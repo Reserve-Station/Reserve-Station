@@ -124,6 +124,10 @@ namespace Content.Server.GameTicking
         [ValidatePrototypeId<EntityPrototype>]
         public const string AdminObserverPrototypeName = "AdminObserver";
 
+        // WD EDIT START
+        [ValidatePrototypeId<JobPrototype>]
+        public const string ClownJobPrototypeName = "Clown";
+        // WD EDIT END
         /// <summary>
         /// How many players have joined the round through normal methods.
         /// Useful for game rules to look at. Doesn't count observers, people in lobby, etc.
@@ -341,6 +345,15 @@ namespace Content.Server.GameTicking
             DebugTools.AssertNotNull(mobMaybe);
             var mob = mobMaybe!.Value;
 
+            // WD EDIT START
+            // Setting the clown nickname if player chooses the clown profession
+            if (jobPrototype.ID == ClownJobPrototypeName && character.ClownName != null)
+            {
+                // Simply set the nickname as the clown's name
+                EnsureComp<RandomMetadataExcludedComponent>(mob);
+                _metaData.SetEntityName(mob, character.ClownName);
+            }
+            // WD EDIT END
             _mind.TransferTo(newMind, mob);
             _admin.UpdatePlayerList(player);
 

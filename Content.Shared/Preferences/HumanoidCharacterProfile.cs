@@ -119,6 +119,12 @@ namespace Content.Shared.Preferences
         public string FlavorText { get; set; } = string.Empty;
 
         /// <summary>
+        /// Clown name for clown job.
+        /// </summary>
+        [DataField]
+        public string? ClownName { get; set; } = null; // WD EDIT
+
+        /// <summary>
         /// Associated <see cref="SpeciesPrototype"/> for this profile.
         /// </summary>
         [DataField]
@@ -191,7 +197,8 @@ namespace Content.Shared.Preferences
             PreferenceUnavailableMode preferenceUnavailable,
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
-            Dictionary<string, RoleLoadout> loadouts)
+            Dictionary<string, RoleLoadout> loadouts,
+            string? clownName = null) // WD EDIT
 
         {
             Name = name;
@@ -208,6 +215,7 @@ namespace Content.Shared.Preferences
             _antagPreferences = antagPreferences;
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
+            ClownName = clownName; // WD EDIT
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -240,7 +248,8 @@ namespace Content.Shared.Preferences
                 other.PreferenceUnavailable,
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
-                new Dictionary<string, RoleLoadout>(other.Loadouts))
+                new Dictionary<string, RoleLoadout>(other.Loadouts),
+                other.ClownName) // WD EDIT
         {
         }
 
@@ -370,6 +379,11 @@ namespace Content.Shared.Preferences
         {
             return new(this) { SpawnPriority = spawnPriority };
         }
+
+        public HumanoidCharacterProfile WithClownName(string? clownName)
+        {
+            return new(this) { ClownName = clownName };
+        } // WD EDIT
 
         public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<ProtoId<JobPrototype>, JobPriority>> jobPriorities)
         {

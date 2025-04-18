@@ -157,6 +157,7 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._White;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -246,6 +247,9 @@ namespace Content.Client.Lobby.UI
         private ColorSelectorSliders _rgbSkinColorSelector;
 
         private bool _isDirty;
+        private bool _customizeClownName; // WD EDIT
+
+        public event Action<HumanoidCharacterProfile, int>? OnProfileChanged;
 
         [ValidatePrototypeId<GuideEntryPrototype>]
         private const string DefaultSpeciesGuidebook = "Species";
@@ -253,6 +257,11 @@ namespace Content.Client.Lobby.UI
         public event Action<List<ProtoId<GuideEntryPrototype>>>? OnOpenGuidebook;
 
         private ISawmill _sawmill;
+
+        // WD EDIT START
+        [ValidatePrototypeId<LocalizedDatasetPrototype>]
+        private const string ClownNames = "ClownNames";
+        // WD EDIT END
 
         public HumanoidProfileEditor(
             IClientPreferencesManager preferencesManager,
@@ -373,6 +382,24 @@ namespace Content.Client.Lobby.UI
             };
 
             #endregion Gender
+
+            #region Custom Names
+
+            _customizeClownName = _cfgManager.GetCVar(WhiteCVars.AllowCustomClownName); // WD EDIT
+
+            _cfgManager.OnValueChanged(WhiteCVars.AllowCustomClownName, OnChangedClownNameCustomizationValue); // WD EDIT
+
+            ClownNameEdit.OnTextChanged += args => { SetClownName(args.Text); }; // WD EDIT
+
+
+            // WD EDIT START
+            if (ClownNameContainer.Visible != _customizeClownName)
+                ClownNameContainer.Visible = _customizeClownName;
+            // WD EDIT END
+
+            #endregion
+
+            #region Species
 
             RefreshSpecies();
 
@@ -753,6 +780,15 @@ namespace Content.Client.Lobby.UI
         /// <summary>
         /// Refreshes the species selector.
         /// </summary>
+        // WD EDIT START
+        private void OnChangedClownNameCustomizationValue(bool newValue)
+        {
+            _customizeClownName = newValue;
+            UpdateClownControls();
+        }
+        // WD EDIT END
+
+        /// Refreshes the species selector
         public void RefreshSpecies()
         {
             SpeciesButton.Clear();
@@ -915,6 +951,7 @@ namespace Content.Client.Lobby.UI
             UpdateBorgNameEdit();
             UpdateSexControls();
             UpdateGenderControls();
+            UpdateClownControls(); // WD EDIT
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
             UpdateAgeEdit();
@@ -1401,6 +1438,35 @@ namespace Content.Client.Lobby.UI
         {
             Profile = Profile?.WithGender(newGender);
             ReloadPreview();
+            IsDirty = true;
+        }
+
+        private void SetDisplayPronouns(string? displayPronouns)
+        {
+            if (displayPronouns == GetFormattedPronounsFromGender())
+                displayPronouns = null;
+
+            Profile = Profile?.WithDisplayPronouns(displayPronouns);
+            ReloadPreview();
+            IsDirty = true;
+        }
+
+        // WD EDIT START
+        private void SetClownName(string? clownName)
+        {
+            Profile = Profile?.WithClownName(clownName);
+            IsDirty = true;
+        }
+        // WD EDIT END
+
+        private string GetFormattedPronounsFromGender()
+        {
+            if (Profile == null)
+                return "they/them";
+
+            var genderName = Enum.GetName(typeof(Gender), Profile.Gender) ?? "Epicene";
+            var label = Loc.GetString($"humanoid-profile-editor-pronouns-{genderName.ToLower()}-text");
+            return label.Replace(" ", string.Empty).ToLower();
         }
 
         private void SetSpecies(string newSpecies)
@@ -1644,6 +1710,36 @@ namespace Content.Client.Lobby.UI
             PronounsButton.SelectId((int) Profile.Gender);
         }
 
+        private void UpdateDisplayPronounsControls()
+        {
+            if (Profile == null)
+                return;
+
+            var label = GetFormattedPronounsFromGender();
+            CosmeticPronounsNameEdit.PlaceHolder = label;
+
+            if (Profile.DisplayPronouns == null)
+                CosmeticPronounsNameEdit.Text = string.Empty;
+            else
+                CosmeticPronounsNameEdit.Text = Profile.DisplayPronouns;
+        }
+
+        // WD EDIT START
+        private void UpdateClownControls()
+        {
+            if (Profile == null)
+                return;
+
+            ClownNameEdit.Text = Profile.ClownName ?? string.Empty;
+
+            if (ClownNameEdit.Text != string.Empty)
+                return;
+
+            var clownNames = _prototypeManager.Index<LocalizedDatasetPrototype>(ClownNames);
+            var randomName = _random.Pick(clownNames.Values);
+            ClownNameEdit.PlaceHolder = Loc.GetString(randomName);
+        }
+        // WD EDIT END
         private void UpdateSpawnPriorityControls()
         {
             if (Profile == null)
