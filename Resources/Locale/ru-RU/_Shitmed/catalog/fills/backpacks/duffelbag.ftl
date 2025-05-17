@@ -1,2 +1,2 @@
-ent-ClothingBackpackDuffelAbductorFilled = alien surgery duffel bag
-    .desc = An ordinary surgical duffel bag woven from a durable fiber.
+ent-ClothingBackpackDuffelAbductorFilled = хирургический вещмешок пришельца
+    .desc = Обычный хирургический вещмешок, сотканный из прочного волокна.

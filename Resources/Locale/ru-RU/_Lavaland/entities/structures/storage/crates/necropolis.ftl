@@ -1,2 +1,2 @@
-ent-LavalandCrateNecropolis = necropolis chest
-    .desc = Steel and strong.
+ent-LavalandCrateNecropolis = сундук некрополиса
+    .desc = Стальной и прочный.

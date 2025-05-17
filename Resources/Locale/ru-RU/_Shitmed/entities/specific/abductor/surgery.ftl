@@ -6,3 +6,7 @@ ent-EnergyScalpelAbductor = энергетический скальпель аб
     .desc = Скальпель, использующий энергетическое лезвие, похоже, также работает как пила.
 ent-BoneManipulatorAbductor = костный манипулятор абдуктора
     .desc = { ent-BaseToolSurgery.desc }
+ent-OmnimedTool = хирургический омнитул
+    .desc = { ent-BaseToolSurgery.desc }
+ent-OmnimedToolSyndie = хирургический омнитул
+    .desc = { ent-BaseToolSurgery.desc }

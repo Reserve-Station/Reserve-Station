@@ -1,2 +1,2 @@
-ent-BlueshieldAmmunitionBox = blueshield ammunition box
-    .desc = A box containing various ammunition and magazines for magnum type weapons.
+ent-BlueshieldAmmunitionBox = коробка боеприпасов офицера "синий щит"
+    .desc = Коробка с различными боеприпасами и магазинами для оружия типа "магнум".

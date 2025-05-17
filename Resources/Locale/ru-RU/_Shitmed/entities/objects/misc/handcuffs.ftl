@@ -1,2 +1,2 @@
-ent-AbductorHandcuffs = Наручники
+ent-AbductorHandcuffs = наручники абдуктора
     .desc = Используются для задержания преступников и прочих придурков.

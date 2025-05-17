@@ -1,1 +1,1 @@
-tendril-destroyed-warning-message = Земля под усиком рушится! БЕГИТЕ!!!
+tendril-destroyed-warning-message = Земля под завитком рушится! БЕГИТЕ!!!

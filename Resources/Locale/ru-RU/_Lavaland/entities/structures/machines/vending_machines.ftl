@@ -1,2 +1,2 @@
-ent-VendingMachineMiningDrobe = MiningDrobe
-    .desc = A highly advanced vending machine for buying mining related clothing for free. Please do not mine Bitcoin with it.
+ent-VendingMachineMiningDrobe = Шахтершкаф
+    .desc = Очень продвинутый торговый автомат для бесплатной покупки одежды и многого другого, связанной с шахтерством и лавалендом. Пожалуйста, не майните с его помощью биткоины.

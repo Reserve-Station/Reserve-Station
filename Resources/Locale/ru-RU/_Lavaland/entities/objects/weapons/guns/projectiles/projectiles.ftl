@@ -1,7 +1,7 @@
-ent-RapidBulletKinetic = rapid kinetic bolt
-    .desc = Not too bad, but you still don't want to get hit by it.
-ent-WeakBulletKinetic = weak kinetic bolt
-    .desc = Not too bad, but you still don't want to get hit by it.
+ent-RapidBulletKinetic = быстрый кинетический разряд
+    .desc = Не так уж плохо, но ты все равно не хочешь, чтобы это ударило по тебе.
+ent-WeakBulletKinetic = слабый кинетический разряд
+    .desc = Не так уж плохо, но ты все равно не хочешь, чтобы это ударило по тебе.
 ent-PelletKinetic = { ent-BulletKinetic }
     .desc = { ent-BulletKinetic.desc }
 ent-PelletKineticSpread = { ent-BulletKinetic }

@@ -1,8 +1,8 @@
-ent-CodexCicatrix = codex cicatrix
+ent-CodexCicatrix = кодекс цикатрикс
     .desc = Зловещая книга которую вы никогда не видели. Кажется, что буквы постоянно перестраиваются.
-ent-HereticEldritchFlask = eldritch flask
+ent-HereticEldritchFlask = зловещая фляжка
     .desc = Фляжка полная неизвестной субстанции. Кто знает что произойдет если вы глотнёте из неё.
-ent-HereticProtectiveBlade = eldritch blade
+ent-HereticProtectiveBlade = зловещее лезвие
     .desc = Водоворот лезвий, сверкающий прямо перед вашими глазами. Почему ты отворачиваешься!?
-ent-HereticProtectiveBladeProjectile = eldritch blade
+ent-HereticProtectiveBladeProjectile = зловещее лезвие
     .desc = Водоворот лезвий, сверкающий прямо перед вашими глазами. Почему ты отворачиваешься!?

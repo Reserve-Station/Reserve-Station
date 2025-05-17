@@ -1,6 +1,6 @@
 ent-MaterialBSCrystal = блюспейс кристал
-    .suffix = Full
+    .suffix = Полный
     .desc = { ent-MaterialBase.desc }
 ent-MaterialBSCrystal1 = { ent-MaterialBSCrystal }
-    .suffix = Single
+    .suffix = Один
     .desc = { ent-MaterialBSCrystal.desc }

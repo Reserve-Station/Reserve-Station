@@ -1,4 +1,4 @@
-action-name-toggle-pka-light = Toggle PKA Light
-action-description-toggle-pka-light = Toggle the PKA light on and off.
-attachment-bayonet-slot-name = Bayonet
-attachment-light-slot-name = Flashlight
+action-name-toggle-pka-light = Переключить свет ПКУ
+action-description-toggle-pka-light = Включить или выключить свет ПКУ.
+attachment-bayonet-slot-name = Нож
+attachment-light-slot-name = Фонарик

@@ -1,0 +1,19 @@
+inspect-wound-Bleeding-minor = слегка истекает кровью
+inspect-wound-Bleeding-moderate = истекает кровью
+inspect-wound-Bleeding-severe = сильно истекает кровью
+inspect-wound-Brute-minor = выглядит ушибленным
+inspect-wound-Brute-moderate = выглядит потрепанным
+inspect-wound-Brute-severe = выглядит изуродованным
+inspect-wound-Burn-minor = выглядит слегка красным
+inspect-wound-Burn-moderate = имеет волдыри по всему телу
+inspect-wound-Burn-severe = кожа отслаивается
+
+self-inspect-wound-Bleeding-minor = слегка истекает кровью
+self-inspect-wound-Bleeding-moderate = истекает кровью
+self-inspect-wound-Bleeding-severe = сильно истекает кровью
+self-inspect-wound-Brute-minor = ушиблен, и болит
+self-inspect-wound-Brute-moderate = потрепан
+self-inspect-wound-Brute-severe = полностью изуродован
+self-inspect-wound-Burn-minor = слегка горит
+self-inspect-wound-Burn-moderate = имеет несколько волдырей
+self-inspect-wound-Burn-severe = кожа отслаивается

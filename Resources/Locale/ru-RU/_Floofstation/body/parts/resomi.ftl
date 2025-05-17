@@ -1,6 +1,6 @@
-ent-TorsoResomi = resomi torso
+ent-TorsoResomi = туловище резоми
     .desc = { ent-TorsoHuman.desc }
-ent-HeadResomi = resomi голова
+ent-HeadResomi = голова резоми
     .desc = { ent-HeadHuman.desc }
 ent-LeftArmResomi = левая рука резоми
     .desc = { ent-LeftArmHuman.desc }
@@ -16,5 +16,5 @@ ent-RightLegResomi = правая нога резоми
     .desc = { ent-RightLegHuman.desc }
 ent-LeftFootResomi = левая ступня резоми
     .desc = { ent-LeftFootHuman.desc }
-ent-RightFootResomi = правая ступня
+ent-RightFootResomi = правая ступня резоми
     .desc = { ent-RightFootHuman.desc }

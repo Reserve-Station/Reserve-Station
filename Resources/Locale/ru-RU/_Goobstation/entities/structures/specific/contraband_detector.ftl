@@ -7,4 +7,4 @@ ent-ContrabandDetectorAnchored = { ent-ContrabandDetector }
 ent-ContrabandDetectorFrame = рамка детектора контрабанды
     .desc = { "" }
 ent-ContrabandDetectorCircuitboard = плата детектора контрабанды
-    .desc = An electronics board used in contraband detector.
+    .desc = Электронная плата, используемая в детекторе контрабанды.

@@ -1,4 +1,4 @@
-reagent-name-gin-and-sonic = Джин и Соник
+reagent-name-gin-and-sonic = джин и соник
 reagent-desc-gin-and-sonic = Зачем ежик отправился на Сатурн? Чтобы собрать его кольца!
 reagent-name-golden-cat = золотой кот
 reagent-desc-golden-cat = Легенды говорят о золотом коте, который продал бургер за целое состояние. Имеет металлический запах.
@@ -6,5 +6,5 @@ reagent-name-pineapple-blast = ананасовый взрыв
 reagent-desc-pineapple-blast = Для тех случаев, когда деревья начинают говорить. Пахнет тропиками, с нотками серы.
 reagent-name-torpedo-juice = сок торпеды
 reagent-desc-torpedo-juice = Радости пьянства и неограниченной подводной войны вместе взятые! Имеет сильный алкогольный запах.
-reagent-name-bees-knees = Пчелиные колени
+reagent-name-bees-knees = пчелиные колени
 reagent-desc-bees-knees = BEEEEEEEEEEEEEEEEES!!! Имеет затхлый запах.
