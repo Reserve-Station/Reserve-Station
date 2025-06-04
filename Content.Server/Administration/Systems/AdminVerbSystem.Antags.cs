@@ -83,7 +83,8 @@
 
 using Content.Server._Goobstation.Wizard.Components;
 using Content.Server._DV.CosmicCult.Components; // DeltaV
-using Content.Server._Harmony.GameTicking.Rules.Components;
+using Content.Server._Harmony.GameTicking.Rules.Components; // Harmony
+using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
@@ -116,6 +117,10 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
     private static readonly EntProtoId DefaultConspiratorRule = "Conspirators"; // Harmony
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
+    // Harmony start
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string DefaultBloodBrotherRule = "BloodBrothers";
+    // Harmony end
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -326,6 +331,21 @@ public sealed partial class AdminVerbSystem
             Message = string.Join(": ", conspiratorName, Loc.GetString("admin-verb-make-conspirator")),
         };
         args.Verbs.Add(conspirator);
+
+        var bloodBrotherName = Loc.GetString("admin-verb-text-make-blood-brother");
+        Verb bloodBrother = new()
+        {
+            Text = bloodBrotherName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Harmony/Interface/Misc/job_icons.rsi"), "BloodBrother"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<BloodBrotherRuleComponent>(targetPlayer, DefaultBloodBrotherRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", bloodBrotherName, Loc.GetString("admin-verb-make-blood-brother")),
+        };
+        args.Verbs.Add(bloodBrother);
         // Harmony end
     }
 }

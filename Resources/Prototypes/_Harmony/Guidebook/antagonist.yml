@@ -4,3 +4,8 @@
   text: "/ServerInfo/_Harmony/Guidebook/Antagonist/Conspirators.xml"
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Conspirators.xml"
+
+- type: guideEntry
+  id: BloodBrothers
+  name: guide-entry-blood-brothers
+  text: "/ServerInfo/_Harmony/Guidebook/Antagonist/BloodBrothers.xml"

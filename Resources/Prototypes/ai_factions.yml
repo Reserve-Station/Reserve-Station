@@ -49,6 +49,7 @@
     - Heretic # goob edit - heretics
     - Blob # Goobstation - Blob
     - Shadowling # Einstein Engines - Shadowlings
+    - BloodBrother # Harmony
   friendly: # Goobstation
     - Wizard
     - PirateFaction # goob - pirates
@@ -73,6 +74,7 @@
   - Xenoborg
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Mouse
@@ -112,6 +114,7 @@
   - Blob # Goobstation - Blob
   - PirateFaction # goob - pirates
   - Lavafauna # Goob - Lavaland
+  - BloodBrother # Harmony
   friendly: # Goobstation
   - Wizard
   - Shadowling # Einstein Engines - Shadowlings
@@ -158,6 +161,7 @@
   - PirateFaction # goob - pirates
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
+  - BloodBrother # Harmony
   friendly: # Goobstation
     - Wizard
 
@@ -182,6 +186,7 @@
   - Xenoborg
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Revolutionary
@@ -220,16 +225,34 @@
   - PirateFaction # goob - pirates
   - Wraith # Goobstation - Wraith
   - Lavafauna # Goob - Lavaland
+  - BloodBrother # Harmony
 
 # Balloons Factions Edit:
 - type: npcFaction
   id: Balloon
+  hostile:
   # Balloons can't attack
+  - Wizard
+  - Xenoborg
 
 - type: npcFaction
   id: Monkey
   hostile:
   - Balloon     # Custom faction specifically for attacking bloons
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - AllHostile
+  - Xenoborg
+  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Xenoborg
@@ -243,9 +266,8 @@
   - Changeling # goob edit - changelings
   - Heretic # goob edit - heretics
   - PirateFaction # goob - pirates
-
+  - BloodBrother # Harmony
   - Xeno # rivalry
-
   # cause they are hostile to them
   - SimpleHostile
   - AllHostile
@@ -268,6 +290,7 @@
   - Heretic # goob edit - heretics
   - Blob # Goobstation - Blob
   - PirateFaction # goob - pirates
+  - BloodBrother # Harmony
   friendly: # Goobstation
   - Wraith # Goobstation
   - Lavafauna # Lavaland
@@ -292,5 +315,6 @@
   - Shadowling # Einstein Engines - Shadowlings
   - Wizard # goob edit - wizard
   - PirateFaction # goob - pirates
+  - BloodBrother # Harmony
   friendly:
   - Dragon

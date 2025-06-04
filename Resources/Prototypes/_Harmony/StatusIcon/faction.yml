@@ -9,3 +9,15 @@
   icon:
     sprite: /Textures/_Harmony/Interface/Misc/job_icons.rsi
     state: Conspirator
+
+- type: factionIcon
+  id: BloodBrotherFaction
+  isShaded: true
+  priority: 12
+  showTo:
+    components:
+    - ShowAntagIcons
+    - BloodBrother
+  icon:
+    sprite: /Textures/_Harmony/Interface/Misc/job_icons.rsi
+    state: BloodBrother
