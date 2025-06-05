@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using Content.Server._Harmony.GameTicking.Rules.Components;
 using Content.Server._Harmony.Roles;
 using Content.Server.Administration.Logs;
@@ -226,10 +226,24 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             return false;
         }
 
-        if (HasComp<MindShieldComponent>(target))
+        if (targetMind.UserId == null)
         {
-            errorMessage = "blood-brother-convert-failed-shielded";
+            errorMessage = "blood-brother-convert-failed-no-mind";
             return false;
+        }
+
+        // Check antag preference
+        if (entity.Comp.RequiredAntagPreference != null &&
+            _preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
+        {
+
+            var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
+
+            if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference!.Value) != true)
+            {
+                errorMessage = "blood-brother-convert-failed-preference";
+                return false;
+            }
         }
 
         if (!_mobStateSystem.IsAlive(target))
@@ -238,22 +252,9 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             return false;
         }
 
-        if (targetMind.UserId == null)
+        if (HasComp<MindShieldComponent>(target))
         {
-            errorMessage = "blood-brother-convert-failed-no-mind";
-            return false;
-        }
-
-        // Check antag preference
-        if (entity.Comp.RequiredAntagPreference == null ||
-            !_preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
-            return true;
-
-        var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
-
-        if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference.Value) != true)
-        {
-            errorMessage = "blood-brother-convert-failed-preference";
+            errorMessage = "blood-brother-convert-failed-shielded";
             return false;
         }
 
