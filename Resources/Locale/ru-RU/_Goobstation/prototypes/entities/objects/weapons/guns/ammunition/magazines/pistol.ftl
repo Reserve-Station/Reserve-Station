@@ -1,2 +1,2 @@
-ent-MagazinePistolNeurotoxin = pistol magazine (.45 neurotoxin)
+ent-MagazinePistolNeurotoxin = пистолетный магазин (.45 Нейротоксин)
     .desc = { ent-BaseMagazineMagnum.desc }

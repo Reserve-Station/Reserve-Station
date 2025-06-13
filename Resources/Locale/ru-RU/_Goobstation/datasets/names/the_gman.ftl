@@ -1,1 +1,1 @@
-names-gman-dataset-1 = Большой человек
+names-gman-dataset-1 = Г-мэн

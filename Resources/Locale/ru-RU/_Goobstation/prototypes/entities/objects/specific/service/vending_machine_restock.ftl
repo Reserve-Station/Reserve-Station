@@ -1,2 +1,2 @@
-ent-VendingMachineRestockSweetToof = SweetToof restock box
-    .desc = A box jampacked with a heinous amount of candy. Load it into a SweetToof vendor to begin.
+ent-VendingMachineRestockSweetToof = Коробка для пополнения вендомата со сладостями
+    .desc = Коробка, битком набитая конфетами. Вставьте её в подходящий торгомат.

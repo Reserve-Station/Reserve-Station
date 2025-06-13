@@ -1,1 +1,1 @@
-death-squad-examined = [цвет=красный]{ CAPITALIZE(POSS-ADJ($target)) } глаза светится пылающей ненавистью.[/color]
+death-squad-examined = [color=red] глаза{ CAPITALIZE(POSS-ADJ($target)) }  светятся пылающей ненавистью.[/color]

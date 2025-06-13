@@ -89,13 +89,19 @@
   levels:
     green:
       announcement: alert-level-green-announcement
-      sound: /Audio/_Reserve/announcement/green.ogg # Reserve
+      sound:
+        path: /Audio/Misc/greenlevel.ogg # Reserve new sounds
+        params:
+          volume: -4
       color: Green
       emergencyLightColor: LawnGreen
       shuttleTime: 600
     blue:
       announcement: alert-level-blue-announcement
-      sound: /Audio/_Reserve/announcement/blue.ogg # Reserve
+      sound:
+        path: /Audio/Misc/bluealert.ogg # Reserve new sounds
+        params:
+          volume: -4
       color: DodgerBlue
       forceEnableEmergencyLights: true
       emergencyLightColor: DodgerBlue
@@ -103,7 +109,7 @@
     # Reserve-Start
     grey:
       announcement: alert-level-grey-announcement
-      sound: /Audio/Misc/gamma.ogg
+      sound: /Audio/Misc/gamma_alt.ogg # Reserve new sounds
       color: SlateGray
       forceEnableEmergencyLights: true
       emergencyLightColor: SlateGray
@@ -111,21 +117,24 @@
     # Reserve-End
     violet:
       announcement: alert-level-violet-announcement
-      sound: /Audio/_Reserve/announcement/violet.ogg # Reserve
+      sound: /Audio/_Reserve/Announcements/violet.ogg # Reserve new sounds
       color: Violet
       emergencyLightColor: Violet
       forceEnableEmergencyLights: true
       shuttleTime: 600
     yellow:
       announcement: alert-level-yellow-announcement
-      sound: /Audio/_Reserve/announcement/yellow.ogg # Reserve
+      sound: /Audio/_Reserve/Announcements/yellow.ogg # Reserve new sounds
       color: Yellow
       emergencyLightColor: Goldenrod
       forceEnableEmergencyLights: true
       shuttleTime: 600
     red:
       announcement: alert-level-red-announcement
-      sound: /Audio/_Reserve/announcement/red.ogg # Reserve
+      sound:
+        path: /Audio/Misc/redalert.ogg # Reserve new sounds
+        params:
+          volume: -4
       color: Red
       emergencyLightColor: Red
       forceEnableEmergencyLights: true
@@ -134,7 +143,7 @@
       announcement: alert-level-gamma-announcement
       selectable: false
       sound:
-        path: /Audio/_Reserve/announcement/gamma.ogg # Reserve
+        path: /Audio/Misc/gamma.ogg
         params:
           volume: -2
       disableSelection: true
@@ -145,7 +154,7 @@
       announcement: alert-level-delta-announcement
       selectable: false
       sound:
-        path: /Audio/_Reserve/announcement/delta.ogg # Reserve
+        path: /Audio/Misc/delta.ogg
         params:
           volume: -3
       disableSelection: true
@@ -157,7 +166,7 @@
       announcement: alert-level-epsilon-announcement
       selectable: false
       sound:
-        path: /Audio/_Reserve/announcement/epsilon.ogg # Reserve
+        path: /Audio/Misc/epsilon.ogg
         params:
           volume: -2
       disableSelection: true

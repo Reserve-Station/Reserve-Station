@@ -1,7 +1,7 @@
 ent-ClothingOuterHardsuitChronolegioneer = футуристичный скафандр
     .desc = Скафандр покрытый неизвестным материалом, который защищает от большинства материальных и временных повреждений.
 ent-ClothingOuterHardsuitChronolegioneerUnremoveable = { ent-ClothingOuterHardsuitChronolegioneer }
-    .suffix = Неустранимый
+    .suffix = Неснимаемый
     .desc = { ent-ClothingOuterHardsuitChronolegioneer.desc }
 ent-ClothingOuterHardsuitBlueshield = скафандр офицера синего щита
     .desc = Скафандр синего щита.

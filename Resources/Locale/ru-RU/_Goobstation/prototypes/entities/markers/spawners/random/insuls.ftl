@@ -1,2 +1,2 @@
-ent-RandomInsulsSpawner = random insuls spawner
+ent-RandomInsulsSpawner = спавнер случайных изолей
     .desc = { ent-MarkerBase.desc }

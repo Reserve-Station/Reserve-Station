@@ -15,17 +15,28 @@ class Project:
         self.ru_locale_prototypes_dir_path = os.path.join(self.ru_locale_dir_path)
 
     def get_files_paths_by_dir(self, dir_path, files_extenstion):
-        return glob.glob(f'{dir_path}/**/*.{files_extenstion}', recursive=True)
+        all_files = glob.glob(f'{dir_path}/**/*.{files_extenstion}', recursive=True)
+        # Фильтруем только те, где есть подпапка с префиксом "_"
+        filtered = [f for f in all_files if any(part.startswith('_') for part in pathlib.Path(f).parts)]
+        return filtered
+
 
     def get_fluent_files_by_dir(self, dir_path):
-        files = []
         files_paths_list = glob.glob(f'{dir_path}/**/*.ftl', recursive=True)
+        # Только те файлы, которые лежат в подпапках с префиксом "_"
+        filtered_paths = [p for p in files_paths_list if any(part.startswith('_') for part in pathlib.Path(p).parts)]
 
-        for file_path in files_paths_list:
+        files = []
+        for file_path in filtered_paths:
             try:
                 files.append(FluentFile(file_path))
             except:
                 continue
 
         return files
+
+    def get_lang_file(self, en_file: FluentFile, lang_code: str) -> FluentFile:
+        rel_path = os.path.relpath(en_file.full_path, self.en_locale_dir_path)
+        target_path = os.path.join(self.locales_dir_path, lang_code, rel_path)
+        return FluentFile(target_path)
 

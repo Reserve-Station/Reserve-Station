@@ -1,3 +1,3 @@
-fibers-modular = модульная
-fibers-classified = classified
-fibers-pitch-black = pitch-black
+fibers-modular = модульные
+fibers-classified = классификационные
+fibers-pitch-black = кромешно-чёрные

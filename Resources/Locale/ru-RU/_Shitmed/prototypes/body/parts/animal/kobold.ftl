@@ -1,6 +1,6 @@
-ent-ChestKobold = kobold chest
+ent-ChestKobold = грудная клетка кобольда
     .desc = { ent-PartKobold.desc }
-ent-GroinKobold = kobold groin
+ent-GroinKobold = пах кобольда
     .desc = { ent-PartKobold.desc }
 ent-PartKobold = { ent-BasePart }
     .desc = { ent-BasePart.desc }

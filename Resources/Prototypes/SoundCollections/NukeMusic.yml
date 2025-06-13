@@ -88,3 +88,9 @@
     - /Audio/StationEvents/last_call.ogg
     - /Audio/StationEvents/tansume.ogg
     - /Audio/StationEvents/sponsored-by-syndicate.ogg
+
+    # Reserve new sounds
+    - /Audio/Corvax/StationEvents/level.ogg
+    - /Audio/_Reserve/StationEvents/broken.ogg
+    - /Audio/_Reserve/StationEvents/ourclasstrial.ogg
+    - /Audio/_Reserve/StationEvents/running-in.ogg

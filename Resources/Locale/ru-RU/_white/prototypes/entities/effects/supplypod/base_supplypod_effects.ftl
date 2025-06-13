@@ -1,7 +1,7 @@
 ent-BaseTargetCircle = { "" }
-    .desc = { "" }
+    .desc = Подождите, это должно быть здесь?
 ent-BaseSupplyPodTargetCircle = { ent-BaseTargetCircle }
-    .suffix = Пусто, по умолчанию
+    .suffix = Пустой, По умолчанию
     .desc = { ent-BaseTargetCircle.desc }
 ent-BaseSupplyPodFallingAnimation = { "" }
     .desc = { "" }

@@ -1,2 +1,2 @@
-ent-SuperStunbaton = super stun baton
-    .desc = RUN AWAY FROM ME, I'M CRAZY!!!
+ent-SuperStunbaton = супер-электрошоковая дубинка
+    .desc = БЕГИ ОТ МЕНЯ, Я СУМАСШЕДШИЙ!!!

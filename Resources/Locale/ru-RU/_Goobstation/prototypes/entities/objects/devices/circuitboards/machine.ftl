@@ -1,10 +1,10 @@
-ent-MaterialSiloCircuitboard = блюспейс хранилище(машинная плата)
+ent-MaterialSiloCircuitboard = блюспейс хранилище (машинная плата)
     .desc = Печатная плата блюспейс хранилища.
 ent-RoboticArmCircuitboard = машинная панель роботизированной руки
     .desc = Машинная печатная плата для роботизированной руки.
-ent-ConstructorCircuitboard = конструкторская машинная доска
+ent-ConstructorCircuitboard = плата конструктора
     .desc = Машинная печатная плата для конструктора.
-ent-StorageBinCircuitboard = машинная доска для хранения бункеров
+ent-StorageBinCircuitboard = плата бункера для хранения
     .desc = Машинная печатная плата для бункера для хранения.
-ent-InteractorCircuitboard = плата интерактивной машины
-    .desc = Машинная печатная плата для взаимодействия.
+ent-InteractorCircuitboard = плата интерактора
+    .desc = Машинная печатная плата для интерактора.

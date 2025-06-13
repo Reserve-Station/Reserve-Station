@@ -1,0 +1,29 @@
+ent-TapeRecorder = tape recorder
+    .desc = Anything said into this device can and will be used against you in a court of space law.
+ent-TapeRecorderFilled = { ent-TapeRecorder }
+    .desc = { ent-TapeRecorder.desc }
+    .suffix = Filled
+ent-CassetteTape = cassette tape
+    .desc = A magnetic tape that can hold up to two minutes of content on either side.
+ent-CassetteTapeInterview = { ent-CassetteTape }
+    .desc = { ent-CassetteTape.desc }
+    .suffix = Interview with Garry Smosh
+interview-with-garry-smosh = Interview with Garry Smosh
+
+interview-with-garry-smosh-phil-dervin = Phil Dervin
+interview-with-garry-smosh-garry-smosh = Garry Smosh
+interview-with-garry-smosh-officer-belview = Оfficer Belview
+
+interview-with-garry-smosh-1 = "Its 11:43am, present in the room are Phil Dervin, Detective first class, Officer Belview and Grarry Smosh, Suspect of one count of secure tresspass, four counts of assault, two counts of theft and 85 counts of disturbing the peace."
+interview-with-garry-smosh-2 = "Mr Smosh, do you understand the charges you have been accused of?"
+interview-with-garry-smosh-3 = "I don't care what you say, i ain't done anything."
+interview-with-garry-smosh-4 = "Sir, you were caught redhanded in the Captains bedroom. In the middle of an attempt at stealing his whiskey reserve no less."
+interview-with-garry-smosh-5 = "You are lucky he didn't shoot you for that."
+interview-with-garry-smosh-6 = "I didn't see no signs saying i couldn't be there."
+interview-with-garry-smosh-7 = "The Captains bedroom? I don't think we need a sign telling people to stay out - it's common sense."
+interview-with-garry-smosh-8 = "Anyway that's besides the point, even if it were not off limits there is still the matter of the restricted items we found on your person and the subsequent attempt at evading arrest."
+interview-with-garry-smosh-9 = "I ain't done nothing."
+interview-with-garry-smosh-10 = "You slipped 3 officers, stole a stun baton and beat Ian with it. The HOP was very upset at that last part."
+interview-with-garry-smosh-11 = "Which one of you gave the HOP a disabler?"
+interview-with-garry-smosh-12 = The Warden did, turned out to be a good idea eh?"
+interview-with-garry-smosh-13 = "I would say so."

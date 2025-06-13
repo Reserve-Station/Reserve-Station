@@ -1,16 +1,16 @@
-devil-speech-grip = Удивляйтесь и падайте!!
+devil-speech-grip = Удивляйтесь и падайте!
 devil-roundend-name = Дьявол
 objective-issuer-devil = Дьявол
 roundend-prepend-devil-contracts = Кто-то заключил [color=red]{ $number }[/color] успешных контрактов.
 roundend-prepend-devil-contracts-named = [color=white]{ $name }[/color] совершил [color=red]{ $number }[/color] успешных контрактов.
 devil-component-examined = [color=darkred]{ CAPITALIZE(POSS-ADJ($target)) } глаза светятся слабым красным светом.[/color]
 condemned-component-examined = [color=chartreuse]Глаза { CAPITALIZE($target) } пустые и бездушные.[/color]
-devil-role-greeting = Вы дъявол из адских глубин,
-  завладевший телом {$playerName}
-  Развращайте смертных и собирайте души при помощи контрактов.
-  Не в ваших интересах вмешиваться в дела станции, не связанные с вашими сделками, - это ниже вас.
-  Ваше настоящее имя - {$trueName}, Постарайтесь держать его в секрете, хорошо?
-
+devil-role-greeting =
+    Вы дъявол из адских глубин,
+    завладевший телом { $playerName }
+    Развращайте смертных и собирайте души при помощи контрактов.
+    Не в ваших интересах вмешиваться в дела станции, не связанные с вашими сделками, - это ниже вас.
+    Ваше настоящее имя - { $trueName }, Постарайтесь держать его в секрете, хорошо?
 devil-true-name-heard = Когда { $speaker } произносит истинное имя { $target }, это заставляет { POSS-ADJ($target) } остановится.
 devil-true-name-heard-chaplain = Действие священных слов { $speaker } произносящих их истинное имя, выжигает саму душу { $target }.
 objective-condition-contract-title = Собрать души

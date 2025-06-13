@@ -32,25 +32,25 @@ knowledge-path-side-s3-void-cloak-desc =
 
 ## стадия 7
 
-knowledge-path-side-s3-ice-spear-name = Mysteries of Creation
+knowledge-path-side-s3-ice-spear-name = Тайны сотворения
 knowledge-path-side-s3-ice-spear-desc =
-    Artifacts linked to the Winter Dawn exude unnatural stillness. Time slows around them. Fires choke. Thoughts become brittle. Proximity breeds hallucinations of endless white fields, a sky with no sun, and a voice that speaks only in cracking ice.
+    Артефакты, связанные с зимним рассветом, источают неестественную тишину. Время вокруг них замедляется. Огонь гаснет. Мысли становятся хрупкими. Близость порождает галлюцинации о бесконечных белых полях, небе без солнца и голосе, который звучит только сквозь треск льда.
     
-    Grants you Mysteries of Creation, a spell that allows you to summon the Glacier Spear at will. This magical spear chills victims upon hit, but more importantly, it shatters upon throwing, dealing a significant amount of damage and temporarily freezing the target into an ice cube. If the spear is destroyed, activating this ability will create a new one, otherwise it will summon the existing spear into your hand.
+    Дает вам "Тайны сотворения" - заклинание, позволяющее по желанию вызывать Ледяное копье. При попадании в жертву это волшебное копье вызывает озноб, но, что более важно, при броске оно разбивается вдребезги, нанося значительный урон и временно превращая цель в кубик льда. Если копье уничтожено, активация этой способности создаст новое, в противном случае оно призовет существующее копье в вашу руку.
 knowledge-path-side-s7-uncuff-name = Волна отчаяния
-knowledge-path-side-s6-rustwalker-name = Rusted Ritual
+knowledge-path-side-s6-rustwalker-name = Ржавый ритуал
 knowledge-path-side-s6-rustwalker-desc =
-    I combined my knowledge of creation with my desire for corruption. The Marshal knew my name, and the Rusted Hills echoed out.
+    Я объединил свои знания о созидании со своим стремлением к разрушению. Маршал знал мое имя, и Ржавые холмы отозвались эхом.
     
-    Allows you to transmute a pool of vomit, 15 cable coil, and 10 sheets of iron into a Rust Walker.
-    Rust Walkers excel at spreading rust and are moderately strong in combat.
-knowledge-path-side-s6-knife-name = Carving Knife
+    Позволяет превратить лужу рвоты, 15 катушек кабеля и 10 листов железа в Ржавого ходока.
+    Ржавые ходоки превосходно разносят ржавчину и умеренно сильны в бою.
+knowledge-path-side-s6-knife-name = Разделочный нож
 knowledge-path-side-s6-knife-desc =
-    Etched, carved... eternal. There is power hidden in everything. I can unveil it! I can carve the monolith to reveal the chains!
+    Выгравированный, вырезанный на камне... вечный. Во всем скрыта сила. Я могу раскрыть ее! Я могу вырезать монолит, чтобы показать цепи!
     
-    Allows you to transmute a knife, a shard of glass, and a piece of paper to create a Carving Knife.
-    The Carving Knife allows you to etch difficult to see traps that trigger on heathens who walk overhead.
-    Also makes for a handy throwing weapon.
+    Позволяет преобразовать нож, осколок стекла и лист бумаги в разделочный нож.
+    Разделочный нож позволяет создавать невидимые ловушки, которые срабатывают на язычников, проходящих над головой.
+    Также это удобное метательное оружие.
 knowledge-path-side-s7-uncuff-desc =
     В темной ярости я разрываю оковы, и их слабые узы рушатся перед моей силой.
     
@@ -77,16 +77,16 @@ knowledge-path-side-s7-crucible-desc =
     Позволяет трансмутировать переносную емкость для воды и стол, чтобы создать тигель.
     В нем можно варить мощные боевые и полезные зелья, но между использованиями его нужно кормить частями тела и органами.
 # stage 8
-knowledge-path-side-s8-cleave-name = Blood Cleave
+knowledge-path-side-s8-cleave-name = Кровяной раскол
 knowledge-path-side-s8-cleave-desc =
-    At first I didn't understand these instruments of war, but the Priest told me to use them regardless. Soon, he said, I would know them well.
+    Сначала я не разобрался в этих боевых инструментах, но Священник велел мне использовать их, несмотря ни на что. Вскоре, по его словам, я буду хорошо их знать.
     
-    Grants you Cleave, an area-of-effect targeted spell that causes heavy bleeding and blood loss to anyone afflicted.
-knowledge-path-side-s8-rust-charge-name = Rust Charge
+    Дарует вам Рассечение - точечное заклинание, которое вызывает сильное кровотечение и кровопотерю у любого пострадавшего.
+knowledge-path-side-s8-rust-charge-name = Заряд ржавчины
 knowledge-path-side-s8-rust-charge-desc =
-    The hills sparkled now, as I neared them my mind began to wander. I quickly regained my resolve and pushed forward, this last leg would be the most treacherous.
+    Холмы засверкали, и когда я приблизился к ним, мои мысли начали блуждать. Я быстро собрался с духом и двинулся вперед, этот последний этап был самым опасным.
     
-    Grants you Rust Charge, a targeted action that can only be cast on a rusted tile. It charges you forward, destroying any rusted objects you come into contact with, it will also deal high damage to others and rust around you during the charge.
+    Дает вам заряд ржавчины, целенаправленное действие, которое можно применить только на ржавой плитке. Он заряжает вас вперед, уничтожая любые ржавые предметы, с которыми вы соприкасаетесь, а также наносит большой урон другим и ржавеет вокруг вас во время заряда.
 
 ## этап 9
 

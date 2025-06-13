@@ -1,4 +1,4 @@
-ent-BorgModuleFireAxe = fire axe cyborg module
-    .desc = A piece of tech that gives cyborgs a fire axe!
-ent-BorgModuleFlamingAxe = fire axe cyborg module
-    .desc = A piece of tech that gives cyborgs a fire axe!
+ent-BorgModuleFireAxe = модуль киборга с пожарным топором
+    .desc = Изобретение, которое дает киборгам пожарный топор!
+ent-BorgModuleFlamingAxe = модуль киборга с пожарным топором
+    .desc = Изобретение, которое дает киборгам пожарный топор!

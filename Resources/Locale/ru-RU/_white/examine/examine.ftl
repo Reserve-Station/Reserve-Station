@@ -5,8 +5,8 @@ examine-can-see = Осмотрев { OBJECT($ent) }, вы можете увид�
 examine-can-see-nothing = { CAPITALIZE(SUBJECT($ent)) } полностью без ничего!
 id-examine = - [bold]{ $item }[/bold] на { POSS-ADJ($ent) } ремне.
 examine-border-line = ═════════════════════
-examine-present-tex = This is a [enttex id="{ $id }" size={ $size }] [bold]{ $name }[/bold]!
-examine-present = This is a [bold]{ $name }[/bold]!
+examine-present-tex = Это [enttex id="{ $id }" size={ $size }] [bold]{ $name }[/bold]!
+examine-present = Это [bold]{ $name }[/bold]!
 examine-present-line = ═══
 head-examine = - [bold]{ $item }[/bold] на { POSS-ADJ($ent) } голове.
 eyes-examine = - [bold]{ $item }[/bold] на { POSS-ADJ($ent) } глазах.
@@ -23,16 +23,16 @@ shoes-examine = - [bold]{ $item }[/bold] на { POSS-ADJ($ent) } ногах.
 
 # Selfaware version
 
-id-card-examine-full = • { CAPITALIZE(POSS-ADJ($wearer)) } ID: [bold]{ $nameAndJob }[/bold].
+id-card-examine-full = • { CAPITALIZE(POSS-ADJ($wearer)) } Должность: [bold]{ $nameAndJob }[/bold].
 examine-name-selfaware = Это вы, [bold]{ $name }[/bold]!
 examine-can-see-selfaware = Осмотрев себя, вы можете увидеть:
 examine-can-see-nothing-selfaware = На вас вообще ничего нет!
 id-examine-selfaware = - [bold]{ $item }[/bold] на вашем поясе.
 head-examine-selfaware =
-    • Your { $id ->
+    • Ваш { $id ->
         [empty] [bold]{ $item }[/bold]
        *[other] [enttex id="{ $id }" size={ $size }][bold]{ $item }[/bold]
-    } on your head.
+    } на вашей голове.
 eyes-examine-selfaware = - [bold]{ $item }[/bold] на ваших глазах.
 mask-examine-selfaware = - [bold]{ $item }[/bold] на вашем лице.
 neck-examine-selfaware = - [bold]{ $item }[/bold] на вашей шее.

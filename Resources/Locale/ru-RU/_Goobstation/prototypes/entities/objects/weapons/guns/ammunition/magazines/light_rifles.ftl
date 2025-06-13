@@ -1,2 +1,2 @@
-ent-MagazineLightRifleSubsonic = magazine (.30 rifle subsonic)
+ent-MagazineLightRifleSubsonic = магазин (дозвуковой винтовочный .30)
     .desc = { ent-BaseMagazineLightRifle.desc }

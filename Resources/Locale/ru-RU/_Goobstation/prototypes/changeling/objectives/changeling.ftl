@@ -12,7 +12,6 @@ ent-ChangelingStealDNAObjective = { ent-BaseChangelingObjective }
     .desc = { ent-BaseChangelingObjective.desc }
 ent-EscapeIdentityObjective = { ent-BaseChangelingObjective }
     .desc = Нам нужно бежать на эвакуационном шаттле. Тайно.
-
 ent-ChangelingStealObjective = { ent-BaseChangelingSyndicateObjective }
     .desc = { ent-BaseChangelingSyndicateObjective.desc }
 ent-LingKillRandomHeadObjective = { ent-BaseChangelingSyndicateObjective }

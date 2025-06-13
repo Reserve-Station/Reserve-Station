@@ -1,2 +1,2 @@
-ent-MagazineSmart = magazine (.160 smart)
+ent-MagazineSmart = магазин (.160 smart)
     .desc = { ent-BaseItem.desc }

@@ -1,6 +1,6 @@
 ent-BaseWeaponLauncher = BaseWeaponLauncher
     .desc = Дерзай — налетай, целься и стреляй.
-ent-WeaponLauncherChinaLake = China Lake
+ent-WeaponLauncherChinaLake = Чайна Лейк
     .desc = БЛУП
 ent-WeaponLauncherRocket = РПГ-7
     .desc = Древний ручной реактивный гранатомёт.
@@ -26,3 +26,5 @@ ent-WeaponLauncherAdmemeMeteorLarge = пускатель метеоритов
 ent-WeaponLauncherAdmemeImmovableRodSlow = пускатель неподвижного жезла
     .desc = Стреляет неподвижными жезлами.
     .suffix = Адмемы
+ent-WeaponLauncherSingularityBuster = ракетная установка "Уничтожитель Синглуярности"
+    .desc = Экспериментальная ракетная установка, предназначенная для стрельбы ракетами, способными дезинтегрировать сингулярность или теслу.

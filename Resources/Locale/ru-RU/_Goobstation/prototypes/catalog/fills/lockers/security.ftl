@@ -1,2 +1,2 @@
-ent-GunSafeLauncherNonLethal = riot launcher safe
+ent-GunSafeLauncherNonLethal = сейф с гранатомётом против беспорядков
     .desc = { ent-GunSafeBaseSecure.desc }

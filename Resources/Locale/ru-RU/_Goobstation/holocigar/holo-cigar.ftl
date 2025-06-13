@@ -1,4 +1,4 @@
-uplink-holo-cigar-name = Holo-Cigar
-uplink-holo-cigar-desc = A holo-cigar imported from the Sol system. The full effects of looking so badass aren't understood yet, but users show an increase in precision while dual-wielding firearms.
-holo-cigar-verb-desc = Become the big boss.
-holo-cigar-verb-text = Activate
+uplink-holo-cigar-name = Голо-Сигара
+uplink-holo-cigar-desc = Голо-Сигара - импортный продукт из Государства Солнечной Системы, позволяющий улучшить опыт носителя в стрельбе из двуручного оружия.
+holo-cigar-verb-desc = Стань крутым чуваком.
+holo-cigar-verb-text = Активировать

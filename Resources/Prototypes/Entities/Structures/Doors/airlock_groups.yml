@@ -74,6 +74,9 @@
 # SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Seven2280 <semvalentin123@gmail.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -90,6 +93,7 @@
     freezer:     Structures/Doors/Airlocks/Standard/freezer.rsi
     hydroponics: Structures/Doors/Airlocks/Standard/hydroponics.rsi
     janitor:     _Goobstation/Structures/Doors/Airlocks/Standard/janitor.rsi # Goobstation - Sweet jani door recolour
+    blood-red:   Structures/Doors/Airlocks/Standard/syndicate.rsi # Reserve-Edit
     maintenance: Structures/Doors/Airlocks/Standard/maint.rsi
     medical:     Structures/Doors/Airlocks/Standard/medical.rsi
     science:     Structures/Doors/Airlocks/Standard/science.rsi
@@ -110,6 +114,7 @@
     glass:       Structures/Doors/Airlocks/Glass/glass.rsi
     hydroponics: Structures/Doors/Airlocks/Glass/hydroponics.rsi
     janitor:     _Goobstation/Structures/Doors/Airlocks/Glass/janitor.rsi # Goobstation - Sweet jani door recolour
+    blood-red:   Structures/Doors/Airlocks/Glass/syndicate.rsi # Reserve-Edit
     maintenance: Structures/Doors/Airlocks/Glass/maint.rsi
     medical:     Structures/Doors/Airlocks/Glass/medical.rsi
     security:    Structures/Doors/Airlocks/Glass/security.rsi

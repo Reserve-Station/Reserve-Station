@@ -1,8 +1,8 @@
-ent-EngineeringTechFabCircuitboard = инженерная машинная доска techfab
-    .desc = Машинная печатная плата для инженерной лаборатории.
-ent-CargoTechFabCircuitboard = грузовая машинная доска techfab
-    .desc = Машинная печатная плата для грузовой технологической лаборатории.
-ent-ScienceTechFabCircuitboard = машинная доска science techfab
-    .desc = Машинная печатная плата для научно-технической лаборатории.
-ent-ServiceTechFabCircuitboard = сервисная плата станка techfab
-    .desc = Машинная печатная плата для сервисной лаборатории.
+ent-EngineeringTechFabCircuitboard = плата инженерного ТехФаба
+    .desc = Машинная печатная плата для инженерного ТехФаба.
+ent-CargoTechFabCircuitboard = плата ТехФаба карго
+    .desc = Машинная печатная плата для грузовой технологической ТехФаба.
+ent-ScienceTechFabCircuitboard = плата научного ТехФаба
+    .desc = Машинная печатная плата для научно-технического ТехФаба.
+ent-ServiceTechFabCircuitboard = плата сервисного ТехФаба
+    .desc = Машинная печатная плата для сервисного ТехФаба.

@@ -23,6 +23,9 @@
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 ImHoks <142083149+ImHoks@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 KillanGenifer <killangenifer@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -63,7 +66,7 @@ using Content.Shared.Chat;
 using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Containers;
 using Content.Shared.Movement.Pulling.Systems;
-
+using Content.Shared._CorvaxNext.Silicons.Borgs;
 
 namespace Content.Shared.Silicons.StationAi;
 
@@ -94,6 +97,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     [Dependency] private readonly   StationAiVisionSystem _vision = default!;
     [Dependency] private readonly   AnchorableSystem _anchorable = default!; // WD edit
     [Dependency] private readonly   PullingSystem _pulling = default!; // WD edit
+    [Dependency] private readonly SharedAiRemoteControlSystem _remoteSystem = default!; // Corvax-Next-AiRemoteControl
 
     // StationAiHeld is added to anything inside of an AI core.
     // StationAiHolder indicates it can hold an AI positronic brain (e.g. holocard / core).
@@ -266,6 +270,13 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         // Try to insert our thing into them
         if (_slots.CanEject(ent.Owner, args.User, ent.Comp.Slot))
         {
+            // Corvax-Next-AiRemoteControl-Start
+            if (ent.Comp.Slot.Item != null
+                && TryComp<StationAiHeldComponent>(ent.Comp.Slot.Item, out var stationAiHeldComp))
+                if (stationAiHeldComp.CurrentConnectedEntity != null)
+                    _remoteSystem.ReturnMindIntoAi(stationAiHeldComp.CurrentConnectedEntity.Value);
+            // Corvax-Next-AiRemoteControl-End
+
             if (!_slots.TryInsert(args.Args.Target.Value, targetHolder.Slot, ent.Comp.Slot.Item!.Value, args.User, excludeUserAudio: true))
             {
                 return;
@@ -323,6 +334,12 @@ public abstract partial class SharedStationAiSystem : EntitySystem
             intelliComp.NextWarningAllowed = _timing.CurTime + intelliComp.WarningDelay;
             AnnounceIntellicardUsage(held, intelliComp.WarningSound);
         }
+
+        // Corvax-Next-AiRemoteControl-Start
+        if (TryComp<StationAiHeldComponent>(held, out var heldComp))
+            if (heldComp.CurrentConnectedEntity != null)
+                AnnounceIntellicardUsage(heldComp.CurrentConnectedEntity.Value, intelliComp.WarningSound);
+        // Corvax-Next-AiRemoteControl-End
 
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, cardHasAi ? intelliComp.UploadTime : intelliComp.DownloadTime, new IntellicardDoAfterEvent(), args.Target, ent.Owner)
         {

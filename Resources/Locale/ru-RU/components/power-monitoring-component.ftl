@@ -15,7 +15,7 @@ power-monitoring-window-show-hv-cable = Высокого
 power-monitoring-window-show-mv-cable = Среднего
 power-monitoring-window-show-lv-cable = Низкового
 power-monitoring-window-flavor-left = [user@nanotrasen] $run power_net_query
-power-monitoring-window-flavor-right = v1.3ru
+power-monitoring-window-flavor-right = v1.3
 power-monitoring-window-rogue-power-consumer = [color=white][font size=14][bold]! ВНИМАНИЕ - ОБНАРУЖЕН НЕСАНКЦИОНИРОВАННЫЙ ЭНЕРГОПОТРЕБИТЕЛЬ ![/bold][/font][/color]
 power-monitoring-window-power-net-abnormalities = [color=white][font size=14][bold]ОСТОРОЖНО - АНОМАЛЬНАЯ АКТИВНОСТЬ В ЭЛЕКТРОСЕТИ[/bold][/font][/color]
 power-monitoring-window-value = { POWERWATTS($value) }

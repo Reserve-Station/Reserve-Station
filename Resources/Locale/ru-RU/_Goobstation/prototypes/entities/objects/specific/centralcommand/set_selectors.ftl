@@ -1,6 +1,6 @@
-ent-BlueshieldUndeterminedWeapon = blueshield weaponry pack
-    .desc = A small box utilizing bluespace technology to drop in a loadout directly to you. Choose wisely.
-ent-BlueshieldUndeterminedHardsuit = blueshield hardsuit pack
-    .desc = A small box utilizing bluespace technology to drop in a loadout directly to you. Choose wisely.
-ent-ERTSecurityUndeterminedWeapon = emergency response weaponry pack
-    .desc = A small remote utilizing bluespace technology to drop in a loadout directly to you. Choose wisely.
+ent-BlueshieldUndeterminedWeapon = набор оружия офицера "Синий Щит"
+    .desc = Небольшая коробка, в которой используется технология блюспейс для доставки товаров непосредственно вам. Выбирайте с умом.
+ent-BlueshieldUndeterminedHardsuit = набор скафандров офицера "Синий Щит"
+    .desc = Небольшая коробка, в которой используется технология блюспейс для доставки товаров непосредственно вам. Выбирайте с умом.
+ent-ERTSecurityUndeterminedWeapon = комплект оружия для отряда быстрого реагирования
+    .desc = Небольшой пульт дистанционного управления, использующий технологию блюспейс, позволяет доставлять оборудование непосредственно вам. Выбирайте с умом.

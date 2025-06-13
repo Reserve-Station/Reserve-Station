@@ -1,5 +1,8 @@
 # SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -248,3 +251,10 @@
   sprites:
     - sprite: Mobs/Customization/human_facial_hair.rsi
       state: sideburn
+- type: marking
+  id: HumanFacialHairHandlebar
+  bodyPart: FacialHair
+  markingCategory: FacialHair
+  sprites:
+    - sprite: Mobs/Customization/human_facial_hair.rsi
+      state: handlebar

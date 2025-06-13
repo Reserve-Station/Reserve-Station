@@ -1,4 +1,4 @@
-ent-BorgFireAxe = borg fire axe
-    .desc = A special shortened axe for engineering cyborgs, designed to fight fire and an abundance of walls!
-ent-BorgFireAxeFlaming = borg fire axe
-    .desc = Cybersun's modified fire axe, suitable for all types of borg chassis! It sets victims on fire on impact.
+ent-BorgFireAxe = пожарный топор борга
+    .desc = Специальный укороченный топор для инженерных киборгов, предназначенный для борьбы с огнем и множеством стен!
+ent-BorgFireAxeFlaming = пожарный топор борга
+    .desc = Модифицированный пожарный топор Cybersun, подходящий для всех типов шасси киборгов! Он поджигает жертв при ударе.

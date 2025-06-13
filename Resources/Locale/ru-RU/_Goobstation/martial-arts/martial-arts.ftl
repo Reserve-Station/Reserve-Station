@@ -1,13 +1,12 @@
 cqc-fail-used = { CAPITALIZE(THE($manual)) } уже использован.
 cqc-fail-notself = Вы не можете никого обучить с помощью { CAPITALIZE(THE($manual)) }.
 cqc-fail-knowanother = Вы уже владеете другим боевым искусством.
-cqc-fail-changeling = We are beyond using this.
+cqc-fail-changeling = Нам это ни к чему.
 cqc-fail-already = Вы уже знаете все о Боевом искусстве.
 cqc-success-unblocked = Ваши навыки кулинарного CQC больше не привязаны к кухне.
-cqc-success-learned = Вы уже знаете CQC.
+cqc-success-learned = Вы выучили CQC.
 cqc-manual-used = [color=white]{ CAPITALIZE(THE($manual)) } выглядит использованным.[/color]
 carp-scroll-waiting = Путешествие в тысячу миль начинается с одного шага, и путь мудрости прокладывается медленно, по одному уроку за раз.
-
 carp-scroll-advance = Вы стали на один шаг ближе к тому, чтобы стать мастером Пути Спящего Карпа.
 carp-scroll-complete = Теперь вы мастер Пути Спящего Карпа.
 carp-saying-huah = ХУА!

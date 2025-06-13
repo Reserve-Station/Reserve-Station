@@ -13,5 +13,6 @@ ghost-role-information-apprentice-sanguine-name = Ученик (жизнь)
 ghost-role-information-apprentice-sanguine-desc = Вы - ученик опытный в "Кричи для меня", "Кровожадный удар" и "Мгновенный призыв". Защитите призвавшего вас мага любой ценой.
 ghost-role-information-apprentice-robeless-name = Ученик (безродье)
 ghost-role-information-apprentice-robeless-desc = Вы - ученик опытный в "смене разума", "Силовой стене" и "Тук-Тук". Защитите призвавшего вас мага любой ценой.
+ghost-role-information-apprentice-robeless-desc = Вы - ученик опытный в заклинаниях Обмена разума, Силовой стене и Стуке. Защитите призвавшего вас мага любой ценой.
 ghost-role-information-apprentice-chaos-name = Ученик (хаос)
 ghost-role-information-apprentice-chaos-desc = Вы - ученик опытный в совершенно случайных заклинаниях. Защитите призвавшего вас мага любой ценой.

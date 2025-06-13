@@ -146,5 +146,9 @@
     - /Audio/Lobby/marhaba.ogg
     - /Audio/Lobby/the_future_soon.ogg
     - /Audio/Lobby/horn.ogg
-  # Reserve
     - /Audio/Lobby/retour.ogg
+  # Reserve
+    - /Audio/_Reserve/Lobby/double-u.ogg
+    - /Audio/_Reserve/Lobby/neon.ogg
+    - /Audio/Corvax/Lobby/service.ogg
+    - /Audio/Corvax/Lobby/nodecision.ogg

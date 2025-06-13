@@ -1,2 +1,2 @@
-ent-HellHand = hell hand
-    .desc = A hellish hand from below!
+ent-HellHand = адская рука
+    .desc = Адская рука снизу!

@@ -10,3 +10,7 @@ ent-FeetAnimal = стопы животного
     .desc = { ent-PartAnimal.desc }
 ent-TorsoAnimal = туловище животного
     .desc = { ent-PartAnimal.desc }
+ent-ChestAnimal = грудная клетка животного
+    .desc = { ent-PartAnimalBase.desc }
+ent-GroinAnimal = пах животного
+    .desc = { ent-PartAnimalBase.desc }

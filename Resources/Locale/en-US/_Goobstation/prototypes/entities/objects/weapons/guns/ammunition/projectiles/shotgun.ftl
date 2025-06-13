@@ -1,4 +1,4 @@
-ent-HighCaliberPelletShotgun = дробь (карпшот 8-го калибра)
+ent-HighCaliberPelletShotgun = дробь (8-го калибра)
     .desc = { ent-BaseBullet.desc }
 ent-HighCaliberPelletShotgunSpread = { ent-HighCaliberPelletShotgun }
     .desc = { ent-HighCaliberPelletShotgun.desc }

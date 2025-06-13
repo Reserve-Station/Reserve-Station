@@ -46,6 +46,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server.Administration;
 using Content.Server.Discord;
 using Content.Server.ADT.Administration;
 using System.Linq;
@@ -56,6 +57,7 @@ namespace Content.Server.GameTicking
     public sealed partial class GameTicker
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IPlayerLocator _locator = default!;
 
         private void InitializePlayer()
         {
@@ -96,25 +98,26 @@ namespace Content.Server.GameTicking
 
                     var record = await _db.GetPlayerRecordByUserId(args.Session.UserId);
                     var firstConnection = record != null &&
-                                          Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 60; //Reserve edit - until 1hr played total
+                                          Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 120; //Reserve edit - until 2hr played total
 
                     var firstSeenTime = record?.FirstSeenTime.ToString("dd.MM.yyyy") ?? "unknown"; // Reserve edit- first connection date
 
                     //ADT tweak begin
                     var creationDate = "Unable to get account creation date";
+                    var main = await _locator.LookupIdAsync(args.Session.UserId); //Reserve edit
                     try
-                    {
-                        // Получаем дату создания аккаунта через API визардов
-                        creationDate = await AuthApiHelper.GetCreationDate(args.Session.UserId.ToString());
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Error($"Ошибка при получении даты создания аккаунта: {ex.Message}");
-                    }
+                        {
+                            // Получаем дату создания аккаунта через API визардов
+                            creationDate = await AuthApiHelper.GetCreationDate(args.Session.UserId.ToString());
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Error($"Ошибка при получении даты создания аккаунта: {ex.Message}");
+                        }
                     //ADT tweak end
                         _chatManager.SendAdminAnnouncement(firstConnection
-                        ? Loc.GetString("player-first-join-message", ("name", args.Session.Name)) +
-                          Loc.GetString("player-first-join-date", ("firstSeenTime", firstSeenTime)) + //Reserve edit
+                        ? Loc.GetString("player-first-join-message", ("name", args.Session.Name)) + " " +
+                          Loc.GetString("player-first-join-date", ("firstSeenTime", firstSeenTime)) + "\n" +//Reserve edit
                           Loc.GetString("player-first-join-account-date", ("creationDate", creationDate)) //Reserve edit
                         : Loc.GetString("player-join-message", ("name", args.Session.Name)));
 
@@ -130,7 +133,9 @@ namespace Content.Server.GameTicking
                             return;
                         var payload = new WebhookPayload
                         {
-                            Content = Loc.GetString("player-first-join-message-webhook", ("name", args.Session.Name))
+                            Content = Loc.GetString("player-first-join-message-webhook", ("name", args.Session.Name)) + "\n" +
+                            Loc.GetString("player-first-join-account-date", ("creationDate", creationDate)) + "\n" + //Reserve edit
+                            $"userid: {main?.Username ?? "unknown"}" //Reserve edit
                         };
                         var identifier = webhookData.ToIdentifier();
                         await _discord.CreateMessage(identifier, payload);

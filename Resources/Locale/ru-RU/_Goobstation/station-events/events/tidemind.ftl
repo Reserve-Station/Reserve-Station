@@ -1,1 +1,1 @@
-station-event-tidemind-message = [color=#AAAAAF]You feel a strong sense of unity with other passengers. You can now use the [color=gray][bold]Tidemind[/bold][/color] with [bold]:p[/bold].[/color]
+station-event-tidemind-message = [color=#AAAAAF]Вы чувствуете сильную связь с другими пассажирами. Теперь вы можете использовать [color=gray][bold]Разум грейтайда[/bold][/color] используя [bold]:p[/bold].[/color]

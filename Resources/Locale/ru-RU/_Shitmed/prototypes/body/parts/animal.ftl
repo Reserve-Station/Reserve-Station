@@ -1,14 +1,14 @@
 ent-HeadAnimal = голова животного
     .desc = { ent-PartAnimal.desc }
-ent-ChestGoliath = грудь голиафа
+ent-ChestGoliath = грудная клетка голиафа
     .desc = { ent-PartAnimalBase.desc }
 ent-GroinGoliath = пах голиафа
     .desc = { ent-PartAnimalBase.desc }
 ent-LegsGoliath = ноги голиафа
     .desc = { ent-PartAnimalBase.desc }
-ent-ChestDragon = драконий сундук
+ent-ChestDragon = грудная клетка дракона
     .desc = { ent-PartAnimalBase.desc }
-ent-GroinDragon = драконий пах
+ent-GroinDragon = пах дракона
     .desc = { ent-PartAnimalBase.desc }
 ent-LegsDragon = драконьи лапы
     .desc = { ent-PartAnimalBase.desc }

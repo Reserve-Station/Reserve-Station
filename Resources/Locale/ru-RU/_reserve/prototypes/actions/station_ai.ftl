@@ -1,6 +1,5 @@
 ent-ActionAIToggleBolts = Переключить боты
     .desc = Переключить болты, крепящие вас к полу.
-
 ent-ActionStationAiInfo = Просмотреть информацию
     .desc = Просмотрите общую информацию о станции.
 ent-ActionStationAiRadar = Интерфейс сканера массы

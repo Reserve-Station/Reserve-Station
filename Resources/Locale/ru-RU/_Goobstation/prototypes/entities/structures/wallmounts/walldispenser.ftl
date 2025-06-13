@@ -1,2 +1,2 @@
-ent-CapsaicinDispenser = capsaicin dispenser
-    .desc = A wallmount dispenser capable of dispensing capsaicin. Refill your pepperspray here.
+ent-CapsaicinDispenser = дозатор капсаицина
+    .desc = Настенный дозатор, способный дозировать капсаицин. Заправьте свой перцовый баллончик здесь.

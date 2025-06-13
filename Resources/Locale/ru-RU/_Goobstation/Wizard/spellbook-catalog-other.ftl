@@ -34,12 +34,12 @@ spellbook-event-dimension-shift-desc =
     Это заклинание вступает в силу немедленно, как только вы его покупаете.
     Возврату не подлежит.
 spellbook-apprentice-name = Контрант ученичества
-spellbook-event-global-tile-toggle-name = Global Tile Movement
-spellbook-event-global-tile-toggle-description = The station will not like this.
+spellbook-event-global-tile-toggle-name = Глобальное перемещение по плиткам
+spellbook-event-global-tile-toggle-description = Станции это не понравится.
 spellbook-apprentice-desc =
     Магический контракт, призывающий ученика мага к вам, используя это вы призовёте его на вашу сторону.
     Можно приобрести лишь один раз.
-    
+
     Вы можете выбрать между 8 наборами заклинаний для вашего ученика:
     Разрушение: Огненный шар и Мутация.
     Эфир: Неземная прогулка и Телепорт.

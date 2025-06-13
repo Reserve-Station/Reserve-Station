@@ -1,2 +1,2 @@
-ent-CryoKatana = cryo katana
-    .desc = Freeze your enemies.
+ent-CryoKatana = криокатана
+    .desc = Замораживайте своих врагов.

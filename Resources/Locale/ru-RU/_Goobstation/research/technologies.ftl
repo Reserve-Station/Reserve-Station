@@ -15,3 +15,7 @@ research-technology-experimental-science = Экспериментальные н
 research-technology-rescue = Передовое спасательное оборудование
 research-technology-energy-bolt-weaponry = Оружие с энергетическим боеприпасом
 research-technology-pinpointing = Технологии пинпоинтеров
+research-technology-mag-fed-pistol = Пистолеты на энергетических элементах
+research-technology-mag-fed-smg = Пистолеты-пулеметы на энергетических элементах
+research-technology-mag-fed-sniper = Снайперы энергетических ячеек
+research-technology-mag-fed-lmg = Легкие пулеметы на энергетических элементах

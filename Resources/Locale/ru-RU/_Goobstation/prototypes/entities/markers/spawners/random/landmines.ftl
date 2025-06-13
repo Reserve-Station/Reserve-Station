@@ -1,2 +1,2 @@
-ent-RandomLandmineSpawner = random landmine spawner
+ent-RandomLandmineSpawner = случайный источник наземных мин
     .desc = { ent-MarkerBase.desc }

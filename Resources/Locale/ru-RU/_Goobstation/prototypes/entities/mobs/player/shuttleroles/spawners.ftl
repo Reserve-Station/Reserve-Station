@@ -1,2 +1,2 @@
-ent-VisitorAlienSpawner = в гостях у инопланетного создателя
+ent-VisitorAlienSpawner = спавнер роль призрака посетитель пришелец
     .desc = { ent-MarkerBase.desc }

@@ -13,13 +13,13 @@ heretic-ritual-basic-heart-desc = Возьмите с собой одно сер
 heretic-ritual-basic-codex = Кодекс Цикатрикс
 heretic-ritual-basic-codex-desc = Преобразуйте пару глаз, книгу и ручку в Кодекс Цикатрикс. Он позволяет произносить продвинутые заклинания, пока вы держите его открытым, и получать в два раза больше знаний от разломов реальности. Вы держите один прямо сейчас.
 heretic-ritual-fail-sacrifice = Нет трупа, который можно было бы принести в жертву.
-heretic-ritual-basic-reminiscence = Reminiscence
-heretic-ritual-basic-reminiscence-desc = Transmute a chair to instantly return one of your lost blades.
-heretic-ritual-basic-owls = Feast of Owls
+heretic-ritual-basic-reminiscence = Воспоминание
+heretic-ritual-basic-reminiscence-desc = Преобразите стул, чтобы мгновенно вернуть одно из ваших потерянных лезвий.
+heretic-ritual-basic-owls = Праздник сов
 heretic-ritual-basic-owls-desc =
-    Under the soft glow of unreason there is a beast that stalks the night. I shall bring it forth and let it enter my presence. It will feast upon my amibitions and leave knowledge in its wake.
+    Под мягким сиянием неразумия скрывается зверь, крадущийся в ночи. Я выведу его на свет и позволю ему предстать передо мной. Он будет наслаждаться моими ощущениями и оставит после себя знания.
     
-    Allows you to undergo a ritual that gives you 5 knowledge points but locks you out of ascension. This can only be done once and cannot be reverted.
+    Позволяет вам пройти ритуал, который дает вам 5 очков знаний, но не дает возможности совершить вознесение. Это можно сделать только один раз и отменить его нельзя.
 heretic-ritual-fail-sacrifice-ineligible = Руна отказывается принимать эту жертву.
 heretic-ritual-fail-reagentpuddle = Здесь нет { $reagentname }.
 heretic-ritual-fail-temperature-hot = Здесь слишком жарко.
@@ -29,11 +29,11 @@ heretic-ritual-fail-sacrifice-blade = У некоторых из них еще �
 
 ## side quests
 
-heretic-ritual-fail-sacrifice-rust = Not enough rotting or silicon corpses.
-heretic-ritual-fail-limit = You have reached a limit of items that this ritual provides.
-heretic-ritual-fail-no-lost-blades = No lost blades can be found.
-heretic-ritual-fail-already-ascended = You are already ascended.
-heretic-ritual-fail-cannot-ascend = You cannot ascend.
+heretic-ritual-fail-sacrifice-rust = Недостаточно гниющих или кремниевых трупов.
+heretic-ritual-fail-limit = Вы достигли предела количества предметов, которые предоставляет этот ритуал.
+heretic-ritual-fail-no-lost-blades = Потерянные лезвия не могут быть найдены.
+heretic-ritual-fail-already-ascended = Вы уже вознесены.
+heretic-ritual-fail-cannot-ascend = Вы не можете вознестись.
 heretic-ritual-side-knowledge = Ритуал знания
 heretic-ritual-side-shark = Палящая акула ## Не готовая хернь
 heretic-ritual-side-cloak = Плащ Пустоты

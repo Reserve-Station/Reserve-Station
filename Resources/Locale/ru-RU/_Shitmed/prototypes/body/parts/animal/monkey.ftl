@@ -1,6 +1,6 @@
-ent-ChestMonkey = monkey chest
+ent-ChestMonkey = грудная клетка обезьяны
     .desc = { ent-PartMonkey.desc }
-ent-GroinMonkey = monkey groin
+ent-GroinMonkey = пах обезьяны
     .desc = { ent-PartMonkey.desc }
 ent-PartMonkey = { ent-BasePart }
     .desc = { ent-BasePart.desc }

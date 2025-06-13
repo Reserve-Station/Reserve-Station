@@ -121,6 +121,7 @@
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 # SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
@@ -223,9 +224,15 @@
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/_Reserve/announcement/flux.ogg # Reserve
+      path: /Audio/Corvax/Announcements/flux.ogg # Reserve new sounds
     weight: 8
     duration: 35
+    chaos: # Goobstation
+      Anomaly: 100
+    eventType: Chaotic # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 70
   - type: AnomalySpawnRule
 
 - type: entity
@@ -236,12 +243,18 @@
     delay:
       min:  30
       max:  30
+    chaosScore: 40 # Goobstation
   - type: StationEvent
     startAnnouncementColor: "#18abf5"
     startAudio:
-      path: /Audio/_Reserve/announcement/bluespace_artifact.ogg  # Reserve
+      path: /Audio/Corvax/Announcements/blusp_anomalies.ogg # Reserve new sounds
+      params:
+        volume: -4
     weight: 8
     duration: 35
+    chaos: # Goobstation
+      Anomaly: 40
+    eventType: Chaotic # Goobstation
   - type: BluespaceArtifactRule
 
 - type: entity
@@ -253,6 +266,12 @@
     reoccurrenceDelay: 5
     earliestStart: 1
     duration: 1
+    chaos: # Goobstation
+      Anomaly: 40
+    eventType: Neutral # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 40
   - type: BluespaceLockerRule
 
 - type: entity
@@ -260,9 +279,21 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
+  # Reserve new sounds bgn
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+      params:
+        volume: -4
+  # Reserve new sounds end
     weight: 7
     duration: 1
     minimumPlayers: 15
+    chaos: # Goobstation
+      Power: 100
+    eventType: Maintenance # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 60
   - type: BreakerFlipRule
 
 - type: entity
@@ -270,10 +301,21 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
+  # Reserve new sounds bgn
+    startAnnouncementColor: "#18abf5"
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+      params:
+        volume: -4
+  # Reserve new sounds end
     startAnnouncement: station-event-bureaucratic-error-announcement
     minimumPlayers: 25
     weight: 3
     duration: 1
+    eventType: Neutral # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 50
   - type: BureaucraticErrorRule
     ignoredJobs:
     - StationAi
@@ -284,9 +326,20 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
+  # Reserve new sounds bgn
+    startAnnouncementColor: "#18abf5"
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+      params:
+        volume: -4
+  # Reserve new sounds end
     minimumPlayers: 15
     weight: 5
     duration: 1
+    eventType: Chaotic # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 30
   - type: ClericalErrorRule
 
 - type: entity
@@ -297,6 +350,10 @@
     weight: 5
     duration: 1
     minimumPlayers: 10
+    eventType: Chaotic # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 60
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
 
@@ -310,6 +367,16 @@
     reoccurrenceDelay: 20
     minimumPlayers: 60
     duration: null
+    chaos: # Goobstation
+      Hostile: 20
+      Friend: 20
+      Combat: 40
+      Death: 100
+      Medical: 100
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 600
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner
@@ -339,6 +406,16 @@
     earliestStart: 45
     reoccurrenceDelay: 20
     minimumPlayers: 30
+    chaos: # Goobstation
+      Hostile: 20
+      Friend: 20
+      Combat: 40
+      Death: 40
+      Medical: 40
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 300
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
     # Goobstation start
@@ -398,6 +475,10 @@
     earliestStart: 20
     reoccurrenceDelay: 20
     minimumPlayers: 15
+    eventType: Chaotic # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 80
   - type: ParadoxCloneRule
     objectiveBlacklist:
       tags:
@@ -433,6 +514,16 @@
     duration: 1
     earliestStart: 30
     minimumPlayers: 20
+    chaos: # Goobstation
+      Hostile: 20
+      Friend: 20
+      Combat: 40
+      Death: 100
+      Medical: 100
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 280
   - type: RandomSpawnRule
     prototype: MobRevenant
 
@@ -492,9 +583,22 @@
   - type: StationEvent
     startAnnouncement: station-event-gas-leak-start-announcement
     startAudio:
-      path: /Audio/_Reserve/announcement/gasleak_start.ogg # Reserve
+      path: /Audio/Announcements/gasleak_start.ogg # Reserve new sounds
+      params:
+        volume: -4
     endAnnouncement: station-event-gas-leak-end-announcement
+    endAudio:
+      path: /Audio/Announcements/gasleak_end.ogg # Reserve new sounds
+      params:
+        volume: -4
     weight: 8
+    chaos:
+      Atmos: 100
+      Medical: 50
+    eventType: Maintenance # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 80 # most of the time scrubbers just clean it
   - type: GasLeakRule
 
 - type: entity
@@ -506,6 +610,14 @@
     minimumPlayers: 15
     weight: 7
     duration: 240
+    chaos:
+      Hostile: 20
+      Friend: 20
+      Medical: 100
+    eventType: Maintenance # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 40
   - type: KudzuGrowthRule
 
 - type: entity
@@ -517,11 +629,15 @@
     startAnnouncement: station-event-power-grid-check-start-announcement
     endAnnouncement: station-event-power-grid-check-end-announcement
     startAudio:
-      path: /Audio/_Reserve/announcement/power_off.ogg # Reserve
+      path: /Audio/_Reserve/Announcements/poweroff.ogg # Reserve new sounds
       params:
         volume: -4
     duration: 60
     maxDuration: 120
+    eventType: Interference # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 80
   - type: PowerGridCheckRule
 
 - type: entity
@@ -533,9 +649,17 @@
     startAnnouncement: station-event-solar-flare-start-announcement
     endAnnouncement: station-event-solar-flare-end-announcement
     startAudio:
-      path: /Audio/_Reserve/announcement/solarflare.ogg # Reserve
+      path: /Audio/Corvax/Announcements/comms_blackout.ogg # Reserve new sounds
+      params:
+        volume: -4
     duration: 120
     maxDuration: 240
+    chaos: # Goobstation
+      Friend: 20
+    eventType: Interference # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 60
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -559,11 +683,19 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-clog-start-announcement
     startAudio:
-      path: /Audio/_Reserve/announcement/ventclog.ogg # Reserve
+      path: /Audio/Announcements/ventclog.ogg # Reserve new sounds
+      params:
+        volume: -4
     earliestStart: 15
     minimumPlayers: 15
     weight: 5
     duration: 60
+    chaos: # Goobstation
+      Mess: 200
+    eventType: Interference # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 70
   - type: VentClogRule
 
 - type: entity
@@ -572,8 +704,12 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
+  # Reserve new sounds begin
     startAudio:
-      path: /Audio/_Reserve/announcement/aliens.ogg # Reserve
+      path: /Audio/_Reserve/Announcements/lifesigns.ogg
+      params:
+        volume: -4
+  # Reserve new sounds end
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -581,6 +717,10 @@
     chaos: # Goobstation
       Hostile: 20
       Medical: 50
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 240
   - type: VentCrittersRule
     entries:
     - id: MobAdultSlimesBlueAngry
@@ -596,8 +736,12 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
+  # Reserve new sounds bgn
     startAudio:
-      path: /Audio/_Reserve/announcement/aliens.ogg # Reserve
+      path: /Audio/_Reserve/Announcements/lifesigns.ogg
+      params:
+        volume: -4
+  # Reserve new sounds end
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -605,6 +749,10 @@
     chaos: # Goobstation
       Hostile: 20
       Medical: 50
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 240
   - type: VentCrittersRule
     entries:
     - id: MobPurpleSnake
@@ -620,8 +768,12 @@
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
+  # Reserve new sounds bgn
     startAudio:
-      path: /Audio/_Reserve/announcement/aliens.ogg # Reserve
+      path: /Audio/_Reserve/Announcements/lifesigns.ogg
+      params:
+        volume: -4
+  # Reserve new sounds end
     earliestStart: 20
     minimumPlayers: 15
     weight: 5
@@ -629,6 +781,10 @@
     chaos: # Goobstation
       Hostile: 20
       Medical: 50
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 240
   - type: VentCrittersRule
     entries:
     - id: MobGiantSpiderAngry
@@ -641,7 +797,9 @@
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
-      path: /Audio/_Reserve/announcement/aliens.ogg # Reserve
+      path: /Audio/_Reserve/Announcements/lifesigns.ogg
+      params:
+        volume: -4
     earliestStart: 45 # DeltaV - was 20
     minimumPlayers: 30 # DeltaV - was 20
     weight: 1 # DeltaV - was 1.5
@@ -649,6 +807,10 @@
     chaos: # Goobstation
       Hostile: 20
       Medical: 50
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 240
   - type: VentCrittersRule
     playerRatio: 35 # DeltaV: Clown spiders are very robust
     entries:
@@ -668,6 +830,10 @@
       Hostile: 100
       Medical: 200
       Death: 200
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 1400
   - type: ZombieRule
   - type: AntagSelection
     definitions:
@@ -706,6 +872,10 @@
       Hostile: 60
       Medical: 75
       Death: 100
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 700
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/striker.yml
@@ -751,9 +921,13 @@
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
-      path: /Audio/_Reserve/announcement/intercept.ogg # Reserve
+      path: /Audio/Announcements/intercept.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 550
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     definitions:
@@ -779,6 +953,10 @@
     reoccurrenceDelay: 30
     chaos: # Goobstation
       Friend: 20
+    eventType: Chaotic # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 30
   - type: MassHallucinationsRule
     minTimeBetweenIncidents: 0.1
     maxTimeBetweenIncidents: 300
@@ -791,6 +969,14 @@
   id: IonStorm
   components:
   - type: StationEvent
+  # Reserve new sounds bgn
+    startAnnouncementColor: "#18abf5"
+    startAnnouncement: station-event-ion-storm-start-announcement
+    startAudio:
+      path: /Audio/_Reserve/Announcements/i-storm1.ogg
+      params:
+        volume: -4
+  # Reserve new sounds end
     weight: 8
     reoccurrenceDelay: 20
     duration: 1
@@ -798,6 +984,10 @@
       Hostile: 10
       Friend: 20
       Mess: 30
+    eventType: Chaotic # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 150
   - type: IonStormRule
 
 - type: entity
@@ -813,6 +1003,10 @@
       Hostile: 20 # for when they're actually properly hostile
       Hunger: 10
       Thirst: 10
+    eventType: Neutral # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 20
   - type: MobReplacementRule
 
 - type: entity
@@ -820,14 +1014,21 @@
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
+  # Reserve new sounds bgn
     startAudio:
-      path: /Audio/_Reserve/announcement/attention.ogg # Reserve
-    weight: 5
+      path: /Audio/_Reserve/Announcements/greytide.ogg
+      params:
+        volume: -4
+  # Reserve new sounds end
     minimumPlayers: 25
     reoccurrenceDelay: 20
     chaos: # Goobstation
       Atmos: 15
       Mess: 30
+    eventType: Maintenance # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 160
   - type: GreytideVirusRule
     accessGroups:
     - Cargo
@@ -866,6 +1067,10 @@
       # can be both hostile and friendly
       Hostile: 10
       Friend: -10
+    eventType: Chaotic # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 80
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner

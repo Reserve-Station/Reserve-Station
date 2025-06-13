@@ -14,3 +14,7 @@ ent-LightHeadBorg = голова киборга
     .desc = { ent-PartSilicon.desc }
 ent-TorsoBorg = туловище киборга
     .desc = { ent-PartSilicon.desc }
+ent-ChestBorg = грудная клетка киборга
+    .desc = { ent-PartSilicon.desc }
+ent-GroinBorg = пах киборга
+    .desc = { ent-PartSilicon.desc }

@@ -1,6 +1,6 @@
-ent-BasePartInorganic = body part
+ent-BasePartInorganic = часть тела
     .desc = { ent-BaseItem.desc }
-ent-BaseTorsoInorganic = torso
+ent-BaseTorsoInorganic = торс
     .desc = { "" }
 ent-BasePart = часть тела
     .desc = { ent-BaseItem.desc }

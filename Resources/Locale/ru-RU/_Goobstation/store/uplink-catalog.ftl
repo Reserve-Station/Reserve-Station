@@ -42,7 +42,7 @@ uplink-beenades-desc = Невзрывная граната, полная... пч
 
 # Weapons
 
-uplink-WSPR-name = WSPR
+uplink-WSPR-name = WSPR (ВСПР)
 uplink-WSPR-desc = ППППСССссшшш.
 uplink-dualetta-kit-name = Коробка Дуалетт
 uplink-dualetta-kit-desc = Две Дуалетты по низкой цене.
@@ -52,13 +52,13 @@ uplink-weapon-burner-name = Тяжелая винтовка "Горелка"
 uplink-weapon-burner-desc = Тяжелая винтовка "Горелка", превосходное оружие для прорыва и подавления.
 uplink-weapon-heavy-shotgun-name = Тяжелый дробовик NZ CSG-242
 uplink-weapon-heavy-shotgun-desc = Беспощадное тяжелое взрывное оружие. Отдача при стрельбе из него настолько велика, что может сбить вас с ног.
-uplink-c20r-name = C-20r
+uplink-c20r-name = C-20r (С-20р)
 uplink-c20r-desc = Cтарый надёжный: Классический пистолет-пулемет C-20r.
 uplink-buldog-name = Бульдог
 uplink-buldog-desc = Дробовик с магазинным питанием.
-uplink-l6-saw-name = L6 SAW
+uplink-l6-saw-name = L6 "ПИЛА"
 uplink-l6-saw-desc = Больше дакки: культовый легкий пулемет L6.
-uplink-m90-name = M-90
+uplink-m90-name = М-90
 uplink-m90-desc = Боевая винтовка M-90.
 uplink-dualetta-bundle-name = Набор Дуалетты
 uplink-dualetta-bundle-desc = В комплект входят 2 Дуалетта, 2 магазина к ним, боевые перчатки, нуарный костюм, плащ детектива и ботинки на шнуровке.
@@ -70,10 +70,10 @@ uplink-whimsy-bundle-name = Набор "Радость и веселье" Син
 uplink-whimsy-bundle-desc = Вам нравится распространять радость и веселье? Тогда у Donk Co. есть решение для вас! Содержит топор из ОГРАНИЧЕННОЙ СЕРИИ и достаточно конфет, чтобы убить человека.
 uplink-m7s-name = M7S "Вентилятор"
 uplink-m7s-desc = Разброс пуль из этого пистолета-пулемета становится тем меньше, чем дольше вы ведете подавление противника. Стрельба тоже глушится. Довольно удобно.
-uplink-he1sg8-bundle-name = Набор HE1S-G8
+uplink-he1sg8-bundle-name = Набор ВР1А-Р4Я
 uplink-he1sg8-bundle-desc = Набор с однозарядной Гаусс-винтовкой чрезвычайной мощности. В комплект входят 10 разрушительных и 9 гиперзаряженных патронов Gauss-8 для дополнительного веселья.
-uplink-combat-shotgun-name = Боевой дробовик 'Бажевич'
-uplink-combat-shotgun-desc = Мощное помповое ружье 8 калибра с магазином на 5 патронов.
+uplink-combat-shotgun-name = Дробовик 'Боевик'
+uplink-combat-shotgun-desc = Мощный помповый дробовик 8 калибра с магазином на 5 патронов.
 
 # Ammo
 
@@ -87,7 +87,7 @@ uplink-rifle-mag-name = Магазин для винтовки (.20 винтов
 uplink-rifle-mag-desc = Магазин на 25 патронов, содержащий винтовочные пули калибра .20. Подходит для Лектера и M-90.
 uplink-rifle-caseless-mag-name = Винтовочный магазин (9.5мм HP)
 uplink-rifle-caseless-mag-desc = Магазин для винтовки на 30 патронов, заполненный 9,5-мм безоболочечными пулями "магнум". Совместим с винтовкой WSPR.
-uplink-pistol-magazine-caseless-saphe-name = Пистолетный магазин (9.5мм SAP-HE)
+uplink-pistol-magazine-caseless-saphe-name = Пистолетный магазин (9.5мм ПБ-ОФ)
 uplink-pistol-magazine-caseless-saphe-desc = Вмещает 10 полубронебойных фугасных безгильзовых патронов "магнум". Это именно то, о чем вы прочитали. Совместим с "Коброй".
 uplink-l6-box-name = Короб патронов (.30 винтовочный)
 uplink-l6-box-desc = Короб со 100 патронами. Совместим с L6 SAW.
@@ -105,23 +105,23 @@ uplink-highcap-pistol-mag-name = Пистолетный магазин (.35 по
 uplink-highcap-pistol-mag-desc = Пистолетный магазин повышенной емкости. Вмещает 4 дополнительных патрона, всего 16.
 uplink-m7s-mag-name = Магазин для ПП (5x23мм)
 uplink-m7s-mag-desc = Магазин для пистолета-пулемета с калибром 5x23 мм на 48 патронов. Совместим с M7S.
-uplink-high-caliber-shotgun-box-name = 8 Gauge shell box
-uplink-high-caliber-shotgun-box-desc = 16 shells of 8 Gauge shells, for the combat shotgun.
-uplink-high-caliber-shotgun-box-slug-name = 8 Gauge slug box
-uplink-high-caliber-shotgun-box-slug-desc = 16 shells of 8 Gauge slugs, for the combat shotgun.
-uplink-high-caliber-shotgun-box-flash-slug-name = 8 Gauge flash shell box
-uplink-high-caliber-shotgun-box-flash-slug-desc = 16 shells of 8 Gauge flashbang shells, for the combat shotgun. Doesn't down those without hearing protection.
-uplink-high-caliber-shotgun-box-sarin-name = 8 Gauge sarin gas shell box
-uplink-high-caliber-shotgun-box-sarin-desc = 16 shells of 8 Gauge sarin shells for the combat shotgun, which release a small plus-shaped cloud of sarin gas.
-uplink-heavy-shotgun-magazine-name = Барабан для тяжелого дробовика (2 калибра ФУГАС-пуля)
+uplink-high-caliber-shotgun-box-name = Коробка патронов 8 калибра
+uplink-high-caliber-shotgun-box-desc = 16 патронов 8 калибра для боевого дробовика.
+uplink-high-caliber-shotgun-box-slug-name = Коробка пуль 8 калибра для боевого дробовика.
+uplink-high-caliber-shotgun-box-slug-desc = 16 пуль 8 калибра для боевого дробовика.
+uplink-high-caliber-shotgun-box-flash-slug-name = Коробка светошумовых пуль
+uplink-high-caliber-shotgun-box-flash-slug-desc = 16 светошумовых пуль 8 калибра для боевого дробовика. Бесполезны против имеющих защиту слуха.
+uplink-high-caliber-shotgun-box-sarin-name = Коробка зариновых патронов 8 калибра
+uplink-high-caliber-shotgun-box-sarin-desc = 16 зариновых патронов 8 калибра для боевого дробовика, которые выделяют небольшое облако нейротоксичного газа в форме плюса.
+uplink-heavy-shotgun-magazine-name = Барабан для тяжелого дробовика (2 калибра)
 uplink-heavy-shotgun-magazine-desc = Магазин для дробовика с 15 фугасными снарядами. Совместим с NZ CSG-242.
-uplink-heavy-shotgun-magazine-slug-name = Барабан для тяжелого дробовика (2 калибра ФУГАС-пуля)
+uplink-heavy-shotgun-magazine-slug-name = Барабан для тяжелого дробовика (2 калибра ОФ)
 uplink-heavy-shotgun-magazine-slug-desc = Магазин для дробовика с 15 осколочно-фугасными снарядами. Совместим с NZ CSG-242.
 
 # Grenades
 
 uplink-sarin-gas-grenade-name = Газовая граната с зарином
-uplink-sarin-gas-grenade-desc = Жестокий нейротоксиновый газ, который оглушает, ослепляет и отравляет всех, кому не повезло уловить его запах, а также сжигает всех без скафандра, оставляя их корчиться на полу и молить, чтобы их прикончили.
+uplink-sarin-gas-grenade-desc = Жестокий нейротоксичный газ, который оглушает, ослепляет и отравляет всех, кому не повезло уловить его запах, а также сжигает всех без скафандра, оставляя их корчиться на полу и молить, чтобы их прикончили.
 
 # Mechs
 
@@ -145,8 +145,8 @@ uplink-fake-mindshield-name = Фейковый имплант защиты ра�
 uplink-fake-mindshield-desc = Имплантат, который может имитировать сигналы настоящего имплантата защиты разума.
 uplink-smoke-implant-name = Дымовой имплант
 uplink-smoke-implant-desc = Выпускает облако дыма при активации.
-uplink-krav-maga-implant-name = Krav Maga Implanter
-uplink-krav-maga-implant-desc = Allows the user to perform various Krav Maga moves.
+uplink-krav-maga-implant-name = Имплант Крав-мага
+uplink-krav-maga-implant-desc = Обучает пользователя различным приемам Крав-мага.
 uplink-nutriment-implant-name = Имплант Помпы питательных веществ
 uplink-nutriment-implant-desc = Устраняет потребность пользователей в еде и/или напитках.
 uplink-radio-implanter-name = Имплант радио
@@ -157,6 +157,13 @@ uplink-jaunter-implanter-desc = Имплант смены места, позво
 # Wearables
 
 uplink-helmet-swat-name = Шлем спецназа Синдиката
+uplink-autosurgeon-right-mantis-blade-name = Автохирург с правым лезвием богомола
+uplink-autosurgeon-left-mantis-blade-name = Автохирург с левым лезвием богомола
+uplink-autosurgeon-mantis-blade-desc = Модифицирует руку пользователя, чтобы по желанию доставать из нее кибер-импланты "Лезвие Богомола", которые лучше всего работают в паре. Требует слишком тонкой настройки для человека, поставляется с одноразовым автохирургом для установки.
+uplink-autosurgeon-sandevistan-name = Автохирург с Сандевистаном
+uplink-autosurgeon-sandevistan-desc = Заменяет сердце пользователя на "Сандевистан", синтетический орган, который значительно увеличивает скорость работы пользователя за счет его выносливости. Требует слишком тонкой настройки для человека, поставляется с одноразовым автохирургом для установки.
+uplink-davids-jacket-name = куртка бегущего по лезвию
+uplink-davids-jacket-desc = Куртка для тех, кто, как и вы, особенно заинтересован в совершенствовании своего тела.
 uplink-helmet-swat-desc = Прочный шлем, который обеспечивает хорошую защиту, а также в некоторой степени подавляет звуки светошумовых гранат.
 uplink-reverse-bear-trap-name = Обратный медвежий капкан
 uplink-reverse-bear-trap-desc = Гениальное устройство для казни, надеваемое (почти всегда насильно) на голову. Взведя его, начнётся отчёт настраиваемого таймера (30-120 секунд), прикрепленного к капкану. Когда отсчёт закончится, челюсти капкана сожмутся, мгновенного убивая того, на ком это было надето, разрывая их челюсти. Для взведения данного устройства, атакуйте кого-нибудь с ним пока на них нету головного убора.
@@ -183,6 +190,9 @@ uplink-access-breaker-desc = Устройство для взлома досту
 uplink-cqc-name = Мануал CQC
 uplink-cqc-desc = Мануал, которое обучает одиночного пользователя тактике ведения ближнего боя перед самоуничтожением. Не ограничивает использование оружия. Ваши обезоруживающие удары наносят некоторый урон выносливости, заставляя людей временно заплетаться в словах, ваши захваты на секунду обездвиживают, что облегчает их повторение, ваши атаки наносят умеренный урон выносливости, и вы получаете набор комбо, которые позволяют вам эффективно сбивать с ног, обезоруживать или оглушать противника. Вы можете найти более подробную информацию о CQC и его комбинациях здесь.
 uplink-sleeping-carp-name = Свиток "Спящего Карпа"
+uplink-cqc-name = Руководство CQC
+uplink-cqc-desc = Одноразовое руководство, которое обучает пользователя тактике ведения ближнего боя. Не ограничивает использование оружия. Ваши обезоруживающие удары наносят некоторый урон выносливости, заставляя людей временно заплетаться в словах, ваши захваты на секунду обездвиживают, что облегчает их повторение, ваши атаки наносят умеренный урон выносливости, и вы получаете набор комбо, которые позволяют вам эффективно сбивать с ног, обезоруживать или оглушать противника. Вы можете найти более подробную информацию о CQC и его комбинациях здесь.
+uplink-sleeping-carp-name = Свиток боевых искусств "Спящий карп"
 uplink-sleeping-carp-desc = Этот свиток содержит секреты древней техники боевых искусств. Вы овладеете приемами рукопашного боя, отражая огонь и пули из оружия дальнего боя. Освоение этого искусства означает, что вы также откажетесь от использования бесчестного оружия дальнего боя. Данный свиток не может быть изучен генокрадами.
 
 # Misc
@@ -200,7 +210,7 @@ uplink-undetermined-bundle-desc = Этот ящик поставляется с 
 uplink-energy-pickaxe-name = Энергетическая кирка
 uplink-energy-pickaxe-desc = Голографический инструмент для добычи полезных ископаемых с лезвиями из твердого света, который также служит смертоносным оружием ближнего боя. Рок'н-стоун!
 uplink-tcminer-name = Добытчик телекристаллов
-uplink-tcminer-desc = Очень громкая машина, использующая технологию блокчейна рэдспейс для генерации телекристаллов каждые 10 секунд. Требуется 10 кВт энергии и размещение где-то на станции. Мультитул в комплект не входит.
+uplink-tcminer-desc = Очень громкая машина, использующая технологию блокчейна редспейс для генерации телекристаллов каждые 10 секунд. Требуется 10 кВт энергии и размещение где-то на станции. Мультитул в комплект не входит.
 uplink-bloodred-casette-name = Кроваво-красный кассетный плеер
 uplink-bloodred-casette-desc = Портативный музыкальный плеер, предоставленный самыми эгоистичными модельерами Киберсан!
 uplink-signaller-name = Продвинутый дистанционный передатчик

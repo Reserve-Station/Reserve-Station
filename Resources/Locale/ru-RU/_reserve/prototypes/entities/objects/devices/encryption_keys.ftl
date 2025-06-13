@@ -1,2 +1,2 @@
-ent-EncryptionKeyVoxRaiders = raider encryption key
-    .desc = An encryption key used by raiders.
+ent-EncryptionKeyVoxRaiders = рейдерский ключ шифрования
+    .desc = Ключ шифрования, используемый рейдерами.

@@ -1,8 +1,8 @@
-ent-Autodoc = Автодокументация Mk.XIV
+ent-Autodoc = Автодок МК.XIV
     .desc = Программируемый робот-хирург, способный автоматически оперировать пациентов.
 ent-AutodocSyndie = { ent-Autodoc }
     .suffix = Синдикат
     .desc = { ent-Autodoc.desc }
 ent-OmnimedToolAutodoc = { ent-OmnimedTool }
-    .suffix = Unremoveable
+    .suffix = Неснимаемый
     .desc = { ent-OmnimedTool.desc }

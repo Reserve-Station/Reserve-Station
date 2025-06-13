@@ -1,6 +1,6 @@
 ent-JugSalicylicAcid = { ent-Jug }
-    .suffix = salicylic acid
+    .suffix = салициловая кислота
     .desc = { ent-Jug.desc }
 ent-JugOxandrolone = { ent-Jug }
-    .suffix = oxandrolone
+    .suffix = оксандролон
     .desc = { ent-Jug.desc }

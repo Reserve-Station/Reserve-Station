@@ -1,2 +1,2 @@
-ent-CrateCargoGatewayLavaland = lavaland gateway crate
-    .desc = Allows you to teleport straight to Lavaland.
+ent-CrateCargoGatewayLavaland = ящик врат на Лаваленд
+    .desc = Позволяет вам телепортироваться прямо на Лаваленд.

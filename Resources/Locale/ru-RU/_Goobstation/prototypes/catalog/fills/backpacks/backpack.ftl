@@ -1,3 +1,3 @@
 ent-ClothingBackpackSyndicateFilledGrenadier = { ent-ClothingBackpackSyndicate }
-    .suffix = Гренадерский сверток, наполненный
+    .suffix = Набор гренадёра, Заполненный
     .desc = { ent-ClothingBackpackSyndicate.desc }

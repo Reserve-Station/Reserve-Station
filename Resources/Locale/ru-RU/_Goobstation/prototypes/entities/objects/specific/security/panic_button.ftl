@@ -1,2 +1,2 @@
-ent-PanicButton = distress signaller
-    .desc = A small device with a small red button on the top. Press it to send a distress signal over the security channel.
+ent-PanicButton = сигнализатор бедствия
+    .desc = Небольшое устройство с маленькой красной кнопкой вверху. Нажмите на нее, чтобы отправить сигнал бедствия по каналу безопасности.

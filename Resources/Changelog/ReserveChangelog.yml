@@ -106,3 +106,83 @@ Entries:
       message: Временно отключен Дьявол ввиду неработающей механики.
   id: 15
   time: '2025-05-28T02:35:24.0000000+00:00'
+- author: Seven228
+  changes:
+    - type: Add
+      message: Раскраска шлюзов в кроваво-красные цвета.
+  id: 16
+  time: '2025-05-31T10:28:59.0000000+00:00'
+- author: Seven228
+  changes:
+    - type: Add
+      message: ОБР теперь только люди.
+  id: 17
+  time: '2025-06-04T14:14:40.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Главам станции вернули имплант "Щит Разума"
+  id: 18
+  time: '2025-06-05T17:27:20.0000000+00:00'
+- author: Kutos
+  changes:
+    - type: Add
+      message: Усы "Велосипедный руль"
+  id: 19
+  time: '2025-06-05T17:30:06.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Добавлены изменения с Goob Station на момент 06.06
+  id: 20
+  time: '2025-06-06T18:31:19.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Добавлена локализация
+    - type: Fix
+      message: Исправлена локализация
+  id: 21
+  time: '2025-06-07T15:45:25.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Новая модель шаттла карго! Тяжеловоз 'Pilgrim'
+  id: 22
+  time: '2025-06-07T21:57:26.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: >-
+        Возвращено: CQC щиту, Кравмаги вардену, Дзюдо в лоадаут, CQC синдикату в
+        аплинк.
+  id: 23
+  time: '2025-06-07T22:50:59.0000000+00:00'
+- author: lexaSvarshik
+  changes:
+    - type: Add
+      message: Новые звуки оповещений и музыка!
+  id: 24
+  time: '2025-06-07T23:24:04.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Tweak
+      message: Настенные таблички теперь полностью на русском языке
+  id: 25
+  time: '2025-06-07T23:53:21.0000000+00:00'
+- author: Gamma91302
+  changes:
+    - type: Add
+      message: Добавлена плюшевая моль в лодауты!
+  id: 26
+  time: '2025-06-10T10:32:36.0000000+00:00'
+- author: EDsLi1103
+  changes:
+    - type: Fix
+      message: Питание Saltern было исправлено.
+    - type: Add
+      message: >-
+        Добавлено топливо ДАМ на Saltern, а так же мастерская для постройки
+        своих шаттлов.
+  id: 27
+  time: '2025-06-12T13:42:39.0000000+00:00'

@@ -33,3 +33,4 @@ marking-HumanFacialHairWatson = Усы (Ватсон)
 marking-HumanFacialHairElvis = Бакенбарды (Элвис)
 marking-HumanFacialHairMutton = Бакенбарды (Бараньи отбивные)
 marking-HumanFacialHairSideburn = Бакенбарды
+marking-HumanFacialHairHandlebar = Усы (Велосипедный руль)

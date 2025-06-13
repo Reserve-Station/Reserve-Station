@@ -1,4 +1,4 @@
-ent-LavalandHierophantClub = клуб иерофантов
-    .desc = Получите товар, лол
+ent-LavalandHierophantClub = посох иерофанта
+    .desc = Поймал тебя, хоп
 ent-LavalandHierophantClubTeleportMarker = таинственный маркер
     .desc = Что это вообще такое?

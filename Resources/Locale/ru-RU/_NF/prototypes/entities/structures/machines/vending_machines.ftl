@@ -1,2 +1,2 @@
-ent-VendingMachineSyndieContraband = Противоречить
+ent-VendingMachineSyndieContraband = КонтраМат
     .desc = Востребован во многих секторах!

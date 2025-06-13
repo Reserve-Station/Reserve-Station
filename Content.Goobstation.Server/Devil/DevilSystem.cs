@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -35,6 +37,7 @@ using Content.Server.Temperature.Components;
 using Content.Server.Zombies;
 using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared._Shitmed.Body.Components;
+using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared.Actions;
 using Content.Shared.CombatMode;
 using Content.Shared.Damage;
@@ -100,7 +103,6 @@ public sealed partial class DevilSystem : EntitySystem
 
     private void OnStartup(Entity<DevilComponent> devil, ref MapInitEvent args)
     {
-
         // Remove human components.
         RemComp<CombatModeComponent>(devil);
         RemComp<HungerComponent>(devil);
@@ -125,7 +127,17 @@ public sealed partial class DevilSystem : EntitySystem
 
         // Change damage modifier
         if (TryComp<DamageableComponent>(devil, out var damageableComp))
-            _damageable.SetDamageModifierSetId(devil, devil.Comp.DevilDamageModifierSet, damageableComp);
+           _damageable.SetDamageModifierSetId(devil, devil.Comp.DevilDamageModifierSet, damageableComp);
+
+        // No decapitating the devil
+        foreach (var part in _body.GetBodyChildren(devil))
+        {
+            if (!TryComp(part.Id, out WoundableComponent? woundable))
+                continue;
+
+            woundable.CanRemove = false;
+            Dirty(part.Id, woundable);
+        }
 
         // Add base actions
         foreach (var actionId in devil.Comp.BaseDevilActions)

@@ -1,2 +1,2 @@
-ent-BulletCaselessRifleSAPHE = bullet (9.5mm SAP-HE)
+ent-BulletCaselessRifleSAPHE = пуля (9,5 мм ПБ-ОФ)
     .desc = { ent-BaseBulletTrigger.desc }

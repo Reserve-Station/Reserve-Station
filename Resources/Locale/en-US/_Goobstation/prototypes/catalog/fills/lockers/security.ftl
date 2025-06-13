@@ -1,2 +1,2 @@
-ent-GunSafeLauncherNonLethal = безопасная пусковая установка для беспорядков
+ent-GunSafeLauncherNonLethal = riot launcher safe
     .desc = { ent-GunSafeBaseSecure.desc }

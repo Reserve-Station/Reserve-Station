@@ -1,2 +1,2 @@
-ent-BulletLightRifleSubsonic = bullet (.30 rifle subsonic)
+ent-BulletLightRifleSubsonic = пуля (дозвуковая винтовочная 30-го калибра)
     .desc = { ent-BaseBullet.desc }

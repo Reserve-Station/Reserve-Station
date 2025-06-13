@@ -1,6 +1,6 @@
-ent-MindRoleApprentice = Apprentice Role
+ent-MindRoleApprentice = Роль ученика
     .desc = { ent-BaseMindRoleAntag.desc }
-ent-SpawnPointMarkerWizard = wizard
+ent-SpawnPointMarkerWizard = волшебник
     .desc = { ent-MarkerBase.desc }
 ent-BaseStationWizardTarget = { "" }
     .desc = { "" }

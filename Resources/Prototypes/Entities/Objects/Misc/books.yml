@@ -185,7 +185,7 @@
       color: "#42b6f5"
   - type: GuideHelp
     guides:
-    - SS14
+    - SS14Reserve # Reserve guidebook
 
 - type: entity
   id: BookTheBookOfControl
@@ -206,7 +206,7 @@
       color: red
   - type: GuideHelp
     guides:
-    - Controls
+    - ControlsReserve # Reserve guidebook
 
 - type: entity
   id: BookBartendersManual
@@ -224,8 +224,8 @@
     - state: icon_bar
   - type: GuideHelp
     guides:
-    - Bartender
-    - Drinks
+    - BartenderReserve # Reserve guidebook
+    - DrinksReserve # Reserve guidebook
 
 - type: entity
   id: BookHowToCookForFortySpaceman
@@ -242,8 +242,8 @@
     - state: icon_apple
   - type: GuideHelp
     guides:
-    - Chef
-    - FoodRecipes
+    - ChefReserve # Reserve guidebook
+    - FoodRecipesReserve # Reserve guidebook
 
 - type: entity
   id: BookLeafLoversSecret
@@ -263,8 +263,8 @@
       color: gold
   - type: GuideHelp
     guides:
-    - Botany
-    - Chemicals
+    - BotanyReserve # Reserve guidebook
+    - ChemicalsReserve # Reserve guidebook
 
 - type: entity
   id: BookEngineersHandbook
@@ -284,7 +284,7 @@
       color: gold
   - type: GuideHelp
     guides:
-    - Engineering
+    - EngineeringReserve # Reserve guidebook
 
 - type: entity
   id: BookScientistsGuidebook
@@ -302,7 +302,7 @@
     - state: icon_dna
   - type: GuideHelp
     guides:
-    - Science
+    - ScienceReserve # Reserve guidebook
 
 - type: entity
   id: BookSecurity
@@ -325,8 +325,8 @@
         Blunt: 6
   - type: GuideHelp
     guides:
-    - Security
-    - Antagonists
+    - SecurityReserve # Reserve guidebook
+    - AntagonistsReserve # Reserve guidebook
 
 - type: entity
   id: BookHowToKeepStationClean
@@ -343,7 +343,7 @@
     - state: icon_bucket
   - type: GuideHelp
     guides:
-    - Janitorial
+    - JanitorialReserve # Reserve guidebook
 
 - type: entity
   id: BookHowToRockAndStone
@@ -364,7 +364,7 @@
       color: "#fcdf74"
   - type: GuideHelp
     guides:
-    - Salvage
+    - SalvageReserve # Reserve guidebook
 
 - type: entity
   id: BookMedicalReferenceBook
@@ -383,7 +383,7 @@
       color: "#58abcc"
   - type: GuideHelp
     guides:
-    - Medical
+    - MedicalReserve # Reserve guidebook
 
 - type: entity
   id: BookHowToSurvive
@@ -404,7 +404,7 @@
     - state: overlay_blood
   - type: GuideHelp
     guides:
-    - Survival
+    - SurvivalReserve # Reserve guidebook
 
 - type: entity
   id: BookChemicalCompendium
@@ -422,8 +422,8 @@
     - state: icon_chemical
   - type: GuideHelp
     guides:
-    - Chemicals
-    - Chemist
+    - ChemicalsReserve # Reserve guidebook
+    - ChemistReserve # Reserve guidebook
 
 - type: entity
   id: BookSpaceLaw

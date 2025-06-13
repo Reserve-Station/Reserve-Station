@@ -44,3 +44,4 @@ spell-summon-simians-maxed-out-message = Ваша сила призыва обе
 dimension-shift-message = Изменение измерений!
 ghosts-summoned-message = Призраки были призваны!
 global-tile-movement-message = Зловещий бит начинает играть!
+global-tile-movement-message = Начинает звучать зловещий ритм!

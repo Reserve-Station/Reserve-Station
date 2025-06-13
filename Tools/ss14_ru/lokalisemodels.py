@@ -2,6 +2,9 @@
 import os
 from pydash import py_
 from project import Project
+import requests
+import urllib.parse
+import logging
 
 class LocalePath:
     def __init__(self, relative_file_path):
@@ -61,4 +64,42 @@ class LokaliseKey:
         return '{name} = {value}'.format(name=self.get_key_last_name(self.key_name), value=self.get_translation('ru').data['translation'])
 
     def get_translation(self, language_iso='ru'):
-        return list(map(lambda data: LokaliseTranslation(key_name=self.data.key_name['web'], data=data), py_.filter(self.data.translations, {'language_iso': language_iso})))[0]
+        filtered = py_.filter(self.data.translations, {'language_iso': language_iso})
+        if filtered:
+            return LokaliseTranslation(key_name=self.data.key_name['web'], data=filtered[0])
+
+        # Если перевода на русский нет — попробуем взять английский и перевести
+        en_translation = py_.find(self.data.translations, {'language_iso': 'en'})
+        if en_translation:
+            text_to_translate = en_translation['translation']
+            translated_text = self.auto_translate(text_to_translate)
+            return LokaliseTranslation(key_name=self.data.key_name['web'], data={'translation': translated_text})
+
+        # fallback
+        return LokaliseTranslation(key_name=self.data.key_name['web'], data={'translation': '{ "" }'})
+
+    def auto_translate(self, text):
+        # Настройка логгера — только один раз (можно вынести в init, если нужно)
+        logger = logging.getLogger("autotranslate")
+        if not logger.handlers:
+            handler = logging.FileHandler("autotranslate.log", mode='a', encoding='utf-8')
+            formatter = logging.Formatter('[%(asctime)s] %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+            handler.setFormatter(formatter)
+            logger.setLevel(logging.INFO)
+            logger.addHandler(handler)
+
+        url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=ru&dt=t&q={urllib.parse.quote(text)}"
+        try:
+            response = requests.get(url)
+            if response.ok:
+                result = response.json()
+                translated = result[0][0][0]
+                logger.info(f'[auto-translate] {text} -> {translated}')
+                return translated
+            else:
+                logger.warning(f'[error] Google returned status {response.status_code} for text: {text}')
+                return '{ "" }'
+        except Exception as e:
+            logger.error(f'[exception] {e} while translating: {text}')
+            return '{ "" }'
+

@@ -54,14 +54,14 @@ class TranslationsAssembler:
 
 ######################################## Var definitions ###############################################################
 
-logging.basicConfig(level=logging.INFO)
-lokalise_project_id = os.getenv('lokalise_project_id')
-lokalise_personal_token = os.getenv('lokalise_personal_token')
-lokalise_project = LokaliseProject(project_id=lokalise_project_id,
-                                   personal_token=lokalise_personal_token)
-all_keys: typing.List[LokaliseKey] = lokalise_project.get_all_keys()
-translations_assembler = TranslationsAssembler(all_keys)
+#logging.basicConfig(level=logging.INFO)
+#lokalise_project_id = os.getenv('lokalise_project_id')
+#lokalise_personal_token = os.getenv('lokalise_personal_token')
+#lokalise_project = LokaliseProject(project_id=lokalise_project_id,
+#                                   personal_token=lokalise_personal_token)
+#all_keys: typing.List[LokaliseKey] = lokalise_project.get_all_keys()
+#translations_assembler = TranslationsAssembler(all_keys)
 
 ########################################################################################################################
 
-translations_assembler.execute()
+#translations_assembler.execute()

@@ -1,6 +1,6 @@
-ent-SprayBottleStypticPowder = styptic powder spray bottle
-    .suffix = Filled, Styptic powder
+ent-SprayBottleStypticPowder = распылитель с кровоостанавливающим порошком
+    .suffix = Заполненный, Кровоостанавливающий порошок
     .desc = { ent-SprayBottle.desc }
-ent-SprayBottleSilverSulfadiazine = silver sulfadiazine spray bottle
-    .suffix = Filled, Silver sulfadiazine
+ent-SprayBottleSilverSulfadiazine = распылитель с сульфадиазином серебра
+    .suffix = Заполненный, сульфадиазин серебра
     .desc = { ent-SprayBottle.desc }

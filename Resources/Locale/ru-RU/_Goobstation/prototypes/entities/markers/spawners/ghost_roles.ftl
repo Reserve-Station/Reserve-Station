@@ -1,4 +1,4 @@
-ent-GhostBarSpawner = ghost bar spawn point
+ent-GhostBarSpawner = точка появления призрачного бара
     .desc = { ent-MarkerBase.desc }
 ent-SpawnPointGhostDerelictCyborgSyndicate = { ent-BaseAntagSpawner }
     .desc = { ent-BaseAntagSpawner.desc }

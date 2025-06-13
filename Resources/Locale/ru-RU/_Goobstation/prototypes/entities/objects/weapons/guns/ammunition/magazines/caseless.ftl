@@ -1,6 +1,6 @@
-ent-MagazinePistolCaselessRifleEmpty = pistol magazine (9.5mm any)
+ent-MagazinePistolCaselessRifleEmpty = пистолетный магазин (любой калибра 9,5 мм)
     .desc = { ent-BaseMagazinePistolCaselessRifle.desc }
-ent-MagazineCaselessRifleEmpty = magazine (9.5mm any)
+ent-MagazineCaselessRifleEmpty = магазин (любой 9,5 мм)
     .desc = { ent-BaseMagazineCaselessRifle.desc }
-ent-MagazinePistolCaselessRifleSAPHE = pistol magazine (9.5mm SAP-HE)
+ent-MagazinePistolCaselessRifleSAPHE = пистолетный магазин (9,5-мм SAP-HE)
     .desc = { ent-BaseMagazinePistolCaselessRifle.desc }

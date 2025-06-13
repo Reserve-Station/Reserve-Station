@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
@@ -6,6 +7,7 @@
 # SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 echotry <48294642+echotry-ss14@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 echotry <xippl1@mail.ru>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # SOP Main Directory
@@ -153,6 +155,7 @@
   name: guide-entry-sop-security
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Security/SecuritySOP.xml"
   children:
+  - Brigmedic SOP
   - Warden SOP
   - OfficerCadet SOP
   - Detective SOP
@@ -444,6 +447,13 @@
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Science/RoboticistSOP.xml"
 
 # Security SOP Entries
+
+- type: guideEntry
+  id: Brigmedic SOP
+  abstract: true #Reserve guidebook
+  name: guide-entry-sop-brigmedic
+  text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Security/BrigmedicSOP.xml"
+
 - type: guideEntry
   id: Detective SOP
   abstract: true #Reserve guidebook

@@ -60,6 +60,7 @@
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -69,8 +70,8 @@ meta:
   engineVersion: 251.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/17/2025 06:40:30
-  entityCount: 35576
+  time: 05/29/2025 08:34:54
+  entityCount: 35570
 maps:
 - 1
 grids:
@@ -137,7 +138,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Map Entity
+      name: Leonid Map
     - type: Transform
     - type: Map
       mapPaused: True
@@ -149,7 +150,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
-      name: grid
+      name: Leonid Station
     - type: Transform
       pos: -0.48958334,-0.4947885
       parent: 1
@@ -100785,16 +100786,6 @@ entities:
     - type: Transform
       pos: -45.41287,-13.339774
       parent: 2
-- proto: ClothingEyesHudMedSec
-  entities:
-  - uid: 16344
-    components:
-    - type: Transform
-      pos: -64.45246,23.46565
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
 - proto: ClothingHandsGlovesBoxingBlue
   entities:
   - uid: 16345
@@ -100922,16 +100913,6 @@ entities:
     components:
     - type: Transform
       pos: -46.530766,9.517819
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-- proto: ClothingHeadHatBeretBrigmedic
-  entities:
-  - uid: 16360
-    components:
-    - type: Transform
-      pos: -64.24316,23.847204
       parent: 2
     - type: Physics
       angularDamping: 0
@@ -101488,8 +101469,11 @@ entities:
   - uid: 16427
     components:
     - type: Transform
-      pos: -65.64945,23.443937
+      pos: -64.61955,23.543169
       parent: 2
+    - type: Physics
+      angularDamping: 0
+      linearDamping: 0
 - proto: ClothingMaskSexyClown
   entities:
   - uid: 16428
@@ -101815,7 +101799,7 @@ entities:
   - uid: 16462
     components:
     - type: Transform
-      pos: -63.606518,23.464205
+      pos: -64.39038,23.532751
       parent: 2
     - type: Physics
       angularDamping: 0
@@ -104450,11 +104434,6 @@ entities:
       parent: 2
 - proto: CrateMedicalSurgery
   entities:
-  - uid: 16851
-    components:
-    - type: Transform
-      pos: -63.5,26.5
-      parent: 2
   - uid: 16852
     components:
     - type: Transform
@@ -105421,6 +105400,12 @@ entities:
       location: Warden's Office
 - proto: DefibrillatorCabinetFilled
   entities:
+  - uid: 16344
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -62.5,27.5
+      parent: 2
   - uid: 16976
     components:
     - type: Transform
@@ -105449,12 +105434,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -61.5,-35.5
-      parent: 2
-  - uid: 16981
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -62.5,27.5
       parent: 2
   - uid: 16982
     components:
@@ -155390,14 +155369,6 @@ entities:
     - type: Transform
       pos: -50.483063,-19.323475
       parent: 2
-  - uid: 23855
-    components:
-    - type: Transform
-      pos: -64.69204,23.653282
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
 - proto: HandheldHealthAnalyzerEmpty
   entities:
   - uid: 23856
@@ -157365,6 +157336,13 @@ entities:
     components:
     - type: Transform
       pos: -22.5,-11.5
+      parent: 2
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 20850
+    components:
+    - type: Transform
+      pos: -65.5,28.5
       parent: 2
 - proto: LockerCaptainFilledNoLaser
   entities:
@@ -159602,11 +159580,6 @@ entities:
       parent: 2
 - proto: MedkitBruteFilled
   entities:
-  - uid: 24396
-    components:
-    - type: Transform
-      pos: -65.471306,26.65822
-      parent: 2
   - uid: 24397
     components:
     - type: Transform
@@ -159638,11 +159611,6 @@ entities:
       parent: 2
 - proto: MedkitBurnFilled
   entities:
-  - uid: 24402
-    components:
-    - type: Transform
-      pos: -65.471306,26.553982
-      parent: 2
   - uid: 24403
     components:
     - type: Transform
@@ -159962,6 +159930,11 @@ entities:
           occludes: True
           ents:
           - 5043
+  - uid: 16360
+    components:
+    - type: Transform
+      pos: -63.5,28.5
+      parent: 2
   - uid: 19116
     components:
     - type: Transform
@@ -160086,11 +160059,6 @@ entities:
     components:
     - type: Transform
       pos: -64.5,28.5
-      parent: 2
-  - uid: 24461
-    components:
-    - type: Transform
-      pos: -63.5,28.5
       parent: 2
   - uid: 24462
     components:
@@ -168816,6 +168784,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 34.5,-41.5
       parent: 2
+  - uid: 16981
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -64.5,23.5
+      parent: 2
   - uid: 25783
     components:
     - type: Transform
@@ -168929,11 +168903,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -73.5,19.5
-      parent: 2
-  - uid: 25804
-    components:
-    - type: Transform
-      pos: -65.5,26.5
       parent: 2
   - uid: 25805
     components:
@@ -190723,6 +190692,13 @@ entities:
     - type: Transform
       pos: -20.5,-10.5
       parent: 2
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 16851
+    components:
+    - type: Transform
+      pos: -64.5,25.5
+      parent: 2
 - proto: SpawnPointCaptain
   entities:
   - uid: 29568
@@ -194429,11 +194405,6 @@ entities:
     components:
     - type: Transform
       pos: -73.5,31.5
-      parent: 2
-  - uid: 30133
-    components:
-    - type: Transform
-      pos: -64.5,23.5
       parent: 2
   - uid: 30134
     components:
@@ -199410,11 +199381,6 @@ entities:
       parent: 2
 - proto: VendingMachineMedical
   entities:
-  - uid: 30935
-    components:
-    - type: Transform
-      pos: -65.5,28.5
-      parent: 2
   - uid: 30936
     components:
     - type: Transform

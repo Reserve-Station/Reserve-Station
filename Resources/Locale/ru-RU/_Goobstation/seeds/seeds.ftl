@@ -1,2 +1,2 @@
-seeds-strange-berries-name = strange berries
-seeds-strange-berries-display-name = strange berry bush
+seeds-strange-berries-name = странные ягоды
+seeds-strange-berries-display-name = куст странных ягод

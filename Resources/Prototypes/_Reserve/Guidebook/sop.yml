@@ -388,6 +388,12 @@
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Science/RoboticistSOP.xml"
 
 # Security SOP Entries
+
+- type: guideEntry
+  id: Brigmedic SOP Reserve
+  name: guide-entry-sop-brigmedic
+  text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Security/BrigmedicSOP.xml"
+
 - type: guideEntry
   id: Detective SOP Reserve
   name: guide-entry-sop-detective

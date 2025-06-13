@@ -1,6 +1,3 @@
-
-
-
 ent-BaseHereticObjective = { ent-BaseObjective }
     .desc = { ent-BaseObjective.desc }
 ent-HereticKnowledgeObjective = { ent-BaseHereticObjective }

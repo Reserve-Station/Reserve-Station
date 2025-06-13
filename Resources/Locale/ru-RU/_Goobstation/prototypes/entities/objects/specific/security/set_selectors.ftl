@@ -1,2 +1,2 @@
-ent-HeadOfSecurityWeaponUndetermined = X-00 Series Box
-    .desc = A small remote utilizing bluespace technology to drop in a weapon from the X-00 series to you. Choose wisely.
+ent-HeadOfSecurityWeaponUndetermined = Коробка серии X-00
+    .desc = Небольшой пульт дистанционного управления, использующий технологию блюспейс, для передачи вам оружия серии X-00. Выбирайте с умом.

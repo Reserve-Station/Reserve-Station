@@ -1,6 +1,6 @@
-ent-BaseMagazineShotgunHeavy = барабан для боеприпасов (2 патрона разного калибра)
+ent-BaseMagazineShotgunHeavy = барабан (2-го калибра любой)
     .desc = { ent-BaseItem.desc }
-ent-MagazineShotgunHeavy = барабан для боеприпасов (2-го калибра с пульками)
+ent-MagazineShotgunHeavy = барабан (2-го калибра)
     .desc = { ent-BaseMagazineShotgunHeavy.desc }
-ent-MagazineShotgunHeavySlug = барабан с боеприпасами (пуля HE 2-го калибра)
+ent-MagazineShotgunHeavySlug = барабан (2-го калибра ОФ)
     .desc = { ent-BaseMagazineShotgunHeavy.desc }

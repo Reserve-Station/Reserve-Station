@@ -1,7 +1,7 @@
 ghost-role-information-nukie-reinforcement-name = Ядерный оперативник
 ghost-role-information-nukie-reinforcement-description = Ядерным оперативникам нужно подкрепление. Вы, резервный агент, поможете им.
 ghost-role-information-nukie-reinforcement-rules = Вы являетесь [color=red][bold]командным антагонистом[/bold][/color] с вызвавшими вас ядерными оперативниками.
-ghost-role-information-SyndiRoach-name = SyndiMaggot
+ghost-role-information-SyndiRoach-name = СиндиЛичинка
 ghost-role-information-SyndiRoach-description = Вы - верный дрессированный питомец ядерных оперативников с микробомбой. Служите своему хозяину до смерти!
 ghost-role-information-SyndiRoach-rules = Вы являетесь [color=red][bold]командным антагонистом[/bold][/color] с агентом, который вас вызвал.
 ghost-role-information-skibidi-toilet-name = Скибиди Туалет
@@ -12,9 +12,9 @@ ghost-role-information-Hecu-description = Центральному команд�
 ghost-role-information-Hecu-rules = Вы обязаны подчиняться приказам своего начальника, вы фактически являетесь его [color=#6495ed][bold]Агентом[/bold][/color].
 ghost-role-information-lootbug-name = Лут-Жук
 ghost-role-information-lootbug-description = Постарайтесь не быть зарезанным тайдерами.
-ghost-role-information-c4-name = C-4
-ghost-role-information-homunculus-name = homunculus
-ghost-role-information-homunculus-description = Obey the one who has created you, if there are nowhere to be found, do as you will.
+ghost-role-information-c4-name = С-4
+ghost-role-information-homunculus-name = гомункул
+ghost-role-information-homunculus-description = Повинуйся тому, кто создал тебя, и если его нигде не найти, делай, что хочешь.
 ghost-role-information-c4-description = Помогите пользователю с бомбометанием.
 ghost-role-information-derelict-cyborg-syndicate-name = Старый киборг Синдиката
 ghost-role-information-derelict-cyborg-syndicate-description = Вы потерялись во время нападения на станцию. После многих лет воздействия ионных бурь вы оказываетесь рядом с космической станцией.

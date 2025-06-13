@@ -128,6 +128,10 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -154,7 +158,7 @@
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
   supervisors: job-supervisors-captain
-  canBeAntag: true #Reserve - no MS for heads
+  canBeAntag: false
   access:
   - Command
   - HeadOfPersonnel
@@ -183,8 +187,8 @@
   - Atmospherics
   - Medical
   special:
-  #- !type:AddImplantSpecial #Reserve - no MS for heads
-  #  implants: [ MindShieldImplant ] #Reserve - no MS for heads
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff

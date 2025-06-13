@@ -63,12 +63,16 @@
 # SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Lincoln McQueen <lincoln.mcqueen@gmail.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 echotry <xippl1@mail.ru>
 # SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
 # SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 #
@@ -121,7 +125,7 @@
       - id: WeaponEnergyShotgun # Goobstation
       #- id: WeaponDisabler #Goobstation (Disablers in belts)
       - id: ClothingBeltSecurityFilled
-      #- id: ClothingHandsGlovesKravMaga # Goobstation - Martial Arts #Reserve edit
+      - id: ClothingHandsGlovesKravMaga # Goobstation - Martial Arts
       - id: BoxLethalInjection # Goobstation
       - id: Flash
       - id: ClothingEyesGlassesSecurity
@@ -177,11 +181,38 @@
       - id: BookSpaceLaw
         prob: 0.5
 
-# Goob
 - type: entity
   id: LockerBrigmedicFilled
-  suffix: MAP THIS, to be migrated to brigmedic
-  parent: LockerMedicineFilled
+  suffix: Brigmedic, Filled
+  parent: LockerBrigmedic
+  components:
+  - type: StorageFill
+    contents: # heavily good edited
+      - id: BoxAutoinjectorCartidges
+      - id: OmnimedTool
+      - id: ClothingOuterHardsuitBrigmedic
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: ClothingUniformJumpskirtOfLife
+        prob: 0.1
+      - id: MedkitOxygenFilled # This one is guaranteed
+      # And extra 3 medkits on average, with autoinjectors and surgery tools should be more than enough round start
+      - id: MedkitFilled
+        prob: 0.75
+      - id: MedkitBruteFilled
+        prob: 0.5
+      - id: MedkitBurnFilled
+        prob: 0.5
+      - id: MedkitToxinFilled
+        prob: 0.3
+      - id: MedkitRadiationFilled
+        prob: 0.3
+      - id: MedkitAdvancedFilled
+        prob: 0.2
+      - id: MedkitCombatFilled
+        prob: 0.1
+      - id: ClothingNeckCloakMoth #bzzz Moth-pocalypse
+        prob: 0.065 # 6,5% for moth obviozzzsly
 
 - type: entity
   id: LockerDetectiveFilled

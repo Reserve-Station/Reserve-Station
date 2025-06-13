@@ -16,9 +16,9 @@
     Scream:
       collection: FelinidScreams
     Laugh:
-      collection: MaleLaugh
+      path: /Audio/Corvax/Voice/Tajaran/laugh.ogg # Reserve new sounds
     Sneeze:
-      collection: MaleSneezes
+      path: /Audio/Corvax/Voice/Tajaran/sneeze.ogg # Reserve new sounds
     Cough:
       collection: MaleCoughs
     Yawn:
@@ -28,9 +28,9 @@
     Honk:
       collection: BikeHorn
     Sigh:
-      collection: MaleSigh
+      path: /Audio/Corvax/Voice/Tajaran/sigh.ogg # Reserve new sounds
     Crying:
-      collection: MaleCry
+      path: /Audio/Corvax/Voice/Tajaran/cry.ogg # Reserve new sounds
     Whistle:
       collection: Whistles
     Weh:
@@ -48,7 +48,7 @@
     CatMeow:
       collection: CatMeows # Goobstation - effect standardization
     Gasp:
-      collection: MaleGasp
+      path: /Audio/Corvax/Voice/Tajaran/gasp.ogg # Reserve new sounds
     DefaultDeathgasp:
       collection: MaleDeathGasp
 
@@ -60,9 +60,9 @@
     Scream:
       collection: FelinidScreams
     Laugh:
-      collection: FemaleLaugh
+      path: /Audio/Corvax/Voice/Tajaran/laugh.ogg # Reserve new sounds
     Sneeze:
-      collection: FemaleSneezes
+      path: /Audio/Corvax/Voice/Tajaran/sneeze.ogg # Reserve new sounds
     Cough:
       collection: FemaleCoughs
     Yawn:
@@ -72,9 +72,9 @@
     Honk:
       collection: CluwneHorn
     Sigh:
-      collection: FemaleSigh
+      path: /Audio/Corvax/Voice/Tajaran/sigh.ogg # Reserve new sounds
     Crying:
-      collection: FemaleCry
+      path: /Audio/Corvax/Voice/Tajaran/cry.ogg # Reserve new sounds
     Whistle:
       collection: Whistles
     Weh:
@@ -92,6 +92,6 @@
     CatMeow:
       collection: CatMeows # Goobstation - effect standardization
     Gasp:
-      collection: FemaleGasp
+      path: /Audio/Corvax/Voice/Tajaran/gasp.ogg # Reserve new sounds
     DefaultDeathgasp:
       collection: FemaleDeathGasp

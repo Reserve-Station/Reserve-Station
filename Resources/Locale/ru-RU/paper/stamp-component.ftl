@@ -1,4 +1,4 @@
-stamp-component-stamped-name-default = VIP
+stamp-component-stamped-name-default = ВИП-персона
 stamp-component-stamped-name-detective = Детектив
 stamp-component-stamped-name-mime = Мим
 stamp-component-stamped-name-captain = Капитан

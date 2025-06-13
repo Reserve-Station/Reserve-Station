@@ -1,17 +1,17 @@
-heretic-roundend-name = heretic
+heretic-roundend-name = еретик
 roundend-prepend-heretic-ascension-success = { $name }, [color=green] вознесся![/color]
 roundend-prepend-heretic-ascension-fail = { $name }, [color=red] не удалось![/color]
 roundend-prepend-heretic-knowledge-named = [color=white]{ $name }[/color] исследовал в общей сложности [color=purple]{ $number }[/color] знаний.
-roundend-prepend-heretic-ascension-fail-owls = { $name }, [color=red] has forsaken their Ascension and thus failed![/color]
+roundend-prepend-heretic-ascension-fail-owls = { $name }, [color=red] отказался от своего вознесения и, таким образом, потерпел неудачу![/color]
 heretic-gamemode-title = Еретики
 heretic-gamemode-description = На станции обнаружена пространственная аномалия. Дополнительных данных нет.
 heretic-role-greeting-fluff =
     Еще один день на бессмысленной работе. Вы чувствуете мерцание вокруг себя, когда осознаете, что в воздухе витает нечто странное. Вы заглядываете внутрь себя и обнаруживаете нечто, что изменит вашу жизнь.
-    
+
     Врата Мансуса открываются перед вашим разумом.
 heretic-role-greeting =
     Вы - Еретик!
-    
+
     Подробнее о вашей роли читайте в гайде.
 heretic-role-greeting-short =
     Вы - Еретик!
@@ -30,11 +30,11 @@ ghostrole-ghoul-name = Упырь
 ghostrole-prophet-name = Сырой пророк
 ghostrole-stalker-name = Сталкер
 ghostrole-ghoul-desc = Помогать своему призывателю в достижении вознесения.
-ghostrole-rustwalker-name = Rust Walker
+ghostrole-rustwalker-name = Ржавый ходок
 ghostrole-prophet-desc = Помочь своему призывателю в достижении вознесения. Подключать других верующих к Связи Мансуса.
 ghostrole-stalker-desc = Помочь своему призывателю в достижении вознесения. Охотьтесь на экипаж станции.
 ghostrole-ghoul-rules = Вы являетесь [color=red][bold]командным антагонистом[/bold][/color] с тем, кто вызвал вас и других жутких существ.
-ghostrole-rustwalker-desc = Aid your summoner in achieving ascension. Spread rust everywhere.
+ghostrole-rustwalker-desc = Помогите своему призывателю достичь вознесения. Распространите ржавчину повсюду.
 
 # Спи спокойно, Мансур.
 

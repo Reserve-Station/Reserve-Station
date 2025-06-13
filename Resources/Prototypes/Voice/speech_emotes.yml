@@ -206,6 +206,8 @@
     # Reserve-Localization-Start
     - свистит
     - свистнул
+    - свистнула
+    - присвистывает
     # Reserve-Localization-End
 
 - type: emote
@@ -251,6 +253,9 @@
     - squishing
     - squishes
     # Reserve-Localization-Start
+    - хлюп
+    - хлюпнул
+    - хлюпнула
     - хлюпает
     # Reserve-Localization-End
 
@@ -273,6 +278,7 @@
    - chittered
    # Reserve-Localization-Start
    - стрекочет
+   - жужжит
    # Reserve-Localization-End
 
 - type: emote
@@ -296,6 +302,8 @@
    - пищит
    - скуик
    - скуик!
+   - скрипит
+   - скрип
    # Reserve-Localization-End
 
 - type: emote
@@ -448,6 +456,9 @@
    - gasp
    - gasps
    - gasped
+   # Reserve-Localization-Start
+   - задыхается
+   # Reserve-Localization-End
 
 - type: emote
   id: DefaultDeathgasp
@@ -486,7 +497,8 @@
     - buzzed
     - buzzes
     # Reserve-Localization-Start
-    - жужжит
+    - жужж
+    - жжж
     - зажужжал
     - зажужжала
     # Reserve-Localization-End
@@ -592,10 +604,8 @@
     # Reserve-Localization-Start
     - бипбуп
     - бип буп
-    - бип-буп
     - бипбип
     - бип бип
-    - бип-бип
     # Reserve-Localization-End
 
 - type: emote

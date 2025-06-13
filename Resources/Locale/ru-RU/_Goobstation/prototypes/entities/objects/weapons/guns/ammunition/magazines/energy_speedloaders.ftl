@@ -1,8 +1,8 @@
 ent-BaseEnergySpeedloader = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-EnergySpeedloaderLethal = energy speedloader (lethal)
-    .desc = A rather volatile powercell utilizing phoron to charge lethal bolts over time. Phoron will make us all rich.
-ent-EnergySpeedloaderDisabler = energy speedloader (disabler)
-    .desc = A rather volatile powercell utilizing phoron to charge disabling bolts over time. Phoron will make us all rich.
-ent-EnergySpeedloaderPulse = energy speedloader (pulse)
-    .desc = A rather volatile powercell utilizing phoron to charge destructive energy pulses over time. Phoron will make us all rich.
+ent-EnergySpeedloaderLethal = энергетический спидлоадер (Летальный)
+    .desc = Довольно энергозависимый элемент питания, использующий форон для зарядки смертоносных зарядов с течением времени. Форон сделает нас всех богатыми.
+ent-EnergySpeedloaderDisabler = энергетический спидлоадер (Изнуряющий)
+    .desc = Довольно энергозависимый элемент питания, использующий форон для подзарядки изнуряющих цель болтов. Форон сделает нас всех богатыми.
+ent-EnergySpeedloaderPulse = энергетический спидлоадер (Импульсный)
+    .desc = Довольно энергозависимый элемент питания, использующий форон для зарядки импульсами разрушительной энергии с течением времени. Форон сделает нас всех богатыми.

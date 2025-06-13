@@ -1,2 +1,2 @@
-ent-ClothingDeathSquadronBackpack = death squad backpack
-    .desc = A spacious backpack utilizing Bluespace technology.
+ent-ClothingDeathSquadronBackpack = рюкзак эскадрона смерти
+    .desc = Просторный рюкзак с использованием технологии блюспейс.

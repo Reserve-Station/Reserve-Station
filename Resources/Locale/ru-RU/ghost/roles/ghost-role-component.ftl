@@ -20,11 +20,11 @@ ghost-role-information-antagonist-rules =
     Вам разрешено помнить знания об игре в целом, например, как готовить, как использовать предметы и т. д.
     Вам абсолютно [color=red]НЕ[/color] разрешено помнить, скажем, имя, внешность и т. д. вашего предыдущего персонажа.
 ghost-role-information-rules-team-antagonist =
-    You are a [color=red][bold]Team Antagonist[/bold][/color]. Your intentions are clear, and harmful to the station and its crew.
-    You must [bold]work with your team[/bold] or follow reasonable directions from your team leaders.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Вы - [color=red][bold]Командный антагонист[/bold][/color]. Ваши намерения ясны и вредны для станции и ее экипажа.
+    Вы должны [bold]работать со своей командой[/bold] или следовать разумным указаниям командиров.
+    Вы не помните ничего из своей предыдущей жизни и не помните ничего из того, чему научились, будучи призраком.
+    Вы можете помнить знания об игре в целом, например, как готовить, как использовать предметы и т.д.
+    Вам абсолютно [color=red]НЕ[/color] разрешено помнить, скажем, имя, внешность и т. д. вашего предыдущего персонажа.
 ghost-role-information-familiar-rules =
     Вы - [color=#6495ed][bold]Фамильяр[/bold][/color]. Служите интересам своего хозяина, какими бы они ни были.
     Вы не помните ничего из своей предыдущей жизни и не помните ничего из того, что узнали, будучи призраком.
@@ -77,8 +77,8 @@ ghost-role-information-rat-king-name = Крысиный король
 ghost-role-information-rat-king-description = Вы - Крысиный король, вас интересует еда, еда и ещё раз еда. Сотрудничайте со станцией или сражайтесь с ней ради еды. Я уже упоминал, что вас интересует еда?
 ghost-role-information-rat-servant-name = Крысиный слуга
 ghost-role-information-rat-servant-description = Вы Крысиный слуга. Выполняйте приказы своего короля.
-ghost-role-information-salvage-carp-name = Space carp on salvage wreck
-ghost-role-information-salvage-carp-description = Defend the loot inside the salvage wreck!
+ghost-role-information-salvage-carp-name = Космический карп на обломке
+ghost-role-information-salvage-carp-description = Защитите добычу обломка!
 ghost-role-information-sentient-carp-name = Разумный карп
 ghost-role-information-sentient-carp-description = Помогите дракону наводнить станцию карпами!
 ghost-role-information-willow-name = Кенгуру Уиллоу

@@ -1,1 +1,1 @@
-upgrade-kit-automation = [color=голубой] Автоматизация [/color]: обеспечивает [color=зеленый] соединение сигналов [/color] и [color=зеленый] портов элементов манипулятора робота[/color].
+upgrade-kit-automation = [color=cyan] Автоматизация [/color]: обеспечивает [color=green] соединение сигналов [/color] и [color=green] портов элементов манипулятора робота[/color].

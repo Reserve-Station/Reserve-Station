@@ -14,8 +14,8 @@ cosmic-examine-text-god = конец - это конец, это конец, э�
 
 cosmic-examine-glyph-cultcount =
     { $COUNT ->
-        [1] [color=#4cabb3]Requires only a single cultist to activate.[/color]
-       *[other] [color=#4cabb3]Requires { $COUNT } cultists to activate.[/color]
+        [1] [color = #4cabb3]Для активации требуется только один культист.[/color]
+       *[other] [color = #4cabb3]Для активации требуется { $COUNT } культистов.[/color]
     }
 cosmic-examine-glyph-truth = [color=#4cabb3] Доносит чистую, неизгладимую истину. Способен привлечь в наши ряды абсолютно любого.[/color]
 cosmic-examine-glyph-knowledge = [color=#4cabb3] Вселяет искру неизгладимых знаний. Способен привлечь большинство людей в наши ряды.[/color]

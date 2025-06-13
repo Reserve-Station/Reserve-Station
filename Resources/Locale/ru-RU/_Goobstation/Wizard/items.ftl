@@ -8,4 +8,4 @@ sanguine-strike-end = { CAPITALIZE($item) } теряет красное свеч
 sanguine-strike-examine = [color=#c41515]Это оружие было заряжено сангвинической магией.[/color]
 scrying-orb-verb-message = Зайти в мир мёртвых
 scrying-orb-verb-text = Активировать шар
-wizard-mirror-guardian-change-species-fail = You can't change your species after hosting guardian!
+wizard-mirror-guardian-change-species-fail = Вы не можете изменить свой вид после того, как являетесь носителем хранителя!

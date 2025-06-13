@@ -1,3 +1,3 @@
-ent-NukeOverride = nuclear override card
-    .desc = A surprisingly cheaply made plastic card, capable of overriding a nuclear devices safety protocols.
-    .suffix = DO NOT MAP
+ent-NukeOverride = карта обхода ядерных протоколов
+    .desc = Удивительно дешевая пластиковая карта, способная обойти все протоколы безопасности ядерных устройств.
+    .suffix = НЕ МАППИТЬ
