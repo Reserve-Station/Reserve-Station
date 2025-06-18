@@ -21,24 +21,23 @@ autodoc-error-patient-unsedated = ПАЦИЕНТУ ТРЕБУЕТСЯ СЕДАЦ
 # These intentionally have russian alongside them for ostranauts-like aesthetic.
 # If you are a russian fork, these don't need translating :)
 # Если вы являетесь русскоязычным форком, то они не нуждаются в переводе :)
+# Идея с китайским автодоком полная хрень, Анар. :)
 autodoc-title = АВТОДОК MK.XIV
-autodoc-create-program = НОВОЕ РАСПИСАНИЕ
-autodoc-program-title = НАЗВАНИЕ РАСПИСАНИЯ
-autodoc-program-title-placeholder = Расписание { $number }
-autodoc-abort-program = СБРОСИТЬ РАСПИСАНИЕ
+autodoc-create-program = НОВЫЙ АЛГОРИТМ
+autodoc-program-title = НАЗВАНИЕ АЛГОРИТМА
+autodoc-program-title-placeholder = Алгоритм { $number }
+autodoc-abort-program = СБРОСИТЬ АЛГОРИТМ
 autodoc-view-program-title = ПРОСМОТР
 autodoc-safety-enabled = БЕЗОПАСНОСТЬ ВКЛЮЧЕНА
 autodoc-safety-disabled = БЕЗОПАСНОСТЬ ВЫКЛЮЧЕНА
 autodoc-remove-program = УДАЛИТЬ
 autodoc-add-step = ДОБАВИТЬ ШАГ
 autodoc-remove-step = УДАЛИТЬ ШАГ
-autodoc-start-program = НАЧАТЬ РАСПИСАНИЕ
+autodoc-start-program = НАЧАТЬ АЛГОРИТМ
 autodoc-add-step-surgery = СДЕЛАЙ ОПЕРАЦИЮ
 autodoc-add-step-grab-item = ВЗЯТЬ ОБЪЕКТ
-# Chinese text translates approximately to "import program")
-autodoc-import-program = ПРОГРАММА ИМПОРТА 进口计划
-# Chinese text translates approximately to "import program")
-autodoc-export-program = ПРОГРАММА ЭКСПОРТА 出口计划
+autodoc-import-program = ИМПОРТИРОВАТЬ АЛГОРИТМ
+autodoc-export-program = ЭКСПОРТИРОВАТЬ АЛГОРИТМ
 autodoc-add-step-grab-item-prompt = Имя предмета
 autodoc-add-step-grab-item-placeholder = сердце дворфа
 autodoc-add-step-grab-organ = ВЗЯТЬ ОРГАН
