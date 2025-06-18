@@ -1,2 +1,2 @@
-ent-BaseSupplyPod = грузовой под
+ent-BaseSupplyPod = капсула снабжения
     .desc = Это сломало чертов пол... тьфу...

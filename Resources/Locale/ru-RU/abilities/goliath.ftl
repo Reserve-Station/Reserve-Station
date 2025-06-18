@@ -1,1 +1,1 @@
-tentacle-ability-use-popup = { CAPITALIZE(THE($entity)) } роет свои щупальца под землей!
+tentacle-ability-use-popup = { CAPITALIZE(THE($entity)) } пускает свои щупальца под землю!
