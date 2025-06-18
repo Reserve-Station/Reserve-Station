@@ -1,5 +1,5 @@
 ent-GatewayLavaland = Ворота Лаваленда
-    .desc = Иди ты к черту.
+    .desc = Прямо к черту на куличики.
 ent-GatewayLavalandStation = Ворота Лаваленда
-    .desc = Иди ты к черту.
+    .desc = Прямо к черту на куличики.
     .suffix = Станция

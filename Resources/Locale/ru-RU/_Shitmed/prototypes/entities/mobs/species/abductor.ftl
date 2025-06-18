@@ -2,5 +2,5 @@ ent-BaseMobAbductor = Урист МакАбдуктор
     .desc = { ent-MobBloodstream.desc }
 ent-MobAbductorDummy = { ent-BaseSpeciesDummy }
     .desc = { ent-BaseSpeciesDummy.desc }
-ent-MobAbductor = Урист Макэлин
+ent-MobAbductor = Урист МакПришелец
     .desc = { ent-MobBloodstream.desc }

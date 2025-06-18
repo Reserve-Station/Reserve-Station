@@ -1,2 +1,2 @@
-ent-BorgModuleAdvancedMining = усовершенствованный модуль горного киборга
+ent-BorgModuleAdvancedMining = усовершенствованный модуль киборга-шахтёра
     .desc = { ent-BaseBorgModuleCargo.desc }

@@ -1,2 +1,2 @@
-ent-OrganAnimalRuminantStomach2 = желудок жвачного животного 2
-    .desc = электрический бугалу
+ent-OrganAnimalRuminantStomach2 = желудок жвачного животного
+    .desc = это желудок, он переваривает.

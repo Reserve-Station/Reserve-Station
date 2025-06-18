@@ -13,10 +13,10 @@ autodoc-waiting = ОЖИДАНИЕ ПРОГРАММЫ
 autodoc-error-missing-patient = НЕ ОБНАРУЖЕН ПАЦИЕНТ
 autodoc-error-body-part = ЧАСТЬ ТЕЛА НЕ ОБНАРУЖЕНА
 autodoc-error-surgery-impossible = ВЫБРАННАЯ ОПЕРАЦИЯ НЕВОЗМОЖНА
-autodoc-error-item-unavailable = ТОВАР НЕДОСТУПЕН
+autodoc-error-item-unavailable = ПРЕДМЕТ НЕДОСТУПЕН
 autodoc-error-surgery-failed = ОПЕРАЦИЯ НЕ УДАЛАСЬ
-autodoc-error-hand-full = МАНИПУЛЯТОР ДЛЯ ПРЕДМЕТОВ ПОЛНЫЙ
-autodoc-error-storage-full = ПОЛНЫЕ ЛОТКИ
+autodoc-error-hand-full = МАНИПУЛЯТОР ДЛЯ ПРЕДМЕТОВ ЗАНЯТ
+autodoc-error-storage-full = ХРАНИЛИЩЕ ЗАПОЛНЕНО
 autodoc-error-patient-unsedated = ПАЦИЕНТУ ТРЕБУЕТСЯ СЕДАЦИЯ
 # These intentionally have russian alongside them for ostranauts-like aesthetic.
 # If you are a russian fork, these don't need translating :)
@@ -38,13 +38,13 @@ autodoc-add-step-grab-item = ВОЗЬМИ ОБЪЕКТ
 # Chinese text translates approximately to "import program")
 autodoc-import-program = ПРОГРАММА ИМПОРТА 进口计划
 # Chinese text translates approximately to "import program")
-autodoc-export-program = ЭКСПОРТНАЯ ПРОГРАММА 出口计划
+autodoc-export-program = ПРОГРАММА ЭКСПОРТА 出口计划
 autodoc-add-step-grab-item-prompt = Имя предмета
 autodoc-add-step-grab-item-placeholder = сердце дворфа
-autodoc-add-step-grab-organ = ВОЗЬМИ ОРГАН
-autodoc-add-step-grab-part = ВОЗЬМИ ЧАСТЬ ТЕЛА
-autodoc-add-step-store-item = МАГАЗИН ОБЪЕКТ
-autodoc-add-step-set-label = НАНЕСИТЕ ЯРЛЫК
+autodoc-add-step-grab-organ = ВЗЯТЬ ОРГАН
+autodoc-add-step-grab-part = ВЗЯТЬ ЧАСТЬ ТЕЛА
+autodoc-add-step-store-item = СОХРАНИТЬ ОБЪЕКТ
+autodoc-add-step-set-label = НАНЕСТИ ЯРЛЫК
 autodoc-add-step-set-label-prompt = ЯРЛЫК
 autodoc-add-step-wait = ЖДАТЬ
 autodoc-add-step-wait-prompt = Секунды ожидания
