@@ -1,5 +1,5 @@
 ent-OrganShadowkinBrain = { ent-OrganHumanBrain }
-    .desc = Ой, я должна положить это туда, где нашла.
+    .desc = Ой, кажется, я должен положить это туда где оно лежало.
 ent-OrganShadowkinEyes = { ent-OrganHumanEyes }
     .desc = Я вижу дальше, чем ты когда-либо сможешь увидеть!
 ent-OrganShadowkinEars = { ent-OrganHumanEars }
@@ -17,4 +17,4 @@ ent-OrganShadowkinStomach = { ent-OrganHumanStomach }
 ent-OrganShadowkinLiver = { ent-OrganHumanLiver }
     .desc = Жить с ней? Я ее почти не знаю!
 ent-OrganShadowkinKidneys = { ent-OrganHumanKidneys }
-    .desc = Верните ребенку колени, пожалуйста, это уже третий раз за неделю.
+    .desc = Верните ему почку, пожалуйста, это уже третий раз за неделю.

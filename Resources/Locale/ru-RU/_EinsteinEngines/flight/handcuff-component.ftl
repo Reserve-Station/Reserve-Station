@@ -1,1 +1,1 @@
-handcuff-component-target-flying-error = Вы не можете дотянться до рук { $targetName }!
+handcuff-component-target-flying-error = Вы не можете дотянуться до рук { $targetName }!
