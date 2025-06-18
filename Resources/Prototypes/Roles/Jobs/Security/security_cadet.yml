@@ -130,7 +130,7 @@
   equipment:
     eyes: ClothingEyesGlassesSecurity #Goobstation
     shoes: ClothingShoesBootsJackFilled
-#    outerClothing: ClothingOuterArmorBasic - Prevents armor duplication
+#    outerClothing: ClothingOuterArmorBasic - Reserve Station fix: Prevents armor duplication
     id: SecurityCadetPDA
     ears: ClothingHeadsetAltSecurityRegular # Goobstation
     belt: ClothingBeltSecurityFilled
