@@ -13,3 +13,11 @@
   alpha: 0.6
   ghostName: Svarshik
   ghostDescription: Вам кажется.
+
+- type: customGhost
+  id: duga-ghost
+  ckey: Duga
+  sprite: /Textures/_Reserve/CustomGhosts/duga-ghost.rsi
+  alpha: 0.9
+  ghostName: Duga
+  ghostDescription: Порядок направлений сохранён намеренно. Это метаирония. Он наблюдает сквозь стены, но не туда.
