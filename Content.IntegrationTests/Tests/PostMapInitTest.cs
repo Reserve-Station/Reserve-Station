@@ -237,9 +237,6 @@ namespace Content.IntegrationTests.Tests
             "Loop",
             "Delta", // Goobstation - add Delta
 			"BattleRoyale", // BattleRoyale Change
-            "ReserveCluster", // Reserve map
-            "ReserveOmega", // Reserve map
-            "ReserveSaltern", // Reserve map
             "ReserveSillyIsland", // Reserve map
             "dm01-entryway",
             "Chloris" // Goobstation
