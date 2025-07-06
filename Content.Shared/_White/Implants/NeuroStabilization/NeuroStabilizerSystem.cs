@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Neverluckz <yanechurka1000.7@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Electrocution;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Damage.Events;
