@@ -1598,6 +1598,9 @@
   id: WhitelistChameleonIdCard
 
 - type: Tag
+  id: NeuroStabilization
+
+- type: Tag
   id: WhitelistChameleonPDA
 
 - type: Tag

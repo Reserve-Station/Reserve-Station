@@ -469,3 +469,19 @@
   components:
   - type: Rattle
     radioChannel: CentCom
+
+# White implants
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: NeuroStabilizationImplant
+  name: neuro stabilization implant
+  description: Blocks all of the incoming stamina damage at the cost of frying you nerve system a bit each time.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+  - type: Tag
+    tags:
+    - SubdermalImplant
+    - HideContextMenu
+    - NeuroStabilization

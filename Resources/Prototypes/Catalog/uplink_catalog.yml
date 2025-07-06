@@ -989,7 +989,7 @@
 
 
 # - type: listing
-#   id: UplinkGigacancerScanner
+#   id: UplinkGigacancer Scanner
 #   name: Ultragigacancer Health Analyzer
 #   description: Works like a normal health analyzer, other than giving everyone it scans ultragigacancer.
 #   productEntity: HandheldHealthAnalyzerGigacancer
@@ -1608,6 +1608,17 @@
   productEntity: FakeMindShieldImplanter
   cost:
     Telecrystal: 15 # goob, I don't like security so x4 instead of x5
+  categories:
+  - UplinkImplants
+
+- type: listing
+  id: UplinkNeuroStabilizationImplanter
+  name: uplink-neuro-stabilization-implanter-name
+  description: uplink-neuro-stabilization-implanter-desc
+  icon: { sprite: Interface/Alerts/stamina.rsi, state: stamina5 }
+  productEntity: NeuroStabilizationImplanter
+  cost:
+    Telecrystal: 20
   categories:
   - UplinkImplants
 
