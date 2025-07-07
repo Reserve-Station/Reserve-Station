@@ -157,7 +157,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     [Dependency] private readonly SharedRoleCodewordSystem _roleCodewordSystem = default!;
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
     [Dependency] private readonly UplinkSystem _uplink = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!; // Reserve edit
 
     public override void Initialize()
     {
@@ -225,7 +225,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             var startingBalance = component.StartingBalance;
             if (_jobs.MindTryGetJob(mindId, out var prototype))
                 startingBalance = Math.Max(startingBalance - prototype.AntagAdvantage, 0);
-
+/// Reserve edit start
             // Get player's uplink preference
             if (TryComp(mindId, out MindComponent? mindComp) && mindComp.UserId != null && _playerManager.TryGetSessionById(mindComp.UserId.Value, out var session))
             {
@@ -259,10 +259,10 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
                     // Reserve Station edit end
                 }
             }
-
+/// Reserve edit end
             // creadth: we need to create uplink for the antag.
             var pda = _uplink.FindUplinkTarget(traitor);
-
+/// Reserve edit start
             Logger.DebugS("traitor", $"Found uplink target: {(pda != null ? ToPrettyString(pda.Value) : "null")}");
             Logger.DebugS("traitor", $"Creating uplink with preference: {uplinkPreference}, balance: {startingBalance}");
 
@@ -281,7 +281,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         }
 
         _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code, issuer, uplinkPreference), Color.Crimson, component.GreetSoundNotification);
-
+/// Reserve edit end
         component.TraitorMinds.Add(mindId);
 
         // Assign briefing
@@ -292,7 +292,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         if (traitorRole is not null)
         {
             AddComp<RoleBriefingComponent>(traitorRole.Value.Owner);
-            Comp<RoleBriefingComponent>(traitorRole.Value.Owner).Briefing = GenerateBriefingCharacter(component.Codewords, code, issuer, uplinkPreference);
+            Comp<RoleBriefingComponent>(traitorRole.Value.Owner).Briefing = GenerateBriefingCharacter(component.Codewords, code, issuer, uplinkPreference); // Reserve edit 
         }
 
         // Send codewords to only the traitor client
@@ -316,11 +316,11 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     }
 
     // TODO: figure out how to handle this? add priority to briefing event?
-    private string GenerateBriefing(string[] codewords, Note[]? uplinkCode, string objectiveIssuer, UplinkPreference uplinkPreference = UplinkPreference.PDA)
+    private string GenerateBriefing(string[] codewords, Note[]? uplinkCode, string objectiveIssuer, UplinkPreference uplinkPreference = UplinkPreference.PDA) // Reserve edit 
     {
         var sb = new StringBuilder();
 
-        // Выбираем приветствие в зависимости от типа аплинка
+// Reserve edit start
         switch (uplinkPreference)
         {
             case UplinkPreference.Implant:
@@ -337,7 +337,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
                 break;
         }
 
-        // Добавляем информацию об аплинке в зависимости от его типа
         if (uplinkCode != null)
         {
             switch (uplinkPreference)
@@ -361,6 +360,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         {
             sb.AppendLine("\n" + Loc.GetString($"traitor-role-nouplink"));
         }
+// Reserve edit end
 
         sb.AppendLine("\n" + Loc.GetString($"traitor-role-codewords", ("codewords", string.Join(", ", codewords))));
 
@@ -368,12 +368,13 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         return sb.ToString();
     }
-    private string GenerateBriefingCharacter(string[] codewords, Note[]? uplinkCode, string objectiveIssuer, UplinkPreference uplinkPreference = UplinkPreference.PDA)
+    private string GenerateBriefingCharacter(string[] codewords, Note[]? uplinkCode, string objectiveIssuer, UplinkPreference uplinkPreference = UplinkPreference.PDA) // Reserve edit
     {
         var sb = new StringBuilder();
         sb.AppendLine("\n" + Loc.GetString($"traitor-{objectiveIssuer}-intro"));
 
         if (uplinkCode != null)
+// Reserve edit start
         {
             switch (uplinkPreference)
             {
@@ -396,6 +397,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         {
             sb.AppendLine("\n" + Loc.GetString($"traitor-role-nouplink"));
         }
+// Reserve edit end
 
         sb.AppendLine(Loc.GetString($"traitor-role-codewords-short", ("codewords", string.Join(", ", codewords))));
 

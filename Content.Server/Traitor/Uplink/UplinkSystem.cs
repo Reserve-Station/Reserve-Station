@@ -65,7 +65,7 @@ public sealed class UplinkSystem : EntitySystem
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly StackSystem _stackSystem = default!;
+    [Dependency] private readonly StackSystem _stackSystem = default!; // Reserve edit
 
     [ValidatePrototypeId<CurrencyPrototype>]
     public const string TelecrystalCurrencyPrototype = "Telecrystal";
@@ -80,15 +80,13 @@ public sealed class UplinkSystem : EntitySystem
     /// <param name="uplinkEntity">The entity that will actually have the uplink functionality. Defaults to the PDA if null.</param>
     /// <param name="uplinkPreference">The preferred type of uplink. Defaults to PDA if not specified.</param>
     /// <returns>Whether or not the uplink was added successfully</returns>
-    public bool AddUplink(EntityUid user, FixedPoint2 balance, EntityUid? uplinkEntity = null, UplinkPreference uplinkPreference = UplinkPreference.PDA)
+    public bool AddUplink(EntityUid user, FixedPoint2 balance, EntityUid? uplinkEntity = null, UplinkPreference uplinkPreference = UplinkPreference.PDA) // Reserve edit
     {
-        // Check if player has requested telecrystals directly
+        // Reserve edit start
         if (uplinkPreference == UplinkPreference.Telecrystals)
         {
-            // Reserve Station edit start - improved telecrystal handling
             var tcEntity = Spawn("Telecrystal", Transform(user).Coordinates);
 
-            // Set stack count using StackSystem
             _stackSystem.SetCount(tcEntity, (int)balance);
 
             if (TryPutInBackpack(user, tcEntity))
@@ -105,12 +103,10 @@ public sealed class UplinkSystem : EntitySystem
 
             Logger.Debug($"Could not place telecrystals in inventory, leaving at player's feet");
             return true;
-            // Reserve Station edit end
         }
 
         if (uplinkPreference == UplinkPreference.Radio)
         {
-            // Reserve Station edit start - improved radio uplink handling
             var radio = Spawn("BaseUplinkRadio", Transform(user).Coordinates);
 
             // Set up radio balance based on parameter
@@ -133,17 +129,15 @@ public sealed class UplinkSystem : EntitySystem
 
             Logger.Debug($"Could not place uplink radio in inventory, leaving at player's feet");
             return true;
-            // Reserve Station edit end
         }
 
-        // For other uplink types
         if (uplinkPreference == UplinkPreference.Implant)
         {
             return ImplantUplink(user, balance);
         }
+        // Reserve Station edit end
 
-        // Default behavior (PDA or specified entity)
-        // Try to find target item if none passed
+ 
         uplinkEntity ??= FindUplinkTarget(user);
 
         if (uplinkEntity == null)
@@ -183,16 +177,13 @@ public sealed class UplinkSystem : EntitySystem
     {
         var implantProto = new string(FallbackUplinkImplant);
 
-        // Reserve Station edit start - simplified implant creation
-        // Create implant directly
         var implant = _subdermalImplant.AddImplant(user, implantProto);
 
-        if (implant == null || !HasComp<StoreComponent>(implant))
+        if (implant == null || !HasComp<StoreComponent>(implant))  // Reserve Station edit start - simplified implant creation
             return false;
 
         SetUplink(user, implant.Value, balance);
         return true;
-        // Reserve Station edit end
     }
 
     /// <summary>
