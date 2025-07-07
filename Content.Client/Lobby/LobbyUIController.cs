@@ -291,7 +291,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         if (selected == null)
             return;
 
-        Logger.InfoS("profile", $"Сохранение профиля. UplinkPreference: {EditedProfile.UplinkPreference}");
+        Logger.InfoS("profile", $"Saving profile. UplinkPreference: {EditedProfile.UplinkPreference}");
 
         _preferencesManager.UpdateCharacter(EditedProfile, EditedSlot.Value);
         ReloadCharacterSetup();
@@ -299,7 +299,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         var savedProfile = _preferencesManager.Preferences?.SelectedCharacter as HumanoidCharacterProfile;
         if (savedProfile != null)
         {
-            Logger.InfoS("profile", $"После сохранения профиля. UplinkPreference: {savedProfile.UplinkPreference}");
+            Logger.InfoS("profile", $"After saving profile. UplinkPreference: {savedProfile.UplinkPreference}");
         }
     }
 

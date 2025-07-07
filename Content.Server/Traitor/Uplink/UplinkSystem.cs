@@ -225,37 +225,6 @@ public sealed class UplinkSystem : EntitySystem
     }
 
     /// <summary>
-    /// Creates a radio for the player's uplink and places it in backpack or hands
-    /// </summary>
-    private EntityUid? FindUplinkRadio(EntityUid user)
-    {
-        Logger.Debug($"Creating new radio for uplink");
-
-        // Reserve Station edit start - use BaseUplinkRadio
-        // Always create a new radio
-        var radio = Spawn("BaseUplinkRadio", Transform(user).Coordinates);
-        // Reserve Station edit end
-
-        // Try to put it in the backpack first
-        if (TryPutInBackpack(user, radio))
-        {
-            Logger.Debug($"Placed new radio in backpack");
-            return radio;
-        }
-
-        // If backpack is full, try to put it in the hands
-        if (_handsSystem.TryPickupAnyHand(user, radio))
-        {
-            Logger.Debug($"Placed new radio in hand");
-            return radio;
-        }
-
-        // If hands are full, leave it at the player's feet
-        Logger.Debug($"Could not place radio in inventory, leaving at player's feet");
-        return radio;
-    }
-
-    /// <summary>
     /// Tries to put an item in the user's backpack
     /// </summary>
     private bool TryPutInBackpack(EntityUid user, EntityUid item)

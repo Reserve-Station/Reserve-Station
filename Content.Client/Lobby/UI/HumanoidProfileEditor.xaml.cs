@@ -1855,7 +1855,7 @@ namespace Content.Client.Lobby.UI
                 return;
             }
 
-            _sawmill.Debug($"Обновление контролов аплинка. Текущее значение: {Profile.UplinkPreference}");
+            _sawmill.Debug($"Updating uplink controls. Current value: {Profile.UplinkPreference}");
 
             UplinkPrefButton.OnItemSelected -= OnUplinkPrefSelected;
             UplinkPrefButton.Clear();
@@ -1886,14 +1886,14 @@ namespace Content.Client.Lobby.UI
             if (Profile == null)
                 return;
 
-            _sawmill.Debug($"Установка предпочтения аплинка. Старое: {Profile.UplinkPreference}, Новое: {uplinkPreference}");
+            _sawmill.Debug($"Setting uplink preference. Old: {Profile.UplinkPreference}, New: {uplinkPreference}");
 
             Profile = Profile.WithUplinkPreference(uplinkPreference);
             SetDirty();
 
             UpdateUplinkPreferenceControls();
 
-            _sawmill.Debug($"После установки предпочтения аплинка: {Profile.UplinkPreference}");
+            _sawmill.Debug($"After setting uplink preference: {Profile.UplinkPreference}");
         }
     }
 }
