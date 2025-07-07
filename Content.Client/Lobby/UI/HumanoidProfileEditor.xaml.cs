@@ -1847,7 +1847,7 @@ namespace Content.Client.Lobby.UI
             ImportButton.Disabled = false;
             ExportButton.Disabled = false;
         }
-<!-- Reserve edit start -->
+/// Reserve edit start
         private void UpdateUplinkPreferenceControls()
         {
             if (Profile == null)
@@ -1860,16 +1860,12 @@ namespace Content.Client.Lobby.UI
             UplinkPrefButton.OnItemSelected -= OnUplinkPrefSelected;
             UplinkPrefButton.Clear();
 
-            // PDA - 20 TC
             UplinkPrefButton.AddItem(Loc.GetString("humanoid-profile-editor-uplink-pda"), (int)UplinkPreference.PDA);
 
-            // Implant - 18 TC
             UplinkPrefButton.AddItem(Loc.GetString("humanoid-profile-editor-uplink-implant"), (int)UplinkPreference.Implant);
 
-            // Radio - 21 TC
             UplinkPrefButton.AddItem(Loc.GetString("humanoid-profile-editor-uplink-radio"), (int)UplinkPreference.Radio);
 
-            // Telecrystals - 25 TC
             UplinkPrefButton.AddItem(Loc.GetString("humanoid-profile-editor-uplink-crystals"), (int)UplinkPreference.Telecrystals);
 
             UplinkPrefButton.SelectId((int)Profile.UplinkPreference);
@@ -1895,6 +1891,6 @@ namespace Content.Client.Lobby.UI
 
             _sawmill.Debug($"After setting uplink preference: {Profile.UplinkPreference}");
         }
-<!-- Reserve edit end -->
+/// Reserve edit end
     }
 }
