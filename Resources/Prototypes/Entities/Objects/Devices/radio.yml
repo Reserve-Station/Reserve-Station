@@ -66,4 +66,3 @@
     sprite: Objects/Devices/securityhandy.rsi
   - type: Item
     sprite: Objects/Devices/securityhandy.rsi
-    heldPrefix: walkietalkie

@@ -1847,7 +1847,7 @@ namespace Content.Client.Lobby.UI
             ImportButton.Disabled = false;
             ExportButton.Disabled = false;
         }
-
+<!-- Reserve edit start -->
         private void UpdateUplinkPreferenceControls()
         {
             if (Profile == null)
@@ -1895,5 +1895,6 @@ namespace Content.Client.Lobby.UI
 
             _sawmill.Debug($"After setting uplink preference: {Profile.UplinkPreference}");
         }
+<!-- Reserve edit end -->
     }
 }
