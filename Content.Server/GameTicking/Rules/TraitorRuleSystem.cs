@@ -239,6 +239,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
                     Logger.DebugS("traitor", $"Player {session.Name} has uplink preference: {uplinkPreference}");
 
                     // Adjust telecrystal amount based on selected uplink type
+                    // Reserve Station edit start -  TC amounts
                     switch (uplinkPreference)
                     {
                         case UplinkPreference.PDA:
@@ -255,6 +256,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
                             startingBalance = 150;
                             break;
                     }
+                    // Reserve Station edit end
                 }
             }
 

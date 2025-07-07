@@ -85,8 +85,10 @@ public sealed class UplinkSystem : EntitySystem
         // Check if player has requested telecrystals directly
         if (uplinkPreference == UplinkPreference.Telecrystals)
         {
+            // Reserve Station edit start - improved telecrystal handling
             var tcEntity = Spawn("Telecrystal", Transform(user).Coordinates);
 
+            // Set stack count using StackSystem
             _stackSystem.SetCount(tcEntity, (int)balance);
 
             if (TryPutInBackpack(user, tcEntity))
@@ -103,12 +105,15 @@ public sealed class UplinkSystem : EntitySystem
 
             Logger.Debug($"Could not place telecrystals in inventory, leaving at player's feet");
             return true;
+            // Reserve Station edit end
         }
 
         if (uplinkPreference == UplinkPreference.Radio)
         {
+            // Reserve Station edit start - improved radio uplink handling
             var radio = Spawn("BaseUplinkRadio", Transform(user).Coordinates);
 
+            // Set up radio balance based on parameter
             var store = EnsureComp<StoreComponent>(radio);
             store.Balance.Clear();
             var bal = new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance } };
@@ -120,16 +125,15 @@ public sealed class UplinkSystem : EntitySystem
                 return true;
             }
 
-            // If backpack is full, try to put it in the hands
             if (_handsSystem.TryPickupAnyHand(user, radio))
             {
                 Logger.Debug($"Placed uplink radio in hand");
                 return true;
             }
 
-            // If hands are full, leave it at the player's feet
             Logger.Debug($"Could not place uplink radio in inventory, leaving at player's feet");
             return true;
+            // Reserve Station edit end
         }
 
         // For other uplink types
@@ -179,14 +183,16 @@ public sealed class UplinkSystem : EntitySystem
     {
         var implantProto = new string(FallbackUplinkImplant);
 
+        // Reserve Station edit start - simplified implant creation
+        // Create implant directly
         var implant = _subdermalImplant.AddImplant(user, implantProto);
 
         if (implant == null || !HasComp<StoreComponent>(implant))
             return false;
 
-
         SetUplink(user, implant.Value, balance);
         return true;
+        // Reserve Station edit end
     }
 
     /// <summary>
@@ -225,8 +231,10 @@ public sealed class UplinkSystem : EntitySystem
     {
         Logger.Debug($"Creating new radio for uplink");
 
+        // Reserve Station edit start - use BaseUplinkRadio
         // Always create a new radio
-        var radio = Spawn("BaseUplinkRadio125TC", Transform(user).Coordinates);
+        var radio = Spawn("BaseUplinkRadio", Transform(user).Coordinates);
+        // Reserve Station edit end
 
         // Try to put it in the backpack first
         if (TryPutInBackpack(user, radio))
