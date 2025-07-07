@@ -860,6 +860,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
 
+                    b.Property<int>("Uplink")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("uplink");
+
                     b.HasKey("Id")
                         .HasName("PK_profile");
 

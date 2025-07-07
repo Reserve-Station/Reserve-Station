@@ -902,6 +902,7 @@ namespace Content.Client.Lobby.UI
             UpdateGenderControls();
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
+            UpdateUplinkPreferenceControls();
             UpdateAgeEdit();
             UpdateEyePickers();
             UpdateSaveButton();
@@ -1845,6 +1846,54 @@ namespace Content.Client.Lobby.UI
             _exporting = false;
             ImportButton.Disabled = false;
             ExportButton.Disabled = false;
+        }
+
+        private void UpdateUplinkPreferenceControls()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            _sawmill.Debug($"Обновление контролов аплинка. Текущее значение: {Profile.UplinkPreference}");
+
+            UplinkPrefButton.OnItemSelected -= OnUplinkPrefSelected;
+            UplinkPrefButton.Clear();
+
+            // PDA - 20 TC
+            UplinkPrefButton.AddItem(Loc.GetString("humanoid-profile-editor-uplink-pda"), (int)UplinkPreference.PDA);
+
+            // Implant - 18 TC
+            UplinkPrefButton.AddItem(Loc.GetString("humanoid-profile-editor-uplink-implant"), (int)UplinkPreference.Implant);
+
+            // Radio - 21 TC
+            UplinkPrefButton.AddItem(Loc.GetString("humanoid-profile-editor-uplink-radio"), (int)UplinkPreference.Radio);
+
+            // Telecrystals - 25 TC
+            UplinkPrefButton.AddItem(Loc.GetString("humanoid-profile-editor-uplink-crystals"), (int)UplinkPreference.Telecrystals);
+
+            UplinkPrefButton.SelectId((int)Profile.UplinkPreference);
+            UplinkPrefButton.OnItemSelected += OnUplinkPrefSelected;
+        }
+
+        private void OnUplinkPrefSelected(OptionButton.ItemSelectedEventArgs args)
+        {
+            SetUplinkPreference((UplinkPreference)args.Id);
+        }
+
+        private void SetUplinkPreference(UplinkPreference uplinkPreference)
+        {
+            if (Profile == null)
+                return;
+
+            _sawmill.Debug($"Установка предпочтения аплинка. Старое: {Profile.UplinkPreference}, Новое: {uplinkPreference}");
+
+            Profile = Profile.WithUplinkPreference(uplinkPreference);
+            SetDirty();
+
+            UpdateUplinkPreferenceControls();
+
+            _sawmill.Debug($"После установки предпочтения аплинка: {Profile.UplinkPreference}");
         }
     }
 }

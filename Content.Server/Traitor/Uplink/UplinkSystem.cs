@@ -36,14 +36,22 @@
 
 using Content.Server.Store.Systems;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.PDA;
+using Content.Shared.Preferences;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
+using Content.Shared.Storage;
+using Content.Shared.Storage.EntitySystems;
+using Content.Server.Storage.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Log;
+using Content.Shared.Stacks;
+using Content.Server.Stack;
 
 namespace Content.Server.Traitor.Uplink;
 
@@ -57,6 +65,7 @@ public sealed class UplinkSystem : EntitySystem
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly StackSystem _stackSystem = default!;
 
     [ValidatePrototypeId<CurrencyPrototype>]
     public const string TelecrystalCurrencyPrototype = "Telecrystal";
@@ -69,11 +78,68 @@ public sealed class UplinkSystem : EntitySystem
     /// <param name="user">The person who is getting the uplink</param>
     /// <param name="balance">The amount of currency on the uplink. If null, will just use the amount specified in the preset.</param>
     /// <param name="uplinkEntity">The entity that will actually have the uplink functionality. Defaults to the PDA if null.</param>
+    /// <param name="uplinkPreference">The preferred type of uplink. Defaults to PDA if not specified.</param>
     /// <returns>Whether or not the uplink was added successfully</returns>
-    public bool AddUplink(EntityUid user, FixedPoint2 balance, EntityUid? uplinkEntity = null)
+    public bool AddUplink(EntityUid user, FixedPoint2 balance, EntityUid? uplinkEntity = null, UplinkPreference uplinkPreference = UplinkPreference.PDA)
     {
-        // Try to find target item if none passed
+        // Check if player has requested telecrystals directly
+        if (uplinkPreference == UplinkPreference.Telecrystals)
+        {
+            var tcEntity = Spawn("Telecrystal", Transform(user).Coordinates);
 
+            _stackSystem.SetCount(tcEntity, (int)balance);
+
+            if (TryPutInBackpack(user, tcEntity))
+            {
+                Logger.Debug($"Placed telecrystals in backpack");
+                return true;
+            }
+
+            if (_handsSystem.TryPickupAnyHand(user, tcEntity))
+            {
+                Logger.Debug($"Placed telecrystals in hand");
+                return true;
+            }
+
+            Logger.Debug($"Could not place telecrystals in inventory, leaving at player's feet");
+            return true;
+        }
+
+        if (uplinkPreference == UplinkPreference.Radio)
+        {
+            var radio = Spawn("BaseUplinkRadio", Transform(user).Coordinates);
+
+            var store = EnsureComp<StoreComponent>(radio);
+            store.Balance.Clear();
+            var bal = new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance } };
+            _store.TryAddCurrency(bal, radio, store);
+
+            if (TryPutInBackpack(user, radio))
+            {
+                Logger.Debug($"Placed uplink radio in backpack");
+                return true;
+            }
+
+            // If backpack is full, try to put it in the hands
+            if (_handsSystem.TryPickupAnyHand(user, radio))
+            {
+                Logger.Debug($"Placed uplink radio in hand");
+                return true;
+            }
+
+            // If hands are full, leave it at the player's feet
+            Logger.Debug($"Could not place uplink radio in inventory, leaving at player's feet");
+            return true;
+        }
+
+        // For other uplink types
+        if (uplinkPreference == UplinkPreference.Implant)
+        {
+            return ImplantUplink(user, balance);
+        }
+
+        // Default behavior (PDA or specified entity)
+        // Try to find target item if none passed
         uplinkEntity ??= FindUplinkTarget(user);
 
         if (uplinkEntity == null)
@@ -113,21 +179,11 @@ public sealed class UplinkSystem : EntitySystem
     {
         var implantProto = new string(FallbackUplinkImplant);
 
-        if (!_proto.TryIndex<ListingPrototype>(FallbackUplinkCatalog, out var catalog))
-            return false;
-
-        if (!catalog.Cost.TryGetValue(TelecrystalCurrencyPrototype, out var cost))
-            return false;
-
-        if (balance < cost) // Can't use Math functions on FixedPoint2
-            balance = 0;
-        else
-            balance = balance - cost;
-
         var implant = _subdermalImplant.AddImplant(user, implantProto);
 
-        if (!HasComp<StoreComponent>(implant))
+        if (implant == null || !HasComp<StoreComponent>(implant))
             return false;
+
 
         SetUplink(user, implant.Value, balance);
         return true;
@@ -160,5 +216,51 @@ public sealed class UplinkSystem : EntitySystem
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Creates a radio for the player's uplink and places it in backpack or hands
+    /// </summary>
+    private EntityUid? FindUplinkRadio(EntityUid user)
+    {
+        Logger.Debug($"Creating new radio for uplink");
+
+        // Always create a new radio
+        var radio = Spawn("BaseUplinkRadio125TC", Transform(user).Coordinates);
+
+        // Try to put it in the backpack first
+        if (TryPutInBackpack(user, radio))
+        {
+            Logger.Debug($"Placed new radio in backpack");
+            return radio;
+        }
+
+        // If backpack is full, try to put it in the hands
+        if (_handsSystem.TryPickupAnyHand(user, radio))
+        {
+            Logger.Debug($"Placed new radio in hand");
+            return radio;
+        }
+
+        // If hands are full, leave it at the player's feet
+        Logger.Debug($"Could not place radio in inventory, leaving at player's feet");
+        return radio;
+    }
+
+    /// <summary>
+    /// Tries to put an item in the user's backpack
+    /// </summary>
+    private bool TryPutInBackpack(EntityUid user, EntityUid item)
+    {
+        if (_inventorySystem.TryGetSlotEntity(user, "back", out var backEntity))
+        {
+            var storageSystem = EntitySystem.Get<SharedStorageSystem>();
+            if (storageSystem.Insert(backEntity.Value, item, out _))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
