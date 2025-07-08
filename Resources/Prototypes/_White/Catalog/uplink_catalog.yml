@@ -96,3 +96,14 @@
     whitelist:
       tags:
       - NukeOpsUplink
+
+- type: listing
+  id: UplinkNeuroStabilizationImplanter
+  name: uplink-neuro-stabilization-implanter-name
+  description: uplink-neuro-stabilization-implanter-desc
+  icon: { sprite: Interface/Alerts/stamina.rsi, state: stamina5 }
+  productEntity: NeuroStabilizationImplanter
+  cost:
+    Telecrystal: 20
+  categories:
+  - UplinkImplants

@@ -993,7 +993,7 @@
 
 
 # - type: listing
-#   id: UplinkGigacancer Scanner
+#   id: UplinkGigacancerScanner
 #   name: Ultragigacancer Health Analyzer
 #   description: Works like a normal health analyzer, other than giving everyone it scans ultragigacancer.
 #   productEntity: HandheldHealthAnalyzerGigacancer

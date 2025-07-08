@@ -61,3 +61,5 @@
       - MindRoleThief
       briefing:
         sound: "/Audio/Misc/thief_greeting.ogg"
+
+- !include ../_Reserve/GameRules/midround.yml
