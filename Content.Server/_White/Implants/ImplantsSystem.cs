@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Neverluckz <yanechurka1000.7@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.Mind;
