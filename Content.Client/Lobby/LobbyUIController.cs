@@ -297,7 +297,6 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
 
         _preferencesManager.UpdateCharacter(EditedProfile, EditedSlot.Value);
         ReloadCharacterSetup();
-
     }
 
     private void CloseProfileEditor()
