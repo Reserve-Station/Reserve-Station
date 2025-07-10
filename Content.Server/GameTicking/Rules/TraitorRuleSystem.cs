@@ -140,6 +140,7 @@ using Robust.Server.Player;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Log;
 using System.Linq;
 using System.Text;
 
@@ -162,10 +163,14 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
     [Dependency] private readonly UplinkSystem _uplink = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!; // Reserve edit
+    [Dependency] private readonly ILogManager _logManager = default!; // Reserve edit
+
+    private ISawmill _sawmill = default!; // Reserve edit
 
     public override void Initialize()
     {
         base.Initialize();
+        _sawmill = _logManager.GetSawmill("traitor"); // Reserve edit
 
         SubscribeLocalEvent<TraitorRuleComponent, AfterAntagEntitySelectedEvent>(AfterEntitySelected);
         SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
@@ -179,7 +184,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
     private void AfterEntitySelected(Entity<TraitorRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
     {
-        Log.Debug($"AfterAntagEntitySelected {ToPrettyString(ent)}");
         MakeTraitor(args.EntityUid, ent);
     }
 
@@ -213,7 +217,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         if (component.GiveCodewords)
         {
-            Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - added codewords flufftext to briefing");
             briefing = Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", component.Codewords)));
         }
 
@@ -229,7 +232,8 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             var startingBalance = component.StartingBalance;
             if (_jobs.MindTryGetJob(mindId, out var prototype))
                 startingBalance = Math.Max(startingBalance - prototype.AntagAdvantage, 0);
-/// Reserve edit start
+
+            // Reserve edit start
             // Get player's uplink preference
             if (TryComp(mindId, out MindComponent? mindComp) && mindComp.UserId != null && _playerManager.TryGetSessionById(mindComp.UserId.Value, out var session))
             {
@@ -240,52 +244,35 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
                 {
                     uplinkPreference = profile.UplinkPreference;
 
-                    Logger.DebugS("traitor", $"Player {session.Name} has uplink preference: {uplinkPreference}");
-
                     // Adjust telecrystal amount based on selected uplink type
-                    // Reserve Station edit start -  TC amounts
+                    // Reserve edit - Using component-based TC amounts
                     switch (uplinkPreference)
                     {
                         case UplinkPreference.PDA:
-                            startingBalance = 100;
-                            break;
-                        case UplinkPreference.Implant:
-                            startingBalance = 90;
+                            startingBalance = component.PdaUplinkTC;
                             break;
                         case UplinkPreference.Radio:
-                            startingBalance = 110;
+                            startingBalance = component.RadioUplinkTC;
+                            break;
+                        case UplinkPreference.Implant:
+                            startingBalance = component.ImplantUplinkTC;
                             break;
                         case UplinkPreference.Telecrystals:
-                            // This is handled by the uplink system
-                            startingBalance = 150;
+                            startingBalance = component.RawTelecrystalsTC;
                             break;
                     }
-                    // Reserve Station edit end
                 }
             }
-/// Reserve edit end
-            // creadth: we need to create uplink for the antag.
-            var pda = _uplink.FindUplinkTarget(traitor);
-/// Reserve edit start
-            Logger.DebugS("traitor", $"Found uplink target: {(pda != null ? ToPrettyString(pda.Value) : "null")}");
-            Logger.DebugS("traitor", $"Creating uplink with preference: {uplinkPreference}, balance: {startingBalance}");
+            // Reserve edit end
 
-            if (!_uplink.AddUplink(traitor, startingBalance, pda, uplinkPreference))
-                return false;
-
-            // If not using telecrystals, add the uplink code
-            if (uplinkPreference != UplinkPreference.Telecrystals && pda != null)
+            // Add the traitor's uplink
+            if (!_uplink.AddUplink(traitor, startingBalance, uplinkPreference: uplinkPreference)) // Reserve edit
             {
-                // Give traitors their codewords and uplink code to keep in their character info menu
-                EnsureComp<RingerUplinkComponent>(pda.Value);
-                var ev = new GenerateUplinkCodeEvent();
-                RaiseLocalEvent(pda.Value, ref ev);
-                code = Comp<RingerUplinkComponent>(pda.Value).Code;
+                _sawmill.Warning($"Failed to create an uplink for the traitor {ToPrettyString(traitor)}!"); // Reserve edit
             }
         }
 
         _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code, issuer, uplinkPreference), Color.Crimson, component.GreetSoundNotification);
-/// Reserve edit end
         component.TraitorMinds.Add(mindId);
 
         // Assign briefing
@@ -296,7 +283,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         if (traitorRole is not null)
         {
             AddComp<RoleBriefingComponent>(traitorRole.Value.Owner);
-            Comp<RoleBriefingComponent>(traitorRole.Value.Owner).Briefing = GenerateBriefingCharacter(component.Codewords, code, issuer, uplinkPreference); // Reserve edit 
+            Comp<RoleBriefingComponent>(traitorRole.Value.Owner).Briefing = GenerateBriefingCharacter(component.Codewords, code, issuer, uplinkPreference); // Reserve edit
         }
 
         // Send codewords to only the traitor client
@@ -320,7 +307,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     }
 
     // TODO: figure out how to handle this? add priority to briefing event?
-    private string GenerateBriefing(string[] codewords, Note[]? uplinkCode, string objectiveIssuer, UplinkPreference uplinkPreference = UplinkPreference.PDA) // Reserve edit 
+    private string GenerateBriefing(string[] codewords, Note[]? uplinkCode, string objectiveIssuer, UplinkPreference uplinkPreference = UplinkPreference.PDA) // Reserve edit
     {
         var sb = new StringBuilder();
 

@@ -71,11 +71,20 @@ public sealed class UplinkSystem : EntitySystem
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly StackSystem _stackSystem = default!; // Reserve edit
+    [Dependency] private readonly ILogManager _logManager = default!; // Reserve edit
+
+    private ISawmill _sawmill = default!; // Reserve edit
 
     [ValidatePrototypeId<CurrencyPrototype>]
     public const string TelecrystalCurrencyPrototype = "Telecrystal";
     private const string FallbackUplinkImplant = "UplinkImplant";
     private const string FallbackUplinkCatalog = "UplinkUplinkImplanter";
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        _sawmill = _logManager.GetSawmill("uplink"); // Reserve edit
+    }
 
     /// <summary>
     /// Adds an uplink to the target
@@ -95,18 +104,12 @@ public sealed class UplinkSystem : EntitySystem
             _stackSystem.SetCount(tcEntity, (int)balance);
 
             if (TryPutInBackpack(user, tcEntity))
-            {
-                Logger.Debug($"Placed telecrystals in backpack");
                 return true;
-            }
 
             if (_handsSystem.TryPickupAnyHand(user, tcEntity))
-            {
-                Logger.Debug($"Placed telecrystals in hand");
                 return true;
-            }
 
-            Logger.Debug($"Could not place telecrystals in inventory, leaving at player's feet");
+            _sawmill.Warning($"Не удалось положить телекристаллы в инвентарь игрока {ToPrettyString(user)}, оставляем под ногами"); // Reserve edit
             return true;
         }
 
@@ -121,18 +124,12 @@ public sealed class UplinkSystem : EntitySystem
             _store.TryAddCurrency(bal, radio, store);
 
             if (TryPutInBackpack(user, radio))
-            {
-                Logger.Debug($"Placed uplink radio in backpack");
                 return true;
-            }
 
             if (_handsSystem.TryPickupAnyHand(user, radio))
-            {
-                Logger.Debug($"Placed uplink radio in hand");
                 return true;
-            }
 
-            Logger.Debug($"Could not place uplink radio in inventory, leaving at player's feet");
+            _sawmill.Warning($"Не удалось положить радио-аплинк в инвентарь игрока {ToPrettyString(user)}, оставляем под ногами"); // Reserve edit
             return true;
         }
 
@@ -142,7 +139,7 @@ public sealed class UplinkSystem : EntitySystem
         }
         // Reserve Station edit end
 
- 
+
         uplinkEntity ??= FindUplinkTarget(user);
 
         if (uplinkEntity == null)
@@ -185,7 +182,10 @@ public sealed class UplinkSystem : EntitySystem
         var implant = _subdermalImplant.AddImplant(user, implantProto);
 
         if (implant == null || !HasComp<StoreComponent>(implant))  // Reserve Station edit start - simplified implant creation
+        {
+            _sawmill.Warning($"Failed to create an uplink implant for the player {ToPrettyString(user)}"); // Reserve edit
             return false;
+        }
 
         SetUplink(user, implant.Value, balance);
         return true;
