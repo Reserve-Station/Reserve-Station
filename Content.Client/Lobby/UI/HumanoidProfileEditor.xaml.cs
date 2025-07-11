@@ -180,9 +180,14 @@ using Robust.Client.Utility;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Robust.Shared.Enums;
+using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Robust.Shared.Localization;
+using Content.Shared.Dataset;
+using Robust.Shared.Random;
 using Direction = Robust.Shared.Maths.Direction;
+
 
 namespace Content.Client.Lobby.UI
 {
@@ -199,6 +204,7 @@ namespace Content.Client.Lobby.UI
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
         private readonly LobbyUIController _controller;
+        private readonly IRobustRandom _random;
 
         private readonly SpriteSystem _sprite;
 
@@ -292,6 +298,7 @@ namespace Content.Client.Lobby.UI
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
             _sprite = _entManager.System<SpriteSystem>();
+            _random = IoCManager.Resolve<IRobustRandom>();
             ImportButton.OnPressed += args =>
             {
                 ImportProfile();
@@ -398,7 +405,7 @@ namespace Content.Client.Lobby.UI
             ClownNameEdit.OnTextChanged += args => { SetClownName(args.Text); }; // WD EDIT
             MimeNameEdit.OnTextChanged += args => { SetMimeName(args.Text); }; // WD EDIT
 
-
+                
             // WD EDIT START
             if (ClownNameContainer.Visible != _customizeClownName)
                 ClownNameContainer.Visible = _customizeClownName;
@@ -1295,7 +1302,7 @@ namespace Content.Client.Lobby.UI
 
         private void OnSkinColorOnValueChanged()
         {
-            if (Profile is null) return;
+            if (Profile == null) return;
 
             var skin = _prototypeManager.Index<SpeciesPrototype>(Profile.Species).SkinColoration;
 
@@ -1458,23 +1465,13 @@ namespace Content.Client.Lobby.UI
             IsDirty = true;
         }
 
-        private void SetDisplayPronouns(string? displayPronouns)
-        {
-            if (displayPronouns == GetFormattedPronounsFromGender())
-                displayPronouns = null;
-
-            Profile = Profile?.WithDisplayPronouns(displayPronouns);
-            ReloadPreview();
-            IsDirty = true;
-        }
-
         // WD EDIT START
         private void SetClownName(string? clownName)
         {
             Profile = Profile?.WithClownName(clownName);
             IsDirty = true;
         }
-
+        
         // WD EDIT START
         private void SetMimeName(string? mimeName)
         {
@@ -1732,20 +1729,6 @@ namespace Content.Client.Lobby.UI
             }
 
             PronounsButton.SelectId((int) Profile.Gender);
-        }
-
-        private void UpdateDisplayPronounsControls()
-        {
-            if (Profile == null)
-                return;
-
-            var label = GetFormattedPronounsFromGender();
-            CosmeticPronounsNameEdit.PlaceHolder = label;
-
-            if (Profile.DisplayPronouns == null)
-                CosmeticPronounsNameEdit.Text = string.Empty;
-            else
-                CosmeticPronounsNameEdit.Text = Profile.DisplayPronouns;
         }
 
         // WD EDIT START
@@ -2020,5 +2003,6 @@ namespace Content.Client.Lobby.UI
             ImportButton.Disabled = false;
             ExportButton.Disabled = false;
         }
+        #endregion
     }
 }

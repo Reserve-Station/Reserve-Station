@@ -377,10 +377,6 @@ namespace Content.Server.Database
                 profile.Age,
                 sex,
                 gender,
-                new HumanoidCharacterAppearance
-                (
-                profile.ClownName, // WD EDIT
-                profile.MimeName, // WD EDIT
                 new HumanoidCharacterAppearance(
                     profile.HairName,
                     Color.FromHex(profile.HairColor),
@@ -395,7 +391,9 @@ namespace Content.Server.Database
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
-                loadouts
+                loadouts,
+                profile.ClownName, // WD EDIT
+                profile.MimeName // WD EDIT
             );
         }
 

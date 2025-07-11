@@ -11,12 +11,6 @@ namespace Content.Server.Database.Migrations.Postgres
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "clown_name",
-                table: "profile",
-                type: "text",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
                 name: "mime_name",
                 table: "profile",
                 type: "text",
@@ -26,10 +20,6 @@ namespace Content.Server.Database.Migrations.Postgres
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "clown_name",
-                table: "profile");
-
             migrationBuilder.DropColumn(
                 name: "mime_name",
                 table: "profile");
