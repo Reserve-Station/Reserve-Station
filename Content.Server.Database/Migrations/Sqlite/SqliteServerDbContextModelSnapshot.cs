@@ -831,6 +831,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("char_name");
 
+                    b.Property<string>("ClownName")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("clown_name");
+
                     b.Property<string>("EyeColor")
                         .IsRequired()
                         .HasColumnType("TEXT")
@@ -869,6 +873,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");
+
+                    b.Property<string>("MimeName")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("mime_name");
 
                     b.Property<int>("PreferenceId")
                         .HasColumnType("INTEGER")

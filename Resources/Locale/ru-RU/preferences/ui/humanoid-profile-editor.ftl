@@ -57,3 +57,4 @@ trait-category-speech = Черты речи
 trait-category-quirks = Причуды
 trait-category-religion = Religion
 humanoid-profile-editor-clown-name-label = Кличка клоуна:
+humanoid-profile-editor-mime-name-label = Кличка мима:

@@ -380,6 +380,7 @@ namespace Content.Server.Database
                 new HumanoidCharacterAppearance
                 (
                 profile.ClownName, // WD EDIT
+                profile.MimeName, // WD EDIT
                 new HumanoidCharacterAppearance(
                     profile.HairName,
                     Color.FromHex(profile.HairColor),
@@ -418,6 +419,7 @@ namespace Content.Server.Database
             profile.Sex = humanoid.Sex.ToString();
             profile.Gender = humanoid.Gender.ToString();
             profile.ClownName = humanoid.ClownName; // WD EDIT
+            profile.MimeName = humanoid.MimeName; // WD EDIT
             profile.HairName = appearance.HairStyleId;
             profile.HairColor = appearance.HairColor.ToHex();
             profile.FacialHairName = appearance.FacialHairStyleId;

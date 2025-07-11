@@ -125,6 +125,12 @@ namespace Content.Shared.Preferences
         public string? ClownName { get; set; } = null; // WD EDIT
 
         /// <summary>
+        /// Mime name for mime job.
+        /// </summary>
+        [DataField]
+        public string? MimeName { get; set; } = null; // WD EDIT
+
+        /// <summary>
         /// Associated <see cref="SpeciesPrototype"/> for this profile.
         /// </summary>
         [DataField]
@@ -198,7 +204,8 @@ namespace Content.Shared.Preferences
             HashSet<ProtoId<AntagPrototype>> antagPreferences,
             HashSet<ProtoId<TraitPrototype>> traitPreferences,
             Dictionary<string, RoleLoadout> loadouts,
-            string? clownName = null) // WD EDIT
+            string? clownName = null, // WD EDIT
+            string? mimeName = null) // WD EDIT
 
         {
             Name = name;
@@ -216,6 +223,7 @@ namespace Content.Shared.Preferences
             _traitPreferences = traitPreferences;
             _loadouts = loadouts;
             ClownName = clownName; // WD EDIT
+            MimeName = mimeName; // WD EDIT
 
             var hasHighPrority = false;
             foreach (var (key, value) in _jobPriorities)
@@ -249,7 +257,8 @@ namespace Content.Shared.Preferences
                 new HashSet<ProtoId<AntagPrototype>>(other.AntagPreferences),
                 new HashSet<ProtoId<TraitPrototype>>(other.TraitPreferences),
                 new Dictionary<string, RoleLoadout>(other.Loadouts),
-                other.ClownName) // WD EDIT
+                other.ClownName, // WD EDIT
+                other.MimeName) // WD EDIT
         {
         }
 
@@ -383,6 +392,11 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithClownName(string? clownName)
         {
             return new(this) { ClownName = clownName };
+        } // WD EDIT
+
+        public HumanoidCharacterProfile WithMimeName(string? mimeName)
+        {
+            return new(this) { MimeName = mimeName };
         } // WD EDIT
 
         public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<ProtoId<JobPrototype>, JobPriority>> jobPriorities)

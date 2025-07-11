@@ -248,6 +248,7 @@ namespace Content.Client.Lobby.UI
 
         private bool _isDirty;
         private bool _customizeClownName; // WD EDIT
+        private bool _customizeMimeName; // WD EDIT
 
         public event Action<HumanoidCharacterProfile, int>? OnProfileChanged;
 
@@ -261,6 +262,9 @@ namespace Content.Client.Lobby.UI
         // WD EDIT START
         [ValidatePrototypeId<LocalizedDatasetPrototype>]
         private const string ClownNames = "ClownNames";
+
+        [ValidatePrototypeId<LocalizedDatasetPrototype>]
+        private const string MimeNames = "MimeNames";
         // WD EDIT END
 
         public HumanoidProfileEditor(
@@ -386,15 +390,21 @@ namespace Content.Client.Lobby.UI
             #region Custom Names
 
             _customizeClownName = _cfgManager.GetCVar(WhiteCVars.AllowCustomClownName); // WD EDIT
+            _customizeMimeName = _cfgManager.GetCVar(WhiteCVars.AllowCustomMimeName); // WD EDIT
 
             _cfgManager.OnValueChanged(WhiteCVars.AllowCustomClownName, OnChangedClownNameCustomizationValue); // WD EDIT
+            _cfgManager.OnValueChanged(WhiteCVars.AllowCustomMimeName, OnChangedMimeNameCustomizationValue); // WD EDIT
 
             ClownNameEdit.OnTextChanged += args => { SetClownName(args.Text); }; // WD EDIT
+            MimeNameEdit.OnTextChanged += args => { SetMimeName(args.Text); }; // WD EDIT
 
 
             // WD EDIT START
             if (ClownNameContainer.Visible != _customizeClownName)
                 ClownNameContainer.Visible = _customizeClownName;
+
+            if (MimeNameContainer.Visible != _customizeMimeName)
+                MimeNameContainer.Visible = _customizeMimeName;
             // WD EDIT END
 
             #endregion
@@ -786,6 +796,12 @@ namespace Content.Client.Lobby.UI
             _customizeClownName = newValue;
             UpdateClownControls();
         }
+
+        private void OnChangedMimeNameCustomizationValue(bool newValue)
+        {
+            _customizeMimeName = newValue;
+            UpdateMimeControls();
+        }
         // WD EDIT END
 
         /// Refreshes the species selector
@@ -952,6 +968,7 @@ namespace Content.Client.Lobby.UI
             UpdateSexControls();
             UpdateGenderControls();
             UpdateClownControls(); // WD EDIT
+            UpdateMimeControls(); // WD EDIT
             UpdateSkinColor();
             UpdateSpawnPriorityControls();
             UpdateAgeEdit();
@@ -1457,6 +1474,13 @@ namespace Content.Client.Lobby.UI
             Profile = Profile?.WithClownName(clownName);
             IsDirty = true;
         }
+
+        // WD EDIT START
+        private void SetMimeName(string? mimeName)
+        {
+            Profile = Profile?.WithMimeName(mimeName);
+            IsDirty = true;
+        }
         // WD EDIT END
 
         private string GetFormattedPronounsFromGender()
@@ -1739,7 +1763,22 @@ namespace Content.Client.Lobby.UI
             var randomName = _random.Pick(clownNames.Values);
             ClownNameEdit.PlaceHolder = Loc.GetString(randomName);
         }
+        private void UpdateMimeControls()
+        {
+            if (Profile == null)
+                return;
+
+            MimeNameEdit.Text = Profile.MimeName ?? string.Empty;
+
+            if (MimeNameEdit.Text != string.Empty)
+                return;
+
+            var mimeNames = _prototypeManager.Index<LocalizedDatasetPrototype>(MimeNames);
+            var randomName = _random.Pick(mimeNames.Values);
+            MimeNameEdit.PlaceHolder = Loc.GetString(randomName);
+        }
         // WD EDIT END
+
         private void UpdateSpawnPriorityControls()
         {
             if (Profile == null)

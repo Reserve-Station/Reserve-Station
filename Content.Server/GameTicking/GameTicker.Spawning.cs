@@ -127,6 +127,9 @@ namespace Content.Server.GameTicking
         // WD EDIT START
         [ValidatePrototypeId<JobPrototype>]
         public const string ClownJobPrototypeName = "Clown";
+
+        [ValidatePrototypeId<JobPrototype>]
+        public const string MimeJobPrototypeName = "Mime";
         // WD EDIT END
         /// <summary>
         /// How many players have joined the round through normal methods.
@@ -352,6 +355,12 @@ namespace Content.Server.GameTicking
                 // Simply set the nickname as the clown's name
                 EnsureComp<RandomMetadataExcludedComponent>(mob);
                 _metaData.SetEntityName(mob, character.ClownName);
+            }
+
+            if (jobPrototype.ID == MimeJobPrototypeName && character.MimeName != null)
+            {
+                EnsureComp<RandomMetadataExcludedComponent>(mob);
+                _metaData.SetEntityName(mob, character.MimeName);
             }
             // WD EDIT END
             _mind.TransferTo(newMind, mob);

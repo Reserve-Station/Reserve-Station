@@ -90,3 +90,4 @@ trait-category-disabilities = Disabilities
 trait-category-speech = Speech traits
 trait-category-quirks = Quirks
 humanoid-profile-editor-clown-name-label = Clown Nickname:
+humanoid-profile-editor-mime-name-label = Mime Nickname:
