@@ -1,7 +1,13 @@
+// SPDX-FileCopyrightText: 2024 Spatison <137375981+spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using System.Numerics;
 using Content.Server.Body.Systems;
-using Content.Server.Standing;
+using Content.Shared._White.Standing;
 using Content.Shared.Charges.Systems;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Interaction.Events;
@@ -25,9 +31,9 @@ public sealed class ExperimentalTeleporterSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly LayingDownSystem _layingDown = default!;
     [Dependency] private readonly SharedChargesSystem _charges = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly TelefragSystem _telefrag = default!;
 
     public override void Initialize()
     {
@@ -77,7 +83,7 @@ public sealed class ExperimentalTeleporterSystem : EntitySystem
     {
         PlaySoundAndEffects(component, coords, oldCoords);
 
-        _layingDown.LieDownInRange(uid, coords);
+        _telefrag.DoTelefrag(uid, coords, TimeSpan.Zero);
         _transform.SetCoordinates(uid, coords);
 
         _charges.TryUseCharge(teleporterUid);

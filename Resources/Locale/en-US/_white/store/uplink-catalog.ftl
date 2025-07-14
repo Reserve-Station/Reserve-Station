@@ -16,8 +16,5 @@ uplink-betrayal-knife-desc =
     Deals significant damage when target is lying down or facing away from you.
     Use it in your hand to toggle blink mode.
 
-uplink-experimental-syndicate-teleporter-name = Experimental syndicate teleporter
-uplink-experimental-syndicate-teleporter-desc = Syndicate Teleporter, when used, teleports the user 3-8 metres forward. In case of teleportation into a wall, uses emergency teleportation. Has 4 charges and automatically recharges.
-
-uplink-ebow-name = Small energy crossbow
-uplink-ebow-desc = A fairly quiet weapon that automatically reloads and stuns. It goes well with other types of weapons.
+uplink-experimental-syndicate-teleporter-name = Experimental Syndicate Teleporter
+uplink-experimental-syndicate-teleporter-desc = A self-recharging device that teleports the user forward. In case of teleportation into a wall, uses emergency teleportation. Or gibs the user if it's out of charges.

@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
@@ -21,9 +22,10 @@ namespace Content.Shared.Eye
         Normal = 1 << 0,
         Ghost = 1 << 1,
         Subfloor = 1 << 2,
-        Abductor = 1 << 3, // Shitmed Change - Starlight Abductors
+        Abductor = 1 << 3, // Shitmed Change - Starlight Abductor
         CosmicCultMonument = 1 << 4, // DeltaV - DeltaV - Cosmic Cult
         EldritchInfluence = 1 << 5, // Goobstation
-        AGhost = 1 << 6, // WD EDIT
+        EldritchInfluenceSpent = 1 << 6, // Goobstation
+        AGhost = 1 << 7, // WD EDIT
     }
 }

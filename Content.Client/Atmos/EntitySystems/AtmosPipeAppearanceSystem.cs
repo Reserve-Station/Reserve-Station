@@ -3,6 +3,10 @@
 // SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -19,6 +23,7 @@ namespace Content.Client.Atmos.EntitySystems;
 public sealed class AtmosPipeAppearanceSystem : EntitySystem
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -33,21 +38,22 @@ public sealed class AtmosPipeAppearanceSystem : EntitySystem
         if (!TryComp(uid, out SpriteComponent? sprite))
             return;
 
-        foreach (PipeConnectionLayer layerKey in Enum.GetValues(typeof(PipeConnectionLayer)))
+        foreach (var layerKey in Enum.GetValues<PipeConnectionLayer>())
         {
-            sprite.LayerMapReserveBlank(layerKey);
-            var layer = sprite.LayerMapGet(layerKey);
-            sprite.LayerSetRSI(layer, component.Sprite.RsiPath);
-            sprite.LayerSetState(layer, component.Sprite.RsiState);
-            sprite.LayerSetDirOffset(layer, ToOffset(layerKey));
+            var layer = _sprite.LayerMapReserve((uid, sprite), layerKey);
+            _sprite.LayerSetRsi((uid, sprite), layer, component.Sprite.RsiPath);
+            _sprite.LayerSetRsiState((uid, sprite), layer, component.Sprite.RsiState);
+            _sprite.LayerSetDirOffset((uid, sprite), layer, ToOffset(layerKey));
         }
     }
 
-    private void HideAllPipeConnection(SpriteComponent sprite)
+    private void HideAllPipeConnection(Entity<SpriteComponent> entity)
     {
-        foreach (PipeConnectionLayer layerKey in Enum.GetValues(typeof(PipeConnectionLayer)))
+        var sprite = entity.Comp;
+
+        foreach (var layerKey in Enum.GetValues<PipeConnectionLayer>())
         {
-            if (!sprite.LayerMapTryGet(layerKey, out var key))
+            if (!_sprite.LayerMapTryGet(entity.AsNullable(), layerKey, out var key, false))
                 continue;
 
             var layer = sprite[key];
@@ -69,7 +75,7 @@ public sealed class AtmosPipeAppearanceSystem : EntitySystem
 
         if (!_appearance.TryGetData<PipeDirection>(uid, PipeVisuals.VisualState, out var worldConnectedDirections, args.Component))
         {
-            HideAllPipeConnection(args.Sprite);
+            HideAllPipeConnection((uid, args.Sprite));
             return;
         }
 
@@ -79,13 +85,13 @@ public sealed class AtmosPipeAppearanceSystem : EntitySystem
         // transform connected directions to local-coordinates
         var connectedDirections = worldConnectedDirections.RotatePipeDirection(-Transform(uid).LocalRotation);
 
-        foreach (PipeConnectionLayer layerKey in Enum.GetValues(typeof(PipeConnectionLayer)))
+        foreach (var layerKey in Enum.GetValues<PipeConnectionLayer>())
         {
-            if (!args.Sprite.LayerMapTryGet(layerKey, out var key))
+            if (!_sprite.LayerMapTryGet((uid, args.Sprite), layerKey, out var key, false))
                 continue;
 
             var layer = args.Sprite[key];
-            var dir = (PipeDirection) layerKey;
+            var dir = (PipeDirection)layerKey;
             var visible = connectedDirections.HasDirection(dir);
 
             layer.Visible &= visible;

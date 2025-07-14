@@ -1,5 +1,9 @@
+// SPDX-FileCopyrightText: 2024 ElectroJr <leonsfriedrich@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -34,7 +38,7 @@ namespace Content.Benchmarks;
 [CategoriesColumn]
 public class ComponentQueryBenchmark
 {
-    public const string Map = "Maps/atlas.yml";
+    public const string Map = "Maps/saltern.yml";
 
     private TestPair _pair = default!;
     private IEntityManager _entMan = default!;

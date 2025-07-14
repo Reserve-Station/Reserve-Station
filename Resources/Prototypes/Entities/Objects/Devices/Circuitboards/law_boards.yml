@@ -1,29 +1,5 @@
 # Reserve additions begin
 - type: entity
-  id: AsimovCircuitBoard
-  parent: BaseElectronics
-  name: law board (Crewsimov)
-  description: An electronics board containing the Crewsimov lawset.
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: std_mod
-  - type: SiliconLawProvider
-    laws: Crewsimov
-
-- type: entity
-  id: CorporateCircuitBoard
-  parent: BaseElectronics
-  name: law board (Corporate)
-  description: An electronics board containing the Corporate lawset.
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: std_mod
-  - type: SiliconLawProvider
-    laws: Corporate
-
-- type: entity
   id: TyrantCircuitBoard
   parent: BaseElectronics
   name: law board (T.Y.R.A.N.T)
@@ -203,6 +179,30 @@
     state: std_mod
   - type: SiliconLawProvider
     laws: NTDefault
+
+- type: entity
+  id: AsimovCircuitBoard
+  parent: BaseElectronics
+  name: law board (Crewsimov)
+  description: An electronics board containing the Crewsimov lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Crewsimov
+
+- type: entity
+  id: CorporateCircuitBoard
+  parent: BaseElectronics
+  name: law board (Corporate)
+  description: An electronics board containing the Corporate lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Corporate
 
 - type: entity
   id: CommandmentCircuitBoard

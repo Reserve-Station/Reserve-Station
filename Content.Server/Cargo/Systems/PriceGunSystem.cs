@@ -15,6 +15,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Popups;
+using Content.Server.Salvage.JobBoard;
 using Content.Shared.Cargo.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Timing;
@@ -29,6 +30,7 @@ public sealed class PriceGunSystem : SharedPriceGunSystem
     [Dependency] private readonly PricingSystem _pricingSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly CargoSystem _bountySystem = default!;
+    [Dependency] private readonly SalvageJobBoardSystem _salvageJobBoard = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     protected override bool GetPriceOrBounty(Entity<PriceGunComponent> entity, EntityUid target, EntityUid user, bool cooldownPopup = false) // Reserve-CooldownPopup
@@ -48,6 +50,10 @@ public sealed class PriceGunSystem : SharedPriceGunSystem
         if (_bountySystem.IsBountyComplete(target, out _))
         {
             _popupSystem.PopupEntity(Loc.GetString("price-gun-bounty-complete"), user, user);
+        }
+        else if (_salvageJobBoard.FulfillsSalvageJob(target, null, out _))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("price-gun-salvjob-complete"), user, user);
         }
         else // Otherwise appraise the price
         {

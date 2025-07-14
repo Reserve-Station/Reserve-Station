@@ -2,10 +2,11 @@
   id: DoubleToySwordGraph
   start: esword
   graph:
-  - node: esword
-    edges:
-      - to: desword
-        steps:
-          - tag: ToySword
-  - node: desword
-    entity: DoubleToySword
+    - node: esword
+      edges:
+        - to: desword
+          steps:
+            - tag: ToySword
+              name: construction-graph-tag-toy-sword
+    - node: desword
+      entity: DoubleToySword
