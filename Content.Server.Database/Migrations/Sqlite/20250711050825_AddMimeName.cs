@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
