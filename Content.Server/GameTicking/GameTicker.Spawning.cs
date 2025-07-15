@@ -109,6 +109,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using Content.Server.RandomMetadata;
 
 namespace Content.Server.GameTicking
 {
