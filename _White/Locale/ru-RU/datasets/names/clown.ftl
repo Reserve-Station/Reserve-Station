@@ -27,4 +27,4 @@ clown-name-dataset-26 = Клоуняша
 clown-name-dataset-27 = Бананчик
 clown-name-dataset-28 = Колпачок
 clown-name-dataset-29 = Носик
-clown-name-dataset-30 = Гримасса 
+clown-name-dataset-30 = Гримасса
