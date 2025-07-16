@@ -184,7 +184,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
     private void AfterEntitySelected(Entity<TraitorRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
     {
-     Log.Debug($"AfterAntagEntitySelected {ToPrettyString(ent)}");
+     _sawmill.Debug($"AfterAntagEntitySelected {ToPrettyString(ent)}"); // Reserve edit, Log -> sawmill
         MakeTraitor(args.EntityUid, ent);
     }
 
@@ -218,7 +218,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         if (component.GiveCodewords)
         {
-        sawmill.Debug($"MakeTraitor {ToPrettyString(traitor)} - added codewords flufftext to briefing"); // Reserve tweak, Log -> sawmill.
+        _sawmill.Debug($"MakeTraitor {ToPrettyString(traitor)} - added codewords flufftext to briefing"); // Reserve tweak, Log -> sawmill
             briefing = Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", component.Codewords)));
         }
 
