@@ -155,7 +155,7 @@ namespace Content.Shared.Preferences
         public SpawnPriorityPreference SpawnPriority { get; private set; } = SpawnPriorityPreference.None;
 
         /// <summary>
-        /// Preferred uplink type when spawning as a traitor
+        /// Reserve add - Preferred uplink type when spawning as a traitor
         /// </summary>
         [DataField]
         public UplinkPreference UplinkPreference { get; private set; } = UplinkPreference.PDA;
