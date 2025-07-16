@@ -179,6 +179,16 @@ public sealed class UplinkSystem : EntitySystem
     {
         var implantProto = new string(FallbackUplinkImplant);
 
+#        if (!_proto.TryIndex<ListingPrototype>(FallbackUplinkCatalog, out var catalog))
+#            return false;
+#
+#        if (!catalog.Cost.TryGetValue(TelecrystalCurrencyPrototype, out var cost))
+#            return false;
+#
+#        if (balance < cost) // Can't use Math functions on FixedPoint2
+#            balance = 0;
+#        else
+#            balance = balance - cost;
         var implant = _subdermalImplant.AddImplant(user, implantProto);
 
         if (implant == null || !HasComp<StoreComponent>(implant))  // Reserve Station edit start - simplified implant creation

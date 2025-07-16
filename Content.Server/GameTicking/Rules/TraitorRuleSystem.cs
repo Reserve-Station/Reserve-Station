@@ -184,6 +184,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
     private void AfterEntitySelected(Entity<TraitorRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
     {
+     Log.Debug($"AfterAntagEntitySelected {ToPrettyString(ent)}");
         MakeTraitor(args.EntityUid, ent);
     }
 
@@ -217,6 +218,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         if (component.GiveCodewords)
         {
+        sawmill.Debug($"MakeTraitor {ToPrettyString(traitor)} - added codewords flufftext to briefing");
             briefing = Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", component.Codewords)));
         }
 
@@ -232,6 +234,23 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             var startingBalance = component.StartingBalance;
             if (_jobs.MindTryGetJob(mindId, out var prototype))
                 startingBalance = Math.Max(startingBalance - prototype.AntagAdvantage, 0);
+
+/*
+           // creadth: we need to create uplink for the antag.
+           // PDA should be in place already
+           var pda = _uplink.FindUplinkTarget(traitor);
+           if (pda == null || !_uplink.AddUplink(traitor, startingBalance))
+               return false;
+
+           // Give traitors their codewords and uplink code to keep in their character info menu
+           EnsureComp<RingerUplinkComponent>(pda.Value);
+           var ev = new GenerateUplinkCodeEvent();
+           RaiseLocalEvent(pda.Value, ref ev);
+           code = Comp<RingerUplinkComponent>(pda.Value).Code;
+       }
+
+       _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code, issuer), Color.Crimson, component.GreetSoundNotification);
+*/
 
             // Reserve edit start
             // Get player's uplink preference
