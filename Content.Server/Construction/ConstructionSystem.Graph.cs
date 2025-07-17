@@ -1,14 +1,36 @@
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 CommieFlowers <rasmus.cedergren@hotmail.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 rolfero <45628623+rolfero@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Arimah Greene <30327355+arimah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spatison <137375981+Spatison@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Construction.Components;
-using Content.Server.Containers;
 using Content.Shared.Construction;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Construction.Steps;
 using Content.Shared.Containers;
 using Content.Shared.Database;
-using Robust.Server.Containers;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Shared.Hands.Components;
 
 namespace Content.Server.Construction
 {
@@ -66,10 +88,10 @@ namespace Content.Server.Construction
             if (!Resolve(uid, ref construction, false))
                 return null;
 
-            if (construction.Node is not {} nodeIdentifier)
+            if (construction.Node is not { } nodeIdentifier)
                 return null;
 
-            return GetCurrentGraph(uid, construction) is not {} graph ? null : GetNodeFromGraph(graph, nodeIdentifier);
+            return GetCurrentGraph(uid, construction) is not { } graph ? null : GetNodeFromGraph(graph, nodeIdentifier);
         }
 
         /// <summary>
@@ -85,10 +107,10 @@ namespace Content.Server.Construction
             if (!Resolve(uid, ref construction, false))
                 return null;
 
-            if (construction.EdgeIndex is not {} edgeIndex)
+            if (construction.EdgeIndex is not { } edgeIndex)
                 return null;
 
-            return GetCurrentNode(uid, construction) is not {} node ? null : GetEdgeFromNode(node, edgeIndex);
+            return GetCurrentNode(uid, construction) is not { } node ? null : GetEdgeFromNode(node, edgeIndex);
         }
 
         /// <summary>
@@ -102,7 +124,7 @@ namespace Content.Server.Construction
             if (GetCurrentNode(uid, construction) is not { } node)
                 return (null, null);
 
-            if (construction.EdgeIndex is not {} edgeIndex)
+            if (construction.EdgeIndex is not { } edgeIndex)
                 return (node, null);
 
             return (node, GetEdgeFromNode(node, edgeIndex));
@@ -121,7 +143,7 @@ namespace Content.Server.Construction
             if (!Resolve(uid, ref construction, false))
                 return null;
 
-            if (GetCurrentEdge(uid, construction) is not {} edge)
+            if (GetCurrentEdge(uid, construction) is not { } edge)
                 return null;
 
             return GetStepFromEdge(edge, construction.StepIndex);
@@ -141,10 +163,10 @@ namespace Content.Server.Construction
             if (!Resolve(uid, ref construction))
                 return null;
 
-            if (construction.TargetNode is not {} targetNodeId)
+            if (construction.TargetNode is not { } targetNodeId)
                 return null;
 
-            if (GetCurrentGraph(uid, construction) is not {} graph)
+            if (GetCurrentGraph(uid, construction) is not { } graph)
                 return null;
 
             return GetNodeFromGraph(graph, targetNodeId);
@@ -165,10 +187,10 @@ namespace Content.Server.Construction
             if (!Resolve(uid, ref construction))
                 return null;
 
-            if (construction.TargetEdgeIndex is not {} targetEdgeIndex)
+            if (construction.TargetEdgeIndex is not { } targetEdgeIndex)
                 return null;
 
-            if (GetCurrentNode(uid, construction) is not {} node)
+            if (GetCurrentNode(uid, construction) is not { } node)
                 return null;
 
             return GetEdgeFromNode(node, targetEdgeIndex);
@@ -245,8 +267,8 @@ namespace Content.Server.Construction
             if (!Resolve(uid, ref construction))
                 return false;
 
-            if (GetCurrentGraph(uid, construction) is not {} graph
-            ||  GetNodeFromGraph(graph, id) is not {} node)
+            if (GetCurrentGraph(uid, construction) is not { } graph
+            || GetNodeFromGraph(graph, id) is not { } node)
                 return false;
 
             var oldNode = construction.Node;
@@ -257,11 +279,11 @@ namespace Content.Server.Construction
                     $"{ToPrettyString(userUid.Value):player} changed {ToPrettyString(uid):entity}'s node from \"{oldNode}\" to \"{id}\"");
 
             // ChangeEntity will handle the pathfinding update.
-            if (node.Entity.GetId(uid, userUid, new(EntityManager)) is {} newEntity
+            if (node.Entity.GetId(uid, userUid, new(EntityManager)) is { } newEntity
                 && ChangeEntity(uid, userUid, newEntity, construction) != null)
                 return true;
 
-            if(performActions)
+            if (performActions)
                 PerformActions(uid, userUid, node.Actions);
 
             // An action might have deleted the entity... Account for this.
@@ -347,7 +369,7 @@ namespace Content.Server.Construction
 
                 // Retain the target node if an entity change happens in response to deconstruction;
                 // in that case, we must continue to move towards the start node.
-                if (construction.TargetNode is {} targetNode)
+                if (construction.TargetNode is { } targetNode)
                     SetPathfindingTarget(newUid, targetNode, newConstruction);
             }
 
@@ -358,7 +380,7 @@ namespace Content.Server.Construction
             }
 
             if (newConstruction.InteractionQueue.Count > 0 && _queuedUpdates.Add(newUid))
-                    _constructionUpdateQueue.Enqueue(newUid);
+                _constructionUpdateQueue.Enqueue(newUid);
 
             // Transform transferring.
             var newTransform = Transform(newUid);
@@ -394,6 +416,17 @@ namespace Content.Server.Construction
                 }
             }
 
+            // WD EDIT START
+            if (userUid != null && IsTransformParentOf(userUid.Value, transform) && TryComp(userUid, out HandsComponent? hands))
+            {
+                var hand = hands.Hands.Values.FirstOrDefault(h => h.HeldEntity == uid);
+                if (hand != null)
+                    _handsSystem.TryDrop(userUid.Value, hand, handsComp: hands);
+
+                _handsSystem.PickupOrDrop(userUid, newUid, handsComp: hands);
+            }
+            // WD EDIT END
+
             var entChangeEv = new ConstructionChangeEntityEvent(newUid, uid);
             RaiseLocalEvent(uid, entChangeEv);
             RaiseLocalEvent(newUid, entChangeEv, broadcast: true);
@@ -408,6 +441,13 @@ namespace Content.Server.Construction
             QueueDel(uid);
 
             return newUid;
+        }
+
+        private bool IsTransformParentOf(EntityUid uid, TransformComponent target) // WD EDIT
+        {
+            var parentUid = target.ParentUid;
+
+            return parentUid == uid || TryComp(parentUid, out TransformComponent? trans) && IsTransformParentOf(uid, trans);
         }
 
         /// <summary>
@@ -430,7 +470,7 @@ namespace Content.Server.Construction
             if (!PrototypeManager.TryIndex<ConstructionGraphPrototype>(graphId, out var graph))
                 return false;
 
-            if(GetNodeFromGraph(graph, nodeId) is not {})
+            if (GetNodeFromGraph(graph, nodeId) is not { })
                 return false;
 
             construction.Graph = graphId;

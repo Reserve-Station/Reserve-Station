@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared.EntityEffects;
 using Content.Shared.Localizations;
@@ -26,17 +35,9 @@ public sealed partial class JobCondition : EntityEffectCondition
             if(!args.EntityManager.HasComponent<JobRoleComponent>(roleId))
                 continue;
 
-            if (!args.EntityManager.TryGetComponent<MindRoleComponent>(roleId, out var mindRole))
-            {
-                Logger.Error($"Encountered job mind role entity {roleId} without a {nameof(MindRoleComponent)}");
+            if(!args.EntityManager.TryGetComponent<MindRoleComponent>(roleId, out var mindRole)
+               || mindRole.JobPrototype is null)
                 continue;
-            }
-
-            if (mindRole.JobPrototype == null)
-            {
-                Logger.Error($"Encountered job mind role entity {roleId} without a {nameof(JobPrototype)}");
-                continue;
-            }
 
             if (Job.Contains(mindRole.JobPrototype.Value))
                 return true;

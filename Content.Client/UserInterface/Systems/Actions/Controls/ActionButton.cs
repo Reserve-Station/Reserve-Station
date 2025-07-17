@@ -1,9 +1,35 @@
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <jmaster9999@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Skye <22365940+Skyedra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JoeHammad1844 <130668733+JoeHammad1844@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Client.Actions;
 using Content.Client.Actions.UI;
 using Content.Client.Cooldown;
 using Content.Client.Stylesheets;
 using Content.Shared.Actions;
+using Content.Shared.Charges.Components;
+using Content.Shared.Charges.Systems;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
@@ -22,6 +48,7 @@ public sealed class ActionButton : Control, IEntityControl
     private IEntityManager _entities;
     private SpriteSystem? _spriteSys;
     private ActionUIController? _controller;
+    private SharedChargesSystem _sharedChargesSys;
     private bool _beingHovered;
     private bool _depressed;
     private bool _toggled;
@@ -65,6 +92,7 @@ public sealed class ActionButton : Control, IEntityControl
 
         _entities = entities;
         _spriteSys = spriteSys;
+        _sharedChargesSys = _entities.System<SharedChargesSystem>();
         _controller = controller;
 
         MouseFilter = MouseFilterMode.Pass;
@@ -194,14 +222,22 @@ public sealed class ActionButton : Control, IEntityControl
 
         var name = FormattedMessage.FromMarkupPermissive(Loc.GetString(metadata.EntityName));
         var decr = FormattedMessage.FromMarkupPermissive(Loc.GetString(metadata.EntityDescription));
+        FormattedMessage? chargesText = null;
 
-        if (_action is { Charges: not null })
+        // TODO: Don't touch this use an event make callers able to add their own shit for actions or I kill you.
+        if (_entities.TryGetComponent(ActionId, out LimitedChargesComponent? actionCharges))
         {
-            var charges = FormattedMessage.FromMarkupPermissive(Loc.GetString($"Charges: {_action.Charges.Value.ToString()}/{_action.MaxCharges.ToString()}"));
-            return new ActionAlertTooltip(name, decr, charges: charges);
+            var charges = _sharedChargesSys.GetCurrentCharges((ActionId.Value, actionCharges, null));
+            chargesText = FormattedMessage.FromMarkupPermissive(Loc.GetString($"Charges: {charges.ToString()}/{actionCharges.MaxCharges}"));
+
+            if (_entities.TryGetComponent(ActionId, out AutoRechargeComponent? autoRecharge))
+            {
+                var chargeTimeRemaining = _sharedChargesSys.GetNextRechargeTime((ActionId.Value, actionCharges, autoRecharge));
+                chargesText.AddText(Loc.GetString($"{Environment.NewLine}Time Til Recharge: {chargeTimeRemaining}"));
+            }
         }
 
-        return new ActionAlertTooltip(name, decr);
+        return new ActionAlertTooltip(name, decr, charges: chargesText);
     }
 
     protected override void ControlFocusExited()

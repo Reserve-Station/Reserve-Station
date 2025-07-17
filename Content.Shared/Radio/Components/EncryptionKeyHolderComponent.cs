@@ -1,3 +1,12 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Chat;
 using Content.Shared.Tools;
 using Robust.Shared.Audio;
@@ -53,4 +62,11 @@ public sealed partial class EncryptionKeyHolderComponent : Component
     /// </summary>
     [ViewVariables]
     public string? DefaultChannel;
+
+    /// <summary>
+    ///     Goobstation: Whether or not the headset can be examined to see the encryption keys while the keys aren't accessible.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("examineWhileLocked")]
+    public bool ExamineWhileLocked = true;
 }

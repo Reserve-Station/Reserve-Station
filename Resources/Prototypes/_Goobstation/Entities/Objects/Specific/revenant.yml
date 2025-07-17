@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Crayon
+  id: CrayonBlood
+  categories: [ HideSpawnMenu ]
+  name: bloody crayon
+  description: A bloody crayon. Looks scary. Oooo...
+  components:
+  - type: Sprite
+    state: red
+  - type: Item
+    heldPrefix: bloody
+  - type: Crayon
+    color: '#a70000'
+    infinite: true
+    deleteEmpty: false # Reserve hot-fix
+  - type: BloodCrayon
+  - type: Tag
+    tags:
+    - Write
+    - Crayon
+    - CrayonRed
+    - Recyclable
+    - Trash

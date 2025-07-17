@@ -1,5 +1,49 @@
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 TaralGit <76408146+TaralGit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 and_a <and_a@DESKTOP-RJENGIR>
+// SPDX-FileCopyrightText: 2023 stopbreaking <126102320+stopbreaking@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Ashley Woodiss-Field <ash@DESKTOP-H64M4AI.localdomain>
+// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ColesMagnum <98577947+AW-FulCode@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Doomsdrayk <robotdoughnut@comcast.net>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Froffy025 <78222136+Froffy025@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 WarMechanic <69510347+WarMechanic@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ActiveMammmoth <kmcsmooth@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 Centronias <charlie.t.santos@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
-using Content.Shared.Camera;
+using Content.Goobstation.Common.Weapons.NoWieldNeeded;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -21,8 +65,14 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable.Components;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Collections;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
+using Content.Shared.Item.ItemToggle;
+// Lavaland Change
+using Content.Shared.StatusEffect;
+using Content.Shared.Stunnable;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Wieldable;
 
@@ -30,7 +80,6 @@ public abstract class SharedWieldableSystem : EntitySystem
 {
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedGunSystem _gun = default!;
@@ -39,12 +88,16 @@ public abstract class SharedWieldableSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
     [Dependency] private readonly UseDelaySystem _delay = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!; // Lavaland Change
+    [Dependency] private readonly SharedStunSystem _stun = default!; // Lavaland Change
+    // [Dependency] private readonly SharedAudioSystem _audio = default!; // Lavaland Change
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<WieldableComponent, UseInHandEvent>(OnUseInHand, before: [typeof(SharedGunSystem)]);
+        SubscribeLocalEvent<WieldableComponent, UseInHandEvent>(OnUseInHand, 
+            before: [typeof(SharedGunSystem), typeof(BatteryWeaponFireModesSystem), typeof(ItemToggleSystem)]); // Goob - before item toogle for hardlight bow
         SubscribeLocalEvent<WieldableComponent, ItemUnwieldedEvent>(OnItemUnwielded);
         SubscribeLocalEvent<WieldableComponent, GotUnequippedHandEvent>(OnItemLeaveHand);
         SubscribeLocalEvent<WieldableComponent, VirtualItemDeletedEvent>(OnVirtualItemDeleted);
@@ -63,6 +116,9 @@ public abstract class SharedWieldableSystem : EntitySystem
         SubscribeLocalEvent<SpeedModifiedOnWieldComponent, HeldRelayedEvent<RefreshMovementSpeedModifiersEvent>>(OnRefreshSpeedWielded);
 
         SubscribeLocalEvent<IncreaseDamageOnWieldComponent, GetMeleeDamageEvent>(OnGetMeleeDamage);
+
+        // Goobstation
+        SubscribeLocalEvent<WieldableComponent, ComponentShutdown>(OnComponentShutdown);
     }
 
     private void OnMeleeAttempt(EntityUid uid, MeleeRequiresWieldComponent component, ref AttemptMeleeEvent args)
@@ -70,15 +126,29 @@ public abstract class SharedWieldableSystem : EntitySystem
         if (TryComp<WieldableComponent>(uid, out var wieldable) &&
             !wieldable.Wielded)
         {
+            // Lavaland Change: If the weapon can fumble, the player will get knocked down if they try to use the weapon without wielding it.
+            if (component.FumbleOnAttempt)
+            {
+                args.Message = Loc.GetString("wieldable-component-requires-fumble", ("item", uid));
+                var playSound = !_statusEffects.HasStatusEffect(args.User, "KnockedDown");
+                _stun.TryKnockdown(args.User, TimeSpan.FromSeconds(1.5f), true);
+                if (playSound)
+                    _audio.PlayPredicted(new SoundPathSpecifier("/Audio/Effects/slip.ogg"), args.User, args.User);
+            }
+            else
+            {
+                args.Message = Loc.GetString("wieldable-component-requires", ("item", uid));
+            }
             args.Cancelled = true;
-            args.Message = Loc.GetString("wieldable-component-requires", ("item", uid));
         }
     }
 
     private void OnShootAttempt(EntityUid uid, GunRequiresWieldComponent component, ref ShotAttemptedEvent args)
     {
         if (TryComp<WieldableComponent>(uid, out var wieldable) &&
-            !wieldable.Wielded)
+            !wieldable.Wielded &&
+            !HasComp<NoWieldNeededComponent>(args.User) // Goobstation - Yowies
+            )
         {
             args.Cancel();
 
@@ -96,7 +166,7 @@ public abstract class SharedWieldableSystem : EntitySystem
 
     private void OnGunUnwielded(EntityUid uid, GunWieldBonusComponent component, ItemUnwieldedEvent args)
     {
-        _gun.RefreshModifiers(uid);
+        _gun.RefreshModifiers(uid, args.User);
     }
 
     private void OnGunWielded(EntityUid uid, GunWieldBonusComponent component, ref ItemWieldedEvent args)
@@ -106,7 +176,8 @@ public abstract class SharedWieldableSystem : EntitySystem
 
     private void OnDeselectWieldable(EntityUid uid, WieldableComponent component, HandDeselectedEvent args)
     {
-        if (_hands.EnumerateHands(args.User).Count() > 2)
+        if (!component.Wielded ||
+            _hands.EnumerateHands(args.User).Count() > 2)
             return;
 
         TryUnwield(uid, component, args.User);
@@ -115,7 +186,8 @@ public abstract class SharedWieldableSystem : EntitySystem
     private void OnGunRefreshModifiers(Entity<GunWieldBonusComponent> bonus, ref GunRefreshModifiersEvent args)
     {
         if (TryComp(bonus, out WieldableComponent? wield) &&
-            wield.Wielded)
+            (wield.Wielded)
+            )
         {
             args.MinAngle += bonus.Comp.MinAngle;
             args.MaxAngle += bonus.Comp.MaxAngle;
@@ -194,7 +266,7 @@ public abstract class SharedWieldableSystem : EntitySystem
             args.ApplyDelay = false;
     }
 
-    public bool CanWield(EntityUid uid, WieldableComponent component, EntityUid user, bool quiet = false)
+    public bool CanWield(EntityUid uid, WieldableComponent component, EntityUid user, bool quiet = false, bool checkHolding = true) // Goob edit
     {
         // Do they have enough hands free?
         if (!TryComp<HandsComponent>(user, out var hands))
@@ -205,14 +277,14 @@ public abstract class SharedWieldableSystem : EntitySystem
         }
 
         // Is it.. actually in one of their hands?
-        if (!_hands.IsHolding(user, uid, out _, hands))
+        if (checkHolding && !_hands.IsHolding(user, uid, out _, hands))
         {
             if (!quiet)
                 _popup.PopupClient(Loc.GetString("wieldable-component-not-in-hands", ("item", uid)), user, user);
             return false;
         }
 
-        if (_hands.CountFreeableHands((user, hands)) < component.FreeHandsRequired)
+        if (_hands.CountFreeableHands((user, hands), true) < component.FreeHandsRequired) // Goob edit
         {
             if (!quiet)
             {
@@ -231,7 +303,7 @@ public abstract class SharedWieldableSystem : EntitySystem
     ///     Attempts to wield an item, starting a UseDelay after.
     /// </summary>
     /// <returns>True if the attempt wasn't blocked.</returns>
-    public bool TryWield(EntityUid used, WieldableComponent component, EntityUid user)
+    public bool TryWield(EntityUid used, WieldableComponent component, EntityUid user, bool showMessage = true) // Goob edit
     {
         if (!CanWield(used, component, user))
             return false;
@@ -260,34 +332,32 @@ public abstract class SharedWieldableSystem : EntitySystem
             _audio.PlayPredicted(component.WieldSound, used, user);
 
         //This section handles spawning the virtual item(s) to occupy the required additional hand(s).
-        //Since the client can't currently predict entity spawning, only do this if this is running serverside.
-        //Remove this check if TrySpawnVirtualItem in SharedVirtualItemSystem is allowed to complete clientside.
-        if (_netManager.IsServer)
+        var virtuals = new ValueList<EntityUid>();
+        for (var i = 0; i < component.FreeHandsRequired; i++)
         {
-            var virtuals = new List<EntityUid>();
-            for (var i = 0; i < component.FreeHandsRequired; i++)
+            if (_virtualItem.TrySpawnVirtualItemInHand(used, user, out var virtualItem, true))
             {
-                if (_virtualItem.TrySpawnVirtualItemInHand(used, user, out var virtualItem, true))
-                {
-                    virtuals.Add(virtualItem.Value);
-                    continue;
-                }
-
-                foreach (var existingVirtual in virtuals)
-                {
-                    QueueDel(existingVirtual);
-                }
-
-                return false;
+                virtuals.Add(virtualItem.Value);
+                continue;
             }
+
+            foreach (var existingVirtual in virtuals)
+            {
+                QueueDel(existingVirtual);
+            }
+
+            return false;
         }
 
         var selfMessage = Loc.GetString("wieldable-component-successful-wield", ("item", used));
         var othersMessage = Loc.GetString("wieldable-component-successful-wield-other", ("user", Identity.Entity(user, EntityManager)), ("item", used));
-        _popup.PopupPredicted(selfMessage, othersMessage, user, user);
+        if (showMessage) // Goob edit
+            _popup.PopupPredicted(selfMessage, othersMessage, user, user);
 
-        var ev = new ItemWieldedEvent(user);
-        RaiseLocalEvent(used, ref ev);
+        _appearance.SetData(used, WieldableVisuals.Wielded, true); // Goobstation
+
+        var targEv = new ItemWieldedEvent(user);
+        RaiseLocalEvent(used, ref targEv);
 
         return true;
     }
@@ -366,5 +436,17 @@ public abstract class SharedWieldableSystem : EntitySystem
             return;
 
         args.Damage += component.BonusDamage;
+    }
+
+    // Goobstation
+    private void OnComponentShutdown(Entity<WieldableComponent> ent, ref ComponentShutdown args)
+    {
+        if (TerminatingOrDeleted(ent))
+            return;
+
+        if (ent.Comp.ApplyNewPrefixOnShutdown)
+            ent.Comp.OldInhandPrefix = ent.Comp.NewPrefixOnShutdown;
+
+        _virtualItem.DeleteInHandsMatching(Transform(ent).ParentUid, ent);
     }
 }

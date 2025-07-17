@@ -1,3 +1,23 @@
+// SPDX-FileCopyrightText: 2021 Kara D <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 eclips_e <67359748+Just-a-Unity-Dev@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Popups;
 using Content.Server.Tabletop.Components;
 using Content.Shared.CCVar;
@@ -14,6 +34,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
+using Content.Server.Chat.Managers;
 
 namespace Content.Server.Tabletop
 {
@@ -24,7 +45,8 @@ namespace Content.Server.Tabletop
         [Dependency] private readonly EyeSystem _eye = default!;
         [Dependency] private readonly ViewSubscriberSystem _viewSubscriberSystem = default!;
         [Dependency] private readonly PopupSystem _popupSystem = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly IChatManager _chat = default!;
+        [Dependency] private readonly INetConfigurationManager _cfg = default!;
 
         public override void Initialize()
         {
@@ -94,7 +116,16 @@ namespace Content.Server.Tabletop
 
             if (!TryComp<ItemComponent>(handEnt, out var item))
                 return;
+            // Skye hotfix to prevent people from infinitely spawning mice on the board games and crashing server.
+            if (component.HologramsSpawned > component.MaximumHologramsAllowed)
+            {
+                _chat.SendAdminAlert($"{EntityManager.ToPrettyString(args.User):user} is attempting to put more holograms than allowed in a gameboard.");
+                _popupSystem.PopupEntity("Nuh uh.", uid, args.User);
+                return;
 
+            }
+            else
+                component.HologramsSpawned++;
             var meta = MetaData(handEnt);
             var protoId = meta.EntityPrototype?.ID;
 

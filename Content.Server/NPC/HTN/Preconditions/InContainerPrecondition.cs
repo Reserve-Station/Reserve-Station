@@ -1,4 +1,10 @@
-﻿using Robust.Server.Containers;
+// SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Server.Containers;
 
 namespace Content.Server.NPC.HTN.Preconditions;
 
@@ -21,7 +27,6 @@ public sealed partial class InContainerPrecondition : HTNPrecondition
     {
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
 
-        return IsInContainer && _container.IsEntityInContainer(owner) ||
-               !IsInContainer && !_container.IsEntityInContainer(owner);
+        return IsInContainer == _container.IsEntityInContainer(owner);
     }
 }

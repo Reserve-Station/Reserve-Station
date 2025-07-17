@@ -1,3 +1,21 @@
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <jmaster9999@gmail.com>
+// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Gameplay;
 using Content.Client.Info;
 using Content.Shared.Guidebook;
@@ -22,7 +40,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     private ISawmill _sawmill = default!;
 
     [ValidatePrototypeId<GuideEntryPrototype>]
-    private const string DefaultRuleset = "DefaultRuleset";
+    private const string DefaultRuleset = "DefaultRulesetReserve"; //Reserve edit
 
     public ProtoId<GuideEntryPrototype> RulesEntryId = DefaultRuleset;
 

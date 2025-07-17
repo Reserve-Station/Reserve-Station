@@ -1,0 +1,12 @@
+ent-LavalandCrateNecropolisHeart = { ent-LavalandCrateNecropolis }
+    .suffix = Проклятое сердце
+    .desc = { ent-LavalandCrateNecropolis.desc }
+ent-LavalandCrateNecropolisCultArmor = { ent-LavalandCrateNecropolis }
+    .suffix = Броня культа
+    .desc = { ent-LavalandCrateNecropolis.desc }
+ent-LavalandCrateNecropolisCultRobe = { ent-LavalandCrateNecropolis }
+    .suffix = Роба культа
+    .desc = { ent-LavalandCrateNecropolis.desc }
+ent-LavalandCrateNecropolisVampirismCrystal = { ent-LavalandCrateNecropolis }
+    .suffix = Кристал вампиризма
+    .desc = { ent-LavalandCrateNecropolis.desc }

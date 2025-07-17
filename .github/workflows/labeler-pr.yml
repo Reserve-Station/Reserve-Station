@@ -1,14 +1,25 @@
-﻿name: "Labels: PR"
+# SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <lexasvarshik666@gmail.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: "Labels: PR"
 
 on:
 - pull_request_target
 
 jobs:
   labeler:
-    if: github.actor != 'PJBot'
     permissions:
       contents: read
       pull-requests: write
+      issues: write #Reserve edit
     runs-on: ubuntu-latest
     steps:
     - uses: actions/labeler@v5

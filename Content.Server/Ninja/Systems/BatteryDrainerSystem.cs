@@ -1,3 +1,15 @@
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Ninja.Events;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -6,7 +18,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Ninja.Systems;
 using Content.Shared.Popups;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.Ninja.Systems;
@@ -54,7 +65,8 @@ public sealed class BatteryDrainerSystem : SharedBatteryDrainerSystem
             MovementThreshold = 0.5f,
             BreakOnMove = true,
             CancelDuplicate = false,
-            AttemptFrequency = AttemptFrequency.StartAndEnd
+            AttemptFrequency = AttemptFrequency.StartAndEnd,
+            MultiplyDelay = false, // Goobstation
         };
 
         _doAfter.TryStartDoAfter(doAfterArgs);

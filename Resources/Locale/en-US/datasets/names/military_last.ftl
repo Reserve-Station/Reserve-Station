@@ -40,3 +40,6 @@ names-military-last-dataset-39 = Ukdah
 names-military-last-dataset-40 = Vega
 names-military-last-dataset-41 = Yildun
 names-military-last-dataset-42 = Zosma
+# Goobstation
+names-military-last-dataset-43 = Voltaire
+names-military-last-dataset-44 = Winterwing

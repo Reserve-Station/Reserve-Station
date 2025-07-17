@@ -1,4 +1,27 @@
-﻿roles-antag-generic-solo-antagonist-name = Solo Antagonist
+# SPDX-FileCopyrightText: 2022 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <108604614+PoTeletubby@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+## goob edited
+roles-antag-syndicate-agent-name = Traitor
+
+roles-antag-generic-solo-antagonist-name = Solo Antagonist
 
 roles-antag-generic-free-agent-name = Free Agent
 
@@ -6,11 +29,10 @@ roles-antag-generic-team-antagonist-name = Team Antagonist
 
 roles-antag-generic-silicon-antagonist-name = Silicon Antagonist
 
-roles-antag-syndicate-agent-name = Syndicate agent
 roles-antag-syndicate-agent-objective = Complete your objectives without being caught.
 
 roles-antag-syndicate-agent-sleeper-name = Syndicate sleeper agent
-roles-antag-syndicate-agent-sleeper-objective = A form of syndicate agent that can activate at any point in the middle of the shift.
+roles-antag-syndicate-agent-sleeper-objective = A form of traitor that can activate at any point in the middle of the shift.
 
 roles-antag-initial-infected-name = Initial Infected
 roles-antag-initial-infected-objective = Once you turn, infect as many other crew members as possible.

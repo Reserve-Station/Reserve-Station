@@ -1,18 +1,41 @@
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 DisposableCrewmember42 <disposablecrewmember42@proton.me>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using Content.Server.Actions;
 using Content.Server.GameTicking;
+using Content.Server.Mind;
+using Content.Server.Revenant.Components;
 using Content.Server.Store.Components;
+using Content.Server.Mind; // Imp
+using Content.Server.Revenant.Components; // Imp
 using Content.Server.Store.Systems;
 using Content.Shared.Alert;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
 using Content.Shared.Eye;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Physics;
+using Content.Shared.Physics; // Imp
 using Content.Shared.Popups;
 using Content.Shared.Revenant;
 using Content.Shared.Revenant.Components;
@@ -21,8 +44,10 @@ using Content.Shared.Store.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Revenant.EntitySystems;
 
@@ -45,9 +70,14 @@ public sealed partial class RevenantSystem : EntitySystem
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly VisibilitySystem _visibility = default!;
+    [Dependency] private readonly MindSystem _mind = default!; // Imp
+    [Dependency] private readonly MetaDataSystem _meta = default!; // Imp
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string RevenantShopId = "ActionRevenantShop";
+
+    [ValidatePrototypeId<EntityPrototype>]  // Imp
+    private const string RevenantHauntId = "ActionRevenantHaunt"; // Imp
 
     public override void Initialize()
     {
@@ -96,7 +126,8 @@ public sealed partial class RevenantSystem : EntitySystem
 
     private void OnMapInit(EntityUid uid, RevenantComponent component, MapInitEvent args)
     {
-        _action.AddAction(uid, ref component.Action, RevenantShopId);
+        _action.AddAction(uid, ref component.ShopAction, RevenantShopId); // Imp
+        _action.AddAction(uid, ref component.HauntAction, RevenantHauntId); // Imp
     }
 
     private void OnStatusAdded(EntityUid uid, RevenantComponent component, StatusEffectAddedEvent args)
@@ -150,8 +181,14 @@ public sealed partial class RevenantSystem : EntitySystem
 
         if (component.Essence <= 0)
         {
-            Spawn(component.SpawnOnDeathPrototype, Transform(uid).Coordinates);
-            QueueDel(uid);
+            component.Essence = 0; // Begin Imp Changes
+            _statusEffects.TryRemoveAllStatusEffects(uid);
+            var stasisObj = Spawn(component.SpawnOnDeathPrototype, Transform(uid).Coordinates);
+            AddComp(stasisObj, new RevenantStasisComponent(component.StasisTime, (uid, component)));
+            if (_mind.TryGetMind(uid, out var mindId, out var _))
+                _mind.TransferTo(mindId, stasisObj);
+            _transformSystem.DetachEntity(uid, Comp<TransformComponent>(uid));
+            _meta.SetEntityPaused(uid, true); // End Imp Changes
         }
         return true;
     }
@@ -178,6 +215,8 @@ public sealed partial class RevenantSystem : EntitySystem
 
         _statusEffects.TryAddStatusEffect<CorporealComponent>(uid, "Corporeal", TimeSpan.FromSeconds(debuffs.Y), false);
         _stun.TryStun(uid, TimeSpan.FromSeconds(debuffs.X), false);
+        if (debuffs.X > 0) // Imp
+            _physics.ResetDynamics(uid, Comp<PhysicsComponent>(uid)); // Imp
 
         return true;
     }
@@ -223,7 +262,12 @@ public sealed partial class RevenantSystem : EntitySystem
 
             if (rev.Essence < rev.EssenceRegenCap)
             {
-                ChangeEssenceAmount(uid, rev.EssencePerSecond, rev, regenCap: true);
+                var essence = rev.EssencePerSecond; // Begin Imp Changes
+
+                if (TryComp<RevenantRegenModifierComponent>(uid, out var regen))
+                    essence += rev.HauntEssenceRegenPerWitness * regen.NewHaunts;
+
+                ChangeEssenceAmount(uid, essence, rev, regenCap: true); // End Imp Changes
             }
         }
     }

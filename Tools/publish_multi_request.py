@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-import argparse
 import requests
 import os
 import subprocess
@@ -15,16 +20,10 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://wizards.cdn.spacestation14.com/"
-FORK_ID = "wizards"
+ROBUST_CDN_URL = "https://cdn.reserve-station.space/"
+FORK_ID = "reserve"
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--fork-id", default=FORK_ID)
-
-    args = parser.parse_args()
-    fork_id = args.fork_id
-
     session = requests.Session()
     session.headers = {
         "Authorization": f"Bearer {PUBLISH_TOKEN}",
@@ -39,7 +38,7 @@ def main():
     headers = {
         "Content-Type": "application/json"
     }
-    resp = session.post(f"{ROBUST_CDN_URL}fork/{fork_id}/publish/start", json=data, headers=headers)
+    resp = session.post(f"{ROBUST_CDN_URL}fork/{FORK_ID}/publish/start", json=data, headers=headers)
     resp.raise_for_status()
     print("Publish successfully started, adding files...")
 
@@ -51,7 +50,7 @@ def main():
                 "Robust-Cdn-Publish-File": os.path.basename(file),
                 "Robust-Cdn-Publish-Version": VERSION
             }
-            resp = session.post(f"{ROBUST_CDN_URL}fork/{fork_id}/publish/file", data=f, headers=headers)
+            resp = session.post(f"{ROBUST_CDN_URL}fork/{FORK_ID}/publish/file", data=f, headers=headers)
 
         resp.raise_for_status()
 
@@ -63,7 +62,7 @@ def main():
     headers = {
         "Content-Type": "application/json"
     }
-    resp = session.post(f"{ROBUST_CDN_URL}fork/{fork_id}/publish/finish", json=data, headers=headers)
+    resp = session.post(f"{ROBUST_CDN_URL}fork/{FORK_ID}/publish/finish", json=data, headers=headers)
     resp.raise_for_status()
 
     print("SUCCESS!")

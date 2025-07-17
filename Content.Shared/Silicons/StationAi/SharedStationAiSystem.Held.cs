@@ -1,8 +1,41 @@
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Fildrance <fildrance@gmail.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ScarKy0 <scarky0@onet.eu>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 pa.pecherskij <pa.pecherskij@interfax.ru>
+// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Actions.Events;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Robust.Shared.Map;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -26,6 +59,7 @@ public abstract partial class SharedStationAiSystem
         SubscribeLocalEvent<StationAiHeldComponent, InteractionAttemptEvent>(OnHeldInteraction);
         SubscribeLocalEvent<StationAiHeldComponent, AttemptRelayActionComponentChangeEvent>(OnHeldRelay);
         SubscribeLocalEvent<StationAiHeldComponent, JumpToCoreEvent>(OnCoreJump);
+        SubscribeLocalEvent<StationAiHeldComponent, AiToggleBoltsEvent>(OnToggleBolts);
         SubscribeLocalEvent<TryGetIdentityShortInfoEvent>(OnTryGetIdentityShortInfo);
     }
 
@@ -51,6 +85,41 @@ public abstract partial class SharedStationAiSystem
 
         _xforms.DropNextTo(core.Comp.RemoteEntity.Value, core.Owner) ;
     }
+
+    // WD edit start
+
+    private void OnToggleBolts(Entity<StationAiHeldComponent> ent, ref AiToggleBoltsEvent args)
+    {
+        if (!TryGetCore(ent.Owner, out var core) || core.Comp?.RemoteEntity == null)
+            return;
+
+        var xform = Transform(core);
+
+        if (!xform.Anchored)
+        {
+            if (TryComp<PhysicsComponent>(core, out var anchorBody) &&
+                !_anchorable.TileFree(xform.Coordinates, anchorBody))
+            {
+                _popup.PopupClient(Loc.GetString("anchorable-occupied"), ent.Owner, core.Comp.RemoteEntity);
+                return;
+            }
+
+            var rot = xform.LocalRotation;
+            xform.LocalRotation = Math.Round(rot / (Math.PI / 2)) * (Math.PI / 2);
+
+            if (TryComp<PullableComponent>(core, out var pullable) && pullable.Puller != null)
+                _pulling.TryStopPull(core, pullable, ignoreGrab: true);
+
+            _xforms.AnchorEntity(core, xform);
+            _audio.PlayEntity(ent.Comp.CoreBoltsDisabled, Filter.Pvs(xform.Coordinates), core.Owner, true);
+        }
+        else
+        {
+            _xforms.Unanchor(core, xform);
+            _audio.PlayEntity(ent.Comp.CoreBoltsEnabled, Filter.Pvs(xform.Coordinates), core.Owner, true);
+        }
+    }
+    // WD edit end
 
     /// <summary>
     /// Tries to get the entity held in the AI core using StationAiCore.
@@ -157,6 +226,9 @@ public abstract partial class SharedStationAiSystem
 
     private void OnTargetVerbs(Entity<StationAiWhitelistComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
+        if (!_uiSystem.HasUi(args.Target, AiUi.Key))
+            return;
+
         if (!args.CanComplexInteract
             || !HasComp<StationAiHeldComponent>(args.User)
             || !args.CanInteract)

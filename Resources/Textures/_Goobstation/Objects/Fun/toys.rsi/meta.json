@@ -1,0 +1,64 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "BeeRobynn, George Gimme, and Ahti, Abductor by Shy Bandit, plushie_jvne by Jvne, plushie_samantha by SolsticeOfTheWinter, fern by Bobbble, plushie_nigel by SS14:gorgan_freemen/Discord:Dummy",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "plushie_louie"
+        },
+        {
+            "name": "plushie_durk"
+        },
+        {
+            "name": "plushie_jvne"
+        },
+        {
+            "name": "plushie_fern"
+        },
+        {
+            "name": "plushie_nigel"
+        },
+		{
+            "name": "plushiejvne-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "plushiejvne-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "plushie_samantha"
+        },
+		{
+            "name": "plushiesamantha-equipped-HELMET",
+            "directions": 4
+        },
+		{
+            "name": "plushiesamantha-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "plushiesamantha-inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "plushie_abductor"
+        },
+        {
+            "name": "bingleing"
+        },
+        {
+            "name": "bongle",
+            "directions": 4
+        },
+        {
+            "name": "bingle_pony",
+            "directions": 4
+        }
+
+    ]
+}

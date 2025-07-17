@@ -1,3 +1,57 @@
+// SPDX-FileCopyrightText: 2020 ComicIronic <comicironic@gmail.com>
+// SPDX-FileCopyrightText: 2020 FL-OZ <58238103+FL-OZ@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 FL-OZ <anotherscuffed@gmail.com>
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 chairbender <kwhipke1@gmail.com>
+// SPDX-FileCopyrightText: 2020 zumorica <zddm@outlook.es>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2022 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ben <50087092+benev0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 BenOwnby <ownbyb@appstate.edu>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2023 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 J. Brown <DrMelon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 James Simonson <jamessimo89@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Scribbles0 <91828755+Scribbles0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <shadowjjt@gmail.com>
+// SPDX-FileCopyrightText: 2024 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TinManTim <73014819+Tin-Man-Tim@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 blueDev2 <89804215+blueDev2@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 degradka <degradka@gmail.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 crasg <109207982+Scruq445@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Administration.Logs;
 using Content.Server.Body.Systems;
 using Content.Server.Construction;
@@ -18,7 +72,7 @@ using Content.Shared.Construction.EntitySystems;
 using Content.Shared.Database;
 using Content.Shared.DeviceLinking.Events;
 using Content.Shared.Destructible;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Robust.Shared.Random;
@@ -86,7 +140,6 @@ namespace Content.Server.Kitchen.EntitySystems
             SubscribeLocalEvent<MicrowaveComponent, EntInsertedIntoContainerMessage>(OnContentUpdate);
             SubscribeLocalEvent<MicrowaveComponent, EntRemovedFromContainerMessage>(OnContentUpdate);
             SubscribeLocalEvent<MicrowaveComponent, InteractUsingEvent>(OnInteractUsing, after: new[] { typeof(AnchorableSystem) });
-            SubscribeLocalEvent<MicrowaveComponent, ContainerIsInsertingAttemptEvent>(OnInsertAttempt);
             SubscribeLocalEvent<MicrowaveComponent, BreakageEventArgs>(OnBreak);
             SubscribeLocalEvent<MicrowaveComponent, PowerChangedEvent>(OnPowerChanged);
             SubscribeLocalEvent<MicrowaveComponent, AnchorStateChangedEvent>(OnAnchorChanged);
@@ -351,35 +404,6 @@ namespace Content.Server.Kitchen.EntitySystems
             UpdateUserInterfaceState(uid, component);
         }
 
-        private void OnInsertAttempt(Entity<MicrowaveComponent> ent, ref ContainerIsInsertingAttemptEvent args)
-        {
-            if (args.Container.ID != ent.Comp.ContainerId)
-                return;
-
-            if (ent.Comp.Broken)
-            {
-                args.Cancel();
-                return;
-            }
-
-            if (TryComp<ItemComponent>(args.EntityUid, out var item))
-            {
-                if (_item.GetSizePrototype(item.Size) > _item.GetSizePrototype(ent.Comp.MaxItemSize))
-                {
-                    args.Cancel();
-                    return;
-                }
-            }
-            else
-            {
-                args.Cancel();
-                return;
-            }
-
-            if (ent.Comp.Storage.Count >= ent.Comp.Capacity)
-                args.Cancel();
-        }
-
         private void OnInteractUsing(Entity<MicrowaveComponent> ent, ref InteractUsingEvent args)
         {
             if (args.Handled)
@@ -546,6 +570,10 @@ namespace Content.Server.Kitchen.EntitySystems
                 // special behavior when being microwaved ;)
                 var ev = new BeingMicrowavedEvent(uid, user);
                 RaiseLocalEvent(item, ev);
+
+                // TODO MICROWAVE SPARKS & EFFECTS
+                // Various microwaveable entities should probably spawn a spark, play a sound, and generate a pop=up.
+                // This should probably be handled by the microwave system, with fields in BeingMicrowavedEvent.
 
                 if (ev.Handled)
                 {

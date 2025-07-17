@@ -1,0 +1,10 @@
+ent-UndeterminedVoidsuitCaptain = выбор скафандра капитана
+    .desc = Небольшой пульт дистанционного управления, использующий технологию bluespace, для установки в скафандр voidsuit или hardsuit по вашему выбору.
+ent-UndeterminedVoidsuitParamedic = выбор скафандра парамедика
+    .desc = Небольшой пульт дистанционного управления, использующий технологию bluespace, для установки в скафандр voidsuit или hardsuit по вашему выбору.
+ent-UndeterminedVoidsuitSecurity = выбор защитного пустотного костюма
+    .desc = Небольшой пульт дистанционного управления, использующий технологию bluespace, для установки в скафандр voidsuit или hardsuit по вашему выбору.
+ent-UndeterminedVoidsuitHeadOfSecurity = начальник отдела безопасности по подбору пустотных костюмов
+    .desc = Небольшой пульт дистанционного управления, использующий технологию bluespace, для установки в скафандр voidsuit или hardsuit по вашему выбору.
+ent-UndeterminedVoidsuitEngineer = выбор инженерного пустотного костюма
+    .desc = Небольшой пульт дистанционного управления, использующий технологию bluespace, для установки в скафандр voidsuit или hardsuit по вашему выбору.

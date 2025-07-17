@@ -1,6 +1,20 @@
-﻿using System.Linq;
-using System.Text;
+// SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Administration.Managers;
+using Content.Server.ADT.Discord;
+using Content.Server.ADT.Discord.Bans;
+using Content.Server.ADT.Discord.Bans.PayloadGenerators;
+using Content.Server.Database;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -18,6 +32,8 @@ public sealed class RoleBanCommand : IConsoleCommand
     [Dependency] private readonly IBanManager _bans = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IServerDbManager _dbManager = default!;
+    [Dependency] private readonly IDiscordBanInfoSender _discordBanInfoSender = default!;
 
     public string Command => "roleban";
     public string Description => Loc.GetString("cmd-roleban-desc");
@@ -94,8 +110,26 @@ public sealed class RoleBanCommand : IConsoleCommand
 
         var targetUid = located.UserId;
         var targetHWid = located.LastHWId;
+        //Start-ADT-Tweak: логи банов для диса
+        var lastRoleBan = await _dbManager.GetLastServerRoleBanAsync();
+        var newRoleBanId = lastRoleBan is not null ? lastRoleBan.Id + 1 : 1;
+        //End-ADT-Tweak
 
         _bans.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, DateTimeOffset.UtcNow);
+        //Start-ADT-Tweak: логи банов для диса
+        var banInfo = new BanInfo
+        {
+            BanId = newRoleBanId is not null ? newRoleBanId.ToString()! : string.Empty,
+            Target = target,
+            Player = shell.Player,
+            Minutes = minutes,
+            Reason = reason,
+            Expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes),
+            AdditionalInfo = new() { { "role", job } }
+        };
+
+        await _discordBanInfoSender.SendBanInfoAsync<RoleBanPayloadGenerator>(banInfo);
+        //End-ADT-Tweak
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

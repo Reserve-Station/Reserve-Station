@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2022 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 eoineoineoin <eoin.mcloughlin+gh@gmail.com>
+# SPDX-FileCopyrightText: 2022 vulppine <vulppine@gmail.com>
+# SPDX-FileCopyrightText: 2023 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 c4llv07e <38111072+c4llv07e@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # UI
 
 ## Window
@@ -13,6 +26,7 @@ air-alarm-ui-window-device-count-label = Total Devices
 air-alarm-ui-window-resync-devices-label = Resync
 
 air-alarm-ui-window-mode-label = Mode
+air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Mode selector failure! [/color][/bold]
 air-alarm-ui-window-auto-mode-label = Auto mode
 
 -air-alarm-state-name = { $state ->

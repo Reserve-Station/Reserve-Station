@@ -1,3 +1,14 @@
+<!--
+SPDX-FileCopyrightText: 2022 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 github-actions <github-actions@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -5,8 +16,10 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <Nullable>enable</Nullable>
     <ServerGarbageCollection>true</ServerGarbageCollection>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NoWarn>NU1903;CA1416</NoWarn>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Content.IntegrationTests\Content.IntegrationTests.csproj" />
     <ProjectReference Include="..\RobustToolbox\Robust.UnitTesting\Robust.UnitTesting.csproj" />

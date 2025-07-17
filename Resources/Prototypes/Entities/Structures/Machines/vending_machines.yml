@@ -1,3 +1,167 @@
+# SPDX-FileCopyrightText: 2019 Acruid <shatter66@gmail.com>
+# SPDX-FileCopyrightText: 2019 DamianX <DamianX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2019 L.E.D <10257081+unusualcrow@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 GlassEclipse <tsymall5@gmail.com>
+# SPDX-FileCopyrightText: 2020 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2020 Swept <jamesurquhartwebb@gmail.com>
+# SPDX-FileCopyrightText: 2020 Vince <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 Ygg01 <daniel.fath7@gmail.com>
+# SPDX-FileCopyrightText: 2020 py01 <60152240+collinlunn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 py01 <pyronetics01@gmail.com>
+# SPDX-FileCopyrightText: 2020 zionnBE <bennyprofanee@protonmail.com>
+# SPDX-FileCopyrightText: 2020 zionnBE <zionn@tfwno.gf>
+# SPDX-FileCopyrightText: 2020 zumorica <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2021 BulletGrade <66234359+BulletGrade@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2021 Moses <StrawberryMoses@gmail.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Ablankmann <103340990+Ablankmann@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Andreas Kämper <andreas@kaemper.tech>
+# SPDX-FileCopyrightText: 2022 Deahaka <96499407+Deahaka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 EmoGarbage404 <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Fishfish458 <47410468+Fishfish458@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Michael Phillips <1194692+MeltedPixel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Profane McBane <profanedbane+github@gmail.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 fishfish458 <fishfish458>
+# SPDX-FileCopyrightText: 2022 hubismal <47284081+hubismal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2022 theashtronaut <112137107+theashtronaut@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ChilbroBaggins <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nairod <110078045+Nairodian@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 OctoRocket <88291550+OctoRocket@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Puro <103608145+PuroSlavKing@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Velcroboy <107660393+ChilbroBaggins@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 freeman2651 <104049107+freeman2651@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Debug <49997488+DebugOk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
+# SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 FoxxoTrystan <45297731+FoxxoTrystan@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
+# SPDX-FileCopyrightText: 2024 Jeff <velcroboy333@hotmail.com>
+# SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
+# SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+# SPDX-FileCopyrightText: 2024 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pspritechologist <naaronn@gmail.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Scruq445 <storchdamien@gmail.com>
+# SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
+# SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Velcroboy <107660393+IamVelcroboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 degradka <69397649+degradka@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
+# SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2024 erohrs2 <157842463+erohrs2@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+# SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
+# SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+# SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Dorragon <101672978+Dorragon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: VendingMachine
   parent: BaseMachinePowered
@@ -18,7 +182,7 @@
       path: /Audio/Ambience/Objects/vending_machine_hum.ogg
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/empty.rsi
-    snapCardinals: true
+    snapCardinals: false
   - type: Physics
     bodyType: Static
   - type: Transform
@@ -82,9 +246,18 @@
     messageSet: SpookySpeakerMessagesGeneric
     speakChance: 0.2
   - type: IntrinsicRadioReceiver
+  #- type: IntrinsicRadioTransmitter
+  #  channels:
+  #  - Binary # Goobstation - replaced with collective mind
   - type: ActiveRadio
     channels:
+    # - Binary # Goobstation - replaced with collective mind
     - Common
+  # Goobstation
+  - type: CollectiveMind
+    defaultChannel: Binary
+    channels:
+    - Binary
   - type: DoAfter
   - type: Electrified
     enabled: false
@@ -92,7 +265,10 @@
   - type: PointLight
     enabled: false
     castShadows: false
-    radius: 1.5
+    radius: 2
+    energy: 1.5
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
@@ -246,7 +422,8 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/cart.rsi
+    noRot: true
+    sprite: Structures/Machines/VendingMachines/laptop.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -256,11 +433,18 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1
+    radius: 2
     energy: 1.3
     color: "#ffb0b0"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: AccessReader
     access: [["HeadOfPersonnel"]]
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -291,9 +475,11 @@
   - type: AccessReader
     access: [["Service"]]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#4b93ad"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -315,6 +501,7 @@
   - type: SpeakOnUIClosed
     pack: CigaretteMachineGoodbyes
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/cigs.rsi
     layers:
     - state: "off"
@@ -324,6 +511,11 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -352,9 +544,14 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.8
+    radius: 2
     energy: 1.6
     color: "#3db83b"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Tag
+    tags:
+      - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
@@ -383,9 +580,14 @@
     - state: panel
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
   - type: PointLight
-    radius: 1.8
+    radius: 2
     energy: 1.6
     color: "#3db83b"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
@@ -411,6 +613,7 @@
   - type: SpeakOnUIClosed
     pack: HotDrinksMachineGoodbyes
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/coffee.rsi
     layers:
     - state: "off"
@@ -424,9 +627,16 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.3
     color: "#ad7c4b"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -450,6 +660,7 @@
   - type: SpeakOnUIClosed
     pack: RobustSoftdrinksGoodbyes
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/cola.rsi
     layers:
     - state: "off"
@@ -460,9 +671,16 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#3c5eb5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachineCola
@@ -470,7 +688,7 @@
   suffix: Black
   components:
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/cola-black.rsi
+    sprite: Structures/Machines/VendingMachines/soda2.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -480,9 +698,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#423438"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineCola
@@ -491,7 +711,7 @@
   description: It vends cola, in space.
   components:
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/cola-red.rsi
+    sprite: Structures/Machines/VendingMachines/cola.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -501,18 +721,22 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#A50824"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
-  parent: VendingMachineCola
+  parent: VendingMachine
   id: VendingMachineSpaceUp
   name: Space-Up! Vendor
   description: Indulge in an explosion of flavor.
   components:
   - type: VendingMachine
     pack: SpaceUpInventory
+    offState: off
+    normalState: normal-unshaded
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/spaceup.rsi
     layers:
@@ -524,9 +748,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#44964A"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineCola
@@ -535,7 +761,12 @@
   components:
   - type: VendingMachine
     pack: SodaInventory
+    offState: off
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/soda.rsi
     layers:
     - state: "off"
@@ -546,18 +777,27 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#CBC6BE"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
-  parent: VendingMachineCola
+  parent: VendingMachine
   id: VendingMachineStarkist
   name: Star-kist Vendor
   description: The taste of a star in liquid form.
   components:
   - type: VendingMachine
     pack: StarkistInventory
+    offState: off
+    normalState: normal-unshaded
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/starkist.rsi
     layers:
@@ -569,9 +809,13 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#D3A44D"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: true
 
 - type: entity
   parent: VendingMachine
@@ -603,9 +847,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#66538F"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -639,9 +885,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#6927C5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -675,9 +923,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#D82929"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -727,11 +977,13 @@
     brokenState: broken
     normalState: normal-unshaded
     ejectState: eject-unshaded
+    denyState: deny-unshaded
   - type: Advertise
     pack: DinnerwareAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/dinnerware.rsi
     layers:
     - state: "off"
@@ -744,9 +996,16 @@
   - type: AccessReader
     access: [["Kitchen"]]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#4b93ad"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -759,11 +1018,14 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
   - type: Advertise
     pack: MagiVendAds
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/magivend.rsi
     layers:
     - state: "off"
@@ -774,9 +1036,16 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#9a18d6"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -807,9 +1076,11 @@
     - texture: Structures/Machines/VendingMachines/maintenance_panel.png
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#6148c7"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -825,6 +1096,7 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/engivend.rsi
     layers:
     - state: "off"
@@ -837,15 +1109,25 @@
   - type: AccessReader
     access: [["Engineering"]]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#b89e2a"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
   id: VendingMachineMedical
   name: NanoMed Plus
-  description: It's a medical drug dispenser. Natural chemicals only!
+  description: It's a medical drug dispenser. Natural chemicals only! (And wheelchairs, why not) # Goobstation
   components:
   - type: VendingMachine
     pack: NanoMedPlusInventory
@@ -860,7 +1142,8 @@
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/medical.rsi
+    sprite: Structures/Machines/VendingMachines/medivend.rsi
+    noRot: true
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -872,12 +1155,19 @@
   - type: AccessReader
     access: [["Medical"]]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#9dc5c9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: GuideHelp
     guides:
     - Medical Doctor
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -897,7 +1187,7 @@
   - type: SpeakOnUIClosed
     pack: NutriMaxGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/nutri.rsi
+    sprite: Structures/Machines/VendingMachines/nutri_green.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -909,9 +1199,11 @@
   - type: AccessReader
     access: [["Hydroponics"]]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#326e3f"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -931,7 +1223,8 @@
   - type: SpeakOnUIClosed
     pack: SecTechGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/sec.rsi
+    sprite: Structures/Machines/VendingMachines/security.rsi
+    noRot: true
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -943,13 +1236,21 @@
   - type: AccessReader
     access: [["Security"]]
   - type: PointLight
-    radius: 1
-    energy: 1.2
+    radius: 2
+    energy: 1.8
     color: "#78645c"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: GuideHelp
     guides:
     - Security
     - Antagonists
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+
 
 - type: entity
   parent: VendingMachine
@@ -970,7 +1271,7 @@
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/seeds.rsi
+    sprite: Structures/Machines/VendingMachines/seeds_green.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -980,9 +1281,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#326e3f"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSeedsUnlocked
@@ -1013,6 +1316,7 @@
   - type: SpeakOnUIClosed
     pack: GetmoreChocolateCorpGoodbyes
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/snack.rsi
     layers:
     - state: "off"
@@ -1023,9 +1327,16 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#c73434"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1053,9 +1364,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#737785"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1073,9 +1386,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#3c5eb5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1093,9 +1408,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#CE3401"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1113,9 +1430,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#5F6A1C"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachineSnack
@@ -1133,9 +1452,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#207E79"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -1158,7 +1479,8 @@
   - type: SpeakOnUIClosed
     pack: BodaGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/sovietsoda.rsi
+    sprite: Structures/Machines/VendingMachines/sodasoviet.rsi
+    noRot: true
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -1168,9 +1490,16 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
-    color: "#389690"
+    color: "#B80F0A"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1192,6 +1521,7 @@
     pack: GenericVendGoodbyes
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/theater.rsi
+    noRot: true
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -1204,9 +1534,19 @@
       map: ["enum.VendingMachineVisualLayers.Screen"]
       shader: unshaded
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#c73434"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
@@ -1226,6 +1566,7 @@
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/vendomat.rsi
     layers:
     - state: "off"
@@ -1236,9 +1577,16 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#9dc5c9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1258,6 +1606,7 @@
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/robotics.rsi
     layers:
     - state: "off"
@@ -1270,9 +1619,16 @@
   - type: AccessReader
     access: [["Research"]]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#B0ADA9"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
   - type: GuideHelp
     guides:
     - Robotics
@@ -1291,6 +1647,7 @@
     ejectState: eject-unshaded
     denyState: deny-unshaded
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/youtool.rsi
     layers:
     - state: "off"
@@ -1301,9 +1658,19 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#d4ab33"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
 
 - type: entity
   parent: VendingMachine
@@ -1323,6 +1690,7 @@
   - type: SpeakOnUIClosed
     pack: GoodCleanFunGoodbyes
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/games.rsi
     layers:
     - state: "off"
@@ -1333,9 +1701,16 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#326e3f"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1350,13 +1725,15 @@
     offState: off
     brokenState: broken
     normalState: normal-unshaded
+    denyState: deny-unshaded
+    ejectState: eject-unshaded
     initialStockQuality: 0.33
   - type: Advertise
     pack: ChangAds
   - type: SpeakOnUIClosed
     pack: ChangGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/changs.rsi
+    sprite: Structures/Machines/VendingMachines/snix.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -1366,9 +1743,16 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#ffe599"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachine
@@ -1376,12 +1760,12 @@
   name: Salvage Vendor
   description: A dwarf's best friend!
   components:
-  - type: VendingMachine
-    pack: SalvageEquipmentInventory
-    offState: off
-    brokenState: broken
-    normalState: normal-unshaded
-    denyState: deny-unshaded
+  #- type: VendingMachine # DeltaV: Use mining points instead of limited stock
+  #  pack: SalvageEquipmentInventory
+  #  offState: off
+  #  brokenState: broken
+  #  normalState: normal-unshaded
+  #  denyState: deny-unshaded
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/mining.rsi
     layers:
@@ -1393,9 +1777,36 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#b89f25"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: ShopVendor # DeltaV
+    pack: SalvageVendorInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: PointsVendor # DeltaV
+  - type: UserInterface # DeltaV: Replace vending machine BUI with shop vendor
+    interfaces:
+      enum.VendingMachineUiKey.Key:
+        type: ShopVendorBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+      enum.MiningVoucherUiKey.Key:
+        type: MiningVoucherBoundUserInterface
+  - type: MiningVendor # Lavaland Change
+    kits:
+    - MiningCrusher
+    - MiningExtraction
+    #- MiningResonator
+    - MiningSurvival
+    #- MiningDrone
+    - MiningConscription
+  - type: Wires # DeltaV: Use shop vendor wires layout
+    layoutId: ShopVendor
   - type: AccessReader
     access: [["Salvage"]]
   - type: GuideHelp
@@ -1431,9 +1842,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#d4ab33"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 # wallmounted machines
 
@@ -1450,11 +1863,13 @@
   - type: Sprite
     drawdepth: WallMountedItems
     snapCardinals: false
-  - type: Rotatable
   - type: WallMount
     arc: 175
   - type: Transform
     noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
 
 - type: entity
   parent: VendingMachineWallmount
@@ -1468,7 +1883,9 @@
     brokenState: broken
     normalState: normal-unshaded
     denyState: deny-unshaded
+    ejectState: eject-unshaded
   - type: Sprite
+    noRot: true
     sprite: Structures/Machines/VendingMachines/wallmed.rsi
     layers:
     - state: "off"
@@ -1478,15 +1895,22 @@
       shader: unshaded
     - texture: Structures/Machines/VendingMachines/maintenance_panel.png
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-  - type: PointLight
-    radius: 1.3
-    energy: 1.6
-    color: "#43ccb5"
   - type: AccessReader
     access: [["Medical"]]
   - type: GuideHelp
     guides:
     - Medical
+  - type: Transform
+    noRot: false
+  - type: Rotatable
+    rotateWhileAnchored: false
+    rotateWhilePulling: true
+  - type: PointLight
+    radius: 1.3
+    energy: 1.6
+    color: "#43ccb5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 # job clothing
 
@@ -1634,9 +2058,11 @@
   - type: AccessReader
     access: [["Chapel"]]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#CCCCCC" #The holy C
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -1899,12 +2325,14 @@
       shader: unshaded
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: AccessReader
+    access: [["Janitor"]]
   - type: PointLight
     radius: 1.5
     energy: 1.6
     color: "#6927C5"
-  - type: AccessReader
-    access: [["Janitor"]]
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
 
 - type: entity
   parent: VendingMachine
@@ -2072,9 +2500,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#48CF48"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: AccessReader
     access: [["CentralCommand"]]
 
@@ -2106,9 +2536,11 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: PointLight
-    radius: 1.5
+    radius: 2
     energy: 1.6
     color: "#3c5eb5"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
   - type: Advertise
     pack: HappyHonkAds
   - type: SpeakOnUIClosed
@@ -2223,4 +2655,3 @@
     ejectDelay: 2
   - type: AccessReader
     access: [["SyndicateAgent"]]
-

@@ -1,0 +1,12 @@
+ent-MeleeDebugSever = удар более сильный
+    .desc = разорву тебя на части через неделю
+    .suffix = отлаживать
+ent-MeleeDebugSever100 = средство для усиления эффекта взрыва 100 мг
+    .desc = { ent-MeleeDebugSever.desc }
+ent-MeleeDebugSever200 = средство для усиления эффекта взрыва 200 мг
+    .desc = { ent-MeleeDebugSever.desc }
+ent-MeleeDebugBurner = взрывная горелка
+    .desc = сожги свои части тела
+    .suffix = отлаживать
+ent-MeleeDebugBurner200 = взрывная горелка 200 мг
+    .desc = { ent-MeleeDebugBurner.desc }

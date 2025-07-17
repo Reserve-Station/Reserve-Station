@@ -1,3 +1,13 @@
+# SPDX-FileCopyrightText: 2025 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ActiveMammmoth <kmcsmooth@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: sledgehammer
   parent: BaseItem
@@ -26,30 +36,30 @@
 
 - type: entity
   id: Mjollnir
-  parent: [ BaseItem, BaseMagicalContraband ]
+  parent: BaseItem
   name: Mjollnir
   description: A weapon worthy of a god, able to strike with the force of a lightning bolt. It crackles with barely contained energy.
   components:
   - type: Wieldable
-    useDelayOnWield: false
-  - type: MeleeRequiresWield
+    useDelayOnWield: false # GoobStation Edit
   - type: LandAtCursor
   - type: Sprite
-    sprite: Objects/Weapons/Melee/mjollnir.rsi
+    sprite: _Goobstation/Objects/Weapons/Melee/mjollnir.rsi # GoobStation Edit
     layers:
     - state: icon
   - type: UseDelay
-    delay: 10
+    delay: 5 # Goobstation
   - type: UseDelayOnMeleeHit
   - type: MeleeThrowOnHit
+    distance: 10 # Goobstation
     stunTime: 3
     activateOnThrown: true
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:
       types:
-        Blunt: 5
-        Structural: 5
+        Blunt: 10 # GoobStation Edit
+        Structural: 10 # GoobStation Edit
     soundHit:
       path: /Audio/Effects/tesla_consume.ogg
       params:
@@ -57,8 +67,8 @@
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 20
-        Structural: 25
+        Blunt: 10 # GoobStation Edit
+        Structural: 15 # GoobStation Edit
   - type: DamageOtherOnHit
     damage:
       types:
@@ -66,10 +76,11 @@
         Structural: 15
   - type: Item
     size: Ginormous
+  - type: Boomerang # Goobstation
 
 - type: entity
   id: SingularityHammer
-  parent: [ BaseItem, BaseMagicalContraband ]
+  parent: BaseItem
   name: Singularity Hammer
   description: The pinnacle of close combat technology, the hammer harnesses the power of a miniaturized singularity to deal crushing blows.
   components:
@@ -88,7 +99,7 @@
       - MobMover
       - Item
   - type: UseDelay
-    delay: 10
+    delay: 5
   - type: UseDelayOnMeleeHit
   - type: MeleeWeapon
     wideAnimationRotation: -135

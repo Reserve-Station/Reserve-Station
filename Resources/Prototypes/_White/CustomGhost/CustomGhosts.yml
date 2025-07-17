@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: customGhost
+  id: pzakusik-ghost
+  ckey: PZAKusik
+  sprite: /Textures/_White/CustomGhosts/pzakusik-ghost.rsi
+  alpha: 0.8
+  ghostName: Kutos
+  ghostDescription: ... 
+
+- type: customGhost
+  id: xelitex-ghost
+  ckey: localhost@_XeliteX_FFX_
+  sprite: /Textures/_Reserve/CustomGhosts/xelitex-ghost.rsi
+  alpha: 0.8
+  ghostName: XeliteX
+  ghostDescription: Очень странный призрак.
+
+- type: customGhost
+  id: already-taken-ghost
+  ckey: is_already_taken
+  sprite: /Textures/_Reserve/CustomGhosts/already-taken-ghost.rsi
+  alpha: 0.8
+  ghostName: Already Taken
+  ghostDescription: Это конец...

@@ -1,3 +1,126 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Javier Guardia Fern�ndez <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 corentt <36075110+corentt@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 778b <33431126+778b@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
+// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 CMDR-Piboy314 <92357316+CMDR-Piboy314@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DieselMohawk <gavin.drinka@gmail.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <JIPDawg93@gmail.com>
+// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 MisterMecky <mrmecky@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 PursuitInAshes <pursuitinashes@gmail.com>
+// SPDX-FileCopyrightText: 2024 QueerNB <176353696+QueerNB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rainfall <rainfey0+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
+// SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spanky <scott@wearejacob.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TytosB <54259736+TytosB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 osjarw <oskariwjarvinen@gmail.com>
+// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+// SPDX-FileCopyrightText: 2024 terezi <147006836+terezi-station@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aineias1 <dmitri.s.kiselev@gmail.com>
+// SPDX-FileCopyrightText: 2025 Deerstop <edainturner@gmail.com>
+// SPDX-FileCopyrightText: 2025 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2025 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 FaDeOkno <143940725+FaDeOkno@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Gallagin <64706450+Gallagin@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 JoeHammad1844 <130668733+JoeHammad1844@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 JoeHammad1844 <finiansalas2@gmail.com>
+// SPDX-FileCopyrightText: 2025 Killerqu00 <killerqueen1777@gmail.com>
+// SPDX-FileCopyrightText: 2025 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 McBosserson <148172569+McBosserson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <plmilonpl@gmail.com>
+// SPDX-FileCopyrightText: 2025 OnsenCapy <101037138+OnsenCapy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Unisol <1929445+Unisol@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Unlumination <144041835+Unlumy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Vortebo <64214314+Vortebo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 compilatron <40789662+jbox144@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+// SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+// SPDX-FileCopyrightText: 2025 quartG <140832593+quartuG3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 quartuG3 <quartug.dfd@gmail.com>
+// SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,16 +133,16 @@ using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Roles;
+using Content.Shared.Station.Components;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
-using Content.Shared.Station.Components;
-using Robust.Shared.EntitySerialization;
-using Robust.Shared.EntitySerialization.Systems;
-using Robust.Shared.IoC;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
 using Robust.Shared.Map.Events;
@@ -55,6 +178,26 @@ namespace Content.IntegrationTests.Tests
             "/Maps/Shuttles/ShuttleEvent/honki.yml", // Contains golden honker, clown's rubber stamp
             "/Maps/Shuttles/ShuttleEvent/instigator.yml", // Contains EXP-320g "Friendship"
             "/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", // Contains syndicate rubber stamp
+            // Goobstation maps/map versions; it's kinda a big TODO rn
+            "/Maps/_Goobstation/bagel.yml",
+            "/Maps/_Goobstation/barratry.yml",
+            "/Maps/_Goobstation/cluster.yml",
+            "/Maps/_Goobstation/amber.yml",
+            "/Maps/_Goobstation/kettle.yml",
+            "/Maps/_Goobstation/lambda.yml",
+            "/Maps/_Goobstation/leonid.yml",
+            "/Maps/_Goobstation/submarine.yml",
+            "/Maps/_Goobstation/Nonstations/wizden.yml", // Obviously
+            "/Maps/_Lavaland/Lavaland/ruin_toyshop.yml", // I think we might want to glob these, idk
+            "/Maps/_Goobstation/loop.yml",
+            "/Maps/_Goobstation/gate.yml",
+            "/Maps/_Goobstation/Shuttles/consul.yml", // Contains HEINOUS amounts of centcomm contraband. Obviously.
+            "/Maps/_Goobstation/Shuttles/retort_assault.yml", // ERT ships
+            "/Maps/_Goobstation/Shuttles/retort_medical.yml",
+            "/Maps/_Goobstation/Shuttles/retort_engineering.yml",
+            "/Maps/_Goobstation/Shuttles/retort_janitorial.yml",
+            "/Maps/_Goobstation/Shuttles/retort_cburn.yml",
+            "/Maps/_CorvaxNext/Nonstations/vox.yml" //Reserve edit - Vox raiders port
         };
 
         private static readonly string[] GameMaps =
@@ -64,24 +207,39 @@ namespace Content.IntegrationTests.Tests
             "Fland",
             "Meta",
             "Packed",
+            "Cluster", // Goobstation - Readds Cluster
             "Omega",
             "Bagel",
             "CentComm",
             "Box",
+            "Europa", // Goobstation - Readds Europa
+            "Atlas", // Goobstation - Readds Atlas
             "Core",
             "Marathon",
             "MeteorArena",
             "Saltern",
             "Reach",
+            "Origin", // Goobstation - Readds Origin
             "Train",
             "Oasis",
-            "Gate",
+            //"Cog", FUCK COG
+            "FlandHighPop", // Goobstation - add highpop maps
+            "OriginHighPop",
+            "OasisHighPop",
+            "Barratry", // Goobstation - add Barratry
+            "Kettle", // Goobstation - add Kettle
+            "Submarine", // Goobstation - add Submarine
+            "Lambda", // Goobstation - add Lambda
+            "Leonid", // Goobstation - add Leonid
             "Amber",
+            "Gate", // Goobstation - goob changes
+            "Lavatest", // Lavaland Change
             "Loop",
-            "Plasma",
-            "Elkridge",
-            "Convex",
-            "Relic"
+            "Delta", // Goobstation - add Delta
+			"BattleRoyale", // BattleRoyale Change
+            "ReserveSillyIsland", // Reserve map
+            "dm01-entryway",
+            "Chloris" // Goobstation
         };
 
         /// <summary>
@@ -156,9 +314,11 @@ namespace Content.IntegrationTests.Tests
                         }
                         catch (Exception ex)
                         {
-                            throw new Exception($"Failed to load shuttle {path}, was it saved as a map instead of a grid?",
+                            throw new Exception(
+                                $"Failed to load shuttle {path}, was it saved as a map instead of a grid?",
                                 ex);
                         }
+
                         mapSystem.DeleteMap(mapId);
                     }
                 });
@@ -181,7 +341,8 @@ namespace Content.IntegrationTests.Tests
             var mapFolder = new ResPath("/Maps");
             var maps = resourceManager
                 .ContentFindFiles(mapFolder)
-                .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
+                .Where(filePath =>
+                    filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
                 .ToArray();
 
             var v7Maps = new List<ResPath>();
@@ -209,10 +370,6 @@ namespace Content.IntegrationTests.Tests
                 var meta = root["meta"];
                 var version = meta["format"].AsInt();
 
-                // TODO MAP TESTS
-                // Move this to some separate test?
-                CheckDoNotMap(map, root, protoManager);
-
                 if (version >= 7)
                 {
                     v7Maps.Add(map);
@@ -221,6 +378,23 @@ namespace Content.IntegrationTests.Tests
 
                 var postMapInit = meta["postmapinit"].AsBool();
                 Assert.That(postMapInit, Is.False, $"Map {map.Filename} was saved postmapinit");
+
+                // testing that maps have nothing with the DoNotMap entity category
+                // I do it here because it's basically copy-paste code for the most part
+                var yamlEntities = root["entities"];
+                if (!protoManager.TryIndex<EntityCategoryPrototype>("DoNotMap", out var dnmCategory))
+                    return;
+                foreach (var yamlEntity in (YamlSequenceNode) yamlEntities)
+                {
+                    var protoId = yamlEntity["proto"].AsString();
+                    protoManager.TryIndex(protoId, out var proto, false);
+                    if (proto is null || proto.EditorSuffix is null)
+                        continue;
+                    if (proto.Categories.Contains(dnmCategory) && !DoNotMapWhitelist.Contains(map.ToString()))
+                    {
+                        Assert.Fail($"\nMap {map} has the DO NOT MAP category in prototype {proto.Name}");
+                    }
+                }
             }
 
             var deps = server.ResolveDependency<IEntitySystemManager>().DependencyCollection;
@@ -338,7 +512,7 @@ namespace Content.IntegrationTests.Tests
                 MapId mapId;
                 try
                 {
-                    var opts = DeserializationOptions.Default with {InitializeMaps = true};
+                    var opts = DeserializationOptions.Default with { InitializeMaps = true };
                     ticker.LoadGameMap(protoManager.Index<GameMapPrototype>(mapProto), out mapId, opts);
                 }
                 catch (Exception ex)
@@ -418,7 +592,9 @@ namespace Content.IntegrationTests.Tests
 
                     jobs.ExceptWith(spawnPoints);
 
-                    Assert.That(jobs, Is.Empty, $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
+                    Assert.That(jobs,
+                        Is.Empty,
+                        $"There is no spawnpoints for {string.Join(", ", jobs)} on {mapProto}.");
                 }
 
                 try
@@ -436,7 +612,6 @@ namespace Content.IntegrationTests.Tests
         }
 
 
-
         private static int GetCountLateSpawn<T>(List<EntityUid> gridUids, IEntityManager entManager)
             where T : ISpawnPoint, IComponent
         {
@@ -448,8 +623,8 @@ namespace Content.IntegrationTests.Tests
                 var spawner = (ISpawnPoint) comp;
 
                 if (spawner.SpawnType is not SpawnPointType.LateJoin
-                || xform.GridUid == null
-                || !gridUids.Contains(xform.GridUid.Value))
+                    || xform.GridUid == null
+                    || !gridUids.Contains(xform.GridUid.Value))
                 {
                     continue;
                 }
@@ -497,7 +672,8 @@ namespace Content.IntegrationTests.Tests
             var mapFolder = new ResPath("/Maps");
             var maps = resourceManager
                 .ContentFindFiles(mapFolder)
-                .Where(filePath => filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
+                .Where(filePath =>
+                    filePath.Extension == "yml" && !filePath.Filename.StartsWith(".", StringComparison.Ordinal))
                 .ToArray();
 
             var mapPaths = new List<ResPath>();
@@ -511,6 +687,7 @@ namespace Content.IntegrationTests.Tests
                 {
                     continue;
                 }
+
                 mapPaths.Add(rootedPath);
             }
 

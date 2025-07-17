@@ -1,3 +1,11 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
 using Robust.Shared.Serialization;
@@ -46,6 +54,10 @@ public sealed partial class RevenantShopActionEvent : InstantActionEvent
 {
 }
 
+public sealed partial class RevenantHauntActionEvent : InstantActionEvent // Imp
+{
+}
+
 public sealed partial class RevenantDefileActionEvent : InstantActionEvent
 {
 }
@@ -61,6 +73,34 @@ public sealed partial class RevenantBlightActionEvent : InstantActionEvent
 public sealed partial class RevenantMalfunctionActionEvent : InstantActionEvent
 {
 }
+
+public sealed partial class RevenantBloodWritingEvent : InstantActionEvent // Begin Imp Changes
+{
+}
+
+public sealed partial class RevenantAnimateEvent : EntityTargetActionEvent
+{
+}
+
+[Serializable, NetSerializable]
+public sealed partial class RevenantHauntWitnessEvent : EntityEventArgs
+{
+    public HashSet<NetEntity> Witnesses = new();
+
+    public RevenantHauntWitnessEvent(HashSet<NetEntity> witnesses)
+    {
+        Witnesses = witnesses;
+    }
+
+    public RevenantHauntWitnessEvent() : this(new())
+    {
+    }
+}
+
+[Serializable, NetSerializable]
+public sealed partial class ExorciseRevenantDoAfterEvent : SimpleDoAfterEvent
+{
+} // End Imp Changes
 
 
 [NetSerializable, Serializable]

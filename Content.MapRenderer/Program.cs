@@ -1,4 +1,21 @@
-﻿#nullable enable
+// SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Julian Giebel <juliangiebel@live.de>
+// SPDX-FileCopyrightText: 2022 Kara D <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 github-actions <github-actions@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+#nullable enable
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,7 +42,6 @@ namespace Content.MapRenderer
 
         internal static async Task Main(string[] args)
         {
-
             if (!CommandLineArguments.TryParse(args, out var arguments))
                 return;
 
@@ -38,6 +54,7 @@ namespace Content.MapRenderer
                 var mapIds = pair.Server
                     .ResolveDependency<IPrototypeManager>()
                     .EnumeratePrototypes<GameMapPrototype>()
+                    .Where(map => !pair.IsTestPrototype(map))
                     .Select(map => map.ID)
                     .ToArray();
 
@@ -105,34 +122,7 @@ namespace Content.MapRenderer
 
             if (arguments.ArgumentsAreFileNames)
             {
-                Console.WriteLine("Retrieving map ids by map file names...");
-
-                Console.Write("Fetching map prototypes... ");
-                await using var pair = await PoolManager.GetServerClient();
-                var mapPrototypes = pair.Server
-                    .ResolveDependency<IPrototypeManager>()
-                    .EnumeratePrototypes<GameMapPrototype>()
-                    .ToArray();
-                Console.WriteLine("[Done]");
-
-                var ids = new List<string>();
-
-                foreach (var mapPrototype in mapPrototypes)
-                {
-                    if (arguments.Maps.Contains(mapPrototype.MapPath.Filename))
-                    {
-                        ids.Add(mapPrototype.ID);
-                        Console.WriteLine($"Found map: {mapPrototype.MapName}");
-                    }
-                }
-
-                if (ids.Count == 0)
-                {
-                    await Console.Error.WriteLineAsync("Found no maps for the given file names!");
-                    return;
-                }
-
-                arguments.Maps = ids;
+                Console.WriteLine("Retrieving maps by file names...");
             }
 
             await Run(arguments);
@@ -155,12 +145,14 @@ namespace Content.MapRenderer
                 };
 
                 mapViewerData.ParallaxLayers.Add(LayerGroup.DefaultParallax());
-                var directory = Path.Combine(arguments.OutputPath, map);
+                var directory = Path.Combine(arguments.OutputPath, Path.GetFileNameWithoutExtension(map));
 
                 var i = 0;
                 try
                 {
-                    await foreach (var renderedGrid in MapPainter.Paint(map))
+                    await foreach (var renderedGrid in MapPainter.Paint(map,
+                                       arguments.ArgumentsAreFileNames,
+                                       arguments.ShowMarkers))
                     {
                         var grid = renderedGrid.Image;
                         Directory.CreateDirectory(directory);

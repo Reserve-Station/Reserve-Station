@@ -92,6 +92,12 @@
       "name": "arithpen_empty"
     },
     {
+      "name": "advcombatpen"
+    },
+    {
+      "name": "advcombatpen_empty"
+    },
+    {
       "name": "punctpen"
     },
     {

@@ -1,3 +1,63 @@
+# SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
+# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+# SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 ZorenZal <51891458+lvvova1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 pointer-to-null <91910481+pointer-to-null@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Jessica M <jessica@jessicamaybe.com>
+# SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+# SPDX-FileCopyrightText: 2022 Leeroy <97187620+elthundercloud@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Michael Phillips <1194692+MeltedPixel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Mr0maks <mr.maks0443@gmail.com>
+# SPDX-FileCopyrightText: 2022 ike709 <ike709@github.com>
+# SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+# SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 theashtronaut <112137107+theashtronaut@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 08A <git@08a.re>
+# SPDX-FileCopyrightText: 2023 Artjom <artjombebenin@gmail.com>
+# SPDX-FileCopyrightText: 2023 Errant <35878406+Errant-4@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Keiku <41867291+Keikiru@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Skye <22365940+Skyedra@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2023 Vasilis The Pikachu <vascreeper@yahoo.com>
+# SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 onoira <onoira@psiko.zone>
+# SPDX-FileCopyrightText: 2024 Aexxie <codyfox.077@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 AstroDogeDX <48888500+AstroDogeDX@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Sk1tch <ben.peter.smith@gmail.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 YuNii <benjamin@bhenrich.de>
+# SPDX-FileCopyrightText: 2024 anotherbutton <MADpfeifer@outlook.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 c4llv07e <igor@c4llv07e.xyz>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+# SPDX-FileCopyrightText: 2025 noirogen <raethertechnologies@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 ## General stuff
 
 ui-options-title = Game Options
@@ -118,11 +178,6 @@ ui-options-header-shuttle = Shuttle
 ui-options-header-map-editor = Map Editor
 ui-options-header-dev = Development
 ui-options-header-general = General
-ui-options-header-text-cursor = Text cursor
-ui-options-header-text-cursor-select = Text selecting
-ui-options-header-text-edit = Text editing
-ui-options-header-text-chat = Chat
-ui-options-header-text-other = Text input other
 
 ui-options-hotkey-keymap = Use US QWERTY Keys
 ui-options-hotkey-toggle-walk = Toggle Walk
@@ -132,6 +187,7 @@ ui-options-function-move-left = Move Left
 ui-options-function-move-down = Move Down
 ui-options-function-move-right = Move Right
 ui-options-function-walk = Walk
+ui-options-function-toggle-standing = Crawl/Stand
 
 ui-options-function-camera-rotate-left = Rotate left
 ui-options-function-camera-rotate-right = Rotate right
@@ -151,6 +207,7 @@ ui-options-function-alt-activate-item-in-world = Alternative activate item in wo
 ui-options-function-drop = Drop item
 ui-options-function-examine-entity = Examine
 ui-options-function-swap-hands = Swap hands
+ui-options-function-swap-hands-reverse = Swap hands (other direction)
 ui-options-function-move-stored-item = Move stored item
 ui-options-function-rotate-stored-item = Rotate stored item
 ui-options-function-save-item-location = Save item location
@@ -158,6 +215,7 @@ ui-options-static-storage-ui = Lock storage window to hotbar
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt
+ui-options-function-smart-equip-back = Smart-equip to back slot
 ui-options-function-open-backpack = Open backpack
 ui-options-function-open-belt = Open belt
 ui-options-function-throw-item-in-hand = Throw item
@@ -228,6 +286,16 @@ ui-options-function-hotbar7 = Hotbar slot 7
 ui-options-function-hotbar8 = Hotbar slot 8
 ui-options-function-hotbar9 = Hotbar slot 9
 ui-options-function-hotbar0 = Hotbar slot 0
+ui-options-function-hotbar-shift1 = Hotbar slot Shift+1
+ui-options-function-hotbar-shift2 = Hotbar slot Shift+2
+ui-options-function-hotbar-shift3 = Hotbar slot Shift+3
+ui-options-function-hotbar-shift4 = Hotbar slot Shift+4
+ui-options-function-hotbar-shift5 = Hotbar slot Shift+5
+ui-options-function-hotbar-shift6 = Hotbar slot Shift+6
+ui-options-function-hotbar-shift7 = Hotbar slot Shift+7
+ui-options-function-hotbar-shift8 = Hotbar slot Shift+8
+ui-options-function-hotbar-shift9 = Hotbar slot Shift+9
+ui-options-function-hotbar-shift0 = Hotbar slot Shift+0
 ui-options-function-loadout1 = Hotbar Loadout 1
 ui-options-function-loadout2 = Hotbar Loadout 2
 ui-options-function-loadout3 = Hotbar Loadout 3
@@ -238,6 +306,16 @@ ui-options-function-loadout7 = Hotbar Loadout 7
 ui-options-function-loadout8 = Hotbar Loadout 8
 ui-options-function-loadout9 = Hotbar Loadout 9
 ui-options-function-loadout0 = Hotbar Loadout 0
+ui-options-function-loadoutshift1 = Hotbar Loadout Shift+1
+ui-options-function-loadoutshift2 = Hotbar Loadout Shift+2
+ui-options-function-loadoutshift3 = Hotbar Loadout Shift+3
+ui-options-function-loadoutshift4 = Hotbar Loadout Shift+4
+ui-options-function-loadoutshift5 = Hotbar Loadout Shift+5
+ui-options-function-loadoutshift6 = Hotbar Loadout Shift+6
+ui-options-function-loadoutshift7 = Hotbar Loadout Shift+7
+ui-options-function-loadoutshift8 = Hotbar Loadout Shift+8
+ui-options-function-loadoutshift9 = Hotbar Loadout Shift+9
+ui-options-function-loadoutshift0 = Hotbar Loadout Shift+0
 
 ui-options-function-shuttle-strafe-up = Strafe up
 ui-options-function-shuttle-strafe-right = Strafe right
@@ -246,42 +324,6 @@ ui-options-function-shuttle-strafe-down = Strafe down
 ui-options-function-shuttle-rotate-left = Rotate left
 ui-options-function-shuttle-rotate-right = Rotate right
 ui-options-function-shuttle-brake = Brake
-
-ui-options-function-text-cursor-left = Move cursor left
-ui-options-function-text-cursor-right = Move cursor right
-ui-options-function-text-cursor-up = Move cursor up
-ui-options-function-text-cursor-down = Move cursor down
-ui-options-function-text-cursor-word-left = Move cursor left by word
-ui-options-function-text-cursor-word-right = Move cursor right by word
-ui-options-function-text-cursor-begin = Move cursor to beginning
-ui-options-function-text-cursor-end = Move cursor to end
-ui-options-function-text-cursor-select = Select text
-ui-options-function-text-cursor-select-left = Expand selection left
-ui-options-function-text-cursor-select-right = Expand selection right
-ui-options-function-text-cursor-select-up = Expand selection up
-ui-options-function-text-cursor-select-down = Expand selection down
-ui-options-function-text-cursor-select-word-left = Expand selection left by word
-ui-options-function-text-cursor-select-word-right = Expand selection right by word
-ui-options-function-text-cursor-select-begin = Expand selection to beginning
-ui-options-function-text-cursor-select-end = Expand selection to end
-ui-options-function-text-backspace = Backspace
-ui-options-function-text-delete = Delete
-ui-options-function-text-word-backspace = Backspace word
-ui-options-function-text-word-delete = Delete word
-ui-options-function-text-newline = Newline
-ui-options-function-text-submit = Submit
-ui-options-function-multiline-text-submit = Submit multiline
-ui-options-function-text-select-all = Select all
-ui-options-function-text-copy = Copy
-ui-options-function-text-cut = Cut
-ui-options-function-text-paste = Paste
-ui-options-function-text-history-prev = Previous from history
-ui-options-function-text-history-next = Next from history
-ui-options-function-text-release-focus = Release focus
-ui-options-function-text-scroll-to-bottom = Scroll to bottom
-ui-options-function-text-tab-complete = Tab completion
-ui-options-function-text-complete-next = Complete next
-ui-options-function-text-complete-prev = Complete previous
 
 ## Network menu
 
@@ -321,34 +363,65 @@ cmd-options-help = Usage: options [tab]
 
 ## Accessibility menu
 
-ui-options-accessability-header-visuals = Visuals
-ui-options-accessability-header-content = Content
-
 ui-options-enable-color-name = Add colors to character names
 ui-options-colorblind-friendly = Colorblind friendly mode
 ui-options-reduced-motion = Reduce motion of visual effects
 ui-options-screen-shake-intensity = Screen shake intensity
-
 ui-options-chat-window-opacity = Chat window opacity
 ui-options-speech-bubble-text-opacity = Speech bubble text opacity
 ui-options-speech-bubble-speaker-opacity = Speech bubble speaker opacity
 ui-options-speech-bubble-background-opacity = Speech bubble background opacity
 
-ui-options-censor-nudity = Censor character nudity
-
 ## Admin menu
+
+## Shitmed Change
+ui-options-header-targeting = Targeting
+ui-options-function-target-head = Target head
+ui-options-function-target-chest = Target chest
+ui-options-function-target-groin = Target groin
+ui-options-function-target-left-arm = Target left arm
+ui-options-function-target-right-arm = Target right arm
+ui-options-function-target-left-hand = Target left hand
+ui-options-function-target-right-hand = Target right hand
+ui-options-function-target-left-leg = Target left leg
+ui-options-function-target-right-leg = Target right leg
+ui-options-function-target-left-foot = Target left foot
+ui-options-function-target-right-foot = Target right foot
 
 ui-options-admin-player-panel = Admin Menu Players List
 
-ui-options-admin-playerlist-separate-symbols = Show separate symbols for each antag role type
-ui-options-admin-playerlist-character-color = Color names of antagonist characters
-ui-options-admin-playerlist-roletype-color = Color role types
+ui-options-admin-player-tab-symbol-setting = Character column antag symbols
+ui-options-admin-player-tab-symbol-setting-off = No antag symbol
+ui-options-admin-player-tab-symbol-setting-basic = Show standard antag symbol
+ui-options-admin-player-tab-symbol-setting-specific = Show specific antag symbol
+
+ui-options-admin-player-tab-role-setting = Role display settings
+ui-options-admin-player-tab-role-setting-roletype = Show role type
+ui-options-admin-player-tab-role-setting-subtype = Show subtype
+ui-options-admin-player-tab-role-setting-roletypesubtype = Show role type and subtype
+ui-options-admin-player-tab-role-setting-subtyperoletype = Show subtype and role type
+
+ui-options-admin-player-tab-color-setting = Color settings
+ui-options-admin-player-tab-color-setting-off = I hate colors
+ui-options-admin-player-tab-color-setting-character = Colorize antag character names
+ui-options-admin-player-tab-color-setting-roletype = Colorize all role types
+ui-options-admin-player-tab-color-setting-both = Colorize both
 
 ui-options-admin-overlay-title = Admin Overlay
-ui-options-enable-classic-overlay = Revert overlay to classic mode
-ui-options-enable-overlay-symbols = Add antag symbol to text
-ui-options-enable-overlay-playtime = Show playtime
-ui-options-enable-overlay-starting-job = Show starting job
-ui-options-overlay-merge-distance = Stack merge distance
-ui-options-overlay-ghost-fade-distance = Ghost overlay fade range from mouse
-ui-options-overlay-ghost-hide-distance = Ghost overlay hide range from mouse
+
+ui-options-admin-overlay-antag-format = Antag label style
+ui-options-admin-overlay-antag-format-binary = Show antag status
+ui-options-admin-overlay-antag-format-roletype = Show role type
+ui-options-admin-overlay-antag-format-subtype = Show subtype
+ui-options-admin-overlay-antag-format-off = Don't show antag status/roletype
+
+ui-options-admin-overlay-antag-symbol = Antag symbol style
+ui-options-admin-overlay-antag-symbol-off = No antag symbol
+ui-options-admin-overlay-antag-symbol-basic = Show standard antag symbol
+ui-options-admin-overlay-antag-symbol-specific = Show specific antag symbol
+
+ui-options-admin-enable-overlay-playtime = Show playtime
+ui-options-admin-enable-overlay-starting-job = Show starting job
+ui-options-admin-overlay-merge-distance = Stack merge distance
+ui-options-admin-overlay-ghost-fade-distance = Ghost overlay fade range from mouse
+ui-options-admin-overlay-ghost-hide-distance = Ghost overlay hide range from mouse

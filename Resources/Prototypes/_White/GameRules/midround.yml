@@ -1,0 +1,57 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: BaseNukeopsRule
+  id: MidRoundNukeops
+  components:
+  - type: LoadMapRule
+    mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml #Reserve edit - goob map
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointNukeopsCommander
+      max: 1
+      pickPlayer: false
+      playerRatio: 10
+      startingGear: SyndicateCommanderGearFull
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicateElite #Reserve datasets fix
+        nameFormat: name-format-nukie-commander
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRoleNukeopsCommander
+    - spawnerPrototype: SpawnPointNukeopsMedic
+      max: 1
+      pickPlayer: false
+      playerRatio: 10
+      startingGear: SyndicateOperativeMedicFull
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicateNormal #Reserve datasets fix
+        nameFormat: name-format-nukie-agent
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRoleNukeopsMedic
+    - spawnerPrototype: SpawnPointNukeopsOperative
+      max: 3
+      pickPlayer: false
+      playerRatio: 10
+      startingGear: SyndicateOperativeGearFull
+      components:
+      - type: NukeOperative
+      - type: RandomMetadata
+        nameSegments:
+        - NamesSyndicateNormal #Reserve datasets fix
+        nameFormat: name-format-nukie-operator
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      mindRoles:
+      - MindRoleNukeops

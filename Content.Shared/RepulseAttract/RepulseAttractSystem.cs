@@ -1,4 +1,12 @@
-﻿using Content.Shared.Physics;
+// SPDX-FileCopyrightText: 2025 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ActiveMammmoth <kmcsmooth@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Physics;
 using Content.Shared.Throwing;
 using Content.Shared.Timing;
 using Content.Shared.Weapons.Melee.Events;
@@ -7,7 +15,6 @@ using Content.Shared.Wieldable;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
-using Content.Shared.RepulseAttract.Events;
 using Content.Shared.Weapons.Melee;
 
 namespace Content.Shared.RepulseAttract;
@@ -29,24 +36,13 @@ public sealed class RepulseAttractSystem : EntitySystem
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
 
         SubscribeLocalEvent<RepulseAttractComponent, MeleeHitEvent>(OnMeleeAttempt, before: [typeof(UseDelayOnMeleeHitSystem)], after: [typeof(SharedWieldableSystem)]);
-        SubscribeLocalEvent<RepulseAttractComponent, RepulseAttractActionEvent>(OnRepulseAttractAction);
     }
-
     private void OnMeleeAttempt(Entity<RepulseAttractComponent> ent, ref MeleeHitEvent args)
     {
         if (_delay.IsDelayed(ent.Owner))
             return;
 
         TryRepulseAttract(ent, args.User);
-    }
-
-    private void OnRepulseAttractAction(Entity<RepulseAttractComponent> ent, ref RepulseAttractActionEvent args)
-    {
-        if (args.Handled)
-            return;
-        
-        var position = _xForm.GetMapCoordinates(args.Performer);
-        args.Handled = TryRepulseAttract(position, args.Performer, ent.Comp.Speed, ent.Comp.Range, ent.Comp.Whitelist, ent.Comp.CollisionMask);
     }
 
     public bool TryRepulseAttract(Entity<RepulseAttractComponent> ent, EntityUid user)

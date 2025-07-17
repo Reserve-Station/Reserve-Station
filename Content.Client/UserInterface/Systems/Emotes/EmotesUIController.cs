@@ -1,3 +1,10 @@
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Client.Chat.UI;
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Chat;
@@ -31,6 +38,7 @@ public sealed class EmotesUIController : UIController, IOnStateChanged<GameplayS
         [EmoteCategory.General] = ("emote-menu-category-general", new SpriteSpecifier.Texture(new ResPath("/Textures/Clothing/Head/Soft/mimesoft.rsi/icon.png"))),
         [EmoteCategory.Hands] = ("emote-menu-category-hands", new SpriteSpecifier.Texture(new ResPath("/Textures/Clothing/Hands/Gloves/latex.rsi/icon.png"))),
         [EmoteCategory.Vocal] = ("emote-menu-category-vocal", new SpriteSpecifier.Texture(new ResPath("/Textures/Interface/Emotes/vocal.png"))),
+        [EmoteCategory.Farts] = ("emote-menu-category-farts", new SpriteSpecifier.Texture(new ResPath("/Textures/_Goobstation/Interface/Emotes/fart.png"))), // Goobstation (obviously)
     };
 
     public void OnStateEntered(GameplayState state)

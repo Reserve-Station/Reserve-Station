@@ -1,4 +1,26 @@
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Wrexbe (Josh) <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 vanx <61917534+Vaaankas@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
+using Content.Shared._Goobstation.Wizard.ArcaneBarrage;
 using Content.Shared.Examine;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
@@ -31,6 +53,7 @@ public abstract partial class SharedHandsSystem : EntitySystem
             .Bind(ContentKeyFunctions.UseItemInHand, InputCmdHandler.FromDelegate(HandleUseItem, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.AltUseItemInHand, InputCmdHandler.FromDelegate(HandleAltUseInHand, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.SwapHands, InputCmdHandler.FromDelegate(SwapHandsPressed, handle: false, outsidePrediction: false))
+            .Bind(ContentKeyFunctions.SwapHandsReverse, InputCmdHandler.FromDelegate(SwapHandsReversePressed, handle: false, outsidePrediction: false))
             .Bind(ContentKeyFunctions.Drop, new PointerInputCmdHandler(DropPressed))
             .Register<SharedHandsSystem>();
     }
@@ -80,6 +103,16 @@ public abstract partial class SharedHandsSystem : EntitySystem
 
     private void SwapHandsPressed(ICommonSession? session)
     {
+        SwapHands(session, false);
+    }
+
+    private void SwapHandsReversePressed(ICommonSession? session)
+    {
+        SwapHands(session, true);
+    }
+
+    private void SwapHands(ICommonSession? session, bool reverse)
+    {
         if (!TryComp(session?.AttachedEntity, out HandsComponent? component))
             return;
 
@@ -89,8 +122,9 @@ public abstract partial class SharedHandsSystem : EntitySystem
         if (component.ActiveHand == null || component.Hands.Count < 2)
             return;
 
-        var newActiveIndex = component.SortedHands.IndexOf(component.ActiveHand.Name) + 1;
-        var nextHand = component.SortedHands[newActiveIndex % component.Hands.Count];
+        var currentIndex = component.SortedHands.IndexOf(component.ActiveHand.Name);
+        var newActiveIndex = (currentIndex + (reverse ? -1 : 1) + component.Hands.Count) % component.Hands.Count;
+        var nextHand = component.SortedHands[newActiveIndex];
 
         TrySetActiveHand(session.AttachedEntity.Value, nextHand, component);
     }
@@ -98,7 +132,33 @@ public abstract partial class SharedHandsSystem : EntitySystem
     private bool DropPressed(ICommonSession? session, EntityCoordinates coords, EntityUid netEntity)
     {
         if (TryComp(session?.AttachedEntity, out HandsComponent? hands) && hands.ActiveHand != null)
-            TryDrop(session.AttachedEntity.Value, hands.ActiveHand, coords, handsComp: hands);
+        {
+            // Goobstation start
+            if (_net.IsServer && HasComp<DeleteOnDropAttemptComponent>(hands.ActiveHandEntity))
+            {
+                QueueDel(hands.ActiveHandEntity.Value);
+                return false;
+            }
+
+            if (session != null)
+            {
+                var ent = session.AttachedEntity.Value;
+
+                if (TryGetActiveItem(ent, out var item) && TryComp<VirtualItemComponent>(item, out var virtComp))
+                {
+                    var userEv = new VirtualItemDropAttemptEvent(virtComp.BlockingEntity, ent, item.Value, false);
+                    RaiseLocalEvent(ent, userEv);
+
+                    var targEv = new VirtualItemDropAttemptEvent(virtComp.BlockingEntity, ent, item.Value, false);
+                    RaiseLocalEvent(virtComp.BlockingEntity, targEv);
+
+                    if (userEv.Cancelled || targEv.Cancelled)
+                        return false;
+                }
+                TryDrop(ent, hands.ActiveHand, coords, handsComp: hands);
+            }
+            // Goobstation end
+        }
 
         // always send to server.
         return false;
@@ -210,9 +270,14 @@ public abstract partial class SharedHandsSystem : EntitySystem
         var locUser = ("user", Identity.Entity(examinedUid, EntityManager));
         var locItems = ("items", ContentLocalizationManager.FormatList(heldItemNames));
 
-        using (args.PushGroup(nameof(HandsComponent)))
+        // WWDP examine
+        if (args.Examiner == args.Examined) // Use the selfaware locale when inspecting yourself
+            locKey += "-selfaware";
+
+        using (args.PushGroup(nameof(HandsComponent), 99)) //  priority for examine
         {
-            args.PushMarkup(Loc.GetString(locKey, locUser, locItems));
+            args.PushMarkup("- " + Loc.GetString(locKey, locUser, locItems)); // "-" for better formatting
         }
+        // WWDP edit end
     }
 }

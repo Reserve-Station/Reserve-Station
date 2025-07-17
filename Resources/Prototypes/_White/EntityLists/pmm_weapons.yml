@@ -1,0 +1,49 @@
+- type: entityList
+  id: PostManifestMassacreWeapons
+  entities:
+    - WeaponRifleAk
+    - WeaponRifleM90GrenadeLauncher
+    - WeaponRifleLecter
+    - WeaponSubMachineGunC20r
+    - WeaponSubMachineGunDrozd
+    - WeaponSubMachineGunWt550
+    - WeaponShotgunBulldog
+    - WeaponShotgunEnforcer
+    - WeaponShotgunDoubleBarreled
+    - WeaponShotgunKammerer
+    - WeaponShotgunSawn
+    - WeaponRevolverDeckard
+    - WeaponRevolverInspector
+    - WeaponRevolverPython
+    - WeaponRevolverMateba
+    - WeaponLightMachineGunL6
+    - WeaponPistolViper
+    - WeaponPistolCobra
+    - WeaponPistolMk58
+    - WeaponPistolN1984
+    - WeaponSniperMosin
+    - WeaponSniperHristov
+    #Reserve edit - goob guns begin
+    - WeaponSubMachineSmart
+    - WeaponRifleBurner
+    - WeaponLeverChester
+    - WeaponEnergyGunLawbringer
+    - WeaponRifleM90
+    - WeaponSubMachineGunM7S
+    - WeaponSubmachineGunMP5
+    - WeaponRifleWSPR
+    - WeaponHeadOfSecuritySMG
+    - WeaponHeadOfSecurityShotgun
+    - WeaponHeadOfSecuritySniper
+    - WeaponHeadOfSecurityRifle
+    - WeaponDecloner
+    - WeaponPistolAnaconda
+    - WeaponMinigun
+    - WeaponMeleeKnockbackStick
+    - WeaponMeleeToolboxRobust
+    - WeaponEnergyRifle
+    - WeaponSubMachineGunAtreides
+    - WeaponRifleFoam # :troll:
+    - WeaponPistolCHIMPUpgraded
+    - BowHardlight
+    #Reserve edit - goob guns end

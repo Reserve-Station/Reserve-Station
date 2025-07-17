@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseMinorContraband
   id: ThiefBeacon
@@ -43,27 +48,39 @@
   id: ToolboxThief
   name: undetermined thieving toolbox
   description: This is where your favorite thief's supplies lie. Try to remember which ones.
-  parent: [ BaseItem, BaseMinorContraband ]
+  parent: [ BaseItem, BaseSetSelector, BaseMinorContraband ] # Goobstation edit
   components:
-  - type: Sprite
-    sprite: Objects/Tools/Toolboxes/toolbox_thief.rsi
-    state: icon
-  - type: ThiefUndeterminedBackpack
-    possibleSets:
-    # TODO Thief pinpointer needed
-    - ChemistrySet
-    - ToolsSet
-    - ChameleonSet # TODO Chameleon stump PR needed
-    - SyndieSet
-    - SleeperSet
-    - CommunicatorSet
-    - SmugglerSet
-  - type: ActivatableUI
-    key: enum.ThiefBackpackUIKey.Key
-  - type: UserInterface
-    interfaces:
-      enum.ThiefBackpackUIKey.Key:
-        type: ThiefBackpackBoundUserInterface
+    - type: Sprite
+      sprite: Objects/Tools/Toolboxes/toolbox_thief.rsi
+      state: icon
+    # Goobstation - SetSelector rework - start
+    #  - type: ThiefUndeterminedBackpack
+    #    possibleSets:
+    #    # TODO Thief pinpointer needed
+    #    - ChemistrySet
+    #    - ToolsSet
+    #    - ChameleonSet # TODO Chameleon stump PR needed
+    #    - SyndieSet
+    #    - SleeperSet
+    #    - CommunicatorSet
+    #    - SmugglerSet
+    #  - type: ActivatableUI
+    #    key: enum.ThiefBackpackUIKey.Key
+    #  - type: UserInterface
+    #    interfaces:
+    #      enum.ThiefBackpackUIKey.Key:
+    #        type: ThiefBackpackBoundUserInterface
+    - type: SetSelector
+      possibleSets:
+        - ThiefAnatomySet
+        - ThiefBreacherSet
+        - ThiefChameleonSet
+        - ThiefSyndieSet
+        - ThiefSleeperSet
+        - ThiefCommunicatorSet
+        - ThiefSmugglerSet
+      maxSelectedSets: 2
+# Goobstation - SetSelector rework - end
 
 - type: entity
   id: SatchelThief
@@ -76,5 +93,9 @@
     state: folded
   - type: Item
     storedRotation: 90
-  - type: ThiefUndeterminedBackpack
+  - type: SetSelector # Goobstation
     spawnedStoragePrototype: ClothingBackpackSatchelSmugglerUnanchored
+    # Goobstation
+    spawnedStorageContainer: storagebase
+    approveSound:
+      collection: storageRustle

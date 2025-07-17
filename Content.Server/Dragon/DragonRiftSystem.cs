@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Chat.Systems;
 using Content.Server.NPC;
 using Content.Server.NPC.Systems;
@@ -6,14 +19,13 @@ using Content.Shared.Damage;
 using Content.Shared.Dragon;
 using Content.Shared.Examine;
 using Content.Shared.Sprite;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization.Manager;
 using System.Numerics;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameStates;
+using Robust.Shared.Random; // Goobstation - Buff carp rift
 using Robust.Shared.Utility;
 
 namespace Content.Server.Dragon;
@@ -25,6 +37,7 @@ public sealed class DragonRiftSystem : EntitySystem
 {
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly DragonSystem _dragon = default!;
+    [Dependency] private readonly IRobustRandom _random = default!; // Goobstation - Buff carp rift
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
     [Dependency] private readonly NPCSystem _npc = default!;
@@ -90,7 +103,7 @@ public sealed class DragonRiftSystem : EntitySystem
             if (comp.SpawnAccumulator > comp.SpawnCooldown)
             {
                 comp.SpawnAccumulator -= comp.SpawnCooldown;
-                var ent = Spawn(comp.SpawnPrototype, xform.Coordinates);
+                var ent = Spawn(_random.Prob(comp.StrongSpawnChance) ? comp.SpawnPrototypeStrong : comp.SpawnPrototype, xform.Coordinates); // Goobstation - Buff carp rift
 
                 // Update their look to match the leader.
                 if (TryComp<RandomSpriteComponent>(comp.Dragon, out var randomSprite))

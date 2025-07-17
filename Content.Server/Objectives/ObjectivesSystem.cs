@@ -1,3 +1,29 @@
+// SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Flareguy <78941145+Flareguy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Crotalus <Crotalus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Hreno <hrenor@gmail.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.GameTicking;
 using Content.Server.Shuttles.Systems;
 using Content.Shared.Cuffs.Components;
@@ -11,6 +37,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
+using Content.Goobstation.Common.CCVar;
+using Content.Server._durkcode.ServerCurrency;
 using Content.Server.Objectives.Commands;
 using Content.Shared.CCVar;
 using Content.Shared.Prototypes;
@@ -18,9 +46,12 @@ using Content.Shared.Roles.Jobs;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
+using Robust.Shared.Configuration;
 
 namespace Content.Server.Objectives;
 
+// heavily edited by goobstation contributor gang
+// if you wanna upstream something think twice
 public sealed class ObjectivesSystem : SharedObjectivesSystem
 {
     [Dependency] private readonly GameTicker _gameTicker = default!;
@@ -29,12 +60,15 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
     [Dependency] private readonly SharedJobSystem _job = default!;
+    [Dependency] private readonly ServerCurrencyManager _currencyMan = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     private IEnumerable<string>? _objectives;
 
     private bool _showGreentext;
 
+    private int _goobcoinsPerGreentext = 5;
+    private int _goobcoinsServerMultiplier = 1;
     public override void Initialize()
     {
         base.Initialize();
@@ -44,6 +78,8 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
         Subs.CVar(_cfg, CCVars.GameShowGreentext, value => _showGreentext = value, true);
 
         _prototypeManager.PrototypesReloaded += CreateCompletions;
+        Subs.CVar(_cfg, GoobCVars.GoobcoinsPerGreentext, value => _goobcoinsPerGreentext = value, true);
+        Subs.CVar(_cfg, GoobCVars.GoobcoinServerMultiplier, value => _goobcoinsServerMultiplier = value, true);
     }
 
     public override void Shutdown()
@@ -59,7 +95,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
     private void OnRoundEndText(RoundEndTextAppendEvent ev)
     {
         // go through each gamerule getting data for the roundend summary.
-        var summaries = new Dictionary<string, Dictionary<string, List<(EntityUid, string)>>>();
+        var summaries = new Dictionary<string, Dictionary<string, Dictionary<string, List<(EntityUid, string)>>>>();
         var query = EntityQueryEnumerator<GameRuleComponent>();
         while (query.MoveNext(out var uid, out var gameRule))
         {
@@ -72,16 +108,20 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                 continue;
 
             // first group the gamerules by their agents, for example 2 different dragons
-            var agent = info.AgentName;
+            var agent = info.Faction ?? info.AgentName;
             if (!summaries.ContainsKey(agent))
-                summaries[agent] = new Dictionary<string, List<(EntityUid, string)>>();
+                summaries[agent] = new Dictionary<string, Dictionary<string, List<(EntityUid, string)>>>();
+
+            // next group them by agent names, for example different traitors, blood brother teams, etc.
+            if (!summaries[agent].ContainsKey(info.AgentName))
+                summaries[agent][info.AgentName] = new Dictionary<string, List<(EntityUid, string)>>();
 
             var prepend = new ObjectivesTextPrependEvent("");
             RaiseLocalEvent(uid, ref prepend);
 
             // next group them by their prepended texts
             // for example with traitor rule, group them by the codewords they share
-            var summary = summaries[agent];
+            var summary = summaries[agent][info.AgentName];
             if (summary.ContainsKey(prepend.Text))
             {
                 // same prepended text (usually empty) so combine them
@@ -94,36 +134,39 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
         }
 
         // convert the data into summary text
-        foreach (var (agent, summary) in summaries)
+        foreach (var (faction, summariesFaction) in summaries)
         {
-            // first get the total number of players that were in these game rules combined
-            var total = 0;
-            var totalInCustody = 0;
-            foreach (var (_, minds) in summary)
+            foreach (var (agent, summary) in summariesFaction)
             {
-                total += minds.Count;
-                totalInCustody += minds.Where(pair => IsInCustody(pair.Item1)).Count();
+                // first get the total number of players that were in these game rules combined
+                var total = 0;
+                var totalInCustody = 0;
+                foreach (var (_, minds) in summary)
+                {
+                    total += minds.Count;
+                    totalInCustody += minds.Where(pair => IsInCustody(pair.Item1)).Count();
+                }
+
+                var result = new StringBuilder();
+                result.AppendLine(Loc.GetString("objectives-round-end-result", ("count", total), ("agent", agent)));
+                if (agent == Loc.GetString("traitor-round-end-agent-name"))
+                {
+                    result.AppendLine(Loc.GetString("objectives-round-end-result-in-custody", ("count", total), ("custody", totalInCustody), ("agent", agent)));
+                }
+                // next add all the players with its own prepended text
+                foreach (var (prepend, minds) in summary)
+                {
+                    if (prepend != string.Empty)
+                        result.Append(prepend);
+
+                    // add space between the start text and player list
+                    result.AppendLine();
+
+                    AddSummary(result, agent, minds);
+                }
+
+                ev.AddLine(result.AppendLine().ToString());
             }
-
-            var result = new StringBuilder();
-            result.AppendLine(Loc.GetString("objectives-round-end-result", ("count", total), ("agent", agent)));
-            if (agent == Loc.GetString("traitor-round-end-agent-name"))
-            {
-                result.AppendLine(Loc.GetString("objectives-round-end-result-in-custody", ("count", total), ("custody", totalInCustody), ("agent", agent)));
-            }
-            // next add all the players with its own prepended text
-            foreach (var (prepend, minds) in summary)
-            {
-                if (prepend != string.Empty)
-                    result.Append(prepend);
-
-                // add space between the start text and player list
-                result.AppendLine();
-
-                AddSummary(result, agent, minds);
-            }
-
-            ev.AddLine(result.AppendLine().ToString());
         }
     }
 
@@ -136,6 +179,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             if (!TryComp<MindComponent>(mindId, out var mind))
                 continue;
 
+            var userid = mind.OriginalOwnerUserId;
             var title = GetTitle((mindId, mind), name);
             var custody = IsInCustody(mindId, mind) ? Loc.GetString("objectives-in-custody") : string.Empty;
 
@@ -178,23 +222,42 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                         agentSummary.AppendLine(Loc.GetString(
                             "objectives-objective-success",
                             ("objective", objectiveTitle),
-                            ("markupColor", "green")
+                            ("progress", progress)
                         ));
                         completedObjectives++;
+
+                         // Easiest place to give people points for completing objectives lol
+                        if(userid.HasValue)
+                            _currencyMan.AddCurrency(userid.Value, _goobcoinsPerGreentext * _goobcoinsServerMultiplier);
+                    }
+                    else if (progress <= 0.99f && progress >= 0.5f)
+                    {
+                        agentSummary.AppendLine(Loc.GetString(
+                            "objectives-objective-partial-success",
+                            ("objective", objectiveTitle),
+                            ("progress", progress)
+                        ));
+                    }
+                    else if (progress < 0.5f && progress > 0f)
+                    {
+                        agentSummary.AppendLine(Loc.GetString(
+                            "objectives-objective-partial-failure",
+                            ("objective", objectiveTitle),
+                            ("progress", progress)
+                        ));
                     }
                     else
                     {
                         agentSummary.AppendLine(Loc.GetString(
                             "objectives-objective-fail",
                             ("objective", objectiveTitle),
-                            ("progress", (int) (progress * 100)),
-                            ("markupColor", "red")
+                            ("progress", progress)
                         ));
                     }
                 }
             }
 
-            var successRate = totalObjectives > 0 ? (float) completedObjectives / totalObjectives : 0f;
+            var successRate = totalObjectives > 0 ? (float)completedObjectives / totalObjectives : 0f;
             agentSummaries.Add((agentSummary.ToString(), successRate, completedObjectives));
         }
 
@@ -263,7 +326,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
     /// Get the title for a player's mind used in round end.
     /// Pass in the original entity name which is shown alongside username.
     /// </summary>
-    public string GetTitle(Entity<MindComponent?> mind, string name)
+    public string GetTitle(Entity<MindComponent?> mind, string name = "")
     {
         if (Resolve(mind, ref mind.Comp) &&
             mind.Comp.OriginalOwnerUserId != null &&
@@ -317,7 +380,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
 /// The objectives system already checks if the game rule is added so you don't need to check that in this event's handler.
 /// </remarks>
 [ByRefEvent]
-public record struct ObjectivesTextGetInfoEvent(List<(EntityUid, string)> Minds, string AgentName);
+public record struct ObjectivesTextGetInfoEvent(List<(EntityUid, string)> Minds, string AgentName, string? Faction = null);
 
 /// <summary>
 /// Raised on the game rule before text for each agent's objectives is added, letting you prepend something.

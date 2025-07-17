@@ -1,8 +1,77 @@
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 avery <51971268+graevy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 AutoOtter <joshuademorris@gmail.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DieselMohawk <gavin.drinka@gmail.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <JIPDawg93@gmail.com>
+// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 MisterMecky <mrmecky@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 PursuitInAshes <pursuitinashes@gmail.com>
+// SPDX-FileCopyrightText: 2024 QueerNB <176353696+QueerNB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 RumiTiger <154005209+RumiTiger@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Unisol <1929445+Unisol@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 osjarw <oskariwjarvinen@gmail.com>
+// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using System.Collections.Immutable;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
+using Content.Server.ADT.Discord;
+using Content.Server.ADT.Discord.Bans;
+using Content.Server.ADT.Discord.Bans.PayloadGenerators;
 using Content.Server.Chat.Managers;
+using Content.Server.Database;
 using Content.Server.EUI;
 using Content.Shared.Administration;
 using Content.Shared.Database;
@@ -19,6 +88,8 @@ public sealed class BanPanelEui : BaseEui
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IAdminManager _admins = default!;
+    [Dependency] private readonly IServerDbManager _dbManager = default!;
+    [Dependency] private readonly IDiscordBanInfoSender _discordBanInfoSender = default!;
 
     private readonly ISawmill _sawmill;
 
@@ -86,9 +157,9 @@ public sealed class BanPanelEui : BaseEui
             }
 
             if (hidInt == 0)
-                hidInt = (uint) (ipAddress.AddressFamily == AddressFamily.InterNetworkV6 ? Ipv6_CIDR : Ipv4_CIDR);
+                hidInt = (uint)(ipAddress.AddressFamily == AddressFamily.InterNetworkV6 ? Ipv6_CIDR : Ipv4_CIDR);
 
-            addressRange = (ipAddress, (int) hidInt);
+            addressRange = (ipAddress, (int)hidInt);
         }
 
         var targetUid = target is not null ? PlayerId : null;
@@ -119,10 +190,31 @@ public sealed class BanPanelEui : BaseEui
         if (roles?.Count > 0)
         {
             var now = DateTimeOffset.UtcNow;
+            //Start-ADT-Tweak: логи банов для диса
+            var lastRoleBan = await _dbManager.GetLastServerRoleBanAsync();
+            var startRoleBanId = lastRoleBan is not null ? lastRoleBan.Id + 1 : 1;
+            var currentRoleBanId = startRoleBanId;
+            var rolesData = new List<string>();
+            //End-ADT-Tweak
             foreach (var role in roles)
             {
-                _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now);
+                rolesData.Add(string.Format("{0}:{1}", role, currentRoleBanId++)); //ADT-Tweak
+                await _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now);
             }
+            //Start-ADT-Tweak: логи банов для диса
+            var roleBanInfo = new BanInfo
+            {
+                BanId = string.Empty,
+                Target = target!,
+                Player = Player,
+                Minutes = minutes,
+                Reason = reason,
+                Expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes),
+                AdditionalInfo = new() { { "roles", string.Join(", ", rolesData) } }
+            };
+
+            await _discordBanInfoSender.SendBanInfoAsync<PanelBanPayloadGenerator>(roleBanInfo);
+            //End-ADT-Tweak
 
             Close();
             return;
@@ -142,7 +234,22 @@ public sealed class BanPanelEui : BaseEui
             }
         }
 
+        var lastServerBan = await _dbManager.GetLastServerBanAsync();
+        var newServerBanId = lastServerBan is not null ? lastServerBan.Id + 1 : 1;
+
         _banManager.CreateServerBan(targetUid, target, Player.UserId, addressRange, targetHWid, minutes, severity, reason);
+
+        var banInfo = new BanInfo
+        {
+            BanId = newServerBanId.ToString()!,
+            Target = target!,
+            Player = Player,
+            Minutes = minutes,
+            Reason = reason,
+            Expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes)
+        };
+
+        await _discordBanInfoSender.SendBanInfoAsync<PanelBanPayloadGenerator>(banInfo);
 
         Close();
     }

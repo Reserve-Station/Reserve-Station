@@ -1,0 +1,228 @@
+Name: Reservelog
+Order: -1
+Entries:
+- author: Svarshik
+  changes:
+    - type: Remove
+      message: ERP
+  id: 3
+  time: '2025-05-15T12:54:44.0000000+00:00'
+- author: lexaSvarshik
+  changes:
+    - type: Add
+      message: Новые инструменты для мапперов.
+  id: 4
+  time: '2025-05-18T21:58:00.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: ERP для администрации
+    - type: Add
+      message: >-
+        К заказу в карго стал доступен ящик с краской. Пару банок перепало и
+        клоуну.
+    - type: Tweak
+      message: >-
+        Гайдбук временно на общесолнечном языке. Перевод на общегалактический
+        находится в обработке у Канцелярии НТ.
+    - type: Remove
+      message: >-
+        Воздушные сенсоры на станции Силли демонтированы в связи с устареванием.
+        Ожидайте монтажа новой ревизии.
+  id: 5
+  time: '2025-05-20T17:36:06.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Tweak
+      message: >-
+        Инженерная бригада полностью заменила трубы атмоса, а так же
+        электропроводку на Силли. Теперь всё соответствует ТБ.
+  id: 6
+  time: '2025-05-23T14:04:48.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Внутриигровое руководство полностью на русском языке!
+  id: 7
+  time: '2025-05-24T20:29:19.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Tweak
+      message: >-
+        Баланс способностей ревенанта - теперь время шока и его вероятность
+        разительно ниже.
+  id: 8
+  time: '2025-05-24T23:46:53.0000000+00:00'
+- author: lexaSvarshik
+  changes:
+    - type: Add
+      message: >-
+        На сервере появились "Дополнения к правилам" - можно ознакомиться в
+        руководстве. В дополнения лишь более детально расписаны примеры
+        поведения в игровых ситуациях.
+  id: 9
+  time: '2025-05-25T11:24:44.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Fix
+      message: >-
+        Исправлены массовые ивенты. Теперь станция не должна превратиться в ад
+        за секунды.
+  id: 10
+  time: '2025-05-25T12:10:58.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Fix
+      message: Исправлен принтер документов. Теперь работает корректно.
+  id: 11
+  time: '2025-05-25T16:23:52.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Добавлены изменения с Goob Station на момент 25.05!
+  id: 12
+  time: '2025-05-26T15:36:33.0000000+00:00'
+- author: Jose229
+  changes:
+    - type: Add
+      message: Добавлена локализация!
+    - type: Remove
+      message: Убрана локализация!
+    - type: Tweak
+      message: Изменена локализация!
+    - type: Fix
+      message: Исправлена локализация!
+  id: 13
+  time: '2025-05-26T16:13:38.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Добавлено МНОГО ЛОКАЛИЗАЦИИ. ПОЛНОСТЬЮ НА РУССКОМ ЯЗЫКЕ!
+  id: 14
+  time: '2025-05-27T23:44:02.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Remove
+      message: Временно отключен Дьявол ввиду неработающей механики.
+  id: 15
+  time: '2025-05-28T02:35:24.0000000+00:00'
+- author: Seven228
+  changes:
+    - type: Add
+      message: Раскраска шлюзов в кроваво-красные цвета.
+  id: 16
+  time: '2025-05-31T10:28:59.0000000+00:00'
+- author: Seven228
+  changes:
+    - type: Add
+      message: ОБР теперь только люди.
+  id: 17
+  time: '2025-06-04T14:14:40.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Главам станции вернули имплант "Щит Разума"
+  id: 18
+  time: '2025-06-05T17:27:20.0000000+00:00'
+- author: Kutos
+  changes:
+    - type: Add
+      message: Усы "Велосипедный руль"
+  id: 19
+  time: '2025-06-05T17:30:06.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Добавлены изменения с Goob Station на момент 06.06
+  id: 20
+  time: '2025-06-06T18:31:19.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Добавлена локализация
+    - type: Fix
+      message: Исправлена локализация
+  id: 21
+  time: '2025-06-07T15:45:25.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Новая модель шаттла карго! Тяжеловоз 'Pilgrim'
+  id: 22
+  time: '2025-06-07T21:57:26.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: >-
+        Возвращено: CQC щиту, Кравмаги вардену, Дзюдо в лоадаут, CQC синдикату в
+        аплинк.
+  id: 23
+  time: '2025-06-07T22:50:59.0000000+00:00'
+- author: lexaSvarshik
+  changes:
+    - type: Add
+      message: Новые звуки оповещений и музыка!
+  id: 24
+  time: '2025-06-07T23:24:04.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Tweak
+      message: Настенные таблички теперь полностью на русском языке
+  id: 25
+  time: '2025-06-07T23:53:21.0000000+00:00'
+- author: Gamma91302
+  changes:
+    - type: Add
+      message: Добавлена плюшевая моль в лодауты!
+  id: 26
+  time: '2025-06-10T10:32:36.0000000+00:00'
+- author: EDsLi1103
+  changes:
+    - type: Fix
+      message: Питание Saltern было исправлено.
+    - type: Add
+      message: >-
+        Добавлено топливо ДАМ на Saltern, а так же мастерская для постройки
+        своих шаттлов.
+  id: 27
+  time: '2025-06-12T13:42:39.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Добавлены измения с Goob Station на момент 19.06
+    - type: Add
+      message: Добавлены измения с Space Wizards на момент 27.04
+  id: 28
+  time: '2025-06-19T19:51:05.0000000+00:00'
+- author: echotry-ss14
+  changes:
+    - type: Fix
+      message: >-
+        вернул ключи шифрования блю шилду, вернул часы для ассистента. Потом
+        займусь доступами.
+  id: 29
+  time: '2025-06-21T11:53:59.0000000+00:00'
+- author: gladiarus
+  changes:
+    - type: Add
+      message: Добавлен напиток "брепси"
+  id: 30
+  time: '2025-06-22T15:14:24.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Remove
+      message: Убраны из ротации Резерв-Омега, Резерв-Салтерн, Резерв-Кластер
+  id: 31
+  time: '2025-06-30T18:52:40.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Добавлены изменения с Goob Station на момент 12.07!
+  id: 32
+  time: '2025-07-13T06:46:40.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Добавлены изменения с Goob Station на момент 12.07!
+  id: 33
+  time: '2025-07-13T07:07:54.0000000+00:00'

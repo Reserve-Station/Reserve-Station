@@ -1,9 +1,47 @@
+// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jacob Tong <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <jmaster9999@gmail.com>
+// SPDX-FileCopyrightText: 2022 Paul <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Menshin <Menshin@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Shitmed.Body.Events; // Shitmed Change
 using Content.Client.DisplacementMap;
 using Content.Client.Examine;
 using Content.Client.Strip;
 using Content.Client.Verbs.UI;
+using Content.Shared.Body.Part; // Shitmed Change
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -17,6 +55,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Hands.Systems
 {
@@ -28,6 +67,7 @@ namespace Content.Client.Hands.Systems
 
         [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
         [Dependency] private readonly StrippableSystem _stripSys = default!;
+        [Dependency] private readonly SpriteSystem _sprite = default!;
         [Dependency] private readonly ExamineSystem _examine = default!;
         [Dependency] private readonly DisplacementMapSystem _displacement = default!;
 
@@ -51,6 +91,8 @@ namespace Content.Client.Hands.Systems
             SubscribeLocalEvent<HandsComponent, ComponentShutdown>(OnHandsShutdown);
             SubscribeLocalEvent<HandsComponent, ComponentHandleState>(HandleComponentState);
             SubscribeLocalEvent<HandsComponent, VisualsChangedEvent>(OnVisualsChanged);
+            SubscribeLocalEvent<HandsComponent, BodyPartRemovedEvent>(HandleBodyPartRemoved); // Shitmed Change
+            SubscribeLocalEvent<HandsComponent, BodyPartDisabledEvent>(HandleBodyPartDisabled); // Shitmed Change
 
             OnHandSetActive += OnHandActivated;
         }
@@ -240,6 +282,37 @@ namespace Content.Client.Hands.Systems
 
         #region visuals
 
+        // Shitmed Change Start
+        private void HideLayers(EntityUid uid, HandsComponent component, Entity<BodyPartComponent> part, SpriteComponent? sprite = null)
+        {
+            if (!Resolve(uid, ref sprite, logMissing: false)
+                || part.Comp.PartType != BodyPartType.Arm
+                && part.Comp.PartType != BodyPartType.Hand)
+                return;
+
+            var location = part.Comp.Symmetry switch
+            {
+                BodyPartSymmetry.None => HandLocation.Middle,
+                BodyPartSymmetry.Left => HandLocation.Left,
+                BodyPartSymmetry.Right => HandLocation.Right,
+                _ => throw new ArgumentOutOfRangeException(nameof(part.Comp.Symmetry))
+            };
+
+            if (component.RevealedLayers.TryGetValue(location, out var revealedLayers))
+            {
+                foreach (var key in revealedLayers)
+                    sprite.RemoveLayer(key);
+
+                revealedLayers.Clear();
+            }
+        }
+
+        private void HandleBodyPartRemoved(EntityUid uid, HandsComponent component, ref BodyPartRemovedEvent args) => HideLayers(uid, component, args.Part);
+
+        private void HandleBodyPartDisabled(EntityUid uid, HandsComponent component, ref BodyPartDisabledEvent args) => HideLayers(uid, component, args.Part);
+
+        // Shitmed Change End
+
         protected override void HandleEntityInserted(EntityUid uid, HandsComponent hands, EntInsertedIntoContainerMessage args)
         {
             base.HandleEntityInserted(uid, hands, args);
@@ -297,7 +370,7 @@ namespace Content.Client.Hands.Systems
             {
                 foreach (var key in revealedLayers)
                 {
-                    sprite.RemoveLayer(key);
+                    _sprite.RemoveLayer((uid, sprite), key);
                 }
 
                 revealedLayers.Clear();
@@ -333,7 +406,7 @@ namespace Content.Client.Hands.Systems
                     continue;
                 }
 
-                var index = sprite.LayerMapReserveBlank(key);
+                var index = _sprite.LayerMapReserve((uid, sprite), key);
 
                 // In case no RSI is given, use the item's base RSI as a default. This cuts down on a lot of unnecessary yaml entries.
                 if (layerData.RsiPath == null
@@ -341,21 +414,23 @@ namespace Content.Client.Hands.Systems
                     && sprite[index].Rsi == null)
                 {
                     if (TryComp<ItemComponent>(held, out var itemComponent) && itemComponent.RsiPath != null)
-                        sprite.LayerSetRSI(index, itemComponent.RsiPath);
+                        _sprite.LayerSetRsi((uid, sprite), index, new ResPath(itemComponent.RsiPath));
                     else if (TryComp(held, out SpriteComponent? clothingSprite))
-                        sprite.LayerSetRSI(index, clothingSprite.BaseRSI);
+                        _sprite.LayerSetRsi((uid, sprite), index, clothingSprite.BaseRSI);
                 }
 
-                sprite.LayerSetData(index, layerData);
+                _sprite.LayerSetData((uid, sprite), index, layerData);
 
-                //Add displacement maps
-                if (hand.Location == HandLocation.Left && handComp.LeftHandDisplacement is not null)
-                    _displacement.TryAddDisplacement(handComp.LeftHandDisplacement, sprite, index, key, revealedLayers);
-                else if (hand.Location == HandLocation.Right && handComp.RightHandDisplacement is not null)
-                    _displacement.TryAddDisplacement(handComp.RightHandDisplacement, sprite, index, key, revealedLayers);
-                //Fallback to default displacement map
-                else if (handComp.HandDisplacement is not null)
-                    _displacement.TryAddDisplacement(handComp.HandDisplacement, sprite, index, key, revealedLayers);
+                // Add displacement maps
+                var displacement = hand.Location switch
+                {
+                    HandLocation.Left => handComp.LeftHandDisplacement,
+                    HandLocation.Right => handComp.RightHandDisplacement,
+                    _ => handComp.HandDisplacement
+                };
+
+                if (displacement is not null && _displacement.TryAddDisplacement(displacement, (uid, sprite), index, key, out var displacementKey))
+                    revealedLayers.Add(displacementKey);
             }
 
             RaiseLocalEvent(held, new HeldVisualsUpdatedEvent(uid, revealedLayers), true);

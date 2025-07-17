@@ -1,3 +1,33 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 Spartak <artak10t@gmail.com>
+// SPDX-FileCopyrightText: 2022 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Illiux <newoutlook@gmail.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 Linus Wacker <70486856+SirDragooon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 PrPleGoo <PrPleGoo@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Intoxicating-Innocence <188202277+Intoxicating-Innocence@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Saphire <lattice@saphi.re>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 Dora <27211909+catdotjs@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 abadaba695 <spacestation13thingy@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Chemistry;
@@ -10,7 +40,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using System.Numerics;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Client.Graphics;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 using Robust.Client.GameObjects;
@@ -116,7 +146,10 @@ namespace Content.Client.Chemistry.UI
                 ("1", ChemMasterReagentAmount.U1, StyleBase.ButtonOpenBoth),
                 ("5", ChemMasterReagentAmount.U5, StyleBase.ButtonOpenBoth),
                 ("10", ChemMasterReagentAmount.U10, StyleBase.ButtonOpenBoth),
+                ("15", ChemMasterReagentAmount.U15, StyleBase.ButtonOpenBoth),
+                ("20", ChemMasterReagentAmount.U20, StyleBase.ButtonOpenBoth),
                 ("25", ChemMasterReagentAmount.U25, StyleBase.ButtonOpenBoth),
+                ("30", ChemMasterReagentAmount.U30, StyleBase.ButtonOpenBoth),
                 ("50", ChemMasterReagentAmount.U50, StyleBase.ButtonOpenBoth),
                 ("100", ChemMasterReagentAmount.U100, StyleBase.ButtonOpenBoth),
                 (Loc.GetString("chem-master-window-buffer-all-amount"), ChemMasterReagentAmount.All, StyleBase.ButtonOpenLeft),

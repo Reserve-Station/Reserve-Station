@@ -1,3 +1,50 @@
+# SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+# SPDX-FileCopyrightText: 2022 Interrobang01 <113810873+Interrobang01@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rinkashikachi <15rinkashikachi15@gmail.com>
+# SPDX-FileCopyrightText: 2023 Alzore <140123969+Blackern5000@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Filler <130583174+FillerVK@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nim <128169402+Nimfar11@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Thom <119594676+ItsMeThom@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Ubaser <134914314+UbaserB@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 lzk228 <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2023 potato1234_x <79580518+potato1234x@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 reverie collection <revsys413@gmail.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <ilyukarno@gmail.com>
+# SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <ajcraigaz@gmail.com>
+# SPDX-FileCopyrightText: 2024 RobDemo <88208745+MrRobDemo@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 ScarKy0 <scarky0@onet.eu>
+# SPDX-FileCopyrightText: 2024 Skarletto <122584947+Skarletto@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 The Canned One <greentopcan@gmail.com>
+# SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 botanySupremist <160211017+botanySupremist@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 botanySupremist <definitelyrealBotSupremist@gmail.com>
+# SPDX-FileCopyrightText: 2024 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 lapatison <100279397+lapatison@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 Aineias1 <142914808+Aineias1@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 amogus <113782077+whateverusername0@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # also used in MakeGhostRuleWindow and MakeGhostRoleCommand
 ghost-role-component-default-rules = All normal rules apply unless an administrator tells you otherwise.
                                      You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
@@ -30,10 +77,14 @@ ghost-role-information-silicon-rules = You are a [color={role-type-silicon-color
                                        You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
 ghost-role-information-mouse-name = Mouse
-ghost-role-information-mouse-description = A hungry and mischievous mouse.
+# Goobstation
+ghost-role-information-mouse-description = A hungry and mischievous mouse. Use +p to talk to other mice.
 
 ghost-role-information-mothroach-name = Mothroach
 ghost-role-information-mothroach-description = A cute but mischievous mothroach.
+
+ghost-role-information-squackroach-name = Squackroach
+ghost-role-information-squackroach-description = A diabolical but nearly harmless squackroach.
 
 ghost-role-information-snail-name = Snail
 ghost-role-information-snail-description = A little snail who doesn't mind a bit of space. Just stay on grid!
@@ -177,10 +228,11 @@ ghost-role-information-ert-medical-name = ERT Medical
 ghost-role-information-ert-medical-description = Assist with medical efforts to resolve the station's issues.
 
 ghost-role-information-cburn-agent-name = CBURN Agent
-ghost-role-information-cburn-agent-description = A highly trained CentComm agent, capable of dealing with various threats.
+ghost-role-information-cburn-agent-description = A highly trained CentComm agent, specializing in biological threats.
 
-ghost-role-information-centcom-official-name = CentComm Official
-ghost-role-information-centcom-official-description = Perform CentComm related duties such as inspect the station, jotting down performance reviews for heads of staff, and managing the fax machine.
+ghost-role-information-centcom-official-name = CentComm official
+ghost-role-information-centcom-official-description = Perform CentComm related duties such as inspecting the station, jotting down performance reviews for heads of staff, and managing the fax machine.
+
 
 ghost-role-information-nukeop-rules = You are a [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] with all other nuclear operatives. Covert syndicate agents are not guaranteed to help you.
 
@@ -194,9 +246,11 @@ ghost-role-information-behonker-description = You are an antagonist, bring death
 ghost-role-information-hellspawn-name = Hellspawn
 ghost-role-information-hellspawn-description = Bring death to those who do not follow the great god Nar'Sie.
 
+# Goob Station - Deathsquad Revamp
+
 ghost-role-information-Death-Squad-name = Death Squad Operative
-ghost-role-information-Death-Squad-description = One of Nanotrasen's top internal affairs agents. Await orders from CentComm or an official.
-ghost-role-information-Death-Squad-rules = You are required to obey orders given by your superior, you are effectively their [color={role-type-familiar-color}][bold]{role-type-familiar-name}[/bold][/color].
+ghost-role-information-Death-Squad-description = We need the Nanotrasen Representative alive to tell us what happened. The rest? Well... they're witnesses.
+ghost-role-information-Death-Squad-rules = Your objectives are simple: [color=red][bold]Terminate[/bold][/color] everyone who isn't Central Command staff. Executive orders may change this.
 
 ghost-role-information-SyndiCat-name = SyndiCat
 ghost-role-information-SyndiCat-description = You're the faithful trained pet of nuclear operatives with a microbomb. Serve your master to the death!
@@ -288,7 +342,7 @@ ghost-role-information-disaster-victim-name = Disaster Victim
 ghost-role-information-disaster-victim-description = You were rescued in an escape pod from another station that suffered a terrible fate. Perhaps you will be found and rescued.
 
 ghost-role-information-syndie-disaster-victim-name = Syndicate Disaster Victim
-ghost-role-information-syndie-disaster-victim-description = You're a regular passenger from a syndicate station. Unfortunately, an evacuation pod has thrown you into an enemy sector...
+ghost-role-information-syndie-disaster-victim-description = You're a regular passenger from a syndicate station. You have defected from your home station and found yourself in unfamiliar territory...
 
 ghost-role-information-syndie-soldier-name = Syndicate Soldier
 ghost-role-information-syndie-soldier-description = You are a soldier from the Syndicate.
@@ -302,11 +356,13 @@ ghost-role-information-blackmarketeer-description = Make trades or take odd jobs
 ghost-role-information-cossack-name = Ancient Traveler
 ghost-role-information-cossack-description = From a history lost to time, you find yourself cast into this day and age.
 
-ghost-role-information-pirate-name = Space Pirate
-ghost-role-information-pirate-description = Argh matey! Collect some cool loot, but make sure to avoid security and salvage!
+ghost-role-information-pirate-irs-name = Space Pirate
+ghost-role-information-pirate-irs-description = Confiscate the station's valuable assets. Arrest the captain for tax evasion.
 
-ghost-role-information-pirate-captain-name = Space Pirate Captain
-ghost-role-information-pirate-captain-description = Argh matey! You are in charge here and need to devise a plan to get that juicy loot by hook or by crook. Just make sure to avoid security and salvage!
+ghost-role-information-pirate-irs-captain-name = Space Pirate Captain
+ghost-role-information-pirate-irs-captain-description = Direct the plundering process. Arrest the captain for tax evasion.
+
+ghost-role-information-pirate-irs-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with the other pirates.
 
 ghost-role-information-artifact-name = Sentient Artifact
 ghost-role-information-artifact-description = Enact your eldritch whims. Forcibly activate your nodes for good or for evil.
@@ -318,5 +374,3 @@ ghost-role-information-gingerbread-name = Gingerbread Man
 ghost-role-information-gingerbread-description = A being of pure holiday spirit.
                                      Spread molassesy goodness and to all good cheer.
 
-ghost-role-information-wizard-name = Wizard
-ghost-role-information-wizard-desc = YER A WIZARD! Show the station what your magic is made of.

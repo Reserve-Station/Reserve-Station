@@ -1,8 +1,27 @@
+// SPDX-FileCopyrightText: 2020 Vince <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2020 zumorica <zddm@outlook.es>
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared.CCVar;
 using Content.Shared.Instruments;
-using Content.Shared.Physics;
-using JetBrains.Annotations;
 using Robust.Client.Audio.Midi;
 using Robust.Shared.Audio.Midi;
 using Robust.Shared.Configuration;
@@ -167,11 +186,14 @@ public sealed class InstrumentSystem : SharedInstrumentSystem
 
     private void UpdateRendererMaster(InstrumentComponent instrument)
     {
-        if (instrument.Renderer == null || instrument.Master == null)
+        if (instrument.Renderer == null)
             return;
 
-        if (!TryComp(instrument.Master, out InstrumentComponent? masterInstrument) || masterInstrument.Renderer == null)
+        if (instrument.Master == null || !TryComp(instrument.Master, out InstrumentComponent? masterInstrument) || masterInstrument.Renderer == null)
+        {
+            instrument.Renderer.Master = null;
             return;
+        }
 
         instrument.Renderer.Master = masterInstrument.Renderer;
     }
@@ -196,15 +218,16 @@ public sealed class InstrumentSystem : SharedInstrumentSystem
             return;
         }
 
-        instrument.Renderer?.SystemReset();
-        instrument.Renderer?.ClearAllEvents();
+        if (instrument.Renderer is { } renderer)
+        {
+            renderer.Master = null;
+            renderer.SystemReset();
+            renderer.ClearAllEvents();
 
-        var renderer = instrument.Renderer;
-
-        // We dispose of the synth two seconds from now to allow the last notes to stop from playing.
-        // Don't use timers bound to the entity in case it is getting deleted.
-        if (renderer != null)
+            // We dispose of the synth two seconds from now to allow the last notes to stop from playing.
+            // Don't use timers bound to the entity in case it is getting deleted.
             Timer.Spawn(2000, () => { renderer.Dispose(); });
+        }
 
         instrument.Renderer = null;
         instrument.MidiEventBuffer.Clear();

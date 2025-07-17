@@ -1,6 +1,16 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Threading;
 using Content.Server.Spawners.Components;
 using Robust.Shared.Random;
+using Content.Shared.Friends.Components; // Shitmed Change
+using Content.Shared._Shitmed.Spawners.EntitySystems; // Shitmed Change
 
 namespace Content.Server.Spawners.EntitySystems;
 
@@ -33,7 +43,11 @@ public sealed class SpawnerSystem : EntitySystem
         for (var i = 0; i < number; i++)
         {
             var entity = _random.Pick(component.Prototypes);
-            SpawnAtPosition(entity, coordinates);
+            // Shitmed Change Start
+            var spawnedEnt = SpawnAtPosition(entity, coordinates);
+            var ev = new SpawnerSpawnedEvent(spawnedEnt, HasComp<PettableFriendComponent>(spawnedEnt));
+            RaiseLocalEvent(uid, ev);
+            // Shitmed Change End
         }
     }
 

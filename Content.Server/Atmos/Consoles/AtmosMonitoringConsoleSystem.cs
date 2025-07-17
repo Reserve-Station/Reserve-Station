@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.Piping.Components;
 using Content.Server.DeviceNetwork.Components;
@@ -17,6 +22,8 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Timing;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared.DeviceNetwork.Components;
+using Content.Shared.NodeContainer;
 
 namespace Content.Server.Atmos.Consoles;
 
@@ -360,7 +367,7 @@ public sealed class AtmosMonitoringConsoleSystem : SharedAtmosMonitoringConsoleS
             chunk.AtmosPipeData[index] = atmosPipeData & ~mask;
         }
 
-        // Rebuild the tile's pipe data 
+        // Rebuild the tile's pipe data
         foreach (var ent in _sharedMapSystem.GetAnchoredEntities(gridUid, grid, coords))
         {
             if (!TryComp<AtmosPipeColorComponent>(ent, out var entAtmosPipeColor))

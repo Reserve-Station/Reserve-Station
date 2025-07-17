@@ -1,6 +1,14 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
 
@@ -62,12 +70,16 @@ namespace Content.Shared.Humanoid.Markings
             string species)
         {
             var speciesProto = _prototypeManager.Index<SpeciesPrototype>(species);
-            var onlyWhitelisted = _prototypeManager.Index(speciesProto.MarkingPoints).OnlyWhitelisted;
+            var markingPoints = _prototypeManager.Index(speciesProto.MarkingPoints);
             var res = new Dictionary<string, MarkingPrototype>();
 
             foreach (var (key, marking) in MarkingsByCategory(category))
             {
-                if (onlyWhitelisted && marking.SpeciesRestrictions == null)
+                // Goobstation - species without hair or other markings
+                if (!markingPoints.Points.ContainsKey(category))
+                    continue;
+
+                if ((markingPoints.OnlyWhitelisted || markingPoints.Points[category].OnlyWhitelisted) && marking.SpeciesRestrictions == null)
                 {
                     continue;
                 }

@@ -1,3 +1,22 @@
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Rainfall <rainfey0+git@gmail.com>
+// SPDX-FileCopyrightText: 2023 Rainfey <11758391+Rainfey@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Tornado Tech <54727692+Tornado-Technology@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Access.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Contraband;
@@ -13,7 +32,6 @@ namespace Content.Shared.Clothing.EntitySystems;
 
 public abstract class SharedChameleonClothingSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ClothingSystem _clothingSystem = default!;
     [Dependency] private readonly ContrabandSystem _contraband = default!;
@@ -66,7 +84,7 @@ public abstract class SharedChameleonClothingSystem : EntitySystem
 
         // item sprite logic
         if (TryComp(uid, out ItemComponent? item) &&
-            proto.TryGetComponent(out ItemComponent? otherItem, _factory))
+            proto.TryGetComponent(out ItemComponent? otherItem, Factory))
         {
             _itemSystem.CopyVisuals(uid, otherItem, item);
         }
@@ -126,7 +144,7 @@ public abstract class SharedChameleonClothingSystem : EntitySystem
             return false;
 
         // check if it is marked as valid chameleon target
-        if (!proto.TryGetComponent(out TagComponent? tag, _factory) || !_tag.HasTag(tag, WhitelistChameleonTag))
+        if (!proto.TryGetComponent(out TagComponent? tag, Factory) || !_tag.HasTag(tag, WhitelistChameleonTag))
             return false;
 
         if (requiredTag != null && !_tag.HasTag(tag, requiredTag))

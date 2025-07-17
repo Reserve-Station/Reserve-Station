@@ -1,3 +1,21 @@
+// SPDX-FileCopyrightText: 2022 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <koolthunder019@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -468,4 +486,112 @@ public sealed class PlayTimeTrackingManager : ISharedPlaytimeManager, IPostInjec
         _userDb.AddOnLoadPlayer(LoadData);
         _userDb.AddOnPlayerDisconnect(ClientDisconnected);
     }
+    // ADT-Tweak-start
+    public async Task FlushTrackerById(NetUserId userId)
+    {
+        var playTimes = await _db.GetPlayTimes(userId, CancellationToken.None);
+
+        foreach (var timer in playTimes)
+        {
+            await _db.UpdatePlayTimes(new List<PlayTimeUpdate> { new PlayTimeUpdate(userId, timer.Tracker, timer.TimeSpent) });
+        }
+    }
+
+    public async Task SaveSessionById(NetUserId userId)
+    {
+        var playTimes = await _db.GetPlayTimes(userId, CancellationToken.None);
+
+        foreach (var timer in playTimes)
+        {
+            await _db.UpdatePlayTimes(new List<PlayTimeUpdate> { new PlayTimeUpdate(userId, timer.Tracker, timer.TimeSpent) });
+        }
+    }
+
+    public async Task AddTimeToTrackerById(NetUserId userId, string tracker, TimeSpan time)
+    {
+        var playTimes = await _db.GetPlayTimes(userId, CancellationToken.None);
+
+        foreach (var timer in playTimes)
+        {
+            if (timer.Tracker == tracker)
+            {
+                timer.TimeSpent += time;
+                await _db.UpdatePlayTimes(new List<PlayTimeUpdate> { new PlayTimeUpdate(userId, tracker, timer.TimeSpent) });
+                return;
+            }
+        }
+
+        // If tracker doesn't exist, add it
+        await _db.UpdatePlayTimes(new List<PlayTimeUpdate> { new PlayTimeUpdate(userId, tracker, time) });
+    }
+
+    public async Task AddTimeToOverallPlaytimeById(NetUserId userId, TimeSpan time)
+    {
+        var playTimes = await _db.GetPlayTimes(userId, CancellationToken.None);
+        var playTimeUpdates = new List<PlayTimeUpdate>();
+
+        bool overallTrackerExists = false;
+
+        foreach (var timer in playTimes)
+        {
+            if (timer.Tracker == PlayTimeTrackingShared.TrackerOverall)
+            {
+                timer.TimeSpent += time;
+                playTimeUpdates.Add(new PlayTimeUpdate(userId, timer.Tracker, timer.TimeSpent));
+                overallTrackerExists = true;
+                break;
+            }
+        }
+
+        if (!overallTrackerExists)
+        {
+            playTimeUpdates.Add(new PlayTimeUpdate(userId, PlayTimeTrackingShared.TrackerOverall, time));
+        }
+
+        await _db.UpdatePlayTimes(playTimeUpdates);
+    }
+
+    public async Task<TimeSpan> GetOverallPlaytimeById(NetUserId userId)
+    {
+        var playTimes = await _db.GetPlayTimes(userId, CancellationToken.None);
+
+        foreach (var timer in playTimes)
+        {
+            if (timer.Tracker == PlayTimeTrackingShared.TrackerOverall)
+            {
+                return timer.TimeSpent;
+            }
+        }
+
+        return TimeSpan.Zero;
+    }
+
+    public async Task<Dictionary<string, TimeSpan>> GetTrackerTimesById(NetUserId userId)
+    {
+        var playTimes = await _db.GetPlayTimes(userId, CancellationToken.None);
+        var trackerTimes = new Dictionary<string, TimeSpan>();
+
+        foreach (var timer in playTimes)
+        {
+            trackerTimes[timer.Tracker] = timer.TimeSpent;
+        }
+
+        return trackerTimes;
+    }
+
+    public async Task<TimeSpan> GetPlayTimeForTrackerById(NetUserId userId, string tracker)
+    {
+        var playTimes = await _db.GetPlayTimes(userId, CancellationToken.None);
+
+        foreach (var timer in playTimes)
+        {
+            if (timer.Tracker == tracker)
+            {
+                return timer.TimeSpent;
+            }
+        }
+
+        return TimeSpan.Zero;
+    }
+    // ADT-Tweak-end
 }

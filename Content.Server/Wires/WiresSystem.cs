@@ -1,15 +1,80 @@
+// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@gmail.com>
+// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
+// SPDX-FileCopyrightText: 2022 ike709 <ike709@github.com>
+// SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <drsmugleaf@gmail.com>
+// SPDX-FileCopyrightText: 2023 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Morb <14136326+Morb0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Slava0135 <super.novalskiy_0135@inbox.ru>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 keronshb <keronshb@live.com>
+// SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 JIPDawg <JIPDawg93@gmail.com>
+// SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
+// SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
+// SPDX-FileCopyrightText: 2024 PursuitInAshes <pursuitinashes@gmail.com>
+// SPDX-FileCopyrightText: 2024 QueerNB <176353696+QueerNB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
+// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
+// SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
+// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading;
 using Content.Server.Construction;
 using Content.Server.Construction.Components;
-using Content.Server.Power.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Power;
+using Content.Shared.Tag; // Shitmed Change
 using Content.Shared.Tools.Components;
 using Content.Shared.Wires;
 using Robust.Server.GameObjects;
@@ -28,6 +93,7 @@ public sealed class WiresSystem : SharedWiresSystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ConstructionSystem _construction = default!;
+    [Dependency] private readonly TagSystem _tags = default!; // Shitmed Change
 
     // This is where all the wire layouts are stored.
     [ViewVariables] private readonly Dictionary<string, WireLayout> _layouts = new();
@@ -448,6 +514,15 @@ public sealed class WiresSystem : SharedWiresSystem
         {
             if (TryComp(args.User, out ActorComponent? actor))
             {
+                // Shitmed Change Start
+                if (_tags.HasTag(args.Used, component.ShowWiresTag))
+                    component.ViewWires = true;
+                else
+                    component.ViewWires = false;
+
+                UpdateUserInterface(uid);
+                // Shitmed Change End
+
                 _uiSystem.OpenUi(uid, WiresUiKey.Key, actor.PlayerSession);
                 args.Handled = true;
             }
@@ -542,8 +617,26 @@ public sealed class WiresSystem : SharedWiresSystem
         var statuses = new List<(int position, object key, object value)>();
         foreach (var (key, value) in wires.Statuses)
         {
-            var valueCast = ((int position, StatusLightData? value)) value;
-            statuses.Add((valueCast.position, key, valueCast.value!));
+            // Shitmed Change Start
+            var tempValue = value;
+            var lightData = (((int, StatusLightData?)) tempValue);
+            if (lightData.Item2 != null && lightData.Item2 is StatusLightData data)
+            {
+                if (wires.ViewWires)
+                {
+                    var foundWires = wires.WiresList
+                        .Where(wire => wire.OriginalPosition == lightData.Item1)
+                        .ToList();
+                    if (foundWires.Any())
+                    {
+                        var wireLetters = string.Join(", ", foundWires.Select(wire => wire.Letter.ToString()));
+                        data.Text = $"{data.Text}({wireLetters})";
+                    }
+                }
+
+                statuses.Add((lightData.Item1, key, data));
+            }
+            // Shitmed Change End
         }
 
         statuses.Sort((a, b) => a.position.CompareTo(b.position));

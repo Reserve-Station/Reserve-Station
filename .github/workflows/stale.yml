@@ -1,0 +1,71 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: Mark and Close Stale Pull Requests
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs daily at midnight UTC.
+    - cron: '0 0 * * *'
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      # Currently we are not planning on marking issues as stale, so this permission is read only.
+      # Just gonna leave this in here in case we need it in the future.
+      issues: read
+      pull-requests: write # Required to add labels, comment, close PRs.
+
+    steps:
+      - name: Mark and Close Stale Pull Requests
+        uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+          # --- Ignore Issues ---
+          # Set to -1 so we never mark issues as stale.
+          days-before-issue-stale: -1
+
+          # --- Pull Request Specific Settings ---
+          # Number of days of inactivity before a Pull Request becomes stale (currently 2 weeks)
+          days-before-pr-stale: 14
+
+          # Number of days of inactivity after being marked stale before a Pull Request is closed (2 more weeks)
+          days-before-pr-close: 14
+
+          # Label to use when marking a PR as stale
+          stale-pr-label: 'Note: Stale'
+
+          # Comment to post when marking a PR as stale
+          stale-pr-message: |
+            Этот pull request был автоматически отмечен как устаревший, потому что он не имел
+            любой активности в течение 14 дней. Он будет закрыт через 14 дней, если не будет никакой дальнейшей деятельности.
+            Спасибо за ваши вклады.
+
+            Вы всегда можете попросить о помощи в нашем развитии [discord](https://discord.gg/4Jn4kxRmvF).
+
+            Если вы хотите оставить это открытым, просто оставьте любой комментарий, и устаревшая этикетка будет удалена.
+          # Comment to post when closing a stale PR
+          close-pr-message: |
+            Этот pull request был автоматически закрыт, так как в течение 14 дней не было никакой активности
+            после того, как был отмечен устаревшим.
+
+            Пожалуйста, не стесняйтесь открывать новый pull request или открыть новый, если вы все еще хотите, чтобы ваши изменения были рассмотрены.
+
+            Снова, вы всегда можете попросить помощи в нашем [discord](https://discord.gg/RYNBE6fUW2).
+
+            Еще раз спасибо за ваш вклад!
+          # Pull Requests with these labels will never be considered stale
+
+          # Set to true to ignore PRs in a milestone (defaults to false)
+          exempt-all-pr-milestones: true
+
+          # Remove stale label from PRs on update (default is true)
+          remove-pr-stale-when-updated: true
+
+          ascending: true

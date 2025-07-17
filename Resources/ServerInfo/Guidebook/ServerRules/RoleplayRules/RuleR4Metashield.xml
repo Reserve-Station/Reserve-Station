@@ -1,3 +1,13 @@
+<!--
+SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 basic pack <159909786+packmore@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
 <Document>
   # Roleplay Rule 4 - Do not metagame, obey the Metashield
   Something that is "shielded" cannot be known by your character during a round until the "revealing condition" happens. This also means that your character cannot do things based on "shielded" information. Knowing or acting on something that is shielded before the revealing condition is met is referred to as metagaming.
@@ -13,52 +23,61 @@
   - Events you experienced as a different character.
   - All information related to the player of a character rather than the character itself. (See "Metafriending and Metagrudging" below.)
   - All information gained while dead or a ghost.
+  - All information gained while in critical condition or unconscious.
   - The fact that a round will end.
 
   This does not prevent knowing that a shift will end, but does prohibit things like preparing to kill people at central command when roleplay rules stop being enforced on LRP.
 
   ## Nuclear Operatives
 
-  The existence of Nuclear Operatives beyond a myth that no one would act on is shielded.
+  - Nuclear Operatives are rumoured but not proven. Have fun with this rumour.
 
-  The fact that the nuke disk must be protected and could be used by a bad actor to try to destroy the station is not shielded.
+  ## Changelings
 
-  The revealing condition for this shield is any of the following:
-  - discovering a blood red hardsuit
-  - discovering a nuclear operative's shuttle
-  - an operative name
-  - a War Ops announcement
-  - being a nuclear operative
+  - In the eyes of the public, changelings are an exterminated predatory lifeform, they could always come back, but they'd not be on our station, right?
+
+  ## Heretics
+
+  - The chaplain is aware of the existence of heretics, but the chaplain is always spewing nonsense. What do they even mean?
+
+  ## Cosmic Cult
+
+  - The chaplain is saying words again! Why do they hire such weird people?
+
+  ## Devils
+
+  - The chaplain is now...talking about DEVILS? What is this nonsense? Devils are just a myth, right? They can't be real!
+
+  Knowledge about the abilities and consequences of a Devil deal are not shielded.
+
+  ## Zombies
+
+  Zombies are known galaxy-wide, but not as real-life, instead, as fiction.
+  Nuclear Operatives and Syndicate Agents are aware of Romerol and what it can do, but there's no benefit to revealing it to the crew. People likely won't believe you anyway.
+
+  ## Infections(Once the zombie virus is proven)
+
+  Such infections have been known to be extinct. But luckily advanced medicine has been able to cure the infection. The cure is not known to the public, but it is known to Chemists and Chief Medical Officers. The cure is not known to be a cure for the zombie virus, but it is known to be a cure for an infection that causes people to become zombies.
+
+  ## Deathsquad
+
+  Deathsquad is a sci-fi trope that is well known in the galaxy, but not as a real thing. It is a myth, a legend, and a story that people tell each other. The Deathsquad is not real, but some will argue that it is.
+
+  ## Implanted implants
+
+  Implants are not shielded by default, but the fact that they are not Nanotrasen (NT) implants is shielded.
 
   ## Chameleon Items
 
   Chameleon items are shielded.
-
   Being suspicious of an item being fake or stolen is not shielded, but testing items or calling them chameleon is covered by this shield.
-
-  The revealing condition for this shield is any of the following:
-  - seeing someone else cause any chameleon item to change
-  - finding holographic nanomachine fibers
-  - experiencing a situation where absolutely no other explanation is possible
-  - discovering an unlocked uplink
 
   ## Stealth Items
 
   The fact that an item can be something other than what its visual appearance and examine description indicate is shielded.
-
+  Security may be aware of tampered items, but they are not aware of the specific item that is tamped. This means that security may not act on the fact that an item is tamped, but they may act on the fact that an item is suspicious.  (Example: Non-NT weapons on a persons is suspicious, how did they get it on station?)
   This shield protects stealth items, including protecting them from being tested.
 
-  The revealing condition for this shield is any of the following:
-  - seeing the item behave differently than the expected behavior for the item
-  - seeing the item used for its hidden purpose
-  - experiencing a situation where absolutely no other explanation is possible
-  - discovering an unlocked uplink
-
-  ## MRP Amendment 1
-  A shield prevents your character from remembering anything that happened while unconscious. This shield is never revealed IC.
-
-  ## MRP Amendment 2
-  There is a "New Life Rule" shield. It prevents you from remembering anything that lead to your death, even if you are put into an MMI. If you are cloned, it also prevents you from remembering everything from that round. This shield is never revealed IC.
 
   ## Metafriending and Metagrudging
   This section provides additional information on a concept that is prohibited by multiple metashield items that are never revealed IC. Giving a person or character preferential treatment based on something that your character should not know is considered metafriending. Treating a person or character negatively based on something that your character should not know is considered metagrudging.
@@ -88,5 +107,7 @@
   - The fact that the Syndicate are enemies of Nanotrasen, and that they regularly attempt to send covert agents to spy on, sabotage, or attack Nanotrasen.
   - A character's typical appearance. Though you should keep in mind that multiple characters can share the same name.
   - The fact that the Syndicate have covert items capable of getting items to them, and that these items are known as uplinks.
-  - The fact that the Syndicate can provide subdermal implants to their agents with various capabilities.
+  - Wizards are not metashielded as the wizards federation is well rumoured about.
+
+  For revealing conditions check out [textlink="Antag revealing conditions" link="Conditions"]
 </Document>

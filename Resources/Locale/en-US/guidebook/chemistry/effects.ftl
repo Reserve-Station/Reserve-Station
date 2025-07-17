@@ -1,3 +1,23 @@
+# SPDX-FileCopyrightText: 2023 LankLTE <135308300+LankLTE@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Sailor <109166122+Equivocateur@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 mhamster <81412348+mhamsterr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Eris <eris@erisws.com>
+# SPDX-FileCopyrightText: 2024 Flesh <62557990+PolterTzi@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Gotimanga <127038462+Gotimanga@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
+# SPDX-FileCopyrightText: 2024 Zonespace <41448081+Zonespace27@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 alex-georgeff <54858069+taurie@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 -create-3rd-person =
     { $chance ->
         [1] Creates
@@ -87,12 +107,30 @@ reagent-effect-guidebook-health-change =
                  }
     } { $changes }
 
+reagent-effect-guidebook-even-health-change =
+    { $chance ->
+        [1] { $healsordeals ->
+            [heals] Evenly heals
+            [deals] Evenly deals
+            *[both] Evenly modifies health by
+        }
+        *[other] { $healsordeals ->
+            [heals] evenly heal
+            [deals] evenly deal
+            *[both] evenly modify health by
+        }
+    } { $changes }
+
+
 reagent-effect-guidebook-status-effect =
     { $type ->
         [add]   { $chance ->
                     [1] Causes
                     *[other] cause
-                } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} with accumulation
+                } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} { $refresh ->
+                                                                                                [false] with
+                                                                                                *[true] without
+                                                                                            } accumulation
         *[set]  { $chance ->
                     [1] Causes
                     *[other] cause
@@ -102,12 +140,6 @@ reagent-effect-guidebook-status-effect =
                     *[other] remove
                 } {NATURALFIXED($time, 3)} {MANY("second", $time)} of {LOC($key)}
     }
-
-reagent-effect-guidebook-activate-artifact =
-    { $chance ->
-        [1] Attempts
-        *[other] attempt
-    } to activate an artifact
 
 reagent-effect-guidebook-set-solution-temperature-effect =
     { $chance ->
@@ -126,7 +158,10 @@ reagent-effect-guidebook-adjust-solution-temperature-effect =
                 [1] add
                 *[-1] remove
             }
-    } heat from the solution until it reaches { $deltasign ->
+    } heat { $deltasign ->
+                [1] to
+                *[-1] from
+           } the solution until it reaches { $deltasign ->
                 [1] at most {NATURALFIXED($maxtemp, 2)}k
                 *[-1] at least {NATURALFIXED($mintemp, 2)}k
             }
@@ -249,6 +284,12 @@ reagent-effect-guidebook-electrocute =
         *[other] electrocute
     } the metabolizer for {NATURALFIXED($time, 3)} {MANY("second", $time)}
 
+reagent-effect-guidebook-emote =
+    { $chance ->
+        [1] Will force
+        *[other] force
+    } the metabolizer to [bold][color=white]{$emote}[/color][/bold]
+
 reagent-effect-guidebook-extinguish-reaction =
     { $chance ->
         [1] Extinguishes
@@ -363,6 +404,12 @@ reagent-effect-guidebook-add-to-solution-reaction =
         *[other] cause
     } chemicals applied to an object to be added to its internal solution container
 
+reagent-effect-guidebook-artifact-unlock =
+    { $chance ->
+        [1] Helps
+        *[other] help
+        } unlock an alien artifact.
+
 reagent-effect-guidebook-plant-attribute =
     { $chance ->
         [1] Adjusts
@@ -404,3 +451,19 @@ reagent-effect-guidebook-plant-seeds-remove =
         [1] Removes the
         *[other] remove the
     } seeds of the plant
+
+reagent-effect-guidebook-add-to-chemicals =
+    { $chance ->
+        [1] { $deltasign ->
+                [1] Adds
+                *[-1] Removes
+            }
+        *[other]
+            { $deltasign ->
+                [1] add
+                *[-1] remove
+            }
+    } {NATURALFIXED($amount, 2)}u of {$reagent} { $deltasign ->
+        [1] to
+        *[-1] from
+    } the solution

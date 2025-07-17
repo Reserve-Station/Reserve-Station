@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
+# SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ThxMqninq <mlakomkin8@gmail.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: guideEntry
+  id: Blob
+  abstract: true #Reserve guidebook
+  name: guide-entry-blob
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Blob.xml"

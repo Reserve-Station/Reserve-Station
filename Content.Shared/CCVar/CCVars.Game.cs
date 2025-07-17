@@ -1,4 +1,13 @@
-﻿using Content.Shared.Roles;
+// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Roles;
 using Robust.Shared.Configuration;
 
 namespace Content.Shared.CCVar;
@@ -385,6 +394,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> ContrabandExamine =
         CVarDef.Create("game.contraband_examine", true, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
+    ///     If true, contraband examination is only possible while wearing an item with `ShowContrabandDetailsComponent`. Requires `ContrabandExamine` to be true as well.
+    /// </summary>
+    public static readonly CVarDef<bool> ContrabandExamineOnlyInHUD =
+        CVarDef.Create("game.contraband_examine_only_in_hud", false, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     ///     Size of the lookup area for adding entities to the context menu

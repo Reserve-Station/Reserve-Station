@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2022 ElectroJr <leonsfriedrich@gmail.com>
+// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 T-Stalker <43253663+DogZeroX@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 T-Stalker <le0nel_1van@hotmail.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Examine;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
@@ -35,22 +51,32 @@ public abstract partial class SharedGunSystem
         component.Shots = state.Shots;
         component.Capacity = state.MaxShots;
         component.FireCost = state.FireCost;
+
+        if (component is HitscanBatteryAmmoProviderComponent hitscan && state.Prototype != null) // Shitmed Change
+            hitscan.Prototype = state.Prototype;
+
         UpdateAmmoCount(uid, prediction: false);
     }
 
     private void OnBatteryGetState(EntityUid uid, BatteryAmmoProviderComponent component, ref ComponentGetState args)
     {
-        args.State = new BatteryAmmoProviderComponentState()
+        var state = new BatteryAmmoProviderComponentState() // Shitmed Change
         {
             Shots = component.Shots,
             MaxShots = component.Capacity,
             FireCost = component.FireCost,
         };
+
+        if (TryComp<HitscanBatteryAmmoProviderComponent>(uid, out var hitscan)) // Shitmed Change
+           state.Prototype = hitscan.Prototype;
+
+        args.State = state; // Shitmed Change
     }
 
     private void OnBatteryExamine(EntityUid uid, BatteryAmmoProviderComponent component, ExaminedEvent args)
     {
-        args.PushMarkup(Loc.GetString("gun-battery-examine", ("color", AmmoExamineColor), ("count", component.Shots)));
+        if (component.Examinable) // goob edit
+            args.PushMarkup(Loc.GetString("gun-battery-examine", ("color", AmmoExamineColor), ("count", component.Shots)));
     }
 
     private void OnBatteryTakeAmmo(EntityUid uid, BatteryAmmoProviderComponent component, TakeAmmoEvent args)
@@ -67,7 +93,7 @@ public abstract partial class SharedGunSystem
             component.Shots--;
         }
 
-        TakeCharge(uid, component);
+        TakeCharge((uid, component));
         UpdateBatteryAppearance(uid, component);
         Dirty(uid, component);
     }
@@ -81,9 +107,9 @@ public abstract partial class SharedGunSystem
     /// <summary>
     /// Update the battery (server-only) whenever fired.
     /// </summary>
-    protected virtual void TakeCharge(EntityUid uid, BatteryAmmoProviderComponent component)
+    protected virtual void TakeCharge(Entity<BatteryAmmoProviderComponent> entity)
     {
-        UpdateAmmoCount(uid, prediction: false);
+        UpdateAmmoCount(entity, prediction: false);
     }
 
     protected void UpdateBatteryAppearance(EntityUid uid, BatteryAmmoProviderComponent component)
@@ -116,5 +142,6 @@ public abstract partial class SharedGunSystem
         public int Shots;
         public int MaxShots;
         public float FireCost;
+        public string? Prototype; // Shitmed Change
     }
 }

@@ -1,8 +1,12 @@
-using System.Linq;
+// SPDX-FileCopyrightText: 2023 Jackrost <jackrost@mail.ru>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Popups;
 using Content.Shared.Spider;
 using Content.Shared.Maps;
-using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 
 namespace Content.Server.Spider;
@@ -74,4 +78,3 @@ public sealed class SpiderSystem : SharedSpiderSystem
         return false;
     }
 }
-

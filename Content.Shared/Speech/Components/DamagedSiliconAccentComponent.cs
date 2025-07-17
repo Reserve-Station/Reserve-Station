@@ -1,4 +1,4 @@
-﻿using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Speech.Components;
@@ -27,10 +27,11 @@ public sealed partial class DamagedSiliconAccentComponent : Component
 
     /// <summary>
     ///     Probability of character corruption will increase linearly to <see cref="MaxDamageCorruption" /> once until
-    ///     total damage is at or above this value.
+    ///     total damage is at or above this value. If null, it will use the value returned by
+    ///     DestructibleSystem.DestroyedAt, which is the damage threshold for destruction or breakage.
     /// </summary>
     [DataField]
-    public FixedPoint2 DamageAtMaxCorruption = 300;
+    public FixedPoint2? DamageAtMaxCorruption;
 
     /// <summary>
     ///     Enable charge level corruption effects

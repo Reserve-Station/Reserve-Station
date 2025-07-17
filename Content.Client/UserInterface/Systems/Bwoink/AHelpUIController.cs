@@ -1,3 +1,25 @@
+// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr.@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2022 Jezithyr <jmaster9999@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <wrexbe@protonmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 dffdff2423 <57052305+dffdff2423@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers@gmail.com>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 c4llv07e <igor@c4llv07e.xyz>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
@@ -21,6 +43,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
+using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Network;
@@ -39,13 +62,14 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
     [UISystemDependency] private readonly AudioSystem _audio = default!;
 
+    private Random _random = new Random();
     private BwoinkSystem? _bwoinkSystem;
     private MenuButton? GameAHelpButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.AHelpButton;
     private Button? LobbyAHelpButton => (UIManager.ActiveScreen as LobbyGui)?.AHelpButton;
     public IAHelpUIHandler? UIHelper;
     private bool _discordRelayActive;
     private bool _hasUnreadAHelp;
-    private bool _bwoinkSoundEnabled;
+    private string? _oldAHelpSound;
     private string? _aHelpSound;
 
     public override void Initialize()
@@ -57,7 +81,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
 
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
         _config.OnValueChanged(CCVars.AHelpSound, v => _aHelpSound = v, true);
-        _config.OnValueChanged(CCVars.BwoinkSoundEnabled, v => _bwoinkSoundEnabled = v, true);
+        _config.OnValueChanged(CCVars.OldAHelpSound, v => _oldAHelpSound = v, true);
     }
 
     public void UnloadButton()
@@ -137,8 +161,16 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         }
         if (message.PlaySound && localPlayer.UserId != message.TrueSender)
         {
-            if (_aHelpSound != null && (_bwoinkSoundEnabled || !_adminManager.IsActive()))
-                _audio.PlayGlobal(_aHelpSound, Filter.Local(), false);
+            if (_random.Next(1, 100) > 98)
+            {
+                if (_oldAHelpSound != null)
+                    _audio.PlayGlobal(_oldAHelpSound, Filter.Local(), false);
+            }
+            else
+            {
+                if (_aHelpSound != null)
+                    _audio.PlayGlobal(_aHelpSound, Filter.Local(), false, new AudioParams().AddVolume(0));
+            }
             _clyde.RequestWindowAttention();
         }
 

@@ -1,0 +1,782 @@
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  id: SurgeryBase
+  components:
+  - type: Surgery
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryOpenIncision
+  name: Open Incision
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepOpenIncisionScalpel
+    - SurgeryStepRetractSkin
+  - type: SurgeryPartPresentCondition
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryStopBloodOutput
+  name: Stop Constant Blood Output
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepClampBleeders
+    - SurgeryStepCloseBloodOutputs
+  - type: SurgeryBleedsPresentCondition
+  - type: SurgeryPartPresentCondition
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryFixDismemberment
+  name: Fix Dismemberment Leftovers
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepRemoveSeveredSkin
+    - SurgeryStepRemoveLeftoverBones
+    - SurgeryStepSealDismembermentWound
+  - type: SurgeryPartPresentCondition
+  - type: SurgeryBleedsPresentCondition
+    inverted: true
+  - type: SurgeryTraumaPresentCondition
+    trauma: Dismemberment
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryCloseIncision
+  name: Close Incision
+  components:
+  - type: Surgery
+    priority: 1
+    steps:
+    - SurgeryStepCloseBones
+    - SurgeryStepMendRibcage
+    - SurgeryStepCloseIncision
+  - type: SurgeryPartPresentCondition
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryOpenRibcage
+  name: Open Ribcage
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepPriseOpenBones
+  - type: SurgeryPartCondition
+    part: Chest
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemovePart
+  name: Remove Part
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawFeature
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveFeature
+  - type: SurgeryHasBodyCondition
+  - type: SurgeryPartCondition
+    part: Chest
+    inverse: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryMendBones
+  name: Mend Bones
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepMendBones
+  - type: SurgeryPartPresentCondition
+  - type: SurgeryBleedsPresentCondition
+    inverted: true
+  - type: SurgeryTraumaPresentCondition
+    trauma: BoneDamage
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryHealOrgans
+  name: Heal Organs
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepHealOrgans
+  - type: SurgeryPartPresentCondition
+  - type: SurgeryBleedsPresentCondition
+    inverted: true
+  - type: SurgeryTraumaPresentCondition
+    trauma: OrganDamage
+
+# I fucking hate hardcoding all of this shit to accomodate for surgery BUI.
+# If anyone can give me pointers on how to make it better I'd be incredibly grateful.
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachHead
+  name: Attach Head
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: head
+    part: Head
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachGroin
+  name: Attach Groin
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: groin
+    part: Groin
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachLeftArm
+  name: Attach Left Arm
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: left arm
+    part: Arm
+    symmetry: Left
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachRightArm
+  name: Attach Right Arm
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: right arm
+    part: Arm
+    symmetry: Right
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachLeftLeg
+  name: Attach Left Leg
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Groin
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: left leg
+    part: Leg
+    symmetry: Left
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachRightLeg
+  name: Attach Right Leg
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Groin
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: right leg
+    part: Leg
+    symmetry: Right
+
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachLeftHand
+  name: Attach Left Hand
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Arm
+    symmetry: Left
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: left hand
+    part: Hand
+    symmetry: Left
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachRightHand
+  name: Attach Right Hand
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Arm
+    symmetry: Right
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: right hand
+    part: Hand
+    symmetry: Right
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachLeftFoot
+  name: Attach Left Foot
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Leg
+    symmetry: Left
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: left foot
+    part: Foot
+    symmetry: Left
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachRightFoot
+  name: Attach Right Foot
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Leg
+    symmetry: Right
+  - type: SurgeryTraumaPresentCondition
+    inverted: true
+    trauma: Dismemberment
+  - type: SurgeryPartRemovedCondition
+    connection: right foot
+    part: Foot
+    symmetry: Right
+
+# Surgery for animals - They have a single legs/hands entity.
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachLegs
+  name: Attach Legs
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Groin
+  - type: SurgeryPartRemovedCondition
+    connection: legs
+    part: Leg
+    symmetry: None
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachHands
+  name: Attach Hands
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryPartRemovedCondition
+    connection: hands
+    part: Hand
+    symmetry: Left # shitcode i guess because of ui icons
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachFeet
+  name: Attach Feet
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Groin
+  - type: SurgeryPartRemovedCondition
+    connection: feet
+    part: Foot
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryAttachTail
+  name: Attach Tail
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertFeature
+    - SurgeryStepSealWounds
+  - type: SurgeryPartCondition
+    part: Groin
+  - type: SurgeryPartRemovedCondition
+    connection: tail
+    part: Tail
+    symmetry: None
+
+#- type: entity
+#  parent: SurgeryBase
+#  id: SurgeryAlienEmbryoRemoval
+#  name: Alien Embryo Removal
+#  description: Removal of an alien embryo from the body.
+#  components:
+#  - type: Surgery
+#    priority: -1
+#    requirement: SurgeryOpenRibcage
+#    steps:
+#    - SurgeryStepCutLarvaRoots
+#    - SurgeryStepRemoveLarva
+#  - type: SurgeryLarvaCondition
+#  - type: SurgeryPartCondition
+#    part: Chest
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryTendWoundsBrute
+  name: Tend Bruise Wounds
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepCarefulIncisionScalpel
+    - SurgeryStepRepairBruteTissue
+    - SurgeryStepSealTendWound
+  - type: SurgeryWoundedCondition
+    damageGroup: Brute
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryTendWoundsBurn
+  name: Tend Burn Wounds
+  components:
+  - type: Surgery
+    steps:
+    - SurgeryStepCarefulIncisionScalpel
+    - SurgeryStepRepairBurnTissue
+    - SurgeryStepSealTendWound
+  - type: SurgeryWoundedCondition
+    damageGroup: Burn
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertItem
+  name: Cavity Implant
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepInsertItem
+    - SurgeryStepRemoveItem
+  - type: SurgeryPartCondition
+    part: Chest
+
+# Note for any Organ manipulation surgeries. Most of the organs are only defined on the server.
+# I added some of them to the client too, but we should probably move them to a shared
+# prototype at some point.
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveBrain
+  name: Remove Brain
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Brain
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveBorgBrain
+  name: Remove Positronic Brain
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    # TODO: ipc surgery steps
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryOrganCondition
+    organ:
+    - type: BorgBrain
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertBrain
+  name: Insert Brain
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertOrgan
+    - SurgeryStepSealOrganWound
+  - type: SurgeryOrganSlotCondition
+    organSlot: brain
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Brain
+    inverse: true
+    reattaching: true
+
+- type: entity
+  parent: SurgeryInsertBrain
+  id: SurgeryInsertBorgBrain
+  name: Insert Positronic Brain
+  components:
+  - type: SurgeryOrganSlotCondition
+    organSlot: posbrain
+  - type: SurgeryOrganCondition
+    organ:
+    - type: BorgBrain
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveHeart
+  name: Remove Heart
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Heart
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertHeart
+  name: Insert Heart
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertHeart
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryOrganSlotCondition
+    organSlot: heart
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Heart
+    inverse: true
+    reattaching: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveLiver
+  name: Remove Liver
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepCarefulIncisionScalpel
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Groin
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Liver
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertLiver
+  name: Insert Liver
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertLiver
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    part: Groin
+  - type: SurgeryOrganSlotCondition
+    organSlot: liver
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Liver
+    inverse: true
+    reattaching: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveLungs
+  name: Remove Lungs
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Lung
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertLungs
+  name: Insert Lungs
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenRibcage
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertLungs
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    part: Chest
+  - type: SurgeryOrganSlotCondition
+    organSlot: lungs
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Lung
+    inverse: true
+    reattaching: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveStomach
+  name: Remove Stomach
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepCarefulIncisionScalpel
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Groin
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Stomach
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertStomach
+  name: Insert Stomach
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepInsertStomach
+    - SurgeryStepSealOrganWound
+  - type: SurgeryPartCondition
+    part: Groin
+  - type: SurgeryOrganSlotCondition
+    organSlot: stomach
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Stomach
+    inverse: true
+    reattaching: true
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryRemoveEyes
+  name: Remove Eyes
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepClampInternalBleeders
+    - SurgeryStepRemoveOrgan
+  - type: SurgeryPartCondition
+    part: Head
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Eyes
+
+- type: entity
+  parent: SurgeryBase
+  id: SurgeryInsertEyes
+  name: Insert Eyes
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+    steps:
+    - SurgeryStepSawBones
+    - SurgeryStepInsertEyes
+    - SurgeryStepSealOrganWound
+  - type: SurgeryOrganSlotCondition
+    organSlot: eyes
+  - type: SurgeryOrganCondition
+    organ:
+    - type: Eyes
+    inverse: true
+    reattaching: true
+
+
+
+# Fluff/Joke Surgeries
+
+#- type: entity
+#  parent: SurgeryBase
+#  id: SurgeryAddFelinidEars
+#  name: Add cat ears
+#  components:
+#  - type: Surgery
+#    #requirement: SurgeryOpenIncision
+#    steps:
+#    - SurgeryStepAddFelinidEars
+#  - type: SurgeryPartCondition
+#    part: Head
+#  - type: SurgeryMarkingCondition
+#    markingCategory: HeadTop
+#    matchString: FelinidEars
+#    inverse: true
+
+#- type: entity
+#  parent: SurgeryBase
+#  id: SurgeryRemoveFelinidEars
+#  name: Remove cat ears
+#  components:
+#  - type: Surgery
+#    requirement: SurgeryOpenIncision
+#    steps:
+#    - SurgeryStepRemoveFelinidEars
+#  - type: SurgeryPartCondition
+#    part: Head
+#  - type: SurgeryMarkingCondition
+#    markingCategory: HeadTop
+#    matchString: FelinidEars
+
+#- type: entity
+#  parent: SurgeryBase
+#  id: SurgeryAddFelinidTail
+#  name: Add cat tail
+#  components:
+#  - type: Surgery
+#    requirement: SurgeryOpenIncision
+#    steps:
+#    - SurgeryStepAddFelinidTail
+#  - type: SurgeryPartCondition
+#    part: Groin
+#  - type: SurgeryMarkingCondition
+#    markingCategory: Tail
+#    matchString: FelinidTail
+#    inverse: true
+
+#- type: entity
+#  parent: SurgeryBase
+#  id: SurgeryRemoveFelinidTail
+#  name: Remove cat tail
+#  components:
+#  - type: Surgery
+#    requirement: SurgeryOpenIncision
+#    steps:
+#    - SurgeryStepRemoveFelinidTail
+#  - type: SurgeryPartCondition
+#    part: Groin
+#  - type: SurgeryMarkingCondition
+#    markingCategory: Tail
+#    matchString: FelinidTail

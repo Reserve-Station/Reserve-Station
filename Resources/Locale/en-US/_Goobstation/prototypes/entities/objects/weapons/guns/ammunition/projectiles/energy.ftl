@@ -1,0 +1,11 @@
+ent-RifleBulletEnergyGunLethal = Энергетический затвор винтовки
+    .desc = { ent-BaseBullet.desc }
+ent-RifleBulletEnergyGunIon = Винтовочный ионный затвор
+    .desc = { ent-BaseBullet.desc }
+ent-RifleBulletEnergyGunDisabler = Затвор для отключения винтовки
+    .desc = { ent-BaseBullet.desc }
+ent-RifleBulletEnergyGunAsh = превращенный в пепел энергетический заряд
+    .suffix = отлаживать
+    .desc = { ent-BaseBullet.desc }
+ent-RifleBulletEnergyGunOverchargeLethal = перезарядите энергетический заряд винтовки
+    .desc = { ent-BaseBulletIncendiary.desc }

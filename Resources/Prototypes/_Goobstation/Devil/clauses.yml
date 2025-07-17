@@ -1,0 +1,230 @@
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sa1nt7331 <202271576+sa1nt7331@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sa1nt7331 <havenz@yandex.ru>
+# SPDX-FileCopyrightText: 2025 sa1nt7331 <sa1nt7331@zaza.kyr>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: clause
+  id: soulownership
+  clauseWeight: 25
+  alias: "владение душой" # Reserve edit - localized devil clauses
+  event: !type:DevilContractSoulOwnershipEvent
+
+- type: clause
+  id: weakness
+  clauseWeight: -35
+  alias: "слабость" # Reserve edit - localized devil clauses
+  damageModifierSet: DevilDealPositive
+
+- type: clause
+  id: fearoffire
+  clauseWeight: -20
+  alias: "страх огня" # Reserve edit - localized devil clauses
+  damageModifierSet: HellSpawn
+  addedComponents:
+  - type: SpecialHighTempImmunity
+
+- type: clause
+  id: brokeness
+  clauseWeight: -20
+  alias: "нищета" # Reserve edit - localized devil clauses
+  spawnedItems:
+  - ClothingShoesRealJordansAutographed
+
+- type: clause
+  id: fearofdeath
+  clauseWeight: -25
+  alias: "страх смерти" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      201: Dead
+
+- type: clause
+  id: fearoflight
+  clauseWeight: -15
+  alias: "страх света" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: FlashImmunity
+
+- type: clause
+  id: fearofelectricity
+  clauseWeight: -15
+  alias: "страх электричества" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: Insulated
+
+- type: clause
+  id: gluttony
+  clauseWeight: -10
+  alias: "чревоугодие" # Reserve edit - localized devil clauses
+  removedComponents:
+  - type: Hunger
+  - type: Thirst
+
+- type: clause
+  id: fearofdrowning
+  clauseWeight: -10
+  alias: "страх утопления" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: SpecialBreathingImmunity
+
+- type: clause
+  id: fearofcrushing
+  clauseWeight: -10
+  alias: "страх сдавливания" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: SpecialPressureImmunity
+
+- type: clause
+  id: fearoffreezing
+  clauseWeight: -10
+  alias: "страх заморозки" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: SpecialLowTempImmunity
+
+- type: clause
+  id: greed
+  clauseWeight: -10
+  alias: "жадность" # Reserve edit - localized devil clauses
+  spawnedItems:
+  - SpaceCash30000
+
+- type: clause
+  id: pain
+  clauseWeight: -5
+  alias: "боль" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: PainNumbness
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 1
+      80: 1
+
+- type: clause
+  id: chance
+  clauseWeight: -20
+  alias: "шанс" # Reserve edit - localized devil clauses
+  event: !type:DevilContractChanceEvent
+
+- type: clause
+  id: shadows
+  clauseWeight: -25
+  alias: "тени" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: Stealth
+  - type: StealthOnMove
+
+- type: clause
+  id: humanity
+  clauseWeight: 25
+  alias: "человечность" # Reserve edit - localized devil clauses
+  polymorph: MobFrogPolymorph
+
+- type: clause
+  id: strength
+  clauseWeight: 30
+  alias: "сила" # Reserve edit - localized devil clauses
+  damageModifierSet: DevilDealNegative
+
+- type: clause
+  id: willtofight
+  clauseWeight: 60
+  alias: "воля к борьбе" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: Pacified
+
+- type: clause
+  id: sight
+  clauseWeight: 60
+  alias: "зрение" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: PermanentBlindness
+
+- type: clause
+  id: coherence
+  clauseWeight: 30
+  alias: "связность" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: BackwardsAccent
+  - type: Clumsy
+
+- type: clause
+  id: voice
+  clauseWeight: 20
+  alias: "голос" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: Muted
+
+- type: clause
+  id: aleg
+  clauseWeight: 30
+  alias: "нога" # Reserve edit - localized devil clauses
+  event: !type:DevilContractLoseLegEvent
+
+- type: clause
+  id: ahand
+  clauseWeight: 30
+  alias: "рука" # Reserve edit - localized devil clauses
+  event: !type:DevilContractLoseHandEvent
+
+- type: clause
+  id: awake
+  clauseWeight: 40
+  alias: "бодрствование" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: Narcolepsy
+    timeBetweenIncidents: 300, 600
+    durationOfIncident: 10, 30
+
+- type: clause
+  id: anorgan
+  clauseWeight: 45
+  alias: "орган" # Reserve edit - localized devil clauses
+  event: !type:DevilContractLoseOrganEvent
+
+- type: clause
+  id: legs
+  clauseWeight: 40
+  alias: "ноги" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: LegsParalyzed
+
+- type: clause
+  id: innerpeace
+  clauseWeight: 5
+  alias: "внутренний покой" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: TileMovement
+
+- type: clause
+  id: death
+  clauseWeight: -25
+  alias: "смерть" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: CheatDeath
+    reviveAmount: 1
+
+- type: clause
+  id: mortality
+  clauseWeight: -135
+  alias: "бессмертие" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: CheatDeath
+    infiniteRevives: true
+
+- type: clause
+  id: time
+  clauseWeight: 150
+  alias: "время" # Reserve edit - localized devil clauses
+  addedComponents:
+  - type: DelayedDeath
+    deathTime: 300
+    deathMessageId: devil-deal-time-ran-out

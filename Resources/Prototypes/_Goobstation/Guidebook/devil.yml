@@ -1,0 +1,13 @@
+- type: guideEntry
+  id: Devil
+  abstract: true #Reserve guidebook
+  name: "Devil"
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Devil.xml"
+  children:
+  - DevilClauses
+
+- type: guideEntry
+  id: DevilClauses
+  abstract: true #Reserve guidebook
+  name: "Devil Clauses"
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/DevilClauses.xml"

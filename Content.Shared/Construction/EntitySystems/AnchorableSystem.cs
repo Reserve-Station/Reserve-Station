@@ -1,3 +1,20 @@
+// SPDX-FileCopyrightText: 2023 Ben <50087092+benev0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 BenOwnby <ownbyb@appstate.edu>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 TGRCDev <tgrc@tgrc.dev>
+// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+// SPDX-FileCopyrightText: 2024 Tornado Tech <54727692+Tornado-Technology@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Administration.Logs;
 using Content.Shared.Examine;
 using Content.Shared.Construction.Components;
@@ -9,7 +26,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Tools;
 using Content.Shared.Tools.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -145,7 +161,7 @@ public sealed partial class AnchorableSystem : EntitySystem
 
         if (TryComp<PullableComponent>(uid, out var pullable) && pullable.Puller != null)
         {
-            _pulling.TryStopPull(uid, pullable);
+            _pulling.TryStopPull(uid, pullable, ignoreGrab: true); // goobstation edit
         }
 
         // TODO: Anchoring snaps rn anyway!
@@ -277,10 +293,13 @@ public sealed partial class AnchorableSystem : EntitySystem
         return !attempt.Cancelled;
     }
 
-    private bool TileFree(EntityCoordinates coordinates, PhysicsComponent anchorBody)
+    /// <summary>
+    /// Returns true if no hard anchored entities exist on the coordinate tile that would collide with the provided physics body.
+    /// </summary>
+    public bool TileFree(EntityCoordinates coordinates, PhysicsComponent anchorBody)
     {
         // Probably ignore CanCollide on the anchoring body?
-        var gridUid = coordinates.GetGridUid(EntityManager);
+        var gridUid = _transformSystem.GetGrid(coordinates);
 
         if (!TryComp<MapGridComponent>(gridUid, out var grid))
             return false;
@@ -329,7 +348,7 @@ public sealed partial class AnchorableSystem : EntitySystem
 
     public bool AnyUnstackablesAnchoredAt(EntityCoordinates location)
     {
-        var gridUid = location.GetGridUid(EntityManager);
+        var gridUid = _transformSystem.GetGrid(location);
 
         if (!TryComp<MapGridComponent>(gridUid, out var grid))
             return false;

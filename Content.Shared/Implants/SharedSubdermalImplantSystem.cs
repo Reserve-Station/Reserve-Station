@@ -1,3 +1,24 @@
+// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 EmoGarbage404 <retron404@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
+// SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 0x6273 <0x40@keemail.me>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.co>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Actions;
 using Content.Shared.Implants.Components;
 using Content.Shared.Interaction;
@@ -14,7 +35,6 @@ namespace Content.Shared.Implants;
 
 public abstract class SharedSubdermalImplantSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly TagSystem _tag = default!;
@@ -38,7 +58,7 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
 
     private void OnInsert(EntityUid uid, SubdermalImplantComponent component, EntGotInsertedIntoContainerMessage args)
     {
-        if (component.ImplantedEntity == null || _net.IsClient)
+        if (component.ImplantedEntity == null)
             return;
 
         if (!string.IsNullOrWhiteSpace(component.ImplantAction))
@@ -54,7 +74,7 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
                 if (_tag.HasTag(implant, MicroBombTag))
                 {
                     _container.Remove(implant, implantContainer);
-                    QueueDel(implant);
+                    PredictedQueueDel(implant);
                 }
             }
         }
@@ -76,6 +96,10 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
 
         if (component.ImplantAction != null)
             _actionsSystem.RemoveProvidedActions(component.ImplantedEntity.Value, uid);
+
+        // GoobStation
+        var ev = new ImplantRemovedFromEvent(uid, component.ImplantedEntity.Value);
+        RaiseLocalEvent(component.ImplantedEntity.Value, ref ev);
 
         if (!_container.TryGetContainer(uid, BaseStorageId, out var storageImplant))
             return;
@@ -216,6 +240,25 @@ public readonly struct ImplantImplantedEvent
     public readonly EntityUid? Implanted;
 
     public ImplantImplantedEvent(EntityUid implant, EntityUid? implanted)
+    {
+        Implant = implant;
+        Implanted = implanted;
+    }
+}
+
+// GoobStation
+
+/// <summary>
+/// Event that is raised whenever removed implant from implanted entity.
+/// Raised on implanted entity.
+/// </summary>
+[ByRefEvent]
+public readonly struct ImplantRemovedFromEvent
+{
+    public readonly EntityUid Implant;
+    public readonly EntityUid Implanted;
+
+    public ImplantRemovedFromEvent(EntityUid implant, EntityUid implanted)
     {
         Implant = implant;
         Implanted = implanted;

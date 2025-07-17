@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Rank #1 Jonestown partygoer <mary@thughunt.ing>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouge2t7 <sarahoneill132@hotmail.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: species
+  id: Felinid
+  name: species-name-felinid
+  roundStart: false
+  prototype: MobFelinid # Reserve
+  sprites: MobHumanSprites
+  markingLimits: MobFelinidMarkingLimits
+  dollPrototype: MobFelinidDummy
+  skinColoration: HumanToned
+
+- type: markingPoints
+  id: MobFelinidMarkingLimits
+  points:
+    # Reserve-Start
+    Special:
+      points: 1
+      required: true
+      defaultMarkings: [ FelinidEarsBasic ]
+    # Reserve-End
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ FelinidTailBasic ]
+    # Reserve-Start
+    #HeadTop:
+    #  points: 1
+    #  required: true
+    #  defaultMarkings: [ FelinidEarsBasic ]
+    # Reserve-End
+    Chest:
+      points: 3
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
+      required: false

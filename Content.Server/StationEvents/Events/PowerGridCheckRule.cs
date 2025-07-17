@@ -1,3 +1,22 @@
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
+// SPDX-FileCopyrightText: 2023 Slava0135 <40753025+Slava0135@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 echotry <xippl1@mail.ru>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Threading;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
@@ -59,7 +78,7 @@ namespace Content.Server.StationEvents.Events
             component.AnnounceCancelToken = new CancellationTokenSource();
             Timer.Spawn(3000, () =>
             {
-                Audio.PlayGlobal(component.PowerOnSound, Filter.Broadcast(), true);
+                Audio.PlayGlobal("/Audio/_Reserve/Announcements/poweron1.ogg", Filter.Broadcast(), true, AudioParams.Default.WithVolume(-4f)); // Reserve new sounds
             }, component.AnnounceCancelToken.Token);
             component.Unpowered.Clear();
         }

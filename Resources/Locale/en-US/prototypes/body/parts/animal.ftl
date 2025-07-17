@@ -1,0 +1,10 @@
+ent-PartAnimalBase = { ent-BasePart }
+    .desc = { ent-BasePart.desc }
+ent-HandsAnimal = animal hands
+    .desc = { ent-PartAnimalBase.desc }
+ent-LegsAnimal = animal legs
+    .desc = { ent-PartAnimalBase.desc }
+ent-FeetAnimal = animal feet
+    .desc = { ent-PartAnimalBase.desc }
+ent-TorsoAnimal = animal torso
+    .desc = { ent-PartAnimalBase.desc }

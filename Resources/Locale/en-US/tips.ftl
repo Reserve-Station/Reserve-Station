@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 K-Dynamic <20566341+K-Dynamic@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Simon <63975668+Simyon264@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SpeltIncorrectyl <66873282+SpeltIncorrectyl@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 tips-dataset-1 = If you're on fire, you can click the alert on the right of your screen to stop, drop, and roll.
 tips-dataset-2 = You can view and edit all keybindings used in-game at any time through the Options menu.
 tips-dataset-3 = You can access the in-game guidebook through the escape menu, or by pressing Numpad 0 by default.
@@ -30,7 +43,8 @@ tips-dataset-29 = As a ghost, you can use the Verb Menu to orbit around and foll
 tips-dataset-30 = As a Traitor, you may sometimes be assigned to hunt other traitors, and in turn be hunted by others.
 tips-dataset-31 = As a Traitor, the syndicate encryption key can be used to communicate through a secure channel with any other traitors who have purchased it.
 tips-dataset-32 = As a Traitor, compromising important communications channels like security or engineering can give valuable intelligence. Be aware that this goes in both ways - security can compromise syndicate communications as well!
-tips-dataset-33 = As a Traitor, the syndicate toolbox is extremely versatile. For only 2 telecrystals, you can get a full set of tools to help you in an emergency, insulated combat gloves and a syndicate gas mask.
+# Goobstation - Telecrystal rework
+tips-dataset-33 = As a Traitor, the syndicate toolbox is extremely versatile. For only 10 telecrystals, you can get a full set of tools to help you in an emergency, insulated combat gloves and a syndicate gas mask.
 tips-dataset-34 = As a Traitor, never underestimate the web vest. It may not provide space protection, but its cheap cost and robust protection makes it handy for protecting against trigger-happy foes.
 tips-dataset-35 = As a Traitor, any purchased grenade penguins won't attack you, and will explode if killed.
 tips-dataset-36 = As a Traitor, be careful when using vestine from the chemical synthesis kit. If someone checks your station, they could easily out you.
@@ -136,3 +150,4 @@ tips-dataset-135 = Instead of picking it up, you can alt-click food to eat it. T
 tips-dataset-136 = If you're trapped behind an electrified door, disable the APC or throw your ID at the door to avoid getting shocked!
 tips-dataset-137 = If the AI electrifies a door and you have insulated gloves, snip and mend the power wire to reset their electrification!
 tips-dataset-138 = If you want to stop your prisoner from escaping from the cell right after being uncuffed, turn on combat mode while uncuffing - this will shove the prisoner down.
+tips-dataset-139 = Make sure to clean your illegal implanters with a soap or a damp rag after you use them! Detectives can scan used implanters for incriminating DNA evidence, but not if they've been wiped clean.

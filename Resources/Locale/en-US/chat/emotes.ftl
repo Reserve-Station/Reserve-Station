@@ -1,3 +1,16 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Minemoder5000 <minemoder50000@gmail.com>
+# SPDX-FileCopyrightText: 2024 Morb <14136326+Morb0@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Verm <32827189+Vermidia@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Names
 chat-emote-name-scream = Scream
 chat-emote-name-laugh = Laugh
@@ -11,7 +24,6 @@ chat-emote-name-squeak = Squeak
 chat-emote-name-thump = Thump Tail
 chat-emote-name-click = Click
 chat-emote-name-clap = Clap
-chat-emote-name-clap-single = Single Clap
 chat-emote-name-snap = Snap
 chat-emote-name-salute = Salute
 chat-emote-name-gasp = Gasp
@@ -46,7 +58,6 @@ chat-emote-msg-squeak = squeaks.
 chat-emote-msg-thump = thumps {POSS-ADJ($entity)} tail.
 chat-emote-msg-click = clicks.
 chat-emote-msg-clap = claps!
-chat-emote-msg-clap-single = claps {POSS-ADJ($entity)} hands together.
 chat-emote-msg-snap = snaps {POSS-ADJ($entity)} fingers.
 chat-emote-msg-salute = salutes.
 chat-emote-msg-gasp = gasps.

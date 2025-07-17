@@ -1,3 +1,13 @@
+// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.RCD.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
@@ -34,13 +44,16 @@ public sealed partial class RCDComponent : Component
     public ProtoId<RCDPrototype> ProtoId { get; set; } = "Invalid";
 
     /// <summary>
-    /// A cached copy of currently selected RCD prototype
+    /// Indicates if a mirrored version of the construction prototype should be used (if available)
     /// </summary>
-    /// <remarks>
-    /// If the ProtoId is changed, make sure to update the CachedPrototype as well
-    /// </remarks>
-    [ViewVariables(VVAccess.ReadOnly)]
-    public RCDPrototype CachedPrototype { get; set; } = default!;
+    [AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
+    public bool UseMirrorPrototype = false;
+
+    /// <summary>
+    /// Indicates whether this is an RCD or an RPD
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool IsRpd { get; set; } = false;
 
     /// <summary>
     /// The direction constructed entities will face upon spawning
@@ -48,10 +61,7 @@ public sealed partial class RCDComponent : Component
     [DataField, AutoNetworkedField]
     public Direction ConstructionDirection
     {
-        get
-        {
-            return _constructionDirection;
-        }
+        get => _constructionDirection;
         set
         {
             _constructionDirection = value;
@@ -68,5 +78,5 @@ public sealed partial class RCDComponent : Component
     /// Contains no position data
     /// </remarks>
     [ViewVariables(VVAccess.ReadOnly)]
-    public Transform ConstructionTransform { get; private set; } = default!;
+    public Transform ConstructionTransform { get; private set; }
 }

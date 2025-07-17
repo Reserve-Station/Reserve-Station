@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2023 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 Myra <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 """
 Sends updates to a Discord webhook for new changelog entries since the last GitHub Actions publish run.
@@ -22,7 +30,7 @@ GITHUB_API_URL = os.environ.get("GITHUB_API_URL", "https://api.github.com")
 DISCORD_SPLIT_LIMIT = 2000
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
-CHANGELOG_FILE = "Resources/Changelog/Changelog.yml"
+CHANGELOG_FILE = "Resources/Changelog/GoobChangelog.yml"
 
 TYPES_TO_EMOJI = {"Fix": "🐛", "Add": "🆕", "Remove": "❌", "Tweak": "⚒️"}
 

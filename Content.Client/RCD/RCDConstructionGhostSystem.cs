@@ -1,4 +1,13 @@
+// SPDX-FileCopyrightText: 2024 August Eymann <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2024 Steve <marlumpy@gmail.com>
+// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 marc-pelletier <113944176+marc-pelletier@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Hands.Components;
+using Content.Shared.Input;
 using Content.Shared.Interaction;
 using Content.Shared.RCD;
 using Content.Shared.RCD.Components;
@@ -6,17 +15,70 @@ using Content.Shared.RCD.Systems;
 using Robust.Client.Placement;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
+using Robust.Shared.Input;
+using Robust.Shared.Input.Binding;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Client.RCD;
 
 public sealed class RCDConstructionGhostSystem : EntitySystem
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly RCDSystem _rcdSystem = default!;
     [Dependency] private readonly IPlacementManager _placementManager = default!;
+    [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
     private string _placementMode = typeof(AlignRCDConstruction).Name;
     private Direction _placementDirection = default;
+    private bool _useMirrorPrototype = false;
+    public event EventHandler? FlipConstructionPrototype;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        // bind key
+        CommandBinds.Builder
+            .Bind(ContentKeyFunctions.EditorFlipObject,
+                new PointerInputCmdHandler(HandleFlip, outsidePrediction: true))
+            .Register<RCDConstructionGhostSystem>();
+    }
+
+    public override void Shutdown()
+    {
+        CommandBinds.Unregister<RCDConstructionGhostSystem>();
+        base.Shutdown();
+    }
+
+    private bool HandleFlip(in PointerInputCmdHandler.PointerInputCmdArgs args)
+    {
+        if (args.State == BoundKeyState.Down)
+        {
+            if (!_placementManager.IsActive || _placementManager.Eraser)
+                return false;
+
+            var placerEntity = _placementManager.CurrentPermission?.MobUid;
+
+            if (!TryComp<RCDComponent>(placerEntity, out var rcd))
+                return false;
+
+            var prototype = _protoManager.Index(rcd.ProtoId);
+            if (string.IsNullOrEmpty(prototype.MirrorPrototype))
+                return false;
+
+            _useMirrorPrototype = !rcd.UseMirrorPrototype;
+
+            var useProto = _useMirrorPrototype ? prototype.MirrorPrototype : prototype.Prototype;
+            CreatePlacer(placerEntity.Value, rcd, useProto, prototype.Mode);
+
+            // tell the server
+
+            RaiseNetworkEvent(new RCDConstructionGhostFlipEvent(GetNetEntity(placerEntity.Value), _useMirrorPrototype));
+        }
+
+        return true;
+    }
+
 
     public override void Update(float frameTime)
     {
@@ -47,6 +109,7 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
 
             return;
         }
+        var prototype = _protoManager.Index(rcd.ProtoId);
 
         // Update the direction the RCD prototype based on the placer direction
         if (_placementDirection != _placementManager.Direction)
@@ -54,21 +117,26 @@ public sealed class RCDConstructionGhostSystem : EntitySystem
             _placementDirection = _placementManager.Direction;
             RaiseNetworkEvent(new RCDConstructionGhostRotationEvent(GetNetEntity(heldEntity.Value), _placementDirection));
         }
+        // If the placer has not changed build it.
+        var useProto = (_useMirrorPrototype && !string.IsNullOrEmpty(prototype.MirrorPrototype)) ? prototype.MirrorPrototype : prototype.Prototype;
+        if (heldEntity != placerEntity || useProto != placerProto)
+        {
+            CreatePlacer(heldEntity.Value, rcd, useProto, prototype.Mode);
+        }
 
-        // If the placer has not changed, exit
-        _rcdSystem.UpdateCachedPrototype(heldEntity.Value, rcd);
 
-        if (heldEntity == placerEntity && rcd.CachedPrototype.Prototype == placerProto)
-            return;
+    }
 
+    private void CreatePlacer(EntityUid uid, RCDComponent component, string? prototype, RcdMode mode)
+    {
         // Create a new placer
         var newObjInfo = new PlacementInformation
         {
-            MobUid = heldEntity.Value,
+            MobUid = uid,
             PlacementOption = _placementMode,
-            EntityType = rcd.CachedPrototype.Prototype,
+            EntityType = prototype,
             Range = (int) Math.Ceiling(SharedInteractionSystem.InteractionRange),
-            IsTile = (rcd.CachedPrototype.Mode == RcdMode.ConstructTile),
+            IsTile = (mode == RcdMode.ConstructTile),
             UseEditorContext = false,
         };
 
