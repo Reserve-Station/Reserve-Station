@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 poemota <142114334+poeMota@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.IO;
 using Lidgren.Network;
 using Robust.Shared.Network;
