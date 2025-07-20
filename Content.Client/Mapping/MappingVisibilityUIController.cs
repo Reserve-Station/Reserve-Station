@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 poemota <142114334+poeMota@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Client.Decals;
 using Content.Client.Markers;
 using Content.Client.SubFloor;
