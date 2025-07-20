@@ -4,6 +4,10 @@
 //
 // SPDX-License-Identifier: MIT
 
+/// Reserve - File heavily edited by PR: Mapping editor.
+/// See https://github.com/space-wizards/space-station-14/pull/34302
+/// and https://github.com/Reserve-Station/Reserve-Station/pull/82 for more details.
+
 using Content.Client.Decals;
 using Content.Client.Markers;
 using Content.Client.SubFloor;

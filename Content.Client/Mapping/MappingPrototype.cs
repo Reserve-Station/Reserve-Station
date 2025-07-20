@@ -101,6 +101,7 @@ public sealed class MappingPrototype
     /// </summary>
     public readonly string Name;
 
+    //Reserve - Wizden mapping editor
     /// <summary>
     ///     Whether the prototype is in the “Favorites” list.
     /// </summary>

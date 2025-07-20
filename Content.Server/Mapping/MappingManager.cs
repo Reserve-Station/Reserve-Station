@@ -109,15 +109,16 @@ public sealed class MappingManager : IPostInjectInit
     [Dependency] private readonly IServerNetManager _net = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
     [Dependency] private readonly IEntitySystemManager _systems = default!;
-    [Dependency] private readonly ISerializationManager _serialization = default!;
-    [Dependency] private readonly IResourceManager _resourceMan = default!;
+    [Dependency] private readonly ISerializationManager _serialization = default!; //Reserve - Wizden mapping editor
+    [Dependency] private readonly IResourceManager _resourceMan = default!; //Reserve - Wizden mapping editor
     [Dependency] private readonly IEntityManager _ent = default!;
 
     private ISawmill _sawmill = default!;
     private ZStdCompressionContext _zstd = default!;
 
-    private const string FavoritesPath = "/mapping_editor_favorites.yml";
+    private const string FavoritesPath = "/mapping_editor_favorites.yml"; //Reserve - Wizden mapping editor
 
+    //Reserve - Wizden mapping editor begin
     public void PostInject()
     {
         _net.RegisterNetMessage<MappingFavoritesSaveMessage>(OnMappingFavoritesSave);
@@ -125,6 +126,7 @@ public sealed class MappingManager : IPostInjectInit
         _net.RegisterNetMessage<MappingFavoritesDataMessage>();
 
         _sawmill = _log.GetSawmill("mapping");
+        //Reserve - Wizden mapping editor end
 
 #if !FULL_RELEASE
         _net.RegisterNetMessage<MappingSaveMapMessage>(OnMappingSaveMap);
@@ -144,7 +146,7 @@ public sealed class MappingManager : IPostInjectInit
                 !_admin.IsAdmin(session, true) ||
                 !_admin.HasAdminFlag(session, AdminFlags.Host) ||
                 !_ent.TryGetComponent(session.AttachedEntity, out TransformComponent? xform) ||
-                xform.MapUid is not {} mapUid)
+                xform.MapUid is not { } mapUid)
             {
                 return;
             }
@@ -172,6 +174,7 @@ public sealed class MappingManager : IPostInjectInit
 #endif
     }
 
+    //Reserve - Wizden mapping editor begin
     private void OnMappingFavoritesSave(MappingFavoritesSaveMessage message)
     {
         var mapping = new MappingDataNode();
@@ -179,7 +182,7 @@ public sealed class MappingManager : IPostInjectInit
 
         var path = new ResPath(FavoritesPath);
         using var writer = _resourceMan.UserData.OpenWriteText(path);
-        var stream = new YamlStream {new(mapping.ToYaml())};
+        var stream = new YamlStream { new(mapping.ToYaml()) };
         stream.Save(new YamlMappingFix(new Emitter(writer)), false);
     }
 
@@ -212,4 +215,5 @@ public sealed class MappingManager : IPostInjectInit
             _sawmill.Error("Failed to load user favorite objects: " + e);
         }
     }
+    //Reserve - Wizden mapping editor end
 }

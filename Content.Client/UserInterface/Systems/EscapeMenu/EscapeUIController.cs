@@ -68,7 +68,7 @@ using Content.Client._RMC14.LinkAccount; // RMC - Patreon
 namespace Content.Client.UserInterface.Systems.EscapeMenu;
 
 [UsedImplicitly]
-public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnStateEntered<MappingState>, IOnStateExited<MappingState>
+public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnStateEntered<MappingState>, IOnStateExited<MappingState> //Reserve - Wizden mapping editor
 {
     [Dependency] private readonly IClientConsoleHost _console = default!;
     [Dependency] private readonly IUriOpener _uri = default!;
@@ -192,6 +192,7 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
         CommandBinds.Unregister<EscapeUIController>();
     }
 
+    //Reserve - Wizden mapping editor begin
     public void OnStateEntered(MappingState state)
     {
         _escapeWindow = UIManager.CreateWindow<Options.UI.EscapeMenu>();
@@ -258,6 +259,7 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
 
         CommandBinds.Unregister<EscapeUIController>();
     }
+    //Reserve - Wizden mapping editor end
 
     private void EscapeButtonOnOnPressed(ButtonEventArgs obj)
     {

@@ -95,7 +95,7 @@ public sealed class MappingManager : IPostInjectInit
 {
     [Dependency] private readonly IFileDialogManager _file = default!;
     [Dependency] private readonly IClientNetManager _net = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!; //Reserve - Wizden mapping editor
 
     private Stream? _saveStream;
     private MappingMapDataMessage? _mapData;
@@ -108,8 +108,8 @@ public sealed class MappingManager : IPostInjectInit
         _net.RegisterNetMessage<MappingSaveMapMessage>();
         _net.RegisterNetMessage<MappingSaveMapErrorMessage>(OnSaveError);
         _net.RegisterNetMessage<MappingMapDataMessage>(OnMapData);
-        _net.RegisterNetMessage<MappingFavoritesDataMessage>(OnFavoritesData);
-        _net.RegisterNetMessage<MappingFavoritesSaveMessage>();
+        _net.RegisterNetMessage<MappingFavoritesDataMessage>(OnFavoritesData); //Reserve - Wizden mapping editor
+        _net.RegisterNetMessage<MappingFavoritesSaveMessage>(); //Reserve - Wizden mapping editor
     }
 
     private void OnSaveError(MappingSaveMapErrorMessage message)
@@ -133,6 +133,7 @@ public sealed class MappingManager : IPostInjectInit
         _mapData = null;
     }
 
+    //Reserve - Wizden mapping editor begin
     private void OnFavoritesData(MappingFavoritesDataMessage message)
     {
         _favoritePrototypes = new List<IPrototype>();
@@ -149,6 +150,7 @@ public sealed class MappingManager : IPostInjectInit
 
         OnFavoritePrototypesLoaded?.Invoke(_favoritePrototypes);
     }
+    //Reserve - Wizden mapping editor end
 
     public async Task SaveMap()
     {
@@ -173,6 +175,7 @@ public sealed class MappingManager : IPostInjectInit
 
         _saveStream = stream;
     }
+    //Reserve - Wizden mapping editor begin
     public void SaveFavorites(List<MappingPrototype> prototypes)
     {
         var msg = new MappingFavoritesSaveMessage()
@@ -190,4 +193,5 @@ public sealed class MappingManager : IPostInjectInit
         var request = new MappingFavoritesLoadMessage();
         _net.ClientSendMessage(request);
     }
+    //Reserve - Wizden mapping editor end
 }

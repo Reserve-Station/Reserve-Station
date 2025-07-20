@@ -5,6 +5,10 @@ SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
+<!-- Reserve - File slightly edited by PR: mapping editor
+    See https://github.com/space-wizards/space-station-14/pull/34302
+    and https://github.com/Reserve-Station/Reserve-Station/pull/82 for more details. -->
+
 
 <mapping:MappingActionsButton
     xmlns="https://spacestation14.io"

@@ -745,7 +745,7 @@ binds:
   type: State
   key: S
   mod1: Control
-- function: MappingEnableDecalPick
+- function: MappingEnableDecalPick #Reserve - Wizden mapping editor
   type: State
   key: Num4
 - function: MappingEnablePick

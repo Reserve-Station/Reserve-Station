@@ -9,6 +9,10 @@
 //
 // SPDX-License-Identifier: MIT
 
+/// Reserve - File heavily edited by PR: Mapping editor.
+/// See https://github.com/space-wizards/space-station-14/pull/34302
+/// and https://github.com/Reserve-Station/Reserve-Station/pull/82 for more details.
+
 using Lidgren.Network;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;

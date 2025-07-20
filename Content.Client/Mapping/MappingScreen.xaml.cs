@@ -78,6 +78,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+/// Reserve - File heavily edited by PR: Mapping editor.
+/// See https://github.com/space-wizards/space-station-14/pull/34302
+/// and https://github.com/Reserve-Station/Reserve-Station/pull/82 for more details.
+
 using System.Linq;
 using System.Numerics;
 using Content.Client.Decals;

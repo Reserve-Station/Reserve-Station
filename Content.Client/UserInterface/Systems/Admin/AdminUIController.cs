@@ -58,7 +58,7 @@ namespace Content.Client.UserInterface.Systems.Admin;
 public sealed class AdminUIController : UIController,
     IOnStateEntered<GameplayState>,
     IOnStateEntered<LobbyState>,
-    IOnStateEntered<MappingState>,
+    IOnStateEntered<MappingState>, //Reserve - Wizden mapping editor
     IOnSystemChanged<AdminSystem>
 {
     [Dependency] private readonly IClientAdminManager _admin = default!;
@@ -101,11 +101,13 @@ public sealed class AdminUIController : UIController,
         AdminStatusUpdated();
     }
 
+    //Reserve - Wizden mapping editor begin
     public void OnStateEntered(MappingState state)
     {
         EnsureWindow();
         AdminStatusUpdated();
     }
+    //Reserve - Wizden mapping editor end
 
     public void OnSystemLoaded(AdminSystem system)
     {
