@@ -15,6 +15,10 @@
 // SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+// SPDX-FileCopyrightText: 2025 poemota <142114334+poeMota@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 

@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+//
+// SPDX-License-Identifier: MIT
+
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Mapping;
