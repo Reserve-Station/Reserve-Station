@@ -1,0 +1,5 @@
+- type: Tag
+  id: Pipe # For mapping editor
+
+- type: Tag
+  id: Disposal # For mapping editor
