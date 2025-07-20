@@ -129,8 +129,8 @@ public sealed partial class MappingPrototypeList : Control
         ClearSearchButton.OnPressed += _ => SearchBar.SetText(string.Empty, true);
         OnResized += UpdateSearch;
 
-        CollapseAllButton.Texture.TexturePath = "/Textures/Interface/VerbIcons/collapse.svg.192dpi.png";
-        ClearSearchButton.Texture.TexturePath = "/Textures/Interface/VerbIcons/xmark-solid.svg.192dpi.png";
+        CollapseAllButton.Texture.TexturePath = "/Textures/_Wizden/Interface/VerbIcons/collapse.svg.192dpi.png";
+        ClearSearchButton.Texture.TexturePath = "/Textures/_Wizden/Interface/VerbIcons/xmark-solid.svg.192dpi.png";
     }
 
     public void UpdateVisible(List<MappingPrototype> prototypes, List<MappingPrototype> allPrototypes)

@@ -112,8 +112,8 @@ public sealed partial class MappingSpawnButton : Control
     {
         RobustXamlLoader.Load(this);
 
-        CollapseTexture.TexturePath = "/Textures/Interface/VerbIcons/chevron-right-solid.svg.192dpi.png";
-        FavoriteTexture.TexturePath = "/Textures/Interface/VerbIcons/star-regular.svg.192dpi.png";
+        CollapseTexture.TexturePath = "/Textures/_Wizden/Interface/VerbIcons/chevron-right-solid.svg.192dpi.png";
+        FavoriteTexture.TexturePath = "/Textures/_Wizden/Interface/VerbIcons/star-regular.svg.192dpi.png";
         OnResized += OnResizedGallery;
         FavoriteButton.OnPressed += args => ToggleFavorite(args.Button.Pressed);
     }
@@ -156,7 +156,7 @@ public sealed partial class MappingSpawnButton : Control
         CollapseButton.Pressed = false;
         ChildrenPrototypes.DisposeAllChildren();
         ChildrenPrototypesGallery.DisposeAllChildren();
-        CollapseTexture.TexturePath = "/Textures/Interface/VerbIcons/chevron-right-solid.svg.192dpi.png";
+        CollapseTexture.TexturePath = "/Textures/_Wizden/Interface/VerbIcons/chevron-right-solid.svg.192dpi.png";
     }
 
     public void UnCollapse()
@@ -167,14 +167,14 @@ public sealed partial class MappingSpawnButton : Control
         ChildrenPrototypes.DisposeAllChildren();
         ChildrenPrototypesGallery.DisposeAllChildren();
 
-        CollapseTexture.TexturePath = "/Textures/Interface/VerbIcons/chevron-down-solid.svg.192dpi.png";
+        CollapseTexture.TexturePath = "/Textures/_Wizden/Interface/VerbIcons/chevron-down-solid.svg.192dpi.png";
     }
 
     public void ToggleFavorite(bool enabled)
     {
         FavoriteButton.Pressed = enabled;
         FavoriteTexture.TexturePath = FavoriteButton.Pressed
-            ? "/Textures/Interface/VerbIcons/star-solid-yellow.svg.192dpi.png"
-            : "/Textures/Interface/VerbIcons/star-regular.svg.192dpi.png";
+            ? "/Textures/_Wizden/Interface/VerbIcons/star-solid-yellow.svg.192dpi.png"
+            : "/Textures/_Wizden/Interface/VerbIcons/star-regular.svg.192dpi.png";
     }
 }
