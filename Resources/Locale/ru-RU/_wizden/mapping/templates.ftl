@@ -64,6 +64,8 @@ mapping-template-core = Ядро
 mapping-template-upload = Аплоуд
 mapping-template-vault = Хранилище
 mapping-template-eva = ЕВА
+mapping-template-bsoquarters = Каюта ОСЩ
+mapping-template-ntrquarters = Каюта ПНТ
 
 mapping-template-medical = Медицинский
 mapping-template-medicalairlocks = Шлюзы Медблока
@@ -78,6 +80,8 @@ mapping-template-cats = Коты
 mapping-template-cryonics = Крионика
 mapping-template-operatingroom = Операционная
 mapping-template-virology = Вирусология
+mapping-template-cloning = Клонирование
+mapping-template-psychologist = Психолог
 
 mapping-template-science = Научный отдел
 mapping-template-scienceairlocks = Шлюзы РНД
@@ -119,9 +123,10 @@ mapping-template-brig = Бриг
 mapping-template-equipmentroom = Комната Снаряжения
 mapping-template-wardensoffice = Кабинет Смотрителя
 mapping-template-armory = Оружейная
-mapping-template-permabrig = Пермабриг
+mapping-template-permabrig = Пермабриг / Генпоп
 mapping-template-detectiveroom = Комната Детектива
 mapping-template-gunnery = Стрельбище
+mapping-template-brigmedic = Бригмедик
 
 mapping-template-justicedepartment = Юстиция
 mapping-template-lawyer = Офис Адвоката

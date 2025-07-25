@@ -133,6 +133,16 @@
       id: Windoor
     - !type:MappingTemplatePrototype
       id: WindoorSecure
+    # Reserve edit begin
+    - !type:MappingTemplatePrototype
+      id: BasePlasmaWindoor
+    - !type:MappingTemplatePrototype
+      id: BaseSecurePlasmaWindoor
+    - !type:MappingTemplatePrototype
+      id: BaseUraniumWindoor
+    - !type:MappingTemplatePrototype
+      id: BaseSecureUraniumWindoor
+    # Reserve edit end
     - !type:MappingTemplatePrototype
       id: ToolRoom
       children:
@@ -153,6 +163,10 @@
               id: CableApcStack
             - !type:MappingTemplatePrototype
               id: ClothingBeltUtility
+            - !type:MappingTemplatePrototype
+              id: ClothingHeadHatWelding # Reserve edit
+            - !type:MappingTemplatePrototype
+              id: ClothingHandsGlovesColorYellow # Reserve edit
             - !type:MappingTemplatePrototype
               id: Crowbar
             - !type:MappingTemplatePrototype
@@ -183,17 +197,35 @@
           id: PowerCellRecharger
         - !type:MappingTemplatePrototype
           id: ClosetToolFilled
+        - !type:MappingTemplatePrototype
+          id: SpawnPointPassenger # Reserve edit
     - !type:MappingTemplatePrototype
       id: Dorms
       children:
-        - !type:MappingTemplatePrototype
-          id: SignDorms
+        #- !type:MappingTemplatePrototype
+        #  id: SignDorms
         - !type:MappingTemplatePrototype
           id: SignDirectionalDorms
         - !type:MappingTemplatePrototype
           id: BedsheetBase
         - !type:MappingTemplatePrototype
           id: Bed
+        # Reserve edit begin
+        - !type:MappingTemplatePrototype
+          id: DresserFilled
+        - !type:MappingTemplatePrototype
+          id: SignalButtonDirectional
+        - !type:MappingTemplatePrototype
+          id: TableWood
+        - !type:MappingTemplatePrototype
+          id: TableCounterWood
+        - !type:MappingTemplatePrototype
+          id: ComfyChair
+        - !type:MappingTemplatePrototype
+          id: CarpetBase
+        - !type:MappingTemplatePrototype
+          id: DormNotifierMarker # :trolled:
+        # Reserve edit end
         - !type:MappingTemplatePrototype
           id: DefaultStationBeaconDorms
         - !type:MappingTemplatePrototype
@@ -203,8 +235,8 @@
     - !type:MappingTemplatePrototype
       id: Arrivals
       children:
-        - !type:MappingTemplatePrototype
-          id: SignArrivals
+        #- !type:MappingTemplatePrototype
+        #  id: SignArrivals
         - !type:MappingTemplatePrototype
           id: AirlockExternalGlassShuttleArrivals
         - !type:MappingTemplatePrototype
@@ -215,11 +247,13 @@
           id: DefaultStationBeaconArrivals
         - !type:MappingTemplatePrototype
           id: HolopadGeneralArrivals
+        - !type:MappingTemplatePrototype
+          id: HolopadSecurityArrivalsCheckpoint # Reserve edit
     - !type:MappingTemplatePrototype
       id: Evac
       children:
-        - !type:MappingTemplatePrototype
-          id: SignEvac
+        #- !type:MappingTemplatePrototype
+        #  id: SignEvac
         - !type:MappingTemplatePrototype
           id: SignDirectionalEvac
         - !type:MappingTemplatePrototype
@@ -227,13 +261,15 @@
         - !type:MappingTemplatePrototype
           id: AirlockExternalGlass
         - !type:MappingTemplatePrototype
-          id: AirlockExternalGlassCommandLocked
-        - !type:MappingTemplatePrototype
-          id: AirlockExternalGlassSecurityLocked
+          id: AirlockExternalGlassShuttleEmergencyLocked # Reserve edit
         - !type:MappingTemplatePrototype
           id: AirlockExternalGlassShuttleEscape
         - !type:MappingTemplatePrototype
           id: AtmosDeviceFanTiny
+        - !type:MappingTemplatePrototype
+          id: HolopadGeneralEvac # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: HolopadSecurityEvacCheckpoint # Reserve edit
     - !type:MappingTemplatePrototype
       id: Corridors
       children:
@@ -256,21 +292,31 @@
         - !type:MappingTemplatePrototype
           id: ExtinguisherCabinetFilled
         - !type:MappingTemplatePrototype
+          id: ClosetEmergencyFilledRandom # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: ClosetFireFilled # Reserve edit
+        - !type:MappingTemplatePrototype
           id: RandomVending
         - !type:MappingTemplatePrototype
           id: RandomVendingDrinks
         - !type:MappingTemplatePrototype
           id: RandomVendingSnacks
         - !type:MappingTemplatePrototype
-          id: VendingMachineCigs
+          id: VendingMachine
+        - !type:MappingTemplatePrototype
+          id: Chair # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: BenchComfy # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: WoodenBench # Reserve edit
         - !type:MappingTemplatePrototype
           id: BenchSteelMiddle
         - !type:MappingTemplatePrototype
           id: BenchSteelWhiteMiddle
         - !type:MappingTemplatePrototype
-          id: RandomPottedPlantBase
+          id: PottedPlantRandom
         - !type:MappingTemplatePrototype
-          id: RandomPottedPlantSpawner
+          id: PottedPlantRandomPlastic
     - !type:MappingTemplatePrototype
       id: Markers
       children:
@@ -281,8 +327,8 @@
         children:
           - !type:MappingTemplatePrototype
             id: WarpPointBombing
-          - !type:MappingTemplatePrototype
-            id: RendingRunePlacementMarker
+          #- !type:MappingTemplatePrototype
+          #  id: RendingRunePlacementMarker
       - !type:MappingTemplatePrototype
         id: Jobs
         children:
@@ -293,6 +339,10 @@
                 id: SpawnPointCaptain
               - !type:MappingTemplatePrototype
                 id: SpawnPointHeadOfPersonnel
+              - !type:MappingTemplatePrototype
+                id: SpawnPointNanotrasenRepresentative # Reserve edit
+              - !type:MappingTemplatePrototype
+                id: SpawnPointBlueshieldOfficer # Reserve edit
           - !type:MappingTemplatePrototype
             id: Security
             children:
@@ -310,10 +360,10 @@
                 id: SpawnPointSecurityCadet
               - !type:MappingTemplatePrototype
                 id: SpawnPointLawyer
-              - !type:MappingTemplatePrototype
-                id: SpawnPointPrisonGuard
-              - !type:MappingTemplatePrototype
-                id: SpawnPointPrisoner
+              #- !type:MappingTemplatePrototype
+              #  id: SpawnPointPrisonGuard
+              #- !type:MappingTemplatePrototype
+              #  id: SpawnPointPrisoner
           - !type:MappingTemplatePrototype
             id: Medbay
             children:
@@ -357,7 +407,9 @@
               - !type:MappingTemplatePrototype
                 id: SpawnPointZookeeper
               - !type:MappingTemplatePrototype
-                id: SpawnPointHobo
+                id: SpawnPointLibrarian
+              - !type:MappingTemplatePrototype
+                id: SpawnPointChaplain
           - !type:MappingTemplatePrototype
             id: Cargo
             children:
@@ -365,8 +417,8 @@
                 id: SpawnPointQuartermaster
               - !type:MappingTemplatePrototype
                 id: SpawnPointSalvageSpecialist
-              - !type:MappingTemplatePrototype
-                id: SpawnPointMailCarrier
+              #- !type:MappingTemplatePrototype
+              #  id: SpawnPointMailCarrier
               - !type:MappingTemplatePrototype
                 id: SpawnPointCargoTechnician
           - !type:MappingTemplatePrototype
@@ -374,18 +426,12 @@
             children:
               - !type:MappingTemplatePrototype
                 id: SpawnPointResearchDirector
-              - !type:MappingTemplatePrototype
-                id: SpawnPointForensicMantis
-              - !type:MappingTemplatePrototype
-                id: SpawnPointRoboticist
+              #- !type:MappingTemplatePrototype
+              #  id: SpawnPointRoboticist
               - !type:MappingTemplatePrototype
                 id: SpawnPointScientist
               - !type:MappingTemplatePrototype
                 id: SpawnPointResearchAssistant
-              - !type:MappingTemplatePrototype
-                id: SpawnPointChaplain
-              - !type:MappingTemplatePrototype
-                id: SpawnPointLibrarian
           - !type:MappingTemplatePrototype
             id: Engineering
             children:
@@ -404,8 +450,6 @@
                 id: PlayerStationAi
               - !type:MappingTemplatePrototype
                 id: SpawnPointBorg
-              - !type:MappingTemplatePrototype
-                id: SpawnPointMedicalBorg
           - !type:MappingTemplatePrototype
             id: Other
             children:
@@ -432,8 +476,6 @@
         - !type:MappingTemplatePrototype
           id: AirlockMaintServiceLocked
         - !type:MappingTemplatePrototype
-          id: AirlockMaintServiceTheatreLocked
-        - !type:MappingTemplatePrototype
           id: WindoorSecureServiceLocked
         - !type:MappingTemplatePrototype
           id: WindoorServiceLocked
@@ -444,7 +486,11 @@
         - !type:MappingTemplatePrototype
           id: SurveillanceCameraService
         - !type:MappingTemplatePrototype
-          id: HolopadServiceToolroom
+          id: ComputerCargoOrdersService # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: CrateLockBoxService # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: ServiceTechFab # Reserve edit
         - !type:MappingTemplatePrototype
           id: LockableButtonService
     # WWDP edit end
@@ -497,11 +543,17 @@
         - !type:MappingTemplatePrototype
           id: SpawnMobMonkeyPunpun
         - !type:MappingTemplatePrototype
+          id: RandomDrinkGlass # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: RandomDrinkBottle
+        - !type:MappingTemplatePrototype
           id: VendingBarDrobe
         - !type:MappingTemplatePrototype
           id: LockerBoozeFilled
         - !type:MappingTemplatePrototype
           id: SpawnPointBartender
+        - !type:MappingTemplatePrototype
+          id: SpawnPointServiceWorker # Reserve edit
         - !type:MappingTemplatePrototype
           id: NuclearBombKeg
     - !type:MappingTemplatePrototype
@@ -564,8 +616,6 @@
         - !type:MappingTemplatePrototype
           id: KitchenElectricGrill # WWDP edit
         - !type:MappingTemplatePrototype
-          id: KitchenDeepFryer # WWDP edit
-        - !type:MappingTemplatePrototype
           id: VendingMachineDinnerware
         - !type:MappingTemplatePrototype
           id: VendingMachineChefvend # WWDP edit
@@ -591,6 +641,28 @@
           id: KitchenReagentGrinder
         - !type:MappingTemplatePrototype
           id: CrateNPCCow
+        # Reserve edit begin
+        - !type:MappingTemplatePrototype
+          id: VendingMachineHappyHonk
+        - !type:MappingTemplatePrototype
+          id: RandomFoodBakedSingle
+        - !type:MappingTemplatePrototype
+          id: RandomFoodBakedWhole
+        - !type:MappingTemplatePrototype
+          id: RandomFoodSingle
+        - !type:MappingTemplatePrototype
+          id: RandomFoodMeal
+        - !type:MappingTemplatePrototype
+          id: RandomMeat
+        - !type:MappingTemplatePrototype
+          id: RandomIngredient
+        - !type:MappingTemplatePrototype
+          id: SpawnPointChef
+        - !type:MappingTemplatePrototype
+          id: SpawnPointServiceWorker
+        - !type:MappingTemplatePrototype
+          id: SpawnMobAlexander
+        # Reserve edit end
     - !type:MappingTemplatePrototype
       id: Hydroponics
       children:
@@ -607,6 +679,10 @@
             - !type:MappingTemplatePrototype
               id: AirlockMaintKitchenHydroLocked
             - !type:MappingTemplatePrototype
+              id: WindoorHydroponicsLocked # Reserve edit
+            - !type:MappingTemplatePrototype
+              id: WindoorKitchenHydroponicsLocked # Reserve edit
+            - !type:MappingTemplatePrototype
               id: AirlockFreezerKitchenHydroLocked
             - !type:MappingTemplatePrototype
               id: AirlockFreezerHydroponicsLocked
@@ -615,6 +691,18 @@
           children:
             - !type:MappingTemplatePrototype
               id: SpawnMobGoat
+            # Reserve edit begin
+            - !type:MappingTemplatePrototype
+              id: SpawnMobCow
+            - !type:MappingTemplatePrototype
+              id: SpawnMobButterfly
+            - !type:MappingTemplatePrototype
+              id: SpawnMobMonkey
+            - !type:MappingTemplatePrototype
+              id: SpawnMobBee
+            - !type:MappingTemplatePrototype
+              id: CrateNPCChicken # there is no spawner for chickens! Why???
+            # Reserve edit end
             - !type:MappingTemplatePrototype
               id: FenceRailing
               children:
@@ -664,7 +752,7 @@
               - !type:MappingTemplatePrototype
                 id: FenceWoodHighGate
         - !type:MappingTemplatePrototype
-          id: SignHydro
+          id: SignHydro1
         - !type:MappingTemplatePrototype
           id: SignDirectionalHydro
         # WWDP edit end
@@ -672,6 +760,8 @@
           id: SpawnPointBotanist
         - !type:MappingTemplatePrototype
           id: hydroponicsTray
+        - !type:MappingTemplatePrototype
+          id: hydroponicsSoil # Reserve edit
         - !type:MappingTemplatePrototype
           id: SeedExtractor
         - !type:MappingTemplatePrototype
@@ -686,6 +776,8 @@
           id: WardrobeBotanistFilled
         - !type:MappingTemplatePrototype
           id: WaterTankHighCapacity
+        - !type:MappingTemplatePrototype
+          id: Sink # Reserve edit
         - !type:MappingTemplatePrototype
           id: DefaultStationBeaconBotany
         - !type:MappingTemplatePrototype
@@ -709,6 +801,10 @@
               id: WindoorSecureJanitorLocked
             - !type:MappingTemplatePrototype
               id: WindoorJanitorLocked
+            - !type:MappingTemplatePrototype
+              id: PlasmaWindoorJanitorLocked # Reserve edit
+            - !type:MappingTemplatePrototype
+              id: PlasmaWindoorSecureJanitorLocked # Reserve edit
        # WWDP edit end
         - !type:MappingTemplatePrototype
           id: SignJanitor # WWDP edit
@@ -718,6 +814,16 @@
           id: SpawnPointJanitor
         - !type:MappingTemplatePrototype
           id: VendingMachineJaniDrobe
+        # Reserve edit begin
+        - !type:MappingTemplatePrototype
+          id: ClothingBeltJanitor
+        - !type:MappingTemplatePrototype
+          id: CrateTrashCartJani
+        - !type:MappingTemplatePrototype
+          id: SpawnVehicleJanicart
+        - !type:MappingTemplatePrototype
+          id: VehicleKeyJanicart
+        # Reserve edit end
         - !type:MappingTemplatePrototype
           id: JanitorialTrolley
         - !type:MappingTemplatePrototype
@@ -735,7 +841,7 @@
         - !type:MappingTemplatePrototype
           id: ClosetL3JanitorFilled
         - !type:MappingTemplatePrototype
-          id: SpawnMobRaccoonMorticia
+          id: FloorDrain # Reserve edit
     - !type:MappingTemplatePrototype
       id: Theater
       children:
@@ -745,12 +851,6 @@
           children:
             - !type:MappingTemplatePrototype
               id: PaintingSadClown
-            - !type:MappingTemplatePrototype
-              id: AirlockClownGlassLocked
-            - !type:MappingTemplatePrototype
-              id: AirlockClownLocked
-            - !type:MappingTemplatePrototype
-              id: AirlockMaintClownLocked
             - !type:MappingTemplatePrototype
               id: LockerClown
             - !type:MappingTemplatePrototype
@@ -765,17 +865,15 @@
               id: BedsheetClown
             - !type:MappingTemplatePrototype
               id: Bed
+            - !type:MappingTemplatePrototype
+              id: BananaPhoneInstrument # Reserve edit
+            - !type:MappingTemplatePrototype
+              id: FoodPieBananaCream # Reserve edit
         - !type:MappingTemplatePrototype
           id: MimeRoom
           children:
             - !type:MappingTemplatePrototype
               id: PosterLegitMime
-            - !type:MappingTemplatePrototype
-              id: AirlockMimeGlassLocked
-            - !type:MappingTemplatePrototype
-              id: AirlockMimeLocked
-            - !type:MappingTemplatePrototype
-              id: AirlockMaintMimeLocked
             - !type:MappingTemplatePrototype
               id: SpawnPointMime
             - !type:MappingTemplatePrototype
@@ -792,19 +890,13 @@
           id: MusicanRoom
           children:
             - !type:MappingTemplatePrototype
-              id: AirlockMusicianGlassLocked
-            - !type:MappingTemplatePrototype
-              id: AirlockMusicianLocked
-            - !type:MappingTemplatePrototype
-              id: AirlockMaintMusicianLocked
-            - !type:MappingTemplatePrototype
               id: SpawnPointMusician
             - !type:MappingTemplatePrototype
               id: HolopadServiceMusician
             - !type:MappingTemplatePrototype
               id: RandomInstruments
         - !type:MappingTemplatePrototype
-          id: SignTheatre
+          id: SignTheater
         - !type:MappingTemplatePrototype
           id: AirlockTheatreGlassLocked
         - !type:MappingTemplatePrototype
@@ -828,6 +920,8 @@
           id: HolopadGeneralTheater # WWDP edit
         - !type:MappingTemplatePrototype
           id: LockableButtonTheatre # WWDP edit
+        - !type:MappingTemplatePrototype
+          id: CrateServiceTheatre # Reserve edit
     - !type:MappingTemplatePrototype
       id: ReportersOffice
       children:
@@ -835,11 +929,17 @@
         - !type:MappingTemplatePrototype
           id: SignNews
         - !type:MappingTemplatePrototype
-          id: AirlockReporterGlassLocked
+          id: AirlockServiceGlassLocked
         - !type:MappingTemplatePrototype
-          id: AirlockReporterLocked
+          id: AirlockServiceLocked
         - !type:MappingTemplatePrototype
-          id: AirlockMaintReporterLocked
+          id: AirlockMaintServiceLocked
+        - !type:MappingTemplatePrototype
+          id: WindoorServiceLocked
+        - !type:MappingTemplatePrototype
+          id: WindoorSecureServiceLocked
+        - !type:MappingTemplatePrototype
+          id: ComputerSurveillanceCameraMonitor # Reserve edit
         - !type:MappingTemplatePrototype
           id: ComputerSurveillanceWirelessCameraMonitor
         - !type:MappingTemplatePrototype
@@ -890,13 +990,19 @@
         - !type:MappingTemplatePrototype
           id: CrateCoffin
         - !type:MappingTemplatePrototype
+          id: Urn # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: BoxCandle # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: Candle # Reserve edit
+        - !type:MappingTemplatePrototype
           id: AltarSpawner
         - !type:MappingTemplatePrototype
           id: ConvertAltarSpawner # WWDP edit
         - !type:MappingTemplatePrototype
-          id: OracleSpawner # WWDP edit
+          id: ChurchBell # Reserve edit
         - !type:MappingTemplatePrototype
-          id: SophicScribeSpawner # WWDP edit
+          id: ChurchOrganInstrument # Reserve edit
         - !type:MappingTemplatePrototype
           id: DefaultStationBeaconChapel
         - !type:MappingTemplatePrototype
@@ -914,11 +1020,15 @@
         - !type:MappingTemplatePrototype
           id: SignDirectionalLibrary
         - !type:MappingTemplatePrototype
-          id: AirlockLibraryGlassLocked
+          id: AirlockServiceGlassLocked
         - !type:MappingTemplatePrototype
-          id: AirlockLibraryLocked
+          id: AirlockServiceLocked
         - !type:MappingTemplatePrototype
-          id: AirlockMaintLibraryLocked
+          id: AirlockMaintServiceLocked
+        - !type:MappingTemplatePrototype
+          id: WindoorServiceLocked
+        - !type:MappingTemplatePrototype
+          id: WindoorSecureServiceLocked
         - !type:MappingTemplatePrototype
           id: DefaultStationBeaconLibrary
         - !type:MappingTemplatePrototype
@@ -937,6 +1047,14 @@
           id: FaxMachineBase
         - !type:MappingTemplatePrototype
           id: BookshelfFilled
+        - !type:MappingTemplatePrototype
+          id: TableWood # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: PaperBin # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: DiceBag # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: PaperCNCSheet # Reserve edit
         - !type:MappingTemplatePrototype
           id: RandomPainting
       # WWDP edit end
@@ -1490,6 +1608,50 @@
         - !type:MappingTemplatePrototype
           id: MaterialDiamond1
         # Reserve edit end
+    # Reserve edit begin
+    - !type:MappingTemplatePrototype
+      id: BSOQuarters
+      children:
+        - !type:MappingTemplatePrototype
+          id: AirlockBlueshieldOfficerCommandLocked
+        - !type:MappingTemplatePrototype
+          id: AirlockBlueshieldOfficerCommandGlassLocked
+        - !type:MappingTemplatePrototype
+          id: UniqueLockerBlueshieldOfficerFilled
+        - !type:MappingTemplatePrototype
+          id: DresserBlueshieldOfficerFilled
+        - !type:MappingTemplatePrototype
+          id: SpawnPointBlueshieldOfficer
+        - !type:MappingTemplatePrototype
+          id: Bed
+        - !type:MappingTemplatePrototype
+          id: BedsheetNT
+        - !type:MappingTemplatePrototype
+          id: HolopadCommandBSO
+        - !type:MappingTemplatePrototype
+          id: SurveillanceCameraCommand
+    - !type:MappingTemplatePrototype
+      id: NTRQuarters
+      children:
+        - !type:MappingTemplatePrototype
+          id: AirlockNanotrasenRepresentativeCommandLocked
+        - !type:MappingTemplatePrototype
+          id: AirlockNanotrasenRepresentativeCommandGlassLocked
+        - !type:MappingTemplatePrototype
+          id: UniqueLockerNanorepFilled
+        - !type:MappingTemplatePrototype
+          id: DresserNanorepFilled
+        - !type:MappingTemplatePrototype
+          id: SpawnPointNanotrasenRepresentative
+        - !type:MappingTemplatePrototype
+          id: Bed
+        - !type:MappingTemplatePrototype
+          id: BedsheetCentcom
+        - !type:MappingTemplatePrototype
+          id: HolopadCommandNTR
+        - !type:MappingTemplatePrototype
+          id: SurveillanceCameraCommand
+    # Reserve edit end
 
 - type: mappingTemplate
   id: Medical
@@ -2919,25 +3081,25 @@
       id: SecurityAirlocks
       children:
         - !type:MappingTemplatePrototype
-          id: WindoorSecureSecurityLawyerLocked
-        - !type:MappingTemplatePrototype
-          id: AirlockSecurityLawyerGlassLocked
-        - !type:MappingTemplatePrototype
-          id: AirlockSecurityLawyerLocked
-        - !type:MappingTemplatePrototype
-          id: AirlockMaintSecurityLawyerLocked
-        - !type:MappingTemplatePrototype
-          id: AirlockExternalGlassSecurityLocked
-        - !type:MappingTemplatePrototype
-          id: AirlockExternalSecurityLocked
-        - !type:MappingTemplatePrototype
-          id: AirlockSecurityGlassLocked
+          id: AirlockSecurity
         - !type:MappingTemplatePrototype
           id: AirlockSecurityLocked
         - !type:MappingTemplatePrototype
           id: AirlockSecurityGlass
         - !type:MappingTemplatePrototype
-          id: AirlockSecurity
+          id: AirlockSecurityGlassLocked
+        - !type:MappingTemplatePrototype
+          id: AirlockSecurityLawyerLocked
+        - !type:MappingTemplatePrototype
+          id: AirlockSecurityLawyerGlassLocked
+        - !type:MappingTemplatePrototype
+          id: WindoorSecureSecurityLocked
+        - !type:MappingTemplatePrototype
+          id: PlasmaWindoorSecureSecurityLocked
+        - !type:MappingTemplatePrototype
+          id: WindoorSecureSecurityLawyerLocked
+        - !type:MappingTemplatePrototype
+          id: HighSecArmoryLocked # Reserve edit
       # WWDP edit end
     - !type:MappingTemplatePrototype
       id: HOSRoom
@@ -2961,6 +3123,8 @@
         - !type:MappingTemplatePrototype
           id: SuitStorageHOS
         - !type:MappingTemplatePrototype
+          id: GlassBoxLawbringerFilled # Reserve edit
+        - !type:MappingTemplatePrototype
           id: DresserHeadOfSecurityFilled
         - !type:MappingTemplatePrototype
           id: BedsheetHOS
@@ -2983,8 +3147,8 @@
         - !type:MappingTemplatePrototype
           id: EquipmentRoom
           children:
-            - !type:MappingTemplatePrototype
-              id: SignEquip
+            #- !type:MappingTemplatePrototype
+            #  id: SignEquip
             - !type:MappingTemplatePrototype
               id: VendingMachineSec
             - !type:MappingTemplatePrototype
@@ -2996,16 +3160,28 @@
             - !type:MappingTemplatePrototype
               id: ClosetL3SecurityFilled
             - !type:MappingTemplatePrototype
+              id: WardrobeSecurityFilled # Reserve edit
+            - !type:MappingTemplatePrototype
               id: WeaponCapacitorRecharger
             - !type:MappingTemplatePrototype
               id: PowerCellRecharger
             - !type:MappingTemplatePrototype
               id: WallWeaponCapacitorRecharger
+            - !type:MappingTemplatePrototype
+              id: LootSpawnerSecurityBasic # Reserve edit
+            - !type:MappingTemplatePrototype
+              id: LootSpawnerSecurity # Reserve edit
+            - !type:MappingTemplatePrototype
+              id: HolopadSecurityLockerRoom # Reserve edit
         # WWDP edit start
         - !type:MappingTemplatePrototype
           id: SignPrison # WWDP edit
         - !type:MappingTemplatePrototype
           id: SignSecurity # WWDP edit
+        - !type:MappingTemplatePrototype
+          id: SignInterrogation # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: BannerSecurity # Reserve edit
         - !type:MappingTemplatePrototype
           id: ComputerCriminalRecords
         - !type:MappingTemplatePrototype
@@ -3016,6 +3192,10 @@
           id: WallmountTelescreen # WWDP edit
         - !type:MappingTemplatePrototype
           id: ComputerSurveillanceCameraMonitor
+        - !type:MappingTemplatePrototype
+          id: ComputerCargoOrdersSecurity # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: CrateLockBoxSecurity # Reserve edit
         - !type:MappingTemplatePrototype
           id: SpawnPointSecurityCadet
         - !type:MappingTemplatePrototype
@@ -3040,6 +3220,10 @@
           id: WardrobePrisonFilled
         - !type:MappingTemplatePrototype
           id: BrigTimer
+        - !type:MappingTemplatePrototype
+          id: ContrabandDetector # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: VendingMachineDonut # Reserve edit
     - !type:MappingTemplatePrototype
       id: WardensOffice
       children:
@@ -3052,6 +3236,8 @@
           id: AirlockArmoryLocked
         - !type:MappingTemplatePrototype
           id: AirlockMaintArmoryLocked
+        - !type:MappingTemplatePrototype
+          id: HighSecArmoryLocked # Reserve edit
         # WWDP edit end
         - !type:MappingTemplatePrototype
           id: DresserWardenFilled
@@ -3073,6 +3259,8 @@
           id: FaxMachineBase # WWDP edit
         - !type:MappingTemplatePrototype
           id: ComputerCriminalRecords
+        - !type:MappingTemplatePrototype
+          id: SpawnMobMcGriff
     - !type:MappingTemplatePrototype
       id: Armory
       children:
@@ -3084,22 +3272,16 @@
         - !type:MappingTemplatePrototype
           id: WindoorSecureArmoryLocked
         - !type:MappingTemplatePrototype
+          id: PlasmaWindoorSecureArmoryLocked # Reserve edit
+        - !type:MappingTemplatePrototype
           id: GunSafe
-        - !type:MappingTemplatePrototype
-          id: GunSafePistolMk58
-        - !type:MappingTemplatePrototype
-          id: GunSafeSubMachineGunWt550
-        - !type:MappingTemplatePrototype
-          id: GunSafeLaserCarbine
-        - !type:MappingTemplatePrototype
-          id: GunSafeDisabler
-        - !type:MappingTemplatePrototype
-          id: GunSafeEnergyGun
-        - !type:MappingTemplatePrototype
-          id: GunSafeRifleLecter
-        - !type:MappingTemplatePrototype
-          id: GunSafeShotgunEnforcer
         # WWDP edit end
+        - !type:MappingTemplatePrototype
+          id: LootSpawnerArmoryArmorOnly # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: LootSpawnerArmoryGunsOnly # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: LootSpawnerArmory # Reserve edit
         - !type:MappingTemplatePrototype
           id: SecurityTechFab
         - !type:MappingTemplatePrototype
@@ -3110,6 +3292,12 @@
           id: HolopadSecurityArmory # WWDP edit
         - !type:MappingTemplatePrototype
           id: LockableButtonArmory
+        - !type:MappingTemplatePrototype
+          id: CrateContrabandStorageSecure # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: LootSpawnerRandomCrateSecurity # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: CrateSecurityTrackingMindshieldImplants # Reserve edit
         - !type:MappingTemplatePrototype
           id: PortableFlasher
         - !type:MappingTemplatePrototype
@@ -3125,49 +3313,31 @@
         - !type:MappingTemplatePrototype
           id: RiotShield
     - !type:MappingTemplatePrototype
-      id: PermaBrig
+      id: PermaBrig # or genpop
       children:
+        - !type:MappingTemplatePrototype
+          id: SignPrison # Reserve edit
+        - !type:MappingTemplatePrototype
+          id: SignGenpop # Reserve edit
         - !type:MappingTemplatePrototype
           id: VendingMachineSustenance
         - !type:MappingTemplatePrototype
           id: DefaultStationBeaconPermaBrig
         - !type:MappingTemplatePrototype
           id: SuitStorageEVAPrisoner
+        - !type:MappingTemplatePrototype
+          id: TurnstileGenpopEnter
+        - !type:MappingTemplatePrototype
+          id: TurnstileGenpopLeave
+        - !type:MappingTemplatePrototype
+          id: LockerPrisoner
+        - !type:MappingTemplatePrototype
+          id: CryogenicSleepUnit
         # WWDP edit start
         - !type:MappingTemplatePrototype
           id: WardrobePrisonFilled
         - !type:MappingTemplatePrototype
-          id: CryogenicSleepUnitSpawnerPrisoner
-        - !type:MappingTemplatePrototype
-          id: SpawnPointPrisonGuard
-        - !type:MappingTemplatePrototype
-          id: SpawnPointPrisoner
-        - !type:MappingTemplatePrototype
-          id: SignPrison
-        - !type:MappingTemplatePrototype
-          id: BodyBagPrisonerFolded
-        - !type:MappingTemplatePrototype
-          id: BoxPrisonerHeadset
-        - !type:MappingTemplatePrototype
-          id: BoxPDAPrisoner
-        - !type:MappingTemplatePrototype
-          id: BoxEncryptionKeyPrisoner
-        - !type:MappingTemplatePrototype
           id: HolopadSecurityPerma
-        - !type:MappingTemplatePrototype
-          id: HolopadSecurityPermaBotany
-        - !type:MappingTemplatePrototype
-          id: HolopadSecurityPermaGuardComplex
-        - !type:MappingTemplatePrototype
-          id: HolopadSecurityPermaKitchen
-        - !type:MappingTemplatePrototype
-          id: HolopadSecurityPermaMineshaft
-        - !type:MappingTemplatePrototype
-          id: HolopadSecurityPermaWorkshop
-        - !type:MappingTemplatePrototype
-          id: HolopadSecurityPermaYardOne
-        - !type:MappingTemplatePrototype
-          id: HolopadSecurityPermaYardTwo
         # WWDP edit end
     - !type:MappingTemplatePrototype
       id: DetectiveRoom
@@ -3196,8 +3366,6 @@
           id: LockableButtonDetective # WWDP edit
         - !type:MappingTemplatePrototype
           id: FaxMachineBase # WWDP edit
-        - !type:MappingTemplatePrototype
-          id: SpawnMobSecDogLaika # WWDP edit
     - !type:MappingTemplatePrototype
       id: Gunnery
       children:
@@ -3219,6 +3387,29 @@
           id: CrateTrainingBombs # WWDP edit
         - !type:MappingTemplatePrototype
           id: ClothingNeckHeadphones # WWDP edit
+    # Reserve edit begin
+    - !type:MappingTemplatePrototype
+      id: Brigmedic
+      children:
+        - !type:MappingTemplatePrototype
+          id: LockerBrigmedicFilled
+        - !type:MappingTemplatePrototype
+          id: ComputerCrewMonitoring
+        - !type:MappingTemplatePrototype
+          id: MedicalBed
+        - !type:MappingTemplatePrototype
+          id: BedsheetBrigmedic
+        - !type:MappingTemplatePrototype
+          id: Morgue
+        - !type:MappingTemplatePrototype
+          id: DefibrillatorCabinetFilled
+        - !type:MappingTemplatePrototype
+          id: HolopadSecurityBrigMed
+        - !type:MappingTemplatePrototype
+          id: DefaultStationBeaconBrigMed
+        - !type:MappingTemplatePrototype
+          id: SpawnPointBrigmedic
+    # Reserve edit end
 # WWDP edit start
 - type: mappingTemplate
   id: JusticeDepartment #changed due to same id with Goob HOS sword.
@@ -3229,20 +3420,24 @@
     children:
     - !type:MappingTemplatePrototype
       id: SignLawyer
-    - !type:MappingTemplatePrototype
-      id: SignDirectionalJustice
-    - !type:MappingTemplatePrototype
-      id: AirlockJusticeGlass
-    - !type:MappingTemplatePrototype
-      id: AirlockJustice
-    - !type:MappingTemplatePrototype
-      id: AirlockLawyerGlassLocked
+    #- !type:MappingTemplatePrototype
+    #  id: SignDirectionalJustice
+    #- !type:MappingTemplatePrototype
+    #  id: AirlockJusticeGlass
+    #- !type:MappingTemplatePrototype
+    #  id: AirlockJustice
     - !type:MappingTemplatePrototype
       id: AirlockLawyerLocked
     - !type:MappingTemplatePrototype
       id: AirlockMaintLawyerLocked
     - !type:MappingTemplatePrototype
-      id: WindoorSecureLawyerLocked
+      id: AirlockLawyerGlassLocked
+    - !type:MappingTemplatePrototype
+      id: AirlockSecurityLawyerLocked # Reserve edit
+    - !type:MappingTemplatePrototype
+      id: AirlockSecurityLawyerGlassLocked # Reserve edit
+    - !type:MappingTemplatePrototype
+      id: WindoorSecureSecurityLawyerLocked # Reserve edit
     - !type:MappingTemplatePrototype
       id: DefaultStationBeaconLawOffice
     - !type:MappingTemplatePrototype
@@ -3260,12 +3455,16 @@
   - !type:MappingTemplatePrototype
     id: CourtRoom
     children:
+      #- !type:MappingTemplatePrototype
+      #  id: SignDirectionaCourt
       - !type:MappingTemplatePrototype
-        id: SignDirectionaCourt
+        id: SignLawyer # Reserve edit
       - !type:MappingTemplatePrototype
         id: DefaultStationBeaconCourtroom
       - !type:MappingTemplatePrototype
         id: HolopadSecurityCourtroom
       - !type:MappingTemplatePrototype
         id: BenchPewMiddle
+      - !type:MappingTemplatePrototype
+        id: ToyHammer # Reserve edit
 # WWDP edit end
