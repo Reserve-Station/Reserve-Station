@@ -19,7 +19,6 @@
     - prefRoles: [ BloodBrother ]
       max: 1
       playerRatio: 1
-      allowNonHumans: true
       briefing:
         text: blood-brother-initial-role-greeting
         color: MediumVioletRed
