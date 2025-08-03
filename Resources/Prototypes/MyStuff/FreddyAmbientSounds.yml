@@ -1,0 +1,13 @@
+- type: soundCollection
+  id: FreddyAmbientSounds
+  files:
+    - /Audio/MyStuff/Freddy/freddygiggle1.ogg
+    - /Audio/MyStuff/Freddy/freddygiggle2.ogg
+    - /Audio/MyStuff/Freddy/freddygiggle3.ogg
+    - /Audio/MyStuff/Freddy/freddygiggle4.ogg
+    - /Audio/MyStuff/Freddy/freddygiggle5.ogg
+    - /Audio/MyStuff/Freddy/freddygiggle6.ogg
+    - /Audio/MyStuff/Freddy/freddygiggle7.ogg
+    - /Audio/MyStuff/Freddy/freddygiggle8.ogg
+    - /Audio/MyStuff/Freddy/freddygiggle9.ogg
+    - /Audio/MyStuff/Freddy/freddyscreamer.ogg

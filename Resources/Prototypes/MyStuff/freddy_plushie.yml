@@ -1,0 +1,50 @@
+- type: entity
+  id: FreddyPlushie
+  name: "Плюшевый Фредди"
+  description: "Виднеется бирка: Собственность Fazbear Entertainment."
+  parent: BasePlushie
+  components:
+    - type: Sprite
+      sprite: Objects/Toys/freddy_plushie.rsi
+      state: icon
+
+    - type: Item
+      size: Small
+
+    # 🎲 случайные смехи по таймеру
+    - type: RandomTimedSound
+      soundCollection: FreddyAmbientSounds
+      intervalMin: 40
+      intervalMax: 80
+      volume: -2
+      range: 8
+      maxInstances: 1
+      mapSavable: false  # 🚫 не сохраняем при savemap
+
+    # 🖱 звук при использовании
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/MyStuff/Freddy/freddy_squeak.ogg
+      params:
+        volume: -2
+
+    # 🪓 звук при падении (броске)
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/MyStuff/Freddy/freddy_squeak.ogg
+      params:
+        volume: -2
+
+    # 🔨 звук при ударе в ближнем бою
+    - type: MeleeWeapon
+      attackRate: 1.0
+      soundHit:
+        path: /Audio/MyStuff/Freddy/freddy_squeak.ogg
+      damage:
+        types:
+          Blunt: 0
+
+
+
+
+

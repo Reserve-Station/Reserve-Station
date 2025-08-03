@@ -1,0 +1,15 @@
+- type: entity
+  id: FreddyPlushieSpawner
+  name: "Freddy Plushie Spawner"
+  description: "Маркер для маппинга — в игре не виден."
+  parent: MarkerBase
+  mapSavable: false
+  components:
+    - type: Sprite
+      sprite: Markers/freddy_marker.rsi
+      state: icon
+      visible: false
+      mapVisible: true
+    - type: ConditionalSpawner
+      prototypes:
+        - FreddyPlushie
