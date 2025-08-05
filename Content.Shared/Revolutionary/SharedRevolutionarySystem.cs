@@ -10,6 +10,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Harmony.BloodBrothers.EntitySystems; // Harmony
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
@@ -23,6 +24,7 @@ namespace Content.Shared.Revolutionary;
 
 public abstract class SharedRevolutionarySystem : EntitySystem
 {
+    [Dependency] private readonly SharedBloodBrotherSystem _bloodBrotherSystem = default!; // Harmony
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedStunSystem _sharedStun = default!;
 
@@ -60,6 +62,8 @@ public abstract class SharedRevolutionarySystem : EntitySystem
             _sharedStun.TryUpdateParalyzeDuration(uid, stunTime);
             _popupSystem.PopupEntity(Loc.GetString("rev-break-control", ("name", name)), uid);
         }
+
+        _bloodBrotherSystem.OnBloodBrotherMindshielded((uid, comp), ref init); // Harmony (who doesn't love some good old hardcoding)
     }
 
     /// <summary>
