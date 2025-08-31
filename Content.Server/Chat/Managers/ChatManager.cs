@@ -159,14 +159,12 @@
 // SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
 // SPDX-FileCopyrightText: 2025 MortalBaguette <169563638+MortalBaguette@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
 // SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Schrödinger <132720404+Schrodinger71@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
@@ -182,7 +180,6 @@
 // SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 // SPDX-FileCopyrightText: 2025 shibe <95730644+shibechef@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 tetra <169831122+Foralemes@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 сачтик <51020966+ca4tuk@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -444,33 +441,16 @@ internal sealed partial class ChatManager : IChatManager
         }
 
         Color? colorOverride = null;
-        //EE multiauth begin
-        var authServer = player.AuthType == LoginType.LoggedIn
-                ? AuthServer.FromStringList(_configurationManager.GetCVar(CCVars.AuthServers))
-                    .FirstOrDefault(x => x.AuthUrl.ToString() == player.Channel.UserData.AuthServer)?.Id ?? "Unknown"
-                : "Unknown";
-        var wrappedMessage = Loc.GetString(
-                "chat-manager-send-ooc-wrap-message",
-                ("playerName", $"{player.Name}"),
-                ("authServer", authServer), //Reserve - althub
-                ("message", FormattedMessage.EscapeText(message)));
-        //EE multiauth end
+        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName",player.Name), ("message", FormattedMessage.EscapeText(message)));
         if (_adminManager.HasAdminFlag(player, AdminFlags.NameColor))
         {
             var prefs = _preferencesManager.GetPreferences(player.UserId);
             colorOverride = prefs.AdminOOCColor;
         }
-        if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
+        if (  _netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
             _linkAccount.GetPatron(player)?.Tier != null) // RMC - Patreon
         {
-            //EE multiauth begin
-            wrappedMessage = Loc.GetString(
-                "chat-manager-send-ooc-patron-wrap-message",
-                ("patronColor", "#aa00ff"), // RMC - Patreon
-                ("playerName", player.Name),
-                ("authServer", authServer), //Reserve - althub
-                ("message", FormattedMessage.EscapeText(message)));
-            //EE multiauth end
+            wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message", ("patronColor", "#aa00ff"),("playerName", player.Name), ("message", FormattedMessage.EscapeText(message))); // RMC - Patreon
         }
 
         //TODO: player.Name color, this will need to change the structure of the MsgChatMessage

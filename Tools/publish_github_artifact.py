@@ -21,7 +21,7 @@ VERSION = os.environ['GITHUB_SHA']
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://cdn.reserve-station.space/"
+ROBUST_CDN_URL = "https://ccdn.reserve-station.space/"
 FORK_ID = "reserve"
 
 def main():

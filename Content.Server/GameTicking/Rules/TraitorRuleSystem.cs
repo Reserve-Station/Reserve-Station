@@ -236,19 +236,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
                 startingBalance = Math.Max(startingBalance - prototype.AntagAdvantage, 0);
 
 /*
-           // creadth: we need to create uplink for the antag.
-           // PDA should be in place already
-           var pda = _uplink.FindUplinkTarget(traitor);
-           if (pda == null || !_uplink.AddUplink(traitor, startingBalance))
-               return false;
-
-           // Give traitors their codewords and uplink code to keep in their character info menu
-           EnsureComp<RingerUplinkComponent>(pda.Value);
-           var ev = new GenerateUplinkCodeEvent();
-           RaiseLocalEvent(pda.Value, ref ev);
-           code = Comp<RingerUplinkComponent>(pda.Value).Code;
-       }
-
        _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code, issuer), Color.Crimson, component.GreetSoundNotification);
 */
 
@@ -288,6 +275,18 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             if (!_uplink.AddUplink(traitor, startingBalance, uplinkPreference: uplinkPreference)) // Reserve edit
             {
                 _sawmill.Warning($"Failed to create an uplink for the traitor {ToPrettyString(traitor)}!"); // Reserve edit
+            }
+            else if (uplinkPreference == UplinkPreference.PDA)
+            {
+                // Generate uplink code for PDA uplinks
+                var pda = _uplink.FindUplinkTarget(traitor);
+                if (pda != null)
+                {
+                    EnsureComp<RingerUplinkComponent>(pda.Value);
+                    var ev = new GenerateUplinkCodeEvent();
+                    RaiseLocalEvent(pda.Value, ref ev);
+                    code = Comp<RingerUplinkComponent>(pda.Value).Code;
+                }
             }
         }
 

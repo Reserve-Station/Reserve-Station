@@ -16,7 +16,7 @@ public sealed partial class AuthApiHelper
 
     public static async Task<string> GetCreationDate(string uuid)
     {
-        string url = $"https://auth.simplestation.org/api/query/userid?userid={uuid}";
+        string url = $"https://auth.spacestation14.com/api/query/userid?userid={uuid}";
 
         try
         {
