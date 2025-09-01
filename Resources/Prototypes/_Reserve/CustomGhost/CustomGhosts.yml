@@ -26,3 +26,11 @@
   alpha: 0.9
   ghostName: Duga
   ghostDescription: Порядок направлений сохранён намеренно. Это метаирония. Он наблюдает сквозь стены, но не туда.
+
+- type: customGhost
+  id: fxx-ghost
+  ckey: FXX
+  sprite: /Textures/_Reserve/CustomGhosts/fxx-ghost.rsi
+  alpha: 0.7
+  ghostName: FXX
+  ghostDescription: Космическая Гидра.
