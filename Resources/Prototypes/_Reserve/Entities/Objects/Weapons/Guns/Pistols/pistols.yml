@@ -1,4 +1,4 @@
-- type: entity
+щиткодить - type: entity
   name: AP Pistol
   parent: [BaseWeaponPistol, BaseSyndicateContraband]
   id: WeaponPistolAP
@@ -16,7 +16,7 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 4
+    fireRate: 10
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
       params:
