@@ -1473,3 +1473,14 @@
     Telecrystal: 3
   categories:
   - UplinkPointless
+
+- type: listing
+  id: UplinkAPPistol
+  name: AP Pistol
+  description: Little armor-pearcing handgun
+  icon: { sprite: _Reserve/Textures/Objects/Weapons/Guns/Pistols/ap_pistol.rsi, state: icon }
+  productEntity: WeaponPistolAP
+  cost:
+    Telecrystal: 33 # goob
+  categories:
+  - UplinkWeaponry
