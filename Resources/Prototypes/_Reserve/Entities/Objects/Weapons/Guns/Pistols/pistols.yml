@@ -1,4 +1,4 @@
-щиткодить - type: entity
+- type: entity
   name: AP Pistol
   parent: [BaseWeaponPistol, BaseSyndicateContraband]
   id: WeaponPistolAP
