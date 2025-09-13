@@ -17,6 +17,7 @@
 // SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 // SPDX-FileCopyrightText: 2025 āda <ss.adasts@gmail.com>
 //
