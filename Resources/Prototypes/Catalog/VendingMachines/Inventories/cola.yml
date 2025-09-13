@@ -22,7 +22,11 @@
 # SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kirill2253 <kirillsuhin5@gmail.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Smith <182301147+AgentSmithRadio@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -30,6 +34,7 @@
   id: RobustSoftdrinksInventory
   startingInventory:
     DrinkColaCan: 4
+    DrinkBrepsiCan: 3
     DrinkGrapeCan: 2
     DrinkRootBeerCan: 2
     DrinkIcedTeaCan: 2

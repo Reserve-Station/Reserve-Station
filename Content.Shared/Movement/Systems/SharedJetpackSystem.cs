@@ -81,8 +81,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Actions;
+using Content.Shared.Buckle;
+using Content.Shared.Buckle.Components;
+using Content.Shared.Clothing;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Inventory;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Popups;
@@ -103,6 +109,8 @@ public abstract class SharedJetpackSystem : EntitySystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!; // Goobstation
+    [Dependency] private readonly InventorySystem _inventory = default!; //Reserve jetpack tweaks fix
+    [Dependency] private readonly SharedBuckleSystem _buckle = default!; //Reserve jetpack tweaks fix
 
     public override void Initialize()
     {
@@ -120,6 +128,8 @@ public abstract class SharedJetpackSystem : EntitySystem
         SubscribeLocalEvent<JetpackComponent, MapInitEvent>(OnMapInit);
 
         SubscribeLocalEvent<JetpackUserComponent, DownedEvent>(OnDowned); // Goobstation
+
+        SubscribeLocalEvent<JetpackUserComponent, MagbootsUpdateStateEvent>(OnMagbootsUpdateState); //Reserve jetpack tweaks fix
     }
 
     private void OnDowned(Entity<JetpackUserComponent> ent, ref DownedEvent args) // Goobstation
@@ -184,7 +194,7 @@ public abstract class SharedJetpackSystem : EntitySystem
     private void OnJetpackUserEntParentChanged(EntityUid uid, JetpackUserComponent component, ref EntParentChangedMessage args)
     {
         if (TryComp<JetpackComponent>(component.Jetpack, out var jetpack) &&
-            !CanEnableOnGrid(args.Transform.GridUid))
+            (!CanEnableOnGrid(args.Transform.GridUid) || !CheckMagboots(uid))) // Reserve jetpack tweaks
         {
             SetEnabled(component.Jetpack, jetpack, false, uid);
 
@@ -225,13 +235,39 @@ public abstract class SharedJetpackSystem : EntitySystem
     {
         if (args.Handled)
             return;
+        //Reserve jetpack tweaks begin
+        if (!TryComp(uid, out TransformComponent? xform))
+            return;
 
-        if (TryComp(uid, out TransformComponent? xform) && !CanEnableOnGrid(xform.GridUid))
+        if (!CheckMagboots(args.Performer))
+        {
+            _popup.PopupClient(Loc.GetString("jetpack-no-magboots-on-grid"), uid, args.Performer);
+            return;
+        }
+
+        var slotEnumerator = _inventory.GetSlotEnumerator(args.Performer);
+
+        while (slotEnumerator.NextItem(out var item))
+        {
+            if (TryComp<BuckleComponent>(args.Performer, out var buckleComponent) && buckleComponent.BuckledTo != null)
+            {
+                _buckle.TryUnbuckle(args.Performer, args.Performer, buckleComponent);
+            }
+            //To use moonboots with jets
+            if (HasComp<AntiGravityClothingComponent>(item))
+            {
+                SetEnabled(uid, component, !IsEnabled(uid));
+                return;
+            }
+        }
+        //if (TryComp(uid, out TransformComponent? xform) && !CanEnableOnGrid(xform.GridUid)) //Reserve jetpack tweaks
+        if (!CanEnableOnGrid(xform.GridUid))
         {
             _popup.PopupClient(Loc.GetString("jetpack-no-station"), uid, args.Performer);
 
             return;
         }
+        //Reserve jetpack tweaks end
 
         if (_standing.IsDown(args.Performer)) // Goobstation
         {
@@ -247,9 +283,42 @@ public abstract class SharedJetpackSystem : EntitySystem
     {
         // No and no again! Do not attempt to activate the jetpack on a grid with gravity disabled. You will not be the first or the last to try this.
         // https://discord.com/channels/310555209753690112/310555209753690112/1270067921682694234
-        return gridUid == null ||
-               (!HasComp<GravityComponent>(gridUid));
+        //return gridUid == null ||
+        //       (!HasComp<GravityComponent>(gridUid));  //Reserve edit //Don't care :troll:
+
+        //Reserve jetpack tweaks begin
+        if (gridUid == null || !TryComp<GravityComponent>(gridUid, out var comp))
+            return true;
+
+        return !comp.Enabled;
+        //Reserve jetpack tweaks end
     }
+
+    // Reserve jetpack tweaks begin
+    /// <summary>
+    ///     Checks whether the entity can use jet with magboots
+    /// </summary>
+    /// <returns>
+    ///     true if entity can use jet with magboots
+    /// </returns>
+    private bool CheckMagboots(EntityUid user)
+    {
+        var xform = Transform(user);
+        if (xform.GridUid is null)
+            return true;
+
+        var slotEnumerator = _inventory.GetSlotEnumerator(user);
+        while (slotEnumerator.NextItem(out var item))
+        {
+            if (HasComp<MagbootsComponent>(item) &&
+                TryComp<ItemToggleComponent>(item, out var itemToggle) &&
+                itemToggle.Activated)
+                return false;
+        }
+
+        return true;
+    }
+    // Reserve jetpack tweaks end
 
     private void OnJetpackGetAction(EntityUid uid, JetpackComponent component, GetItemActionsEvent args)
     {
@@ -299,6 +368,19 @@ public abstract class SharedJetpackSystem : EntitySystem
     {
         return true;
     }
+    //Reserve jetpack tweaks begin
+    private void OnMagbootsUpdateState(Entity<JetpackUserComponent> ent, ref MagbootsUpdateStateEvent args)
+    {
+        if (!args.State)
+            return;
+
+        if (TryComp<JetpackComponent>(ent.Comp.Jetpack, out var jetpack))
+        {
+            SetEnabled(ent.Comp.Jetpack, jetpack, false, ent.Owner);
+            _popup.PopupClient(Loc.GetString("jetpack-to-grid"), ent.Comp.Jetpack, ent.Owner);
+        }
+    }
+    //Reserve jetpack tweaks end
 }
 
 [Serializable, NetSerializable]

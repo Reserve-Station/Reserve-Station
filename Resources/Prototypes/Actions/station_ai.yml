@@ -2,6 +2,9 @@
 # SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
 # SPDX-FileCopyrightText: 2024 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Actions
@@ -63,3 +66,14 @@
     useDelay: 0.5
   - type: InstantAction
     event: !type:ToggleLawsScreenEvent
+
+# WD edit start
+- type: entity
+  id: ActionAIToggleBolts
+  parent: BaseAction # reserve edit
+  name: Toggle floor bolts
+  description: Toggle bolts, that keep you wrenched to the floor.
+  components:
+  - type: InstantAction
+    event: !type:AiToggleBoltsEvent
+# WD edit end

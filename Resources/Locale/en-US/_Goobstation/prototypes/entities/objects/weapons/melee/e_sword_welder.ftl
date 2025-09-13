@@ -1,0 +1,12 @@
+ent-EnergySwordWelder = welder energy sword
+    .desc = Roughly converted from a welding tool, this energy sword hums an unstable flame. It looks like it's about to fall apart.
+ent-EnergySwordWelderIndustrial = welder energy sword
+    .desc = { ent-EnergySwordWelder.desc }
+ent-EnergySwordWelderExperimental = welder energy sword
+    .desc = A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
+ent-UnfinishedWelderSword = unfinished welder sword
+    .desc = A crude assembly of parts that vaguely resembles a weapon. It's completely non-functional.
+ent-UnfinishedWelderSwordIndustrial = unfinished industrial welder sword
+    .desc = { ent-UnfinishedWelderSword.desc }
+ent-UnfinishedWelderSwordExperimental = unfinished experimental welder sword
+    .desc = { ent-UnfinishedWelderSword.desc }

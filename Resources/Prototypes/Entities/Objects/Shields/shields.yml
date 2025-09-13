@@ -139,6 +139,11 @@
       sprite: Objects/Weapons/Melee/shields.rsi
       size: Ginormous
       heldPrefix: riot
+    - type: Clothing
+      sprite: _Reserve/Objects/Shields/RiotBulletShield.rsi
+      slots:
+      - suitStorage
+      quickEquip: false
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -199,6 +204,11 @@
   components:
     - type: StaticPrice
       price: 90
+    - type: Clothing
+      sprite: _Reserve/Objects/Shields/RiotShield.rsi
+      slots:
+      - suitStorage
+      quickEquip: false
     - type: Blocking
       passiveBlockModifier:
         coefficients:
@@ -222,6 +232,11 @@
       state: riot_laser-icon
     - type: Item
       heldPrefix: riot_laser
+    - type: Clothing
+      sprite: _Reserve/Objects/Shields/RiotLaserShield.rsi
+      slots:
+      - suitStorage
+      quickEquip: false
     - type: Blocking
       passiveBlockModifier:
         coefficients:

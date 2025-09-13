@@ -14,6 +14,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Server.Blob.Components;
 using Content.Goobstation.Shared.Blob.Components;
 using Content.Goobstation.Shared.Blob.NPC.BlobPod;
 using Content.Server.DoAfter;
@@ -98,6 +99,14 @@ public sealed class BlobPodSystem : SharedBlobPodSystem
         {
             _explosionSystem.QueueExplosion(uid, blobCoreComponent.BlobExplosive, 4, 1, 2, maxTileBreak: 0);
         }
+
+        //Reserve edit - blob factory port begin
+        if (component.Factory == null || !TryComp<BlobFactoryComponent>(component.Factory, out var factoryComp))
+            return;
+
+        factoryComp.BlobPods.Remove(uid);
+        factoryComp.SpawnedCount -= 1;
+        //Reserve edit - blob factory port end
     }
 
     public bool Zombify(Entity<BlobPodComponent> ent, EntityUid target)

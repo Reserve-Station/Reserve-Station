@@ -296,6 +296,7 @@
     - JawsOfLife
     - BorgModuleAdvancedTool
     - SignallerAdvanced # Moved from explosives research
+    - BorgModuleFireAxe #Reserve Fireaxe Borg Modules
   # Goobstation R&D Console rework start
   position: 2,-5
   technologyPrerequisites:

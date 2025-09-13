@@ -25,25 +25,34 @@
 # SPDX-FileCopyrightText: 2024 yglop <95057024+yglop@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 AwareFoxy <135021509+AwareFoxy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 # SPDX-FileCopyrightText: 2025 Deerstop <edainturner@gmail.com>
+# SPDX-FileCopyrightText: 2025 EDsLi1103 <44909161+EDsLi1103@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Emisse <99158783+Emisse@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Gallagin <64706450+Gallagin@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 JoeHammad1844 <130668733+JoeHammad1844@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 JoeHammad1844 <finiansalas2@gmail.com>
+# SPDX-FileCopyrightText: 2025 Khundo <141230574+korguzenok@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 OnsenCapy <101037138+OnsenCapy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 Spessmann <156740760+Spessmann@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 compilatron <40789662+jbox144@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 echotry <xippl1@mail.ru>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 # SPDX-FileCopyrightText: 2025 floatingfeeling <karaadastra@gmail.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+# SPDX-FileCopyrightText: 2025 quartG <140832593+quartuG3@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 quartuG3 <quartug.dfd@gmail.com>
 # SPDX-FileCopyrightText: 2025 shibe <95730644+shibechef@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 starch <starchpersonal@gmail.com>
 #
@@ -57,7 +66,7 @@
   - Bagel
   - Box
   - Cluster
-  #- Core
+#  - Core
   - Fland
  # - Gate Goobstation - My name is Walter Hartwell White, I live at 2308 Negra alloya line albequrque new mexico.
   - Loop
@@ -72,10 +81,11 @@
   #- Train # Goobstation - all my friends hate train
   - FlandHighPop
   - OasisHighPop
-  - Barratry # Goobstation - Re-add barratry
+# - Barratry # Goobstation - Re-add barratry # Reserve - NOBODY LOVES BARRATRY
   - Kettle # Goobstation - Re-add kettle (before it was gemini!)
   - Submarine # goobstation - kill yourse
   - Leonid # Goobstation - for goob by goob
   - Delta # Goobstation - ported from Corvax
   - Chloris # Goobstation - also Corvax because we love goidamaps
+  - ReserveSillyIsland # Reserve, silly port
   - Cog # those who forget to clear their multitool

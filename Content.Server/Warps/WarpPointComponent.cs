@@ -15,6 +15,9 @@
 // SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kill_Me_I_Noobs <118206719+Vonsant@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: MIT
 
@@ -26,8 +29,11 @@ namespace Content.Server.Warps
     [RegisterComponent]
     public sealed partial class WarpPointComponent : Component
     {
+        // Corvax-Next-Warper-Start: Unique (across all loaded maps) identifier for teleporting to warp points.
+		[ViewVariables(VVAccess.ReadWrite)] [DataField("id")] public string? ID { get; set; }
         [ViewVariables(VVAccess.ReadWrite), DataField]
         public string? Location;
+		// Corvax-Next-Warper-End
 
         /// <summary>
         ///     If true, ghosts warping to this entity will begin following it.

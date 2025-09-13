@@ -314,14 +314,21 @@
   description: A somewhat flexible and well-armored suit with a powerful shoulder mounted flashlight manufactured in the Gorlex Marauder's iconic blood-red color scheme, it does not protect its wearer from space.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Armor/syndie-raid.rsi
+    # sprite: Clothing/OuterClothing/Armor/syndie-raid.rsi
+    sprite: _Reserve/Clothing/OuterClothing/Armor/syndie-raid.rsi #Reserve raid suit resprite
     layers:
     - state: icon
+    #Reserve raid suit resprite begin
+    - state: icon-flash
+      visible: false
+      map: [ "light" ]
+    #Reserve raid suit resprite end
     - state: light-overlay
       visible: false
       shader: unshaded
   - type: Clothing
-    sprite: Clothing/OuterClothing/Armor/syndie-raid.rsi
+    # sprite: Clothing/OuterClothing/Armor/syndie-raid.rsi #Reserve raid suit resprite
+    sprite: _Reserve/Clothing/OuterClothing/Armor/syndie-raid.rsi #Reserve raid suit resprite
   - type: Armor
     coverage:
     - Chest
@@ -344,13 +351,14 @@
         Piercing: 0.3
         Heat: 0.3
         Caustic: 0.3
+        Radiation: 0.85 #Reserve raid suit rework
   - type: ExplosionResistance
     damageCoefficient: 0.35
   - type: StaminaResistance # do not add these to other equipment or mobs, we don't want to microbalance these everywhere
     damageCoefficient: 0.4 # Goob edit
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 1 #Reserve raid suit rework
+    sprintModifier: 0.95 #Reserve raid suit rework
   #Shoulder mounted flashlight
   - type: ToggleableVisuals
     spriteLayer: light
@@ -404,6 +412,15 @@
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 3
     knockdownTimeDelta: -3
+  #Reserve raid suit rework begin
+  - type: TemperatureProtection
+    heatingCoefficient: 0.15
+    coolingCoefficient: 0.15
+  - type: FireProtection
+    reduction: 0.4
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5
+  #Reserve raid suit rework end
   - type: Item
     size: Normal
 

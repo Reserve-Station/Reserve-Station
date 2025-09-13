@@ -1,5 +1,8 @@
 // SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -20,6 +23,8 @@ public sealed partial class Electrocute : EntityEffect
     /// </remarks>
     [DataField] public bool Refresh = true;
 
+    [DataField] public float ElectrocutionChance = 1f; // Reserve edit - ElectrocutionChance
+
     protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("reagent-effect-guidebook-electrocute", ("chance", Probability), ("time", ElectrocuteTime));
 
@@ -30,7 +35,7 @@ public sealed partial class Electrocute : EntityEffect
         if (args is EntityEffectReagentArgs reagentArgs)
         {
             reagentArgs.EntityManager.System<ElectrocutionSystem>().TryDoElectrocution(reagentArgs.TargetEntity, null,
-                Math.Max((reagentArgs.Quantity * ElectrocuteDamageScale).Int(), 1), TimeSpan.FromSeconds(ElectrocuteTime), Refresh, ignoreInsulation: true);
+                Math.Max((reagentArgs.Quantity * ElectrocuteDamageScale).Int(), 1), TimeSpan.FromSeconds(ElectrocuteTime), Refresh, electrocutionChance: ElectrocutionChance, ignoreInsulation: true); //Reserve edit - electrocutionChance
 
             if (reagentArgs.Reagent != null)
                 reagentArgs.Source?.RemoveReagent(reagentArgs.Reagent.ID, reagentArgs.Quantity);

@@ -25,7 +25,6 @@
 // SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 Vordenburg <114301317+Vordenburg@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2023 deltanedas <deltanedas@laptop>
 // SPDX-FileCopyrightText: 2023 deltanedas <user@zenith>
@@ -45,6 +44,11 @@
 // SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -313,6 +317,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
                     TimeSpan.FromSeconds(electrified.ShockTime * MathF.Pow(RecursiveTimeMultiplier, depth)),
                     true,
                     electrified.SiemensCoefficient,
+                    electrocutionChance: electrified.ElectrocutionChance, // Reserve edit
                     ignoreInsulation: electrified.IgnoreInsulation // Goobstation
                 );
             }
@@ -347,6 +352,7 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
                     TimeSpan.FromSeconds(electrified.ShockTime * MathF.Pow(RecursiveTimeMultiplier, depth) * timeScalar),
                     true,
                     electrified.SiemensCoefficient,
+                    electrocutionChance: electrified.ElectrocutionChance, // Reserve edit
                     electrified.IgnoreInsulation); // Goob edit
             }
             return lastRet;
@@ -374,9 +380,21 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
 
     /// <inheritdoc/>
     public override bool TryDoElectrocution(
-        EntityUid uid, EntityUid? sourceUid, int shockDamage, TimeSpan time, bool refresh, float siemensCoefficient = 1f,
-        StatusEffectsComponent? statusEffects = null, bool ignoreInsulation = false)
+        EntityUid uid,
+        EntityUid? sourceUid,
+        int shockDamage,
+        TimeSpan time,
+        bool refresh,
+        float siemensCoefficient = 1f,
+        float electrocutionChance = 1f,// Reserve edit
+        StatusEffectsComponent? statusEffects = null,
+        bool ignoreInsulation = false)
     {
+        // Reserve edit - electrocution chance
+        if (electrocutionChance < 1f && !_random.Prob(electrocutionChance))
+            return false;
+        // Reserve edit end
+
         if (!DoCommonElectrocutionAttempt(uid, sourceUid, ref siemensCoefficient, ignoreInsulation)
             || !DoCommonElectrocution(uid, sourceUid, shockDamage, time, refresh, siemensCoefficient, statusEffects))
             return false;
@@ -393,10 +411,14 @@ public sealed class ElectrocutionSystem : SharedElectrocutionSystem
         TimeSpan time,
         bool refresh,
         float siemensCoefficient = 1f,
+        float electrocutionChance = 1f, //Reserve edit
         bool ignoreInsulation = false, // Goobstation
         StatusEffectsComponent? statusEffects = null,
         TransformComponent? sourceTransform = null)
     {
+        if (electrocutionChance < 1f && !_random.Prob(electrocutionChance)) //Reserve edit
+            return false;
+
         if (!DoCommonElectrocutionAttempt(uid, sourceUid, ref siemensCoefficient, ignoreInsulation)) // Goob edit
             return false;
 

@@ -686,9 +686,6 @@
         Steel: 187
         Plasma: 37
         Uranium: 37
-    - type: Tag # Goobstation
-      tags:
-      - Rifle
 
 - type: entity
   name: x-ray cannon

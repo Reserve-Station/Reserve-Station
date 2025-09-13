@@ -14,7 +14,7 @@ on:
 jobs:
   add_label:
     # Change the repository name after you've made sure the team name is correct for your fork!
-    if: ${{ (github.repository == 'Goob-Station/Goob-Station') && (github.event.review.state == 'APPROVED') }}
+    if: ${{ (github.repository == 'echotry-ss14/Reserve-Station') && (github.event.review.state == 'APPROVED') }} #Reserve edit
     permissions:
       contents: read
       pull-requests: write

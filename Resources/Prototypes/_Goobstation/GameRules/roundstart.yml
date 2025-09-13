@@ -61,9 +61,6 @@
       lateJoinAdditional: true
       mindRoles:
       - MindRoleChangeling
-  - type: Tag
-    tags:
-      - RoundstartAntag
 
 - type: entity
   parent: BaseTraitorRule
@@ -117,9 +114,6 @@
       lateJoinAdditional: true
       mindRoles:
       - MindRoleTraitor
-  - type: Tag
-    tags:
-      - CalmAntag
 
 - type: entity
   parent: Changeling
@@ -140,9 +134,6 @@
       lateJoinAdditional: true
       mindRoles:
       - MindRoleTraitor
-  - type: Tag
-    tags:
-      - CalmAntag
 
 - type: entity
   parent: BaseNukeopsRule
@@ -209,9 +200,6 @@
         - Syndicate
       mindRoles:
       - MindRoleNukeops
-  - type: Tag
-    tags:
-      - CalmAntag
 
 - type: entity
   id: CalmRevs # For Dual Antag Gamemodes
@@ -230,18 +218,17 @@
         components:
         - CommandStaff
       briefing:
-        text: head-rev-role-greeting
+        text: head-rev-role-greeting-consent-only # Reserve-ConsentRev
         color: CornflowerBlue
         sound: "/Audio/Ambience/Antag/headrev_start.ogg"
-      startingGear: HeadRevGear
+      #startingGear: HeadRevGear # Reserve-ConsentRev
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
+        onlyConsentConvert: true # Reserve-ConsentRev
       mindRoles:
       - MindRoleHeadRevolutionary
-  - type: Tag
-    tags:
-      - CalmAntag
+
 # Blob
 - type: entity
   id: BlobRule
@@ -306,6 +293,10 @@
   parent: BaseNukeopsRule
   id: Honkops
   components:
+  # Reserve-HonkOps-MinPlayers-Start
+  - type: GameRule
+    minPlayers: 50
+  # Reserve-HonkOps-MinPlayers-End
   - type: RandomMetadata # this generates the random operation name cuz it's cool.
     nameSegments:
     - OperationPrefixHonkops

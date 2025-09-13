@@ -4,11 +4,15 @@
 # SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
 # SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: MIT
 
 - type: guideEntry
   id: Science
+  abstract: true #Reserve guidebook
   name: guide-entry-science
   text: "/ServerInfo/Guidebook/Science/Science.xml"
   children:
@@ -19,12 +23,14 @@
 
 - type: guideEntry
   id: Technologies
+  abstract: true #Reserve guidebook
   name: guide-entry-technologies
   text: "/ServerInfo/Guidebook/Science/Technologies.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: AnomalousResearch
+  abstract: true #Reserve guidebook
   name: guide-entry-anomalous-research
   text: "/ServerInfo/Guidebook/Science/AnomalousResearch.xml"
   children:
@@ -33,16 +39,19 @@
 
 - type: guideEntry
   id: ScannersAndVessels
+  abstract: true #Reserve guidebook
   name: guide-entry-scanners-and-vessels
   text: "/ServerInfo/Guidebook/Science/ScannersAndVessels.xml"
 
 - type: guideEntry
   id: APE
+  abstract: true #Reserve guidebook
   name: guide-entry-ape
   text: "/ServerInfo/Guidebook/Science/APE.xml"
 
 - type: guideEntry
   id: Xenoarchaeology
+  abstract: true #Reserve guidebook
   name: guide-entry-xenoarchaeology
   text: "/ServerInfo/Guidebook/Science/Xenoarchaeology.xml"
   children:
@@ -50,6 +59,7 @@
 
 - type: guideEntry
   id: Robotics
+  abstract: true #Reserve guidebook
   name: guide-entry-robotics
   text: "/ServerInfo/Guidebook/Science/Robotics.xml"
   children:
@@ -57,10 +67,12 @@
 
 - type: guideEntry
   id: ArtifactReports
+  abstract: true #Reserve guidebook
   name: guide-entry-artifact-reports
   text: "/ServerInfo/Guidebook/Science/ArtifactReports.xml"
 
 - type: guideEntry
   id: Cyborgs
+  abstract: true #Reserve guidebook
   name: guide-entry-cyborgs
   text: "/ServerInfo/Guidebook/Science/Cyborgs.xml"

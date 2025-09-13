@@ -25,6 +25,11 @@
 // SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Schrödinger <132720404+Schrodinger71@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -41,6 +46,10 @@ using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server.Administration;
+using Content.Server.Discord;
+using Content.Server.ADT.Administration;
+using System.Linq;
 
 namespace Content.Server.GameTicking
 {
@@ -48,6 +57,7 @@ namespace Content.Server.GameTicking
     public sealed partial class GameTicker
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IPlayerLocator _locator = default!;
 
         private void InitializePlayer()
         {
@@ -85,12 +95,48 @@ namespace Content.Server.GameTicking
 
                     var record = await _db.GetPlayerRecordByUserId(args.Session.UserId);
                     var firstConnection = record != null &&
-                                          Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 1;
+                                          Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 120; //Reserve edit - until 2hr played total
 
-                    _chatManager.SendAdminAnnouncement(firstConnection
-                        ? Loc.GetString("player-first-join-message", ("name", args.Session.Name))
+                    var firstSeenTime = record?.FirstSeenTime.ToString("dd.MM.yyyy") ?? "unknown"; // Reserve edit- first connection date
+
+                    //ADT tweak begin
+                    var creationDate = "Unable to get account creation date";
+                    try
+                        {
+                            // Получаем дату создания аккаунта через API визардов
+                            creationDate = await AuthApiHelper.GetCreationDate(args.Session.UserId.ToString());
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Error($"Ошибка при получении даты создания аккаунта: {ex.Message}");
+                        }
+                    //ADT tweak end
+                        _chatManager.SendAdminAnnouncement(firstConnection
+                        ? Loc.GetString("player-first-join-message", ("name", args.Session.Name)) + " " +
+                          Loc.GetString("player-first-join-date", ("firstSeenTime", firstSeenTime)) + "\n" +//Reserve edit
+                          Loc.GetString("player-first-join-account-date", ("creationDate", creationDate)) //Reserve edit
                         : Loc.GetString("player-join-message", ("name", args.Session.Name)));
 
+                    // ADT-Tweak-start: Постит в дис админчата, о заходе новых игроков
+                    if (!string.IsNullOrEmpty(_cfg.GetCVar(CCVars.DiscordAdminchatWebhook)) && firstConnection)
+                    {
+                        var webhookUrl = _cfg.GetCVar(CCVars.DiscordAdminchatWebhook);
+
+                        if (webhookUrl == null)
+                            return;
+
+                        if (await _discord.GetWebhook(webhookUrl) is not { } webhookData)
+                            return;
+                        var payload = new WebhookPayload
+                        {
+                            Content = Loc.GetString("player-first-join-message-webhook", ("name", args.Session.Name)) + "\n" +
+                            Loc.GetString("player-first-join-account-date", ("creationDate", creationDate)) + "\n" + //Reserve edit
+                            $"userid: {args.Session.UserId.ToString()}" //Reserve edit
+                        };
+                        var identifier = webhookData.ToIdentifier();
+                        await _discord.CreateMessage(identifier, payload);
+                    }
+                    // ADT-Tweak-end
                     RaiseNetworkEvent(GetConnectionStatusMsg(), session.Channel);
 
                     if (firstConnection && _cfg.GetCVar(CCVars.AdminNewPlayerJoinSound))

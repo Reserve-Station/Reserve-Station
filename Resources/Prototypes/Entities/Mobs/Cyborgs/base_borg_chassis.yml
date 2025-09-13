@@ -263,6 +263,10 @@
     stunTime: 5
   - type: SiliconLawProvider
     laws: Crewsimov
+  - type: IonStormTarget
+  - type: Strippable # Reserve ai update
+  - type: StationAiVision
+  - type: InventorySlots # Reserve ai update
   - type: Inventory
     templateId: borg
   - type: Hands

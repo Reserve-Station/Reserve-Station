@@ -298,7 +298,7 @@
         mask:
         - MachineMask
         layer:
-          - MachineLayer
+        - MachineLayer
   - type: Lathe
   - type: MaterialStorage
   - type: Destructible
@@ -408,9 +408,9 @@
   - type: MaterialStorage
     whitelist:
       tags:
-        - Sheet
-        - RawMaterial
-        - Ingot
+      - Sheet
+      - RawMaterial
+      - Ingot
   - type: Lathe
     idleState: icon
     runningState: building
@@ -493,9 +493,9 @@
   - type: MaterialStorage
     whitelist:
       tags:
-        - Sheet
-        - RawMaterial
-        - Ingot
+      - Sheet
+      - RawMaterial
+      - Ingot
   - type: Lathe
     idleState: icon
     runningState: building
@@ -527,6 +527,8 @@
     - UpgradeKits
     # Einstein Engines Packs
     - Translators
+    # Reserve Packs
+    - PlantAnalyzer
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityAmmo
@@ -598,9 +600,9 @@
   - type: MaterialStorage
     whitelist:
       tags:
-        - Sheet
-        - RawMaterial
-        - Ingot
+      - Sheet
+      - RawMaterial
+      - Ingot
   - type: RequireProjectileTarget
 
 - type: entity
@@ -706,8 +708,8 @@
     ignoreColor: true
     whitelist:
       tags:
-        - Sheet
-        - RawMaterial
+      - Sheet
+      - RawMaterial
   - type: Lathe
     idleState: icon
     runningState: building
@@ -745,6 +747,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
+    unlitIdleState: unlit # DeltaV - added animation sprite layers
+    unlitRunningState: unlit-building # DeltaV - added animation sprite layers
     staticPacks:
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
@@ -789,9 +793,9 @@
   - type: MaterialStorage
     whitelist:
       tags:
-        - Sheet
-        - RawMaterial
-        - Ingot
+      - Sheet
+      - RawMaterial
+      - Ingot
 
 - type: entity
   id: AmmoTechFab
@@ -799,38 +803,40 @@
   name: ammo techfab
   description: Prints the bare minimum of bullets that any budget military or armory could need. Nothing fancy.
   components:
-    - type: Sprite
-      sprite: Structures/Machines/techfab.rsi
-      layers:
-        - state: icon
-          map: ["enum.LatheVisualLayers.IsRunning"]
-        - state: ammo
-        - state: unlit
-          shader: unshaded
-          map: ["enum.PowerDeviceVisualLayers.Powered"]
-        - state: inserting
-          map: ["enum.MaterialStorageVisualLayers.Inserting"]
-        - state: panel
-          map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - type: Machine
-      board: AmmoTechFabCircuitboard
-    - type: Lathe
-      idleState: icon
-      runningState: icon
-      staticPacks:
-      - SecurityAmmoStatic
-      # Goobstation Packs
-      - SecurityAmmoStaticGoob
-    - type: EmagLatheRecipes # Goobstation Packs
-      emagStaticPacks:
-      - SyndicateAmmoLightStatic
-      - SyndicateAmmoHeavyStatic
-    - type: MaterialStorage
-      whitelist:
-        tags:
-          - Sheet
-          - RawMaterial
-          - Ingot
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: ammo
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: AmmoTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    unlitIdleState: unlit # DeltaV - added animation sprite layers
+    unlitRunningState: unlit-building # DeltaV - added animation sprite layers
+    staticPacks:
+    - SecurityAmmoStatic
+    # Goobstation Packs
+    - SecurityAmmoStaticGoob
+  - type: MaterialStorage
+    whitelist:
+      tags:
+      - Sheet
+      - RawMaterial
+      - Ingot
+  - type: EmagLatheRecipes # Goobstation Packs
+    emagStaticPacks:
+    - SyndicateAmmoLightStatic
+    - SyndicateAmmoHeavyStatic
 
 - type: entity
   id: MedicalTechFab
@@ -854,6 +860,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
+    unlitIdleState: unlit # DeltaV - added animation sprite layers
+    unlitRunningState: unlit-building # DeltaV - added animation sprite layers
     staticPacks:
     - TopicalsStatic
     - ChemistryStatic
@@ -941,9 +949,9 @@
   - type: MaterialStorage
     whitelist:
       tags:
-        - Sheet
-        - RawMaterial
-        - Ingot
+      - Sheet
+      - RawMaterial
+      - Ingot
 
 - type: entity
   id: Biogenerator

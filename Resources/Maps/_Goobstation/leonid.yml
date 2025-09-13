@@ -155280,13 +155280,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -29.5,83.5
       parent: 2
-- proto: HelpimovCircuitBoard
-  entities:
-  - uid: 8990
-    components:
-    - type: Transform
-      pos: 26.65766,-83.4234
-      parent: 2
 - proto: HighSecArmoryLocked
   entities:
   - uid: 23870

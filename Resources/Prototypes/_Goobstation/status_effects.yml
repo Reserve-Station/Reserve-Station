@@ -70,6 +70,10 @@
   alwaysAllowed: true
 
 - type: statusEffect
+  id: EssenceRegen
+  alert: EssenceRegen
+
+- type: statusEffect
   id: Fleshmend
   alert: Fleshmend
   alwaysAllowed: true

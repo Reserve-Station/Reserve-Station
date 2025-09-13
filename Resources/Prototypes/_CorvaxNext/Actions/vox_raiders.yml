@@ -1,0 +1,7 @@
+#- type: entity
+#  id: ActionToggleStealthHardsuit
+#  name: Stealth hardsuit
+#  description: Toggles your stealth hardsuit.
+#  components:
+#  - type: InstantAction
+#    event: !type:ToggleActionEvent

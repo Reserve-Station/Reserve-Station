@@ -2,7 +2,10 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Errant <35878406+Errant-4@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Thomas <87614336+Aeshus@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 // SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -21,13 +24,13 @@ public sealed partial class CCVars
     ///     Change this to have the changelog and rules "last seen" date stored separately.
     /// </summary>
     public static readonly CVarDef<string> ServerId =
-        CVarDef.Create("server.id", "Goobstation", CVar.REPLICATED | CVar.SERVER); // if ur a fork of goob pls change this thanks :)
+        CVarDef.Create("server.id", "Reserve station", CVar.REPLICATED | CVar.SERVER); // if ur a fork of goob pls change this thanks :) //Reserve edit
 
     /// <summary>
     ///     Guide Entry Prototype ID to be displayed as the server rules.
     /// </summary>
     public static readonly CVarDef<string> RulesFile =
-        CVarDef.Create("server.rules_file", "DefaultRuleset", CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("server.rules_file", "DefaultRulesetReserve", CVar.REPLICATED | CVar.SERVER); //Reserve edit
 
     /// <summary>
     ///     Guide entry that is displayed by default when a guide is opened.

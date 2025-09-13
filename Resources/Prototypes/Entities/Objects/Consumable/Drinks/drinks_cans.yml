@@ -72,7 +72,6 @@
 # SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
 # SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
 # SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
@@ -121,6 +120,10 @@
 # SPDX-FileCopyrightText: 2024 wafehling <wafehling@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kirill2253 <kirillsuhin5@gmail.com>
+# SPDX-FileCopyrightText: 2025 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # When adding new drinks also add to random spawner located in Resources\Prototypes\Entities\Markers\Spawners\Random\Food_Drinks\drinks_soda.yml
@@ -848,3 +851,60 @@
   - type: Tag
     tags:
     - Wine
+
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkBrepsiCan
+  name: brepsi
+  description: A sweet, carbonated soft drink.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Brepsi
+          Quantity: 30
+      grindable:
+        reagents:
+        - ReagentId: Aluminium
+          Quantity: 4
+        - ReagentId: Iron
+          Quantity: 1
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Recyclable
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/brepsi.rsi
+  - type: Item
+    sprite: _Reserve/Objects/Consumable/Drinks/brepsi.rsi
+
+- type: entity
+  parent: DrinkBrepsiCan
+  id: DrinkBrepsiCanEmpty
+  suffix: empty
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+      grindable:
+        reagents:
+        - ReagentId: Aluminium
+          Quantity: 4
+        - ReagentId: Iron
+          Quantity: 1
+  - type: Openable
+    opened: true
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/brepsi.rsi
+    layers:
+    - state: icon_open
+  - type: Item
+    sprite: _Reserve/Objects/Consumable/Drinks/brepsi.rsi
+  - type: Tag
+    tags:
+    - DrinkCan
+    - Recyclable
+    - Trash

@@ -19,9 +19,13 @@
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -29,6 +33,7 @@ using System.Collections.Frozen;
 using Content.Goobstation.Common.MisandryBox;
 using Content.Shared.Chat; // Einstein Engines - Languages & Goobmod
 using Content.Shared.Chat.Prototypes;
+using Content.Shared.Emoting;
 using Content.Shared.Speech;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
@@ -201,14 +206,29 @@ public partial class ChatSystem
     /// </summary>
     /// <param name="uid"></param>
     /// <param name="textInput"></param>
-    private void TryEmoteChatInput(EntityUid uid, string textInput)
+    private void TryEmoteChatInput(EntityUid uid, string textInput, out bool consumed)
     {
+        consumed = false;
         var actionTrimmedLower = TrimPunctuation(textInput.ToLower());
         if (!_wordEmoteDict.TryGetValue(actionTrimmedLower, out var emote))
             return;
 
         if (!AllowedToUseEmote(uid, emote))
             return;
+
+        //Reserve emote cooldown begin
+        if (TryComp<EmotingComponent>(uid, out var comp))
+        {
+            var currentTime = _gameTiming.CurTime;
+            if (currentTime - comp.LastChatEmoteTime < comp.ChatEmoteCooldown)
+            {
+                consumed = true;
+                return;
+            }
+
+            comp.LastChatEmoteTime = currentTime;
+        }
+        //Reserve emote cooldown end
 
         InvokeEmoteEvent(uid, emote, voluntary: true); // Goob - emotespam
         return;

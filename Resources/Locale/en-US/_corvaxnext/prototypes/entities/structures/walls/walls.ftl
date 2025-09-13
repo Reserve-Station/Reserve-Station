@@ -1,0 +1,12 @@
+ent-MarkerBlocker = invisible wall
+    .suffix = marker, infinity
+    .desc = { ent-MarkerBase.desc }
+ent-WallShuttleVox = shuttle wall
+    .suffix = Vox, Exterior
+    .desc = { ent-BaseWall.desc }
+ent-WallShuttleVoxInterior = shuttle wall
+    .suffix = Vox, Interior
+    .desc = { ent-BaseWall.desc }
+ent-WallShuttleVoxDiagonal = shuttle wall
+    .desc = Keeps the air in and the greytide out.
+    .suffix = Vox, Diagonal

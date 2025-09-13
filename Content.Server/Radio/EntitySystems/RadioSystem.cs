@@ -145,6 +145,9 @@ public sealed class RadioSystem : EntitySystem
         LanguagePrototype? language = null,
         bool escapeMarkup = true)
     {
+        // Проверяем, не содержит ли сообщение символ "/"
+        if (message.Contains("/"))
+            return;
         // Einstein Engines - Language begin
         if (language == null)
             language = _language.GetLanguage(messageSource);

@@ -950,6 +950,9 @@ CargoShuttleComputerCircuitboard: CargoShuttleConsoleCircuitboard
 # 2025-05-09 Goobstation
 ClothingBackpackCentcom: ClothingBackpackCentcomm
 
+# Reserve
+JermovCircuitBoard: null
+
 # 2025-06-04 Goobstation Plushie Death
 PlushieBenny: null
 PlushieCairo: null

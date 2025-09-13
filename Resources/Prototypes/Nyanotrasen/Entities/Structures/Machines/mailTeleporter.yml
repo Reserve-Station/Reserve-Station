@@ -12,6 +12,7 @@
   description: Teleports mail addressed to the crew of this station.
   components:
   - type: MailTeleporter
+    radioNotification: true
   - type: InteractionOutline
   - type: Physics
     bodyType: Static

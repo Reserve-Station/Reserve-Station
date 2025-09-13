@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitCBURNLeader
+  name: CBURN commander exosuit
+  description: A lightweight yet strong exosuit used for special cleanup operations.
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/OuterClothing/hardsuits/cburncommander.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/OuterClothing/hardsuits/cburncommander.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.25 # Goobstation - CBURN should protect against zombie attacks
+        Piercing: 0.6
+        Heat: 0.05
+        Cold: 0.1
+        Shock: 0.1
+        Radiation: 0.1
+        Caustic: 0.1
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing # Goobstation - Modsuits change
+    clothingPrototypes:
+      head:  ClothingHeadHelmetCBURNLeader
+  - type: ModifyDelayedKnockdown # Goobstation
+    delayDelta: 3
+    knockdownTimeDelta: -3
+  - type: StaminaResistance # Goobstation
+    damageCoefficient: 0.5

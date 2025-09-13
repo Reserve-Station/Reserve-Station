@@ -10,132 +10,77 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-- type: emote
-  id: Fart
-  name: chat-emote-name-fart
-  category: Farts
-  icon: _Goobstation/Interface/Emotes/fart.png
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
-    - Silicon
-  chatMessages: ["chat-emote-msg-fart"]
-  chatTriggers:
-    - fart
-    - farts
-    - farting
-    - farted
-    - toot
-    - toots
-    - tooted
-    - tooting
-    - pass gas
-    - passes gas
-    - passing gas
-    - passed gas
-    - break wind
-    - breaks wind
-    - breaking wind
-    - broke wind
-    - flatulate
-    - flatulates
-    - flatulating
-    - flatulated
-    - let one rip
-    - lets one rip
-    - letting one rip
-    - cut cheese
-    - cuts cheese
-    - cutting cheese
-    - cut the cheese
-    - cuts the cheese
-    - cutting the cheese
-    - let out a stinker
-    - lets out a stinker
-    - letting out a stinker
-    - exhales anally
-    - burps from the rear
-    - burps from the butt
-    - bowel howl
-    - bowel howls
-    - bowel howling
-    - bowel howled
-    - accelerates climate change
+# - type: emote
+#   id: FartInhale
+#   name: chat-emote-name-fart-inhale
+#   category: Farts
+#   icon: _Goobstation/Interface/Emotes/fart-in.png
+#   whitelist:
+#     components:
+#     - Vocal
+#   blacklist:
+#     components:
+#     - BorgChassis
+#     - Silicon
+#   chatMessages: ["chat-emote-msg-fart-inhale"]
+#   chatTriggers:
+#     - inhale anally
+#     - inhales anally
+#     - inhaling anally
+#     - inhaled anally
+#     - anally inhale
+#     - anally inhales
+#     - anally inhaling
+#     - anally inhaled
+#     - farts backward
+#     - fart backward
+#     - fart in
+#     - farts in
+#     - farting in
+#     - farted in
+#     - inhales through the rear
+#     - inhales through rear
+#     - inhales through the butt
+#     - inhales through butt
+#     - inhales through the anus
+#     - inhales through anus
+#     - inhales through the rectum
+#     - inhales through rectum
+#     - inhales through the ass
+#     - inhales through ass
+#     - buttreathes in
+#     - breathes in through butt
 
-- type: emote
-  id: FartInhale
-  name: chat-emote-name-fart-inhale
-  category: Farts
-  icon: _Goobstation/Interface/Emotes/fart-in.png
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
-    - Silicon
-  chatMessages: ["chat-emote-msg-fart-inhale"]
-  chatTriggers:
-    - inhale anally
-    - inhales anally
-    - inhaling anally
-    - inhaled anally
-    - anally inhale
-    - anally inhales
-    - anally inhaling
-    - anally inhaled
-    - farts backward
-    - fart backward
-    - fart in
-    - farts in
-    - farting in
-    - farted in
-    - inhales through the rear
-    - inhales through rear
-    - inhales through the butt
-    - inhales through butt
-    - inhales through the anus
-    - inhales through anus
-    - inhales through the rectum
-    - inhales through rectum
-    - inhales through the ass
-    - inhales through ass
-    - buttreathes in
-    - breathes in through butt
-
-- type: emote
-  id: FartSuper
-  name: chat-emote-name-fart-super
-  category: Farts
-  icon: _Goobstation/Interface/Emotes/fart-super.png
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
-    - Silicon
-  chatMessages: ["chat-emote-msg-fart-super"]
-  chatTriggers:
-    - superfart
-    - superfarts
-    - superfarted
-    - superfarting
-    - super fart
-    - super farts
-    - super farted
-    - super farting
-    - ultrafart
-    - ultrafarts
-    - ultrafarted
-    - ultrafarting
-    - ultra fart
-    - ultra farts
-    - ultra farted
-    - ultra farting
+# - type: emote
+#   id: FartSuper
+#   name: chat-emote-name-fart-super
+#   category: Farts
+#   icon: _Goobstation/Interface/Emotes/fart-super.png
+#   whitelist:
+#     components:
+#     - Vocal
+#   blacklist:
+#     components:
+#     - BorgChassis
+#     - Silicon
+#   chatMessages: ["chat-emote-msg-fart-super"]
+#   chatTriggers:
+#     - superfart
+#     - superfarts
+#     - superfarted
+#     - superfarting
+#     - super fart
+#     - super farts
+#     - super farted
+#     - super farting
+#     - ultrafart
+#     - ultrafarts
+#     - ultrafarted
+#     - ultrafarting
+#     - ultra fart
+#     - ultra farts
+#     - ultra farted
+#     - ultra farting
 
 - type: emote
   id: Flap
@@ -157,6 +102,18 @@
    - flaps her wings
    - flaps their wings
    - flaps its wings
+  # Reserve edit start
+   - машет крыльями
+   - машет его крыльями
+   - машет её крыльями
+   - хлопает крыльями
+   - хлопает его крыльями
+   - хлопает её крыльями
+   - хлопнул крыльями
+   - хлопнула крыльями
+   - хлопнул его крыльями
+   - хлопнула её крыльями
+  # Reserve edit end
 
 - type: emote
   id: Trill
@@ -176,6 +133,11 @@
     - trills
     - trilling
     - trilled
+    #Reserve translation begin
+    - трель
+    - издает трель
+    - издаёт трель
+    #Reserve translation end
 
 - type: emote
   id: Warble
@@ -195,6 +157,9 @@
     - warbles
     - warbling
     - warbled
+    #Reserve translation begin
+    - поскрипывает
+    #Reserve translation end
 
 - type: emote
   id: Wurble
@@ -217,6 +182,11 @@
     - wurbles
     - wurbling
     - wurbled
+    #Reserve translation begin
+    - урчит
+    - заурчал
+    - заурчала
+    #Reserve translation end
 
 - type: emote # Mono
   id: Bagawk
@@ -252,6 +222,11 @@
   chatTriggers:
     - gulps
     - gulp
+    #Reserve translation begin
+    - сглатывает
+    - сглотнул
+    - сглотнула
+    #Reserve translation end
 
 - type: emote
   id: Surprised

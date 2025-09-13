@@ -1,0 +1,35 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ActionRevenantHaunt
+  name: Haunt
+  parent: BaseAction # reserve edit
+  description: Gives essence and stolen essence for every witness.
+  components:
+  - type: InstantAction
+    event: !type:RevenantHauntActionEvent
+
+- type: entity
+  id: ActionRevenantBloodWriting
+  name: Blood Writing
+  parent: BaseAction # reserve edit
+  description: Costs 2 Essence per glyph.
+  components:
+  - type: InstantAction
+    event: !type:RevenantBloodWritingEvent
+
+- type: entity
+  id: ActionRevenantAnimate
+  name: Animate
+  parent: BaseAction # reserve edit
+  description: Costs 50 Essence.
+  components:
+  - type: EntityTargetAction
+    event: !type:RevenantAnimateEvent
+    canTargetSelf: false
+    whitelist:
+      components:
+      - Item

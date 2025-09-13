@@ -60,10 +60,6 @@
   - type: RuleGrids
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/wizden.yml
-  - type: Tag
-    tags:
-      - RoundstartAntag
-
 - type: entity
   parent: BaseWizardRule
   id: Wizard

@@ -1,9 +1,15 @@
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+// SPDX-FileCopyrightText: 2025 sa1nt7331 <202271576+sa1nt7331@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sa1nt7331 <havenz@yandex.ru>
+// SPDX-FileCopyrightText: 2025 sa1nt7331 <sa1nt7331@zaza.kyr>
+// SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -302,8 +308,8 @@ public sealed partial class DevilContractSystem : EntitySystem
 
             var clauseKey = match.Groups["clause"].Value.Trim().ToLowerInvariant().Replace(" ", "");
 
-            if (!_prototypeManager.TryIndex(clauseKey, out DevilClausePrototype? clauseProto)
-                || !contract.Comp.CurrentClauses.Add(clauseProto))
+            var clauseProto = FindClauseByKeyOrAlias(clauseKey); // Reserve edit - localized devil clauses
+            if (clauseProto == null || !contract.Comp.CurrentClauses.Add(clauseProto)) // Reserve edit - localized devil clauses
                 continue;
 
             newWeight += clauseProto.ClauseWeight;
@@ -312,6 +318,16 @@ public sealed partial class DevilContractSystem : EntitySystem
         contract.Comp.ContractWeight = newWeight;
     }
 
+    // Reserve edit begin
+    private DevilClausePrototype? FindClauseByKeyOrAlias(string clauseKey)
+    {
+        if (_prototypeManager.TryIndex<DevilClausePrototype>(clauseKey, out var clauseProto))
+            return clauseProto;
+            
+        return _prototypeManager.EnumeratePrototypes<DevilClausePrototype>()
+            .FirstOrDefault(clause => clause.Alias?.ToLowerInvariant().Replace(" ", "") == clauseKey);
+    }
+ // Reserve edit end
     private void DoContractEffects(Entity<DevilContractComponent> contract, PaperComponent? paper = null)
     {
         if (!Resolve(contract, ref paper))
@@ -339,7 +355,8 @@ public sealed partial class DevilContractSystem : EntitySystem
                 continue;
             }
 
-            if (!_prototypeManager.TryIndex(clauseKey, out DevilClausePrototype? clause))
+            var clause = FindClauseByKeyOrAlias(clauseKey); // Reserve edit
+            if (clause == null) // Reserve edit
             {
                 _sawmill.Warning($"Unknown contract clause: {clauseKey}");
                 continue;

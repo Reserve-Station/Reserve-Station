@@ -3,7 +3,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Radio;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Mail.Components
 {
@@ -34,6 +36,18 @@ namespace Content.Server.Mail.Components
         /// </summary>
         [DataField]
         public string MailPool = "BaseMailDeliveryPool"; // Goobstation / Frontier / DeltaV: Mail rework
+
+        /// <summary>
+        /// Imp. Whether or not the telepad should output a message upon recieving mail.
+        /// </summary>
+        [DataField]
+        public bool RadioNotification = false;
+
+        [DataField]
+        public LocId ShipmentReceivedMessage = "mail-received-message";
+
+        [DataField]
+        public ProtoId<RadioChannelPrototype> RadioChannel = "Supply";
 
         /// <summary>
         /// How many mail candidates do we need per actual delivery sent when
@@ -95,8 +109,8 @@ namespace Content.Server.Mail.Components
         /// How long until a priority delivery is considered as having failed
         /// if not delivered?
         /// </summary>
-        [DataField("priorityDuration")]
-        public TimeSpan priorityDuration = TimeSpan.FromMinutes(5);
+        [DataField("PriorityDuration")]
+        public TimeSpan PriorityDuration = TimeSpan.FromMinutes(5);
 
         /// <summary>
         /// What's the bonus for delivering a priority package on time?

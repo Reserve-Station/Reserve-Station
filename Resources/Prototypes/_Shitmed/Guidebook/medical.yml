@@ -6,6 +6,7 @@
 
 - type: guideEntry
   id: Surgery
+  abstract: true #Reserve guidebook
   name: guide-entry-surgery
   text: "/ServerInfo/_Shitmed/Guidebook/Medical/Surgery.xml"
   children:
@@ -16,23 +17,27 @@
 
 - type: guideEntry
   id: PartManipulation
+  abstract: true #Reserve guidebook
   name: guide-entry-partmanipulation
   text: "/ServerInfo/_Shitmed/Guidebook/Medical/PartManipulation.xml"
   filterEnabled: true
 
 - type: guideEntry
   id: OrganManipulation
+  abstract: true #Reserve guidebook
   name: guide-entry-organmanipulation
   text: "/ServerInfo/_Shitmed/Guidebook/Medical/OrganManipulation.xml"
   filterEnabled: true
 
 - type: guideEntry
   id: UtilitySurgeries
+  abstract: true #Reserve guidebook
   name: guide-entry-utilitysurgeries
   text: "/ServerInfo/_Shitmed/Guidebook/Medical/UtilitySurgeries.xml"
   filterEnabled: true
 
 - type: guideEntry
   id: Autodoc
+  abstract: true #Reserve guidebook
   name: guide-entry-autodoc
   text: "/ServerInfo/_Shitmed/Guidebook/Medical/Autodoc.xml"

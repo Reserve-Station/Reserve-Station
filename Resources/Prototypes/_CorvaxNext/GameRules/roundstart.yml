@@ -1,0 +1,9 @@
+- type: entity
+  id: BattleRoyale
+  name: Battle Royale
+  parent: BaseGameRule
+  components:
+  - type: BattleRoyaleRule
+    gear: BattleRoyaleGear
+    roundEndDelay: 10
+  - type: PointManager

@@ -1,6 +1,9 @@
 // SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Palladinium <patrick.chieppe@hotmail.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -81,6 +84,17 @@ public sealed partial class CCVars
         CVarDef.Create("discord.watchlist_connection_buffer_time", 5f, CVar.SERVERONLY);
 
     /// <summary>
+    /// URL of the Discord webhook which will relay bans info to the channel.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordBansWebhook =
+        CVarDef.Create("discord.bans_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    ///     Reserve - ADT port
+    ///     URL of the Discord adminchat info to the channel.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordAdminchatWebhook =
+        CVarDef.Create("discord.adminchat_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL | CVar.ARCHIVE);
     ///     URL of the Discord webhook which will receive station news acticles at the round end.
     ///     If left empty, disables the webhook.
     /// </summary>

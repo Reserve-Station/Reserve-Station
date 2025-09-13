@@ -244,6 +244,7 @@
     - type: Tag
       tags:
         - CannotSuicide
+        - NoPaint #EE spray paint port
     # <Goobstation>
     - type: MovementIgnoreGravity
     - type: ActionGrant
@@ -378,6 +379,7 @@
       tags:
         - CannotSuicide
         - FootstepSound
+        - NoPaint
     - type: Inventory
       templateId: holoclown
     - type: Hands

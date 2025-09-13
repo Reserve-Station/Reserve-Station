@@ -5,11 +5,15 @@
 # SPDX-FileCopyrightText: 2024 f0x-n3rd <150924715+f0x-n3rd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: guideEntry
   id: Chemicals
+  abstract: true #Reserve guidebook
   name: guide-entry-chemicals
   text: "/ServerInfo/Guidebook/Chemicals.xml"
   children:
@@ -27,54 +31,63 @@
 
 - type: guideEntry
   id: Elements
+  abstract: true #Reserve guidebook
   name: guide-entry-elements
   text: "/ServerInfo/Guidebook/ChemicalTabs/Elements.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Narcotics
+  abstract: true #Reserve guidebook
   name: guide-entry-narcotics
   text: "/ServerInfo/Guidebook/ChemicalTabs/Narcotics.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Pyrotechnic
+  abstract: true #Reserve guidebook
   name: guide-entry-pyrotechnics
   text: "/ServerInfo/Guidebook/ChemicalTabs/Pyrotechnic.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Toxins
+  abstract: true #Reserve guidebook
   name: guide-entry-toxins
   text: "/ServerInfo/Guidebook/ChemicalTabs/Toxins.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Foods
+  abstract: true #Reserve guidebook
   name: guide-entry-foods
   text: "/ServerInfo/Guidebook/ChemicalTabs/Foods.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Botanical
+  abstract: true #Reserve guidebook
   name: guide-entry-botanical
   text: "/ServerInfo/Guidebook/Medical/Botanicals.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Biological
+  abstract: true #Reserve guidebook
   name: guide-entry-biological
   text: "/ServerInfo/Guidebook/ChemicalTabs/Biological.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Special
+  abstract: true #Reserve guidebook
   name: guide-entry-special
   text: "/ServerInfo/Guidebook/ChemicalTabs/Special.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Others
+  abstract: true #Reserve guidebook
   name: guide-entry-others
   text: "/ServerInfo/Guidebook/ChemicalTabs/Other.xml"
   filterEnabled: True

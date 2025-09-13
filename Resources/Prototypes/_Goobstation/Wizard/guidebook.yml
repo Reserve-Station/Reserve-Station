@@ -5,6 +5,7 @@
 
 - type: guideEntry
   id: Wizard
+  abstract: true #Reserve guidebook
   name: guide-entry-wizard
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Wizard.xml"
   children:
@@ -12,5 +13,6 @@
 
 - type: guideEntry
   id: WizardSpells
+  abstract: true #Reserve guidebook
   name: guide-entry-wizard-spells
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/WizardSpells.xml"

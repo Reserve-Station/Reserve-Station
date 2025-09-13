@@ -154,11 +154,14 @@
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 # SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
+# SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 LuciferEOS <stepanteliatnik2022@gmail.com>
 # SPDX-FileCopyrightText: 2025 LuciferMkshelter <154002422+LuciferEOS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Minemoder5000 <minemoder50000@gmail.com>
 # SPDX-FileCopyrightText: 2025 Preston Smith <92108534+thetolbean@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
 # SPDX-FileCopyrightText: 2025 RedBookcase <crazykid1590@gmail.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
@@ -167,6 +170,8 @@
 # SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 # SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <lexasvarshik666@gmail.com>
 # SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Theodore Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 TurboTracker <130304754+TurboTrackerss14@users.noreply.github.com>
@@ -175,10 +180,11 @@
 # SPDX-FileCopyrightText: 2025 Velcroboy <107660393+iamvelcroboy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Zachary Higgs <compgeek223@gmail.com>
 # SPDX-FileCopyrightText: 2025 crasg <109207982+Scruq445@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 echotry <48294642+echotry-ss14@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 hyperDelegate <zachary1064@gmail.com>
 # SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 loltart <159829224+loltart@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 robinthedragon <92946919+robinthedragon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
@@ -1253,7 +1259,7 @@
   id: UplinkSurplusBundle
   name: uplink-surplus-bundle-name
   description: uplink-surplus-bundle-desc
-  productEntity: CrateSyndicateSurplusBundle
+  productEntity: SupplyPodCircleSyndicateSurplusBundle # WWDP-EDIT
   cost:
     Telecrystal: 100 # goob
   categories:
@@ -1273,7 +1279,7 @@
   id: UplinkSuperSurplusBundle
   name: uplink-super-surplus-bundle-name
   description: uplink-super-surplus-bundle-desc
-  productEntity: CrateSyndicateSuperSurplusBundle
+  productEntity: SupplyPodCircleSyndicateSuperSurplusBundle # WWDP-EDIT
   cost:
     Telecrystal: 200 # goob
   categories:
@@ -1654,21 +1660,22 @@
   #      tags:
   #        - NukeOpsUplink
 
-- type: listing
-  id: UplinkUplinkImplanter # uplink uplink real
-  name: uplink-uplink-implanter-name
-  description: uplink-uplink-implanter-desc
-  icon: { sprite: /Textures/Objects/Devices/communication.rsi, state: radio }
-  productEntity: UplinkImplanter
-  cost:
-    Telecrystal: 10 # goob
-  categories:
-  - UplinkImplants
-  conditions:
-    - !type:StoreWhitelistCondition
-      blacklist:
-        tags:
-          - NukeOpsUplink
+#- type: listing
+#  id: UplinkUplinkImplanter # uplink uplink real
+#  name: uplink-uplink-implanter-name
+#  description: uplink-uplink-implanter-desc
+#  icon: { sprite: /Textures/Objects/Devices/communication.rsi, state: radio }
+#  productEntity: UplinkImplanter
+#  cost:
+#    Telecrystal: 10 # goob
+#  categories:
+#  - UplinkImplants
+#  conditions:
+#    - !type:StoreWhitelistCondition
+#      blacklist:
+#       tags:
+#          - NukeOpsUplink
+# Removed by reserve station, implant uplink - player can now select this as a preference instead
 
 
 - type: listing
@@ -1855,17 +1862,20 @@
   id: UplinkClothingOuterArmorRaid
   name: uplink-syndie-raid-name
   description: uplink-syndie-raid-desc
-  icon: { sprite: /Textures/Clothing/OuterClothing/Armor/syndie-raid.rsi, state: icon }
+  # icon: { sprite: /Textures/Clothing/OuterClothing/Armor/syndie-raid.rsi, state: icon }
+  icon: { sprite: /Textures/_Reserve/Clothing/OuterClothing/Armor/syndie-raid.rsi, state: icon } #Reserve raid suit resprite
   productEntity: ClothingBackpackSyndicateRaidBundle
   cost:
     Telecrystal: 50 # goob
   categories:
   - UplinkWearables
-  conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+#Reserve raid suit rework begin
+#  conditions:
+#  - !type:StoreWhitelistCondition
+#    whitelist:
+#      tags:
+#      - NukeOpsUplink
+#Reserve raid suit rework end
 
 
 - type: listing
@@ -1890,7 +1900,7 @@
   name: uplink-clothing-outer-hardsuit-juggernaut-name
   description: uplink-clothing-outer-hardsuit-juggernaut-desc
   icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/cybersun.rsi, state: icon } # goobstation - duke nukies
-  productEntity: CrateCybersunJuggernautBundle
+  productEntity: SupplyPodCircleCybersunJuggernautBundle #Reserve supplypods
   cost:
     Telecrystal: 75 # goob
   categories:
@@ -1902,20 +1912,33 @@
   #    - NukeOpsUplink
 
 
+#reserve Syndie visor buff begin
+#- type: listing
+#  id: UplinkClothingEyesHudSyndicate
+#  name: uplink-clothing-eyes-hud-syndicate-name
+#  description: uplink-clothing-eyes-hud-syndicate-desc
+#  productEntity: ClothingEyesHudSyndicate
+#  cost:
+#    Telecrystal: 2
+#  categories:
+#    - UplinkWearables
+#  conditions:
+#   - !type:StoreWhitelistCondition
+#      blacklist:
+#        tags:
+#        - NukeOpsUplink
+#        - LoneOpsUplink
+
 - type: listing
-  id: UplinkClothingEyesHudSyndicate
-  name: uplink-clothing-eyes-hud-syndicate-name
-  description: uplink-clothing-eyes-hud-syndicate-desc
-  productEntity: ClothingEyesHudSyndicate
+  id: UplinkClothingEyesHudSyndicateAgent
+  name: uplink-clothing-eyes-hud-syndicate-agent-name
+  description: uplink-clothing-eyes-hud-syndicate-agent-desc
+  productEntity: ClothingEyesHudSyndicateAgent
   cost:
     Telecrystal: 10 # goob
   categories:
     - UplinkWearables
-  conditions:
-    - !type:StoreWhitelistCondition
-      whitelist:
-        tags:
-          - NukeOpsUplink
+#reserve Syndie visor buff end
 
 # Goobstation - Explosive gloves
 #- type: listing
@@ -1927,6 +1950,7 @@
 #    Telecrystal: 10 # goob
 #  categories:
 #  - UplinkWearables
+
 
 
 - type: listing

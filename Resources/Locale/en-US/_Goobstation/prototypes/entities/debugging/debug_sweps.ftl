@@ -1,0 +1,9 @@
+ent-MeleeDebugGibHoly100 = палочка holy blast stick 100 мг
+    .desc = Узрите силу БОЖЬЮ!!
+    .suffix = отлаживать
+ent-MeleeDebugGibHoly200 = палочка holy blast stick 200 мг
+    .desc = Узрите силу БОЖЬЮ!!
+    .suffix = отлаживать
+ent-MeleeDebugGibHoly200000 = святая ударная палочка
+    .desc = ПРОЧЬ, ГРЕШНИК
+    .suffix = отлаживать

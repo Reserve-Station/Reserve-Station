@@ -32,7 +32,7 @@ public sealed partial class MainMenuControl : Control
         LayoutContainer.SetMarginTop(VBox, 30);
         LayoutContainer.SetGrowHorizontal(VBox, LayoutContainer.GrowDirection.Begin);
 
-        var logoTexture = resCache.GetResource<TextureResource>("/Textures/Logo/logo.png");
+        var logoTexture = resCache.GetResource<TextureResource>("/Textures/Logo/icon/icon-256x256.png"); /// Reserve-Edit-Fix
         Logo.Texture = logoTexture;
 
         var currentUserName = configMan.GetCVar(CVars.PlayerName);

@@ -40,3 +40,5 @@ invalid-possession-target = You cannot possess this target!
 devil-power-level-increase-weak = Bits of flame flare out from your fingertips. Your connection with hell has strengthened.
 devil-power-level-increase-moderate = You feel your power surge. Your connection with hell has strengthened.
 devil-power-level-increase-powerful = You've almost completed your tasks here. Just a few more souls.
+
+devil-speech-grip = Stupete et cadite!!

@@ -37,9 +37,6 @@
   name: Overload Lights
   description: Summons lightning from nearby lights. Costs 40 Essence. #Goob edit
   components:
-  - type: Action
-    icon: Interface/Actions/overloadlight.png
-    useDelay: 20
   - type: InstantAction
     event: !type:RevenantOverloadLightsActionEvent
 

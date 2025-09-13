@@ -17,12 +17,17 @@
 # SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 GrownSamoyedDog <61863648+GrownSamoyedDog@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: guideEntry
   id: Engineering
+  abstract: true #Reserve guidebook
   name: guide-entry-engineering
   text: "/ServerInfo/Guidebook/Engineering/Engineering.xml"
   children:
@@ -35,6 +40,7 @@
 
 - type: guideEntry
   id: Construction
+  abstract: true #Reserve guidebook
   name: guide-entry-construction
   text: "/ServerInfo/Guidebook/Engineering/Construction.xml"
   children:
@@ -44,11 +50,13 @@
 
 - type: guideEntry
   id: ExpandingRepairingStation
+  abstract: true #Reserve guidebook
   name: guide-entry-expandingrepairingstation
   text: "/ServerInfo/Guidebook/Engineering/ExpandingRepairingStation.xml"
 
 - type: guideEntry
   id: Airlocks
+  abstract: true #Reserve guidebook
   name: guide-entry-airlocks
   text: "/ServerInfo/Guidebook/Engineering/Airlocks.xml"
   children:
@@ -56,16 +64,19 @@
 
 - type: guideEntry
   id: WirePanels
+  abstract: true #Reserve guidebook
   name: guide-entry-wirepanels
   text: "/ServerInfo/Guidebook/Engineering/WirePanels.xml"
 
 - type: guideEntry
   id: AirlockSecurity
+  abstract: true #Reserve guidebook
   name: guide-entry-airlock-security
   text: "/ServerInfo/Guidebook/Engineering/AirlockSecurity.xml"
 
 - type: guideEntry
   id: Atmospherics
+  abstract: true #Reserve guidebook
   name: guide-entry-atmospherics
   text: "/ServerInfo/Guidebook/Engineering/Atmospherics.xml"
   children:
@@ -77,6 +88,7 @@
 
 - type: guideEntry
   id: GasManipulation
+  abstract: true #Reserve guidebook
   name: guide-entry-gasmanipulation
   text: "/ServerInfo/Guidebook/Engineering/GasManipulation.xml"
   children:
@@ -91,16 +103,19 @@
 
 - type: guideEntry
   id: Pipes
+  abstract: true #Reserve guidebook
   name: guide-entry-pipes
   text: "/ServerInfo/Guidebook/Engineering/Pipes.xml"
 
 - type: guideEntry
   id: Pumps
+  abstract: true #Reserve guidebook
   name: guide-entry-pumps
   text: "/ServerInfo/Guidebook/Engineering/Pumps.xml"
 
 - type: guideEntry
   id: AtmosphereInOut
+  abstract: true #Reserve guidebook
   name: guide-entry-atmosphereinout
   text: "/ServerInfo/Guidebook/Engineering/AtmosphereInOut.xml"
   children:
@@ -112,31 +127,37 @@
 
 - type: guideEntry
   id: AirVent
+  abstract: true #Reserve guidebook
   name: guide-entry-airvent
   text: "/ServerInfo/Guidebook/Engineering/AirVent.xml"
 
 - type: guideEntry
   id: PassiveVent
+  abstract: true #Reserve guidebook
   name: guide-entry-passivevent
   text: "/ServerInfo/Guidebook/Engineering/PassiveVent.xml"
 
 - type: guideEntry
   id: AirInjector
+  abstract: true #Reserve guidebook
   name: guide-entry-airinjector
   text: "/ServerInfo/Guidebook/Engineering/AirInjector.xml"
 
 - type: guideEntry
   id: AirScrubber
+  abstract: true #Reserve guidebook
   name: guide-entry-airscrubber
   text: "/ServerInfo/Guidebook/Engineering/AirScrubber.xml"
 
 - type: guideEntry
   id: PortableScrubber
+  abstract: true #Reserve guidebook
   name: guide-entry-portablescrubber
   text: "/ServerInfo/Guidebook/Engineering/PortableScrubber.xml"
 
 - type: guideEntry
   id: Valves
+  abstract: true #Reserve guidebook
   name: guide-entry-valves
   text: "/ServerInfo/Guidebook/Engineering/Valves.xml"
   children:
@@ -147,36 +168,43 @@
 
 - type: guideEntry
   id: ManualValve
+  abstract: true #Reserve guidebook
   name: guide-entry-manualvalve
   text: "/ServerInfo/Guidebook/Engineering/ManualValve.xml"
 
 - type: guideEntry
   id: SignalValve
+  abstract: true #Reserve guidebook
   name: guide-entry-signalvalve
   text: "/ServerInfo/Guidebook/Engineering/SignalValve.xml"
 
 - type: guideEntry
   id: PneumaticValve
+  abstract: true #Reserve guidebook
   name: guide-entry-pneumaticvalve
   text: "/ServerInfo/Guidebook/Engineering/PneumaticValve.xml"
 
 - type: guideEntry
   id: PassiveGate
+  abstract: true #Reserve guidebook
   name: guide-entry-passivegate
   text: "/ServerInfo/Guidebook/Engineering/PassiveGate.xml"
 
 - type: guideEntry
   id: MixingAndFiltering
+  abstract: true #Reserve guidebook
   name: guide-entry-mixingandfiltering
   text: "/ServerInfo/Guidebook/Engineering/MixingAndFiltering.xml"
 
 - type: guideEntry
   id: GasCanisters
+  abstract: true #Reserve guidebook
   name: guide-entry-gascanisters
   text: "/ServerInfo/Guidebook/Engineering/GasCanisters.xml"
 
 - type: guideEntry
   id: Thermomachines
+  abstract: true #Reserve guidebook
   name: guide-entry-thermomachines
   text: "/ServerInfo/Guidebook/Engineering/Thermomachines.xml"
   children:
@@ -184,16 +212,19 @@
 
 - type: guideEntry
   id: GasCondensing
+  abstract: true #Reserve guidebook
   name: guide-entry-gascondensing
   text: "/ServerInfo/Guidebook/Engineering/GasCondensing.xml"
 
 - type: guideEntry
   id: Radiators
+  abstract: true #Reserve guidebook
   name: guide-entry-radiators
   text: "/ServerInfo/Guidebook/Engineering/Radiators.xml"
 
 - type: guideEntry
   id: AtmosphericsSystems
+  abstract: true #Reserve guidebook
   name: guide-entry-atmosphericssystems
   text: "/ServerInfo/Guidebook/Engineering/AtmosphericsSystems.xml"
   children:
@@ -204,11 +235,13 @@
 
 - type: guideEntry
   id: PipeNetworks
+  abstract: true #Reserve guidebook
   name: guide-entry-pipenetworks
   text: "/ServerInfo/Guidebook/Engineering/PipeNetworks.xml"
 
 - type: guideEntry
   id: DeviceMonitoringAndControl
+  abstract: true #Reserve guidebook
   name: guide-entry-devicemonitoringandcontrol
   text: "/ServerInfo/Guidebook/Engineering/DeviceMonitoringAndControl.xml"
   children:
@@ -218,31 +251,37 @@
 
 - type: guideEntry
   id: AirAlarms
+  abstract: true #Reserve guidebook
   name: guide-entry-airalarms
   text: "/ServerInfo/Guidebook/Engineering/AirAlarms.xml"
 
 - type: guideEntry
   id: AtmosphericAlertsComputer
+  abstract: true #Reserve guidebook
   name: guide-entry-atmosphericalertscomputer
   text: "/ServerInfo/Guidebook/Engineering/AtmosphericAlertsComputer.xml"
 
 - type: guideEntry
   id: AtmosphericNetworkMonitor
+  abstract: true #Reserve guidebook
   name: guide-entry-atmosphericnetworkmonitor
   text: "/ServerInfo/Guidebook/Engineering/AtmosphericNetworkMonitor.xml"
 
 - type: guideEntry
   id: FireAndGasControl
+  abstract: true #Reserve guidebook
   name: guide-entry-fireandgascontrol
   text: "/ServerInfo/Guidebook/Engineering/FireAndGasControl.xml"
 
 - type: guideEntry
   id: GasMiningAndStorage
+  abstract: true #Reserve guidebook
   name: guide-entry-gasminingandstorage
   text: "/ServerInfo/Guidebook/Engineering/GasMiningAndStorage.xml"
 
 - type: guideEntry
   id: AtmosphericUpsets
+  abstract: true #Reserve guidebook
   name: guide-entry-atmosphericupsets
   text: "/ServerInfo/Guidebook/Engineering/AtmosphericUpsets.xml"
   children:
@@ -251,31 +290,37 @@
 
 - type: guideEntry
   id: Fires
+  abstract: true #Reserve guidebook
   name: guide-entry-fires
   text: "/ServerInfo/Guidebook/Engineering/Fires.xml"
 
 - type: guideEntry
   id: Spacing
+  abstract: true #Reserve guidebook
   name: guide-entry-spacing
   text: "/ServerInfo/Guidebook/Engineering/Spacing.xml"
 
 - type: guideEntry
   id: AtmosTools
+  abstract: true #Reserve guidebook
   name: guide-entry-atmostools
   text: "/ServerInfo/Guidebook/Engineering/AtmosTools.xml"
 
 - type: guideEntry
   id: Gasses
+  abstract: true #Reserve guidebook
   name: guide-entry-gasses
   text: "/ServerInfo/Guidebook/Engineering/Gasses.xml"
 
 - type: guideEntry
   id: ShuttleCraft
+  abstract: true #Reserve guidebook
   name: guide-entry-shuttle-craft
   text: "/ServerInfo/Guidebook/Engineering/Shuttlecraft.xml"
 
 - type: guideEntry
   id: Networking
+  abstract: true #Reserve guidebook
   name: guide-entry-networking
   text: "/ServerInfo/Guidebook/Engineering/Networking.xml"
   children:
@@ -283,11 +328,13 @@
 
 - type: guideEntry
   id: AccessConfigurator
+  abstract: true #Reserve guidebook
   name: guide-entry-access-configurator
   text: "/ServerInfo/Guidebook/Engineering/AccessConfigurator.xml"
 
 - type: guideEntry
   id: Power
+  abstract: true #Reserve guidebook
   name: guide-entry-power
   text: "/ServerInfo/Guidebook/Engineering/Power.xml"
   children:
@@ -299,26 +346,31 @@
 
 - type: guideEntry
   id: InspectingPower
+  abstract: true #Reserve guidebook
   name: guide-entry-inspectingpower
   text: "/ServerInfo/Guidebook/Engineering/InspectingPower.xml"
 
 - type: guideEntry
   id: PowerStorage
+  abstract: true #Reserve guidebook
   name: guide-entry-powerstorage
   text: "/ServerInfo/Guidebook/Engineering/PowerStorage.xml"
 
 - type: guideEntry
   id: Ramping
+  abstract: true #Reserve guidebook
   name: guide-entry-ramping
   text: "/ServerInfo/Guidebook/Engineering/Ramping.xml"
 
 - type: guideEntry
   id: VoltageNetworks
+  abstract: true #Reserve guidebook
   name: guide-entry-voltagenetworks
   text: "/ServerInfo/Guidebook/Engineering/VoltageNetworks.xml"
 
 - type: guideEntry
   id: Generators
+  abstract: true #Reserve guidebook
   name: guide-entry-generators
   text: "/ServerInfo/Guidebook/Engineering/Generators.xml"
   children:
@@ -332,11 +384,13 @@
 
 - type: guideEntry
   id: AME
+  abstract: true #Reserve guidebook
   name: guide-entry-ame
   text: "/ServerInfo/Guidebook/Engineering/AME.xml"
 
 - type: guideEntry
   id: SingularityTeslaEngine
+  abstract: true #Reserve guidebook
   name: guide-entry-singularityteslaengine
   text: "/ServerInfo/Guidebook/Engineering/SingularityTeslaEngine.xml"
   children:
@@ -345,30 +399,36 @@
 
 - type: guideEntry
   id: SingularityEngine
+  abstract: true #Reserve guidebook
   name: guide-entry-singularityengine
   text: "/ServerInfo/Guidebook/Engineering/SingularityEngine.xml"
 
 - type: guideEntry
   id: TeslaEngine
+  abstract: true #Reserve guidebook
   name: guide-entry-teslaengine
   text: "/ServerInfo/Guidebook/Engineering/TeslaEngine.xml"
 
 - type: guideEntry
   id: TEG
+  abstract: true #Reserve guidebook
   name: guide-entry-teg
   text: "/ServerInfo/Guidebook/Engineering/TEG.xml"
 
 - type: guideEntry
   id: RTG
+  abstract: true #Reserve guidebook
   name: guide-entry-rtg
   text: "/ServerInfo/Guidebook/Engineering/RTG.xml"
 
 - type: guideEntry
   id: PortableGenerator
+  abstract: true #Reserve guidebook
   name: guide-entry-portable-generator
   text: "/ServerInfo/Guidebook/Engineering/PortableGenerator.xml"
 
 - type: guideEntry
   id: SolarPanels
+  abstract: true #Reserve guidebook
   name: guide-entry-solarpanels
   text: "/ServerInfo/Guidebook/Engineering/SolarPanels.xml"

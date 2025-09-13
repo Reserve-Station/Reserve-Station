@@ -43,6 +43,7 @@
     Bucket: 3
     BoxMouthSwab: 1
     BoxAgrichem: 1
+    PlantAnalyzer: 1 # Reserve-PlantAnalyzer
     #TO DO:
     #plant analyzer
   contrabandInventory:

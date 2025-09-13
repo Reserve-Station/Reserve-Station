@@ -266,7 +266,7 @@
   rules:
   - Nukeops
   - DummyNonAntagChance
-  - SubGamemodesRule
+  #  - SubGamemodesRule #Reserve edit - no thieves on nukeops
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler

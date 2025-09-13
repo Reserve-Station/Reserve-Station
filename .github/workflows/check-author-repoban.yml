@@ -1,4 +1,9 @@
-﻿name: soft-repoban check
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Sara Aldrete's Top Guy <malchanceux@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+name: soft-repoban check
 
 on:
   pull_request:

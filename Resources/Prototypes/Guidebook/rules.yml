@@ -10,6 +10,14 @@
 # SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 GrownSamoyedDog <61863648+GrownSamoyedDog@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 echotry <48294642+echotry-ss14@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 echotry <xippl1@mail.ru>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+# SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 GrownSamoyedDog <61863648+GrownSamoyedDog@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Rouge2t7 <sarahoneill132@hotmail.com>
@@ -20,6 +28,7 @@
 
 - type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
   id: DefaultRuleset
+  abstract: true #Reserve guidebook
   name: guide-entry-rules
   priority: 60
   text: "/ServerInfo/Guidebook/ServerRules/DefaultRules.xml"
@@ -33,6 +42,7 @@
 
 - type: guideEntry
   id: RoleTypes
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-role-types
   ruleEntry: true
   priority: 20
@@ -40,6 +50,7 @@
 
 - type: guideEntry
   id: CoreRules
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-core
   ruleEntry: true
   priority: 30
@@ -68,6 +79,7 @@
 
 - type: guideEntry
   id: RuleC1
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c1
   ruleEntry: true
   priority: 2
@@ -75,6 +87,7 @@
 
 - type: guideEntry
   id: RuleC2
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c2
   ruleEntry: true
   priority: 3
@@ -82,6 +95,7 @@
 
 - type: guideEntry
   id: RuleC3
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c3
   ruleEntry: true
   priority: 4
@@ -89,6 +103,7 @@
 
 - type: guideEntry
   id: RuleC4
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c4
   ruleEntry: true
   priority: 5
@@ -96,6 +111,7 @@
 
 - type: guideEntry
   id: RuleC5
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c5
   ruleEntry: true
   priority: 6
@@ -103,6 +119,7 @@
 
 - type: guideEntry
   id: RuleC6
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c6
   ruleEntry: true
   priority: 7
@@ -110,6 +127,7 @@
 
 - type: guideEntry
   id: RuleC7
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c7
   ruleEntry: true
   priority: 8
@@ -117,6 +135,7 @@
 
 - type: guideEntry
   id: RuleC8
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c8
   ruleEntry: true
   priority: 9
@@ -124,6 +143,7 @@
 
 - type: guideEntry
   id: RuleC9
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c9
   ruleEntry: true
   priority: 10
@@ -131,6 +151,7 @@
 
 - type: guideEntry
   id: RuleC10
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c10
   ruleEntry: true
   priority: 11
@@ -138,6 +159,7 @@
 
 - type: guideEntry
   id: RuleC11
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c11
   ruleEntry: true
   priority: 12
@@ -145,6 +167,7 @@
 
 - type: guideEntry
   id: RuleC12
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-c12
   ruleEntry: true
   priority: 13
@@ -152,6 +175,7 @@
 
 - type: guideEntry
   id: RoleplayRules
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-roleplay
   ruleEntry: true
   priority: 40
@@ -176,6 +200,7 @@
 
 - type: guideEntry
   id: RuleR1
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r1
   ruleEntry: true
   priority: 1
@@ -183,6 +208,7 @@
 
 - type: guideEntry
   id: RuleR2
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r2
   ruleEntry: true
   priority: 2
@@ -190,6 +216,7 @@
 
 - type: guideEntry
   id: RuleR3
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r3
   ruleEntry: true
   priority: 3
@@ -197,6 +224,7 @@
 
 - type: guideEntry
   id: RuleR4
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r4
   ruleEntry: true
   priority: 4
@@ -204,6 +232,7 @@
 
 - type: guideEntry
   id: RuleR5
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r5
   ruleEntry: true
   priority: 5
@@ -211,6 +240,7 @@
 
 - type: guideEntry
   id: RuleR6
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r6
   ruleEntry: true
   priority: 6
@@ -218,6 +248,7 @@
 
 - type: guideEntry
   id: RuleR7
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r7
   ruleEntry: true
   priority: 7
@@ -225,6 +256,7 @@
 
 - type: guideEntry
   id: RuleR8
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r8
   ruleEntry: true
   priority: 8
@@ -232,6 +264,7 @@
 
 - type: guideEntry
   id: RuleR9
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r9
   ruleEntry: true
   priority: 9
@@ -239,6 +272,7 @@
 
 - type: guideEntry
   id: RuleR10
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r10
   ruleEntry: true
   priority: 10
@@ -246,6 +280,7 @@
 
 - type: guideEntry
   id: RuleR11
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r11
   ruleEntry: true
   priority: 11
@@ -253,6 +288,7 @@
 
 - type: guideEntry
   id: RuleR12
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r12
   ruleEntry: true
   priority: 12
@@ -260,6 +296,7 @@
 
 - type: guideEntry
   id: RuleR13
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r13
   ruleEntry: true
   priority: 13
@@ -267,6 +304,7 @@
 
 - type: guideEntry
   id: RuleR14
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-r14
   ruleEntry: true
   priority: 14
@@ -288,6 +326,7 @@
 
 - type: guideEntry
   id: SiliconRules
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-silicon
   ruleEntry: true
   priority: 50
@@ -306,6 +345,7 @@
 
 - type: guideEntry
   id: RuleS1
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s1
   ruleEntry: true
   priority: 1
@@ -313,6 +353,7 @@
 
 - type: guideEntry
   id: RuleS2
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s2
   ruleEntry: true
   priority: 2
@@ -320,6 +361,7 @@
 
 - type: guideEntry
   id: RuleS3
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s3
   ruleEntry: true
   priority: 3
@@ -327,6 +369,7 @@
 
 - type: guideEntry
   id: RuleS4
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s4
   ruleEntry: true
   priority: 4
@@ -334,6 +377,7 @@
 
 - type: guideEntry
   id: RuleS5
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s5
   ruleEntry: true
   priority: 5
@@ -341,6 +385,7 @@
 
 - type: guideEntry
   id: RuleS6
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s6
   ruleEntry: true
   priority: 6
@@ -348,6 +393,7 @@
 
 - type: guideEntry
   id: RuleS7
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s7
   ruleEntry: true
   priority: 7
@@ -355,6 +401,7 @@
 
 - type: guideEntry
   id: RuleS8
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s8
   ruleEntry: true
   priority: 8
@@ -362,6 +409,7 @@
 
 - type: guideEntry
   id: RuleS9
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s9
   ruleEntry: true
   priority: 9
@@ -369,6 +417,7 @@
 
 - type: guideEntry
   id: RuleS10
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-s10
   ruleEntry: true
   priority: 10
@@ -377,6 +426,7 @@
 
 - type: guideEntry
   id: MRPRules
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-mrp-m0
   ruleEntry: true
   priority: 60
@@ -386,6 +436,7 @@
 
 - type: guideEntry
   id: RuleM1
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-m1
   ruleEntry: true
   priority: 10
@@ -393,6 +444,7 @@
 
 - type: guideEntry
   id: SpaceLaw
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-space-law
   priority: 1
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SpaceLaw.xml"
@@ -401,12 +453,14 @@
 
 - type: guideEntry
   id: SpaceLawCrimeList
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-sl-crime-list
   priority: 5
   text: "/ServerInfo/Guidebook/ServerRules/SpaceLaw/SLCrimeList.xml"
 
 - type: guideEntry
   id: BanTypes
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-ban-types
   ruleEntry: true
   priority: 90
@@ -414,6 +468,7 @@
 
 - type: guideEntry
   id: BanDurations
+  abstract: true #Reserve guidebook
   name: guide-entry-rules-ban-durations
   ruleEntry: true
   priority: 100

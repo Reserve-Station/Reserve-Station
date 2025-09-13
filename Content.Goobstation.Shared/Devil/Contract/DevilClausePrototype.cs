@@ -1,6 +1,11 @@
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sa1nt7331 <202271576+sa1nt7331@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 sa1nt7331 <havenz@yandex.ru>
+// SPDX-FileCopyrightText: 2025 sa1nt7331 <sa1nt7331@zaza.kyr>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -17,6 +22,10 @@ public sealed class DevilClausePrototype : IPrototype
 
     [DataField(required: true)]
     public int ClauseWeight;
+
+    // Reserve edit - localized devil clauses
+    [DataField]
+    public string? Alias;
 
     [DataField]
     public ComponentRegistry? AddedComponents;

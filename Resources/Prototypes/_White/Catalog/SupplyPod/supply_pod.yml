@@ -1,0 +1,309 @@
+# Stray supply pod surplus cargo
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleSurplusCargo
+  suffix: Surplus, Cargo
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationSurplusCargo
+
+- type: entity
+  parent: SupplyPodDefaultFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationSurplusCargo
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodSurplusCargo
+
+- type: entity
+  parent: SupplyPodCapsuleDefault
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodSurplusCargo
+  components:
+    - type: EntityTableContainerFill
+      containers:
+        entity_storage: !type:NestedSelector
+          tableId: SurplusCargoTable
+
+# Stray syndicate surplus 25TK
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleSyndicateSurplus25TK #Goob
+  suffix: Surplus 25TK, Syndicate #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationSyndicateSurplus25TK #Goob
+
+- type: entity
+  parent: SupplyPodSyndicateFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationSyndicateSurplus25TK #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodSyndicateSurplus25TK #Goob
+
+- type: entity
+  parent: [ SupplyPodCapsuleSyndicate, StorePresetUplink ] #Goob
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodSyndicateSurplus25TK #Goob
+  components:
+    - type: SurplusBundle
+      totalPrice: 25 #Goob
+
+# Stray syndicate surplus 50TK
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleSyndicateSurplus50TK #Goob
+  suffix: Surplus 50TK, Syndicate #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationSyndicateSurplus50TK #Goob
+
+- type: entity
+  parent: SupplyPodSyndicateFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationSyndicateSurplus50TK #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodSyndicateSurplus50TK #Goob
+
+- type: entity
+  parent: [ SupplyPodCapsuleSyndicate, StorePresetUplink ] #Goob
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodSyndicateSurplus50TK #Goob
+  components:
+    - type: SurplusBundle
+      totalPrice: 50 #Goob
+
+# Stray syndicate surplus 75TK
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleSyndicateSurplus75TK #Goob
+  suffix: Surplus 75TK, Syndicate #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationSyndicateSurplus75TK #Goob
+
+- type: entity
+  parent: SupplyPodSyndicateFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationSyndicateSurplus75TK #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodSyndicateSurplus75TK #Goob
+
+- type: entity
+  parent: [ SupplyPodCapsuleSyndicate, StorePresetUplink ] #Goob
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodSyndicateSurplus75TK #Goob
+  components:
+    - type: SurplusBundle
+      totalPrice: 75 #Goob
+
+# Stray syndicate surplus 100TK
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleSyndicateSurplus100TK
+  suffix: Surplus 100TK, Syndicate #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationSyndicateSurplus100TK #Goob
+
+- type: entity
+  parent: SupplyPodSyndicateFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationSyndicateSurplus100TK #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodSyndicateSurplus100TK
+
+- type: entity
+  parent: [ SupplyPodCapsuleSyndicate, StorePresetUplink ] #Goob
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodSyndicateSurplus100TK #Goob
+  components:
+    - type: SurplusBundle
+      totalPrice: 100 #Goob
+
+# Stray syndicate surplus 125TK
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleSyndicateSurplus125TK #Goob
+  suffix: Surplus 125TK, Syndicate #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationSyndicateSurplus125TK #Goob
+
+- type: entity
+  parent: SupplyPodSyndicateFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationSyndicateSurplus125TK #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodSyndicateSurplus125TK
+
+- type: entity
+  parent: [ SupplyPodCapsuleSyndicate, StorePresetUplink ] #Goob
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodSyndicateSurplus125TK #Goob
+  components:
+    - type: SurplusBundle
+      totalPrice: 125 #Goob
+
+# SyndicateSurplusBundle
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleSyndicateSurplusBundle
+  suffix: Surplus bundle 250TK, Syndicate #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationSyndicateSurplusBundle
+
+- type: entity
+  parent: SupplyPodSyndicateFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationSyndicateSurplusBundle
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodSyndicateSurplusBundle
+
+- type: entity
+  parent: [ SupplyPodCapsuleSyndicate, StorePresetUplink ] #Goob
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodSyndicateSurplusBundle
+  components:
+    - type: SurplusBundle
+      totalPrice: 250 #Goob
+
+# SyndicateSuperSurplusBundle
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleSyndicateSuperSurplusBundle
+  suffix: Super surplus bundle 625TK, Syndicate #Goob
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationSyndicateSuperSurplusBundle
+
+- type: entity
+  parent: SupplyPodSyndicateFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationSyndicateSuperSurplusBundle
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodSyndicateSuperSurplusBundle
+
+- type: entity
+  parent: [ SupplyPodCapsuleSyndicate, StorePresetUplink ] #Goob
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodSyndicateSuperSurplusBundle
+  components:
+    - type: SurplusBundle
+      totalPrice: 625 #Goob
+
+# CybersunJuggernautBundle
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleCybersunJuggernautBundle
+  suffix: Cybersun Juggernaut bundle, Syndicate
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationCybersunJuggernautBundle
+
+- type: entity
+  parent: SupplyPodSyndicateFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationCybersunJuggernautBundle
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodCybersunJuggernautBundle
+
+- type: entity
+  parent: SupplyPodCapsuleSyndicate
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodCybersunJuggernautBundle
+  components:
+    - type: StorageFill
+      contents:
+        - id: ClothingOuterHardsuitJuggernaut
+        - id: ClothingMaskGasSyndicate
+        - id: ClothingHandsGlovesCombat
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: DoubleEmergencyNitrogenTankFilled
+
+# NPCGondola
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleNPCGondola
+  suffix: Gondola
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationNPCGondola
+
+- type: entity
+  parent: SupplyPodGondolaFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationNPCGondola
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodNPCGondola
+
+- type: entity
+  parent: SupplyPodCapsuleGondola
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodNPCGondola
+  components:
+    - type: StorageFill
+      contents:
+        - id: MobGondola
+
+# DreadnoughtBundle
+- type: entity
+  parent: BaseSupplyPodTargetCircle
+  id: SupplyPodCircleCybersunDreadnoughtBundle
+  suffix: Dreadnought bundle, Syndicate
+  components:
+    - type: TimedSpawner
+      prototypes:
+        -  SupplyPodFallingAnimationCybersunDreadnoughtBundle
+
+- type: entity
+  parent: SupplyPodSyndicateFallingAnimation
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodFallingAnimationCybersunDreadnoughtBundle
+  components:
+    - type: TimedSpawner
+      prototypes:
+        - SupplyPodCybersunDreadnoughtBundle
+
+- type: entity
+  parent: SupplyPodCapsuleSyndicate
+  categories: [ HideSpawnMenu ]
+  id: SupplyPodCybersunDreadnoughtBundle
+  components:
+    - type: StorageFill
+      contents:
+        - id: ClothingOuterHardsuitCybersunDreadnought
+        - id: ClothingMaskGasSyndicate
+        - id: ClothingHandsGlovesCombat
+        - id: DoubleEmergencyOxygenTankFilled
+        - id: DoubleEmergencyNitrogenTankFilled

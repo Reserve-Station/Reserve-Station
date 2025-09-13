@@ -188,6 +188,11 @@
     guides:
     - Botany
     - Chemicals
+  #EE spray paint port begin
+  - type: Tag
+    tags:
+      - NoPaint
+  #EE spray paint port end
 
 - type: entity
   parent: hydroponicsTray

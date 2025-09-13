@@ -213,11 +213,11 @@
   beginDay: 21
   beginMonth: June
 
-- type: holiday
-  id: StonewallRiotsAnniversary
-  name: holiday-name-stonewall-riots-anniversary
-  beginDay: 28
-  beginMonth: June
+#- type: holiday #Reserve remove things begin
+#  id: StonewallRiotsAnniversary
+#  name: holiday-name-stonewall-riots-anniversary
+#  beginDay: 28
+#  beginMonth: June #Reserve remove things end
 
 - type: holiday
   id: DoctorDay
@@ -285,11 +285,11 @@
     !type:DayOfYear
     dayOfYear: 256
 
-- type: holiday
-  id: BisexualPrideDay
-  name: holiday-name-bisexual-pride-day
-  beginDay: 23
-  beginMonth: September
+#- type: holiday #Reserve remove things begin
+#  id: BisexualPrideDay
+#  name: holiday-name-bisexual-pride-day
+#  beginDay: 23
+#  beginMonth: September #Reserve remove things end
 
 - type: holiday
   id: StupidQuestionsDay
@@ -309,17 +309,17 @@
   beginDay: 7
   beginMonth: October
 
-- type: holiday
-  id: LesbianDay
-  name: holiday-name-lesbian-day
-  beginDay: 8
-  beginMonth: October
+#- type: holiday #Reserve remove things begin
+#  id: LesbianDay
+#  name: holiday-name-lesbian-day
+#  beginDay: 8
+#  beginMonth: October
 
-- type: holiday
-  id: NationalComingOutDay
-  name: holiday-name-national-coming-out-day
-  beginDay: 11
-  beginMonth: October
+#- type: holiday
+#  id: NationalComingOutDay
+#  name: holiday-name-national-coming-out-day
+#  beginDay: 11
+#  beginMonth: October #Reserve remove things end
 
 - type: holiday
   id: CanadianThanksgiving
@@ -381,11 +381,11 @@
   beginDay: 19
   beginMonth: November
 
-- type: holiday
-  id: TransgenderRemembranceDay
-  name: holiday-name-transgender-remembrance-day
-  beginDay: 20
-  beginMonth: November
+#- type: holiday #Reserve remove things begin
+#  id: TransgenderRemembranceDay
+#  name: holiday-name-transgender-remembrance-day
+# beginDay: 20
+#  beginMonth: November #Reserve remove things end
 
 - type: holiday
   id: SayingHelloDay
@@ -458,9 +458,9 @@
   shouldCelebrate:
     !type:FridayThirteenth { }
 
-- type: holiday
-  id: PrideMonth
-  name: holiday-name-pride-month
-  beginDay: 1
-  endDay: 31
-  beginMonth: June
+#- type: holiday #Reserve remove things begin
+#  id: PrideMonth
+#  name: holiday-name-pride-month
+#  beginDay: 1
+#  endDay: 31
+#  beginMonth: June #Reserve remove things end

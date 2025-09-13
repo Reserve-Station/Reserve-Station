@@ -6,10 +6,16 @@
 # SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Jezithyr <jezithyr@gmail.com>
 # SPDX-FileCopyrightText: 2024 Matt <psykzz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Nikolai Korolev <korolevns98@gmail.com>
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 AwareFoxy <135021509+AwareFoxy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -17,8 +23,8 @@ name: Publish
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 10 * * *'
+  #schedule: #Reserve edit
+  #  - cron: '0 10 * * *'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -26,7 +32,8 @@ concurrency:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest #Reserve edit. No self-hosted sadly
+
 
     steps:
     - name: Fail if we are attempting to run on the master branch
@@ -49,7 +56,7 @@ jobs:
       with:
         submodules: 'recursive'
     - name: Setup .NET Core
-      if: env.skip == 'false'
+      # if: env.skip == 'false' #Reserve edit. Always setup. Or idk.
       uses: actions/setup-dotnet@v3.2.0
       with:
         dotnet-version: 9.0.x

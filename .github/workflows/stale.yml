@@ -1,3 +1,9 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 name: Mark and Close Stale Pull Requests
 
 on:
@@ -37,29 +43,29 @@ jobs:
 
           # Comment to post when marking a PR as stale
           stale-pr-message: |
-            This pull request has been automatically marked as stale because it has not had
-            any activity for 14 days. It will be closed in another 14 days if no further activity occurs.
-            Thank you for your contributions.
+            Этот pull request был автоматически отмечен как устаревший, потому что он не имел
+            любой активности в течение 14 дней. Он будет закрыт через 14 дней, если не будет никакой дальнейшей деятельности.
+            Спасибо за ваши вклады.
 
-            You can always ask for help on our development [discord](https://discord.gg/RYNBE6fUW2/).
+            Вы всегда можете попросить о помощи в нашем развитии [discord](https://discord.gg/4Jn4kxRmvF).
 
-            If you'd like to keep this open, just leave any comment, and the stale label will be removed.
+            Если вы хотите оставить это открытым, просто оставьте любой комментарий, и устаревшая этикетка будет удалена.
           # Comment to post when closing a stale PR
           close-pr-message: |
-            This pull request has been automatically closed because there has been no more activity in the 14 days
-            since being marked stale.
+            Этот pull request был автоматически закрыт, так как в течение 14 дней не было никакой активности
+            после того, как был отмечен устаревшим.
 
-            Please feel free to reopen or open a new pull request if you'd still like this to be addressed.
+            Пожалуйста, не стесняйтесь открывать новый pull request или открыть новый, если вы все еще хотите, чтобы ваши изменения были рассмотрены.
 
-            Again, you can always ask for help on our development [discord](https://discord.gg/RYNBE6fUW2).
+            Снова, вы всегда можете попросить помощи в нашем [discord](https://discord.gg/RYNBE6fUW2).
 
-            Thanks again for your contribution!
+            Еще раз спасибо за ваш вклад!
           # Pull Requests with these labels will never be considered stale
 
           # Set to true to ignore PRs in a milestone (defaults to false)
           exempt-all-pr-milestones: true
-          
+
           # Remove stale label from PRs on update (default is true)
           remove-pr-stale-when-updated: true
-          
+
           ascending: true

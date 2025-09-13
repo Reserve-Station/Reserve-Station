@@ -309,3 +309,5 @@ Resources/MapImages
 
 config.json
 .github/workflows/update-prs.yaml
+/Tools/ss14_ru
+/Scripts/bat

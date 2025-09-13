@@ -206,6 +206,22 @@
     - Flash
     - MagazinePistol
 
+- type: startingGear # Reserve
+  id: CBURNLeaderGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitColorBrown
+    back: ClothingBackpackDuffelCBURN
+    mask: ClothingMaskGasExplorer
+    eyes: ClothingEyesGlassesSecurity
+    ears: ClothingHeadsetAltCentCom
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterHardsuitCBURNLeader
+    shoes: ClothingShoesBootsCombatFilled
+    id: CBURNPDA
+    pocket1: RadioHandheld
+    pocket2: WeaponLaserGun
+    belt: ClothingBeltUtilityFilled
+
 - type: startingGear
   id: BoxingKangarooGear
   equipment:
@@ -258,6 +274,7 @@
   id: MobAghostGear
   equipment:
     back: ClothingBackpackSatchelHolding
+    eyes: ClothingEyesHudMultiversal #Reserve
     id: AdminPDA
   storage:
     back:
@@ -265,6 +282,28 @@
     - trayScanner
     - AccessConfiguratorUniversal
     - Multitool
+    # Reserve admin stachel begin
+    - GeigerCounter
+    - HandheldHealthAnalyzer
+    - JawsOfLife
+    - PowerDrill
+    - WelderExperimental
+    - AnomalyScanner
+    - ForensicScanner
+    - NodeScanner
+    - RubberStampCentcom
+    - RubberStampApproved
+    - RubberStampDenied
+    - RubberStampSyndicate
+    - PenCentcom
+    - HandheldFaxOfficial
+    - OmnimedTool
+    - PlantAnalyzerDebug
+    - WeaponMeleeKnockbackStick
+    - DoorRemoteAllCC
+    - SuperSynthesizerInstrument
+    - PinpointerUniversal
+    # Reserve admin stachel end
 
 #Gladiator with spear
 - type: startingGear

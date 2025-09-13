@@ -1,0 +1,12 @@
+ent-ActionStationAiInfo = View Information
+    .desc = View the information of your chassis and station.
+ent-ActionStationAiRadar = Mass Scanner Interface
+    .desc = View a Mass Scanner Interface.
+ent-ActionStationAiCrewMonitoring = Crew Monitoring Interface
+    .desc = View a Crew Monitoring Interface.
+ent-ActionStationAiStationRecords = Station Records Interface
+    .desc = View a Station Records Interface.
+ent-ActionStationAiCommunications = Communications Interface
+    .desc = View a Communications Interface.
+ent-ActionStationAiAtmosphericAlerts = Atmospheric Alerts
+    .desc = View a Atmospheric Alerts Interface.

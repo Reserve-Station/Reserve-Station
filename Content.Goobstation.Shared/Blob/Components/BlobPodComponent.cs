@@ -37,6 +37,9 @@ public sealed partial class BlobPodComponent : Component
     [ViewVariables(VVAccess.ReadOnly)]
     public EntityUid? Core = null;
 
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? Factory = null; //Reserve edit - blob factory port
+
     [ViewVariables(VVAccess.ReadWrite), DataField("zombifySoundPath")]
     public SoundSpecifier ZombifySoundPath = new SoundPathSpecifier("/Audio/Effects/Fluids/blood1.ogg");
 

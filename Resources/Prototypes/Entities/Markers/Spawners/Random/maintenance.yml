@@ -428,6 +428,16 @@
         children:
         - id: DrinkSpaceGlue
         - id: DrinkSpaceLube
+      #EE spray paint begin
+      - !type:GroupSelector
+        children:
+        - id: DeathPaint
+        - id: DeathPaintTwo
+        - id: SprayPaintBlue
+        - id: SprayPaintRed
+        - id: SprayPaintGreen
+        - id: SprayPaintOrange
+      #EE spray paint end
       # Rare Group
     - !type:GroupSelector
       weight: 2

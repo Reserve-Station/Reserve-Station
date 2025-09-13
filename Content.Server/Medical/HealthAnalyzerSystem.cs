@@ -212,10 +212,11 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             if (component.MaxScanRange != null && !_transformSystem.InRange(patientCoordinates, transform.Coordinates, component.MaxScanRange.Value))
             {
                 //Range too far, disable updates
-                StopAnalyzingEntity((uid, component), patient);
+                PauseAnalyzingEntity((uid, component), patient, component.CurrentBodyPart); // DeltaV - Analyzer Reactivation
                 continue;
             }
 
+            component.IsAnalyzerActive = true; // DeltaV - Analyzer Reactivation
             UpdateScannedUser(uid, patient, true, component.CurrentMode, component.CurrentBodyPart); // Shitmed Change
         }
     }
@@ -321,6 +322,20 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         _toggle.TryDeactivate(healthAnalyzer.Owner);
 
         UpdateScannedUser(healthAnalyzer, target, false, healthAnalyzer.Comp.CurrentMode);
+    }
+
+    /// <summary>
+    /// DeltaV - If the scanner is active, sends one last update and sets it to inactive.
+    /// </summary>
+    /// <param name="healthAnalyzer">The health analyzer that's receiving the updates</param>
+    /// <param name="target">The entity to analyze</param>
+    private void PauseAnalyzingEntity(Entity<HealthAnalyzerComponent> healthAnalyzer, EntityUid target, EntityUid? part = null)
+    {
+        if (!healthAnalyzer.Comp.IsAnalyzerActive)
+            return;
+
+        UpdateScannedUser(healthAnalyzer, target, false, healthAnalyzer.Comp.CurrentMode); //Reserve edit
+        healthAnalyzer.Comp.IsAnalyzerActive = false;
     }
 
     // Shitmed Change Start

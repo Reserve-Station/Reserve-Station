@@ -227,7 +227,8 @@ public sealed partial class ZombieComponent : Component
             { "Slash", -1 },
             { "Piercing", -1 },
             { "Heat", -1 },
-            { "Shock", -1 }
+            { "Shock", -1 },
+            { "Cold", -0.5 } //Reserve zombie-buff
         }
     };
 
@@ -249,7 +250,9 @@ public sealed partial class ZombieComponent : Component
             { "Slash", -25 },
             { "Piercing", -25 },
             { "Heat", -25 },
-            { "Shock", -25 }
+            { "Shock", -25 },
+            { "Cold", -10 }, //Reserve zombie-buff
+            { "Stamina", -25 }
         }
     };
 

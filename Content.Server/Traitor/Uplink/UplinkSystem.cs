@@ -31,19 +31,32 @@
 // SPDX-FileCopyrightText: 2025 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Store.Systems;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.PDA;
+using Content.Shared.Preferences;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
+using Content.Shared.Storage;
+using Content.Shared.Storage.EntitySystems;
+using Content.Server.Storage.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Log;
+using Content.Shared.Stacks;
+using Content.Server.Stack;
 
 namespace Content.Server.Traitor.Uplink;
 
@@ -57,11 +70,21 @@ public sealed class UplinkSystem : EntitySystem
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly StackSystem _stackSystem = default!; // Reserve edit
+    [Dependency] private readonly ILogManager _logManager = default!; // Reserve edit
+
+    private ISawmill _sawmill = default!; // Reserve edit
 
     [ValidatePrototypeId<CurrencyPrototype>]
     public const string TelecrystalCurrencyPrototype = "Telecrystal";
     private const string FallbackUplinkImplant = "UplinkImplant";
     private const string FallbackUplinkCatalog = "UplinkUplinkImplanter";
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        _sawmill = _logManager.GetSawmill("uplink"); // Reserve edit
+    }
 
     /// <summary>
     /// Adds an uplink to the target
@@ -69,10 +92,53 @@ public sealed class UplinkSystem : EntitySystem
     /// <param name="user">The person who is getting the uplink</param>
     /// <param name="balance">The amount of currency on the uplink. If null, will just use the amount specified in the preset.</param>
     /// <param name="uplinkEntity">The entity that will actually have the uplink functionality. Defaults to the PDA if null.</param>
+    /// <param name="uplinkPreference">The preferred type of uplink. Defaults to PDA if not specified.</param>
     /// <returns>Whether or not the uplink was added successfully</returns>
-    public bool AddUplink(EntityUid user, FixedPoint2 balance, EntityUid? uplinkEntity = null)
+    public bool AddUplink(EntityUid user, FixedPoint2 balance, EntityUid? uplinkEntity = null, UplinkPreference uplinkPreference = UplinkPreference.PDA) // Reserve edit
     {
-        // Try to find target item if none passed
+        // Reserve edit start
+        if (uplinkPreference == UplinkPreference.Telecrystals)
+        {
+            var tcEntity = Spawn("Telecrystal", Transform(user).Coordinates);
+
+            _stackSystem.SetCount(tcEntity, (int)balance);
+
+            if (TryPutInBackpack(user, tcEntity))
+                return true;
+
+            if (_handsSystem.TryPickupAnyHand(user, tcEntity))
+                return true;
+
+            _sawmill.Warning($"Не удалось положить телекристаллы в инвентарь игрока {ToPrettyString(user)}, оставляем под ногами"); // Reserve edit
+            return true;
+        }
+
+        if (uplinkPreference == UplinkPreference.Radio)
+        {
+            var radio = Spawn("BaseUplinkRadio", Transform(user).Coordinates);
+
+            // Set up radio balance based on parameter
+            var store = EnsureComp<StoreComponent>(radio);
+            store.Balance.Clear();
+            var bal = new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance } };
+            _store.TryAddCurrency(bal, radio, store);
+
+            if (TryPutInBackpack(user, radio))
+                return true;
+
+            if (_handsSystem.TryPickupAnyHand(user, radio))
+                return true;
+
+            _sawmill.Warning($"Не удалось положить радио-аплинк в инвентарь игрока {ToPrettyString(user)}, оставляем под ногами"); // Reserve edit
+            return true;
+        }
+
+        if (uplinkPreference == UplinkPreference.Implant)
+        {
+            return ImplantUplink(user, balance);
+        }
+        // Reserve Station edit end
+
 
         uplinkEntity ??= FindUplinkTarget(user);
 
@@ -113,6 +179,7 @@ public sealed class UplinkSystem : EntitySystem
     {
         var implantProto = new string(FallbackUplinkImplant);
 
+        /*
         if (!_proto.TryIndex<ListingPrototype>(FallbackUplinkCatalog, out var catalog))
             return false;
 
@@ -123,11 +190,15 @@ public sealed class UplinkSystem : EntitySystem
             balance = 0;
         else
             balance = balance - cost;
+        */
 
         var implant = _subdermalImplant.AddImplant(user, implantProto);
 
-        if (!HasComp<StoreComponent>(implant))
+        if (implant == null || !HasComp<StoreComponent>(implant))  // Reserve Station edit start - simplified implant creation
+        {
+            _sawmill.Warning($"Failed to create an uplink implant for the player {ToPrettyString(user)}"); // Reserve edit
             return false;
+        }
 
         SetUplink(user, implant.Value, balance);
         return true;
@@ -160,5 +231,22 @@ public sealed class UplinkSystem : EntitySystem
         }
 
         return null;
+    }
+
+    /// <summary>
+    /// Tries to put an item in the user's backpack
+    /// </summary>
+    private bool TryPutInBackpack(EntityUid user, EntityUid item)
+    {
+        if (_inventorySystem.TryGetSlotEntity(user, "back", out var backEntity))
+        {
+            var storageSystem = EntitySystem.Get<SharedStorageSystem>();
+            if (storageSystem.Insert(backEntity.Value, item, out _))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

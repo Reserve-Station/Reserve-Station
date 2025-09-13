@@ -1,19 +1,17 @@
 {
     "version": 1,
     "license": "CC0-1.0",
-    "copyright": "Sprited by kipdotnet (github) for Impstation",
+    "copyright": "Codersprite created by deltanedas (github) for Goobstation",
     "size": {
         "x": 32,
         "y": 32
     },
     "states": [
         {
-            "name": "icon",
-            "directions": 4
+            "name": "icon"
         },
         {
-            "name": "powered",
-            "directions": 4
+            "name": "powered"
         }
     ]
 }

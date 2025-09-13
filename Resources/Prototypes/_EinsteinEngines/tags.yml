@@ -1,4 +1,7 @@
 - type: Tag
+  id: NoPaint
+
+- type: Tag
   id: Envirohelm
 
 - type: Tag

@@ -65,6 +65,14 @@
   alert: Corporeal
 
 - type: statusEffect
+  id: RevenantStasis
+  alert: RevenantStasis
+  alwaysAllowed: true
+
+- type: statusEffect
+  id: ForcedSleep #I.e., they will not wake on damage or similar
+
+- type: statusEffect
   id: TemporaryBlindness
 
 - type: statusEffect

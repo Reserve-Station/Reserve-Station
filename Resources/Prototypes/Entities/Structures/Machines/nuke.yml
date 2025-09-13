@@ -53,9 +53,9 @@
       map: ["enum.NukeVisualLayers.Unlit"]
       shader: unshaded
       visible: false
-    - state: nuclearbomb_gay
-      map: ["pride"]
-      visible: false
+    #- state: nuclearbomb_gay #Reserve remove things begin
+    #  map: ["pride"]
+    #  visible: false #Reserve remove things end
     - state: nukefestive
       map: ["christmas"]
       visible: false
@@ -64,8 +64,8 @@
     holidays:
       festive:
       - FestiveSeason
-      pride:
-      - PrideMonth
+      #pride: #Reserve remove things
+      #- PrideMonth #Reserve remove things
   - type: GenericVisualizer
     visuals:
       enum.HolidayVisuals.Holiday:
@@ -178,16 +178,16 @@
     - state: nukefestive
       map: ["christmas"]
       visible: false
-    - state: nuclearbomb_gay
-      map: [ "pride" ]
-      visible: false
+    #- state: nuclearbomb_gay #Reserve remove things begin
+    #  map: [ "pride" ]
+    #  visible: false #Reserve remove things end
   - type: Appearance
   - type: HolidayVisuals
     holidays:
       festive:
       - FestiveSeason
-      pride:
-      - PrideMonth
+      #pride: #Reserve remove things
+      #- PrideMonth #Reserve remove things
   - type: GenericVisualizer
     visuals:
       enum.HolidayVisuals.Holiday:

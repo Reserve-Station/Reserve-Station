@@ -25,6 +25,12 @@
 # SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Kirill2253 <kirillsuhin5@gmail.com>
+# SPDX-FileCopyrightText: 2025 RedBookcase <crazykid1590@gmail.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -327,3 +333,33 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: metallic
   color: "#66538F"
+
+- type: reagent
+  id: Brepsi
+  name: reagent-name-brepsi
+  parent: BaseSoda
+  desc: reagent-desc-brepsi
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: brepsi
+  color: "#6c2828"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/colaglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 1.0
+        type: Remove
+  tileReactions: # Goobstation
+  - !type:ChangeTileReaction # Unrusts tile
+    newTileId: Plating
+    oldTileId: PlatingRust
+    effect: null

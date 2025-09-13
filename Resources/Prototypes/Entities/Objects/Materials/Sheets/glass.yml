@@ -55,6 +55,7 @@
     tags:
     - Sheet
     - DroneUsable # Goobstation
+    - NoPaint #EE spray paint port
   - type: Material
   - type: Damageable
     damageContainer: Inorganic

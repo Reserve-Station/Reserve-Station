@@ -628,6 +628,7 @@ public sealed partial class StationSystem : SharedStationSystem
 
         return stats;
     }
+
     // Goobstation start
     public HashSet<EntityUid> GetAllStationGrids()
     {

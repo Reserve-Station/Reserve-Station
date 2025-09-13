@@ -297,7 +297,8 @@
       gender: male
   - type: Sharp
   - type: NightVision # Goobstation - Nigthvision
-    color: "#d14343"
+    toggleAction: null
+    color: "#808080"
     activateSound: null
     deactivateSound: null
   - type: Insulated # Goobstation
@@ -350,7 +351,6 @@
   - type: GuideHelp
     guides:
     - MinorAntagonists
-
 
 - type: entity
   name: rat servant

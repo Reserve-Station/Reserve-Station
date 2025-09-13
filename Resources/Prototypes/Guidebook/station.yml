@@ -18,15 +18,17 @@
 # SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
-# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 GrownSamoyedDog <61863648+GrownSamoyedDog@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: guideEntry
   id: SS14
+  abstract: true #Reserve guidebook
   name: guide-entry-ss14
   text: "/ServerInfo/Guidebook/SpaceStation14.xml"
   children:
@@ -39,10 +41,12 @@
 
 - type: guideEntry
   id: Glossary
+  abstract: true #Reserve guidebook
   name: guide-entry-glossary
   text: "/ServerInfo/Guidebook/Glossary.xml"
 
 - type: guideEntry
   id: Survival
+  abstract: true #Reserve guidebook
   name: guide-entry-survival
   text: "/ServerInfo/Guidebook/Survival.xml"

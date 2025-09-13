@@ -61,6 +61,7 @@
     - id: CrateFunArtSupplies
     - id: CrateFunFoamGuns
       weight: 0.01
+    - id: CrateFunSprayPaints #EE spray paint port
 
 - type: entityTable
   id: LowValueMaterialCrateTable

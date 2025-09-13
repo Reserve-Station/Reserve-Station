@@ -127,6 +127,7 @@
   - type: Tag
     tags:
       - DroneUsable # Goobstation
+      - NoPaint #EE spray paint port
   # Goobstation - Custom stack splitting dialog
   - type: UserInterface
     interfaces:

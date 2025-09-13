@@ -155,6 +155,7 @@
     - ActionJumpToCore
     - ActionSurvCameraLights
     - ActionAIViewLaws
+    - ActionAIToggleBolts # WD edit
     - ActionOpenRemoteDevicesMenu # Corvax-Next-AiRemoteControl
     - ActionOpenCameraWarpMenu # Goobstation-Ai-Camera-Jumping
   - type: UserInterface
@@ -169,6 +170,12 @@
         type: SiliconLawBoundUserInterface
       enum.CommunicationsConsoleUiKey.Key:
         type: CommunicationsConsoleBoundUserInterface
+    # ADT Start
+      enum.AtmosAlertsComputerUiKey.Key:
+        type: AtmosAlertsComputerBoundUserInterface
+      enum.StationAiInfoUiKey.Key:
+        type: StationAiInfoBoundUserInterface
+    # ADT End
       enum.RemoteDeviceUiKey.Key: # Corvax-Next-AiRemoteControl
         type: RemoteDevicesBoundUserInterface
       enum.CamWarpUiKey.Key: # Goobstation-Ai-Camera-Jumping
@@ -176,13 +183,17 @@
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
-        toggleAction: ActionAGhostShowRadar
+        toggleAction: ActionStationAiRadar #ADT-Tweak
       enum.CrewMonitoringUIKey.Key:
-        toggleAction: ActionAGhostShowCrewMonitoring
+        toggleAction: ActionStationAiCrewMonitoring #ADT-Tweak
       enum.GeneralStationRecordConsoleKey.Key:
-        toggleAction: ActionAGhostShowStationRecords
+        toggleAction: ActionStationAiStationRecords #ADT-Tweak
       enum.CommunicationsConsoleUiKey.Key:
-        toggleAction: ActionAGhostShowCommunications
+    # ADT Start
+        toggleAction: ActionStationAiCommunications
+      enum.AtmosAlertsComputerUiKey.Key:
+        toggleAction: ActionStationAiAtmosphericAlerts
+    # ADT End
   - type: CrewMonitoringConsole
   - type: GeneralStationRecordConsole
   - type: DeviceNetwork
@@ -195,6 +206,15 @@
     canShuttle: false
     title: comms-console-announcement-title-station-ai
     color: "#5ed7aa"
+    # ADT Start
+  - type: StationAiInfo
+  - type: CrewManifestViewer
+    ownerKey: enum.StationAiInfoUiKey.Key
+    # ADT End
+  - type: HolographicAvatar
+    layerData:
+    - sprite: Mobs/Silicon/station_ai.rsi
+      state: default
   - type: ShowJobIcons
   - type: ShowHealthIcons #Goobstation
   - type: ShowHealthBars #Goobstation
@@ -383,7 +403,7 @@
   - type: BlockMovement
     blockInteraction: false
   - type: SiliconLawProvider
-    laws: NTDefault # Goobstation - AI/borg law changes - set AI to NTDefault
+    laws: Crewsimov # Reserve-Crewsimov-StationAI
   - type: IonStormTarget # Goobstation - AI/borg law changes - ion stormable AI
   - type: SiliconLawBound
   - type: ActionGrant
@@ -480,6 +500,7 @@
   parent: BorgChassisSelectable
   suffix: Battery
   components:
+  - type: StationAiVision
   - type: ContainerFill
     containers:
       borg_brain:

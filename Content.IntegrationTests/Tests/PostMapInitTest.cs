@@ -91,12 +91,14 @@
 // SPDX-FileCopyrightText: 2025 OnsenCapy <101037138+OnsenCapy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 Spessmann <156740760+Spessmann@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
@@ -112,7 +114,10 @@
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 // SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
+// SPDX-FileCopyrightText: 2025 quartG <140832593+quartuG3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 quartuG3 <quartug.dfd@gmail.com>
 // SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 //
@@ -194,6 +199,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/_Goobstation/Shuttles/retort_engineering.yml",
             "/Maps/_Goobstation/Shuttles/retort_janitorial.yml",
             "/Maps/_Goobstation/Shuttles/retort_cburn.yml",
+            "/Maps/_CorvaxNext/Nonstations/vox.yml" //Reserve edit - Vox raiders port
         };
 
         private static readonly string[] GameMaps =
@@ -232,6 +238,8 @@ namespace Content.IntegrationTests.Tests
             "Lavatest", // Lavaland Change
             "Loop",
             "Delta", // Goobstation - add Delta
+			"BattleRoyale", // BattleRoyale Change
+            "ReserveSillyIsland", // Reserve map
             "dm01-entryway",
             "Chloris", // Goobstation
             "Serpentcrest", // Goobstation

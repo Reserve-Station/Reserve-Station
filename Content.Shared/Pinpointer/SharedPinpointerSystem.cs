@@ -233,4 +233,9 @@ public abstract class SharedPinpointerSystem : EntitySystem
 
         component.CanRetarget = true;
     }
+    public virtual bool IsTrackingTarget(PinpointerComponent pinpointer, EntityUid target)
+    {
+        return pinpointer.Targets.Contains(target);
+    }
+
 }

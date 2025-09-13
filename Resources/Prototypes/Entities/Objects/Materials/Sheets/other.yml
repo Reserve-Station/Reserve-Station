@@ -54,6 +54,7 @@
     tags:
     - Sheet
     - DroneUsable # Goobstation
+    - NoPaint #EE spray paint port
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -162,6 +163,7 @@
   - type: Tag
     tags:
     - Sheet
+    - NoPaint #EE spray paint port
 
 - type: entity
   parent: SheetPlasma
@@ -205,6 +207,7 @@
     - Plastic
     - Sheet
     - DroneUsable # Goobstation
+    - NoPaint #EE spray paint port
   - type: Material
   - type: PhysicalComposition
     materialComposition:

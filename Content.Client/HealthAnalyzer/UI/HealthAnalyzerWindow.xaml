@@ -22,31 +22,31 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
-    MinWidth="800"
-    MinHeight="525"> <!-- Shitmed Change -->
+    MinWidth="650"
+    MinHeight="450"> <!-- Reserve - Changed from 800x525 to 650x450 for more compact size -->
     <BoxContainer Orientation="Vertical" VerticalExpand="True">
         <BoxContainer
             Orientation="Horizontal"
-            Margin="8 10 8 10">
+            Margin="6 8 6 8">
             <Button
                 Name="BodyButton"
-                Text="Body"
-                MinWidth="130"
-                MinHeight="30"
+                Text="{Loc health-analyzer-window-tab-body-text}"
+                MinWidth="100"
+                MinHeight="28"
                 HorizontalExpand="True"
                 StyleClasses="OpenRight"/>
             <Button
                 Name="OrgansButton"
-                Text="Organs"
-                MinWidth="130"
-                MinHeight="30"
+                Text="{Loc health-analyzer-window-tab-organs-text}"
+                MinWidth="100"
+                MinHeight="28"
                 HorizontalExpand="True"
                 StyleClasses="OpenBoth"/>
             <Button
                 Name="ChemicalsButton"
-                Text="Chemicals"
-                MinWidth="130"
-                MinHeight="30"
+                Text="{Loc health-analyzer-window-tab-chemicals-text}"
+                MinWidth="100"
+                MinHeight="28"
                 HorizontalExpand="True"
                 StyleClasses="OpenLeft"/>
         </BoxContainer>
@@ -71,7 +71,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     <!-- Shitmed Change End -->
                     <BoxContainer
                         Name="PatientDataContainer"
-                        Margin="0 16 0 5"
+                        Margin="0 12 0 5"
                         Orientation="Vertical">
                         <!-- Shitmed Change Start -->
                         <BoxContainer Orientation="Horizontal"

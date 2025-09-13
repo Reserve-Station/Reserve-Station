@@ -108908,13 +108908,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -16.5,55.5
       parent: 2
-- proto: HelpimovCircuitBoard
-  entities:
-  - uid: 9006
-    components:
-    - type: Transform
-      pos: -110.48048,8.710773
-      parent: 2
 - proto: Hemostat
   entities:
   - uid: 16410

@@ -15,6 +15,7 @@
   name: Urist McFelinid
   parent: MobFelinidBase
   id: MobFelinid
+  categories: [ HideSpawnMenu ] # Reserve
   components:
   - type: CombatMode
   - type: InteractionPopup

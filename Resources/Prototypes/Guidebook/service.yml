@@ -17,11 +17,16 @@
 # SPDX-FileCopyrightText: 2024 exincore <me@exin.xyz>
 # SPDX-FileCopyrightText: 2024 f0x-n3rd <150924715+f0x-n3rd@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 TheBorzoiMustConsume <197824988+TheBorzoiMustConsume@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: guideEntry
   id: Service
+  abstract: true #Reserve guidebook
   name: guide-entry-service
   text: "/ServerInfo/Guidebook/Service/Service.xml"
   filterEnabled: True
@@ -34,21 +39,25 @@
 
 - type: guideEntry
   id: Bartender
+  abstract: true #Reserve guidebook
   name: guide-entry-bartender
   text: "/ServerInfo/Guidebook/Service/Bartender.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Botany
+  abstract: true #Reserve guidebook
   name: guide-entry-botany
   text: "/ServerInfo/Guidebook/Service/Botany.xml"
 
 - type: guideEntry
   id: Chef
+  abstract: true #Reserve guidebook
   name: guide-entry-chef
   text: "/ServerInfo/Guidebook/Service/Chef.xml"
 
 - type: guideEntry
   id: Janitorial
+  abstract: true #Reserve guidebook
   name: guide-entry-janitorial
   text: "/ServerInfo/Guidebook/Service/Janitorial.xml"

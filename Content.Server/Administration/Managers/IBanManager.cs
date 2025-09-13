@@ -13,6 +13,7 @@
 
 using System.Net;
 using System.Threading.Tasks;
+using Content.Server.Database;
 using Content.Shared.Database;
 using Content.Shared.Roles;
 using Robust.Shared.Network;
@@ -49,7 +50,7 @@ public interface IBanManager
     /// <param name="reason">Reason for the ban</param>
     /// <param name="minutes">Number of minutes to ban for. 0 and null mean permanent</param>
     /// <param name="timeOfBan">Time when the ban was applied, used for grouping role bans</param>
-    public void CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan);
+    public Task CreateRoleBan(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableTypedHwid? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan); //ADT-Tweak Логи банов диса
 
     /// <summary>
     /// Pardons a role ban for the specified target, username or GUID

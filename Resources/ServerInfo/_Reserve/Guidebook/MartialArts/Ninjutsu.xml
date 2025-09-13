@@ -1,0 +1,89 @@
+<Document>
+
+  # Ниндзюцу
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingMaskNinja" Caption=""/>
+  </Box>
+
+  [bold]Ниндзюцу[/bold] - [textlink="боевое искусство" link="MartialArts"], тщательно разработанное [bold]кланом Паука[/bold].
+  [bold]Космические ниндзя[/bold] - истинные [bold]мастера[/bold] этой техники, но [bold]космические волшебники[/bold] тоже могут раскрыть её секреты.
+  Помни [bold]четыре учения[/bold]: Никогда не двигайся шумно. Бей только из тени. [bold]Терпение побеждает, спешка губит[/bold]. [bold]Смерть приходит в тишине[/bold].
+
+  ## Особые способности
+
+  ### Sneak Attack
+
+  <Box>
+    <GuideEntityEmbed Entity="EnergyKatana" Caption=""/>
+  </Box>
+
+  В тени тишины [bold]удар ниндзя[/bold] отзовётся [bold]силой двоих[/bold]. [bold]Удваивает урон[/bold] следующей [bold]атаки ближнего боя[/bold].
+  Как только урон нанесён, [bold]скрытность[/bold] исчезает, отступая в [bold]стремительность[/bold], ожидая следующего шанса подняться.
+  Включает [bold]захват ниндзюцу и убийство[/bold], отключает [bold]быстрый удар[/bold].
+
+  ### Loss of Surprise
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookLossOfSurprise" Caption=""/>
+  </Box>
+
+  В тишине возможности [bold]ниндзя[/bold] движется как шёпот на ветру.
+  [bold]Скорость[/bold] - их оружие, а момент для [bold]удара[/bold] мимолётен, как тень в темноте.
+  Длится [bold]5 секунд[/bold]. Отключает [bold]захват ниндзюцу и убийство[/bold], но включает [bold]быстрый удар[/bold].
+
+  ### Escape Plan
+
+  Ваша [bold]цель погибла[/bold]. Время уйти и планировать следующую [bold]атаку[/bold].
+
+  После успешного [bold]убийства[/bold] дух ниндзя обостряется и ускоряется. Их [bold]скорость передвижения[/bold] временно увеличивается,
+  скользя через тень и кровь - [bold]невидимый, неостановимый[/bold], и уже исчезнувший до следующего вдоха.
+
+  ## Комбо
+
+  ### Assassinate
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+  Наносит [bold]массивный урон[/bold] в грудь цели, если активна [bold]Sneak Attack[/bold]. Урон легко блокируется [bold]бронёй[/bold].
+  Работает в [bold]рукопашном бою[/bold] или атаками левой кнопкой мыши оружием [bold]Slash[/bold] типа.
+
+  ### Ninjutsu Takedown
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHelp" Caption=""/>
+  </Box>
+
+  Работает только с активной [bold]Sneak Attack[/bold]. Значительно [bold]замедляет[/bold] противника и [bold]заглушает[/bold] его.
+  Работает лучше, если выполнено [bold]сзади[/bold].
+
+  ### Swift Strike
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+    Когда враг [bold]сбит с ног[/bold], [bold]оружие ближнего боя[/bold] с [color=Red][bold]Slash[/bold][/color] уроном [color=Green][bold]бьёт быстрее, чем глаз может уследить[/bold][/color].
+    А [bold]безоружным[/bold], каждая [bold]атака[/bold] будет истощать [color=Purple][bold]Stamina[/bold][/color] противника. Работает только с активной [bold]Loss of Surprise[/bold].
+
+  ### Bite The Dust
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+  </Box>
+
+  Временно [bold]сбивает противника с ног[/bold]. Также наносит [color=Orange][bold]Blunt[/bold][/color] урон.
+
+  ### Dirty Kill
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+  </Box>
+
+  Временно [bold]оглушает[/bold] [bold]сбитого с ног противника[/bold]. Цель не может быть оглушена дольше, чем она лежит.
+
+</Document>

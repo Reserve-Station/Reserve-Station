@@ -256,7 +256,7 @@
   - BorgModuleHarvesting
   - BorgModuleLollypop # Goobstation
 
-  lawset: Clown # DeltaV: Custom lawset
+  lawset: Crewsimov # DeltaV: Custom lawset
 
   radioChannels:
   - Science

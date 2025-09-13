@@ -8,6 +8,5 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <GridContainer xmlns="https://spacestation14.io"
                Columns="5"
-               HorizontalAlignment="Center"
-               Margin="0 8">
+               HorizontalAlignment="Center">
 </GridContainer>

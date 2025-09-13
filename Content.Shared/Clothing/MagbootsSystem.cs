@@ -139,6 +139,10 @@ public sealed class SharedMagbootsSystem : EntitySystem
             _alerts.ShowAlert(user, ent.Comp.MagbootsAlert);
         else
             _alerts.ClearAlert(user, ent.Comp.MagbootsAlert);
+        //Reserve jetpack tweaks begin
+        var ev = new MagbootsUpdateStateEvent(state);
+        RaiseLocalEvent(user, ref ev);
+        //Reserve jetpack tweaks  end
     }
 
     private void OnIsWeightless(Entity<MagbootsComponent> ent, ref IsWeightlessEvent args)
@@ -159,3 +163,11 @@ public sealed class SharedMagbootsSystem : EntitySystem
         OnIsWeightless(ent, ref args.Args);
     }
 }
+//Reserve jetpack tweaks begin
+/// <summary>
+/// The event that rises when the state of MagbootEffects is changes
+/// </summary>
+/// <param name="State"></param>
+[ByRefEvent]
+public record struct MagbootsUpdateStateEvent(bool State);
+//Reserve jetpack tweaks end

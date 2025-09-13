@@ -28,6 +28,10 @@
   chatMessages: [ boops. ]
   chatTriggers:
   - boops
+  #Reserve translation begin
+  - буп
+  - буп.
+  #Reserve translation end
   whitelist:
     components:
     - Silicon
@@ -40,6 +44,12 @@
   chatMessages: [ whirrs. ]
   chatTriggers:
   - whirrs
+  #Reserve translation begin
+  - шумит
+  - шшш
+  - ш-ш-ш
+  - зашумел
+  #Reserve translation end
   whitelist:
     components:
     - Silicon
@@ -61,6 +71,10 @@
     - mars
     - marsing
     - marsed
+    #Reserve translation begin
+    - мар
+    - мар.
+    #Reserve translation end
 
 - type: emoteSounds
   id: UnisexPlasmaman

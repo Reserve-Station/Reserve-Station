@@ -82,7 +82,7 @@ names-ai-dataset-55 = Hivebot Overmind
 names-ai-dataset-56 = Huey
 
 # A play on the fad apple spawned of putting "i" infront of your tech products name
-names-ai-dataset-57 = iCore
+names-ai-dataset-57 = iAI
 
 # Hell on earth (web browser)
 names-ai-dataset-58 = I.E. 6

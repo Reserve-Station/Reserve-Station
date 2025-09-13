@@ -14,8 +14,11 @@
     weight: 6
     duration: 1
     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
+    startAnnouncementColor: "#18abf5"
     startAudio:
       path: /Audio/Announcements/attention.ogg
+      params: # Reserve MoreAnonces
+        volume: -4
     chaos: # Goobstation
       Mess: 5
       Friend: -5

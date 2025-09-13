@@ -5,8 +5,13 @@
 # SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 GreenArg7 <GreenArc12@outlook.com>
+# SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -17,11 +22,12 @@
   targetNode: bananiumSword
   category: construction-category-weapons
   objectType: Item
-  
-- type: construction
-  id: boomerang
-  graph: boomerangGraph
-  startNode: start
-  targetNode: boomerangFinish
-  category: construction-category-weapons
-  objectType: Item
+
+# Reserve - removed boomerang crafting for balance reasons
+#- type: construction
+#  id: boomerang
+#  graph: boomerangGraph
+#  startNode: start
+#  targetNode: boomerangFinish
+#  category: construction-category-weapons
+#  objectType: Item

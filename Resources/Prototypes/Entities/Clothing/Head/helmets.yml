@@ -647,9 +647,11 @@
   description: An armored helmet for use with the syndicate raid suit. Very stylish.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/syndie-raid.rsi
+    # sprite: Clothing/Head/Helmets/syndie-raid.rsi #Reserve raid suit resprite
+    sprite: _Reserve/Clothing/Head/Helmets/syndie-raid-helmet.rsi #Reserve raid suit resprite
   - type: Clothing
-    sprite: Clothing/Head/Helmets/syndie-raid.rsi
+    # sprite: Clothing/Head/Helmets/syndie-raid.rsi #Reserve raid suit resprite
+    sprite: _Reserve/Clothing/Head/Helmets/syndie-raid-helmet.rsi #Reserve raid suit resprite
   - type: Armor
     coverage:
     - Head
@@ -666,9 +668,19 @@
         Piercing: 0.35
         Heat: 0.35
         Caustic: 0.35
- # - type: HideLayerClothing  #Goobstation
- #   layers:
- #     Hair: HEAD
+  #Reserve raid suit rework begin
+        Radiation: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  #suit offers best protection against cold and flames with this helmet
+  #if you pair with SWAT helmet, it will defend a bit better, but less fire/cold protected
+  - type: TemperatureProtection
+    heatingCoefficient: 0.2
+    coolingCoefficient: 0.2
+  #Reserve raid suit rework end
+#  - type: HideLayerClothing
+#    layers:
+#      Hair: HEAD
 
 #Bone Helmet
 #No need to hide the hair on this one

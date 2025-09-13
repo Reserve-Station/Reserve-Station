@@ -61,7 +61,6 @@
 // SPDX-FileCopyrightText: 2024 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Spanky <scott@wearejacob.com>
 // SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
@@ -93,18 +92,24 @@
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
 // SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Rinary <72972221+Rinary1@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
 // SPDX-FileCopyrightText: 2025 Superlagg <sprambersonson@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tim <timfalken@hotmail.com>
 // SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
 // SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2025 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ash lea <ashkitten@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 echotry <xippl1@mail.ru>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 // SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -154,6 +159,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Chat.Systems;
 
@@ -184,12 +190,15 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly GhostVisibilitySystem _ghostVisibility = default!; // Goobstation Change
     [Dependency] private readonly ScryingOrbSystem _scrying = default!; // Goobstation Change
     [Dependency] private readonly CollectiveMindUpdateSystem _collectiveMind = default!; // Goobstation - Starlight collective mind port
+    [Dependency] private readonly IGameTiming _gameTiming = default!; //Reserve - emote cooldown
     [Dependency] private readonly LanguageSystem _language = default!; // Einstein Engines - Language
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
-    public const string DefaultAnnouncementSound = "/Audio/Announcements/attention.ogg";
+
+    public const string DefaultAnnouncementSound = "/Audio/Announcements/attention.ogg"; // Reserve Announcements
+    public const string CentComAnnouncementSound = "/Audio/Corvax/Announcements/centcomm.ogg"; // Reserve Announcements
     public const float DefaultObfuscationFactor = 0.2f; // Percentage of symbols in a whispered message that can be seen even by "far" listeners
     public readonly Color DefaultSpeakColor = Color.White; // Einstein Engines - Language
 
@@ -311,6 +320,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         LanguagePrototype? languageOverride = null // Einstein Engines - Language
         )
     {
+
         if (HasComp<GhostComponent>(source))
         {
             // Ghosts can only send dead chat messages, so we'll forward it to InGame OOC.
@@ -495,6 +505,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null
         )
+    // Reserve-Start
     {
         sender ??= Loc.GetString("chat-manager-sender-announcement");
 
@@ -502,10 +513,12 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
-            _audio.PlayGlobal(announcementSound == null ? DefaultAnnouncementSound : _audio.ResolveSound(announcementSound), Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
+            if (sender == Loc.GetString("admin-announce-announcer-default")) announcementSound = new SoundPathSpecifier(CentComAnnouncementSound); // Reserve-Announcements: Support custom alert sound from admin panel
+            _audio.PlayGlobal(announcementSound == null ? DefaultAnnouncementSound : _audio.GetSound(announcementSound), Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
     }
+    // Reserve-End
 
     /// <summary>
     /// Dispatches an announcement to players selected by filter.
@@ -904,8 +917,13 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("message", FormattedMessage.RemoveMarkupOrThrow(action)));
 
         if (checkEmote)
-            TryEmoteChatInput(source, action);
-
+            {
+            // Reserve emote cooldwon begin
+            TryEmoteChatInput(source, action, out var consumed);
+            if (consumed)
+                return;
+            // Reserve emote cooldwon end
+            }
         SendInVoiceRange(
             ChatChannel.Emotes,
             name,
@@ -918,7 +936,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             author,
             checkLOS: EmoteRespectsLOS // Floofstation - Some things don't go through walls, but they can go through windows.
             ); // Einstein Engines - Language
-
         if (!hideLog)
             if (name != Name(source))
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Emote from {ToPrettyString(source):user} as {name}: {action}");
@@ -1115,6 +1132,9 @@ public sealed partial class ChatSystem : SharedChatSystem
     private string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false, bool capitalizeTheWordI = true)
     {
         var newMessage = SanitizeMessageReplaceWords(message.Trim());
+
+        // Reserve add
+        newMessage = newMessage.Replace("/", "").Replace("(", "").Replace(")", "");
 
         GetRadioKeycodePrefix(source, newMessage, out newMessage, out var prefix);
 

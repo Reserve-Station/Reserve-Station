@@ -39,6 +39,8 @@ using Content.Server.Nutrition.EntitySystems;
 using Content.Server.Storage.Components;
 using Content.Server.Temperature.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Cuffs;
+using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Fluids.Components;
@@ -92,6 +94,7 @@ public sealed class NPCUtilitySystem : EntitySystem
     [Dependency] private readonly MobThresholdSystem _thresholdSystem = default!;
     [Dependency] private readonly TurretTargetSettingsSystem _turretTargetSettings = default!;
     [Dependency] private readonly SharedWieldableSystem _wieldable = default!; // Goobstation
+    [Dependency] private readonly SharedCuffableSystem _cuffableSystem = default!;
 
     private EntityQuery<PuddleComponent> _puddleQuery;
     private EntityQuery<TransformComponent> _xformQuery;

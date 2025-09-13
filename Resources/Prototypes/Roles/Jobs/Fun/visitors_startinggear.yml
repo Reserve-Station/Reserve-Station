@@ -16,7 +16,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitCaptain
     shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesSunglasses
+    eyes: ClothingEyesGlassesCommand # Reserve-CommandHUD
     gloves: ClothingHandsGlovesCaptain
     head: ClothingHeadHatCaptain
     neck: ClothingNeckCloakCap
@@ -32,7 +32,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitCapFormal
     shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesSunglasses
+    eyes: ClothingEyesGlassesCommand # Reserve-CommandHUD
     gloves: ClothingHandsGlovesCaptain
     head: ClothingHeadHatCapcap
     neck: ClothingNeckMantleCap
@@ -54,6 +54,7 @@
     belt: ClothingBeltChiefEngineerFilled
     back: ClothingBackpackDuffelEngineering
     ears: ClothingHeadsetAltEngineering # Goobstation
+    eyes: ClothingEyesGlassesWeldingCommand # Reserve-CommandHUD
     outerClothing: ClothingOuterVestHazard
     pocket1: WeaponDisabler
 
@@ -68,6 +69,7 @@
     belt: ClothingBeltChiefEngineerFilled
     back: ClothingBackpackSatchelEngineering
     ears: ClothingHeadsetAltEngineering # Goobstation
+    eyes: ClothingEyesGlassesWeldingCommand # Reserve-CommandHUD
     outerClothing: ClothingOuterWinterCE
     pocket1: WeaponDisabler
 
@@ -82,6 +84,7 @@
     id: VisitorPDA
     back: ClothingBackpackMedical
     ears: ClothingHeadsetAltMedical # Goobstation
+    eyes: ClothingEyesGlassesMedicalCommand # Reserve-CommandHUD
     belt: ClothingBeltMedicalFilled
     outerClothing: ClothingOuterCoatLabCmo
     pocket1: WeaponDisabler
@@ -97,6 +100,7 @@
     id: VisitorPDA
     back: ClothingBackpackSatchelMedical
     ears: ClothingHeadsetAltMedical # Goobstation
+    eyes: ClothingEyesGlassesMedicalCommand # Reserve-CommandHUD
     belt: ClothingBeltMedicalFilled
     outerClothing: ClothingOuterCoatLabCmo
     pocket1: WeaponDisabler
@@ -112,6 +116,7 @@
     belt: WeaponDisabler
     back: ClothingBackpackDebug
     ears: ClothingHeadsetAltCommand
+    eyes: ClothingEyesGlassesCommand # Reserve-CommandHUD
     outerClothing: ClothingOuterWinterHoP
     pocket1: WeaponDisabler
 
@@ -126,6 +131,7 @@
     belt: WeaponDisabler
     back: ClothingBackpackSatchelLeather
     ears: ClothingHeadsetAltCommand
+    eyes: ClothingEyesGlassesCommand # Reserve-CommandHUD
     outerClothing: ClothingOuterWinterHoP
     pocket1: WeaponDisabler
 
@@ -179,6 +185,7 @@
     id: VisitorPDA
     back: ClothingBackpackScience
     ears: ClothingHeadsetAltScience # Goobstation
+    eyes: ClothingEyesGlassesDiagnosticCommand # Reserve-CommandHUD
     outerClothing: ClothingOuterCoatRD
     pocket1: WeaponDisabler
 
@@ -193,6 +200,7 @@
     id: VisitorPDA
     back: ClothingBackpackSatchelScience
     ears: ClothingHeadsetAltScience # Goobstation
+    eyes: ClothingEyesGlassesDiagnosticCommand # Reserve-CommandHUD
     outerClothing: ClothingOuterCoatRD
     pocket1: WeaponDisabler
 
@@ -206,9 +214,10 @@
     id: VisitorPDA
     back: ClothingBackpackCargo
     ears: ClothingHeadsetAltCargo # Goobstation
+    eyes: ClothingEyesGlassesAppraisalCommand # Reserve-CommandHUD
     outerClothing: ClothingOuterWinterQM
     pocket1: WeaponDisabler
-    pocket2: AppraisalTool
+    #pocket2: AppraisalTool # Reserve-CommandHUD
 
 - type: startingGear
   id: VisitorQMAlt
@@ -220,9 +229,10 @@
     id: VisitorPDA
     back: ClothingBackpackSatchelCargo
     ears: ClothingHeadsetAltCargo # Goobstation
+    eyes: ClothingEyesGlassesAppraisalCommand # Reserve-CommandHUD
     outerClothing: ClothingOuterWinterQM
     pocket1: WeaponDisabler
-    pocket2: AppraisalTool
+    #pocket2: AppraisalTool # Reserve-CommandHUD
 
 # Security
 

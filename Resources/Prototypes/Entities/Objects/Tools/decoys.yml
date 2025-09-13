@@ -35,7 +35,7 @@
     size: Normal
   - type: RandomMetadata # No metagaming these, jimbo.
     nameSegments:
-    - NamesSyndicatePrefix
+    - NamesSyndicatePrefix #Reserve datasets fix
     - NamesSyndicateNormal
     nameFormat: name-format-nukie-generic
   - type: Damageable

@@ -17,6 +17,9 @@ namespace Content.Goobstation.Server.Blob.Components;
 [RegisterComponent]
 public sealed partial class BlobFactoryComponent : Component
 {
+    [ViewVariables(VVAccess.ReadOnly)]
+    public float SpawnedCount = 0; //Reserve better blob factory
+
     [DataField("spawnLimit"), ViewVariables(VVAccess.ReadWrite)]
     public float SpawnLimit = 3;
 

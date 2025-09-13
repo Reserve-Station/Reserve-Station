@@ -124,7 +124,7 @@
   name: Urist McHands
   parent: BaseMobHuman
   id: MobHuman
-  
+
 #Syndie
 - type: entity
   parent: MobHuman
@@ -218,7 +218,7 @@
     roleLoadout: [ RoleSurvivalSyndicate ]
   - type: RandomMetadata
     nameSegments:
-    - NamesSyndicatePrefix
+    - NamesSyndicatePrefix #Reserve datasets fix
     - NamesSyndicateNormal
     nameFormat: name-format-nukie-generic
   - type: NpcFactionMember

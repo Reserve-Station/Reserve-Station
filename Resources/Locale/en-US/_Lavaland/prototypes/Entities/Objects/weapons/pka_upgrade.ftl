@@ -1,0 +1,10 @@
+ent-BasePKAUpgrade = набор улучшения ПКУ
+    .desc = Набор улучшения для протокинетического ускорителя.
+ent-PKAUpgradeDamage = набор улучшения ПКУ (урон)
+    .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeRange = набор улучшения ПКУ (дальность стрельбы)
+    .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeFireRate = набор улучшения ПКУ (скорость стрельбы)
+    .desc = { ent-BasePKAUpgrade.desc }
+ent-PKAUpgradeLight = набор улучшения ПКУ (свет)
+    .desc = { ent-BasePKAUpgrade.desc }

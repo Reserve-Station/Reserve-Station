@@ -45,3 +45,6 @@ health-analyzer-window-scan-mode-inactive = Inactive
 health-analyzer-popup-scan-target = {CAPITALIZE(THE($user))} is trying to scan you!
 ## Shitmed Change
 health-analyzer-window-return-button-text = < Return
+health-analyzer-window-tab-body-text = Body
+health-analyzer-window-tab-organs-text = Organs
+health-analyzer-window-tab-chemicals-text = Chemicals

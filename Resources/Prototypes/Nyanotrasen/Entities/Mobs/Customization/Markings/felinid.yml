@@ -13,8 +13,20 @@
 - type: marking
   id: FelinidEarsBasic
   bodyPart: HeadTop
-  markingCategory: HeadTop
+  markingCategory: Special
   speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      basic_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: basic_outer
@@ -24,8 +36,20 @@
 - type: marking
   id: FelinidEarsCurled
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Felinid]
+  markingCategory: Special
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      curled_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: curled_outer
@@ -35,8 +59,20 @@
 - type: marking
   id: FelinidEarsDroopy
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Felinid]
+  markingCategory: Special
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      droopy_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: droopy_outer
@@ -46,8 +82,20 @@
 - type: marking
   id: FelinidEarsFuzzy
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Felinid]
+  markingCategory: Special
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      fuzzy_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: basic_outer
@@ -57,8 +105,20 @@
 - type: marking
   id: FelinidEarsStubby
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Felinid]
+  markingCategory: Special
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      stubby_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: stubby_outer
@@ -68,8 +128,24 @@
 - type: marking
   id: FelinidEarsTall
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Felinid]
+  markingCategory: Special
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      tall_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
+      tall_fuzz:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: tall_outer
@@ -81,8 +157,20 @@
 - type: marking
   id: FelinidEarsTorn
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Felinid]
+  markingCategory: Special
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      torn_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: torn_outer
@@ -92,8 +180,20 @@
 - type: marking
   id: FelinidEarsWide
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Felinid]
+  markingCategory: Special
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      wide_inner:
+        type:
+          !type:SimpleColoring
+          color: "#FFFFFF"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_ears.rsi
     state: wide_outer
@@ -107,7 +207,14 @@
   id: FelinidTailBasic
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Tajaran, Human] # Goobstation - Tajaran
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -120,7 +227,19 @@
   id: FelinidTailBasicWithBow
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Tajaran] # Goobstation - Tajaran
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      basic_bow:
+        type:
+          !type:SimpleColoring
+          color: "#FF4A4A"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -135,7 +254,19 @@
   id: FelinidTailBasicWithBell
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Tajaran] # Goobstation - Tajaran
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      basic_bell:
+        type:
+          !type:SimpleColoring
+          color: "#FFC800"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
@@ -150,7 +281,23 @@
   id: FelinidTailBasicWithBowAndBell
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Felinid, Tajaran] # Goobstation - Tajaran
+  speciesRestriction: [Felinid, Human]
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SkinColoring
+    layers:
+      basic_bell:
+        type:
+          !type:SimpleColoring
+          color: "#FF4A4A"
+      basic_bow:
+        type:
+          !type:SimpleColoring
+          color: "#FFC800"
   sprites:
   - sprite: Nyanotrasen/Mobs/Customization/felinid_tails.rsi
     state: basic_tail_tip
