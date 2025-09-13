@@ -873,6 +873,7 @@
       - state: inhand-left-blade
         shader: unshaded
         map: [ "blade" ]
+
       right:
       - state: inhand-right-blade
         shader: unshaded
@@ -902,6 +903,55 @@
       path: /Audio/Weapons/eblademiss.ogg
       params:
         variation: 0.125
+
+    - type: PointLight
+      enabled: false
+      radius: 2
+      energy: 2
+      color: white
+    - type: Item
+      size: Small
+      sprite: Objects/Weapons/Melee/e_sword-inhands.rsi
+    - type: UseDelay
+      delay: 1.0
+      netsync: false
+    - type: Appearance
+    - type: ToggleableVisuals
+      spriteLayer: blade
+      inhandVisuals:
+        left:
+          - state: inhand-left-blade
+            shader: unshaded
+        right:
+          - state: inhand-right-blade
+            shader: unshaded
+    - type: ItemTogglePointLight
+    - type: DisarmMalus
+      malus: 0
+    - type: StaminaDamageOnHit
+      damage: 8
+    - type: MeleeWeapon
+      wideAnimationRotation: -135
+      damage:
+        types:
+          Blunt: 0
+    - type: ItemToggleMeleeWeapon
+      activatedDamage:
+        types:
+          Heat: 10.5
+      activatedSoundOnHit:
+        path: /Audio/Weapons/eblade1.ogg
+        params:
+          variation: 0.250
+      activatedSoundOnHitNoDamage:
+        path: /Audio/Weapons/eblade1.ogg
+        params:
+          variation: 0.250
+      activatedSoundOnSwing:
+        path: /Audio/Weapons/eblademiss.ogg
+        params:
+          variation: 0.125
+
   - type: Tag
     tags:
     - ToySword #Goobstation

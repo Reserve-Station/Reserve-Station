@@ -330,13 +330,13 @@
   - type: Tag
     tags:
     - CorgiWearable
+    - HidesIdentity
     - WhitelistChameleon
 
 - type: entity
   parent: [ClothingEyesBase, BaseSyndicateContraband] # Goob edit
   id: ClothingEyesHudSyndicateAgent
   name: syndicate medical visor
-  description: The Syndicate Corpsman's professional heads-up display, designed for quick diagnosis of their team's status.
   components:
   - type: Sprite
     sprite: Clothing/Eyes/Hud/syndagent.rsi
