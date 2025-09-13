@@ -83,12 +83,15 @@ reagent-effect-guidebook-status-effect =
             { $chance ->
                 [1] Вызывает
                *[other] вызывают
-            } { LOC($key) } по крайней мере { NATURALFIXED($time, 3) } { MANY("second", $time) } с накоплением
+            } { LOC($key) } по крайней мере { NATURALFIXED($time, 3) } { MANY("second", $time) } { $refresh ->
+                [false] с
+               *[true] без
+            } накопление
        *[set]
             { $chance ->
                 [1] Вызывает
                *[other] вызывают
-            } { LOC($key) } минимум на { NATURALFIXED($time, 3) } без накопления
+            } { LOC($key) } минимум на { NATURALFIXED($time, 3) }, эффект не накапливается
         [remove]
             { $chance ->
                 [1] Удаляет

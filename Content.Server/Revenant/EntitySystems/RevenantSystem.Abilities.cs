@@ -401,7 +401,8 @@ public sealed partial class RevenantSystem
         if (newHaunts > 0 && _statusEffects.TryAddStatusEffect(uid,
             RevenantEssenceRegen,
             comp.HauntEssenceRegenDuration,
-            true
+            true,
+            component: new RevenantRegenModifierComponent(witnesses, newHaunts)
         ))
         {
             if (_mind.TryGetMind(uid, out var _, out var mind) && _playerManager.TryGetSessionById(mind.UserId, out var session))
@@ -591,7 +592,7 @@ public sealed partial class RevenantSystem
             _handsSystem.AddHand(uid, "crayon", HandLocation.Middle);
             var crayon = Spawn("CrayonBlood");
             component.BloodCrayon = crayon;
-            _handsSystem.DoPickup(uid, "crayon", crayon);
+            _handsSystem.DoPickup(uid, hands.Hands["crayon"], crayon);
             EnsureComp<UnremoveableComponent>(crayon);
         }
     }

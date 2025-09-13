@@ -88,8 +88,8 @@ namespace Content.Server.Nuke
         /// <summary>
         ///     How long a user must wait to disarm the bomb.
         /// </summary>
-        [DataField("disarmDoAfterLength")]
-        public float DisarmDoAfterLength = 30.0f;
+        [DataField("disarmDoafterLength")]
+        public float DisarmDoafterLength = 60.0f;
 
         [DataField("alertLevelOnActivate")] public string AlertLevelOnActivate = default!;
         [DataField("alertLevelOnOverride")] public string AlertLevelOnOverride = default!; // Goobstation

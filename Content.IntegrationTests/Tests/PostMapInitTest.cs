@@ -242,7 +242,7 @@ namespace Content.IntegrationTests.Tests
             "ReserveSillyIsland", // Reserve map
             "dm01-entryway",
             "Chloris", // Goobstation
-            "Serpentcrest", // Goobstation
+            "Serpentcrest" // Goobstation
         };
 
         /// <summary>

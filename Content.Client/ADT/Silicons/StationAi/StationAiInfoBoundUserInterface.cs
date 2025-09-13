@@ -2,7 +2,6 @@
 // SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
-
 using Robust.Client.UserInterface;
 using JetBrains.Annotations;
 using Content.Shared.CrewManifest;
