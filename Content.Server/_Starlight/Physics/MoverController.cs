@@ -1,85 +1,50 @@
-// SPDX-FileCopyrightText: 2019 DamianX <DamianX@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2019 Injazz <43905364+Injazz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2019 Silver <Silvertorch5@gmail.com>
-// SPDX-FileCopyrightText: 2019 ZelteHonor <gabrieldionbouchard@gmail.com>
-// SPDX-FileCopyrightText: 2019 moneyl <8206401+Moneyl@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 4dplanner <3combined@gmail.com>
-// SPDX-FileCopyrightText: 2020 Clyybber <darkmine956@gmail.com>
-// SPDX-FileCopyrightText: 2020 ColdAutumnRain <73938872+ColdAutumnRain@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 ComicIronic <comicironic@gmail.com>
-// SPDX-FileCopyrightText: 2020 FL-OZ <anotherscuffed@gmail.com>
-// SPDX-FileCopyrightText: 2020 Jackson Lewis <inquisitivepenguin@protonmail.com>
-// SPDX-FileCopyrightText: 2020 Memory <58238103+FL-OZ@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
-// SPDX-FileCopyrightText: 2020 Vince <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2020 Ygg01 <y.laughing.man.y@gmail.com>
-// SPDX-FileCopyrightText: 2020 chairbender <kwhipke1@gmail.com>
-// SPDX-FileCopyrightText: 2020 zumorica <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Galactic Chimp <GalacticChimpanzee@gmail.com>
-// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@gmail.com>
-// SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2021 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <zddm@outlook.es>
-// SPDX-FileCopyrightText: 2021 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 tmtmtl30 <53132901+tmtmtl30@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2022 Radrark <76271993+Radrark@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2023 Doru991 <75124791+Doru991@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
-// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
-// SPDX-FileCopyrightText: 2024 {Koks} <koks@blue-creature.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
+using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
+using Content.Shared._Starlight.Sound;
 using Content.Shared.Friction;
+using Content.Shared.Maps;
+using Content.Shared.Mind.Components;
 using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
+using Content.Shared.Starlight.CCVar;
 using Prometheus;
+using Robust.Server.Player;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
-using DroneConsoleComponent = Content.Server.Shuttles.DroneConsoleComponent;
+using Robust.Shared.Threading;
 using DependencyAttribute = Robust.Shared.IoC.DependencyAttribute;
-using Robust.Shared.Map.Components;
+using DroneConsoleComponent = Content.Server.Shuttles.DroneConsoleComponent;
 
-namespace Content.Server.Physics.Controllers;
+namespace Content.Server._Starlight.Physics;
 
-public sealed class MoverController : SharedMoverController
+public sealed class SLMoverController : SharedMoverController
 {
     private static readonly Gauge ActiveMoverGauge = Metrics.CreateGauge(
         "physics_active_mover_count",
         "Active amount of InputMovers being processed by MoverController");
 
+    private static readonly Gauge ActivePrioritizedMoverGauge = Metrics.CreateGauge(
+    "physics_active_prioritized_mover_count"    ,
+    "Active amount of prioritized InputMovers being processed by MoverController");
+
     [Dependency] private readonly ThrusterSystem _thruster = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
+    [Dependency] private readonly IParallelManager _parallel = default!; 
+    [Dependency] private readonly IPlayerManager _players = default!; 
+    [Dependency] private readonly SharedAudioSystem _audio = default!; 
+
+    private HandleMobMovementJob _handleMobMovementJob; 
 
     private Dictionary<EntityUid, (ShuttleComponent, List<(EntityUid, PilotComponent, InputMoverComponent, TransformComponent)>)> _shuttlePilots = new();
 
@@ -90,6 +55,8 @@ public sealed class MoverController : SharedMoverController
         SubscribeLocalEvent<RelayInputMoverComponent, PlayerDetachedEvent>(OnRelayPlayerDetached);
         SubscribeLocalEvent<InputMoverComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<InputMoverComponent, PlayerDetachedEvent>(OnPlayerDetached);
+
+        _handleMobMovementJob = new HandleMobMovementJob(this); 
     }
 
     private void OnRelayPlayerAttached(Entity<RelayInputMoverComponent> entity, ref PlayerAttachedEvent args)
@@ -119,25 +86,28 @@ public sealed class MoverController : SharedMoverController
         return true;
     }
 
-    private HashSet<EntityUid> _moverAdded = new();
-    private List<Entity<InputMoverComponent>> _movers = new();
+    private readonly HashSet<EntityUid> _moverAdded = new();
+    private readonly List<Entity<InputMoverComponent>> _movers = [];
+    private readonly List<Entity<InputMoverComponent>> _prioritizedMovers = [];
 
-    private void InsertMover(Entity<InputMoverComponent> source)
+    private void InsertMover(Entity<InputMoverComponent> source, bool prioritized = false)
     {
-        // Already added
-        // Goob-Station - Surely there wasnt a reason this check was after the if statement, and nothing will break, right?
-        if (!_moverAdded.Add(source.Owner))
-            return;
-
         if (TryComp(source, out MovementRelayTargetComponent? relay))
         {
             if (TryComp(relay.Source, out InputMoverComponent? relayMover))
             {
-                InsertMover((relay.Source, relayMover));
+                InsertMover((relay.Source, relayMover), true);
             }
         }
 
-        _movers.Add(source);
+        // Already added
+        if (!_moverAdded.Add(source.Owner))
+            return;
+
+        if(prioritized)
+            _prioritizedMovers.Add(source);
+        else
+            _movers.Add(source);
     }
 
     public override void UpdateBeforeSolve(bool prediction, float frameTime)
@@ -145,23 +115,226 @@ public sealed class MoverController : SharedMoverController
         base.UpdateBeforeSolve(prediction, frameTime);
 
         _moverAdded.Clear();
+        _prioritizedMovers.Clear();
         _movers.Clear();
-        var inputQueryEnumerator = AllEntityQuery<InputMoverComponent>();
 
-        // Need to order mob movement so that movers don't run before their relays.
+        foreach ( var session in _players.Sessions)
+            if(session.AttachedEntity.HasValue
+                && TryComp<InputMoverComponent>(session.AttachedEntity.Value, out var mover))
+                InsertMover((session.AttachedEntity.Value, mover), true);
+
+        var inputQueryEnumerator = EntityQueryEnumerator<InputMoverComponent>();
         while (inputQueryEnumerator.MoveNext(out var uid, out var mover))
-        {
             InsertMover((uid, mover));
-        }
 
-        foreach (var mover in _movers)
-        {
+        foreach (var mover in _prioritizedMovers)
             HandleMobMovement(mover, frameTime);
+
+        _handleMobMovementJob.FrameTime = frameTime;
+        _handleMobMovementJob.Prepare(_movers);
+
+        _parallel.ProcessNow(_handleMobMovementJob, _movers.Count);
+
+        var velocities = _handleMobMovementJob.Velocities;
+        var rotations = _handleMobMovementJob.Rotations;
+        for (var i = 0; i < velocities.Length; i++)
+        {
+            ref readonly var velocity = ref velocities[i];
+            ref readonly var rotation = ref rotations[i];
+            var (uid, mover) = _movers[i];
+            if (velocity.HasValue)
+            {
+                PhysicsSystem.SetLinearVelocity(uid, velocity.Value);
+                PhysicsSystem.SetAngularVelocity(uid, 0);
+            }
+            if(rotation.HasValue)
+                _transform.SetLocalRotation(uid, rotation.Value);
+
         }
+        foreach (ref readonly var sound in _handleMobMovementJob.Sounds)
+            if (sound.HasValue)
+                _audio.PlayPredicted(sound.Value.SoundSpecifier, sound.Value.Source, sound.Value.User, sound.Value.AudioParams);
 
         ActiveMoverGauge.Set(_movers.Count);
+        ActivePrioritizedMoverGauge.Set(_prioritizedMovers.Count);
 
         HandleShuttleMovement(frameTime);
+    }
+
+    public Vector2? HandleAIMobMovement(
+        Entity<InputMoverComponent> entity,
+        float frameTime,
+        out SoundEvent? soundEvent,
+        out Angle? rotation)
+    {
+        soundEvent = null;
+        rotation = null;
+        var uid = entity.Owner;
+        var mover = entity.Comp;
+
+        if (!XformQuery.TryComp(entity.Owner, out var xform))
+            return null;
+
+        // Update relative movement
+        if (mover.LerpTarget < Timing.CurTime)
+        {
+            TryUpdateRelative(uid, mover, xform);
+        }
+
+        LerpRotation(uid, mover, frameTime);
+
+        // If we can't move then just use tile-friction / no movement handling.
+        if (!mover.CanMove
+            || !PhysicsQuery.TryComp(uid, out var physicsComponent)
+            || PullableQuery.TryGetComponent(uid, out var pullable) && pullable.BeingPulled)
+        {
+            UsedMobMovement[uid] = false;
+            return null;
+        }
+
+        // If the body is in air but isn't weightless then it can't move
+        // TODO: MAKE ISWEIGHTLESS EVENT BASED
+        var weightless = _gravity.IsWeightless(uid, physicsComponent, xform);
+        var inAirHelpless = false;
+
+        if (physicsComponent.BodyStatus != BodyStatus.OnGround && !CanMoveInAirQuery.HasComponent(uid))
+        {
+            if (!weightless)
+            {
+                UsedMobMovement[uid] = false;
+                return null;
+            }
+            inAirHelpless = true;
+        }
+
+        UsedMobMovement[uid] = true;
+
+        var moveSpeedComponent = ModifierQuery.CompOrNull(uid);
+
+        float friction;
+        float accel;
+        Vector2 wishDir;
+        var velocity = physicsComponent.LinearVelocity;
+
+        // Get current tile def for things like speed/friction mods
+        ContentTileDefinition? tileDef = null;
+
+        var touching = false;
+        // Whether we use tilefriction or not
+        if (weightless || inAirHelpless)
+        {
+            // Find the speed we should be moving at and make sure we're not trying to move faster than that
+            var walkSpeed = moveSpeedComponent?.WeightlessWalkSpeed ?? MovementSpeedModifierComponent.DefaultBaseWalkSpeed;
+            var sprintSpeed = moveSpeedComponent?.WeightlessSprintSpeed ?? MovementSpeedModifierComponent.DefaultBaseSprintSpeed;
+
+            wishDir = AssertValidWish(mover, walkSpeed, sprintSpeed);
+
+            var ev = new CanWeightlessMoveEvent(uid);
+            RaiseLocalEvent(uid, ref ev, true);
+
+            touching = ev.CanMove || xform.GridUid != null || MapGridQuery.HasComp(xform.GridUid);
+
+            // If we're touching then use the weightless values
+            if (touching)
+            {
+                touching = true;
+                if (wishDir != Vector2.Zero)
+                    friction = moveSpeedComponent?.WeightlessFriction ?? _airDamping;
+                else
+                    friction = moveSpeedComponent?.WeightlessFrictionNoInput ?? _airDamping;
+            }
+            // Otherwise use the off-grid values.
+            else
+            {
+                friction = moveSpeedComponent?.OffGridFriction ?? _offGridDamping;
+            }
+
+            accel = moveSpeedComponent?.WeightlessAcceleration ?? MovementSpeedModifierComponent.DefaultWeightlessAcceleration;
+        }
+        else
+        {
+            if (MapGridQuery.TryComp(xform.GridUid, out var gridComp)
+                && _mapSystem.TryGetTileRef(xform.GridUid.Value, gridComp, xform.Coordinates, out var tile)
+                && physicsComponent.BodyStatus == BodyStatus.OnGround)
+                tileDef = (ContentTileDefinition)_tileDefinitionManager[tile.Tile.TypeId];
+
+            var walkSpeed = moveSpeedComponent?.CurrentWalkSpeed ?? MovementSpeedModifierComponent.DefaultBaseWalkSpeed;
+            var sprintSpeed = moveSpeedComponent?.CurrentSprintSpeed ?? MovementSpeedModifierComponent.DefaultBaseSprintSpeed;
+
+            wishDir = AssertValidWish(mover, walkSpeed, sprintSpeed);
+
+            if (wishDir != Vector2.Zero)
+            {
+                friction = moveSpeedComponent?.Friction ?? MovementSpeedModifierComponent.DefaultFriction;
+                friction *= tileDef?.MobFriction ?? tileDef?.Friction ?? 1f;
+            }
+            else
+            {
+                friction = moveSpeedComponent?.FrictionNoInput ?? MovementSpeedModifierComponent.DefaultFrictionNoInput;
+                friction *= tileDef?.Friction ?? 1f;
+            }
+
+            accel = moveSpeedComponent?.Acceleration ?? MovementSpeedModifierComponent.DefaultAcceleration;
+            accel *= tileDef?.MobAcceleration ?? 1f;
+        }
+        // This way friction never exceeds acceleration when you're trying to move.
+        // If you want to slow down an entity with "friction" you shouldn't be using this system.
+        if (wishDir != Vector2.Zero)
+            friction = Math.Min(friction, accel);
+        friction = Math.Max(friction, _minDamping);
+        var minimumFrictionSpeed = moveSpeedComponent?.MinimumFrictionSpeed ?? MovementSpeedModifierComponent.DefaultMinimumFrictionSpeed;
+        Friction(minimumFrictionSpeed, frameTime, friction, ref velocity);
+
+        if (!weightless || touching)
+            Accelerate(ref velocity, in wishDir, accel, frameTime);
+
+        SetWishDir((uid, mover), wishDir);
+
+        /*
+         * SNAKING!!! >-( 0 ================>
+         * Snaking is a feature where you can move faster by strafing in a direction perpendicular to the
+         * direction you intend to move while still holding the movement key for the direction you're trying to move.
+         * Snaking only works if acceleration exceeds friction, and it's effectiveness scales as acceleration continues
+         * to exceed friction.
+         * Snaking works because friction is applied first in the direction of our current velocity, while acceleration
+         * is applied after in our "Wish Direction" and is capped by the dot of our wish direction and current direction.
+         * This means when you change direction, you're technically able to accelerate more than what the velocity cap
+         * allows, but friction normally eats up the extra movement you gain.
+         * By strafing as stated above you can increase your speed by about 1.4 (square root of 2).
+         * This only works if friction is low enough so be sure that anytime you are letting a mob move in a low friction
+         * environment you take into account the fact they can snake! Also be sure to lower acceleration as well to
+         * prevent jerky movement!
+         */
+        //PhysicsSystem.SetLinearVelocity(uid, velocity, body: physicsComponent);
+
+        // Ensures that players do not spiiiiiiin
+        //PhysicsSystem.SetAngularVelocity(uid, 0, body: physicsComponent);
+
+        // Handle footsteps at the end
+        if (wishDir != Vector2.Zero)
+        {
+            if (!NoRotateQuery.HasComponent(uid))
+            {
+                // TODO apparently this results in a duplicate move event because "This should have its event run during
+                // island solver"??. So maybe SetRotation needs an argument to avoid raising an event?
+                var worldRot = _transform.GetWorldRotation(xform);
+
+                rotation = xform.LocalRotation + wishDir.ToWorldAngle() - worldRot;
+            }
+
+            if (!weightless && MobMoverQuery.TryGetComponent(uid, out var mobMover) &&
+                TryGetSound(weightless, uid, mover, mobMover, xform, out var sound, tileDef: tileDef))
+            {
+                var soundModifier = mover.Sprinting ? 3.5f : 1.5f;
+
+                var audioParams = sound.Params
+                    .WithVolume(sound.Params.Volume + soundModifier)
+                    .WithVariation(sound.Params.Variation ?? mobMover.FootstepVariation);
+
+                soundEvent = new SoundEvent(sound, uid, uid, audioParams);
+            }
+        }
+        return velocity;
     }
 
     public (Vector2 Strafe, float Rotation, float Brakes) GetPilotVelocityInput(PilotComponent component)
@@ -632,4 +805,5 @@ public sealed class MoverController : SharedMoverController
         && (ftl.State & (FTLState.Starting | FTLState.Travelling | FTLState.Arriving)) != 0x0
             || HasComp<PreventPilotComponent>(shuttleUid);
     }
+
 }
