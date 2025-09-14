@@ -188,6 +188,25 @@
     - заурчала
     #Reserve translation end
 
+- type: emote # Mono
+  id: Bagawk
+  name: chat-emote-name-bagawk
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/caw.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-bagawk"]
+  chatTriggers:
+  - bagawk
+  - bagawks
+  - bawk
+  - bawks
+
 - type: emote
   id: Gulp
   name: chat-emote-name-gulp

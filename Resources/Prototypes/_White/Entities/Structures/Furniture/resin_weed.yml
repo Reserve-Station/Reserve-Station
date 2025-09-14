@@ -17,7 +17,7 @@
     key: cm_xeno_weeds
     base: weed_dir
     mode: CardinalFlags
-  #  - type: SmoothEdge # goobstation new sprites
+#  - type: SmoothEdge # goobstation new sprites
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Resin
