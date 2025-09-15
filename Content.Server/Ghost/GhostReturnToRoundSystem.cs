@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq; // HOTFIX RESERVE BLEAT
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
