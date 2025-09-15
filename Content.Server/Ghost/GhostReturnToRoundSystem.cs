@@ -1,6 +1,8 @@
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
+using Content.Server.Ghost.Roles; // HOTFIX RESERVE BLEAT
 using Content.Server.Mind;
 using Content.Shared.Database;
 using Content.Shared.CCVar;
@@ -21,6 +23,7 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly GameTicker _ticker = default!;
+    [Dependency] private readonly GhostRoleSystem _ghostRoleSystem = default!; // HOTFIX RESERVE BLEAT
 
     public override void Initialize()
     {
@@ -57,6 +60,19 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
             wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
             return;
         }
+
+        // HOTFIX RESERVE BLEART
+        if (_playerManager.TryGetSessionById(userId, out var playerSession))
+        {
+            var ghostRoles = _ghostRoleSystem.GetGhostRolesInfo(playerSession);
+            var hasActiveRaffles = ghostRoles.Any(role => role.Kind == Shared.Ghost.Roles.GhostRoleKind.RaffleJoined);
+            
+            if (hasActiveRaffles)
+            {
+                _ghostRoleSystem.LeaveAllRaffles(playerSession);
+            }
+        }
+        // HOTFIX RESERVE BLEND
 
         var deathTime = EnsureComp<GhostComponent>(uid).TimeOfDeath;
         // WD EDIT START
