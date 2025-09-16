@@ -237,7 +237,6 @@ namespace Content.IntegrationTests.Tests
             "Lavatest", // Lavaland Change
             "Loop",
             "Delta", // Goobstation - add Delta
-			"BattleRoyale", // BattleRoyale Change
             "ReserveSillyIsland", // Reserve map
             "dm01-entryway",
             "Chloris" // Goobstation

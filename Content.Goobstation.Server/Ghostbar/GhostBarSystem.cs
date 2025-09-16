@@ -12,7 +12,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Goobstation.Ghostbar.Components; //Reserve battleroyale port
+using Content.Goobstation.Server.Ghostbar.Components;
 using Content.Server.Antag.Components;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
@@ -30,7 +30,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
-namespace Content.Server._Goobstation.Ghostbar; //Reserve battleroyale port
+namespace Content.Goobstation.Server.Ghostbar;
 
 public sealed class GhostBarSystem : EntitySystem
 {
