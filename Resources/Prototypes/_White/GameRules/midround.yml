@@ -17,7 +17,6 @@
       - type: RandomMetadata
         nameSegments:
         - NamesSyndicateElite #Reserve datasets fix
-        nameFormat: name-format-nukie-commander
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -33,7 +32,6 @@
       - type: RandomMetadata
         nameSegments:
         - NamesSyndicateNormal #Reserve datasets fix
-        nameFormat: name-format-nukie-agent
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -49,7 +47,6 @@
       - type: RandomMetadata
         nameSegments:
         - NamesSyndicateNormal #Reserve datasets fix
-        nameFormat: name-format-nukie-operator
       - type: NpcFactionMember
         factions:
         - Syndicate

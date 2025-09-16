@@ -218,7 +218,7 @@
   id: Omniplus
   name: reagent-name-omniplus
   group: Medicine
-  desc: reagent-desc-royal-omniheal
+  desc: reagent-desc-royal-omniplus
   physicalDesc: reagent-physical-desc-gelatinous
   flavor: medicine
   color: "#F08080"
