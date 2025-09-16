@@ -83,7 +83,7 @@ tilemap:
   22: FloorBrokenWood
   28: FloorClown
   29: FloorConcrete
-  5: FloorConcreteOutsideSmooth
+  5: FloorConcreteSmooth
   32: FloorDark
   33: FloorDarkDiagonal
   34: FloorDarkDiagonalMini
@@ -96,7 +96,7 @@ tilemap:
   54: FloorGrayConcrete
   55: FloorGrayConcreteMono
   13: FloorGrayConcreteOutside
-  11: FloorGrayConcreteOutsideSmooth
+  11: FloorGrayConcreteSmooth
   56: FloorGrayConcreteSmooth
   61: FloorHydro
   64: FloorKitchen
@@ -105,8 +105,8 @@ tilemap:
   2: FloorMowedAstroGrass
   75: FloorOldConcrete
   76: FloorOldConcreteMono
-  3: FloorOldConcreteOutsideMono
-  14: FloorOldConcreteOutsideSmooth
+  3: FloorOldConcreteMono
+  14: FloorOldConcreteSmooth
   16: FloorOldConcreteSmooth
   78: FloorPlanetDirt
   79: FloorPlanetGrass
