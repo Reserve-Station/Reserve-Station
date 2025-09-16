@@ -23,7 +23,7 @@ tilemap:
   23: FloorBrokenWood
   18: FloorDarkMono
   4: FloorDarkPlastic
-  14: FloorGrayConcreteOutsideMono
+  14: FloorGrayConcreteMono
   24: FloorKitchen
   3: FloorMetalDiamond
   12: FloorPlastic

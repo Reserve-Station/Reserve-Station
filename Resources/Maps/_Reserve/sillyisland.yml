@@ -41074,13 +41074,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 36.92855,-7.4308915
       parent: 2
-- proto: ShippingContainerNakamura
-  entities:
-  - uid: 5136
-    components:
-    - type: Transform
-      pos: 44.5,2.5
-      parent: 2
 - proto: Shovel
   entities:
   - uid: 5137
