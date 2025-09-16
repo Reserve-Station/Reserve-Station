@@ -13,3 +13,4 @@ ghost-respawn-log-character-almost-same = Player { $player } { $try ->
     *[false] tried to join
 } in the round after the respawn with a similar name. Past name: { $oldName }, current: { $newName }.
 ghost-respawn-log-return-to-lobby = { $userName } returned to the lobby.
+ghost-respawn-error = Something went wrong while trying to respawn. Try again and contact an admin if the issue persists.
