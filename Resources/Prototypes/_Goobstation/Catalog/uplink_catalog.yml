@@ -750,21 +750,6 @@
   saleLimit: 1
 
 - type: listing
-  id: UplinkZooimovCircuitBoard
-  name: zooimov circuit board
-  description: A lawset for when you wanna keep all the stations animals safe and protected.
-  productEntity: ZooimovCircuitBoard
-  cost:
-    Telecrystal: 15
-  categories:
-    -  UplinkJob
-  conditions:
-  - !type:BuyerJobCondition
-    whitelist:
-    - Zookeeper
-  saleLimit: 1
-
-- type: listing
   id: uplinkBeeNades    #goob - bee update
   name: uplink-beenades-name
   description: uplink-beenades-desc
