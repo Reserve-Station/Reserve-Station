@@ -118,9 +118,5 @@ namespace Content.Shared.Verbs
         
         // Shitmed - Starlight Abductors
         public static readonly VerbCategory Switch = new("verb-categories-switch", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
-
-        public static readonly VerbCategory TurretControlMode = new("verb-categories-turret-control-mode", null); // Corvax-Next-TurretControl
-
-        public static readonly VerbCategory PinpointerTarget = new("verb-categories-pinpointer-target", null); // Corvax-Next-VoxRaiders
     }
 }
