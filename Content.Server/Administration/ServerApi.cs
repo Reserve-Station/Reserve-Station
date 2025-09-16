@@ -83,7 +83,6 @@ public sealed partial class ServerApi : IPostInjectInit
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
-    [Dependency] private readonly IAdminManager _admin = default!;
     [Dependency] private readonly INetConfigurationManager _netConfigManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
@@ -810,7 +809,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
         await RunOnMainThread(async () =>
         {
-            var clients = _admin.ActiveAdmins
+            var clients = _adminManager.ActiveAdmins
             .Where(admin => _adminManager.GetAdminData(admin)?.Flags.HasFlag(AdminFlags.Adminchat) == true)
             .Select(p => p.Channel)
             .ToList();

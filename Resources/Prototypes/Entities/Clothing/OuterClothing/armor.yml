@@ -412,8 +412,6 @@
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 3
     knockdownTimeDelta: -3
-  - type: StaminaResistance # Goobstation
-    damageCoefficient: 0.4
   #Reserve raid suit rework begin
   - type: TemperatureProtection
     heatingCoefficient: 0.15
