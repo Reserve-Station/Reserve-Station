@@ -95,7 +95,7 @@ tilemap:
   53: FloorGrassLight
   54: FloorGrayConcrete
   55: FloorGrayConcreteMono
-  13: FloorGrayConcreteOutside
+  13: FloorGrayConcrete
   11: FloorGrayConcreteSmooth
   56: FloorGrayConcreteSmooth
   61: FloorHydro
