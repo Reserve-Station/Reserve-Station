@@ -84,9 +84,8 @@ public sealed class GrabThrownSystem : EntitySystem
 
     private void OnStopThrow(EntityUid uid, GrabThrownComponent comp, StopThrowEvent args)
     {
-        if (_netMan.IsClient)
+        if (_netMan.IsClient) //Reserve edit
             return;
-
         if (comp.DamageOnCollide != null)
             _damageable.TryChangeDamage(uid, comp.DamageOnCollide);
 
