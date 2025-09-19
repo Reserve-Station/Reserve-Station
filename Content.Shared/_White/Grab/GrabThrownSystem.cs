@@ -90,7 +90,7 @@ public sealed class GrabThrownSystem : EntitySystem
         if (comp.DamageOnCollide != null)
             _damageable.TryChangeDamage(uid, comp.DamageOnCollide);
 
-        RemComp<GrabThrownComponent>(uid);
+        RemComp<GrabThrownComponent>(uid); //Reserve edit
     }
 
     /// <summary>
