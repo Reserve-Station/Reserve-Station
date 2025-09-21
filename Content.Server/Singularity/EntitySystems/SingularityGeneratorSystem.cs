@@ -67,7 +67,20 @@ public sealed class SingularityGeneratorSystem : SharedSingularityGeneratorSyste
             return;
 
         SetPower(uid, 0, comp);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
         EntityManager.SpawnEntity(comp.SpawnPrototype, Transform(uid).Coordinates);
+=======
+>>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
+        Spawn(comp.SpawnPrototype, Transform(uid).Coordinates);
+
+        // Goobstation - since it's reusable also trigger failsafe to avoid unintentional tesla spam
+        comp.NextFailsafe = _timing.CurTime + comp.FailsafeCooldown;
+<<<<<<< HEAD
+=======
+>>>>>>> goob-upstream/master
+>>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
     }
 
     #region Getters/Setters
@@ -123,12 +136,12 @@ public sealed class SingularityGeneratorSystem : SharedSingularityGeneratorSyste
     /// <param name="args">The state of the beginning of the collision.</param>
     private void HandleParticleCollide(EntityUid uid, ParticleProjectileComponent component, ref StartCollideEvent args)
     {
-        if (!EntityManager.TryGetComponent<SingularityGeneratorComponent>(args.OtherEntity, out var generatorComp))
+        if (!TryComp<SingularityGeneratorComponent>(args.OtherEntity, out var generatorComp))
             return;
 
         if (_timing.CurTime < _metadata.GetPauseTime(uid) + generatorComp.NextFailsafe && !generatorComp.FailsafeDisabled)
         {
-            EntityManager.QueueDeleteEntity(uid);
+            QueueDel(uid);
             return;
         }
 
@@ -166,7 +179,7 @@ public sealed class SingularityGeneratorSystem : SharedSingularityGeneratorSyste
             );
         }
 
-        EntityManager.QueueDeleteEntity(uid);
+        QueueDel(uid);
     }
     #endregion Event Handlers
 

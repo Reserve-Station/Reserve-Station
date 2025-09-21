@@ -1212,13 +1212,27 @@ public sealed class MappingState : GameplayStateBase
 
         if (Screen.Pick.Pressed)
         {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
             if (!uid.IsValid())
+=======
+>>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
+            var mapPos = _transform.ToMapCoordinates(coords);
+
+            if (_mapMan.TryFindGridAt(mapPos, out var gridUid, out var grid) &&
+                _entityManager.System<SharedMapSystem>().TryGetTileRef(gridUid, grid, coords, out var tileRef) &&
+                _allPrototypesDict.TryGetValue(_entityManager.System<TurfSystem>().GetContentTileDefinition(tileRef), out button))
+<<<<<<< HEAD
+=======
+>>>>>>> goob-upstream/master
             {
                 var mapPos = _transform.ToMapCoordinates(coords);
 
                 if (_mapMan.TryFindGridAt(mapPos, out var gridUid, out var grid) &&
                     _entityManager.System<SharedMapSystem>().TryGetTileRef(gridUid, grid, coords, out var tileRef) &&
                     _allPrototypesDict.TryGetValue(tileRef.GetContentTileDefinition(), out button))
+>>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
                 {
                     switch (button.Prototype)
                     {
