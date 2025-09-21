@@ -110,10 +110,6 @@ public enum RevenantVisuals : byte
     Stunned,
     Harvesting,
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 
 [NetSerializable, Serializable]
 public enum RevenantVisualLayers : byte
@@ -122,8 +118,3 @@ public enum RevenantVisualLayers : byte
     Digit2,
     Digit3
 }
-<<<<<<< HEAD
-=======
-=======
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295

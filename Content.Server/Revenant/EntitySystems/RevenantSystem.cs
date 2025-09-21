@@ -70,18 +70,9 @@ public sealed partial class RevenantSystem : EntitySystem
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly VisibilitySystem _visibility = default!;
-<<<<<<< HEAD
     [Dependency] private readonly MindSystem _mind = default!; // Imp
     [Dependency] private readonly MetaDataSystem _meta = default!; // Imp
     [Dependency] private readonly TurfSystem _turf = default!;
-=======
-<<<<<<< HEAD
-    [Dependency] private readonly MindSystem _mind = default!; // Imp
-    [Dependency] private readonly MetaDataSystem _meta = default!; // Imp
-=======
-    [Dependency] private readonly TurfSystem _turf = default!;
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 
     [ValidatePrototypeId<EntityPrototype>]
     private const string RevenantShopId = "ActionRevenantShop";

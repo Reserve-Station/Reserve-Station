@@ -241,17 +241,8 @@ namespace Content.IntegrationTests.Tests
 			"BattleRoyale", // BattleRoyale Change
             "ReserveSillyIsland", // Reserve map
             "dm01-entryway",
-<<<<<<< HEAD
             "Chloris", // Goobstation
-            "Serpentcrest", // Goobstation
-=======
-<<<<<<< HEAD
-            "Chloris" // Goobstation
-=======
-            "Chloris", // Goobstation
-            "Serpentcrest", // Goobstation
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
+            "Serpentcrest" // Goobstation
         };
 
         /// <summary>

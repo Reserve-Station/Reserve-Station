@@ -5,10 +5,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 name: "Labels: Approved"
 
 on:
@@ -34,33 +30,3 @@ jobs:
       uses: actions-ecosystem/action-add-labels@v1
       with:
         labels: "S: Approved"
-<<<<<<< HEAD
-=======
-=======
-#name: "Labels: Approved"
-#
-#on:
-#  pull_request_review:
-#    types: [submitted]
-#
-#jobs:
-#  add_label:
-#    # Change the repository name after you've made sure the team name is correct for your fork!
-#    if: ${{ (github.repository == 'Goob-Station/Goob-Station') && (github.event.review.state == 'APPROVED') }}
-#    permissions:
-#      contents: read
-#      pull-requests: write
-#    runs-on: ubuntu-latest
-#    steps:
-#    - uses: tspascoal/get-user-teams-membership@v3
-#      id: checkUserMember
-#      with:
-#        username: ${{ github.actor }}
-#        team: "maintainers"
-#        GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-#    - if: ${{ steps.checkUserMember.outputs.isTeamMember == 'true' }}
-#      uses: actions-ecosystem/action-add-labels@v1
-#      with:
-#        labels: "S: Approved"
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295

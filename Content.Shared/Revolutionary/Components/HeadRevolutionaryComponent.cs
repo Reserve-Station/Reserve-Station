@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 // SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
@@ -84,10 +79,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._EinsteinEngines.Language; // Goob Station - Revolutionary Language
-<<<<<<< HEAD
-=======
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 using Robust.Shared.GameStates;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
@@ -126,11 +117,6 @@ public sealed partial class HeadRevolutionaryComponent : Component
     /// </summary>
     [DataField]
     public bool ConvertAbilityEnabled = true;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 
     // Reserve-ConsentRev-Start
     /// <summary>
@@ -139,12 +125,3 @@ public sealed partial class HeadRevolutionaryComponent : Component
     [DataField] public bool OnlyConsentConvert = false;
     // Reserve-ConsentRev-End
 }
-<<<<<<< HEAD
-=======
-
-
-
-=======
-}
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295

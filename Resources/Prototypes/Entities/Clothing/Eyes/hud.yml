@@ -321,28 +321,16 @@
   - type: ShowSyndicateIcons
   - type: ShowJobIcons # Goob
   - type: ShowMindShieldIcons # Goob
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
   #reserve Syndie visor buff start
   - type: EyeProtection
   - type: FlashImmunity
   - type: IdentityBlocker
     coverage: EYES
   #reserve Syndie visor buff end
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
   - type: Tag
     tags:
     - CorgiWearable
     - WhitelistChameleon
-<<<<<<< HEAD
-=======
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 
 - type: entity
   parent: [ClothingEyesBase, BaseSyndicateContraband] # Goob edit
@@ -361,12 +349,9 @@
   - type: ShowHealthBars
     damageContainers:
     - Biological
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
     - Silicon #IPC and borgs
     - Inorganic
+    - SiliconRadiation # Goobstation - IPCs
   - type: ShowHealthIcons
     damageContainers:
     - Biological
@@ -378,18 +363,10 @@
     coverage: EYES
   - type: SolutionScanner #because nukie medic should make chems
   #reserve Syndie visor buff end
-<<<<<<< HEAD
-=======
-=======
-    - SiliconRadiation # Goobstation - IPCs
-  - type: ShowJobIcons # Goob
-  - type: ShowMindShieldIcons # Goob
   - type: Tag
     tags:
     - CorgiWearable
     - WhitelistChameleon
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 
 - type: entity
   parent: [ClothingEyesGlassesSunglasses, ShowSecurityIcons]

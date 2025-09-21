@@ -527,10 +527,6 @@
       mindRoles:
       - MindRoleParadoxClone
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 - type: entity
   parent: BaseGameRule
   id: RevenantSpawn
@@ -552,33 +548,7 @@
     chaosScore: 450
   - type: RandomSpawnRule
     prototype: MobRevenant
-<<<<<<< HEAD
 # Note: Goobstation has this disabled until rework, but Reserve Station keeps it active
-=======
-=======
-#- type: entity   Goobstaion start - disabled until rework
-#  parent: BaseGameRule
-#  id: RevenantSpawn
-#  components:
-#  - type: StationEvent
-#    weight: 3.5
-#    duration: 1
-#    earliestStart: 30
-#    minimumPlayers: 20
-#    chaos: # Goobstation
-#      Hostile: 20
-#      Friend: 20
-#      Combat: 40
-#      Death: 100
-#      Medical: 100
-#    eventType: HostilesSpawn # Goobstation
-#  # Goobstation
-#  - type: GameRule
-#    chaosScore: 450
-#  - type: RandomSpawnRule
-#    prototype: MobRevenant      goobstation end
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 
 # Goob - wiz of our own
 #- type: entity

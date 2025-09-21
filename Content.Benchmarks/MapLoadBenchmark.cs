@@ -81,15 +81,7 @@ public class MapLoadBenchmark
         PoolManager.Shutdown();
     }
 
-<<<<<<< HEAD
     public static readonly string[] MapsSource = { "Empty", "Satlern", "Box", "Bagel", "Dev", "CentComm", "Atlas", "Core", "TestTeg", "Packed", "Origin", "Omega", "Cluster", "Reach", "Meta", "Marathon", "Europa", "MeteorArena", "Fland", "Oasis", "FlandHighPop", "OasisHighPop", "OriginHighPop", "Barratry", "Kettle", "Submarine", "Lambda", "Leonid", "Delta", "Amber", "Chloris", "Cog", "ReserveSillyIsland", "BattleRoyale", "Serpentcrest"}; //Goobstation, readds maps
-=======
-<<<<<<< HEAD
-    public static readonly string[] MapsSource = { "Empty", "Satlern", "Box", "Bagel", "Dev", "CentComm", "Atlas", "Core", "TestTeg", "Packed", "Origin", "Omega", "Cluster", "Reach", "Meta", "Marathon", "Europa", "MeteorArena", "Fland", "Oasis", "FlandHighPop", "OasisHighPop", "OriginHighPop", "Barratry", "Kettle", "Submarine", "Lambda", "Leonid", "Delta", "Amber", "Chloris", "Cog", "ReserveSillyIsland", "BattleRoyale"}; //Goobstation, readds maps
-=======
-    public static readonly string[] MapsSource = { "Empty", "Satlern", "Box", "Bagel", "Dev", "CentComm", "Atlas", "Core", "TestTeg", "Packed", "Origin", "Omega", "Cluster", "Reach", "Meta", "Marathon", "Europa", "MeteorArena", "Fland", "Oasis", "FlandHighPop", "OasisHighPop", "OriginHighPop", "Barratry", "Kettle", "Submarine", "Lambda", "Leonid", "Delta", "Amber", "Chloris", "Cog", "Serpentcrest"}; //Goobstation, readds maps
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 
     [ParamsSource(nameof(MapsSource))]
     public string Map;

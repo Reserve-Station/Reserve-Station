@@ -412,10 +412,6 @@
   - type: ModifyDelayedKnockdown # Goobstation
     delayDelta: 3
     knockdownTimeDelta: -3
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.4
   #Reserve raid suit rework begin
@@ -427,11 +423,6 @@
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
   #Reserve raid suit rework end
-<<<<<<< HEAD
-=======
-=======
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
   - type: Item
     size: Normal
 

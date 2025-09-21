@@ -36,11 +36,6 @@
   - CurtainCall4
   obeysTo: laws-owner-curtaincall
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 # Delta-V Laws
 # Job-Based LawSets
 
@@ -136,10 +131,6 @@
   - Clown3
   obeysTo: laws-owner-crew
 
-<<<<<<< HEAD
-=======
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
 - type: siliconLaw
   id: Salvage1
   order: 1
@@ -161,12 +152,5 @@
   - Salvage1
   - Salvage2
   - Salvage3
-<<<<<<< HEAD
   - Salvage4
-=======
-<<<<<<< HEAD
-  - Salvage4
-=======
->>>>>>> goob-upstream/master
->>>>>>> 0c9a726656801a03f8f057092aaff70be9aa0295
   obeysTo: laws-owner-crew
