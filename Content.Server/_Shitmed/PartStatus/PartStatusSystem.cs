@@ -25,6 +25,7 @@ using Robust.Shared.Utility;
 
 using Content.Goobstation.Common.Examine; // Goobstation Change
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Examine;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.IdentityManagement;
@@ -176,7 +177,7 @@ public sealed class PartStatusSystem : EntitySystem
 
             if (!damageSeverities.TryGetValue(wound.Comp.DamageType, out var existingSeverity) ||
                 wound.Comp.WoundSeverity > existingSeverity)
-                damageSeverities[_proto.Index(wound.Comp.DamageGroup).LocalizedName] = wound.Comp.WoundSeverity;
+                damageSeverities[_proto.Index<DamageGroupPrototype>(wound.Comp.DamageGroup?.Id ?? string.Empty).LocalizedName] = wound.Comp.WoundSeverity;
 
             if (TryComp<BleedInflicterComponent>(wound, out var bleeds) && bleeds.IsBleeding)
                 isBleeding = true;

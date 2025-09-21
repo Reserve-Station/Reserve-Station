@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 // SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
@@ -1706,13 +1706,13 @@ public sealed partial class WoundSystem
         if (healable)
         {
             return GetWoundableWounds(targetEntity, targetWoundable)
-                .Where(wound => _prototype.Index(wound.Comp.DamageGroup)?.ID == damageGroup || damageGroup == null)
+                .Where(wound => wound.Comp.DamageGroup?.Id == damageGroup || damageGroup == null)
                 .Where(wound => CanHealWound(wound, wound.Comp, ignoreBlockers))
                 .Aggregate(FixedPoint2.Zero, (current, wound) => current + wound.Comp.WoundSeverityPoint);
         }
 
         return GetWoundableWounds(targetEntity, targetWoundable)
-            .Where(wound => _prototype.Index(wound.Comp.DamageGroup)?.ID == damageGroup || damageGroup == null)
+            .Where(wound => wound.Comp.DamageGroup?.Id == damageGroup || damageGroup == null)
             .Aggregate(FixedPoint2.Zero, (current, wound) => current + wound.Comp.WoundSeverityPoint);
     }
 
@@ -1739,13 +1739,13 @@ public sealed partial class WoundSystem
         if (healable)
         {
             return GetWoundableWounds(targetEntity, targetWoundable)
-                .Where(wound => _prototype.Index(wound.Comp.DamageGroup)?.ID == damageGroup || damageGroup == null)
+                .Where(wound => wound.Comp.DamageGroup?.Id == damageGroup || damageGroup == null)
                 .Where(wound => CanHealWound(wound, wound.Comp, ignoreBlockers))
                 .Aggregate(FixedPoint2.Zero, (current, wound) => current + wound.Comp.WoundIntegrityDamage);
         }
 
         return GetWoundableWounds(targetEntity, targetWoundable)
-            .Where(wound => _prototype.Index(wound.Comp.DamageGroup)?.ID == damageGroup || damageGroup == null)
+            .Where(wound => wound.Comp.DamageGroup?.Id == damageGroup || damageGroup == null)
             .Aggregate(FixedPoint2.Zero, (current, wound) => current + wound.Comp.WoundIntegrityDamage);
     }
 

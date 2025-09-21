@@ -107,7 +107,8 @@
   storage:
     back:
     - DrinkBrepsiCan # Reserve edit
-    pocket1: KeyRingJanitor # Goobstation
+    pocket1:
+    - KeyRingJanitor # Goobstation
 
 - type: startingGear
   id: JanitorMaidGear
@@ -118,7 +119,9 @@
     head: ClothingHeadHatCatEars
     ears: ClothingHeadsetService
     belt: ClothingBeltJanitorFilled
-    pocket1: KeyRingJanitor # Goobstation
+  storage:
+    pocket1:
+    - KeyRingJanitor # Goobstation
 
 
 - type: chameleonOutfit

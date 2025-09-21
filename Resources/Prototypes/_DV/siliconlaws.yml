@@ -40,72 +40,72 @@
 # Job-Based LawSets
 
 - type: siliconLaw
-  id: Medical1
+  id: DVMedical1
   order: 1
   lawString: law-crewsimov-1
 
 - type: siliconLaw
-  id: Medical2
+  id: DVMedical2
   order: 2
   lawString: law-crewsimov-2
 
 - type: siliconLaw
-  id: Medical3
+  id: DVMedical3
   order: 3
   lawString: law-medical-3
 
 - type: siliconLawset
-  id: Medical
+  id: DVMedical
   laws:
-  - Medical1
-  - Medical2
-  - Medical3
+  - DVMedical1
+  - DVMedical2
+  - DVMedical3
   obeysTo: laws-owner-crew
 
 - type: siliconLaw
-  id: Engineer1
+  id: DVEngineer1
   order: 1
   lawString: law-crewsimov-1
 
 - type: siliconLaw
-  id: Engineer2
+  id: DVEngineer2
   order: 2
   lawString: law-crewsimov-2
 
 - type: siliconLaw
-  id: Engineer3
+  id: DVEngineer3
   order: 3
   lawString: law-engineer-3
 
 - type: siliconLawset
-  id: Engineer
+  id: DVEngineer
   laws:
-  - Engineer1
-  - Engineer2
-  - Engineer3
+  - DVEngineer1
+  - DVEngineer2
+  - DVEngineer3
   obeysTo: laws-owner-station-station
 
 - type: siliconLaw
-  id: Janitor1
+  id: DVJanitor1
   order: 1
   lawString: law-crewsimov-1
 
 - type: siliconLaw
-  id: Janitor2
+  id: DVJanitor2
   order: 2
   lawString: law-crewsimov-2
 
 - type: siliconLaw
-  id: Janitor3
+  id: DVJanitor3
   order: 3
   lawString: law-janitor-3
 
 - type: siliconLawset
-  id: Janitor
+  id: DVJanitor
   laws:
-  - Janitor1
-  - Janitor2
-  - Janitor3
+  - DVJanitor1
+  - DVJanitor2
+  - DVJanitor3
   obeysTo: laws-owner-charge
 
 - type: siliconLaw

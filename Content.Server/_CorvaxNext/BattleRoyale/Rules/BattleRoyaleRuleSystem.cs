@@ -5,6 +5,7 @@
 
 using System.Linq;
 using Content.Server.Administration.Commands;
+using Content.Server.Clothing.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
@@ -71,6 +72,7 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
         [Dependency] private readonly IRobustRandom _random = default!;
         //[Dependency] private readonly SharedSkillsSystem _skills = default!; //Reserve port BattleRoyale
         [Dependency] private readonly ArrivalsSystem _arrivals = default!;
+        [Dependency] private readonly OutfitSystem _outfitSystem = default!;
 
         private const int MaxNormalCallouts = 60;
         private const int MaxEnvironmentalCallouts = 10;
@@ -167,7 +169,7 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
 					RemComp<NarcolepsyComponent>(mob);
 
                 _mind.TransferTo(newMind, mob);
-                SetOutfitCommand.SetOutfit(mob, br.Gear, false, EntityManager);
+                _outfitSystem.SetOutfit(mob, br.Gear, doSpecial: false);
                 EnsureComp<KillTrackerComponent>(mob);
                 EnsureComp<SleepingComponent>(mob);
 

@@ -186,7 +186,7 @@ public sealed class FootprintSystem : EntitySystem
 
         if (footprintSolution.Value.Comp.Solution.Volume >= MaxFootprintVolumeOnTile)
         {
-            var footprintSolutionClone = footprintSolution.Value.Comp.Solution.Clone();
+            var footprintSolutionClone = (Solution)footprintSolution.Value.Comp.Solution.Clone();
 
             Del(footprint);
 
@@ -243,7 +243,7 @@ public sealed class FootprintSystem : EntitySystem
         if (!_solution.TryGetSolution(footprint, FootprintSolution, out _, out var footprintSolution))
             return;
 
-        footprintSolution = footprintSolution.Clone();
+        footprintSolution = (Solution)footprintSolution.Clone();
 
         Del(footprint);
 

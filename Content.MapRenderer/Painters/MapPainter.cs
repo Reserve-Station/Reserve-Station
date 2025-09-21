@@ -32,6 +32,7 @@ using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Utility;
 using Robust.Shared.Maths;
 using Robust.Shared.Timing;
 using SixLabors.ImageSharp;
@@ -86,7 +87,7 @@ namespace Content.MapRenderer.Painters
                         },
                     };
 
-                    if (!_pair.Server.System<MapLoaderSystem>().TryLoadGeneric(stream, mapFile.FileName, out var loadResult, loadOptions))
+                    if (!_pair.Server.System<MapLoaderSystem>().TryLoadGeneric(new ResPath(mapFile.FileName), out var loadResult, loadOptions))
                         throw new IOException($"File {mapFile.FileName} could not be read");
 
                     _grids = loadResult.Grids.ToArray();

@@ -28,6 +28,7 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Alert;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusEffectNew;
+using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -134,7 +135,7 @@ namespace Content.Shared.StatusEffect
         [Obsolete("Migration to Content.Shared.StatusEffectNew.SharedStatusEffectsSystem is required")]
         public bool TryAddStatusEffect<T>(EntityUid uid, string key, TimeSpan time, bool refresh,
             StatusEffectsComponent? status = null)
-            where T : IComponent, new()
+            where T : Component, new()
         {
             if (!Resolve(uid, ref status, false))
                 return false;
