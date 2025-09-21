@@ -67,11 +67,17 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
+<<<<<<< HEAD
 # SPDX-FileCopyrightText: 2025 Kirill2253 <96187155+Kirill2253@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Kirill2253 <kirillsuhin5@gmail.com>
 # SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+=======
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+>>>>>>> goob-upstream/master
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -83,7 +89,7 @@
   startingGear: JanitorGear
   icon: "JobIconJanitor"
   supervisors: job-supervisors-hop
-  goobcoins: 15 #Goob content
+  goobcoins: 20 # Goobstation
   access:
   - Service
   - Janitor
@@ -100,9 +106,13 @@
     id: JanitorPDA
     ears: ClothingHeadsetService
     belt: ClothingBeltJanitorFilled
+<<<<<<< HEAD
   storage:
     back:
     - DrinkBrepsiCan # Reserve edit
+=======
+    pocket1: KeyRingJanitor # Goobstation
+>>>>>>> goob-upstream/master
 
 - type: startingGear
   id: JanitorMaidGear
@@ -113,6 +123,8 @@
     head: ClothingHeadHatCatEars
     ears: ClothingHeadsetService
     belt: ClothingBeltJanitorFilled
+    pocket1: KeyRingJanitor # Goobstation
+
 
 - type: chameleonOutfit
   id: JanitorChameleonOutfit
