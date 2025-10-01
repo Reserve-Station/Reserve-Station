@@ -260,7 +260,7 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorHovered = Color.FromHex("#17181aff");
         public static readonly Color ButtonColorHoveredRed = Color.FromHex("#151118ff");
         public static readonly Color ButtonColorPressed = Color.FromHex("#33274bff");
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#222930ff");
+        public static readonly Color ButtonColorDisabled = Color.FromHex("#181d22ff");
 
         public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232");
         public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f");
