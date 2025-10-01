@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: SecondChanceImplant
+  name: имплант второго шанса
+  description: Этот имплант позволяет вам вернуться к жизни
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SubdermalImplant
+      whitelist:
+        components:
+        - MobState # admeme implanting a chair with tracking implant needs to give the chair mobstate so it can die first
+    - type: SecondChance
+    
+    
+- type: entity
+  id: SecondChanceImplanter
+  name: имплантер второго шанса
+  parent: BaseImplantOnlyImplanter
+  components:
+    - type: Implanter
+      implant: SecondChanceImplant
