@@ -37,9 +37,9 @@ namespace Content.Server._FreakyStation.CyberPunk
             {
                 if (component.SpawnSlot == "active-hand")
                 {
-                    if (_handsSystem.TryGetActiveHand(user, out var activeHand) && activeHand.HeldEntity != null)
+                    if (_handsSystem.TryGetActiveItem(user, out var heldEntity) && heldEntity != null)
                     {
-                        _handsSystem.TryDrop(user, activeHand.HeldEntity.Value);
+                        _handsSystem.TryDrop(user, heldEntity.Value);
                     }
                 }
                 else
