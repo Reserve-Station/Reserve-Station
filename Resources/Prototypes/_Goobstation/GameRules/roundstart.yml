@@ -33,7 +33,7 @@
   components:
   - type: ChangelingRule
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 10
     chaosScore: 800
   - type: AntagRandomObjectives
     sets:
@@ -62,7 +62,7 @@
   id: CalmTraitor # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 10
     chaosScore: 700
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -83,7 +83,7 @@
   id: CalmLing # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 10
     chaosScore: 450
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -101,7 +101,7 @@
   id: Calmops # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 12
     chaosScore: 1000
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml
@@ -168,7 +168,7 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 12
     chaosScore: 700
   - type: RevolutionaryRule
   - type: AntagSelection
@@ -206,7 +206,7 @@
   components:
   - type: BlobRule
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 10
     chaosScore: 1000
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -254,7 +254,7 @@
   components:
   # Reserve-HonkOps-MinPlayers-Start
   - type: GameRule
-    minPlayers: 50
+    minPlayers: 10
   # Reserve-HonkOps-MinPlayers-End
   - type: RandomMetadata # this generates the random operation name cuz it's cool.
     nameSegments:
@@ -334,7 +334,7 @@
   - type: DevilRule
   - type: GameRule
     chaosScore: 350 # low since they tend to revive people and stuff
-    minPlayers: 15
+    minPlayers: 7
   - type: AntagObjectives
     objectives:
     - DevilContractObjective

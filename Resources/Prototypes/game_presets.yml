@@ -245,7 +245,7 @@
   name: death-match-title
   description: death-match-description
   maxPlayers: 15
-  showInVote: true
+  showInVote: false
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31
@@ -256,7 +256,7 @@
     - nukeops
   name: nukeops-title
   description: nukeops-description
-  showInVote: false
+  showInVote: true
   rules:
     - Nukeops
   #  - SubGamemodesRule #Reserve edit - no thieves on nukeops
@@ -275,7 +275,7 @@
     - revolutionaries
   name: rev-title
   description: rev-description
-  showInVote: false
+  showInVote: true
   rules:
   - DummyNonAntagChance
   - Revolutionary
@@ -296,7 +296,7 @@
   - zomber
   name: zombie-title
   description: zombie-description
-  showInVote: false
+  showInVote: true
   rules:
   - Zombie
   - BasicStationEventScheduler
