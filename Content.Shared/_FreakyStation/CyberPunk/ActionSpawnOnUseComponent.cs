@@ -1,0 +1,24 @@
+using Robust.Shared.GameObjects;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared._FreakyStation.CyberPunk
+{
+    [RegisterComponent]
+    public partial class ActionSpawnOnUseComponent : Component
+    {
+        [DataField("spawnPrototype")]
+        public string SpawnPrototype { get; set; } = string.Empty;
+        // Впереди гремучий лес - шкибиди доп доп ес ес
+        [DataField("spawnSlot")]
+        public string SpawnSlot { get; set; } = string.Empty;
+
+        [DataField("removeOnSecondUse")]
+        public bool RemoveOnSecondUse { get; set; } = false;
+
+        [DataField("dropPreviousItem")]
+        public bool DropPreviousItem { get; set; } = false;
+
+        [DataField("spawnedItem")]
+        public EntityUid? SpawnedItem { get; set; }
+    }
+}
