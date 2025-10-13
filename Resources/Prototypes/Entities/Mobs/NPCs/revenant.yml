@@ -113,6 +113,8 @@
   name: revenant
   description: A spooky ghostie.
   components:
+  - type: Emag
+    emagType: All
   - type: Input
     context: "ghost"
   - type: Spectral
@@ -194,6 +196,8 @@
     nameFormat: name-format-revenant
   - type: Speech
     speechVerb: Ghost
+  - type: LanguageSpeaker # Einstein Engines - Languages
+  - type: UniversalLanguageSpeaker # Einstein Engines - Languages
   - type: NightVision # Goobstation - Nightvision
     color: MediumPurple
     activateSound: null
@@ -201,11 +205,6 @@
   - type: Reactive
     groups:
       Acidic: [Touch]
-  #EE spray paint port begin
-  - type: Tag
-    tags:
-      - NoPaint
-  #EE spray paint port end
   #reserve revenant buff start
   - type: DamageOnAttacked
     damage:

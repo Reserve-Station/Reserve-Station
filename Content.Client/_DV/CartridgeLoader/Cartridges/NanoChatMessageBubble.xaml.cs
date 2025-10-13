@@ -2,9 +2,14 @@
 // SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -21,8 +26,10 @@ public sealed partial class NanoChatMessageBubble : BoxContainer
 {
     public static readonly Color OwnMessageColor = Color.FromHex("#173717d9"); // Dark green
     public static readonly Color OtherMessageColor = Color.FromHex("#252525d9"); // Dark gray
+    public static readonly Color CoinMessageColor = Color.FromHex("#1a4d1ad9"); // Dark green for coin transfers Reserve add
     public static readonly Color BorderColor = Color.FromHex("#40404066"); // Subtle border
     public static readonly Color TextColor = Color.FromHex("#dcdcdc"); // Slightly softened white
+    public static readonly Color CoinTextColor = Color.FromHex("#90ee90"); // Light green text for coin messages // Reserve add
     public static readonly Color ErrorColor = Color.FromHex("#cc3333"); // Red
 
     public NanoChatMessageBubble()
@@ -37,17 +44,39 @@ public sealed partial class NanoChatMessageBubble : BoxContainer
 
         // Configure message appearance
         var style = (StyleBoxFlat)MessagePanel.PanelOverride;
-        style.BackgroundColor = isOwnMessage ? OwnMessageColor : OtherMessageColor;
-        style.BorderColor = BorderColor;
 
-        // Set message content
-        MessageText.Text = message.Content;
-        MessageText.Modulate = TextColor;
+        // Reserve edit start
+        // Special styling for coin transfer messages
+        if (message.IsCoinTransfer)
+        {
+            style.BackgroundColor = CoinMessageColor;
+            style.BorderColor = CoinMessageColor;
+            style.BorderThickness = new Thickness(2); // Thicker border for coin messages
+            MessageText.Modulate = CoinTextColor;
+
+            MessageText.Text = message.Content;
+        }
+        else
+        {
+            style.BackgroundColor = isOwnMessage ? OwnMessageColor : OtherMessageColor;
+            style.BorderColor = BorderColor;
+            style.BorderThickness = new Thickness(1);
+            MessageText.Modulate = TextColor;
+            MessageText.Text = message.Content;
+        }
+        // Reserve edit end
 
         // Show delivery failed text if needed (only for own messages)
         DeliveryFailedLabel.Visible = isOwnMessage && message.DeliveryFailed;
         if (DeliveryFailedLabel.Visible)
+        {
             DeliveryFailedLabel.Modulate = ErrorColor;
+            // Reserve edit start. Showing the standard error.
+            DeliveryFailedLabel.Text = !string.IsNullOrEmpty(message.FailureReason)
+                ? message.FailureReason
+                : Loc.GetString("nano-chat-delivery-failed");
+        }
+        // Reserve edit end
 
         // For own messages: FlexSpace -> MessagePanel -> RightSpacer
         // For other messages: LeftSpacer -> MessagePanel -> FlexSpace

@@ -107,16 +107,19 @@
   equipment:
     head: ClothingHeadHatPurplesoft
 
+
 # Jumpsuit
 - type: loadout
   id: JanitorJumpsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitJanitor
 
+
 - type: loadout
   id: JanitorJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtJanitor
+
 
 # Gloves
 - type: loadout
@@ -124,15 +127,18 @@
   equipment:
     gloves: ClothingHandsGlovesJanitor
 
+
 - type: loadout
   id: OrangeGloves
   equipment:
     gloves: ClothingHandsGlovesColorOrange
 
+
 - type: loadout
   id: PurpleGloves
   equipment:
     gloves: ClothingHandsGlovesColorPurple
+
 
 # Outer clothing
 - type: loadout

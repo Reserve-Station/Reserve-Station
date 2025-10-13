@@ -71,3 +71,23 @@ comp-pda-ui-unassigned = Unassigned
 
 pda-notification-message = [font size=12][bold]PDA[/bold] { $header }: [/font]
     "{ $message }"
+
+# Coin transfer localization
+nano-chat-coin-transfer-title = Send Credits
+nano-chat-coin-transfer-prompt = Enter amount of credits to send:
+nano-chat-coin-transfer-send = Send
+nano-chat-coin-transfer-cancel = Cancel
+nano-chat-coin-transfer-amount-placeholder = Enter amount
+nano-chat-send-coin = Send Credits
+
+# Success messages
+nano-chat-coin-transfer-success-sender = Sent { $amount } credits
+nano-chat-coin-transfer-success-recipient = Received { $amount } credits
+
+# Error details - specific error descriptions
+nano-chat-coin-transfer-insufficient-funds = Insufficient funds
+nano-chat-coin-transfer-delivery-failed = Recipient unavailable or not found
+nano-chat-coin-transfer-rate-limit = Too many transfers. Please wait
+nano-chat-coin-transfer-invalid-amount = Invalid transfer amount
+nano-chat-coin-transfer-unauthorized = Access denied: you are not the owner of this PDA
+nano-chat-coin-transfer-failed = System error during transfer

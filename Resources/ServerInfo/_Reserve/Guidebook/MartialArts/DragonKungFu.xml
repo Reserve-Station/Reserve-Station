@@ -1,0 +1,55 @@
+<Document>
+
+  # Кунг-фу Дракона
+
+  <Box>
+    <GuideEntityEmbed Entity="BSOManual" Caption=""/>
+  </Box>
+
+  [bold]Кунг-фу Дракона[/bold] - [bold]шаолиньское[/bold] [textlink="боевое искусство" link="MartialArts"], сосредоточенное на [bold]защите и контроле[/bold].
+  Плавные движения и мощные [bold]удары[/bold] приходят с [bold]терпением и стойкостью[/bold]. Идеально для [bold]телохранителей[/bold], укрепляет защиту и контратакует с точностью.
+  [bold]Офицеры Синего Щита[/bold] могут выбрать руководство по этому боевому искусству в своём [bold]оружейном ящике[/bold].
+
+  ## Особые способности
+
+  ### Dragon Power
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDragonPower" Caption=""/>
+  </Box>
+
+  Мгновение стойки [bold]неподвижно без оружия[/bold] превращает воина в [bold]живую гору[/bold], значительно снижая
+  силу входящих [bold]ударов ближнего боя[/bold] и усиливая их собственные [bold]атаки[/bold], как вооружённые, так и безоружные.
+
+  ## Комбо
+
+  ### Dragon Claw
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+  </Box>
+
+    Наносит массивный [color=Purple][bold]Stamina[/bold][/color] урон и [color=Yellow][bold]значительно замедляет[/bold][/color] противника.
+
+  ### Dragon Tail
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+    Наносит [color=Orange][bold]Blunt[/bold][/color] урон и [color=Purple][bold]Stamina[/bold][/color] урон. [bold]Сбивает противника с ног[/bold], если он стоит, и применяет [color=Yellow][bold]короткое оглушение[/bold][/color] в противном случае.
+
+  ### Dragon Strike
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+    Наносит [bold]40 урона[/bold] и [color=Yellow][bold]оглушает на 2 секунды[/bold][/color]. Работает только против [bold]сбитых противников[/bold].
+
+</Document>

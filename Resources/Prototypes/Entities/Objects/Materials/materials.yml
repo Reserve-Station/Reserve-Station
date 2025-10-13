@@ -127,7 +127,6 @@
     tags:
       - RawMaterial
       - DroneUsable # Goobstation
-      - NoPaint #EE spray paint port
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -860,7 +859,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 15
+        Slash: 12 #goobedit - buff spear variant, nerf tooth.
   - type: Sprite
     sprite: Objects/Materials/Mob/sharktooth.rsi
     layers:

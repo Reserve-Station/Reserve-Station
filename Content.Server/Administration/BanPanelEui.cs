@@ -76,7 +76,9 @@ using Content.Server.EUI;
 using Content.Shared.Administration;
 using Content.Shared.Database;
 using Content.Shared.Eui;
+using Content.Shared.Roles;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Administration;
 
@@ -90,6 +92,7 @@ public sealed class BanPanelEui : BaseEui
     [Dependency] private readonly IAdminManager _admins = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly IDiscordBanInfoSender _discordBanInfoSender = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private readonly ISawmill _sawmill;
 
@@ -199,7 +202,14 @@ public sealed class BanPanelEui : BaseEui
             foreach (var role in roles)
             {
                 rolesData.Add(string.Format("{0}:{1}", role, currentRoleBanId++)); //ADT-Tweak
-                await _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now);
+                if (_prototypeManager.HasIndex<JobPrototype>(role))
+                {
+                    _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now);
+                }
+                else
+                {
+                    _sawmill.Warning($"{Player.Name} ({Player.UserId}) tried to issue a job ban with an invalid job: {role}");
+                }
             }
             //Start-ADT-Tweak: логи банов для диса
             var roleBanInfo = new BanInfo

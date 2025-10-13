@@ -8,7 +8,6 @@
     sprite: _Reserve/Objects/Weapons/Melee/superstunbaton.rsi
     layers:
     - state: stunbaton_off
-      map: [ "enum.ToggleVisuals.Layer" ]
   - type: Stunbaton
     energyPerUse: 1
   - type: ItemToggleMeleeWeapon

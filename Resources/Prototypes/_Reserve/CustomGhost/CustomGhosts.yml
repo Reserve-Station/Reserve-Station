@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 XeliteXFXX <gamesvitalik20@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -26,3 +27,19 @@
   alpha: 0.9
   ghostName: Duga
   ghostDescription: Порядок направлений сохранён намеренно. Это метаирония. Он наблюдает сквозь стены, но не туда.
+
+- type: customGhost
+  id: fxx-ghost
+  ckey: FXX
+  sprite: /Textures/_Reserve/CustomGhosts/fxx-ghost.rsi
+  alpha: 0.7
+  ghostName: FXX
+  ghostDescription: Космическая Гидра.
+
+- type: customGhost
+  id: already-taken-ghost
+  ckey: is_already_taken
+  sprite: /Textures/_Reserve/CustomGhosts/already-taken-ghost.rsi
+  alpha: 0.8
+  ghostName: Раймонд Роберт (Is_already_taken)
+  ghostDescription: РП Аллах

@@ -15,9 +15,11 @@ pda-bound-user-interface-lock-uplink-description = Предотвратите д
 comp-pda-ui-menu-title = КПК
 comp-pda-ui-footer = Карманный Персональный Компьютер
 comp-pda-ui-station = Станция: [color=white]{ $station }[/color]
+comp-pda-ui-station-time = Продолжительность смены: [color=white]{ $time }[/color]
+comp-pda-ui-reserve-coins = Баланс: [color=gold]{ $balance }[/color] Кредитов
+comp-pda-ui-reserve-coins-unknown = Баланс: [color=gray]Неизвестно[/color]
 comp-pda-ui-station-alert-level = Уровень угрозы: [color={ $color }]{ $level }[/color]
 comp-pda-ui-station-alert-level-instructions = Инструкции: [color=white]{ $instructions }[/color]
-comp-pda-ui-station-time = Продолжительность смены: [color=white]{ $time }[/color]
 comp-pda-ui-eject-id-button = Извлечь ID
 comp-pda-ui-eject-pen-button = Извлечь ручку
 comp-pda-ui-ringtone-button-description = Измените рингтон вашего КПК
@@ -29,3 +31,24 @@ comp-pda-ui-unknown = Неизвестно
 comp-pda-ui-unassigned = Не назначено
 pda-notification-message = [font size=12][bold]КПК[/bold] { $header }: [/font]
     "{ $message }"
+
+# Coin transfer localization
+nano-chat-coin-transfer-title = Отправить кредиты
+nano-chat-coin-transfer-prompt = Введите количество кредитов для отправки:
+nano-chat-coin-transfer-send = Отправить
+nano-chat-coin-transfer-cancel = Отмена
+nano-chat-coin-transfer-amount-placeholder = Введите сумму
+nano-chat-send-coin = Отправить кредиты
+
+# Success messages
+nano-chat-coin-transfer-success-sender = Отправлено { $amount } кредитов
+nano-chat-coin-transfer-success-recipient = Получено { $amount } кредитов
+
+# Error details - specific error descriptions
+nano-chat-coin-transfer-insufficient-funds = Недостаточно средств
+nano-chat-coin-transfer-delivery-failed = Получатель недоступен или не найден
+nano-chat-coin-transfer-rate-limit = Слишком частые переводы. Подождите немного
+nano-chat-coin-transfer-invalid-amount = Некорректная сумма для перевода
+nano-chat-coin-transfer-unauthorized = Доступ запрещен
+nano-chat-coin-transfer-failed = Системная ошибка при переводе
+

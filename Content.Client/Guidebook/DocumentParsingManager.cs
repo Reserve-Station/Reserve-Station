@@ -72,7 +72,11 @@
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Whatstone <166147148+whatston3@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -170,7 +174,9 @@ public sealed partial class DocumentParsingManager
     private string CutComments(string text)
     {
 	if (text.Contains("<!--")){
-           return text.Remove(text.IndexOf("<!--"), text.IndexOf("-->") + 3);
+           var startIndex = text.IndexOf("<!--");
+           var endIndex = text.IndexOf("-->") + 3;
+           return text.Remove(startIndex, endIndex - startIndex);
         }
 	return text;
     }

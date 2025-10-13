@@ -93,3 +93,13 @@ guide-entry-space-law-table = Таблица статей
 guide-entry-space-law-violations-minor = 1ХХ статьи (лёгкие)
 guide-entry-space-law-violations-average = 2ХХ статьи (средние)
 guide-entry-space-law-violations-serious = 3ХХ статьи (тяжкие)
+
+# - Боевые искусства
+guide-entry-martial-arts = Боевые искусства
+guide-entry-cqc = Рукопашный бой (CQC)
+guide-entry-sleeping-carp = Спящий Карп
+guide-entry-krav-maga = Крав-мага
+guide-entry-corporate-judo = Корпоративное дзюдо
+guide-entry-capoeira = Капоэйра
+guide-entry-ninjutsu = Ниндзюцу
+guide-entry-dragon-kung-fu = Кунг-фу Дракона

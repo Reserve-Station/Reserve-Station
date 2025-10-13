@@ -11,12 +11,21 @@
 # SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 KamTheSythe <kamil.dolowiec01@gmail.com>
 # SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 FungiFellow <151778459+FungiFellow@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Hannah Giovanna Dawson <karakkaraz@gmail.com>
+# SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 KamTheSythe <kamil.dolowiec01@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 # SPDX-FileCopyrightText: 2025 Southbridge <7013162+southbridge-fur@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Thomas <87614336+Aeshus@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Utmanarn <Utmanarn@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 # SPDX-FileCopyrightText: 2025 lzk <124214523+lzk228@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
@@ -286,6 +295,38 @@
   - БАР В ТЕХТУННЕЛЯХ
   - РИМСКУЮ ИМПЕРИЮ
   - ВАШИ СНЫ И/ИЛИ КОШМАРЫ
+  - КОСМОС
+  - ШАТТЛ ПРИБЫТИЯ
+  - ТУАЛЕТ
+  - МОСТИК
+  - БРИГ
+  - THE BINGLE PIT # Goobstation
+  - THE CARGO DEPARTMENT # Goobstation
+  - THE EMERGENCY SHUTTLE
+  - THE ESCAPE PODS
+  - THE GALAXY
+  - THE GAS GIANT, WHICH IS TOTALLY REAL
+  - THE GULAG
+  - THE HALLWAY # Goobstation
+  - THE HOPLINE
+  - THE IMPERIUM OF MANKIND
+  - THE INTERNET
+  - THE KITCHEN
+  - THE LIBRARY
+  - THE MAINTENANCE BAR
+  - THE MIME'S INVISIBLE BOX
+  - THE ROMAN EMPIRE
+  - THE SCIENCE DEPARTMENT # Goobstation
+  - THE SECURITY DEPARTMENT # Goobstation
+  - THE SHADOW FACTORY # Goobstation
+  - THE TOOL ROOM # Goobstation
+  - THE UNIVERSE
+  - THE WIZARD'S DEN # Goobstation
+  - TIDELAND # Goobstation
+  - URANUS
+  - VENUS
+  - YOUR DREAMS AND/OR NIGHTMARES
+  - EQUESTRIA # Goobstation
 
 # Abstract concepts for the law holder to decide on it's own definition of.
 - type: dataset

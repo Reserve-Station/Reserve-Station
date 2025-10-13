@@ -69,6 +69,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
             <ContainerButton Name="StationTimeButton">
                 <RichTextLabel Name="StationTimeLabel" Access="Public"/>
             </ContainerButton>
+            <!-- Reserve edit start -->
+            <ContainerButton Name="ReserveCoinBalanceButton">
+                <RichTextLabel Name="ReserveCoinBalanceLabel" Access="Public"/>
+            </ContainerButton>
+            <!-- Reserve edit end -->
             <ContainerButton Name="StationAlertLevelInstructionsButton">
                 <RichTextLabel Name="StationAlertLevelInstructions" Access="Public"/>
             </ContainerButton>

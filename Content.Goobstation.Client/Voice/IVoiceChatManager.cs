@@ -1,6 +1,8 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -9,7 +11,7 @@ namespace Content.Goobstation.Client.Voice;
 /// <summary>
 /// Interface for the voice chat manager.
 /// </summary>
-public interface IVoiceChatManager : IDisposable
+public interface IVoiceChatManager
 {
     /// <summary>
     /// Adds a packet of PCM audio data to the playback queue for a specific entity.
@@ -35,4 +37,6 @@ public interface IVoiceChatManager : IDisposable
 
     void Initalize();
     void Update();
+
+    void Shutdown();
 }

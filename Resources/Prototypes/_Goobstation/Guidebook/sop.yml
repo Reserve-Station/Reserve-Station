@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
 # SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
 # SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
@@ -7,6 +8,7 @@
 # SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 echotry <48294642+echotry-ss14@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 echotry <xippl1@mail.ru>
+# SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
@@ -17,9 +19,12 @@
   name: guide-entry-sop
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/SoP.xml"
   children:
+  - Alert Levels
+  - Emergencies SOP
   - Jobs SOP
   - Legal SOP
   - StandardProcedures SOP
+  - Succession
 
 # Alert Levels Main Directory
 - type: guideEntry
@@ -27,7 +32,7 @@
   abstract: true #Reserve guidebook
   name: guide-entry-sop-alert-levels
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/AlertLevels/AlertLevelsSOP.xml"
-  priority: 0
+  priority: 1
   children:
   - GreenAlert SOP
   - BlueAlert SOP
@@ -63,19 +68,18 @@
   abstract: true #Reserve guidebook
   name: guide-entry-sop-standards
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/StandardProcedures/StandardProceduresSOP.xml"
+  priority: 2
   children:
-  - Alert Levels
-  - Emergencies SOP
   - Demoting SOP
   - EarlyEvacuation SOP
   - Hiring SOP
-  - Succession
 
 - type: guideEntry
   id: Legal SOP
   abstract: true #Reserve guidebook
   name: guide-entry-sop-legal
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Legal/LegalSOP.xml"
+  priority: 2
   children:
   - Execution SOP
   - PermaBrig SOP
@@ -88,6 +92,7 @@
   abstract: true #Reserve guidebook
   name: guide-entry-sop-jobs
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/JobsSOP.xml"
+  priority: 2
   children:
   - Cargo SOP
   - Command SOP
@@ -257,7 +262,7 @@
   abstract: true #Reserve guidebook
   name: guide-entry-sop-succession # Is named as "Chain of Command" in game.
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/StandardProcedures/CommandSuccession.xml"
-  priority: 10
+  priority: 0
 
 # Emergency SOP Entries
 - type: guideEntry

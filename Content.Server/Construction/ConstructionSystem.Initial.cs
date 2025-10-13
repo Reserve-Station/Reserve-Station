@@ -145,7 +145,7 @@ namespace Content.Server.Construction
                     if(!containerSlot.ContainedEntity.HasValue)
                         continue;
 
-                    if (EntityManager.TryGetComponent(containerSlot.ContainedEntity.Value, out StorageComponent? storage))
+                    if (TryComp(containerSlot.ContainedEntity.Value, out StorageComponent? storage))
                     {
                         foreach (var storedEntity in storage.Container.ContainedEntities)
                         {
@@ -347,7 +347,7 @@ namespace Content.Server.Construction
             }
 
             var newEntityProto = graph.Nodes[edge.Target].Entity.GetId(null, user, new(EntityManager));
-            var newEntity = EntityManager.SpawnAttachedTo(newEntityProto, coords, rotation: angle);
+            var newEntity = SpawnAttachedTo(newEntityProto, coords, rotation: angle);
 
             if (!TryComp(newEntity, out ConstructionComponent? construction))
             {
@@ -567,7 +567,7 @@ namespace Content.Server.Construction
 
             // Goobstation - can only realistically happen for sus clients, but ignore this for constructor
             HandsComponent? hands = null;
-            if (senderSession != null && !TryComp<HandsComponent>(user, out hands))
+            if (senderSession != null && !TryComp(user, out hands))
                 return false;
 
             foreach (var condition in constructionPrototype.Conditions)
@@ -601,11 +601,10 @@ namespace Content.Server.Construction
             }
             else if (hands != null)
             {
-                entWith = hands.ActiveHandEntity;
+                entWith = _handsSystem.GetActiveItem((user, hands));
             }
 
-            if (!_actionBlocker.CanInteract(user, null)
-                || (senderSession != null && entWith == null)) // Goobstation
+            if (!_actionBlocker.CanInteract(user, null))
             {
                 Cleanup();
                 return false;
@@ -628,11 +627,12 @@ namespace Content.Server.Construction
             if(edge == null)
                 throw new InvalidDataException($"Can't find edge from starting node to the next node in pathfinding! Recipe: {prototypeName}");
 
-            if (senderSession != null) // Goobstation - don't check this for constructor machine
+            if (_handsSystem.GetActiveItem((user, hands)) is {} holding
+                && senderSession != null) // Goobstation - don't check this for constructor machine
             {
                 var valid = false;
 
-                if (entWith is not {Valid: true} holding) // Goobstation - don't check for constructor machine
+                if (entWith == null) // Goobstation - don't check for constructor machine
                 {
                     Cleanup();
                     return false;

@@ -22,3 +22,4 @@ guide-entry-rules-space-law-reserve = Космический Закон
 guide-entry-rules-slcrime-list-reserve = Список нарушений
 guide-entry-rules-ban-types-reserve = Типы банов
 guide-entry-rules-ban-durations-reserve = Длительность банов
+guide-entry-grammar = Guide to Grammar

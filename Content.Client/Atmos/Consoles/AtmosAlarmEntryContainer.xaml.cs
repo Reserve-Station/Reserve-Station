@@ -200,7 +200,7 @@ public sealed partial class AtmosAlarmEntryContainer : BoxContainer
         switch (alarmType)
         {
             case AtmosAlarmType.Normal:
-                return StyleNano.GoodGreenFore;
+                return StyleNano.NeonGreenFore;
             case AtmosAlarmType.Warning:
                 return StyleNano.ConcerningOrangeFore;
             case AtmosAlarmType.Danger:
