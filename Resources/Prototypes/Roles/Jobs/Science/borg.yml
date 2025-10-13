@@ -53,7 +53,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 36000 # 10 hrs
+      time: 18000 # 5 hrs
   canBeAntag: false
   goobcoins: 20 #Goob content
   icon: JobIconBorg
