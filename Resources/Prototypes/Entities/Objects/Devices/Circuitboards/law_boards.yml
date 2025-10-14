@@ -117,7 +117,7 @@
     sprite: Objects/Misc/module.rsi
     state: std_mod
   - type: SiliconLawProvider
-    laws: Clown
+    laws: Crewsimov
 
 - type: entity
   id: JanitorCircuitBoard
@@ -312,6 +312,8 @@
   - type: SiliconLawProvider
     laws: AntimovLawset
     lawUploadSound: /Audio/Ambience/Antag/silicon_lawboard_antimov.ogg
+  - type: StaticPrice
+    price: 10000
 
 - type: entity
   id: NutimovCircuitBoard
@@ -350,3 +352,15 @@
     state: std_mod
   - type: SiliconLawProvider
     laws: MothershipCoreLawset
+
+- type: entity
+  id: HelpimovCircuitBoard
+  parent: BaseElectronics
+  name: law board (Helpimov)
+  description: An electronics board containing the Helpimov lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: Crewsimov

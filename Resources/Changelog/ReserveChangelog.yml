@@ -226,3 +226,17 @@ Entries:
       message: Добавлены изменения с Goob Station на момент 12.07!
   id: 33
   time: '2025-07-13T07:07:54.0000000+00:00'
+- author: Svarshik
+  changes:
+    - type: Add
+      message: Изменения с Goob Station на момент 26.09
+    - type: Add
+      message: Изменения с Space Wizards на момент 20.07
+  id: 34
+  time: '2025-09-28T19:13:32.0000000+00:00'
+- author: Kutos
+  changes:
+    - type: Add
+      message: IC передача резервкоинов
+  id: 35
+  time: '2025-09-28T19:29:13.0000000+00:00'

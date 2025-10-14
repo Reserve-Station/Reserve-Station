@@ -1,0 +1,88 @@
+<Document>
+
+  # Капоэйра
+
+  <Box>
+    <GuideEntityEmbed Entity="CapoeiraManual" Caption=""/>
+  </Box>
+
+  [bold]Капоэйра[/bold] - [color=Yellow][bold]танец войны Синдиката[/bold][/color] родом из [color=Green][bold]Бразилии[/bold][/color], [textlink="боевое искусство" link="MartialArts"], маскирующее [bold]насилие[/bold] под [bold]красоту[/bold].
+  Быстрые атаки перетекают в плавные [bold]комбо[/bold], каждое движение быстрее и сильнее предыдущего, питаемое неустанным [bold]импульсом[/bold].
+
+  ## Особые способности
+
+    Пользователи капоэйры лучше владеют [color=Orange][bold]захватом[/bold][/color] - успешный [bold]захват[/bold] противника дарует им кратковременное [bold]ускорение[/bold].
+
+  ### Capoeira Stance
+
+    Вы никогда не прекращаете движение, исполняя [color=Yellow][bold]жингу[/bold][/color]. Это делает вас очень [bold]мобильными[/bold] в бою.
+
+    Через стремительное движение мастера капоэйры превращают [color=Green][bold]скорость в энергию[/bold][/color], делая [bold]комбо[/bold] более смертоносными, чем быстрее они бегут.
+    Остановите их [bold]поток[/bold], и их сила исчезнет. Их комбо, питаемые движением, слабеют, когда они лежат.
+
+  ### Capoeira Momentum
+
+    Через плавное, неустанное движение капоэйры каждое успешное [bold]комбо[/bold] [color=Blue][bold]восстанавливает выносливость[/bold][/color] пользователя.
+    Каждый попавший [bold]удар[/bold] питает их выносливость, позволяя драться дольше, быстрее и сильнее без паузы.
+
+  ### Capoeira Rhythm
+
+    [color=#999999][italic]"Попал или промахнулся - это всё часть танца! И лучшая часть вот-вот начнётся!"[/italic][/color]
+
+    Промахнувшаяся [bold]атака[/bold] затачивает следующую, [color=Green][bold]уменьшая время восстановления и увеличивая урон[/bold][/color].
+
+  ## Комбо
+
+  ### Push Kick
+
+    <Box>
+      <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    </Box>
+
+    [bold]Сбивает с ног[/bold] и [bold]отталкивает[/bold] противника от пользователя. Не заставляет бросить предметы в руках.
+
+  ### Circle Kick
+
+    <Box>
+      <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    </Box>
+
+    Наносит [color=Orange][bold]Blunt[/bold][/color] урон и также [color=Yellow]значительно замедляет[/color] противника.
+
+  ### Sweep Kick
+
+    <Box>
+      <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    </Box>
+
+    Сбивает с ног и наносит [color=Orange][bold]Blunt[/bold][/color] урон и [color=Purple][bold]Stamina[/bold][/color] урон. [color=Green][bold]Временно немного увеличивает скорость атаки[/bold][/color] пользователя.
+    Нельзя выполнить, если пользователь движется слишком медленно.
+
+  ### Spin Kick
+
+    <Box>
+      <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    </Box>
+
+    Наносит много [color=Orange][bold]Blunt[/bold][/color] урона и сбивает противника с ног. Также заставляет пользователя сделать [bold][color=Yellow]сальто[/color][/bold]. Работает только против стоящих противников.
+    Нельзя выполнить, если пользователь движется слишком медленно.
+
+  ### Kick Up
+
+    <Box>
+      <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+      <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    </Box>
+
+    [color=Yellow][bold]Нужно навести на самого пользователя.[/bold][/color] [color=Green][bold]Можно выполнить лёжа.[/bold][/color] Убирает эффект сбивания с ног и заставляет пользователя [color=Green][bold]мгновенно встать[/bold][/color].
+
+</Document>

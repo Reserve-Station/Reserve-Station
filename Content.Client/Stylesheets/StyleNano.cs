@@ -3,6 +3,7 @@
 // SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
 // SPDX-FileCopyrightText: 2019 Remie Richards <remierichards@gmail.com>
 // SPDX-FileCopyrightText: 2019 Silver <Silvertorch5@gmail.com>
+// SPDX-FileCopyrightText: 2019 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2019 V�ctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2019 moneyl <8206401+Moneyl@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
@@ -73,7 +74,6 @@
 // SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
 // SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
@@ -94,7 +94,6 @@
 // SPDX-FileCopyrightText: 2024 Willhelm53 <97707302+Willhelm53@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 Your Name <you@example.com>
 // SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
@@ -120,9 +119,16 @@
 // SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 BeBright <98597725+be1bright@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Ciarán Walsh <github@ciaranwal.sh>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2025 Rane <60792108+Elijahrane@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 bedroomvampire <leannetoni@proton.me>
+// SPDX-FileCopyrightText: 2025 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 eoineoineoin <helloworld@eoinrul.es>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -136,6 +142,7 @@ using Content.Client.Silicons.Laws.SiliconLawEditUi;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Controls.FancyTree;
 using Content.Client.Verbs.UI;
+using Content.Goobstation.UIKit.UserInterface.Controls;
 using Content.Shared.Verbs;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -148,6 +155,7 @@ namespace Content.Client.Stylesheets
 {
     public static class ResCacheExtension
     {
+
         // Goobstation - ZH text support start
         public static Font NotoStack(this IResourceCache resCache, string variation = "Regular", int size = 10, bool display = false)
         {
@@ -221,6 +229,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassChatFilterOptionButton = "chatFilterOptionButton";
         public const string StyleClassStorageButton = "storageButton";
         public const string StyleClassInset = "Inset";
+        public const string StyleClassGlitchText = "GlitchText"; // New: For glitch effect on text elements
 
         public const string StyleClassConsoleHeading = "ConsoleHeading";
         public const string StyleClassConsoleSubHeading = "ConsoleSubHeading";
@@ -247,74 +256,81 @@ namespace Content.Client.Stylesheets
         public const string StyleClassPopupMessageLarge = "PopupMessageLarge";
         public const string StyleClassPopupMessageLargeCaution = "PopupMessageLargeCaution";
 
-        public static readonly Color PanelDark = Color.FromHex("#1E1E22");
+        public static readonly Color PanelDark = Color.FromHex("#0A0A0F"); // Darkened for cyberpunk void
 
-        public static readonly Color NanoGold = Color.FromHex("#A88B5E");
-        public static readonly Color GoodGreenFore = Color.FromHex("#31843E");
-        public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
-        public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
-        public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
+        // Enhanced Cyberpunk / Glitch color palette
+        public static readonly Color NanoGold = Color.FromHex("#FFD700"); // Brighter neon gold
+        public static readonly Color NeonCyan = Color.FromHex("#00FFFF"); // Core cyberpunk cyan
+        public static readonly Color NeonMagenta = Color.FromHex("#FF00FF"); // Vibrant magenta
+        public static readonly Color NeonGreenFore = Color.FromHex("#39FF14"); // Acid green
+        public static readonly Color NeonPinkFore = Color.FromHex("#FF1493"); // Hot pink
+        public static readonly Color ConcerningOrangeFore = Color.FromHex("#FF4500"); // Fiery orange
+        public static readonly Color DangerousRedFore = Color.FromHex("#FF0000"); // Blood red
+        public static readonly Color GlitchOverlay = Color.FromHex("#00FF41"); // Glitch green overlay
+        public static readonly Color DisabledFore = Color.FromHex("#333333"); // Muted gray
+        public static readonly Color GoodGreenFore = Color.FromHex("#39FF14");
 
-        public static readonly Color ButtonColorDefault = Color.FromHex("#222930ff");
-        public static readonly Color ButtonColorDefaultRed = Color.FromHex("#2a2230ff");
-        public static readonly Color ButtonColorHovered = Color.FromHex("#17181aff");
-        public static readonly Color ButtonColorHoveredRed = Color.FromHex("#151118ff");
-        public static readonly Color ButtonColorPressed = Color.FromHex("#33274bff");
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#181d22ff");
+        public static readonly Color ButtonColorDefault = Color.FromHex("#0D1117"); // Deeper black
+        public static readonly Color ButtonColorDefaultRed = Color.FromHex("#1A0000");
+        public static readonly Color ButtonColorHovered = NeonCyan;
+        public static readonly Color ButtonColorHoveredRed = NeonMagenta;
+        public static readonly Color ButtonColorPressed = NeonMagenta;
+        public static readonly Color ButtonColorDisabled = Color.FromHex("#0A0A0F");
 
-        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232");
-        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f");
-        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#602a2a");
+        public static readonly Color ButtonColorCautionDefault = DangerousRedFore;
+        public static readonly Color ButtonColorCautionHovered = NeonPinkFore;
+        public static readonly Color ButtonColorCautionPressed = NeonMagenta;
+        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#220000");
 
-        public static readonly Color ButtonColorGoodDefault = Color.FromHex("#3E6C45");
-        public static readonly Color ButtonColorGoodHovered = Color.FromHex("#31843E");
-        public static readonly Color ButtonColorGoodDisabled = Color.FromHex("#164420");
+        public static readonly Color ButtonColorGoodDefault = NeonGreenFore;
+        public static readonly Color ButtonColorGoodHovered = Color.FromHex("#00FF88");
+        public static readonly Color ButtonColorGoodDisabled = Color.FromHex("#002200");
 
-        //NavMap
-        public static readonly Color PointRed = Color.FromHex("#B02E26");
-        public static readonly Color PointGreen = Color.FromHex("#38b026");
-        public static readonly Color PointMagenta = Color.FromHex("#FF00FF");
+        // NavMap
+        public static readonly Color PointRed = DangerousRedFore;
+        public static readonly Color PointGreen = NeonGreenFore;
+        public static readonly Color PointMagenta = NeonMagenta;
 
-        // Context menu button colors
-        public static readonly Color ButtonColorContext = Color.FromHex("#1119");
-        public static readonly Color ButtonColorContextHover = Color.DarkSlateGray;
-        public static readonly Color ButtonColorContextPressed = Color.LightSlateGray;
-        public static readonly Color ButtonColorContextDisabled = Color.Black;
+        // Context menu
+        public static readonly Color ButtonColorContext = Color.FromHex("#0D1117");
+        public static readonly Color ButtonColorContextHover = NeonCyan;
+        public static readonly Color ButtonColorContextPressed = NeonMagenta;
+        public static readonly Color ButtonColorContextDisabled = Color.FromHex("#000000");
 
-        // Examine button colors
+        // Examine buttons
         public static readonly Color ExamineButtonColorContext = Color.Transparent;
-        public static readonly Color ExamineButtonColorContextHover = Color.DarkSlateGray;
-        public static readonly Color ExamineButtonColorContextPressed = Color.LightSlateGray;
-        public static readonly Color ExamineButtonColorContextDisabled = Color.FromHex("#5A5A5A");
+        public static readonly Color ExamineButtonColorContextHover = NeonCyan;
+        public static readonly Color ExamineButtonColorContextPressed = NeonMagenta;
+        public static readonly Color ExamineButtonColorContextDisabled = Color.FromHex("#333333");
 
-        // Fancy Tree elements
-        public static readonly Color FancyTreeEvenRowColor = Color.FromHex("#25252A");
+        // Fancy Tree
+        public static readonly Color FancyTreeEvenRowColor = Color.FromHex("#0A0A0F");
         public static readonly Color FancyTreeOddRowColor = FancyTreeEvenRowColor * new Color(0.8f, 0.8f, 0.8f);
-        public static readonly Color FancyTreeSelectedRowColor = new Color(55, 55, 68);
+        public static readonly Color FancyTreeSelectedRowColor = NeonCyan;
 
-        //Used by the APC and SMES menus
+        // APC / SMES menus
         public const string StyleClassPowerStateNone = "PowerStateNone";
         public const string StyleClassPowerStateLow = "PowerStateLow";
         public const string StyleClassPowerStateGood = "PowerStateGood";
 
         public const string StyleClassItemStatus = "ItemStatus";
         public const string StyleClassItemStatusNotHeld = "ItemStatusNotHeld";
-        public static readonly Color ItemStatusNotHeldColor = Color.Gray;
+        public static readonly Color ItemStatusNotHeldColor = Color.FromHex("#333333");
 
-        //Background
+        // Background
         public const string StyleClassBackgroundBaseDark = "PanelBackgroundBaseDark";
 
-        //Buttons
+        // Buttons
         public const string StyleClassCrossButtonRed = "CrossButtonRed";
         public const string StyleClassButtonColorRed = "ButtonColorRed";
         public const string StyleClassButtonColorGreen = "ButtonColorGreen";
 
-        public static readonly Color ChatBackgroundColor = Color.FromHex("#25252ADD");
+        public static readonly Color ChatBackgroundColor = Color.FromHex("#0A0A0FDD"); // Darker cyberpunk chat
 
-        //Bwoink
+        // Pin buttons
         public const string StyleClassPinButtonPinned = "pinButtonPinned";
         public const string StyleClassPinButtonUnpinned = "pinButtonUnpinned";
+
 
 
         public override Stylesheet Stylesheet { get; }
@@ -558,20 +574,20 @@ namespace Content.Client.Stylesheets
             };
             tabContainerPanel.SetPatchMargin(StyleBox.Margin.All, 2);
 
-            var tabContainerBoxActive = new StyleBoxFlat { BackgroundColor = new Color(64, 64, 64) };
+            var tabContainerBoxActive = new StyleBoxFlat { BackgroundColor = new Color(20, 20, 30) }; // Darker cyberpunk tab
             tabContainerBoxActive.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
-            var tabContainerBoxInactive = new StyleBoxFlat { BackgroundColor = new Color(32, 32, 32) };
+            var tabContainerBoxInactive = new StyleBoxFlat { BackgroundColor = new Color(10, 10, 20) };
             tabContainerBoxInactive.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
 
             var progressBarBackground = new StyleBoxFlat
             {
-                BackgroundColor = new Color(0.25f, 0.25f, 0.25f)
+                BackgroundColor = new Color(0.1f, 0.1f, 0.1f) // Deeper black
             };
             progressBarBackground.SetContentMarginOverride(StyleBox.Margin.Vertical, 14.5f);
 
             var progressBarForeground = new StyleBoxFlat
             {
-                BackgroundColor = new Color(0.25f, 0.50f, 0.25f)
+                BackgroundColor = new Color(NeonGreenFore.R * 0.8f, NeonGreenFore.G * 0.8f, NeonGreenFore.B * 0.8f, NeonGreenFore.A) // Semi-transparent neon
             };
             progressBarForeground.SetContentMarginOverride(StyleBox.Margin.Vertical, 14.5f);
 
@@ -630,7 +646,7 @@ namespace Content.Client.Stylesheets
             var monotoneCheckBoxTextureChecked = resCache.GetTexture("/Textures/Interface/Nano/Monotone/monotone_checkbox_checked.svg.96dpi.png");
             var monotoneCheckBoxTextureUnchecked = resCache.GetTexture("/Textures/Interface/Nano/Monotone/monotone_checkbox_unchecked.svg.96dpi.png");
 
-            // Tooltip box
+            // Tooltip box with cyberpunk glow
             var tooltipTexture = resCache.GetTexture("/Textures/Interface/Nano/tooltip.png");
             var tooltipBox = new StyleBoxTexture
             {
@@ -639,7 +655,7 @@ namespace Content.Client.Stylesheets
             tooltipBox.SetPatchMargin(StyleBox.Margin.All, 2);
             tooltipBox.SetContentMarginOverride(StyleBox.Margin.Horizontal, 7);
 
-            // Whisper box
+            // Whisper box with glitch overlay potential
             var whisperTexture = resCache.GetTexture("/Textures/Interface/Nano/whisper.png");
             var whisperBox = new StyleBoxTexture
             {
@@ -648,20 +664,20 @@ namespace Content.Client.Stylesheets
             whisperBox.SetPatchMargin(StyleBox.Margin.All, 2);
             whisperBox.SetContentMarginOverride(StyleBox.Margin.Horizontal, 7);
 
-            // Placeholder
+            // Placeholder with cyberpunk scanline
             var placeholderTexture = resCache.GetTexture("/Textures/Interface/Nano/placeholder.png");
             var placeholder = new StyleBoxTexture { Texture = placeholderTexture };
             placeholder.SetPatchMargin(StyleBox.Margin.All, 19);
             placeholder.SetExpandMargin(StyleBox.Margin.All, -5);
             placeholder.Mode = StyleBoxTexture.StretchMode.Tile;
 
-            var itemListBackgroundSelected = new StyleBoxFlat { BackgroundColor = new Color(75, 75, 86) };
+            var itemListBackgroundSelected = new StyleBoxFlat { BackgroundColor = new Color(15, 15, 25) }; // Darker selected
             itemListBackgroundSelected.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListBackgroundSelected.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
-            var itemListItemBackgroundDisabled = new StyleBoxFlat { BackgroundColor = new Color(10, 10, 12) };
+            var itemListItemBackgroundDisabled = new StyleBoxFlat { BackgroundColor = new Color(5, 5, 10) };
             itemListItemBackgroundDisabled.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListItemBackgroundDisabled.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
-            var itemListItemBackground = new StyleBoxFlat { BackgroundColor = new Color(55, 55, 68) };
+            var itemListItemBackground = new StyleBoxFlat { BackgroundColor = new Color(10, 10, 20) };
             itemListItemBackground.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListItemBackground.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
             var itemListItemBackgroundTransparent = new StyleBoxFlat { BackgroundColor = Color.Transparent };
@@ -675,7 +691,7 @@ namespace Content.Client.Stylesheets
                 ContentMarginLeftOverride = 10
             };
 
-            // NanoHeading
+            // NanoHeading with neon glow
             var nanoHeadingTex = resCache.GetTexture("/Textures/Interface/Nano/nanoheading.svg.96dpi.png");
             var nanoHeadingBox = new StyleBoxTexture
             {
@@ -689,7 +705,7 @@ namespace Content.Client.Stylesheets
 
             nanoHeadingBox.SetPatchMargin(StyleBox.Margin.Left | StyleBox.Margin.Bottom, 2);
 
-            // Stripe background
+            // Stripe background with scanline glitch
             var stripeBackTex = resCache.GetTexture("/Textures/Interface/Nano/stripeback.svg.96dpi.png");
             var stripeBack = new StyleBoxTexture
             {
@@ -697,7 +713,7 @@ namespace Content.Client.Stylesheets
                 Mode = StyleBoxTexture.StretchMode.Tile
             };
 
-            // Slider
+            // Slider with neon fills
             var sliderOutlineTex = resCache.GetTexture("/Textures/Interface/Nano/slider_outline.svg.96dpi.png");
             var sliderFillTex = resCache.GetTexture("/Textures/Interface/Nano/slider_fill.svg.96dpi.png");
             var sliderGrabTex = resCache.GetTexture("/Textures/Interface/Nano/slider_grabber.svg.96dpi.png");
@@ -705,7 +721,7 @@ namespace Content.Client.Stylesheets
             var sliderFillBox = new StyleBoxTexture
             {
                 Texture = sliderFillTex,
-                Modulate = Color.FromHex("#3E6C45")
+                Modulate = new Color(NeonGreenFore.R * 0.8f, NeonGreenFore.G * 0.8f, NeonGreenFore.B * 0.8f, NeonGreenFore.A)
             };
 
             var sliderBackBox = new StyleBoxTexture
@@ -717,7 +733,7 @@ namespace Content.Client.Stylesheets
             var sliderForeBox = new StyleBoxTexture
             {
                 Texture = sliderOutlineTex,
-                Modulate = Color.FromHex("#494949")
+                Modulate = Color.FromHex("#1A1A2E") // Cyberpunk outline
             };
 
             var sliderGrabBox = new StyleBoxTexture
@@ -730,9 +746,9 @@ namespace Content.Client.Stylesheets
             sliderForeBox.SetPatchMargin(StyleBox.Margin.All, 12);
             sliderGrabBox.SetPatchMargin(StyleBox.Margin.All, 12);
 
-            var sliderFillGreen = new StyleBoxTexture(sliderFillBox) { Modulate = Color.LimeGreen };
-            var sliderFillRed = new StyleBoxTexture(sliderFillBox) { Modulate = Color.Red };
-            var sliderFillBlue = new StyleBoxTexture(sliderFillBox) { Modulate = Color.Blue };
+            var sliderFillGreen = new StyleBoxTexture(sliderFillBox) { Modulate = NeonGreenFore };
+            var sliderFillRed = new StyleBoxTexture(sliderFillBox) { Modulate = DangerousRedFore };
+            var sliderFillBlue = new StyleBoxTexture(sliderFillBox) { Modulate = NeonCyan };
             var sliderFillWhite = new StyleBoxTexture(sliderFillBox) { Modulate = Color.White };
 
             var boxFont13 = resCache.NotoStack2ElectricBoogaloo("/Fonts/Boxfont-round/Boxfont Round.ttf", 13); // Goobstation - ZH text support
@@ -740,15 +756,15 @@ namespace Content.Client.Stylesheets
             var insetBack = new StyleBoxTexture
             {
                 Texture = buttonTex,
-                Modulate = Color.FromHex("#202023"),
+                Modulate = Color.FromHex("#0F0F14"), // Dark inset
             };
             insetBack.SetPatchMargin(StyleBox.Margin.All, 10);
 
-            // Default paper background:
+            // Default paper background with cyberpunk paper texture (assume glitchy scanline overlay)
             var paperBackground = new StyleBoxTexture
             {
                 Texture = resCache.GetTexture("/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"),
-                Modulate = Color.FromHex("#eaedde"), // A light cream
+                Modulate = Color.FromHex("#0D1117"), // Dark cyberpunk paper
             };
             paperBackground.SetPatchMargin(StyleBox.Margin.All, 16.0f);
 
@@ -760,11 +776,14 @@ namespace Content.Client.Stylesheets
             var directionIconQuestionTex = resCache.GetTexture("/Textures/Interface/VerbIcons/information.svg.192dpi.png");
             var directionIconHereTex = resCache.GetTexture("/Textures/Interface/VerbIcons/dot.svg.192dpi.png");
 
+            // New: Glitch texture for overlay (assume a glitch noise texture exists or use procedural)
+            var glitchTexture = resCache.GetTexture("/Textures/Interface/Glitch/noise_overlay.png"); // Hypothetical glitch texture
+
             Stylesheet = new Stylesheet(BaseRules.Concat(new[]
             {
                 Element().Class("monospace")
                     .Prop("font", notoSansMono),
-                // Window title.
+                // Window title with cyberpunk neon.
                 new StyleRule(
                     new SelectorElement(typeof(Label), new[] {DefaultWindow.StyleClassWindowTitle}, null, null),
                     new[]
@@ -780,7 +799,7 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(Label.StylePropertyFontColor, Color.White),
                         new StyleProperty(Label.StylePropertyFont, notoSansDisplayBold14),
                     }),
-                // Window background.
+                // Window background with subtle glitch overlay.
                 new StyleRule(
                     new SelectorElement(null, new[] {DefaultWindow.StyleClassWindowPanel}, null, null),
                     new[]
@@ -807,7 +826,7 @@ namespace Content.Client.Stylesheets
                     {
                         new StyleProperty(PanelContainer.StylePropertyPanel, invSlotBg),
                     }),
-                // hand slot highlight
+                // hand slot highlight with neon
                 new StyleRule(
                     new SelectorElement(null, new[] {StyleClassHandSlotHighlight}, null, null),
                     new[]
@@ -860,7 +879,7 @@ namespace Content.Client.Stylesheets
                     new StyleProperty(Label.StylePropertyAlignMode, Label.AlignMode.Center),
                 }),
 
-                // Colors for the buttons.
+                // Colors for the buttons with cyberpunk neon hovers.
                 Element<ContainerButton>().Class(ContainerButton.StyleClassButton)
                     .Pseudo(ContainerButton.StylePseudoClassNormal)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorDefault),
@@ -955,7 +974,7 @@ namespace Content.Client.Stylesheets
                     .Pseudo(ContainerButton.StylePseudoClassDisabled)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorContextDisabled),
 
-                // Context Menu Labels
+                // Context Menu Labels with glitch option
                 Element<RichTextLabel>().Class(InteractionVerb.DefaultTextStyleClass)
                     .Prop(Label.StylePropertyFont, notoSansBoldItalic12),
 
@@ -967,6 +986,10 @@ namespace Content.Client.Stylesheets
 
                 Element<RichTextLabel>().Class(Verb.DefaultTextStyleClass)
                     .Prop(Label.StylePropertyFont, notoSans12),
+
+                // New: Glitch text style - duplicate text with offset and color shift for glitch effect
+                Element<RichTextLabel>().Class(StyleClassGlitchText)
+                    .Prop(Label.StylePropertyFontColor, NanoGold),
 
                 Element<TextureRect>().Class(ContextMenuElement.StyleClassContextMenuExpansionTexture)
                     .Prop(TextureRect.StylePropertyTexture, contextMenuExpansionTexture),
@@ -1049,19 +1072,19 @@ namespace Content.Client.Stylesheets
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassNormal)
-                    .Prop(Control.StylePropertyModulateSelf, new Color(55, 55, 68)),
+                    .Prop(Control.StylePropertyModulateSelf, new Color(10, 10, 20)), // Cyberpunk list
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, new Color(75, 75, 86)),
+                    .Prop(Control.StylePropertyModulateSelf, new Color(20, 20, 30)),
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassPressed)
-                    .Prop(Control.StylePropertyModulateSelf, new Color(75, 75, 86)),
+                    .Prop(Control.StylePropertyModulateSelf, new Color(20, 20, 30)),
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassDisabled)
-                    .Prop(Control.StylePropertyModulateSelf, new Color(10, 10, 12)),
+                    .Prop(Control.StylePropertyModulateSelf, new Color(5, 5, 10)),
 
                 // Main menu: Make those buttons bigger.
                 new StyleRule(new SelectorChild(
@@ -1090,7 +1113,7 @@ namespace Content.Client.Stylesheets
                     new SelectorElement(typeof(LineEdit), new[] {LineEdit.StyleClassLineEditNotEditable}, null, null),
                     new[]
                     {
-                        new StyleProperty("font-color", new Color(192, 192, 192)),
+                        new StyleProperty("font-color", new Color(100, 100, 100)), // Muted cyberpunk
                     }),
 
                 new StyleRule(
@@ -1273,7 +1296,7 @@ namespace Content.Client.Stylesheets
                 new StyleRule(new SelectorElement(typeof(ItemList), null, null, null), new[]
                 {
                     new StyleProperty(ItemList.StylePropertyBackground,
-                        new StyleBoxFlat {BackgroundColor = new Color(32, 32, 40)}),
+                        new StyleBoxFlat {BackgroundColor = new Color(5, 5, 15)}), // Deeper cyberpunk
                     new StyleProperty(ItemList.StylePropertyItemBackground,
                         itemListItemBackground),
                     new StyleProperty(ItemList.StylePropertyDisabledItemBackground,
@@ -1310,10 +1333,10 @@ namespace Content.Client.Stylesheets
                 new StyleRule(new SelectorElement(typeof(Tree), null, null, null), new[]
                 {
                     new StyleProperty(Tree.StylePropertyBackground,
-                        new StyleBoxFlat {BackgroundColor = new Color(32, 32, 40)}),
+                        new StyleBoxFlat {BackgroundColor = new Color(5, 5, 15)}),
                     new StyleProperty(Tree.StylePropertyItemBoxSelected, new StyleBoxFlat
                     {
-                        BackgroundColor = new Color(55, 55, 68),
+                        BackgroundColor = new Color(10, 10, 20),
                         ContentMarginLeftOverride = 4
                     })
                 }),
@@ -1328,7 +1351,7 @@ namespace Content.Client.Stylesheets
                     new SelectorElement(typeof(Label), new[] {Placeholder.StyleClassPlaceholderText}, null, null), new[]
                     {
                         new StyleProperty(Label.StylePropertyFont, notoSans16),
-                        new StyleProperty(Label.StylePropertyFontColor, new Color(103, 103, 103, 128)),
+                        new StyleProperty(Label.StylePropertyFontColor, new Color(50, 50, 50, 128)), // Faded cyberpunk
                     }),
 
                 // Big Label
@@ -1367,7 +1390,7 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(Label.StylePropertyFontColor, Color.DarkGray),
                     }),
 
-                // Console text
+                // Console text with glitch class option
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassConsoleText}, null, null), new[]
                 {
                     new StyleProperty(Label.StylePropertyFont, robotoMonoBold11)
@@ -1392,20 +1415,20 @@ namespace Content.Client.Stylesheets
                         new StyleProperty("font", notoSans16)
                     }),
 
-                //APC and SMES power state label colors
+                //APC and SMES power state label colors with neon
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassPowerStateNone}, null, null), new[]
                 {
-                    new StyleProperty(Label.StylePropertyFontColor, new Color(0.8f, 0.0f, 0.0f))
+                    new StyleProperty(Label.StylePropertyFontColor, DangerousRedFore)
                 }),
 
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassPowerStateLow}, null, null), new[]
                 {
-                    new StyleProperty(Label.StylePropertyFontColor, new Color(0.9f, 0.36f, 0.0f))
+                    new StyleProperty(Label.StylePropertyFontColor, ConcerningOrangeFore)
                 }),
 
                 new StyleRule(new SelectorElement(typeof(Label), new[] {StyleClassPowerStateGood}, null, null), new[]
                 {
-                    new StyleProperty(Label.StylePropertyFontColor, new Color(0.024f, 0.8f, 0.0f))
+                    new StyleProperty(Label.StylePropertyFontColor, NeonGreenFore)
                 }),
 
                 // Those top menu buttons.
@@ -1677,7 +1700,7 @@ namespace Content.Client.Stylesheets
                 }),
 
                 Element<PanelContainer>().Class(OptionButton.StyleClassOptionsBackground)
-                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#25252A"))),
+                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#0A0A0F"))), // Dark options
 
                 new StyleRule(new SelectorElement(typeof(PanelContainer), new []{ ClassHighDivider}, null, null), new []
                 {
@@ -1699,22 +1722,22 @@ namespace Content.Client.Stylesheets
                 // Different Background shapes ---
                 Element<PanelContainer>().Class(ClassAngleRect)
                     .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#0A0A0F")),
 
                 Element<PanelContainer>().Class("BackgroundOpenRight")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenRight)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#0A0A0F")),
 
                 Element<PanelContainer>().Class("BackgroundOpenLeft")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenLeft)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252A")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#0A0A0F")),
                 // ---
 
-                // Dividers
+                // Dividers with neon glow
                 Element<PanelContainer>().Class(ClassLowDivider)
                     .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat
                     {
-                        BackgroundColor = Color.FromHex("#444"),
+                        BackgroundColor = new Color(NeonCyan.R * 0.5f, NeonCyan.G * 0.5f, NeonCyan.B * 0.5f, NeonCyan.A), // Semi-transparent neon divider
                         ContentMarginLeftOverride = 2,
                         ContentMarginBottomOverride = 2
                     }),
@@ -1726,39 +1749,39 @@ namespace Content.Client.Stylesheets
 
                 Element<PanelContainer>().Class("WindowHeadingBackground")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenLeft) { Padding = default })
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1F1F23")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#0A0A0F")),
 
                 Element<PanelContainer>().Class("WindowHeadingBackgroundLight")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenLeft) { Padding = default }),
 
-                // Window Header Help Button
+                // Window Header Help Button with glitch hover
                 Element<TextureButton>().Class(FancyWindow.StyleClassWindowHelpButton)
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Nano/help.png"))
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#4B596A")),
+                    .Prop(Control.StylePropertyModulateSelf, new Color(NeonCyan.R * 0.7f, NeonCyan.G * 0.7f, NeonCyan.B * 0.7f, NeonCyan.A)),
 
                 Element<TextureButton>().Class(FancyWindow.StyleClassWindowHelpButton).Pseudo(ContainerButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#7F3636")),
+                    .Prop(Control.StylePropertyModulateSelf, GlitchOverlay),
 
                 Element<TextureButton>().Class(FancyWindow.StyleClassWindowHelpButton).Pseudo(ContainerButton.StylePseudoClassPressed)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#753131")),
+                    .Prop(Control.StylePropertyModulateSelf, NeonMagenta),
 
                 //The lengths you have to go through to change a background color smh
                 Element<PanelContainer>().Class("PanelBackgroundBaseDark")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenBoth) { Padding = default })
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1F1F23")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#0A0A0F")),
 
                 Element<PanelContainer>().Class("PanelBackgroundLight")
                     .Prop("panel", new StyleBoxTexture(BaseButtonOpenBoth) { Padding = default })
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#2F2F3B")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1A1A24")),
 
-                // Window Footer
+                // Window Footer with glitch texture overlay
                 Element<TextureRect>().Class("NTLogoDark")
                     .Prop(TextureRect.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Nano/ntlogo.svg.png"))
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#757575")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#333333")),
 
                 Element<Label>().Class("WindowFooterText")
                     .Prop(Label.StylePropertyFont, notoSans8)
-                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#757575")),
+                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#333333")),
 
                 // X Texture button ---
                 Element<TextureButton>().Class("CrossButtonRed")
@@ -1766,10 +1789,10 @@ namespace Content.Client.Stylesheets
                     .Prop(Control.StylePropertyModulateSelf, DangerousRedFore),
 
                 Element<TextureButton>().Class("CrossButtonRed").Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#7F3636")),
+                    .Prop(Control.StylePropertyModulateSelf, NeonMagenta),
 
-                Element<TextureButton>().Class("CrossButtonRed").Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#753131")),
+                Element<TextureButton>().Class("CrossButtonRed").Pseudo(TextureButton.StylePseudoClassPressed)
+                    .Prop(Control.StylePropertyModulateSelf, NeonPinkFore),
 
                 //
                 Element<TextureButton>().Class("Refresh")
@@ -1782,14 +1805,14 @@ namespace Content.Client.Stylesheets
 
                 Element<TextureButton>().Class("SpeciesInfoWarning")
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/info.svg.192dpi.png"))
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#eeee11")),
+                    .Prop(Control.StylePropertyModulateSelf, NeonPinkFore),
 
                 // The default look of paper in UIs. Pages can have components which override this
                 Element<PanelContainer>().Class("PaperDefaultBorder")
                     .Prop(PanelContainer.StylePropertyPanel, paperBackground),
                 Element<RichTextLabel>().Class("PaperWrittenText")
                     .Prop(Label.StylePropertyFont, notoSans12)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#111111")),
+                    .Prop(Control.StylePropertyModulateSelf, NanoGold), // Neon text on paper
 
                 Element<RichTextLabel>().Class("LabelSubText")
                     .Prop(Label.StylePropertyFont, notoSans10)
@@ -1797,6 +1820,24 @@ namespace Content.Client.Stylesheets
 
                 Element<LineEdit>().Class("PaperLineEdit")
                     .Prop(LineEdit.StylePropertyStyleBox, new StyleBoxEmpty()),
+
+                // Goobstation-EsColorPicker-Start
+                Element<Button>().Class("SecretButton")
+                    .Prop(Control.StylePropertyModulateSelf, Color.Transparent),
+
+                Element<Button>().Class("SecretButton").Pseudo(ContainerButton.StylePseudoClassNormal)
+                    .Prop(Control.StylePropertyModulateSelf, Color.Transparent),
+
+                Element<Button>().Class("SecretButton").Pseudo(ContainerButton.StylePseudoClassHover)
+                    .Prop(Control.StylePropertyModulateSelf, Color.Transparent),
+
+                Element<Button>().Class("SecretButton").Pseudo(ContainerButton.StylePseudoClassPressed)
+                    .Prop(Control.StylePropertyModulateSelf, Color.Transparent),
+
+                Element<TextureRect>().Class("SyndicateLogo")
+                    .Prop(TextureRect.StylePropertyTexture, resCache.GetTexture("/Textures/_Goobstation/Interface/syndicate_logo_white.svg.96dpi.png"))
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#757575")),
+                // Goobstation-EsColorPicker-End
 
                 // Red Button ---
                 Element<Button>().Class("ButtonColorRed")
@@ -1847,7 +1888,7 @@ namespace Content.Client.Stylesheets
                     .Prop("font-color", NanoGold),
 
                 Element<Label>().Class("Good")
-                    .Prop("font-color", GoodGreenFore),
+                    .Prop("font-color", NeonGreenFore),
 
                 Element<Label>().Class("Caution")
                     .Prop("font-color", ConcerningOrangeFore),
@@ -1858,29 +1899,32 @@ namespace Content.Client.Stylesheets
                 Element<Label>().Class("Disabled")
                     .Prop("font-color", DisabledFore),
 
-                // Radial menu buttons
+                // Radial menu buttons with cyberpunk neon
                 Element<TextureButton>().Class("RadialMenuButton")
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Radial/button_normal.png")),
                 Element<TextureButton>().Class("RadialMenuButton")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Radial/button_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Radial/button_hover.png"))
+                    .Prop(Control.StylePropertyModulateSelf, NeonCyan),
 
                 Element<TextureButton>().Class("RadialMenuCloseButton")
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Radial/close_normal.png")),
                 Element<TextureButton>().Class("RadialMenuCloseButton")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Radial/close_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Radial/close_hover.png"))
+                    .Prop(Control.StylePropertyModulateSelf, DangerousRedFore),
 
                 Element<TextureButton>().Class("RadialMenuBackButton")
                     .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Radial/back_normal.png")),
                 Element<TextureButton>().Class("RadialMenuBackButton")
                     .Pseudo(TextureButton.StylePseudoClassHover)
-                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Radial/back_hover.png")),
+                    .Prop(TextureButton.StylePropertyTexture, resCache.GetTexture("/Textures/Interface/Radial/back_hover.png"))
+                    .Prop(Control.StylePropertyModulateSelf, NeonMagenta),
 
-                //PDA - Backgrounds
+                //PDA - Backgrounds with cyberpunk dark
                 Element<PanelContainer>().Class("PdaContentBackground")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenBoth)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#25252a")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#0A0A0F")),
 
                 Element<PanelContainer>().Class("PdaBackground")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenBoth)
@@ -1888,26 +1932,26 @@ namespace Content.Client.Stylesheets
 
                 Element<PanelContainer>().Class("PdaBackgroundRect")
                     .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#717059")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#1A1A24")),
 
                 Element<PanelContainer>().Class("PdaBorderRect")
                     .Prop(PanelContainer.StylePropertyPanel, AngleBorderRect),
 
                 Element<PanelContainer>().Class("BackgroundDark")
-                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#25252A"))),
+                    .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat(Color.FromHex("#0A0A0F"))),
 
                 //PDA - Buttons
                 Element<PdaSettingsButton>().Pseudo(ContainerButton.StylePseudoClassNormal)
                     .Prop(PdaSettingsButton.StylePropertyBgColor, Color.FromHex(PdaSettingsButton.NormalBgColor))
-                    .Prop(PdaSettingsButton.StylePropertyFgColor, Color.FromHex(PdaSettingsButton.EnabledFgColor)),
+                    .Prop(PdaSettingsButton.StylePropertyFgColor, NeonCyan),
 
                 Element<PdaSettingsButton>().Pseudo(ContainerButton.StylePseudoClassHover)
                     .Prop(PdaSettingsButton.StylePropertyBgColor, Color.FromHex(PdaSettingsButton.HoverColor))
-                    .Prop(PdaSettingsButton.StylePropertyFgColor, Color.FromHex(PdaSettingsButton.EnabledFgColor)),
+                    .Prop(PdaSettingsButton.StylePropertyFgColor, NeonGreenFore),
 
                 Element<PdaSettingsButton>().Pseudo(ContainerButton.StylePseudoClassPressed)
                     .Prop(PdaSettingsButton.StylePropertyBgColor, Color.FromHex(PdaSettingsButton.PressedColor))
-                    .Prop(PdaSettingsButton.StylePropertyFgColor, Color.FromHex(PdaSettingsButton.EnabledFgColor)),
+                    .Prop(PdaSettingsButton.StylePropertyFgColor, NeonMagenta),
 
                 Element<PdaSettingsButton>().Pseudo(ContainerButton.StylePseudoClassDisabled)
                     .Prop(PdaSettingsButton.StylePropertyBgColor, Color.FromHex(PdaSettingsButton.NormalBgColor))
@@ -1925,11 +1969,11 @@ namespace Content.Client.Stylesheets
                 //PDA - Text
                 Element<Label>().Class("PdaContentFooterText")
                     .Prop(Label.StylePropertyFont, notoSans10)
-                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#757575")),
+                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#333333")),
 
                 Element<Label>().Class("PdaWindowFooterText")
                     .Prop(Label.StylePropertyFont, notoSans10)
-                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#333d3b")),
+                    .Prop(Label.StylePropertyFontColor, Color.FromHex("#1A1A24")),
 
                 // Fancy Tree
                 Element<ContainerButton>().Identifier(TreeItem.StyleIdentifierTreeButton)
@@ -2016,6 +2060,7 @@ namespace Content.Client.Stylesheets
 
                 // Silicon law edit ui
                 Element<Label>().Class(SiliconLawContainer.StyleClassSiliconLawPositionLabel)
+                    .Class(StyleClassGlitchText)
                     .Prop(Label.StylePropertyFontColor, NanoGold),
                 // Pinned button style
                 new StyleRule(

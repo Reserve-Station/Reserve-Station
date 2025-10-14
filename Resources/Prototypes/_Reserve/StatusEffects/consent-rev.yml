@@ -1,9 +1,0 @@
-- type: statusEffect
-  id: RevConversionDenied
-  alert: RevConversionDenied
-  alwaysAllowed: true
-
-- type: statusEffect
-  id: RevConversionCooldown
-  alert: RevConversionCooldown
-  alwaysAllowed: true

@@ -27,9 +27,13 @@
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server.Codewords;
 using Content.Shared.Dataset;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.Roles;
@@ -48,6 +52,9 @@ public sealed partial class TraitorRuleComponent : Component
     public ProtoId<AntagPrototype> TraitorPrototypeId = "Traitor";
 
     [DataField]
+    public ProtoId<CodewordFactionPrototype> CodewordFactionPrototypeId = "Traitor";
+
+    [DataField]
     public ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
 
     [DataField]
@@ -60,7 +67,7 @@ public sealed partial class TraitorRuleComponent : Component
     public ProtoId<LocalizedDatasetPrototype> CodewordVerbs = "Verbs";
 
     [DataField]
-    public ProtoId<DatasetPrototype> ObjectiveIssuers = "TraitorFlavor"; // Goobstation
+    public ProtoId<LocalizedDatasetPrototype> ObjectiveIssuers = "TraitorCorporationsFlavor"; // Goobstation Change
 
     /// <summary>
     /// Give this traitor an Uplink on spawn.
@@ -81,8 +88,6 @@ public sealed partial class TraitorRuleComponent : Component
     public bool GiveBriefing = true;
 
     public int TotalTraitors => TraitorMinds.Count;
-    public string[] Codewords = new string[3];
-    public string ObjectiveIssuer = string.Empty; // goob edit
 
     public enum SelectionState
     {
@@ -107,12 +112,6 @@ public sealed partial class TraitorRuleComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg");
-
-    /// <summary>
-    /// The amount of codewords that are selected.
-    /// </summary>
-    [DataField]
-    public int CodewordCount = 4;
 
     /// <summary>
     /// The amount of TC traitors start with.

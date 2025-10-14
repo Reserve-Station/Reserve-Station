@@ -126,6 +126,9 @@
 # SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 csqrb <56765288+CaptainSqrBeard@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Minemoder5000 <minemoder50000@gmail.com>
+# SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -144,11 +147,16 @@
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 36000 #10 hrs
+    - !type:SpeciesRequirement # Goob - None Felinid
+      inverted: true
+      species:
+      - Felinid
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
   supervisors: job-supervisors-captain
-  canBeAntag: false
+  #canBeAntag: false
+  antagAdvantage: 75 # Goobstation
   goobcoins: 40 #Goob content
   access:
   - Maintenance
@@ -178,3 +186,15 @@
     back:
     - Flash
     - TelescopicBaton # Goobstation
+
+- type: chameleonOutfit
+  id: ChiefEngineerChameleonOutfit
+  job: ChiefEngineer
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+    mask: ClothingMaskBreath
+    neck: ClothingNeckCloakCe
+    outerClothing: ClothingOuterWinterCE
+    gloves: ClothingHandsGlovesColorYellow
+    shoes: ClothingShoesBootsMagAdv

@@ -24,17 +24,36 @@ namespace Content.Client.Stylesheets
 {
     public sealed class StyleSpace : StyleBase
     {
-        public static readonly Color SpaceRed = Color.FromHex("#9b2236");
+        public const string StyleClassGlitchText = "GlitchText"; // New: For glitch effect on text elements
 
-        public static readonly Color ButtonColorDefault = Color.FromHex("#464966");
-        public static readonly Color ButtonColorHovered = Color.FromHex("#575b7f");
-        public static readonly Color ButtonColorPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#30313c");
+        public static readonly Color PanelDark = Color.FromHex("#0A0A0F"); // Darkened for cyberpunk void
 
-        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232");
-        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f");
-        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#602a2a");
+        // Enhanced Cyberpunk / Glitch color palette
+        public static readonly Color NanoGold = Color.FromHex("#FFD700"); // Brighter neon gold
+        public static readonly Color NeonCyan = Color.FromHex("#00FFFF"); // Core cyberpunk cyan
+        public static readonly Color NeonMagenta = Color.FromHex("#FF00FF"); // Vibrant magenta
+        public static readonly Color NeonGreenFore = Color.FromHex("#39FF14"); // Acid green
+        public static readonly Color NeonPinkFore = Color.FromHex("#FF1493"); // Hot pink
+        public static readonly Color ConcerningOrangeFore = Color.FromHex("#FF4500"); // Fiery orange
+        public static readonly Color DangerousRedFore = Color.FromHex("#FF0000"); // Blood red
+        public static readonly Color GlitchOverlay = Color.FromHex("#00FF41"); // Glitch green overlay
+        public static readonly Color DisabledFore = Color.FromHex("#333333"); // Muted gray
+
+        public static readonly Color ButtonColorDefault = Color.FromHex("#0D1117"); // Deeper black
+        public static readonly Color ButtonColorHovered = NeonCyan;
+        public static readonly Color ButtonColorPressed = NeonMagenta;
+        public static readonly Color ButtonColorDisabled = Color.FromHex("#0A0A0F");
+
+        public static readonly Color ButtonColorCautionDefault = DangerousRedFore;
+        public static readonly Color ButtonColorCautionHovered = NeonPinkFore;
+        public static readonly Color ButtonColorCautionPressed = NeonMagenta;
+        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#220000");
+
+        public static readonly Color ButtonColorGoodDefault = NeonGreenFore;
+        public static readonly Color ButtonColorGoodHovered = Color.FromHex("#00FF88");
+        public static readonly Color ButtonColorGoodDisabled = Color.FromHex("#002200");
+
+        public static readonly Color SpaceRed = DangerousRedFore; // Updated to cyberpunk red
 
         public override Stylesheet Stylesheet { get; }
 
@@ -42,7 +61,7 @@ namespace Content.Client.Stylesheets
         {
             var notoSans10 = resCache.GetFont
             (
-                new []
+                new[]
                 {
                     "/Fonts/NotoSans/NotoSans-Regular.ttf",
                     "/Fonts/NotoSans/NotoSansSymbols-Regular.ttf",
@@ -52,7 +71,7 @@ namespace Content.Client.Stylesheets
             );
             var notoSansBold16 = resCache.GetFont
             (
-                new []
+                new[]
                 {
                     "/Fonts/NotoSans/NotoSans-Bold.ttf",
                     "/Fonts/NotoSans/NotoSansSymbols-Regular.ttf",
@@ -63,13 +82,13 @@ namespace Content.Client.Stylesheets
 
             var progressBarBackground = new StyleBoxFlat
             {
-                BackgroundColor = new Color(0.25f, 0.25f, 0.25f)
+                BackgroundColor = new Color(0.1f, 0.1f, 0.1f) // Deeper black
             };
             progressBarBackground.SetContentMarginOverride(StyleBox.Margin.Vertical, 14.5f);
 
             var progressBarForeground = new StyleBoxFlat
             {
-                BackgroundColor = new Color(0.25f, 0.50f, 0.25f)
+                BackgroundColor = new Color(NeonGreenFore.R * 0.8f, NeonGreenFore.G * 0.8f, NeonGreenFore.B * 0.8f, NeonGreenFore.A) // Semi-transparent neon
             };
             progressBarForeground.SetContentMarginOverride(StyleBox.Margin.Vertical, 14.5f);
 
@@ -78,31 +97,35 @@ namespace Content.Client.Stylesheets
             var tabContainerPanel = new StyleBoxTexture();
             tabContainerPanel.SetPatchMargin(StyleBox.Margin.All, 2);
 
-            var tabContainerBoxActive = new StyleBoxFlat {BackgroundColor = new Color(64, 64, 64)};
+            var tabContainerBoxActive = new StyleBoxFlat { BackgroundColor = new Color(20, 20, 30) }; // Darker cyberpunk tab
             tabContainerBoxActive.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
-            var tabContainerBoxInactive = new StyleBoxFlat {BackgroundColor = new Color(32, 32, 32)};
+            var tabContainerBoxInactive = new StyleBoxFlat { BackgroundColor = new Color(10, 10, 20) };
             tabContainerBoxInactive.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
 
             Stylesheet = new Stylesheet(BaseRules.Concat(new StyleRule[]
             {
                 Element<Label>().Class(StyleClassLabelHeading)
                     .Prop(Label.StylePropertyFont, notoSansBold16)
-                    .Prop(Label.StylePropertyFontColor, SpaceRed),
+                    .Prop(Label.StylePropertyFontColor, NanoGold), // Neon gold for headings
 
                 Element<Label>().Class(StyleClassLabelSubText)
                     .Prop(Label.StylePropertyFont, notoSans10)
                     .Prop(Label.StylePropertyFontColor, Color.DarkGray),
 
+                // New: Glitch text style
+                Element<Label>().Class(StyleClassGlitchText)
+                    .Prop(Label.StylePropertyFontColor, NanoGold),
+
                 Element<PanelContainer>().Class(ClassHighDivider)
                     .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat
                     {
-                        BackgroundColor = SpaceRed, ContentMarginBottomOverride = 2, ContentMarginLeftOverride = 2
+                        BackgroundColor = NanoGold, ContentMarginBottomOverride = 2, ContentMarginLeftOverride = 2
                     }),
 
                 Element<PanelContainer>().Class(ClassLowDivider)
                     .Prop(PanelContainer.StylePropertyPanel, new StyleBoxFlat
                     {
-                        BackgroundColor = Color.FromHex("#444"),
+                        BackgroundColor = new Color(NeonCyan.R * 0.5f, NeonCyan.G * 0.5f, NeonCyan.B * 0.5f, NeonCyan.A), // Semi-transparent neon divider
                         ContentMarginLeftOverride = 2,
                         ContentMarginBottomOverride = 2
                     }),
@@ -127,7 +150,7 @@ namespace Content.Client.Stylesheets
                     .Class(ButtonSquare)
                     .Prop(ContainerButton.StylePropertyStyleBox, BaseButtonSquare),
 
-                // Colors for the buttons.
+                // Colors for the buttons with cyberpunk neon hovers.
                 Element<ContainerButton>().Class(ContainerButton.StyleClassButton)
                     .Pseudo(ContainerButton.StylePseudoClassNormal)
                     .Prop(Control.StylePropertyModulateSelf, ButtonColorDefault),
@@ -167,7 +190,7 @@ namespace Content.Client.Stylesheets
 
                 Element<PanelContainer>().Class(ClassAngleRect)
                     .Prop(PanelContainer.StylePropertyPanel, BaseAngleRect)
-                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#202030")),
+                    .Prop(Control.StylePropertyModulateSelf, Color.FromHex("#0A0A0F")),
 
                 Child()
                     .Parent(Element<Button>().Class(ContainerButton.StylePseudoClassDisabled))

@@ -1,8 +1,15 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 VMSolidus <evilexecutive@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+// SPDX-FileCopyrightText: 2025 sa1nt7331 <202271576+sa1nt7331@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -77,11 +84,12 @@ public sealed class GrabThrownSystem : EntitySystem
 
     private void OnStopThrow(EntityUid uid, GrabThrownComponent comp, StopThrowEvent args)
     {
+        if (_netMan.IsClient) //Reserve edit
+            return;
         if (comp.DamageOnCollide != null)
             _damageable.TryChangeDamage(uid, comp.DamageOnCollide);
 
-        if (HasComp<GrabThrownComponent>(uid))
-            RemComp<GrabThrownComponent>(uid);
+        RemComp<GrabThrownComponent>(uid); //Reserve edit
     }
 
     /// <summary>

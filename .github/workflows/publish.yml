@@ -11,9 +11,11 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 AwareFoxy <135021509+AwareFoxy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
 # SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 # SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
@@ -36,6 +38,10 @@ jobs:
 
 
     steps:
+    - name: Fail if we are attempting to run on the master branch
+      if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
+      run: exit 1
+
     - name: Install dependencies
       run: sudo apt-get install -y python3-paramiko python3-lxml
 

@@ -25,6 +25,11 @@
 # SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -35,6 +40,7 @@
   text: "/ServerInfo/Guidebook/Antagonist/Antagonists.xml"
   children:
   - Traitors
+  - CorporateAgents # Goobstation - Corporate Agents
   - Changelings # Goobstation - changelings
   - Heretics # Goobstation - heretics
   - Blob # Goobstation - Blob
@@ -49,6 +55,9 @@
   - Abductors # Shitmed - Abductors
   - Bingle # Goob content
   - Devil # Goob content
+  - Shadowlings # Einstein Engines - Shadowlings
+  - SlaughterDemon # Goob content
+  - Xenomorphs # WD - Xenomorphs
 
 - type: guideEntry
   id: Traitors

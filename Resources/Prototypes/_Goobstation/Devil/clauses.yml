@@ -21,6 +21,29 @@
   alias: "слабость" # Reserve edit - localized devil clauses
   damageModifierSet: DevilDealPositive
 
+# // VORE //
+- type: clause
+  id: avarice
+  clauseWeight: -30
+  addedComponents:
+  - type: Devourer
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidAppearance
+    stomachStorageWhitelist:
+      components:
+      - MobState
+      - Item
+    chemical: Ichor
+    healRate: 7.5
+    whitelist:
+      components:
+      - MobState
+      - Door
+      - Item
+      tags:
+      - Wall
+
 - type: clause
   id: fearoffire
   clauseWeight: -20
@@ -77,6 +100,12 @@
   - type: SpecialBreathingImmunity
 
 - type: clause
+  id: fearofclowns
+  clauseWeight: -10
+  addedComponents:
+  - type: NoSlip
+
+- type: clause
   id: fearofcrushing
   clauseWeight: -10
   alias: "страх сдавливания" # Reserve edit - localized devil clauses
@@ -124,7 +153,7 @@
 
 - type: clause
   id: humanity
-  clauseWeight: 25
+  clauseWeight: 80
   alias: "человечность" # Reserve edit - localized devil clauses
   polymorph: MobFrogPolymorph
 
@@ -165,19 +194,19 @@
 
 - type: clause
   id: aleg
-  clauseWeight: 30
+  clauseWeight: 20
   alias: "нога" # Reserve edit - localized devil clauses
   event: !type:DevilContractLoseLegEvent
 
 - type: clause
   id: ahand
-  clauseWeight: 30
+  clauseWeight: 20
   alias: "рука" # Reserve edit - localized devil clauses
   event: !type:DevilContractLoseHandEvent
 
 - type: clause
   id: awake
-  clauseWeight: 40
+  clauseWeight: 35
   alias: "бодрствование" # Reserve edit - localized devil clauses
   addedComponents:
   - type: Narcolepsy
@@ -186,7 +215,7 @@
 
 - type: clause
   id: anorgan
-  clauseWeight: 45
+  clauseWeight: 30
   alias: "орган" # Reserve edit - localized devil clauses
   event: !type:DevilContractLoseOrganEvent
 
@@ -226,5 +255,6 @@
   alias: "время" # Reserve edit - localized devil clauses
   addedComponents:
   - type: DelayedDeath
+    preventAllRevives: true # :trol:
     deathTime: 300
     deathMessageId: devil-deal-time-ran-out

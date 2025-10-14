@@ -73,7 +73,7 @@ namespace Content.Client.Interactable.Components
             }
         }
 
-        //RESERVE STATION
+        //RESERVE STATION | from nodjak, thank you
         private ShaderInstance GetOrCreateShader(bool inRange, int renderScale)
         {
             if (inRange)

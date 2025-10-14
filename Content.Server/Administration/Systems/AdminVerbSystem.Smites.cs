@@ -90,17 +90,26 @@
 // SPDX-FileCopyrightText: 2025 Armok <155400926+ARMOKS@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
+// SPDX-FileCopyrightText: 2025 JohnJohn <189290423+JohnJJohn@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Kyle Tyo <36606155+VerinSenpai@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Pancake <Pangogie@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Princess Cheeseballs <66055347+Pronana@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 // SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
 // SPDX-FileCopyrightText: 2025 TemporalOroboros <TemporalOroboros@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -112,6 +121,7 @@ using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Server.Clothing.Systems;
 using Content.Server.Electrocution;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.GhostKick;
@@ -151,7 +161,6 @@ using Content.Shared.Slippery;
 using Content.Shared.Tabletop.Components;
 using Content.Shared.Tools.Systems;
 using Content.Shared.Verbs;
-using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
@@ -195,7 +204,7 @@ public sealed partial class AdminVerbSystem
     // All smite verbs have names so invokeverb works.
     private void AddSmiteVerbs(GetVerbsEvent<Verb> args)
     {
-        if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
+        if (!TryComp(args.User, out ActorComponent? actor))
             return;
 
         var player = actor.PlayerSession;
@@ -233,7 +242,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = chessName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Fun/Tabletop/chessboard.rsi"), "chessboard"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Fun/Tabletop/chessboard.rsi"), "chessboard"),
             Act = () =>
             {
                 _sharedGodmodeSystem.EnableGodmode(args.Target); // So they don't suffocate.
@@ -285,7 +294,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = monkeyName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Mobs/Animals/monkey.rsi"), "monkey"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Mobs/Animals/monkey.rsi"), "monkey"),
             Act = () =>
             {
                 _polymorphSystem.PolymorphEntity(args.Target, "AdminMonkeySmite");
@@ -300,7 +309,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = disposalBinName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Structures/Piping/disposal.rsi"), "disposal"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Structures/Piping/disposal.rsi"), "disposal"),
             Act = () =>
             {
                 _polymorphSystem.PolymorphEntity(args.Target, "AdminDisposalsSmite");
@@ -318,11 +327,12 @@ public sealed partial class AdminVerbSystem
             {
                 Text = hardElectrocuteName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Clothing/Hands/Gloves/Color/yellow.rsi"), "icon"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Hands/Gloves/Color/yellow.rsi"), "icon"),
                 Act = () =>
                 {
                     int damageToDeal;
-                    if (!_mobThresholdSystem.TryGetThresholdForState(args.Target, MobState.Critical, out var criticalThreshold)) {
+                    if (!_mobThresholdSystem.TryGetThresholdForState(args.Target, MobState.Critical, out var criticalThreshold))
+                    {
                         // We can't crit them so try killing them.
                         if (!_mobThresholdSystem.TryGetThresholdForState(args.Target, MobState.Dead,
                                 out var deadThreshold))
@@ -364,7 +374,7 @@ public sealed partial class AdminVerbSystem
             {
                 Text = creamPieName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Consumable/Food/Baked/pie.rsi"), "plain-slice"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Consumable/Food/Baked/pie.rsi"), "plain-slice"),
                 Act = () =>
                 {
                     _creamPieSystem.SetCreamPied(args.Target, creamPied, true);
@@ -382,10 +392,10 @@ public sealed partial class AdminVerbSystem
             {
                 Text = bloodRemovalName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Fluids/tomato_splat.rsi"), "puddle-1"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Fluids/tomato_splat.rsi"), "puddle-1"),
                 Act = () =>
                 {
-                    _bloodstreamSystem.SpillAllSolutions(args.Target, bloodstream);
+                    _bloodstreamSystem.SpillAllSolutions((args.Target, bloodstream));
                     var xform = Transform(args.Target);
                     _popupSystem.PopupEntity(Loc.GetString("admin-smite-remove-blood-self"), args.Target,
                         args.Target, PopupType.LargeCaution);
@@ -482,7 +492,7 @@ public sealed partial class AdminVerbSystem
             {
                 Text = stomachRemovalName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Mobs/Species/Human/organs.rsi"), "stomach"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Mobs/Species/Human/organs.rsi"), "stomach"),
                 Act = () =>
                 {
                     foreach (var entity in _bodySystem.GetBodyOrganEntityComps<StomachComponent>((args.Target, body)))
@@ -503,7 +513,7 @@ public sealed partial class AdminVerbSystem
             {
                 Text = lungRemovalName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Mobs/Species/Human/organs.rsi"), "lung-r"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Mobs/Species/Human/organs.rsi"), "lung-r"),
                 Act = () =>
                 {
                     foreach (var entity in _bodySystem.GetBodyOrganEntityComps<LungComponent>((args.Target, body)))
@@ -527,7 +537,7 @@ public sealed partial class AdminVerbSystem
             {
                 Text = pinballName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Fun/toys.rsi"), "basketball"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Fun/Balls/basketball.rsi"), "icon"),
                 Act = () =>
                 {
                     var xform = Transform(args.Target);
@@ -594,7 +604,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = breadName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Consumable/Food/Baked/bread.rsi"), "plain"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Consumable/Food/Baked/bread.rsi"), "plain"),
             Act = () =>
             {
                 _polymorphSystem.PolymorphEntity(args.Target, "AdminBreadSmite");
@@ -609,7 +619,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = mouseName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Mobs/Animals/mouse.rsi"), "icon-0"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Mobs/Animals/mouse.rsi"), "icon-0"),
             Act = () =>
             {
                 _polymorphSystem.PolymorphEntity(args.Target, "AdminMouseSmite");
@@ -664,7 +674,7 @@ public sealed partial class AdminVerbSystem
             {
                 Text = nyanifyName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Clothing/Head/Hats/catears.rsi"), "icon"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Head/Hats/catears.rsi"), "icon"),
                 Act = () =>
                 {
                     var ears = Spawn("ClothingHeadHatCatEars", Transform(args.Target).Coordinates);
@@ -682,7 +692,7 @@ public sealed partial class AdminVerbSystem
             {
                 Text = killSignName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Misc/killsign.rsi"), "icon"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Misc/killsign.rsi"), "icon"),
                 Act = () =>
                 {
                     EnsureComp<KillSignComponent>(args.Target);
@@ -698,7 +708,7 @@ public sealed partial class AdminVerbSystem
                 Text = cluwneName,
                 Category = VerbCategory.Smite,
 
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Clothing/Mask/cluwne.rsi"), "icon"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Mask/cluwne.rsi"), "icon"),
 
                 Act = () =>
                 {
@@ -714,10 +724,10 @@ public sealed partial class AdminVerbSystem
             {
                 Text = maidenName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Clothing/Uniforms/Jumpskirt/janimaid.rsi"), "icon"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Uniforms/Jumpskirt/janimaid.rsi"), "icon"),
                 Act = () =>
                 {
-                    SetOutfitCommand.SetOutfit(args.Target, "JanitorMaidGear", false, EntityManager, (_, clothing) => // Goobstation
+                    _outfit.SetOutfit(args.Target, "JanitorMaidGear", (_, clothing) =>
                     {
                         if (HasComp<ClothingComponent>(clothing))
                             EnsureComp<UnremoveableComponent>(clothing);
@@ -735,7 +745,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = angerPointingArrowsName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Interface/Misc/pointing.rsi"), "pointing"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/pointing.rsi"), "pointing"),
             Act = () =>
             {
                 EnsureComp<PointingArrowAngeringComponent>(args.Target);
@@ -750,10 +760,10 @@ public sealed partial class AdminVerbSystem
         {
             Text = dustName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Materials/materials.rsi"), "ash"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Materials/materials.rsi"), "ash"),
             Act = () =>
             {
-                EntityManager.QueueDeleteEntity(args.Target);
+                QueueDel(args.Target);
                 Spawn("Ash", Transform(args.Target).Coordinates);
                 _popupSystem.PopupEntity(Loc.GetString("admin-smite-turned-ash-other", ("name", args.Target)), args.Target, PopupType.LargeCaution);
             },
@@ -782,7 +792,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = instrumentationName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Fun/Instruments/h_synthesizer.rsi"), "supersynth"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Fun/Instruments/h_synthesizer.rsi"), "supersynth"),
             Act = () =>
             {
                 _polymorphSystem.PolymorphEntity(args.Target, "AdminInstrumentSmite");
@@ -815,7 +825,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = reptilianName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Objects/Fun/toys.rsi"), "plushie_lizard"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Objects/Fun/Plushies/lizard.rsi"), "icon"),
             Act = () =>
             {
                 _polymorphSystem.PolymorphEntity(args.Target, "AdminLizardSmite");
@@ -830,7 +840,7 @@ public sealed partial class AdminVerbSystem
         {
             Text = lockerName,
             Category = VerbCategory.Smite,
-            Icon = new SpriteSpecifier.Rsi(new ("/Textures/Structures/Storage/closet.rsi"), "generic"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Structures/Storage/closet.rsi"), "generic"),
             Act = () =>
             {
                 var xform = Transform(args.Target);

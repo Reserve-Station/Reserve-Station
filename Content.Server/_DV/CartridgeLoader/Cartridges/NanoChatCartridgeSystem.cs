@@ -1,12 +1,20 @@
 // SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Skubman <ba.fallaria@gmail.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -17,15 +25,20 @@ using Content.Server.Power.Components;
 using Content.Server.Radio;
 using Content.Server.Radio.Components;
 using Content.Server.Station.Systems;
+using Content.Goobstation.Common.ServerCurrency;
 using Content.Shared.Access.Components;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Database;
 using Content.Shared._DV.CartridgeLoader.Cartridges;
 using Content.Shared._DV.NanoChat;
 using Content.Shared.PDA;
+using Robust.Shared.GameObjects;
+using Robust.Server.GameObjects;
+using Robust.Shared.Player;
 using Content.Shared.Radio.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Network;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 
@@ -34,13 +47,20 @@ namespace Content.Server._DV.CartridgeLoader.Cartridges;
 public sealed class NanoChatCartridgeSystem : EntitySystem
 {
     [Dependency] private readonly CartridgeLoaderSystem _cartridge = default!;
-    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedNanoChatSystem _nanoChat = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!;
+    [Dependency] private readonly ICommonCurrencyManager _serverCurrency = default!; // Reserve add
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
+
+    // Reserve edit start
+    // Rate limiting for coin transfers (по пользователю, в игровом реальном времени)
+    private readonly Dictionary<NetUserId, TimeSpan> _lastCoinTransfer = new();
+    private readonly TimeSpan _coinTransferCooldown = TimeSpan.FromSeconds(2);
+    // Reserve edit end
 
     // Messages in notifications get cut off after this point
     // no point in storing it on the comp
@@ -134,6 +154,9 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
                 break;
             case NanoChatUiMessageType.SendMessage:
                 HandleSendMessage(ent, card, msg);
+                break;
+            case NanoChatUiMessageType.SendCoin: // Reserve add
+                HandleSendCoin(ent, card, msg); // Reserve add
                 break;
             case NanoChatUiMessageType.ToggleListNumber:
                 HandleToggleListNumber(card);
@@ -313,7 +336,7 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
 
         _adminLogger.Add(LogType.Chat,
             LogImpact.Low,
-            $"{ToPrettyString(card):user} sent NanoChat message to {recipientsText}: {content}{(deliveryFailed ? " [DELIVERY FAILED]" : "")}");
+            $"{ToPrettyString(msg.Actor):user} sent NanoChat message to {recipientsText}: {content}{(deliveryFailed ? " [DELIVERY FAILED]" : "")}");
 
         var msgEv = new NanoChatMessageReceivedEvent(card);
         RaiseLocalEvent(ref msgEv);
@@ -326,6 +349,190 @@ public sealed class NanoChatCartridgeSystem : EntitySystem
             DeliverMessageToRecipient(card, recipient, message);
         }
     }
+
+    // Reserve edit start
+    /// <summary>
+    ///     Handles sending coins to another player via NanoChat.
+    /// </summary>
+    private void HandleSendCoin(Entity<NanoChatCartridgeComponent> cartridge,
+        Entity<NanoChatCardComponent> card,
+        NanoChatUiMessageEvent msg)
+    {
+        if (msg.RecipientNumber == null || msg.Content == null || card.Comp.Number == null)
+            return;
+
+        if (!int.TryParse(msg.Content, out var amount))
+            return;
+        if (amount < 0 || amount > 10000) // Sanity check for maximum amount
+        {
+            _adminLogger.Add(LogType.Action, LogImpact.Medium,
+                $"{ToPrettyString(card):user} attempted invalid coin transfer amount: {amount}");
+            return;
+        }
+
+        // Rate limiting check
+        var senderPlayer = GetPlayerFromCard(card);
+        if (senderPlayer != null)
+        {
+            var now = _timing.RealTime;
+            if (_lastCoinTransfer.TryGetValue(senderPlayer.UserId, out var lastAt) && now - lastAt < _coinTransferCooldown)
+            {
+                SendCoinTransferError(card, msg.RecipientNumber.Value, amount, "nano-chat-coin-transfer-rate-limit");
+                _adminLogger.Add(LogType.Action, LogImpact.Low,
+                    $"{ToPrettyString(card):user} hit coin transfer rate limit");
+                return;
+            }
+        }
+
+        // Get sender player entity
+        if (senderPlayer == null)
+        {
+            SendCoinTransferError(card, msg.RecipientNumber.Value, amount, "nano-chat-coin-transfer-failed");
+            return;
+        }
+
+        // Verify that the player actually owns this PDA
+        if (!VerifyPdaOwnership(card, senderPlayer, msg.Actor))
+        {
+            SendCoinTransferError(card, msg.RecipientNumber.Value, amount, "nano-chat-coin-transfer-unauthorized");
+            return;
+        }
+
+
+        // Check if sender has enough OOC reserve coins
+        var senderBalance = _serverCurrency.GetBalance(senderPlayer.UserId);
+        if (senderBalance < amount)
+        {
+            SendCoinTransferError(card, msg.RecipientNumber.Value, amount, "nano-chat-coin-transfer-insufficient-funds");
+            _adminLogger.Add(LogType.Action, LogImpact.Low,
+                $"{ToPrettyString(card):user} attempted coin transfer without sufficient funds: {amount}");
+            return;
+        }
+
+        // Attempt to find recipients and get recipient player
+        var (deliveryFailed, recipients) = AttemptMessageDelivery(cartridge, msg.RecipientNumber.Value);
+        if (deliveryFailed || recipients.Count == 0)
+        {
+            SendCoinTransferError(card, msg.RecipientNumber.Value, amount, "nano-chat-coin-transfer-delivery-failed");
+            return;
+        }
+
+        var recipientPlayer = GetPlayerFromCard(recipients[0]);
+        if (recipientPlayer == null)
+        {
+            SendCoinTransferError(card, msg.RecipientNumber.Value, amount, "nano-chat-coin-transfer-delivery-failed");
+            return;
+        }
+
+        // Update rate limit tracker
+        _lastCoinTransfer[senderPlayer.UserId] = _timing.RealTime;
+
+        // Perform the OOC reserve coin transfer
+        try
+        {
+            _serverCurrency.TransferCurrency(senderPlayer.UserId, recipientPlayer.UserId, amount);
+            
+            // Create success message for sender
+            var senderMessage = new NanoChatMessage(
+                _timing.CurTime,
+                Loc.GetString("nano-chat-coin-transfer-success-sender", ("amount", (object)amount)),
+                (uint)card.Comp.Number,
+                false,
+                amount
+            );
+            _nanoChat.AddMessage((card, card.Comp), msg.RecipientNumber.Value, senderMessage);
+
+            // Create notification message for recipient
+            var recipientMessage = new NanoChatMessage(
+                _timing.CurTime,
+                Loc.GetString("nano-chat-coin-transfer-success-recipient", ("amount", (object)amount)),
+                (uint)card.Comp.Number,
+                false,
+                amount
+            );
+
+            // Deliver to all recipients
+            foreach (var recipient in recipients)
+            {
+                DeliverMessageToRecipient(card, recipient, recipientMessage);
+            }
+
+            // Enhanced logging for successful transfers
+            _adminLogger.Add(LogType.Action,
+                LogImpact.Medium,
+                $"{ToPrettyString(card):user} successfully transferred {amount} reserve coins via NanoChat to {string.Join(", ", recipients.Select(r => ToPrettyString(r)))}");
+        }
+        catch (Exception)
+        {
+            // Transfer failed - log as suspicious
+            SendCoinTransferError(card, msg.RecipientNumber.Value, amount, "nano-chat-coin-transfer-failed");
+            _adminLogger.Add(LogType.Action, LogImpact.Medium,
+                $"{ToPrettyString(card):user} reserve coin transfer failed unexpectedly: {amount} to {string.Join(", ", recipients.Select(r => ToPrettyString(r)))}");
+        }
+    }
+
+    /// <summary>
+    /// Helper method to send coin transfer error messages
+    /// </summary>
+    private void SendCoinTransferError(Entity<NanoChatCardComponent> card, uint recipientNumber, int amount, string errorKey)
+    {
+        if (card.Comp.Number == null)
+            return;
+            
+        var failureMessage = new NanoChatMessage(
+            _timing.CurTime,
+            Loc.GetString("nano-chat-coin-transfer-success-sender", ("amount", (object)amount)),
+            card.Comp.Number.Value,
+            true,
+            0,
+            Loc.GetString(errorKey)
+        );
+        
+        _nanoChat.AddMessage((card, card.Comp), recipientNumber, failureMessage);
+    }
+    /// <summary>
+    ///     Gets the owner of the PDA.
+    /// </summary>
+    private ICommonSession? GetPlayerFromCard(Entity<NanoChatCardComponent> card)
+    {
+        if (card.Comp.PdaUid == null)
+            return null;
+
+        // Get the PDA component and check if it has a contained ID
+        if (!TryComp<PdaComponent>(card.Comp.PdaUid, out var pda) || pda.ContainedId != card.Owner)
+            return null;
+
+        if (pda.PdaOwner != null && TryComp<ActorComponent>(pda.PdaOwner.Value, out var ownerActor))
+        {
+            return ownerActor.PlayerSession;
+        }
+
+        return null;
+    }
+
+    /// <summary>
+    /// Verifies that the actor is the owner of the PDA.
+    /// </summary>
+    private bool VerifyPdaOwnership(Entity<NanoChatCardComponent> card, ICommonSession player, EntityUid actor)
+    {
+        if (card.Comp.PdaUid == null)
+            return false;
+
+        var pdaUid = card.Comp.PdaUid.Value;
+        
+        if (!TryComp<PdaComponent>(pdaUid, out var pda))
+            return false;
+
+        // The actor must be the designated PDA owner
+        if (pda.PdaOwner != null && pda.PdaOwner.Value == actor)
+        {
+            return true;
+        }
+
+        // If PDA has no owner or actor is not the owner, deny coin transfers
+        return false;
+    }
+    // Reserve edit end
 
     /// <summary>
     ///     Ensures a recipient exists in the sender's contacts.

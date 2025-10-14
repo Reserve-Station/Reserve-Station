@@ -250,7 +250,7 @@ public sealed partial class AirAlarmWindow : FancyWindow
         {
             AtmosAlarmType.Danger => StyleNano.DangerousRedFore,
             AtmosAlarmType.Warning => StyleNano.ConcerningOrangeFore,
-            _ => StyleNano.GoodGreenFore,
+            _ => StyleNano.NeonGreenFore,
         };
     }
 

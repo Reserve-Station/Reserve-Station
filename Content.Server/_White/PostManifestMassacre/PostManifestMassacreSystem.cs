@@ -1,11 +1,10 @@
-using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Humanoid;
-using Content.Shared._White;
 using Content.Shared.EntityList;
 using Content.Shared.Hands.EntitySystems;
 using Content.Server.GameTicking;
+using Content.Shared._White;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -35,7 +34,7 @@ public sealed class PostManifestMassacreSystem : EntitySystem
         if(!_cfg.GetCVar(WhiteCVars.PMMEnabled) || !_prototypeManager.TryIndex(_weaponsPrototypeId , out EntityListPrototype? prototype))
             return;
 
-        var weapons = prototype.EntityIds;
+        var weapons = prototype.Entities; // Reserve upstream 26/09
 
         var players = AllEntityQuery<HumanoidAppearanceComponent, ActorComponent, MobStateComponent>();
 

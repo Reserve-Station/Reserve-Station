@@ -73,7 +73,6 @@ public sealed partial class ServerApi : IPostInjectInit
     [Dependency] private readonly IStatusHost _statusHost = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
-    [Dependency] private readonly IAdminManager _adminManager = default!; // Frontier: ISharedAdminManager<IAdminManager>
     [Dependency] private readonly IGameMapManager _gameMapManager = default!;
     [Dependency] private readonly IServerNetManager _netManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -546,7 +545,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
             foreach (var player in _playerManager.Sessions)
             {
-                var adminData = _adminManager.GetAdminData(player, true);
+                var adminData = _admin.GetAdminData(player, true);
 
                 players.Add(new InfoResponse.Player
                 {
@@ -811,7 +810,7 @@ public sealed partial class ServerApi : IPostInjectInit
         await RunOnMainThread(async () =>
         {
             var clients = _admin.ActiveAdmins
-            .Where(admin => _adminManager.GetAdminData(admin)?.Flags.HasFlag(AdminFlags.Adminchat) == true)
+            .Where(admin => _admin.GetAdminData(admin)?.Flags.HasFlag(AdminFlags.Adminchat) == true)
             .Select(p => p.Channel)
             .ToList();
 

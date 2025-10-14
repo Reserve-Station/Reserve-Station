@@ -28,11 +28,17 @@
 // SPDX-FileCopyrightText: 2025 GMWQ <garethquaile@gmail.com>
 // SPDX-FileCopyrightText: 2025 Gareth Quaile <garethquaile@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 IrisTheAmped <iristheamped@gmail.com>
+// SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+// SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tim <timfalken@hotmail.com>
 // SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
@@ -49,7 +55,10 @@ using Content.Server.Roles;
 using Content.Server.RoundEnd;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
+using Content.Server.Speech.EntitySystems;
+using Content.Server.Speech.Components;
 using Content.Shared.Database;
+using Content.Shared.Flash;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
@@ -62,6 +71,7 @@ using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Revolutionary.Components;
 using Content.Shared.Stunnable;
+using Content.Shared.Speech.Muting;
 using Content.Shared.Zombies;
 using Content.Shared.Heretic;
 using Content.Goobstation.Common.Changeling;
@@ -71,16 +81,15 @@ using Content.Shared.Cuffs.Components;
 using Content.Shared.Revolutionary;
 using Content.Server.Communications;
 using System.Linq;
-using Content.Server._Reserve.Revolutionary.UI;
 using Content.Goobstation.Shared.Revolutionary;
+using Content.Server.Antag.Components;
 using Content.Server.Chat.Systems;
 using Content.Shared.Mind;
-using Content.Shared.Popups;
-using Content.Shared.Verbs;
 using Content.Shared._EinsteinEngines.Revolutionary;
 using Content.Shared._EinsteinEngines.Revolutionary;
 using Robust.Shared.Player;
 
+using Content.Server.Chat.Systems;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -121,6 +130,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
         SubscribeLocalEvent<HeadRevolutionaryComponent, MobStateChangedEvent>(OnHeadRevMobStateChanged);
 
         SubscribeLocalEvent<RevolutionaryRoleComponent, GetBriefingEvent>(OnGetBriefing);
+
     }
 
     protected override void Started(EntityUid uid, RevolutionaryRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
@@ -207,16 +217,8 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     private void OnGetBriefing(EntityUid uid, RevolutionaryRoleComponent comp, ref GetBriefingEvent args)
     {
         var ent = args.Mind.Comp.OwnedEntity;
-        // Reserve-ConsentRev-Start
-        if (TryComp<HeadRevolutionaryComponent>(ent, out var headComp))
-        {
-            args.Append(Loc.GetString(headComp.OnlyConsentConvert ? "head-rev-briefing-consent-only" : "head-rev-briefing"));
-        }
-        else
-        {
-            args.Append(Loc.GetString("rev-briefing"));
-        }
-        // Reserve-ConsentRev-End
+        var head = HasComp<HeadRevolutionaryComponent>(ent);
+        args.Append(Loc.GetString(head ? "head-rev-briefing" : "rev-briefing"));
     }
 
     /// <summary>
@@ -226,12 +228,21 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     {
         // Einstein Engines - Revolutionary Manifesto - Use RevolutionaryConverterSystem instead of hardcoding flashes
         // GoobStation - check if headRev's ability enabled
-        if (!comp.ConvertAbilityEnabled || comp.OnlyConsentConvert) // Reserve-ConsentRev
+        if (!comp.ConvertAbilityEnabled)
+            return;
+
+        // Goobstation - Something something check for 30 conditions of mute or otherwise speech impeding shit that makes book pointless
+        if (HasComp<MumbleAccentComponent>(uid) // Muzzles to bypass speech is bad
+            || HasComp<MutedComponent>(uid)) // No speech = No convert
+            return;
+        // Goob edit end (for now)
+
+        if (uid != ev.User)
             return;
 
         var alwaysConvertible = HasComp<AlwaysRevolutionaryConvertibleComponent>(ev.Target);
 
-        if (!_mind.TryGetMind(ev.Target, out var mindId, out var mind) && !alwaysConvertible)
+        if (!_mind.TryGetMind(ev.Target, out var mindId, out var mind))
             return;
 
         if (HasComp<RevolutionaryComponent>(ev.Target) ||
@@ -241,9 +252,10 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
             !_mobState.IsAlive(ev.Target) ||
             HasComp<ZombieComponent>(ev.Target) ||
             HasComp<HereticComponent>(ev.Target) ||
-            HasComp<ChangelingComponent>(ev.Target)) // goob edit - no more ling or heretic revs
+            HasComp<ChangelingComponent>(ev.Target) || // goob edit - no more ling or heretic revs
+            HasComp<AntagImmuneComponent>(ev.Target)) // Antag immune MEANS antag immune.
         {
-            if(ev.User != null)
+            if (ev.User != null)
                 _popup.PopupEntity("The conversion failed!", ev.User.Value, ev.User.Value);
 
             return;
@@ -455,72 +467,4 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
         // revs lost and heads died
         "rev-stalemate"
     };
-
-    // Reserve-ConsentRev-Start
-    /// <summary>
-    /// Converts entity to revolution. Doesn't have any checks for possibility of convert.
-    /// It's actually just copied code from headrev flash event handler.
-    /// </summary>
-    public void ConvertEntityToRevolution(EntityUid target, EntityUid? converter)
-    {
-        if (!_mind.TryGetMind(target, out var mindId, out var mind))
-            return;
-
-        if (HasComp<RevolutionEnemyComponent>(target))
-            RemComp<RevolutionEnemyComponent>(target);
-
-        _npcFaction.AddFaction(target, RevolutionaryNpcFaction);
-        var revComp = EnsureComp<RevolutionaryComponent>(target);
-
-        if (converter != null)
-        {
-            _adminLogManager.Add(LogType.Mind,
-                LogImpact.Medium,
-                $"{ToPrettyString(converter.Value)} converted {ToPrettyString(target)} into a Revolutionary");
-
-            if (_mind.TryGetMind(converter.Value, out var revMindId, out _))
-            {
-                if (_role.MindHasRole<RevolutionaryRoleComponent>(revMindId, out var role))
-                    role.Value.Comp2.ConvertedCount++;
-            }
-        }
-
-        if (mindId == default || !_role.MindHasRole<RevolutionaryRoleComponent>(mindId))
-        {
-            _role.MindAddRole(mindId, "MindRoleRevolutionary");
-        }
-
-        if (target != null)
-            _antag.SendBriefing(target, Loc.GetString("rev-role-greeting"), Color.Red, revComp.RevStartSound);
-
-        if (!TryComp<CommandStaffComponent>(target, out var commandComp))
-            return;
-
-        commandComp.Enabled = false;
-        CheckCommandLose();
-    }
-
-    /// <summary>
-    /// Checks if entity can be converted to revolutioner
-    /// </summary>
-    public bool IsConvertable(EntityUid uid)
-    {
-        var alwaysConvertible = HasComp<AlwaysRevolutionaryConvertibleComponent>(uid);
-
-        if (!_mind.TryGetMind(uid, out var mindId, out var mind) && !alwaysConvertible)
-            return false;
-
-        if (HasComp<RevolutionaryComponent>(uid) ||
-            HasComp<MindShieldComponent>(uid) ||
-            !HasComp<HumanoidAppearanceComponent>(uid) &&
-            !alwaysConvertible ||
-            !_mobState.IsAlive(uid) ||
-            HasComp<ZombieComponent>(uid))
-        {
-            return false;
-        }
-
-        return true;
-    }
-    // Reserve-ConsentRev-End
 }

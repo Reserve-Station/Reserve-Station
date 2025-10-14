@@ -1,0 +1,87 @@
+<Document>
+
+  # Ближний бой
+
+  <Box>
+    <GuideEntityEmbed Entity="CQCManual" Caption=""/>
+  </Box>
+
+  [bold]Ближний бой[/bold] (Close Quarters Combat), или [bold]CQC[/bold], - это [textlink="боевое искусство" link="MartialArts"], сосредоточенное на [bold]быстром и эффективном[/bold]
+  [bold]уничтожении противника[/bold]. Использует простые, но мощные [bold]комбинации[/bold], лишённые экстравагантных приёмов других боевых искусств.
+  CQC - [bold]агрессивный стиль боя[/bold], направленный на нанесение [bold]урона выносливости[/bold] для быстрого подавления противников
+  техникой [bold]давления[/bold] и сокрушительными [bold]ударами[/bold]. Требует глубокого понимания системы [bold]действий[/bold].
+
+  Обычно используется [bold]антагонистами Синдиката[/bold], но [bold]повара[/bold] тоже имеют к нему доступ. Для поваров CQC означает
+  "[bold]Кулинарию Ближнего Боя[/bold]" - они не готовят вне кухни, поэтому не могут применять CQC за её пределами.
+
+  ## Особые способности
+
+    Пользователи CQC лучше владеют [color=Orange][bold]разоружением[/bold][/color], поскольку их [bold]толчки[/bold] наносят [color=Yellow][bold]дополнительный урон[/bold][/color] [color=Purple][bold]выносливости[/bold][/color] противнику.
+
+  ### Riposte
+
+  С [bold]молниеносными рефлексами[/bold] мастер CQC имеет шанс [bold]парировать[/bold] любую входящую [bold]атаку ближнего боя[/bold]. В этот короткий момент атакующий остается [bold]уязвимым[/bold],
+  поэтому мастер CQC наносит [bold]ответный удар[/bold] и автоматически [color=Yellow][bold]оглушает[/bold][/color] их, если только они также не являются мастером CQC. Расчетливый, смертельный ответ на любое нападение.
+
+  ### Neck Snap
+
+  Нет спасения от [bold]удушающего захвата[/bold] мастера CQC. Одним [bold]ударом по голове[/bold] шея жертвы [bold]ломается[/bold],
+  [color=Red][bold]убивая их мгновенно[/bold][/color]. Никакая [bold]броня[/bold] не может защитить от этой [bold]смертельной точности[/bold]. Конец приходит быстро и без пощады.
+
+  ## Комбо
+
+  ### Slam
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+    [bold]Ударяет[/bold] противника, [bold]сбивая его с ног[/bold] и нанося [color=Orange][bold]Blunt[/bold][/color] урон. Работает только против [bold]стоящих противников[/bold].
+
+  ### Kick
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+    [bold]Отталкивает[/bold] противника и наносит как [color=Orange][bold]Blunt[/bold][/color] урон, так и [color=Purple][bold]Stamina[/bold][/color] урон. Если у противника закончилась [color=Purple][bold]Stamina[/bold][/color], [color=Yellow][bold]усыпляет[/bold][/color] его.
+
+  ### Restrain
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+  </Box>
+
+    Блокирует противника в [color=Yellow][bold]обездвиживающем положении[/bold][/color], [bold]сбивая его с ног[/bold] и нанося [color=Purple][bold]Stamina[/bold][/color] урон.
+
+  ### Pressure
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+  </Box>
+
+    Наносит [color=Purple][bold]Stamina[/bold][/color] урон и [color=Yellow][bold]крадет[/bold][/color] любой предмет, который противник в данный момент держит в [bold]активной руке[/bold].
+
+  ### Consecutive
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+  Наносит много [color=Purple][bold]Stamina[/bold][/color] урона и некоторый [color=Orange][bold]Blunt[/bold][/color] урон противнику.
+
+  ### Leg Sweep
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+  Может выполняться только [bold]лежа[/bold]. [bold]Сбивает противника с ног[/bold] и заставляет пользователя [bold]встать на ноги[/bold], даже если он ползет вручную.
+
+</Document>

@@ -6,7 +6,12 @@
 # SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
 # SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Myra <vasilis@pikachu.systems>
+# SPDX-FileCopyrightText: 2024 Nikolai Korolev <korolevns98@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -35,7 +40,7 @@ jobs:
       uses: space-wizards/submodule-dependency@v0.1.5
     - uses: PaulRitter/yaml-schema-validator@v1
       with:
-        schema: RobustToolbox/Schemas/rga.yml
+        schema: .github/Schemas/rga.yml
         path_pattern: .*attributions.ya?ml$
         validators_path: RobustToolbox/Schemas/rga_validators.py
-        validators_requirements: RobustToolbox/Schemas/rga_requirements.txt
+        validators_requirements: .github/Schemas/rga_requirements.txt

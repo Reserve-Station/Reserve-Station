@@ -156,6 +156,10 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 9000 # 2.5 hours
+    - !type:SpeciesRequirement # Goob - None Felinid
+      inverted: true
+      species:
+      - Felinid
   goobcoins: 40 #Goob content
   weight: 20
   startingGear: HoPGear
@@ -201,7 +205,7 @@
   equipment:
     shoes: ClothingShoesColorBrown
     id: HoPPDA
-    gloves: ClothingHandsGlovesHop
+    #gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetAltCommand
     eyes: ClothingEyesGlassesCommand # Reserve-CommandHUD
     belt: BoxFolderClipboard
@@ -209,3 +213,15 @@
     back:
     - Flash
     - TelescopicBaton # Goobstation
+
+- type: chameleonOutfit
+  id: HeadOfPersonnelChameleonOutfit
+  job: HeadOfPersonnel
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatHopcap
+    eyes: ClothingEyesHudCommand
+    mask: ClothingMaskNeckGaiterRed
+    neck: ClothingNeckCloakHop
+    outerClothing: ClothingOuterWinterHoP
+
