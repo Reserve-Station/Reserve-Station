@@ -31,7 +31,7 @@ public sealed class SecondChanceSystem : EntitySystem
 
         SubscribeLocalEvent<SecondChanceComponent, ImplantImplantedEvent>(OnImplant);
         SubscribeLocalEvent<SecondChanceComponent, MobStateChangedEvent>(OnMobState);
-        SubscribeLocalEvent<SecondChanceComponent, ImplantRemovedFromEvent>(OnUnimplanted);
+        //SubscribeLocalEvent<SecondChanceComponent, ImplantRemovedFromEvent>(OnUnimplanted); // Аник фикс
         SubscribeLocalEvent<SecondChanceComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<SecondChanceComponent, ExaminedEvent>(OnExamine);
 
@@ -99,11 +99,11 @@ public sealed class SecondChanceSystem : EntitySystem
         }
     }
 
-    public void OnUnimplanted(Entity<SecondChanceComponent> ent, ref ImplantRemovedFromEvent args)
-    {
-        if (HasComp<SecondChanceComponent>(args.Implant))
-            RemComp<SecondChanceComponent>(ent);
-    }
+//    public void OnUnimplanted(Entity<SecondChanceComponent> ent, ref ImplantRemovedFromEvent args) // Аник фикс
+//    {
+//        if (HasComp<SecondChanceComponent>(args.Implant))
+//            RemComp<SecondChanceComponent>(ent);
+//    }
 
 
 
