@@ -1,0 +1,35 @@
+- type: animatedLobbyScreen
+  id: SeaLobbyScreen
+  path: /Textures/_White/Lobby/backgrounds/sea.rsi
+
+- type: animatedLobbyScreen
+  id: RocketLobbyScreen
+  path: /Textures/_White/Lobby/backgrounds/rocket.rsi
+
+- type: animatedLobbyScreen
+  id: CubeLobbyScreen
+  path: /Textures/_White/Lobby/backgrounds/cube.rsi
+
+- type: animatedLobbyScreen
+  id: MilkywayLobbyScreen
+  path: /Textures/_White/Lobby/backgrounds/milkyway.rsi
+
+#- type: animatedLobbyScreen
+#  id: NativeLobbyScreen
+#  path: White/Lobby/backgrounds/native.rsi
+
+- type: animatedLobbyScreen
+  id: CentcommLobbyScreen
+  path: /Textures/_White/Lobby/backgrounds/centcomm.rsi
+
+- type: animatedLobbyScreen
+  id: VangoghLobbyScreen
+  path: /Textures/_White/Lobby/backgrounds/vangogh.rsi
+
+#- type: animatedLobbyScreen
+#  id: ThirdLobbyScreen
+#  path: Ohio/Lobby/backgrounds/3.rsi
+
+#- type: animatedLobbyScreen
+#  id: FifthLobbyScreen
+#  path: Ohio/Lobby/backgrounds/5.rsi

@@ -411,11 +411,10 @@ public class RadialMenuTextureButtonWithSector : RadialMenuTextureButton, IRadia
 
     private bool _isWholeCircle;
     private Vector2? _parentCenter;
-
-    private Color _backgroundColorSrgb = Color.ToSrgb(new Color(70, 73, 102, 128));
-    private Color _hoverBackgroundColorSrgb = Color.ToSrgb(new Color(87, 91, 127, 128));
-    private Color _borderColorSrgb = Color.ToSrgb(new Color(173, 216, 230, 70));
-    private Color _hoverBorderColorSrgb = Color.ToSrgb(new Color(87, 91, 127, 128));
+    private Color _backgroundColorSrgb = Color.ToSrgb(new Color(255, 0, 255, 128));
+    private Color _hoverBackgroundColorSrgb = Color.ToSrgb(new Color(0, 255, 255, 128));
+    private Color _borderColorSrgb = Color.ToSrgb(new Color(0, 255, 65, 70));
+    private Color _hoverBorderColorSrgb = Color.ToSrgb(new Color(255, 215, 0, 128));
 
     /// <summary>
     /// Marker, that controls if border of segment should be rendered. Is false by default.

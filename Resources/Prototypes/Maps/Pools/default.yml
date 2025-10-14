@@ -49,6 +49,7 @@
 # SPDX-FileCopyrightText: 2025 compilatron <40789662+jbox144@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 echotry <xippl1@mail.ru>
 # SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+# SPDX-FileCopyrightText: 2025 floatingfeeling <karaadastra@gmail.com>
 # SPDX-FileCopyrightText: 2025 pheenty <fedorlukin2006@gmail.com>
 # SPDX-FileCopyrightText: 2025 quartG <140832593+quartuG3@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 quartuG3 <quartug.dfd@gmail.com>
@@ -77,7 +78,7 @@
   - Saltern
   - Packed
   - Reach
-# - Train # Goobstation - all my friends hate train
+  #- Train # Goobstation - all my friends hate train
   - FlandHighPop
   - OasisHighPop
 # - Barratry # Goobstation - Re-add barratry # Reserve - NOBODY LOVES BARRATRY
@@ -86,5 +87,6 @@
   - Leonid # Goobstation - for goob by goob
   - Delta # Goobstation - ported from Corvax
   - Chloris # Goobstation - also Corvax because we love goidamaps
-# RESERVE
   - ReserveSillyIsland # Reserve, silly port
+  - Cog # those who forget to clear their multitool
+  - Serpentcrest # Goobstation when contra

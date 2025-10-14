@@ -36,6 +36,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassLabelHeading = "LabelHeading";
         public const string StyleClassLabelSubText = "LabelSubText";
         public const string StyleClassItalic = "Italic";
+        public const string StyleClassGlitchText = "GlitchText"; // New: For glitch effect on text elements
 
         public const string ClassAngleRect = "AngleRect";
 
@@ -61,12 +62,24 @@ namespace Content.Client.Stylesheets
         protected StyleBoxTexture BaseAngleRect { get; }
         protected StyleBoxTexture AngleBorderRect { get; }
 
+        // Enhanced Cyberpunk / Glitch color palette (common)
+        public static readonly Color PanelDark = Color.FromHex("#0A0A0F"); // Darkened for cyberpunk void
+        public static readonly Color NanoGold = Color.FromHex("#FFD700"); // Brighter neon gold
+        public static readonly Color NeonCyan = Color.FromHex("#00FFFF"); // Core cyberpunk cyan
+        public static readonly Color NeonMagenta = Color.FromHex("#FF00FF"); // Vibrant magenta
+        public static readonly Color NeonGreenFore = Color.FromHex("#39FF14"); // Acid green
+        public static readonly Color NeonPinkFore = Color.FromHex("#FF1493"); // Hot pink
+        public static readonly Color ConcerningOrangeFore = Color.FromHex("#FF4500"); // Fiery orange
+        public static readonly Color DangerousRedFore = Color.FromHex("#FF0000"); // Blood red
+        public static readonly Color GlitchOverlay = Color.FromHex("#00FF41"); // Glitch green overlay
+        public static readonly Color DisabledFore = Color.FromHex("#333333"); // Muted gray
+
         // Goobstation - ZH text support
         protected StyleBase(IResourceCache resCache)
         {
             var notoSans12 = resCache.GetFont
             (
-                new []
+                new[]
                 {
                     "/Fonts/NotoSans/NotoSans-Regular.ttf",
                     "/Fonts/NotoSans/NotoSansSC-Regular.ttf",
@@ -77,7 +90,7 @@ namespace Content.Client.Stylesheets
             );
             var notoSans12Italic = resCache.GetFont
             (
-                new []
+                new[]
                 {
                     "/Fonts/NotoSans/NotoSans-Italic.ttf",
                     "/Fonts/NotoSans/NotoSansSC-Regular.ttf",
@@ -147,31 +160,31 @@ namespace Content.Client.Stylesheets
 
             var vScrollBarGrabberNormal = new StyleBoxFlat
             {
-                BackgroundColor = Color.Gray.WithAlpha(0.35f), ContentMarginLeftOverride = DefaultGrabberSize,
+                BackgroundColor = new Color(NeonCyan.R * 0.35f, NeonCyan.G * 0.35f, NeonCyan.B * 0.35f, 0.35f), ContentMarginLeftOverride = DefaultGrabberSize,
                 ContentMarginTopOverride = DefaultGrabberSize
             };
             var vScrollBarGrabberHover = new StyleBoxFlat
             {
-                BackgroundColor = new Color(140, 140, 140).WithAlpha(0.35f), ContentMarginLeftOverride = DefaultGrabberSize,
+                BackgroundColor = new Color(NeonCyan.R * 0.5f, NeonCyan.G * 0.5f, NeonCyan.B * 0.5f, 0.35f), ContentMarginLeftOverride = DefaultGrabberSize,
                 ContentMarginTopOverride = DefaultGrabberSize
             };
             var vScrollBarGrabberGrabbed = new StyleBoxFlat
             {
-                BackgroundColor = new Color(160, 160, 160).WithAlpha(0.35f), ContentMarginLeftOverride = DefaultGrabberSize,
+                BackgroundColor = new Color(NeonCyan.R * 0.6f, NeonCyan.G * 0.6f, NeonCyan.B * 0.6f, 0.35f), ContentMarginLeftOverride = DefaultGrabberSize,
                 ContentMarginTopOverride = DefaultGrabberSize
             };
 
             var hScrollBarGrabberNormal = new StyleBoxFlat
             {
-                BackgroundColor = Color.Gray.WithAlpha(0.35f), ContentMarginTopOverride = DefaultGrabberSize
+                BackgroundColor = new Color(NeonCyan.R * 0.35f, NeonCyan.G * 0.35f, NeonCyan.B * 0.35f, 0.35f), ContentMarginTopOverride = DefaultGrabberSize
             };
             var hScrollBarGrabberHover = new StyleBoxFlat
             {
-                BackgroundColor = new Color(140, 140, 140).WithAlpha(0.35f), ContentMarginTopOverride = DefaultGrabberSize
+                BackgroundColor = new Color(NeonCyan.R * 0.5f, NeonCyan.G * 0.5f, NeonCyan.B * 0.5f, 0.35f), ContentMarginTopOverride = DefaultGrabberSize
             };
             var hScrollBarGrabberGrabbed = new StyleBoxFlat
             {
-                BackgroundColor = new Color(160, 160, 160).WithAlpha(0.35f), ContentMarginTopOverride = DefaultGrabberSize
+                BackgroundColor = new Color(NeonCyan.R * 0.6f, NeonCyan.G * 0.6f, NeonCyan.B * 0.6f, 0.35f), ContentMarginTopOverride = DefaultGrabberSize
             };
 
 
@@ -193,6 +206,14 @@ namespace Content.Client.Stylesheets
                         new StyleProperty("font", notoSans12Italic),
                     }),
 
+                // New: Glitch text style - neon color for glitch effect
+                new StyleRule(
+                    new SelectorElement(null, new[] {StyleClassGlitchText}, null, null),
+                    new[]
+                    {
+                        new StyleProperty("font-color", NanoGold),
+                    }),
+
                 // Window close button base texture.
                 new StyleRule(
                     new SelectorElement(typeof(TextureButton), new[] {DefaultWindow.StyleClassWindowCloseButton}, null,
@@ -200,7 +221,7 @@ namespace Content.Client.Stylesheets
                     new[]
                     {
                         new StyleProperty(TextureButton.StylePropertyTexture, textureCloseButton),
-                        new StyleProperty(Control.StylePropertyModulateSelf, Color.FromHex("#4B596A")),
+                        new StyleProperty(Control.StylePropertyModulateSelf, new Color(NeonCyan.R * 0.7f, NeonCyan.G * 0.7f, NeonCyan.B * 0.7f, NeonCyan.A)),
                     }),
                 // Window close button hover.
                 new StyleRule(
@@ -208,7 +229,7 @@ namespace Content.Client.Stylesheets
                         new[] {TextureButton.StylePseudoClassHover}),
                     new[]
                     {
-                        new StyleProperty(Control.StylePropertyModulateSelf, Color.FromHex("#7F3636")),
+                        new StyleProperty(Control.StylePropertyModulateSelf, GlitchOverlay),
                     }),
                 // Window close button pressed.
                 new StyleRule(
@@ -216,10 +237,10 @@ namespace Content.Client.Stylesheets
                         new[] {TextureButton.StylePseudoClassPressed}),
                     new[]
                     {
-                        new StyleProperty(Control.StylePropertyModulateSelf, Color.FromHex("#753131")),
+                        new StyleProperty(Control.StylePropertyModulateSelf, NeonMagenta),
                     }),
 
-                // Scroll bars
+                // Scroll bars with cyberpunk neon
                 new StyleRule(new SelectorElement(typeof(VScrollBar), null, null, null),
                     new[]
                     {

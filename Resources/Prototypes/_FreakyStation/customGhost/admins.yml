@@ -4,7 +4,7 @@
   sprite: /Textures/_FreakStation/Ghost/GhostEgorql.rsi
   alpha: 0.8
   ghostName: Egorql
-  ghostDescription: Блять че за хуйня
+  ghostDescription: Блять че за хуйняя
 
 - type: customGhost
   id: CashaGhost

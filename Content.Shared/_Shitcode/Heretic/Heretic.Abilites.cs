@@ -6,7 +6,9 @@
 // SPDX-FileCopyrightText: 2025 Marcus F <199992874+thebiggestbruh@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 the biggest bruh <199992874+thebiggestbruh@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 username <113782077+whateverusername0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
 // SPDX-FileCopyrightText: 2025 yglop <95057024+yglop@users.noreply.github.com>
@@ -114,8 +116,54 @@ public sealed partial class EventHereticMansusLink : EntityTargetActionEvent { }
 
 // ash
 public sealed partial class EventHereticAshenShift : InstantActionEvent { }
-public sealed partial class EventHereticVolcanoBlast : InstantActionEvent { }
-public sealed partial class EventHereticNightwatcherRebirth : InstantActionEvent { }
+
+public sealed partial class EventHereticVolcanoBlast : InstantActionEvent
+{
+    [DataField]
+    public float Radius = 5;
+}
+
+public sealed partial class EventHereticNightwatcherRebirth : InstantActionEvent
+{
+    [DataField]
+    public float Range = 7f;
+
+    [DataField]
+    public DamageSpecifier Damage = new()
+    {
+        DamageDict =
+        {
+            { "Heat", 20 },
+        },
+    };
+
+    [DataField]
+    public float FireStacks = 3f;
+
+    [DataField]
+    public float HealAmount = -10f;
+
+    [DataField]
+    public DamageSpecifier ToHeal = new()
+    {
+        DamageDict =
+        {
+            {"Blunt", 1},
+            {"Slash", 1},
+            {"Piercing", 1},
+            {"Heat", 1},
+            {"Cold", 1},
+            {"Shock", 1},
+            {"Asphyxiation", 1},
+            {"Bloodloss", 1},
+            {"Caustic", 1},
+            {"Poison", 1},
+            {"Radiation", 1},
+            {"Cellular", 1},
+            {"Holy", 1},
+        },
+    };
+}
 public sealed partial class EventHereticFlames : InstantActionEvent { }
 public sealed partial class EventHereticCascade : InstantActionEvent { }
 
@@ -125,14 +173,71 @@ public sealed partial class EventHereticFleshSurgery : EntityTargetActionEvent {
 // void (+ upgrades)
 [Serializable, NetSerializable, DataDefinition] public sealed partial class HereticAristocratWayEvent : EntityEventArgs { }
 public sealed partial class HereticVoidBlastEvent : InstantActionEvent { }
-public sealed partial class HereticVoidBlinkEvent : WorldTargetActionEvent { }
-public sealed partial class HereticVoidPullEvent : InstantActionEvent { }
+
+public sealed partial class HereticVoidBlinkEvent : WorldTargetActionEvent
+{
+    [DataField]
+    public DamageSpecifier Damage = new ()
+    {
+        DamageDict =
+        {
+            {"Cold", 40},
+        },
+    };
+
+    [DataField]
+    public float Radius = 1.5f;
+
+    [DataField]
+    public EntProtoId InEffect = "EffectVoidBlinkIn";
+
+    [DataField]
+    public EntProtoId OutEffect = "EffectVoidBlinkOut";
+}
+
+public sealed partial class HereticVoidPullEvent : InstantActionEvent
+{
+    [DataField]
+    public DamageSpecifier Damage = new ()
+    {
+        DamageDict =
+        {
+            {"Cold", 30},
+        },
+    };
+
+    [DataField]
+    public TimeSpan StunTime = TimeSpan.FromSeconds(0.5);
+
+    [DataField]
+    public TimeSpan KnockDownTime = TimeSpan.FromSeconds(3);
+
+    [DataField]
+    public float Radius = 7f;
+
+    [DataField]
+    public float StunRadius = 4f;
+
+    [DataField]
+    public float DamageRadius = 1.5f;
+
+    [DataField]
+    public EntProtoId InEffect = "EffectVoidBlinkIn";
+}
+
 public sealed partial class HereticVoidVisionEvent : EntityEventArgs { } // done only via void's ascension
 
 // blade (+ upgrades)
 [Serializable, NetSerializable, DataDefinition] public sealed partial class HereticCuttingEdgeEvent : EntityEventArgs { }
 [Serializable, NetSerializable, DataDefinition] public sealed partial class HereticDanceOfTheBrandEvent : EntityEventArgs { }
-public sealed partial class EventHereticRealignment : InstantActionEvent { }
+public sealed partial class EventHereticRealignment : InstantActionEvent
+{
+    [DataField]
+    public float StaminaRegenRate = -9f; // Same value as default stamina consumption for non humans.
+
+    [DataField]
+    public string StaminaRegenKey = "Realignment";
+}
 [Serializable, NetSerializable, DataDefinition] public sealed partial class HereticChampionStanceEvent : EntityEventArgs { }
 public sealed partial class EventHereticFuriousSteel : InstantActionEvent { }
 
@@ -195,6 +300,9 @@ public sealed partial class EventHereticEntropicPlume : InstantActionEvent
     public float LookupRange = 0.1f;
 
     [DataField]
+    public int RustStrength = 7; // Toxic blade level
+
+    [DataField]
     public EntProtoId TileRune = "TileHereticRustRune";
 }
 
@@ -208,6 +316,9 @@ public sealed partial class EventHereticAggressiveSpread : InstantActionEvent
 
     [DataField]
     public float LookupRange = 0.1f;
+
+    [DataField]
+    public int RustStrength = 4; // Mark of rust level
 
     [DataField]
     public EntProtoId TileRune = "TileHereticRustRune";

@@ -2,11 +2,16 @@
 // SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
 // SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
 // SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -67,6 +72,7 @@ public enum NanoChatUiMessageType : byte
     DeleteChat,
     ToggleMute,
     ToggleListNumber,
+    SendCoin, // Reserve add
 }
 
 // putting this here because i can
@@ -136,18 +142,40 @@ public struct NanoChatMessage
     public bool DeliveryFailed;
 
     /// <summary>
+    ///     The specific error message if delivery failed.
+    /// </summary>
+    public string? FailureReason;
+
+    // Reserve edit start
+    /// <summary>
+    ///     The amount of coins being transferred with this message, if any.
+    /// </summary>
+    public int CoinAmount;
+
+    /// <summary>
+    ///     Whether this message is a coin transfer.
+    /// </summary>
+    public bool IsCoinTransfer;
+    // Reserve edit end
+
+    /// <summary>
     ///     Creates a new NanoChat message.
     /// </summary>
     /// <param name="timestamp">When the message was sent</param>
     /// <param name="content">The content of the message</param>
     /// <param name="senderId">The sender's NanoChat number</param>
     /// <param name="deliveryFailed">Whether delivery to the recipient failed</param>
-    public NanoChatMessage(TimeSpan timestamp, string content, uint senderId, bool deliveryFailed = false)
+    /// <param name="coinAmount">Amount of coins being transferred</param>
+    /// <param name="failureReason">Specific error message if delivery failed</param>
+    public NanoChatMessage(TimeSpan timestamp, string content, uint senderId, bool deliveryFailed = false, int coinAmount = 0, string? failureReason = null)
     {
         Timestamp = timestamp;
         Content = content;
         SenderId = senderId;
         DeliveryFailed = deliveryFailed;
+        CoinAmount = Math.Max(0, coinAmount);
+        IsCoinTransfer = CoinAmount > 0;
+        FailureReason = failureReason;
     }
 }
 

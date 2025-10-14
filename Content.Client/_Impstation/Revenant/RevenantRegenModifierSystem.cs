@@ -1,5 +1,7 @@
 using System.Numerics;
 using Content.Client.Alerts;
+using Content.Shared.Alert;
+using Content.Shared.Alert.Components;
 using Content.Shared.Revenant;
 using Content.Shared.Revenant.Components;
 using Robust.Client.GameObjects;
@@ -18,7 +20,7 @@ public sealed class RevenantRegenModifierSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RevenantRegenModifierComponent, UpdateAlertSpriteEvent>(OnUpdateAlert);
+        SubscribeLocalEvent<RevenantRegenModifierComponent, GetGenericAlertCounterAmountEvent>(OnGetCounterAmount); // Reserve edit - upstream 26/09
         SubscribeNetworkEvent<RevenantHauntWitnessEvent>(OnWitnesses);
     }
 
@@ -40,15 +42,14 @@ public sealed class RevenantRegenModifierSystem : EntitySystem
         }
     }
 
-    private void OnUpdateAlert(Entity<RevenantRegenModifierComponent> ent, ref UpdateAlertSpriteEvent args)
+    private void OnGetCounterAmount(Entity<RevenantRegenModifierComponent> ent, ref GetGenericAlertCounterAmountEvent args) // Reserve edit begin - upstream 26/09
     {
-        if (args.Alert.ID != ent.Comp.Alert)
+        if (args.Handled)
+            return;
+        if (ent.Comp.Alert != args.Alert)
             return;
 
-        var sprite = args.SpriteViewEnt.Comp;
-        var witnesses = Math.Clamp(ent.Comp.Witnesses.Count, 0, 99);
-        sprite.LayerSetState(RevenantVisualLayers.Digit1, $"{witnesses / 10}");
-        sprite.LayerSetState(RevenantVisualLayers.Digit2, $"{witnesses % 10}");
+        args.Amount = Math.Clamp(ent.Comp.Witnesses.Count, 0, 99); // Reserve edit end - upstream 26/09
     }
 }
 

@@ -39,7 +39,7 @@
     - gc
     - gc_mode
     - cvar
-    - fuckrules
+#   - fuckrules # Sosat by Freaky
     - midipanic
     - replay_recording_start
     - replay_recording_stop
@@ -87,12 +87,14 @@
     - localdelete
     - fullstatereset
     - dumpentities
+    - showaccessreaders
 
 - Flags: MAPPING
   Commands:
     - mapping
     - toggleautosave
     - toggledecals
+    - showaccessreaders
 
 - Flags: QUERY
   Commands:

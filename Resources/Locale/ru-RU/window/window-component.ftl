@@ -8,4 +8,4 @@ comp-window-damaged-4 = [color=yellow]Имеется несколько боль
 comp-window-damaged-5 = [color=orange]Имеется множество глубоких больших трещин.[/color]
 comp-window-damaged-6 = [color=red]Всё в глубоких трещинах, вот-вот разрушится.[/color]
 # Shown when knocking on a window
-comp-window-knock = *тук тук*
+comp-window-knock = *туки туки*

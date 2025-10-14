@@ -19,7 +19,12 @@
 // SPDX-FileCopyrightText: 2024 faint <46868845+ficcialfaint@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2024 user424242420 <142989209+user424242420@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
 // SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -57,7 +62,7 @@ namespace Content.Client.PDA
         private string _stationName = Loc.GetString("comp-pda-ui-unknown");
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
         private string _instructions = Loc.GetString("comp-pda-ui-unknown");
-        
+        private int? _reserveBalance;
 
         private int _currentView;
 
@@ -150,8 +155,13 @@ namespace Content.Client.PDA
                 _clipboard.SetText(_instructions);
             };
 
-            
-
+            // Reserve edit start
+            ReserveCoinBalanceButton.OnPressed += _ =>
+            {
+                if (_reserveBalance is { } bal)
+                    _clipboard.SetText(bal.ToString());
+            };
+            // Reserve edit end
 
             HideAllViews();
             ToHomeScreen();
@@ -196,6 +206,15 @@ namespace Content.Client.PDA
 
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
                 ("time", stationTime.ToString("hh\\:mm\\:ss"))));
+
+            // Reserve edit start
+            // Update Reserve Coin balance display
+            _reserveBalance = state.ReserveCoinBalance;
+            ReserveCoinBalanceLabel.SetMarkup(
+                state.ReserveCoinBalance is { } bal
+                    ? Loc.GetString("comp-pda-ui-reserve-coins", ("balance", bal))
+                    : Loc.GetString("comp-pda-ui-reserve-coins-unknown"));
+            // Reserve edit end
 
             var alertLevel = state.PdaOwnerInfo.StationAlertLevel;
             var alertColor = state.PdaOwnerInfo.StationAlertColor;
@@ -366,10 +385,10 @@ namespace Content.Client.PDA
         {
             base.Draw(handle);
 
-            var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
+            var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);	
 
-            StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
-                ("time", stationTime.ToString("hh\\:mm\\:ss"))));
+            StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",	
+                ("time", stationTime.ToString("hh\\:mm\\:ss"))));	
         }
     }
 }

@@ -233,7 +233,6 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private readonly PlayerRateLimitManager _rateLimitManager = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
-    [Dependency] private readonly IConfigurationManager _cfg = default!; //Reserve edit
     [Dependency] private readonly DiscordWebhook _discord = default!; //Reserve edit
 
     /// <summary>
@@ -493,9 +492,9 @@ internal sealed partial class ChatManager : IChatManager
 
         _adminLogger.Add(LogType.Chat, $"Admin chat from {player:Player}: {message}");
         // ADT-Tweak-start: Постит в дис весь админчат, если есть данный вебхук
-        if (!string.IsNullOrEmpty(_cfg.GetCVar(CCVars.DiscordAdminchatWebhook)))
+        if (!string.IsNullOrEmpty(_configurationManager.GetCVar(CCVars.DiscordAdminchatWebhook)))
         {
-            var webhookUrl = _cfg.GetCVar(CCVars.DiscordAdminchatWebhook);
+            var webhookUrl = _configurationManager.GetCVar(CCVars.DiscordAdminchatWebhook);
 
             if (webhookUrl == null)
                 return;

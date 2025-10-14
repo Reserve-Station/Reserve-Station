@@ -123,6 +123,7 @@
   - entities
   - nearby
   - ent
+  - shutdown
 
 - Flags: FUN
   Commands:
@@ -136,7 +137,6 @@
   - pausemap
   - unpausemap
   - restart
-  - shutdown
 
 - Flags: SPAWN
   Commands:

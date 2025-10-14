@@ -183,6 +183,15 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                   PlaceHolder="{Loc nano-chat-message-placeholder}"
                                   HorizontalExpand="True"
                                   StyleClasses="OpenRight" />
+                        <Button Name="SendCoinButton"
+                                MinSize="32 32"
+                                StyleClasses="OpenBoth"
+                                Margin="4 0 0 0"
+                                ToolTip="{Loc nano-chat-send-coin}">
+                            <TextureRect StyleClasses="ButtonSquare"
+                                         TexturePath="/Textures/Objects/Economy/cash.rsi/cash_1000.png"
+                                         Stretch="KeepAspectCentered" />
+                        </Button>
                         <Button Name="SendButton"
                                 MinSize="32 32"
                                 Disabled="True"

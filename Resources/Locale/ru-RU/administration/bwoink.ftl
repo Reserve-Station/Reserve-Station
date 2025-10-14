@@ -1,4 +1,4 @@
-bwoink-user-title = Сообщение от администратора
+bwoink-user-title = Сообщение от фрика.
 bwoink-system-starmute-message-no-other-users = *Система: Никто не доступен для получения вашего сообщения. Попробуйте обратиться к администраторам игры в Discord.
 bwoink-system-messages-being-relayed-to-discord = Ваше сообщение было передано администраторам в Discord. Оно может остаться без ответа.
 bwoink-system-introductory-message =
@@ -11,7 +11,7 @@ bwoink-system-typing-indicator =
         [one] печатает
        *[other] печатают
     }...
-admin-ahelp-admin-only = Только Админ
+admin-ahelp-admin-only = Только Фрик
 admin-ahelp-admin-only-tooltip =
     Если отмечено, сообщение не будет видно игроку,
     но будет видно админам и будет отправлено в Дискорд.
@@ -21,5 +21,5 @@ bwoink-system-rate-limited = Система: вы отправляете соо�
 bwoink-system-player-disconnecting = отключился.
 bwoink-system-player-reconnecting = переподключился.
 bwoink-system-player-banned = был забанен за: { $banReason }
-bwoink-message-admin-only = (Только Админ)
+bwoink-message-admin-only = (Только Фрик)
 bwoink-message-silent = (S)

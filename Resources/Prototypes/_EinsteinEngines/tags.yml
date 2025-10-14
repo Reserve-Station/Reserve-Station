@@ -1,5 +1,8 @@
 - type: Tag
-  id: NoPaint
+  id: Envirohelm
+
+- type: Tag
+  id: PlasmamanSafe
 
 - type: Tag
   id: ShadowkinEmotes

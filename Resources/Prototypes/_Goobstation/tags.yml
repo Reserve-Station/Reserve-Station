@@ -13,6 +13,7 @@
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 # SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
+# SPDX-FileCopyrightText: 2025 CometVoid <cometsstrile@gmail.com>
 # SPDX-FileCopyrightText: 2025 Creatorbot01 <creatorbot02@gmail.com>
 # SPDX-FileCopyrightText: 2025 Creatorbot01 <creatorbot20@gmail.com>
 # SPDX-FileCopyrightText: 2025 Fishbait <Fishbait@git.ml>
@@ -30,6 +31,7 @@
 # SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2025 PunishedJoe <PunishedJoeseph@proton.me>
 # SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
 # SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Scruq445 <storchdamien@gmail.com>
 # SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
@@ -93,6 +95,9 @@
   id: BreathMask
 
 - type: Tag
+  id: Bulwark
+
+- type: Tag
   id: CartridgeHighCaliber
 
 - type: Tag
@@ -144,6 +149,9 @@
   id: CombatMech
 
 - type: Tag
+  id: CorporateOverride
+
+- type: Tag
   id: ContrabandDetectorCircuitboard
 
 - type: Tag
@@ -189,6 +197,9 @@
   id: EmergencyOxygenTank
 
 - type: Tag
+  id: EmergencyPlasmaTank
+
+- type: Tag
   id: EnergySpeedloader
 
 - type: Tag
@@ -204,6 +215,12 @@
   id: ExtendedEmergencyOxygenTank
 
 - type: Tag
+  id: ExtendedEmergencyNitrogenTank
+
+- type: Tag
+  id: ExtendedEmergencyPlasmaTank
+
+- type: Tag
   id: Eyes
 
 - type: Tag
@@ -217,9 +234,6 @@
 
 - type: Tag
   id: FlashIgnoreResistances
-
-- type: Tag
-  id: FlashVulnerable
 
 - type: Tag
   id: FollowerStayOnPolymorph
@@ -315,7 +329,13 @@
   id: IgnoreImmovableRod
 
 - type: Tag
+  id: IPCDrinkBlacklist
+
+- type: Tag
   id: ItemPickaxe
+
+- type: Tag
+  id: ImprovisedShotgun
 
 - type: Tag
   id: IndustrialMech
@@ -325,6 +345,9 @@
 
 - type: Tag
   id: Justice
+
+- type: Tag
+  id: Keyring
 
 - type: Tag
   id: Kidneys
@@ -380,6 +403,9 @@
 
 - type: Tag
   id: MedicalPatch
+
+- type: Tag
+  id: Medipen
 
 - type: Tag
   id: MilitaryPowerCell
@@ -484,6 +510,9 @@
   id: ShadowCloakAction
 
 - type: Tag
+  id: SheetPlasma
+
+- type: Tag
   id: ShowWizardIcons
 
 - type: Tag
@@ -491,6 +520,9 @@
 
 - type: Tag
   id: SnapPop
+
+- type: Tag
+  id: SolarAssemblyFlatpack # stupid upstream thing used it in a construction graph
 
 - type: Tag
   id: SoulTapped
@@ -553,6 +585,9 @@
   id: ToySword
 
 - type: Tag
+  id: MakeshiftShield
+
+- type: Tag
   id: MolotovConstruction
 
 - type: Tag
@@ -565,16 +600,31 @@
   id: UristHand
 
 - type: Tag
+  id: Ushanka
+
+- type: Tag
   id: VehicleKey
 
 - type: Tag
   id: VulpEmotes
 
 - type: Tag
+  id: Vial
+  
+- type: Tag
+  id: WallLight
+
+- type: Tag
   id: WaterTank
 
 - type: Tag
   id: WeaponDisabler
+
+- type: Tag
+  id: Flash
+
+- type: Tag
+  id: RevFlash
 
 - type: Tag
   id: WeaponPistolDualetta
@@ -596,6 +646,9 @@
 
 - type: Tag
   id: WizardHat
+
+- type: Tag # These tags are NOT alphabetical!!
+  id: Xenomorph
 
 - type: Tag
   id: HudMedicalSecurity
@@ -626,3 +679,6 @@
 
 - type: Tag
   id: MidroundAntag
+
+- type: Tag
+  id: DisposableBattery

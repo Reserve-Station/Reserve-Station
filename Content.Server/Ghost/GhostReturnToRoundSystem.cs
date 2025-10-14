@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
@@ -58,7 +64,14 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
             return;
         }
 
-        var deathTime = EnsureComp<GhostComponent>(uid).TimeOfDeath;
+        if (!TryComp<GhostComponent>(uid, out var ghostComp))
+        {
+            message = Loc.GetString("ghost-respawn-error", ("players", maxPlayers));
+            wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+            return;
+        }
+
+        var deathTime = ghostComp.TimeOfDeath;
         // WD EDIT START
         if (_mindSystem.TryGetMind(uid, out _, out var mind) && mind.TimeOfDeath.HasValue)
             deathTime = mind.TimeOfDeath.Value;

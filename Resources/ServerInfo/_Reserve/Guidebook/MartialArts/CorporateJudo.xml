@@ -1,0 +1,75 @@
+<Document>
+
+  # Корпоративное дзюдо
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingBeltCorporateJudo" Caption=""/>
+  </Box>
+
+  [bold]Корпоративное дзюдо[/bold], или просто [bold]дзюдо[/bold], - это [textlink="боевое искусство" link="MartialArts"], сосредоточенное на [bold]обездвиживании противника[/bold]
+  более сложными, но эффективными [bold]приёмами[/bold]. Этот стиль чаще всего используют [bold]офицеры службы безопасности[/bold], 
+  поскольку они имеют доступ к [bold]поясам[/bold] в своём отделе. Овладейте искусством и остановите любого [bold]грейтайдера[/bold], вставшего у вас на пути. 
+  Требует хорошего понимания [bold]действий[/bold].
+
+  ## Особые способности
+
+    Пользователи дзюдо лучше владеют [color=Red][bold]ударом[/bold][/color] - их [bold]безоружные атаки[/bold] наносят [color=Yellow][bold]дополнительный урон[/bold][/color] противнику.
+
+  ### Stunbaton Scorn
+
+    Пользователь дзюдо [color=Red][bold]не может использовать станбатоны[/bold][/color]. [color=Yellow][bold]Истинный мастер[/bold][/color] полагается на [bold]технику[/bold], используя
+    [bold]рычаги тела[/bold] и силу для подавления, оставив позади потребность в электрической силе.
+
+  ## Комбо
+
+  ### Discombobulate
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+  </Box>
+
+    [color=Yellow][bold]Замедляет[/bold][/color] противника и наносит некоторый [color=Purple][bold]Stamina[/bold][/color] урон.
+
+  ### Eye Poke
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+    [color=Yellow][bold]Ослепляет[/bold][/color] противника и размывает его зрение, [color=Green][bold]независимо от защиты глаз[/bold][/color], и наносит некоторый [color=Orange][bold]Blunt[/bold][/color] урон.
+
+  ### Judo Throw
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+  </Box>
+
+    Можно выполнить только [bold]стоя[/bold]. Работает только против [bold]стоящих противников[/bold], нанося [color=Purple][bold]Stamina[/bold][/color] урон и [bold]сбивая их с ног[/bold].
+    Длительность сбивания зависит от их [color=Purple][bold]Stamina[/bold][/color] сопротивления.
+
+  ### Armbar
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+  </Box>
+
+    Работает только против [bold]сбитых противников[/bold]. Наносит [color=Purple][bold]Stamina[/bold][/color] урон, [color=Yellow][bold]разоружает[/bold][/color] их и блокирует в [bold]рычаге[/bold], пока они не смогут встать.
+    [bold]Armbar[/bold] работает аналогично сбиванию и удушающему захвату, и его длительность зависит от их [color=Purple][bold]Stamina[/bold][/color] сопротивления.
+
+  ### Wheel Throw
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+    Работает только против противников в [bold]Armbar[/bold]. [bold]Перебрасывает противника через плечо[/bold],
+    нанося массивный [color=Purple][bold]Stamina[/bold][/color] урон и заставляя пользователя встать на ноги.
+
+</Document>

@@ -1,0 +1,96 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineGoyda
+  name: гойдамат
+  description: Торговый автомат, наполненный русской силой.
+  components:
+  - type: VendingMachine
+    pack: GoydaDrobeInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+#  - type: DatasetVocalizer
+#    dataset: GoydaDrobeAds
+  - type: SpeakOnUIClosed
+    pack: GoydaDrobeGoodbyes
+  - type: Speech
+  - type: PointLight
+    radius: 1.5
+    energy: 1.3
+    color: "#FFFFFF" #UUUUUUCK
+  - type: Sprite
+    sprite: /Textures/_FreakStation/goydomat/goydamat.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+
+- type: localizedDataset
+  id: GoydaDrobeAds
+  values:
+    prefix: advertisement-goyda-
+    count: 4
+
+- type: localizedDataset
+  id: GoydaDrobeGoodbyes
+  values:
+    prefix: thankyou-goyda-
+    count: 4
+
+- type: vendingMachineInventory
+  id: GoydaDrobeInventory
+  startingInventory:
+    DrinkVodkaBottleFull: 4
+    ClothingHeadHatUshanka: 2
+    RussiaHandyFlag: 3
+    PlushieOhlobustin: 2
+    DrinkSodaWaterCan: 3
+  emaggedInventory:
+    WeaponSniperMosin: 2
+    MagazineBoxLightRifle: 2
+    ClothingNeckUSSPPin: 4
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieOhlobustin
+  name: плюшевый охлобыстин
+  description: ГОЙДА!
+  components:
+  - type: Sprite
+    sprite: /Textures/_FreakStation/goydomat/ohlobustin.rsi
+    state: icon
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_FreakStation/goyda.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_FreakStation/goyda.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_FreakStation/goyda.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_FreakStation/goyda.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/_FreakStation/goyda.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 720
+    soundHit:
+      path: /Audio/_FreakStation/goyda.ogg
+
+- type: entity
+  parent: BaseItem
+  id: RussiaHandyFlag
+  name: русский ручной флажок
+  description: ГОЙДА, БРАТЬЯ!
+  components:
+  - type: Sprite
+    sprite: /Textures/_FreakStation/goydomat/russia_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: /Textures/_FreakStation/goydomat/russia_handy_flag.rsi

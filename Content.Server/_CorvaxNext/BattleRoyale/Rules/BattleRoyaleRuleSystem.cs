@@ -167,7 +167,7 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
 					RemComp<NarcolepsyComponent>(mob);
 
                 _mind.TransferTo(newMind, mob);
-                SetOutfitCommand.SetOutfit(mob, br.Gear, false, EntityManager);
+                //SetOutfitCommand.SetOutfit(mob, br.Gear, false, EntityManager); //Reserve - fixed in 'Battle Royale balanced' PR
                 EnsureComp<KillTrackerComponent>(mob);
                 EnsureComp<SleepingComponent>(mob);
 

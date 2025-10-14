@@ -1,0 +1,157 @@
+
+- type: entity
+  name: Нелегальный гонщик
+  id: MobCar_rtr
+  suffix:  RedTerror
+  parent: [BaseMob, InventoryBase]
+  description: А по дороге, по прямой, едет «Хонда» едет. У меня в глазах жизнь моя вся светит. Пролетит ментов, он и не заметит, а потом поворот, и с разгону входит он в поворот.
+  components:
+  - type: InputMover
+  - type: MovementIgnoreGravity
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: /Textures/_FreakStation/Bibika.rsi
+    scale: 0.7, 0.55
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: test
+  - type: Fixtures
+    fixtures: 
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.5
+        density: 185
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Puller
+    needsHands: false 
+  - type: Tag
+    tags:
+      - CannotSuicide
+      - DoorBumpOpener
+  - type: NoSlip
+  - type: ComplexInteraction
+  - type: Speech
+    speechVerb: SmallMob
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 8
+    baseWalkSpeed: 16
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      400: Dead
+  - type: ContentEye
+    maxZoom: 1.44,1.44
+  - type: Stripping
+  - type: ZombieImmune
+  - type: FlashImmunity
+  - type: Damageable
+    damageContainer: Biological
+  - type: Spectral
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 400
+        behaviors:
+        - !type:TriggerBehavior
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Explosive 
+    explosionType: Default
+    totalIntensity: 100
+    intensitySlope: 10
+    maxIntensity: 12
+    canCreateVacuum: false
+  - type: Inventory
+    templateId: aghost
+  - type: Loadout
+    prototypes: [KostulForSex]
+  - type: Body
+    prototype: Human
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 10
+    soundHit:
+      collection: MetalThud
+  - type: ExplodeOnTrigger
+
+- type: entity
+  parent: Clothing
+  id: ClothingEBAT
+  name: костыль
+  categories: [ HideSpawnMenu ]
+  description: БЛЯТЬ, НУ И КОСТЫЛЬ
+  components:
+  - type: Sprite
+    sprite: /Textures/_FreakStation/ebat.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+    sprite: /Textures/_FreakStation/ebat.rsi
+  - type: Item
+    sprite: /Textures/_FreakStation/ebat.rsi
+  - type: Skates
+    acceleration: 8
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSkates
+      params:
+        volume: -24
+  - type: Unremoveable
+
+
+- type: startingGear
+  id: KostulForSex
+  equipment:
+    back: ClothingEBAT
+
+- type: entity
+  name: Райан Гослинг
+  id: MobProCar_rtr
+  suffix:  RedTerror
+  parent: MobCar_rtr
+  description: Да да, тот самый из драйва.
+  components:
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 200
+    soundHit:
+      collection: MetalThud
+  - type: ImmovableRod
+    minSpeed: 35
+    destroyTiles: false
+    randomizeVelocity: false
+    shouldGib: false
+    damage:
+      types:
+        Blunt: 100
+        Structural: 1000
+  - type: Fixtures
+    fixtures: 
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.5
+        density: 185
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: AmbientSound
+    volume: -2
+    range: 5
+    sound:
+      path: /Audio/_FreakStation/wroom.ogg
+  - type: MovementIgnoreGravity
+  - type: CanMoveInAir
+  - type: MovementAlwaysTouching

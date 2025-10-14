@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sa1nt7331 <202271576+sa1nt7331@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  id: Antimutax
+  name: reagent-name-antimutax
+  group: Botanical
+  desc: reagent-desc-antimutax
+  flavor: bitter
+  color: "#cc0000"
+  physicalDesc: reagent-physical-desc-fizzing
+  plantMetabolism:
+    - !type:PlantClearMutations {}
+    - !type:PlantAdjustToxins
+      amount: -3
+    - !type:PlantAdjustWeeds
+      amount: -5
+  metabolisms:
+    Poison:
+      metabolismRate: 0.33
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+        conditions:
+        - !type:OrganType
+          type: Yowie
+          shouldHave: false

@@ -57,3 +57,15 @@
   name: PigeonBeans - Sunset
   path:
     path: /Audio/Jukebox/sunset.ogg
+
+- type: jukebox
+  id: invisible
+  name: Duran Duran - INVISIBLE
+  path:
+    path: /Audio/_FreakStation/Jukebox/invisible.ogg # Freakystation
+
+- type: jukebox
+  id: themanwhosoldtheworld
+  name: Midge Ure - The Man Who Sold The World
+  path:
+    path: /Audio/_FreakStation/Jukebox/themanwhosoldtheworld.ogg # Freakystation

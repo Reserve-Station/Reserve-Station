@@ -49,11 +49,6 @@
   - type: Construction # Frontier
     graph: FiresGraph # Frontier
     node: BonfireNode # Frontier
-  # EE spray paint port begin
-  - type: Tag
-    tags:
-      - NoPaint
-  # EE spray paint port end
 
 - type: entity
   id: LegionnaireBonfire

@@ -19,6 +19,9 @@
 # Status effect prototypes.
 # Holds no actual logic, just some basic data about the effect.
 
+# Note: We have a new status effect system that needs all of these status effects to be fully ported to.
+# Adding new status effects under the old system is NOT RECOMMENDED.
+
 - type: statusEffect
   id: Stun
   alert: Stun
@@ -41,9 +44,6 @@
   id: AllCaps
 
 - type: statusEffect
-  id: SeeingRainbows
-
-- type: statusEffect
   id: Electrocution
 
 - type: statusEffect
@@ -64,7 +64,7 @@
   id: Corporeal
   alert: Corporeal
 
-- type: statusEffect
+- type: statusEffect #IMP revenant
   id: RevenantStasis
   alert: RevenantStasis
   alwaysAllowed: true
@@ -89,9 +89,6 @@
 
 - type: statusEffect
   id: RadiationProtection
-
-- type: statusEffect
-  id: Drowsiness #blurs your vision and makes you randomly fall asleep
 
 - type: statusEffect
   id: Adrenaline
