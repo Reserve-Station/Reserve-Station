@@ -153,7 +153,7 @@
   - type: RespawnDeadRule
     alwaysRespawnDead: true
   - type: RespawnTracker
-    respawnDelay: 10
+    respawnDelay: 5
     deleteBody: false
 
 - type: entity
@@ -252,7 +252,7 @@
   id: Nukeops
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 10
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml # goob edit
   - type: AntagSelection
@@ -481,7 +481,7 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 5
     delay:
       min: 600
       max: 900

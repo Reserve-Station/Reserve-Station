@@ -99,7 +99,7 @@
   id: CalmTraitor # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 15
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
@@ -120,7 +120,7 @@
   id: CalmLing # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 15
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     agentName: changeling-roundend-name
@@ -140,7 +140,7 @@
   id: Calmops # For Dual Antag Gamemodes
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 15
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml
   - type: AntagSelection
@@ -206,7 +206,7 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 15
   - type: RevolutionaryRule
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -246,7 +246,7 @@
   components:
   - type: BlobRule
   - type: GameRule
-    minPlayers: 20
+    minPlayers: 15
     chaosScore: 1000
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -295,7 +295,7 @@
   components:
   # Reserve-HonkOps-MinPlayers-Start
   - type: GameRule
-    minPlayers: 50
+    minPlayers: 10
   # Reserve-HonkOps-MinPlayers-End
   - type: RandomMetadata # this generates the random operation name cuz it's cool.
     nameSegments:
