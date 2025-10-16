@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2025 ANIvarmin <danilter2021@gmail.com>
 // SPDX-FileCopyrightText: 2025 Egorql <Egorkashilkin@gmail.com>
+// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
