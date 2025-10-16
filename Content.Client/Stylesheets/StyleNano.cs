@@ -764,7 +764,7 @@ namespace Content.Client.Stylesheets
             var paperBackground = new StyleBoxTexture
             {
                 Texture = resCache.GetTexture("/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"),
-                Modulate = Color.FromHex("#0D1117"), // Dark cyberpunk paper
+                Modulate = Color.FromHex("#eaedde"),
             };
             paperBackground.SetPatchMargin(StyleBox.Margin.All, 16.0f);
 

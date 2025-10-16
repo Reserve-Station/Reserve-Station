@@ -22,3 +22,12 @@
   alpha: 0.8
   ghostName: Arab2004
   ghostDescription: Ку
+  
+- type: customGhost
+  id: VernyaGhost
+  ckey: Vernya
+  sprite: /Textures/_FreakStation/Ghost/Booster/vernya.rsi
+  scale: 0.5
+  alpha: 0.8
+  ghostName: Vernya
+  ghostDescription: НЕ уходил на рыбалку
