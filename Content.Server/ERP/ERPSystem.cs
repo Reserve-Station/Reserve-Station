@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Egorql <Egorkashilkin@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.ERP;
 using Content.Shared.Database;
 using Content.Shared.Verbs;

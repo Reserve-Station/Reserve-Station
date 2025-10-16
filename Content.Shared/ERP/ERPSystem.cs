@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Egorql <Egorkashilkin@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Robust.Shared.Serialization;
 using Content.Shared.Eui;
 using Content.Shared.Humanoid;

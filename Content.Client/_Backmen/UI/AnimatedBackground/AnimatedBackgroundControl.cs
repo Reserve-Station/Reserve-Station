@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Egorql <Egorkashilkin@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Shared._Backmen;
 using Robust.Client.Graphics;

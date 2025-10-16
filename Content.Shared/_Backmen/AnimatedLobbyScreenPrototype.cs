@@ -1,4 +1,8 @@
-﻿using Robust.Shared.Prototypes;
+// SPDX-FileCopyrightText: 2025 Egorql <Egorkashilkin@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Backmen;
 
