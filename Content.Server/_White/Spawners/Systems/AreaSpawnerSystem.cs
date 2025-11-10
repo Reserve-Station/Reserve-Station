@@ -36,17 +36,12 @@ public sealed class AreaSpawnerSystem : EntitySystem
     {
         foreach (var spawned in component.Spawneds.ToList())
         {
-            // Reserve add start
-            if (MetaData(spawned).EntityLifeStage >= EntityLifeStage.Terminating)
-                continue;
-            // Reserve add end //the fuck is that
-            // <Goobstation> rewrote to be non goida
+            // Reserve fix start: check TerminatingOrDeleted BEFORE accessing MetaData to avoid KeyNotFoundException
             if (TerminatingOrDeleted(spawned))
                 continue;
-
+            // Reserve fix end
             var comp = EnsureComp<TimedDespawnComponent>(spawned);
             comp.Lifetime = _random.NextFloat(component.MinTime, component.MaxTime);
-            // </Goobstation>
         }
     }
 
