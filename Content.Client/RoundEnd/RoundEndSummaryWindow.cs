@@ -70,6 +70,40 @@ namespace Content.Client.RoundEnd
     {
         private readonly IEntityManager _entityManager;
         public int RoundId;
+        
+        // Reserve edit start
+        /// <summary>
+        /// Safely sets markup on a RichTextLabel, falling back to plain text if parsing fails
+        /// </summary>
+        private static void SafeSetMarkup(RichTextLabel label, string markup)
+        {
+            try
+            {
+                label.SetMarkup(markup);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Failed to parse markup, falling back to plain text: {ex.Message}");
+                Logger.Error($"Problematic markup: {markup}");
+                label.SetMessage(FormattedMessage.FromUnformatted(markup));
+            }
+        }
+
+        /// <summary>
+        /// Creates a fallback error tab when a tab fails to load
+        /// </summary>
+        private static BoxContainer CreateErrorTab(string tabName, string errorMessage)
+        {
+            var errorTab = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Vertical,
+                Name = tabName
+            };
+            var errorLabel = new Label { Text = errorMessage };
+            errorTab.AddChild(errorLabel);
+            return errorTab;
+        }
+        // Reserve edit end
 
         public RoundEndSummaryWindow(string gm, string roundEnd, TimeSpan roundTimeSpan, int roundId,
             RoundEndMessageEvent.RoundEndPlayerInfo[] info, IEntityManager entityManager)
@@ -88,9 +122,38 @@ namespace Content.Client.RoundEnd
 
             RoundId = roundId;
             var roundEndTabs = new TabContainer();
-            roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
-            roundEndTabs.AddChild(MakePlayerManifestTab(info));
-            roundEndTabs.AddChild(MakeStationReportTab()); //goob
+            
+            // Reserve edit start
+            // Add tabs with error handling to ensure at least some content is shown
+            try
+            {
+                roundEndTabs.AddChild(MakeRoundEndSummaryTab(gm, roundEnd, roundTimeSpan, roundId));
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Failed to create round end summary tab: {ex}");
+                roundEndTabs.AddChild(CreateErrorTab("Round Summary", "Error loading round summary"));
+            }
+            
+            try
+            {
+                roundEndTabs.AddChild(MakePlayerManifestTab(info));
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Failed to create player manifest tab: {ex}");
+                roundEndTabs.AddChild(CreateErrorTab("Player Manifest", "Error loading player manifest"));
+            }
+            
+            try
+            {
+                roundEndTabs.AddChild(MakeStationReportTab()); //goob
+            }
+            catch (Exception ex)
+            {
+                Logger.Error($"Failed to create station report tab: {ex}");
+            }
+            // Reserve edit end
 
             Contents.AddChild(roundEndTabs);
 
@@ -138,7 +201,7 @@ namespace Content.Client.RoundEnd
             if (!string.IsNullOrEmpty(roundEnd))
             {
                 var roundEndLabel = new RichTextLabel();
-                roundEndLabel.SetMarkup(roundEnd);
+                SafeSetMarkup(roundEndLabel, roundEnd); // Reserve edit roundEndLabel ->SafeSetMarkup
                 roundEndSummaryContainer.AddChild(roundEndLabel);
             }
 
@@ -255,7 +318,7 @@ namespace Content.Client.RoundEnd
                         VerticalExpand = true,
                     };
 
-                    playerLastWordsText.SetMarkup(Loc.GetString("round-end-summary-window-last-words",
+                    SafeSetMarkup(playerLastWordsText, Loc.GetString("round-end-summary-window-last-words", // Reserve edit playerLastWordsText -> SafeSetMarkup
                         ("lastWords", playerInfo.LastWords)));
 
                     textVBox.AddChild(playerLastWordsText);
@@ -303,7 +366,7 @@ namespace Content.Client.RoundEnd
                         _ => "mysterious",
                     };
 
-                    deathLabel.SetMarkup(
+                    SafeSetMarkup(deathLabel, // Reserve add
                         Loc.GetString("round-end-summary-window-death",
                             ("severity", severityAdj),
                             ("type", typeAdj)));
@@ -363,7 +426,7 @@ namespace Content.Client.RoundEnd
                 }
                 else if (playerInfo.EntMobState == MobState.Invalid)
                 {
-                    deathLabel.SetMarkup(Loc.GetString("round-end-summary-window-death-unknown"));
+                    SafeSetMarkup(deathLabel, Loc.GetString("round-end-summary-window-death-unknown")); // Reserve edit "deathLabel.SetMarkup -> SafeSetMarkup
                 }
 
                 hBox.AddChild(textVBox);
@@ -397,11 +460,14 @@ namespace Content.Client.RoundEnd
                 Orientation = LayoutOrientation.Vertical
             };
             var StationReportLabel = new RichTextLabel();
-            var StationReportmessage = new FormattedMessage();
-            StationReportmessage.AddMarkupOrThrow(stationReportText);
-            StationReportLabel.SetMessage(StationReportmessage);
+            // Reserve edit start
+            SafeSetMarkup(StationReportLabel, stationReportText);
             StationReportContainer.AddChild(StationReportLabel);
-
+            // var StationReportmessage = new FormattedMessage();
+            // StationReportmessage.AddMarkupOrThrow(stationReportText);
+            // StationReportLabel.SetMessage(StationReportmessage);
+            
+            // Reserve edit end
 
             StationReportContainerScrollbox.AddChild(StationReportContainer);
             stationReportTab.AddChild(StationReportContainerScrollbox);
