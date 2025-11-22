@@ -1,4 +1,8 @@
-﻿using Content.Shared.Weather;
+// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Weather;
 
 namespace Content.Client.Weather;
 

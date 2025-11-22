@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2025 Goob Station Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Server.Devil.Contract;
 using Content.Goobstation.Shared.Slasher.Components;
 using Content.Goobstation.Shared.Slasher.Events;
