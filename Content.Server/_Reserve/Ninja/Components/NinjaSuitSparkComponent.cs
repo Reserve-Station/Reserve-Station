@@ -1,5 +1,6 @@
 
 
+using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server._Reserve.Ninja.Components;
@@ -15,4 +16,7 @@ public sealed partial class NinjaSuitSparkComponent : Component
 
     [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
     public TimeSpan NextSparkTime = TimeSpan.Zero;
+
+    [DataField]
+    public SoundSpecifier SparkSound = new SoundCollectionSpecifier("sparks");
 }

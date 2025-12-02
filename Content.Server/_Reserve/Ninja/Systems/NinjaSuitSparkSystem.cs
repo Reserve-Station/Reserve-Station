@@ -2,7 +2,9 @@
 
 using Content.Server._Reserve.Ninja.Components;
 using Content.Shared.Inventory;
+using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
@@ -15,8 +17,15 @@ public sealed class NinjaSuitSparkSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     private static readonly EntProtoId SparkPrototype = "EffectSparks";
+
+    public override void Initialize()
+    {
+        base.Initialize();
+        SubscribeLocalEvent<NinjaSuitSparkComponent, ItemToggledEvent>(OnSuitToggled);
+    }
 
     public override void Update(float frameTime)
     {
@@ -40,8 +49,23 @@ public sealed class NinjaSuitSparkSystem : EntitySystem
 
             var coords = Transform(wearer.Value).Coordinates;
             Spawn(SparkPrototype, coords);
+            _audio.PlayPvs(sparkComp.SparkSound, wearer.Value);
 
             sparkComp.NextSparkTime = currentTime + TimeSpan.FromSeconds(sparkComp.SparkInterval);
+        }
+    }
+
+    private void OnSuitToggled(Entity<NinjaSuitSparkComponent> ent, ref ItemToggledEvent args)
+    {
+        var (uid, comp) = ent;
+        
+        if (args.Activated)
+        {
+            comp.NextSparkTime = _timing.CurTime + TimeSpan.FromSeconds(comp.SparkInterval);
+        }
+        else
+        {
+            comp.NextSparkTime = TimeSpan.Zero;
         }
     }
 }
