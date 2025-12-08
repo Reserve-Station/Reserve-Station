@@ -21,8 +21,8 @@
 - type: species
   id: Felinid
   name: species-name-felinid
-  roundStart: false
-  prototype: MobFelinid # Reserve
+  roundStart: true
+  prototype: MobFelinid
   sprites: MobHumanSprites
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
@@ -31,12 +31,6 @@
 - type: markingPoints
   id: MobFelinidMarkingLimits
   points:
-    # Reserve-Start
-    Special:
-      points: 1
-      required: true
-      defaultMarkings: [ FelinidEarsBasic ]
-    # Reserve-End
     Hair:
       points: 1
       required: false
@@ -47,12 +41,10 @@
       points: 1
       required: true
       defaultMarkings: [ FelinidTailBasic ]
-    # Reserve-Start
-    #HeadTop:
-    #  points: 1
-    #  required: true
-    #  defaultMarkings: [ FelinidEarsBasic ]
-    # Reserve-End
+    HeadTop:
+      points: 1
+      required: true
+      defaultMarkings: [ FelinidEarsBasic ]
     Chest:
       points: 1
       required: false

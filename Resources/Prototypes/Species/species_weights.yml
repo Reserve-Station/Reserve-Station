@@ -26,8 +26,8 @@
     Diona: 2
     # Goobstation
     Vulpkanin: 3
-    # Felinid: 4
     Feroxi: 3 # DeltaV - Feroxi, see Prototypes/_DV/Entities/Mobs/Species/feroxi.yml
+    Felinid: 4
     Harpy: 3
     Rodentia: 3
     Tajaran: 3
