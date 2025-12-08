@@ -31,7 +31,7 @@
     - ReptilianReserve
     - SlimePersonReserve
     # Goobstation
-    # - FelinidReserve
+    - FelinidReserve
     - GingerbreadReserve
     - HarpyReserve
     - VoxReserve
@@ -80,10 +80,10 @@
 
 # Goobstation
 
-#- type: guideEntry
-#  id: FelinidReserve
-#  name: species-name-felinid
-#  text: "/ServerInfo/_Reserve/Guidebook/Mobs/Felinid.xml"
+- type: guideEntry
+  id: FelinidReserve
+  name: species-name-felinid
+  text: "/ServerInfo/_Reserve/Guidebook/Mobs/Felinid.xml"
 
 - type: guideEntry
   id: GingerbreadReserve
