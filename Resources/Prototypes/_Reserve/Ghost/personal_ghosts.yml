@@ -112,3 +112,20 @@
   components:
   - type: Sprite
     sprite: _White/Ghosts/ckey/pzakusik-ghost.rsi
+
+- type: customGhost
+  id: thxmqninq-ghost
+  category: personal
+  proto: MobObserverCkeyThxMqninq
+  restrictions:
+  - !type:CkeyRestriction
+    ckey: [ _____, ThxMqninq ]
+  name: ThxMqninq
+  desc: korovka
+
+- type: entity
+  parent: MobObserverCkey
+  id: MobObserverCkeyThxMqninq
+  components:
+  - type: Sprite
+    sprite: _Reserve/Ghosts/thxmqninq-ghost.rsi
