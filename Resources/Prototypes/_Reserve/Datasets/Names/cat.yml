@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: NamesCat
+  values:
+    prefix: names-cat-dataset-
+    count: 143

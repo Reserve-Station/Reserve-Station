@@ -943,7 +943,7 @@
   - type: EatToGrow # Goobstation Eat To Grow System
     growth: 0.05
     maxGrowth: 2
-    
+
 # Note that the mallard duck is actually a male drake mallard, with the brown duck being the female variant of the same species, however ss14 lacks sex specific textures
 # The white duck is more akin to a pekin or call duck.
 
@@ -1800,7 +1800,11 @@
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
   components:
   - type: NameIdentifier
-    group: Monkey
+    group: null # Reserve
+  - type: RandomMetadata # Reserve
+    nameSegments:
+    - NamesMonkey
+    nameFormat: random-metadata-name-format-default
   - type: Speech
     speechSounds: Monkey
     speechVerb: Monkey
@@ -1844,7 +1848,11 @@
   suffix: syndicate base
   components:
   - type: NameIdentifier
-    group: Monkey
+    group: null # Reserve
+  - type: RandomMetadata # Reserve
+    nameSegments:
+    - NamesMonkey
+    nameFormat: random-metadata-name-format-default
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-primate
   - type: Speech
@@ -3555,6 +3563,10 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
     baseSprintSpeed: 4
+  - type: RandomMetadata # Reserve
+    nameSegments:
+    - NamesCat
+    nameFormat: random-metadata-name-format-default
 
 - type: entity
   name: calico cat

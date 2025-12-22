@@ -1,0 +1,5 @@
+- type: localizedDataset
+  id: NamesMonkey
+  values:
+    prefix: names-monkey-dataset-
+    count: 238
