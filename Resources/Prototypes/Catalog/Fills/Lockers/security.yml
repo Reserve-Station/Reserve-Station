@@ -134,6 +134,9 @@
     - id: Wrench # Goobstation
     - id: ContrabandDetectorFlatpack # Goobstation
     - id: SecurityMegaphone # goob - loudspeakers
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entityTable
   id: FillLockerWardenHarduit
@@ -188,6 +191,9 @@
       - id: ClothingBeltCorporateJudoFilled
         weight: 0.5
     # Goobstation - Martial Arts - end
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entity
   id: LockerBrigmedicFilled
@@ -215,6 +221,9 @@
     - id: MedkitAdvancedFilled
     - id: BoxSyringe
     - id: BoxBodyBag # Goob Station
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entity
   id: LockerDetectiveFilled
@@ -249,6 +258,9 @@
     - id: BloodTrak # Goobstation
     - id: Betty # Goobstation
     - id: BoxTapeRecorder # DeltaV
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entity
   id: ClosetBombFilled

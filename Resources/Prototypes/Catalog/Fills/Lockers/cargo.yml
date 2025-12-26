@@ -76,6 +76,9 @@
       - id: FlashlightSeclite
       - id: ClothingEyesGlassesMeson
       # Lavaland Change End
+      - id: PresentRandom # Reserve
+      - id: PresentRandomUnsafe # Reserve
+        prob: 0.1 
 
 - type: entity
   id: LockerSalvageSpecialistFilled
@@ -109,3 +112,6 @@
       - id: FlashlightSeclite
       # TODO: bluespace shelter capsule
       # Lavaland Change End
+      - id: PresentRandom # Reserve
+      - id: PresentRandomUnsafe # Reserve
+        prob: 0.1 

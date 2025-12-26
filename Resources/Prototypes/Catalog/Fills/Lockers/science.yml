@@ -24,3 +24,6 @@
       - id: NodeScanner
       - id: NetworkConfigurator
         prob: 0.5
+      - id: PresentRandom # Reserve
+      - id: PresentRandomUnsafe # Reserve
+        prob: 0.1 

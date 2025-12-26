@@ -175,6 +175,9 @@
     - id: SalvageJobBoardComputerCircuitboard # Goobstation - This doesn't really have a use right now but it's there incase it ever gets use again
     - id: CargoMegaphone # goob - loudspeaker
     - id: SlotMachineHighRollerFlatPack # Goob - gambling
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prod: 0.1
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -212,6 +215,9 @@
       conditions:
       - !type:PlayerCountCondition
         max: 15
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1
 
 # No laser table + Laser table
 - type: entityTable
@@ -301,6 +307,9 @@
     - id: ServiceTechFabCircuitboard # Goobstation - Service Techfab
     - id: PrinterDocFlatpack # Corvax-Printer
     - id: CommandMegaphone # goob - loudspeakers
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -341,6 +350,9 @@
     - id: WeaponLauncherSingularityBuster
     - id: MachinePowerTransmissionLaserFlatpack
     - id: RCDRechargingCE
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -419,6 +431,9 @@
     - id: DiseaseDiagnoserFlatPack
     - id: VaccinatorFlatPack
     # Goobstation End
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -480,6 +495,9 @@
     - id: ClothingBeltGeminiHoloProjector # Goobstation - Who better to do science with than yourself?
     - id: XenobiologyBountyComputerCircuitboard # Goobstation
     - id: MMI # Goobstation
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -543,6 +561,9 @@
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: ClothingBeltSheathHeadOfSecurityFilled # Goobstation - security revamp
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -595,3 +616,6 @@
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.25

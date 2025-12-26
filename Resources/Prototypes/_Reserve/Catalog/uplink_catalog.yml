@@ -7,3 +7,23 @@
     Telecrystal: 15 #Goob
   categories:
   - UplinkDisruption
+
+- type: listing
+  id: UplinkPresentRandom
+  name: uplink-present-random-name
+  description: uplink-present-random-desc
+  productEntity: PresentRandom
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkPointless
+
+- type: listing
+  id: UplinkPresentUnsafe
+  name: uplink-present-unsafe-name
+  description: uplink-present-unsafe-desc
+  productEntity: PresentRandomUnsafe
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkDisruption

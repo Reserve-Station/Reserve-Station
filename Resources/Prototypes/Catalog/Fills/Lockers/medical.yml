@@ -97,6 +97,9 @@
       - id: UniformScrubsColorPurple
         weight: 0.05
     - id: ClothingMaskSterile
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entity
   parent: LockerMedical
@@ -168,6 +171,9 @@
     - id: HandheldGPSBasic
     - id: MedkitFilled
       prob: 0.3
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entity
   parent: LockerParamedic
@@ -191,3 +197,6 @@
       - id: HandheldGPSBasic
       - id: MedkitFilled
         prob: 0.3
+      - id: PresentRandom # Reserve
+      - id: PresentRandomUnsafe # Reserve
+        prob: 0.1 

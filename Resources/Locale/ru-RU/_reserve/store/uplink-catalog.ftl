@@ -5,3 +5,9 @@ uplink-clothing-eyes-hud-syndicate-agent-desc = Продвинутый визо�
 
 uplink-borg-module-axe-name = Модуль киборга с огнетопором
 uplink-borg-module-axe-desc = Универсальный модуль, дающий киборгам модифицированный пожарный топор, поджигающий жертв при ударе
+
+uplink-present-random-name = Подарок
+uplink-present-random-desc = Подарок, украденный у одного из сотрудников неизвестной вам станции. Надейтесь, что внутри не уголь.
+
+uplink-present-unsafe-name = Небезопасный подарок
+uplink-present-unsafe-desc = Подарок, украденный у одного из сотрудников Центрального Командования. Надейтесь, что внутри не ваша смерть.

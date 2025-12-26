@@ -85,6 +85,9 @@
       children:
       - id: BoxBeanbag
       - id: RagItem
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 #- type: entity
 #  id: LockerFormalFilled
@@ -124,6 +127,9 @@
       children:
       - id: FoodCondimentPacketSalt
       - id: FoodCondimentPacketPepper
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entity
   id: ClosetJanitorFilled
@@ -154,6 +160,9 @@
       - id: FlashlightLantern
       - id: Plunger
       - id: WireBrush
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entity
   id: ClosetLegalFilled
@@ -201,6 +210,9 @@
     - id: ClothingUniformOveralls
     - id: ClothingHeadHatTrucker
       prob: 0.1
+    - id: PresentRandom # Reserve
+    - id: PresentRandomUnsafe # Reserve
+      prob: 0.1 
 
 - type: entity
   id: LockerBotanistLoot
