@@ -426,8 +426,11 @@ namespace Content.Client.Lobby.UI
                 OnSkinColorOnValueChanged();
             };
 
-            RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new ColorSelectorSliders());
-            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
+            RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new ColorSelectorSliders
+            {
+                SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv // Default to HSV
+            });
+
             _rgbSkinColorSelector.OnColorChanged += _ =>
             {
                 OnSkinColorOnValueChanged();
