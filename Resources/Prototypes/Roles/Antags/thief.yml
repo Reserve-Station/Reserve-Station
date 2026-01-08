@@ -89,6 +89,10 @@
   setPreference: true
   objective: roles-antag-thief-objective
   guides: [ Thieves ]
+  category: Solo
+  icon:
+    sprite: Objects/Storage/Toolbox/toolbox_syndicate.rsi
+    state: icon
 
 - type: startingGear
   id: ThiefGear

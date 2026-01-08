@@ -100,6 +100,10 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-objective
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: nuclearoperative
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 36000 # 10 hours - Goobstation
@@ -118,6 +122,10 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: nuclearoperative
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 90000 # 25 hours - Goobstation
@@ -139,6 +147,10 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: nuclearoperativecommander
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 144000 # 40 hours - Goobstation

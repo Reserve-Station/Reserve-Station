@@ -88,6 +88,11 @@
     inverted: true
     species:
     - Plasmaman
+  category: Solo
+  icon:
+    sprite: Objects/Weapons/Melee/katana.rsi
+    state: icon
+  previewStartingGear: SpaceNinjaGear
 
 #Ninja Gear
 - type: startingGear

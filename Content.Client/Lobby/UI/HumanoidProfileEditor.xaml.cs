@@ -836,95 +836,137 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        // _Funkystation Start: New Antagonist Cards
         public void RefreshAntags()
         {
             AntagList.DisposeAllChildren();
-            var items = new[]
+
+            // Group antags by category prototype
+            var antagGroups = _prototypeManager.EnumeratePrototypes<AntagPrototype>()
+                .Where(a => a.SetPreference)
+                .OrderBy(a => Loc.GetString(a.Name))
+                .GroupBy(a => a.Category ?? "Default")
+                .OrderBy(g => g.Key);
+
+            foreach (var group in antagGroups)
             {
-                ("humanoid-profile-editor-antag-preference-yes-button", 0),
-                ("humanoid-profile-editor-antag-preference-no-button", 1)
-            };
+                var categoryId = group.Key;
+                var categoryAntags = group.ToList();
 
-            AntagList.AddChild(new Label { Text = Loc.GetString("humanoid-profile-editor-antag-roll-before-jobs") }); // Goobstation
-
-            foreach (var antag in _prototypeManager.EnumeratePrototypes<AntagPrototype>().OrderBy(a => Loc.GetString(a.Name)))
-            {
-                if (!antag.SetPreference)
-                    continue;
-
-                var antagContainer = new BoxContainer()
+                string categoryName;
+                if (categoryId == "Default")
                 {
-                    Orientation = LayoutOrientation.Horizontal,
-                };
-
-                var selector = new RequirementsSelector()
+                    categoryName = "Uncategorized";
+                }
+                else if (_prototypeManager.TryIndex<AntagCategoryPrototype>(categoryId, out var categoryProto))
                 {
-                    Margin = new Thickness(3f, 3f, 3f, 0f),
-                };
-                selector.OnOpenGuidebook += OnOpenGuidebook;
-
-                var title = Loc.GetString(antag.Name);
-                var description = Loc.GetString(antag.Objective);
-                selector.Setup(items, title, 250, description, guides: antag.Guides);
-                selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
-
-                var requirements = _entManager.System<SharedRoleSystem>().GetAntagRequirement(antag);
-                if (!_requirements.CheckRoleRequirements(requirements, (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, out var reason))
-                {
-                    selector.LockRequirements(reason);
-                    Profile = Profile?.WithAntagPreference(antag.ID, false);
-                    SetDirty();
+                    categoryName = Loc.GetString(categoryProto.Name);
                 }
                 else
                 {
-                    selector.UnlockRequirements();
+                    categoryName = categoryId;
                 }
 
-                selector.OnSelected += preference =>
+                // Create category header
+                var headerButton = new ContainerButton
                 {
-                    Profile = Profile?.WithAntagPreference(antag.ID, preference == 0);
-                    SetDirty();
+                    HorizontalExpand = true,
+                    Margin = new Thickness(0, 10, 0, 5)
                 };
-
-                antagContainer.AddChild(selector);
-
-                var loadoutWindowBtn = new Button()
+                var headerPanel = new PanelContainer
                 {
-                    Text = Loc.GetString("loadout-window"),
-                    HorizontalAlignment = HAlignment.Right,
-                    Margin = new Thickness(3f, 0f, 0f, 0f),
-                };
-
-                // Goob start
-                if (!_prototypeManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetAntagPrototype(antag.ID), out var roleLoadoutProto))
-                {
-                    loadoutWindowBtn.Disabled = true;
-                }
-                else
-                {
-                    loadoutWindowBtn.OnPressed += _ =>
+                    PanelOverride = new StyleBoxFlat
                     {
-                        RoleLoadout? loadout = null;
+                        BackgroundColor = Color.FromHex("#202028"),
+                        ContentMarginLeftOverride = 8,
+                        ContentMarginRightOverride = 8,
+                        ContentMarginTopOverride = 4,
+                        ContentMarginBottomOverride = 4,
+                        BorderThickness = new Thickness(0)
+                    },
+                    HorizontalExpand = true
+                };
+                headerPanel.AddChild(new Label
+                {
+                    Text = categoryName,
+                    HorizontalAlignment = HAlignment.Center,
+                    StyleClasses = { "labelHeaderLarge" }
+                });
+                headerButton.AddChild(headerPanel);
+                AntagList.AddChild(headerButton);
 
-                        Profile?.Loadouts.TryGetValue(LoadoutSystem.GetAntagPrototype(antag.ID), out loadout);
-                        loadout = loadout?.Clone();
+                // Collapsible container for cards
+                var categoryContainer = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Vertical,
+                    HorizontalExpand = true
+                };
+                headerButton.OnPressed += _ =>
+                {
+                    categoryContainer.Visible = !categoryContainer.Visible;
+                };
 
-                        if (loadout == null)
+                // Fixed GridContainer for cards
+                var grid = new GridContainer
+                {
+                    Columns = 3,
+                    HorizontalExpand = true,
+                    Margin = new Thickness(0, 0, 0, 10)
+                };
+                foreach (var antag in categoryAntags)
+                {
+                    var antagSelector = new AntagSelector();
+                    antagSelector.SetName(Loc.GetString(antag.Name));
+                    antagSelector.SetDescription(Loc.GetString(antag.Objective));
+                    antagSelector.OnGuidebookClicked += () => OnOpenGuidebook?.Invoke(antag.Guides ?? new());
+
+                    // Set icon with fallback
+                    Texture? iconTexture = null;
+                    if (antag.Icon != null)
+                    {
+                        try { iconTexture = _sprite.Frame0(antag.Icon); } catch { }
+                    }
+                    if (iconTexture == null)
+                    {
+                        try
                         {
-                            loadout = new RoleLoadout(roleLoadoutProto.ID);
-                            loadout.SetDefault(Profile, _playerManager.LocalSession, _prototypeManager);
+                            iconTexture = _sprite.Frame0(new SpriteSpecifier.Rsi(new ResPath("_Funkystation/Mobs/Animals/meowl.rsi"), "icon"));
                         }
+                        catch
+                        {
+                            Logger.Error($"Antag '{antag.ID}' fallback icon failed to load.");
+                        }
+                        Logger.Error($"Antag '{antag.ID}' is missing its prototype icon.");
+                    }
+                    if (iconTexture != null)
+                        antagSelector.SetIcon(iconTexture);
 
-                        OpenLoadout(null, loadout, roleLoadoutProto, Loc.GetString(antag.Name));
+                    // Preference toggle
+                    var isEnabled = Profile?.AntagPreferences.Contains(antag.ID) == true;
+                    var toggleButton = new Button
+                    {
+                        Text = isEnabled ? Loc.GetString("humanoid-profile-editor-antag-preference-yes-button") : Loc.GetString("humanoid-profile-editor-antag-preference-no-button"),
+                        ToggleMode = true,
+                        Pressed = isEnabled,
+                        VerticalAlignment = VAlignment.Center,
+                        HorizontalExpand = true,
+                        MinWidth = 80
                     };
+                    toggleButton.OnToggled += args =>
+                    {
+                        toggleButton.Text = args.Pressed ? Loc.GetString("humanoid-profile-editor-antag-preference-yes-button") : Loc.GetString("humanoid-profile-editor-antag-preference-no-button");
+                        Profile = Profile?.WithAntagPreference(antag.ID, args.Pressed);
+                        ReloadPreview();
+                        setDirty();
+                    };
+                    antagSelector.SetPreferenceSelector(toggleButton);
+                    grid.AddChild(antagSelector);
                 }
-
-                antagContainer.AddChild(loadoutWindowBtn);
-                // Goob end
-
-                AntagList.AddChild(antagContainer);
+                categoryContainer.AddChild(grid);
+                AntagList.AddChild(categoryContainer);
             }
         }
+        // _Funkystation End: New Antagonist Cards
 
         private void SetDirty()
         {
@@ -2064,3 +2106,4 @@ namespace Content.Client.Lobby.UI
         }
     }
 }
+
