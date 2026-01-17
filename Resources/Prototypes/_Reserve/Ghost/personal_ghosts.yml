@@ -12,7 +12,7 @@
   proto: MobObserverCkeyCa4tuk
   restrictions:
   - !type:CkeyRestriction
-    ckey: [ca4tuk]
+    ckey: [ca4tuk, AwareFoxy]
   name: ca4tuk
   desc: ДА
 
