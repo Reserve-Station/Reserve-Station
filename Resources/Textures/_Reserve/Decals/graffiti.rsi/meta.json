@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Taken from Goonstation (https://github.com/goonstation/goonstation/blob/master/icons/obj/decals/graffiti.dmi)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "grinch1"
+    },
+    {
+      "name": "grinch2"
+    },
+    {
+      "name": "grinch3"
+    },
+    {
+      "name": "grinch4"
+    },
+    {
+      "name": "grinch5"
+    },
+    {
+      "name": "grinch6"
+    },
+    {
+      "name": "graffiti-single-1"
+    },
+    {
+      "name": "graffiti-single-2"
+    },
+    {
+      "name": "graffiti-single-3"
+    },
+    {
+      "name": "graffiti-single-4"
+    },
+    {
+      "name": "graffiti-single-5"
+    },
+    {
+      "name": "graffiti-single-6"
+    },
+    {
+      "name": "graffiti-single-7"
+    },
+    {
+      "name": "graffiti-single-8"
+    },
+    {
+      "name": "graffiti-single-9"
+    },
+    {
+      "name": "graffiti-single-10"
+    },
+    {
+      "name": "graffiti-single-11"
+    },
+    {
+      "name": "graffiti-single-12"
+    },
+    {
+      "name": "graffiti-single-13"
+    },
+    {
+      "name": "graffiti-single-14"
+    },
+    {
+      "name": "graffiti-single-15"
+    },
+    {
+      "name": "graffiti-single-16"
+    },
+    {
+      "name": "graffiti-dbl-1-1"
+    },
+    {
+      "name": "graffiti-dbl-1-2"
+    },
+    {
+      "name": "graffiti-dbl-2-1"
+    },
+    {
+      "name": "graffiti-dbl-2-2"
+    },
+    {
+      "name": "graffiti-dbl-3-1"
+    },
+    {
+      "name": "graffiti-dbl-3-2"
+    },
+    {
+      "name": "graffiti-dbl-4-1"
+    },
+    {
+      "name": "graffiti-dbl-4-2"
+    },
+    {
+      "name": "graffiti-dbl-5-1"
+    },
+    {
+      "name": "graffiti-dbl-5-2"
+    },
+    {
+      "name": "graffiti-dbl-6-1"
+    },
+    {
+      "name": "graffiti-dbl-6-2"
+    },
+    {
+      "name": "graffiti-dbl-7-1"
+    },
+    {
+      "name": "graffiti-dbl-7-2"
+    },
+    {
+      "name": "graffiti-dbl-8-1"
+    },
+    {
+      "name": "graffiti-dbl-8-2"
+    },
+    {
+      "name": "graffiti-dbl-9-1"
+    },
+    {
+      "name": "graffiti-dbl-9-2"
+    },
+    {
+      "name": "graffiti-dbl-10-1"
+    },
+    {
+      "name": "graffiti-dbl-10-2"
+    },
+    {
+      "name": "graffiti-dbl-11-1"
+    },
+    {
+      "name": "graffiti-dbl-11-2"
+    },
+    {
+      "name": "graffiti-dbl-12-1"
+    },
+    {
+      "name": "graffiti-dbl-12-2"
+    },
+    {
+      "name": "graffiti-dbl-13-1"
+    },
+    {
+      "name": "graffiti-dbl-13-2"
+    },
+    {
+      "name": "graffiti-trpl-1-1"
+    },
+    {
+      "name": "graffiti-trpl-1-2"
+    },
+    {
+      "name": "graffiti-trpl-1-3"
+    },
+    {
+      "name": "graffiti-trpl-2-1"
+    },
+    {
+      "name": "graffiti-trpl-2-2"
+    },
+    {
+      "name": "graffiti-trpl-2-3"
+    },
+    {
+      "name": "graffiti-trpl-3-1"
+    },
+    {
+      "name": "graffiti-trpl-3-2"
+    },
+    {
+      "name": "graffiti-trpl-3-3"
+    },
+    {
+      "name": "graffiti-trpl-4-1"
+    },
+    {
+      "name": "graffiti-trpl-4-2"
+    },
+    {
+      "name": "graffiti-trpl-4-3"
+    },
+    {
+      "name": "graffiti-trpl-5-1"
+    },
+    {
+      "name": "graffiti-trpl-5-2"
+    },
+    {
+      "name": "graffiti-trpl-5-3"
+    },
+    {
+      "name": "graffiti-trpl-6-1"
+    },
+    {
+      "name": "graffiti-trpl-6-2"
+    },
+    {
+      "name": "graffiti-trpl-6-3"
+    },
+    {
+      "name": "graffiti-trpl-7-1"
+    },
+    {
+      "name": "graffiti-trpl-7-2"
+    },
+    {
+      "name": "graffiti-trpl-7-3"
+    },
+    {
+      "name": "graffiti-trpl-8-1"
+    },
+    {
+      "name": "graffiti-trpl-8-2"
+    },
+    {
+      "name": "graffiti-trpl-8-3"
+    },
+    {
+      "name": "graffiti-trpl-9-1"
+    },
+    {
+      "name": "graffiti-trpl-9-2"
+    },
+    {
+      "name": "graffiti-trpl-9-3"
+    },
+    {
+      "name": "graffiti-trpl-10-1"
+    },
+    {
+      "name": "graffiti-trpl-10-2"
+    },
+    {
+      "name": "graffiti-trpl-10-3"
+    },
+    {
+      "name": "graffiti-trpl-11-1"
+    },
+    {
+      "name": "graffiti-trpl-11-2"
+    },
+    {
+      "name": "graffiti-trpl-11-3"
+    },
+    {
+      "name": "graffiti-trpl-12-1"
+    },
+    {
+      "name": "graffiti-trpl-12-2"
+    },
+    {
+      "name": "graffiti-trpl-12-3"
+    },
+    {
+      "name": "graffiti-trpl-13-1"
+    },
+    {
+      "name": "graffiti-trpl-13-2"
+    },
+    {
+      "name": "graffiti-trpl-13-3"
+    },
+    {
+      "name": "graffiti-trpl-14-1"
+    },
+    {
+      "name": "graffiti-trpl-14-2"
+    },
+    {
+      "name": "graffiti-trpl-14-3"
+    },
+    {
+      "name": "graffiti-trpl-15-1"
+    },
+    {
+      "name": "graffiti-trpl-15-2"
+    },
+    {
+      "name": "graffiti-trpl-15-3"
+    },
+    {
+      "name": "graffiti-trpl-16-1"
+    },
+    {
+      "name": "graffiti-trpl-16-2"
+    },
+    {
+      "name": "graffiti-trpl-16-3"
+    },
+    {
+      "name": "graffiti-trpl-17-1"
+    },
+    {
+      "name": "graffiti-trpl-17-2"
+    },
+    {
+      "name": "graffiti-trpl-17-3"
+    }
+  ]
+}

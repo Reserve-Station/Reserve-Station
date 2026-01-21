@@ -1,0 +1,601 @@
+# Grinch
+
+- type: decal
+  id: Grinch1
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: grinch1
+
+- type: decal
+  id: Grinch2
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: grinch2
+
+- type: decal
+  id: Grinch3
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: grinch3
+
+- type: decal
+  id: Grinch4
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: grinch4
+
+- type: decal
+  id: Grinch5
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: grinch5
+
+- type: decal
+  id: Grinch6
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: grinch6
+
+# Single
+
+- type: decal
+  id: GraffitiSingle1
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-1
+
+- type: decal
+  id: GraffitiSingle2
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-2
+
+- type: decal
+  id: GraffitiSingle3
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-3
+
+- type: decal
+  id: GraffitiSingle4
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-4
+
+- type: decal
+  id: GraffitiSingle5
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-5
+
+- type: decal
+  id: GraffitiSingle6
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-6
+
+- type: decal
+  id: GraffitiSingle7
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-7
+
+- type: decal
+  id: GraffitiSingle8
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-8
+
+- type: decal
+  id: GraffitiSingle9
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-9
+
+- type: decal
+  id: GraffitiSingle10
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-10
+
+- type: decal
+  id: GraffitiSingle11
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-11
+
+- type: decal
+  id: GraffitiSingle12
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-12
+
+- type: decal
+  id: GraffitiSingle13
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-13
+
+- type: decal
+  id: GraffitiSingle14
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-14
+
+- type: decal
+  id: GraffitiSingle15
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-15
+
+- type: decal
+  id: GraffitiSingle16
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-single-16
+
+# Double
+
+- type: decal
+  id: GraffitiDouble11
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-1-1
+
+- type: decal
+  id: GraffitiDouble12
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-1-2
+
+- type: decal
+  id: GraffitiDouble21
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-2-1
+
+- type: decal
+  id: GraffitiDouble22
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-2-2
+
+- type: decal
+  id: GraffitiDouble31
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-3-1
+
+- type: decal
+  id: GraffitiDouble32
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-3-2
+
+- type: decal
+  id: GraffitiDouble41
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-4-1
+
+- type: decal
+  id: GraffitiDouble42
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-4-2
+
+- type: decal
+  id: GraffitiDouble51
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-5-1
+
+- type: decal
+  id: GraffitiDouble52
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-5-2
+
+- type: decal
+  id: GraffitiDouble61
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-6-1
+
+- type: decal
+  id: GraffitiDouble62
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-6-2
+
+- type: decal
+  id: GraffitiDouble71
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-7-1
+
+- type: decal
+  id: GraffitiDouble72
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-7-2
+
+- type: decal
+  id: GraffitiDouble81
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-8-1
+
+- type: decal
+  id: GraffitiDouble82
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-8-2
+
+- type: decal
+  id: GraffitiDouble91
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-9-1
+
+- type: decal
+  id: GraffitiDouble92
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-9-2
+
+- type: decal
+  id: GraffitiDouble101
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-10-1
+
+- type: decal
+  id: GraffitiDouble102
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-10-2
+
+- type: decal
+  id: GraffitiDouble111
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-11-1
+
+- type: decal
+  id: GraffitiDouble112
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-11-2
+
+- type: decal
+  id: GraffitiDouble121
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-12-1
+
+- type: decal
+  id: GraffitiDouble122
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-12-2
+
+- type: decal
+  id: GraffitiDouble131
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-13-1
+
+- type: decal
+  id: GraffitiDouble132
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-dbl-13-2
+
+# Triple
+
+- type: decal
+  id: GraffitiTriple11
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-1-1
+
+- type: decal
+  id: GraffitiTriple12
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-1-2
+
+- type: decal
+  id: GraffitiTriple13
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-1-3
+
+- type: decal
+  id: GraffitiTriple21
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-2-1
+
+- type: decal
+  id: GraffitiTriple22
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-2-2
+
+- type: decal
+  id: GraffitiTriple23
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-2-3
+
+- type: decal
+  id: GraffitiTriple31
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-3-1
+
+- type: decal
+  id: GraffitiTriple32
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-3-2
+
+- type: decal
+  id: GraffitiTriple33
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-3-3
+
+- type: decal
+  id: GraffitiTriple41
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-4-1
+
+- type: decal
+  id: GraffitiTriple42
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-4-2
+
+- type: decal
+  id: GraffitiTriple43
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-4-3
+
+- type: decal
+  id: GraffitiTriple51
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-5-1
+
+- type: decal
+  id: GraffitiTriple52
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-5-2
+
+- type: decal
+  id: GraffitiTriple53
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-5-3
+
+- type: decal
+  id: GraffitiTriple61
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-6-1
+
+- type: decal
+  id: GraffitiTriple62
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-6-2
+
+- type: decal
+  id: GraffitiTriple63
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-6-3
+
+- type: decal
+  id: GraffitiTriple71
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-7-1
+
+- type: decal
+  id: GraffitiTriple72
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-7-2
+
+- type: decal
+  id: GraffitiTriple73
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-7-3
+
+- type: decal
+  id: GraffitiTriple81
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-8-1
+
+- type: decal
+  id: GraffitiTriple82
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-8-2
+
+- type: decal
+  id: GraffitiTriple83
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-8-3
+
+- type: decal
+  id: GraffitiTriple91
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-9-1
+
+- type: decal
+  id: GraffitiTriple92
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-9-2
+
+- type: decal
+  id: GraffitiTriple93
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-9-3
+
+- type: decal
+  id: GraffitiTriple101
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-10-1
+
+- type: decal
+  id: GraffitiTriple102
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-10-2
+
+- type: decal
+  id: GraffitiTriple103
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-10-3
+
+- type: decal
+  id: GraffitiTriple111
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-11-1
+
+- type: decal
+  id: GraffitiTriple112
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-11-2
+
+- type: decal
+  id: GraffitiTriple113
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-11-3
+
+- type: decal
+  id: GraffitiTriple121
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-12-1
+
+- type: decal
+  id: GraffitiTriple122
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-12-2
+
+- type: decal
+  id: GraffitiTriple123
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-12-3
+
+- type: decal
+  id: GraffitiTriple131
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-13-1
+
+- type: decal
+  id: GraffitiTriple132
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-13-2
+
+- type: decal
+  id: GraffitiTriple133
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-13-3
+
+- type: decal
+  id: GraffitiTriple141
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-14-1
+
+- type: decal
+  id: GraffitiTriple142
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-14-2
+
+- type: decal
+  id: GraffitiTriple143
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-14-3
+
+- type: decal
+  id: GraffitiTriple151
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-15-1
+
+- type: decal
+  id: GraffitiTriple152
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-15-2
+
+- type: decal
+  id: GraffitiTriple153
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-15-3
+
+- type: decal
+  id: GraffitiTriple161
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-16-1
+
+- type: decal
+  id: GraffitiTriple162
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-16-2
+
+- type: decal
+  id: GraffitiTriple163
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-16-3
+
+- type: decal
+  id: GraffitiTriple171
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-17-1
+
+- type: decal
+  id: GraffitiTriple172
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-17-2
+
+- type: decal
+  id: GraffitiTriple173
+  sprite:
+    sprite: _Reserve/Decals/graffiti.rsi
+    state: graffiti-trpl-17-3
