@@ -76,9 +76,6 @@ public sealed partial class StoreSystem : EntitySystem
     // goob edit - store now transfers on pm
     private void OnPolymorphed(Entity<StoreComponent> ent, ref PolymorphedEvent args)
     {
-        if (args.IsRevert)
-            return;
-
         _polymorph.CopyPolymorphComponent<StoreComponent>(ent, args.NewEntity);
     }
 

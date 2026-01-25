@@ -108,134 +108,134 @@
   id: Welder
   description: "Melts anything as long as it's fueled, don't forget your eye protection!"
   components:
-    # Goobstation edit start
-    - type: EmitSoundOnPickup
-      sound:
-        path: /Audio/_Goobstation/Items/handling/weldingtool_pickup.ogg
-    - type: EmitSoundOnDrop
-      sound:
-        path: /Audio/Items/welder_drop.ogg
-    # Goobstation edit end
-    - type: EmitSoundOnLand
-      sound:
-        path: /Audio/Items/welder_drop.ogg
-    - type: Sprite
-      sprite: Objects/Tools/welder.rsi
-      layers:
-        - state: icon
-        - state: welder_flame
-          visible: false
-          shader: unshaded
-          map: ["enum.ToggleableVisuals.Layer"]
-    - type: GenericVisualizer
-      visuals:
-        enum.ToggleableVisuals.Enabled:
-          enum.ToggleableVisuals.Layer:
-            True: { visible: true }
-            False: { visible: false }
-    - type: Item
-      size: Small
-      sprite: Objects/Tools/welder.rsi
-    - type: ItemToggle
-      predictable: false
-      soundActivate:
-        collection: WelderOn
-        params:
-          variation: 0.125
-          volume: -5
-      soundDeactivate:
-        collection: WelderOff
-        params:
-          variation: 0.125
-          volume: -5
-    - type: ItemToggleMeleeWeapon
-      activatedSoundOnHit:
-        path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
-        params:
-          variation: 0.250
-          volume: -10
-      activatedSoundOnHitNoDamage:
-        path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
-        params:
-          variation: 0.250
-          volume: -12
-      deactivatedSoundOnHitNoDamage:
-        collection: MetalThud
-      activatedDamage:
+  # Goobstation edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Goobstation/Items/handling/weldingtool_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Items/welder_drop.ogg
+  # Goobstation edit end
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/welder_drop.ogg
+  - type: Sprite
+    sprite: Objects/Tools/welder.rsi
+    layers:
+    - state: icon
+    - state: welder_flame
+      visible: false
+      shader: unshaded
+      map: ["enum.ToggleableVisuals.Layer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: Item
+    size: Small
+    sprite: Objects/Tools/welder.rsi
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      collection: WelderOn
+      params:
+        variation: 0.125
+        volume: -5
+    soundDeactivate:
+      collection: WelderOff
+      params:
+        variation: 0.125
+        volume: -5
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -12
+    deactivatedSoundOnHitNoDamage:
+      collection: MetalThud
+    activatedDamage:
         types:
-          Heat: 8
-    - type: ItemToggleSize
-      activatedSize: Large
-    - type: ItemToggleHot
-    - type: ComponentToggler
-      components:
-        - type: DisarmMalus
-          malus: 0.6
-    - type: ToggleableVisuals
-      spriteLayer: flame
-      inhandVisuals:
-        left:
-          - state: inhand-left-flame
-            shader: unshaded
-        right:
-          - state: inhand-right-flame
-            shader: unshaded
-    - type: UseDelay
-    - type: MeleeWeapon
-      animationRotation: -90 # WWDP
-      wideAnimationRotation: -90
-      damage:
-        types:
-          Blunt: 5 #i mean... i GUESS you could use it like that
-      soundHit:
-        collection: MetalThud
-    - type: RefillableSolution
-      solution: Welder
-    - type: SolutionContainerManager
-      solutions:
-        Welder:
-          reagents:
-            - ReagentId: WeldingFuel
-              Quantity: 100
-          maxVol: 100
-    - type: Tool
-      alwaysCheckDoAfter: true # Goobstation
-      useSound:
-        collection: Welder
-      qualities:
-        - Welding
-        - Axing # Goobstation
-        - Ignition
-    - type: WeldingSparks # Goobstation
-    - type: ToolTileCompatible # Goobstation
-      delay: 2
-    - type: Welder
-    - type: PointLight
-      enabled: false
-      radius: 1.5
-      color: orange
-      netsync: false
-    - type: ItemTogglePointLight
-    - type: Appearance
-    - type: RequiresEyeProtection
-    - type: PhysicalComposition
-      materialComposition:
-        Steel: 200
-    - type: StaticPrice
-      price: 40
-    - type: IgnitionSource
-      temperature: 700
-    - type: Cautery # Shitmed
-      speed: 0.7
-    - type: SurgeryTool # Shitmed
-      startSound:
-        collection: Welder
-      endSound:
-        collection: WelderOff
-    - type: Tag
-      tags:
-        - DroneUsable # Goobstation
-        - WeldingTool # Einstein Engines
+            Heat: 8
+  - type: ItemToggleSize
+    activatedSize: Large
+  - type: ItemToggleHot
+  - type: ComponentToggler
+    components:
+    - type: DisarmMalus
+      malus: 0.6
+  - type: ToggleableVisuals
+    spriteLayer: flame
+    inhandVisuals:
+      left:
+      - state: inhand-left-flame
+        shader: unshaded
+      right:
+      - state: inhand-right-flame
+        shader: unshaded
+  - type: UseDelay
+  - type: MeleeWeapon
+    animationRotation: -90 # WWDP
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Blunt: 5 #i mean... i GUESS you could use it like that
+    soundHit:
+      collection: MetalThud
+  - type: RefillableSolution
+    solution: Welder
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 100
+        maxVol: 100
+  - type: Tool
+    alwaysCheckDoAfter: true # Goobstation
+    useSound:
+      collection: Welder
+    qualities:
+    - Welding
+    - Axing # Goobstation
+    - Ignition
+  - type: WeldingSparks # Goobstation
+  - type: ToolTileCompatible # Goobstation
+    delay: 2
+  - type: Welder
+  - type: PointLight
+    enabled: false
+    radius: 1.5
+    color: orange
+    netsync: false
+  - type: ItemTogglePointLight
+  - type: Appearance
+  - type: RequiresEyeProtection
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 200
+  - type: StaticPrice
+    price: 40
+  - type: IgnitionSource
+    temperature: 700
+  - type: Cautery # Shitmed
+    speed: 0.7
+  - type: SurgeryTool # Shitmed
+    startSound:
+      collection: Welder
+    endSound:
+      collection: WelderOff
+  - type: Tag
+    tags:
+    - DroneUsable # Goobstation
+    - WeldingTool # Einstein Engines
 
 - type: entity
   name: industrial welding tool
@@ -243,17 +243,17 @@
   id: WelderIndustrial
   description: "An industrial welder with over double the fuel capacity."
   components:
-    - type: Sprite
-      sprite: Objects/Tools/welder_industrial.rsi
-    - type: Item
-      sprite: Objects/Tools/welder_industrial.rsi
-    - type: SolutionContainerManager
-      solutions:
-        Welder:
-          reagents:
-            - ReagentId: WeldingFuel
-              Quantity: 250
-          maxVol: 250
+  - type: Sprite
+    sprite: Objects/Tools/welder_industrial.rsi
+  - type: Item
+    sprite: Objects/Tools/welder_industrial.rsi
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 250
+        maxVol: 250
 
 - type: entity
   name: advanced industrial welding tool
@@ -261,19 +261,19 @@
   id: WelderIndustrialAdvanced
   description: "An advanced industrial welder with over five times the fuel capacity and a hotter flame." #Reserve Experimental Welder Rework
   components:
-    - type: Sprite
-      sprite: Objects/Tools/welder_industrialadv.rsi
-    - type: Item
-      sprite: Objects/Tools/welder_industrialadv.rsi
-    - type: SolutionContainerManager
-      solutions:
-        Welder:
-          reagents:
-            - ReagentId: WeldingFuel
-              Quantity: 500 #Reserve Experimental Welder Rework
-          maxVol: 500 #Reserve Experimental Welder Rework
-    - type: Tool
-      speedModifier: 1.5 #Reserve Experimental Welder Rework
+  - type: Sprite
+    sprite: Objects/Tools/welder_industrialadv.rsi
+  - type: Item
+    sprite: Objects/Tools/welder_industrialadv.rsi
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 500 #Reserve Experimental Welder Rework
+        maxVol: 500 #Reserve Experimental Welder Rework
+  - type: Tool
+    speedModifier: 1.5 #Reserve Experimental Welder Rework
 
 - type: entity
   name: experimental welding tool
@@ -281,39 +281,39 @@
   id: WelderExperimental
   description: "An experimental welder that is less harmful to the eyes while having a hotter flame and slowly regenerating fuel." #Reserve Experimental Welder Rework
   components:
-    - type: Sprite
-      sprite: Objects/Tools/welder_experimental.rsi
-    - type: Item
-      sprite: Objects/Tools/welder_experimental.rsi
-    - type: SolutionContainerManager
-      solutions:
-        Welder:
-          reagents:
-            - ReagentId: WeldingFuel
-              Quantity: 200 #Reserve Experimental Welder Rework
-          maxVol: 200 #Reserve Experimental Welder Rework
-    - type: PointLight
-      enabled: false
-      radius: 1.5
-      color: lightblue
-    - type: SolutionRegeneration
-      solution: Welder
-      generated:
+  - type: Sprite
+    sprite: Objects/Tools/welder_experimental.rsi
+  - type: Item
+    sprite: Objects/Tools/welder_experimental.rsi
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
         reagents:
-          - ReagentId: WeldingFuel
-            Quantity: 0.5 #Reserve Experimental Welder Rework
-    - type: RequiresEyeProtection
-      statusEffectTime: 5 # less harmful; sunglasses can block it
-    - type: PhysicalComposition #Goobstation - Recycle update
-      materialComposition:
-        Steel: 200
-        Plasma: 50
-    - type: StaticPrice #Goobstation - Recycle update
-      price: 50
-    - type: Tool #Reserve Experimental Welder Rework
-      speedModifier: 2 #Reserve Experimental Welder Rework
-    - type: WeldingSparks # Goobstation
-      effect: EffectWeldingSparksExp
+        - ReagentId: WeldingFuel
+          Quantity: 200 #Reserve Experimental Welder Rework
+        maxVol: 200 #Reserve Experimental Welder Rework
+  - type: PointLight
+    enabled: false
+    radius: 1.5
+    color: lightblue
+  - type: SolutionRegeneration
+    solution: Welder
+    generated:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 0.5 #Reserve Experimental Welder Rework
+  - type: RequiresEyeProtection
+    statusEffectTime: 5 # less harmful; sunglasses can block it
+  - type: PhysicalComposition #Goobstation - Recycle update
+    materialComposition:
+      Steel: 200
+      Plasma: 50
+  - type: StaticPrice #Goobstation - Recycle update
+    price: 50
+  - type: Tool #Reserve Experimental Welder Rework
+    speedModifier: 2 #Reserve Experimental Welder Rework
+  - type: WeldingSparks # Goobstation
+    effect: EffectWeldingSparksExp
 
 - type: entity
   name: emergency welding tool
@@ -321,41 +321,41 @@
   id: WelderMini
   description: "A miniature welder used during emergencies."
   components:
-    - type: Sprite
-      sprite: Objects/Tools/welder_mini.rsi
-    - type: Item
-      size: Tiny
-      sprite: Objects/Tools/welder_mini.rsi
-    - type: RefillableSolution
-      solution: Welder
-    - type: SolutionContainerManager
-      solutions:
-        Welder:
-          reagents:
-            - ReagentId: WeldingFuel
-              Quantity: 50
-          maxVol: 50
-    - type: Tool
-      speedModifier: 0.7
-    - type: PointLight
-      enabled: false
-      radius: 1.0
-      color: orange
+  - type: Sprite
+    sprite: Objects/Tools/welder_mini.rsi
+  - type: Item
+    size: Tiny
+    sprite: Objects/Tools/welder_mini.rsi
+  - type: RefillableSolution
+    solution: Welder
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 50
+        maxVol: 50
+  - type: Tool
+    speedModifier: 0.7
+  - type: PointLight
+    enabled: false
+    radius: 1.0
+    color: orange
 
 - type: entity
-  parent: [Welder, BaseXenoborgContraband]
+  parent: [ Welder, BaseXenoborgContraband ]
   id: RefuelingWelder
   name: refuling welding tool
   description: "An slow welder that can refuel itself over time."
   components:
-    - type: Tool
-      speedModifier: 0.5
-    - type: Welder
-      fuelConsumption: 2
-      fuelLitCost: 1
-    - type: SolutionRegeneration
-      solution: Welder
-      generated:
-        reagents:
-          - ReagentId: WeldingFuel
-            Quantity: 0.1
+  - type: Tool
+    speedModifier: 0.5
+  - type: Welder
+    fuelConsumption: 2
+    fuelLitCost: 1
+  - type: SolutionRegeneration
+    solution: Welder
+    generated:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 0.1

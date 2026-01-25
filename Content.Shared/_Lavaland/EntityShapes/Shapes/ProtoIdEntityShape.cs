@@ -1,8 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
-using System.Numerics;
+﻿using System.Numerics;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lavaland.EntityShapes.Shapes;
@@ -11,7 +7,6 @@ namespace Content.Shared._Lavaland.EntityShapes.Shapes;
 /// Works like NestedEntityShape, but also has serialization,
 /// so you can just type id: in prototypes and it will work.
 /// </summary>
-[DataDefinition]
 public sealed partial class ProtoIdEntityShape : EntityShape
 {
     public const string IdDataFieldTag = "id";

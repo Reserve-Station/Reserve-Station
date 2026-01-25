@@ -6,7 +6,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     useDelay: 15
     itemIconStyle: NoItem
     sound:
@@ -33,7 +32,6 @@
     icon:
       sprite: _Goobstation/Heretic/abilities_heretic.rsi
       state: star_touch
-    raiseOnUser: true
   - type: InstantAction
     event: !type:EventHereticStarTouch
   - type: HereticAction
@@ -47,7 +45,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     useDelay: 1
     itemIconStyle: NoItem
     sound:
@@ -73,7 +70,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     useDelay: 15
     itemIconStyle: NoItem
     sound:
@@ -95,7 +91,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     useDelay: 30
     itemIconStyle: NoItem
     icon:
@@ -114,7 +109,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     useDelay: 30
     itemIconStyle: NoItem
     icon:
@@ -133,7 +127,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     useDelay: 5
     itemIconStyle: NoItem
     icon:

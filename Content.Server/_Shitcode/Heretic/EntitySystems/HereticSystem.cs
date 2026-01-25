@@ -103,12 +103,7 @@ public sealed class HereticSystem : EntitySystem
     }
 
     private void OnPolymorphed(Entity<HereticComponent> ent, ref PolymorphedEvent args)
-    {
-        if (args.IsRevert)
-            return;
-
-        _polymorph.CopyPolymorphComponent<HereticComponent>(ent, args.NewEntity);
-    }
+        => _polymorph.CopyPolymorphComponent<HereticComponent>(ent, args.NewEntity);
 
     private void OnRestart(RoundRestartCleanupEvent ev)
     {
@@ -217,19 +212,23 @@ public sealed class HereticSystem : EntitySystem
             _eye.SetVisibilityMask(ent, eye.VisibilityMask | HereticVisFlags, eye);
 
         foreach (var k in ent.Comp.BaseKnowledge)
-            _knowledge.AddKnowledge(ent, ent.Comp, k);
+            _knowledge.AddKnowledge(ent, ent.Comp, k, research: false);
 
-        if (ent.Comp.KnowledgeRequiredTags.Count == 0)
-            GenerateRequiredKnowledgeTags(ent);
+        // in case of polymorph
+        foreach (var k in ent.Comp.ResearchedKnowledge)
+            _knowledge.AddKnowledge(ent, ent.Comp, k, research: false);
 
-        if (ent.Comp.SacrificeTargets.Count == 0)
-            RaiseLocalEvent(ent, new EventHereticRerollTargets());
+        GenerateRequiredKnowledgeTags(ent);
+        RaiseLocalEvent(ent, new EventHereticRerollTargets());
     }
 
     private void OnShutdown(Entity<HereticComponent> ent, ref ComponentShutdown args)
     {
         if (TryComp<EyeComponent>(ent, out var eye))
             _eye.SetVisibilityMask(ent, eye.VisibilityMask & ~HereticVisFlags, eye);
+
+        foreach (var action in ent.Comp.ProvidedActions)
+            _actions.RemoveAction(action);
     }
 
     private void OnGetVisMask(Entity<HereticComponent> uid, ref GetVisMaskEvent args)

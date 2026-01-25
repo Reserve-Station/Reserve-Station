@@ -13,7 +13,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     useDelay: 8
     itemIconStyle: NoItem
     icon:
@@ -37,7 +36,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     predicted: false
     useDelay: 30
     itemIconStyle: NoItem
@@ -64,7 +62,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     predicted: false
     useDelay: 30
     itemIconStyle: NoItem
@@ -88,7 +85,6 @@
   components:
   - type: Action
     checkCanInteract: false
-    raiseOnUser: true
     useDelay: 45
     itemIconStyle: NoItem
     icon:
@@ -111,7 +107,6 @@
   components:
   - type: Action
     checkCanInteract: true
-    raiseOnUser: true
     useDelay: 35
     itemIconStyle: NoItem
     sound:
