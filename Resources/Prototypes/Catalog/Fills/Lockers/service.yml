@@ -154,6 +154,8 @@
       - id: FlashlightLantern
       - id: Plunger
       - id: WireBrush
+        amount: 2
+      - id: FlatpackWashingMachine
 
 - type: entity
   id: ClosetLegalFilled

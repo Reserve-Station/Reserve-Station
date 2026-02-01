@@ -52,6 +52,21 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 0vrseer <iov3rseeri@gmail.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Doctor-Cpu <77215380+Doctor-Cpu@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Perry Fraser <perryprog@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 PurpleTranStar <tehevilduckiscoming@gmail.com>
+// SPDX-FileCopyrightText: 2025 Rouden <149893554+Roudenn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
+// SPDX-FileCopyrightText: 2025 pre-commit-ci[bot] <66853113+pre-commit-ci[bot]@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -60,16 +75,22 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reaction;
+using Content.Shared.Chemistry;
+using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Database;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Fluids.Components;
-using Content.Shared.IdentityManagement;
-using Content.Shared.Nutrition.EntitySystems;
-using Content.Shared.Popups;
 using Content.Shared.Spillable;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Player;
+using Content.Shared._DV.Chemistry.Systems;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Popups; // DeltaV Beergoggles enable safe throw
+using Robust.Shared.Physics.Systems; // DeltaV Beergoggles enable safe throw
 
 namespace Content.Server.Fluids.EntitySystems;
 
@@ -81,7 +102,6 @@ public sealed partial class PuddleSystem
 
         SubscribeLocalEvent<SpillableComponent, LandEvent>(SpillOnLand);
         // Openable handles the event if it's closed
-        SubscribeLocalEvent<SpillableComponent, MeleeHitEvent>(SplashOnMeleeHit, after: [typeof(OpenableSystem)]);
         SubscribeLocalEvent<SpillableComponent, SolutionContainerOverflowEvent>(OnOverflow);
         SubscribeLocalEvent<SpillableComponent, SpillDoAfterEvent>(OnDoAfter);
     }
@@ -176,6 +196,15 @@ public sealed partial class PuddleSystem
         if (args.User != null)
         {
             _adminLogger.Add(LogType.Landed,
+            // DeltaV - start of Beergoggles enable safe throw
+            if (_safesolthrower.GetSafeThrow(args.User.Value))
+            {
+                _physics.SetAngularVelocity(entity, 0);
+                Transform(entity).LocalRotation = Angle.Zero;
+                return;
+            }
+            // DeltaV - end of Beergoggles enable safe throw
+            AdminLogger.Add(LogType.Landed,
                 $"{ToPrettyString(entity.Owner):entity} spilled a solution {SharedSolutionContainerSystem.ToPrettyString(solution):solution} on landing");
         }
 
