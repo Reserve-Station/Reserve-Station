@@ -4,7 +4,7 @@ armor-examine-modify-delayed-knockdown-delay =
     - { $deltasign ->
         [1] [color=green]Увеличивает[/color]
        *[-1] [color=red]Уменьшает[/color]
-    } задержку нокдауна на [color=lightblue]{ NATURALFIXED($amount, 2) } { $amount ->
+    } задержку оглушения на [color=lightblue]{ NATURALFIXED($amount, 2) } { $amount ->
         [1] секунду
        *[other] секунд
     }[/color].

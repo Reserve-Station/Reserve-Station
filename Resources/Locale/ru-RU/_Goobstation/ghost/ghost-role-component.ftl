@@ -55,12 +55,21 @@ ghost-role-information-greytider-name = Грейтайдер
 ghost-role-information-greytider-description = Будь робастным.
 
 ghost-role-information-sentient-shark-name = Разумная акула
+ghost-role-information-plague-mouse-name = Чумная мышь
+ghost-role-information-plague-mouse-description = Голодная и озорная мышь. Эта мышь переносит болезнь и будет распространять её при укусе.
+
+ghost-role-information-trevor-name = Тревор
+ghost-role-information-trevor-description = Надёжный боевой конь службы безопасности.
 
 # Халфлайф
 
 ghost-role-information-Gman-name = G-Man
 ghost-role-information-Gman-description = Правильный человек, оказавшийся в неподходящем месте, может изменить мир к лучшему.
 ghost-role-information-Gman-rules = Вы не подчиняетесь никаким правилам или границам. Смерть не может удержать вас, как и Нанотрейзен.
+
+# cargo bingle
+ghost-role-cargo-bingle-name = Бингл снабжения
+ghost-role-cargo-bingle-desc = Служите представителю Nanotrasen и его интересам, не кусайте экипаж, помогайте отделу снабжения.
 
 # Роли с шаттлов
 
@@ -75,8 +84,8 @@ ghost-role-information-conquest-rules = Подготовьте эту станц
 
 # Justice Persona Role
 
-justice-role-name = Justice Persona
-justice-role-description = Help the HOS carry out arrests by shouting phrases for them while they deliver Justice.
+justice-role-name = Правосудие
+justice-role-description = Помогайте главе службы безопасности проводить аресты, выкрикивая для него фразы, пока он вершит правосудие.
 
 # Ancient Xenos
 
@@ -109,3 +118,52 @@ roles-slaughter-demon-name-token = Демон резни (Токен)
 roles-laughter-demon-name-token = Демон смеха (Токен)
 ghost-role-information-ancient-rogue-king-name-token = Древний король ксено-отступник (Токен)
 ghost-role-information-slasher-token = Мясник (Токен)
+
+# Misc-Midround antags
+
+ghost-role-information-grey-tide-name = Грей Тайд
+ghost-role-information-grey-tide-description = Против всего зла, которое может сотворить щиткур, против всего зла, которое может создать научный отдел, мы пошлём к ним только вас. Будьте крепки и дерьмовы, пока это не будет сделано.
+grey-tide-role-greeting = Давно забытый в глубинах технических туннелей, вы [color=#880808]- ГРЕЙ-ТАЙД [/color], одежда, которую вы носите, слилась с вашим телом из-за чрезмерной нагрузки, эту станцию им не завоевать...
+tide-objective-kill-everyone-desc = Эта станция причинила вам зло в последний раз, робастите и тайдите, пока они все не умрут.
+tide-objective-condition-kill-everyone-else-title = Заробастить всех.
+
+ghost-role-information-tunnel-clown-name = Туннельный клоун
+ghost-role-information-tunnel-clown-description = Член банды клоунов, чьим домом стали технические тоннели.
+tunnel-clown-role-greeting = Вы - [color=#880808]Туннельный клоун[/color], член банды клоунов, тех, кто поселился в технических туннелях. Проверьте меню персонажа чтобы узнать о своих целях.
+tunnel-clown-objective-maints-slasher-desc = Коридоры технического обслуживания были вашим домом столько, сколько вы себя помните, и до сих пор вы только и знали, что прятаться от экипажа в шкафчиках. Посетители станции вторглись в ваш дом в последний раз, убейте любого, кто посмеет нарушить покой вашего дома.
+tunnel-clown-objective-condition-maints-slasher-title = Защищайте технические туннели.
+tunnel-clown-business-card = Туннельный клоун, лицензия на убийства.
+
+ghost-role-information-Singuloth-Knight-name = Рыцарь Сингулота
+ghost-role-information-Singuloth-Knight-description = Некогда великие инженеры, а ныне последователи Лорда Сингулота. Владея молотом сингулярности, они представляют собой силу, с которой следует считаться!
+Singuloth-Knight-role-greeting = Вы [color=#880808]Рыцарь Сингулота[/color], преданный последователь лорда Сингулота. Проверьте своё меню персонажа на предмет целей.
+objective-issuer-lord-singuloth = [color=#320022]Лорд Сингулот[/color]
+
+ghost-role-information-dark-lord-name = Тёмный лорд
+ghost-role-information-dark-lord-description = Агент Синдиката, созданный в честь повелителя Ситхов, используй свою силу молнии и энергетический меч для достижения своих целей!
+dark-lord-role-greeting = Вы [color=#880808]Тёмный лорд[/color], отправленный синдикатом на эту станцию для выполнения своей грязной работы. Проверьте своё меню персонажа на предмет ваших целей.
+
+ghost-role-information-chosen-one-name = Избранный
+ghost-role-information-chosen-one-description = Специальный агент, посланный Nanotrasen на станцию, чтобы победить Тёмного лорда.
+chosen-one-role-greeting = Вы [color=#0087FF]Избранный[/color], вы были отправлены на эту станцию, чтобы победить Тёмного лорда, посланного Синдикатом. Проверьте своё меню персонажа на предмет ваших целей.
+objective-condition-dark-lord-kill-title = Убедитесь, что Тёмный лорд {$targetName} умрёт.
+
+ghost-role-information-mime-Assassin-name = Убийца-мим
+ghost-role-information-mime-Assassin-description = Ассассин, который носит одежду мима и предпочитает бесшумные убийства, как его зовут? Ну, он, вероятно, не может вам сказать, но именно это делает его таким замечательным!
+mime-Assassin-role-greeting = Вы [color=#880808]Мим-убийца[/color], вы были отправлены на эту станцию Синдикатом чтобы убить несколько членов командования. Синдикат проспонсировал вас некоторыми инструментами для выполнения работы, тихой... Проверьте меню персонажа на наличие целей, и не попадите в руки СБ.
+
+ghost-role-information-dark-priest-name = Тёмный священник
+ghost-role-information-dark-priest-description = Агент тёмных богов, посланный убить кого-то, защитить кого-то и нанять кого-то, кто заинтересовал их, в качестве ученика, обладает "благословением жнеца".
+dark-priest-role-greeting = Вы [color=#880808]Тёмный священник[/color], вы были отправлены на эту станцию, чтобы выбрать кого-то в качестве своего ученика, убить кого-то и защитить кого-то. Проверьте меню персонажа на предмет выполнения поставленных задач.
+objective-condition-other-alive-title = Убедитесь, что {$targetName}, {CAPITALIZE($job)} выживет.
+objective-issuer-self = [color=#7851A9]Ваши личные интересы[/color]
+
+ghost-role-information-vox-raider-name = Вокс-рейдер
+ghost-role-information-vox-raider-description = Вокс, который клянётся в верности Шоулу. Неясно, каковы их намерения и планируют ли они торговать или воровать на станции. Всегда лучше проявлять осторожность, когда они появляются.
+vox-raider-role-greeting = Вы [color=#7851A9]Вокс-рейдер[/color], вокс, присягнувший на верность Шоулу, перед вами стоит задача украсть предметы со станции или обменять их, не имеет значения, что вы решите сделать, важно лишь то, что вы получите все предметы, необходимые для достижения ваших целей и завершения "Ограбления". Проверьте своё меню персонажа на предмет целей.
+
+ghost-role-information-clown-goblin-name = Клоун-гоблин
+ghost-role-information-clown-goblin-description = Ужасное существо, вышедшее из ада.
+
+ghost-role-information-santa-name = Санта Клаус
+ghost-role-information-santa-description = Распространите рождественское приветствие по всей станции!

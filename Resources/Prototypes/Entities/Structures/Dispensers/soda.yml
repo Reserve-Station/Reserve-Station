@@ -144,8 +144,7 @@
     board: SodaDispenserMachineCircuitboard
   - type: GuideHelp
     guides:
-    - Bartender
-    - Drinks
+    - NonAlcoholicDrinks
 
 - type: entity
   parent: SodaDispenser

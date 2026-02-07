@@ -43,3 +43,7 @@ shadowling-examine-self = [color=#D22B2B]Вы получаете { $damage } у�
 
 asc-broadcast-title = Вознесённое вещание
 asc-broadcast-prompt = Сообщение
+
+roles-antag-shadowling-name = Тенеморф
+
+roles-antag-shadowling-description = Возвысьтесь.

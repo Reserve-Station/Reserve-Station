@@ -1,0 +1,9 @@
+disease-type-viral = Вирусная
+disease-type-bacterial = Бактериальная
+disease-type-owncells = Раковая
+disease-type-prion = Прионная
+disease-type-parasite = Паразитарная
+disease-type-debug = Неизвестная
+disease-spread-aerial = Воздушно-капельный
+disease-spread-blood = Кровь
+disease-spread-debug = Дебаг

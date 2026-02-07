@@ -11,7 +11,6 @@
 # SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
 # SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 JohnOakman <sremy2012@hotmail.fr>
-# SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 LuciferMkshelter <154002422+LuciferEOS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
 # SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
@@ -35,7 +34,6 @@
   name: Urist McPositronic
   description: A positronic brain in a metal body.
   components:
-  - type: CRTVisionOverlay # WD add
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic
@@ -73,6 +71,8 @@
         requireInputValidation: false
       enum.SurgeryUIKey.Key: # Shitmed
         type: SurgeryBui
+      enum.RadarConsoleUiKey.Key: #goob - contractor
+        type: RadarConsoleBoundUserInterface
   # Goobstation Start - Energycrit
   # - type: PowerCellSlot
   #   cellSlotId: cell_slot
@@ -125,7 +125,6 @@
     stateAlertDict:
       Alive: BorgHealth
       Dead: BorgDead
-    showOverlays: false # WWDP add
   - type: TypingIndicator
     proto: robot
   - type: Destructible

@@ -1,8 +1,13 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Goobstation.Common.Physics;
 using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Targeting;
+using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.StatusEffectNew;
@@ -16,6 +21,7 @@ public abstract class SharedFireBlastSystem : EntitySystem
     [Dependency] protected readonly SharedTransformSystem Xform = default!;
     [Dependency] protected readonly StatusEffectsSystem Status = default!;
     [Dependency] protected readonly DamageableSystem Dmg = default!;
+    [Dependency] protected readonly SharedBodySystem Body = default!;
 
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedStaminaSystem _stam = default!;
@@ -80,7 +86,7 @@ public abstract class SharedFireBlastSystem : EntitySystem
             };
 
             Dmg.TryChangeDamage(uid,
-                damage,
+                damage * Body.GetVitalBodyPartRatio(uid),
                 true,
                 false,
                 dmg,

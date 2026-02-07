@@ -5,10 +5,10 @@ chat-speech-verb-gondola-1 = вглядывается
 chat-speech-verb-gondola-2 = дышит
 
 chat-speech-verb-name-dead = Мертвый
-chat-speech-verb-dead-1 = соли
-chat-speech-verb-dead-2 = мальдирует
+chat-speech-verb-dead-1 = солит
+chat-speech-verb-dead-2 = злится
 chat-speech-verb-dead-3 = справляется
-chat-speech-verb-dead-4 = проливает
+chat-speech-verb-dead-4 = протекает
 chat-speech-verb-dead-5 = плачет
 chat-speech-verb-dead-6 = ноет
 chat-speech-verb-dead-7 = стонет

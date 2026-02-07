@@ -3,7 +3,7 @@ job-name-salvagediver = утилизатор-десантинк
 job-name-ntr = представитель Nanotrasen
 job-name-bs = офицер Синего Щита
 job-name-overall = общий
-job-name-exec = исполнительный доступ
+job-name-tider = тайдер
 
 # Флот
 
@@ -18,13 +18,13 @@ job-name-nct = карьерный тренер Nanotrasen
 
 job-name-hecu = оперативник HECU
 job-name-highcommander = верховный главнокомандующий
-job-name-gman = джи-мен
 job-name-governmentman = джи-мэн
 
 # Misc
 
 job-name-conquest = завоеватель
 job-name-mercenarycaptain = капитан наёмников
+job-name-radiohost = радиоведущий
 
 # Таймеры ролей - сделайте их в алфавитном порядке или я вас порежу (не слушайте апстрим, я скопировал и вставил это, сделайте их не в алфавитном порядке :godo:)
 
@@ -41,3 +41,5 @@ JobConquest = Завоеватель
 JobInspector = Аудитор Центрального Командования
 JobMercenaryCaptain = Капитан наёмников
 JobRoboticist = Робототехник
+JobRadioHost = Радиоведущий
+JobVirologist = Вирусолог

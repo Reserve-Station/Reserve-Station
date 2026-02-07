@@ -15,3 +15,5 @@ ent-VehicleWheelchairFolded = { ent-VehicleWheelchair }
     .desc = { ent-VehicleWheelchair.desc }
 ent-VehicleHoverchair = кресло на воздушной подушке
     .desc = Откиньтесь на спинку роскошного кресла-качалки и расслабьтесь.
+ent-VehicleForklift = вилочный погрузчик
+    .desc = Требуется сертификация вилочного погрузчика, одобренного компанией NanoTrasen.

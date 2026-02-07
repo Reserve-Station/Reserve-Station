@@ -1,1 +1,1 @@
-entity-category-name-enchants = Очаровывает
+entity-category-name-enchants = Зачарования

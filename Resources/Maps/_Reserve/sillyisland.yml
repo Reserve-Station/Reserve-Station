@@ -34877,13 +34877,6 @@ entities:
           - 2996
           - 2997
           - 2998
-- proto: LavalandCrateNecropolisCultArmor
-  entities:
-  - uid: 6842
-    components:
-    - type: Transform
-      pos: 6.465088,-0.8305054
-      parent: 6572
 - proto: LightHeadBorg
   entities:
   - uid: 4322

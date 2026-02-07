@@ -40,6 +40,8 @@
   - Rodentia
   - SlimePerson
   - Dwarf
+  - Feroxi
+  - Chitinid
   components:
   - type: RandomHumanoidAppearance
     randomizeName: false

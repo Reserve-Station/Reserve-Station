@@ -184,6 +184,9 @@ public sealed partial class VirologyMachinesSystem : EntitySystem
 
     private void AddAltVerb(Entity<VirologyMachineComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
+        if (!args.CanAccess || !args.CanInteract)
+            return;
+
         if (!ent.Comp.Vaccinator || HasComp<ActiveVirologyMachineComponent>(ent))
             return;
 

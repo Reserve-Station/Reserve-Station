@@ -480,15 +480,21 @@ namespace Content.Server.Lathe
         {
             if (component.Queue.Count > 0)
             {
-                var allMaterials = component.Queue.SelectMany(q => _proto.Index(q).Materials);
                 var totalMaterials = new Dictionary<string, int>();
 
-                foreach (var (mat, amount) in allMaterials)
+                // Reserve fix start - apply MaterialUseMultiplier when refunding materials to prevent duplication
+                foreach (var recipeId in component.Queue)
                 {
-                    if(!totalMaterials.ContainsKey(mat))
-                        totalMaterials[mat] = 0;
-                    totalMaterials[mat] += amount;
+                    var recipe = _proto.Index(recipeId);
+                    foreach (var (mat, amount) in recipe.Materials)
+                    {
+                        var adjustedAmount = AdjustMaterial(amount, recipe.ApplyMaterialDiscount, component.MaterialUseMultiplier);
+                        if (!totalMaterials.ContainsKey(mat))
+                            totalMaterials[mat] = 0;
+                        totalMaterials[mat] += adjustedAmount;
+                    }
                 }
+                // Reserve fix end
 
                 if(_materialStorage.CanChangeMaterialAmount(uid, totalMaterials))
                 {

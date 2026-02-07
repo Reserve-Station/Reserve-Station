@@ -17,9 +17,15 @@
   id: ExperimentalScienceGoob
   recipes:
   - ExperimentalCircuitBoard
+  - NTCustomLawboard
 
 - type: latheRecipePack
   id: XenobioPack
   recipes:
   - SlimeGrinderMachineCircuitboard
   - ClothingBackpackXenoBioTank
+
+- type: latheRecipePack
+  id: XenobagHoldingPack
+  recipes:
+  - ClothingBeltChemBagXenobiologyHolding

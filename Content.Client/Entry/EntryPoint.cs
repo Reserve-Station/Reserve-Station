@@ -110,11 +110,9 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 // SPDX-FileCopyrightText: 2025 Aidenkrz <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
 // SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Svarshik <lexasvarshik666@gmail.com>
 // SPDX-FileCopyrightText: 2025 echotry <48294642+echotry-ss14@users.noreply.github.com>
@@ -261,11 +259,6 @@ namespace Content.Client.Entry
             _prototypeManager.RegisterIgnore("codewordFaction");
             _prototypeManager.RegisterIgnore("story"); //Reserve edit
             _prototypeManager.RegisterIgnore("storyBeat"); //Reserve edit
-
-            // WD EDIT START
-            // Vision effects
-            _componentFactory.RegisterIgnore("CRTVisionComponent");
-            // WD EDIT END
 
             _componentFactory.GenerateNetIds();
             _adminManager.Initialize();

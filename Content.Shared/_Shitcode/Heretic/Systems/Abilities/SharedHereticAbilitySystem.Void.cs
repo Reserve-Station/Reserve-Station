@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Linq;
 using Content.Goobstation.Common.BlockTeleport;
 using Content.Goobstation.Common.Body.Components;
@@ -69,7 +73,7 @@ public abstract partial class SharedHereticAbilitySystem
             if (condition)
                 Voidcurse.DoCurse(pookie, 2);
             _dmg.TryChangeDamage(pookie,
-                args.Damage,
+                args.Damage * _body.GetVitalBodyPartRatio(pookie),
                 true,
                 origin: ent,
                 targetPart: TargetBodyPart.All,
@@ -92,7 +96,7 @@ public abstract partial class SharedHereticAbilitySystem
         foreach (var pookie in pookies)
         {
             _dmg.TryChangeDamage(pookie,
-                args.Damage,
+                args.Damage * _body.GetVitalBodyPartRatio(pookie),
                 true,
                 origin: ent,
                 targetPart: TargetBodyPart.All,

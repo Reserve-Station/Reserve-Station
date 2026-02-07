@@ -136,8 +136,7 @@
     board: BoozeDispenserMachineCircuitboard
   - type: GuideHelp
     guides:
-    - Bartender
-    - Drinks
+    - AlcoholicDrinks
   - type: StealTarget
     stealGroup: BoozeDispenser
 

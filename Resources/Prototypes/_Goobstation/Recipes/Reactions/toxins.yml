@@ -10,16 +10,14 @@
   id: Triclor
   impact: Medium
   reactants:
-    Ammonia:
+    Amatoxin:
       amount: 1
-    SodiumHydroxide: # reserve triclor-fix begin
-      amount: 2
     Ipecac:
+      amount: 1
+    Aluite:
       amount: 3
-    Ichor:
-      amount: 1 # reserve triclor-fix end
   products:
-    Triclor: 3
+    Triclor: 5
 
 - type: reaction
   id: Cyanide

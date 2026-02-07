@@ -1,0 +1,16 @@
+ent-YellowSlimeExtract = жёлтый экстракт слайма
+    .desc = { ent-BaseSlimeExtract.desc }
+ent-DarkPurpleSlimeExtract = тёмно-фиолетовый экстракт слайма
+    .desc = { ent-BaseSlimeExtract.desc }
+ent-DarkBlueSlimeExtract = тёмно-синий экстракт слайма
+    .desc = { ent-BaseSlimeExtract.desc }
+ent-SilverSlimeExtract = серебрянный экстракт слайма
+    .desc = { ent-BaseSlimeExtract.desc }
+ent-BluespaceSlimeExtract = экстракт блюспейс-слайма
+    .desc = { ent-BaseSlimeExtract.desc }
+ent-SepiaSlimeExtract = экстракт сепия-слайма
+    .desc = { ent-BaseSlimeExtract.desc }
+ent-CeruleanSlimeExtract = лазурный экстракт слайма
+    .desc = { ent-BaseSlimeExtract.desc }
+ent-PyriteSlimeExtract = пиритовый экстракт слайма
+    .desc = { ent-BaseSlimeExtract.desc }

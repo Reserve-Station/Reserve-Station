@@ -332,16 +332,12 @@ namespace Content.Server.Connection
                 return (ConnectionDenyReason.NoHwid, Loc.GetString("hwid-required"), null);
             }
 
-            var isSpecialAuthUser = _adminManager.IsSpecialAuthUser(e.UserName);
-            if (!isSpecialAuthUser)
+            var bans = await _db.GetServerBansAsync(addr, userId, hwId, modernHwid, includeUnbanned: false);
+            if (bans.Count > 0)
             {
-                var bans = await _db.GetServerBansAsync(addr, userId, hwId, modernHwid, includeUnbanned: false);
-                if (bans.Count > 0)
-                {
-                    var firstBan = bans[0];
-                    var message = firstBan.FormatBanMessage(_cfg, _loc);
-                    return (ConnectionDenyReason.Ban, message, bans);
-                }
+                var firstBan = bans[0];
+                var message = firstBan.FormatBanMessage(_cfg, _loc);
+                return (ConnectionDenyReason.Ban, message, bans);
             }
 
             if (HasTemporaryBypass(userId))
