@@ -299,3 +299,9 @@ Entries:
       message: Исправлены локали наручников
   id: 43
   time: '2025-12-31T11:19:44.0000000+00:00'
+- author: lexaSvarshik
+  changes:
+    - type: Add
+      message: Апстрим с Goob Station на 07.02!
+  id: 44
+  time: '2026-02-07T15:21:17.0000000+00:00'

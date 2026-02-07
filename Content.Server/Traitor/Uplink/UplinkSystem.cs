@@ -31,32 +31,17 @@
 // SPDX-FileCopyrightText: 2025 ActiveMammmoth <140334666+ActiveMammmoth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Traitor;
 using Content.Server.Store.Systems;
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Shared.Clothing.Components;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants;
-using Content.Shared.Inventory;
 using Content.Shared.Mind;
-using Content.Shared.PDA;
-using Content.Shared.Preferences;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
-using Content.Shared.Storage;
-using Content.Shared.Storage.EntitySystems;
-using Content.Server.Storage.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Log;
-using Content.Shared.Stacks;
-using Content.Server.Stack;
 
 namespace Content.Server.Traitor.Uplink;
 
@@ -64,92 +49,60 @@ namespace Content.Server.Traitor.Uplink;
 // do not touch unless you want to shoot yourself in the leg
 public sealed class UplinkSystem : EntitySystem
 {
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
-    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly StackSystem _stackSystem = default!; // Reserve edit
-    [Dependency] private readonly ILogManager _logManager = default!; // Reserve edit
-
-    private ISawmill _sawmill = default!; // Reserve edit
+    [Dependency] private readonly GoobCommonUplinkSystem _goobUplink = default!;
 
     public static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
     private static readonly EntProtoId FallbackUplinkImplant = "UplinkImplant";
     private static readonly ProtoId<ListingPrototype> FallbackUplinkCatalog = "UplinkUplinkImplanter";
 
-    public override void Initialize()
+    /// <summary>
+    /// Adds an uplink to the target based on their preference
+    /// Falls back to implant if the preferred target entity is not found
+    /// </summary>
+    public bool TryAddUplink(
+        EntityUid user,
+        FixedPoint2 balance,
+        ProtoId<UplinkPreferencePrototype> preferenceId,
+        out EntityUid? uplinkTarget,
+        out SetupUplinkEvent? setupEvent)
     {
-        base.Initialize();
-        _sawmill = _logManager.GetSawmill("uplink"); // Reserve edit
+        var preference = _proto.Index(preferenceId);
+        uplinkTarget = null;
+        setupEvent = null;
+
+        if (preference.SearchComponents != null)
+            uplinkTarget = _goobUplink.FindUplinkTarget(user, preference.SearchComponents);
+
+        if (uplinkTarget == null)
+            return ImplantUplink(user, balance);
+
+        EnsureComp<UplinkComponent>(uplinkTarget.Value);
+        SetUplink(user, uplinkTarget.Value, balance);
+
+        var ev = new SetupUplinkEvent { User = user };
+        RaiseLocalEvent(uplinkTarget.Value, ref ev);
+        setupEvent = ev;
+
+        return true;
     }
 
     /// <summary>
-    /// Adds an uplink to the target
+    /// Legacy method for backwards compatibility.
+    /// Adds an uplink to the target, auto-detecting location (prefers PDA).
     /// </summary>
-    /// <param name="user">The person who is getting the uplink</param>
-    /// <param name="balance">The amount of currency on the uplink. If null, will just use the amount specified in the preset.</param>
-    /// <param name="uplinkEntity">The entity that will actually have the uplink functionality. Defaults to the PDA if null.</param>
-    /// <param name="uplinkPreference">The preferred type of uplink. Defaults to PDA if not specified.</param>
-    /// <returns>Whether or not the uplink was added successfully</returns>
-    public bool AddUplink(EntityUid user, FixedPoint2 balance, EntityUid? uplinkEntity = null, UplinkPreference uplinkPreference = UplinkPreference.PDA) // Reserve edit
+    public bool AddUplinkAutoDetect(EntityUid user, FixedPoint2 balance, EntityUid? uplinkEntity = null)
     {
-        // Reserve edit start
-        if (uplinkPreference == UplinkPreference.Telecrystals)
-        {
-            var tcEntity = Spawn("Telecrystal", Transform(user).Coordinates);
-
-            _stackSystem.SetCount(tcEntity, (int)balance);
-
-            if (TryPutInBackpack(user, tcEntity))
-                return true;
-
-            if (_handsSystem.TryPickupAnyHand(user, tcEntity))
-                return true;
-
-            _sawmill.Warning($"Не удалось положить телекристаллы в инвентарь игрока {ToPrettyString(user)}, оставляем под ногами"); // Reserve edit
-            return true;
-        }
-
-        if (uplinkPreference == UplinkPreference.Radio)
-        {
-            var radio = Spawn("BaseUplinkRadio", Transform(user).Coordinates);
-
-            // Set up radio balance based on parameter
-            var store = EnsureComp<StoreComponent>(radio);
-            store.Balance.Clear();
-            var bal = new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance } };
-            _store.TryAddCurrency(bal, radio, store);
-
-            if (TryPutInBackpack(user, radio))
-                return true;
-
-            if (_handsSystem.TryPickupAnyHand(user, radio))
-                return true;
-
-            _sawmill.Warning($"Не удалось положить радио-аплинк в инвентарь игрока {ToPrettyString(user)}, оставляем под ногами"); // Reserve edit
-            return true;
-        }
-
-        if (uplinkPreference == UplinkPreference.Implant)
-        {
-            return ImplantUplink(user, balance);
-        }
-        // Reserve Station edit end
-
-
-        uplinkEntity ??= FindUplinkTarget(user);
+        uplinkEntity ??= _goobUplink.FindUplinkTarget(user, new[] { "Pda", "Pen" });
 
         if (uplinkEntity == null)
             return ImplantUplink(user, balance);
 
         EnsureComp<UplinkComponent>(uplinkEntity.Value);
-
         SetUplink(user, uplinkEntity.Value, balance);
-
-        // TODO add BUI. Currently can't be done outside of yaml -_-
-        // ^ What does this even mean?
 
         return true;
     }
@@ -189,59 +142,10 @@ public sealed class UplinkSystem : EntitySystem
 
         var implant = _subdermalImplant.AddImplant(user, FallbackUplinkImplant);
 
-        if (implant == null || !HasComp<StoreComponent>(implant))  // Reserve Station edit start - simplified implant creation
-        {
-            _sawmill.Warning($"Failed to create an uplink implant for the player {ToPrettyString(user)}"); // Reserve edit
+        if (!HasComp<StoreComponent>(implant))
             return false;
-        }
 
         SetUplink(user, implant.Value, balance);
         return true;
-    }
-
-    /// <summary>
-    /// Finds the entity that can hold an uplink for a user.
-    /// Usually this is a pda in their pda slot, but can also be in their hands. (but not pockets or inside bag, etc.)
-    /// </summary>
-    public EntityUid? FindUplinkTarget(EntityUid user)
-    {
-        // Try to find PDA in inventory
-        if (_inventorySystem.TryGetContainerSlotEnumerator(user, out var containerSlotEnumerator))
-        {
-            while (containerSlotEnumerator.MoveNext(out var pdaUid))
-            {
-                if (!pdaUid.ContainedEntity.HasValue)
-                    continue;
-
-                if (HasComp<PdaComponent>(pdaUid.ContainedEntity.Value) || HasComp<StoreComponent>(pdaUid.ContainedEntity.Value))
-                    return pdaUid.ContainedEntity.Value;
-            }
-        }
-
-        // Also check hands
-        foreach (var item in _handsSystem.EnumerateHeld(user))
-        {
-            if (HasComp<PdaComponent>(item) || HasComp<StoreComponent>(item))
-                return item;
-        }
-
-        return null;
-    }
-
-    /// <summary>
-    /// Tries to put an item in the user's backpack
-    /// </summary>
-    private bool TryPutInBackpack(EntityUid user, EntityUid item)
-    {
-        if (_inventorySystem.TryGetSlotEntity(user, "back", out var backEntity))
-        {
-            var storageSystem = EntitySystem.Get<SharedStorageSystem>();
-            if (storageSystem.Insert(backEntity.Value, item, out _))
-            {
-                return true;
-            }
-        }
-
-        return false;
     }
 }

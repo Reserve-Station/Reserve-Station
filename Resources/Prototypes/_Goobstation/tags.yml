@@ -499,6 +499,9 @@
   id: RatvarianSpear
 
 - type: Tag
+  id: InquisitorChainSword
+
+- type: Tag
   id: ReptilianEmotes
 
 - type: Tag
@@ -807,9 +810,12 @@
 
 - type: Tag
   id: HereticCostume
-  
+
 - type: Tag
-  id: VinylSleeveFit  
+  id: VinylSleeveFit
 
 - type: Tag
   id: CD
+
+- type: Tag
+  id: ContractorUplink

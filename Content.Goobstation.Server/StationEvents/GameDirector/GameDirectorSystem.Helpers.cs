@@ -1,8 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Goob Station Contributors
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
-
-using System.Linq;
+﻿using System.Linq;
 using Content.Shared.Mind;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;

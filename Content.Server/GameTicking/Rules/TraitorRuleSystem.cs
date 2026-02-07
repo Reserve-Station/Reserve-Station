@@ -105,42 +105,27 @@
 // SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Administration.Logs;
+using Content.Goobstation.Common.Traitor;
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Objectives;
-using Content.Server.PDA.Ringer;
-using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
 using Content.Server.Traitor.Uplink;
-using Content.Shared.Database;
-using Content.Shared.GameTicking.Components;
-using Content.Shared.Humanoid;
 using Content.Shared.Mind;
 using Content.Shared.NPC.Systems;
-using Content.Shared.PDA;
-using Content.Shared.PDA.Ringer;
-using Content.Shared.Preferences;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
 using Content.Shared.Roles.RoleCodeword;
-using Robust.Server.Player;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Log;
 using System.Linq;
 using System.Text;
 using Content.Server.Codewords;
@@ -163,15 +148,11 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
     [Dependency] private readonly UplinkSystem _uplink = default!;
     [Dependency] private readonly CodewordSystem _codewordSystem = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!; // Reserve edit
-    [Dependency] private readonly ILogManager _logManager = default!; // Reserve edit
-
-    private ISawmill _sawmill = default!; // Reserve edit
+    [Dependency] private readonly GoobCommonUplinkSystem _goobUplink = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        _sawmill = _logManager.GetSawmill("traitor"); // Reserve edit
 
         SubscribeLocalEvent<TraitorRuleComponent, AfterAntagEntitySelectedEvent>(AfterEntitySelected);
         SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
@@ -179,7 +160,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
     private void AfterEntitySelected(Entity<TraitorRuleComponent> ent, ref AfterAntagEntitySelectedEvent args)
     {
-     _sawmill.Debug($"AfterAntagEntitySelected {ToPrettyString(ent)}"); // Reserve edit, Log -> sawmill
+        Log.Debug($"AfterAntagEntitySelected {ToPrettyString(ent)}");
         MakeTraitor(args.EntityUid, ent);
     }
 
@@ -196,9 +177,8 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         var issuer = _random.Pick(_prototypeManager.Index(component.ObjectiveIssuers));
 
-        Note[]? code = null;
-
-        var uplinkPreference = UplinkPreference.PDA;
+        string? uplinkBriefing = null;
+        string? uplinkBriefingShort = null;
 
         if (component.GiveUplink)
         {
@@ -207,61 +187,24 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             if (_jobs.MindTryGetJob(mindId, out var prototype))
                 startingBalance = Math.Max(startingBalance - prototype.AntagAdvantage, 0);
 
-/*
-       _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code, issuer), Color.Crimson, component.GreetSoundNotification);
-*/
+            var uplinkPreference = _goobUplink.GetUplinkPreference(mindId);
 
-            // Reserve edit start
-            // Get player's uplink preference
-            if (TryComp(mindId, out MindComponent? mindComp) && mindComp.UserId != null && _playerManager.TryGetSessionById(mindComp.UserId.Value, out var session))
+            if (!_uplink.TryAddUplink(traitor, startingBalance, uplinkPreference, out _, out var setupEvent))
+                return false;
+
+            if (setupEvent != null)
             {
-                var prefsManager = IoCManager.Resolve<IServerPreferencesManager>();
-                var prefs = prefsManager.GetPreferences(session.UserId);
-
-                if (prefs?.SelectedCharacter is HumanoidCharacterProfile profile)
-                {
-                    uplinkPreference = profile.UplinkPreference;
-
-                    // Adjust telecrystal amount based on selected uplink type
-                    // Reserve edit - Using component-based TC amounts
-                    switch (uplinkPreference)
-                    {
-                        case UplinkPreference.PDA:
-                            startingBalance = component.PdaUplinkTC;
-                            break;
-                        case UplinkPreference.Radio:
-                            startingBalance = component.RadioUplinkTC;
-                            break;
-                        case UplinkPreference.Implant:
-                            startingBalance = component.ImplantUplinkTC;
-                            break;
-                        case UplinkPreference.Telecrystals:
-                            startingBalance = component.RawTelecrystalsTC;
-                            break;
-                    }
-                }
+                uplinkBriefing = setupEvent.Value.BriefingEntry;
+                uplinkBriefingShort = setupEvent.Value.BriefingEntryShort;
             }
-            // Reserve edit end
-
-            // Add the traitor's uplink
-            if (!_uplink.AddUplink(traitor, startingBalance, uplinkPreference: uplinkPreference)) // Reserve edit
+            else // Fallback ooplink
             {
-                _sawmill.Warning($"Failed to create an uplink for the traitor {ToPrettyString(traitor)}!"); // Reserve edit
-            }
-            else if (uplinkPreference == UplinkPreference.PDA)
-            {
-                // Generate uplink code for PDA uplinks
-                var pda = _uplink.FindUplinkTarget(traitor);
-                if (pda != null)
-                {
-                    EnsureComp<RingerUplinkComponent>(pda.Value);
-                    var ev = new GenerateUplinkCodeEvent();
-                    RaiseLocalEvent(pda.Value, ref ev);
-                    code = Comp<RingerUplinkComponent>(pda.Value).Code;
-                }
+                uplinkBriefing = Loc.GetString("traitor-role-uplink-implant");
+                uplinkBriefingShort = Loc.GetString("traitor-role-uplink-implant-short");
             }
         }
-        string[]? codewords = new string[]{};
+
+        string[]? codewords = null;
         if (component.GiveCodewords)
         {
             Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - added codewords flufftext to briefing");
@@ -272,7 +215,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         if (component.GiveBriefing)
         {
-            _antag.SendBriefing(traitor, GenerateBriefing(codewords, code, issuer, uplinkPreference), null, component.GreetSoundNotification);
+            _antag.SendBriefing(traitor, GenerateBriefing(codewords, uplinkBriefing, issuer), null, component.GreetSoundNotification);
             Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - Sent the Briefing");
         }
 
@@ -287,7 +230,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         {
             EnsureComp<RoleBriefingComponent>(traitorRole.Value.Owner, out var briefingComp);
             // Goobstation Change - If you remove this, we lose ringtones and flavor in char menu. Upstream's version sucks.
-            briefingComp.Briefing = GenerateBriefingCharacter(codewords, code, issuer, uplinkPreference);
+            briefingComp.Briefing = GenerateBriefingCharacter(codewords, uplinkBriefingShort, issuer);
         }
 
         var color = TraitorCodewordColor; // Fall back to a dark red Syndicate color if a prototype is not found
@@ -311,85 +254,29 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     }
 
     // TODO: figure out how to handle this? add priority to briefing event?
-    private string GenerateBriefing(string[] codewords, Note[]? uplinkCode, string objectiveIssuer, UplinkPreference uplinkPreference = UplinkPreference.PDA) // Reserve edit
+    private string GenerateBriefing(string[]? codewords, string? uplinkBriefing, string objectiveIssuer)
     {
         var sb = new StringBuilder();
-
-// Reserve edit start
-        switch (uplinkPreference)
-        {
-            case UplinkPreference.Implant:
-                sb.AppendLine("\n" + Loc.GetString($"traitor-role-greeting-implant", ("corporation", objectiveIssuer)));
-                break;
-            case UplinkPreference.Radio:
-                sb.AppendLine("\n" + Loc.GetString($"traitor-role-greeting-radio", ("corporation", objectiveIssuer)));
-                break;
-            case UplinkPreference.Telecrystals:
-                sb.AppendLine("\n" + Loc.GetString($"traitor-role-greeting-telecrystals", ("corporation", objectiveIssuer)));
-                break;
-            default:
-                sb.AppendLine("\n" + Loc.GetString($"traitor-role-greeting", ("corporation", objectiveIssuer)));
-                break;
-        }
-
-        if (uplinkCode != null)
-        {
-            switch (uplinkPreference)
-            {
-                case UplinkPreference.Implant:
-                    sb.AppendLine("\n" + Loc.GetString($"traitor-role-uplink-implant"));
-                    break;
-                case UplinkPreference.Radio:
-                    sb.AppendLine("\n" + Loc.GetString($"traitor-role-uplink-radio"));
-                    break;
-                case UplinkPreference.PDA:
-                    sb.AppendLine("\n" + Loc.GetString($"traitor-role-uplink-code", ("code", string.Join("-", uplinkCode).Replace("sharp", "#"))));
-                    break;
-            }
-        }
-        else if (uplinkPreference == UplinkPreference.Telecrystals)
-        {
-            sb.AppendLine("\n" + Loc.GetString($"traitor-role-uplink-telecrystals"));
-        }
+        sb.AppendLine(Loc.GetString("traitor-role-greeting", ("corporation", objectiveIssuer ?? Loc.GetString("objective-issuer-unknown"))));
+        if (codewords != null)
+            sb.AppendLine(Loc.GetString("traitor-role-codewords", ("codewords", string.Join(", ", codewords))));
+        if (uplinkBriefing != null)
+            sb.AppendLine(uplinkBriefing);
         else
-        {
-            sb.AppendLine("\n" + Loc.GetString($"traitor-role-nouplink"));
-        }
-// Reserve edit end
-
+            sb.AppendLine(Loc.GetString("traitor-role-uplink-implant"));
 
         return sb.ToString();
     }
-    private string GenerateBriefingCharacter(string[] codewords, Note[]? uplinkCode, string objectiveIssuer, UplinkPreference uplinkPreference = UplinkPreference.PDA) // Reserve edit
+
+    // Goobstation Change - Readd the character briefing text.
+    private string GenerateBriefingCharacter(string[]? codewords, string? uplinkBriefingShort, string objectiveIssuer)
     {
         var sb = new StringBuilder();
         sb.AppendLine("\n" + Loc.GetString($"traitor-{objectiveIssuer.Replace(" ", "").ToLower()}-intro"));
 
-        if (uplinkCode != null)
-// Reserve edit start
-        {
-            switch (uplinkPreference)
-            {
-                case UplinkPreference.Implant:
-                    sb.AppendLine(Loc.GetString($"traitor-role-uplink-implant-short"));
-                    break;
-                case UplinkPreference.Radio:
-                    sb.AppendLine(Loc.GetString($"traitor-role-uplink-radio-short"));
-                    break;
-                case UplinkPreference.PDA:
-                    sb.AppendLine(Loc.GetString($"traitor-role-uplink-code-short", ("code", string.Join("-", uplinkCode).Replace("sharp", "#"))));
-                    break;
-            }
-        }
-        else if (uplinkPreference == UplinkPreference.Telecrystals)
-        {
-            sb.AppendLine(Loc.GetString($"traitor-role-uplink-telecrystals-short"));
-        }
-        else
-        {
-            sb.AppendLine("\n" + Loc.GetString($"traitor-role-nouplink"));
-        }
-// Reserve edit end
+        if (uplinkBriefingShort != null)
+            sb.AppendLine(uplinkBriefingShort);
+        else sb.AppendLine("\n" + Loc.GetString($"traitor-role-nouplink"));
 
         if (codewords != null)
             sb.AppendLine(Loc.GetString($"traitor-role-codewords-short", ("codewords", string.Join(", ", codewords))));

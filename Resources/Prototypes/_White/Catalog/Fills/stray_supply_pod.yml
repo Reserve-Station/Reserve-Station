@@ -629,7 +629,7 @@
       - !type:GroupSelector
         children:
         - !type:EntSelector
-          id: LavalandCrateNecropolisCultArmor #bruh
+          id: CrateSecurityArmor
           weight: 1
         # Cargo - Medical
       - !type:GroupSelector

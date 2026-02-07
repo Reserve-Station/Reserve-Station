@@ -20,8 +20,8 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://ccdn.reserve-station.space/" # reserve
-FORK_ID = "reserve"
+ROBUST_CDN_URL = "https://main-cdn.reserve-station.space/" # reserve
+FORK_ID = "reserve" # reserve
 
 def main():
     session = requests.Session()
