@@ -12,12 +12,10 @@
       state: engineering
     - type: MachineBoard
       prototype: ReverseEngineeringMachine
-      machinePartRequirements:
-        MatterBin: 1
-        Manipulator: 1
       stackRequirements:
         Cable: 1
         PlasmaGlass: 5
+        Manipulator: 2
       tagRequirements:
         BorgArm:
           amount: 3
