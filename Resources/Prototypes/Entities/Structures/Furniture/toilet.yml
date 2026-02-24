@@ -224,6 +224,8 @@
         ToolOpenableVisualState.StashOpen:
           Open: { state: disposal-open }
           Closed: { state: disposal-closed }
+  - type: AcousticData # VDS
+    absorption: 5
 
 - type: entity
   name: toilet

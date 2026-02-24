@@ -40,7 +40,8 @@
     - Carpet
     - ForceFixRotations
   - type: Physics
-    canCollide: false
+    bodyType: static # VDS
+    canCollide: true # VDS - from false, so carpets collide with acoustic rays.
   - type: Fixtures
   - type: Damageable
     damageContainer: Inorganic
@@ -59,6 +60,8 @@
     - id: MaterialCloth1
       amount: 1
   - type: TrayScanReveal
+  - type: AcousticData # VDS
+    absorption: 12
 
 - type: entity
   id: Carpet

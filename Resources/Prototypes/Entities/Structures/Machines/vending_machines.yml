@@ -290,6 +290,9 @@
     understands:
     - TauCetiBasic
     - RobotTalk
+  - type: AcousticData # VDS
+    absorption: 20
+    reflectRay: true
 
 - type: entity
   id: VendingMachineWallmount

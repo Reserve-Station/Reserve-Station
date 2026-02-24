@@ -293,6 +293,9 @@
     - KnockOn
   - type: WeldingSparksAnimation # Goobstation
     startingOffset: 0, 0.5
+  - type: AcousticData # VDS
+    absorption: 10
+    reflectRay: true
   placement:
     mode: SnapgridCenter
 

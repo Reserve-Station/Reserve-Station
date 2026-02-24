@@ -70,7 +70,8 @@
     - ForceFixRotations
   - type: RequireProjectileTarget # Goobstation - Crawling
     ignoreThrow: true
-
+  - type: AcousticData # VDS
+    absorption: 20
 
 - type: entity
   id: CounterBase
@@ -88,5 +89,7 @@
         mask:
         - TableMask
         layer:
-        - TableLayer 
+        - TableLayer
         - BulletImpassable # Goobstation - Crawling
+  - type: AcousticData # VDS
+    absorption: 35

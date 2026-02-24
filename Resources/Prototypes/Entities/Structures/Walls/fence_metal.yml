@@ -93,6 +93,8 @@
     messagePerceivedByOthers: fence-rattle-success
     interactSuccessSound:
       collection: FenceRattle
+  - type: AcousticData # VDS
+    absorption: 2
 
 - type: entity
   parent: BaseFenceMetal

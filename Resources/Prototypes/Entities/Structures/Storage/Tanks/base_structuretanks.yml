@@ -105,6 +105,9 @@
   - type: ReagentTank
   - type: Transform
     noRot: true
+  - type: AcousticData # VDS
+    absorption: 15
+    reflectRay: true
 
 # For highcap tanks
 - type: entity

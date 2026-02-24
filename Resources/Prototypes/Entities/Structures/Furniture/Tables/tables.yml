@@ -94,6 +94,8 @@
   - type: Construction
     graph: Table
     node: TableFrame
+  - type: AcousticData # VDS
+    absorption: 3
 
 - type: entity
   id: CounterWoodFrame
@@ -152,6 +154,8 @@
     node: CounterWoodFrame
   - type: RequireProjectileTarget # Goobstation - Crawling
     ignoreThrow: true
+  - type: AcousticData # VDS
+    absorption: 5
 
 - type: entity
   id: CounterMetalFrame
@@ -619,6 +623,8 @@
       collection: FootstepWood
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: CosmicTable
+  - type: AcousticData # VDS
+    absorption: 25
 
 - type: entity
   id: TableCarpet
@@ -674,6 +680,8 @@
       collection: FootstepCarpet
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: CosmicTable
+  - type: AcousticData # VDS
+    absorption: 35
 
 - type: entity
   id: TableStone
@@ -739,6 +747,8 @@
       collection: FootstepCarpet
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: CosmicTable
+  - type: AcousticData # VDS
+    absorption: 30
 
 # Fancy tables
 
@@ -781,6 +791,8 @@
       collection: FootstepCarpet
   - type: CosmicCorruptible # DeltaV - Cosmic Cult
     convertTo: CosmicTable
+  - type: AcousticData # VDS
+    absorption: 25
 
 - type: entity
   id: TableFancyBlue
@@ -990,6 +1002,8 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepWood
+  - type: AcousticData # VDS
+    absorption: 25
 
 - type: entity
   id: TableCounterMetal

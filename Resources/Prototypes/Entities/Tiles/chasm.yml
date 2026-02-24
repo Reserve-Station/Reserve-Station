@@ -63,6 +63,8 @@
   - type: Tag
     tags:
     - HideContextMenu
+  - type: AcousticData # VDS. the fucking chasm ate my sound
+    absorption: 30
 
 - type: entity
   parent: FloorChasmEntity
