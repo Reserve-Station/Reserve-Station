@@ -2,10 +2,10 @@ cqc-fail-notself = Вы не можете никого обучить с пом�
 
 cqc-fail-changeling = Нам это ни к чему.
 cqc-fail-knowanother = Вы уже владеете другим боевым искусством.
-cqc-fail-already = Вы уже знаете все о Боевом искусстве.
-cqc-success-unblocked = Ваши навыки кулинарного CQC больше не привязаны к кухне.
-cqc-success-learned = Вы выучили CQC.
-capoeira-success-learned = Вы изучали капоэйра. Руководство сгорает в ваших руках...
+cqc-fail-already = Вы уже знаете все о боевом искусстве.
+cqc-success-unblocked = Ваши навыки кулинарного ближнего боя больше не привязаны к кухне.
+cqc-success-learned = Вы выучили ближний бой.
+capoeira-success-learned = Вы изучили капоэйра. Руководство сгорает в ваших руках...
 dragon-success-learned = Вы изучили драконье кунг-фу. Инструкция сгорает у вас в руках...
 ninjutsu-success-learned = Вы изучили ниндзюцу. Свиток сгорает у вас в руках...
 hellrip-success-learned = Вы изучили адское разрывание. Свиток сгорает в ваших руках...
@@ -34,8 +34,9 @@ carp-saying-cowabunga = КОВАБУНГА!
 krav-maga-ready = Вы готовы к { $action }
 
 martial-arts-action-sender = Вы ударяете { $name } с помощью { $move }
-martial-arts-fail-prone = Вы не можете использовать этот приём лёжа!
+martial-arts-action-receiver = {$name} ударяет вас с помощью {$move}
 
+martial-arts-fail-prone = Вы не можете использовать этот приём лёжа!
 martial-arts-fail-target-down = Вы не можете использовать этот приём против сбитых целей!
 martial-arts-fail-target-standing = Вы не можете использовать этот приём против стоящих целей!
 capoeira-fail-low-velocity = Вы слишком медлительны, чтобы выполнить этот приём!

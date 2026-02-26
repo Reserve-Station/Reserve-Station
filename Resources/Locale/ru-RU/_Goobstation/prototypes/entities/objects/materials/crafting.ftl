@@ -1,0 +1,12 @@
+ent-MaterialHexNut = стальная гайка
+    .suffix = Полный
+    .desc = Грубо изогнутая гайка из стали.
+ent-MaterialHexNutSingle = { ent-MaterialHexNut }
+    .suffix = Одна
+    .desc = { ent-MaterialHexNut.desc }
+ent-MaterialScrew = стальной винт
+    .suffix = Полный
+    .desc = Этот винт очень ржавый, вам явно не хочется порезаться об него...
+ent-MaterialScrewSingle = { ent-MaterialScrew }
+    .suffix = Один
+    .desc = { ent-MaterialScrew.desc }
