@@ -1,6 +1,6 @@
 miner-weapon-selector-pka-name = Протокинетический ускоритель
 miner-weapon-selector-pka-description =
-    Классический ускоритель ближнего действия, доставляющий
+    Классический ускоритель ближнего действия, наносящий
     постоянный урон с высокой точностью.
 miner-weapon-selector-repeater-name = Протокинетический репитер
 miner-weapon-selector-repeater-description =
