@@ -9,6 +9,15 @@ job-name-alt-chemist-2 = Lab Technician
 
 job-name-alt-paramedic-1 = Trauma Specialist
 job-name-alt-paramedic-2 = Emergency Medical Technician
+job-name-alt-paramedic-3 = Search & Rescue Technician
+
+job-name-alt-qm-1 = Requisitions Officer
+job-name-alt-qm-2 = Deck Chief
+job-name-alt-qm-3 = Warehouse Supervisor
+job-name-alt-qm-4 = Supply Foreperson
+job-name-alt-qm-4-f = Supply Forewoman
+job-name-alt-qm-4-m = Supply Foreman
+job-name-alt-qm-5 = Logistics Coordinator
 
 job-name-alt-cargotech-1 = Courier
 job-name-alt-cargotech-2 = Shuttle Pilot
@@ -17,6 +26,11 @@ job-name-alt-cargotech-3 = Logistics Clerk
 job-name-alt-salvage-1 = Shaft Miner
 
 job-name-alt-atmos-1 = Fire Suppression Specialist
+job-name-alt-ce-1 = Head of Engineering
+job-name-alt-ce-2 = Engineering Foreperson
+job-name-alt-ce-2-f = Engineering Forewoman
+job-name-alt-ce-2-m = Engineering Foreman
+job-name-alt-ce-3 = Engineering Supervisor
 
 job-name-alt-engineer-1 = Maintenance Technician
 job-name-alt-engineer-2 = Mechanic

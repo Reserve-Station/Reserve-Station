@@ -14,8 +14,10 @@
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -26,6 +28,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Roles;
+using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Access.Systems;
@@ -110,7 +113,7 @@ public sealed class PresetIdCardSystem : EntitySystem
         if (id.AlternateTitleId != null &&
             _prototypeManager.TryIndex(id.AlternateTitleId.Value, out JobAlternateTitlePrototype? altTitle))
         {
-            titleToSet = altTitle.LocalizedName;
+            titleToSet = altTitle.LocalizedName(Gender.Neuter);
         }
         else if (job.AlternateTitles != null && job.AlternateTitles.Count > 0)
         {
@@ -124,7 +127,7 @@ public sealed class PresetIdCardSystem : EntitySystem
                 }
             }
 
-            titleToSet = altFromJob?.LocalizedName ?? job.LocalizedName;
+            titleToSet = altFromJob?.LocalizedName(Gender.Neuter) ?? job.LocalizedName;
         }
         else
         {

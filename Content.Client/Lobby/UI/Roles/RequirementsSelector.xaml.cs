@@ -3,9 +3,11 @@
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Janet Blackquill <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -21,6 +23,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Shared.Roles;
 using System.Linq;
+using Robust.Shared.Enums;
 
 namespace Content.Client.Lobby.UI.Roles;
 
@@ -99,7 +102,8 @@ public sealed partial class RequirementsSelector : BoxContainer
         List<ProtoId<GuideEntryPrototype>>? guides = null,
         List<(ProtoId<JobAlternateTitlePrototype> Id, bool Locked)>? altTitles = null,
         ProtoId<JobAlternateTitlePrototype>? defaultAltTitle = null,
-        IPrototypeManager? protoMan = null)
+        IPrototypeManager? protoMan = null,
+        Gender? gender = null)
     {
         foreach (var (text, value) in items)
         {
@@ -135,7 +139,7 @@ public sealed partial class RequirementsSelector : BoxContainer
             foreach (var (id, locked) in altTitles)
             {
                 var altTitle = protoMan.Index(id);
-                var name = altTitle.LocalizedName;
+                var name = altTitle.LocalizedName(gender);
 
                 titleOptions.AddItem(name);
 
