@@ -68,6 +68,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Log;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
+using Robust.Shared.Spawners;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager.Attributes;
 
@@ -437,8 +438,13 @@ namespace Content.IntegrationTests.Tests
             await pair.RunTicksSync(3);
 
             // We consider only non-audio entities, as some entities will just play sounds when they spawn.
-            int Count(IEntityManager ent) => ent.EntityCount - ent.Count<AudioComponent>();
-            IEnumerable<EntityUid> Entities(IEntityManager entMan) => entMan.GetEntities().Where(e => !entMan.HasComponent<AudioComponent>(e));
+            // Reserve edit begin
+            // We also exclude TimedDespawn entities, as they are temporary effects (sparks, flashes, etc.)
+            // that may be spawned by other entities and will clean themselves up automatically.
+            int Count(IEntityManager ent) => ent.EntityCount - ent.Count<AudioComponent>() - ent.Count<TimedDespawnComponent>();
+            IEnumerable<EntityUid> Entities(IEntityManager entMan) => entMan.GetEntities()
+                .Where(e => !entMan.HasComponent<AudioComponent>(e) && !entMan.HasComponent<TimedDespawnComponent>(e));
+            // Reserve edit end
 
             await Assert.MultipleAsync(async () =>
             {
