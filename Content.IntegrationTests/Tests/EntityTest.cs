@@ -409,9 +409,8 @@ namespace Content.IntegrationTests.Tests
 
                 // <Goob>
                 "PendingSlimeSpawn", // shut the fuck up please
-                "Slime", // please
+                "Slime" // please
                 // </Goob>
-
             };
 
             Assert.That(server.CfgMan.GetCVar(CVars.NetPVS), Is.False);
