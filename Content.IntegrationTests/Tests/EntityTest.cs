@@ -412,6 +412,32 @@ namespace Content.IntegrationTests.Tests
                 "Slime", // please
                 // </Goob>
 
+                // <Reserve>
+                // Temporary visual/sound effects that are spawned by other entities
+                "EffectSpark", // sparks from electrified entities
+                "EffectElectricity", // electricity effect
+                "EffectRepulse", // repulse effect
+                "EffectRay", // ray effect
+                "EffectRayCharge", // charged ray effect
+                "SanguineBloodEffect", // blood effect
+                "SanguineFlashEffect", // flash effect
+                "SupermatterFlashEffect", // supermatter flash
+                "FireFlashEffect", // fire flash
+                "EmpFlashEffect", // EMP flash
+                "BlindingTrapFlashEffect", // blinding trap flash
+                "FlameTrapFlashEffect", // flame trap flash
+                "ChillTrapFlashEffect", // chill trap flash
+                "StunTrapFlashEffect", // stun trap flash
+                "DamageTrapFlashEffect", // damage trap flash
+                "EtherealJauntStartEffect", // ethereal jaunt start
+                "EtherealJauntEndEffect", // ethereal jaunt end
+                "SwapSpellEffect", // swap spell effect
+                "WeaponArcHighFreq", // weapon arc
+                "WeaponArcTempSlash", // weapon arc slash
+                "BindSoulParticle", // bind soul particle
+                "ActionTargetMark", // action target marker
+                "Chronofield" // chrono field
+                // </Reserve>
             };
 
             Assert.That(server.CfgMan.GetCVar(CVars.NetPVS), Is.False);
