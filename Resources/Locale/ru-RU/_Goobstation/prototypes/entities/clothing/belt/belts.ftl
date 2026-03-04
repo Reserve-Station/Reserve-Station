@@ -19,3 +19,7 @@ ent-ClothingBeltChemBagXenobiologyHolding = бездонная сумка для
     .desc =  Большая, устойчивая к слизи сумка, предназначенная для использования ксенобиологами. Пахнет экстрактом блюспейса и обезьяньей шерстью.
 ent-ClothingBeltMilitaryWebbingBSOFilled = РПС Синего Щита
     .desc = Разгрузка, используемая подразделениями Центрального Командования.
+ent-ClothingBeltSecurityWebbingContractor = РПС контрактника
+    .desc = Нагрудный РПС с глубокими карманами и взрывозащищенностью, часто используется контрактниками и охотниками за головами.
+ent-ClothingBeltSecurityWebbingContractorFilled = { ent-ClothingBeltSecurityWebbingContractor }
+    .desc = { ent-ClothingBeltSecurityWebbingContractor.desc }

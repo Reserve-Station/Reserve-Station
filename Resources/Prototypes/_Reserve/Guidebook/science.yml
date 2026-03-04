@@ -17,7 +17,9 @@
   - TechnologiesReserve
   - AnomalousResearchReserve
   - XenoarchaeologyReserve
+  - XenobiologyReserve # Goobstation
   - RoboticsReserve
+  - ReverseEngineering # Reserve
 
 - type: guideEntry
   id: TechnologiesReserve
@@ -66,3 +68,13 @@
   id: CyborgsReserve
   name: guide-entry-cyborgs
   text: "/ServerInfo/_Reserve/Guidebook/Science/Cyborgs.xml"
+
+- type: guideEntry
+  id: ReverseEngineering # reserve: nyano port
+  name: guide-entry-reverse-engineering
+  text: "/ServerInfo/Guidebook/Science/ReverseEngineering.xml"
+
+- type: guideEntry
+  id: XenobiologyReserve
+  name: "Ксенобиология" # where da ftl
+  text: "/ServerInfo/_Reserve/Guidebook/Science/Xenobiology.xml"

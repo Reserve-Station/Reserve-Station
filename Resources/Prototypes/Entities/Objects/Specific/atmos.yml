@@ -59,7 +59,7 @@
       Glass: 75
   - type: GuideHelp
     guides:
-    - AtmosTools
-    - PipeNetworks
-    - Pipes
-    - GasCanisters
+    - AtmosToolsReserve # Reserve guidebook
+    - PipeNetworksReserve # Reserve guidebook
+    - PipesReserve # Reserve guidebook
+    - GasCanistersReserve # Reserve guidebook

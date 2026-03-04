@@ -14,6 +14,8 @@ using Content.Shared.Administration;
 using Content.Shared.Chat;
 using Robust.Server.Player;
 using Robust.Shared.Console;
+using Content.Shared._Reserve.LenaApi; // Reserve-LenaApi
+using Robust.Shared.Configuration; // Reserve-LenaApi
 
 namespace Content.Goobstation.Server.ServerCurrency.Commands
 {
@@ -22,12 +24,22 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     {
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
+        [Dependency] private readonly IConfigurationManager _configuration = default!; // Reserve-LenaApi
         public string Command => Loc.GetString("server-currency-balance-command");
         public string Description => Loc.GetString("server-currency-balance-command-description");
         public string Help => Loc.GetString("server-currency-balance-command-help");
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
+            // Reserve-LenaApi-start
+            var apiIntegrationEnabled = _configuration.GetCVar(LenaApiCVars.ApiIntegration);
+            if (apiIntegrationEnabled)
+            {
+                shell.WriteLine(Loc.GetString("reserve-command-disabled-due-integration-enabled"));
+                return;
+            }
+            // Reserve-LenaApi-end
+
             if (args.Length != 0)
             {
                 shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
@@ -52,6 +64,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     {
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
+        [Dependency] private readonly IConfigurationManager _configuration = default!; // Reserve-LenaApi
 
         public string Command => Loc.GetString("server-currency-gift-command");
         public string Description => Loc.GetString("server-currency-gift-command-description");
@@ -59,6 +72,15 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
+            // Reserve-LenaApi-start
+            var apiIntegrationEnabled = _configuration.GetCVar(LenaApiCVars.ApiIntegration);
+            if (apiIntegrationEnabled)
+            {
+                shell.WriteLine(Loc.GetString("reserve-command-disabled-due-integration-enabled"));
+                return;
+            }
+            // Reserve-LenaApi-end
+
             if (args.Length != 2)
             {
                 shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));

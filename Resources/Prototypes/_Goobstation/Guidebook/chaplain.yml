@@ -9,6 +9,5 @@
 
 - type: guideEntry
   id: Chaplain
-  abstract: true #Reserve guidebook
   name: guide-entry-chaplain
   text: "/ServerInfo/_Goobstation/Guidebook/Service/Chaplain.xml"

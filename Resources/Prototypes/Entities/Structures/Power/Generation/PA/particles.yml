@@ -80,8 +80,8 @@
             Level3: {state: particle3}
     - type: GuideHelp # why does this even have a guidebook link in the first place
       guides:
-      - SingularityTeslaEngine
-      - Power
+      - SingularityTeslaEngineReserve # Reserve guidebook
+      - PowerReserve # Reserve guidebook
 
 - type: entity
   name: anti particles

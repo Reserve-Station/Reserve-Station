@@ -122,7 +122,7 @@
       path: /Audio/Ambience/Objects/server_fans.ogg
   - type: GuideHelp
     guides:
-    - Science
+    - ScienceReserve # Reserve guidebook
   - type: ResearchPointSource # Goobstation
     pointspersecond: 15
     active: true
@@ -186,4 +186,4 @@
             max: 1
   - type: GuideHelp
     guides:
-    - Science
+    - ScienceReserve # Reserve guidebook

@@ -1,0 +1,20 @@
+<!--
+SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               Title="{Loc reserve-cosmetic-selection-title}"
+               SetSize="450 500"
+               Resizable="False">
+    <BoxContainer Orientation="Vertical">
+        <LineEdit Name="SearchBar"
+                  PlaceHolder="{Loc reserve-cosmetic-selection-search}"
+                  Margin="8 8 8 4" />
+        <ScrollContainer VerticalExpand="True">
+            <GridContainer Name="ItemsGrid" Columns="5" Margin="4" />
+        </ScrollContainer>
+    </BoxContainer>
+</DefaultWindow>

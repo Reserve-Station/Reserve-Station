@@ -47,6 +47,7 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Sprite;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;

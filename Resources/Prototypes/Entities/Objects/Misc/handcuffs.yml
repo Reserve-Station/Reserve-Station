@@ -143,8 +143,8 @@
         Blunt: 0
   - type: GuideHelp
     guides:
-    - Security
-    - Antagonists
+    - SecurityReserve # Reserve guidebook
+    - AntagonistsReserve # Reserve guidebook
   - type: UseDelay
     delay: 3
 

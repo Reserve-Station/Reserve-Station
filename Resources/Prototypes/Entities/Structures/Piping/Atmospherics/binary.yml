@@ -135,7 +135,7 @@
     navMapBlip: GasFlowRegulator
   - type: GuideHelp
     guides:
-    - Pumps
+    - PumpsReserve # Reserve guidebook
   - type: VentCrawlerTube # Goobstation - ventcrawl
     containerId: VentCrawlerTube
   - type: VentCrawlerTransit # Goobstation - ventcrawl
@@ -214,7 +214,7 @@
       navMapBlip: GasFlowRegulator
     - type: GuideHelp
       guides:
-      - Pumps
+      - PumpsReserve # Reserve guidebook
     - type: VentCrawlerTube # Goobstation - ventcrawl
       containerId: VentCrawlerTube
     - type: VentCrawlerTransit # Goobstation - ventcrawl
@@ -281,7 +281,7 @@
     navMapBlip: GasFlowRegulator
   - type: GuideHelp
     guides:
-    - PressureRegulator
+    - PressureRegulatorReserve # Reserve guidebook
 
 - type: entity
   parent: GasBinaryBase
@@ -323,7 +323,7 @@
       navMapBlip: GasValve
     - type: GuideHelp
       guides:
-      - PassiveGate
+      - PassiveGateReserve # Reserve guidebook
     - type: VentCrawlerTube # Goobstation - ventcrawl
       containerId: VentCrawlerTube
     - type: VentCrawlerTransit # Goobstation - ventcrawl
@@ -390,7 +390,7 @@
       navMapBlip: GasValve
     - type: GuideHelp
       guides:
-      - ManualValve
+      - ManualValveReserve # Reserve guidebook
     - type: VentCrawlerTube # Goobstation - ventcrawl
       containerId: VentCrawlerTube
     - type: VentCrawlerTransit # Goobstation - ventcrawl
@@ -468,7 +468,7 @@
     navMapBlip: GasValve
   - type: GuideHelp
     guides:
-    - SignalValve
+    - SignalValveReserve # Reserve guidebook
   - type: VentCrawlerTube # Goobstation - ventcrawl
     containerId: VentCrawlerTube
   - type: VentCrawlerTransit # Goobstation - ventcrawl
@@ -513,7 +513,7 @@
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-      - GasCanisters
+      - GasCanistersReserve # Reserve guidebook
     - type: VentCrawlerTube # Goobstation - ventcrawl
       containerId: VentCrawlerTube
     - type: VentCrawlerJunction # Goobstation - ventcrawl
@@ -587,7 +587,7 @@
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-      - AirVent
+      - AirVentReserve # Reserve guidebook
 
 - type: entity
   parent: [ BaseMachine, ConstructibleMachine ]
@@ -705,7 +705,7 @@
     navMapBlip: Thermoregulator
   - type: GuideHelp
     guides:
-    - Radiators
+    - RadiatorsReserve # Reserve guidebook
 
 - type: entity
   parent: HeatExchanger

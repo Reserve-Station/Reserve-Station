@@ -37,8 +37,8 @@
     - HighRiskItem
   - type: GuideHelp
     guides:
-    - Security
-    - Antagonists
+    - SecurityReserve # Reserve guidebook
+    - AntagonistsReserve # Reserve guidebook
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0

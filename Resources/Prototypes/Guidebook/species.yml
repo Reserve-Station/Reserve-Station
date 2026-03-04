@@ -25,7 +25,6 @@
 
 - type: guideEntry
   id: Species
-  abstract: true #Reserve guidebook
   name: guide-entry-species
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
   children:
@@ -55,98 +54,82 @@
 
 - type: guideEntry
   id: Arachnid
-  abstract: true #Reserve guidebook
   name: species-name-arachnid
   text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
 
 - type: guideEntry
   id: Diona
-  abstract: true #Reserve guidebook
   name: species-name-diona
   text: "/ServerInfo/Guidebook/Mobs/Diona.xml"
 
 - type: guideEntry
   id: Dwarf
-  abstract: true #Reserve guidebook
   name: species-name-dwarf
   text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
 
 - type: guideEntry
   id: Human
-  abstract: true #Reserve guidebook
   name: species-name-human
   text: "/ServerInfo/Guidebook/Mobs/Human.xml"
 
 - type: guideEntry
   id: Moth
-  abstract: true #Reserve guidebook
   name: species-name-moth
   text: "/ServerInfo/Guidebook/Mobs/Moth.xml"
 
 - type: guideEntry
   id: Reptilian
-  abstract: true #Reserve guidebook
   name: species-name-reptilian
   text: "/ServerInfo/Guidebook/Mobs/Reptilian.xml"
 
 - type: guideEntry
   id: SlimePerson
-  abstract: true #Reserve guidebook
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
 
 # Goobstation
 - type: guideEntry
   id: Felinid
-  abstract: true #Reserve guidebook
   name: species-name-felinid
   text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
 
 - type: guideEntry
   id: Gingerbread
-  abstract: true #Reserve guidebook
   name: species-name-gingerbread
   text: "/ServerInfo/Guidebook/Mobs/Gingerbread.xml"
 
 - type: guideEntry
   id: Harpy
-  abstract: true #Reserve guidebook
   name: species-name-harpy
   text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
 
 - type: guideEntry
   id: Vox
-  abstract: true #Reserve guidebook
   name: species-name-vox
   text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
 
 - type: guideEntry
   id: Vulpkanin
-  abstract: true #Reserve guidebook
   name: species-name-vulpkanin
   text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
 
 - type: guideEntry
   id: Yowie
-  abstract: true #Reserve guidebook
   name: species-name-yowie
   text: "/ServerInfo/Guidebook/Mobs/Yowie.xml"
 
 - type: guideEntry
   id: IPC
-  abstract: true #Reserve guidebook
   name: species-name-ipc
   text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
 
 - type: guideEntry
   id: Resomi
-  abstract: true #Reserve guidebook
   name: species-name-resomi
   text: "/ServerInfo/Guidebook/Mobs/Resomi.xml"
 
 - type: guideEntry
   id: Tajaran
-  abstract: true #Reserve guidebook
   name: species-name-tajaran
   text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
 

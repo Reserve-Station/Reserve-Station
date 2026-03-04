@@ -308,7 +308,7 @@
       Glass: 5
   - type: GuideHelp
     guides:
-    - Robotics
+    - RoboticsReserve # Reserve guidebook
   - type: ReverseEngineering # reserve: nyano port
     difficulty: 2
     recipes:

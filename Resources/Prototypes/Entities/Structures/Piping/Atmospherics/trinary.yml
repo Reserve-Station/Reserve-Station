@@ -130,7 +130,7 @@
       navMapBlip: GasFlowRegulator
     - type: GuideHelp
       guides:
-      - MixingAndFiltering
+      - MixingAndFilteringReserve # Reserve guidebook
     - type: VentCrawlerTube # Goobstation - ventcrawl
       containerId: VentCrawlerTube
     - type: VentCrawlerJunction # Goobstation - ventcrawl
@@ -230,7 +230,7 @@
       navMapBlip: GasFlowRegulator
     - type: GuideHelp
       guides:
-      - MixingAndFiltering
+      - MixingAndFilteringReserve # Reserve guidebook
     - type: VentCrawlerTube # Goobstation - ventcrawl
       containerId: VentCrawlerTube
     - type: VentCrawlerJunction # Goobstation - ventcrawl
@@ -356,9 +356,9 @@
       navMapBlip: GasFlowRegulator
     - type: GuideHelp
       guides:
-      - PneumaticValve
-      - Pumps
-      - Valves
+      - PneumaticValveReserve # Reserve guidebook
+      - PumpsReserve # Reserve guidebook
+      - ValvesReserve # Reserve guidebook
     - type: VentCrawlerTube # Goobstation - ventcrawl
       containerId: VentCrawlerTube
     - type: VentCrawlerJunction # Goobstation - ventcrawl

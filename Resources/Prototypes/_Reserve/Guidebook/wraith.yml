@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: guideEntry
+  id: WraithReserve
+  name: guide-entry-wraith
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Wraith.xml"
+  children:
+  - PlaguebringerReserve
+  - HarbingerReserve
+  - TricksterReserve
+  - RevenantWraithReserve
+  - VoidSummonsReserve
+
+- type: guideEntry
+  id: PlaguebringerReserve
+  name: guide-entry-plaguebringer
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Plaguebringer.xml"
+
+- type: guideEntry
+  id: HarbingerReserve
+  name: guide-entry-harbinger
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Harbinger.xml"
+
+- type: guideEntry
+  id: TricksterReserve
+  name: guide-entry-trickster
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Trickster.xml"
+
+- type: guideEntry
+  id: VoidSummonsReserve
+  name: guide-entry-void-summons
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/VoidSummons.xml"
+
+- type: guideEntry
+  id: RevenantWraithReserve
+  name: guide-entry-revenant
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/revenant.xml"

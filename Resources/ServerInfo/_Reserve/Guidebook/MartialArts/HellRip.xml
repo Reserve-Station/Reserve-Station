@@ -1,0 +1,59 @@
+<Document>
+
+  # Адская Геена
+
+  <Box>
+    <GuideEntityEmbed Entity="LegionnaireBonfire" Caption=""/>
+  </Box>
+
+  Адская Геена — это [textlink="боевое искусство" link="MartialArtsReserve"], которое фокусируется на прорыве через толпы демонов с
+  жестокой эффективностью. Это искусство может быть освоено только демонами бойни из ада, так как для его освоения требуется огромная грубая сила и мощь,
+  однако Космические Волшебники также могут раскрыть его секреты.
+  Полное понимание этого искусства позволит вам окрасить станцию в красный цвет. Никто не будет в безопасности от вашей бойни.
+
+  ## Особые способности
+
+  Мастера Адской Геены наносят экстремальное количество урона за короткие промежутки времени, что делает их непревзойдёнными в рукопашном бою.
+
+  ## Комбо-атаки
+
+  ### Разрушение
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+  </Box>
+
+  Наносит массивный режущий урон и вызывает кровотечение у цели.
+
+  ### Отрывание головы
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
+  </Box>
+
+  Отрывает голову мёртвому противнику, очень смертоносно. Нельзя выполнить, пока цель жива.
+
+  ### Адский удар
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
+  </Box>
+
+  Сбивает противника с ног и наносит тяжёлый урон по выносливости. Если вы сбиты, то поднимаетесь.
+
+  ### Пинок
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+    <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
+  </Box>
+
+  Отбрасывает лежащего противника. Отлично подходит для окрашивания пола. Нельзя выполнить, находясь на земле.
+
+</Document>

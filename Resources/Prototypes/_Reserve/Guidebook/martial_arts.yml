@@ -1,0 +1,60 @@
+# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 sa1nt7331 <202271576+sa1nt7331@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: guideEntry
+  id: MartialArtsReserve
+  name: guide-entry-martial-arts
+  text: "/ServerInfo/_Reserve/Guidebook/MartialArts/MartialArts.xml"
+  children:
+  - CQCReserve
+  - SleepingCarpReserve
+  - KravMagaReserve
+  - CorporateJudoReserve
+  - CapoeiraReserve
+  - NinjutsuReserve
+  - DragonKungFuReserve
+  - HellRipReserve
+
+- type: guideEntry
+  id: CQCReserve
+  name: guide-entry-cqc
+  text: "/ServerInfo/_Reserve/Guidebook/MartialArts/CQC.xml"
+
+- type: guideEntry
+  id: HellRipReserve
+  name: guide-entry-hell-rip
+  text: "/ServerInfo/_Reserve/Guidebook/MartialArts/HellRip.xml"
+
+- type: guideEntry
+  id: SleepingCarpReserve
+  name: guide-entry-sleeping-carp
+  text: "/ServerInfo/_Reserve/Guidebook/MartialArts/SleepingCarp.xml"
+
+- type: guideEntry
+  id: KravMagaReserve
+  name: guide-entry-krav-maga
+  text: "/ServerInfo/_Reserve/Guidebook/MartialArts/KravMaga.xml"
+
+- type: guideEntry
+  id: CorporateJudoReserve
+  name: guide-entry-corporate-judo
+  text: "/ServerInfo/_Reserve/Guidebook/MartialArts/CorporateJudo.xml"
+
+- type: guideEntry
+  id: CapoeiraReserve
+  name: guide-entry-capoeira
+  text: "/ServerInfo/_Reserve/Guidebook/MartialArts/Capoeira.xml"
+
+- type: guideEntry
+  id: NinjutsuReserve
+  name: guide-entry-ninjutsu
+  text: "/ServerInfo/_Reserve/Guidebook/MartialArts/Ninjutsu.xml"
+
+- type: guideEntry
+  id: DragonKungFuReserve
+  name: guide-entry-dragon-kung-fu
+  text: "/ServerInfo/_Reserve/Guidebook/MartialArts/DragonKungFu.xml"

@@ -178,8 +178,8 @@
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-      - AirVent
-      - DeviceMonitoringAndControl
+      - AirVentReserve # Reserve guidebook
+      - DeviceMonitoringAndControlReserve # Reserve guidebook
 
 - type: entity
   parent: GasUnaryBase
@@ -212,7 +212,7 @@
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-      - PassiveVent
+      - PassiveVentReserve # Reserve guidebook
     - type: VentCrawlerEntry # Goobstation - ventcrawl
     - type: VentCrawlerTube # Goobstation - ventcrawl
       containerId: VentCrawlerTube
@@ -285,8 +285,8 @@
     - type: VentCritterSpawnLocation # DeltaV
     - type: GuideHelp
       guides:
-      - AirScrubber
-      - DeviceMonitoringAndControl
+      - AirScrubberReserve # Reserve guidebook
+      - DeviceMonitoringAndControlReserve # Reserve guidebook
 
 - type: entity
   parent: GasUnaryBase
@@ -330,7 +330,7 @@
       navMapBlip: GasVentOpening
     - type: GuideHelp
       guides:
-      - AirInjector
+      - AirInjectorReserve # Reserve guidebook
     - type: VentCrawlerTube # Goobstation - ventcrawl
       containerId: VentCrawlerTube
     - type: VentCrawlerJunction # Goobstation - ventcrawl
@@ -393,7 +393,7 @@
       navMapBlip: Thermoregulator
     - type: GuideHelp
       guides:
-      - Thermomachines
+      - ThermomachinesReserve # Reserve guidebook
 
 - type: entity
   parent: BaseGasThermoMachine
@@ -615,5 +615,5 @@
       output: PlumbingOutput
   - type: GuideHelp
     guides:
-    - GasCondensing
+    - GasCondensingReserve # Reserve guidebook
 

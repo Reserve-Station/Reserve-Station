@@ -193,7 +193,7 @@
   - type: GuideHelp
     openOnActivation: true
     guides:
-    - SS14
+    - SS14Reserve # Reserve guidebook
   - type: MeleeWeapon  # Should write it again since BaseGuidebook doesn't inherit BookBase
     soundHit:
       collection: Punch

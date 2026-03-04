@@ -26,7 +26,6 @@
 
 - type: guideEntry
   id: Jobs
-  abstract: true #Reserve guidebook
   name: guide-entry-jobs
   text: "/ServerInfo/Guidebook/Jobs.xml"
   children:

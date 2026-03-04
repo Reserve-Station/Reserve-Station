@@ -35,6 +35,7 @@ namespace Content.Client.Launcher
         private const float RedialWaitTimeSeconds = 15f;
         private readonly LauncherConnecting _state;
         private float _waitTime;
+        private string? _authUri; // Reserve-LenaApi
 
         // Pressing reconnect will redial instead of simply reconnecting.
         private bool _redial;
@@ -66,6 +67,16 @@ namespace Content.Client.Launcher
             CopyButton.OnPressed += CopyButtonPressed;
             CopyButtonDisconnected.OnPressed += CopyButtonDisconnectedPressed;
             ExitButton.OnPressed += _ => _state.Exit();
+
+            // Reserve-LenaApi-Start
+            AuthLinkButton.OnPressed += _ =>
+            {
+                if (_authUri is null)
+                    return;
+                var uriOpener = IoCManager.Resolve<IUriOpener>();
+                uriOpener.OpenUri(_authUri);
+            };
+            // Reserve-LenaApi-End
 
             var addr = state.Address;
             if (addr != null)
@@ -146,6 +157,18 @@ namespace Content.Client.Launcher
                 {
                     _waitTime = RedialWaitTimeSeconds;
                 }
+
+                // Reserve-LenaApi-Start
+                if (reason.Message.StringOf("auth-uri") is { } link)
+                {
+                    AuthLinkButton.Visible = true;
+                    _authUri = link;
+                }
+                else
+                {
+                    AuthLinkButton.Visible = false;
+                }
+                // Reserve-LenaApi-End
 
             }
         }

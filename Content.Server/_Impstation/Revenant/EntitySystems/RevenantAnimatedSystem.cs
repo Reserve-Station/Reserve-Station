@@ -26,6 +26,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Mobs;
 using Robust.Shared.Timing;
 using Content.Shared.Construction.Components;
+using Content.Shared.Trigger.Components.Triggers;
 
 namespace Content.Server.Revenant.EntitySystems;
 
@@ -115,7 +116,7 @@ public sealed partial class RevenantAnimatedSystem : EntitySystem
         else if (HasComp<HandcuffComponent>(ent))
             // Goals: Jump into any creature's pockets/hands and cuff them
             htn.RootTask = new HTNCompoundTask() { Task = "AnimatedHandcuffsCompound" };
-        else if (HasComp<OnUseTimerTriggerComponent>(ent))
+        else if (HasComp<TriggerOnUseComponent>(ent))
             // Goals: Jump into any creature's pockets/hands and activate self
             htn.RootTask = new HTNCompoundTask() { Task = "AnimatedGrenadeCompound" };
         else

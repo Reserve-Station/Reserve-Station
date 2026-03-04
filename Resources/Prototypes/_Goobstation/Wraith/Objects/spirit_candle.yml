@@ -53,7 +53,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: GuideHelp
-    guides: [ Chaplain ]
+    guides: [ ChaplainReserve ] # Reserve guidebook
 
 
 

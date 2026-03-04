@@ -117,7 +117,7 @@
   - type: AnomalyScanner
   - type: GuideHelp
     guides:
-    - ScannersAndVessels
+    - ScannersAndVesselsReserve # Reserve guidebook
   - type: Item
     storedRotation: -90
   - type: PhysicalComposition #Goobstation - Recycle update

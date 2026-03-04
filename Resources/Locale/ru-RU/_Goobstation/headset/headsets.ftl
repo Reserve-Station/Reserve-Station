@@ -1,2 +1,4 @@
 chat-radio-future = Будущее
-chat-radio-tidemind = Tidemind
+
+chat-radio-radioshow = Станционное радио
+

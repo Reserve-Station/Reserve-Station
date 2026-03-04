@@ -23,7 +23,6 @@
 
 - type: guideEntry
   id: Medical
-  abstract: true #Reserve guidebook
   name: guide-entry-medical
   text: "/ServerInfo/Guidebook/Medical/Medical.xml"
   children:
@@ -32,30 +31,26 @@
   - Cloning
   - Cryogenics
   - Surgery # Shitmed Change
-  - Medical Patches # Fix for Medicine Patches
+  - MedicalPatches # Fix for Medicine Patches
   - Virology # Goobstation
 
 - type: guideEntry
   id: MedicalDoctor
-  abstract: true #Reserve guidebook
   name: guide-entry-medicaldoctor
   text: "/ServerInfo/Guidebook/Medical/MedicalDoctor.xml"
 
 - type: guideEntry
   id: Cloning
-  abstract: true #Reserve guidebook
   name: guide-entry-cloning
   text: "/ServerInfo/Guidebook/Medical/Cloning.xml"
 
 - type: guideEntry
   id: Cryogenics
-  abstract: true #Reserve guidebook
   name: guide-entry-cryogenics
   text: "/ServerInfo/Guidebook/Medical/Cryogenics.xml"
 
 - type: guideEntry
   id: Chemist
-  abstract: true #Reserve guidebook
   name: guide-entry-chemist
   text: "/ServerInfo/Guidebook/Medical/Chemist.xml"
   children:
@@ -68,21 +63,18 @@
 
 - type: guideEntry
   id: Medicine
-  abstract: true #Reserve guidebook
   name: guide-entry-medicine
   text: "/ServerInfo/Guidebook/Medical/Medicine.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Botanicals
-  abstract: true #Reserve guidebook
   name: guide-entry-botanicals
   text: "/ServerInfo/Guidebook/Medical/Botanicals.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: AdvancedBrute
-  abstract: true #Reserve guidebook
   name: guide-entry-brute
   text: "/ServerInfo/Guidebook/Medical/AdvancedBrute.xml"
 

@@ -12,7 +12,7 @@
  */
 
 using Content.Server.Parallax;
-using Content.Server.Station.Components;
+using Content.Shared.Station.Components;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
 using Content.Shared.Teleportation.Systems;

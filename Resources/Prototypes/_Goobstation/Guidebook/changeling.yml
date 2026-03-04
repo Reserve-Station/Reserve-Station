@@ -10,7 +10,6 @@
 
 - type: guideEntry
   id: Changelings
-  abstract: true #Reserve guidebook
   name: guide-entry-changelings
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Changelings.xml"
   children:
@@ -18,6 +17,5 @@
 
 - type: guideEntry
   id: ChangelingsAbilities
-  abstract: true #Reserve guidebook
   name: guide-entry-changelings-abilities
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/ChangelingsAbilities.xml"

@@ -1,7 +1,13 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: safepointer
   description: A portable device that directs you toward salvation or death
-  suffix: DO NOT MAP, Battle Royal
+  suffix: DO NOT MAP, Battle Royale
   parent: BaseItem
   id: RoyalPinpointer
   components:

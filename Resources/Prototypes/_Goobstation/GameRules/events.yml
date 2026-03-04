@@ -35,7 +35,7 @@
     weight: 4.5 # Uncommon
     earliestStart: 30
     reoccurrenceDelay: 30
-    minimumPlayers: 4
+    minimumPlayers: 20 # Reserve edit
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0

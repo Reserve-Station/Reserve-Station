@@ -5,12 +5,12 @@
 Командование и служба безопасности должны использовать этот раздел, чтобы определить уровень опасности для станции и выбрать соответствующие реакции.
 
 В этой папке собраны следующие чрезвычайные ситуации:
-- [textlink="Подтверждённая Революция" link="ConfirmedRevs SOP Reserve"]
-- [textlink="Теслалуз/Сингалуз" link="ContainmentFail SOP Reserve"]
-- [textlink="Пожар/Опасные газы" link="FireGasSpill SOP Reserve"]
-- [textlink="Метеоритная буря" link="MeteorStorm SOP Reserve"]
-- [textlink="Дестабилизация суперматерии" link="SMDelam SOP Reserve"]
-- [textlink="Объявление о войне" link="WarDeclaration SOP Reserve"]
-- [textlink="Вспышка зомби-вируса" link="Zombie SOP Reserve"]
+- [textlink="Подтверждённая Революция" link="ConfirmedRevsSOPReserve"]
+- [textlink="Теслалуз/Сингалуз" link="ContainmentFailSOPReserve"]
+- [textlink="Пожар/Опасные газы" link="FireGasSpillSOPReserve"]
+- [textlink="Метеоритная буря" link="MeteorStormSOPReserve"]
+- [textlink="Дестабилизация суперматерии" link="SMDelamSOPReserve"]
+- [textlink="Объявление о войне" link="WarDeclarationSOPReserve"]
+- [textlink="Вспышка зомби-вируса" link="ZombieSOPReserve"]
 
 </Document>

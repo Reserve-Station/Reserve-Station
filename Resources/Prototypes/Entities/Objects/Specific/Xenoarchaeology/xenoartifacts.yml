@@ -28,7 +28,7 @@
         type: IntercomBoundUserInterface
   - type: GuideHelp
     guides:
-    - Xenoarchaeology
+    - XenoarchaeologyReserve # Reserve guidebook
   # gameplay interactions
   - type: XenoArtifact
     effectsTable: !type:NestedSelector

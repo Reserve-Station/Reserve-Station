@@ -305,7 +305,7 @@
       visible: false
   - type: GuideHelp
     guides:
-    - ArtifactReports
+    - ArtifactReportsReserve # Reserve guidebook
   - type: PaperVisuals
     headerImagePath: "/Textures/Interface/Paper/paper_heading_artifact_analyzer.svg.96dpi.png"
     headerMargin: 0.0, 0.0, 0.0, 16.0

@@ -15,4 +15,4 @@
   - type: GrantNinjutsu
   - type: GuideHelp
     guides:
-    - Ninjutsu
+    - NinjutsuReserve # Reserve guidebook

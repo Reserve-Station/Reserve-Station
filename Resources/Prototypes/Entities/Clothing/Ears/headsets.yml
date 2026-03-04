@@ -128,7 +128,7 @@
     sprite: Clothing/Ears/Headsets/base.rsi
   - type: GuideHelp
     guides:
-    - Radio
+    - RadioReserve # Reserve guidebook
   - type: Armor # provide minimal covering to your head
     coverage:
     - Head

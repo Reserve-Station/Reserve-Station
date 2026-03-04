@@ -62,8 +62,8 @@
     - Unstackable
   - type: GuideHelp
     guides:
-    - AtmosphericNetworkMonitor
-    - DeviceMonitoringAndControl
+    - AtmosphericNetworkMonitorReserve # Reserve guidebook
+    - DeviceMonitoringAndControlReserve # Reserve guidebook
 
 - type: entity
   parent: GasPipeSensor

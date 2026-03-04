@@ -321,8 +321,8 @@
     - WhitelistChameleon
   - type: GuideHelp
     guides:
-    - Security
-    - Antagonists
+    - SecurityReserve # Reserve guidebook
+    - AntagonistsReserve # Reserve guidebook
   - type: IdentityBlocker
     coverage: EYES
   - type: Armor # provide more coverage than default ones. you know, it's a sec one

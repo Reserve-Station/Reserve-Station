@@ -167,6 +167,7 @@ using Content.Server._Goobstation.Antag;
 using Content.Server._Orion.ServerProtection;
 using Content.Server._Orion.ServerProtection.Chat;
 using Content.Server._Orion.ServerProtection.Emoting;
+using Content.Server._Reserve.LenaApi;
 using Content.Server._RMC14.LinkAccount; // RMC - Patreon
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -256,6 +257,7 @@ namespace Content.Server.IoC
             IoCManager.Register<ChatProtectionSystem>();
             IoCManager.Register<EmoteProtectionSystem>();
             // Orion-End
+            IoCManager.Register<LenaApiManager>(); // Reserve-LenaApi
         }
     }
 }

@@ -340,7 +340,7 @@
     price: 22
   - type: GuideHelp
     guides:
-    - Construction
+    - ConstructionReserve # Reserve guidebook
 
 - type: entity
   name: multitool
@@ -400,10 +400,10 @@
     price: 56
   - type: GuideHelp
     guides:
-    - Networking
-    - WirePanels
-    - Airlocks
-    - InspectingPower
+    - NetworkingReserve # Reserve guidebook
+    - WirePanelsReserve # Reserve guidebook
+    - AirlocksReserve # Reserve guidebook
+    - InspectingPowerReserve # Reserve guidebook
 
 - type: entity
   name: network configurator
@@ -454,7 +454,7 @@
       price: 56
     - type: GuideHelp
       guides:
-      - Networking
+      - NetworkingReserve # Reserve guidebook
     - type: PhysicalComposition #Goobstation - Recycle update
       materialComposition:
         Steel: 25

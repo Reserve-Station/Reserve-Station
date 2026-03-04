@@ -133,9 +133,9 @@
     - type: WiredNetworkConnection
     - type: GuideHelp
       guides:
-      - PowerStorage
-      - VoltageNetworks
-      - Power
+      - PowerStorageReserve # Reserve guidebook
+      - VoltageNetworksReserve # Reserve guidebook
+      - PowerReserve # Reserve guidebook
 
     # Interface
     - type: BatteryInterface

@@ -30,4 +30,4 @@
   - type: InteractionOutline
   - type: GuideHelp
     guides:
-    - Construction
+    - ConstructionReserve # Reserve guidebook

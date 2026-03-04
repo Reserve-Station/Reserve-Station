@@ -42,7 +42,7 @@
         Quantity: 10
   - type: GuideHelp
     guides:
-    - Xenoarchaeology
+    - XenoarchaeologyReserve # Reserve guidebook
   - type: Item
     heldPrefix: artifact
   - type: Tag

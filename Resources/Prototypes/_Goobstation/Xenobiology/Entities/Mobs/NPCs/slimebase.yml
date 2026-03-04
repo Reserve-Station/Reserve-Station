@@ -146,7 +146,7 @@
       task: XenoSlimeCompound
   - type: GuideHelp
     guides:
-    - Xenobiology
+    - XenobiologyReserve # Reserve guidebook
 
 # Begin Slimes
 

@@ -20,12 +20,16 @@
   - DrinksReserve
   - FoodRecipesReserve
   - WritingReserve
+  - EnchantingReserve
 
 - type: guideEntry
   id: DrinksReserve
   name: guide-entry-drinks
   text: "/ServerInfo/_Reserve/Guidebook/ReferenceTables/Drinks.xml"
   filterEnabled: True
+  children:
+  - AlcoholicDrinksReserve
+  - NonAlcoholicDrinksReserve
 
 - type: guideEntry
   id: FoodRecipesReserve
@@ -144,3 +148,19 @@
   name: guide-entry-writing
   text: "/ServerInfo/_Reserve/Guidebook/Writing.xml"
 
+- type: guideEntry
+  id: AlcoholicDrinksReserve
+  name: guide-entry-alcoholic-drinks
+  text: /ServerInfo/_Reserve/Guidebook/ReferenceTables/AlcoholicDrinks.xml
+  filterEnabled: true
+
+- type: guideEntry
+  id: NonAlcoholicDrinksReserve
+  name: guide-entry-non-alcoholic-drinks
+  text: /ServerInfo/_Reserve/Guidebook/ReferenceTables/NonAlcoholicDrinks.xml
+  filterEnabled: true
+
+- type: guideEntry
+  id: EnchantingReserve
+  name: guide-entry-enchanting
+  text: /ServerInfo/_Reserve/Guidebook/ReferenceTables/Enchanting.xml

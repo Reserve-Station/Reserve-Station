@@ -1581,3 +1581,8 @@
   id: artifactglue
   flavorType: Complex
   description: flavor-complex-artifact-glue
+
+- type: flavor
+  id: motivating
+  flavorType: Base
+  description: flavor-base-motivating

@@ -8,6 +8,7 @@ job-description-navy-special-operations-officer = Отправляйте, инс
 
 # Generic Nanotrasen
 
+job-description-bs = Выполняйте свои обязанности как охранника глав станции и VIP-персон.
 job-description-nct = Научите новичков правильно выполнять порученные им компанией задания и не попадать в неприятности.
 job-description-ntr = Сообщайте о приказах с ЦК, отправляйте отчёты и следите за работой глав станции.
 

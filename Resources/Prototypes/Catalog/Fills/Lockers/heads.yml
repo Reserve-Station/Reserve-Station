@@ -473,7 +473,6 @@
     #- id: ProtolatheMachineCircuitboard # Goobstation - Science Techfab
     - id: ResearchComputerCircuitboard
     - id: ComputerCargoRequestScienceFlatpack # Goobstation
-    - id: NTCustomLawboard # Goobstation - Custom Law Board
     - id: RubberStampRd
     # - id: EncryptionKeyBinary # goobstation - readd the cool binary channel access. fuck you. # Goobstation - WYCI + malf ai major
     - id: AnomalyLocator # GoobStation - adding anomaly locator to the RD locker to reduce the amount of anoms that crit
@@ -598,3 +597,5 @@
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
+    - id: FoodMango #Goobstation
+      prob: 0.65

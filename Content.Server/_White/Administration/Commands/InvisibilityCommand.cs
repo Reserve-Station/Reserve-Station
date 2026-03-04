@@ -32,7 +32,7 @@ public sealed class InvisibilityCommand : LocalizedCommands
 
         var visibility = _entManager.System<VisibilitySystem>();
 
-        visibility.AddLayer((entity.Value, visibilityComponent), (int) VisibilityFlags.AGhost, false);
+        visibility.AddLayer((entity.Value, visibilityComponent), (int) VisibilityFlags.Admin, false);
         visibility.RemoveLayer((entity.Value, visibilityComponent), (int) VisibilityFlags.Ghost, false);
         visibility.RefreshVisibility(entity.Value, visibilityComponent);
     }

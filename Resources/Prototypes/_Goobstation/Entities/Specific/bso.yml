@@ -27,7 +27,7 @@
   - type: GrantKungFuDragon
   - type: GuideHelp
     guides:
-    - DragonKungFu
+    - DragonKungFuReserve # Reserve guidebook
 
 - type: entity
   parent: [BaseItem, BaseCentcommContraband]

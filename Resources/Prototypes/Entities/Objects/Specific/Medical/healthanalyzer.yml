@@ -144,7 +144,7 @@
           False: { visible: false }
   - type: GuideHelp
     guides:
-    - MedicalDoctor
+    - MedicalDoctorReserve # Reserve guidebook
 
 - type: entity
   id: HandheldHealthAnalyzer

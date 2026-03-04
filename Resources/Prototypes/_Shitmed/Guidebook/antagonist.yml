@@ -6,6 +6,5 @@
 
 - type: guideEntry
   id: Abductors
-  abstract: true #Reserve guidebook
   name: guide-entry-abductors
   text: "/ServerInfo/_Shitmed/Guidebook/Antagonist/Abductors.xml"

@@ -1,9 +1,53 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+- type: gamePreset
+  id: BattleRoyale
+  alias:
+  - battleroyale
+  - royale
+  name: Battle Royale
+  description: Load your gun and watch them run.
+  showInVote: false # secret
+  supportedMaps: BattleRoyaleMapPool
+  rules:
+  - BattleRoyale
+
+- type: gameMapPool
+  id: BattleRoyaleMapPool
+  maps:
+   - BattleRoyale
+  #- Empty
+
 - type: entity
   id: BattleRoyale
   name: Battle Royale
   parent: BaseGameRule
   components:
   - type: BattleRoyaleRule
-    gear: BattleRoyaleGear
     roundEndDelay: 10
   - type: PointManager
+  - type: GameRule
+    minPlayers: 1
+  #- type: AntagLoadProfileRule
+  #  speciesOverride: Human
+  #  speciesOverrideBlacklist:
+  #  - Yowie
+  #  - Oni
+  #- type: AntagSelection
+  #  selectionTime: PrePlayerSpawn
+  #  definitions:
+  #  - prefRoles: [ BattleRoyaleMember ]
+  #    spawnerPrototype: SpawnPointBattleRoyale
+  #    startingGear: BattleRoyaleGear
+  #    roleLoadout:
+  #    - RoleSurvivalNukie
+  #    briefing:
+  #      text: battleroyale-briefing
+  #      sound: "/Audio/_CorvaxNext/Misc/vox_raiders_greeting.ogg"
+  #    mindRoles:
+  #    - MindRoleBattleRoyaleMember
+  #    components:
+  #      - type: KillTracker

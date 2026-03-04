@@ -163,8 +163,8 @@
   guides: # goobstation
   - Command
   - Succession
-  - StandardProcedures SOP
-  - HeadOfPersonnel SOP
+  - StandardProceduresSOP
+  - HeadOfPersonnelSOP
   - Writing
   goobcoins: 40 #Goob content
   weight: 20
@@ -217,6 +217,7 @@
     ears: ClothingHeadsetAltCommand
     eyes: ClothingEyesGlassesCommand # Reserve-CommandHUD
     belt: BoxFolderClipboard
+    # eyes: ClothingEyesHudCommand  # Reserve-CommandHUD
   storage:
     back:
     - Flash

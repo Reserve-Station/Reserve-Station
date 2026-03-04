@@ -38,7 +38,7 @@
       - DurandArmor
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: GygaxArmorPlate
@@ -56,7 +56,7 @@
       - GygaxArmor
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: RipleyUpgradeKit
@@ -73,7 +73,7 @@
       - RipleyMKIIUpgradeKit
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: MechAirTank
@@ -90,7 +90,7 @@
       - MechAirTank
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: MechThruster
@@ -107,4 +107,4 @@
       - MechThruster
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook

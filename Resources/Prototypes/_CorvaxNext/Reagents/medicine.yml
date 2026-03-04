@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: reagent
   id: RoyalOmniheal
   name: reagent-name-royal-omniheal
@@ -16,9 +21,11 @@
             Burn: -4
             Airloss: -4
             Toxin: -4
+            Genetic: -4
           types:
             Cellular: -4
             Holy: -4
+            Radiation: -4
       - !type:ModifyBleedAmount
         amount: -2
       - !type:ChemHealEyeDamage
@@ -27,6 +34,16 @@
         visualType: Medium
         messages: ["omniheal-effect-rejuvenating"]
         probability: 0.3
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          max: 293.15
+        amount: 10
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 293.15
+        amount: -10
 
 - type: reagent
   id: RoyalHyperphase
@@ -167,16 +184,6 @@
         conditions:
         - !type:ReagentThreshold
           min: 1
-      - !type:Emote
-        emote: Scream
-        showInChat: false
-        force: true
-        probability: 0.6
-      - !type:Emote
-        emote: Crying
-        showInChat: false
-        force: true
-        probability: 0.6
       - !type:PopupMessage
         type: Local
         visualType: Medium
@@ -204,7 +211,7 @@
           reagent: RoyalHyperphase
           min: 25
         emote: Scream
-        showInChat: true
+        showInChat: false
         probability: 0.3
       - !type:PopupMessage
         conditions:

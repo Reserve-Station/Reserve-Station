@@ -499,6 +499,9 @@
   id: RatvarianSpear
 
 - type: Tag
+  id: DragonsTail
+
+- type: Tag
   id: InquisitorChainSword
 
 - type: Tag
@@ -798,18 +801,6 @@
 
 - type: Tag
   id: Crate
-
-- type: Tag
-  id: GreenGloves
-
-- type: Tag
-  id: WaterBottle
-
-- type: Tag
-  id: IceBucket
-
-- type: Tag
-  id: HereticCostume
 
 - type: Tag
   id: VinylSleeveFit

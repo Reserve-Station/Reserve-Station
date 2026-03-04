@@ -135,6 +135,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Goobstation.Antag;
+using Content.Server._Reserve.LenaApi;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -246,6 +247,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<GhostKickManager>().Initialize();
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
                 IoCManager.Resolve<ServerApi>().Initialize();
+                IoCManager.Resolve<LenaApiManager>().Initialize(); // Reserve
 
                 _voteManager.Initialize();
                 _updateManager.Initialize();

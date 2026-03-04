@@ -160,8 +160,8 @@
   - type: Appearance
   - type: GuideHelp
     guides:
-    - Cyborgs
-    - Robotics
+    - CyborgsReserve # Reserve guidebook
+    - RoboticsReserve # Reserve guidebook
   - type: ChangeVoiceInContainer
     whitelist:
       components:
@@ -260,8 +260,8 @@
             On: { state: posibrain-occupied }
     - type: GuideHelp
       guides:
-      - Cyborgs
-      - Robotics
+      - CyborgsReserve # Reserve guidebook
+      - RoboticsReserve # Reserve guidebook
     - type: ChangeVoiceInContainer
       whitelist:
         components:

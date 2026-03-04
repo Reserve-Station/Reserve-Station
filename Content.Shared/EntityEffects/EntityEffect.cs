@@ -6,6 +6,7 @@
 
 using System.Linq;
 using Content.Shared.Chemistry;
+using Robust.Shared.Serialization;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Database;
 using Content.Goobstation.Maths.FixedPoint;
@@ -21,6 +22,7 @@ namespace Content.Shared.EntityEffects;
 ///     Entity effects describe behavior that occurs on different kinds of triggers, e.g. when a reagent is ingested and metabolized by some
 ///     organ. They only trigger when all of <see cref="Conditions"/> are satisfied.
 /// </summary>
+[Serializable, NetSerializable]
 [ImplicitDataDefinitionForInheritors]
 [MeansImplicitUse]
 public abstract partial class EntityEffect
@@ -99,6 +101,19 @@ public static class EntityEffectExt
         }
 
         return true;
+    }
+}
+
+[ByRefEvent]
+public struct ExecuteEntityEffectEvent<T> where T : EntityEffect
+{
+    public T Effect;
+    public EntityEffectBaseArgs Args;
+
+    public ExecuteEntityEffectEvent(T effect, EntityEffectBaseArgs args)
+    {
+        Effect = effect;
+        Args = args;
     }
 }
 

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Anti Thrall Item
 - type: entity
   parent: BaseItem
@@ -15,7 +19,7 @@
     maxCharges: 5
   - type: AntiMindControlItem
   - type: GuideHelp
-    guides: [ Shadowlings ]
+    guides: [ ShadowlingsReserve ] #Reserve Guidebook
 
 - type: entity
   parent: ArmBladeChangeling

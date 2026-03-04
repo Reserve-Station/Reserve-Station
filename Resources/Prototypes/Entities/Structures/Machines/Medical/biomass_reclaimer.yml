@@ -33,4 +33,4 @@
     board: BiomassReclaimerMachineCircuitboard
   - type: GuideHelp
     guides:
-    - Cloning
+    - CloningReserve # Reserve guidebook

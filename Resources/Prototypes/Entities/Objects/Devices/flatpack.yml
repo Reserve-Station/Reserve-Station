@@ -100,8 +100,8 @@
     price: 500
   - type: GuideHelp
     guides:
-    - AME
-    - Power
+    - AMEReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
   - type: StealTarget
     stealGroup: AmePartFlatpack
 
@@ -118,8 +118,8 @@
     - state: singularity-generator
   - type: GuideHelp
     guides:
-    - SingularityEngine
-    - Power
+    - SingularityEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
 
 - type: entity
   parent: BaseFlatpack
@@ -134,8 +134,8 @@
     - state: radiation-collector
   - type: GuideHelp
     guides:
-    - SingularityEngine
-    - Power
+    - SingularityEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
 
 - type: entity
   parent: BaseFlatpack
@@ -150,8 +150,8 @@
     - state: containment-field-generator
   - type: GuideHelp
     guides:
-    - SingularityEngine
-    - Power
+    - SingularityEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
 
 - type: entity
   parent: BaseFlatpack
@@ -166,8 +166,8 @@
     - state: emitter
   - type: GuideHelp
     guides:
-    - SingularityEngine
-    - Power
+    - SingularityEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
 
 - type: entity
   parent: BaseFlatpack
@@ -182,8 +182,8 @@
     - state: tesla-generator
   - type: GuideHelp
     guides:
-    - TeslaEngine
-    - Power
+    - TeslaEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
 
 - type: entity
   parent: BaseFlatpack
@@ -198,8 +198,8 @@
     - state: tesla-coil
   - type: GuideHelp
     guides:
-    - TeslaEngine
-    - Power
+    - TeslaEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
 
 - type: entity
   parent: BaseFlatpack
@@ -214,8 +214,8 @@
     - state: grounding-rod
   - type: GuideHelp
     guides:
-    - TeslaEngine
-    - Power
+    - TeslaEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
 
 - type: entity
   parent: BaseFlatpack
@@ -299,5 +299,5 @@
     - state: hydroponics-tray
   - type: GuideHelp
     guides:
-    - Botany
+    - BotanyReserve # Reserve guidebook
     - ChemicalsReserve # Reserve edit

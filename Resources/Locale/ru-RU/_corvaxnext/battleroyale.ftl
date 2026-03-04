@@ -7,3 +7,6 @@ battle-royale-zone-shrinking = Зона боя сужается! Найдите 
 battle-royale-zone-closing = Зона боя стремительно сокращается! Немедленно перемещайтесь к центру!
 battle-royale-winner-announcement = { $player } — последний выживший! Раунд скоро завершится.
 battle-royale-single-player = { $player } единственный участник. Автоматическая победа!
+roles-battle-royale-name = Участник королевской битвы
+roles-battle-royale-objective = Убейте каждого, кого встретите.
+role-information-battle-royale-rules = Каждый [color=red][bold]Сам за себя[/bold][/color] и вам не разрешено кооперироваться

@@ -86,7 +86,7 @@
   - type: RequireProjectileTarget
   - type: GuideHelp
     guides:
-    - SolarPanels
+    - SolarPanelsReserve # Reserve guidebook
 
 - type: entity
   id: SolarPanelPlasma
@@ -394,7 +394,7 @@
   - type: RequireProjectileTarget
   - type: GuideHelp
     guides:
-    - SolarPanels
+    - SolarPanelsReserve # Reserve guidebook
 
 - type: entity
   id: SolarTracker
@@ -442,4 +442,4 @@
   - type: RequireProjectileTarget
   - type: GuideHelp
     guides:
-    - SolarPanels
+    - SolarPanelsReserve # Reserve guidebook

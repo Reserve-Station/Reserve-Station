@@ -255,8 +255,8 @@
           type: WiresBoundUserInterface
   - type: GuideHelp
     guides:
-    - AtmosphericAlertsComputer
-    - DeviceMonitoringAndControl
+    - AtmosphericAlertsComputerReserve # Reserve guidebook
+    - DeviceMonitoringAndControlReserve # Reserve guidebook
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -292,8 +292,8 @@
         type: WiresBoundUserInterface
   - type: GuideHelp
     guides:
-    - AtmosphericNetworkMonitor
-    - DeviceMonitoringAndControl
+    - AtmosphericNetworkMonitorReserve # Reserve guidebook
+    - DeviceMonitoringAndControlReserve # Reserve guidebook
 
 - type: entity
   parent: BaseComputer
@@ -370,7 +370,7 @@
       disk_slot: !type:ContainerSlot {}
   - type: GuideHelp
     guides:
-    - ShuttleCraft
+    - ShuttleCraftReserve # Reserve guidebook
   # Frontier edit start
   - type: DeviceLinkSource
     ports:
@@ -653,7 +653,7 @@
     access: [["Security"]]
   - type: GuideHelp
     guides:
-    - CriminalRecords
+    - CriminalRecordsReserve # Reserve guidebook
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -678,7 +678,7 @@
     board: StationRecordsComputerCircuitboard
   - type: GuideHelp
     guides:
-    - Forensics
+    - ForensicsReserve # Reserve guidebook
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -765,7 +765,7 @@
     color: "#b53ca1"
   - type: GuideHelp
     guides:
-    - Science
+    - ScienceReserve # Reserve guidebook
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -814,7 +814,7 @@
     color: "#b53ca1"
   - type: GuideHelp
     guides:
-    - Xenoarchaeology
+    - XenoarchaeologyReserve # Reserve guidebook
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -920,6 +920,7 @@
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
   - type: DeviceNetwork
+    deviceNetId: Wireless
     transmitFrequencyId: ShuttleTimer
   - type: ActivatableUI
     key: enum.CommunicationsConsoleUiKey.Key
@@ -1040,8 +1041,8 @@
     color: "#e6e227"
   - type: GuideHelp
     guides:
-    - SolarPanels
-    - Power
+    - SolarPanelsReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
   - type: Tag
     tags:
     - DroneUsable # Goobstation
@@ -1426,7 +1427,7 @@
     damageModifierSet: StructuralMetallicStrong
   - type: GuideHelp
     guides:
-    - Cloning
+    - CloningReserve # Reserve guidebook
 
 - type: entity
   parent: BaseComputerAiAccess

@@ -7,7 +7,7 @@ using Robust.Shared.Audio;
 
 namespace Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(raiseAfterAutoHandleState: true)]
 public sealed partial class DynamicRangeComponent : Component
 {
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadWrite)]

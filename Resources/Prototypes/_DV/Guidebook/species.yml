@@ -11,13 +11,11 @@
 
 - type: guideEntry
   id: Rodentia
-  abstract: true #Reserve guidebook
   name: species-name-rodentia
   text: "/ServerInfo/Guidebook/Mobs/_DV/Rodentia.xml"
 
 - type: guideEntry
   id: Oni
-  abstract: true #Reserve guidebook
   name: species-name-oni
   text: "/ServerInfo/Guidebook/Mobs/_DV/Oni.xml"
 

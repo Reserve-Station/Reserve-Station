@@ -21,7 +21,7 @@
       - ClarkeCentralControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: ClarkePeripheralsElectronics
@@ -37,7 +37,7 @@
       - ClarkePeripheralsControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 # Gygax
 
@@ -57,7 +57,7 @@
       - GygaxCentralControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: GygaxPeripheralsElectronics
@@ -73,7 +73,7 @@
       - GygaxPeripheralsControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: GygaxTargetingElectronics
@@ -89,7 +89,7 @@
       - GygaxTargetingControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 # Durand
 
@@ -109,7 +109,7 @@
       - DurandCentralControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: DurandPeripheralsElectronics
@@ -125,7 +125,7 @@
       - DurandPeripheralsControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: DurandTargetingElectronics
@@ -141,4 +141,4 @@
       - DurandTargetingControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook

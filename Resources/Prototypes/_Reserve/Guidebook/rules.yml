@@ -45,12 +45,13 @@
   - RuleReserve37
   - RuleReserve38
   - RuleReserve4
-  #- RuleReserve5 #Not present any
+  - RuleReserve5
   - RuleReserve6
   - RuleReserve7
   - RuleReserve8
   - RuleReserve9
   - RuleReserve10
+  - ConditionsReserve #Antag
 
 #Reserve-Rules-Start
 
@@ -146,38 +147,45 @@
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve4.xml"
 
 - type: guideEntry
+  id: RuleReserve5
+  name: "Взаимодействие с ССД персонажами"
+  ruleEntry: true
+  priority: 13
+  text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve5.xml"
+
+- type: guideEntry
   id: RuleReserve6
   name: "Ответственная игра за антагониста"
   ruleEntry: true
-  priority: 14
+  priority: 15
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve6.xml"
 
 - type: guideEntry
   id: RuleReserve7
   name: "Самоантагонизм"
   ruleEntry: true
-  priority: 15
+  priority: 16
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve7.xml"
 
 - type: guideEntry
   id: RuleReserve8
   name: "Валидхант"
   ruleEntry: true
-  priority: 16
+  priority: 17
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve8.xml"
 
 - type: guideEntry
   id: RuleReserve9
   name: "ERP"
   ruleEntry: true
-  priority: 17
+  priority: 18
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve9.xml"
 
 - type: guideEntry
   id: RuleReserve10
   name: "Нечестная игра"
   ruleEntry: true
-  priority: 18
+  priority: 19
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve10.xml"
 
 # Reserve-Rule-End

@@ -1,0 +1,9 @@
+ent-SpaceLeviathan = космический кит
+    .suffix = Сохраняет покрытие, не деспавнится
+    .desc = Когда пространство становится слишком тихим, нет никакой надежды, нет выхода, но есть это.
+ent-SpaceWhaleSegment = { "" }
+    .suffix = НЕ СПАВНИТЬ
+    .desc = { "" }
+ent-SpaceLeviathanDespawn = { "" }
+    .suffix = Деспавнится
+    .desc = { "" }

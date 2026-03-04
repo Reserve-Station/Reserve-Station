@@ -31,7 +31,7 @@
       path: /Audio/Items/crowbar.ogg
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
 
 - type: entity
   name: high-tech wirecutter
@@ -86,7 +86,7 @@
         variation: 0.125
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
 
 - type: entity
   name: high-tech screwdriver
@@ -135,7 +135,7 @@
       path: /Audio/_Shitmed/Medical/Surgery/retractor2.ogg
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
 
 - type: entity
   name: high-tech wrench
@@ -161,7 +161,7 @@
       path: /Audio/Items/ratchet.ogg
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
 
 - type: entity
   name: high-tech welding tool
@@ -200,7 +200,7 @@
     delay: 2
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
 
 - type: entity
   name: high-tech multitool
@@ -232,7 +232,7 @@
     - Belt
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
   - type: UserInterface
     interfaces:
       enum.NetworkConfiguratorUiKey.List:

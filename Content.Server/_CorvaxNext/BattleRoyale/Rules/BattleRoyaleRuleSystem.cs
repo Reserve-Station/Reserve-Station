@@ -4,54 +4,54 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
-using Content.Server.Administration.Commands;
-using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
-using Content.Server.GameTicking.Events;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Server.GameTicking.Rules;
 using Content.Server.KillTracking;
 using Content.Server.Mind;
-//using Content.Server.Traits.Assorted; //Reserve port BattleRoyale
-//using Content.Server._CorvaxNext.Traits.Assorted; //Reserve port BattleRoyale
 using Content.Server.Points;
 using Content.Server.RoundEnd;
-using Content.Server.Shuttles.Components;
-using Content.Server.Shuttles.Systems;
+using Content.Server.Roles;
 using Content.Server.Station.Systems;
+using Content.Server._CorvaxNext.BattleRoyale.Components;
 using Content.Server._CorvaxNext.BattleRoyale.Rules.Components;
 using Robust.Shared.Audio;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Chat;
 using Content.Shared.Eye.Blinding.Components;
-using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Players;
 using Content.Shared.Points;
 using Content.Shared.Traits.Assorted;
-using Content.Server.Traits.Assorted; //Reserve port BattleRoyale
-//using Content.Shared._CorvaxNext.Skills; //Reserve port BattleRoyale
-using Robust.Server.GameObjects;
+using Content.Server.Traits.Assorted;
 using Robust.Server.Player;
+using Robust.Shared.Map;
 using Robust.Shared.Network;
-using Robust.Shared.Maths;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Robust.Shared.Enums;
+using Robust.Shared.Prototypes;
+using Robust.Shared.GameObjects;
+using Content.Server.Parallax;
+using Content.Shared.Shuttles.Components;
+using Content.Shared.Parallax.Biomes;
+using Robust.Shared.Map.Components;
+using Content.Shared.Light.Components;
+using Content.Shared.Station.Components;
+using Content.Server.Clothing.Systems;
 
 namespace Content.Server._CorvaxNext.BattleRoyale.Rules
 {
     /// <summary>
-    /// Battle Royale game mode where the last player standing wins, with built-in checks to prevent late joining.
+    /// Battle Royale game mode where the last player standing wins.
     /// </summary>
     public sealed class BattleRoyaleRuleSystem : GameRuleSystem<BattleRoyaleRuleComponent>
     {
@@ -59,30 +59,78 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
         [Dependency] private readonly MindSystem _mind = default!;
         [Dependency] private readonly PointSystem _point = default!;
         [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-        [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
-        [Dependency] private readonly TransformSystem _transforms = default!;
         [Dependency] private readonly MobStateSystem _mobState = default!;
-        [Dependency] private readonly KillTrackingSystem _killTracking = default!;
-        [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly ChatSystem _chatSystem = default!;
-        [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
-        //[Dependency] private readonly SharedSkillsSystem _skills = default!; //Reserve port BattleRoyale
-        [Dependency] private readonly ArrivalsSystem _arrivals = default!;
+        [Dependency] private readonly StationSpawningSystem _stationSpawning = default!;
+        [Dependency] private readonly RoleSystem _role = default!;
+        [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+        [Dependency] private readonly BiomeSystem _biomes = default!;
+        [Dependency] private readonly MetaDataSystem _metaData = default!;
+        [Dependency] private readonly IEntityManager _entManager = default!;
+        [Dependency] private readonly OutfitSystem _outfitSystem = default!;
+        [Dependency] private readonly IPrototypeManager _protoManager = default!;
+
+        private ISawmill _sawmill = default!;
 
         private const int MaxNormalCallouts = 60;
         private const int MaxEnvironmentalCallouts = 10;
+        public Color MapLight = Color.FromHex("#D8B059");
+
+        private readonly List<ProtoId<BiomeTemplatePrototype>> _biome = new()
+        {
+            "JustWater",
+        };
+
+        private EntityUid? _battleRoyaleStation;
 
         public override void Initialize()
         {
             base.Initialize();
+
+            _sawmill = Logger.GetSawmill("BattleRoyale");
+
+            SubscribeLocalEvent<RulePlayerSpawningEvent>(OnRulePlayerSpawning);
             SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
             SubscribeLocalEvent<KillReportedEvent>(OnKillReported);
-            SubscribeLocalEvent<PlayerBeforeSpawnEvent>(OnBeforeSpawn);
             SubscribeLocalEvent<RefreshLateJoinAllowedEvent>(OnRefreshLateJoinAllowed);
-            SubscribeLocalEvent<PlayerSpawningEvent>(OnPlayerSpawning, before: new[] { typeof(ArrivalsSystem) });
             SubscribeLocalEvent<PlayerDetachedEvent>(OnPlayerDetached);
+        }
+
+        private void SetupStation(EntityUid stationUid, EntityUid gridUid, MapId mapId)
+        {
+            if (!_mapSystem.TryGetMap(mapId, out var mapUid))
+            {
+                _sawmill.Error($"Battle Royale: Map {mapUid} not found!");
+                return;
+            }
+
+            _battleRoyaleStation = stationUid;
+
+            _metaData.SetEntityName(mapUid.Value, "BATTLE ROYALE");
+
+            EnsureComp<PreventPilotComponent>(gridUid);
+
+            // Setup planet
+            var bm = _random.Pick(_biome);
+            _biomes.EnsurePlanet(mapUid.Value, _protoManager.Index(bm), null, null, mapLight: MapLight);
+
+            // Add MapLightComponent
+            var lighting = _entManager.EnsureComponent<MapLightComponent>(mapUid.Value);
+            lighting.AmbientLightColor = MapLight;
+
+            // Change ImplicitRoofComponent - See, this is hardcoded due to only reason that our main map for this rule is a planet
+            if (TryComp<BattleRoyaleMapComponent>(stationUid, out var station))
+                if (station.ClearImplicitRoofComponent)
+                {
+                    var roof = _entManager.EnsureComponent<ImplicitRoofComponent>(gridUid);
+                    roof.Color = MapLight;
+                }
+
+            _sawmill.Info($"Battle Royale: Configured map {MetaData(mapUid.Value).EntityName}");
+
+            _entManager.Dirty(mapUid.Value, lighting);
         }
 
         private void OnRefreshLateJoinAllowed(RefreshLateJoinAllowedEvent ev)
@@ -93,15 +141,121 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
             }
         }
 
-        private void OnPlayerSpawning(PlayerSpawningEvent ev)
+        private void OnRulePlayerSpawning(RulePlayerSpawningEvent ev)
         {
-            if (CheckBattleRoyaleActive() && ev.SpawnResult == null)
+            var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, GameRuleComponent>();
+            while (query.MoveNext(out var uid, out var br, out var gameRule))
             {
-                if (HasComp<StationArrivalsComponent>(ev.Station))
+                if (!GameTicker.IsGameRuleActive(uid, gameRule))
+                    continue;
+
+                if (_battleRoyaleStation == null || !Exists(_battleRoyaleStation.Value))
                 {
-                    ev.SpawnResult = null;
+                    var stationQuery = EntityQueryEnumerator<BattleRoyaleMapComponent>();
+                    while (stationQuery.MoveNext(out var stationUid, out _))
+                    {
+                        if (TryComp<StationDataComponent>(stationUid, out var stationData) && stationData.Grids.Count > 0)
+                        {
+                            var gridUid = stationData.Grids.First();
+                            if (TryComp<TransformComponent>(gridUid, out var xform))
+                            {
+                                var mapId = xform.MapID;
+                                if (mapId != MapId.Nullspace)
+                                {
+                                    SetupStation(stationUid, gridUid, mapId);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Only Battle Royale station should be used
+                if (_battleRoyaleStation == null || !Exists(_battleRoyaleStation.Value))
+                {
+                    _sawmill.Error("Battle Royale: Station not found! Make sure the map is loaded.");
+                    return;
+                }
+
+                var station = _battleRoyaleStation.Value;
+
+                // Spawning player on that map
+                foreach (var session in ev.PlayerPool.ToList())
+                {
+                    SpawnBattleRoyalePlayer(session, station, br);
+                    _sawmill.Info($"Battle Royale: Spawning {session.Name} on map {station}");
+                    ev.PlayerPool.Remove(session);
                 }
             }
+        }
+
+        private void SpawnBattleRoyalePlayer(ICommonSession session, EntityUid station, BattleRoyaleRuleComponent br)
+        {
+            var profile = GameTicker.GetPlayerProfile(session);
+
+            // mind
+            var newMind = _mind.CreateMind(session.UserId, profile.Name);
+            _mind.SetUserId(newMind, session.UserId);
+
+            // Spawning mob
+            var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(station, null, profile);
+            if (mobMaybe == null)
+            {
+                _sawmill.Error($"Battle Royale: Failed to spawn player {session.Name}");
+                return;
+            }
+            var mob = mobMaybe.Value;
+
+            _mind.TransferTo(newMind, mob);
+
+            _role.MindAddRole(newMind, br.Role);
+
+            SetupBattleRoyalePlayer(mob, br);
+
+            GameTicker.PlayerJoinGame(session);
+
+            _sawmill.Info($"Battle Royale: Spawned player {session.Name} as {ToPrettyString(mob)}");
+        }
+
+        private void SetupBattleRoyalePlayer(EntityUid player, BattleRoyaleRuleComponent br)
+        {
+            _sawmill.Info($"Setting up Battle Royale player: {ToPrettyString(player)}");
+
+            // Add required components
+            EnsureComp<KillTrackerComponent>(player);
+            EnsureComp<SleepingComponent>(player);
+
+            _outfitSystem.SetOutfit(player, br.Gear);
+
+            // Add pacification
+            var pacified = EnsureComp<PacifiedComponent>(player);
+            var removePacifiedTime = br.PacificationDuration;
+            Timer.Spawn(removePacifiedTime, () =>
+            {
+                if (Deleted(player))
+                    return;
+
+                RemComp<PacifiedComponent>(player);
+                _sawmill.Debug($"Removed pacification from {ToPrettyString(player)}");
+            });
+
+            // Add temporary blurry vision
+            var blurry = EnsureComp<BlurryVisionComponent>(player);
+            Timer.Spawn(TimeSpan.FromSeconds(15), () =>
+            {
+                if (Deleted(player))
+                    return;
+
+                RemComp<BlurryVisionComponent>(player);
+                _sawmill.Debug($"Removed blurry vision from {ToPrettyString(player)}");
+            });
+
+            // Remove negative traits
+            RemComp<PainNumbnessComponent>(player);
+            RemComp<PermanentBlindnessComponent>(player);
+            RemComp<NarcolepsyComponent>(player);
+
+            _sawmill.Info($"Battle Royale player setup complete: {ToPrettyString(player)}");
         }
 
         private bool CheckBattleRoyaleActive()
@@ -114,6 +268,8 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
         {
             base.Started(uid, component, gameRule, args);
 
+            _sawmill.Info($"Battle Royale rule started: {ToPrettyString(uid)}");
+
             Timer.Spawn(TimeSpan.FromSeconds(5), () =>
             {
                 CheckLastManStanding(uid, component);
@@ -121,12 +277,10 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
 
             Timer.Spawn(TimeSpan.FromMinutes(2), () =>
             {
-                //Reserve edit begin
-                if (!Exists(uid) || !TryComp<GameRuleComponent>(uid, out var gameRule))
+                if (!Exists(uid) || !TryComp<GameRuleComponent>(uid, out var gameRuleComp))
                     return;
-                //Reserve edit end
 
-                if (!GameTicker.IsGameRuleActive(uid, gameRule))
+                if (!GameTicker.IsGameRuleActive(uid, gameRuleComp))
                     return;
 
                 var message = Loc.GetString("battle-royale-kill-or-be-killed");
@@ -134,67 +288,9 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
 
                 var sound = new SoundPathSpecifier("/Audio/Ambience/Antag/traitor_start.ogg");
 
+                _sawmill.Info("Dispatching Battle Royale announcement");
                 _chatSystem.DispatchGlobalAnnouncement(message, title, true, sound, Color.Red);
             });
-        }
-
-        private void OnBeforeSpawn(PlayerBeforeSpawnEvent ev)
-        {
-            var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, GameRuleComponent>();
-            while (query.MoveNext(out var uid, out var br, out var gameRule))
-            {
-                if (!GameTicker.IsGameRuleActive(uid, gameRule))
-                    continue;
-
-                var newMind = _mind.CreateMind(ev.Player.UserId, ev.Profile.Name);
-                _mind.SetUserId(newMind, ev.Player.UserId);
-
-                var mobMaybe = _stationSpawning.SpawnPlayerCharacterOnStation(ev.Station, null, ev.Profile);
-                DebugTools.AssertNotNull(mobMaybe);
-                var mob = mobMaybe!.Value;
-
-				if (HasComp<PainNumbnessComponent>(mob))
-					RemComp<PainNumbnessComponent>(mob);
-
-				//if (HasComp<MoodModifyTraitComponent>(mob)) //Reserve port BattleRoyale
-				//	RemComp<MoodModifyTraitComponent>(mob); //Reserve port BattleRoyale
-
-				if (HasComp<PermanentBlindnessComponent>(mob))
-					RemComp<PermanentBlindnessComponent>(mob);
-
-				if (HasComp<NarcolepsyComponent>(mob))
-					RemComp<NarcolepsyComponent>(mob);
-
-                _mind.TransferTo(newMind, mob);
-                //SetOutfitCommand.SetOutfit(mob, br.Gear, false, EntityManager); //Reserve - fixed in 'Battle Royale balanced' PR
-                EnsureComp<KillTrackerComponent>(mob);
-                EnsureComp<SleepingComponent>(mob);
-
-                // _skills.GrantAllSkills(mob); //Reserve port BattleRoyale
-
-                var pacifiedComp = EnsureComp<PacifiedComponent>(mob);
-                Timer.Spawn(TimeSpan.FromMinutes(2), () =>
-                {
-                    if (!Deleted(mob) && HasComp<PacifiedComponent>(mob))
-				        RemComp<PacifiedComponent>(mob);
-                });
-
-                var blurryVisionComp = EnsureComp<BlurryVisionComponent>(mob);
-                Timer.Spawn(TimeSpan.FromSeconds(15), () =>
-                {
-                    if (!Deleted(mob) && HasComp<BlurryVisionComponent>(mob))
-				        RemComp<BlurryVisionComponent>(mob);
-                });
-
-                ev.Handled = true;
-
-                Timer.Spawn(TimeSpan.FromSeconds(0.5), () =>
-                {
-                    CheckLastManStanding(uid, br);
-                });
-
-                break;
-            }
         }
 
         private void OnMobStateChanged(MobStateChangedEvent args)
@@ -312,7 +408,7 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
                 if (!component.WinnerAnnounced || component.Victor == null || component.Victor.Value != alivePlayers.First())
                 {
                     component.Victor = alivePlayers.First();
-                    if (!component.WinnerAnnounced && _mind.TryGetMind(component.Victor.Value, out var mindId, out var mind)&&
+                    if (!component.WinnerAnnounced && _mind.TryGetMind(component.Victor.Value, out var mindId, out var mind) &&
                     _player.TryGetSessionById(mind.UserId, out var session))
                     {
                         component.WinnerAnnounced = true;

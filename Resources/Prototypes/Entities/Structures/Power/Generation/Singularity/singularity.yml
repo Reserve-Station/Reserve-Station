@@ -151,9 +151,9 @@
   - type: Appearance
   - type: GuideHelp # Always strive to be helpful in trying times.
     guides:
-    - SingularityEngine
-    - SingularityTeslaEngine
-    - Power
+    - SingularityEngineReserve # Reserve guidebook
+    - SingularityTeslaEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
   - type: WarpPoint
     follow: true
     location: singularity

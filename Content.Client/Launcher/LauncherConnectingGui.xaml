@@ -36,6 +36,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     </BoxContainer>
                     <BoxContainer Orientation="Vertical" Name="ConnectFail" Visible="False" SeparationOverride="10">
                         <RichTextLabel Name="ConnectFailReason" VerticalAlignment="Stretch"/>
+                        <!-- Reserve-LenaApi-Start -->
+                        <Button Name="AuthLinkButton"
+                                Visible="False"
+                                Text="{Loc 'reserve-auth-button'}"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"/>
+                        <!-- Reserve-LenaApi-End -->
                         <BoxContainer Orientation="Horizontal" Align="Center">
                             <Button Name="RetryButton"
                                     Text="{Loc 'connecting-retry'}"

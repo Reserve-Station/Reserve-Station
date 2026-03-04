@@ -124,8 +124,8 @@
               acts: ["Destruction"]
     - type: GuideHelp
       guides:
-      - PortableGenerator
-      - Power
+      - PortableGeneratorReserve # Reserve guidebook
+      - PowerReserve # Reserve guidebook
 
     # Core functionality
     - type: PortableGenerator

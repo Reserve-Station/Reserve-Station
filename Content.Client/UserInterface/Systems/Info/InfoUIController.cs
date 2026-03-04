@@ -16,8 +16,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client.Administration.Managers; // Reserve edit
 using Content.Client.Gameplay;
 using Content.Client.Info;
+using Content.Shared.Administration; // Reserve edit
 using Content.Shared.Guidebook;
 using Content.Shared.Info;
 using Robust.Client.Console;
@@ -30,6 +32,7 @@ namespace Content.Client.UserInterface.Systems.Info;
 
 public sealed class InfoUIController : UIController, IOnStateExited<GameplayState>
 {
+    [Dependency] private readonly IClientAdminManager _adminManager = default!; // Reserve edit
     [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
@@ -38,7 +41,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     private RulesAndInfoWindow? _infoWindow;
 
     [ValidatePrototypeId<GuideEntryPrototype>]
-    private static readonly ProtoId<GuideEntryPrototype> DefaultRuleset = "DefaultRulesetReserve"; //Reserve edit
+    private static readonly ProtoId<GuideEntryPrototype> DefaultRuleset = "DefaultRulesetReserve"; // Reserve edit
 
     public ProtoId<GuideEntryPrototype> RulesEntryId = DefaultRuleset;
 
@@ -55,9 +58,12 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
             "",
             "",
             (_, _, _) =>
-        {
-            OnAcceptPressed();
-        });
+            {
+                if (!_adminManager.HasFlag(AdminFlags.Admin)) // Reserve edit
+                    return;
+
+                OnAcceptPressed();
+            });
     }
 
     private void OnRulesInformationMessage(SendRulesInformationMessage message)
@@ -111,7 +117,8 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
         if (!_prototype.TryIndex(RulesEntryId, out var guideEntryPrototype))
         {
             guideEntryPrototype = _prototype.Index(DefaultRuleset);
-            Log.Error($"Couldn't find the following prototype: {RulesEntryId}. Falling back to {DefaultRuleset}, please check that the server has the rules set up correctly");
+            Log.Error(
+                $"Couldn't find the following prototype: {RulesEntryId}. Falling back to {DefaultRuleset}, please check that the server has the rules set up correctly");
             return guideEntryPrototype;
         }
 

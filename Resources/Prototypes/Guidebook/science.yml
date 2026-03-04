@@ -12,7 +12,6 @@
 
 - type: guideEntry
   id: Science
-  abstract: true #Reserve guidebook
   name: guide-entry-science
   text: "/ServerInfo/Guidebook/Science/Science.xml"
   children:
@@ -24,14 +23,12 @@
 
 - type: guideEntry
   id: Technologies
-  abstract: true #Reserve guidebook
   name: guide-entry-technologies
   text: "/ServerInfo/Guidebook/Science/Technologies.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: AnomalousResearch
-  abstract: true #Reserve guidebook
   name: guide-entry-anomalous-research
   text: "/ServerInfo/Guidebook/Science/AnomalousResearch.xml"
   children:
@@ -40,19 +37,16 @@
 
 - type: guideEntry
   id: ScannersAndVessels
-  abstract: true #Reserve guidebook
   name: guide-entry-scanners-and-vessels
   text: "/ServerInfo/Guidebook/Science/ScannersAndVessels.xml"
 
 - type: guideEntry
   id: APE
-  abstract: true #Reserve guidebook
   name: guide-entry-ape
   text: "/ServerInfo/Guidebook/Science/APE.xml"
 
 - type: guideEntry
   id: Xenoarchaeology
-  abstract: true #Reserve guidebook
   name: guide-entry-xenoarchaeology
   text: "/ServerInfo/Guidebook/Science/Xenoarchaeology.xml"
   children:
@@ -60,7 +54,6 @@
 
 - type: guideEntry
   id: Robotics
-  abstract: true #Reserve guidebook
   name: guide-entry-robotics
   text: "/ServerInfo/Guidebook/Science/Robotics.xml"
   children:
@@ -68,17 +61,10 @@
 
 - type: guideEntry
   id: ArtifactReports
-  abstract: true #Reserve guidebook
   name: guide-entry-artifact-reports
   text: "/ServerInfo/Guidebook/Science/ArtifactReports.xml"
 
 - type: guideEntry
   id: Cyborgs
-  abstract: true #Reserve guidebook
   name: guide-entry-cyborgs
   text: "/ServerInfo/Guidebook/Science/Cyborgs.xml"
-
-- type: guideEntry
-  id: ReverseEngineering # reserve: nyano port
-  name: guide-entry-reverse-engineering
-  text: "/ServerInfo/Guidebook/Science/ReverseEngineering.xml"

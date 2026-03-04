@@ -143,13 +143,13 @@
 [color=#cc74fc]Фиолетовый код[/color] устанавливается из-за вирусных вспышек, когда возникает зомби-инфекция или другая болезнь.
 
 These alerts can be found in entries listed below:
-- [textlink="Зелёный код" link="GreenAlert SOP Reserve"]
-- [textlink="Синий код" link="BlueAlert SOP Reserve"]
-- [textlink="Жёлтый код" link="YellowAlert SOP Reserve"]
-- [textlink="Красный код" link="RedAlert SOP Reserve"]
-- [textlink="Дельта код" link="DeltaAlert SOP Reserve"]
-- [textlink="Код Эпсилон" link="EpsilonAlert SOP Reserve"]
-- [textlink="Гамма код" link="GammaAlert SOP Reserve"]
-- [textlink="Фиолетовый код" link="VioletAlert SOP Reserve"]
+- [textlink="Зелёный код" link="GreenAlertSOPReserve"]
+- [textlink="Синий код" link="BlueAlertSOPReserve"]
+- [textlink="Жёлтый код" link="YellowAlertSOPReserve"]
+- [textlink="Красный код" link="RedAlertSOPReserve"]
+- [textlink="Дельта код" link="DeltaAlertSOPReserve"]
+- [textlink="Код Эпсилон" link="EpsilonAlertSOPReserve"]
+- [textlink="Гамма код" link="GammaAlertSOPReserve"]
+- [textlink="Фиолетовый код" link="VioletAlertSOPReserve"]
 
 </Document>

@@ -28,7 +28,7 @@
       - RipleyCentralControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: RipleyPeripheralsElectronics
@@ -44,7 +44,7 @@
       - RipleyPeripheralsControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 # H.O.N.K.
 
@@ -80,7 +80,7 @@
       - HonkerPeripheralsControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: HonkerTargetingElectronics
@@ -96,7 +96,7 @@
       - HonkerTargetingControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 # HAMTR
 
@@ -116,7 +116,7 @@
       - HamtrCentralControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: HamtrPeripheralsElectronics
@@ -132,4 +132,4 @@
       - HamtrPeripheralsControlModule
     - type: GuideHelp
       guides:
-      - Robotics
+      - RoboticsReserve # Reserve guidebook

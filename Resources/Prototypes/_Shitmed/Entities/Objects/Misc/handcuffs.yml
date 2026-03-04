@@ -24,6 +24,6 @@
     state: handcuff
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
   - type: UseDelay
     delay: 1.5

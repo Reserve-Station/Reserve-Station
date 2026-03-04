@@ -34,8 +34,9 @@
   - JobsReserve
   - SurvivalReserve
   - AntagonistsReserve
-  - MartialArts
+  - MartialArtsReserve
   - GlossaryReserve
+  - SOPReserve
 
 - type: guideEntry
   id: GlossaryReserve

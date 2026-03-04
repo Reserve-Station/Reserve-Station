@@ -143,9 +143,9 @@
   - type: SupermatterImmune # Goobstation
   - type: GuideHelp # For the curious among the brave.
     guides:
-    - TeslaEngine
-    - SingularityTeslaEngine
-    - Power
+    - TeslaEngineReserve # Reserve guidebook
+    - SingularityTeslaEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
 
 - type: entity
   id: TeslaMiniEnergyBall

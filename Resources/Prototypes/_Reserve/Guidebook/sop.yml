@@ -8,444 +8,445 @@
 # SPDX-FileCopyrightText: 2025 echotry <xippl1@mail.ru>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# SOP Reserve Main Directory
+# SOPReserve Main Directory
 - type: guideEntry
-  id: SOP Reserve
+  id: SOPReserve
   name: guide-entry-sop
   text: "/ServerInfo/_Reserve/Guidebook/SoP/SoP.xml"
   children:
-  - Jobs SOP Reserve
-  - Legal SOP Reserve
-  - StandardProcedures SOP Reserve
+  - JobsSOPReserve
+  - LegalSOPReserve
+  - StandardProceduresSOPReserve
 
 # Alert Levels Main Directory
 - type: guideEntry
-  id: Alert Levels Reserve
+  id: AlertLevelsReserve
   name: guide-entry-sop-alert-levels
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/AlertLevelsSOP.xml"
   priority: 0
   children:
-  - GreenAlert SOP Reserve
-  - BlueAlert SOP Reserve
-  - YellowAlert SOP Reserve
-  - RedAlert SOP Reserve
-  - DeltaAlert SOP Reserve
-  - EpsilonAlert SOP Reserve
-  - GammaAlert SOP Reserve
-  - VioletAlert SOP Reserve
-  - OmicronAlert SOP Reserve
+  - GreenAlertSOPReserve
+  - BlueAlertSOPReserve
+  - YellowAlertSOPReserve
+  - RedAlertSOPReserve
+  - DeltaAlertSOPReserve
+  - EpsilonAlertSOPReserve
+  - GammaAlertSOPReserve
+  - VioletAlertSOPReserve
+  - OmicronAlertSOPReserve
 
 # Emergencies Main Directory
 - type: guideEntry
-  id: Emergencies SOP Reserve
+  id: EmergenciesSOPReserve
   name: guide-entry-sop-emergencies
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/Emergencies.xml"
   priority: 1
   children:
-  - ConfirmedRevs SOP Reserve
-  - ContainmentFail SOP Reserve
-  - FireGasSpill SOP Reserve
-  - MeteorStorm SOP Reserve
-  - SMDelam SOP Reserve
-  - StationDamage SOP Reserve
-  - WarDeclaration SOP Reserve
-  - Zombie SOP Reserve
-  - EmergencyResponseTeam SOP Reserve
+  - ConfirmedRevsSOPReserve
+  - ContainmentFailSOPReserve
+  - FireGasSpillSOPReserve
+  - MeteorStormSOPReserve
+  - SMDelamSOPReserve
+  - StationDamageSOPReserve
+  - WarDeclarationSOPReserve
+  - ZombieSOPReserve
+  - EmergencyResponseTeamSOPReserve
 
 # Standard Procedures and Legal Main Directories
 - type: guideEntry
-  id: StandardProcedures SOP Reserve
+  id: StandardProceduresSOPReserve
   name: guide-entry-sop-standards
   text: "/ServerInfo/_Reserve/Guidebook/SoP/StandardProcedures/StandardProceduresSOP.xml"
   children:
-  - Alert Levels Reserve
-  - Emergencies SOP Reserve
-  - Demoting SOP Reserve
-  - EarlyEvacuation SOP Reserve
-  - Hiring SOP Reserve
-  - Succession Reserve
+  - AlertLevelsReserve
+  - EmergenciesSOPReserve
+  - DemotingSOPReserve
+  - EarlyEvacuationSOPReserve
+  - HiringSOPReserve
+  - SuccessionReserve
 
 - type: guideEntry
-  id: Legal SOP Reserve
+  id: LegalSOPReserve
   name: guide-entry-sop-legal
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Legal/LegalSOP.xml"
   children:
-  - Execution SOP Reserve
-  - PermaBrig SOP Reserve
-  - Punishments SOP Reserve
-  - Searches SOP Reserve
+  - ExecutionSOPReserve
+  - PermaBrigSOPReserve
+  - PunishmentsSOPReserve
+  - SearchesSOPReserve
 
 # Jobs Main Directory and Subdirectories
 - type: guideEntry
-  id: Jobs SOP Reserve
+  id: JobsSOPReserve
   name: guide-entry-sop-jobs
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/JobsSOP.xml"
   children:
-  - Cargo SOP Reserve
-  - Command SOP Reserve
-  - Engineering SOP Reserve
-  - Medical SOP Reserve
-  - Science SOP Reserve
-  - Security SOP Reserve
-  - Service SOP Reserve
+  - CargoSOPReserve
+  - CommandSOPReserve
+  - EngineeringSOPReserve
+  - MedicalSOPReserve
+  - ScienceSOPReserve
+  - SecuritySOPReserve
+  - ServiceSOPReserve
 
 - type: guideEntry
-  id: Cargo SOP Reserve
+  id: CargoSOPReserve
   name: guide-entry-sop-cargo
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Cargo/CargoSOP.xml"
   children:
-  - CargoTech SOP Reserve
-  - SalvageSpecialist SOP Reserve
+  - CargoTechSOPReserve
+  - SalvageSpecialistSOPReserve
 
 - type: guideEntry
-  id: Command SOP Reserve
+  id: CommandSOPReserve
   name: guide-entry-sop-command
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/CommandSOP.xml"
   children:
-  - NanotrasenRep SOP Reserve
-  - BlueshieldOfficer SOP Reserve
-  - Captain SOP Reserve
-  - HeadOfPersonnel SOP Reserve
-  - HeadOfSecurity SOP Reserve
-  - ResearchDirector SOP Reserve
-  - ChiefMedicalOfficer SOP Reserve
-  - ChiefEngineer SOP Reserve
-  - Quartermaster SOP Reserve
+  - NanotrasenRepSOPReserve
+  - BlueshieldOfficerSOPReserve
+  - CaptainSOPReserve
+  - HeadOfPersonnelSOPReserve
+  - HeadOfSecuritySOPReserve
+  - ResearchDirectorSOPReserve
+  - ChiefMedicalOfficerSOPReserve
+  - ChiefEngineerSOPReserve
+  - QuartermasterSOPReserve
 
 - type: guideEntry
-  id: Engineering SOP Reserve
+  id: EngineeringSOPReserve
   name: guide-entry-sop-engineering
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Engineering/EngineeringSOP.xml"
   children:
-  - AtmosTech SOP Reserve
-  - StationEngineer SOP Reserve
+  - AtmosTechSOPReserve
+  - StationEngineerSOPReserve
 
 - type: guideEntry
-  id: Medical SOP Reserve
+  id: MedicalSOPReserve
   name: guide-entry-sop-medical
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Medical/MedicalSOP.xml"
   children:
-  - DoctorIntern SOP Reserve
-  - Chemist SOP Reserve
+  - DoctorInternSOPReserve
+  - ChemistSOPReserve
 
 - type: guideEntry
-  id: Science SOP Reserve
+  id: ScienceSOPReserve
   name: guide-entry-sop-science
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Science/ScienceSOP.xml"
   children:
-  - Scientist SOP Reserve
-  - Roboticist SOP Reserve
+  - ScientistSOPReserve
+  - RoboticistSOPReserve
 
 - type: guideEntry
-  id: Security SOP Reserve
+  id: SecuritySOPReserve
   name: guide-entry-sop-security
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Security/SecuritySOP.xml"
   children:
-  - Warden SOP Reserve
-  - OfficerCadet SOP Reserve
-  - Detective SOP Reserve
+  - WardenSOPReserve
+  - OfficerCadetSOPReserve
+  - DetectiveSOPReserve
+  - BrigmedicSOPReserve
 
 - type: guideEntry
-  id: Service SOP Reserve
+  id: ServiceSOPReserve
   name: guide-entry-sop-service
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Service/ServiceSOP.xml"
   children:
-  - Bartender SOP Reserve
-  - Botanist SOP Reserve
-  - Chef SOP Reserve
-  - Clown SOP Reserve
-  - Janitor SOP Reserve
-  - Librarian SOP Reserve
-  - Mime SOP Reserve
-  - Reporter SOP Reserve
+  - BartenderSOPReserve
+  - BotanistSOPReserve
+  - ChefSOPReserve
+  - ClownSOPReserve
+  - JanitorSOPReserve
+  - LibrarianSOPReserve
+  - MimeSOPReserve
+  - ReporterSOPReserve
 
-# Alert Levels SOP Entries
+# Alert LevelsSOPEntries
 - type: guideEntry
-  id: GreenAlert SOP Reserve
+  id: GreenAlertSOPReserve
   name: guide-entry-sop-greenalert
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/GreenAlertSOP.xml"
 
 - type: guideEntry
-  id: BlueAlert SOP Reserve
+  id: BlueAlertSOPReserve
   name: guide-entry-sop-bluealert
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/BlueAlertSOP.xml"
 
 - type: guideEntry
-  id: YellowAlert SOP Reserve
+  id: YellowAlertSOPReserve
   name: guide-entry-sop-yellowalert
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/YellowAlertSOP.xml"
 
 - type: guideEntry
-  id: RedAlert SOP Reserve
+  id: RedAlertSOPReserve
   name: guide-entry-sop-redalert
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/RedAlertSOP.xml"
 
 - type: guideEntry
-  id: DeltaAlert SOP Reserve
+  id: DeltaAlertSOPReserve
   name: guide-entry-sop-deltaalert
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/DeltaAlertSOP.xml"
 
 - type: guideEntry
-  id: EpsilonAlert SOP Reserve
+  id: EpsilonAlertSOPReserve
   name: guide-entry-sop-epsilonalert
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/EpsilonAlertSOP.xml"
 
 - type: guideEntry
-  id: GammaAlert SOP Reserve
+  id: GammaAlertSOPReserve
   name: guide-entry-sop-gammaalert
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/GammaAlertSOP.xml"
 
 - type: guideEntry
-  id: VioletAlert SOP Reserve
+  id: VioletAlertSOPReserve
   name: guide-entry-sop-violetalert
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/VioletAlertSOP.xml"
 
 - type: guideEntry
-  id: OmicronAlert SOP Reserve
+  id: OmicronAlertSOPReserve
   name: guide-entry-sop-omicronalert
   text: "/ServerInfo/_Reserve/Guidebook/SoP/AlertLevels/OmicronAlertSOP.xml"
 
-# Basic SOP Entries
+# BasicSOPEntries
 - type: guideEntry
-  id: Demoting SOP Reserve
+  id: DemotingSOPReserve
   name: guide-entry-sop-demoting
   text: "/ServerInfo/_Reserve/Guidebook/SoP/StandardProcedures/FiringDemotion.xml"
   priority: 10
 
 - type: guideEntry
-  id: EarlyEvacuation SOP Reserve
+  id: EarlyEvacuationSOPReserve
   name: guide-entry-sop-evacuation
   text: "/ServerInfo/_Reserve/Guidebook/SoP/StandardProcedures/EarlyEvacuationSOP.xml"
   priority: 10
 
 - type: guideEntry
-  id: Hiring SOP Reserve
+  id: HiringSOPReserve
   name: guide-entry-sop-hiring
   text: "/ServerInfo/_Reserve/Guidebook/SoP/StandardProcedures/HiringTransfers.xml"
   priority: 10
 
 - type: guideEntry
-  id: Succession Reserve
+  id: SuccessionReserve
   name: guide-entry-sop-succession # Is named as "Chain of Command" in game.
   text: "/ServerInfo/_Reserve/Guidebook/SoP/StandardProcedures/CommandSuccession.xml"
   priority: 10
 
-# Emergency SOP Entries
+# EmergencySOPEntries
 - type: guideEntry
-  id: ConfirmedRevs SOP Reserve
+  id: ConfirmedRevsSOPReserve
   name: guide-entry-sop-confirmedrevs
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/ConfirmedRevolutions.xml"
 
 - type: guideEntry
-  id: ContainmentFail SOP Reserve
+  id: ContainmentFailSOPReserve
   name: guide-entry-sop-containmentfail
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/ContainmentFail.xml"
 
 - type: guideEntry
-  id: FireGasSpill SOP Reserve
+  id: FireGasSpillSOPReserve
   name: guide-entry-sop-firegasspill
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/FireGasSpill.xml"
 
 - type: guideEntry
-  id: MeteorStorm SOP Reserve
+  id: MeteorStormSOPReserve
   name: guide-entry-sop-meteorstorm
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/MeteorStorm.xml"
 
 - type: guideEntry
-  id: StationDamage SOP Reserve
+  id: StationDamageSOPReserve
   name: guide-entry-sop-stationdamage
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/StationDamage.xml"
 
 - type: guideEntry
-  id: SMDelam SOP Reserve
+  id: SMDelamSOPReserve
   name: guide-entry-sop-supermatterdelam
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/SupermatterDelam.xml"
 
 - type: guideEntry
-  id: WarDeclaration SOP Reserve
+  id: WarDeclarationSOPReserve
   name: guide-entry-sop-wardeclaration
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/WarDeclaration.xml"
 
 - type: guideEntry
-  id: Zombie SOP Reserve
+  id: ZombieSOPReserve
   name: guide-entry-sop-zombieoutbreak
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/ZombieOutbreak.xml"
 
 - type: guideEntry
-  id: EmergencyResponseTeam SOP Reserve
+  id: EmergencyResponseTeamSOPReserve
   name: guide-entry-sop-emergencyresponseteam
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Emergencies/EmergencyResponseTeam.xml"
 
-# Legal SOP Entries
+# LegalSOPEntries
 - type: guideEntry
-  id: Execution SOP Reserve
+  id: ExecutionSOPReserve
   name: guide-entry-sop-execution
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Legal/ExecutionSOP.xml"
 
 - type: guideEntry
-  id: PermaBrig SOP Reserve
+  id: PermaBrigSOPReserve
   name: guide-entry-sop-permabrig
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Legal/PermaBrigSOP.xml"
 
 - type: guideEntry
-  id: Punishments SOP Reserve
+  id: PunishmentsSOPReserve
   name: guide-entry-sop-punishments
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Legal/PunishmentsSOP.xml"
 
 - type: guideEntry
-  id: Searches SOP Reserve
+  id: SearchesSOPReserve
   name: guide-entry-sop-searches
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Legal/SearchesSOP.xml"
 
-# Cargo SOP Entries
+# CargoSOPEntries
 - type: guideEntry
-  id: CargoTech SOP Reserve
+  id: CargoTechSOPReserve
   name: guide-entry-sop-cargotech
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Cargo/CargoTechSOP.xml"
 
 - type: guideEntry
-  id: SalvageSpecialist SOP Reserve
+  id: SalvageSpecialistSOPReserve
   name: guide-entry-sop-salvage
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Cargo/SalvageSpecialistSOP.xml"
 
-# Command SOP Entries
+# CommandSOPEntries
 - type: guideEntry
-  id: NanotrasenRep SOP Reserve
+  id: NanotrasenRepSOPReserve
   name: guide-entry-sop-ntr
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/NanotrasenRepSOP.xml"
 
 - type: guideEntry
-  id: BlueshieldOfficer SOP Reserve
+  id: BlueshieldOfficerSOPReserve
   name: guide-entry-sop-bso
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/BlueshieldOfficerSOP.xml"
 
 - type: guideEntry
-  id: Captain SOP Reserve
+  id: CaptainSOPReserve
   name: guide-entry-sop-captain
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/CaptainSOP.xml"
 
 - type: guideEntry
-  id: HeadOfPersonnel SOP Reserve
+  id: HeadOfPersonnelSOPReserve
   name: guide-entry-sop-hop
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/HeadOfPersonnelSOP.xml"
 
 - type: guideEntry
-  id: HeadOfSecurity SOP Reserve
+  id: HeadOfSecuritySOPReserve
   name: guide-entry-sop-hos
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/HeadOfSecuritySOP.xml"
 
 - type: guideEntry
-  id: ResearchDirector SOP Reserve
+  id: ResearchDirectorSOPReserve
   name: guide-entry-sop-rd
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/ResearchDirectorSOP.xml"
 
 - type: guideEntry
-  id: ChiefMedicalOfficer SOP Reserve
+  id: ChiefMedicalOfficerSOPReserve
   name: guide-entry-sop-cmo
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/ChiefMedicalOfficerSOP.xml"
 
 - type: guideEntry
-  id: ChiefEngineer SOP Reserve
+  id: ChiefEngineerSOPReserve
   name: guide-entry-sop-ce
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/ChiefEngineerSOP.xml"
 
 - type: guideEntry
-  id: Quartermaster SOP Reserve
+  id: QuartermasterSOPReserve
   name: guide-entry-sop-qm
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Command/QuartermasterSOP.xml"
 
-# Engineering SOP Entries
+# EngineeringSOPEntries
 - type: guideEntry
-  id: AtmosTech SOP Reserve
+  id: AtmosTechSOPReserve
   name: guide-entry-sop-atmostech
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Engineering/AtmosTechSOP.xml"
 
 - type: guideEntry
-  id: StationEngineer SOP Reserve
+  id: StationEngineerSOPReserve
   name: guide-entry-sop-stationengineer
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Engineering/StationEngineerSOP.xml"
 
-# Medical SOP Entries
+# MedicalSOPEntries
 - type: guideEntry
-  id: DoctorIntern SOP Reserve
+  id: DoctorInternSOPReserve
   name: guide-entry-sop-doctorintern
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Medical/DoctorInternSOP.xml"
 
 - type: guideEntry
-  id: Chemist SOP Reserve
+  id: ChemistSOPReserve
   name: guide-entry-sop-chemist
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Medical/ChemistSOP.xml"
 
-# Science SOP Entries
+# ScienceSOPEntries
 - type: guideEntry
-  id: Scientist SOP Reserve
+  id: ScientistSOPReserve
   name: guide-entry-sop-scientist
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Science/ScientistSOP.xml"
 
 - type: guideEntry
-  id: Roboticist SOP Reserve
+  id: RoboticistSOPReserve
   name: guide-entry-sop-roboticist
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Science/RoboticistSOP.xml"
 
-# Security SOP Entries
+# SecuritySOPEntries
 
 - type: guideEntry
-  id: Brigmedic SOP Reserve
+  id: BrigmedicSOPReserve
   name: guide-entry-sop-brigmedic
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Security/BrigmedicSOP.xml"
 
 - type: guideEntry
-  id: Detective SOP Reserve
+  id: DetectiveSOPReserve
   name: guide-entry-sop-detective
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Security/DetectiveSOP.xml"
 
 - type: guideEntry
-  id: OfficerCadet SOP Reserve
+  id: OfficerCadetSOPReserve
   name: guide-entry-sop-officercadet
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Security/OfficerCadetSOP.xml"
 
 - type: guideEntry
-  id: Warden SOP Reserve
+  id: WardenSOPReserve
   name: guide-entry-sop-warden
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Security/WardenSOP.xml"
 
-# Service SOP Entries
+# ServiceSOPEntries
 - type: guideEntry
-  id: Bartender SOP Reserve
+  id: BartenderSOPReserve
   name: guide-entry-sop-bartender
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Service/BartenderSOP.xml"
 
 - type: guideEntry
-  id: Botanist SOP Reserve
+  id: BotanistSOPReserve
   name: guide-entry-sop-botanist
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Service/BotanistSOP.xml"
 
 - type: guideEntry
-  id: Chef SOP Reserve
+  id: ChefSOPReserve
   name: guide-entry-sop-chef
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Service/ChefSOP.xml"
 
 - type: guideEntry
-  id: Clown SOP Reserve
+  id: ClownSOPReserve
   name: guide-entry-sop-clown
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Service/ClownSOP.xml"
 
 - type: guideEntry
-  id: Janitor SOP Reserve
+  id: JanitorSOPReserve
   name: guide-entry-sop-janitor
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Service/JanitorSOP.xml"
 
 - type: guideEntry
-  id: Librarian SOP Reserve
+  id: LibrarianSOPReserve
   name: guide-entry-sop-librarian
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Service/LibrarianSOP.xml"
 
 - type: guideEntry
-  id: Mime SOP Reserve
+  id: MimeSOPReserve
   name: guide-entry-sop-mime
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Service/MimeSOP.xml"
 
 - type: guideEntry
-  id: Reporter SOP Reserve
+  id: ReporterSOPReserve
   name: guide-entry-sop-reporter
   text: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Service/ReporterSOP.xml"

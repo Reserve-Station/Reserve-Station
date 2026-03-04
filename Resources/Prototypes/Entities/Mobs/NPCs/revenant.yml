@@ -127,7 +127,6 @@
     - state: active
   - type: StatusEffects
     allowed:
-    - Stun
     - Corporeal
     - EssenceRegen # Imp
   - type: Hands # Imp
@@ -222,5 +221,9 @@
     ignoreInsulation: true
     electrocutionChance: 0.25
     #reserve revenant buff end
+  - type: Tag
+    tags:
+    - SlowImmune
+    - KnockdownImmune
   - type: WeakToHoly # Goobstation Shitchap
     alwaysTakeHoly: true

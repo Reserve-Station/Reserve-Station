@@ -113,7 +113,7 @@
     - WhitelistChameleon
     - PlasmamanSafe
   - type: GuideHelp # While the playerbase is getting introduced to Plasmamen, add their guidebook here
-    guides: [ Plasmaman ]
+    guides: [ PlasmamanReserve ] # Reserve guidebook
   - type: AllowSuitStorage # Goobstation - plasmamen can use the envirosuit as gasholder
     whitelist:
       tags:

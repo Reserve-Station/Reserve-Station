@@ -35,7 +35,6 @@
 
 - type: guideEntry
   id: Antagonists
-  abstract: true #Reserve guidebook
   name: guide-entry-antagonists
   text: "/ServerInfo/Guidebook/Antagonist/Antagonists.xml"
   children:
@@ -64,42 +63,35 @@
 
 - type: guideEntry
   id: Traitors
-  abstract: true #Reserve guidebook
   name: guide-entry-traitors
   text: "/ServerInfo/Guidebook/Antagonist/Traitors.xml"
 
 - type: guideEntry
   id: NuclearOperatives
-  abstract: true #Reserve guidebook
   name: guide-entry-nuclear-operatives
   text: "/ServerInfo/Guidebook/Antagonist/Nuclear Operatives.xml"
 
 - type: guideEntry
   id: Zombies
-  abstract: true #Reserve guidebook
   name: guide-entry-zombies
   text: "/ServerInfo/Guidebook/Antagonist/Zombies.xml"
 
 - type: guideEntry
   id: Revolutionaries
-  abstract: true #Reserve guidebook
   name: guide-entry-revolutionaries
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Revolutionaries.xml" # goobstation
 
 - type: guideEntry
   id: MinorAntagonists
-  abstract: true #Reserve guidebook
   name: guide-entry-minor-antagonists
   text: "/ServerInfo/Guidebook/Antagonist/MinorAntagonists.xml"
 
 - type: guideEntry
   id: SpaceNinja
-  abstract: true #Reserve guidebook
   name: guide-entry-space-ninja
   text: "/ServerInfo/Guidebook/Antagonist/SpaceNinja.xml"
 
 - type: guideEntry
   id: Thieves
-  abstract: true #Reserve guidebook
   name: guide-entry-thieves
   text: "/ServerInfo/Guidebook/Antagonist/Thieves.xml"

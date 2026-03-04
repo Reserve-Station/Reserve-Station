@@ -7,6 +7,5 @@
 
 - type: guideEntry
   id: Heretics
-  abstract: true #Reserve guidebook
   name: guide-entry-heretics
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Heretics.xml"

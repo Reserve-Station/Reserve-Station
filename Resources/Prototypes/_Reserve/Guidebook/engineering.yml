@@ -148,6 +148,7 @@
   - SignalValveReserve
   - PneumaticValveReserve
   - PassiveGateReserve
+  - PressureRegulatorReserve
 
 - type: guideEntry
   id: ManualValveReserve
@@ -168,6 +169,11 @@
   id: PassiveGateReserve
   name: guide-entry-passivegate
   text: "/ServerInfo/_Reserve/Guidebook/Engineering/PassiveGate.xml"
+
+- type: guideEntry
+  id: PressureRegulatorReserve
+  name: guide-entry-ressureregulator
+  text: "/ServerInfo/_Reserve/Guidebook/Engineering/PressureRegulator.xml"
 
 - type: guideEntry
   id: MixingAndFilteringReserve
@@ -388,3 +394,8 @@
   id: AutomationReserve
   name: guide-entry-automation
   text: "/ServerInfo/_Reserve/Guidebook/Engineering/Automation.xml"
+
+- type: guideEntry
+  id: PlumbingReserve
+  name: guide-entry-plumbing
+  text: "/ServerInfo/_Reserve/Guidebook/Engineering/Plumbing.xml"

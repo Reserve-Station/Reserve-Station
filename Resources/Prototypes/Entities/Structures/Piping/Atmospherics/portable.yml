@@ -116,7 +116,7 @@
             acts: [ "Destruction" ]
   - type: GuideHelp
     guides:
-    - PortableScrubber
+    - PortableScrubberReserve # Reserve guidebook
 
 - type: entity
   id: SpaceHeater
@@ -204,7 +204,7 @@
             acts: [ "Destruction" ]
   - type: GuideHelp
     guides:
-    - Thermomachines
+    - ThermomachinesReserve # Reserve guidebook
 
 - type: entity
   parent: SpaceHeater

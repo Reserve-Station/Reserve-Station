@@ -153,8 +153,8 @@
   # Guidebook
   - type: GuideHelp
     guides:
-    - VoltageNetworks
-    - Power
+    - VoltageNetworksReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
 
   # Ambient sound
   - type: AmbientOnPowered

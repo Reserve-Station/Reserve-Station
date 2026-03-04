@@ -10,6 +10,7 @@
       silent: true
       consumesCharges: 1
       applyFlashEffect: true
+      bypassMuted: true
     - type: LimitedCharges
       maxCharges: 5
     - type: Sprite
@@ -45,8 +46,8 @@
             True: { state: burnt }
     - type: GuideHelp
       guides:
-        - Security
-        - Antagonists
+        - SecurityReserve # Reserve guidebook
+        - AntagonistsReserve # Reserve guidebook
     - type: Construction
       graph: RevFlash
       node: revFlash

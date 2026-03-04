@@ -64,4 +64,4 @@
     receiveFrequencyId: BasicDevice
   - type: GuideHelp
     guides:
-    - Automation
+    - AutomationReserve # Reserve guidebook

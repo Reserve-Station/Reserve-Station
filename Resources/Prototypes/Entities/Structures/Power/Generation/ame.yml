@@ -156,8 +156,8 @@
       fuelSlot: !type:ContainerSlot
   - type: GuideHelp
     guides:
-    - AME
-    - Power
+    - AMEReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
   - type: Tag
     tags:
     - DroneUsable # Goobstation
@@ -270,8 +270,8 @@
     node: ameShielding
   - type: GuideHelp
     guides:
-    - AME
-    - Power
+    - AMEReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
   - type: Electrified
     onHandInteract: false
     onInteractUsing: false

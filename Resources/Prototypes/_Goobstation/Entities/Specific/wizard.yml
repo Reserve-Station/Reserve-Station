@@ -16,4 +16,4 @@
   - type: GrantHellRip
   - type: GuideHelp
     guides:
-    - HellRip
+    - HellRipReserve # Reserve guidebook

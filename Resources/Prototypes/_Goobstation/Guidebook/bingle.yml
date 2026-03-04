@@ -10,6 +10,5 @@
 
 - type: guideEntry
   id: Bingle
-  abstract: true #Reserve guidebook
   name: guide-entry-bingle
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Bingle.xml"

@@ -26,7 +26,7 @@
   - type: MechEquipment
   - type: GuideHelp
     guides:
-    - Robotics
+    - RoboticsReserve # Reserve guidebook
 
 - type: entity
   id: MechEquipmentGrabber

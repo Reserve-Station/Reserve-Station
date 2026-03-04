@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: guideEntry
+  id: SlasherReserve
+  name: "Мясник" # why no fucking .ftl chuds
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/Slasher.xml"

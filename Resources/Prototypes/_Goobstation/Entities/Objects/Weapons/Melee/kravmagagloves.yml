@@ -27,4 +27,4 @@
     - type: KravMaga
   - type: GuideHelp
     guides:
-    - KravMaga
+    - KravMagaReserve # Reserve guidebook

@@ -120,8 +120,8 @@
       Glass: 25
   - type: GuideHelp
     guides:
-    - Cyborgs
-    - Robotics
+    - CyborgsReserve # Reserve guidebook
+    - RoboticsReserve # Reserve guidebook
   - type: Damageable # Shitmed
     damageModifierSet: Silicon
 

@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: guideEntry
+  id: XenomorphsReserve
+  name: guide-entry-xenomorph
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/Xenomorphs.xml"
+  children:
+  - XenomorphClassesReserve
+  - XenomorphPlayGuideReserve
+
+- type: guideEntry
+  id: XenomorphClassesReserve
+  name: guide-entry-xenomorph-classes
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/XenomorphClasses.xml"
+
+- type: guideEntry
+  id: XenomorphPlayGuideReserve
+  name: guide-entry-xenomorph-how-to-play
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/XenomorphPlayGuide.xml"

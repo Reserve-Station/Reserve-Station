@@ -186,7 +186,7 @@
       path: /Audio/Ambience/Objects/flowing_water_open.ogg
   - type: GuideHelp
     guides:
-    - Botany
+    - BotanyReserve # Reserve guidebook
     - ChemicalsReserve # Reserve edit
 
 - type: entity

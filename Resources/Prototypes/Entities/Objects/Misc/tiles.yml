@@ -159,7 +159,7 @@
         Blunt: 20
   - type: GuideHelp
     guides:
-    - ExpandingRepairingStation
+    - ExpandingRepairingStationReserve # Reserve guidebook
   - type: Extractable # Goobstation - Tilenol
     juiceSolution:
       reagents:

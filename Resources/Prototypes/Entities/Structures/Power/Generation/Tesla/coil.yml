@@ -129,8 +129,8 @@
     board: TeslaCoilCircuitboard # Goobstation
   - type: GuideHelp
     guides:
-    - TeslaEngine
-    - SingularityTeslaEngine
+    - TeslaEngineReserve # Reserve guidebook
+    - SingularityTeslaEngineReserve # Reserve guidebook
 
 - type: entity
   id: TeslaGroundingRod
@@ -224,5 +224,5 @@
                 max: 4
   - type: GuideHelp
     guides:
-    - TeslaEngine
-    - SingularityTeslaEngine
+    - TeslaEngineReserve # Reserve guidebook
+    - SingularityTeslaEngineReserve # Reserve guidebook

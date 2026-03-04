@@ -201,8 +201,8 @@
     sprite: Objects/Weapons/Melee/kitchen_knife.rsi
   - type: GuideHelp
     guides:
-    - Chef
-    - FoodRecipes
+    - ChefReserve # Reserve guidebook
+    - FoodRecipesReserve # Reserve guidebook
   - type: EmbeddableProjectile # Goobstation
     sound: /Audio/Weapons/star_hit.ogg
     offset: -0.15,0.0
@@ -236,8 +236,8 @@
     sprite: Objects/Weapons/Melee/cleaver.rsi
   - type: GuideHelp
     guides:
-    - Chef
-    - FoodRecipes
+    - ChefReserve # Reserve guidebook
+    - FoodRecipesReserve # Reserve guidebook
   - type: Scalpel # Shitmed
     speed: 0.3
   - type: BoneSaw # Shitmed: Better than tg 25% because its a cleaver its meant to hack off limbs
@@ -374,7 +374,7 @@
     sprite: Clothing/Head/Hats/brownflatcap.rsi
   - type: Clothing
     sprite: Clothing/Head/Hats/brownflatcap.rsi
-  
+
 - type: entity
   name: shiv
   parent: [BaseKnife, BaseMinorContraband]

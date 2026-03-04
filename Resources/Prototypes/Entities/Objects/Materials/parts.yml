@@ -106,7 +106,7 @@
           Quantity: 0.5
   - type: GuideHelp
     guides:
-    - ExpandingRepairingStation
+    - ExpandingRepairingStationReserve # Reserve guidebook
 
 - type: entity
   parent: PartRodMetal

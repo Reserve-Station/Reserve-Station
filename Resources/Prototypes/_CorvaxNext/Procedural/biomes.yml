@@ -99,3 +99,16 @@
         - FloorCave
       entities:
         - WallRockBasaltTin
+
+- type: biomeTemplate
+  id: JustWater
+  layers:
+    - !type:BiomeTileLayer
+      threshold: -1.0
+      tile: FloorCaveDrought
+    - !type:BiomeEntityLayer
+      allowedTiles:
+        - FloorCaveDrought
+      threshold: -1.0
+      entities:
+        - FloorWaterEntity

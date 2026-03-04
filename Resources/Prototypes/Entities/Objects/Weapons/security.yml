@@ -238,7 +238,7 @@
       Plastic: 75
   - type: GuideHelp
     guides:
-    - Security
+    - SecurityReserve # Reserve guidebook
   - type: MartialArtBlocked # Goobstation - Martial Arts
     form: CorporateJudo # Goobstation - Martial Arts
 
@@ -277,8 +277,8 @@
     price: 80
   - type: GuideHelp
     guides:
-    - Security
-    - Antagonists
+    - SecurityReserve # Reserve guidebook
+    - AntagonistsReserve # Reserve guidebook
 
 - type: entity
   name: flash
@@ -336,8 +336,8 @@
             False: {visible: false}
     - type: GuideHelp
       guides:
-      - Security
-      - Antagonists
+      - SecurityReserve # Reserve guidebook
+      - AntagonistsReserve # Reserve guidebook
     - type: Tag
       tags:
       - Flash
@@ -358,6 +358,7 @@
   description: An ultrabright flashbulb with a proximity trigger, useful for making an area security-only.
   components:
     - type: EmitSoundOnTrigger
+      predicted: true
       sound:
         path: /Audio/Weapons/flash.ogg
     - type: FlashOnTrigger
@@ -394,5 +395,5 @@
       enabled: true
     - type: GuideHelp
       guides:
-      - Security
-      - Antagonists
+      - SecurityReserve # Reserve guidebook
+      - AntagonistsReserve # Reserve guidebook

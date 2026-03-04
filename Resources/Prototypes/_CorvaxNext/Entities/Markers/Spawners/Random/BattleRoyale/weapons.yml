@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Pistols
 - type: entityTable
   id: RoyalePistolTable
@@ -12,53 +17,79 @@
       - id: WeaponFlareGun
       - id: WeaponPistolCHIMPUpgraded
       - id: WeaponRevolverPirate
+      - id: WeaponFlareGunSecurity
+      - id: WeaponMakeshiftLaser
+      - id: WeaponProtoKineticPistol
     # Tier 1 - Common (25%)
     - !type:GroupSelector
       weight: 25
       children:
       - id: WeaponPistolViper
       - id: WeaponPlasmaCutter
-      - id: WeaponPistolCobra
-      - id: WeaponProtoKineticPistol
+      - id: WeaponPlasmaRifle
+      - id: WeaponDisabler
       - id: WeaponPistolMk58
+      - id: WeaponPistolMk58
+      - id: WeaponPistolMk58 #:troll:
     # Tier 2 - Rare (20%)
     - !type:GroupSelector
       weight: 20
       children:
-      - id: WeaponLaserSvalinn
-      - id: WeaponMakeshiftLaser
-      - id: WeaponDisabler
+      - id: WeaponRevolverInspector
       - id: WeaponRevolverInspector
       - id: WeaponRevolverPython
+      - id: WeaponPistolCobra
+      - id: WeaponDisablerSMG
+      - id: WeaponDisablerAdvanced
+      - id: WeaponLaserSvalinn
+      - id: WeaponLaserSvalinn
+      - id: WeaponLaserSvalinn #too lazy to make GroupSelector for this. No need in that ig
     # Tier 3 - Very Rare (10%)
     - !type:GroupSelector
       weight: 10
       children:
+      - id: WeaponPistolAnaconda
       - id: WeaponLaserGun
       - id: WeaponRevolverDeckard
-      - id: WeaponRevolverMatebaAP
-      - id: WeaponRevolverPythonAP
+      - id: WeaponRevolverDeckard
+      - id: WeaponRevolverMateba
+      - id: WeaponRevolverPython
       - id: WeaponSubMachineGunDrozd
+      - !type:AllSelector
+        children:
+        - id: WeaponPistolDualetta
+        - id: WeaponPistolDualetta
+      - id: WeaponPistolN1984
+      - id: WeaponPistolEchis
+      - id: WeaponSubMachineGunWt550
+      - id: WeaponEnergyRevolver
+      - id: WeaponEnergyRevolver
+      - id: WeaponEnergyRevolver
+      - id: WeaponEnergyGunMultiphase
     # Tier 4 - Epic (5%)
     - !type:GroupSelector
       weight: 5
       children:
       - id: WeaponAntiqueLaser
       - id: WeaponPulsePistol
-      - id: WeaponPistolEchis
       - id: WeaponAdvancedLaser
       - id: WeaponSubMachineGunC20r
-      - id: WeaponSubMachineGunWt550
+      - id: WeaponSubMachineGunAtreides
+      - id: WeaponAlien
+      - id: WeaponEnergyGunLawbringer
+      - id: WeaponSubmachineGunMP5
+      - id: WeaponHeadOfSecuritySMG
+      - id: WeaponSubMachineSmart
     # Tier 5 - Fun (2%)
     - !type:GroupSelector
       weight: 2
       children:
-      - id: WeaponWaterPistol
-      - id: RevolverCapGun
+      - id: WeaponTaser
+      - id: WeaponImprovisedPneumaticCannonGun
       - id: RevolverCapGunFake
-      - id: WeaponDisablerPractice
-      - id: WeaponSubMachineGunAtreides
+      - id: WeaponPistolCentcommAgent #just a .45 gun
 
+#So, PUBG parity - ammo spawns as few mags + ammo box. I may make another sub-table for it, but IG this is also fine.
 - type: entityTable
   id: RoyalePistolAmmoTable
   table: !type:GroupSelector
@@ -69,48 +100,136 @@
       children:
       - id: CartridgeAntiMateriel
       - id: ShellShotgunFlare
-      - id: ShellShotgunImprovised
-      - id: SpeedLoaderCap
+      - !type:AllSelector
+        children:
+        - id: ShellShotgunImprovised
+        - id: ShellShotgunImprovised
+        - id: ShellShotgunImprovised
+        - id: ShellShotgunImprovised
+      - id: MagazineShotgunBeanbag
       - id: PowerCellSmall
     # Tier 1 - Common (25%)
     - !type:GroupSelector
       weight: 25
       children:
-      - id: MagazinePistol
-      - id: MagazinePistolHighCapacity
-      - id: MagazinePistolCaselessRifle
-      - id: SpeedLoaderPistol
-      - id: PowerCellSmall
+      - !type:AllSelector
+        children:
+        - id: MagazinePistol
+        - id: MagazinePistolEmpty
+        - id: MagazineBoxPistol
+      - !type:AllSelector
+        children:
+        - id: MagazinePistolHighCapacity
+        - id: MagazinePistolHighCapacityEmpty
+        - id: MagazineBoxPistol
+      - !type:AllSelector
+        children:
+        - id: SpeedLoaderMagnum
+        - id: SpeedLoaderMagnumEmpty
+        - id: MagazineBoxMagnum
+      - id: BoxShotgunFlare
+      - id: SheetPlasma10 #for plasma guns
+      - id: PowerCellMedium
+      - id: PKAUpgradeRange
     # Tier 2 - Rare (20%)
     - !type:GroupSelector
       weight: 20
       children:
-      - id: MagazineMagnum
-      - id: SpeedLoaderMagnum
-      - id: MagazinePistolPractice
-      - id: MagazinePistolIncendiary
+      - !type:AllSelector
+        children:
+        - id: MagazineMagnum
+        - id: MagazineMagnumEmpty
+        - id: MagazineBoxMagnum
+      - !type:AllSelector
+        children:
+        - id: MagazinePistolCaselessRifle
+        - id: MagazinePistolCaselessRifleEmpty
+        - id: MagazineBoxCaselessRifle
+      - !type:AllSelector
+        children:
+        - id: SpeedLoaderMagnum
+        - id: SpeedLoaderMagnumEmpty
+        - id: MagazineBoxMagnum
+      - !type:AllSelector
+        children:
+        - id: MagazinePistolIncendiary
+        - id: MagazinePistolEmpty
+        - id: MagazineBoxPistol #No shitload of incendiary
+      - id: BoxShotgunSlug #for shitguns
+      - id: EnergySpeedloaderDisabler
       - id: PowerCellHigh
+      - id: PKAUpgradeFireRate
+      - id: PKAUpgradeDamage
     # Tier 3 - Very Rare (10%)
     - !type:GroupSelector
       weight: 10
       children:
-      - id: MagazinePistolUranium
-      - id: SpeedLoaderMagnumAP
-      - id: MagazinePistolSubMachineGun
+      - !type:AllSelector
+        children:
+        - id: MagazinePistolIncendiary
+        - id: MagazinePistolHighCapacityEmpty
+        - id: MagazineBoxPistolIncendiary
+      - !type:AllSelector
+        children:
+        - id: MagazinePistolUranium
+        - id: MagazinePistolEmpty
+        - id: MagazineBoxPistolUranium
+      - !type:AllSelector
+        children:
+        - id: MagazinePistolSubMachineGun
+        - id: MagazinePistolSubMachineGunEmpty
+        - id: MagazineBoxPistol
+      - !type:AllSelector
+        children:
+        - id: MagazinePistolSubMachineGunTopMounted
+        - id: MagazinePistolSubMachineGunTopMountedEmpty
+        - id: MagazineBoxPistol
+      - !type:AllSelector
+        children:
+        - id: SpeedLoaderMagnumIncendiary
+        - id: SpeedLoaderMagnumEmpty
+        - id: MagazineBoxMagnumIncendiary
+      - !type:AllSelector
+        children:
+        - id: MagazinePistolCaselessRifleSAPHE
+        - id: MagazinePistolCaselessRifleSAPHE
+        - id: MagazinePistolCaselessRifleSAPHE
+        - id: MagazinePistolCaselessRifleSAPHE #sadly no box, so here have 4 mags
+      - id: BoxMagazinePistol #4 mags
+      - id: EnergySpeedloaderLethal # auto recharges so only one
       - id: PowerCellHyper
     # Tier 4 - Epic (5%)
     - !type:GroupSelector
       weight: 5
       children:
+      - id: SpeedLoaderMagnumAP
       - id: MagazineMagnumAP
-      - id: MagazinePistolSubMachineGunTopMounted
-      - id: MagazinePistolSubMachineGunIncendiary
+      - !type:AllSelector
+        children:
+        - id: MagazinePistolSubMachineGunIncendiary
+        - id: MagazinePistolSubMachineGunEmpty
+        - id: MagazineBoxPistolIncendiary
+      - id: MagazineCaselessRifle
+      - id: MagazineCaselessRifleShort
+      - id: EnergySpeedloaderPulse # auto recharges so only one
+      - id: MagazineSmart
       - id: PowerCellMicroreactor
+    # Tier 5 - Fun (2%)
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: MagazineBoxCaselessRifle10x24 #bruh - 200 caseless cartriges
+      - !type:AllSelector
+        children:
+        - id: BoxMagazinePistolHighCapacity #shitload of pistol mags. 8 high cap, 8 common
+        - id: BoxMagazinePistolHighCapacity
+        - id: BoxMagazinePistol
+        - id: BoxMagazinePistol
 
 - type: entity
   name: BR Pistol Spawner
   description: BR issue
-  suffix: DO NOT MAP, Battle Royal
+  suffix: DO NOT MAP, Battle Royale
   id: RoyalPistolTableSpawner
   parent: MarkerBase
   components:
@@ -127,7 +246,7 @@
 - type: entity
   name: BR Pistol Ammo Spawner
   description: BR issue
-  suffix: DO NOT MAP, Battle Royal
+  suffix: DO NOT MAP, Battle Royale
   id: RoyalPistolAmmoTableSpawner
   parent: MarkerBase
   components:
@@ -151,11 +270,13 @@
       weight: 15
       children:
       - id: WeaponShotgunImprovisedLoaded
+      - id: WeaponFlareGunSecurity
     # Tier 1 - Common (25%)
     - !type:GroupSelector
       weight: 25
       children:
       - id: WeaponShotgunDoubleBarreled
+      - id: WeaponShotgunBlunderbuss
     # Tier 2 - Rare (20%)
     - !type:GroupSelector
       weight: 20
@@ -172,14 +293,17 @@
     - !type:GroupSelector
       weight: 5
       children:
+      - id: WeaponShotgunAntelope
+      - id: WeaponShotgunBulldogLegallyDistinct #worse bulldog
       - id: WeaponEnergyShotgun
-      - id: WeaponShotgunBulldog
-    # Tier 5 - Fun (2%)
+      - id: WeaponLeverChester
+    # Tier 5 - Extra rare (2%)
     - !type:GroupSelector
       weight: 2
       children:
-      - id: WeaponWaterBlaster
-      - id: WeaponWaterBlasterSuper
+      - id: WeaponHeadOfSecurityShotgun
+      - id: WeaponShotgunBulldog
+      - id: WeaponShotgunCombat
 
 - type: entityTable
   id: RoyaleShotgunAmmoTable
@@ -190,7 +314,7 @@
       weight: 15
       children:
       - id: ShellShotgunImprovised
-      - id: BoxShotgunPractice
+      - id: ShellShotgun
       - id: PowerCellMedium
     # Tier 1 - Common (25%)
     - !type:GroupSelector
@@ -201,33 +325,91 @@
       - id: BoxShotgunSlug
       - id: PowerCellHigh
       - id: BoxShotgunFlare
+      - id: PKAUpgradeRange
     # Tier 2 - Rare (20%)
     - !type:GroupSelector
       weight: 20
       children:
-      - id: MagazineShotgun
-      - id: MagazineShotgunBeanbag
+      - !type:AllSelector
+        children:
+        - id: MagazineShotgun
+        - id: MagazineShotgunEmpty
+        - id: BoxLethalshot
+      - !type:AllSelector
+        children:
+        - id: MagazineShotgunBeanbag
+        - id: MagazineShotgunEmpty
+        - id: BoxBeanbag
       - id: BoxShotgunIncendiary
       - id: PowerCellHigh
+      - id: PKAUpgradeFireRate
+      - id: PKAUpgradeDamage
     # Tier 3 - Very Rare (10%)
     - !type:GroupSelector
       weight: 10
       children:
-      - id: MagazineShotgunSlug
+      - !type:AllSelector
+        children:
+        - id: MagazineShotgunSlug
+        - id: MagazineShotgunEmpty
+        - id: BoxShotgunSlug
       - id: MagazineShotgunIncendiary
       - id: BoxShotgunUranium
       - id: ShellTranquilizer
-      - id: BoxShellTranquilizer
+      - id: MagazineBoxShotgunHighCaliber
+      - id: MagazineBoxShotgunSlugHighCaliber
     # Tier 4 - Epic (5%)
     - !type:GroupSelector
       weight: 5
       children:
       - id: PowerCellMicroreactor
+      - !type:AllSelector
+        children:
+        - id: MagazineBoxShotgunHighCaliber
+        - id: MagazineShotgunLeverRifleEmpty
+        - id: MagazineShotgunLeverRifle
+      - !type:AllSelector
+        children:
+        - id: MagazineBoxShotgunIncendiaryHighCaliber
+        - id: MagazineShotgunLeverRifleEmpty
+        - id: MagazineShotgunLeverRifleEmpty
+      - !type:AllSelector
+        children:
+        - id: MagazineBoxShotgunHighCaliberEnsnaring
+        - id: MagazineShotgunLeverRifleEmpty
+        - id: MagazineShotgunLeverRifleEmpty
+      - !type:AllSelector
+        children:
+        - id: MagazineBoxShotgunUraniumHighCaliber
+        - id: MagazineShotgunLeverRifleEmpty
+        - id: MagazineShotgunLeverRifleEmpty
+      - !type:AllSelector
+        children:
+        - id: MagazineBoxShotgunSlugHighCaliber
+        - id: MagazineShotgunLeverRifleEmpty
+        - id: MagazineShotgunLeverRifleEmpty
+      - id: BoxMagazineShotgun # 4 mags
+      - id: BoxShellTranquilizer
+    # Tier 5 - Extra rare (2%)
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - !type:AllSelector
+        children:
+        - id: BoxMagazineShotgun #shitload of mags. 8 slugs, 8 lethal
+        - id: BoxMagazineShotgun
+        - id: BoxMagazineShotgunSlug
+        - id: BoxMagazineShotgunSlug
+      - !type:AllSelector
+        children:
+        - id: MagazineBoxShotgunHighCaliberSarin
+        - id: MagazineShotgunLeverRifleEmpty
+        - id: MagazineShotgunLeverRifleEmpty
 
 - type: entity
   name: BR Shotguns Spawner
   description: BR issue
-  suffix: DO NOT MAP, Battle Royal
+  suffix: DO NOT MAP, Battle Royale
   id: RoyalShotgunTableSpawner
   parent: MarkerBase
   components:
@@ -244,7 +426,7 @@
 - type: entity
   name: BR Shotgun Ammo Spawner
   description: BR issue
-  suffix: DO NOT MAP, Battle Royal
+  suffix: DO NOT MAP, Battle Royale
   id: RoyalShotgunAmmoTableSpawner
   parent: MarkerBase
   components:
@@ -280,7 +462,6 @@
     - !type:GroupSelector
       weight: 20
       children:
-      - id: WeaponSniperHristov
       - id: WeaponLaserCarbine
       - id: WeaponRifleAk
     # Tier 3 - Very Rare (10%)
@@ -288,20 +469,28 @@
       weight: 10
       children:
       - id: WeaponSpike
+      - id: WeaponEnergyRifle
       - id: WeaponLaserCannon
       - id: WeaponXrayCannon
-      - id: WeaponDisablerSMG
+      - id: WeaponRifleM90
+      - id: WeaponHeadOfSecurityRifle
     # Tier 4 - Epic (5%)
     - !type:GroupSelector
       weight: 5
       children:
-      - id: WeaponRifleM90GrenadeLauncher
+      - id: WeaponSniperHristov
+      - id: WeaponHeadOfSecuritySniper
+      - id: WeaponTemperatureGun
+      - id: WeaponRifleAnnie
+      - id: WeaponDecloner
       - id: WeaponPulseCarbine
+      - id: WeaponRifleWSPR
     # Tier 5 - Fun (2%)
     - !type:GroupSelector
       weight: 2
       children:
-      - id: WeaponLaserCarbinePractice
+      - id: WeaponTeslaGun
+      - id: WeaponBehonkerLaser
 
 - type: entityTable
   id: RoyaleCarbineAmmoTable
@@ -311,7 +500,11 @@
     - !type:GroupSelector
       weight: 15
       children:
-      - id: CartridgeAntiMateriel
+      - !type:AllSelector
+        children:
+        - id: CartridgeAntiMateriel
+        - id: CartridgeAntiMateriel
+        - id: CartridgeAntiMateriel
       - id: MagazineBoxLightRifle
       - id: SpeedLoaderLightRifle
       - id: PowerCellMedium
@@ -320,48 +513,92 @@
       weight: 25
       children:
       - id: MagazineRifle
-      - id: MagazineLightRifle
-      - id: MagazineCaselessRifle
+      - !type:AllSelector
+        children:
+        - id: MagazineLightRifle
+        - id: MagazineLightRifleEmpty
+        - id: MagazineBoxLightRifle
+      - !type:AllSelector
+        children:
+        - id: MagazineCaselessRifle
+        - id: MagazineCaselessRifleEmpty
+        - id: MagazineBoxCaselessRifle
       - id: PowerCellMedium
+      - id: PKAUpgradeRange
     # Tier 2 - Rare (20%)
     - !type:GroupSelector
       weight: 20
       children:
-      - id: MagazineBoxRifle
-      - id: MagazineRifleIncendiary
-      - id: MagazineLightRifleIncendiary
+      - !type:AllSelector
+        children:
+        - id: MagazineRifle
+        - id: MagazineRifleEmpty
+        - id: MagazineBoxRifle
+      - !type:AllSelector
+        children:
+        - id: MagazineRifleIncendiary
+        - id: MagazineRifleEmpty
+        - id: MagazineBoxRifleIncendiary
+      - !type:AllSelector
+        children:
+        - id: EnergyMagRifleDisabler
+        - id: EnergyMagRifleDisabler
       - id: PowerCellHigh
+      - id: PKAUpgradeFireRate
+      - id: PKAUpgradeDamage
     # Tier 3 - Very Rare (10%)
     - !type:GroupSelector
       weight: 10
       children:
-      - id: MagazineBoxAntiMateriel
-      - id: MagazineRifleUranium
-      - id: MagazineLightRifleUranium
-      - id: CannonBall
-      - id: CannonBallGrapeshot
+      - !type:AllSelector
+        children:
+        - id: MagazineRifleUranium
+        - id: MagazineRifleEmpty
+        - id: MagazineBoxRifleUranium
+      - !type:AllSelector
+        children:
+        - id: MagazineLightRifleUranium
+        - id: MagazineLightRifleEmpty
+        - id: MagazineBoxLightRifleUranium
+      - !type:AllSelector
+        children:
+        - id: EnergyMagRifleLethal
+        - id: EnergyMagRifleLethal
       - id: PowerCellHyper
-      - id: CartridgeRocket
-      - id: MagazineLightRifleBox
-      - id: MagazineGrenadeFlash
-      - id: MagazineGrenadeEMP
-      - id: CannonBallGlassshot
-      - id: CartridgeRocketSlow
+      - id: PKAUpgradeFireRate
+      - id: PKAUpgradeDamage
     # Tier 4 - Epic (5%)
     - !type:GroupSelector
       weight: 5
       children:
-      - id: MagazineGrenadeFrag
-      - id: MagazineGrenadeBlast
-      - id: MagazineBoxLightRifleBig
+      - !type:AllSelector
+        children:
+        - id: MagazineBoxAntiMateriel
+        - id: MagazineAntiMateriel
+        - id: MagazineAntiMaterielEmpty
+      - !type:AllSelector
+        children:
+        - id: MagazineCaselessRifle
+        - id: MagazineCaselessRifle
+        - id: MagazineCaselessRifleShort
+        - id: MagazineCaselessRifleShort
+      - !type:AllSelector
+        children:
+        - id: EnergyMagRifleOverchargeLethal
+        - id: EnergyMagRifleOverchargeLethal
+      - id: BoxMagazineLightRifle
       - id: PowerCellMicroreactor
-      - id: MagazineGrenadeFrag
-
+    # Tier 5 - Extra rare (2%)
+    - !type:GroupSelector
+      weight: 2
+      children:
+      - id: MagazineBoxLightRifleBig
+      - id: MagazineBoxRifleBig
 
 - type: entity
   name: BR Carbine Spawner
   description: BR issue
-  suffix: DO NOT MAP, Battle Royal
+  suffix: DO NOT MAP, Battle Royale
   id: RoyalCarbineTableSpawner
   parent: MarkerBase
   components:
@@ -378,7 +615,7 @@
 - type: entity
   name: BR Rifle Ammo Spawner
   description: BR issue
-  suffix: DO NOT MAP, Battle Royal
+  suffix: DO NOT MAP, Battle Royale
   id: RoyalCarbineAmmoTableSpawner
   parent: MarkerBase
   components:
@@ -392,7 +629,7 @@
       tableId: RoyaleCarbineAmmoTable
       prob: 0.7
 
-# Heavy and Grenades
+# Heavy
 - type: entityTable
   id: RoyaleHeavyTable
   table: !type:GroupSelector
@@ -401,10 +638,63 @@
     - !type:GroupSelector
       weight: 15
       children:
+      - id: WeaponMechIndustrialKineticAccelerator #troll
+    # Tier 1 - Common (25%)
+    - !type:GroupSelector
+      weight: 25
+      children:
+      - id: WeaponImprovisedPneumaticCannonGun
+    # Tier 2 - Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: WeaponLauncherNonLethal
+    # Tier 3 - Very Rare (10%)
+    - !type:GroupSelector
+      weight: 10
+      children:
+      - id: WeaponLauncherSingularityBuster
+    # Tier 4 - Epic (5%)
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - id: WeaponLauncherPirateCannon
+    # Tier 5 - Fun (1%)
+    - !type:GroupSelector
+      weight: 1
+      children:
+      - id: WeaponMechCombatFlashbangLauncher #troll
+
+- type: entity
+  name: BR Heavy Spawner
+  description: BR issue
+  suffix: DO NOT MAP, Battle Royale
+  id: RoyalHeavyTableSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RoyaleHeavyTable
+      prob: 0.25
+
+# Grenade
+- type: entityTable
+  id: RoyaleGrenadeTable
+  table: !type:GroupSelector
+    children:
+    # Tier 0 - Shit (15%)
+    - !type:GroupSelector
+      weight: 15
+      children:
       - id: CleanerGrenade
-      - id: GrenadeDummy
       - id: GlueGrenade
       - id: LubeGrenade
+      - id: ThrowingStar # troll
     # Tier 1 - Common (25%)
     - !type:GroupSelector
       weight: 25
@@ -413,7 +703,6 @@
       - id: TearGasGrenade
       - id: EmpGrenade
       - id: SmokeGrenade
-      - id: ExGrenade
     # Tier 2 - Rare (20%)
     - !type:GroupSelector
       weight: 20
@@ -422,44 +711,65 @@
       - id: GrenadeStinger
       - id: MetalFoamGrenade
       - id: GrenadeIncendiary
-      - id: WeaponMinigun
-      - id: WeaponLauncherPirateCannon
+      - !type:AllSelector
+        children:
+        - id: GrenadeFlash # For riot grenade launcher
+        - id: GrenadeFlash
+      - !type:AllSelector
+        children:
+        - id: GrenadeBaton
+        - id: GrenadeBaton
+      - !type:AllSelector
+        children:
+        - id: GrenadeEMP
+        - id: GrenadeEMP
+      - !type:AllSelector
+        children:
+        - id: GrenadeTeargas
+        - id: GrenadeTeargas
     # Tier 3 - Very Rare (10%)
     - !type:GroupSelector
       weight: 10
       children:
+      - id: ExGrenade
       - id: C4
       - id: ClusterGrenade
       - id: WhiteholeGrenade
-      - id: WeaponLauncherMultipleRocket
-      - id: WeaponLauncherRocket
+      - id: ClusterBangFull
     # Tier 4 - Epic (5%)
     - !type:GroupSelector
       weight: 5
       children:
-      - id: WeaponLauncherChinaLake
-      - id: WeaponLightMachineGunL6
+      - !type:AllSelector
+        children:
+        - id: CannonBallGlassshot
+        - id: CannonBall
+        - id: CannonBallGrapeshot
+      - id: SyndieMiniBomb
+      - id: SarinGasGrenade
+      - id: CartridgeRocketSingularityBuster
+      - id: ClusterGrenade
     # Tier 5 - Fun (1%)
     - !type:GroupSelector
       weight: 1
       children:
-      - id: HolyHandGrenade
+      - id: BeeGrenade
 
 - type: entity
-  name: BR Heavy Spawner
+  name: BR Grenade Spawner
   description: BR issue
-  suffix: DO NOT MAP, Battle Royal
-  id: RoyalHeavyTableSpawner
+  suffix: DO NOT MAP, Battle Royale
+  id: RoyalGrenadeTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite
     layers:
     - state: red
-    - sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+    - sprite: Objects/Weapons/Grenades/grenade.rsi
       state: icon
   - type: EntityTableSpawner
     table: !type:NestedSelector
-      tableId: RoyaleHeavyTable
+      tableId: RoyaleGrenadeTable
       prob: 0.5
 
 # Melee
@@ -477,6 +787,9 @@
       - id: WhiteCane
       - id: Shiv
       - id: ReinforcedShiv
+      - id: Shovel
+      - id: ToolboxEmergency
+      - id: MeleeHammer
     # Tier 1 - Common (25%)
     - !type:GroupSelector
       weight: 25
@@ -494,36 +807,49 @@
       - id: WeaponBaguette
       - id: Spear
       - id: SpearReinforced
+      - id: ToolboxSyndicate
+      - id: EldritchBlade
     # Tier 2 - Rare (20%)
     - !type:GroupSelector
       weight: 20
       children:
       - id: CaneBlade
-      - id: EnergyDagger
+      - id: EnergyDaggerBox
       - id: Cutlass
       - id: Katana
       - id: Machete
       - id: KukriKnife
       - id: Claymore
       - id: WeaponCrusher
+      - id: LavalandWeaponKineticClaws
+      - id: LavalandWeaponKineticMachete
+      - id: ThrowingKnivesKit
+      - id: UnholyHalberd
       - id: EldritchBlade
-      - id: HereticBladeBase
+      - id: HereticBladeAsh
       - id: HereticBladeBlade
-      - id: BaseBallBat
+      - !type:AllSelector
+        children:
+        - id: BaseBallBat
+        - id: ClothingHeadHatRichard #Cool hat
       - id: EnergyCutlass
       - id: Pickaxe
+      - id: ClothingHandsKnuckleDusters
     # Tier 3 - Very Rare (10%)
     - !type:GroupSelector
       weight: 10
       children:
       - id: WeaponCrusherDagger
-      - id: CaptainSabre
+      - id: ClothingBeltSheathFilled
       - id: WeaponMeleeToolboxRobust
       - id: Chainsaw
       - id: FireAxe
       - id: SpearPlasma
       - id: SpearUranium
-      - id: MiningDrill
+      - id: TelescopicBaton
+      - id: ClothingHandsGlovesNorthStar
+      - id: Truncheon
+      - id: Sledgehammer
     # Tier 4 - Epic (5%)
     - !type:GroupSelector
       weight: 5
@@ -535,28 +861,34 @@
       - id: FireAxeFlaming
       - id: EnergyKatana
       - id: Chainsaw
-      - id: MiningDrillDiamond
+      - id: ClothingHandsKnuckleDustersSyndicate
+      - id: ContractorBaton
+      - id: NFEnergyPickaxe
+      - id: LollyChop
+      - id: ClothingBeltSheathHeadOfSecurityFilled
+      - id: EnergySpike
     # Tier 5 - Fun (1%)
     - !type:GroupSelector
       weight: 1
       children:
-      - id: WeaponMeleeNeedle
-      - id: TelescopicBaton
       - id: WeaponMeleeKnockbackStick
+      - id: BananiumSword
+      - id: CQCManual #robust em all
+      - id: Wonderprod
       - id: Mjollnir
       - id: SingularityHammer
 
 - type: entity
   name: BR Melee Spawner
   description: BR issue
-  suffix: DO NOT MAP, Battle Royal
+  suffix: DO NOT MAP, Battle Royale
   id: RoyalMeleeTableSpawner
   parent: MarkerBase
   components:
   - type: Sprite
     layers:
     - state: red
-    - sprite: Objects/Weapons/Guns/Rifles/carbine.rsi
+    - sprite: Objects/Weapons/Melee/combat_knife.rsi
       state: icon
   - type: EntityTableSpawner
     table: !type:NestedSelector

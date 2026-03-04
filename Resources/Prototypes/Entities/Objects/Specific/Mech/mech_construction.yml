@@ -39,7 +39,7 @@
   - type: Pullable
   - type: GuideHelp
     guides:
-    - Robotics
+    - RoboticsReserve # Reserve guidebook
   - type: DragDropTargetable # Goobstation - so you can drag-drop onto harnesses
 
 # Ripley APLU

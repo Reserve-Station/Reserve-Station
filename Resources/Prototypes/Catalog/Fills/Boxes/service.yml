@@ -45,7 +45,7 @@
       - state: agrichemkit
   - type: GuideHelp
     guides:
-    - Botanical
+    - BotanicalReserve # Reserve guidebook
     - ChemicalsReserve # Reserve edit
 
 - type: entity

@@ -23,7 +23,7 @@ poll-control-ends-in-hours = Закончится через {$hours} {$hours ->
     [one] час
     *[other] часа
 }
-poll-control-ended = Законечно
+poll-control-ended = Закончено
 poll-control-no-end-time = Без времени окончания
 poll-control-options = Выбор:
 

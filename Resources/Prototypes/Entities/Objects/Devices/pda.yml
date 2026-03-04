@@ -405,7 +405,7 @@
     state: pda-internmed
   - type: GuideHelp
     guides:
-    - MedicalDoctor
+    - MedicalDoctorReserve # Reserve guidebook
 
 - type: entity
   parent: BaseSecurityPDA
@@ -963,7 +963,7 @@
     state: pda-medical
   - type: GuideHelp
     guides:
-    - MedicalDoctor
+    - MedicalDoctorReserve # Reserve guidebook
 
 - type: entity
   parent: MedicalPDA

@@ -95,6 +95,8 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordAdminchatWebhook =
         CVarDef.Create("discord.adminchat_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL | CVar.ARCHIVE);
+
+    /// <summary>
     ///     URL of the Discord webhook which will receive station news acticles at the round end.
     ///     If left empty, disables the webhook.
     /// </summary>
@@ -113,4 +115,10 @@ public sealed partial class CCVars
     public static readonly CVarDef<bool> DiscordNewsWebhookSendDuringRound =
         CVarDef.Create("discord.news_webhook_send_during_round", false, CVar.SERVERONLY);
 
+    /// <summary>
+    ///     Reserve ooc-chat
+    ///     URL of the Discord OOC webhook.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordOOCChatWebhook =
+        CVarDef.Create("discord.ooc_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL | CVar.ARCHIVE);
 }

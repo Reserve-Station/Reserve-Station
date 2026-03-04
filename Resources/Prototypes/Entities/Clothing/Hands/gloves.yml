@@ -590,7 +590,7 @@
   - type: FingerprintMask
   - type: GuideHelp
     guides:
-    - Forensics
+    - ForensicsReserve # Reserve guidebook
 
 # TODO Make lubed items not slip in hands
 - type: entity

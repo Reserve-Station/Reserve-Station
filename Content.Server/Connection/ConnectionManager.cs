@@ -125,6 +125,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Goobstation.Common.CCVar; // Goobstation - Queue
+using Content.Server._Reserve.LenaApi; // Reserve-LenaApi
+using Content.Shared._Reserve.LenaApi; // Reserve-LenaApi
 
 /*
  * TODO: Remove baby jail code once a more mature gateway process is established. This code is only being issued as a stopgap to help with potential tiding in the immediate future.
@@ -169,6 +171,7 @@ namespace Content.Server.Connection
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IHttpClientHolder _http = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
+        [Dependency] private readonly LenaApiManager _lena = default!; // Reserve-LenaApi
 
         private ISawmill _sawmill = default!;
         private readonly Dictionary<NetUserId, TimeSpan> _temporaryBypasses = [];
@@ -257,6 +260,10 @@ namespace Content.Server.Connection
                 var properties = new Dictionary<string, object>();
                 if (reason == ConnectionDenyReason.Full)
                     properties["delay"] = _cfg.GetCVar(CCVars.GameServerFullReconnectDelay);
+                // Reserve-LenaApi-Start
+                else if (reason == ConnectionDenyReason.AuthRequired)
+                    properties["auth-uri"] = _cfg.GetCVar(LenaApiCVars.AuthUri);
+                // Reserve-LenaApi-End
 
                 e.Deny(new NetDenyReason(msg, properties));
             }
@@ -447,6 +454,14 @@ namespace Content.Server.Connection
                 if (result.IsBad)
                     return (ConnectionDenyReason.IPChecks, result.Reason, null);
             }
+
+            // Reserve-LenaApi-Start
+            var lenaApiDenyReason = await _lena.ShouldDenyConnection(userId);
+            if (lenaApiDenyReason != null)
+            {
+                return (ConnectionDenyReason.AuthRequired, lenaApiDenyReason, null);
+            }
+            // Reserve-ApiAuth-End
 
             return null;
         }

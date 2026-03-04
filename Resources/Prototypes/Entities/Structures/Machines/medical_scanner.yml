@@ -130,4 +130,4 @@
     - scanner-bodyContainer
   - type: GuideHelp
     guides:
-    - Cloning
+    - CloningReserve # Reserve guidebook

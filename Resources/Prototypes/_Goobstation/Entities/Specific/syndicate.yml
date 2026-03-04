@@ -24,7 +24,7 @@
   - type: GrantCqc
   - type: GuideHelp
     guides:
-    - CQC
+    - CQCReserve # Reserve guidebook
 
 - type: entity
   parent: [ BaseItem, BaseSyndicateContraband ]
@@ -44,7 +44,7 @@
   - type: GrantSleepingCarp
   - type: GuideHelp
     guides:
-    - SleepingCarp
+    - SleepingCarpReserve # Reserve guidebook
 
 - type: entity
   parent: [BaseItem, BaseSyndicateContraband]
@@ -63,4 +63,4 @@
   - type: GrantCapoeira
   - type: GuideHelp
     guides:
-    - Capoeira
+    - CapoeiraReserve # Reserve guidebook

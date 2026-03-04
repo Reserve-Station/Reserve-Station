@@ -117,8 +117,8 @@
         path: /Audio/Ambience/Objects/vending_machine_hum.ogg
     - type: GuideHelp
       guides:
-      - TEG
-      - Power
+      - TEGReserve # Reserve guidebook
+      - PowerReserve # Reserve guidebook
     - type: StealTarget
       stealGroup: Teg
 
@@ -178,8 +178,8 @@
     - type: Pullable
     - type: GuideHelp
       guides:
-      - TEG
-      - Power
+      - TEGReserve # Reserve guidebook
+      - PowerReserve # Reserve guidebook
 
     # functionality
     - type: NodeContainer

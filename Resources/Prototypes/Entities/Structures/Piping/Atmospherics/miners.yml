@@ -87,7 +87,7 @@
       spawnAmount: 400
     - type: GuideHelp
       guides:
-      - GasMiningAndStorage
+      - GasMiningAndStorageReserve # Reserve guidebook
 
 - type: entity
   name: O2 gas miner

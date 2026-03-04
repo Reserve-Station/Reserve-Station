@@ -143,7 +143,7 @@
       path: /Audio/Mecha/mechmove03.ogg
   - type: GuideHelp
     guides:
-    - Robotics
+    - RoboticsReserve # Reserve guidebook
   - type: Destructible
     thresholds:
     - trigger:

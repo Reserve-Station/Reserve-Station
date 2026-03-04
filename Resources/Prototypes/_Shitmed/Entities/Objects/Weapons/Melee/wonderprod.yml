@@ -34,7 +34,7 @@
     state: icon
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 0.75

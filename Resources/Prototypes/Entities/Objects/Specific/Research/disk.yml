@@ -44,7 +44,7 @@
   - type: ResearchDisk
   - type: GuideHelp
     guides:
-    - Science
+    - ScienceReserve # Reserve guidebook
 
 - type: entity
   parent: ResearchDisk

@@ -257,8 +257,8 @@
       state: storageHalf
   - type: GuideHelp
     guides:
-    - Pipes
-    - PipeNetworks
+    - PipesReserve # Reserve guidebook
+    - PipeNetworksReserve # Reserve guidebook
 
 - type: entity
   parent: GasPipeBase
@@ -306,8 +306,8 @@
       collection: MetalThud # this NEEDS to changed to the metal pipe falling sound effect on april first every year
   - type: GuideHelp
     guides:
-    - Pipes
-    - PipeNetworks
+    - PipesReserve # Reserve guidebook
+    - PipeNetworksReserve # Reserve guidebook
 
 - type: entity
   parent: GasPipeBase
@@ -367,8 +367,8 @@
         Blunt: 100
   - type: GuideHelp
     guides:
-    - Pipes
-    - PipeNetworks
+    - PipesReserve # Reserve guidebook
+    - PipeNetworksReserve # Reserve guidebook
 
 - type: entity
   parent: GasPipeBase
@@ -410,8 +410,8 @@
       collection: MetalThud
   - type: GuideHelp
     guides:
-    - Pipes
-    - PipeNetworks
+    - PipesReserve # Reserve guidebook
+    - PipeNetworksReserve # Reserve guidebook
   - type: VentCrawlerTube # Goobstation - ventcrawl
     containerId: VentCrawlerTube
   - type: VentCrawlerJunction # Goobstation - ventcrawl
@@ -476,8 +476,8 @@
       collection: MetalThud
   - type: GuideHelp
     guides:
-    - Pipes
-    - PipeNetworks
+    - PipesReserve # Reserve guidebook
+    - PipeNetworksReserve # Reserve guidebook
 
 - type: entity
   id: GasPipeBroken
@@ -509,8 +509,8 @@
         acts: ["Destruction"]
   - type: GuideHelp
     guides:
-    - Pipes
-    - PipeNetworks
+    - PipesReserve # Reserve guidebook
+    - PipeNetworksReserve # Reserve guidebook
 
 - type: entity
   parent: GasPipeSansLayers

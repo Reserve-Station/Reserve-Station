@@ -145,5 +145,5 @@
     node: MeatSpike
   - type: GuideHelp
     guides:
-    - Chef
-    - FoodRecipes
+    - ChefReserve # Reserve guidebook
+    - FoodRecipesReserve # Reserve guidebook

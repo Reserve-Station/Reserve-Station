@@ -36,5 +36,5 @@
     access: [["Research"]]
   - type: GuideHelp
     guides:
-    - Xenobiology
-    - Science
+    - XenobiologyReserve # Reserve guidebook
+    - ScienceReserve # Reserve guidebook

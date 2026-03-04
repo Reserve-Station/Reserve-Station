@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 // SPDX-FileCopyrightText: 2025 BombasterDS2 <shvalovdenis.workmail@gmail.com>
 // SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
@@ -12,14 +10,10 @@
 using Content.Server.Objectives.Components;
 using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
-using Content.Shared.Roles; // DeltaV
-using Content.Shared.Roles.Jobs; // DeltaV
 using Content.Server.GameTicking.Rules;
-using Content.Server.Revolutionary.Components; //Reserve
-using Robust.Shared.Prototypes; // DeltaV
+using Content.Server.Revolutionary.Components;
 using Robust.Shared.Random;
 using System.Linq;
-using Content.Shared.NukeOps;
 
 namespace Content.Server.Objectives.Systems;
 
@@ -33,8 +27,6 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly TraitorRuleSystem _traitorRule = default!;
-    [Dependency] private readonly SharedRoleSystem _role = default!; // DeltaV
-    [Dependency] private readonly IPrototypeManager _proto = default!; // DeltaV
 
     public override void Initialize()
     {
@@ -42,10 +34,6 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
 
         SubscribeLocalEvent<PickSpecificPersonComponent, ObjectiveAssignedEvent>(OnSpecificPersonAssigned);
         SubscribeLocalEvent<PickRandomPersonComponent, ObjectiveAssignedEvent>(OnRandomPersonAssigned);
-        SubscribeLocalEvent<PickRandomHeadComponent, ObjectiveAssignedEvent>(OnRandomHeadAssigned);
-
-        SubscribeLocalEvent<RandomTraitorProgressComponent, ObjectiveAssignedEvent>(OnRandomTraitorProgressAssigned);
-        SubscribeLocalEvent<RandomTraitorAliveComponent, ObjectiveAssignedEvent>(OnRandomTraitorAliveAssigned);
     }
 
     private void OnSpecificPersonAssigned(Entity<PickSpecificPersonComponent> ent, ref ObjectiveAssignedEvent args)
@@ -80,7 +68,7 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
     private void OnRandomPersonAssigned(Entity<PickRandomPersonComponent> ent, ref ObjectiveAssignedEvent args)
     {
         // invalid objective prototype
-        if (!TryComp<TargetObjectiveComponent>(ent.Owner, out var target))
+        if (!TryComp<TargetObjectiveComponent>(ent, out var target))
         {
             args.Cancelled = true;
             return;
@@ -90,152 +78,13 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
         if (target.Target != null)
             return;
 
-        // Begin DeltaV Additions: Only target people with jobs
-
-        var allHumans = _mind.GetAliveHumans(args.MindId,
-            ent.Comp.NeedsOrganic, ent.Comp.ExcludeChangeling).Where(mindId => // Goob edit - exclude IPCs and/or changelings
-        _role.MindHasRole<JobRoleComponent>((mindId.Owner, mindId.Comp), out var role) &&
-        role?.Comp1.JobPrototype is { } jobId &&
-        _proto.Index(jobId).SetPreference).ToHashSet();
-
-        // End DeltaV Additions
-
-        // Can't have multiple objectives to kill the same person
-        foreach (var objective in args.Mind.Objectives)
-        {
-            if (HasComp<KillPersonConditionComponent>(objective) && TryComp<TargetObjectiveComponent>(objective, out var kill))
-            {
-                allHumans.RemoveWhere(x => x.Owner == kill.Target);
-            }
-        }
-
-        // no other humans to kill
-        if (allHumans.Count == 0)
+        // couldn't find a target :(
+        if (_mind.PickFromPool(ent.Comp.Pool, ent.Comp.Filters, args.MindId) is not {} picked)
         {
             args.Cancelled = true;
             return;
         }
 
-        _target.SetTarget(ent.Owner, _random.Pick(allHumans), target);
-    }
-
-    private void OnRandomHeadAssigned(Entity<PickRandomHeadComponent> ent, ref ObjectiveAssignedEvent args)
-    {
-        // invalid prototype
-        if (!TryComp<TargetObjectiveComponent>(ent.Owner, out var target))
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        // target already assigned
-        if (target.Target != null)
-            return;
-
-        // no other humans to kill
-        var allHumans = _mind.GetAliveHumans(args.MindId);
-        if (allHumans.Count == 0)
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        var allHeads = new HashSet<Entity<MindComponent>>();
-        foreach (var person in allHumans)
-        {
-            if (TryComp<MindComponent>(person, out var mind) && mind.OwnedEntity is { } owned && HasComp<CommandStaffComponent>(owned) && !HasComp<NukeOperativeComponent>(owned))
-                allHeads.Add(person); // Goob edit - exclude nuke ops from being selected as heads (bruh why would you even want that)
-        } 
-
-        // Goobstation - Cancel if there is no command staff
-        if (allHeads.Count == 0)
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        _target.SetTarget(ent.Owner, _random.Pick(allHeads), target);
-    }
-
-    private void OnRandomTraitorProgressAssigned(Entity<RandomTraitorProgressComponent> ent, ref ObjectiveAssignedEvent args)
-    {
-        // invalid prototype
-        if (!TryComp<TargetObjectiveComponent>(ent.Owner, out var target))
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        var traitors = _traitorRule.GetOtherTraitorMindsAliveAndConnected(args.Mind).ToHashSet();
-
-        // cant help anyone who is tasked with helping:
-        // 1. thats boring
-        // 2. no cyclic progress dependencies!!!
-        foreach (var traitor in traitors)
-        {
-            // TODO: replace this with TryComp<ObjectivesComponent>(traitor) or something when objectives are moved out of mind
-            if (!TryComp<MindComponent>(traitor.Id, out var mind))
-                continue;
-
-            foreach (var objective in mind.Objectives)
-            {
-                if (HasComp<HelpProgressConditionComponent>(objective))
-                    traitors.RemoveWhere(x => x.Mind == mind);
-            }
-        }
-
-        // Can't have multiple objectives to help/save the same person
-        foreach (var objective in args.Mind.Objectives)
-        {
-            if (HasComp<RandomTraitorAliveComponent>(objective) || HasComp<RandomTraitorProgressComponent>(objective))
-            {
-                if (TryComp<TargetObjectiveComponent>(objective, out var help))
-                {
-                    traitors.RemoveWhere(x => x.Id == help.Target);
-                }
-            }
-        }
-
-        // no more helpable traitors
-        if (traitors.Count == 0)
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        _target.SetTarget(ent.Owner, _random.Pick(traitors).Id, target);
-    }
-
-    private void OnRandomTraitorAliveAssigned(Entity<RandomTraitorAliveComponent> ent, ref ObjectiveAssignedEvent args)
-    {
-        // invalid prototype
-        if (!TryComp<TargetObjectiveComponent>(ent.Owner, out var target))
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        var traitors = _traitorRule.GetOtherTraitorMindsAliveAndConnected(args.Mind).ToHashSet();
-
-        // Can't have multiple objectives to help/save the same person
-        foreach (var objective in args.Mind.Objectives)
-        {
-            if (HasComp<RandomTraitorAliveComponent>(objective) || HasComp<RandomTraitorProgressComponent>(objective))
-            {
-                if (TryComp<TargetObjectiveComponent>(objective, out var help))
-                {
-                    traitors.RemoveWhere(x => x.Id == help.Target);
-                }
-            }
-        }
-
-        // You are the first/only traitor.
-        if (traitors.Count == 0)
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        _target.SetTarget(ent.Owner, _random.Pick(traitors).Id, target);
+        _target.SetTarget(ent, picked, target);
     }
 }

@@ -115,4 +115,4 @@
       clonepod-bodyContainer: !type:ContainerSlot
   - type: GuideHelp
     guides:
-    - Cloning
+    - CloningReserve # Reserve guidebook

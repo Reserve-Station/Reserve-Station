@@ -21,6 +21,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using Content.Server.Administration.Logs;
 using Content.Server.Administration.Systems;
 using Content.Server.Administration.Managers;
 using Content.Server.GameTicking;
@@ -48,6 +49,8 @@ using Content.Shared.Database;
 using Content.Server.ADT.Discord;
 using Content.Server.ADT.Discord.Bans;
 using Content.Server.ADT.Discord.Bans.PayloadGenerators;
+using Content.Server.MoMMI;
+using Content.Shared._Reserve.LenaApi; // Reserve api-ooc-handler
 
 namespace Content.Server.Administration;
 
@@ -83,6 +86,8 @@ public sealed partial class ServerApi : IPostInjectInit
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
     [Dependency] private readonly IAdminManager _admin = default!;
+    [Dependency] private readonly IMoMMILink _mommiLink = default!; // Reserve api-ooc-handler
+    [Dependency] private readonly IAdminLogManager _adminLogger = default!; // Reserve api-ooc-handler
     [Dependency] private readonly INetConfigurationManager _netConfigManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
@@ -113,10 +118,15 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/force_preset", ActionForcePreset);
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/set_motd", ActionForceMotd);
         RegisterActorHandler(HttpMethod.Patch, "/admin/actions/panic_bunker", ActionPanicPunker);
-        RegisterHandler(HttpMethod.Post, "/admin/actions/send_bwoink", ActionSendBwoink); // Frontier - Discord Ahelp Reply
-        RegisterActorHandler(HttpMethod.Post, "/admin/actions/a_chat", ActionAdminChat);                // ADT Tweak
+        RegisterHandler(HttpMethod.Post,
+            "/admin/actions/send_bwoink",
+            ActionSendBwoink); // Frontier - Discord Ahelp Reply
+        RegisterActorHandler(HttpMethod.Post, "/admin/actions/a_chat", ActionAdminChat); // ADT Tweak
         RegisterActorHandler(HttpMethod.Post, "/admin/actions/play_time_addjob", ActionPlayAddTimeJob); // ADT Tweak
-        RegisterActorHandler(HttpMethod.Post, "/admin/actions/server_ban", ActionServerBan);            // ADT Tweak
+        RegisterActorHandler(HttpMethod.Post, "/admin/actions/server_ban", ActionServerBan); // ADT Tweak
+        RegisterActorHandler(HttpMethod.Post,
+            "/admin/actions/send_ooc",
+            ActionSendOOCMessage); // Reserve api-ooc-handler
     }
 
     public void Initialize()
@@ -430,9 +440,11 @@ public sealed partial class ServerApi : IPostInjectInit
             await RespondOk(context);
         });
     }
+
     #endregion
 
     #region Frontier
+
     // Creating a region here incase more actions are added in the future
 
     private async Task ActionSendBwoink(IStatusHandlerContext context)
@@ -442,27 +454,26 @@ public sealed partial class ServerApi : IPostInjectInit
             return;
 
         await RunOnMainThread(async () =>
-    {
-        // Player not online or wrong Guid
-        if (!_playerManager.TryGetSessionById(new NetUserId(body.Guid), out var player))
         {
-            await RespondError(
-                context,
-                ErrorCode.PlayerNotFound,
-                HttpStatusCode.UnprocessableContent,
-                "Player not found");
-            return;
-        }
+            // Player not online or wrong Guid
+            if (!_playerManager.TryGetSessionById(new NetUserId(body.Guid), out var player))
+            {
+                await RespondError(
+                    context,
+                    ErrorCode.PlayerNotFound,
+                    HttpStatusCode.UnprocessableContent,
+                    "Player not found");
+                return;
+            }
 
-        var serverBwoinkSystem = _entitySystemManager.GetEntitySystem<BwoinkSystem>();
-        var message = new SharedBwoinkSystem.BwoinkTextMessage(player.UserId, SharedBwoinkSystem.SystemUserId, body.Text);
-        serverBwoinkSystem.OnWebhookBwoinkTextMessage(message, body);
+            var serverBwoinkSystem = _entitySystemManager.GetEntitySystem<BwoinkSystem>();
+            var message =
+                new SharedBwoinkSystem.BwoinkTextMessage(player.UserId, SharedBwoinkSystem.SystemUserId, body.Text);
+            serverBwoinkSystem.OnWebhookBwoinkTextMessage(message, body);
 
-        // Respond with OK
-        await RespondOk(context);
-    });
-
-
+            // Respond with OK
+            await RespondOk(context);
+        });
     }
 
     #endregion
@@ -553,7 +564,7 @@ public sealed partial class ServerApi : IPostInjectInit
                     Name = player.Name,
                     IsAdmin = adminData != null,
                     IsDeadminned = !adminData?.Active ?? false,
-                    PingUser = player.Ping,                 // ADT-Tweak: Передаём пинг пользователя
+                    PingUser = player.Ping, // ADT-Tweak: Передаём пинг пользователя
                     AdminTitle = adminData?.Title ?? string.Empty // ADT-Tweak: Добавляем передачу инфы о Title админа
                 });
             }
@@ -628,8 +639,8 @@ public sealed partial class ServerApi : IPostInjectInit
             _sawmill.Debug("No authorization token set for admin API");
         }
         else if (CryptographicOperations.FixedTimeEquals(
-                Encoding.UTF8.GetBytes(authValue),
-                Encoding.UTF8.GetBytes(_token)))
+                     Encoding.UTF8.GetBytes(authValue),
+                     Encoding.UTF8.GetBytes(_token)))
         {
             return true;
         }
@@ -795,6 +806,54 @@ public sealed partial class ServerApi : IPostInjectInit
 
     #endregion
 
+    #region api-ooc-tweak
+
+    private async Task ActionSendOOCMessage(IStatusHandlerContext context, Actor actor)
+    {
+        var body = await ReadJson<ActionSendOOCBody>(context);
+        if (body == null)
+            return;
+
+        var oocEnabled = _config.GetCVar(CCVars.OocEnabled);
+        var doocEnabled = _config.GetCVar(LenaApiCVars.DoocEnabled);
+        if (!oocEnabled && !doocEnabled)
+        {
+            await RespondBadRequest(context, "OOC chat currently disabled");
+            return;
+        }
+
+        await RunOnMainThread(async () =>
+        {
+            var wrappedMessage = Loc.GetString("reserve-chat-manager-send-ooc-with-sub-unknown",
+                ("patronColor", body.Color),
+                ("playerName", body.Name),
+                ("message", FormattedMessage.EscapeText(body.Message)));
+
+
+            _chatManager.ChatMessageToAll(ChatChannel.OOC,
+                body.Message,
+                wrappedMessage,
+                EntityUid.Invalid,
+                hideChat: false,
+                recordReplay: true);
+        });
+        _mommiLink.SendOOCMessage(body.Name, body.Message.Replace("@", "\\@").Replace("<", "\\<").Replace("/", "\\/"));
+        _adminLogger.Add(LogType.Chat, LogImpact.Low, $"OOC from {body.Name} (api): {body.Message}");
+
+        await RespondOk(context);
+        _sawmill.Info($"Send OOC message by {body.Name}");
+    }
+
+    private sealed class ActionSendOOCBody
+    {
+        public required string SubName { get; init; }
+        public required string Color { get; init; }
+        public required string Name { get; init; }
+        public required string Message { get; init; }
+    }
+
+    #endregion
+
     #region ADT-Tweak
 
     private async Task ActionAdminChat(IStatusHandlerContext context, Actor actor)
@@ -810,9 +869,9 @@ public sealed partial class ServerApi : IPostInjectInit
         await RunOnMainThread(async () =>
         {
             var clients = _admin.ActiveAdmins
-            .Where(admin => _admin.GetAdminData(admin)?.Flags.HasFlag(AdminFlags.Adminchat) == true)
-            .Select(p => p.Channel)
-            .ToList();
+                .Where(admin => _admin.GetAdminData(admin)?.Flags.HasFlag(AdminFlags.Adminchat) == true)
+                .Select(p => p.Channel)
+                .ToList();
 
             // Используем Loc.GetString для формирования сообщения
             var wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
@@ -825,8 +884,10 @@ public sealed partial class ServerApi : IPostInjectInit
             foreach (var client in clients)
             {
                 bool isSource = true;
-                string? audioPath = isSource ? _netConfigManager.GetClientCVar(client, CCVars.AdminChatSoundPath) : default;
-                float audioVolume = isSource ? _netConfigManager.GetClientCVar(client, CCVars.AdminChatSoundVolume) : default;
+                string? audioPath =
+                    isSource ? _netConfigManager.GetClientCVar(client, CCVars.AdminChatSoundPath) : default;
+                float audioVolume =
+                    isSource ? _netConfigManager.GetClientCVar(client, CCVars.AdminChatSoundVolume) : default;
 
                 _chatManager.ChatMessageToOne(
                     ChatChannel.AdminChat,
@@ -864,6 +925,7 @@ public sealed partial class ServerApi : IPostInjectInit
             {
                 return;
             }
+
             userId = dbGuid.UserId;
         }
 

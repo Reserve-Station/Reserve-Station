@@ -150,11 +150,13 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Content.Shared.Players.RateLimiting;
 using Content.Shared.Radio;
+using Content.Shared.Station.Components;
 using Content.Shared.Whitelist;
 using Content.Goobstation.Common.Chat;
 using Content.Goobstation.Common.Traits;
 using Content.Server._Orion.ServerProtection.Chat;
 using Content.Server._Orion.ServerProtection.Emoting;
+using Content.Server._Reserve.Vahter.Chat; // Reserve - Vahter
 using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -201,6 +203,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly LanguageSystem _language = default!; // Einstein Engines - Language
     [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // Orion
     [Dependency] private readonly EmoteProtectionSystem _emoteProtection = default!; // Orion
+    [Dependency] private readonly BanwordFilterSystem _banwordFilter = default!; // Reserve vahter
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -350,6 +353,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (_chatProtection.CheckICMessage(message, source))
             return;
         // Orion-End
+
+        // Reserve Vahter-Start
+        if (_banwordFilter.CheckMessage(message, source))
+            return;
+        // Reserve Vahter-End
 
         // Sus
         if (player?.AttachedEntity is { Valid: true } entity && source != entity)
@@ -603,6 +611,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
         // Orion-End
 
+        // Reserve Vahter-Start
+        if (_banwordFilter.CheckMessage(message, source))
+            return;
+        // Reserve Vahter-End
+
         if (!TryComp<StationDataComponent>(station, out var stationDataComp)) return;
 
         var filter = _stationSystem.GetInStation(stationDataComp);
@@ -723,6 +736,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
         // Orion-End
 
+        // Reserve Vahter-Start
+        if (_banwordFilter.CheckMessage(message, source))
+            return;
+        // Reserve Vahter-End
+
         var speech = GetSpeechVerb(source, message);
 
         // get the entity's apparent name (if no override provided).
@@ -836,9 +854,14 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
         // Orion-End
 
+        // Reserve Vahter-Start
+        if (_banwordFilter.CheckMessage(message, source))
+            return;
+        // Reserve Vahter-End
+
         // get the entity's name by visual identity (if no override provided).
         string nameIdentity = FormattedMessage.EscapeText(nameOverride ?? Identity.Name(source, EntityManager));
-        
+
         // Reserve edit: Port from WD START
         var nameEv = new TransformSpeakerNameEvent(source, Name(source));
         RaiseLocalEvent(source, nameEv);
@@ -852,7 +875,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (nameOverride != null)
             name = nameOverride;
         // Reserve edit: Port from WD END
-        
+
         name = FormattedMessage.EscapeText(name);
 
         if (!language.SpeechOverride.RequireSpeech && language.SpeechOverride.RequireLOS)

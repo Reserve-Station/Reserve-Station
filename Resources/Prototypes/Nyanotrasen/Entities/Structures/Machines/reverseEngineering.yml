@@ -68,7 +68,7 @@
       path: /Audio/Ambience/Objects/revMachine_ambience.ogg
   - type: GuideHelp
     guides:
-    - ReverseEngineering
+    - ReverseEngineering # Reserve guidebook
   - type: Appearance
   - type: GenericVisualizer
     visuals:

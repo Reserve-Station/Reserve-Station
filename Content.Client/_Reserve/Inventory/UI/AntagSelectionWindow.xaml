@@ -1,0 +1,24 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="{Loc reserve-antag-selection-title}"
+    SetSize="320 400"
+    Resizable="False">
+    <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
+
+        <Label Text="{Loc reserve-antag-selection-desc}"
+               HorizontalAlignment="Center"
+               Margin="8 8 8 4" />
+
+        <PanelContainer HorizontalExpand="True" VerticalExpand="True" Margin="8 4 8 8">
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#1b1b1e" />
+            </PanelContainer.PanelOverride>
+            <ScrollContainer HorizontalExpand="True" VerticalExpand="True" Margin="8">
+                <BoxContainer Name="RulesContainer" Orientation="Vertical" HorizontalExpand="True" />
+            </ScrollContainer>
+        </PanelContainer>
+
+    </BoxContainer>
+</DefaultWindow>

@@ -102,8 +102,8 @@
   - type: Pullable
   - type: GuideHelp
     guides:
-    - SingularityEngine
-    - Power
+    - SingularityEngineReserve # Reserve guidebook
+    - PowerReserve # Reserve guidebook
   - type: ContainerContainer
     containers:
       gas_tank: !type:ContainerSlot {}

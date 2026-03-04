@@ -33,4 +33,4 @@
       board: SlimeGrinderMachineCircuitboard
     - type: GuideHelp
       guides:
-      - Xenobiology
+      - XenobiologyReserve # Reserve guidebook

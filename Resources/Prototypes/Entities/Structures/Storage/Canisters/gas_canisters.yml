@@ -186,7 +186,7 @@
       locked: false
     - type: GuideHelp
       guides:
-      - GasCanisters
+      - GasCanistersReserve # Reserve guidebook
     - type: Paintable
       group: Canisters
 

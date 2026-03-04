@@ -290,7 +290,7 @@
     nameFormat: name-format-regal-rat
   - type: GuideHelp
     guides:
-    - MinorAntagonists
+    - MinorAntagonistsReserve # Reserve guidebook
   - type: Grammar
     attributes:
       gender: male
@@ -349,7 +349,7 @@
       250: 0.5
   - type: GuideHelp
     guides:
-    - MinorAntagonists
+    - MinorAntagonistsReserve # Reserve guidebook
 
 - type: entity
   name: rat servant
@@ -504,7 +504,7 @@
     speechVerb: SmallMob
   - type: GuideHelp
     guides:
-    - MinorAntagonists
+    - MinorAntagonistsReserve # Reserve guidebook
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning

@@ -215,9 +215,9 @@
     - type: NavMapDoor
     - type: GuideHelp
       guides:
-      - FireAndGasControl
-      - Fires
-      - Spacing
+      - FireAndGasControlReserve # Reserve guidebook
+      - FiresReserve # Reserve guidebook
+      - SpacingReserve # Reserve guidebook
     - type: Penetratable # Goobstation - Better snipers
       penetrateDamage: 75
       damagePenalty: 0.2

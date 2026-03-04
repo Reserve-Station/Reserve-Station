@@ -97,7 +97,6 @@ using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
 using Content.Server.Roles.Jobs;
-using Content.Server.Warps;
 using Content.Shared.Actions;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
@@ -121,7 +120,6 @@ using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
 using Content.Shared._White.Xenomorphs.Infection;
 using Robust.Server.GameObjects;
-using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
@@ -144,6 +142,7 @@ using Content.Shared.Roles;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.SSDIndicator;
+using Content.Shared.Warps;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Ghost
@@ -584,7 +583,7 @@ namespace Content.Server.Ghost
             foreach (var antagonist in EntityQuery<GlobalAntagonistComponent>())
             {
                 var entity = antagonist.Owner;
-                
+
                 if (!_prototypeManager.TryIndex<AntagonistPrototype>(antagonist.AntagonistPrototype ?? "globalAntagonistUnknown", out var prototype))
                     continue;
 

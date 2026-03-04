@@ -35,7 +35,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <cc:CommandButton Name="Currency"
                     Command="balanceui"
                     Text="{Loc 'gs-balanceui-shop-label'}"
-                    Margin="0 5 0 0"/>
+                    Margin="0 5 0 0"
+                    Visible="False"/>
+                <Button Name="CurrencyWeb"
+                    Text="{Loc 'gs-balanceui-shop-label'}"
+                    Margin="0 5 0 0"
+                    Visible="False"/>
             </BoxContainer>
         </BoxContainer>
         <Label Name="Unloaded" Text="{Loc 'lobby-character-preview-panel-unloaded-preferences-label'}"/>

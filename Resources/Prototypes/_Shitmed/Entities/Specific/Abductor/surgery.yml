@@ -47,7 +47,7 @@
     speed: 2
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
   # barber scissor
   - type: MagicMirror
     addSlotTime: 2
@@ -96,7 +96,7 @@
     speed: 2
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
 
 - type: entity
   name: high-tech energy scalpel
@@ -133,7 +133,7 @@
     speed: 2
   - type: GuideHelp
     guides:
-    - Abductors
+    - AbductorsReserve # Reserve guidebook
 
 - type: entity
   name: high-tech bone manipulator
@@ -161,4 +161,4 @@
       speed: 2
     - type: GuideHelp
       guides:
-      - Abductors
+      - AbductorsReserve # Reserve guidebook

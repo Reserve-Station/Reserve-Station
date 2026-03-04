@@ -188,9 +188,6 @@
     bodyType: KinematicController # Same for all inheritors
   - type: StatusEffects
     allowed:
-    - Stun
-    - KnockedDown
-    - SlowedDown
     - Stutter
     - Electrocution
   - type: Repairable
@@ -295,7 +292,7 @@
   - type: MobMover
   - type: GuideHelp
     guides:
-    - Robotics
+    - RoboticsReserve # Reserve guidebook
   - type: Tag
     tags:
     - DoorBumpOpener

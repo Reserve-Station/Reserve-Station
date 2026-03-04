@@ -464,7 +464,7 @@
     accent-cowboy-words-93: accent-cowboy-replacement-93
     accent-cowboy-words-94: accent-cowboy-replacement-94
     accent-cowboy-words-95: accent-cowboy-replacement-95
-#    accent-cowboy-words-96: accent-cowboy-replacement-96 -GoobStation
+    #    accent-cowboy-words-96: accent-cowboy-replacement-96 -GoobStation
     accent-cowboy-words-97: accent-cowboy-replacement-97
     accent-cowboy-words-98: accent-cowboy-replacement-98
     accent-cowboy-words-99: accent-cowboy-replacement-99
@@ -736,7 +736,7 @@
     reserve-chatsan-word-15: reserve-chatsan-replacement-15
     reserve-chatsan-word-16: reserve-chatsan-replacement-16
     reserve-chatsan-word-17: reserve-chatsan-replacement-17
-    reserve-chatsan-word-18: reserve-chatsan-replacement-18
+    #    reserve-chatsan-word-18: reserve-chatsan-replacement-18 # Reserve - Vahter edit
     reserve-chatsan-word-19: reserve-chatsan-replacement-19
     reserve-chatsan-word-20: reserve-chatsan-replacement-20
     reserve-chatsan-word-21: reserve-chatsan-replacement-21
@@ -776,7 +776,7 @@
     reserve-chatsan-word-55: reserve-chatsan-replacement-55
     reserve-chatsan-word-56: reserve-chatsan-replacement-56
     reserve-chatsan-word-57: reserve-chatsan-replacement-57
-    reserve-chatsan-word-58: reserve-chatsan-replacement-58
+#    reserve-chatsan-word-58: reserve-chatsan-replacement-58 # Reserve - Vahter edit
     reserve-chatsan-word-59: reserve-chatsan-replacement-59
     reserve-chatsan-word-60: reserve-chatsan-replacement-60
     reserve-chatsan-word-61: reserve-chatsan-replacement-61
@@ -785,8 +785,8 @@
     reserve-chatsan-word-64: reserve-chatsan-replacement-64
     reserve-chatsan-word-65: reserve-chatsan-replacement-65
     reserve-chatsan-word-66: reserve-chatsan-replacement-66
-    reserve-chatsan-word-67: reserve-chatsan-replacement-67
-    reserve-chatsan-word-68: reserve-chatsan-replacement-68
+#    reserve-chatsan-word-67: reserve-chatsan-replacement-67 # Reserve - Vahter edit
+#    reserve-chatsan-word-68: reserve-chatsan-replacement-68 # Reserve - Vahter edit
     reserve-chatsan-word-69: reserve-chatsan-replacement-69
     reserve-chatsan-word-70: reserve-chatsan-replacement-70
     reserve-chatsan-word-71: reserve-chatsan-replacement-71
@@ -798,7 +798,7 @@
     reserve-chatsan-word-77: reserve-chatsan-replacement-77
     reserve-chatsan-word-78: reserve-chatsan-replacement-78
     reserve-chatsan-word-79: reserve-chatsan-replacement-79
-    reserve-chatsan-word-80: reserve-chatsan-replacement-80
+#    reserve-chatsan-word-80: reserve-chatsan-replacement-80 # Reserve - Vahter edit | почему это вообще заменяется
     reserve-chatsan-word-81: reserve-chatsan-replacement-81
     reserve-chatsan-word-82: reserve-chatsan-replacement-82
     reserve-chatsan-word-83: reserve-chatsan-replacement-83
@@ -807,12 +807,12 @@
     reserve-chatsan-word-86: reserve-chatsan-replacement-86
     reserve-chatsan-word-87: reserve-chatsan-replacement-87
     reserve-chatsan-word-88: reserve-chatsan-replacement-88
-    reserve-chatsan-word-89: reserve-chatsan-replacement-89
+    reserve-chatsan-word-89: reserve-chatsan-replacement-89 # чем ближе крах империи...
     reserve-chatsan-word-90: reserve-chatsan-replacement-90
     reserve-chatsan-word-91: reserve-chatsan-replacement-91
     reserve-chatsan-word-92: reserve-chatsan-replacement-92
-    reserve-chatsan-word-93: reserve-chatsan-replacement-93
-    reserve-chatsan-word-94: reserve-chatsan-replacement-94
+#    reserve-chatsan-word-93: reserve-chatsan-replacement-93 # Reserve - Vahter edit
+#    reserve-chatsan-word-94: reserve-chatsan-replacement-94 # Reserve - Vahter edit
     reserve-chatsan-word-95: reserve-chatsan-replacement-95
     reserve-chatsan-word-96: reserve-chatsan-replacement-96
     reserve-chatsan-word-97: reserve-chatsan-replacement-97
@@ -840,7 +840,7 @@
     reserve-chatsan-word-119: reserve-chatsan-replacement-119
     reserve-chatsan-word-120: reserve-chatsan-replacement-120
     reserve-chatsan-word-121: reserve-chatsan-replacement-121
-    reserve-chatsan-word-122: reserve-chatsan-replacement-122
+#    reserve-chatsan-word-122: reserve-chatsan-replacement-122 # Reserve - Vahter edit
     reserve-chatsan-word-123: reserve-chatsan-replacement-123
     reserve-chatsan-word-124: reserve-chatsan-replacement-124
     reserve-chatsan-word-125: reserve-chatsan-replacement-125

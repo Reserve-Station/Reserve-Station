@@ -43,6 +43,12 @@
   - AbductorsReserve # Shitmed - Abductors
   - BingleReserve # Goob content
   - DevilReserve # Goob content
+  - SlasherReserve
+  - ShadowlingsReserve # Einstein Engines - Shadowlings
+  - SlaughterDemonReserve # Goob content
+  - XenomorphsReserve # WD - Xenomorphs
+  - WraithReserve
+  - CorporateAgentsReserve # Goob content
 
 - type: guideEntry
   id: TraitorsReserve
@@ -136,6 +142,11 @@
   name: guide-entry-wizard-spells
   text: "/ServerInfo/_Reserve/Guidebook/Antagonist/WizardSpells.xml"
 
+- type: guideEntry
+  id: SlaughterDemonReserve
+  name: "Демон Резни" #where is da .ftl chuds
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/SlaughterDemon.xml"
+
 #DV
 - type: guideEntry
   id: CosmicCultReserve
@@ -167,3 +178,9 @@
   id: ConspiratorsReserve
   name: guide-entry-conspirators
   text: "/ServerInfo/_Reserve/Guidebook/Antagonist/Conspirators.xml"
+
+# EE
+- type: guideEntry
+  id: ShadowlingsReserve
+  name: guide-entry-shadowlings
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/Shadowlings.xml"

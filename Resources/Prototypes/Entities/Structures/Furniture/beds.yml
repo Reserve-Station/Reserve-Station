@@ -119,7 +119,7 @@
     node: medicalbed
   - type: GuideHelp
     guides:
-    - MedicalDoctor
+    - MedicalDoctorReserve # Reserve guidebook
 
 - type: entity
   parent: Bed
