@@ -1,4 +1,4 @@
-ent-ScienceCommsComputerCircuitboard = плата консоли связи НиО
+ent-ScienceCommsComputerCircuitboard = плата консоли связи РнД
     .desc = { ent-CommsComputerCircuitboard.desc }
 ent-SecurityCommsComputerCircuitboard = плата консоли связи Службы Безопасности
     .desc = { ent-CommsComputerCircuitboard.desc }
