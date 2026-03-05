@@ -1,4 +1,4 @@
-comms-console-announcement-title-science = НиО
+comms-console-announcement-title-science = РнД
 comms-console-announcement-title-cargo = Отдел Снабжения
 comms-console-announcement-title-security = Служба Безопасности
 comms-console-announcement-title-medical = Медблок
