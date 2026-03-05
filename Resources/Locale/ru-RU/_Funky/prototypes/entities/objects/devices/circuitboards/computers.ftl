@@ -1,0 +1,12 @@
+ent-ScienceComputerComms = плата консоли связи НиО
+    .desc = { ent-ComputerComms.desc }
+ent-Security CommsComputerCircuitboard = плата консоли связи Службы Безопасности
+    .desc = { ent-ComputerComms.desc }
+ent-ServiceCommsComputerCircuitboard = плата консоли связи Сервисного отдела
+    .desc = { ent-ComputerComms.desc }
+ent-CargoCommsComputerCircuitboard = плата консоли связи отдела Снабжения
+    .desc = { ent-ComputerComms.desc }
+ent-EngiCommsComputerCircuitboard = плата консоли связи Инженерного отдела
+    .desc = { ent-ComputerComms.desc }
+ent-MedicalCommsComputerCircuitboard = плата консоли связи Медицинского отдела
+    .desc = { ent-ComputerComms.desc }

@@ -1,0 +1,53 @@
+- type: entity
+  parent: BaseFlatpack
+  id: ScienceComputerCommsFlatpack
+  name: Science ComputerComms Flatpack
+  description: A flatpack used for constructing a Science Communication console
+  components:
+  - type: Flatpack
+    entity: ScienceComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: SecurityComputerCommsFlatpack
+  name: Security Communication console flatpack
+  description: A flatpack used for constructing a Security Communication console
+  components:
+  - type: Flatpack
+    entity: SecurityComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: ServiceComputerCommsFlatpack
+  name: Service Communication console flatpack
+  description: A flatpack used for constructing a Service Communication console
+  components:
+  - type: Flatpack
+    entity: ServiceComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: CargoComputerCommsFlatpack
+  name: Cargo Communication console flatpack
+  description: A flatpack used for constructing a Cargo Communication console
+  components:
+  - type: Flatpack
+    entity: CargoComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: EngiComputerCommsFlatpack
+  name: Engineering Communication console flatpack
+  description: A flatpack used for constructing a Engineering Communication console
+  components:
+  - type: Flatpack
+    entity: EngiComputerComms
+
+- type: entity
+  parent: BaseFlatpack
+  id: MedicalComputerCommsFlatpack
+  name: Medical Communication console flatpack
+  description: A flatpack used for constructing a Medical Communication console
+  components:
+  - type: Flatpack
+    entity: MedicalComputerComms

@@ -1,0 +1,12 @@
+ent-ScienceComputerComms = консоль связи НиО
+    .desc = { ent-ComputerComms.desc }
+ent-SecurityComputerComms = консоль связи Службы Безопасности
+    .desc = { ent-ComputerComms.desc }
+ent-ServiceComputerComms = консоль связи Сервисного отдела
+    .desc = { ent-ComputerComms.desc }
+ent-CargoComputerComms = консоль связи отдела Снабжения
+    .desc = { ent-ComputerComms.desc }
+ent-EngiComputerComms = консоль связи Инженерного отдела
+    .desc = { ent-ComputerComms.desc }
+ent-MedicalComputerComms = консоль связи Медицинского отдела
+    .desc = { ent-ComputerComms.desc }
