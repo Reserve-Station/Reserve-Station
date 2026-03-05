@@ -113,12 +113,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                                     <Control HorizontalExpand="True"/>
                                     <OptionButton Name="SpawnPriorityButton" HorizontalAlignment="Right" />
                                 </BoxContainer>
-                                <!-- Uplink Preference, Reserve add-->
-                                <BoxContainer HorizontalExpand="True">
-                                    <Label Text="{Loc 'humanoid-profile-editor-uplink-label'}" />
-                                    <Control HorizontalExpand="True"/>
-                                    <OptionButton Name="UplinkPrefButton" HorizontalAlignment="Right" />
-                                </BoxContainer>
                                 <!-- WWDP EDIT START -->
                                 <BoxContainer HorizontalExpand="True" Orientation="Horizontal">
                                     <Label Text="{Loc 'humanoid-profile-editor-bark-voice-label'}" />

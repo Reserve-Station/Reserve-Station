@@ -38,7 +38,7 @@ public sealed class InventoryItemActionsSystem : EntitySystem
 
         _lenaApi.RegisterItemAction("low_tier_token", (session, item) => OpenAntagSelection(session, item.ItemId));
         _lenaApi.RegisterItemIcon("low_tier_token",
-            "/Textures/Objects/Specific/Syndicate/telecrystal.rsi/telecrystal.png");
+            "Resources/Textures/Objects/Specific/Syndicate/telecrystal.rsi/telecrystal.png");
         _lenaApi.RegisterAntagRule("low_tier_token",
             "Thief",
             "Вор",
@@ -48,7 +48,7 @@ public sealed class InventoryItemActionsSystem : EntitySystem
 
         _lenaApi.RegisterItemAction("ghost_tier_token", (session, item) => OpenAntagSelection(session, item.ItemId));
         _lenaApi.RegisterItemIcon("ghost_tier_token",
-            "/Textures/Effects/crayondecals.rsi/ghost.png");
+            "Resources/Textures/Effects/crayondecals.rsi/ghost.png");
         _lenaApi.RegisterAntagRule("ghost_tier_token", "SkeletonMidround", "Скелет из шкафа", forAlive: false);
         _lenaApi.RegisterAntagRule("ghost_tier_token", "LoneAbductorSpawn", "Одинокий абдуктор", forAlive: false);
         _lenaApi.RegisterAntagRule("ghost_tier_token", "GreyTideAntagMidround", "Грейтайд", forAlive: false);
@@ -58,7 +58,7 @@ public sealed class InventoryItemActionsSystem : EntitySystem
 
         _lenaApi.RegisterItemAction("mid_tier_token", (session, item) => OpenAntagSelection(session, item.ItemId));
         _lenaApi.RegisterItemIcon("mid_tier_token",
-            "/Textures/Objects/Weapons/Melee/e_sword.rsi/icon.png");
+            "Resources/Textures/Objects/Weapons/Melee/e_sword.rsi/icon.png");
         _lenaApi.RegisterAntagRule("mid_tier_token",
             "Thief",
             "Вор",
@@ -70,7 +70,7 @@ public sealed class InventoryItemActionsSystem : EntitySystem
             "Traitor",
             "Предатель",
             forAlive: true,
-            forAliveAction: session => _antagSelection.ForceMakeAntag<ChangelingRuleComponent>(session, "Traitor"));
+            forAliveAction: session => _antagSelection.ForceMakeAntag<TraitorRuleComponent>(session, "Traitor"));
         _lenaApi.RegisterAntagRule("mid_tier_token",
             "Changeling",
             "Генокрад",
@@ -88,7 +88,7 @@ public sealed class InventoryItemActionsSystem : EntitySystem
 
 
         _lenaApi.RegisterItemAction("high_tier_token", (session, item) => OpenAntagSelection(session, item.ItemId));
-        _lenaApi.RegisterItemIcon("high_tier_token", "/Textures/Clothing/Mask/gassyndicate.rsi/icon.png");
+        _lenaApi.RegisterItemIcon("high_tier_token", "Resources/Textures/Clothing/Mask/gassyndicate.rsi/icon.png");
         _lenaApi.RegisterAntagRule("high_tier_token", "SkeletonMidround", "Скелет из шкафа", forAlive: false);
         _lenaApi.RegisterAntagRule("high_tier_token", "LoneAbductorSpawn", "Одинокий абдуктор", forAlive: false);
         _lenaApi.RegisterAntagRule("high_tier_token", "NinjaSpawn", "Ниндзя", forAlive: false);
@@ -108,7 +108,7 @@ public sealed class InventoryItemActionsSystem : EntitySystem
             "Traitor",
             "Предатель",
             forAlive: true,
-            forAliveAction: session => _antagSelection.ForceMakeAntag<ChangelingRuleComponent>(session, "Traitor"));
+            forAliveAction: session => _antagSelection.ForceMakeAntag<TraitorRuleComponent>(session, "Traitor"));
         _lenaApi.RegisterAntagRule("high_tier_token",
             "Changeling",
             "Генокрад",
@@ -151,7 +151,7 @@ public sealed class InventoryItemActionsSystem : EntitySystem
         _lenaApi.RegisterItemAction("admin_abuse_tier_token",
             (session, item) => OpenCosmeticSelection(session, item.ItemId));
         _lenaApi.RegisterItemIcon("admin_abuse_tier_token",
-            "/Textures/Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi/icon.png");
+            "Resources/Textures/Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi/icon.png");
 
         List<string> adminAbuseItems =
         [

@@ -23,6 +23,9 @@
         "name": "light_overlay"
     },
     {
+      "name": "insert_overlay"
+    },
+    {
         "name": "pda",
         "_comment": "YAML linter appeasement regarding chameleon PDA, removal TODO. Refer to /Resources/Textures/Objects/Devices/pda.rsi/meta.json for licensing information"
     }

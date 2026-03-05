@@ -18,19 +18,19 @@ public sealed class LenaApiManager
 
     private ApiWrapper? _wrapper;
     public ApiWrapper? Wrapper => _wrapper;
-    [ViewVariables] private readonly Dictionary<string, User> _users = new();
-    [ViewVariables] private Dictionary<int, ApiWrapper.ItemRarityList.Entry> _rarityNames = new();
-    [ViewVariables] private Dictionary<int, ApiWrapper.SubTierList.Entry> _subLevelNames = new();
+    [ViewVariables] private readonly Dictionary<string, User> _users = [];
+    [ViewVariables] private Dictionary<int, ApiWrapper.ItemRarityList.Entry> _rarityNames = [];
+    [ViewVariables] private Dictionary<int, ApiWrapper.SubTierList.Entry> _subLevelNames = [];
 
-    private readonly Dictionary<string, Action<ICommonSession, ApiWrapper.ItemRead>> _itemActions = new();
-    private readonly Dictionary<string, string> _itemIcons = new();
-    private readonly Dictionary<string, Dictionary<string, AntagRuleConfig>> _antagRules = new();
-    private readonly Dictionary<string, TokenConditions> _tokenConditions = new();
-    private readonly Dictionary<NetUserId, HashSet<string>> _lockedOutTokens = new();
-    private readonly Dictionary<NetUserId, HashSet<string>> _processingTokens = new();
-    private readonly HashSet<NetUserId> _globallyLockedPlayers = new();
-    private readonly Dictionary<NetUserId, Action<string>> _inventoryRemoveCallbacks = new();
-    private readonly Dictionary<string, List<string>> _cosmeticItems = new();
+    private readonly Dictionary<string, Action<ICommonSession, ApiWrapper.ItemRead>> _itemActions = [];
+    private readonly Dictionary<string, string> _itemIcons = [];
+    private readonly Dictionary<string, Dictionary<string, AntagRuleConfig>> _antagRules = [];
+    private readonly Dictionary<string, TokenConditions> _tokenConditions = [];
+    private readonly Dictionary<NetUserId, HashSet<string>> _lockedOutTokens = [];
+    private readonly Dictionary<NetUserId, HashSet<string>> _processingTokens = [];
+    private readonly HashSet<NetUserId> _globallyLockedPlayers = [];
+    private readonly Dictionary<NetUserId, Action<string>> _inventoryRemoveCallbacks = [];
+    private readonly Dictionary<string, List<string>> _cosmeticItems = [];
 
     private string ApiToken => _configurationManager.GetCVar(LenaApiCVars.ApiKey);
     public bool IsIntegrationEnabled => _configurationManager.GetCVar(LenaApiCVars.ApiIntegration);
@@ -141,22 +141,30 @@ public sealed class LenaApiManager
 
     #region api methods
 
-    public async Task<ApiWrapper.Result<ApiWrapper.UserRead>> GetUserFromApi(string ss14Id) =>
-        await Send<ApiWrapper.UserRead>(wrapper => wrapper.GetUser(ss14Id));
+    public async Task<ApiWrapper.Result<ApiWrapper.UserRead>> GetUserFromApi(string ss14Id)
+    {
+        return await Send(wrapper => wrapper.GetUser(ss14Id));
+    }
 
-    public async Task<ApiWrapper.Result<ApiWrapper.InventoryRead>> GetInventoryFromApi(int id) =>
-        await Send<ApiWrapper.InventoryRead>(wrapper => wrapper.GetInventory(id));
+    public async Task<ApiWrapper.Result<ApiWrapper.InventoryRead>> GetInventoryFromApi(int id)
+    {
+        return await Send(wrapper => wrapper.GetInventory(id));
+    }
 
-    public async Task<ApiWrapper.Result<ApiWrapper.InventoryModify>> TakeItemFromApi(int userId, int itemId, string? comment = null) =>
-        await Send<ApiWrapper.InventoryModify>(wrapper => wrapper.PostInventoryModify(userId,
+    public async Task<ApiWrapper.Result<ApiWrapper.InventoryModify>> TakeItemFromApi(int userId, int itemId, string? comment = null)
+    {
+        return await Send(wrapper => wrapper.PostInventoryModify(userId,
             new ApiWrapper.InventoryModify { ItemId = itemId, Amount = 1, Comment = comment }));
+    }
 
     #endregion
 
     #region item icons
 
     public void RegisterItemIcon(string itemId, string iconPath)
-        => _itemIcons[itemId] = iconPath;
+    {
+        _itemIcons[itemId] = iconPath;
+    }
 
     public string? GetItemIcon(string itemId)
     {
@@ -205,14 +213,14 @@ public sealed class LenaApiManager
         Action<ICommonSession>? forAliveAction = null)
     {
         if (!_antagRules.TryGetValue(itemId, out var rules))
-            _antagRules[itemId] = rules = new Dictionary<string, AntagRuleConfig>();
+            _antagRules[itemId] = rules = [];
         rules[ruleId] = new AntagRuleConfig(displayName, forAlive, forAliveAction);
     }
 
     public IReadOnlyDictionary<string, AntagRuleConfig> GetAntagRules(string itemId)
     {
         _antagRules.TryGetValue(itemId, out var rules);
-        return rules ?? new Dictionary<string, AntagRuleConfig>();
+        return rules ?? [];
     }
 
     #endregion
@@ -220,7 +228,9 @@ public sealed class LenaApiManager
     #region token conditions
 
     public void RegisterTokenConditions(string itemId, TokenConditions conditions)
-        => _tokenConditions[itemId] = conditions;
+    {
+        _tokenConditions[itemId] = conditions;
+    }
 
     public TokenConditions? GetTokenConditions(string itemId)
     {
@@ -233,18 +243,22 @@ public sealed class LenaApiManager
     #region lockout
 
     public bool IsTokenLockedOut(NetUserId userId, string itemId)
-        => _globallyLockedPlayers.Contains(userId)
-           || (_lockedOutTokens.TryGetValue(userId, out var tokens) && tokens.Contains(itemId));
+    {
+        return _globallyLockedPlayers.Contains(userId)
+               || _lockedOutTokens.TryGetValue(userId, out var tokens) && tokens.Contains(itemId);
+    }
 
     public void LockOutToken(NetUserId userId, string itemId)
     {
         if (!_lockedOutTokens.TryGetValue(userId, out var tokens))
-            _lockedOutTokens[userId] = tokens = new HashSet<string>();
+            _lockedOutTokens[userId] = tokens = [];
         tokens.Add(itemId);
     }
 
     public void LockOutPlayerGlobally(NetUserId userId)
-        => _globallyLockedPlayers.Add(userId);
+    {
+        _globallyLockedPlayers.Add(userId);
+    }
 
     public void ClearAllLockouts()
     {
@@ -255,7 +269,7 @@ public sealed class LenaApiManager
     public bool TryBeginTokenUse(NetUserId userId, string itemId)
     {
         if (!_processingTokens.TryGetValue(userId, out var set))
-            _processingTokens[userId] = set = new HashSet<string>();
+            _processingTokens[userId] = set = [];
         return set.Add(itemId);
     }
 
@@ -272,7 +286,7 @@ public sealed class LenaApiManager
     public void RegisterCosmeticItem(string tokenId, string protoId)
     {
         if (!_cosmeticItems.TryGetValue(tokenId, out var list))
-            _cosmeticItems[tokenId] = list = new List<string>();
+            _cosmeticItems[tokenId] = list = [];
         list.Add(protoId);
     }
 
@@ -288,10 +302,14 @@ public sealed class LenaApiManager
     #region inventory callbacks
 
     public void RegisterInventoryRemoveCallback(NetUserId userId, Action<string> callback)
-        => _inventoryRemoveCallbacks[userId] = callback;
+    {
+        _inventoryRemoveCallbacks[userId] = callback;
+    }
 
     public void UnregisterInventoryRemoveCallback(NetUserId userId)
-        => _inventoryRemoveCallbacks.Remove(userId);
+    {
+        _inventoryRemoveCallbacks.Remove(userId);
+    }
 
     public void NotifyItemRemoved(NetUserId userId, string itemId)
     {

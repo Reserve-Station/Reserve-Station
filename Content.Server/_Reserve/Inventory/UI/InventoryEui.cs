@@ -66,10 +66,9 @@ public sealed class InventoryEui : BaseEui
             .ConvertAll(e => e.Item)
             .FindAll(i => i.CanBeUsedIngame);
 
-        _items = result.Value.Items
+        _items = [.. result.Value.Items
             .Where(e => e.Item.CanBeUsedIngame)
-            .Select(e => new InventoryItemData(e.Item.ItemId, e.Item.ItemName, e.Item.Description, e.Item.Rarity, e.Item.CanBeUsedIngame, _lenaApi.GetItemIcon(e.Item.ItemId)))
-            .ToList();
+            .Select(e => new InventoryItemData(e.Item.ItemId, e.Item.ItemName, e.Item.Description, e.Item.Rarity, e.Item.CanBeUsedIngame, _lenaApi.GetItemIcon(e.Item.ItemId)))];
         _isLoading = false;
         StateDirty();
     }
