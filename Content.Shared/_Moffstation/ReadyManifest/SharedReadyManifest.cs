@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: MIT
+
 using Content.Shared.Eui;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;

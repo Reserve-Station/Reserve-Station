@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: MIT
+
 using System.Linq;
 using Content.Server.EUI;
 using Content.Server.GameTicking;
