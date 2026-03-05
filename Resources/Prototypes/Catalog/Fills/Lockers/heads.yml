@@ -175,6 +175,7 @@
     - id: SalvageJobBoardComputerCircuitboard # Goobstation - This doesn't really have a use right now but it's there incase it ever gets use again
     - id: CargoMegaphone # goob - loudspeaker
     - id: SlotMachineHighRollerFlatPack # Goob - gambling
+    - id: CargoComputerCommsFlatpack # Reserve - Funky port departamental comms
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -301,6 +302,7 @@
     - id: ServiceTechFabCircuitboard # Goobstation - Service Techfab
     - id: PrinterDocFlatpack # Corvax-Printer
     - id: CommandMegaphone # goob - loudspeakers
+    - id: ServiceComputerCommsFlatpack # Reserve - Funky port departamental comms
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -343,6 +345,7 @@
     - id: WeaponLauncherSingularityBuster
     - id: MachinePowerTransmissionLaserFlatpack
     - id: RCDRechargingCE
+    - id: EngiComputerCommsFlatpack # Reserve - Funky port departamental comms
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -421,6 +424,7 @@
     - id: DiseaseDiagnoserFlatPack
     - id: VaccinatorFlatPack
     # Goobstation End
+    - id: MedicalComputerCommsFlatpack # Reserve - Funky port departamental comms
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -482,6 +486,7 @@
     - id: ClothingBeltGeminiHoloProjector # Goobstation - Who better to do science with than yourself?
     - id: XenobiologyBountyComputerCircuitboard # Goobstation
     - id: MMI # Goobstation
+    - id: ScienceComputerCommsFlatpack # Reserve - Funky port departamental comms
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -545,6 +550,7 @@
     - id: WantedListCartridge
     - id: DrinkHosFlask
     - id: ClothingBeltSheathHeadOfSecurityFilled # Goobstation - security revamp
+    - id: SecurityComputerCommsFlatpack # Reserve - Funky port departamental comms
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
