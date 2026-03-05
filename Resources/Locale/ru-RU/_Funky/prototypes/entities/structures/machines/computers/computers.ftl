@@ -1,4 +1,4 @@
-ent-ScienceComputerComms = консоль связи НиО
+ent-ScienceComputerComms = консоль связи РнД
     .desc = { ent-ComputerComms.desc }
 ent-SecurityComputerComms = консоль связи Службы Безопасности
     .desc = { ent-ComputerComms.desc }
