@@ -1,5 +1,4 @@
 - type: guideEntry
-  abstract: true # reserve edit
   id: Conspirators
   name: guide-entry-conspirators
   text: "/ServerInfo/_Harmony/Guidebook/Antagonist/Conspirators.xml"
