@@ -161,11 +161,11 @@
       species:
       - Felinid
   guides: # goobstation
-  - Command
-  - Succession
-  - StandardProceduresSOP
-  - HeadOfPersonnelSOP
-  - Writing
+  - CommandReserve # Reserve guidebook
+  - SuccessionReserve # Reserve guidebook
+  - StandardProceduresSOPReserve # Reserve guidebook
+  - HeadOfPersonnelSOPReserve # Reserve guidebook
+  - WritingReserve # Reserve guidebook
   goobcoins: 40 #Goob content
   weight: 20
   startingGear: HoPGear

@@ -74,7 +74,7 @@
   startingGear: ChaplainGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-hop
-  guides: [ Chaplain ] # goobstation
+  guides: [ ChaplainReserve ] # goobstation # Reserve guidebook
   goobcoins: 25 #Goob content
   access:
   - Chapel

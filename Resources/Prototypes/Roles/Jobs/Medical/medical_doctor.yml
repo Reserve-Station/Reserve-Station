@@ -85,9 +85,9 @@
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
   guides: # goobstation
-  - MedicalDoctor
-  - Medical
-  - Medicine
+  - MedicalDoctorReserve # Reserve guidebook
+  - MedicalReserve # Reserve guidebook
+  - MedicineReserve # Reserve guidebook
   goobcoins: 20 #Goob content
   access:
   - Medical

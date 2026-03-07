@@ -158,11 +158,11 @@
   #canBeAntag: false
   antagAdvantage: 75 # Goobstation
   guides: # goobstation
-  - Engineering
-  - ChiefEngineerSOP
-  - EngineeringSOP
-  - Command
-  - EmergenciesSOP
+  - EngineeringReserve # Reserve guidebook
+  - ChiefEngineerSOPReserve # Reserve guidebook
+  - EngineeringSOPReserve # Reserve guidebook
+  - CommandReserve # Reserve guidebook
+  - EmergenciesSOPReserve # Reserve guidebook
   goobcoins: 40 #Goob content
   access:
   - Maintenance

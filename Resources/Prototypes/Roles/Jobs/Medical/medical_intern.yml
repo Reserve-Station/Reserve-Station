@@ -72,9 +72,9 @@
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
   guides: # goobstation
-  - MedicalDoctor
-  - Cloning
-  - Medicine
+  - MedicalDoctorReserve # Reserve guidebook
+  - CloningReserve # Reserve guidebook
+  - MedicineReserve # Reserve guidebook
   goobcoins: 20 #Goob content
   access:
   - Medical

@@ -97,11 +97,11 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   guides: # goobstation
-  - Security
-  - LegalSOP
-  - OfficerCadetSOP
-  - CorporateJudo
-  - AlertLevels
+  - SecurityReserve # Reserve guidebook
+  - LegalSOPReserve # Reserve guidebook
+  - OfficerCadetSOPReserve # Reserve guidebook
+  - CorporateJudoReserve # Reserve guidebook
+  - AlertLevelsReserve # Reserve guidebook
   goobcoins: 30 #Goob content
   access:
   - Security

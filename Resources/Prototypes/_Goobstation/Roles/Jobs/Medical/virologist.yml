@@ -12,10 +12,10 @@
   supervisors: job-supervisors-cmo
   goobcoins: 20 #Goob content
   guides:
-  - MedicalDoctor
-  - Medical
-  - Medicine
-  - Virology
+  - MedicalDoctorReserve # Reserve guidebook
+  - MedicalReserve # Reserve guidebook
+  - MedicineReserve # Reserve guidebook
+  - VirologyReserve # Reserve guidebook
   access:
   - Medical
   - Maintenance

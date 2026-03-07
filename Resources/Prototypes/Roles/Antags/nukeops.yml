@@ -110,7 +110,7 @@
     inverted: true
     species:
     - Plasmaman
-  guides: [ NuclearOperatives ]
+  guides: [ NuclearOperativesReserve ] # Reserve guidebook
 
 - type: antag
   id: NukeopsMedic
@@ -131,7 +131,7 @@
     inverted: true
     species:
     - Plasmaman
-  guides: [ NuclearOperatives ]
+  guides: [ NuclearOperativesReserve ] # Reserve guidebook
 
 - type: antag
   id: NukeopsCommander
@@ -153,7 +153,7 @@
     inverted: true
     species:
     - Plasmaman
-  guides: [ NuclearOperatives ]
+  guides: [ NuclearOperativesReserve ] # Reserve guidebook
 
 - type: startingGear
   id: SyndicateOperativeGearFullNoUplink

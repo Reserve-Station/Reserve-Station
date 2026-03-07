@@ -40,7 +40,7 @@
     inverted: true
     species:
     - Plasmaman
-  guides: [ Wizard ]
+  guides: [ WizardReserve ] # Reserve guidebook
 
 - type: antag
   id: Apprentice

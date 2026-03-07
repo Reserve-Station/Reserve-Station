@@ -100,7 +100,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-syndicate-agent-objective
-  guides: [ Traitors ]
+  guides: [ TraitorsReserve ] # Reserve guidebook
 
 - type: antag
   id: TraitorSleeper
@@ -108,7 +108,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-syndicate-agent-sleeper-objective
-  guides: [ Traitors ]
+  guides: [ TraitorsReserve ] # Reserve guidebook
 
 # Syndicate Operative Outfit - Monkey
 - type: startingGear

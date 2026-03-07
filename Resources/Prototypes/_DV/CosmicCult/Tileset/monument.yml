@@ -108,7 +108,7 @@
     totalEntropy: 0
   - type: GuideHelp
     guides:
-    - CosmicCult
+    - CosmicCultReserve # Reserve guidebook
   - type: WarpPoint
     location: The Monument
   - type: CosmicCultExamine

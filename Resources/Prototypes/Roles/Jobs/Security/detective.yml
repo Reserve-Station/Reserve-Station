@@ -77,9 +77,9 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   guides: # goobstation
-  - Forensics
-  - Security
-  - DetectiveSOP
+  - ForensicsReserve # Reserve guidebook
+  - SecurityReserve # Reserve guidebook
+  - DetectiveSOPReserve # Reserve guidebook
   goobcoins: 30 #Goob content
   access:
   - Security

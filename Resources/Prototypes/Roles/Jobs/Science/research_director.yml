@@ -158,10 +158,10 @@
   #canBeAntag: false
   antagAdvantage: 75 # Goobstation
   guides: # goobstation
-  - Science
-  - Command
-  - ResearchDirectorSOP
-  - ScienceSOP
+  - ScienceReserve # Reserve guidebook
+  - CommandReserve # Reserve guidebook
+  - ResearchDirectorSOPReserve # Reserve guidebook
+  - ScienceSOPReserve # Reserve guidebook
   goobcoins: 40 #Goob content
   access:
   - Research

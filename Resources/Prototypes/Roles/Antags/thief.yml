@@ -88,7 +88,7 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-thief-objective
-  guides: [ Thieves ]
+  guides: [ ThievesReserve ] # Reserve guidebook
 
 - type: startingGear
   id: ThiefGear

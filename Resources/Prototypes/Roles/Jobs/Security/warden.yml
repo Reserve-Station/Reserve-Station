@@ -154,11 +154,11 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   guides: # goobstation
-  - SpaceLaw
-  - LegalSOP
-  - Security
-  - WardenSOP
-  - KravMaga
+  - SpaceLawReserve # Reserve guidebook
+  - LegalSOPReserve # Reserve guidebook
+  - SecurityReserve # Reserve guidebook
+  - WardenSOPReserve # Reserve guidebook
+  - KravMagaReserve # Reserve guidebook
   goobcoins: 35 #Goob content
   access:
   - Security

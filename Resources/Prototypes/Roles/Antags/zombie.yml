@@ -21,7 +21,7 @@
     species:
     - IPC
     - Plasmaman
-  guides: [ Zombies ]
+  guides: [ ZombiesReserve ] # Reserve guidebook
 
 - type: antag
   id: Zombie
@@ -35,4 +35,4 @@
     species:
     - IPC
     - Plasmaman
-  guides: [ Zombies ]
+  guides: [ ZombiesReserve ] # Reserve guidebook

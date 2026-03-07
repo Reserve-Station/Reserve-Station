@@ -80,8 +80,8 @@
   icon: "JobIconShaftMiner"
   startingGear: SalvageSpecialistGear
   guides: # goobstation
-  - Salvage
-  - Cargo
+  - SalvageReserve # Reserve guidebook
+  - CargoReserve # Reserve guidebook
   goobcoins: 20 #Goob content
   supervisors: job-supervisors-qm
   access:

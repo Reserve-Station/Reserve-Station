@@ -13,7 +13,7 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 18000 # 5 hours
-  guides: [ Shadowlings ]
+  guides: [ ShadowlingsReserve ] # Reserve guidebook
 
 - type: antag
   id: Thrall

@@ -154,10 +154,10 @@
   #canBeAntag: false
   antagAdvantage: 75 # Goobstation
   guides: # goobstation
-  - Cargo
-  - QuartermasterSOP
-  - CargoSOP
-  - Command
+  - CargoReserve # Reserve guidebook
+  - QuartermasterSOPReserve # Reserve guidebook
+  - CargoSOPReserve # Reserve guidebook
+  - CommandReserve # Reserve guidebook
   goobcoins: 40 #Goob content
   access:
   - Cargo

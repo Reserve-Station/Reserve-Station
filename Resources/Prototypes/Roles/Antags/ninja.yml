@@ -82,7 +82,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-space-ninja-objective
-  guides: [ SpaceNinja ]
+  guides: [ SpaceNinjaReserve ] # Reserve guidebook
   requirements:
   - !type:SpeciesRequirement
     inverted: true

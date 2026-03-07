@@ -89,9 +89,9 @@
   icon: "JobIconChef"
   supervisors: job-supervisors-hop
   guides: # goobstation
-  - Chef
-  - FoodRecipes
-  - CQC
+  - ChefReserve # Reserve guidebook
+  - FoodRecipesReserve # Reserve guidebook
+  - CQCReserve # Reserve guidebook
   goobcoins: 15 #Goob content
   access:
   - Service

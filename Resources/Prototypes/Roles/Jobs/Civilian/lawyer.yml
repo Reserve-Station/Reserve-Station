@@ -77,8 +77,8 @@
   icon: "JobIconLawyer"
   supervisors: job-supervisors-hop
   guides: # goobstation
-  - SpaceLaw
-  - LegalSOP
+  - SpaceLawReserve # Reserve guidebook
+  - LegalSOPReserve # Reserve guidebook
   goobcoins: 10 #Goob content
   access:
   - Service

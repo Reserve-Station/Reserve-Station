@@ -62,7 +62,7 @@
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
-  guides: [ Science ] # goobstation
+  guides: [ ScienceReserve ] # goobstation # Reserve guidebook
   goobcoins: 20 #Goob content
   access:
   - Research

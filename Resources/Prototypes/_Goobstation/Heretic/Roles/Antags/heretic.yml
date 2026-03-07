@@ -18,7 +18,7 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 54000 # 15h
-  guides: [ Heretics ]
+  guides: [ HereticsReserve ] # Reserve guidebook
 
 - type: antag
   id: Ghoul
@@ -26,4 +26,4 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-ghoul-description
-  guides: [ Heretics ]
+  guides: [ HereticsReserve ] # Reserve guidebook

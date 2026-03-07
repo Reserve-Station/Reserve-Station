@@ -111,9 +111,9 @@
   supervisors: job-supervisors-security
   canBeAntag: false
   guides: # goobstation
-  - Security
-  - OfficerCadetSOP
-  - SearchesSOP
+  - SecurityReserve # Reserve guidebook
+  - OfficerCadetSOPReserve # Reserve guidebook
+  - SearchesSOPReserve # Reserve guidebook
   goobcoins: 30 #Goob content
   access:
   - Security

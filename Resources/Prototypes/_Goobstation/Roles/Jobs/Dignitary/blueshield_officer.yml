@@ -49,9 +49,9 @@
       species:
       - Felinid
   guides:
-  - BlueshieldOfficerSOP
-  - Command
-  - Succession
+  - BlueshieldOfficerSOPReserve # Reserve guidebook
+  - CommandReserve # Reserve guidebook
+  - SuccessionReserve # Reserve guidebook
   goobcoins: 45
   weight: 20
   startingGear: BlueshieldOfficerGear

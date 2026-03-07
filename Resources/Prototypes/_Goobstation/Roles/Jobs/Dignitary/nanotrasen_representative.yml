@@ -116,10 +116,10 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   guides:
-  - NanotrasenRepSOP
-  - SOP
-  - SpaceLaw
-  - Writing
+  - NanotrasenRepSOPReserve # Reserve guidebook
+  - SOPReserve # Reserve guidebook
+  - SpaceLawReserve # Reserve guidebook
+  - WritingReserve # Reserve guidebook
   goobcoins: 40
   access:
   - Security

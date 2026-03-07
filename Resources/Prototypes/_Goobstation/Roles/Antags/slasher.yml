@@ -4,7 +4,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-slasher-objectives
-  guides: [ Slasher ]
+  guides: [ SlasherReserve ] # Reserve guidebook
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]

@@ -158,12 +158,12 @@
   supervisors: job-supervisors-captain
   canBeAntag: false
   guides: # goobstation
-  - Medical
-  - ChiefMedicalOfficerSOP
-  - MedicalSOP
-  - Command
-  - Chemicals
-  - Virology
+  - MedicalReserve # Reserve guidebook
+  - ChiefMedicalOfficerSOPReserve # Reserve guidebook
+  - MedicalSOPReserve # Reserve guidebook
+  - CommandReserve # Reserve guidebook
+  - ChemicalsReserve # Reserve guidebook
+  - VirologyReserve # Reserve guidebook
   goobcoins: 40 #Goob content
   weight: 10 #Goob Edit
   access:

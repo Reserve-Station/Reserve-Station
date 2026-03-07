@@ -11,8 +11,8 @@
   icon: "JobIconLavaShaftMiner" # Wizden's icon is already called shaft miner for whatever reason.
   startingGear: ShaftMinerGear
   guides:
-  - Salvage # TODO lavaland guide
-  - Cargo
+  - SalvageReserve # TODO lavaland guide # Reserve guidebook
+  - CargoReserve # Reserve guidebook
   goobcoins: 20
   supervisors: job-supervisors-qm
   access:

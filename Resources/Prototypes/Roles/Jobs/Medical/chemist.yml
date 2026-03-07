@@ -73,8 +73,8 @@
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
   guides: # goobstation
-  - Chemist
-  - Chemicals
+  - ChemistReserve # Reserve guidebook
+  - ChemicalsReserve # Reserve guidebook
   goobcoins: 20 #Goob content
   access:
   - Medical

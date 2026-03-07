@@ -73,9 +73,9 @@
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
   guides: # goobstation
-  - Construction
-  - Power
-  - Networking
+  - ConstructionReserve # Reserve guidebook
+  - PowerReserve # Reserve guidebook
+  - NetworkingReserve # Reserve guidebook
   goobcoins: 20 #Goob content
   access:
   - Maintenance

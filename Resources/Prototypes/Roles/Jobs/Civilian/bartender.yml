@@ -79,8 +79,8 @@
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop
   guides: # goobstation
-  - Bartender
-  - Drinks
+  - BartenderReserve # Reserve guidebook
+  - DrinksReserve # Reserve guidebook
   goobcoins: 10 #Goob content
   access:
   - Service

@@ -166,13 +166,13 @@
   supervisors: job-supervisors-captain
   canBeAntag: false
   guides: # goobstation
-  - Security
-  - SpaceLaw
-  - LegalSOP
-  - Command
-  - HeadOfSecuritySOP
-  - SecuritySOP
-  - AlertLevels
+  - SecurityReserve # Reserve guidebook
+  - SpaceLawReserve # Reserve guidebook
+  - LegalSOPReserve # Reserve guidebook
+  - CommandReserve # Reserve guidebook
+  - HeadOfSecuritySOPReserve # Reserve guidebook
+  - SecuritySOPReserve # Reserve guidebook
+  - AlertLevelsReserve # Reserve guidebook
   goobcoins: 45 #Goob content
   access:
   - HeadOfSecurity
