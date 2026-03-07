@@ -27,7 +27,8 @@
   - CloningReserve
   - CryogenicsReserve
   - SurgeryReserve # Shitmed Change
-  - MedicalPatchesReserve # Fix for Medicine Patches
+  - MedicalPatchesReserve # Goob
+  - VirologyReserve # Goobstation
 
 - type: guideEntry
   id: MedicalDoctorReserve
@@ -112,3 +113,8 @@
   id: AutodocReserve
   name: guide-entry-autodoc
   text: "/ServerInfo/_Reserve/Guidebook/Medical/Autodoc.xml"
+
+- type: guideEntry
+  id: VirologyReserve
+  name: guide-entry-virology
+  text: "/ServerInfo/_Reserve/Guidebook/Medical/Virology.xml"
