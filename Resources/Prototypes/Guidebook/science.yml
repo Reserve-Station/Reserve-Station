@@ -22,6 +22,7 @@
   - Xenoarchaeology
   - Xenobiology # Goobstation
   - Robotics
+  - ReverseEngineering # Reserve - nyano port
 
 - type: guideEntry
   id: Technologies
@@ -86,3 +87,8 @@
   text: "/ServerInfo/Guidebook/Science/Cyborgs.xml"
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/Cyborgs.xml"
+
+- type: guideEntry
+  id: ReverseEngineering # reserve: nyano port
+  name: guide-entry-reverse-engineering
+  text: "/ServerInfo/_Reserve/Guidebook/Science/ReverseEngineering.xml" #already localised
