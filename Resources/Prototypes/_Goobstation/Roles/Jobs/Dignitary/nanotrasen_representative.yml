@@ -118,7 +118,7 @@
   guides:
   - NanotrasenRepSOP
   - SOP
-  - SpaceLaw
+  - SpaceLawReserve # Reserve guidebook
   - Writing
   goobcoins: 40
   access:

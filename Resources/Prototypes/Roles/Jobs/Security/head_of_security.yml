@@ -167,7 +167,7 @@
   canBeAntag: false
   guides: # goobstation
   - Security
-  - SpaceLaw
+  - SpaceLawReserve # Reserve guidebook
   - LegalSOP
   - Command
   - HeadOfSecuritySOP
