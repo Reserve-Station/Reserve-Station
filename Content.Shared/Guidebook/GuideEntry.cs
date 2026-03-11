@@ -76,6 +76,8 @@ public class GuideEntry
     [DataField] public int Priority = 0;
 
     // Reserve localized guidebook begin
+    private readonly ISawmill _sawmill = default!;
+
     /// <summary>
     ///     Gets the appropriate text path for the specified culture.
     /// </summary>
@@ -91,8 +93,8 @@ public class GuideEntry
             if (LocalizedText.TryGetValue("en-US", out var enUsPath))
                 return enUsPath;
 
-            // Throw exception if culture not found
-            throw new InvalidOperationException($"Culture \"{culture}\" not found!");
+            // Culture not found
+            _sawmill.Error($"Culture {culture} not found!");
         }
 
         // Use Text field as fallback
