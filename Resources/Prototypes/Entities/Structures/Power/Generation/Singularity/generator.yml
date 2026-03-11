@@ -56,5 +56,5 @@
   - type: Pullable
   - type: GuideHelp
     guides:
-    - SingularityEngineReserve # Reserve guidebook
-    - PowerReserve # Reserve guidebook
+    - SingularityEngine
+    - Power

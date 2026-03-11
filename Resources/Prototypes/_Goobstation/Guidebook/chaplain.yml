@@ -11,3 +11,5 @@
   id: Chaplain
   name: guide-entry-chaplain
   text: "/ServerInfo/_Goobstation/Guidebook/Service/Chaplain.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/Chaplain.xml"

@@ -114,8 +114,8 @@
         - ForceFixRotations
     - type: GuideHelp
       guides:
-        - DeviceMonitoringAndControlReserve # Reserve guidebook
-        - AtmosphericsSystemsReserve # Reserve guidebook
+        - DeviceMonitoringAndControl
+        - AtmosphericsSystems
 
 - type: entity
   id: AirSensor

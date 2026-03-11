@@ -232,8 +232,8 @@
       path: /Audio/Effects/countdown.ogg
   - type: GuideHelp
     guides:
-    - SecurityReserve # Reserve guidebook
-    - AntagonistsReserve # Reserve guidebook
+    - Security
+    - Antagonists
   - type: Flashbang # Goobstation
   - type: Tag
     tags:

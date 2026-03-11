@@ -146,7 +146,7 @@
     stackType: ArtifactFragment
   - type: GuideHelp
     guides:
-    - XenoarchaeologyReserve # Reserve guidebook
+    - Xenoarchaeology
   # Lavaland Change start
   - type: Material
   - type: PhysicalComposition

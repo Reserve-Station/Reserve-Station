@@ -123,8 +123,8 @@
     board: SodaDispenserMachineCircuitboard
   - type: GuideHelp
     guides:
-    - BartenderReserve # Reserve guidebook
-    - DrinksReserve # Reserve guidebook
+    - Bartender
+    - Drinks
 
 - type: entity
   parent: SodaDispenserEmpty

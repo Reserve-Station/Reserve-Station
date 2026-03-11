@@ -27,6 +27,8 @@
   id: Species
   name: guide-entry-species
   text: "/ServerInfo/Guidebook/Mobs/Species.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Species.xml"
   children:
     - Arachnid
     - Diona
@@ -56,89 +58,125 @@
   id: Arachnid
   name: species-name-arachnid
   text: "/ServerInfo/Guidebook/Mobs/Arachnid.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Arachnid.xml"
 
 - type: guideEntry
   id: Diona
   name: species-name-diona
   text: "/ServerInfo/Guidebook/Mobs/Diona.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Diona.xml"
 
 - type: guideEntry
   id: Dwarf
   name: species-name-dwarf
   text: "/ServerInfo/Guidebook/Mobs/Dwarf.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Dwarf.xml"
 
 - type: guideEntry
   id: Human
   name: species-name-human
   text: "/ServerInfo/Guidebook/Mobs/Human.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Human.xml"
 
 - type: guideEntry
   id: Moth
   name: species-name-moth
   text: "/ServerInfo/Guidebook/Mobs/Moth.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Moth.xml"
 
 - type: guideEntry
   id: Reptilian
   name: species-name-reptilian
   text: "/ServerInfo/Guidebook/Mobs/Reptilian.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Reptilian.xml"
 
 - type: guideEntry
   id: SlimePerson
   name: species-name-slime
   text: "/ServerInfo/Guidebook/Mobs/SlimePerson.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/SlimePerson.xml"
 
 # Goobstation
 - type: guideEntry
   id: Felinid
   name: species-name-felinid
   text: "/ServerInfo/Guidebook/Mobs/Felinid.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Felinid.xml"
 
 - type: guideEntry
   id: Gingerbread
   name: species-name-gingerbread
   text: "/ServerInfo/Guidebook/Mobs/Gingerbread.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Gingerbread.xml"
 
 - type: guideEntry
   id: Harpy
   name: species-name-harpy
   text: "/ServerInfo/Guidebook/Mobs/Harpy.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Harpy.xml"
 
 - type: guideEntry
   id: Vox
   name: species-name-vox
   text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Vox.xml"
 
 - type: guideEntry
   id: Vulpkanin
   name: species-name-vulpkanin
   text: "/ServerInfo/Guidebook/Mobs/Vulpkanin.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Vulpkanin.xml"
 
 - type: guideEntry
   id: Yowie
   name: species-name-yowie
   text: "/ServerInfo/Guidebook/Mobs/Yowie.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Yowie.xml"
 
 - type: guideEntry
   id: IPC
   name: species-name-ipc
   text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/IPCs.xml"
 
 - type: guideEntry
   id: Resomi
   name: species-name-resomi
   text: "/ServerInfo/Guidebook/Mobs/Resomi.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Resomi.xml"
 
 - type: guideEntry
   id: Tajaran
   name: species-name-tajaran
   text: "/ServerInfo/Guidebook/Mobs/Tajaran.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Tajaran.xml"
 
 - type: guideEntry
   id: Plasmaman
   name: species-name-plasmaman
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Plasmaman.xml"
 
 - type: guideEntry
   id: Shadowkin
   name: species-name-shadowkin
   text: "/ServerInfo/Guidebook/Mobs/Shadowkin.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Shadowkin.xml"

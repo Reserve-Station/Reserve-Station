@@ -228,8 +228,8 @@
     - microwave_entity_container
   - type: GuideHelp
     guides:
-    - ChefReserve # Reserve guidebook
-    - FoodRecipesReserve # Reserve guidebook
+    - Chef
+    - FoodRecipes
 
 - type: entity
   id: SyndicateMicrowave

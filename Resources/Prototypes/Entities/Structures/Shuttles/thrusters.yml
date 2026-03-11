@@ -80,7 +80,7 @@
       price: 300
     - type: GuideHelp
       guides:
-      - ShuttleCraftReserve # Reserve guidebook
+      - ShuttleCraft
   placement:
     mode: SnapgridCenter
 

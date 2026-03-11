@@ -186,8 +186,8 @@
       path: /Audio/Ambience/Objects/flowing_water_open.ogg
   - type: GuideHelp
     guides:
-    - BotanyReserve # Reserve guidebook
-    - ChemicalsReserve # Reserve edit
+    - Botany
+    - Chemicals
 
 - type: entity
   parent: hydroponicsTray

@@ -45,8 +45,8 @@
       - state: agrichemkit
   - type: GuideHelp
     guides:
-    - BotanicalReserve # Reserve guidebook
-    - ChemicalsReserve # Reserve edit
+    - Botanical
+    - Chemicals
 
 - type: entity
   parent: BoxLightbulb

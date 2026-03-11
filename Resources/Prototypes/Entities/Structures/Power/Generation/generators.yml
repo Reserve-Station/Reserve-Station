@@ -119,7 +119,7 @@
     highVoltageNode: output
   - type: GuideHelp
     guides:
-    - ShuttleCraftReserve # Reserve guidebook
+    - ShuttleCraft
 
 # Base Wallmount Generator
 
@@ -166,7 +166,7 @@
     supplyRampTolerance: 500
   - type: GuideHelp
     guides:
-    - ShuttleCraftReserve # Reserve guidebook
+    - ShuttleCraft
 
 # Construction Frames
 
@@ -245,7 +245,7 @@
       board: !type:Container
   - type: GuideHelp
     guides:
-    - ShuttleCraftReserve # Reserve guidebook
+    - ShuttleCraft
 
 # RTG - no fuel requirement
 
@@ -270,8 +270,8 @@
       path: /Audio/Ambience/Objects/buzzing.ogg
   - type: GuideHelp
     guides:
-    - RTGReserve # Reserve guidebook
-    - PowerReserve # Reserve guidebook
+    - RTG
+    - Power
   - type: Destructible
     thresholds:
       - trigger:

@@ -2,6 +2,8 @@
   id: Wraith
   name: guide-entry-wraith
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Wraith.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Wraith.xml"
   children:
   - Plaguebringer
   - Harbinger
@@ -13,23 +15,33 @@
   id: Plaguebringer
   name: guide-entry-plaguebringer
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Plaguebringer.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Plaguebringer.xml"
 
 - type: guideEntry
   id: Harbinger
   name: guide-entry-harbinger
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Harbinger.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Harbinger.xml"
 
 - type: guideEntry
   id: Trickster
   name: guide-entry-trickster
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Trickster.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Trickster.xml"
 
 - type: guideEntry
   id: VoidSummons
   name: guide-entry-void-summons
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/VoidSummons.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/VoidSummons.xml"
 
 - type: guideEntry
   id: RevenantWraith
   name: guide-entry-revenant
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/revenant.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/revenant.xml"

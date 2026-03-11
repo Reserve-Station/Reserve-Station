@@ -1,13 +1,13 @@
 <Document>
   # Клапаны
-  Клапаны это быстрый способ перекрыть или открыть поток газов через [textlink="сеть труб" link="PipeNetworksReserve"].
+  Клапаны это быстрый способ перекрыть или открыть поток газов через [textlink="сеть труб" link="PipeNetworks"].
   <Box>
     <GuideEntityEmbed Entity="GasValve"/>
     <GuideEntityEmbed Entity="SignalControlledValve"/>
     <GuideEntityEmbed Entity="PressureControlledValve"/>
     <GuideEntityEmbed Entity="GasPassiveGate"/>
   </Box>
-  Все клапаны не нуждаются в [textlink="питании" link="PowerReserve"] для работы.
+  Все клапаны не нуждаются в [textlink="питании" link="Power"] для работы.
 
   Клапаны могут выглядеть просто, но они могут обеспечить широкий спектр из сложных систем труб, включая:
   - Сигнальные клапаны реагируют на воздушные сигнализации или логические ворота

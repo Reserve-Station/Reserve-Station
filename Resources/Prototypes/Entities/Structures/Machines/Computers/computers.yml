@@ -255,8 +255,8 @@
           type: WiresBoundUserInterface
   - type: GuideHelp
     guides:
-    - AtmosphericAlertsComputerReserve # Reserve guidebook
-    - DeviceMonitoringAndControlReserve # Reserve guidebook
+    - AtmosphericAlertsComputer
+    - DeviceMonitoringAndControl
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -292,8 +292,8 @@
         type: WiresBoundUserInterface
   - type: GuideHelp
     guides:
-    - AtmosphericNetworkMonitorReserve # Reserve guidebook
-    - DeviceMonitoringAndControlReserve # Reserve guidebook
+    - AtmosphericNetworkMonitor
+    - DeviceMonitoringAndControl
 
 - type: entity
   parent: BaseComputer
@@ -370,7 +370,7 @@
       disk_slot: !type:ContainerSlot {}
   - type: GuideHelp
     guides:
-    - ShuttleCraftReserve # Reserve guidebook
+    - ShuttleCraft
   # Frontier edit start
   - type: DeviceLinkSource
     ports:
@@ -653,7 +653,7 @@
     access: [["Security"]]
   - type: GuideHelp
     guides:
-    - CriminalRecordsReserve # Reserve guidebook
+    - CriminalRecords
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -678,7 +678,7 @@
     board: StationRecordsComputerCircuitboard
   - type: GuideHelp
     guides:
-    - ForensicsReserve # Reserve guidebook
+    - Forensics
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -765,7 +765,7 @@
     color: "#b53ca1"
   - type: GuideHelp
     guides:
-    - ScienceReserve # Reserve guidebook
+    - Science
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -814,7 +814,7 @@
     color: "#b53ca1"
   - type: GuideHelp
     guides:
-    - XenoarchaeologyReserve # Reserve guidebook
+    - Xenoarchaeology
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -1041,8 +1041,8 @@
     color: "#e6e227"
   - type: GuideHelp
     guides:
-    - SolarPanelsReserve # Reserve guidebook
-    - PowerReserve # Reserve guidebook
+    - SolarPanels
+    - Power
   - type: Tag
     tags:
     - DroneUsable # Goobstation
@@ -1131,7 +1131,7 @@
       - OrderSender
   - type: GuideHelp
     guides:
-    - CargoReserve # Reserve edit
+    - Cargo
 
 # Request console variants.
 - type: entity
@@ -1336,8 +1336,8 @@
     access: [["Quartermaster"]]
   - type: GuideHelp
     guides:
-    - CargoBountiesReserve # Reserve edit
-    - CargoReserve # Reserve edit
+    - CargoBounties
+    - Cargo
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -1427,7 +1427,7 @@
     damageModifierSet: StructuralMetallicStrong
   - type: GuideHelp
     guides:
-    - CloningReserve # Reserve guidebook
+    - Cloning
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -1636,7 +1636,7 @@
     color: "#b89f25"
   - type: GuideHelp
     guides:
-    - CargoReserve # Reserve edit
+    - Cargo
 
 - type: entity
   parent: BaseComputerAiAccess

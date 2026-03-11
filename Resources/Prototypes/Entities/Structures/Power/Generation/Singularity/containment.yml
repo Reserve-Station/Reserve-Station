@@ -87,9 +87,9 @@
           False: { visible: false }
   - type: GuideHelp
     guides:
-    - SingularityTeslaEngineReserve # Reserve guidebook
-    - SingularityEngineReserve # Reserve guidebook
-    - PowerReserve # Reserve guidebook
+    - SingularityTeslaEngine
+    - SingularityEngine
+    - Power
 
 
 - type: entity
@@ -125,6 +125,6 @@
   - type: SyncSprite
   - type: GuideHelp
     guides:
-    - SingularityTeslaEngineReserve # Reserve guidebook
-    - SingularityEngineReserve # Reserve guidebook
-    - PowerReserve # Reserve guidebook
+    - SingularityTeslaEngine
+    - SingularityEngine
+    - Power

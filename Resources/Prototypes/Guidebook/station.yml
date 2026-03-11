@@ -30,6 +30,8 @@
   id: SS14
   name: guide-entry-ss14
   text: "/ServerInfo/Guidebook/SpaceStation14.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/SpaceStation14.xml"
   children:
   - Jobs
   - Survival
@@ -42,8 +44,12 @@
   id: Glossary
   name: guide-entry-glossary
   text: "/ServerInfo/Guidebook/Glossary.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Glossary.xml"
 
 - type: guideEntry
   id: Survival
   name: guide-entry-survival
   text: "/ServerInfo/Guidebook/Survival.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Survival.xml"

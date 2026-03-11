@@ -23,7 +23,7 @@
     - type: Appearance
     - type: GuideHelp
       guides:
-      - RevolutionariesReserve # Reserve guidebook
+      - Revolutionaries
     - type: Construction
       graph: RevolutionaryManifesto
       node: revolutionaryManifesto

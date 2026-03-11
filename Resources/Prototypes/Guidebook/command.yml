@@ -12,3 +12,5 @@
   id: Command
   name: guide-entry-command
   text: "/ServerInfo/Guidebook/Command.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Command.xml"

@@ -7,13 +7,13 @@
 </Box>
 
 Следующие папки перечислены в этой папке:
-- [textlink="Отдел Снабжения" link="CargoSOPReserve"]
-- [textlink="Командный Отдел" link="CommandSOPReserve"]
-- [textlink="Инженерный Отдел" link="EngineeringSOPReserve"]
-- [textlink="Медицинский Отдел" link="MedicalSOPReserve"]
-- [textlink="Научный Отдел" link="ScienceSOPReserve"]
-- [textlink="Отдел Безопасности" link="SecuritySOPReserve"]
-- [textlink="Сервисный Отдел" link="ServiceSOPReserve"]
+- [textlink="Отдел Снабжения" link="CargoSOP"]
+- [textlink="Командный Отдел" link="CommandSOP"]
+- [textlink="Инженерный Отдел" link="EngineeringSOP"]
+- [textlink="Медицинский Отдел" link="MedicalSOP"]
+- [textlink="Научный Отдел" link="ScienceSOP"]
+- [textlink="Отдел Безопасности" link="SecuritySOP"]
+- [textlink="Сервисный Отдел" link="ServiceSOP"]
 
 Космический Закон:
 - [textlink="Космический Закон" link="SpaceLawReserve"]

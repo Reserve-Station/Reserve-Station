@@ -111,7 +111,7 @@
     damageModifierSet: Metallic
   - type: GuideHelp
     guides:
-    - NetworkingReserve # Reserve guidebook
+    - Networking
   - type: Destructible
     thresholds:
       - trigger:

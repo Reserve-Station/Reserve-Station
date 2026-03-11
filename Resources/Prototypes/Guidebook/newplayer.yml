@@ -13,6 +13,8 @@
   id: NewPlayer
   name: guide-entry-newplayer
   text: "/ServerInfo/Guidebook/NewPlayer/NewPlayer.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/NewPlayer/NewPlayer.xml"
   children:
   - Controls
   - CharacterCreation
@@ -21,6 +23,8 @@
   id: Controls
   name: guide-entry-controls
   text: "/ServerInfo/Guidebook/NewPlayer/Controls/Controls.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/NewPlayer/Controls/Controls.xml"
   children:
   - Radio
 
@@ -28,11 +32,15 @@
   id: Radio
   name: guide-entry-radio
   text: "/ServerInfo/Guidebook/NewPlayer/Controls/Radio.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/NewPlayer/Controls/Radio.xml"
 
 - type: guideEntry
   id: CharacterCreation
   name: guide-entry-charactercreation
   text: "/ServerInfo/Guidebook/NewPlayer/CharacterCreation.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/NewPlayer/CharacterCreation.xml"
   children:
   - YourFirstCharacter
   - Species
@@ -41,3 +49,5 @@
   id: YourFirstCharacter
   name: guide-entry-yourfirstcharacter
   text: "/ServerInfo/Guidebook/NewPlayer/YourFirstCharacter.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/NewPlayer/YourFirstCharacter.xml"

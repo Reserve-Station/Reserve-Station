@@ -2,6 +2,8 @@
   id: Devil
   name: "Devil"
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Devil.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Devil.xml"
   children:
   - DevilClauses
 
@@ -9,3 +11,5 @@
   id: DevilClauses
   name: "Devil Clauses"
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/DevilClauses.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/DevilClauses.xml"

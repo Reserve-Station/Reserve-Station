@@ -292,7 +292,7 @@
   - type: MobMover
   - type: GuideHelp
     guides:
-    - RoboticsReserve # Reserve guidebook
+    - Robotics
   - type: Tag
     tags:
     - DoorBumpOpener

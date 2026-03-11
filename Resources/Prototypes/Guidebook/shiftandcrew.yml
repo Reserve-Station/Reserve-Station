@@ -28,8 +28,10 @@
   id: Jobs
   name: guide-entry-jobs
   text: "/ServerInfo/Guidebook/Jobs.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Jobs.xml"
   children:
-  - CargoReserve # Reserve edit
+  - Cargo
   - Command
   - Engineering
   - Medical

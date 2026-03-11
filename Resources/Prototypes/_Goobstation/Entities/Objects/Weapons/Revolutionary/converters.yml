@@ -46,8 +46,8 @@
             True: { state: burnt }
     - type: GuideHelp
       guides:
-        - SecurityReserve # Reserve guidebook
-        - AntagonistsReserve # Reserve guidebook
+        - Security
+        - Antagonists
     - type: Construction
       graph: RevFlash
       node: revFlash

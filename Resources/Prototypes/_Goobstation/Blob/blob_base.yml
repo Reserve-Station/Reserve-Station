@@ -54,7 +54,7 @@
           density: 1000
     - type: GuideHelp
       guides:
-      - BlobReserve # Reserve guidebook
+      - Blob
 
 - type: entity
   id: MobObserverBlobController

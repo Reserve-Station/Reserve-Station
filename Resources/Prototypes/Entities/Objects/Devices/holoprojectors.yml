@@ -143,9 +143,9 @@
       Glass: 12
   - type: GuideHelp
     guides:
-    - AtmosToolsReserve # Reserve guidebook
-    - FiresReserve # Reserve guidebook
-    - SpacingReserve # Reserve guidebook
+    - AtmosTools
+    - Fires
+    - Spacing
 
 #- type: entity #Goobstation - Use DV Holofans
 #  parent: HolofanProjector

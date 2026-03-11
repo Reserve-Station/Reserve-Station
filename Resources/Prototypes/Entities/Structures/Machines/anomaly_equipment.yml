@@ -105,7 +105,7 @@
       - !type:ExplodeBehavior
   - type: GuideHelp
     guides:
-    - ScannersAndVesselsReserve # Reserve guidebook
+    - ScannersAndVessels
 
 - type: entity
   id: MachineAnomalyVesselExperimental
@@ -200,7 +200,7 @@
     powerLoad: 100
   - type: GuideHelp
     guides:
-    - APEReserve # Reserve guidebook
+    - APE
   - type: Gun
     projectileSpeed: 10
     fireRate: 10 #just has to be fast enough to keep up with upgrades
@@ -345,4 +345,4 @@
     access: [["Research"]]
   - type: GuideHelp
     guides:
-    - AnomalousResearchReserve # Reserve guidebook
+    - AnomalousResearch

@@ -15,8 +15,10 @@
   id: References
   name: guide-entry-references
   text: "/ServerInfo/Guidebook/References.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/References.xml"
   children:
-  - ChemicalsReserve # Reserve edit
+  - Chemicals
   - Drinks
   - FoodRecipes
   - Writing
@@ -26,6 +28,8 @@
   id: Drinks
   name: guide-entry-drinks
   text: "/ServerInfo/Guidebook/ReferenceTables/Drinks.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/ReferenceTables/Drinks.xml"
   filterEnabled: True
   children: # Goob - Drinks guidebook split
   - AlcoholicDrinks
@@ -35,6 +39,8 @@
   id: FoodRecipes
   name: guide-entry-foodrecipes
   text: "/ServerInfo/Guidebook/Service/FoodRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/FoodRecipes.xml"
   filterEnabled: True
   children:
   - PizzaRecipes
@@ -57,93 +63,125 @@
   id: PizzaRecipes
   name: guide-entry-pizza-recipes
   text: "/ServerInfo/Guidebook/Service/PizzaRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/PizzaRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: SavoryRecipes
   name: guide-entry-savory-recipes
   text: "/ServerInfo/Guidebook/Service/SavoryRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/SavoryRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: BreadRecipes
   name: guide-entry-bread-recipes
   text: "/ServerInfo/Guidebook/Service/BreadRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/BreadRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: BreakfastRecipes
   name: guide-entry-breakfast-recipes
   text: "/ServerInfo/Guidebook/Service/BreakfastRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/BreakfastRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: MothRecipes
   name: guide-entry-moth-recipes
   text: "/ServerInfo/Guidebook/Service/MothRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/MothRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: PastaRecipes
   name: guide-entry-pasta-recipes
   text: "/ServerInfo/Guidebook/Service/PastaRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/PastaRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: DessertRecipes
   name: guide-entry-dessert-recipes
   text: "/ServerInfo/Guidebook/Service/DessertRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/DessertRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: SoupRecipes
   name: guide-entry-soup-recipes
   text: "/ServerInfo/Guidebook/Service/SoupRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/SoupRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: PieRecipes
   name: guide-entry-pie-recipes
   text: "/ServerInfo/Guidebook/Service/PieRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/PieRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: BarsAndCookiesRecipes
   name: guide-entry-barsandcookies-recipes
   text: "/ServerInfo/Guidebook/Service/BarsAndCookiesRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/BarsAndCookiesRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: CakeRecipes
   name: guide-entry-cake-recipes
   text: "/ServerInfo/Guidebook/Service/CakeRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/CakeRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: SaladRecipes
   name: guide-entry-salad-recipes
   text: "/ServerInfo/Guidebook/Service/SaladRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/SaladRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: OtherRecipes
   name: guide-entry-other-recipes
   text: "/ServerInfo/Guidebook/Service/OtherRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/OtherRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: MedicinalRecipes
   name: guide-entry-medicinal-recipes
   text: "/ServerInfo/Guidebook/Service/MedicinalRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/MedicinalRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: SecretRecipes
   name: guide-entry-secret-recipes
   text: "/ServerInfo/Guidebook/Service/SecretRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/SecretRecipes.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Writing
   name: guide-entry-writing
   text: "/ServerInfo/Guidebook/Writing.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Writing.xml"

@@ -79,8 +79,8 @@
     board: ChemDispenserMachineCircuitboard
   - type: GuideHelp
     guides:
-    - ChemicalsReserve # Reserve edit
-    - ChemistReserve # Reserve edit
+    - Chemicals
+    - Chemist
   - type: StealTarget
     stealGroup: ChemDispenser
   - type: Fixtures

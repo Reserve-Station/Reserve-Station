@@ -116,8 +116,8 @@
     solution: buffer
   - type: GuideHelp
     guides:
-    - ChemicalsReserve # Reserve edit
-    - ChemistReserve # Reserve guidebook
+    - Chemicals
+    - Chemist
   - type: StaticPrice
     price: 20
   - type: SolutionItemStatus  # lets you see how full it is when holding it

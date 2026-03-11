@@ -191,7 +191,7 @@
       - DroneUsable # Goobstation
   - type: GuideHelp
     guides:
-    - JanitorialReserve # Reserve guidebook
+    - Janitorial
   - type: DnaSubstanceTrace
   - type: FloorCleaner # Goobstation
     radius: 2
@@ -375,7 +375,7 @@
     heldPrefix: plunger
   - type: GuideHelp
     guides:
-    - JanitorialReserve # Reserve guidebook
+    - Janitorial
   - type: Clothing
     sprite: Objects/Specific/Janitorial/plunger.rsi
     slots:

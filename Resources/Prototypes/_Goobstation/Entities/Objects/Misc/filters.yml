@@ -21,7 +21,7 @@
     graph: AutomationFilter
   - type: GuideHelp
     guides:
-    - AutomationReserve # Reserve guidebook
+    - Automation
 
 - type: entity
   abstract: true

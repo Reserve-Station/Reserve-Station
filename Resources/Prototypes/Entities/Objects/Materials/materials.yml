@@ -448,7 +448,7 @@
     color: "#8A9A5B"
   - type: GuideHelp
     guides:
-    - CloningReserve # Reserve guidebook
+    - Cloning
 
 - type: entity
   parent: MaterialBiomass

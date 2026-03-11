@@ -92,8 +92,8 @@
       Steel: 15
   - type: GuideHelp
     guides:
-    - VoltageNetworksReserve # Reserve guidebook
-    - PowerReserve # Reserve guidebook
+    - VoltageNetworks
+    - Power
   # EE Change Start
   #MORE than ointment Estacao Pirata IPCs
   - type: Healing

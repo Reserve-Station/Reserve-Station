@@ -24,21 +24,21 @@
 
 ## Общие СРП Станции
 Следующие ссылки предназначены для общего ознакомления с процедурами на станции:
-- [textlink="Найм, Повышение, Перевод" link="HiringSOPReserve"]
-- [textlink="Увольнение, Понижение, Прекращение Договора" link="DemotingSOPReserve"]
-- [textlink="Цепь Командования" link="Succession Reserve"]
-- [textlink="Правовые Процедуры" link="LegalSOPReserve"]
-- [textlink="Чрезвычайные Ситуации" link="EmergenciesSOPReserve"]
-- [textlink="Уровни Тревоги" link="AlertLevelsReserve"]
+- [textlink="Найм, Повышение, Перевод" link="HiringSOP"]
+- [textlink="Увольнение, Понижение, Прекращение Договора" link="DemotingSOP"]
+- [textlink="Цепь Командования" link="Succession "]
+- [textlink="Правовые Процедуры" link="LegalSOP"]
+- [textlink="Чрезвычайные Ситуации" link="EmergenciesSOP"]
+- [textlink="Уровни Тревоги" link="AlertLevels"]
 
 ## Общие Отделы
 Следующие ссылки ведут к стандартным процедурам отделов. Они направят вас в соответствующую папку:
-- [textlink="Карго" link="CargoSOPReserve"]
-- [textlink="Командный Отдел" link="CommandSOPReserve"]
-- [textlink="Инженерный Отдел" link="EngineeringSOPReserve"]
-- [textlink="Медицинский Отдел" link="MedicalSOPReserve"]
-- [textlink="Научный Отдел" link="ScienceSOPReserve"]
-- [textlink="Отдел Безопасности" link="SecuritySOPReserve"]
-- [textlink="Сервисный Отдел" link="ServiceSOPReserve"]
+- [textlink="Карго" link="CargoSOP"]
+- [textlink="Командный Отдел" link="CommandSOP"]
+- [textlink="Инженерный Отдел" link="EngineeringSOP"]
+- [textlink="Медицинский Отдел" link="MedicalSOP"]
+- [textlink="Научный Отдел" link="ScienceSOP"]
+- [textlink="Отдел Безопасности" link="SecuritySOP"]
+- [textlink="Сервисный Отдел" link="ServiceSOP"]
 
 </Document>

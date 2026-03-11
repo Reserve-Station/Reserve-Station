@@ -238,7 +238,7 @@
       Plastic: 75
   - type: GuideHelp
     guides:
-    - SecurityReserve # Reserve guidebook
+    - Security
   - type: MartialArtBlocked # Goobstation - Martial Arts
     form: CorporateJudo # Goobstation - Martial Arts
 
@@ -277,8 +277,8 @@
     price: 80
   - type: GuideHelp
     guides:
-    - SecurityReserve # Reserve guidebook
-    - AntagonistsReserve # Reserve guidebook
+    - Security
+    - Antagonists
 
 - type: entity
   name: flash
@@ -336,8 +336,8 @@
             False: {visible: false}
     - type: GuideHelp
       guides:
-      - SecurityReserve # Reserve guidebook
-      - AntagonistsReserve # Reserve guidebook
+      - Security
+      - Antagonists
     - type: Tag
       tags:
       - Flash
@@ -395,5 +395,5 @@
       enabled: true
     - type: GuideHelp
       guides:
-      - SecurityReserve # Reserve guidebook
-      - AntagonistsReserve # Reserve guidebook
+      - Security
+      - Antagonists

@@ -132,7 +132,7 @@
   - type: AnimationPlayer
   - type: GuideHelp
     guides:
-    - AnomalousResearchReserve # Reserve guidebook
+    - AnomalousResearch
   - type: EmitSoundOnSpawn
     sound:
       path: /Audio/Effects/teleport_arrival.ogg

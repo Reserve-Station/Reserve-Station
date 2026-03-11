@@ -2,3 +2,5 @@
   id: SlaughterDemon
   name: "Slaughter Demon"
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/SlaughterDemon.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/SlaughterDemon.xml"

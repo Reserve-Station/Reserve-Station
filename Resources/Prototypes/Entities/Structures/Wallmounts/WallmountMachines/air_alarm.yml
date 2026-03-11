@@ -142,8 +142,8 @@
                 volume: -4
   - type: GuideHelp
     guides:
-    - AirAlarmsReserve # Reserve guidebook
-    - DeviceMonitoringAndControlReserve # Reserve guidebook
+    - AirAlarms
+    - DeviceMonitoringAndControl
 
 - type: entity
   parent: BaseWallmountMetallic

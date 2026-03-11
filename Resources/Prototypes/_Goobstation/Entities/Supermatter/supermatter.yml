@@ -84,7 +84,7 @@
       intensitySlope: 5
       totalIntensity: 10000
     - type: GuideHelp
-      guides: [ SupermatterReserve, PowerReserve ] # Reserve guidebook
+      guides: [ SupermatterReserve, Power ]
     - type: WarpPoint
       follow: true
       location: supermatter

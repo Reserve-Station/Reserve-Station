@@ -8,8 +8,12 @@
   id: MedicalPatches
   name: guide-entry-medpatches
   text: "/ServerInfo/_Goobstation/Guidebook/Medical/Medicalpatches.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Medical/Medicalpatches.xml"
 
 - type: guideEntry
   id: Virology
   name: guide-entry-virology
   text: "/ServerInfo/_Goobstation/Guidebook/Medical/Virology.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Medical/Virology.xml"

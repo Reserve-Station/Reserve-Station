@@ -186,6 +186,7 @@ namespace Content.Client.IoC
             collection.Register<TitleWindowManager>();
             collection.Register<LinkAccountManager>(); // RMC14
             collection.Register<ClientsidePlaytimeTrackingManager>();
+            collection.Register<GuidebookLocalizationManager>(); // Reserve localized guidebook
         }
     }
 }

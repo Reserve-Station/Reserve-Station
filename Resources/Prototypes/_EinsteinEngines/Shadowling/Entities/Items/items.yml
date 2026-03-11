@@ -19,7 +19,7 @@
     maxCharges: 5
   - type: AntiMindControlItem
   - type: GuideHelp
-    guides: [ ShadowlingsReserve ] #Reserve Guidebook
+    guides: [ Shadowlings ]
 
 - type: entity
   parent: ArmBladeChangeling

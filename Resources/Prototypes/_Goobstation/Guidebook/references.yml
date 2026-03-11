@@ -3,14 +3,20 @@
   name: guide-entry-alcoholic-drinks
   text: /ServerInfo/_Goobstation/Guidebook/ReferenceTables/AlcoholicDrinks.xml
   filterEnabled: true
+  localizedText:
+    ru-RU: ServerInfo/_Reserve/Guidebook/ReferenceTables/AlcoholicDrinks.xml
 
 - type: guideEntry
   id: NonAlcoholicDrinks
   name: guide-entry-non-alcoholic-drinks
   text: /ServerInfo/_Goobstation/Guidebook/ReferenceTables/NonAlcoholicDrinks.xml
   filterEnabled: true
+  localizedText:
+    ru-RU: /ServerInfo/_Reserve/Guidebook/ReferenceTables/NonAlcoholicDrinks.xml
 
 - type: guideEntry
   id: Enchanting
   name: guide-entry-enchanting
   text: /ServerInfo/_Goobstation/Guidebook/ReferenceTables/Enchanting.xml
+  localizedText:
+    ru-RU: /ServerInfo/_Reserve/Guidebook/ReferenceTables/Enchanting.xml

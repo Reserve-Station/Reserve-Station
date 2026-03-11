@@ -150,7 +150,7 @@
   - type: FingerprintMask
   - type: GuideHelp
     guides:
-    - ForensicsReserve # Reserve guidebook
+    - Forensics
 
 - type: entity
   parent: ClothingHandsGlovesEnviroglovesBase

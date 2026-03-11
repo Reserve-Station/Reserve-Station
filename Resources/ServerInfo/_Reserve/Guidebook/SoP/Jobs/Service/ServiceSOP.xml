@@ -5,14 +5,14 @@
 Кроме того, эти списки не обязательно совпадают друг с другом и разделены по должностям, если не указано иное.
 
 Следующие должности включены в этот отдел, где [color=#1b67a5][bold]Глава Персонала[/bold][/color] является Главой Отдела:
-- [textlink="Глава Персонала" link="HeadOfPersonnelSOPReserve"]
-- [textlink="Бармен" link="BartenderSOPReserve"]
-- [textlink="Ботаник" link="BotanistSOPReserve"]
-- [textlink="Повар" link="ChefSOPReserve"]
-- [textlink="Клоун" link="ClownSOPReserve"]
-- [textlink="Уборщик" link="JanitorSOPReserve"]
-- [textlink="Библиотекарь" link="LibrarianSOPReserve"]
-- [textlink="Мим" link="MimeSOPReserve"]
-- [textlink="Репортёр" link="ReporterSOPReserve"]
+- [textlink="Глава Персонала" link="HeadOfPersonnelSOP"]
+- [textlink="Бармен" link="BartenderSOP"]
+- [textlink="Ботаник" link="BotanistSOP"]
+- [textlink="Повар" link="ChefSOP"]
+- [textlink="Клоун" link="ClownSOP"]
+- [textlink="Уборщик" link="JanitorSOP"]
+- [textlink="Библиотекарь" link="LibrarianSOP"]
+- [textlink="Мим" link="MimeSOP"]
+- [textlink="Репортёр" link="ReporterSOP"]
 
 </Document>

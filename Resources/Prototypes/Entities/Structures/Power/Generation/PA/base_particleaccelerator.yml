@@ -52,7 +52,7 @@
   - type: Clickable
   - type: GuideHelp
     guides:
-    - SingularityTeslaEngineReserve # Reserve guidebook
+    - SingularityTeslaEngine
   - type: Appearance
 
 - type: entity

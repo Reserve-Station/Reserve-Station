@@ -8,3 +8,5 @@
   id: CorporateAgents
   name: "Corporate Agents"
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/CorporateAgent.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/CorporateAgent.xml"

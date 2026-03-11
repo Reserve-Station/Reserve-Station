@@ -204,8 +204,8 @@
     price: 500
   - type: GuideHelp
     guides:
-    - VoltageNetworksReserve # Reserve guidebook
-    - PowerReserve # Reserve guidebook
+    - VoltageNetworks
+    - Power
   - type: BatteryDrinkerSource # EE IPCs
     maxAmount: 10000
 

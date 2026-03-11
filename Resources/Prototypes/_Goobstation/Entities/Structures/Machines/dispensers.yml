@@ -74,8 +74,8 @@
   - type: WiresPanel
   - type: GuideHelp
     guides:
-    - ChemicalsReserve # Reserve guidebook
-    - ChemistReserve # Reserve guidebook
+    - Chemicals
+    - Chemist
   - type: StealTarget
     stealGroup: ChemDispenser
   - type: Machine

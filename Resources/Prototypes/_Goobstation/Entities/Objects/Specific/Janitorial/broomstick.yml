@@ -47,7 +47,7 @@
     - DroneUsable # Goobstation
   - type: GuideHelp
     guides:
-    - JanitorialReserve # Reserve guidebook
+    - Janitorial
   - type: DnaSubstanceTrace
 
 - type: entity

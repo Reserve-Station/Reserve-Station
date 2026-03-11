@@ -110,7 +110,7 @@
   - type: ForensicScanner
   - type: GuideHelp
     guides:
-    - ForensicsReserve # Reserve guidebook
+    - Forensics
   - type: StealTarget
     stealGroup: ForensicScanner
 
@@ -140,7 +140,7 @@
     maxWritableArea: 368.0, 256.0
   - type: GuideHelp
     guides:
-    - ForensicsReserve # Reserve guidebook
+    - Forensics
 
 - type: entity
   parent: ForensicReportPaper

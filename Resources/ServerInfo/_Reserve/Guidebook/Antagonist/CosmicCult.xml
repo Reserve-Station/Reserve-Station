@@ -39,8 +39,8 @@
 
 Вы можете хранить до 14 Крупиц Энтропии. Приближение к Монументу автоматически передаст все ваши запасы.
 
-  - [textlink="Подробнее о Монументе" link="CosmicCultMonumentReserve"]
-  - [textlink="Подробнее о Влияниях" link="CosmicCultInfluencesReserve"]
+  - [textlink="Подробнее о Монументе" link="CosmicCultMonument"]
+  - [textlink="Подробнее о Влияниях" link="CosmicCultInfluences"]
 
   <Box>
     <GuideEntityEmbed Entity="CosmicVacuousSpire" Caption="Пустотная башня"/>
@@ -61,7 +61,7 @@
 
 Для успеха необходимо определённое количество присутствующих культистов. Точное число можно проверить через Монумент. [italic]Если их недостаточно, обращение провалится, раскрыв ваш культ.[/italic]
 
-[textlink="Информация об обратном обращении" link="CosmicCultDeconversionReserve"]
+[textlink="Информация об обратном обращении" link="CosmicCultDeconversion"]
 
 ## Зловещие Разломы
   <Box>

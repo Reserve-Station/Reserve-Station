@@ -110,5 +110,5 @@
         - LowImpassable
   - type: GuideHelp
     guides:
-    - MedicalDoctorReserve # Reserve guidebook
+    - MedicalDoctor
   - type: PowerSwitch

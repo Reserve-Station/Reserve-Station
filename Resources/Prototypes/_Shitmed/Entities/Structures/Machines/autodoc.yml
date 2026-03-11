@@ -99,7 +99,7 @@
   - type: SurgerySpeedModifier
     speedModifier: 1
   - type: GuideHelp
-    guides: [ AutodocReserve ] # Reserve guidebook
+    guides: [ Autodoc ]
 
 - type: entity
   parent: Autodoc

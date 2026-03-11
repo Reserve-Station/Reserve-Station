@@ -23,6 +23,7 @@ using System.Linq;
 using Content.Client.Guidebook.Components;
 using Content.Client.Light;
 using Content.Client.Verbs;
+using Content.Goobstation.Client._Reserve.Guidebook;
 using Content.Shared.Guidebook;
 using Content.Shared.Interaction;
 using Content.Shared.Light.Components;
@@ -50,6 +51,7 @@ public sealed class GuidebookSystem : EntitySystem
     [Dependency] private readonly RgbLightControllerSystem _rgbLightControllerSystem = default!;
     [Dependency] private readonly SharedPointLightSystem _pointLightSystem = default!;
     [Dependency] private readonly TagSystem _tags = default!;
+    [Dependency] private readonly GuidebookLocalizationManager _guidebookLocalization = default!; // Reserve localized guidebook
 
     public event Action<List<ProtoId<GuideEntryPrototype>>,
         List<ProtoId<GuideEntryPrototype>>?,
@@ -64,6 +66,9 @@ public sealed class GuidebookSystem : EntitySystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        base.Initialize(); // Reserve localized guidebook
+        _guidebookLocalization.Initialize(); // Reserve localized guidebook
+
         SubscribeLocalEvent<GuideHelpComponent, GetVerbsEvent<ExamineVerb>>(OnGetVerbs);
         SubscribeLocalEvent<GuideHelpComponent, ActivateInWorldEvent>(OnInteract);
 

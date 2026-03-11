@@ -265,9 +265,9 @@
   - type: BlockWeather
   - type: GuideHelp
     guides:
-    - AirlocksReserve # Reserve guidebook
-    - WirePanelsReserve # Reserve guidebook
-    - NetworkingReserve # Reserve guidebook
+    - Airlocks
+    - WirePanels
+    - Networking
   - type: Penetratable # Goobstation - Better snipers
     penetrateDamage: 75
     damagePenalty: 0.2

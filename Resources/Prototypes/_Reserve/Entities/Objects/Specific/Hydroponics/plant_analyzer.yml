@@ -27,8 +27,8 @@
   - type: PlantAnalyzer
   - type: GuideHelp
     guides:
-    - BotanyReserve # Reserve guidebook
-    - ChemicalsReserve # Reserve guidebook
+    - Botany
+    - Chemicals
 
 - type: entity
   name: plant analyzer report

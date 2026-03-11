@@ -74,7 +74,7 @@
         canReact: false
   - type: GuideHelp
     guides:
-    - ExpandingRepairingStationReserve # Reserve guidebook
+    - ExpandingRepairingStation
 
 - type: entity
   parent: SheetMetalBase

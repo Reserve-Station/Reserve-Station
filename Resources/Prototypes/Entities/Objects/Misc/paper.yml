@@ -305,7 +305,7 @@
       visible: false
   - type: GuideHelp
     guides:
-    - ArtifactReportsReserve # Reserve guidebook
+    - ArtifactReports
   - type: PaperVisuals
     headerImagePath: "/Textures/Interface/Paper/paper_heading_artifact_analyzer.svg.96dpi.png"
     headerMargin: 0.0, 0.0, 0.0, 16.0
@@ -450,8 +450,8 @@
     price: 0
   - type: GuideHelp
     guides:
-    - CargoBountiesReserve # Reserve edit
-    - CargoReserve # Reserve edit
+    - CargoBounties
+    - Cargo
 
 - type: entity
   id: PaperSalvageJobLabel

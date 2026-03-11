@@ -15,6 +15,8 @@
   id: Chemicals
   name: guide-entry-chemicals
   text: "/ServerInfo/Guidebook/Chemicals.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Chemicals.xml"
   children:
   - Elements
   - Medicine
@@ -32,52 +34,70 @@
   id: Elements
   name: guide-entry-elements
   text: "/ServerInfo/Guidebook/ChemicalTabs/Elements.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/ChemicalTabs/Elements.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Narcotics
   name: guide-entry-narcotics
   text: "/ServerInfo/Guidebook/ChemicalTabs/Narcotics.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/ChemicalTabs/Narcotics.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Pyrotechnic
   name: guide-entry-pyrotechnics
   text: "/ServerInfo/Guidebook/ChemicalTabs/Pyrotechnic.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/ChemicalTabs/Pyrotechnic.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Toxins
   name: guide-entry-toxins
   text: "/ServerInfo/Guidebook/ChemicalTabs/Toxins.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/ChemicalTabs/Toxins.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Foods
   name: guide-entry-foods
   text: "/ServerInfo/Guidebook/ChemicalTabs/Foods.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/ChemicalTabs/Foods.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Botanical
   name: guide-entry-botanical
   text: "/ServerInfo/Guidebook/Medical/Botanicals.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Medical/Botanicals.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Biological
   name: guide-entry-biological
   text: "/ServerInfo/Guidebook/ChemicalTabs/Biological.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/ChemicalTabs/Biological.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Special
   name: guide-entry-special
   text: "/ServerInfo/Guidebook/ChemicalTabs/Special.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/ChemicalTabs/Special.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: Others
   name: guide-entry-others
   text: "/ServerInfo/Guidebook/ChemicalTabs/Other.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/ChemicalTabs/Other.xml"
   filterEnabled: True

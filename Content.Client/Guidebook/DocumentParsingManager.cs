@@ -104,6 +104,7 @@ public sealed partial class DocumentParsingManager
     [Dependency] private readonly IReflectionManager _reflectionManager = default!;
     [Dependency] private readonly IResourceManager _resourceManager = default!;
     [Dependency] private readonly ISandboxHelper _sandboxHelper = default!;
+    [Dependency] private readonly GuidebookLocalizationManager _localization = default!; // Reserve localized guidebook
 
     private readonly Dictionary<string, Parser<char, Control>> _tagControlParsers = new();
     private Parser<char, Control> _controlParser = default!;
@@ -135,21 +136,41 @@ public sealed partial class DocumentParsingManager
 
     public bool TryAddMarkup(Control control, ProtoId<GuideEntryPrototype> entryId, bool log = true)
     {
-        if (!_prototype.TryIndex(entryId, out var entry))
-            return false;
+        //if (!_prototype.TryIndex(entryId, out var entry)) // Reserve localized guidebook
+        // Getting localized path by GuidebookLocalizationManager
+        var localizedPath = _localization.GetLocalizedPath(entryId.Id);
 
-        using var file = _resourceManager.ContentFileReadText(entry.Text);
+        if (localizedPath == null)
+        {
+            if (log)
+                _sawmill.Error($"Guide entry {entryId.Id} has no valid text path!");
+            return false;
+        }
+
+        using var file = _resourceManager.ContentFileReadText(localizedPath.Value);
+        // Reserve localized guidebook end
         return TryAddMarkup(control, file.ReadToEnd(), log);
     }
 
     public bool TryAddMarkup(Control control, GuideEntry entry, bool log = true)
     {
-        using var file = _resourceManager.ContentFileReadText(entry.Text);
+        // using var file = _resourceManager.ContentFileReadText(entry.Text); // Reserve localized guidebook begin
+        var path = entry.GetLocalizedTextPath(_localization.GetAvailableCultures().FirstOrDefault());
+
+        if (path == ResPath.Empty)
+        {
+            if (log)
+                _sawmill.Error($"Guide entry {entry.Id} has no valid text path!");
+            return false;
+        }
+
+        using var file = _resourceManager.ContentFileReadText(path);
+        // Reserve localized guidebook end
         return TryAddMarkup(control, file.ReadToEnd(), log);
     }
 
     public bool TryAddMarkup(Control control, string text, bool log = true)
-    {   
+    {
         text = CutComments(text); // Reserve parse fix
         try
         {
@@ -173,12 +194,13 @@ public sealed partial class DocumentParsingManager
     // Reserve parse fix
     private string CutComments(string text)
     {
-	if (text.Contains("<!--")){
-           var startIndex = text.IndexOf("<!--");
-           var endIndex = text.IndexOf("-->") + 3;
-           return text.Remove(startIndex, endIndex - startIndex);
+        if (text.Contains("<!--"))
+        {
+            var startIndex = text.IndexOf("<!--");
+            var endIndex = text.IndexOf("-->") + 3;
+            return text.Remove(startIndex, endIndex - startIndex);
         }
-	return text;
+        return text;
     }
     // Reserve parse fix
 

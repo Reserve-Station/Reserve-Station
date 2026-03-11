@@ -855,8 +855,8 @@
     fireCost: 62.5
   - type: GuideHelp
     guides:
-    - SecurityReserve # Reserve guidebook
-    - AntagonistsReserve # Reserve guidebook
+    - Security
+    - Antagonists
   - type: PacifismAllowedGun
   # Goobstation start
   - type: Tag

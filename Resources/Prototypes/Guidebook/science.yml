@@ -14,6 +14,8 @@
   id: Science
   name: guide-entry-science
   text: "/ServerInfo/Guidebook/Science/Science.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/Science.xml"
   children:
   - Technologies
   - AnomalousResearch
@@ -25,12 +27,16 @@
   id: Technologies
   name: guide-entry-technologies
   text: "/ServerInfo/Guidebook/Science/Technologies.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/Technologies.xml"
   filterEnabled: True
 
 - type: guideEntry
   id: AnomalousResearch
   name: guide-entry-anomalous-research
   text: "/ServerInfo/Guidebook/Science/AnomalousResearch.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/AnomalousResearch.xml"
   children:
   - APE
   - ScannersAndVessels
@@ -39,16 +45,22 @@
   id: ScannersAndVessels
   name: guide-entry-scanners-and-vessels
   text: "/ServerInfo/Guidebook/Science/ScannersAndVessels.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/ScannersAndVessels.xml"
 
 - type: guideEntry
   id: APE
   name: guide-entry-ape
   text: "/ServerInfo/Guidebook/Science/APE.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/APE.xml"
 
 - type: guideEntry
   id: Xenoarchaeology
   name: guide-entry-xenoarchaeology
   text: "/ServerInfo/Guidebook/Science/Xenoarchaeology.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/Xenoarchaeology.xml"
   children:
   - ArtifactReports
 
@@ -56,6 +68,8 @@
   id: Robotics
   name: guide-entry-robotics
   text: "/ServerInfo/Guidebook/Science/Robotics.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/Robotics.xml"
   children:
   - Cyborgs
 
@@ -63,8 +77,12 @@
   id: ArtifactReports
   name: guide-entry-artifact-reports
   text: "/ServerInfo/Guidebook/Science/ArtifactReports.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/ArtifactReports.xml"
 
 - type: guideEntry
   id: Cyborgs
   name: guide-entry-cyborgs
   text: "/ServerInfo/Guidebook/Science/Cyborgs.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/Cyborgs.xml"

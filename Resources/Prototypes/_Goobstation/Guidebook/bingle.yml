@@ -12,3 +12,5 @@
   id: Bingle
   name: guide-entry-bingle
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Bingle.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Bingle.xml"

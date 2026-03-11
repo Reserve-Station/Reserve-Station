@@ -39,5 +39,5 @@
   - type: Anchorable
   - type: GuideHelp
     guides:
-    - TeslaEngineReserve # Reserve guidebook
-    - PowerReserve # Reserve guidebook
+    - TeslaEngine
+    - Power

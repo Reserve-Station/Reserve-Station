@@ -91,7 +91,7 @@
     color: "#b53ca1"
   - type: GuideHelp
     guides:
-    - XenoarchaeologyReserve # Reserve guidebook
+    - Xenoarchaeology
   - type: LitOnPowered
   - type: Appearance
   - type: GenericVisualizer

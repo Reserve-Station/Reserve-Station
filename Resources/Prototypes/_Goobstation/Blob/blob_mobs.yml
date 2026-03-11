@@ -126,7 +126,7 @@
       state: blobpod
     - type: GuideHelp
       guides:
-      - BlobReserve # Reserve guidebook
+      - Blob
 
 # Blobbernaut
 - type: entity
@@ -234,7 +234,7 @@
       deactivateSound: null
     - type: GuideHelp
       guides:
-      - BlobReserve # Reserve guidebook
+      - Blob
     - type: Bloodstream
       bloodMaxVolume: 300
       bloodReagent: Blood

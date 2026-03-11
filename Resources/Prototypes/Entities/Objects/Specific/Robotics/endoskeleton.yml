@@ -153,5 +153,5 @@
   - type: Pullable
   - type: GuideHelp
     guides:
-    - CyborgsReserve # Reserve guidebook
-    - RoboticsReserve # Reserve guidebook
+    - Cyborgs
+    - Robotics

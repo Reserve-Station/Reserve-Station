@@ -2,3 +2,5 @@
   id: Shadowlings
   name: guide-entry-shadowlings
   text: "/ServerInfo/Guidebook/Antagonist/Shadowlings.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Shadowlings.xml"

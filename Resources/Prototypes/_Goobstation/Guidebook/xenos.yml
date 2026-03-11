@@ -2,6 +2,8 @@
   id: Xenomorphs
   name: guide-entry-xenomorph
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Xenomorphs.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Xenomorphs.xml"
   children:
   - XenomorphClasses
   - XenomorphPlayGuide
@@ -10,8 +12,12 @@
   id: XenomorphClasses
   name: guide-entry-xenomorph-classes
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/XenomorphClasses.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/XenomorphClasses.xml"
 
 - type: guideEntry
   id: XenomorphPlayGuide
   name: guide-entry-xenomorph-how-to-play
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/XenomorphPlayGuide.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/XenomorphPlayGuide.xml"

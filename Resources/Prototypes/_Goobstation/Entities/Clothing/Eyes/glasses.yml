@@ -255,8 +255,8 @@
     - WhitelistChameleon
   - type: GuideHelp
     guides:
-    - SecurityReserve # Reserve guidebook
-    - AntagonistsReserve # Reserve guidebook
+    - Security
+    - Antagonists
   - type: ThermalVision
     flashDurationMultiplier: 2
     pulseTime: 2

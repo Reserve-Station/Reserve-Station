@@ -26,8 +26,24 @@ public class GuideEntry
 {
     /// <summary>
     ///     The file containing the contents of this guide.
+    ///     Used as fallback when LocalizedText is not specified.
     /// </summary>
-    [DataField(required: true)] public ResPath Text = default!;
+    [DataField(required: true)]
+    public ResPath Text = ResPath.Empty;
+
+    // Reserve localized guidebook begin
+    /// <summary>
+    ///     Localized paths for different cultures.
+    ///     If specified, overrides Text based on current culture.
+    ///     Format: culture code -> path
+    ///     Example YAML:
+    ///       localizedText:
+    ///         en-US: "/path/en.xml"
+    ///         ru-RU: "/path/ru.xml"
+    /// </summary>
+    [DataField("localizedText")]
+    public Dictionary<string, ResPath> LocalizedText { get; set; } = [];
+    // Reserve localized guidebook end
 
     /// <summary>
     ///     The unique id for this guide.
@@ -58,4 +74,29 @@ public class GuideEntry
     ///     If the guide is the child of some other guide, the order simply determined by the order of children in <see cref="Children"/>.
     /// </summary>
     [DataField] public int Priority = 0;
+
+    // Reserve localized guidebook begin
+    /// <summary>
+    ///     Gets the appropriate text path for the specified culture.
+    /// </summary>
+    public ResPath GetLocalizedTextPath(string? culture)
+    {
+        // If LocalizedText has entries, try to get culture-specific path
+        if (LocalizedText.Count > 0)
+        {
+            if (culture != null && LocalizedText.TryGetValue(culture, out var culturePath))
+                return culturePath;
+
+            // Fallback to en-US if available
+            if (LocalizedText.TryGetValue("en-US", out var enUsPath))
+                return enUsPath;
+
+            // Throw exception if culture not found
+            throw new InvalidOperationException($"Culture \"{culture}\" not found!");
+        }
+
+        // Use Text field as fallback
+        return Text;
+    }
+    // Reserve localized guidebook end
 }

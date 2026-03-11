@@ -129,7 +129,7 @@
     board: EmitterCircuitboard
   - type: GuideHelp
     guides:
-    - SingularityTeslaEngineReserve # Reserve guidebook
+    - SingularityTeslaEngine
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: BasicDevice

@@ -166,5 +166,5 @@
     unlimited: true
   - type: GuideHelp
     guides:
-    - ChemicalsReserve # Reserve edit
-    - ChemistReserve # Reserve edit
+    - Chemicals
+    - Chemist
