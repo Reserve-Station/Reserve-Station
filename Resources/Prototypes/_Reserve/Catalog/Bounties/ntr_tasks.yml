@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Reserve Orchito start
+# Orchito start
 - type: ntrTask
   id: TaskOrchito
   proto: TaskBottle
@@ -19,4 +19,4 @@
     whitelist:
       tags: [ ]
       components: [ ]
-# Reserve Orchito end
+# Orchito end

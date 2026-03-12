@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Reserve Orchito start
+# Orchito start
 - type: reagent
   id: Orchito
   name: reagent-name-orchito
@@ -17,4 +17,4 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-# Reserve Orchito end
+# Orchito end
