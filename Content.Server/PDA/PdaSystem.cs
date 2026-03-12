@@ -142,7 +142,6 @@ namespace Content.Server.PDA
         [Dependency] private readonly UnpoweredFlashlightSystem _unpoweredFlashlight = default!;
         [Dependency] private readonly ContainerSystem _containerSystem = default!;
         [Dependency] private readonly IdCardSystem _idCard = default!;
-        [Dependency] private readonly ICommonCurrencyManager _serverCurrency = default!; // Reserve add
 
         public override void Initialize()
         {
@@ -307,20 +306,6 @@ namespace Content.Server.PDA
             var programs = _cartridgeLoader.GetAvailablePrograms(uid, loader);
             var id = CompOrNull<IdCardComponent>(pda.ContainedId);
 
-            // Reserve edit start
-            // Get reserve coin balance - only show to the actual owner
-            int? reserveCoinBalance = null;
-            if (pda.PdaOwner != null && TryComp<ActorComponent>(pda.PdaOwner.Value, out var actor))
-            {
-                var currentViewers = _ui.GetActors(uid, PdaUiKey.Key);
-                
-                if (currentViewers.Contains(pda.PdaOwner.Value))
-                {
-                    reserveCoinBalance = _serverCurrency.GetBalance(actor.PlayerSession.UserId);
-                }
-            }
-            // Reserve edit end
-            
             var state = new PdaUpdateState(
                 programs,
                 GetNetEntity(loader.ActiveProgram),
@@ -338,8 +323,7 @@ namespace Content.Server.PDA
                 pda.StationName,
                 showUplink,
                 hasInstrument,
-                address,
-                reserveCoinBalance); // Reserve add
+                address); 
 
             _ui.SetUiState(uid, PdaUiKey.Key, state);
         }

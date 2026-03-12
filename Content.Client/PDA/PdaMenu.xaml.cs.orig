@@ -62,7 +62,7 @@ namespace Content.Client.PDA
         private string _stationName = Loc.GetString("comp-pda-ui-unknown");
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
         private string _instructions = Loc.GetString("comp-pda-ui-unknown");
-        private int? _reserveBalance;
+        
 
         private int _currentView;
 
@@ -155,6 +155,9 @@ namespace Content.Client.PDA
                 _clipboard.SetText(_instructions);
             };
 
+            
+
+
             HideAllViews();
             ToHomeScreen();
         }
@@ -192,7 +195,7 @@ namespace Content.Client.PDA
             _stationName = state.StationName ?? Loc.GetString("comp-pda-ui-unknown");
             StationNameLabel.SetMarkup(Loc.GetString("comp-pda-ui-station",
                 ("station", _stationName)));
-
+            
 
             var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
 
@@ -368,10 +371,17 @@ namespace Content.Client.PDA
         {
             base.Draw(handle);
 
+<<<<<<< HEAD
+            var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);	
+
+            StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",	
+                ("time", stationTime.ToString("hh\\:mm\\:ss"))));	
+=======
             var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
 
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
                 ("time", stationTime.ToString("hh\\:mm\\:ss"))));
+>>>>>>> parent of 23a628eb58 (65)
         }
     }
 }
