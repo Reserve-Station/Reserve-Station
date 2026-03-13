@@ -91,8 +91,11 @@
   guides: [ Thieves ]
   category: Solo
   icon:
-    sprite: Objects/Storage/Toolbox/toolbox_syndicate.rsi
-    state: icon
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: thief
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600 # 1h
 
 - type: startingGear
   id: ThiefGear
