@@ -194,6 +194,7 @@
       - ActionCritSuccumb
       - ActionCritFakeDeath
       - ActionCritLastWords
+      - ActionCritRageQuit #Reserve
   - type: Deathgasp
   - type: HealthExaminable
     examinableTypes:

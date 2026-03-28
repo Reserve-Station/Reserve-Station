@@ -27,3 +27,12 @@ public sealed partial class CritFakeDeathEvent : InstantActionEvent
 public sealed partial class CritLastWordsEvent : InstantActionEvent
 {
 }
+
+// Reserve-start
+/// <summary>
+///     Рейжквит
+/// </summary>
+public sealed partial class CritRageQuitEvent : InstantActionEvent
+{
+}
+// Reserve-end

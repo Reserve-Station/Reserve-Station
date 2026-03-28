@@ -46,6 +46,9 @@ public sealed partial class CritMobActionsSystem : EntitySystem
         SubscribeLocalEvent<MobStateActionsComponent, CritSuccumbEvent>(OnSuccumb);
         SubscribeLocalEvent<MobStateActionsComponent, CritFakeDeathEvent>(OnFakeDeath);
         SubscribeLocalEvent<MobStateActionsComponent, CritLastWordsEvent>(OnLastWords);
+        // Reserve-start
+        SubscribeLocalEvent<MobStateActionsComponent, CritRageQuitEvent>(OnRageQuit);
+        // Reserve-end
     }
 
     private void OnSuccumb(EntityUid uid, MobStateActionsComponent component, CritSuccumbEvent args)
@@ -106,4 +109,36 @@ public sealed partial class CritMobActionsSystem : EntitySystem
 
         args.Handled = true;
     }
+
+    // Reserve-start
+    private static readonly string[] RageQuitPhrases =
+    [
+        "ragequit-phrase-1",
+        "ragequit-phrase-2",
+        "ragequit-phrase-3",
+        "ragequit-phrase-4",
+        "ragequit-phrase-5",
+        "ragequit-phrase-6",
+        "ragequit-phrase-7",
+        "ragequit-phrase-8"
+    ];
+
+    private void OnRageQuit(EntityUid uid, MobStateActionsComponent component, CritRageQuitEvent args)
+    {
+        if (!TryComp<ActorComponent>(uid, out var actor) || !_mobState.IsCritical(uid))
+            return;
+
+        if (HasComp<MutedComponent>(uid))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("ragequit-muted"), uid, uid);
+            return;
+        }
+
+        var phraseKey = RageQuitPhrases[Random.Shared.Next(RageQuitPhrases.Length)];
+        var rageQuitMessage = Loc.GetString(phraseKey);
+        _chat.TrySendInGameICMessage(uid, rageQuitMessage, InGameICChatType.Speak, ChatTransmitRange.Normal, checkRadioPrefix: false, ignoreActionBlocker: true);
+        _host.ExecuteCommand(actor.PlayerSession, "ghost");
+        args.Handled = true;
+    }
+    // Reserve-end
 }
