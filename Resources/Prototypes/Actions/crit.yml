@@ -58,18 +58,3 @@
       state: lastwords
   - type: InstantAction
     event: !type:CritLastWordsEvent
-
-# Reserve-start
-- type: entity
-  parent: ActionCritSuccumb
-  id: ActionCritRageQuit
-  name: Рейдж Квит
-  description: Выкрикни своё последнее оскорбление и сдайся в ярости!
-  components:
-  - type: Action
-    icon:
-      sprite: _Reserve/Interface/Actions/action_ragequit.rsi
-      state: icon
-  - type: InstantAction
-    event: !type:CritRageQuitEvent
-# Reserve-end
