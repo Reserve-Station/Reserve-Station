@@ -4,6 +4,7 @@
   name: minebot
   description: A miner's best friend!
   components:
+  - type: AiRemoteController #Reserve add
   - type: Sprite
     sprite: _EinsteinEngines/Mobs/Silicon/Bots/minebot.rsi
     state: minebot
