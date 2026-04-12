@@ -9,3 +9,5 @@
   id: BloodBrothers
   name: guide-entry-blood-brothers
   text: "/ServerInfo/_Harmony/Guidebook/Antagonist/BloodBrothers.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/BloodBrothers.xml"
