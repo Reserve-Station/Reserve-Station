@@ -167,15 +167,13 @@
     - id: Heretic # goob edit
       prob: 0.2
     - id: Devil # Goob
-      prob: 0.02
+      prob: 0.05
     - id: Shadowling # Goob
-      prob: 0.02
+      prob: 0.05
     # Harmony start
     - id: BloodBrothers
-      prob: 0.31
+      prob: 0.3
     # Harmony end
-    - id: SubWizard
-      prob: 0.05
 
 - type: entity
   parent: BaseGameRule
