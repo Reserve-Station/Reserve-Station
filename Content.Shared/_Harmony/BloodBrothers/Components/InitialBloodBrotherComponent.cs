@@ -1,4 +1,8 @@
-﻿using Content.Shared._Harmony.BloodBrothers.EntitySystems;
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared._Harmony.BloodBrothers.EntitySystems;
 using Content.Shared.Actions.Components;
 using Content.Shared.Actions;
 using Content.Shared.NPC.Prototypes;
