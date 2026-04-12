@@ -28,5 +28,5 @@ blood-brother-convert-failed-shielded = Разум {CAPITALIZE($converted)} сл
 blood-brother-convert-failed-dead = {CAPITALIZE($converted)} мёртв.
 blood-brother-convert-failed-preference = Разум {CAPITALIZE($converted)} не реагирует.
 
-blood-brother-convert-convertible = {CAPITALIZE($converted))} может быть конвертирован.
+blood-brother-convert-convertible = {CAPITALIZE($converted)} может быть конвертирован.
 blood-brother-conversion-popup = {CAPITALIZE($converter)} твёрдо берёт {$converted} и наносит глубокие символы на руки.
