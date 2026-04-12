@@ -56,7 +56,7 @@ public abstract class SharedBloodBrotherSystem : EntitySystem
         var name = Identity.Entity(entity, EntityManager);
         RemCompDeferred<BloodBrotherComponent>(entity);
         if (bloodBrother.DeconversionStunTime != null)
-            _stunSystem.TryParalyze(entity, bloodBrother.DeconversionStunTime.Value, true);
+            _stunSystem.TryAddParalyzeDuration(entity, bloodBrother.DeconversionStunTime.Value); // Reserve edit
         _popupSystem.PopupEntity(
             Loc.GetString("blood-brother-break-control", ("name", name)),
             entity,

@@ -1,4 +1,5 @@
 ﻿using Content.Shared._Harmony.BloodBrothers.EntitySystems;
+using Content.Shared.Actions.Components;
 using Content.Shared.Actions;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.Objectives.Components;
