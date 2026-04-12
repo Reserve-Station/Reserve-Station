@@ -10,7 +10,6 @@
   name: fillbot
   description: It picks up things and puts them somewhere else.
   components:
-  - type: AiRemoteController #Reserve add
   - type: Fillbot
   - type: Sprite
     sprite: _EinsteinEngines/Mobs/Silicon/Bots/fillbot.rsi
@@ -65,3 +64,4 @@
     description: ghost-role-information-fillbot-description
     rules: ghost-role-information-familiar-rules
   - type: GhostTakeoverAvailable
+  - type: AiRemoteController #Reserve add

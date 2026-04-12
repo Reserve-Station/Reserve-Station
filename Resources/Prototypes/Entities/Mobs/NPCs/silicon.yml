@@ -313,7 +313,6 @@
   name: firebot
   description: A little fire extinguishing bot. He looks rather anxious.
   components:
-  - type: AiRemoteController #Reserve add
   - type: Sprite
     sprite: Mobs/Silicon/Bots/firebot.rsi
     state: firebot
@@ -354,6 +353,7 @@
       path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: Vocalizer
   - type: DatasetVocalizer
+  - type: AiRemoteController #Reserve add
     dataset: FirebotAd
 
 - type: entity
@@ -362,7 +362,6 @@
   name: honkbot
   description: Horrifying.
   components:
-  - type: AiRemoteController #Reserve add
   - type: SpamEmitSound
     minInterval: 2
     maxInterval: 12
@@ -425,6 +424,7 @@
       path: /Audio/Items/bikehorn.ogg
       params:
         variation: 0.125
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent: MobHonkBot
@@ -432,7 +432,6 @@
   name: jonkbot
   description: Horrifying.
   components:
-  - type: AiRemoteController #Reserve add
   - type: SpamEmitSound
     sound:
       collection: CluwneHorn
@@ -467,6 +466,7 @@
     totalIntensity: 10
     intensitySlope: 5
     canCreateVacuum: false
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent: MobSiliconBase
@@ -474,7 +474,6 @@
   name: cleanbot
   description: The creep of automation now threatening space janitors.
   components:
-  - type: AiRemoteController #Reserve add
   - type: Sprite
     sprite: Mobs/Silicon/Bots/cleanbot.rsi
     state: cleanbot
@@ -519,6 +518,7 @@
     size: Large
   - type: StationAiVision # Goobstation - AI can see through NT silicon
     range: 0
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent:
@@ -529,7 +529,6 @@
   name: medibot
   description: No substitute for a doctor, but better than nothing.
   components:
-  - type: AiRemoteController #Reserve add
   - type: Medibot
     treatments:
       Alive:
@@ -595,6 +594,7 @@
   - type: DoAfter
   - type: StationAiVision # Goobstation - AI can see through NT silicon
     range: 1
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent:
@@ -604,7 +604,6 @@
   name: mimebot
   description: Why not give the mimebot a friendly wave?
   components:
-  - type: AiRemoteController #Reserve add
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -629,6 +628,7 @@
     interactFailureString: petting-failure-mimebot
   - type: Inventory
     templateId: head
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent: MobSiliconBase
@@ -636,7 +636,6 @@
   name: supplybot
   description: Delivers cargo!
   components:
-  - type: AiRemoteController #Reserve add
   - type: Sprite
     sprite: Mobs/Silicon/Bots/supplybot.rsi
     layers:
@@ -703,3 +702,4 @@
     range: 1
   - type: Puller
     needsHands: false
+  - type: AiRemoteController #Reserve add
