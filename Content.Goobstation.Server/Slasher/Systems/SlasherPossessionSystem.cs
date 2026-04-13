@@ -56,7 +56,7 @@ public sealed class SlasherPossessionSystem : EntitySystem
         }
 
         // Posses Target
-        var ok = _possession.TryPossessTarget(args.Target,
+        _possession.TryPossessTarget(args.Target,
             ent.Owner,
             ent.Comp.PossessionDuration,
             pacifyPossessed: false,

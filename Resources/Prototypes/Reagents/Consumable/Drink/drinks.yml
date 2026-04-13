@@ -134,6 +134,14 @@
       - !type:AdjustReagent
         reagent: Theobromine
         amount: 0.05
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/cocoa.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 1
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: Cream
@@ -148,6 +156,14 @@
       effects:
       - !type:SatiateThirst
         factor: 1
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/cream.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: CoconutWater
@@ -162,6 +178,14 @@
       effects:
       - !type:SatiateThirst
         factor: 4 # Coconut water is 94% water
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/coconut.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: CreamOfCoconut
@@ -176,6 +200,14 @@
       effects:
       - !type:SatiateThirst
         factor: 2
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/coconut_cream.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: CafeLatte
@@ -304,6 +336,14 @@
   physicalDesc: reagent-physical-desc-sickly
   flavor: bitter
   color: "#6600CC"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/berry_poison.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Drink:
       effects:
@@ -349,6 +389,14 @@
   flavor: milk
   color: "#DFDFDF"
   recognizable: true
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/milk.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   plantMetabolism:
     - !type:PlantAdjustNutrition
       amount: 0.1
@@ -376,6 +424,14 @@
   parent: Milk
   name: reagent-name-milk-goat
   desc: reagent-desc-milk-goat
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/milk_goat.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: MilkOat
@@ -386,6 +442,14 @@
   flavor: oats
   color: "#DEDACD"
   recognizable: true
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/milk_oat.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Drink:
       effects:
@@ -400,6 +464,14 @@
   physicalDesc: reagent-physical-desc-refreshing
   flavor: soy
   color: "#D2C29D"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/milk_soy.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: MilkSpoiled
@@ -409,6 +481,14 @@
   physicalDesc: reagent-physical-desc-putrid
   flavor: terrible
   color: "#faffba"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/milk_spoiled.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Drink:
       effects:
@@ -473,6 +553,14 @@
   flavor: fizzy
   color: "#619494"
   fizziness: 0.8
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/soda.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: SoyLatte
@@ -634,6 +722,14 @@
   physicalDesc: reagent-physical-desc-wormy
   flavor: cheapnoodles
   color: "#664300"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/ramen_dry.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food:
       effects:
@@ -648,6 +744,14 @@
   physicalDesc: reagent-physical-desc-wormy
   flavor: cheapnoodles
   color: "#664300"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/ramen.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food:
       effects:
@@ -685,6 +789,14 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: pilk
   color: "#e7c69f"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/pilk.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Drink:
       effects:
@@ -700,6 +812,14 @@
   physicalDesc: reagent-physical-desc-sour
   flavor: bitter
   color: "#B3B599"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/posca.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: KiraSpecial
@@ -741,6 +861,14 @@
   physicalDesc: reagent-physical-desc-murky
   flavor: mopwata
   color: "#59502b"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/mopwata.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Drink:
       effects:

@@ -19,3 +19,606 @@
     sprite: _Reserve/Objects/Consumable/Drinks/orchito.rsi
     state: icon
 # Orchito end
+
+# Orchid's Barmania - Visual Fixes start
+
+# - Juices -
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkAppleJuice
+  suffix: apple juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuiceApple
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/apple.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBananaJuice
+  suffix: banana juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuiceBanana
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/banana.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBluePumpkinJuice
+  suffix: blue pumpkin juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuiceBluePumpkin
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/bluepumpkin.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBungoJuice
+  suffix: bungo juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuiceBungo
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/bungo.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCherryJuice
+  suffix: cherry juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuiceCherry
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/cherry.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPineappleJuice
+  suffix: pineapple juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuicePineapple
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/pineapple.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPotatoJuice
+  suffix: potato juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: JuicePotato
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/glass_brown.rsi
+    state: icon
+
+# - Sodas -
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkChangelingStingGlass
+  suffix: changeling sting
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: ChangelingSting
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/changeling_sting.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkEnergyDrinkGlass
+  suffix: energy drink
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EnergyDrink
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/energy_drink.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkLemonLimeCranberryGlass
+  suffix: lemon lime cranberry
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: LemonLimeCranberry
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/lemon_lime_cranberry.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPwrGameGlass
+  suffix: pwr game
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: PwrGame
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/pwrgame.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkStarkistGlass
+  suffix: starkist
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Starkist
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/starkist.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkShamblersJuice
+  suffix: Shambler's juice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: ShamblersJuice
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/shambler.rsi
+    state: icon
+
+# - Other -
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCreamOfCoconutGlass
+  suffix: coconut water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: CreamOfCoconut
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/coconut_cream.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMilkGoatGlass
+  suffix: goat milk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MilkGoat
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/milk_goat.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMilkOatGlass
+  suffix: oat milk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MilkOat
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/milk_oat.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMilkSoyGlass
+  suffix: soy milk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MilkSoy
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/milk_soy.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMilkSpoiledGlass
+  suffix: spoiled milk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MilkSpoiled
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/milk_spoiled.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSodaGlass
+  suffix: soda
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SodaWater
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/soda.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkDryRamenGlass
+  suffix: dry ramen
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: DryRamen
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/ramen_dry.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkHotRamenGlass
+  suffix: hot ramen
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: HotRamen
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/ramen.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPilkGlass
+  suffix: pilk
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Pilk
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/pilk.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMopwataGlass
+  suffix: mopwata
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Mopwata
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/mopwata.rsi
+    state: icon
+
+# - Food -
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkEnzymeGlass
+  suffix: universal enzyme
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Enzyme
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/enzyme.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkEggGlass
+  suffix: eggs
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Egg
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/egg.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkEggCookedGlass
+  suffix: cooked eggs
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: EggCooked
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/egg_cooked.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkVinegarGlass
+  suffix: vinegar
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Vinegar
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/vinegar.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkOilGlass
+  suffix: oil
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Oil
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/oil.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkOilOliveGlass
+  suffix: olive oil
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: OilOlive
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/oil_olive.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCapsaicinOilGlass
+  suffix: capsaicin oil
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: CapsaicinOil
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/oil_capsaicin.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkFrostOilGlass
+  suffix: frost oil
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: FrostOil
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/oil_frost.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkVitaminGlass
+  suffix: vitamins
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Vitamin
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/vitamin.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkPumpkinFleshGlass
+  suffix: pumpkin flesh
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/pumpkin.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkCornoilGlass
+  suffix: corn oil
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Cornoil
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/oil_corn.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkLaughinSyrupGlass
+  suffix: laughin syrup
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: LaughinSyrup
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/syrup_laugh.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSoysauceGlass
+  suffix: soy sauce
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Soysauce
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/soy.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSyrupGlass
+  suffix: syrup
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Syrup
+          Quantity: 30
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/syrup.rsi
+    state: icon
+# Orchid's Barmania - Visual Fixes end

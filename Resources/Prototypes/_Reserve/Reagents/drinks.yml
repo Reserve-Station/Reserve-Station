@@ -18,3 +18,20 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
 # Orchito end
+
+# Orchid's Barmania - Visual Fixes start
+- type: reagent
+  id: Milkshake
+  parent: BaseDrink
+  name: reagent-name-milkshake
+  desc: reagent-desc-milkshake
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: milk
+  color: "#e0e0e0"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/milkshake.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+# Orchid's Barmania - Visual Fixes end

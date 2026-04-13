@@ -59,7 +59,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AnyCommand]
+    [AdminCommand(AdminFlags.Host)] // Reserve edit AnyCommand -> AdminFlags.Host
     public sealed class GiftServerCurrencyCommand : IConsoleCommand
     {
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;

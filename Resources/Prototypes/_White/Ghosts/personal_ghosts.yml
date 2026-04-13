@@ -15,8 +15,7 @@
   - !type:CkeyRestriction
     ckey: [Duga] # Reserve edit, сука редкокс добавил мой скей сюда
   name: custom-ghost-personal-placeholder-name
-  desc: custom-ghost-personal-placeholder-desc
-
+  description: custom-ghost-personal-placeholder-desc
 - type: entity
   parent: MobObserverCkey
   id: MobObserverCkeyPlaceholder

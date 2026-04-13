@@ -1,13 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Ghost;
-using Content.Shared.Players.PlayTimeTracking;
-using Content.Shared.Roles;
-using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-
 namespace Content.Shared._White.CustomGhostSystem;
 
 [Prototype("customGhost")]
@@ -55,23 +50,20 @@ public sealed class CustomGhostPrototype : IPrototype, IInheritingPrototype
     }
 
     [DataField("proto", required: true)]
-    public EntProtoId<GhostComponent> GhostEntityPrototype { get; private set; } = default!;
-
+    public EntProtoId<GhostComponent> GhostEntityPrototype { get; private set; }
     /// <summary>
     /// If null, the default of "custom-ghost-[id]-name" will be used.
     /// </summary>
-    [DataField("name")]
+    [DataField]
     public string? Name { get; private set; }
-
     public string DisplayName => Loc.GetString(Name ?? $"custom-ghost-{ID.ToLowerInvariant()}-name");
     public string DisplayDesc => Loc.GetString(Description ?? $"custom-ghost-{ID.ToLowerInvariant()}-desc");
 
     /// <summary>
     /// If null, the default of "custom-ghost-[id]-desc" will be used.
     /// </summary>
-    [DataField("desc")]
-    public string? Description { get; private set; }
-}
+    [DataField]
+    public string? Description { get; private set; }}
 
 
 public abstract class CustomGhostRestriction

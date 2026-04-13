@@ -610,7 +610,7 @@
         - ReagentId: JuiceBerry
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/berryjuice.rsi
+    sprite: _Reserve/Objects/Consumable/Drinks/berry.rsi  # Reserve: Orchid's Barmania - Visual Fixes
     state: icon
 
 - type: entity
@@ -754,7 +754,7 @@
         - ReagentId: JuiceCarrot
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/carrotjuice.rsi
+    sprite: _Reserve/Objects/Consumable/Drinks/carrot.rsi  # Reserve: Orchid's Barmania - Visual Fixes
     state: icon
 
 - type: entity
@@ -770,7 +770,7 @@
         - ReagentId: HotCocoa
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/chocolateglass.rsi
+    sprite: _Reserve/Objects/Consumable/Drinks/cocoa.rsi  # Reserve: Orchid's Barmania - Visual Fixes
     state: icon
 
 - type: entity
@@ -817,6 +817,11 @@
         reagents:
         - ReagentId: CoconutWater
           Quantity: 30
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/coconut.rsi
+    state: icon
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: entity
   parent: DrinkGlass
@@ -878,6 +883,11 @@
         reagents:
         - ReagentId: Cream
           Quantity: 30
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/cream.rsi
+    state: icon
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: entity
   parent: DrinkGlass
@@ -1584,6 +1594,11 @@
         reagents:
         - ReagentId: JuiceLime
           Quantity: 30
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/glass_green.rsi
+    state: icon
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: entity
   parent: DrinkGlass
@@ -1702,6 +1717,15 @@
   id: DrinkMilkshake
   suffix: milkshake
   components:
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Milkshake
+          Quantity: 30
+  # Reserve: Orchid's Barmania - Visual Fixes end
   - type: Icon
     sprite: Objects/Consumable/Drinks/milkshake.rsi
     state: icon
@@ -1879,7 +1903,7 @@
         - ReagentId: JuiceBerryPoison
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/poisonberryjuice.rsi
+    sprite: _Reserve/Objects/Consumable/Drinks/berry_poison.rsi  # Reserve: Orchid's Barmania - Visual Fixes
     state: icon
 
 - type: entity
@@ -1911,7 +1935,7 @@
         - ReagentId: Posca
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/glass_light_yellow.rsi
+    sprite: _Reserve/Objects/Consumable/Drinks/posca.rsi  # Reserve: Orchid's Barmania - Visual Fixes
     state: icon
 
 - type: entity
@@ -2407,6 +2431,11 @@
         reagents:
         - ReagentId: JuiceTomato
           Quantity: 30
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/tomato.rsi
+    state: icon
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: entity
   parent: DrinkGlass
@@ -2565,6 +2594,11 @@
         reagents:
         - ReagentId: JuiceWatermelon
           Quantity: 30
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/watermelonglass.rsi
+    state: icon
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: entity
   parent: DrinkGlass

@@ -138,6 +138,71 @@
       - DrinkShakeWhite
       - DrinkTheMartinez
       - DrinkMoonshineGlass
+      # Reserve: Orchid's Barmania - Visual Fixes start
+      # - Missing non-reserve juices
+      - DrinkAppleJuice
+      - DrinkBananaJuice
+      - DrinkBluePumpkinJuice
+      - DrinkBungoJuice
+      - DrinkCherryJuice
+      - DrinkPineappleJuice
+      # - Missing non-reserve sodas
+      - DrinkEnergyDrinkGlass
+      - DrinkLemonLimeCranberryGlass
+      - DrinkLemonLime
+      - DrinkSodaGlass
+      - DrinkStarkistGlass
+      # - Missing non-reserve drinks
+      - DrinkCreamOfCoconutGlass
+      - DrinkMilkGoatGlass
+      - DrinkMilkOatGlass
+      - DrinkMilkSoyGlass
+      - DrinkDryRamenGlass
+      - DrinkHotRamenGlass
+      # - Missing non-reserve ingredients
+      - DrinkEggCookedGlass
+      - DrinkOilOliveGlass
+      - DrinkPumpkinFleshGlass
+      - DrinkCornoilGlass
+      - DrinkSoysauceGlass
+      - DrinkSyrupGlass
+      # - Unused non-reserve juices
+      - DrinkLimeJuice
+      - DrinkLemonJuice
+      - DrinkOrangeJuice
+      # - Unused non-reserve drinks
+      - DrinkCoconutWaterGlass
+      - DrinkCoffee
+      - DrinkCream
+      - DrinkEggnog
+      - DrinkGrapeSodaGlass
+      - DrinkGrenadineGlass
+      - DrinkIcedTeaGlass
+      - DrinkIrishCreamGlass
+      - DrinkCoffeeLiqueurGlass
+      - DrinkRootBeerGlass
+      - DrinkCogChampBase
+      - DrinkEmeraldGlass
+      - DrinkGlassWhite
+      - DrinkSolDryGlass
+      - DrinkSnowWhite
+      - DrinkSpaceUpGlass
+      - DrinkSpaceMountainWindGlass
+      - DrinkTeaGlass
+      - DrinkTequilaGlass
+      - DrinkTomatoJuice
+      - DrinkVermouthGlass
+      - DrinkVodkaGlass
+      - DrinkWhiskeyGlass
+      - DrinkCaipirinha
+      - DrinkDaiquiri
+      - DrinkDeathInTheAfternoon
+      - DrinkEmpress75
+      - DrinkEspressoMartini
+      - DrinkMimosa
+      - DrinkMoscowMule
+      - DrinkTheSunAlsoRises
+      # Reserve: Orchid's Barmania - Visual Fixes end
     chance: 0.8
     offset: 0.0
     #rare
@@ -156,4 +221,32 @@
       - DrinkHoochGlass
       - DrinkBeepskySmashGlass
       - DrinkBacchusBlessing
+      # Reserve: Orchid's Barmania - Visual Fixes start
+      # - Missing non-reserve drinks
+      - DrinkPotatoJuice
+      - DrinkChangelingStingGlass
+      - DrinkShamblersJuice
+      - DrinkMilkSpoiledGlass
+      - DrinkMopwataGlass
+      # - Missing non-reserve ingredients
+      - DrinkEnzymeGlass
+      - DrinkEggGlass
+      - DrinkVinegarGlass
+      - DrinkOilGlass
+      - DrinkCapsaicinOilGlass
+      - DrinkFrostOilGlass
+      - DrinkVitaminGlass
+      - DrinkLaughinSyrupGlass
+      # - Unused non-reserve drinks
+      - DrinkBloodGlass
+      - DrinkIceGlass
+      - DrinkManhattanProjectGlass
+      - DrinkMayojito
+      - DrinkMimeosa
+      - DrinkNothing
+      - DrinkPoisonBerryJuice
+      - DrinkPoisonWineGlass
+      - DrinkTeapot
+      - DrinkWhiskeySour
+      # Reserve: Orchid's Barmania - Visual Fixes end
     rareChance: 0.05

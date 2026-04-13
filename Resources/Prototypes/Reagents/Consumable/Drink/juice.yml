@@ -75,6 +75,14 @@
   flavor: apple
   color: "#FDAD01"
   recognizable: true
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/apple.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceBanana
@@ -84,6 +92,14 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: banana
   color: "#FFE777"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/banana.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceBerry
@@ -93,6 +109,14 @@
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/berry.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceBluePumpkin
@@ -102,6 +126,14 @@
   physicalDesc: reagent-physical-desc-strong-smelling
   flavor: bluepumpkin
   color: "#00BFFF"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/bluepumpkin.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceBungo
@@ -111,6 +143,14 @@
   physicalDesc: reagent-physical-desc-tart
   flavor: bungo
   color: "#F9E43D"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/bungo.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceCarrot
@@ -131,6 +171,19 @@
       - !type:AdjustReagent
         reagent: Nutriment
         amount: 0.5
+      - !type:ImmunityModifier #Goobstation start
+        gainRateModifier: 0.0005 #1/3rd of immurin
+        strengthModifier: 0.01
+        statusLifetime: 3 # 3s per 1u #Goobstation end
+
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/carrot.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceGrape
@@ -140,6 +193,14 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: juice
   color: "#512284"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/grapejuice.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceLemon
@@ -155,6 +216,15 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms: #Goobstation start
+    Medicine:
+      effects:
+      - !type:SatiateThirst
+      - !type:ImmunityModifier
+        gainRateModifier: 0.0005 #1/3rd of immurin
+        strengthModifier: 0.01
+        statusLifetime: 3 # 3s per 1u
+        #Goobstation end
 
 - type: reagent
   id: JuiceLime
@@ -164,14 +234,24 @@
   physicalDesc: reagent-physical-desc-citric
   flavor: sour
   color: "#99bb43"
+  metabolisms: #Goobstation start
+    Medicine:
+      effects:
+      - !type:SatiateThirst
+      - !type:ImmunityModifier
+        gainRateModifier: 0.0005 #1/3rd of immurin
+        strengthModifier: 0.01
+        statusLifetime: 3 # 3s per 1u
+        #Goobstation end
 
-# /datum/reagent/drink/orangejuice/on_mob_life(var/mob/living/M)
-
-# if(..())
-# return 1
-
-# if(M.getToxLoss() && prob(20))
-# M.adjustToxLoss(-REM)
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_green.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceOrange
@@ -187,6 +267,15 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+  metabolisms: #Goobstation start
+    Medicine:
+      effects:
+      - !type:SatiateThirst
+      - !type:ImmunityModifier
+        gainRateModifier: 0.0005 #1/3rd of immurin
+        strengthModifier: 0.01
+        statusLifetime: 3 # 3s per 1u
+        #Goobstation end
 
 - type: reagent
   id: JuicePineapple
@@ -196,6 +285,24 @@
   physicalDesc: reagent-physical-desc-tropical
   flavor: pineapple
   color: yellow
+  metabolisms: #Goobstation start
+    Medicine:
+      effects:
+      - !type:SatiateThirst
+      - !type:ImmunityModifier
+        gainRateModifier: 0.0005 #1/3rd of immurin
+        strengthModifier: 0.01
+        statusLifetime: 3 # 3s per 1u
+        #Goobstation end
+
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/pineapple.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuicePotato
@@ -205,6 +312,14 @@
   physicalDesc: reagent-physical-desc-starchy
   flavor: potatoes
   color: "#302000"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/glass_brown.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceTomato
@@ -214,6 +329,14 @@
   physicalDesc: reagent-physical-desc-saucey
   flavor: tomato
   color: "#731008"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/tomato.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: JuiceWatermelon
@@ -238,3 +361,11 @@
   physicalDesc: reagent-physical-desc-sweet
   flavor: cherry
   color: "#84031a"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/cherry.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end

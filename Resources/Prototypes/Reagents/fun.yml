@@ -218,6 +218,7 @@
       - !type:Electrocute
         probability: 0.15 # DeltaV - was 0.35, this should not be guaranteed for a cheaper chem
 
+
 - type: reagent
   id: Razorium
   name: reagent-name-razorium

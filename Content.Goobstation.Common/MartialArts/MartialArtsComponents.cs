@@ -18,6 +18,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Grab;
 using Robust.Shared.GameStates;
 
 namespace Content.Goobstation.Common.MartialArts;
@@ -30,7 +31,7 @@ public sealed partial class MartialArtBlockedComponent : Component
 }
 public abstract partial class GrabStagesOverrideComponent : Component
 {
-    public GrabStage StartingStage = GrabStage.Soft;
+    public readonly GrabStage StartingStage = GrabStage.Soft;
 }
 
 [RegisterComponent]

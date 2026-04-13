@@ -78,13 +78,13 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMO
     shoes: ClothingShoesColorBrown
+    eyes: ClothingEyesGlassesMedicalCommand # Reserve-CommandHUD
     gloves: ClothingHandsGlovesLatex
     head: ClothingHeadMirror
     neck: ClothingCloakCmo
     id: VisitorPDA
     back: ClothingBackpackMedical
     ears: ClothingHeadsetAltMedical # Goobstation
-    eyes: ClothingEyesGlassesMedicalCommand # Reserve-CommandHUD
     belt: ClothingBeltMedicalFilled
     outerClothing: ClothingOuterCoatLabCmo
     pocket1: WeaponDisabler
@@ -94,13 +94,13 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitCMOTurtle
     shoes: ClothingShoesColorBrown
+    eyes: ClothingEyesGlassesMedicalCommand # Reserve-CommandHUD
     gloves: ClothingHandsGlovesNitrile
     head: ClothingHeadHatBeretCmo
     neck: ClothingNeckMantleCMO
     id: VisitorPDA
     back: ClothingBackpackSatchelMedical
     ears: ClothingHeadsetAltMedical # Goobstation
-    eyes: ClothingEyesGlassesMedicalCommand # Reserve-CommandHUD
     belt: ClothingBeltMedicalFilled
     outerClothing: ClothingOuterCoatLabCmo
     pocket1: WeaponDisabler

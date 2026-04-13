@@ -244,8 +244,11 @@ flavor-complex-whiskey-cola = как газированная патока
 flavor-complex-singulo = как бездонная дыра
 flavor-complex-syndie-bomb = как горький виски
 flavor-complex-root-beer-float = как мороженое в рутбире
+flavor-complex-crush-depth = как "Хадальная Зона"
 flavor-complex-black-russian = как алкогольный кофе
 flavor-complex-white-russian = как подслащённый алкогольный кофе
+flavor-complex-electric-shark = как "Неделя акул" в тропиках
+flavor-complex-tortuga = как сладкий чай
 flavor-complex-moonshine = как чистый алкоголь
 flavor-complex-tequila-sunrise = как мексиканское утро
 flavor-complex-irish-coffee = как пробуждение алкоголика
@@ -259,6 +262,12 @@ flavor-complex-atomic-cola = как накопление бутылочных к
 flavor-complex-cuba-libre = как крепкая кола
 flavor-complex-gin-tonic = как крепкая газировка с лимоном и лаймом
 flavor-complex-screwdriver = как крепкий апельсиновый сок
+flavor-complex-jack-rose = как свидетельство
+flavor-complex-jungle-bird = словно ты в тропическом птичнике
+flavor-complex-kalimotxo = как изысканная кола с алкоголем
+flavor-complex-vampiro = фруктово, пикантно и пряно
+flavor-complex-bronx = как слегка сладкий, алкогольный фрукт
+flavor-complex-monkey-business = как в обезьяннике
 flavor-complex-cogchamp = как латунь
 flavor-complex-themartinez = как фиалки и лимонная водка
 flavor-complex-vodka-red-bool = как инфаркт
@@ -268,9 +277,7 @@ flavor-complex-budget-insuls-drink = как взлом шлюза
 flavor-complex-watermelon-wakeup = как сладкое пробуждение
 flavor-complex-rubberneck = как синтетика
 flavor-complex-irish-car-bomb = как шипучая пенка колы
-
-### This is exactly what pilk tastes like. I'm not even joking. I might've been a little drunk though
-
+flavor-complex-alien-brain-hemorrhage = как инопланетная травма
 flavor-complex-white-gilgamesh = как слегка газированные сливки
 flavor-complex-zombiecocktail = как будто ешь мозги
 flavor-complex-antifreeze = тепло
@@ -300,9 +307,11 @@ flavor-complex-brave-bull = как будто тебя переехал груз
 flavor-complex-demons-blood = как седьмой круг ада
 flavor-complex-devils-kiss = как каннибализм
 flavor-complex-driest-martini = как пьяный мимик
+flavor-complex-eggnog = как растопленный заварной крем
 flavor-complex-erika-surprise = как будто бармен ошибся
 flavor-complex-gin-fizz = освежающий и лимонный
 flavor-complex-gildlager = как золото царя
+flavor-complex-dark-and-stormy = как имбирный эль с ромом
 flavor-complex-grog = как в морской песне
 flavor-complex-hippies-delight = как будто у вас падает давление
 flavor-complex-hooch = как если бы вы были дизельным двигателем, это было бы вкусно
@@ -313,6 +322,7 @@ flavor-complex-martini = как в шпионском фильме
 flavor-complex-mojito = как будто зайти в тень после пребывания на жарком солнце
 flavor-complex-neurotoxin = как подземный испытательный центр
 flavor-complex-patron = как будто поют серенаду мариачи
+flavor-complex-radler = как лимонад с алкоголем
 flavor-complex-red-mead = как битва викингов
 flavor-complex-sbiten = как огонь
 flavor-complex-snowwhite = как кислый и горький хмель
@@ -320,9 +330,6 @@ flavor-complex-sui-dream = как картина Альп
 flavor-complex-toxins-special = как освоение космоса
 flavor-complex-vodka-martini = как шпионский фильм из России
 flavor-complex-vodka-tonic = освежающе горький
-
-### This is exactly what pilk tastes как. I'm not even joking. I might've been a little drunk though
-
 flavor-complex-pilk = как сладкое молоко
 
 # Medicine/chemical-specific flavors.

@@ -53,6 +53,14 @@
   physicalDesc: reagent-physical-desc-chalky
   flavor: vitamin
   color: "#D3D3D3"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/vitamin.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food: #This makes it not compete with medicines, a large bonus for something that can heal
       effects:
@@ -66,6 +74,10 @@
       - !type:ModifyBleedAmount
         amount: -0.25
       - !type:SatiateHunger #Numbers are balanced with this in mind + it helps limit how much healing you can get from food
+      - !type:ImmunityModifier #Goobstation
+        gainRateModifier: 0.0005 #1/3rd of immurin
+        strengthModifier: 0.01
+        statusLifetime: 3
   # Lets plants benefit too
   plantMetabolism:
   - !type:PlantAdjustNutrition
@@ -134,3 +146,11 @@
   desc: reagent-desc-pumpkin-flesh
   flavor: pumpkin
   color: "#fc9300"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/pumpkin.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end

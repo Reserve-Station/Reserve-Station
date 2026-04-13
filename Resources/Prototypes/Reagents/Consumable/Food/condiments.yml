@@ -64,6 +64,14 @@
   flavor: oily
   color: yellow
   recognizable: true
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/oil_corn.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: HorseradishSauce
@@ -114,6 +122,14 @@
   flavor: sweet
   color: "#803280"
   recognizable: true
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/syrup_laugh.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: Mayo
@@ -154,6 +170,14 @@
   flavor: salty
   color: saddlebrown
   recognizable: true
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/soy.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Food:
       effects:
@@ -213,6 +237,14 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-sticky
   viscosity: 0.55 #Start using syrup to attach your remote recievers to your microwaves!
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/syrup.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   tileReactions:
     - !type:SpillTileReaction
   metabolisms:

@@ -14,7 +14,7 @@
   - !type:CkeyRestriction
     ckey: [ca4tuk, AwareFoxy]
   name: ca4tuk
-  desc: ДА
+  description: ДА
 
 - type: entity
   parent: MobObserverCkey
@@ -32,7 +32,7 @@
   - !type:CkeyRestriction
     ckey: [Svarshik]
   name: Svarshik
-  desc: Вам кажется.
+  description: Вам кажется.
 
 - type: entity
   parent: MobObserverCkey
@@ -68,7 +68,7 @@
   - !type:CkeyRestriction
     ckey: [FXX]
   name: FXX
-  desc: Космическая Гидра.
+  description: Космическая Гидра.
 
 - type: entity
   parent: MobObserverCkey
@@ -86,7 +86,7 @@
   - !type:CkeyRestriction
     ckey: [is_already_taken]
   name: Раймонд Роберт (Is_already_taken)
-  desc: РП Аллах
+  description: РП Аллах
 
 - type: entity
   parent: MobObserverCkey
@@ -104,7 +104,7 @@
   - !type:CkeyRestriction
     ckey: [PZAKusik]
   name: Kutos
-  desc: ...
+  description: ...
 
 - type: entity
   parent: MobObserverCkey
@@ -121,7 +121,7 @@
   - !type:CkeyRestriction
     ckey: [ _____, ThxMqninq ]
   name: ThxMqninq
-  desc: korovka
+  description: korovka
 
 - type: entity
   parent: MobObserverCkey
@@ -129,3 +129,21 @@
   components:
   - type: Sprite
     sprite: _Reserve/Ghosts/thxmqninq-ghost.rsi
+
+- type: customGhost
+  id: perlovka_is_my_name
+  category: personal
+  proto: MobObserverCkeyPerlovkaIsMyName
+  restrictions:
+  - !type:CkeyRestriction
+    ckey: [perlovka_is_my_name]
+  name: Перловка
+  description: Waiting...
+
+- type: entity
+  parent: MobObserverCkey
+  id: MobObserverCkeyPerlovkaIsMyName
+  components:
+  - type: Sprite
+    sprite: _Reserve/Ghosts/perlovka_is_my_name.rsi
+    color: "#FFFFFF"

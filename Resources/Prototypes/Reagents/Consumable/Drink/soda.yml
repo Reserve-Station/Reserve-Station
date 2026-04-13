@@ -92,6 +92,14 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: soda
   color: "#2E6671"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/changeling_sting.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: DrGibb
@@ -116,6 +124,14 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: energydrink
   color: "#ffffbf"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/energy_drink.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
   metabolisms:
     Drink:
       effects:
@@ -138,6 +154,14 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: grapesoda
   color: "#ae94a6"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/gsodaglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: IceCream
@@ -164,6 +188,14 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: lemonlimesoda
   color: "#878F00"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/lemonlime.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: LemonLimeCranberry
@@ -173,6 +205,14 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: lemonlimecranberrysoda
   color: "#803C53"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/lemon_lime_cranberry.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: PwrGame
@@ -183,6 +223,14 @@
   flavor: pwrgamesoda
   color: "#9385bf"
   fizziness: 0.9 # gamers crave the fizz
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/pwrgame.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: RootBeer
@@ -288,6 +336,14 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: starkistsoda
   color: "#9F3400"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/starkist.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: FourteenLoko
@@ -333,6 +389,14 @@
   physicalDesc: reagent-physical-desc-fizzy
   flavor: metallic
   color: "#66538F"
+  # Reserve: Orchid's Barmania - Visual Fixes start
+  metamorphicSprite:
+    sprite: _Reserve/Objects/Consumable/Drinks/shambler.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  # Reserve: Orchid's Barmania - Visual Fixes end
 
 - type: reagent
   id: Brepsi

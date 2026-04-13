@@ -88,5 +88,10 @@ namespace Content.Goobstation.Server.Chemistry.Components
 
         [DataField]
         public Dictionary<string, float> Reagents = [];
+
+        // Reserve-Start
+        [DataField]
+        public float RefundEnergyEfficiency = 0.5f;
+        // Reserve-End
     }
 }
