@@ -148,6 +148,7 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Client._Starlight.Shaders;
 
 namespace Content.Client.IoC
 {
@@ -187,6 +188,7 @@ namespace Content.Client.IoC
             collection.Register<LinkAccountManager>(); // RMC14
             collection.Register<ClientsidePlaytimeTrackingManager>();
             collection.Register<GuidebookLocalizationManager>(); // Reserve localized guidebook
+            collection.Register<IStarlightShaderManager, StarlightShaderManager>(); // Starlight
         }
     }
 }
