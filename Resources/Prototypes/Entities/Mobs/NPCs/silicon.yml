@@ -353,8 +353,8 @@
       path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: Vocalizer
   - type: DatasetVocalizer
-  - type: AiRemoteController #Reserve add
     dataset: FirebotAd
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent: MobSiliconBase
