@@ -990,3 +990,75 @@
     accent-british-words-107: accent-british-words-replace-107
     accent-british-words-108: accent-british-words-replace-108
     accent-british-words-109: accent-british-words-replace-109
+
+# Reserve edit start: add
+- type: accent
+  id: ukrainianaccent
+  wordReplacements:
+    accent-ukrainianaccent-words-1: accent-ukrainianaccent-words-replace-1
+    accent-ukrainianaccent-words-2: accent-ukrainianaccent-words-replace-2
+    accent-ukrainianaccent-words-3: accent-ukrainianaccent-words-replace-3
+    accent-ukrainianaccent-words-4: accent-ukrainianaccent-words-replace-4
+    accent-ukrainianaccent-words-5: accent-ukrainianaccent-words-replace-5
+    accent-ukrainianaccent-words-6: accent-ukrainianaccent-words-replace-6
+    accent-ukrainianaccent-words-7: accent-ukrainianaccent-words-replace-7
+    accent-ukrainianaccent-words-8: accent-ukrainianaccent-words-replace-8
+    accent-ukrainianaccent-words-9: accent-ukrainianaccent-words-replace-9
+    accent-ukrainianaccent-words-10: accent-ukrainianaccent-words-replace-10
+    accent-ukrainianaccent-words-11: accent-ukrainianaccent-words-replace-11
+    accent-ukrainianaccent-words-12: accent-ukrainianaccent-words-replace-12
+    accent-ukrainianaccent-words-13: accent-ukrainianaccent-words-replace-13
+    accent-ukrainianaccent-words-14: accent-ukrainianaccent-words-replace-14
+    accent-ukrainianaccent-words-15: accent-ukrainianaccent-words-replace-15
+    accent-ukrainianaccent-words-16: accent-ukrainianaccent-words-replace-16
+    accent-ukrainianaccent-words-17: accent-ukrainianaccent-words-replace-17
+    accent-ukrainianaccent-words-18: accent-ukrainianaccent-words-replace-18
+    accent-ukrainianaccent-words-19: accent-ukrainianaccent-words-replace-19
+    accent-ukrainianaccent-words-20: accent-ukrainianaccent-words-replace-20
+    accent-ukrainianaccent-words-21: accent-ukrainianaccent-words-replace-21
+    accent-ukrainianaccent-words-22: accent-ukrainianaccent-words-replace-22
+    accent-ukrainianaccent-words-23: accent-ukrainianaccent-words-replace-23
+    accent-ukrainianaccent-words-24: accent-ukrainianaccent-words-replace-24
+    accent-ukrainianaccent-words-25: accent-ukrainianaccent-words-replace-25
+    accent-ukrainianaccent-words-26: accent-ukrainianaccent-words-replace-26
+    accent-ukrainianaccent-words-27: accent-ukrainianaccent-words-replace-27
+    accent-ukrainianaccent-words-28: accent-ukrainianaccent-words-replace-28
+    accent-ukrainianaccent-words-29: accent-ukrainianaccent-words-replace-29
+    accent-ukrainianaccent-words-30: accent-ukrainianaccent-words-replace-30
+    accent-ukrainianaccent-words-31: accent-ukrainianaccent-words-replace-31
+    accent-ukrainianaccent-words-32: accent-ukrainianaccent-words-replace-32
+    accent-ukrainianaccent-words-33: accent-ukrainianaccent-words-replace-33
+    accent-ukrainianaccent-words-34: accent-ukrainianaccent-words-replace-34
+    accent-ukrainianaccent-words-35: accent-ukrainianaccent-words-replace-35
+    accent-ukrainianaccent-words-36: accent-ukrainianaccent-words-replace-36
+    accent-ukrainianaccent-words-37: accent-ukrainianaccent-words-replace-37
+    accent-ukrainianaccent-words-38: accent-ukrainianaccent-words-replace-38
+    accent-ukrainianaccent-words-39: accent-ukrainianaccent-words-replace-39
+    accent-ukrainianaccent-words-40: accent-ukrainianaccent-words-replace-40
+    accent-ukrainianaccent-words-41: accent-ukrainianaccent-words-replace-41
+    accent-ukrainianaccent-words-42: accent-ukrainianaccent-words-replace-42
+    accent-ukrainianaccent-words-43: accent-ukrainianaccent-words-replace-43
+    accent-ukrainianaccent-words-44: accent-ukrainianaccent-words-replace-44
+    accent-ukrainianaccent-words-45: accent-ukrainianaccent-words-replace-45
+    accent-ukrainianaccent-words-46: accent-ukrainianaccent-words-replace-46
+    accent-ukrainianaccent-words-47: accent-ukrainianaccent-words-replace-47
+    accent-ukrainianaccent-words-48: accent-ukrainianaccent-words-replace-48
+    accent-ukrainianaccent-words-49: accent-ukrainianaccent-words-replace-49
+    accent-ukrainianaccent-words-50: accent-ukrainianaccent-words-replace-50
+    accent-ukrainianaccent-words-51: accent-ukrainianaccent-words-replace-51
+    accent-ukrainianaccent-words-52: accent-ukrainianaccent-words-replace-52
+    accent-ukrainianaccent-words-53: accent-ukrainianaccent-words-replace-53
+    accent-ukrainianaccent-words-54: accent-ukrainianaccent-words-replace-54
+    accent-ukrainianaccent-words-55: accent-ukrainianaccent-words-replace-55
+    accent-ukrainianaccent-words-56: accent-ukrainianaccent-words-replace-56
+    accent-ukrainianaccent-words-57: accent-ukrainianaccent-words-replace-57
+    accent-ukrainianaccent-words-58: accent-ukrainianaccent-words-replace-58
+    accent-ukrainianaccent-words-59: accent-ukrainianaccent-words-replace-59
+    accent-ukrainianaccent-words-60: accent-ukrainianaccent-words-replace-60
+    accent-ukrainianaccent-words-61: accent-ukrainianaccent-words-replace-61
+    accent-ukrainianaccent-words-62: accent-ukrainianaccent-words-replace-62
+    accent-ukrainianaccent-words-63: accent-ukrainianaccent-words-replace-63
+    accent-ukrainianaccent-words-64: accent-ukrainianaccent-words-replace-64
+    accent-ukrainianaccent-words-65: accent-ukrainianaccent-words-replace-65
+    accent-ukrainianaccent-words-66: accent-ukrainianaccent-words-replace-66
+    accent-ukrainianaccent-words-67: accent-ukrainianaccent-words-replace-67

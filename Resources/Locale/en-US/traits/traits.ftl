@@ -104,3 +104,7 @@ trait-newyork-desc = You speak with a thick New York accent. I'm fuckin' walkin'
 
 trait-british-name = British accent
 trait-british-desc = You speak proper, unlike those bloody yanks.
+
+# Reserve edit: add
+trait-ukrainianaccent-name = Ukrainian accent 
+trait-ukrainianaccent-desc = Ukrainian dialect, slightly rough.

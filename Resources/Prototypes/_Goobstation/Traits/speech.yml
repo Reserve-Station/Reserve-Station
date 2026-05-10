@@ -74,3 +74,14 @@
   components:
   - type: ReplacementAccent
     accent: british
+
+# Reserve edit start: add
+- type: trait
+  id: ukrainianaccent
+  name: trait-ukrainianaccent-name
+  description: trait-ukrainianaccent-desc
+  category: SpeechTraits
+  cost: 0
+  components:
+  - type: ReplacementAccent
+    accent: ukrainianaccent

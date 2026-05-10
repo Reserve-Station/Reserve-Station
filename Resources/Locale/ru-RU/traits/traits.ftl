@@ -49,3 +49,5 @@ trait-dementia-name = Деменция
 trait-dementia-desc = Я... э-э, о чем это было? О, точно! Ты иногда многое забываешь.
 trait-painnumbness-name = Онемение
 trait-painnumbness-desc = У вас отсутствует какое-либо ощущение боли, вы не осознаете, насколько вам может быть больно.
+trait-ukrainianaccent-name = Украинский акцент
+trait-ukrainianaccent-desc = Теперь вы говорите с украинским акцентом! И, слегка грубы.
