@@ -7,12 +7,19 @@
 - type: vendingMachineInventory
   id: HappyHonkDispenserInventory
   startingInventory:
-    HappyHonk: 10
+    HappyHonk: 6  # Reserve: Orchid's Barmania - Vendichaos
     HappyHonkMime: 4
+    # Reserve: Orchid's Barmania - Vendichaos start
+    FoodMealHappyHonkBigBite: 2
+    DrinkEggCan: 3
+    DrinkNothingCan: 3
+    # Reserve: Orchid's Barmania - Vendichaos end
   contrabandInventory:
     ToyFigurineClown: 1
     ToyFigurineMime: 1
     ToyFigurineNukie: 1
     HappyHonkCluwne: 1
+    FoodBoxDonkpocketHonk: 1  # Reserve: Orchid's Barmania - Vendichaos
   emaggedInventory:
     HappyHonkNukie: 1
+    HappyHonkNukieSnacks: 1  # Reserve: Orchid's Barmania - Vendichaos

@@ -1,7 +1,7 @@
 traitor-corporations-flavor-dataset-1 = Террорист ARC
 traitor-corporations-flavor-dataset-2 = Фронт освобождения пчёл
 traitor-corporations-flavor-dataset-3 = Cybersun Industries
-traitor-corporations-flavor-dataset-4 = Мародёры Горлекс
+traitor-corporations-flavor-dataset-4 = Мародёры Горлекса
 traitor-corporations-flavor-dataset-5 = Альпинист
 traitor-corporations-flavor-dataset-6 = Donk Co.
 traitor-corporations-flavor-dataset-7 = Проблемы с законом

@@ -68,10 +68,15 @@
     location: nuke disk
   - type: Tag
     tags:
+    - CD  # To fit inside CD racks and CD cases.  # Reserve: CD disks fix
     - HighRiskItem
   - type: StealTarget
     stealGroup: NukeDisk
   - type: SupermatterImmune # Goobstation
+  # Reserve: CD disks fix start
+  - type: Item
+    size: Tiny
+  # Reserve: CD disks fix end
 
 - type: entity
   name: nuclear authentication disk
@@ -104,4 +109,9 @@
     price: 1 # it's worth even less than normal items. Perfection.
   - type: Tag
     tags:
+    - CD  # To fit inside CD racks and CD cases.  # Reserve: CD disks fix
     - FakeNukeDisk
+  # Reserve: CD disks fix start
+  - type: Item
+    size: Tiny
+  # Reserve: CD disks fix end

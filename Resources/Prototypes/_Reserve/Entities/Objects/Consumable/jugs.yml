@@ -1,0 +1,105 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  id: DrinkAppleJuiceJug
+  name: apple juice jug
+  description: Just apples.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: JuiceApple
+          Quantity: 300
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-juice-apple
+
+- type: entity
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  id: DrinkLemonJuiceJug
+  name: lemon juice jug
+  description: A very yellow flavor.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: JuiceLemon
+          Quantity: 150
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-juice-lemon
+
+- type: entity
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  id: DrinkBluePumpkinJuiceJug
+  name: blue pumpkin juice jug
+  description: A very blue flavor.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: JuiceBluePumpkin
+          Quantity: 150
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-juice-blue-pumpkin
+
+- type: entity
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  id: DrinkMangoJuiceJug
+  name: mango juice jug
+  description: A very tropical flavor.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: JuiceMango
+          Quantity: 100
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-juice-mango
+
+- type: entity
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  id: DrinkBungoJuiceJug
+  name: bungo juice jug
+  description: A very tropical flavor.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: JuiceBungo
+          Quantity: 150
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-juice-bungo
+
+- type: entity
+  parent: [DrinkBottleVisualsOpenable, DrinkBottlePlasticBaseFull]
+  id: DrinkPineappleJuiceJug
+  name: pineapple juice jug
+  description: A very tropical flavor.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: JuicePineapple
+          Quantity: 150
+  - type: Drink
+  - type: Label
+    currentLabel: reagent-name-juice-pineapple

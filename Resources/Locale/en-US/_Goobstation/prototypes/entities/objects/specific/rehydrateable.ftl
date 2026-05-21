@@ -28,3 +28,14 @@ ent-VoxCube = vox cube
     .desc = { ent-MonkeyCube.desc }
 ent-ShadowkinCube = Shadowkin cube
     .desc = { ent-MonkeyCube.desc }
+
+ent-SlimeCubeBox = коробка кубиков слаймов
+    .desc = Кубики слаймов фирмы Drymate. Просто добавь воды!
+ent-SlimeCubeBoxSyndie = коробка кубиков слаймов синдиката
+    .desc = Кубики слаймов фирмы Interdyne. Просто добавь воды!
+ent-SlimeCubeWrapped = кубик слайма
+    .desc = Разверни чтобы получить кубик слайма.
+ent-SlimeCubeWrappedSyndie = кубик слайма синдиката
+    .desc = Разверни чтобы получить кубик слайма.
+ent-SlimeCube = кубик слайма
+    .desc = { ent-MonkeyCube.desc }

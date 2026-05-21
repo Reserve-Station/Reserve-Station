@@ -10,6 +10,36 @@
 - type: vendingMachineInventory
   id: CondimentInventory
   startingInventory:
+    # Reserve: Orchid's Barmania - Vendichaos start
+    FoodCondimentPacketHotKetchup: 5
+    FoodCondimentPacketWasabi: 5
+    FoodCondimentPacketKetchunaise: 5
+    FoodCondimentPacketMayo: 5
+    FoodCondimentPacketVinaigrette: 5
+    FoodCondimentPacketSyrup: 5
+    FoodCondimentPacketGarlic: 5
+    FoodCondimentPacketSourGreenSauce: 5
+    FoodCondimentPacketHollandaise: 5
+    FoodCondimentPacketTomatoSauce: 5
+    FoodCondimentPacketTomatoDressing: 5
+    FoodCondimentPacketPesto: 5
+    FoodCondimentPacketBechamel: 5
+    FoodCondimentPacketMustardSauce: 5
+    FoodCondimentPacketCarrot: 5
+    FoodCondimentPacketTartarSauce: 5
+    FoodCondimentPacketBananaSauce: 5
+    FoodCondimentPacketCherryJam: 5
+    FoodCondimentPacketBerryJam: 5
+    FoodCondimentPacketAppleJam: 5
+    FoodCondimentPacketOrangeJam: 5
+    FoodCondimentPacketSatsibili: 5
+    FoodCondimentPacketCheeseSauce: 5
+    FoodCondimentPacketCarbonaraSauce: 5
+    FoodCondimentPacketSweetChili: 5
+    FoodCondimentPacketBurgerSauce: 5
+    FoodCondimentPacketGolfSauce: 5
+    FoodCondimentPacketVodkaSauce: 5
+    # Reserve: Orchid's Barmania - Vendichaos end
     FoodCondimentPacketAstrotame: 5
     FoodCondimentPacketBbq: 5
     FoodCondimentPacketColdsauce: 5
@@ -32,3 +62,6 @@
     FoodShakerPepper: 1
     FoodCondimentBottleKetchup: 1
     ReagentContainerMayo: 1
+    FoodCondimentBottleCornOil: 1  # Reserve: Orchid's Barmania - Vendichaos
+  emaggedInventory:
+    FoodCondimentBottleCapsaicinOil: 1  # Reserve: Orchid's Barmania - Vendichaos

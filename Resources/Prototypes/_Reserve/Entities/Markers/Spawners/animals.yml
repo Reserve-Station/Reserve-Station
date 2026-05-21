@@ -1,0 +1,53 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobCatAny
+  name: Any Cat Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobCat
+    - MobCatCalico
+    - MobCatCaracal
+    - MobCatKitten
+    rarePrototypes:
+    - MobCatShadow
+    - MobCatSpace
+    - MobCatRuntime
+    - MobCatException
+    - MobCatFloppa
+    - MobBingus
+    rareChance: 0.15
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobScurret
+  name: Any Scurret Spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobScurret
+    rarePrototypes:
+    - MobEmotionalSupportScurret
+    rareChance: 0.15
+
+- type: entity
+  parent: SpawnMobBrullbar
+  id: SpawnMobBrullbarChance
+  suffix: 5% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobBrullbar
+    chance: 0.05

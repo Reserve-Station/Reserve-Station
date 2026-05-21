@@ -1,0 +1,125 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: RandomGlasses
+  name: random clothing spawner
+  suffix: Glasses, Goggles
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Clothing/Eyes/Glasses/sunglasses.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+      - ClothingEyesGlassesCheapSunglasses
+      - ClothingEyesGlassesCheapSunglasses
+      - ClothingEyesGlassesCheapSunglasses
+      - ClothingEyesGlassesSunglasses
+      - ClothingEyesGlassesSunglasses
+      - ClothingEyesGlasses
+      - ClothingEyesGlassesJamjar
+      - ClothingEyesGlassesJensen
+      - ClothingEyesGlassesOutlawGlasses
+    chance: 0.8
+    offset: 0.0
+    rarePrototypes:
+      - ClothingEyesGlassesNoir
+      - ClothingEyesGlassesMercenary
+      - ClothingEyesHudOnionBeer
+    rareChance: 0.05
+
+- type: entity
+  id: RandomHat
+  name: random clothing spawner
+  suffix: Hat
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Clothing/Head/Hats/fishcap.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+      - ClothingHeadHatBeret
+      - ClothingHeadHatBeretFrench
+      - ClothingHeadHatCasa
+      - ClothingHeadHatBowlerHat
+      - ClothingHeadHatFedoraBrown
+      - ClothingHeadHatFedoraGrey
+      - ClothingHeadHatFez
+      - ClothingHeadHatCanadaBeanie
+      - ClothingHeadHatTrucker
+      - ClothingHeadPaperSackSmile
+      - ClothingHeadFishCap
+    chance: 0.8
+    offset: 0.0
+    rarePrototypes:
+      - ClothingHeadHatCardborg
+      - ClothingHeadHatOutlawHat
+      - ClothingHeadHatPaper
+      - ClothingHeadHatSombrero
+      - ClothingHeadHatTophat
+      - ClothingHeadHatUshanka
+      - ClothingHeadPaperSack
+      - ClothingHeadWehcellentCap
+      - ClothingHeadRastaHat
+      - ClothingHeadSafari
+    rareChance: 0.02
+
+- type: entity
+  id: RandomTowel
+  name: random clothing spawner
+  suffix: Towel
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Clothing/Multiple/towel.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+      - TowelColorWhite
+      - TowelColorPurple
+      - TowelColorRed
+      - TowelColorBlue
+      - TowelColorDarkBlue
+      - TowelColorLightBlue
+      - TowelColorTeal
+      - TowelColorBrown
+      - TowelColorLightBrown
+      - TowelColorGray
+      - TowelColorGreen
+      - TowelColorDarkGreen
+      - TowelColorGold
+      - TowelColorOrange
+      - TowelColorBlack
+      - TowelColorPink
+      - TowelColorYellow
+      - TowelColorMaroon
+      - TowelColorSilver
+      - TowelColorMime
+      - TowelColorNT
+    chance: 0.8
+    offset: 0.0
+    rarePrototypes:
+      - TowelColorCentcom
+      - TowelColorSyndicate
+    rareChance: 0.02

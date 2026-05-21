@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: SauceDispenserMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: sauce dispenser machine board
+  description: A machine printed circuit board for a sauce dispenser.
+  components:
+    - type: Sprite
+      state: service
+    - type: MachineBoard
+      prototype: SauceDispenserEmpty
+      stackRequirements:
+        Steel: 5
+      tagRequirements:
+          GlassBeaker:
+            amount: 1
+            defaultPrototype: Beaker

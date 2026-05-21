@@ -18,8 +18,10 @@
   suffix: Meal
   parent: MarkerBase
   placement:
-    mode: AlignTileAny
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+  - type: Transform
+    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: red
@@ -87,7 +89,6 @@
       - FoodSoupStew
     chance: 0.8
     offset: 0.0
-    #rare
     rarePrototypes:
       - FoodMealMint
       - FoodMealBearsteak

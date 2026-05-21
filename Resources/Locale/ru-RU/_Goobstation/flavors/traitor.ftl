@@ -64,11 +64,24 @@ traitor-wafflecorporationterrorist-allies = Большинству других 
 traitor-wafflecorporationterrorist-uplink = Для выполнения задания вам предоставлен канал связи с синдикатом, расположенный в вашем КПК.
 traitor-wafflecorporationterrorist-roundend = [color=red]террорист «Waffle Co.»[/color].
 
-traitor-neulithivfederationvisionary-intro = Вы - провидец Федерации Неулитов
+traitor-neulithivfederationvisionary-intro = Вы - провидец Федерации Неулитив.
 traitor-neulithivfederationvisionary-goal = Федерация космических волшебников хочет, чтобы мы доказали, что можем хорошо с ними работать. Привлекайте к себе как можно больше внимания, продолжая выполнять свою задачу.
 traitor-neulithivfederationvisionary-allies = Членам Федерации космических волшебников и другим провидцам можно доверять. Вам решать, доверять ли другим членам Синдиката.
 traitor-neulithivfederationvisionary-uplink = Федерация предоставила вам доступ к сети интернет в вашем персональном компьютере. Используйте ее с умом.
 traitor-neulithivfederationvisionary-roundend = [color=violet]провидец Федерации[/color]
+
+# ?
+# traitor-postal-intro = You have Gone Postal.
+# traitor-postal-goal = The preparations are finally complete. Today is the day you go postal. You're going to hijack the emergency shuttle and live a new life free of Nanotrasen.
+# traitor-postal-allies = If the syndicate learns of your plan, they're going to kill you and take your uplink. Take no chances.
+# traitor-postal-uplink = You've actually managed to steal a full uplink a month ago. This should certainly help accomplish your goals.
+# traitor-postal-roundend = [color=white]simply going completely Postal[/color]
+
+traitor-evilchampion-intro = Вы Чемпион Зла!
+traitor-evilchampion-goal = У вас есть планы на сегодня, которые вы можете составить на салфетках, чтобы совершить какое-нибудь злодеяние. С другой стороны, Чемпионы Зла всегда ищут более безнравственных злоумышленников! Проведите вербовку!
+traitor-evilchampion-allies = Любой, кто видит то же, что и вы, и чувствует то же, что и вы, может присоединиться к Чемпионам Зла! Это означает, что Синдикат, корыстолюбивый или даже безумный, если в его сердце есть тьма, то Чемпионы не против!
+traitor-evilchampion-uplink = У Чемпионов Зла хорошие связи с чёрным рынком. Вам был предоставлен аплинк для создания "предельного зла"!
+traitor-evilchampion-roundend = [color=red]Чемпион Зла[/color]
 
 issuers-corporate-flavor-1 = NanoTrasen
 issuers-corporate-flavor-2 = Центральное командование

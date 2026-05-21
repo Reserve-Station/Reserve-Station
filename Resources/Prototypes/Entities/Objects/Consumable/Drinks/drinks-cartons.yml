@@ -157,6 +157,11 @@
   - type: TrashOnSolutionEmpty
     solution: drink
   - type: DnaSubstanceTrace
+  # Reserve: Orchid's Barmania - Vendichaos start
+  - type: Tag
+    tags:
+    - DrinkBottle
+  # Reserve: Orchid's Barmania - Vendichaos end
 
 - type: entity
   parent: DrinkCartonBaseFull

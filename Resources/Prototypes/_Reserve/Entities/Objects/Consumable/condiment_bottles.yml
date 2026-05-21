@@ -1,0 +1,417 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Empty
+
+- type: entity
+  parent: BaseFoodCondimentBottle
+  id: DrinkBottleTall
+  name: condiment bottle
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: Sprite
+    layers:
+    - state: bottle-empty
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: label-c
+    - state: bottle-alpha-6
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: true
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+  - type: Icon
+    state: bottle-coldsauce
+
+# endregion
+
+# region Condiments
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleKetchunaise
+  name: ketchunaise
+  description: A common condiment.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Ketchunaise
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleMayo
+  name: mayo
+  description: A common condiment.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Mayo
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleMustard
+  name: mustard
+  description: A common condiment.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Mustard
+          Quantity: 30
+  - type: StaticPrice
+    price: 32
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleSoySauce
+  name: soy sauce
+  description: A common ingredient for eastern dishes.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Soysauce
+          Quantity: 30
+
+# endregion
+
+# region Ingredients
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleVinaigrette
+  name: vinaigrette
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Vinaigrette
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleHorseradishSauce
+  name: horseradish sauce
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: HorseradishSauce
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleSyrup
+  name: syrup
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Syrup
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleBlackpepper
+  name: black pepper
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Blackpepper
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleTonic
+  name: tonic
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: TonicWater
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleGrenadine
+  name: grenadine
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Grenadine
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleTeaPowder
+  name: tea powder
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: TeaPowder
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleAllicin
+  name: garlic extract
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Allicin
+          Quantity: 30
+
+# endregion
+
+# region Mixes
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleTeriyaki
+  name: teriyaki
+  description: An elegant condiment on an alcoholic basis for eastern dishes.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Soysauce
+          Quantity: 12
+        - ReagentId: Sake
+          Quantity: 10
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Allicin
+          Quantity: 3
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleExoticBitter
+  name: exotic bitter
+  description: An elegant condiment for drinks on a low-alcohol basis.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Ethanol
+          Quantity: 5
+        - ReagentId: TeaPowder
+          Quantity: 10
+        - ReagentId: OilOlive
+          Quantity: 10
+        - ReagentId: Enzyme
+          Quantity: 5
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleVodkaSauce
+  name: vodka sauce
+  description: An elegant condiment on an alcoholic basis.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Vodka
+          Quantity: 12
+        - ReagentId: JuiceTomato
+          Quantity: 9
+        - ReagentId: Cream
+          Quantity: 6
+        - ReagentId: Allicin
+          Quantity: 3
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleEveryspice
+  name: everyspice
+  description: A blend of all the basic spices.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Blackpepper
+          Quantity: 10
+        - ReagentId: TableSalt
+          Quantity: 10
+        - ReagentId: Sugar
+          Quantity: 10
+
+# endregion
+
+# region Oils
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleOil
+  name: sunflower oil
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Oil
+          Quantity: 27
+        - ReagentId: Nutriment
+          Quantity: 1
+        - ReagentId: Water
+          Quantity: 1
+        - ReagentId: Butter
+          Quantity: 1
+  - type: StaticPrice
+    price: 8
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleOliveOil
+  name: olive oil
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: OilOlive
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleCapsaicinOil
+  name: capsaicin oil
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: CapsaicinOil
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleFrostOil
+  name: frost oil
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: FrostOil
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleCornOil
+  name: corn oil
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Cornoil
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleRefinedOil
+  name: refined oil
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Oil
+          Quantity: 30
+
+# endregion
+
+# region Special condiments
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleAstrotame
+  name: astrotame
+  description: Perfect for cooking.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Astrotame
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleLaughinSyrup
+  name: laughing syrup
+  description: Lifts your mood.
+  suffix: condiment bottle
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: LaughinSyrup
+          Quantity: 30
+
+# endregion

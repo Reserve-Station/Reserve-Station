@@ -57,14 +57,18 @@
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
-#Spawners
+
+# Spawners
+
 - type: entity
   id: RandomProduce
   name: random produce spawner
   parent: MarkerBase
   placement:
-    mode: AlignTileAny
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+  - type: Transform
+    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: green
@@ -75,12 +79,13 @@
       tableId: ProduceTable
       prob: 0.8
 
-#Tables
+# Tables
+
 - type: entityTable
   id: ProduceTable
   table: !type:GroupSelector
     children:
-    #Common
+    # Common
     - !type:GroupSelector
       weight: 100
       children:
@@ -176,7 +181,7 @@
           range: 1, 5
       - id: FoodWatermelon
         amount: !type:RangeNumberSelector
-          range: 1, 5
+          range: 1, 2  # Reserve: Better spawners
       - id: FoodGrape
         amount: !type:RangeNumberSelector
           range: 1, 5
@@ -191,7 +196,7 @@
           range: 1, 5
       - id: FoodPumpkin
         amount: !type:RangeNumberSelector
-          range: 1, 5
+          range: 1, 2  # Reserve: Better spawners
       - id: CottonBol
         amount: !type:RangeNumberSelector
           range: 1, 5
@@ -201,7 +206,24 @@
       - id: FoodCherry
         amount: !type:RangeNumberSelector
           range: 1, 5
-    #rare
+      # Reserve: Better spawners start
+      - id: FoodLemoon
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodLily
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodMango
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodMimana
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: LeavesTea
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      # Reserve: Better spawners end
+    # Rare
     - !type:GroupSelector
       children:
       - id: FoodBlueTomato
@@ -222,3 +244,71 @@
       - id: DeathNettle
         amount: !type:RangeNumberSelector
           range: 1, 5
+      # Reserve: Better spawners start
+      - id: FoodAnomalyBerry
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodBloonion
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodBluePumpkin
+        amount: !type:RangeNumberSelector
+          range: 1, 2
+      - id: FoodBluespaceTomato
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodExtradimensionalOrange
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodFakeCapfruit
+        amount: !type:RangeNumberSelector
+          range: 1, 2
+      - id: FoodGatfruit
+        amount: !type:RangeNumberSelector
+          range: 1, 2
+      - id: FoodGlasstle
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodGoldenApple
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodHolymelon
+        amount: !type:RangeNumberSelector
+          range: 1, 2
+      - id: FoodLaughinPeaPod
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodMealCactusFruit
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodMealSerakaCap
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodMeatWheat
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodRealCapfruit
+        amount: !type:RangeNumberSelector
+          range: 1, 2
+      - id: FoodSpacemansTrumpet
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodSpaceshroom
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodStrangeBerries
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: FoodWorldPeas
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: LeavesCannabisRainbow
+        amount: !type:RangeNumberSelector
+          range: 1, 2
+      - id: Papercane
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      - id: PyrottonBol
+        amount: !type:RangeNumberSelector
+          range: 1, 5
+      # Reserve: Better spawners end

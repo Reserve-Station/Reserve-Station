@@ -63,6 +63,8 @@
     CandyBowl: 1
     BarSpoon: 2
     DrinkShaker: 2
+    DrinkCup: 2  # Reserve: Orchid's Barmania - Vendichaos
+    DrinkBottleTall: 2  # Reserve: Orchid's Barmania - Vendichaos
   emaggedInventory: # Goobstation
     CombatKnife: 1
     ThrowingKnife: 1

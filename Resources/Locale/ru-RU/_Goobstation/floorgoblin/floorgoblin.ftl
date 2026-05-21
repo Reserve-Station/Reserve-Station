@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Evaisa <mail@evaisa.dev>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 language-FloorGoblin-name = Гоблинский
 language-FloorGoblin-description =
     Мимими мимими ийойойо мемимимими бибибибиби мимим мимими

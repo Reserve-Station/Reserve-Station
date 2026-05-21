@@ -8,7 +8,6 @@ ent-DrinkOrchitoGlass = { ent-DrinkGlass }
     .suffix = Орхито
 # Orchito end
 
-# Orchid's Barmania - Visual Fixes start
 ent-DrinkAppleJuice = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Яблочный сок
@@ -24,6 +23,9 @@ ent-DrinkBungoJuice = { ent-DrinkGlass }
 ent-DrinkCherryJuice = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Вишневый сок
+ent-DrinkMangoJuice = { ent-DrinkGlass }
+    .desc = { ent-DrinkGlass.desc }
+    .suffix = Манго
 ent-DrinkPineappleJuice = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Ананасовый сок
@@ -123,4 +125,3 @@ ent-DrinkSoysauceGlass = { ent-DrinkGlass }
 ent-DrinkSyrupGlass = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Сироп
-# Orchid's Barmania - Visual Fixes end

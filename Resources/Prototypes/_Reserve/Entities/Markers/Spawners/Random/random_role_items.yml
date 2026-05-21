@@ -1,0 +1,384 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entityTable
+  id: BotanistToolTable
+  table: !type:GroupSelector
+    children:
+    - id: PlantBGoneSpray
+      weight: 1.2
+    - id: PlantAnalyzer
+      weight: 1.2
+    - id: PlantBag
+      weight: 1.2
+    - id: PlantBagOfHolding
+      weight: 0.8
+    - id: ClothingBeltPlantFilled
+    - id: VasePlant0
+      amount: 2
+      weight: 1.2
+    - id: PestSpray
+      weight: 1.2
+    - id: WeedSpray
+      weight: 1.2
+    - id: BoxMouthSwab
+      weight: 1.2
+    - id: Dropper
+      weight: 1.2
+    - id: Bucket
+      weight: 1.2
+    - id: HydroponicsToolClippers
+      weight: 1.2
+    - id: HydroponicsToolSpade
+      weight: 1.2
+    - id: HydroponicsToolMiniHoe
+      weight: 1.2
+    - id: HydroponicsToolHatchet
+      weight: 1.2
+    - id: HydroponicsToolScythe
+      weight: 1.2
+    - id: ChemistryBottleEZNutrient
+      weight: 1.2
+    - id: ChemistryBottleLeft4Zed
+      weight: 1.2
+    - id: ChemistryBottleRobustHarvest
+      weight: 1.2
+    - id: ChemistryBottleUnstableMutagen
+      weight: 1.2
+    - id: ChemistryBottleDylovene
+    - id: AugmentBotanyPanel
+      weight: 0.8
+    - id: ClothingOuterApronBotanist
+    - id: ClothingHandsGlovesLeather
+    - id: ClothingHandsGlovesEnviroglovesLeather
+    - !type:AllSelector
+      children:
+      - id: ClothingUniformJumpsuitMilitaryHydroponics
+      - id: ClothingHeadHatBeretSeniorBotanist
+    - !type:AllSelector
+      children:
+      - id: ClothingUniformEnvirosuitHydroponics
+      - id: ClothingHeadEnvirohelmHydroponics
+    - id: ToyFigurineBotanist
+    - id: VendingMachineRestockSeeds
+    - !type:AllSelector
+      children:
+      - id: BloonionSeeds
+      - id: MangoSeeds
+    - !type:AllSelector
+      children:
+      - id: StrangeBerrySeeds
+      - id: PumpkinSeeds
+
+- type: entityTable
+  id: JanitorToolTable
+  table: !type:GroupSelector
+    children:
+    - id: MopItem
+    - id: DrinkMopwataBottleRandom
+    - id: DrinkMopwataGlass
+    - id: AdvMopItem
+    - id: MopBucketCubeWrapped
+    - id: MoproachCube
+    - id: MothroachCube
+    - id: MoproachShoes
+    - id: SprayBottleSpaceCleaner
+    - id: CrewCassette
+    - id: SoapNT
+    - id: BoxSoapsAssorted
+    - id: BoxSoapsAssortedOmega
+    - id: GrenadeCleanade
+      amount: 2
+    - id: LubeGrenade
+      amount: 2
+    - id: BoxCleanerGrenades
+    - id: VinylSleeveJanitor
+    - id: ClothingHandsGlovesEnviroglovesJanitor
+    - id: ClothingHandsGlovesJanitor
+    - id: ClothingBeltJanitorFilled
+    - id: ToyFigurineJanitor
+    - id: TrashBag
+      amount: 2
+    - id: Plunger
+    - id: Bucket
+    - id: WetFloorSign
+    - id: WireBrush
+    - !type:AllSelector
+      children:
+      - id: ClothingOuterBioJanitor
+      - id: ClothingHeadHatHoodBioJanitor
+    - !type:AllSelector
+      children:
+      - id: ClothingOuterWinterJani
+      - id: ClothingHeadHatJanitorCap
+
+- type: entityTable
+  id: AtmosToolTable
+  table: !type:GroupSelector
+    children:
+    - id: GasAnalyzer
+      weight: 1.2
+    - id: ClothingHandsGlovesAtmosInsulated
+      weight: 1.2
+    - id: ClothingHandsGlovesEnviroglovesAtmos
+      weight: 1.2
+    - id: ClothingUniformJumpsuitMilitaryAtmospherics
+    - id: ClothingMaskGasAtmos
+      weight: 1.2
+    - id: ClothingMaskWeldingGas
+    - id: ClothingModsuitAtmostech
+      weight: 0.8
+    - id: ClothingModsuitAtmostechPowerCell
+      weight: 0.6
+    - id: ClothingBackpackFirefighterTank
+    - id: DoorRemoteFirefight
+    - id: RCD
+      weight: 1.2
+    - id: RPD
+      weight: 1.2
+    - id: HolofanProjector
+      weight: 1.2
+    - id: PlushieAtmosian
+      weight: 1.2
+    - id: ToyFigurineAtmosTech
+    - id: RCDAmmo
+      amount: 2
+      weight: 1.2
+    - id: AirTankFilled
+      amount: 2
+      weight: 1.2
+    - id: AirGrenade
+      amount: 2
+      weight: 1.2
+    - id: MetalFoamGrenade
+      amount: 2
+      weight: 0.8
+    - id: BudgetInsulsDrinkGlass
+      weight: 0.8
+    - !type:AllSelector
+      children:
+      - id: ClothingOuterSuitAtmosFire
+      - id: ClothingHeadHelmetAtmosFire
+    - !type:AllSelector
+      children:
+      - id: ClothingOuterHardsuitAtmos
+      - id: ClothingHeadHelmetHardsuitAtmos
+    - id: Welder
+      weight: 1.2
+    - id: WelderIndustrialAdvanced
+      weight: 0.8
+    - id: WelderExperimental
+      weight: 0.8
+    - id: WelderMini
+    - id: RefuelingWelder
+    - id: ToolboxMechanicalFilled
+    - id: VendingMachineRestockTankDispenser
+
+- type: entity
+  id: RandomBotanistTool
+  name: random tool
+  suffix: Botanist, Hydroponics
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Reserve/Objects/Specific/Hydroponics/plant_analyzer.rsi
+        state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: BotanistToolTable
+
+- type: entity
+  id: RandomJanitorTool
+  name: random tool
+  suffix: Janitor
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Specific/Janitorial/advmop.rsi
+        state: advmop
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: JanitorToolTable
+
+- type: entity
+  id: RandomAtmosTool
+  name: random tool
+  suffix: Atmos
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Tools/rpd.rsi
+        state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: AtmosToolTable
+
+# Objects
+
+- type: entity
+  id: GeneratorBasic15kWChance
+  name: generator spawner
+  suffix: 15kW, 50% chance to spawn
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Power/power.rsi
+        state: generator
+  - type: RandomSpawner
+    prototypes:
+      - GeneratorBasic15kW
+    chance: 0.5
+
+- type: entity
+  id: SolarPanelChance
+  name: solar panel spawner
+  suffix: 10% to be broken
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Power/Generation/solar_panel.rsi
+        state: solar_panel_glass
+  - type: RandomSpawner
+    prototypes:
+      - SolarPanel
+    chance: 1
+    rarePrototypes:
+      - SolarPanelBroken
+    rareChance: 0.15
+
+- type: entity
+  id: RandomCanister
+  name: random gas canister spawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Storage/canister.rsi
+        state: blue
+  - type: RandomSpawner
+    prototypes:
+      - AirCanister
+      - CarbonDioxideCanister
+      - NitrogenCanister
+      - OxygenCanister
+      - PlasmaCanister
+      - WaterVaporCanister
+    chance: 1
+    rarePrototypes:
+      - AmmoniaCanister
+      - FrezonCanister
+      - NitrousOxideCanister
+      - TritiumCanister
+      - BZCanister
+      - HealiumCanister
+      - NitriumCanister
+      - PluoxiumCanister
+    rareChance: 0.25
+    offset: 0.0
+
+- type: entityTable
+  id: RandomFrozenSnackTable
+  table: !type:GroupSelector
+    children:
+    - id: FoodFrozenFreezy
+    - id: FoodFrozenSandwich
+    - id: FoodFrozenSandwichStrawberry
+    - id: FoodFrozenPopsicleBerry
+    - id: FoodFrozenPopsicleJumbo
+    - id: FoodFrozenPopsicleOrange
+    - id: FoodFrozenCornuto
+    - id: FoodFrozenSundae
+    - id: FoodPieFrostySlice
+    - id: DrinkIceCreamGlass
+    - id: FoodPieFrostySlice
+    - id: DrinkIceCreamGlass
+    - id: FoodFrozenSnowconeBase
+    - id: FoodFrozenSnowconeBerry
+    - id: FoodFrozenSnowconeFruit
+    - id: FoodFrozenSnowconeRainbow
+    - id: FoodFrozenSnowconeClown
+    - id: FoodFrozenSnowconeMime
+
+- type: entityTable
+  id: FillFreezer
+  table: !type:AllSelector
+    children:
+    - !type:NestedSelector
+      tableId: MeatTable
+    - !type:NestedSelector
+      tableId: MeatTable
+    - !type:GroupSelector
+      children:
+      - id: FoodMeatSynth
+        amount: 2
+      - !type:NestedSelector
+        tableId: MeatTable
+      prob: 0.25
+    - !type:GroupSelector
+      children:
+      - id: DrinkIceGlass
+        amount: 2
+      - id: DrinkIceBucket
+      prob: 0.65
+    - !type:GroupSelector
+      children:
+      - id: DrinkIcedTeaCan
+        amount: 2
+      - id: DrinkFrostOilGlass
+        amount: 2
+      - id: FoodCondimentPacketColdsauce
+        amount: 2
+      - id: DrinkIcedTeaJug
+      prob: 0.25
+    - !type:NestedSelector
+      tableId: RandomFrozenSnackTable
+      prob: 0.80
+    - !type:NestedSelector
+      tableId: RandomFrozenSnackTable
+      prob: 0.80
+    - id: OrganHumanHeart
+      prob: 0.01
+
+- type: entity
+  id: LockerFreezerFilledRandom
+  parent: LockerFreezer
+  suffix: Filled, Random
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillFreezer
+
+- type: entity
+  id: CrateFreezerFilledRandom
+  parent: CrateFreezer
+  suffix: Filled, Random
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillFreezer

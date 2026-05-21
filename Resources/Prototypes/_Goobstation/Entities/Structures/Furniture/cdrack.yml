@@ -61,6 +61,7 @@
     whitelist:
       tags:
         - CD
+        - CDCase  # So we can put CD cases in a CD rack  # Reserve: CD disks fix
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:

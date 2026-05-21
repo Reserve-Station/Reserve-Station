@@ -7,7 +7,11 @@
   name: industrial fluff spawner
   id: LootSpawnerIndustrialFluff
   parent: MarkerBase
+  placement:
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+    - type: Transform
+      anchored: false  # Reserve: Better spawners
     - type: Sprite
       layers:
         - state: red
@@ -41,7 +45,11 @@
   suffix: Tools + Materials
   id: LootSpawnerIndustrial
   parent: MarkerBase
+  placement:
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+    - type: Transform
+      anchored: false  # Reserve: Better spawners
     - type: Sprite
       layers:
         - state: red

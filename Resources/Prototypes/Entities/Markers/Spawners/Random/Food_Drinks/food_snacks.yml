@@ -12,11 +12,12 @@
 - type: entity
   id: RandomSnacks
   name: random snack spawner
-  #suffix: ""
   parent: MarkerBase
   placement:
-    mode: AlignTileAny
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+  - type: Transform
+    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: red

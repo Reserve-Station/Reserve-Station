@@ -1,0 +1,187 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Empty
+
+- type: entity
+  parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
+  id: DrinkBottle
+  name: bottle
+  description: Hopefully no microplastics inside.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/Bottles/default.rsi
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: fill-1
+        map: ["enum.SolutionContainerLayers.Fill"]
+        visible: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: fill-
+
+# region Juices
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkJuicePumpkinBottleFull
+  name: Pumpkin Paradise bottle
+  description: A bottle of non-sweetened blended pumpkin flesh.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 100
+  - type: Label
+    currentLabel: reagent-name-pumpkin-flesh
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/Bottles/pumpkin.rsi
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkJuiceBluePumpkinBottleFull
+  name: Bluemax bottle
+  description: A bottle of non-sweetened blue pumpkin juice.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceBluePumpkin
+          Quantity: 100
+  - type: Label
+    currentLabel: reagent-name-juice-blue-pumpkin
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/Bottles/bluemax.rsi
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkJuiceMultifruitBottleFull
+  name: Multifruit bottle
+  description: A healthy taste of fruits coming together.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceApple
+          Quantity: 25
+        - ReagentId: JuiceMango
+          Quantity: 25
+        - ReagentId: JuiceBanana
+          Quantity: 25
+        - ReagentId: JuiceOrange
+          Quantity: 25
+  - type: Label
+    currentLabel: reagent-name-juice-multifruit
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/Bottles/default.rsi
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkLemonLimeStillBottleFull
+  name: Smite Still bottle
+  description: A non-carbonated drink line from Smite!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceLemon
+          Quantity: 40
+        - ReagentId: JuiceLime
+          Quantity: 40
+        - ReagentId: Sugar
+          Quantity: 20
+  - type: Label
+    currentLabel: reagent-name-lemon-lime-still
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/Bottles/lemon_lime_still.rsi
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkMangoBoomBottleFull
+  name: Mango Boom bottle
+  description: Some soothing non-carbonated sweetness for those who doesn't like bubbles.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceMango
+          Quantity: 80
+        - ReagentId: Sugar
+          Quantity: 20
+  - type: Label
+    currentLabel: reagent-name-mango-boom
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/Bottles/mango.rsi
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkBlueBoomBottleFull
+  name: Blue Boom bottle
+  description: Some soothing non-carbonated sweetness for those who like mysteries.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceBluePumpkin
+          Quantity: 80
+        - ReagentId: Sugar
+          Quantity: 20
+  - type: Label
+    currentLabel: reagent-name-blue-boom
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/Bottles/default.rsi
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkPoisonBoomBottleFull
+  name: Poison Boom bottle
+  description: Some soothing non-carbonated sweetness for those who like dying.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceBerryPoison
+          Quantity: 80
+        - ReagentId: Sugar
+          Quantity: 20
+  - type: Label
+    currentLabel: reagent-name-poison-boom
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/Bottles/default.rsi
+
+# region Sodas
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkSupermaxBottleFull
+  name: Supermax bottle
+  description: Supercharged blue carbonated sweetness.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceBluePumpkin
+          Quantity: 45
+        - ReagentId: SodaWater
+          Quantity: 45
+        - ReagentId: Sugar
+          Quantity: 10
+  - type: Label
+    currentLabel: reagent-name-supermax
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/Bottles/supermax.rsi

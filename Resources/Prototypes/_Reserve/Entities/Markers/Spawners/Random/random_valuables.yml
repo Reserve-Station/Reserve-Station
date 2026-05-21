@@ -1,0 +1,126 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: RandomValuable
+  name: random valuable spawner
+  suffix: Gold, diamond, credits, research
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Consumable/Drinks/dr_gibb.rsi
+        state: icon
+  - type: RandomSpawner
+    prototypes:
+      - IngotGold1
+      - IngotGold1
+      - IngotGold1
+      - MaterialDiamond1
+      - ResearchDisk
+      - ResearchDisk
+      - ResearchDisk5000
+      - ResearchDisk5000
+      - SpaceCash10
+      - SpaceCash100
+      - SpaceCash500
+      - SpaceCash1000
+    chance: 0.8
+    offset: 0.0
+    rarePrototypes:
+      - IngotGold
+      - MaterialDiamond
+      - ResearchDisk10000
+      - SpaceCash2500
+    rareChance: 0.05
+
+- type: entity
+  id: RandomCurrency
+  name: random currency spawner
+  suffix: Credits, research
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Economy/cash.rsi
+        state: cash_500
+  - type: RandomSpawner
+    prototypes:
+      - ResearchDisk
+      - ResearchDisk
+      - ResearchDisk5000
+      - ResearchDisk5000
+      - SpaceCash10
+      - SpaceCash100
+      - SpaceCash500
+      - SpaceCash1000
+    chance: 0.8
+    offset: 0.0
+    rarePrototypes:
+      - ResearchDisk10000
+      - SpaceCash2500
+    rareChance: 0.10
+
+- type: entity
+  id: RandomCurrencyMin
+  name: random currency spawner
+  suffix: Credits, research - Minimal
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Economy/cash.rsi
+        state: cash_10
+  - type: RandomSpawner
+    prototypes:
+      - ResearchDisk
+      - ResearchDisk
+      - SpaceCash10
+      - SpaceCash100
+    chance: 0.8
+    offset: 0.0
+    rarePrototypes:
+      - ResearchDisk5000
+      - SpaceCash500
+    rareChance: 0.10
+
+- type: entity
+  id: RandomCurrencyMax
+  name: random currency spawner
+  suffix: Credits, research - Maximal
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Economy/cash.rsi
+        state: cash_5000
+  - type: RandomSpawner
+    prototypes:
+      - ResearchDisk10000
+      - SpaceCash2500
+    chance: 0.8
+    offset: 0.0
+    rarePrototypes:
+      - SpaceCash5000
+    rareChance: 0.15

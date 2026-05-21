@@ -1,0 +1,292 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: RandomPersonalAI
+  name: random personal AI spawner
+  suffix: Normal
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Fun/pai.rsi
+        state: pai-base
+  - type: RandomSpawner
+    prototypes:
+      - PersonalAI
+    chance: 0.75
+    offset: 0.0
+    rarePrototypes:
+      - GoldenPersonalAI
+    rareChance: 0.02
+
+- type: entity
+  id: RandomBoardGame
+  name: random board game
+  suffix: Board
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Fun/Tabletop/chessboard.rsi
+        state: chessboard
+  - type: RandomSpawner
+    prototypes:
+      - ChessBoard
+      - BackgammonBoard
+      - ParchisBoard
+      - CheckerBoard
+    chance: 0.8
+    offset: 0.0
+
+- type: entity
+  id: RandomBattlemap
+  name: random board game
+  suffix: Battlemap
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Fun/Tabletop/chessboard.rsi
+        state: chessboard
+  - type: RandomSpawner
+    prototypes:
+      - ShipBattlemap
+      - SnowBattlemap
+      - SandBattlemap
+      - GrassBattlemap
+      - MoonBattlemap
+    chance: 0.8
+    offset: 0.0
+
+- type: entity
+  id: RandomCardGame
+  name: random board game
+  suffix: Card Game
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: EstacaoPirata/Objects/Misc/cards.rsi
+        state: black_box
+  - type: RandomSpawner
+    prototypes:
+      - BoxPlaysetEvacPod
+      - CardBoxBase
+      - CardBoxBlack
+      - CardBoxNanotrasen
+    chance: 0.8
+    offset: 0.0
+
+- type: entity
+  id: RandomTableTopGame
+  name: random board game
+  suffix: Cards, Boards
+  parent: MarkerBase
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: EstacaoPirata/Objects/Misc/cards.rsi
+        state: nanotrasen_box
+  - type: RandomSpawner
+    prototypes:
+      - ChessBoard
+      - BackgammonBoard
+      - ParchisBoard
+      - CheckerBoard
+      - BoxPlaysetEvacPod
+      - CardBoxBase
+      - CardBoxBlack
+      - CardBoxNanotrasen
+    chance: 0.8
+    offset: 0.0
+
+# Objects
+
+- type: entityTable
+  id: CrateFunToyBoxFill
+  table: !type:AllSelector
+    children:
+    - id: SnapPopBox
+      prob: 0.3
+    - id: CrazyGlue
+      amount: 2
+      prob: 0.3
+    - id: PlasticBanana
+      prob: 0.3
+    - id: WhoopieCushion
+      prob: 0.5
+    - id: ToyHammer
+      prob: 0.5
+    - id: MysteryFigureBox
+      prob: 0.9
+    - id: MysteryFigureBox
+      amount: 2
+      prob: 0.1
+    - !type:GroupSelector
+      children:
+      - id: RevolverCapGun
+      - id: DoubleToySword
+      - id: FoamWonderprod
+      - id: FoamCutlass
+    - !type:GroupSelector
+      children:
+      - !type:AllSelector
+        children:
+        - id: MrChips
+        - id: MrDips
+        - id: LilCal
+        weight: 1.0
+      - !type:NestedSelector
+        tableId: AllPlushiesTable
+        weight: 1.5
+    - !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: RandomVinylSleeve
+        weight: 2.0
+      - !type:NestedSelector
+        tableId: RandomCDDisk
+        weight: 1.0
+      - id: DiskCaseFilled
+        weight: 1.0
+    - !type:GroupSelector
+      children:
+      - id: BalloonNT
+      - id: BalloonCorgi
+    - !type:GroupSelector
+      children:
+      - id: Basketball
+      - id: BeachBall
+      - id: Football
+    - id: ClothingShoesSkates
+      prob: 0.5
+    - id: RubberChicken
+      prob: 0.5
+    - !type:GroupSelector
+      children:
+      - id: HelicopterInstrument
+      - id: BirdToyInstrument
+      prob: 0.3
+    - id: DrinkPwrGameCan
+      amount: 2
+      prob: 0.2
+    - id: GrenadeToy
+      amount: 2
+      prob: 0.2
+    - !type:GroupSelector
+      children:
+      - id: ToyAi
+      - id: ToyMouse
+      prob: 0.2
+    - !type:GroupSelector
+      children:
+      - id: ChessBoard
+      - id: BackgammonBoard
+      - id: ParchisBoard
+      - id: CheckerBoard
+      - id: BoxPlaysetEvacPod
+      - id: CardBoxBase
+      - id: CardBoxBlack
+      - id: CardBoxNanotrasen
+      - id: DiceBag
+      - id: MagicDiceBag
+      - id: BoxDarts
+      - id: CrayonBox
+      prob: 0.2
+    - !type:GroupSelector
+      children:
+      - id: ChessBoard
+      - id: BackgammonBoard
+      - id: ParchisBoard
+      - id: CheckerBoard
+      - id: BoxPlaysetEvacPod
+      - id: CardBoxBase
+      - id: CardBoxBlack
+      - id: CardBoxNanotrasen
+      - id: DiceBag
+      - id: MagicDiceBag
+      - id: BoxDarts
+      - id: CrayonBox
+      prob: 0.5
+    - !type:GroupSelector
+      children:
+      - id: ClothingShoesClownLarge
+      - id: ClothingShoeSlippersLizard
+      - id: ClothingShoesFakeJordans
+      prob: 0.2
+    - !type:GroupSelector
+      children:
+      - id: ClothingHandsGlovesBoxingRed
+      - id: ClothingHandsGlovesBoxingBlue
+      - id: ClothingHandsGlovesBoxingYellow
+      - id: ClothingHandsGlovesBoxingGreen
+      prob: 0.5
+      rolls: 2
+    - !type:GroupSelector
+      children:
+      - id: ClothingHeadHatMagician
+      - id: ClothingMaskJoy
+      prob: 0.2
+    - id: ToolboxArtisticFilled
+      prob: 0.1
+
+- type: entity
+  id: CrateFunToyBoxRandom
+  parent: CrateToyBox
+  suffix: Filled, Random
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: CrateFunToyBoxFill
+
+- type: entity
+  id: RandomArcadeAny
+  name: random arcade spawner
+  suffix: Any
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Goobstation/Structures/Machines/slotmachines/claw_machine.rsi
+        state: clawmachine
+  - type: RandomSpawner
+    prototypes:
+      - BlockGameArcade
+      - SpaceVillainArcadeFilled
+      - BlockGameArcade
+      - SpaceVillainArcadeFilled
+      - BlockGameArcade
+      - SpaceVillainArcadeFilled
+      - BlockGameArcade
+      - SpaceVillainArcadeFilled
+      - ClawMachine
+    chance: 1

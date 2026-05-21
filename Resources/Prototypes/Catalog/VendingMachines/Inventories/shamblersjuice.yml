@@ -11,14 +11,24 @@
   id: ShamblersJuiceInventory
   startingInventory:
     DrinkShamblersJuiceCan: 4
-    DrinkGrapeCan: 2
-    DrinkRootBeerCan: 2
-    DrinkIcedTeaCan: 2
-    DrinkSolDryCan: 2
-    DrinkLemonLimeCan: 2
-    DrinkLemonLimeCranberryCan: 2
-    DrinkFourteenLokoCan: 2
+    # Reserve: Orchid's Barmania - Vendichaos start
+    DrinkBerryBoomCan: 2
+    DrinkBlueBoomCan: 2
+    DrinkCherryBoomCan: 2
+    DrinkMangoBoomCan: 2
+    DrinkBungoBoomCan: 2
+    DrinkPumpkinBoomCan: 2
+    DrinkTonicWaterCan: 2
+    # Reserve: Orchid's Barmania - Vendichaos end
   contrabandInventory:
     DrinkChangelingStingCan: 2
+    # Reserve: Orchid's Barmania - Vendichaos start
+    DrinkMojitoCan: 1
+    DrinkMangoBoomBottleFull: 1
+    DrinkBlueBoomBottleFull: 1
+    # Reserve: Orchid's Barmania - Vendichaos end
   emaggedInventory:
-    DrinkNukieCan: 2
+    # Reserve: Orchid's Barmania - Vendichaos start
+    DrinkPoisonBoomCan: 2
+    DrinkWineCan: 2
+    # Reserve: Orchid's Barmania - Vendichaos end

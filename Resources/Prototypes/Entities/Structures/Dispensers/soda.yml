@@ -135,20 +135,22 @@
     contents:
     - id: DrinkCoconutWaterJug
     - id: DrinkCoffeeJug
-    - id: DrinkColaBottleFull
+    # - id: DrinkColaBottleFull  # Reserve: Orchid's Barmania - Vendichaos
     - id: DrinkCreamCartonXL
     - id: DrinkDrGibbJug
     - id: DrinkEnergyDrinkJug
     - id: DrinkGreenTeaJug
     - id: DrinkIceJug
+    - id: DrinkJuiceBluePumpkinBottleFull  # Reserve: Orchid's Barmania - Vendichaos
+    - id: DrinkMangoJuiceJug  # Reserve: Orchid's Barmania - Vendichaos
     - id: DrinkJuiceLimeCartonXL
     - id: DrinkJuiceOrangeCartonXL
-    - id: DrinkLemonLimeJug
+    # - id: DrinkLemonLimeJug  # Reserve: Orchid's Barmania - Vendichaos
     - id: DrinkRootBeerJug
-    - id: DrinkSodaWaterBottleFull
-    - id: DrinkSpaceMountainWindBottleFull
-    - id: DrinkSpaceUpBottleFull
+    # - id: DrinkSodaWaterBottleFull  # Reserve: Orchid's Barmania - Vendichaos
+    # - id: DrinkSpaceMountainWindBottleFull  # Reserve: Orchid's Barmania - Vendichaos
+    # - id: DrinkSpaceUpBottleFull  # Reserve: Orchid's Barmania - Vendichaos
     - id: DrinkSugarJug
     - id: DrinkTeaJug
-    - id: DrinkTonicWaterBottleFull
+    # - id: DrinkTonicWaterBottleFull  # Reserve: Orchid's Barmania - Vendichaos
     - id: DrinkWaterMelonJuiceJug

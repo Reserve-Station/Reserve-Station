@@ -8,3 +8,5 @@ ent-PlantAnalyzerEmpty = { ent-PlantAnalyzer }
 ent-PlantAnalyzerDebug = { ent-BasePlantAnalyzer }
     .suffix = Debug
     .desc = { ent-BasePlantAnalyzer.desc }
+ent-PlantAnalyzerReportPaper = отчет анализатора растений
+    .desc = Распечатка с анализатора растений.

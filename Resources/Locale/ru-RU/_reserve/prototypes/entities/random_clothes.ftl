@@ -1,0 +1,9 @@
+ent-RandomGlasses = спавнер случайная одежда
+    .suffix = Очки
+    .desc = { ent-MarkerBase.desc }
+ent-RandomHat = спавнер случайная одежда
+    .suffix = Шапка, Кепка
+    .desc = { ent-MarkerBase.desc }
+ent-RandomTowel = спавнер случайная одежда
+    .suffix = Полотенце
+    .desc = { ent-MarkerBase.desc }

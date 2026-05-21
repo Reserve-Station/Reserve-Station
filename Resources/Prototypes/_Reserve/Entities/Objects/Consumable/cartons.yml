@@ -1,0 +1,175 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Empty
+
+- type: entity
+  parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
+  id: DrinkCarton
+  name: carton
+  suffix: ""
+  description: A basic cardboard carton made for drinks. Save the environment!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 50
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/cartons.rsi
+
+# endregion
+
+# region Cartons
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkWineCarton
+  name: wine
+  description: Your way to forgetting all worries and having fun!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Wine
+          Quantity: 50
+  - type: Sprite
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: wine
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkJuiceBluePumpkinCarton
+  name: blue pumpkin juice
+  description: Tastes like space Halloween.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceBluePumpkin
+          Quantity: 50
+  - type: Sprite
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: blue_pumpkin
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkJuiceMangoCarton
+  name: mango juice
+  description: Not an orange, but orange!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceMango
+          Quantity: 50
+  - type: Sprite
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: mango
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkJuiceMultifruitCarton
+  name: multifruit juice
+  description: A healthy taste of fruits coming together.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceApple
+          Quantity: 12.5
+        - ReagentId: JuiceMango
+          Quantity: 12.5
+        - ReagentId: JuiceBanana
+          Quantity: 12.5
+        - ReagentId: JuiceOrange
+          Quantity: 12.5
+  - type: Sprite
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: multifruit
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkJuiceTropicalCarton
+  name: tropical juice
+  description: A delicious tropical juice.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuicePineapple
+          Quantity: 12.5
+        - ReagentId: JuiceMango
+          Quantity: 12.5
+        - ReagentId: JuiceBungo
+          Quantity: 12.5
+        - ReagentId: JuiceBanana
+          Quantity: 12.5
+  - type: Sprite
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: tropical
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkJuiceBungoCarton
+  name: bungo juice
+  description: A delicious tropical juice.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceBungo
+          Quantity: 50
+  - type: Sprite
+    layers:
+      - state: icon
+        map: ["enum.OpenableVisuals.Layer"]
+      - state: bungo
+
+# endregion
+
+# region Mini Cartons
+
+- type: entity
+  parent: DrinkMilkCartonMini
+  id: DrinkOatMilkCartonMini
+  name: mini oat milk
+  description: Oat power - a bit of hay, a lot of benefit.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: MilkOat
+          Quantity: 25
+
+- type: entity
+  parent: DrinkMilkCartonMini
+  id: DrinkSoyMilkCartonMini
+  name: mini soy milk
+  description: Soy power - a bit of beans, a lot of benefit.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: MilkSoy
+          Quantity: 25
+
+# endregion

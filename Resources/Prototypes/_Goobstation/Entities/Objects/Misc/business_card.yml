@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: CentralCommandBusinessCard
   name: centcomm business card
@@ -22,6 +26,11 @@
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 4.0, 4.0, 4.0, 4.0
     maxWritableArea: 400.0, 256.0
+  # Reserve: Folder fix start
+  - type: Tag
+    tags:
+    - Card
+  # Reserve: Folder fix end
 
 - type: entity
   id: TunnelClownBusinessCard

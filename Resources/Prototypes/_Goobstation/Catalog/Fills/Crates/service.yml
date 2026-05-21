@@ -136,6 +136,18 @@
     - id: CdDiskXgOnboarding4
       weight: 0.1
 
+# Reserve: CD disks fix start
+- type: entityTable
+  id: RandomCDDiskOrCase
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: RandomCDDisk
+      weight: 1
+    - id: DiskCaseFilled
+      weight: 0.6
+# Reserve: CD disks fix end
+
 - type: entityTable
   id: RandomVinylDisk
   table: !type:GroupSelector

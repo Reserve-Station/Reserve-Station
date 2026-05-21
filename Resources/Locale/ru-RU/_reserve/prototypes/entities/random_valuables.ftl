@@ -1,0 +1,12 @@
+ent-RandomValuable = спавнер случайные ценности
+    .suffix = Золото, бриллиант, кредиты, диск с очками исследований
+    .desc = { ent-MarkerBase.desc }
+ent-RandomCurrency = спавнер случайные ценности
+    .suffix = Кредиты/очки исследований, любое
+    .desc = { ent-MarkerBase.desc }
+ent-RandomCurrencyMin = спавнер случайные ценности
+    .suffix = Кредиты/очки исследований, мало
+    .desc = { ent-MarkerBase.desc }
+ent-RandomCurrencyMax = спавнер случайные ценности
+    .suffix = Кредиты/очки исследований, много
+    .desc = { ent-MarkerBase.desc }

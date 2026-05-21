@@ -124,7 +124,7 @@
   desc: reagent-desc-hot-cocoa
   physicalDesc: reagent-physical-desc-aromatic
   flavor: chocolate
-  color: "#664300"
+  color: "#e6a380"  # Reserve: Orchid's Barmania - Vendichaos
   recognizable: true
   metabolisms:
     Drink:

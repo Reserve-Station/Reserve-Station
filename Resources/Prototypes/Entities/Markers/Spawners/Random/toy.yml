@@ -42,7 +42,11 @@
   name: Toy Spawner
   id: ToySpawner
   parent: MarkerBase
+  placement:
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+    - type: Transform
+      anchored: false  # Reserve: Better spawners
     - type: Sprite
       layers:
       - state: red
@@ -89,7 +93,11 @@
   name: Prize Figurine Spawner
   id: FigureSpawner
   parent: MarkerBase
+  placement:
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+    - type: Transform
+      anchored: false  # Reserve: Better spawners
     - type: Sprite
       layers:
         - state: red
@@ -125,7 +133,11 @@
   suffix: Librarian only, map with care!
   id: SpacemenFigureSpawner
   parent: MarkerBase
+  placement:
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+    - type: Transform  # Reserve: Better spawners
+      anchored: false
     - type: Sprite
       layers:
         - sprite: Objects/Fun/figurines.rsi

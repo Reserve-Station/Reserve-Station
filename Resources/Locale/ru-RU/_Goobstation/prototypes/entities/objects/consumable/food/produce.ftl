@@ -1,6 +1,8 @@
-ent-FoodStrangeBerries = странные ягоды.
+ent-FoodStrangeBerries = странные ягоды
     .desc = Горсть странных ягод.
 ent-Nevcotta = бревно невкотта
     .desc = Если посадить данное бревно в его родную среду обитания, то оно вырастет в совсем другое растение.
 ent-NevcottaBark = кора невкотта
     .desc = Кора дерева невкотта.
+ent-FoodBluespaceTomato = блюспейс помидор
+    .desc = Будьте с ним осторожны.

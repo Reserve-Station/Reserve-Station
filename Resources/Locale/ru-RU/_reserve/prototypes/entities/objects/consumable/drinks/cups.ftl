@@ -1,0 +1,33 @@
+ent-DrinkCup = чашка
+    .suffix = Пусто
+    .desc = Темная крепкая чашка.
+
+ent-DrinkEggCooked = яичный суп
+    .desc = Простые приготовленные яйца в чашке. Сердито, но дешево.
+ent-DrinkHotRamen = лапшичный суп
+    .desc = Простая приготовленная лапша в чашке. Сердито, но дешево.
+ent-DrinkMisoSoup = мисо суп
+    .desc = Полноценное блюдо в небольшой чашке. Вкусно, но хочется еще!
+ent-DrinkTomYamSoup = том ям суп
+    .desc = Полноценное блюдо в небольшой чашке. Остро, но хочется еще!
+ent-DrinkPumpkinSoup = тыквенный суп
+    .desc = Полноценное блюдо в небольшой чашке. Страшно, но хочется еще!
+ent-DrinkBluePumpkinSoup = синетыквенный суп
+    .desc = Полноценное блюдо в небольшой чашке. Инопланетно, но хочется еще!
+ent-DrinkGarlicSoup = чесночный суп
+    .desc = Полноценное блюдо в небольшой чашке. Горько, но хочется еще!
+ent-DrinkNettleSoup = { ent-FoodSoupNettle }
+    .desc = { ent-FoodSoupNettle.desc }
+
+ent-DrinkPumpkinSpiceLatte = тыквенный пряный латте
+    .desc = Прекрасен на вкус - главное не перехвалить.
+ent-DrinkHotSoyLatte = соевый латте
+    .desc = Горячий соевый латте. Вкусно!
+ent-DrinkHotCream = сливки
+    .desc = Горячие сливки. Вкусно!
+ent-DrinkCreamOfCoconut = кокосовые сливки
+    .desc = Горячие кокосовые сливки. Вкусно!
+ent-DrinkMilkChoco = шоколадное молоко
+    .desc = Горячее шоколадное молоко. Вкусно!
+ent-DrinkCreamCoffee = сливочный кофе
+    .desc = Горячий сливочный кофе. Вкусно!

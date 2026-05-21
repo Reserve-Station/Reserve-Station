@@ -99,20 +99,35 @@
     ReagentContainerOliveoil: 2
     ReagentContainerMayo: 1
     VariantCubeBox: 1
-    FoodContainerEgg: 2 #Goobstation
+    # Reserve: Orchid's Barmania - Vendichaos start
+    FoodContainerEgg: 1 #Goobstation
     DrinkMilkCarton: 2
     DrinkSoyMilkCarton: 1
     FoodButter: 3
     FoodCheese: 2 #Goobstation
     FoodMeat: 6
-    FoodGarlic: 2 #Goobstation
-    FoodOnion: 2 #Goobstation
-    FoodTomato: 3 #Goobstation
+    FoodCondimentBottleOil: 1
+    FoodCondimentBottleAllicin: 1
+    # Reserve: Orchid's Barmania - Vendichaos end
   contrabandInventory:
     EggBoxBroken: 1
     FoodBoxDonkpocket: 1
     FoodFrozenSandwich: 2
     FoodFrozenSandwichStrawberry: 2
+    # Reserve: Orchid's Barmania - Vendichaos start
+    FoodGarlic: 2
+    FoodOnion: 2
+    FoodTomato: 3
+    FoodCondimentBottleRefinedOil: 1
+    FoodCondimentBottleOliveOil: 1
+    FoodCondimentBottleCornOil: 1
+    FoodCondimentBottleEveryspice: 1
+    DrinkJuicePumpkinBottleFull: 1
+    # Reserve: Orchid's Barmania - Vendichaos end
   emaggedInventory: # Goobstation
     WeaponCroissant: 3
     WeaponBaguette: 2
+    # Reserve: Orchid's Barmania - Vendichaos start
+    FoodCondimentBottleCapsaicinOil: 1
+    FoodCondimentBottleFrostOil: 1
+    # Reserve: Orchid's Barmania - Vendichaos end

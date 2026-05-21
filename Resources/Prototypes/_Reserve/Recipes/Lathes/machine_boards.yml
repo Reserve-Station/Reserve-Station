@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
+  id: SauceDispenserMachineCircuitboard
+  icon: { sprite: Structures/smalldispensers.rsi, state: sauce }
+  result: SauceDispenserMachineCircuitboard

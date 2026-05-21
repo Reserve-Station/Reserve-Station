@@ -11,6 +11,20 @@
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:NestedSelector
-        tableId: RandomCDDisk
+        tableId: RandomCDDiskOrCase  # Reserve: CD disks fix
         rolls: !type:RangeNumberSelector
           range: 1, 8
+
+# Reserve: CD disks fix start
+- type: entity
+  parent: DiskCase
+  id: DiskCaseFilled
+  suffix: random filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: RandomCDDisk
+        rolls: !type:RangeNumberSelector
+          range: 0, 2
+# Reserve: CD disks fix end

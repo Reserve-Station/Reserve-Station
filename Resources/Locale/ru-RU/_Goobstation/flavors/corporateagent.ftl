@@ -1,4 +1,3 @@
-
 traitor-nanotrasen-intro = Вы элитный агент.
 traitor-nanotrasen-goal = Nanotrasen отправили вас выполнить задание. Сделайте это так, чтобы вас не поймали и это не вызвало подозрений.
 traitor-nanotrasen-allies = Смерть Синдикату.

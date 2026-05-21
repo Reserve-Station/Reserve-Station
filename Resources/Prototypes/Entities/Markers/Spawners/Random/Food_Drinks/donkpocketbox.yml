@@ -13,7 +13,11 @@
   name: Donkpocket Box Spawner
   id: DonkpocketBoxSpawner
   parent: MarkerBase
-  components:
+  placement:  # Reserve: Orchid's Barmania - Vendichaos
+    mode: PlaceFree
+  components:  # Reserve: Orchid's Barmania - Vendichaos
+    - type: Transform
+      anchored: false
     - type: Sprite
       layers:
         - state: red
