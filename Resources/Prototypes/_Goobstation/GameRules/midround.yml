@@ -76,6 +76,7 @@
   - type: Tag
     tags:
       - MidroundAntag
+  - type: GhostPingRule # Reserve
 
 # Blob Midround
 - type: entity
@@ -103,6 +104,7 @@
   - type: Tag
     tags:
       - MidroundAntag
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseGameRule
@@ -159,6 +161,7 @@
   - type: AntagObjectives
     objectives:
     - GrayTideKillEveryoneObjective
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseGameRule
@@ -194,6 +197,7 @@
   - type: AntagObjectives
     objectives:
     - TunnelClownProtectMaintenanceObjective
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseGameRule
@@ -231,6 +235,7 @@
     - SingulothKnightPreachObjective
     - SingulothKnightSingularityObjective
     - SingulothKnightTeslaObjective
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseGameRule
@@ -270,6 +275,7 @@
     - HijackShuttleObjective
     - KillRandomHeadObjective
     - DarkLordDuelObjective
+  - type: GhostPingRule # Reserve
 
 - type: entity # Only has a chance to spawn whenever dark lord spawns
   parent: BaseGameRule
@@ -296,6 +302,7 @@
   - type: AntagObjectives
     objectives:
     - ChosenOneKillDarkLordObjective
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseGameRule
@@ -335,6 +342,7 @@
     - KillRandomHeadObjective
     - KillRandomHeadObjective
     - EscapeShuttleObjective
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseGameRule
@@ -373,6 +381,7 @@
     - DarkPriestHireApprentice
     - KillRandomPersonObjective
     - EscapeShuttleObjective
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseGameRule
@@ -420,6 +429,7 @@
         text: vox-raider-role-greeting
         color: Purple
         sound: /Audio/Misc/thief_greeting.ogg
+  - type: GhostPingRule # Reserve
 
 
 - type: entity
@@ -536,6 +546,7 @@
   - type: Tag
     tags:
     - MidroundAntag
+  - type: GhostPingRule # Reserve
 
 # Santa
 
@@ -555,6 +566,7 @@
     max: 1
     table:
       id: SantaClaus
+  - type: GhostPingRule # Reserve
 
 #Contractor
 - type: entity
@@ -616,3 +628,4 @@
   - type: Tag
     tags:
     - MidroundAntag
+  - type: GhostPingRule # Reserve

@@ -55,3 +55,4 @@
         - Syndicate
       mindRoles:
       - MindRoleNukeops
+  - type: GhostPingRule # Reserve

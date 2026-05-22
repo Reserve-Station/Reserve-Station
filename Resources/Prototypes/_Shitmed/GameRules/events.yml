@@ -96,6 +96,7 @@
         speedModifier: 1.5
       mindRoles:
       - MindRoleLoneAbductor
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseGameRule
@@ -239,3 +240,4 @@
       - type: AbductorScientist # Should be removed when we have proper teleportation system
       mindRoles:
       - MindRoleAbductorAgent
+  - type: GhostPingRule # Reserve

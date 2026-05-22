@@ -31,3 +31,4 @@
     chaosScore: 600
   - type: RandomSpawnRule
     prototype: SpawnPointGhostBinglePrime
+  - type: GhostPingRule # Reserve

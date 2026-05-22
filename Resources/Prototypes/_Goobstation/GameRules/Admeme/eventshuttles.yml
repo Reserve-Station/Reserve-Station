@@ -19,6 +19,7 @@
     maxOccurrences: 1
   - type: LoadMapRule
     preloadedGrid: ConsulShuttle
+  - type: GhostPingRule # Reserve
 
 # CBURN
 
@@ -34,6 +35,7 @@
     maxOccurrences: 1
   - type: LoadMapRule
     preloadedGrid: RetortShuttleCBURN
+  - type: GhostPingRule # Reserve
 
 # ERT
 
@@ -49,6 +51,7 @@
     maxOccurrences: 1
   - type: LoadMapRule
     preloadedGrid: RetortShuttleAssault
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -62,6 +65,7 @@
     maxOccurrences: 1
   - type: LoadMapRule
     preloadedGrid: RetortShuttleMedical
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -75,6 +79,7 @@
     maxOccurrences: 1
   - type: LoadMapRule
     preloadedGrid: RetortShuttleEngineering
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -88,6 +93,7 @@
     maxOccurrences: 1
   - type: LoadMapRule
     preloadedGrid: RetortShuttleJanitorial
+  - type: GhostPingRule # Reserve
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -101,6 +107,7 @@
     maxOccurrences: 1
   - type: LoadMapRule
     preloadedGrid: RetortShuttleChaplain
+  - type: GhostPingRule # Reserve
 
 #Contractor
 - type: entity
@@ -157,3 +164,4 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+  - type: GhostPingRule # Reserve

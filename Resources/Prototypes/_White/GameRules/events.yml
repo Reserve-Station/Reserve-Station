@@ -38,3 +38,4 @@
         color: "#8c3986"
       mindRoles:
       - MindRoleXenomorph
+  - type: GhostPingRule # Reserve

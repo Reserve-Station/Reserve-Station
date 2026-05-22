@@ -30,6 +30,7 @@
         sound: /Audio/_DV/CosmicCult/antag_cosmic_briefing.ogg
       components:
       - type: RogueAscended
+  - type: GhostPingRule # Reserve
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
