@@ -57,7 +57,7 @@ public sealed class ThunderstrikeSystem : EntitySystem
 
     public void CreateLighting(EntityCoordinates coordinates)
     {
-        var randomInt = _random.Next(1, 2); // two variants of lightning
+        var randomInt = _random.Next(1, 3); // two variants of lightning
         var coords = new EntityCoordinates(coordinates.EntityId, coordinates.Position.X + 0.5f, coordinates.Position.Y + 1.5f);
         var ent = Spawn($"EffectLightning{randomInt}", coords);
 
