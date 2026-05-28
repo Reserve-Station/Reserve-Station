@@ -78,8 +78,10 @@
   suffix: Single Serving
   parent: MarkerBase
   placement:
-    mode: AlignTileAny
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+  - type: Transform
+    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: red
@@ -125,7 +127,6 @@
       - FoodTacoShell
     chance: 0.8
     offset: 0.0
-    #rare
     rarePrototypes:
       - FoodBurgerAppendix
       - FoodBurgerRobot

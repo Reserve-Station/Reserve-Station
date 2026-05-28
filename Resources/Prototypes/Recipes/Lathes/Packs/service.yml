@@ -55,6 +55,7 @@
   - ElectricGrillMachineCircuitboard
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
+  - SauceDispenserMachineCircuitboard  # Reserve: Orchid's Barmania - Vendichaos
   - PrinterDocMachineCircuitboard # Corvax-Printer
 
 ## Dynamic

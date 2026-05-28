@@ -1,0 +1,24 @@
+ent-RandomBotanistTool = { ent-RandomInstruments }
+    .suffix = Ботаник, Гидропоника
+    .desc = { ent-MarkerBase.desc }
+ent-RandomJanitorTool = { ent-RandomInstruments }
+    .suffix = Уборщик
+    .desc = { ent-MarkerBase.desc }
+ent-RandomAtmosTool = { ent-RandomInstruments }
+    .suffix = Атмосферный инженер
+    .desc = { ent-MarkerBase.desc }
+
+ent-GeneratorBasic15kWChance = спавнер генератора
+    .suffix = 15кВт, 50% шанс спавна
+    .desc = { ent-MarkerBase.desc }
+ent-SolarPanelChance = спавнер солнечной панели
+    .suffix = 10% шанс что сломана
+    .desc = { ent-MarkerBase.desc }
+ent-RandomCanister = спавнер канистры
+    .desc = { ent-MarkerBase.desc }
+ent-LockerFreezerFilledRandom = холодильник
+    .suffix = Кухня, Закрыт, Заполненный, Случайный
+    .desc = { ent-MarkerBase.desc }
+ent-CrateFreezerFilledRandom = холодильник
+    .suffix = Кухня, Закрыт, Заполненный, Случайный
+    .desc = { ent-MarkerBase.desc }

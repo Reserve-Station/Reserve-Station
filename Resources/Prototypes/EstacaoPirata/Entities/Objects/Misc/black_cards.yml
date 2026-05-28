@@ -185,7 +185,7 @@
     state: singlecard_down_black
   - type: Rotatable
   - type: Item
-    size: Small
+    size: Tiny  # Reserve: Folder fix
   - type: UseDelay
     delay: 0.5
   - type: Card
@@ -193,6 +193,11 @@
     - sprite: EstacaoPirata/Objects/Misc/cards.rsi
       state: singlecard_down_black
     flipped: true
+  # Reserve: Folder fix start
+  - type: Tag
+    tags:
+    - Card
+  # Reserve: Folder fix end
 
 # region Black Cards
 

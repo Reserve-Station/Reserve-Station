@@ -1,0 +1,125 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineSauces
+  name: Sauce-O-Mat
+  description: An automated dispenser for sauces and seasonings.
+  suffix: ""
+  components:
+  - type: VendingMachine
+    pack: FoodCondimentBottleInventory
+    initialStockQuality: 0.80
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/Machines/VendingMachines/sauce.rsi
+
+- type: entity
+  parent: VendingMachineCoffee
+  id: VendingMachineSoups
+  name: Solar's Best Hot Soups
+  description: Served boiling so it stays hot all shift!
+  components:
+  - type: VendingMachine
+    pack: FoodSoupCupInventory
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/Machines/VendingMachines/soup.rsi
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineEnergyDrinks
+  name: Reserve Energy
+  description: Fuel for true Reserve professionals.
+  suffix: ""
+  components:
+  - type: VendingMachine
+    pack: FoodEnergyDrinkInventory
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/Machines/VendingMachines/reserve.rsi
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineIceCream
+  name: The Cold Star
+  description: A vending machine that dispenses ice cream.
+  suffix: ""
+  components:
+  - type: VendingMachine
+    pack: FoodIceCreamInventory
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/Machines/VendingMachines/icecream.rsi
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineJellyDonuts
+  name: Blob's Jelly Secret
+  description: An automated dispenser for jelly donuts.
+  suffix: ""
+  components:
+  - type: VendingMachine
+    pack: FoodJellyDonutInventory
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/Machines/VendingMachines/donut.rsi
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineBottles
+  name: Barmania's Big Drinks
+  description: A softdrink vendor provided by Orchid's Barmania.
+  suffix: ""
+  components:
+  - type: VendingMachine
+    pack: FoodBottleInventory
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/Machines/VendingMachines/bottle.rsi
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineIcedDrinks
+  name: Ice-In-A-Can
+  description: A vending machine full of icy goodness.
+  suffix: ""
+  components:
+  - type: VendingMachine
+    pack: FoodIcedDrinkInventory
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/cola-red.rsi
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineCartons
+  name: Juicy Paradize
+  description: Healthy drinks from Orchid's Barmania!
+  suffix: ""
+  components:
+  - type: VendingMachine
+    pack: FoodCartonInventory
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/Machines/VendingMachines/carton.rsi
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineBoom
+  name: Juicy Boom
+  description: A vending machine that dispenses drinks with explosive flavors.
+  suffix: ""
+  components:
+  - type: VendingMachine
+    pack: FoodBoomInventory
+    initialStockQuality: 0.50
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/Machines/VendingMachines/boom.rsi
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineBadDrinks
+  name: Bad Drinks co.
+  description: A vending machine that dispenses questionable beverages, provided to you by Reserve Station.
+  suffix: ""
+  components:
+  - type: VendingMachine
+    pack: FoodBadDrinksInventory
+    initialStockQuality: 0.66
+  - type: Sprite
+    sprite: Structures/Machines/VendingMachines/soda2.rsi

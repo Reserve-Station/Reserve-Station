@@ -7,8 +7,8 @@
   flavor: mango
   color: "#FFBF34"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/orangejuiceglass.rsi
+    sprite: _Reserve/Objects/Consumable/Drinks/mango.rsi  # Reserve: Orchid's Barmania - Vendichaos
     state: icon_empty
-  metamorphicMaxFillLevels: 5
+  metamorphicMaxFillLevels: 4  # Reserve: Orchid's Barmania - Vendichaos
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false

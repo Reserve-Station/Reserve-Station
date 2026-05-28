@@ -33,3 +33,8 @@
       maxWritableArea: 400.0, 256.0
     - type: ScannableForPoints # Goobstation - NTR rework
       points: 0 # there was a bug that let ntr get infinite points
+    # Reserve: Folder fix start
+    - type: Tag
+      tags:
+      - Card
+    # Reserve: Folder fix end

@@ -62,3 +62,7 @@
     damage:
       types:
         Blunt: 4
+  # Reserve edit: Orchid's Barmania - Vendichaos start
+  - type: Item
+    size: Tiny
+  # Reserve edit: Orchid's Barmania - Vendichaos end

@@ -764,7 +764,7 @@
   suffix: Black
   components:
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/soda2.rsi
+    sprite: Structures/Machines/VendingMachines/cola-black.rsi  # Reserve: Orchid's Barmania - Vendichaos
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

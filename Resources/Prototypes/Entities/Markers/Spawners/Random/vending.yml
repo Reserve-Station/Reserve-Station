@@ -15,7 +15,7 @@
 - type: entity
   id: RandomVending
   name: random vending machine spawner
-  suffix: Any
+  suffix: Food, Drinks, Cigs
   parent: MarkerBase
   components:
   - type: Sprite
@@ -47,6 +47,20 @@
     - VendingMachineSpaceUp
     - VendingMachineStarkist
     - VendingMachineSweetToof # Goobstation
+    # Reserve: Orchid's Barmania - Vendichaos start
+    - VendingMachineFitness
+    - VendingMachineHotfood
+    - VendingMachineSolsnack
+    - VendingMachineWeeb
+    - VendingMachineCigs  # Twice for bigger chance
+    - VendingMachineSoups  # Reserve
+    - VendingMachineEnergyDrinks  # Reserve
+    - VendingMachineBottles  # Reserve
+    - VendingMachineIcedDrinks  # Reserve
+    - VendingMachineCartons  # Reserve
+    - VendingMachineIceCream  # Reserve
+    - VendingMachineJellyDonuts  # Reserve
+    # Reserve: Orchid's Barmania - Vendichaos end
     chance: 1
 
 

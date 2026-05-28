@@ -9,11 +9,27 @@
 - type: vendingMachineInventory
   id: DonutInventory
   startingInventory:
-    FoodDonutChocolate: 5
-    FoodDonutApple: 3
-    FoodDonutPink: 3
-    FoodDonutBungo: 3
+    # Reserve: Orchid's Barmania - Vendichaos start
+    FoodDonutPlain: 4
+    FoodDonut: 2
+    FoodDonutChocolate: 2
+    FoodDonutApple: 2
+    FoodDonutPink: 2
+    FoodDonutBungo: 2
+    FoodDonutCaramel: 2
+    FoodDonutSpaceman: 2
+    FoodDonutSweetpea: 2
+    # Reserve: Orchid's Barmania - Vendichaos end
   contrabandInventory:
     FoodBagel: 2
     FoodBagelPoppy: 2
+    # Reserve: Orchid's Barmania - Vendichaos start
+    FoodDonutHomer: 2
+    FoodDonutBluePumpkin: 2
+    # Reserve: Orchid's Barmania - Vendichaos end
+  emaggedInventory:
     FoodDonutPoison: 1
+    # Reserve: Orchid's Barmania - Vendichaos start
+    FoodDonutChaos: 1
+    FoodDonutMeat: 2
+    # Reserve: Orchid's Barmania - Vendichaos end

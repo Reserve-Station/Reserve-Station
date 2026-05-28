@@ -62,3 +62,5 @@ ent-BoxDarts = darts box
     .desc = A box filled with colorful darts.
 ent-BoxEnvelope = envelope box
     .desc = A box filled with envelopes.
+ent-BoxUtensil = utensil box
+    .desc = A box filled with forks and spoons.

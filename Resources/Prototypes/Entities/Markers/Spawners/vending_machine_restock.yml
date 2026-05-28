@@ -13,7 +13,11 @@
   name: Vending Machine Restock
   suffix: "food or drink"
   parent: MarkerBase
+  placement:
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+  - type: Transform
+    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: green
@@ -37,7 +41,11 @@
   name: Vending Machine Restock
   suffix: "food"
   parent: MarkerBase
+  placement:
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+  - type: Transform
+    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: green
@@ -60,7 +68,11 @@
   name: Vending Machine Restock
   suffix: "drink"
   parent: MarkerBase
+  placement:
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+  - type: Transform
+    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: green

@@ -1,0 +1,190 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: weldbot spawner
+  parent: MarkerBase
+  id: SpawnMobWeldbot
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _EinsteinEngines/Mobs/Silicon/Bots/weldbot.rsi
+      state: weldbot
+  - type: ConditionalSpawner
+    prototypes:
+    - MobWeldbot
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobJonkBot
+  name: jonkbot spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/Bots/honkbot.rsi
+      state: jonkbot
+  - type: ConditionalSpawner
+    prototypes:
+    - MobJonkBot
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobMimeBot
+  name: mimebot spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/Bots/mimebot.rsi
+      state: mimebot
+  - type: ConditionalSpawner
+    prototypes:
+    - MobMimeBot
+
+# Random
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobFunBot
+  name: funbot spawner
+  suffix: honkbot, jonkbot, mimebot
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/Bots/mimebot.rsi
+      state: mimebot
+  - type: ConditionalSpawner
+    prototypes:
+    - MobHonkBot
+    - MobJonkBot
+    - MobMimeBot
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobAnyBot
+  name: any minibot spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Silicon/Bots/mimebot.rsi
+      state: mimebot
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCleanBot
+    - MobFireBot
+    - MobHonkBot
+    - MobJonkBot
+    - MobMedibot
+    - MobMimeBot
+    - MobPlantbot
+    - MobSupplyBot
+    - MobWeldbot
+
+# Chance 10%
+
+- type: entity
+  id: SpawnMobPlantbotChance10
+  parent: SpawnMobPlantbot
+  suffix: 10% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+      - MobPlantbot
+    chance: 0.1
+
+- type: entity
+  id: SpawnMobWeldbotChance10
+  parent: SpawnMobWeldbot
+  suffix: 10% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+      - MobWeldbot
+    chance: 0.1
+
+- type: entity
+  parent: SpawnMobMedibot
+  id: SpawnMobMedibotChance10
+  suffix: 10% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobMedibot
+    chance: 0.1
+
+- type: entity
+  parent: SpawnMobCleanBot
+  id: SpawnMobCleanBotChance10
+  suffix: 10% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCleanBot
+    chance: 0.1
+
+- type: entity
+  parent: SpawnMobFireBot
+  id: SpawnMobFireBotChance10
+  suffix: 10% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobFireBot
+    chance: 0.1
+
+- type: entity
+  parent: SpawnMobSupplyBot
+  id: SpawnMobSupplyBotChance10
+  suffix: 10% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSupplyBot
+    chance: 0.1
+
+- type: entity
+  parent: SpawnMobHonkBot
+  id: SpawnMobHonkBotChance10
+  suffix: 10% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobHonkBot
+    chance: 0.1
+
+- type: entity
+  parent: SpawnMobJonkBot
+  id: SpawnMobJonkBotChance10
+  suffix: 10% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobJonkBot
+    chance: 0.1
+
+- type: entity
+  parent: SpawnMobMimeBot
+  id: SpawnMobMimeBotChance10
+  suffix: 10% chance
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobMimeBot
+    chance: 0.1
+
+- type: entity
+  parent: SpawnMobFunBot
+  id: SpawnMobFunBotChance10
+  suffix: 10% chance, honkbot, jonkbot, mimebot
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobHonkBot
+    - MobJonkBot
+    - MobMimeBot
+    chance: 0.1

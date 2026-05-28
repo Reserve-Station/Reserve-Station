@@ -17,7 +17,11 @@
   id: BodaInventory
   startingInventory:
     DrinkSodaWaterCan: 10 #typically hacked product. Default product is "soda"
+    DrinkWaterBottleFull: 2  # Reserve: Orchid's Barmania - Vendichaos
   contrabandInventory:
     DrinkSodaWaterBottleFull: 2
     DrinkColaCan: 10
     ClothingHeadHatUshanka: 2
+    DrinkWaterJug: 1  # Reserve: Orchid's Barmania - Vendichaos
+  emaggedInventory:
+    ChemistryBottleHydrogen: 2  # Reserve: Orchid's Barmania - Vendichaos

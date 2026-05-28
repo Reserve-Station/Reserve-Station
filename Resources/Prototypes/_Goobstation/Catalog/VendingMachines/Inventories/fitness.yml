@@ -14,6 +14,8 @@
     FoodCondimentPacketProtein: 3
     DrinkMilkCartonMini: 3
     DrinkMilkCartonMiniChocolate: 3
+    DrinkOatMilkCartonMini: 3  # Reserve: Orchid's Barmania - Vendichaos
+    DrinkSoyMilkCartonMini: 3  # Reserve: Orchid's Barmania - Vendichaos
     DrinkWaterBottleFull: 3
     DrinkFitnessShakerBlack: 2
     DrinkFitnessShakerRed: 2

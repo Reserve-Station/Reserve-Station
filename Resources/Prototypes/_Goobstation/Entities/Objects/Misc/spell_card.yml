@@ -16,3 +16,10 @@
     overrideText: "Special Attack: 65 STRIKE!!!!"
   - type: UseDelay
     delay: 5
+  # Reserve: Folder fix start
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Card
+  # Reserve: Folder fix end

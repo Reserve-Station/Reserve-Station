@@ -81,6 +81,7 @@
             amount: !type:RangeNumberSelector
               range: 1, 5
       - !type:GroupSelector
+        weight: 2  # Reserve: Orchid's Barmania - Vendichaos
         children:
         - id: FoodCondimentBottleColdsauce
         - id: FoodCondimentBottleVinegar
@@ -89,6 +90,38 @@
         - id: FoodCondimentBottleBBQ
         - id: FoodCondimentBottleKetchup
         - id: FoodCondimentBottleKetchup
+        # Reserve: Orchid's Barmania - Vendichaos start
+        - id: FoodCondimentBottleKetchunaise
+        - id: FoodCondimentBottleMayo
+        - id: FoodCondimentBottleMustard
+        - id: FoodCondimentBottleSoySauce
+        # Ingredients
+        - id: FoodCondimentBottleEnzyme
+        - id: FoodCondimentBottleVinaigrette
+        - id: FoodCondimentBottleHorseradishSauce
+        - id: FoodCondimentBottleSyrup
+        - id: FoodCondimentBottleBlackpepper
+        - id: FoodCondimentBottleTonic
+        - id: FoodCondimentBottleGrenadine
+        - id: FoodCondimentBottleTeaPowder
+        - id: FoodCondimentBottleAllicin
+        # Oils
+        - id: FoodCondimentBottleOil
+        - id: FoodCondimentBottleOliveOil
+        - id: FoodCondimentBottleCapsaicinOil
+        - id: FoodCondimentBottleFrostOil
+        - id: FoodCondimentBottleCornOil
+        - id: FoodCondimentBottleRefinedOil
+        # Mixes
+        - id: FoodCondimentBottleExoticBitter
+        - id: FoodCondimentBottleTeriyaki
+        - id: FoodCondimentBottleVodkaSauce
+        - id: FoodCondimentBottleEveryspice
+        # Special condiments
+        - id: FoodCondimentBottleAstrotame
+        - id: FoodCondimentBottleLaughinSyrup
+        - id: DrinkJuicePumpkinBottleFull
+        # Reserve: Orchid's Barmania - Vendichaos end
     #Rare
     - !type:GroupSelector
       weight: 0.5

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BoxFolderNuclearCodes
   parent: BaseItem
@@ -52,12 +56,14 @@
     whitelist:
       tags:
       - Document
+      - Card  # Reserve: Folder fix
   - type: ItemMapper
     mapLayers:
       folder-overlay-paper:
         whitelist:
           tags:
           - Document
+          - Card  # Reserve: Folder fix
   - type: Appearance
   - type: Tag
     tags:
@@ -206,12 +212,14 @@
     whitelist:
       tags:
       - Document
+      - Card  # Reserve: Folder fix
   - type: ItemMapper
     mapLayers:
       clipboard_paper:
         whitelist:
           tags:
           - Document
+          - Card  # Reserve: Folder fix
       clipboard_pen:
         whitelist:
           tags:

@@ -1,0 +1,278 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Empty
+
+- type: entity
+  parent: DrinkBaseCup
+  id: DrinkCup
+  name: cup
+  suffix: ""
+  description: A dark sturdy cup.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 20
+  - type: Icon
+    sprite: _Reserve/Objects/Consumable/Drinks/cups.rsi
+    state: icon-vend
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Drinks/cups.rsi
+    layers:
+      - state: icon-0
+      - map: ["enum.SolutionContainerLayers.Fill"]
+        state: icon-4
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: icon-
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+# endregion
+
+# region Soups
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkEggCooked
+  name: egg soup
+  description: Hot cooked eggs in a cup. Simple yet cheap.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: EggCooked
+          Quantity: 20
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkHotRamen
+  name: noodle soup
+  description: Hot noodles in a cup. Simple yet cheap.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: HotRamen
+          Quantity: 20
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkMisoSoup
+  name: miso soup
+  description: A full proper meal in a small cup. Tasty, but you crave more!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: HotRamen
+          Quantity: 9
+        - ReagentId: EggCooked
+          Quantity: 5
+        - ReagentId: Soysauce
+          Quantity: 4
+        - ReagentId: Oil
+          Quantity: 2
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkTomYamSoup
+  name: tom yam soup
+  description: A full proper meal in a small cup. Spicy, but you crave more!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: HotRamen
+          Quantity: 10
+        - ReagentId: EggCooked
+          Quantity: 5
+        - ReagentId: CapsaicinOil
+          Quantity: 5
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkPumpkinSoup
+  name: pumpkin soup
+  description: A full proper meal in a small cup. Spooky, but you crave more!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 12
+        - ReagentId: OilOlive
+          Quantity: 4
+        - ReagentId: TableSalt
+          Quantity: 2
+        - ReagentId: Blackpepper
+          Quantity: 2
+  - type: StaticPrice
+    price: 15
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkBluePumpkinSoup
+  name: blue pumpkin soup
+  description: A full proper meal in a small cup. Alien, but you crave more!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: JuiceBluePumpkin
+          Quantity: 12
+        - ReagentId: OilOlive
+          Quantity: 4
+        - ReagentId: TableSalt
+          Quantity: 2
+        - ReagentId: Blackpepper
+          Quantity: 2
+  - type: StaticPrice
+    price: 15
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkGarlicSoup
+  name: garlic soup
+  description: A full proper meal in a small cup. Bitter, but you crave more!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: OilOlive
+          Quantity: 4
+        - ReagentId: Blackpepper
+          Quantity: 2
+        - ReagentId: TableSalt
+          Quantity: 2
+        - ReagentId: Allicin
+          Quantity: 2
+  - type: StaticPrice
+    price: 15
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkNettleSoup
+  name: nettle soup
+  description: To think, the botanist would've beat you to death with one of these.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Water
+          Quantity: 10
+        - ReagentId: Omnizine
+          Quantity: 1.5
+        - ReagentId: Histamine
+          Quantity: 0.5
+  - type: StaticPrice
+    price: 20
+
+# endregion
+
+# region Drinks
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkPumpkinSpiceLatte
+  name: pumpkin spice latte
+  description: Tastes great - just don't overhype it.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 6
+        - ReagentId: CafeLatte
+          Quantity: 14
+  - type: StaticPrice
+    price: 15
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkHotSoyLatte
+  name: soy latte
+  description: Hot soy latte. Tastes great!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: SoyLatte
+          Quantity: 20
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkHotCream
+  name: cream
+  description: Hot cream. Tastes great!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Cream
+          Quantity: 20
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkCreamOfCoconut
+  name: cream of coconut
+  description: Hot cream of coconut. Tastes great!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: CreamOfCoconut
+          Quantity: 20
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkMilkChoco
+  name: chocolate milk
+  description: Hot chocolate milk. Tastes great!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: MilkChoco
+          Quantity: 20
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkCreamCoffee
+  name: cream coffee
+  description: Hot cream coffee. Tastes great!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Coffee
+          Quantity: 10
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Cream
+          Quantity: 5
+
+# endregion

@@ -64,3 +64,4 @@
     description: ghost-role-information-fillbot-description
     rules: ghost-role-information-familiar-rules
   - type: GhostTakeoverAvailable
+  - type: AiRemoteController #Reserve add

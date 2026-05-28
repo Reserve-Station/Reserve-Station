@@ -354,6 +354,7 @@
   - type: Vocalizer
   - type: DatasetVocalizer
     dataset: FirebotAd
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent: MobSiliconBase
@@ -423,6 +424,7 @@
       path: /Audio/Items/bikehorn.ogg
       params:
         variation: 0.125
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent: MobHonkBot
@@ -464,6 +466,7 @@
     totalIntensity: 10
     intensitySlope: 5
     canCreateVacuum: false
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent: MobSiliconBase
@@ -515,6 +518,7 @@
     size: Large
   - type: StationAiVision # Goobstation - AI can see through NT silicon
     range: 0
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent:
@@ -545,20 +549,17 @@
       Critical:
         reagent: SpaceDrugs
         quantity: 25
-  - type: RandomSprite
-    available:
-        - enum.DamageStateVisualLayers.Base:
-            medibot: ""
-          enum.DamageStateVisualLayers.BaseUnshaded:
-            powered: Rainbow
+  # - type: RandomSprite  # Reserve: Bring back original medibot
+  #   available:
+  #       - enum.DamageStateVisualLayers.Base:
+  #           medibot: ""
+  #         enum.DamageStateVisualLayers.BaseUnshaded:
+  #           powered: Rainbow
   - type: Sprite
-    sprite: _Goobstation/Mobs/Silicon/Bots/medibot.rsi
+    sprite: Mobs/Silicon/Bots/medibot.rsi
     layers:
       - state: medibot
         map: [ "enum.DamageStateVisualLayers.Base" ]
-      - state: powered
-        map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-        shader: unshaded
   - type: HTN
     rootTask:
       task: MedibotCompound
@@ -573,7 +574,8 @@
     interactFailureString: petting-failure-medibot
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
-      path: /Audio/Animals/cat_meow.ogg
+      # path: /Audio/Animals/cat_meow.ogg  # Reserve: Bring back original medibot
+      path: /Audio/Ambience/Objects/periodic_beep.ogg  # Reserve: Bring back original medibot
   - type: ShowHealthBars
     damageContainers:
     - Biological
@@ -590,6 +592,7 @@
   - type: DoAfter
   - type: StationAiVision # Goobstation - AI can see through NT silicon
     range: 1
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent:
@@ -623,6 +626,7 @@
     interactFailureString: petting-failure-mimebot
   - type: Inventory
     templateId: head
+  - type: AiRemoteController #Reserve add
 
 - type: entity
   parent: MobSiliconBase
@@ -696,3 +700,4 @@
     range: 1
   - type: Puller
     needsHands: false
+  - type: AiRemoteController #Reserve add

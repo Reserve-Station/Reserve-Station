@@ -21,6 +21,9 @@
     DrinkFourteenLokoCan: 2
   contrabandInventory:
     DrinkDrGibbCan: 3
-    DrinkChangelingStingCan: 2
+    # Reserve: Orchid's Barmania - Vendichaos start
+    DrinkPilkCan: 2
+    DrinkDoctorPwrCan: 1
+    # Reserve: Orchid's Barmania - Vendichaos end
   emaggedInventory:
     DrinkNukieCan: 2

@@ -119,6 +119,7 @@ public abstract partial class SharedMindSystem : EntitySystem
         SubscribeLocalEvent<MindContainerComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<MindContainerComponent, SuicideEvent>(OnSuicide);
         SubscribeLocalEvent<VisitingMindComponent, EntityTerminatingEvent>(OnVisitingTerminating);
+        SubscribeLocalEvent<MindComponent, EntityTerminatingEvent>(OnMindTerminating);  // Reserve edit: Try to fix tests
         SubscribeLocalEvent<RoundRestartCleanupEvent>(OnReset);
         SubscribeLocalEvent<MindComponent, ComponentStartup>(OnMindStartup);
         SubscribeLocalEvent<MindContainerComponent, EntityRenamedEvent>(OnRenamed); // Goob edit
@@ -227,6 +228,29 @@ public abstract partial class SharedMindSystem : EntitySystem
         if (component.MindId != null)
             UnVisit(component.MindId.Value);
     }
+
+    // Reserve edit start: Try to fix tests
+    private void OnMindTerminating(EntityUid uid, MindComponent component, ref EntityTerminatingEvent args)
+    {
+        var query = EntityQueryEnumerator<MindContainerComponent>();
+        while (query.MoveNext(out var container_uid, out var container))
+        {
+            var dirty = false;
+            if (container.Mind == uid)
+            {
+                container.Mind = null;
+                dirty = true;
+            }
+            if (container.LastMindStored == uid)
+            {
+                container.LastMindStored = null;
+                dirty = true;
+            }
+            if (dirty)
+                Dirty(container_uid, container);
+        }
+    }
+    // Reserve edit end: Try to fix tests
 
     // goob start
     public void SetShowExamineInfo(Entity<MindContainerComponent> ent, bool value)
@@ -429,7 +453,7 @@ public abstract partial class SharedMindSystem : EntitySystem
         if (mindId == null || !Resolve(mindId.Value, ref mind, false))
             return;
 
-        TransferTo(mindId.Value, null, createGhost:false, mind: mind);
+        TransferTo(mindId.Value, null, createGhost: false, mind: mind);
         SetUserId(mindId.Value, null, mind: mind);
     }
 
@@ -451,9 +475,9 @@ public abstract partial class SharedMindSystem : EntitySystem
     {
     }
 
-    public virtual void ControlMob(EntityUid user, EntityUid target) {}
+    public virtual void ControlMob(EntityUid user, EntityUid target) { }
 
-    public virtual void ControlMob(NetUserId user, EntityUid target) {}
+    public virtual void ControlMob(NetUserId user, EntityUid target) { }
 
     /// <summary>
     /// Tries to create and add an objective from its prototype id.

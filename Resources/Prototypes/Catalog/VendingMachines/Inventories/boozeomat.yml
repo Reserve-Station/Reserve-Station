@@ -97,7 +97,7 @@
 - type: vendingMachineInventory
   id: BoozeOMatInventory
   startingInventory:
-    DrinkGlass: 20 #Kept glasses at top for ease to differentiate from booze.
+    DrinkGlass: 20 # Kept glasses at top for ease to differentiate from booze.
     DrinkShotGlass: 10
     DrinkGlassCoupeShaped: 10
     DrinkVacuumFlask: 5
@@ -106,18 +106,28 @@
     DrinkJigger: 5
     DrinkIceBucket: 2
     BarSpoon: 3
-    CustomDrinkJug: 2 #to allow for custom drinks in the soda/booze dispensers
+    CustomDrinkJug: 3  # to allow for custom drinks in the soda/booze dispensers  # Reserve: Orchid's Barmania - Vendichaos
+    # Reserve: Orchid's Barmania - Vendichaos start
+    DrinkCup: 5
+    DrinkBottleTall: 2
+    DrinkBottle: 2
+    DrinkCarton: 1
+    FoodCondimentBottleSyrup: 2
+    FoodCondimentBottleTeaPowder: 2
+    FoodCondimentBottleExoticBitter: 2
+    DrinkSupermaxBottleFull: 1
+    # Reserve: Orchid's Barmania - Vendichaos end
     DrinkAbsintheBottleFull: 2
-    DrinkAleBottleFull: 5
-    DrinkBeerBottleFull: 5
+    DrinkAleBottleFull: 4
+    DrinkBeerBottleFull: 4
     DrinkBlueCuracaoBottleFull: 2
-    DrinkCognacBottleFull: 4
+    DrinkCognacBottleFull: 3
     DrinkCoconutWaterCarton: 3
     DrinkColaBottleFull: 4
     DrinkEnergyDrinkCan: 8
     DrinkMilkCarton: 2
     DrinkCreamCarton: 5
-    DrinkGinBottleFull: 3
+    DrinkGinBottleFull: 2
     DrinkGildlagerBottleFull: 2 #if champagne gets less because its premium, then gildlager should match this and have two
     DrinkGrenadineBottleFull: 2
     DrinkJuiceLimeCarton: 3
@@ -125,25 +135,41 @@
     DrinkJuicePineappleCarton: 3
     DrinkJuiceOrangeCarton: 3
     DrinkJuiceTomatoCarton: 3
-    DrinkCoffeeLiqueurBottleFull: 3
+    DrinkCoffeeLiqueurBottleFull: 2
     DrinkMelonLiquorBottleFull: 3
     DrinkPatronBottleFull: 2
-    DrinkRumBottleFull: 4
-    DrinkSodaWaterCan: 8
+    DrinkRumBottleFull: 3
+    DrinkSodaWaterBottleFull: 3  # Reserve: Orchid's Barmania - Vendichaos
     DrinkSolDryCan: 8
     DrinkSpaceMountainWindBottleFull: 3
     DrinkSpaceUpBottleFull: 3
-    DrinkTequilaBottleFull: 3
-    DrinkTonicWaterCan: 8
-    DrinkVermouthBottleFull: 5
-    DrinkVodkaBottleFull: 5
-    DrinkWhiskeyBottleFull: 5
-    DrinkWineBottleFull: 5
+    DrinkTequilaBottleFull: 2
+    DrinkTonicWaterBottleFull: 3  # Reserve: Orchid's Barmania - Vendichaos
+    DrinkVermouthBottleFull: 4
+    DrinkVodkaBottleFull: 4
+    DrinkWhiskeyBottleFull: 4
+    DrinkWineBottleFull: 4
     DrinkChampagneBottleFull: 2 #because the premium drink
     DrinkSakeBottleFull: 3
-    DrinkBeerCan: 5
-    DrinkWineCan: 5
+    DrinkBeerCan: 4
+    DrinkWineCan: 4
   contrabandInventory:
     ChemistryBottleEthanol: 3
     DrinkBottleOfNothingFull: 1
+    # Reserve: Orchid's Barmania - Vendichaos start
+    DrinkWineCarton: 1
+    DrinkJuiceBluePumpkinCarton: 1
+    DrinkJuiceMangoCarton: 1
+    DrinkJuiceMultifruitCarton: 1
+    DrinkJuiceTropicalCarton: 1
+    DrinkJuiceBungoCarton: 1
+    FoodCondimentBottleTonic: 1
+    FoodCondimentBottleGrenadine: 1
+    FoodCondimentBottleLaughinSyrup: 2
+    # Reserve: Orchid's Barmania - Vendichaos end
+  emaggedInventory:
+    # Reserve: Orchid's Barmania - Vendichaos start
     DrinkPoisonWinebottleFull: 2
+    DrinkPoisonBoomBottleFull: 1
+    DrinkJuiceBluePumpkinBottleFull: 1
+    # Reserve: Orchid's Barmania - Vendichaos end

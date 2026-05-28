@@ -20,6 +20,11 @@
       setup:
         !type:TabletopEmptySetup
         boardPrototype: GrassBoardTabletop
+    # Reserve: Folder fix start
+    - type: Tag
+      tags:
+      - Document
+    # Reserve: Folder fix end
 
 - type: entity
   parent: BaseBattlemap

@@ -57,11 +57,10 @@
     Bucket: 3
     BoxMouthSwab: 1
     BoxAgrichem: 1
-    #TO DO:
-    #plant analyzer
   contrabandInventory:
     ChemistryBottleUnstableMutagen: 1
     Chainsaw: 1 #Goob
     Joint: 1
     ChemistryBottleLeft4Zed: 1
-
+  emaggedInventory:
+    DrinkDoctorMomCan: 1  # Reserve: Orchid's Barmania - Vendichaos

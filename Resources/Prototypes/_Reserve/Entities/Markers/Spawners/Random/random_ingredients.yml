@@ -1,0 +1,131 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Condiment Bottles
+
+- type: entity
+  parent: MarkerBase
+  id: RandomFoodCondimentBottle
+  name: random ingredient spawner
+  description: Spawns a random condiment bottle.
+  suffix: condiment bottle
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: RandomSpawner
+    prototypes:
+    # Empty
+    - DrinkBottleTall
+    # Condiments
+    - FoodCondimentBottleKetchup
+    - FoodCondimentBottleBBQ
+    - FoodCondimentBottleHotsauce
+    - FoodCondimentBottleKetchunaise
+    - FoodCondimentBottleMayo
+    - FoodCondimentBottleMustard
+    - FoodCondimentBottleSoySauce
+    # Ingredients
+    - FoodCondimentBottleEnzyme
+    - FoodCondimentBottleVinegar
+    - FoodCondimentBottleVinaigrette
+    - FoodCondimentBottleHorseradishSauce
+    - FoodCondimentBottleSyrup
+    - FoodCondimentBottleBlackpepper
+    - FoodCondimentBottleTonic
+    - FoodCondimentBottleGrenadine
+    - FoodCondimentBottleTeaPowder
+    - FoodCondimentBottleAllicin
+    # Oils
+    - FoodCondimentBottleOil
+    - FoodCondimentBottleOliveOil
+    - FoodCondimentBottleCapsaicinOil
+    - FoodCondimentBottleFrostOil
+    - FoodCondimentBottleCornOil
+    - FoodCondimentBottleRefinedOil
+    chance: 0.8
+    rarePrototypes:
+    # Mixes
+    - FoodCondimentBottleExoticBitter
+    - FoodCondimentBottleTeriyaki
+    - FoodCondimentBottleVodkaSauce
+    - FoodCondimentBottleEveryspice
+    # Special condiments
+    - FoodCondimentBottleAstrotame
+    - FoodCondimentBottleLaughinSyrup
+    - FoodCondimentBottleColdsauce
+    rareChance: 0.1
+    offset: 0.0
+  - type: Sprite
+    sprite: Objects/Consumable/Food/condiments.rsi
+    state: bottle-empty
+
+# endregion
+
+# region Condiment Packets
+
+- type: entity
+  parent: MarkerBase
+  id: RandomFoodCondimentPacket
+  name: random ingredient spawner
+  description: Spawns a random condiment packet.
+  suffix: condiment packet
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: RandomSpawner
+    prototypes:
+    - FoodCondimentPacketKetchup
+    - FoodCondimentPacketHotKetchup
+    - FoodCondimentPacketBbq
+    - FoodCondimentPacketCornoil
+    - FoodCondimentPacketHorseradish
+    - FoodCondimentPacketWasabi
+    - FoodCondimentPacketHotsauce
+    - FoodCondimentPacketKetchunaise
+    - FoodCondimentPacketMayo
+    - FoodCondimentPacketMustard
+    - FoodCondimentPacketVinaigrette
+    - FoodCondimentPacketSoy
+    - FoodCondimentPacketSyrup
+    - FoodCondimentPacketGarlic
+    - FoodCondimentPacketSourGreenSauce
+    - FoodCondimentPacketHollandaise
+    - FoodCondimentPacketTomatoSauce
+    - FoodCondimentPacketTomatoDressing
+    - FoodCondimentPacketPesto
+    - FoodCondimentPacketBechamel
+    - FoodCondimentPacketMustardSauce
+    - FoodCondimentPacketPepper
+    - FoodCondimentPacketSalt
+    - FoodCondimentPacketSugar
+    chance: 0.8
+    rarePrototypes:
+    - FoodCondimentPacketCarrot
+    - FoodCondimentPacketTartarSauce
+    - FoodCondimentPacketBananaSauce
+    - FoodCondimentPacketCherryJam
+    - FoodCondimentPacketBerryJam
+    - FoodCondimentPacketAppleJam
+    - FoodCondimentPacketOrangeJam
+    - FoodCondimentPacketSatsibili
+    - FoodCondimentPacketCheeseSauce
+    - FoodCondimentPacketCarbonaraSauce
+    - FoodCondimentPacketSweetChili
+    - FoodCondimentPacketBurgerSauce
+    - FoodCondimentPacketGolfSauce
+    - FoodCondimentPacketVodkaSauce
+    - FoodCondimentPacketProtein
+    - FoodCondimentPacketAstrotame
+    - FoodCondimentPacketColdsauce
+    rareChance: 0.1
+    offset: 0.0
+  - type: Sprite
+    sprite: Objects/Consumable/Food/condiments.rsi
+    state: packet-empty
+
+# endregion

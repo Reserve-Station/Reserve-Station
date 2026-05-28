@@ -17,15 +17,16 @@
   suffix: Bottle
   parent: MarkerBase
   placement:
-    mode: AlignTileAny
+    mode: PlaceFree  # Reserve: Orchid's Barmania - Vendichaos
   components:
+  - type: Transform  # Reserve: Orchid's Barmania - Vendichaos
+    anchored: false
   - type: Sprite
     layers:
       - state: red
       - sprite: Objects/Consumable/Drinks/ginbottle.rsi
         state: icon
   - type: RandomSpawner
-  #small item
     prototypes:
       - DrinkAbsintheBottleFull
       - DrinkBlueCuracaoBottleFull
@@ -48,9 +49,20 @@
       - DrinkAleBottleFull
       - DrinkAleBottleFullGrowler
       - DrinkChampagneBottleFull
+      # Reserve: Orchid's Barmania - Vendichaos start
+      - DrinkJuiceBluePumpkinBottleFull
+      - DrinkJuiceMultifruitBottleFull
+      - DrinkBlueBoomBottleFull
+      - DrinkMangoBoomBottleFull
+      - DrinkLemonLimeStillBottleFull
+      - DrinkSupermaxBottleFull
+      # Reserve: Orchid's Barmania - Vendichaos end
     chance: 0.8
     offset: 0.0
-    #rare
     rarePrototypes:
       - DrinkPoisonWinebottleFull
+      # Reserve: Orchid's Barmania - Vendichaos start
+      - DrinkPoisonBoomBottleFull
+      - DrinkJuicePumpkinBottleFull
+      # Reserve: Orchid's Barmania - Vendichaos end
     rareChance: 0.01

@@ -404,6 +404,11 @@
   - type: PhysicalComposition
     materialComposition:
       Glass: 50
+  # Reserve: Orchid's Barmania - Vendichaos start
+  - type: Tag
+    tags:
+      - DrinkBottle
+  # Reserve: Orchid's Barmania - Vendichaos end
 
 - type: entity
   parent: BaseFoodCondimentBottle
@@ -429,6 +434,7 @@
     state: bottle-coldsauce
   - type: Tag
     tags:
+      - DrinkBottle  # Reserve: Orchid's Barmania - Vendichaos
       - Coldsauce
 
 - type: entity
@@ -455,6 +461,7 @@
     state: bottle-enzyme
   - type: Tag
     tags:
+      - DrinkBottle  # Reserve: Orchid's Barmania - Vendichaos
       - Enzyme
 
 - type: entity
@@ -504,6 +511,7 @@
     state: bottle-hotsauce
   - type: Tag
     tags:
+      - DrinkBottle  # Reserve: Orchid's Barmania - Vendichaos
       - Hotsauce
 
 - type: entity
@@ -530,6 +538,7 @@
     state: bottle-ketchup
   - type: Tag
     tags:
+      - DrinkBottle  # Reserve: Orchid's Barmania - Vendichaos
       - Ketchup
 
 - type: entity
@@ -557,6 +566,7 @@
     state: bottle-ketchup
   - type: Tag
     tags:
+      - DrinkBottle  # Reserve: Orchid's Barmania - Vendichaos
       - BBQsauce
 
 # Shakers

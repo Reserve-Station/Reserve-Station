@@ -16,8 +16,11 @@
     state: icon
   - type: StaticPrice
     price: 100
+  - type: Item  # Reserve: CD disks fix
+    size: Tiny
   - type: Tag
     tags:
+    - CD  # Reserve: CD disks fix
     - CoordinatesDisk
   - type: DamageOtherOnHit
     damage:

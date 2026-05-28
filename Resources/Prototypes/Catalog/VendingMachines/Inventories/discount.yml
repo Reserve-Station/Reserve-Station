@@ -28,6 +28,10 @@
     FoodSnackEnergy: 3
     CigPackMixed: 2
     DiscountDanLighter: 1
+    DrinkEggCookedCan: 1  # Reserve: Orchid's Barmania - Vendichaos
   contrabandInventory:
     FoodSnackDanDanNoodles: 3
     FoodBakedBunHoney: 3
+    DrinkHotRamenCan: 1  # Reserve: Orchid's Barmania - Vendichaos
+  emaggedInventory:
+    DrinkPotatoBoomCan: 1  # Reserve: Orchid's Barmania - Vendichaos

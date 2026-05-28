@@ -1,0 +1,177 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: vendingMachineInventory
+  id: FoodCondimentBottleInventory
+  startingInventory:
+    FoodCondimentBottleKetchup: 2
+    FoodCondimentBottleBBQ: 2
+    FoodCondimentBottleHotsauce: 2
+    FoodCondimentBottleKetchunaise: 2
+    FoodCondimentBottleMayo: 2
+    FoodCondimentBottleMustard: 2
+    FoodCondimentBottleSoySauce: 2
+    FoodCondimentBottleVinaigrette: 2
+    FoodCondimentBottleHorseradishSauce: 2
+    FoodCondimentBottleTeriyaki: 2
+  contrabandInventory:
+    FoodCondimentBottleAstrotame: 2
+    FoodCondimentBottleVodkaSauce: 2
+
+- type: vendingMachineInventory
+  id: FoodSoupCupInventory
+  startingInventory:
+    DrinkEggCooked: 3
+    DrinkHotRamen: 3
+    DrinkMisoSoup: 3
+    DrinkTomYamSoup: 3
+    DrinkPumpkinSoup: 3
+    DrinkBluePumpkinSoup: 3
+    DrinkGarlicSoup: 3
+    DrinkNettleSoup: 3
+  contrabandInventory:
+    FoodSoupClown: 2
+    FoodSoupSlime: 2
+
+- type: vendingMachineInventory
+  id: FoodEnergyDrinkInventory
+  startingInventory:
+    DrinkEnergyDrinkCan: 8
+    DrinkEnergySugarCan: 5
+    DrinkEnergyReserveCan: 3
+    DrinkEnergyMaxCan: 2
+    DrinkEnergyReserveRobustCan: 2
+  contrabandInventory:
+    DrinkPwrGameCan: 4
+    DrinkDoctorPwrCan: 1
+
+- type: vendingMachineInventory
+  id: FoodIceCreamInventory
+  startingInventory:
+    FoodFrozenFreezy: 2
+    FoodFrozenSandwich: 2
+    FoodFrozenSandwichStrawberry: 2
+    FoodFrozenPopsicleBerry: 2
+    FoodFrozenPopsicleJumbo: 2
+    FoodFrozenPopsicleOrange: 2
+    FoodFrozenCornuto: 2
+    FoodFrozenSundae: 2
+    FoodPieFrostySlice: 2
+    DrinkIceCreamGlass: 2
+    FoodFrozenSnowconeBase: 2
+    FoodFrozenSnowconeBerry: 2
+    FoodFrozenSnowconeFruit: 2
+    FoodFrozenSnowconeRainbow: 2
+  contrabandInventory:
+    FoodFrozenSnowconeClown: 3
+    FoodFrozenSnowconeMime: 3
+
+- type: vendingMachineInventory
+  id: FoodJellyDonutInventory
+  startingInventory:
+    FoodDonutJellyPlain: 4
+    FoodDonutJelly: 2
+    FoodDonutJellyChocolate: 2
+    FoodDonutJellyApple: 2
+    FoodDonutJellyPink: 2
+    FoodDonutJellyBungo: 2
+    FoodDonutJellyCaramel: 2
+    FoodDonutJellySpaceman: 2
+    FoodDonutJellySweetpea: 2
+    FoodDonutJellyScurret: 2
+  contrabandInventory:
+    FoodBagel: 2
+    FoodBagelPoppy: 2
+    FoodDonutJellyHomer: 2
+    FoodDonutJellyBluePumpkin: 2
+  emaggedInventory:
+    FoodDonutPoison: 1
+    FoodDonutChaos: 1
+    FoodDonutMeat: 2
+
+- type: vendingMachineInventory
+  id: FoodBottleInventory
+  startingInventory:
+    DrinkJuiceBluePumpkinBottleFull: 2
+    DrinkJuiceMultifruitBottleFull: 2
+    DrinkBlueBoomBottleFull: 2
+    DrinkMangoBoomBottleFull: 2
+    DrinkLemonLimeStillBottleFull: 2
+    DrinkSupermaxBottleFull: 2
+    DrinkColaBottleFull: 2
+    DrinkSodaWaterBottleFull: 2
+    DrinkSpaceMountainWindBottleFull: 2
+    DrinkSpaceUpBottleFull: 2
+    DrinkTonicWaterBottleFull: 2
+  contrabandInventory:
+    DrinkPoisonWinebottleFull: 1
+    DrinkPoisonBoomBottleFull: 1
+    DrinkJuicePumpkinBottleFull: 2
+
+- type: vendingMachineInventory
+  id: FoodIcedDrinkInventory
+  startingInventory:
+    DrinkOrchitoCan: 3
+    DrinkIcedMilkCan: 3
+    DrinkIcedTeaCan: 3
+    DrinkIcedGreenTeaCan: 3
+    DrinkIcedCoffeeCan: 3
+    DrinkEggCookedCan: 3
+    DrinkHotRamenCan: 3
+    DrinkLemonadeSodaCan: 3
+  contrabandInventory:
+    DrinkIceBucket: 3
+
+- type: vendingMachineInventory
+  id: FoodCartonInventory
+  startingInventory:
+    DrinkWaterJug: 3
+    DrinkMilkCartonMini: 2
+    DrinkMilkCartonMiniChocolate: 2
+    DrinkOatMilkCartonMini: 2
+    DrinkSoyMilkCartonMini: 2
+    DrinkJuiceMangoCarton: 2
+    DrinkJuiceMultifruitCarton: 2
+    DrinkJuiceTropicalCarton: 2
+    DrinkJuiceLimeCarton: 2
+    DrinkJuiceOrangeCarton: 2
+    DrinkJuiceTomatoCarton: 2
+    DrinkJuiceLemonCarton: 2
+    DrinkJuicePineappleCarton: 2
+  contrabandInventory:
+    DrinkJuiceBungoCarton: 2
+    DrinkJuiceBluePumpkinCarton: 2
+    DrinkWineCarton: 2
+
+- type: vendingMachineInventory
+  id: FoodBoomInventory
+  startingInventory:
+    DrinkBerryBoomCan: 3
+    DrinkBlueBoomCan: 3
+    DrinkCherryBoomCan: 3
+    DrinkMangoBoomCan: 3
+    DrinkBungoBoomCan: 3
+    DrinkPumpkinBoomCan: 3
+    DrinkJuiceMultifruitCan: 3
+    DrinkJuiceVeggieCan: 3
+  contrabandInventory:
+    DrinkPotatoBoomCan: 3
+    DrinkPoisonBoomCan: 3
+    DrinkAnomalyBoomCan: 3
+
+- type: vendingMachineInventory
+  id: FoodBadDrinksInventory
+  startingInventory:
+    DrinkEnergyReserveCan: 3
+    DrinkTeaFakeCan: 3
+    DrinkTonicMutagenCan: 3
+    DrinkWaterFakeCan: 3
+    DrinkRespawnCan: 3
+    DrinkTonicFakeCan: 3
+    DrinkPilkCan: 3
+    DrinkSodaAccelerateCan: 3
+  contrabandInventory:
+    DrinkNothingCan: 3
+    DrinkEggCan: 3
+    DrinkBloodCan: 3

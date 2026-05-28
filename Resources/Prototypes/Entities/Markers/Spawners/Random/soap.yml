@@ -9,7 +9,11 @@
   id: RandomSoap
   name: random soap spawner
   parent: MarkerBase
+  placement:
+    mode: PlaceFree  # Reserve: Better spawners
   components:
+  - type: Transform
+    anchored: false  # Reserve: Better spawners
   - type: Sprite
     layers:
       - state: red
@@ -21,8 +25,11 @@
       - SoapHomemade
       - SoapNT
       - SoapDeluxe
+      - SoapHomemadeBanana  # Reserve: Better spawners
     chance: 0.95
     rarePrototypes:
       - SoapSyndie
       - SoapOmega
+      - SoapGold  # Reserve: Better spawners
+      - SoapCentcomm  # Reserve: Better spawners
     rareChance: 0.05

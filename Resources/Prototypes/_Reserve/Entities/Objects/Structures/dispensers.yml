@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SodaDispenserEmpty
+  id: SauceDispenserEmpty
+  name: раздатчик соусов
+  description: Диспенсер для соусов и приправ.
+  suffix: Empty
+  components:
+  - type: Sprite
+    state: sauce
+  - type: Machine
+    board: SauceDispenserMachineCircuitboard
+  - type: GuideHelp
+    guides:
+    - Chef
+    - FoodRecipes
+
+- type: entity
+  parent: SauceDispenserEmpty
+  id: SauceDispenser
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodCondimentBottleKetchup
+    - id: FoodCondimentBottleBBQ
+    - id: FoodCondimentBottleHotsauce
+    - id: FoodCondimentBottleMayo
+    - id: FoodCondimentBottleMustard
+    - id: FoodCondimentBottleSoySauce

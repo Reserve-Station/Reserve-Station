@@ -131,7 +131,7 @@
   desc: reagent-desc-egg
   physicalDesc: reagent-physical-desc-fluffy
   flavor: egg
-  color: white
+  color: "#F8F0DA"  # Reserve: Orchid's Barmania - Vendichaos
   recognizable: true
   # Reserve: Orchid's Barmania - Visual Fixes start
   metamorphicSprite:

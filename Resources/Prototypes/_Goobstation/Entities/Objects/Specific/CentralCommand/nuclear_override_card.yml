@@ -16,3 +16,10 @@
   - type: Sprite
     sprite: _Goobstation/Objects/Misc/nukeoverride.rsi
     state: icon
+  # Reserve: Folder fix start
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Card
+  # Reserve: Folder fix end

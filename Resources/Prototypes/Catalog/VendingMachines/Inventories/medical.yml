@@ -128,5 +128,7 @@
     SyringeMicroplastics: 2 #Technically a medicine
     FoodSnackLollypopWrappedLexorin: 3
     FoodSnackLollypopWrappedMysteryEvil: 5 # Goobstation - end
+    DrinkDoctorMomCan: 1  # Reserve: Orchid's Barmania - Vendichaos
   contrabandInventory:
     FoodApple: 1
+    DrinkDoctorPwrCan: 1  # Reserve: Orchid's Barmania - Vendichaos

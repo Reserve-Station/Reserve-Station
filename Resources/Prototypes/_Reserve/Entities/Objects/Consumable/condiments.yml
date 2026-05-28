@@ -1,0 +1,625 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Sauces
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketHotKetchup
+  name: hot ketchup packet
+  description: Contains 10u of hot ketchup.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Ketchup
+          Quantity: 5
+        - ReagentId: Hotsauce
+          Quantity: 5
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketWasabi
+  name: wasabi packet
+  description: Contains 10u of low-quality wasabi.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: HorseradishSauce
+          Quantity: 3
+        - ReagentId: Hotsauce
+          Quantity: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketKetchunaise
+  name: ketchunaise packet
+  description: Contains 10u of ketchup and mayonnaise.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Ketchunaise
+          Quantity: 10
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketMayo
+  name: mayonnaise packet
+  description: Contains 10u of mayonnaise.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Mayo
+          Quantity: 10
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketVinaigrette
+  name: vinaigrette packet
+  description: Contains 10u of vinaigrette.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Vinaigrette
+          Quantity: 10
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketSyrup
+  name: syrup packet
+  description: Contains 10u of sweet syrup.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Syrup
+          Quantity: 10
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-trans-
+  - type: StaticPrice
+    price: 25
+
+# region Exotic
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketGarlic
+  name: garlic sauce packet
+  description: Contains 10u of garlic sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Allicin
+          Quantity: 4
+        - ReagentId: CapsaicinOil
+          Quantity: 1
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketSourGreenSauce
+  name: sour-green sauce packet
+  description: Contains 10u of "sour-green sauce".
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Milk
+          Quantity: 6
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Enzyme
+          Quantity: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketCarrot
+  name: carrot sauce packet
+  description: Contains 10u of carrot sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: JuiceCarrot
+          Quantity: 6
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Cornmeal
+          Quantity: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketHollandaise
+  name: hollandaise sauce packet
+  description: Contains 10u of hollandaise sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: EggCooked
+          Quantity: 5
+        - ReagentId: Butter
+          Quantity: 5
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketTomatoSauce
+  name: tomato sauce packet
+  description: Contains 10u of tomato sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Cornoil
+          Quantity: 3.3
+        - ReagentId: TableSalt
+          Quantity: 3.3
+        - ReagentId: JuiceTomato
+          Quantity: 3.4
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketTomatoDressing
+  name: tomato dressing packet
+  description: Contains 10u of tomato dressing.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: JuiceTomato
+          Quantity: 8
+        - ReagentId: TableSalt
+          Quantity: 1
+        - ReagentId: Blackpepper
+          Quantity: 1
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketPesto
+  name: pesto packet
+  description: Contains 10u of pesto.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: OilOlive
+          Quantity: 3.3
+        - ReagentId: TableSalt
+          Quantity: 3.3
+        - ReagentId: Allicin
+          Quantity: 3.4
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketBechamel
+  name: bechamel packet
+  description: Contains 10u of bechamel.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Milk
+          Quantity: 3.3
+        - ReagentId: Flour
+          Quantity: 3.3
+        - ReagentId: OilOlive
+          Quantity: 3.4
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketTartarSauce
+  name: tartar sauce packet
+  description: Contains 10u of tartar sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Mayo
+          Quantity: 8
+        - ReagentId: Nutriment
+          Quantity: 1
+        - ReagentId: Allicin
+          Quantity: 1
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketBananaSauce
+  name: banana sauce packet
+  description: Contains 10u of banana sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: JuiceBanana
+          Quantity: 6
+        - ReagentId: TableSalt
+          Quantity: 1.5
+        - ReagentId: Blackpepper
+          Quantity: 1.5
+        - ReagentId: Vinegar
+          Quantity: 1
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketMustardSauce
+  name: mustard sauce packet
+  description: Contains 10u of mustard sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Mustard
+          Quantity: 6
+        - ReagentId: Vinegar
+          Quantity: 2
+        - ReagentId: Sugar
+          Quantity: 1
+        - ReagentId: TableSalt
+          Quantity: 1
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketSatsibili
+  name: satsibili packet
+  description: Contains 10u of satsibili.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: JuiceTomato
+          Quantity: 5
+        - ReagentId: Allicin
+          Quantity: 2
+        - ReagentId: Vinegar
+          Quantity: 2
+        - ReagentId: Cornoil
+          Quantity: 1
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketCheeseSauce
+  name: cheese sauce packet
+  description: Contains 10u of cheese sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Cream
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Butter
+          Quantity: 2
+        - ReagentId: TableSalt
+          Quantity: 1
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketCarbonaraSauce
+  name: carbonara sauce packet
+  description: Contains 10u of carbonara sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Cream
+          Quantity: 6
+        - ReagentId: Nutriment
+          Quantity: 1
+        - ReagentId: Butter
+          Quantity: 3
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketSweetChili
+  name: sweet chili packet
+  description: Contains 10u of sweet chili.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Hotsauce
+          Quantity: 3
+        - ReagentId: Vinegar
+          Quantity: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketBurgerSauce
+  name: burger sauce packet
+  description: Contains 10u of burger sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Ketchunaise
+          Quantity: 7
+        - ReagentId: Mustard
+          Quantity: 3
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketGolfSauce
+  name: golf sauce packet
+  description: Contains 10u of golf sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Ketchunaise
+          Quantity: 7
+        - ReagentId: Blackpepper
+          Quantity: 1
+        - ReagentId: JuiceLemon
+          Quantity: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketVodkaSauce
+  name: vodka sauce packet
+  description: Contains 10u of vodka sauce.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Vodka
+          Quantity: 4
+        - ReagentId: JuiceTomato
+          Quantity: 3
+        - ReagentId: Cream
+          Quantity: 2
+        - ReagentId: Allicin
+          Quantity: 1
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+# region Jams
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketCherryJam
+  name: cherry jam packet
+  description: Contains 10u of cherry jam.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: JuiceCherry
+          Quantity: 7
+        - ReagentId: Sugar
+          Quantity: 1
+        - ReagentId: Syrup
+          Quantity: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-trans-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketBerryJam
+  name: berry jam packet
+  description: Contains 10u of berry jam.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: JuiceBerry
+          Quantity: 7
+        - ReagentId: Sugar
+          Quantity: 1
+        - ReagentId: Syrup
+          Quantity: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-trans-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketAppleJam
+  name: apple jam packet
+  description: Contains 10u of apple jam.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: JuiceApple
+          Quantity: 7
+        - ReagentId: Sugar
+          Quantity: 1
+        - ReagentId: Syrup
+          Quantity: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-trans-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketOrangeJam
+  name: orange jam packet
+  description: Contains 10u of orange jam.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: JuiceOrange
+          Quantity: 7
+        - ReagentId: Sugar
+          Quantity: 1
+        - ReagentId: Syrup
+          Quantity: 2
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-trans-
