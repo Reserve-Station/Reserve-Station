@@ -26,7 +26,7 @@
     drawdepth: Effects
     noRot: true
     layers:
-    - state: lightning_1
+    - state: lightning_2
       shader: unshaded
   - type: Transform
     anchored: false
