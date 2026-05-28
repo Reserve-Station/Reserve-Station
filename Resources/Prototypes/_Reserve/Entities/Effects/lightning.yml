@@ -1,0 +1,40 @@
+- type: entity
+  id: EffectLightning1
+  components:
+  - type: Sprite
+    sprite: _Reserve/Effects/lightning.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - state: lightning_1
+      shader: unshaded
+  - type: Transform
+    anchored: false
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: PointLight
+    color: White
+    radius: 10
+    energy: 15
+    netsync: false
+
+- type: entity
+  id: EffectLightning2
+  components:
+  - type: Sprite
+    sprite: _Reserve/Effects/lightning.rsi
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - state: lightning_1
+      shader: unshaded
+  - type: Transform
+    anchored: false
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: PointLight
+    color: White
+    radius: 10
+    energy: 15
+    netsync: false
+
