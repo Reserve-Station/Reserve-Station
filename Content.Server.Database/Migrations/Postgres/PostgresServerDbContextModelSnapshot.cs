@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 // SPDX-FileCopyrightText: 2020 20kdc <asdd2808@gmail.com>
 // SPDX-FileCopyrightText: 2021 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2021 Leo <lzimann@users.noreply.github.com>

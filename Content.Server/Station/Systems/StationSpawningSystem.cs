@@ -259,11 +259,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         var gearEquippedEv = new StartingGearEquippedEvent(entity.Value);
         RaiseLocalEvent(entity.Value, ref gearEquippedEv);
 
-<<<<<<< HEAD
-        if (prototype != null && TryComp(entity.Value, out MetaDataComponent? metaData))
-        {
-            SetPdaAndIdCardData(entity.Value, metaData.EntityName, prototype, station);
-=======
         JobAlternateTitlePrototype? altTitle = null;
         if (profile != null && prototype != null && profile.JobAlternateTitles.TryGetValue(prototype.ID, out var altId))
             _prototypeManager.TryIndex(altId, out altTitle);
@@ -279,7 +274,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             {
                 AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
             }
->>>>>>> 5149aaa14ff (Cosmetic Job Titles (#2407))
         }
 
         DoJobSpecials(job, entity.Value);

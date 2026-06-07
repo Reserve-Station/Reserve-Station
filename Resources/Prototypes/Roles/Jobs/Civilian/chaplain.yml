@@ -89,13 +89,11 @@
   special:
   - !type:AddComponentSpecial
     components:
-    - type: BibleUser #Lets them heal with bibles
     - type: Condemned
       soulOwnedNotDevil: true # This just means they won't suffer the effects of being condemned, while still not being able to sell their soul. - Goobstation
     - type: CanEnchant #GoobStation
     - type: CurseImmune # Immune to curses of wraith plaguebringer - Goobstation
     - type: BibleUser #Lets them heal with bibles and transform null rods.
-    - type: CultResistant # Funky cult
   alternateTitles:
   - ChaplainPreacher
   - ChaplainSpiritualAdvisor
@@ -124,8 +122,6 @@
     neck: ClothingNeckStoleChaplain
     outerClothing: ClothingOuterPlagueSuit
     gloves: ClothingHandsGlovesColorBlack
-    - NullRodDefault
-    - CosmicCenser # DeltaV - Cosmic Cult
 
 - type: jobAlternateTitle
   id: ChaplainPreacher

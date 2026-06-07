@@ -454,9 +454,9 @@ namespace Content.Server.Database
                     markings
                 ),
                 spawnPriority,
-                altTitles,
                 jobs,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
+                altTitles,
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
