@@ -84,8 +84,6 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: maskbloodicon
-  - type: StaticPrice
-    price: 25
 
 - type: entity
   abstract: true

@@ -71,7 +71,7 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
 
         HashSet<EntityUid> items = new();
 
-        SharedEntityStorageComponent? entityStorageComp = null;
+        EntityStorageComponent? entityStorageComp = null;
         if (_storage.ResolveStorage(uid, ref entityStorageComp))
             items = entityStorageComp.Contents.ContainedEntities.ToHashSet();
 
@@ -177,7 +177,7 @@ public abstract partial class SharedWashingMachineSystem : EntitySystem
 
         HashSet<EntityUid> items = new();
 
-        SharedEntityStorageComponent? entityStorageComp = null;
+        EntityStorageComponent? entityStorageComp = null;
         if (_storage.ResolveStorage(ent.Owner, ref entityStorageComp))
             items = entityStorageComp.Contents.ContainedEntities.ToHashSet();
 

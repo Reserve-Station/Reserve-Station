@@ -75,7 +75,6 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
-using Robust.Shared.Physics.Events;
 using Robust.Shared.Utility;
 using Content.Shared.Projectiles;
 
@@ -175,24 +174,18 @@ public sealed class SlipperySystem : EntitySystem
                 && _status.CanAddStatusEffect(toSlip, SharedStunSystem.StunId); //Should be KnockedDown instead?
     }
 
-    public void TrySlip(EntityUid uid, SlipperyComponent component, EntityUid other, bool requiresContact = true, bool force = false)
+    public void TrySlip(EntityUid uid, SlipperyComponent component, EntityUid other, bool requiresContact = true, bool force = true, bool predicted = true)
     {
-        if (HasComp<KnockedDownComponent>(other) && !component.SlipData.SuperSlippery && !force)
+        var knockedDown = _knockedDownQuery.HasComp(other);
+        if (knockedDown && !component.SlipData.SuperSlippery && !force)
             return;
+        var attemptEv = new SlipAttemptEvent(uid);
+        RaiseLocalEvent(other, attemptEv);
+        if (attemptEv.SlowOverSlippery)
+            _speedModifier.AddModifiedEntity(other);
 
-        if (!force)
-        {
-            var attemptEv = new SlipAttemptEvent(component.SlipData.SuperSlippery)
-            {
-                SlipCausingEntity = uid
-            };
-            RaiseLocalEvent(other, attemptEv);
-            if (attemptEv.SlowOverSlippery)
-                _speedModifier.AddModifiedEntity(other);
-
-            if (attemptEv.NoSlip)
-                return;
-        }
+        if (attemptEv.NoSlip)
+            return;
 
         var attemptCausingEv = new SlipCausingAttemptEvent();
         RaiseLocalEvent(uid, ref attemptCausingEv);
@@ -254,13 +247,11 @@ public sealed class SlipAttemptEvent : EntityEventArgs, IInventoryRelayEvent
 
     public SlotFlags TargetSlots { get; } = SlotFlags.FEET;
 
-    public EntityUid? SlipCausingEntity;
-
     public bool SuperSlippery;
 
-    public SlipAttemptEvent(bool superSlippery)
+    public SlipAttemptEvent(EntityUid? slipCausingEntity)
     {
-        SuperSlippery = superSlippery;
+        SlipCausingEntity = slipCausingEntity;
     }
 }
 

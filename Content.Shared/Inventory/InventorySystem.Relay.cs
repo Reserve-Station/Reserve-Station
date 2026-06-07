@@ -140,10 +140,8 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, ChameleonControllerOutfitSelectedEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, BeforeEmoteEvent>(RelayInventoryEvent);
 
-        SubscribeLocalEvent<InventoryComponent, CheckMagicItemEvent>(RelayInventoryEvent); //heretic FunkyStation
         SubscribeLocalEvent<InventoryComponent, SlippedEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, SpilledOnEvent>(RelayInventoryEvent);
-
 
         // by-ref events
         SubscribeLocalEvent<InventoryComponent, RefreshFrictionModifiersEvent>(RefRelayInventoryEvent);

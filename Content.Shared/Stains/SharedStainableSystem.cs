@@ -5,6 +5,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Maths.FixedPoint; // Reserve - for FixedPoint2
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Fluids;
@@ -17,7 +18,6 @@ using Content.Shared.Stains.Components; // Gaby
 using Content.Shared.Verbs; // Gaby
 using Content.Shared.DoAfter; // Gaby
 using Content.Shared.Popups; // Gaby
-using Content.Shared.FixedPoint;
 using Robust.Shared.Utility; // Gaby
 
 namespace Content.Shared.Stains;

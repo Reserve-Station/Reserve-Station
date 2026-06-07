@@ -189,8 +189,6 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.7
-  - type: StaminaResistance
-    damageCoefficient: 0.85
   - type: Tag
     tags:
       - Armor

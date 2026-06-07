@@ -47,12 +47,9 @@ namespace Content.Shared.Fluids;
 
 public abstract partial class SharedPuddleSystem : EntitySystem
 {
-    [Dependency] protected readonly ISharedAdminLogManager AdminLogger = default!;
-    [Dependency] protected readonly SharedPopupSystem Popups = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
-    [Dependency] protected readonly ReactiveSystem Reactive = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
 
     private static readonly ProtoId<ReagentPrototype> Blood = "Blood";

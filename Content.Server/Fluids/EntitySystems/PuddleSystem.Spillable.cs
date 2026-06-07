@@ -70,27 +70,20 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Goobstation.Common.Solutions;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry;
-using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Chemistry.Reaction;
-using Content.Shared.Chemistry;
-using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Database;
-using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Fluids.Components;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Popups;
 using Content.Shared.Spillable;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Player;
-using Content.Shared._DV.Chemistry.Systems;
-using Content.Shared.Chemistry.Components;
-using Content.Shared.IdentityManagement;
-using Content.Shared.Popups; // DeltaV Beergoggles enable safe throw
-using Robust.Shared.Physics.Systems; // DeltaV Beergoggles enable safe throw
 
 namespace Content.Server.Fluids.EntitySystems;
 
@@ -196,15 +189,6 @@ public sealed partial class PuddleSystem
         if (args.User != null)
         {
             _adminLogger.Add(LogType.Landed,
-            // DeltaV - start of Beergoggles enable safe throw
-            if (_safesolthrower.GetSafeThrow(args.User.Value))
-            {
-                _physics.SetAngularVelocity(entity, 0);
-                Transform(entity).LocalRotation = Angle.Zero;
-                return;
-            }
-            // DeltaV - end of Beergoggles enable safe throw
-            AdminLogger.Add(LogType.Landed,
                 $"{ToPrettyString(entity.Owner):entity} spilled a solution {SharedSolutionContainerSystem.ToPrettyString(solution):solution} on landing");
         }
 

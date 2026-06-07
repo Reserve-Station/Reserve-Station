@@ -5,10 +5,10 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Maths.FixedPoint; // Reserve - for FixedPoint2
 using Content.Client.Clothing;
 using Content.Client.Items.Systems;
 using Content.Shared.Clothing;
-using Content.Shared.FixedPoint;
 using Content.Shared.Hands;
 using Content.Shared.Stains;
 using Robust.Client.GameObjects;
