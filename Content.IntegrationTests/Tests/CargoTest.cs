@@ -145,6 +145,9 @@ public sealed class CargoTest
             {
                 foreach (var proto in protoManager.EnumeratePrototypes<CargoProductPrototype>())
                 {
+                    if (Ignored.Contains(proto.ID))  // Reserve edit: Orchid's Barmania - Service Heaven
+                        continue;
+
                     var ent = entManager.SpawnEntity(proto.Product, new MapCoordinates(Vector2.Zero, mapId));
 
                     foreach (var bounty in bounties)
