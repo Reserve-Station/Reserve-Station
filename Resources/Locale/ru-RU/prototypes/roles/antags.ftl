@@ -1,6 +1,3 @@
-## goob edited
-roles-antag-syndicate-agent-name = Агент Синдиката
-
 # Antag Categories
 antag-category-solo = Одиночные антагонисты
 antag-category-team = Командные антагонисты
