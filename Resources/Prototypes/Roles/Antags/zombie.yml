@@ -17,8 +17,8 @@
   objective: roles-antag-initial-infected-objective
   category: Team
   icon:
-    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
-    state: initialinfected
+    sprite: Structures/Wallmounts/signs.rsi
+    state: biohazard
   requirements:
   - !type:SpeciesRequirement
     inverted: true

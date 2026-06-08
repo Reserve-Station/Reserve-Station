@@ -90,8 +90,8 @@
     - Plasmaman
   category: Solo
   icon:
-    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
-    state: ninja
+    sprite: Objects/Weapons/Melee/energykatana.rsi
+    state: icon
   previewStartingGear: SpaceNinjaGear
 
 #Ninja Gear

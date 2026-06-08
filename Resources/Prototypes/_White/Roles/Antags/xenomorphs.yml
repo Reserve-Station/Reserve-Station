@@ -2,4 +2,6 @@
   id: Xenomorph
   name: roles-antag-xenomorph-name
   antagonist: true
+  setPreference: false
   objective: roles-antag-xenomorph-objective
+  category: Team

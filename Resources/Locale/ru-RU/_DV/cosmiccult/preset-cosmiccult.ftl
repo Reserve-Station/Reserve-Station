@@ -4,7 +4,7 @@ cosmiccult-announcement-sender = ???
 cosmiccult-title = Космический культ
 cosmiccult-description = Среди экипажа скрываются культисты.
 roles-antag-cosmiccult-name = Космический культист
-roles-antag-cosmiccult-description = Приблизьте конец всего сущего с помощью уловок и саботажа, промывая мозги тем, кто мог бы выступить против вас.
+roles-antag-cosmiccult-description = Приведите к концу всё с помощью обмана и саботажа, промывая мозги тем, кто вам противостоит. [color=#4cabb3][bold]Занавес должен опуститься.[/bold][/color]
 cosmiccult-gamemode-title = Космический культ
 cosmiccult-gamemode-description = Сканеры фиксируют аномальное увеличение Λ-CDM. Дополнительных данных нет.
 cosmiccult-vote-steward-initiator = Неизвестное

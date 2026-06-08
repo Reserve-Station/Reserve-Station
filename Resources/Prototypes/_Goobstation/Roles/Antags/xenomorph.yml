@@ -8,3 +8,8 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 180000
+  category: Team
+  icon:
+    sprite: _White/Interface/Actions/xenomorph.rsi
+    state: evolve
+

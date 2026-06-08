@@ -104,7 +104,7 @@
   category: Solo
   icon:
     sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
-    state: syndicateagent
+    state: sleeperagent
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 3600 # 1h

@@ -8,3 +8,7 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 3600 # 1h
+  category: Team
+  icon:
+    sprite: _Harmony/Interface/Misc/job_icons.rsi
+    state: Conspirator

@@ -8,4 +8,9 @@
   id: Dragon
   name: roles-antag-dragon-name
   antagonist: true
+  setPreference: false # Reserve edit
   objective: roles-antag-dragon-objective
+  category: Solo
+  icon:
+    sprite: Mobs/Aliens/Carps/dragon.rsi
+    state: dead
