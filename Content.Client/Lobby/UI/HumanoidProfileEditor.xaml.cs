@@ -957,7 +957,7 @@ namespace Content.Client.Lobby.UI
                         toggleButton.Text = args.Pressed ? Loc.GetString("humanoid-profile-editor-antag-preference-yes-button") : Loc.GetString("humanoid-profile-editor-antag-preference-no-button");
                         Profile = Profile?.WithAntagPreference(antag.ID, args.Pressed);
                         ReloadPreview();
-                        setDirty();
+                        SetDirty();
                     };
                     antagSelector.SetPreferenceSelector(toggleButton);
                     grid.AddChild(antagSelector);
