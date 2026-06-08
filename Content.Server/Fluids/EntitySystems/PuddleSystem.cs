@@ -903,7 +903,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
     private void OnCrawlInPuddle(Entity<StandingStateComponent> ent, ref MoveEvent args) // Gaby
     {
-        if (_standing.IsDown(ent.Owner, ent))
+        if (!_standing.IsDown(ent.Owner, ent))
             return;
 
         var gridUid = args.NewPosition.GetGridUid(EntityManager);
@@ -939,7 +939,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     private void OnStepInPuddle(Entity<InventoryComponent> ent, ref MoveEvent args)
     {
         // Only if upright
-        if (!_standing.IsDown(ent.Owner))
+        if (_standing.IsDown(ent.Owner))
             return;
 
         // Only on tile change
