@@ -215,7 +215,7 @@
 - type: jobAlternateTitle
   id: QuartermasterDeckChief
   name: job-name-alt-qm-2
-  emaleName: job-name-alt-qm-2-f
+  femaleName: job-name-alt-qm-2-f
   maleName: job-name-alt-qm-2-m
 
 - type: jobAlternateTitle
