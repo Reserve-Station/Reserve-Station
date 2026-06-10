@@ -18,9 +18,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-## goob edited
-roles-antag-syndicate-agent-name = Traitor
-
 # Antag Categories
 antag-category-solo = Solo Antagonists
 antag-category-team = Team Antagonists
@@ -41,7 +38,7 @@ roles-antag-syndicate-agent-objective = You are an agent for the Syndicate. Infi
 
 roles-antag-syndicate-agent-sleeper-name = Syndicate Sleeper Agent
 roles-antag-syndicate-agent-sleeper-objective = You are an ordinary crewmember...until the signal arrives.
-    
+
     When it does, your Syndicate Agent status activates, and your objectives will be revealed.
 
 roles-antag-initial-infected-name = Initial Infected
