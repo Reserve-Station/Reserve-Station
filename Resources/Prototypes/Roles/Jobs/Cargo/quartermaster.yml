@@ -215,16 +215,18 @@
 - type: jobAlternateTitle
   id: QuartermasterDeckChief
   name: job-name-alt-qm-2
+  emaleName: job-name-alt-qm-2-f
+  maleName: job-name-alt-qm-2-m
 
 - type: jobAlternateTitle
   id: QuartermasterWarehouseSupervisor
   name: job-name-alt-qm-3
+  femaleName: job-name-alt-qm-3-f
+  maleName: job-name-alt-qm-3-m
 
 - type: jobAlternateTitle
   id: QuartermasterSupplyForeman
   name: job-name-alt-qm-4
-  femaleName: job-name-alt-qm-4-f
-  maleName: job-name-alt-qm-4-m
 
 - type: jobAlternateTitle
   id: QuartermasterLogisticsCoordinator

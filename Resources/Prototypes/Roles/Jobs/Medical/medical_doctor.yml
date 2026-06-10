@@ -135,6 +135,8 @@
 - type: jobAlternateTitle
   id: MedicalDoctorNurse
   name: job-name-alt-medical-2
+  femaleName: job-name-alt-medical-2-f
+  maleName: job-name-alt-medical-2-m
 
 - type: jobAlternateTitle
   id: MedicalDoctorPhysician

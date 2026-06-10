@@ -113,7 +113,6 @@
     - ForensicScanner
     - ClothingMaskGasSecurity # Goobstation
     - SecHypo # Goobstation
-    - CartridgeEmergency
 
 - type: chameleonOutfit
   id: DetectiveChameleonOutfit

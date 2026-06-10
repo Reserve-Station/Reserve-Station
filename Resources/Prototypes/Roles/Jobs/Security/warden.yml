@@ -191,7 +191,6 @@
     - MagazinePistol
     - ClothingMaskGasSecurity # Goobstation
     - SecHypo # Goobstation
-    - autoInjectorCartridgeCaseSoft
 
 - type: chameleonOutfit
   id: WardenChameleonOutfit

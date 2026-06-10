@@ -130,7 +130,6 @@
     - Flash
     - MagazinePistol
     - SecHypo # Goobstation
-    - CartridgeEmergency
 
 - type: chameleonOutfit
   id: SecurityOfficerChameleonOutfit

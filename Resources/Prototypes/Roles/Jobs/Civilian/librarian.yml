@@ -75,7 +75,6 @@
   access:
   - Service
   - Maintenance
-  - Library
   special: # Goobstation start - Librarian should speak most languages.
   - !type:AddImplantSpecial
     implants: [ LibrarianTranslatorImplant ] # Goobstation end

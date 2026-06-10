@@ -1,14 +1,26 @@
 ﻿job-alt-title-reminder =  Мы не рекомендуем вам использовать звание [color=#33ccff]"{$altTitle}"[/color] в качестве предлога для того, чтобы отказываться от вашей основной работы (ваша должность - [color=#ffffff]{$jobName}[/color]).
 
 job-name-alt-medical-1 = Хирург
-job-name-alt-medical-2 = Медсестра
+job-name-alt-medical-2 = Медбрат
+job-name-alt-medical-2-f = Медсестра
+job-name-alt-medical-2-m = Медбрат
 job-name-alt-medical-3 = Медик
 
 job-name-alt-chemist-1 = Фармацевт
 job-name-alt-chemist-2 = Лаборант
 
 job-name-alt-paramedic-1 = Травматолог
-job-name-alt-paramedic-2 = Фельдшер скорой помощи
+job-name-alt-paramedic-2 = Член поисково-спасательной службы
+
+job-name-alt-qm-1 = Офицер рассмотра заявок
+job-name-alt-qm-2 = Заведующий стойкой
+job-name-alt-qm-2-f = Заведующая стойкой
+job-name-alt-qm-2-m = Заведующий стойкой
+job-name-alt-qm-3 = Начальник склада
+job-name-alt-qm-3-f = Начальница склада
+job-name-alt-qm-3-m = Начальник склада
+job-name-alt-qm-4 = Глава снабжения
+job-name-alt-qm-5 = Координатор логистики
 
 job-name-alt-cargotech-1 = Курьер
 job-name-alt-cargotech-2 = Пилот шаттла
@@ -17,8 +29,11 @@ job-name-alt-cargotech-3 = Специалист по логистике
 job-name-alt-salvage-1 = Утилизатор
 
 job-name-alt-atmos-1 = Специалист по пожаротушению
+job-name-alt-ce-1 = Глава инженерного отдела
+job-name-alt-ce-2 = Инженер-бригадир
+job-name-alt-ce-3 = Технический руководитель
 
-job-name-alt-engineer-1 = Специалист по спецобслуживанию
+job-name-alt-engineer-1 = Специалист по техобслуживанию
 job-name-alt-engineer-2 = Механик
 job-name-alt-engineer-3 = Электрик
 job-name-alt-engineer-4 = Оператор двигателя
@@ -35,7 +50,7 @@ job-name-alt-detective-1 = Судмедэксперт
 
 job-name-alt-assistant-1 = Пассажир
 job-name-alt-assistant-2 = Посетитель
-job-name-alt-assistant-3 = Антрепренёр
+job-name-alt-assistant-3 = Предприниматель
 job-name-alt-assistant-4 = Дежурный экипаж
 
 job-name-alt-bartender-1 = Миксолог
@@ -51,12 +66,14 @@ job-name-alt-chaplain-3 = Хранитель храма
 
 job-name-alt-chef-1 = Су-шеф
 job-name-alt-chef-2 = Раздающий повар
-job-name-alt-chef-3 = Ланч-леди
+job-name-alt-chef-3 = Ланч-мэн
+job-name-alt-chef-3-f = Ланч-леди
+job-name-alt-chef-3-m = Ланч-мэн
 
 job-name-alt-clown-1 = Шут
 job-name-alt-clown-2 = Буффон
 
-job-name-alt-janitor-1 = Прислуга
+job-name-alt-janitor-1 = Домработник
 job-name-alt-janitor-2 = Специалист по техобслуживанию
 job-name-alt-janitor-3 = Специалист по уборке
 
@@ -89,11 +106,11 @@ job-name-alt-boxer-3 = Лайф-тренер
 job-name-alt-boxer-4 = Персональный тренер
 job-name-alt-boxer-5 = Спарринг-партнёр
 
-job-name-alt-psychologist-1 = Терапевт
+job-name-alt-psychologist-1 = Психотерапевт
 job-name-alt-psychologist-2 = Консультант по профориентации
 job-name-alt-psychologist-3 = Психиатр
 
 job-name-alt-zookeeper-1 = Член службы отлова животных
 job-name-alt-zookeeper-2 = Менажерист
-job-name-alt-zookeeper-3 = Ксенобиолог
+job-name-alt-zookeeper-3 = Ксенозоолог
 job-name-alt-zookeeper-4 = Специалист по дикой природе
