@@ -191,7 +191,6 @@
     damageCoefficient: 0.7
   - type: Tag
     tags:
-      - Armor
       - WhitelistChameleon
   - type: Stainable
     clothingVisuals:
