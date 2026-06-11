@@ -51,7 +51,7 @@ job-name-alt-detective-1 = Судмедэксперт
 job-name-alt-assistant-1 = Пассажир
 job-name-alt-assistant-2 = Посетитель
 job-name-alt-assistant-3 = Предприниматель
-job-name-alt-assistant-4 = Дежурный экипаж
+job-name-alt-assistant-4 = Экипаж вне смены
 
 job-name-alt-bartender-1 = Миксолог
 job-name-alt-bartender-2 = Оператор оборудования для регидратации
