@@ -16,7 +16,7 @@
   guides: [ Shadowlings ]
   category: Team
   icon:
-    sprite: _EinsteinEngines/Shadowling/Objectives.rsi
+    sprite: _EinsteinEngines/Shadowling/objectives.rsi
     state: ascendance_icon
 
 - type: antag

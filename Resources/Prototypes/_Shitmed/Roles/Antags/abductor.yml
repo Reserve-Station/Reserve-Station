@@ -23,6 +23,7 @@
   setPreference: true # Reserve edit
   objective: roles-antag-abductor-objective
   category: Team
+  guides: [ Abductors ] # Reserve edit
   icon:
     sprite: _Shitmed/Objects/Weapons/Melee/wonderprod.rsi
     state: icon
@@ -34,6 +35,7 @@
   setPreference: true # Reserve edit
   objective: roles-antag-abductor-objective
   category: Team
+  guides: [ Abductors ] # Reserve edit
   icon:
     sprite: _Shitmed/Objects/Misc/gizmo.rsi
     state: icon
