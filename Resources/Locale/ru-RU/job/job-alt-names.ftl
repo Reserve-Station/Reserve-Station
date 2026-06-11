@@ -40,7 +40,7 @@ job-name-alt-engineer-4 = Оператор двигателя
 
 job-name-alt-scientist-1 = Ксеноархеолог
 job-name-alt-scientist-2 = Исследователь аномалий
-job-name-alt-scientist-3 = Аппаратный техник
+job-name-alt-scientist-3 = Ксенобиолог
 
 job-name-alt-secoff-1 = Смотрящий за коридорами
 
