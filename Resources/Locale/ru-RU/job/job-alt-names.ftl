@@ -71,7 +71,7 @@ job-name-alt-chef-3-f = Ланч-леди
 job-name-alt-chef-3-m = Ланч-мэн
 
 job-name-alt-clown-1 = Шут
-job-name-alt-clown-2 = Буффон
+job-name-alt-clown-2 = Джокер
 
 job-name-alt-janitor-1 = Домработник
 job-name-alt-janitor-2 = Специалист по техобслуживанию
