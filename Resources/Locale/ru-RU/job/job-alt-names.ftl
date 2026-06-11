@@ -73,8 +73,8 @@ job-name-alt-chef-3-m = Ланч-мэн
 job-name-alt-clown-1 = Шут
 job-name-alt-clown-2 = Джокер
 
-job-name-alt-janitor-1 = Домработник
-job-name-alt-janitor-2 = Специалист по техобслуживанию
+job-name-alt-janitor-1 = Дормработник
+job-name-alt-janitor-2 = Сантехник
 job-name-alt-janitor-3 = Специалист по уборке
 
 job-name-alt-lawyer-1 = Юрист
