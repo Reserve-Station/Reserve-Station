@@ -32,10 +32,10 @@ public sealed class AltTitleReminderSystem : EntitySystem
             return;
 
         if (profile.JobAlternateTitles.TryGetValue(jobProto.ID, out var altTitleId) &&
-            _prototype.TryIndex<JobAlternateTitlePrototype>(altTitleId, out var altTitleProto))
+            _prototype.TryIndex(altTitleId, out var altTitleProto))
         {
             var message = _loc.GetString("job-alt-title-reminder",
-                ("altTitle", altTitleProto.LocalizedName),
+                ("altTitle", altTitleProto.LocalizedName(profile.Gender)),
                 ("jobName", jobProto.LocalizedName));
 
             var wrappedMessage = _loc.GetString("chat-manager-server-wrap-message", ("message", message));
