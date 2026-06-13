@@ -9,6 +9,7 @@ job-name-tider = Тайдер
 
 job-name-navyofficer = Офицер ВКФ
 job-name-navy-officer-undercover = Офицер ВКФ под прикрытием
+job-name-special-operations-officer = Офицер спецопераций
 job-name-navycaptain = Капитан ВКФ
 job-name-diplomat = Дипломат
 job-name-inspector = Аудитор Центрального Командования
@@ -34,6 +35,7 @@ JobHecuOperative = Оперативник HECU
 JobNanotrasenCareerTrainer = Карьерный тренер Nanotrasen
 JobNavyOfficer = Офицер ВКФ
 JobNavyOfficerUndercover = Офицер ВКФ под прикрытием
+JobSpecialOperationsOfficer = Офицер спецопераций
 JobNavyCaptain = Капитан ВКФ
 JobDiplomat = Дипломат
 JobGovernmentMan = Джи-мэн

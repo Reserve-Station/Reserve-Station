@@ -13,6 +13,7 @@ job-description-navy-officer = Answer faxes and radio communications directed at
 job-description-diplomat = Represent Central Command, managing relationships with other factions aboard the station. Cleanup the issues the captain has likely caused.
 job-description-navy-special-operations-officer = Send, brief, and direct emergency response teams or other Nanotrasen forces. Release the nuclear codes, or don't.
 job-description-outercommander = An external observer who audits Central Command and applies bureaucratic pressure without direct authority.
+job-description-operations-officer = Send, brief, and direct emergency response teams or other Nanotrasen forces. Release the nuclear codes, or don't.
 
 # Generic Nanotrasen
 
