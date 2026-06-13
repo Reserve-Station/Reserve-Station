@@ -80,6 +80,7 @@
           Quantity: 30
       stain: # Reserve - clothing stains
         maxVol: 5
+  # Reserve start - clothing stains
   - type: Appearance
   - type: Stainable # Reserve
     clothingVisuals:
@@ -96,6 +97,7 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: uniformbloodicon
+  # Reserve end - clothing stains
   - type: Tag
     tags:
     - ClothMade # Reserve
@@ -111,6 +113,7 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
+  # Reserve start - clothing stains
   - type: Stainable
     clothingVisuals:
       jumpsuit:
@@ -126,6 +129,7 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: uniformbloodicon
+  # Reserve end - clothing stains
 
 
 - type: entity
@@ -173,6 +177,7 @@
     foldVerbText: fold-verb-clothing-jacket
   - type: FoldableClothing
     foldedEquippedPrefix: folded
+  # Reserve start - clothing stains
   - type: Stainable
     clothingVisuals:
       jumpsuit:
@@ -188,3 +193,4 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: uniformbloodicon
+  # Reserve end - clothing stains

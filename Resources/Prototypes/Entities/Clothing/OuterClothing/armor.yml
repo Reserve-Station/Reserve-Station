@@ -189,6 +189,7 @@
     knockdownTimeDelta: -2
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.7
+  # Reserve start - clothing stains
   - type: Tag
     tags:
       - WhitelistChameleon
@@ -200,6 +201,7 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: armorbloodicon
+  # Reserve end - clothing stains
 
 #Standard armor vest, allowed for security and bartenders
 - type: entity

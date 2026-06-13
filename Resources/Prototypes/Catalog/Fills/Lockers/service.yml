@@ -154,7 +154,7 @@
       - id: FlashlightLantern
       - id: Plunger
       - id: WireBrush
-      - id: FlatpackWashingMachine
+      - id: FlatpackWashingMachine # Reserve - clothing stains
         amount: 2
 
 - type: entity

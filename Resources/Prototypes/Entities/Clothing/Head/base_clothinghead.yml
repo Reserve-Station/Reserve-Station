@@ -128,14 +128,17 @@
           Quantity: 10
       stain: # Reserve - clothing stains
         maxVol: 5
+  # Reserve start - clothing stains
   - type: ContainerContainer
     containers:
       hidden_slot: !type:ContainerSlot
+  # Reserve end - clothing stains
   - type: Tag
     tags:
     - ClothMade
     - WhitelistChameleon
     - DroneUsable # Goobstation
+  # Reserve start - clothing stains
   - type: Appearance
   - type: Stainable # Reserve
     clothingVisuals:
@@ -145,6 +148,7 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: helmetbloodicon
+  # Reserve end - clothing stains
 
 - type: entity
   abstract: true
@@ -266,8 +270,10 @@
     - Snout
     - HeadTop
     - HeadSide
+  # Reserve start - clothing stains
   - type: StainBlocker
     slots: [MASK]
+  # Reserve end - clothing stains
 
 - type: entity
   abstract: true
@@ -331,8 +337,9 @@
     - HeadTop
     - HeadSide
   - type: FaceHuggerBlocker # Goobstation
+  # Reserve start - clothing stains
   - type: Appearance
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       head:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -342,6 +349,7 @@
       state: helmetbloodicon
   - type: StainBlocker
     slots: [MASK]
+  # Reserve end - clothing stains
 
 - type: entity
   abstract: true
@@ -429,8 +437,9 @@
     - Hair
     - HeadTop
     - HeadSide
+  # Reserve start - clothing stains
   - type: Appearance
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       head:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -438,3 +447,4 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: helmetbloodicon
+  # Reserve end - clothing stains

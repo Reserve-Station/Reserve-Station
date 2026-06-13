@@ -168,8 +168,9 @@
   - type: Sprite
     state: icon
   - type: AllowSuitStorage # DeltaV - allow suit storage for all outer clothing, no whitelist
+  # Reserve start - clothing stains
   - type: Appearance
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -188,6 +189,7 @@
         maxVol: 5
   - type: StainBlocker # Reserve
     slots: [INNERCLOTHING]
+  # Reserve end - clothing stains
 
 - type: entity
   abstract: true

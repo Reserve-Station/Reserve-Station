@@ -70,9 +70,11 @@
           Quantity: 10
       stain: # Reserve - clothing stains
         maxVol: 5
+  # Reserve start - clothing stains
   - type: TemperatureProtection
     heatingCoefficient: 1
     coolingCoefficient: 0.95
+  # Reserve end - clothing stains
   - type: Tag
     tags:
     - ClothMade
@@ -87,6 +89,7 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
+  # Reserve start - clothing stains
   - type: Appearance
   - type: Stainable # Reserve
     clothingVisuals:
@@ -96,6 +99,7 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: shoebloodicon
+  # Reserve end - clothing stains
 
 - type: entity
   abstract: true
