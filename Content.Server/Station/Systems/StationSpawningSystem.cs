@@ -237,17 +237,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         entity ??= Spawn(species.Prototype, coordinates);
 
-        if (profile != null)
-        {
-            _humanoidSystem.LoadProfile(entity.Value, profile);
-            _metaSystem.SetEntityName(entity.Value, profile.Name);
-
-            if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
-            {
-                AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
-            }
-        }
-
         if (loadout != null)
         {
             EquipRoleLoadout(entity.Value, loadout, roleProto!);
