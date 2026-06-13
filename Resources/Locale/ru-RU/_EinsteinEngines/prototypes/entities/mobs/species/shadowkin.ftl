@@ -1,4 +1,6 @@
 ent-MobShadowkinBase = Урист МакШэдоу
     .desc = { ent-BaseMobSpeciesOrganic.desc }
-ent-MobShadowkinDummy = { ent-MobHumanDummy }
-    .desc = Фиктивное порождение тьмы, предназначенное для использования при настройке персонажа.
+    .suffix = { species-name-shadowkin }
+ent-MobShadowkinDummy = манекен { ent-MobShadowkinBase }
+    .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-shadowkin }

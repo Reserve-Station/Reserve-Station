@@ -1,0 +1,39 @@
+ent-PartXenomorph = { ent-BasePart }
+    .desc = { ent-BasePart.desc }
+    .suffix = { roles-antag-xenomorph-name }
+
+ent-ChestXenomorph = { ent-BaseChest }
+    .desc = { ent-BaseChest.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+ent-GroinXenomorph = { ent-BaseGroin }
+    .desc = { ent-BaseGroin.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+ent-HeadXenomorph = { ent-BaseHead }
+    .desc = { ent-BaseHead.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+
+ent-LeftArmXenomorph = { ent-BaseLeftArm }
+    .desc = { ent-BaseLeftArm.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+ent-RightArmXenomorph = { ent-BaseRightArm }
+    .desc = { ent-BaseRightArm.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+ent-LeftHandXenomorph = { ent-BaseLeftHand }
+    .desc = { ent-BaseLeftHand.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+ent-RightHandXenomorph = { ent-BaseRightHand }
+    .desc = { ent-BaseRightHand.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+
+ent-LeftLegXenomorph = { ent-BaseLeftLeg }
+    .desc = { ent-BaseLeftLeg.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+ent-RightLegXenomorph = { ent-BaseRightLeg }
+    .desc = { ent-BaseRightLeg.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+ent-LeftFootXenomorph = { ent-BaseLeftFoot }
+    .desc = { ent-BaseLeftFoot.desc }
+    .suffix = { ent-PartXenomorph.suffix }
+ent-RightFootXenomorph = { ent-BaseRightFoot }
+    .desc = { ent-BaseRightFoot.desc }
+    .suffix = { ent-PartXenomorph.suffix }

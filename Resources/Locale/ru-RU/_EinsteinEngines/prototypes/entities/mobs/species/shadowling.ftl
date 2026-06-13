@@ -1,6 +1,9 @@
-ent-BaseMobShadowling = Урист МакСлинг
-
-ent-MobShadowlingDummy = { ent-BaseSpeciesDummy }
+ent-BaseMobShadowling = Урист МакТенеморф
+    .desc = { ent-BaseMobSpeciesOrganic.desc }
+    .suffix = { species-name-shadowling }
+ent-MobShadowlingDummy = манекен { ent-BaseMobShadowling }
     .desc = { ent-BaseSpeciesDummy.desc }
-
+    .suffix = { species-name-shadowling }
 ent-MobShadowling = { ent-BaseMobShadowling }
+    .desc = { ent-BaseMobShadowling.desc }
+    .suffix = { species-name-shadowling }

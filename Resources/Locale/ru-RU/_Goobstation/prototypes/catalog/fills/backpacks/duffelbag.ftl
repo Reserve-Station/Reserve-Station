@@ -17,3 +17,5 @@ ent-ClothingBackpackDuffelSyndicateFilledHE1SG8 = набор ВР1А-Р4Я
 ent-ClothingBackpackDuffelContractorHardsuitBundle = набор скафандра контрактника
     .desc = Содержит одобренный Гильдией защитный скафандр.
     .suffix = Синдикат
+ent-ClothingBackpackDuffelTennisGame = набор для игры в теннис
+    .desc = Содержит всё что нужно чтобы начать теннисный матч!

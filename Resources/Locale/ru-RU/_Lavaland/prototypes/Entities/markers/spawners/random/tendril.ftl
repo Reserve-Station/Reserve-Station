@@ -1,5 +1,5 @@
 ent-SpawnerRandomTendrilLavaland = порождатель тендриля
-    .suffix = Лаваланд
+    .suffix = Лаваленд
     .desc = { ent-MarkerBase.desc }
 ent-LavalandRandomTendrilSpawner = случайный тендриль
     .suffix = Лаваленд

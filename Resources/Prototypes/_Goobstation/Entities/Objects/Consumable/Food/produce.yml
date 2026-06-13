@@ -116,3 +116,9 @@
     tags:
     - Fruit
     - Vegetable
+  # Reserve edit start: Orchid's Garden - Tidy Kitchen
+  # Can be sliced
+  - type: SliceableFood
+    count: 4
+    slice: FoodBluespaceTomatoSlice
+  # Reserve edit end: Orchid's Garden - Tidy Kitchen

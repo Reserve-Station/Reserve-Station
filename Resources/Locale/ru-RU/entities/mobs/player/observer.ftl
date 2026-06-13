@@ -57,3 +57,22 @@ ent-MobObserverMouse = { ent-MobObserver }
     .desc = { ent-MobObserver.desc }
 ent-MobObserverParrot = { ent-MobObserver }
     .desc = { ent-MobObserver.desc }
+
+# Custom ghosts - personal
+
+ent-MobObserverCkeyPlaceholder = { ent-MobObserver }
+    .desc = { ent-MobObserver.desc }
+ent-MobObserverCkeyCa4tuk = { ent-MobObserver }
+    .desc = { ent-MobObserver.desc }
+ent-MobObserverCkeySvarshik = { ent-MobObserver }
+    .desc = { ent-MobObserver.desc }
+ent-MobObserverCkeyFXX = { ent-MobObserver }
+    .desc = { ent-MobObserver.desc }
+ent-MobObserverCkeyAlreadyTaken = { ent-MobObserver }
+    .desc = { ent-MobObserver.desc }
+ent-MobObserverCkeyPZAKusik = { ent-MobObserver }
+    .desc = { ent-MobObserver.desc }
+ent-MobObserverCkeyThxMqninq = { ent-MobObserver }
+    .desc = { ent-MobObserver.desc }
+ent-MobObserverCkeyPerlovkaIsMyName = { ent-MobObserver }
+    .desc = { ent-MobObserver.desc }

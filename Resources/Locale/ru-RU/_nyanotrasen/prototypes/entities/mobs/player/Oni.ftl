@@ -1,2 +1,3 @@
-ent-MobOni = Урист МакОни
+ent-MobOni = { ent-MobOniBase }
     .desc = { ent-MobOniBase.desc }
+    .suffix = { species-name-oni }

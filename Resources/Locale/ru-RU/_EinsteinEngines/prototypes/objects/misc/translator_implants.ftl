@@ -52,3 +52,6 @@ ent-SchechiTranslatorImplanter = имплантер
 ent-NewKinPidginTranslatorImplanter = имплантер
     .suffix = Переводчик Ка'ракк
     .desc = { ent-BaseTranslatorImplanter.desc }
+ent-GruntishTranslatorImplanter = имплантер
+    .suffix = Переводчик Ворчливый
+    .desc = { ent-BaseTranslatorImplanter.desc }

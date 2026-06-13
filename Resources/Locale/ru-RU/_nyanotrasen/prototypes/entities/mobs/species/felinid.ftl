@@ -1,4 +1,6 @@
 ent-MobFelinidBase = Урист МакФелинид
     .desc = { ent-BaseMobHuman.desc }
-ent-MobFelinidDummy = Урист МакФеленид
-    .desc = Манекен фелинида, предназначенная для настройки персонажа.
+    .suffix = { species-name-felinid }
+ent-MobFelinidDummy = манекен { ent-MobFelinidBase }
+    .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-felinid }

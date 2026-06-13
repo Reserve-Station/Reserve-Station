@@ -9,5 +9,5 @@ ent-ClothingModsuitChestplateResponsorySecurity = нагрудный щиток 
 ent-ClothingModsuitBootsResponsorySecurity = защитные сапоги модульного костюма Службы Безопасности
     .desc = Ультрасовременная пара ботинок для модульного костюма Службы Безопасности
 ent-SuitStorageResponsorySecurity = { ent-SuitStorageBase }
-    .suffix = Защитный костюм для обеспечения безопасности
+    .suffix = Модсьют службы безопасности
     .desc = { ent-SuitStorageBase.desc }

@@ -34,3 +34,5 @@ ent-ClothingBackpackSatchelSalvage = сумка шахтёра
     .desc = Прочная сумка для хранения добычи.
 ent-ClothingBackpackSatchelHolding = бездонная сумка
     .desc = Сумка, открывающаяся в локальный карман блюспейса.
+ent-ClothingBackpackSatchelAdmin = бездонная сумка администрации
+    .desc = Если ты каким-то образом нашел это, то нет, не нашел.

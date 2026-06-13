@@ -1,10 +1,15 @@
 ent-XenoTunnel = туннель
     .desc = Вход в туннель. Похоже, его вырыло какое-то когтистое существо.
+    .suffix = { roles-antag-xenomorph-name }
 ent-XenoTunnelMaint = технический люк
     .desc = Вход в технический туннель. Внутри видны куски слизи и смолы. Обломки мешают подойти ближе.
+    .suffix = { roles-antag-xenomorph-name }
 ent-XenoTunnelMaintNoXenoDesc = технический люк
     .desc = Вход в технический туннель. Обломки мешают подойти ближе.
+    .suffix = { roles-antag-xenomorph-name }
 ent-XenoTunnelMaintHybrisa = канализационный люк
     .desc = { ent-XenoTunnelMaint.desc }
+    .suffix = { roles-antag-xenomorph-name }
 ent-XenoTunnelMaintHybrisaNoXenoDesc = канализационный люк
     .desc = { ent-XenoTunnelMaintNoXenoDesc.desc }
+    .suffix = { roles-antag-xenomorph-name }

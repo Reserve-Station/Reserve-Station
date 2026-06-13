@@ -216,6 +216,12 @@
     damage:
       types:
         Blunt: 0
+  # Reserve edit start: Orchid's Garden - Tidy Kitchen
+  # Can be recycled
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 50
+  # Reserve edit end: Orchid's Garden - Tidy Kitchen
 
 - type: entity
   abstract: true

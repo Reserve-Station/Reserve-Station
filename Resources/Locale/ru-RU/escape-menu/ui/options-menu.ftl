@@ -359,8 +359,8 @@ ui-options-function-target-left-hand = Левая ладонь
 ui-options-function-target-right-hand = Правая ладонь
 ui-options-function-target-left-leg = Левая нога
 ui-options-function-target-right-leg = Правая нога
-ui-options-function-target-left-foot = Левая ступня
-ui-options-function-target-right-foot = Правая ступня
+ui-options-function-target-left-foot = Левая стопа
+ui-options-function-target-right-foot = Правая стопа
 
 ui-options-admin-player-panel = Список персонажей в админ меню
 

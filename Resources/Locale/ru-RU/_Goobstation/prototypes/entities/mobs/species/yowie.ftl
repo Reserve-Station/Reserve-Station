@@ -1,4 +1,6 @@
-ent-BaseMobYowie = Урист МакЙоуи
+ent-BaseMobYowie = Урист МакЙоу
     .desc = { ent-BaseMobSpeciesOrganic.desc }
-ent-MobYowieDummy = { ent-BaseSpeciesDummy }
+    .suffix = { species-name-yowie }
+ent-MobYowieDummy = манекен { ent-BaseMobYowie }
     .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-yowie }

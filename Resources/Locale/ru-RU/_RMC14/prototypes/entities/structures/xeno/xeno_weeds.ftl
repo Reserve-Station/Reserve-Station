@@ -1,10 +1,15 @@
 ent-XenoWeeds = сорняки
     .desc = Странные чёрные сорняки…
+    .suffix = { roles-antag-xenomorph-name }
 ent-XenoWeedsSource = узел сорняка
     .desc = Странный пульсирующий узел
+    .suffix = { roles-antag-xenomorph-name }
 ent-XenoWeedsWall = сорняки
     .desc = { "" }
+    .suffix = { roles-antag-xenomorph-name }
 ent-XenoHardyWeeds = { ent-XenoWeeds }
     .desc = { ent-XenoWeeds.desc }
+    .suffix = { roles-antag-xenomorph-name }
 ent-XenoHardyWeedsSource = узел выносливого сорняка
     .desc = Странный пульсирующий узел
+    .suffix = { roles-antag-xenomorph-name }

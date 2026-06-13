@@ -19,3 +19,5 @@ ent-GasPipeFourway = { ent-GasPipeBase }
     .desc = { ent-GasPipeBase.desc }
 ent-GasPipeBroken = сломанная труба
     .desc = Раньше в ней содержался газ.
+ent-GasPipeManifold = труба-коннектор
+    .desc = Позволяет соединять между собой газопроводы различной конфигурации.

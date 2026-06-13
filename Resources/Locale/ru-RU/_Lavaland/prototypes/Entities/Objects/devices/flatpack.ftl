@@ -1,2 +1,2 @@
-ent-GatewayFlatpackLavaland = упакованные врата лавалэнда
+ent-GatewayFlatpackLavaland = упакованные врата лаваленда
     .desc = Содержит врата переноса в Лаваленд.

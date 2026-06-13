@@ -1,6 +1,6 @@
 ent-ScryingOrbBase = { "" }
-    .suffix = Маг
     .desc = { "" }
+    .suffix = Волшебник
 ent-PonderingOrbWizard = сфера для размышлений
     .desc = Обдумайте свои планы относительно станции с помощью этого дальнозоркого артефакта.
 ent-ScryingOrbWizard = сфера для любования

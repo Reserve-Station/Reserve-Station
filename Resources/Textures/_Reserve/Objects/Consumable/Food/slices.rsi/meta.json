@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-4.0",
+    "copyright": "Made by Ceterai on GitHub.",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        { "name": "apple" },
+        { "name": "golden_apple" },
+        { "name": "banana" },
+        { "name": "mimana" },
+        { "name": "mango" },
+        { "name": "lemon" },
+        { "name": "lemoon" },
+        { "name": "lime" },
+        { "name": "orange" },
+        { "name": "carrot" },
+        { "name": "cabbage" },
+        { "name": "corn" },
+        { "name": "eggplant" },
+        { "name": "garlic" },
+        { "name": "potato" },
+        { "name": "tomato" },
+        { "name": "blood_tomato" },
+        { "name": "blue_tomato" },
+        { "name": "bluespace_tomato" },
+        { "name": "pumpkin" },
+        { "name": "blue_pumpkin" }
+    ]
+}

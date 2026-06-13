@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   name: mango
   parent: FoodProduceBase
@@ -36,3 +40,10 @@
     entries:
       Taco: FSE_Mango
       Burger: FSE_MangoBurger
+      Skewer: FSE_Mango  # Reserve edit: Orchid's Garden - Tidy Kitchen
+  # Reserve edit start: Orchid's Garden - Tidy Kitchen
+  # Can be sliced
+  - type: SliceableFood
+    count: 4
+    slice: FoodMangoSlice
+  # Reserve edit end: Orchid's Garden - Tidy Kitchen

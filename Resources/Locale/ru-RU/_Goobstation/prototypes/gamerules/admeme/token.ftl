@@ -16,3 +16,6 @@ ent-TokenLoneAbductorSpawn = { ent-LoneAbductorSpawn }
     .desc = { ent-LoneAbductorSpawn.desc }
 ent-TokenWizard = { ent-WizardMidround }
     .desc = { ent-WizardMidround.desc }
+ent-TokenAncientRogueKingSpawn = { ent-AncientRogueKingToken }
+    .desc = { ent-AncientRogueKingToken.desc }
+    .suffix = Токен, Восставший король

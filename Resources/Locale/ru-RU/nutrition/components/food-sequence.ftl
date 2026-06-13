@@ -2,7 +2,7 @@ food-sequence-no-space = Вы не можете положить больше!
 
 # GENERAL
 
-food-sequence-content-chicken = курицой
+food-sequence-content-chicken = курицей
 food-sequence-content-duck = уткой
 food-sequence-content-crab = крабом
 food-sequence-content-dragon = драконом
@@ -14,7 +14,7 @@ food-sequence-content-salami = салями
 food-sequence-content-slime = слаймом
 food-sequence-content-clown = клоуном
 food-sequence-content-pea = бобами
-food-sequence-content-world-pea = world pea
+food-sequence-content-world-pea = горохом мира
 food-sequence-content-bungo = бунго
 food-sequence-content-banana = бананом
 food-sequence-content-mimana = миманом
@@ -54,7 +54,7 @@ food-sequence-content-lizard = мясой ящерицы
 food-sequence-content-plant = мясом растения
 food-sequence-content-rotten = гнилым мясом
 food-sequence-content-spider = паучьими ножками
-food-sequence-content-carrot = морквой
+food-sequence-content-carrot = морковью
 food-sequence-content-cabbage = капустой
 food-sequence-content-garlic = чесноком
 food-sequence-content-pineapple = ананасом
@@ -65,7 +65,7 @@ food-sequence-content-glasstle = стеклополохом
 food-sequence-content-gatfruit = гатфруктом
 food-sequence-content-koibean = коибобами
 food-sequence-content-watermelon = арбузом
-food-sequence-content-holymelon = holymelon
+food-sequence-content-holymelon = святым арбузом
 food-sequence-content-cannabis = коноплёй
 food-sequence-content-rainbow-cannabis = радужной коноплёй
 food-sequence-content-tobacco = табаком
@@ -77,6 +77,14 @@ food-sequence-content-spacemans-trumpet = космической трубкой
 food-sequence-content-cherry = вишней
 food-sequence-content-snail = улиткой
 food-sequence-content-anomaly-berry = аномальной ягодой
+food-sequence-content-golden-apple = золотым яблоком
+food-sequence-content-eggplant = баклажаном
+food-sequence-content-blue-tomato = синим томатом
+food-sequence-content-blood-tomato = кровяным томатом
+food-sequence-content-bluespace-tomato = блюспейс томатом
+food-sequence-content-pumpkin = тыквой
+food-sequence-content-blue-pumpkin = синетыквой
+food-sequence-content-laughin-pea = смешным горошком
 
 # BURGERS
 
@@ -94,7 +102,7 @@ food-sequence-burger-content-lizard = ящеро
 food-sequence-burger-content-plant = растене
 food-sequence-burger-content-rotten = мусоро
 food-sequence-burger-content-spider = паутино
-food-sequence-burger-content-carrot = моркво
+food-sequence-burger-content-carrot = морково
 food-sequence-burger-content-cabbage = капусто
 food-sequence-burger-content-garlic = чесно
 food-sequence-burger-content-pineapple = ананасо
@@ -119,6 +127,24 @@ food-sequence-burger-content-spacemans-trumpet = космотрубо
 food-sequence-burger-content-anomaly-berry = аномо
 food-sequence-burger-content-extradimensional-orange = три-дэ
 food-sequence-burger-content-world-pea = миро
+food-sequence-burger-content-apple = ябло
+food-sequence-burger-content-golden-apple = золо
+food-sequence-burger-content-banana = банано
+food-sequence-burger-content-mimana = мимано
+food-sequence-burger-content-lemon = лимо
+food-sequence-burger-content-lemoon = лилу
+food-sequence-burger-content-lime = лаймо
+food-sequence-burger-content-orange = апель
+food-sequence-burger-content-corn = кукурузо
+food-sequence-burger-content-eggplant = бакло
+food-sequence-burger-content-tomato = томато
+food-sequence-burger-content-blue-tomato = синетомато
+food-sequence-burger-content-blood-tomato = кроветомато
+food-sequence-burger-content-bluespace-tomato = блюспейстомато
+food-sequence-burger-content-potato = карто
+food-sequence-burger-content-pumpkin = тыкво
+food-sequence-burger-content-blue-pumpkin = синетыкво
+food-sequence-burger-content-laughin-pea = смехо
 
 # TACO
 

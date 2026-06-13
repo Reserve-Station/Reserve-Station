@@ -1,0 +1,9 @@
+ent-MobHivebot = ульебот
+    .desc = Механизированный вредитель.
+    .suffix = ИИ, Ксеноморф
+ent-MobHivebotRanged = { ent-MobHivebot }
+    .desc = { ent-MobHivebot.desc } У этого есть оружие.
+    .suffix = { ent-MobHivebot.suffix }, Дальний
+ent-MobHivebotStrong = сильный { ent-MobHivebot }
+    .desc = { ent-MobHivebot.desc } Этот кажется сильнее, чем обычно.
+    .suffix = { ent-MobHivebotRanged.suffix }

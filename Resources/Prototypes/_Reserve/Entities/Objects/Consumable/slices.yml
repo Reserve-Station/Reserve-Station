@@ -1,0 +1,443 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Apple
+
+- type: entity
+  parent: FoodPineappleSlice
+  id: FoodAppleSlice
+  name: apple slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - apple
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: apple
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceApple
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: AppleSliceBurger
+      Taco: AppleSlice
+      Skewer: AppleSlice
+
+- type: entity
+  parent: FoodAppleSlice
+  id: FoodGoldenAppleSlice
+  name: golden apple slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - apple
+      - metallic
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: golden_apple
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceApple
+        Quantity: 2.5
+      - ReagentId: Gold
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: GoldenAppleSliceBurger
+      Taco: GoldenAppleSlice
+      Skewer: GoldenAppleSlice
+
+# endregion
+
+# region Banana
+
+- type: entity
+  parent: FoodPineappleSlice
+  id: FoodBananaSlice
+  name: banana slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - banana
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: banana
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBanana
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: BananaSliceBurger
+      Taco: BananaSlice
+      Skewer: BananaSlice
+
+- type: entity
+  parent: FoodPineappleSlice
+  id: FoodMimanaSlice
+  name: mimana slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - banana
+      - nothing
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: mimana
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBanana
+        Quantity: 2.5
+      - ReagentId: Nothing
+        Quantity: 1.25
+  - type: FoodSequenceElement
+    entries:
+      Burger: MimanaSliceBurger
+      Taco: MimanaSlice
+      Skewer: MimanaSlice
+
+# endregion
+
+# region Citrus
+
+- type: entity
+  parent: FoodPineappleSlice
+  id: FoodLemonSlice
+  name: lemon slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sour
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: lemon
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceLemon
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: LemonSliceBurger
+      Taco: LemonSlice
+      Skewer: LemonSlice
+
+- type: entity
+  parent: FoodLemonSlice
+  id: FoodLemoonSlice
+  name: lemoon slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - lemoon
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: lemoon
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Sake
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: LemoonSliceBurger
+      Taco: LemoonSlice
+      Skewer: LemoonSlice
+
+- type: entity
+  parent: FoodLemonSlice
+  id: FoodLimeSlice
+  name: lime slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sour
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: lime
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceLime
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: LimeSliceBurger
+      Taco: LimeSlice
+      Skewer: LimeSlice
+
+- type: entity
+  parent: FoodLemonSlice
+  id: FoodOrangeSlice
+  name: orange slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - orange
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: orange
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceOrange
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: OrangeSliceBurger
+      Taco: OrangeSlice
+      Skewer: OrangeSlice
+
+# endregion
+
+# region Mango
+
+- type: entity
+  parent: FoodLemonSlice
+  id: FoodMangoSlice
+  name: mango slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - fruity
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: mango
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceMango
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: MangoSliceBurger
+      Taco: MangoSlice
+      Skewer: MangoSlice
+
+# endregion
+
+# region Veggie
+
+- type: entity
+  parent: FoodOnionSlice
+  id: FoodCarrotSlice
+  name: carrot slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - carrot
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: carrot
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceCarrot
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: CarrotSliceBurger
+      Taco: CarrotSlice
+      Skewer: CarrotSlice
+
+- type: entity
+  parent: FoodOnionSlice
+  id: FoodCabbageSlice
+  name: cabbage slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cabbage
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: cabbage
+  - type: FoodSequenceElement
+    entries:
+      Burger: CabbageSliceBurger
+      Taco: CabbageSlice
+      Skewer: CabbageSlice
+
+- type: entity
+  parent: FoodOnionSlice
+  id: FoodCornSlice
+  name: corn slicing
+  components:
+  - type: FlavorProfile
+    flavors:
+      - corn
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: corn
+  - type: FoodSequenceElement
+    entries:
+      Burger: CornSliceBurger
+      Taco: CornSlice
+
+- type: entity
+  parent: FoodOnionSlice
+  id: FoodEggplantSlice
+  name: eggplant slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - eggplant
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: eggplant
+  - type: FoodSequenceElement
+    entries:
+      Burger: EggplantSliceBurger
+      Taco: EggplantSlice
+      Skewer: EggplantSlice
+
+- type: entity
+  parent: FoodOnionSlice
+  id: FoodGarlicSlice
+  name: garlic slicing
+  components:
+  - type: FlavorProfile
+    flavors:
+      - garlic
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: garlic
+  - type: FoodSequenceElement
+    entries:
+      Burger: GarlicSliceBurger
+      Taco: GarlicSlice
+
+- type: entity
+  parent: FoodOnionSlice
+  id: FoodPotatoSlice
+  name: potato slicing
+  components:
+  - type: FlavorProfile
+    flavors:
+      - potatoes
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: potato
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuicePotato
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: PotatoSliceBurger
+      Taco: PotatoSlice
+
+# endregion
+
+# region Tomato
+
+- type: entity
+  parent: FoodOnionSlice
+  id: FoodTomatoSlice
+  name: tomato slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - tomato
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: tomato
+  - type: FoodSequenceElement
+    entries:
+      Burger: TomatoSliceBurger
+      Taco: TomatoSlice
+      Skewer: TomatoSlice
+
+- type: entity
+  parent: FoodTomatoSlice
+  id: FoodBloodTomatoSlice
+  name: blood tomato slice
+  components:
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: blood_tomato
+  - type: FoodSequenceElement
+    entries:
+      Burger: BloodTomatoSliceBurger
+      Taco: BloodTomatoSlice
+      Skewer: BloodTomatoSlice
+
+- type: entity
+  parent: FoodTomatoSlice
+  id: FoodBlueTomatoSlice
+  name: blue tomato slice
+  components:
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: blue_tomato
+  - type: FoodSequenceElement
+    entries:
+      Burger: BlueTomatoSliceBurger
+      Taco: BlueTomatoSlice
+      Skewer: BlueTomatoSlice
+
+- type: entity
+  parent: FoodBlueTomatoSlice
+  id: FoodBluespaceTomatoSlice
+  name: bluespace tomato slice
+  components:
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: bluespace_tomato
+  - type: FoodSequenceElement
+    entries:
+      Burger: BluespaceTomatoSliceBurger
+      Taco: BluespaceTomatoSlice
+      Skewer: BluespaceTomatoSlice
+
+# endregion
+
+# region Pumpkin
+
+- type: entity
+  parent: FoodOnionSlice
+  id: FoodPumpkinSlice
+  name: pumpkin slicing
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pumpkin
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: pumpkin
+  - type: FoodSequenceElement
+    entries:
+      Burger: PumpkinSliceBurger
+      Taco: PumpkinSlice
+      Skewer: PumpkinSlice
+
+- type: entity
+  parent: FoodOnionSlice
+  id: FoodBluePumpkinSlice
+  name: blue pumpkin slice
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bluepumpkin
+  - type: Sprite
+    sprite: _Reserve/Objects/Consumable/Food/slices.rsi
+    state: blue_pumpkin
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuiceBluePumpkin
+        Quantity: 2.5
+  - type: FoodSequenceElement
+    entries:
+      Burger: BluePumpkinSliceBurger
+      Taco: BluePumpkinSlice
+      Skewer: BluePumpkinSlice
+
+# endregion

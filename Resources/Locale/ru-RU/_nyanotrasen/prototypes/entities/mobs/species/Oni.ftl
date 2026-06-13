@@ -1,4 +1,6 @@
 ent-MobOniBase = Урист МакОни
     .desc = { ent-BaseMobHuman.desc }
-ent-MobOniDummy = Урист МакОни
-    .desc = Манекен Они, предназначенная для настройки персонажа.
+    .suffix = { species-name-oni }
+ent-MobOniDummy = манекен { ent-MobOniBase }
+    .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-oni }
