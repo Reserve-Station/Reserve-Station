@@ -88,6 +88,7 @@
     inverted: true
     species:
     - Plasmaman
+  # Reserve - antag UI
   category: Solo
   icon:
     sprite: Objects/Weapons/Melee/energykatana.rsi

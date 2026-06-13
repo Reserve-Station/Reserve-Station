@@ -18,14 +18,15 @@
   setPreference: true
   objective: roles-antag-rev-head-objective
   guides: [ Revolutionaries ]
-  category: Team
-  icon:
-    sprite: Objects/Weapons/Melee/flash.rsi
-    state: flash
   requirements:
   - !type:DepartmentTimeRequirement # was  - !type:OverallPlaytimeRequirement, Goob change
       department: Command
       time: 36000 # 10h
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: Objects/Weapons/Melee/flash.rsi
+    state: flash
 
 - type: antag
   id: Rev

@@ -24,6 +24,7 @@
     inverted: true
     species:
     - Plasmaman
+  # Reserve - antag UI
   category: Solo
   icon:
     sprite: Objects/Misc/bureaucracy.rsi

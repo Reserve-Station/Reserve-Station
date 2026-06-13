@@ -100,10 +100,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-objective
-  category: Team
-  icon:
-    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
-    state: nuclearoperative
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 36000 # 10 hours - Goobstation
@@ -115,6 +111,11 @@
     species:
     - Plasmaman
   guides: [ NuclearOperatives ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: nuclearoperative
 
 - type: antag
   id: NukeopsMedic
@@ -122,10 +123,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-agent-objective
-  category: Team
-  icon:
-    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
-    state: nuclearoperativeagent
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 90000 # 25 hours - Goobstation
@@ -140,6 +137,11 @@
     species:
     - Plasmaman
   guides: [ NuclearOperatives ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: nuclearoperativeagent
 
 - type: antag
   id: NukeopsCommander
@@ -147,10 +149,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-nuclear-operative-commander-objective
-  category: Team
-  icon:
-    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
-    state: nuclearoperativecommander
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 144000 # 40 hours - Goobstation
@@ -166,6 +164,11 @@
     species:
     - Plasmaman
   guides: [ NuclearOperatives ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: nuclearoperativecommander
 
 - type: startingGear
   id: SyndicateOperativeGearFullNoUplink

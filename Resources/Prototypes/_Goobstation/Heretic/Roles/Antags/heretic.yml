@@ -18,8 +18,9 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 54000 # 15h
-  category: Solo
   guides: [ Heretics ]
+  # Reserve - antag UI
+  category: Solo
   icon:
     sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
     state: heretic

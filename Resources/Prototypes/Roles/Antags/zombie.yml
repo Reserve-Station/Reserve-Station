@@ -15,10 +15,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-initial-infected-objective
-  category: Team
-  icon:
-    sprite: Structures/Wallmounts/signs.rsi
-    state: biohazard
   requirements:
   - !type:SpeciesRequirement
     inverted: true
@@ -26,6 +22,11 @@
     - IPC
     - Plasmaman
   guides: [ Zombies ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: Structures/Wallmounts/signs.rsi
+    state: biohazard
 
 - type: antag
   id: Zombie

@@ -10,6 +10,7 @@
   antagonist: true
   setPreference: false # Reserve edit
   objective: roles-antag-dragon-objective
+  # Reserve - antag UI
   category: Solo
   icon:
     sprite: Mobs/Aliens/Carps/dragon.rsi

@@ -41,6 +41,7 @@
     species:
     - Plasmaman
   guides: [ Wizard ]
+  # Reserve - antag UI
   category: Solo
   icon:
     sprite: _Funkystation/Interface/Lobby/AntagCards.rsi

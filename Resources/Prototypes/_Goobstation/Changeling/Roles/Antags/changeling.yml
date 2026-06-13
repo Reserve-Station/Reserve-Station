@@ -15,7 +15,6 @@
   antagonist: true
   setPreference: true
   objective: roles-antag-changeling-description
-  category: Team
   requirements:
   - !type:OverallPlaytimeRequirement
       time: 36000 #10 hrs
@@ -25,6 +24,8 @@
     - IPC
     - Plasmaman
   guides: [ Changelings ]
+  # Reserve - antag UI
+  category: Solo
   icon:
     sprite: Objects/Weapons/Melee/armblade.rsi
     state: icon
