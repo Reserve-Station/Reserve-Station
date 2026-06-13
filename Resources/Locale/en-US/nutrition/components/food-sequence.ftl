@@ -89,6 +89,14 @@ food-sequence-content-spacemans-trumpet = spaceman's trupmet
 food-sequence-content-cherry = cherry
 food-sequence-content-snail = snail
 food-sequence-content-anomaly-berry = anomaly berry
+food-sequence-content-golden-apple = golden apple
+food-sequence-content-eggplant = eggplant
+food-sequence-content-blue-tomato = blue tomato
+food-sequence-content-blood-tomato = blood tomato
+food-sequence-content-bluespace-tomato = bluespace tomato
+food-sequence-content-pumpkin = pumpkin
+food-sequence-content-blue-pumpkin = blue pumpkin
+food-sequence-content-laughin-pea = laughin pea
 
 # BURGERS
 
@@ -132,6 +140,24 @@ food-sequence-burger-content-spacemans-trumpet = spacetrump
 food-sequence-burger-content-anomaly-berry = anom
 food-sequence-burger-content-extradimensional-orange = 3d
 food-sequence-burger-content-world-pea = peace
+food-sequence-burger-content-apple = apple
+food-sequence-burger-content-golden-apple = gold
+food-sequence-burger-content-banana = banana
+food-sequence-burger-content-mimana = mimana
+food-sequence-burger-content-lemon = lemo
+food-sequence-burger-content-lemoon = lemoo
+food-sequence-burger-content-lime = lime
+food-sequence-burger-content-orange = oran
+food-sequence-burger-content-corn = corn
+food-sequence-burger-content-eggplant = eggplanto
+food-sequence-burger-content-tomato = tomato
+food-sequence-burger-content-blue-tomato = bluetomato
+food-sequence-burger-content-blood-tomato = bloodtomato
+food-sequence-burger-content-bluespace-tomato = bluespacetomato
+food-sequence-burger-content-potato = potato
+food-sequence-burger-content-pumpkin = pumpkin
+food-sequence-burger-content-blue-pumpkin = blue
+food-sequence-burger-content-laughin-pea = laugh
 
 # COTTON BURGERS
 

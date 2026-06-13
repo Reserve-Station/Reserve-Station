@@ -1,9 +1,9 @@
 ent-DefaultStationBeaconNoWarpPoints = { ent-DefaultStationBeacon }
     .desc = { ent-DefaultStationBeacon.desc }
-    .suffix = Лавалэнд, { ent-DefaultStationBeacon.suffix }
+    .suffix = Лаваленд, { ent-DefaultStationBeacon.suffix }
 ent-DefaultStationBeaconLavalandRuin = { ent-DefaultStationBeaconNoWarpPoints }
     .desc = { ent-DefaultStationBeaconNoWarpPoints.desc }
-    .suffix = Лавалэнд, Руины
+    .suffix = Лаваленд, Руины
 
 ent-DefaultStationBeaconRuinAbductor = { ent-DefaultStationBeaconNoWarpPoints }
     .desc = { ent-DefaultStationBeaconNoWarpPoints.desc }

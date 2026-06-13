@@ -1,4 +1,6 @@
 ent-BaseMobTajaran = Урист МакТаяран
     .desc = { ent-BaseMobSpeciesOrganic.desc }
-ent-MobTajaranDummy = Урист МакТаяран
-    .desc = Кукла таярана, предназначенная для использования при настройке персонажа.
+    .suffix = { species-name-tajaran }
+ent-MobTajaranDummy = манекен { ent-BaseMobTajaran }
+    .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-tajaran }

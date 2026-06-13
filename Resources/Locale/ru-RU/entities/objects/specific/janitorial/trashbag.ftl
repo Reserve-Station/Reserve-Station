@@ -4,3 +4,6 @@ ent-TrashBagBlue = мешок для мусора
     .desc = { ent-TrashBag.desc }
 ent-BagOfSummoningGarbage = заклинание всепоглощающей чистоты
     .desc = { ent-BaseItem.desc }
+ent-BorgTrashBag = внутренний { ent-TrashBag }
+    .desc = Улучшенный мусорный мешок большей ёмкости, установленный в уборочного борга.
+    .suffix = Борг

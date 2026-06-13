@@ -12,3 +12,6 @@ ent-ChlorineChemistryVial = { ent-BaseChemistryEmptyVial }
 ent-PlasmaChemistryVial = { ent-BaseChemistryEmptyVial }
     .suffix = Плазма
     .desc = { ent-BaseChemistryEmptyVial.desc }
+ent-BorgVial = внутренняя { ent-BaseChemistryEmptyVial }
+    .desc = Внутренняя ёмкость, установленная в борга. Может содержать до 30 ед. жидкости.
+    .suffix = Борг

@@ -1,3 +1,3 @@
 ent-SpawnMobGoidaBot = спавнер ватнобота
-    .desc = { MarkerBase.desc }
+    .desc = { ent-MarkerBase.desc }
     .suffix = Адмем

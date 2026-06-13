@@ -29,4 +29,4 @@ role-subtype-dragon = Дракон
 role-subtype-survivor = Выживший
 role-subtype-subverted = Изменённый
 role-subtype-paradox-clone = Клон
-role-subtype-wizard = Маг
+role-subtype-wizard = Волшебник

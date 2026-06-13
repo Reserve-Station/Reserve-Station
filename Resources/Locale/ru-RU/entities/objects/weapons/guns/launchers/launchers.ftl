@@ -1,7 +1,9 @@
 ent-BaseWeaponLauncher = BaseWeaponLauncher
     .desc = Дерзай — налетай, целься и стреляй.
 ent-WeaponLauncherChinaLake = Чайна Лейк
-    .desc = БЛУП
+    .desc = БЛУП.
+ent-WeaponLauncherHydra = Гидра
+    .desc = БЛУП... ФСССССС!
 ent-WeaponLauncherRocket = РПГ-7
     .desc = Древний ручной реактивный гранатомёт.
 ent-WeaponLauncherMultipleRocket = система залпового пуска

@@ -1,3 +1,3 @@
-ent-MobHumanPathDummy = Pathfinding Dummy
+ent-MobHumanPathDummy = манекен pathfindинга
     .desc = Жалкая кучка тайн.
-    .suffix = ИИ
+    .suffix = ИИ, DEBUG, Человек

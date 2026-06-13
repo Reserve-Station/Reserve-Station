@@ -1,5 +1,6 @@
 ent-SlasherMachete = мачете
     .desc = Большой, устрашающего вида клинок.
+    .suffix = Мясник
 ent-ClothingHeadHatSlasherMask = маска мясника
     .desc = Защитная маска для лица, устанавливаемая на голове и предназначенная для полной защиты пользователя от посторонних глаз.
 ent-ClothingOuterSlasherApron = фартук мясника
@@ -10,3 +11,4 @@ ent-ClothingShoesSlasher = обувь мясника
     .desc = Старые кожаные ботинки, знававшие лучшие времена.
 ent-SlasherMeatSpike = жуткий мясной крюк
     .desc = Возможно, вам захочется сбежать.
+    .suffix = Мясник

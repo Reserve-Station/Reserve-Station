@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Bun bottom
 
 - type: foodSequenceElement
@@ -1142,6 +1146,26 @@
   name: food-sequence-content-pea
   sprites:
   - sprite: Objects/Specific/Hydroponics/pea.rsi
+    state: produce
+  tags:
+  - Vegetable
+
+# Laughin Pea
+
+- type: foodSequenceElement
+  id: LaughinPea
+  name: food-sequence-content-laughin-pea
+  sprites:
+  - sprite: Objects/Specific/Hydroponics/laughin_pea.rsi
+    state: produce
+  tags:
+  - Vegetable
+
+- type: foodSequenceElement
+  id: LaughinPeaBurger
+  name: food-sequence-burger-content-laughin-pea
+  sprites:
+  - sprite: Objects/Specific/Hydroponics/laughin_pea.rsi
     state: produce
   tags:
   - Vegetable

@@ -1,6 +1,9 @@
-ent-PolymorphShadowJauntAnimation = Неизвестный
+ent-PolymorphShadowJauntAnimation = неизвестность
     .desc = Ты не можешь понять, что это такое.
-ent-PolymorphShadowJauntEndAnimation = Неизвестный
-    .desc = Ты не можешь понять, что это такое.
-ent-PolymorphShadowJaunt = Неизвестный
-    .desc = Ты не можешь понять, что это такое.
+    .suffix = Эффект, Полиморф, Тень, Начало
+ent-PolymorphShadowJauntEndAnimation = { ent-PolymorphShadowJauntAnimation }
+    .desc = { ent-PolymorphShadowJauntAnimation.desc }
+    .suffix = Эффект, Полиморф, Тень, Конец
+ent-PolymorphShadowJaunt = { ent-PolymorphShadowJauntAnimation }
+    .desc = { ent-PolymorphShadowJauntAnimation.desc }
+    .suffix = Эффект, Полиморф, Тень

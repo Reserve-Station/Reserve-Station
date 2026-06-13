@@ -1,4 +1,6 @@
 ent-BaseMobRodentia = Урист МакГрызун
     .desc = { ent-BaseMobSpeciesOrganic.desc }
-ent-MobRodentiaDummy = Манекен грызуна
-    .desc = Манекен грызуна, предназначенный для использования при создании персонажа.
+    .suffix = { species-name-rodentia }
+ent-MobRodentiaDummy = манекен { ent-BaseMobRodentia }
+    .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-rodentia }

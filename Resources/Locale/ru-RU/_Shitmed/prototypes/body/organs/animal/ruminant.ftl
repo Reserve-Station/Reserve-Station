@@ -1,2 +1,3 @@
-ent-OrganAnimalRuminantStomach2 = желудок жвачного животного 2
+ent-OrganAnimalRuminantStomach2 = { ent-OrganAnimalStomach }
     .desc = электрический бугалу
+    .suffix = Жвачное животное, второй
