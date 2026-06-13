@@ -86,7 +86,7 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: FourTwenty
     prototype: CannabisSeeds
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - BotanistHydroponicsSpecialist
   - BotanistHerbologist
 

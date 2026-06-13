@@ -90,7 +90,7 @@
     components:
     - type: Condemned
       soulOwnedNotDevil: true
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - LawyerAttorney
   - LawyerLegalRepresentative
   - LawyerCounsel

@@ -102,7 +102,7 @@
     since: 600
     until: 24600
     disarmMalus: true
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - AssistantPassenger
   - AssistantVisitor
   - AssistantEntrepreneur

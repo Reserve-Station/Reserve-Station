@@ -86,7 +86,7 @@
   - !type:AddComponentSpecial # Goobstation
     components:
     - type: EngineeringStaff
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - AtmosphericTechnicianFirefighter
 
 - type: startingGear

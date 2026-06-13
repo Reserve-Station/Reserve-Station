@@ -149,7 +149,7 @@
       interval: 10
   - !type:AddImplantSpecial
     implants: [ SadTromboneImplant ]
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - ClownJester
   - ClownBouffon
 

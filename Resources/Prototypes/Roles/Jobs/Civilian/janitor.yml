@@ -96,7 +96,7 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay
     prototype: WeaponRevolverInspector
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - JanitorMaid
   - JanitorMaintenanceWorker
   - JanitorCustodialTechnician

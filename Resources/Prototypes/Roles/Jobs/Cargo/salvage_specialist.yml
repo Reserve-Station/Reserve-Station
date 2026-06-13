@@ -89,7 +89,7 @@
   - Salvage
   - Maintenance
   - External
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - SalvageSpecialistMiner
 
 - type: startingGear

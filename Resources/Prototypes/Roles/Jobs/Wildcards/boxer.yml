@@ -70,7 +70,7 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay
     prototype: ClothingHandsGlovesBoxingRigged
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - BoxerFitnessInstructor
   - BoxerYogaInstructor
   - BoxerLifeCoach

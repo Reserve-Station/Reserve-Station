@@ -92,7 +92,7 @@
   extendedAccess:
   - Kitchen
   - Hydroponics
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - BartenderMixologist
   - BartenderBarista
   - BartenderHydrationEquipmentOperator

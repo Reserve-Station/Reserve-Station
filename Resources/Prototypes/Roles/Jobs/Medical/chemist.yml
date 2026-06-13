@@ -86,7 +86,7 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.25
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - ChemistPharmacist
   - ChemistLabTechnician
 

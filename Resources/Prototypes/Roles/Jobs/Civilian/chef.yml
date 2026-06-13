@@ -108,7 +108,7 @@
         isBlocked: true
   - !type:AddImplantSpecial # Chefs speak space italian
     implants: [ SpaceItalianTranslatorImplant ]
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - ChefSousChef
   - ChefLineCook
   - ChefNutritionist

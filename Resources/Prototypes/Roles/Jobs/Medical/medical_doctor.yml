@@ -103,7 +103,7 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.5
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - MedicalDoctorPhysician
   - MedicalDoctorNurse
   - MedicalDoctorSurgeon

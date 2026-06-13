@@ -175,7 +175,7 @@
   - !type:AddComponentSpecial # goobstation
     components:
       - type: SecurityStaff
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - WardenDispatch
 
 - type: startingGear
@@ -190,7 +190,6 @@
     - Flash
     - MagazinePistol
     - ClothingMaskGasSecurity # Goobstation
-    - SecHypo # Goobstation
 
 - type: chameleonOutfit
   id: WardenChameleonOutfit

@@ -97,7 +97,7 @@
   special: # goob
   - !type:AddImplantSpecial # Service workers can understand a chef's communications.
     implants: [ BasicSpaceItalianTranslatorImplant ]
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - ServiceWorkerWaiter
   - ServiceWorkerJuniorCook
   - ServiceWorkerBartenderApprentice

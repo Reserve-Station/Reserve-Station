@@ -188,6 +188,10 @@
     components:
       - type: CommandStaff
       - type: EngineeringStaff # Goobstation
+  alternateTitles: # Reserve - alternate titles
+  - ChiefEngineerHeadOfEngineering
+  - ChiefEngineerEngineeringForeman
+  - ChiefEngineerEngineeringSupervisor
 
 - type: startingGear
   id: ChiefEngineerGear

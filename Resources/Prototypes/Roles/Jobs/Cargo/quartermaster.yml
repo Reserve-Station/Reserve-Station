@@ -182,6 +182,12 @@
     components:
       - type: CommandStaff
       - type: QuartermasterTraining
+  alternateTitles: # Reserve - alternate titles
+  - QuartermasterRequisitionsOfficer
+  - QuartermasterDeckChief
+  - QuartermasterWarehouseSupervisor
+  - QuartermasterSupplyForeman
+  - QuartermasterLogisticsCoordinator
 
 - type: startingGear
   id: QuartermasterGear

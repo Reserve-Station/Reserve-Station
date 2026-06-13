@@ -94,7 +94,7 @@
     - type: CanEnchant #GoobStation
     - type: CurseImmune # Immune to curses of wraith plaguebringer - Goobstation
     - type: BibleUser #Lets them heal with bibles and transform null rods.
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - ChaplainPreacher
   - ChaplainSpiritualAdvisor
   - ChaplainShrineGuardian

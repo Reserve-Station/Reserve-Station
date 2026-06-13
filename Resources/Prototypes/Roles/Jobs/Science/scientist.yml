@@ -85,7 +85,7 @@
   access:
   - Research
   - Maintenance
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - ScientistXenoarchaeologist
   - ScientistAnomalyResearcher
   - ScientistHardwareTechnician

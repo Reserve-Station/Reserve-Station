@@ -78,7 +78,7 @@
   special: # Goobstation start - Librarian should speak most languages.
   - !type:AddImplantSpecial
     implants: [ LibrarianTranslatorImplant ] # Goobstation end
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - LibrarianClerk
   - LibrarianWriter
   - LibrarianProfessor

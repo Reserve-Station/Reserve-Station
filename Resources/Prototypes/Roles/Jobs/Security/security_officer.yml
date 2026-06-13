@@ -116,7 +116,7 @@
   - !type:AddComponentSpecial # goobstation
     components:
       - type: SecurityStaff
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - SecurityOfficerHallMonitor
 
 - type: startingGear
@@ -129,7 +129,6 @@
     back:
     - Flash
     - MagazinePistol
-    - SecHypo # Goobstation
 
 - type: chameleonOutfit
   id: SecurityOfficerChameleonOutfit

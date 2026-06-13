@@ -92,7 +92,7 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay
     prototype: BoxCardboard
-  alternateTitles:
+  alternateTitles: # Reserve - alternate titles
   - CargoTechnicianCourier
   - CargoTechnicianPilot
   - CargoTechnicianClerk
