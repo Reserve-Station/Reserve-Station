@@ -78,13 +78,10 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 30
-      stain:
+      stain: # Reserve - clothing stains
         maxVol: 5
-  - type: TemperatureProtection
-    heatingCoefficient: 1
-    coolingCoefficient: 0.9
   - type: Appearance
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       jumpsuit:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -101,7 +98,7 @@
       state: uniformbloodicon
   - type: Tag
     tags:
-    - ClothMade
+    - ClothMade # Reserve
     - Recyclable
     - WhitelistChameleon
     - Skirt # Goobstation

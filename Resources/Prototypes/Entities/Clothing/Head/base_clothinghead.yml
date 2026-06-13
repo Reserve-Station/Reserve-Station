@@ -126,7 +126,7 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 10
-      stain:
+      stain: # Reserve - clothing stains
         maxVol: 5
   - type: ContainerContainer
     containers:
@@ -137,7 +137,7 @@
     - WhitelistChameleon
     - DroneUsable # Goobstation
   - type: Appearance
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       head:
       - sprite: _Gabystation/Effects/blood.rsi

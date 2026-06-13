@@ -184,9 +184,9 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 30
-      stain:
+      stain: # Reserve - clothing stains
         maxVol: 5
-  - type: StainBlocker
+  - type: StainBlocker # Reserve
     slots: [INNERCLOTHING]
 
 - type: entity
@@ -206,7 +206,7 @@
   - type: Tag
     tags:
       - WhitelistChameleon
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -214,7 +214,7 @@
     iconVisuals:
     - sprite: _Gabystation/Effects/blood.rsi
       state: suitbloodicon
-  - type: StainBlocker
+  - type: StainBlocker # Reserve
     slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity
@@ -235,7 +235,7 @@
         type: StorageBoundUserInterface
   - type: StaticPrice
     price: 70
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -264,7 +264,7 @@
     - state: icon-open
       map: ["foldedLayer"]
       visible: false
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -411,7 +411,7 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
-  - type: StainBlocker
+  - type: StainBlocker # Reserve
     slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity
@@ -458,7 +458,7 @@
   - type: Tag
     tags:
     - PlasmamanSafe # EE Plasmeme Change
-  - type: StainBlocker
+  - type: StainBlocker # Reserve
     slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity

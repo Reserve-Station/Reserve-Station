@@ -113,7 +113,7 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 10
-      stain:
+      stain: # Reserve - clothing stains
         maxVol: 5
   - type: Tag
     tags:
@@ -132,7 +132,7 @@
         Slash: 0.95
         Piercing: 0.95
   - type: Appearance
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       gloves:
       - sprite: _Gabystation/Effects/blood.rsi

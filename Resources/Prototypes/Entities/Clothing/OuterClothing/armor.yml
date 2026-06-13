@@ -192,7 +192,7 @@
   - type: Tag
     tags:
       - WhitelistChameleon
-  - type: Stainable
+  - type: Stainable # Reserve
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
