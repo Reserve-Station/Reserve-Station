@@ -50,7 +50,6 @@
     solution: tank
   - type: StaticPrice
     price: 500
-    price: 600 # imp edit, plastic more spensive than steel
   - type: AcousticData # VDS
     absorption: 20
     reflectRay: true
