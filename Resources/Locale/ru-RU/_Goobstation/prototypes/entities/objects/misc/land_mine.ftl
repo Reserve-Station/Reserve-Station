@@ -1,2 +1,2 @@
-ent-LandMineRedialTest = бета-шахта
+ent-LandMineRedialTest = бета-мина
     .desc = { ent-BaseLandMine.desc }

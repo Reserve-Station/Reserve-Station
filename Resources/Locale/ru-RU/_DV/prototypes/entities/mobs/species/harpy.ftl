@@ -1,7 +1,10 @@
 ent-MobHarpyBase = Урист МакГарпия
     .desc = { ent-BaseMobHuman.desc }
-ent-MobHarpyDummy = Манекен МакГарпия
-    .desc = Манекен гарпии, предназначенный для использования при настройке персонажа.
+    .suffix = { species-name-harpy }
+ent-MobHarpyDummy = манекен { ent-MobHarpyBase }
+    .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-harpy }
+
 ent-ActionHarpyPlayMidi = Играть MIDI
     .desc = Пойте от души! Щелкните правой кнопкой мыши, чтобы установить инструмент.
 ent-ActionSyrinxChangeVoiceMask = Установить имя

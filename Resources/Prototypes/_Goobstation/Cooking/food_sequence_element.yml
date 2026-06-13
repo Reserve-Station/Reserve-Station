@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 
 # we could keep the same ids but im putting FSE before every itemid for the sake of clarity. i recommend you do too
 
@@ -65,6 +69,7 @@
   sprites:
   - sprite: _RMC14/Objects/Kitchen/Plants/mango.rsi
     state: produce
+  scale: 0.75,0.75  # Reserve edit: Orchid's Garden - Tidy Kitchen
 
 - type: foodSequenceElement
   id: FSE_MangoBurger
@@ -72,4 +77,5 @@
   sprites:
   - sprite: _RMC14/Objects/Kitchen/Plants/mango.rsi
     state: produce
+  scale: 0.75,0.75  # Reserve edit: Orchid's Garden - Tidy Kitchen
 

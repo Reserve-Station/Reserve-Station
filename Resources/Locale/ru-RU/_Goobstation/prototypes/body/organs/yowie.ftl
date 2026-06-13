@@ -1,8 +1,12 @@
-ent-OrganYowieStomach = желудок йоуи
+ent-OrganYowieStomach = { ent-OrganHumanStomach }
     .desc = { ent-OrganHumanStomach.desc }
-ent-OrganYowieLiver = печень йоуи
+    .suffix = Йоуи
+ent-OrganYowieLiver = { ent-OrganHumanLiver }
     .desc = { ent-OrganHumanLiver.desc }
-ent-OrganYowieHeart = сердце йоуи
+    .suffix = Йоуи
+ent-OrganYowieHeart = { ent-OrganHumanHeart }
     .desc = { ent-OrganHumanHeart.desc }
-ent-OrganYowieLungs = легкие йоуи
+    .suffix = Йоуи
+ent-OrganYowieLungs = { ent-OrganHumanLungs }
     .desc = Фильтрует кислород из атмосферы, который затем направляется в кровоток для использования в качестве переносчика электронов.
+    .suffix = Йоуи

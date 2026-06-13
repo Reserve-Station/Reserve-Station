@@ -1,4 +1,6 @@
 ent-BaseMobResomi = Урист МакРезоми
     .desc = { ent-BaseMobHuman.desc }
-ent-MobResomiDummy = { ent-BaseSpeciesDummy }
-    .desc = Фиктивный ресоми, предназначенный для настройки персонажа.
+    .suffix = { species-name-resomi }
+ent-MobResomiDummy = манекен { ent-BaseMobResomi }
+    .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-resomi }

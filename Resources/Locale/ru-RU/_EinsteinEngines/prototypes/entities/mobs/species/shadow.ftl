@@ -1,0 +1,9 @@
+ent-BaseMobShadow = Урист МакТень
+    .desc = { ent-BaseMobSpeciesOrganic.desc }
+    .suffix = { species-name-shadow }
+ent-MobShadowDummy = манекен { ent-BaseMobShadow }
+    .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-shadow }
+ent-MobShadow = { ent-BaseMobShadow }
+    .desc = { ent-BaseMobShadow.desc }
+    .suffix = { species-name-shadow }

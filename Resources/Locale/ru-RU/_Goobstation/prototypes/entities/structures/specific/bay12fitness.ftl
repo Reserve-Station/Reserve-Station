@@ -14,4 +14,4 @@ ent-FitnessPunchingBagSyndicate = { ent-FitnessPunchingBag }
     .suffix = Синдикат
 ent-FitnessPunchingBagWizard = { ent-FitnessPunchingBag }
     .desc = Боксерская груша с принтом мага.
-    .suffix = Маг
+    .suffix = Волшебник

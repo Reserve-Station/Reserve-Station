@@ -53,6 +53,12 @@
       color: "#FF6600"
     - temperature: 600
       color: "#FF2200"
+  # Reserve edit start: Orchid's Garden - Tidy Kitchen
+  # Can be recycled
+  - type: PhysicalComposition
+    materialComposition:
+      Biomass: 1
+  # Reserve edit end: Orchid's Garden - Tidy Kitchen
 
 # This base type is used to cover all of the "obvious" things that should be doable to open-package food.
 # Practically this means injection.

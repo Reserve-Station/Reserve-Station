@@ -21,3 +21,6 @@ ent-ClothingMaskGasUnremoveable = { ent-ClothingMaskGas }
     .suffix = Неснимаемый
 ent-ClothingBSOMaskGasSwat = противогаз офицера Синего Щита
     .desc = Стандартный противогаз для сотрудников Синего Щита.
+ent-ClothingMaskGasThunderdome = противогаз громовержца
+    .desc = ВЫ ГОТОВЫ К БИТВЕЕЕЕ?
+    .suffix = НЕ МАППИТЬ

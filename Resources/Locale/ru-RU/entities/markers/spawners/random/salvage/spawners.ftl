@@ -37,3 +37,5 @@ ent-SalvageSpawnerMobShark = спавнер обломок Карпоакула
     .desc = { ent-MarkerBase.desc }
 ent-SalvageSpawnerMobMiningAsteroid = спавнер моб шахтёрский астероид
     .desc = { ent-MarkerBase.desc }
+ent-SalvageSpawnerStructuresVarious = спавнер обломок разное
+    .desc = { ent-MarkerBase.desc }

@@ -1,0 +1,147 @@
+ent-CMPlatformBase = платформа
+    .desc = A square metal surface resting on four legs.
+
+ent-CMPlatformBaseBroken = разрушенная платформа
+    .desc = A square metal surface resting on four legs. It has been destroyed.
+ent-CMPlatformBaseDestructible = { ent-CMPlatformBase }
+    .desc = { ent-CMPlatformBase.desc }
+ent-CMPlatformBroken = { ent-CMPlatformBaseBroken }
+    .desc = { ent-CMPlatformBaseBroken.desc }
+ent-CMPlatform = платформа
+    .desc = A square metal surface resting on four legs.
+ent-CMPlatformCorner = платформа
+    .desc = A square metal surface resting on four legs.
+ent-RMCPlatformCornerSmall = платформа
+    .desc = A square metal surface resting on four legs.
+ent-RMCPlatformRound = платформа
+    .desc = A square metal surface resting on four legs.
+ent-RMCPlatformStairRight = { ent-CMPlatform }
+    .desc = { ent-CMPlatform.desc }
+ent-RMCPlatformStairLeft = { ent-CMPlatform }
+    .desc = { ent-CMPlatform.desc }
+ent-RMCPlatformKutjevo = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
+ent-RMCPlatformKutjevoBroken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformKutjevoCornerSmall = возвышенный металлический угол
+    .desc = The corner of what appears to be raised piece of metal, often used to imply the illusion of elevation in non-Euclidean 2d spaces. But you don't know that, you're just a spaceman with a rifle.
+ent-RMCPlatformKutjevoSM = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
+ent-RMCPlatformKutjevoSMCorner = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
+ent-RMCPlatformKutjevoSMRound = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
+ent-RMCPlatformKutjevoStairRight = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
+ent-RMCPlatformKutjevoStairLeft = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
+ent-RMCPlatformShiva = возвышенная резиновая платформа
+    .desc = Reliable steel and a polymer rubber substitute. Doesn't crack under cold weather.
+ent-RMCPlatformShivaBroken = разрушенная резиновая платформа
+    .desc = Reliable steel and a polymer rubber substitute. Doesn't crack under cold weather. It has been destroyed.
+ent-RMCPlatformShivaCornerSmall = возвышенная резиновая платформа
+    .desc = Reliable steel and a polymer rubber substitute. Doesn't crack under cold weather.
+ent-RMCPlatformKutjevoRock = возвышенный каменный край
+    .desc = A collection of stones and rocks that provide ample grappling and vaulting opportunity. Indicates a change in elevation. You could probably climb it.
+ent-RMCPlatformKutjevoRockBroken = разрушенный возвышенный каменный край
+    .desc = A collection of stones and rocks that provide ample grappling and vaulting opportunity. Indicates a change in elevation. You could probably climb it. It has been destroyed.
+ent-RMCPlatformKutjevoRockCornerSmall = возвышенный каменный угол
+    .desc = A collection of stones and rocks that cap the edge of some conveniently 1-meter-long lengths of perfectly climbable chest high walls.
+ent-RMCPlatformHybrisaEdge = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformHybrisaEdgeBroken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformHybrisaEdgeCornerSmall = возвышенный металлический угол
+    .desc = A raised level of metal, often used to elevate areas above others. This is the corner.
+ent-RMCPlatformHybrisa = возвышенная металлическая платформа
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformHybrisaBroken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformHybrisaCornerSmall = возвышенный металлический угол
+    .desc = A raised level of metal, often used to elevate areas above others. This is the corner.
+ent-RMCPlatformHybrisaTwo = возвышенная металлическая платформа
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformHybrisa2Broken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformHybrisaTwoCornerSmall = возвышенный металлический угол
+    .desc = A raised level of metal, often used to elevate areas above others. This is the corner.
+ent-RMCPlatformHybrisaThree = возвышенная металлическая платформа
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformHybrisa3Broken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformHybrisaThreeCorner = возвышенная металлическая платформа
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformHybrisaThreeStair = возвышенная металлическая платформа
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformHybrisaThreeStairAlt = возвышенная металлическая платформа
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformHybrisaThreeCornerSmall = возвышенный металлический угол
+    .desc = A raised level of metal, often used to elevate areas above others. This is the corner.
+ent-RMCPlatformHybrisaRock = возвышенный каменный край
+    .desc = A collection of stones and rocks that provide ample grappling and vaulting opportunity. Indicates a change in elevation. You could probably climb it.
+ent-RMCPlatformHybrisaRockBroken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformHybrisaRockCornerSmall = возвышенный каменный угол
+    .desc = A collection of stones and rocks that cap the edge of some conveniently 1-meter-long lengths of perfectly climbable chest high walls.
+ent-RMCPlatformHybrisaStone = возвышенная каменная платформа
+    .desc = A raised level of stone, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformHybrisaStoneBroken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformHybrisaStoneCornerSmall = возвышенный каменный угол
+    .desc = A raised level of stone, often used to elevate areas above others. This is the corner.
+ent-RMCPlatformSandstone = песчаная платформа
+    .desc = A raised level of metal, often used to elevate areas above others, or construct bridges. You could probably climb it.
+ent-RMCPlatformSandstoneBroken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformSandstoneCornerSmall = угол песчаной платформы
+    .desc = The corner of what appears to be raised piece of metal, often used to imply the illusion of elevation in non-Euclidean 2d spaces. But you don't know that, you're just a spaceman with a rifle.
+ent-RMCPlatformSandstoneStairRight = ступеньки песчаной платформы
+    .desc = { ent-CMPlatform.desc }
+ent-RMCPlatformSandstoneStairLeft = ступеньки песчаной платформы
+    .desc = { ent-CMPlatform.desc }
+
+
+# Shiva Rock
+
+ent-RMCPlatformShivaRock = ледяной каменный край
+    .desc = A solid chunk of desolate rocks and ice. Looks like you could climb it with some difficulty.
+ent-RMCPlatformShivaRockBroken = разрушенный ледяной каменный край
+    .desc = A solid chunk of desolate rocks and ice. Looks like you could climb it with some difficulty. It has been destroyed.
+ent-RMCPlatformShivaRockCornerSmall = ледяной каменный угол
+    .desc = A solid chunk of desolate rocks and ice.
+
+
+# Sorokyne Strata
+
+ent-RMCPlatformStrata = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformStrataBroken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformStrataStair = { ent-RMCPlatformStrata }
+    .desc = { ent-RMCPlatformStrata.desc }
+ent-RMCPlatformStrataStairAlt = { ent-RMCPlatformStrata }
+    .desc = { ent-RMCPlatformStrata.desc }
+ent-RMCPlatformStrataCornerSmall = возвышенный металлический угол
+    .desc = A raised level of metal, often used to elevate areas above others. This is the corner.
+ent-RMCPlatformStrataTwo = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformStrata2Broken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformStrataTwoCornerSmall = возвышенный металлический угол
+    .desc = A raised level of metal, often used to elevate areas above others. This is the corner.
+ent-RMCPlatformStrataThree = возвышенный металлический край
+    .desc = A raised level of metal, often used to elevate areas above others. You could probably climb it.
+ent-RMCPlatformStrata3Broken = { ent-CMPlatformBroken }
+    .desc = { ent-CMPlatformBroken.desc }
+ent-RMCPlatformStrataThreeCornerSmall = возвышенный металлический угол
+    .desc = A raised level of metal, often used to elevate areas above others. This is the corner.
+
+# Sorokyne Rock
+
+ent-RMCPlatformStrataRock = ледяной каменный край
+    .desc = A solid chunk of desolate rocks and ice. Looks like you could climb it with some difficulty.
+ent-RMCPlatformStrataRockBroken = разрушенный ледяной каменный край
+    .desc = A solid chunk of desolate rocks and ice. Looks like you could climb it with some difficulty. It has been destroyed.
+ent-RMCPlatformStrataRockCornerSmall = ледяной каменный угол
+    .desc = A solid chunk of desolate rocks and ice.
+

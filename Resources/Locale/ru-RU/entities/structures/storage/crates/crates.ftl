@@ -49,8 +49,25 @@ ent-CrateCommandSecure = ящик командования
     .desc = { ent-CrateBaseSecure.desc }
 ent-CrateLivestock = ящик для скота
     .desc = { ent-CrateGeneric.desc }
+ent-CrateNPCXenobioSlime = ящик слаймов
+    .desc = Содержит двух слаймов для экспериментов.
+    .suffix = Ксенобиология
 ent-CrateRodentCage = хомячья клетка
     .desc = { ent-CrateGeneric.desc }
+
+ent-CrateBaseLockBox = сейф
+    .desc = Надежный сейф. Средства от его продажи будут распределены обратно в департамент. Только помните: карго всегда получает свою долю от прибыли.
+ent-CrateLockBoxEngineering = инженерный { ent-CrateBaseLockBox }
+    .desc = { ent-CrateBaseLockBox.desc }
+ent-CrateLockBoxMedical = медицинский { ent-CrateBaseLockBox }
+    .desc = { ent-CrateBaseLockBox.desc }
+ent-CrateLockBoxScience = научный { ent-CrateBaseLockBox }
+    .desc = { ent-CrateBaseLockBox.desc }
+ent-CrateLockBoxSecurity = { ent-CrateBaseLockBox } службы безопасности
+    .desc = { ent-CrateBaseLockBox.desc }
+ent-CrateLockBoxService = сервисный { ent-CrateBaseLockBox }
+    .desc = { ent-CrateBaseLockBox.desc }
+
 ent-CratePirate = пиратский сундук
     .desc = Сундук космического пирата, не для станционных крыс.
 ent-CrateToyBox = коробка игрушек

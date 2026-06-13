@@ -1,0 +1,15 @@
+ent-HiveEggMorpherXeno = преобразователь яиц улья
+    .desc = Отвратительный генератор биомассы, источающий зловоние гниющей плоти. Способен самостоятельно производить паразитов.
+    .suffix = { roles-antag-xenomorph-name }
+ent-HiveClusterXeno = узел улья
+    .desc = Большой комок липкой массы. Он ритмично пульсирует, словно что-то закачивает в сорняки под землей...
+    .suffix = { roles-antag-xenomorph-name }
+ent-HiveCoreXeno = ядро улья
+    .desc = Огромный пульсирующий сгусток массы. Выглядит очень живым.
+    .suffix = { roles-antag-xenomorph-name }
+ent-HivePylonXeno = пилон улья
+    .desc = Возвышающийся смоляной шип. Его основание пульсирует крупными усиками.
+    .suffix = { roles-antag-xenomorph-name }
+ent-HiveRecoveryNodeXeno = восстанавливающий узел улья
+    .desc = Теплый, успокаивающий источник света, пульсирующий слабым гудением.
+    .suffix = { roles-antag-xenomorph-name }

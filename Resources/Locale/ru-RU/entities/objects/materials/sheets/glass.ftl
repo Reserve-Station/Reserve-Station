@@ -1,5 +1,6 @@
 ent-SheetGlassBase = стекло
     .desc = Лист стекла, широко применяемого на станции в различных целях.
+
 ent-SheetGlass = { ent-SheetGlassBase }
     .suffix = Полный
     .desc = { ent-SheetGlassBase.desc }
@@ -12,39 +13,51 @@ ent-SheetGlass1 = { ent-SheetGlass }
 ent-SheetGlassLingering0 = { ent-SheetGlass }
     .suffix = Не исчезают закончившись, 0
     .desc = { ent-SheetGlass.desc }
+
 ent-SheetRGlass = бронестекло
     .suffix = Полный
     .desc = Лист армированного стекла.
-ent-SheetRGlass1 = бронестекло
+ent-SheetRGlass1 = { ent-SheetRGlass }
     .suffix = Один
     .desc = { ent-SheetRGlass.desc }
+ent-SheetRGlassLingering0 = { ent-SheetRGlass }
+    .suffix = Не исчезают закончившись, 0
+    .desc = { ent-SheetRGlass.desc }
+
 ent-SheetPGlass = плазменное стекло
     .suffix = Полный
     .desc = Лист полупрозрачной плазмы.
-ent-SheetPGlass1 = плазменное стекло
+ent-SheetPGlass1 = { ent-SheetPGlass }
     .suffix = Один
     .desc = { ent-SheetPGlass.desc }
+
 ent-SheetRPGlass = плазменное бронестекло
     .suffix = Полный
     .desc = Лист армированной полупрозрачной плазмы.
-ent-SheetRPGlass1 = плазменное бронестекло
+ent-SheetRPGlass1 = { ent-SheetRPGlass }
     .suffix = Один
     .desc = { ent-SheetRPGlass.desc }
+ent-SheetRPGlassLingering0 = { ent-SheetRPGlass }
+    .suffix = Не исчезают закончившись, 0
+    .desc = { ent-SheetRPGlass.desc }
+
 ent-SheetUGlass = урановое стекло
     .desc = Лист уранового стекла.
     .suffix = Полный
-ent-SheetUGlass1 = урановое стекло
+ent-SheetUGlass1 = { ent-SheetUGlass }
     .suffix = Один
     .desc = { ent-SheetUGlass.desc }
+
 ent-SheetRUGlass = урановое бронестекло
     .desc = Лист армированного уранового стекла.
     .suffix = Полный
-ent-SheetRUGlass1 = урановое бронестекло
+ent-SheetRUGlass1 = { ent-SheetRUGlass }
     .suffix = Один
     .desc = { ent-SheetRUGlass.desc }
+
 ent-SheetClockworkGlass = заводное стекло
     .desc = Лист укреплённного латунью стекла, в основном используемый любителями часовых механизмов и остатками культа Ратвара.
     .suffix = Полный
-ent-SheetClockworkGlass1 = заводное стекло
+ent-SheetClockworkGlass1 = { ent-SheetClockworkGlass }
     .suffix = Один
     .desc = { ent-SheetClockworkGlass.desc }

@@ -1,3 +1,12 @@
-ent-DebugItemShapeWeird = weirdly shaped item
-    .desc = What is it...?
+ent-DebugItemShapeWeird = предмет странной формы
+    .desc = Что же это...?
     .suffix = DEBUG
+ent-PonderingOrbRadioactive = { ent-PonderingOrb }
+    .desc = { ent-PonderingOrb.desc }
+    .suffix = DEBUG, 700 rads
+ent-PonderingOrbRadioactiveM = { ent-PonderingOrb }
+    .desc = { ent-PonderingOrb.desc }
+    .suffix = DEBUG, 100 rads
+ent-PonderingOrbRadioactiveS = { ent-PonderingOrb }
+    .desc = { ent-PonderingOrb.desc }
+    .suffix = DEBUG, 7 rads

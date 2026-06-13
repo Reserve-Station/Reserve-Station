@@ -19,3 +19,95 @@
   products:
     Orchito: 6
 # Orchito end
+
+# region Alt recipes for existing drinks
+
+- type: reaction
+  id: JungleBirdAlt
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Rum:
+      amount: 3
+    JuiceMango:
+      amount: 1
+    Grenadine:
+      amount: 1
+    JuiceLemon:
+      amount: 1
+  products:
+    JungleBird: 6
+
+- type: reaction
+  id: JungleBirdAlt2
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Rum:
+      amount: 3
+    JuiceBungo:
+      amount: 1
+    TripleCitrus:
+      amount: 2
+  products:
+    JungleBird: 6
+
+- type: reaction
+  id: MojitoAlt
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    LemonLime:
+      amount: 2
+    Rum:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    Mojito: 4
+
+# endregion
+
+# region Missing recipes for existing drinks
+
+- type: reaction
+  id: MelonLiquor
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Rum:
+      amount: 2
+    Enzyme:
+      amount: 1
+    JuiceWatermelon:
+      amount: 2
+  products:
+    MelonLiquor: 5
+
+- type: reaction
+  id: CoffeeLiqueur
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    Rum:
+      amount: 2
+    Enzyme:
+      amount: 1
+    Coffee:
+      amount: 2
+  products:
+    CoffeeLiqueur: 5
+
+- type: reaction
+  id: BlueCuracao
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    JuiceBluePumpkin:
+      amount: 1
+    WhiskeySour:
+      amount: 1
+  products:
+    BlueCuracao: 2
+
+# endregion

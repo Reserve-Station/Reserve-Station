@@ -1,4 +1,6 @@
 ent-MobIPC = Урист МакПозитроник
     .desc = Позитронный мозг в металлическом корпусе.
-ent-MobIPCDummy = Урист МакПозитроник
-    .desc = Фиктивный IPC, предназначенный для использования при настройке персонажа.
+    .suffix = { species-name-ipc }
+ent-MobIPCDummy = манекен { ent-MobIPC }
+    .desc = { ent-MobHumanDummy.desc }
+    .suffix = { species-name-ipc }

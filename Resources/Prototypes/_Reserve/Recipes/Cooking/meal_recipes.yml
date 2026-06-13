@@ -1,0 +1,199 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Alt recipes for existing food
+
+# Soups
+
+- type: microwaveMealRecipe
+  id: RecipeStewSoupAlt
+  name: stew recipe
+  result: FoodSoupStew
+  time: 10
+  group: Soup
+  reagents:
+    Water: 10
+  solids:
+    FoodBowlBig: 1
+    FoodMeatPatty: 2
+    FoodTomatoSlice: 5
+    FoodGarlicSlice: 3
+    FoodCarrotSlice: 4
+    FoodOnionRedSlice: 4
+    FoodMushroom: 1
+
+# Salads
+
+- type: microwaveMealRecipe
+  id: RecipeJungleSaladAlt
+  name: jungle salad recipe
+  result: FoodSaladJungle
+  time: 5
+  group: Salad
+  solids:
+    FoodBowlBig: 1
+    FoodOrangeSlice: 5
+    FoodBungo: 3
+    FoodPineappleSlice: 3
+
+- type: microwaveMealRecipe
+  id: RecipeHerbSaladAlt
+  name: herb salad recipe
+  result: FoodSaladHerb
+  time: 5
+  group: Salad
+  solids:
+    FoodBowlBig: 1
+    LeavesTea: 4
+    FoodAppleSlice: 6
+
+- type: microwaveMealRecipe
+  id: RecipeWatermelonFruitBowlSaladAlt
+  name: watermelon fruit bowl recipe
+  result: FoodSaladWatermelonFruitBowl
+  time: 5
+  group: Salad
+  solids:
+    FoodHolymelon: 1
+    FoodGoldenAppleSlice: 4
+    FoodMimanaSlice: 4
+    FoodLemoonSlice: 4
+    LeavesTea: 1
+
+# endregion
+
+# region Missing recipes for existing food
+
+# Soups
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSoupMiso
+  name: miso soup recipe
+  result: FoodSoupMiso
+  time: 15
+  group: Soup
+  reagents:
+    Water: 10
+    Soysauce: 5
+    EggCooked: 5
+    Oil: 5
+  solids:
+    FoodMeatCutletCooked: 2
+    FoodCarrotSlice: 2
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSoupMystery
+  name: mystery soup recipe
+  result: FoodSoupMystery
+  time: 15
+  group: Soup
+  reagents:
+    Nothing: 10
+    Astrotame: 5
+  solids:
+    FoodBluePumpkinSlice: 2
+    FoodBlueTomatoSlice: 5
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSoupPotato
+  name: sweet potato soup recipe
+  result: FoodSoupPotato
+  time: 15
+  group: Soup
+  reagents:
+    Water: 10
+    Sugar: 5
+  solids:
+    FoodPotatoSlice: 8
+    FoodTomatoSlice: 2
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSoupElectron
+  name: electron soup recipe
+  result: FoodSoupElectron
+  time: 15
+  group: Soup
+  reagents:
+    Plasma: 10
+  solids:
+    FoodMushroom: 2
+    FoodBluespaceTomatoSlice: 6
+
+# Salads
+
+- type: microwaveMealRecipe
+  id: RecipeFoodMealCornedbeef
+  name: corned beef and cabbage recipe
+  result: FoodMealCornedbeef
+  time: 5
+  group: Salad
+  reagents:
+    Blackpepper: 5
+  solids:
+    FoodCabbageSlice: 3
+    FoodMeatCutletCooked: 2
+    FoodCornSlice: 2
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSaladAesir
+  name: aesir salad recipe
+  result: FoodSaladAesir
+  time: 5
+  group: Salad
+  solids:
+    FoodHolymelonSlice: 4
+    FoodGoldenAppleSlice: 6
+    FoodAmbrosiaDeus: 3
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSaladEden
+  name: eden salad recipe
+  result: FoodSaladEden
+  time: 5
+  group: Salad
+  solids:
+    FoodBungo: 2
+    FoodGoldenAppleSlice: 6
+    FoodStrangeBerries: 3
+
+# Desserts
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedCannoli
+  name: cannoli recipe
+  result: FoodBakedCannoli
+  time: 10
+  group: Dessert
+  reagents:
+    Flour: 5
+    Wine: 5
+    Vinegar: 5
+    Sugar: 5
+    TableSalt: 5
+    Egg: 5
+    Oil: 5
+  solids:
+    FoodButterSlice: 1
+    FoodCheeseSlice: 1
+
+# endregion
+
+# region Grilling recipes for existing items
+
+- type: constructionGraph
+  id: RecipeTrashBakedBananaPeelAlt
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: end
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: end
+    entity: TrashBakedBananaPeel
+
+# endregion
