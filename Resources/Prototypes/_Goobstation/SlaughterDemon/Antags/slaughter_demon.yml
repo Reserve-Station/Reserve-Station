@@ -7,4 +7,5 @@
   id: SlaughterDemon
   name: roles-antag-slaughter-demon-name
   antagonist: true
+  setPreference: false # Reserve edit
   objective: roles-antag-slaughter-demon-objective

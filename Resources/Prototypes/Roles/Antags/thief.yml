@@ -89,6 +89,14 @@
   setPreference: true
   objective: roles-antag-thief-objective
   guides: [ Thieves ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 3600 # 1h
+  # Reserve - antag UI
+  category: Solo
+  icon:
+    sprite: Clothing/Back/Satchels/smuggler.rsi
+    state: icon
 
 - type: startingGear
   id: ThiefGear

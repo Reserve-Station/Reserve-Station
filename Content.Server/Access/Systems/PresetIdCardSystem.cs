@@ -14,6 +14,10 @@
 // SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 // SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -21,8 +25,10 @@ using Content.Server.Access.Components;
 using Content.Server.GameTicking;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
+using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Roles;
+using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Access.Systems;
@@ -89,7 +95,7 @@ public sealed class PresetIdCardSystem : EntitySystem
         if (id.JobName == null)
             return;
 
-        if (!_prototypeManager.TryIndex(id.JobName, out JobPrototype? job))
+        if (!_prototypeManager.TryIndex(id.JobName.Value, out JobPrototype? job))
         {
             Log.Error($"Invalid job id ({id.JobName}) for preset card");
             return;
@@ -97,10 +103,47 @@ public sealed class PresetIdCardSystem : EntitySystem
 
         _accessSystem.SetAccessToJob(uid, job, extended);
 
-        _cardSystem.TryChangeJobTitle(uid, job.LocalizedName);
+        // Reserve start - alternative titles
+        if (!TryComp<IdCardComponent>(uid, out var card))
+        {
+            Log.Warning($"Entity {uid} does not have IdCardComponent, skipping title setup.");
+            return;
+        }
+
+        string? titleToSet = null;
+
+        if (id.AlternateTitleId != null &&
+            _prototypeManager.TryIndex(id.AlternateTitleId.Value, out JobAlternateTitlePrototype? altTitle))
+        {
+            titleToSet = altTitle.LocalizedName(Gender.Neuter);
+        }
+        // Disabled this so new cards have a default job name, not first alternative.
+        // else if (job.AlternateTitles != null && job.AlternateTitles.Count > 0)
+        // {
+        //     JobAlternateTitlePrototype? altFromJob = null;
+        //     foreach (var altId in job.AlternateTitles)
+        //     {
+        //         if (_prototypeManager.TryIndex(altId, out var proto))
+        //         {
+        //             altFromJob = proto;
+        //             break;
+        //         }
+        //     }
+
+        //     titleToSet = altFromJob?.LocalizedName(Gender.Neuter) ?? job.LocalizedName;
+        // }
+        else
+        {
+            titleToSet = job.LocalizedName;
+        }
+
+        if (!string.IsNullOrEmpty(titleToSet))
+            _cardSystem.TryChangeJobTitle(uid, titleToSet);
+        // Reserve end - alternative titles
+
         _cardSystem.TryChangeJobDepartment(uid, job);
 
-        if (_prototypeManager.TryIndex(job.Icon, out var jobIcon))
+        if (!string.IsNullOrEmpty(job.Icon) && _prototypeManager.TryIndex(job.Icon, out var jobIcon))
             _cardSystem.TryChangeJobIcon(uid, jobIcon);
     }
 }

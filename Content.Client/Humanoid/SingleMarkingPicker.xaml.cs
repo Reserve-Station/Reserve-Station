@@ -237,7 +237,8 @@ public sealed partial class SingleMarkingPicker : BoxContainer
         {
             var selector = new ColorSelectorSliders
             {
-                HorizontalExpand = true
+                HorizontalExpand = true,
+                SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv // Default to HSV
             };
             selector.Color = marking.MarkingColors[i];
             selector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV

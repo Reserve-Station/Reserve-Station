@@ -23,6 +23,7 @@
 using Content.Shared.Guidebook;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Roles;
 
@@ -47,6 +48,12 @@ public sealed partial class AntagPrototype : IPrototype
     /// </summary>
     [DataField("objective", required: true)]
     public string Objective { get; private set; } = "";
+
+    /// <summary>
+    ///     Icon to display in the antag preference menu.
+    /// </summary>
+    [DataField]
+    public SpriteSpecifier? Icon { get; private set; }
 
     /// <summary>
     ///     Whether or not the antag role is one of the bad guys.
@@ -74,4 +81,18 @@ public sealed partial class AntagPrototype : IPrototype
     /// </summary>
     [DataField]
     public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+    /// <summary>
+    /// If this is not null, this antag will be allowed to be displayed on the character customization screen if that
+    /// character has no jobs selected.
+    /// This set of starting gear will be applied to the dummy entity.
+    /// </summary>
+    [DataField]
+    public ProtoId<StartingGearPrototype>? PreviewStartingGear;
+
+    /// <summary>
+    ///     The category prototype ID for this antag.
+    /// </summary>
+    [DataField("category")]
+    public string? Category { get; private set; }
 }

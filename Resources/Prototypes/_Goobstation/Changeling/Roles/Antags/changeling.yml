@@ -24,3 +24,8 @@
     - IPC
     - Plasmaman
   guides: [ Changelings ]
+  # Reserve - antag UI
+  category: Solo
+  icon:
+    sprite: Objects/Weapons/Melee/armblade.rsi
+    state: icon

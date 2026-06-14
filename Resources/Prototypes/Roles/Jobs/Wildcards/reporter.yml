@@ -66,6 +66,10 @@
   - Service
   - Maintenance
   - Journalism # goob
+  alternateTitles: # Reserve - alternate titles
+  - ReporterInfluencer
+  - ReporterDocumentarian
+  - ReporterMediaCoordinator
 
 - type: startingGear
   id: ReporterGear
@@ -90,3 +94,15 @@
     outerClothing: ClothingOuterCoatTrench
     neck: ClothingNeckTieRed
     gloves: ClothingHandsGlovesFingerless
+
+- type: jobAlternateTitle
+  id: ReporterInfluencer
+  name: job-name-alt-reporter-1
+
+- type: jobAlternateTitle
+  id: ReporterDocumentarian
+  name: job-name-alt-reporter-2
+
+- type: jobAlternateTitle
+  id: ReporterMediaCoordinator
+  name: job-name-alt-reporter-3

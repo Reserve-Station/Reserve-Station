@@ -154,6 +154,27 @@
 // SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Amethyst <52829582+jackel234@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Janet Blackquill <uhhadd@gmail.com>
+// SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Mish <bluscout78@yahoo.com>
+// SPDX-FileCopyrightText: 2025 Mora <46364955+TrixxedHeart@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Quantum-cross <7065792+Quantum-cross@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SaffronFennec <firefoxwolf2020@protonmail.com>
+// SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
+// SPDX-FileCopyrightText: 2025 W.xyz() <tptechteam@gmail.com>
+// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 maelines <amae.tones@gmail.com>
+// SPDX-FileCopyrightText: 2025 maelines <genovedd.almn@gmail.com>
+// SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 w.xyz() <84605679+pirakaplant@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 Mora <46364955+TrixxedHeart@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 TrixxedHeart <46364955+TrixxedBit@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -426,8 +447,11 @@ namespace Content.Client.Lobby.UI
                 OnSkinColorOnValueChanged();
             };
 
-            RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new ColorSelectorSliders());
-            _rgbSkinColorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV
+            RgbSkinColorContainer.AddChild(_rgbSkinColorSelector = new ColorSelectorSliders
+            {
+                SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv // Default to HSV
+            });
+
             _rgbSkinColorSelector.OnColorChanged += _ =>
             {
                 OnSkinColorOnValueChanged();
@@ -833,95 +857,137 @@ namespace Content.Client.Lobby.UI
             }
         }
 
+        // _Funkystation Start: New Antagonist Cards
         public void RefreshAntags()
         {
             AntagList.DisposeAllChildren();
-            var items = new[]
+
+            // Group antags by category prototype
+            var antagGroups = _prototypeManager.EnumeratePrototypes<AntagPrototype>()
+                .Where(a => a.SetPreference)
+                .OrderBy(a => Loc.GetString(a.Name))
+                .GroupBy(a => a.Category ?? "Default")
+                .OrderBy(g => g.Key);
+
+            foreach (var group in antagGroups)
             {
-                ("humanoid-profile-editor-antag-preference-yes-button", 0),
-                ("humanoid-profile-editor-antag-preference-no-button", 1)
-            };
+                var categoryId = group.Key;
+                var categoryAntags = group.ToList();
 
-            AntagList.AddChild(new Label { Text = Loc.GetString("humanoid-profile-editor-antag-roll-before-jobs") }); // Goobstation
-
-            foreach (var antag in _prototypeManager.EnumeratePrototypes<AntagPrototype>().OrderBy(a => Loc.GetString(a.Name)))
-            {
-                if (!antag.SetPreference)
-                    continue;
-
-                var antagContainer = new BoxContainer()
+                string categoryName;
+                if (categoryId == "Default")
                 {
-                    Orientation = LayoutOrientation.Horizontal,
-                };
-
-                var selector = new RequirementsSelector()
+                    categoryName = "Uncategorized";
+                }
+                else if (_prototypeManager.TryIndex<AntagCategoryPrototype>(categoryId, out var categoryProto))
                 {
-                    Margin = new Thickness(3f, 3f, 3f, 0f),
-                };
-                selector.OnOpenGuidebook += OnOpenGuidebook;
-
-                var title = Loc.GetString(antag.Name);
-                var description = Loc.GetString(antag.Objective);
-                selector.Setup(items, title, 250, description, guides: antag.Guides);
-                selector.Select(Profile?.AntagPreferences.Contains(antag.ID) == true ? 0 : 1);
-
-                var requirements = _entManager.System<SharedRoleSystem>().GetAntagRequirement(antag);
-                if (!_requirements.CheckRoleRequirements(requirements, (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, out var reason))
-                {
-                    selector.LockRequirements(reason);
-                    Profile = Profile?.WithAntagPreference(antag.ID, false);
-                    SetDirty();
+                    categoryName = Loc.GetString(categoryProto.Name);
                 }
                 else
                 {
-                    selector.UnlockRequirements();
+                    categoryName = categoryId;
                 }
 
-                selector.OnSelected += preference =>
+                // Create category header
+                var headerButton = new ContainerButton
                 {
-                    Profile = Profile?.WithAntagPreference(antag.ID, preference == 0);
-                    SetDirty();
+                    HorizontalExpand = true,
+                    Margin = new Thickness(0, 10, 0, 5)
                 };
-
-                antagContainer.AddChild(selector);
-
-                var loadoutWindowBtn = new Button()
+                var headerPanel = new PanelContainer
                 {
-                    Text = Loc.GetString("loadout-window"),
-                    HorizontalAlignment = HAlignment.Right,
-                    Margin = new Thickness(3f, 0f, 0f, 0f),
-                };
-
-                // Goob start
-                if (!_prototypeManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetAntagPrototype(antag.ID), out var roleLoadoutProto))
-                {
-                    loadoutWindowBtn.Disabled = true;
-                }
-                else
-                {
-                    loadoutWindowBtn.OnPressed += _ =>
+                    PanelOverride = new StyleBoxFlat
                     {
-                        RoleLoadout? loadout = null;
+                        BackgroundColor = Color.FromHex("#202028"),
+                        ContentMarginLeftOverride = 8,
+                        ContentMarginRightOverride = 8,
+                        ContentMarginTopOverride = 4,
+                        ContentMarginBottomOverride = 4,
+                        BorderThickness = new Thickness(0)
+                    },
+                    HorizontalExpand = true
+                };
+                headerPanel.AddChild(new Label
+                {
+                    Text = categoryName,
+                    HorizontalAlignment = HAlignment.Center,
+                    StyleClasses = { "labelHeaderLarge" }
+                });
+                headerButton.AddChild(headerPanel);
+                AntagList.AddChild(headerButton);
 
-                        Profile?.Loadouts.TryGetValue(LoadoutSystem.GetAntagPrototype(antag.ID), out loadout);
-                        loadout = loadout?.Clone();
+                // Collapsible container for cards
+                var categoryContainer = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Vertical,
+                    HorizontalExpand = true
+                };
+                headerButton.OnPressed += _ =>
+                {
+                    categoryContainer.Visible = !categoryContainer.Visible;
+                };
 
-                        if (loadout == null)
+                // Fixed GridContainer for cards
+                var grid = new GridContainer
+                {
+                    Columns = 3,
+                    HorizontalExpand = true,
+                    Margin = new Thickness(0, 0, 0, 10)
+                };
+                foreach (var antag in categoryAntags)
+                {
+                    var antagSelector = new AntagSelector();
+                    antagSelector.SetName(Loc.GetString(antag.Name));
+                    antagSelector.SetDescription(Loc.GetString(antag.Objective));
+                    antagSelector.OnGuidebookClicked += () => OnOpenGuidebook?.Invoke(antag.Guides ?? new());
+
+                    // Set icon with fallback
+                    Texture? iconTexture = null;
+                    if (antag.Icon != null)
+                    {
+                        try { iconTexture = _sprite.Frame0(antag.Icon); } catch { }
+                    }
+                    if (iconTexture == null)
+                    {
+                        try
                         {
-                            loadout = new RoleLoadout(roleLoadoutProto.ID);
-                            loadout.SetDefault(Profile, _playerManager.LocalSession, _prototypeManager);
+                            iconTexture = _sprite.Frame0(new SpriteSpecifier.Rsi(new ResPath("_Funkystation/Mobs/Animals/meowl.rsi"), "icon"));
                         }
+                        catch
+                        {
+                            Logger.Error($"Antag '{antag.ID}' fallback icon failed to load.");
+                        }
+                        Logger.Error($"Antag '{antag.ID}' is missing its prototype icon.");
+                    }
+                    if (iconTexture != null)
+                        antagSelector.SetIcon(iconTexture);
 
-                        OpenLoadout(null, loadout, roleLoadoutProto, Loc.GetString(antag.Name));
+                    // Preference toggle
+                    var isEnabled = Profile?.AntagPreferences.Contains(antag.ID) == true;
+                    var toggleButton = new Button
+                    {
+                        Text = isEnabled ? Loc.GetString("humanoid-profile-editor-antag-preference-yes-button") : Loc.GetString("humanoid-profile-editor-antag-preference-no-button"),
+                        ToggleMode = true,
+                        Pressed = isEnabled,
+                        VerticalAlignment = VAlignment.Center,
+                        HorizontalExpand = true,
+                        MinWidth = 80
                     };
+                    toggleButton.OnToggled += args =>
+                    {
+                        toggleButton.Text = args.Pressed ? Loc.GetString("humanoid-profile-editor-antag-preference-yes-button") : Loc.GetString("humanoid-profile-editor-antag-preference-no-button");
+                        Profile = Profile?.WithAntagPreference(antag.ID, args.Pressed);
+                        ReloadPreview();
+                        SetDirty();
+                    };
+                    antagSelector.SetPreferenceSelector(toggleButton);
+                    grid.AddChild(antagSelector);
                 }
-
-                antagContainer.AddChild(loadoutWindowBtn);
-                // Goob end
-
-                AntagList.AddChild(antagContainer);
+                categoryContainer.AddChild(grid);
+                AntagList.AddChild(categoryContainer);
             }
         }
+        // _Funkystation End: New Antagonist Cards
 
         private void SetDirty()
         {
@@ -1133,6 +1199,8 @@ namespace Content.Client.Lobby.UI
 
                 Array.Sort(jobs, JobUIComparer.Instance);
 
+                var altJobTitlesEnable = _cfgManager.GetCVar(CCVars.ICAlternateJobTitlesEnable);
+
                 foreach (var job in jobs)
                 {
                     var jobContainer = new BoxContainer()
@@ -1143,6 +1211,7 @@ namespace Content.Client.Lobby.UI
                     var selector = new RequirementsSelector()
                     {
                         Margin = new Thickness(3f, 3f, 3f, 0f),
+                        HorizontalExpand = true,
                     };
                     selector.OnOpenGuidebook += OnOpenGuidebook;
 
@@ -1152,8 +1221,39 @@ namespace Content.Client.Lobby.UI
                         VerticalAlignment = VAlignment.Center
                     };
                     var jobIcon = _prototypeManager.Index(job.Icon);
-                    icon.Texture = _sprite.Frame0(jobIcon.Icon);
-                    selector.Setup(items, job.LocalizedName, 200, job.LocalizedDescription, icon, job.Guides);
+                    icon.Texture = jobIcon.Icon.Frame0();
+                    var hasDefaultAltTitle = Profile?.JobAlternateTitles.ContainsKey(job.ID);
+
+                    List<(ProtoId<JobAlternateTitlePrototype> Id, bool Locked)>? altTitleInfo = null;
+                    ProtoId<JobAlternateTitlePrototype>? currentAlt = null;
+
+                    if (altJobTitlesEnable)
+                    {
+                        if (hasDefaultAltTitle.HasValue && hasDefaultAltTitle.Value)
+                        {
+                            currentAlt = Profile?.JobAlternateTitles[job.ID];
+                        }
+
+                        if (job.AlternateTitles != null)
+                        {
+                            altTitleInfo = new List<(ProtoId<JobAlternateTitlePrototype>, bool)>();
+                            foreach (var titleId in job.AlternateTitles)
+                            {
+                                var isLocked = false;
+                                if (_prototypeManager.TryIndex(titleId, out var titleProto) &&
+                                    titleProto.Requirements != null)
+                                {
+                                    if (!_requirements.CheckRoleRequirements(titleProto.Requirements, Profile, out _))
+                                    {
+                                        isLocked = true;
+                                    }
+                                }
+                                altTitleInfo.Add((titleId, isLocked));
+                            }
+                        }
+                    }
+
+                    selector.Setup(items, job.LocalizedName, 280, job.LocalizedDescription, icon, job.Guides, altTitleInfo, currentAlt, _prototypeManager, Profile?.Gender);
 
                     if (!_requirements.IsAllowed(job, (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter, out var reason))
                     {
@@ -1163,6 +1263,14 @@ namespace Content.Client.Lobby.UI
                     {
                         selector.UnlockRequirements();
                     }
+
+                    selector.OnSelectedTitle += selectedTitle =>
+                    {
+                        if (!altJobTitlesEnable)
+                            return;
+                        Profile = Profile?.WithJobAltTitle(job.ID, selectedTitle);
+                        SetDirty();
+                    };
 
                     selector.OnSelected += selectedPrio =>
                     {
@@ -1470,6 +1578,7 @@ namespace Content.Client.Lobby.UI
         {
             Profile = Profile?.WithGender(newGender);
             ReloadPreview();
+            RefreshJobs(); // So gender-specific job titles get corrected without having to save your character.
         }
 
         private void SetSpecies(string newSpecies)
@@ -2061,3 +2170,4 @@ namespace Content.Client.Lobby.UI
         }
     }
 }
+

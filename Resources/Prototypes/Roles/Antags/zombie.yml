@@ -22,6 +22,11 @@
     - IPC
     - Plasmaman
   guides: [ Zombies ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: Structures/Wallmounts/signs.rsi
+    state: biohazard
 
 - type: antag
   id: Zombie

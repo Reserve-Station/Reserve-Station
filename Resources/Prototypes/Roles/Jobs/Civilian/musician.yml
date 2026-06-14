@@ -71,6 +71,10 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: MikuDay
     prototype: BoxPerformer
+  alternateTitles: # Reserve - alternate titles
+  - MusicianRadioDJ
+  - MusicianVisitingCelebrity
+  - MusicianPerformer
 
 - type: startingGear
   id: MusicianGear
@@ -92,3 +96,15 @@
     neck: ClothingMultipleHeadphones
     outerClothing: ClothingOuterWinterMusician
     gloves: ClothingHandsGlovesColorBlack
+
+- type: jobAlternateTitle
+  id: MusicianRadioDJ
+  name: job-name-alt-musician-1
+
+- type: jobAlternateTitle
+  id: MusicianVisitingCelebrity
+  name: job-name-alt-musician-2
+
+- type: jobAlternateTitle
+  id: MusicianPerformer
+  name: job-name-alt-musician-3

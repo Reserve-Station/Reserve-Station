@@ -175,6 +175,8 @@
   - !type:AddComponentSpecial # goobstation
     components:
       - type: SecurityStaff
+  alternateTitles: # Reserve - alternate titles
+  - WardenDispatch
 
 - type: startingGear
   id: WardenGear
@@ -202,3 +204,7 @@
     belt: ClothingBeltSecurity
     gloves: ClothingHandsGlovesCombat
     shoes: ClothingShoesBootsJack
+
+- type: jobAlternateTitle
+  id: WardenDispatch
+  name: job-name-alt-warden-1

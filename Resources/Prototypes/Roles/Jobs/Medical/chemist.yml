@@ -86,6 +86,9 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.25
+  alternateTitles: # Reserve - alternate titles
+  - ChemistPharmacist
+  - ChemistLabTechnician
 
 - type: startingGear
   id: ChemistGear
@@ -108,3 +111,11 @@
     neck: ClothingNeckStethoscope
     outerClothing: ClothingOuterCoatLabChem
     gloves: ClothingHandsGlovesLatex
+
+- type: jobAlternateTitle
+  id: ChemistPharmacist
+  name: job-name-alt-chemist-1
+
+- type: jobAlternateTitle
+  id: ChemistLabTechnician
+  name: job-name-alt-chemist-2

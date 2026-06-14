@@ -8,3 +8,9 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 180000
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _White/Interface/Actions/xenomorph.rsi
+    state: evolve
+

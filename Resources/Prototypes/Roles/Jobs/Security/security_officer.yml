@@ -116,6 +116,8 @@
   - !type:AddComponentSpecial # goobstation
     components:
       - type: SecurityStaff
+  alternateTitles: # Reserve - alternate titles
+  - SecurityOfficerHallMonitor
 
 - type: startingGear
   id: SecurityOfficerGear
@@ -137,3 +139,7 @@
     mask: ClothingMaskGasSecurity
     neck: Dinkystar
     gloves: ClothingHandsGlovesColorBlack
+
+- type: jobAlternateTitle
+  id: SecurityOfficerHallMonitor
+  name: job-name-alt-secoff-1

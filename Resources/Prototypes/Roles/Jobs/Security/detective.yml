@@ -95,6 +95,8 @@
   - !type:AddComponentSpecial # goobstation
     components:
       - type: SecurityStaff
+  alternateTitles: # Reserve - alternate titles
+  - DetectiveForensicInvestigator
 
 - type: startingGear
   id: DetectiveGear
@@ -120,3 +122,7 @@
     mask: ClothingMaskGasSecurity
     neck: ClothingNeckTieDet
     gloves: ClothingHandsGlovesForensic
+
+- type: jobAlternateTitle
+  id: DetectiveForensicInvestigator
+  name: job-name-alt-detective-1

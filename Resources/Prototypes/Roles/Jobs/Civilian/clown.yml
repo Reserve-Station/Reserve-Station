@@ -149,6 +149,9 @@
       interval: 10
   - !type:AddImplantSpecial
     implants: [ SadTromboneImplant ]
+  alternateTitles: # Reserve - alternate titles
+  - ClownJester
+  - ClownBouffon
 
 - type: startingGear
   id: ClownGear
@@ -163,6 +166,7 @@
     - RubberStampClown
     - CrayonRainbow
 
+
 - type: chameleonOutfit
   id: ClownChameleonOutfit
   job: Clown
@@ -172,3 +176,11 @@
     neck: ClothingHeadHatFlowerWreath
     outerClothing: ClothingOuterClownPriest
     gloves: ClothingHandsGlovesColorYellowBudget
+
+- type: jobAlternateTitle
+  id: ClownJester
+  name: job-name-alt-clown-1
+
+- type: jobAlternateTitle
+  id: ClownBouffon
+  name: job-name-alt-clown-2

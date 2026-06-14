@@ -97,6 +97,12 @@
   special: # goob
   - !type:AddImplantSpecial # Service workers can understand a chef's communications.
     implants: [ BasicSpaceItalianTranslatorImplant ]
+  alternateTitles: # Reserve - alternate titles
+  - ServiceWorkerWaiter
+  - ServiceWorkerJuniorCook
+  - ServiceWorkerBartenderApprentice
+  - ServiceWorkerCroupier
+  - ServiceWorkerSteward
 
 - type: startingGear
   id: ServiceWorkerGear
@@ -118,3 +124,23 @@
     neck: ClothingNeckScarfStripedBrown
     outerClothing: ClothingOuterVest
     gloves: ClothingHandsGlovesColorBlack
+
+- type: jobAlternateTitle
+  id: ServiceWorkerWaiter
+  name: job-name-alt-serviceworker-1
+
+- type: jobAlternateTitle
+  id: ServiceWorkerJuniorCook
+  name: job-name-alt-serviceworker-2
+
+- type: jobAlternateTitle
+  id: ServiceWorkerBartenderApprentice
+  name: job-name-alt-serviceworker-3
+
+- type: jobAlternateTitle
+  id: ServiceWorkerCroupier
+  name: job-name-alt-serviceworker-4
+
+- type: jobAlternateTitle
+  id: ServiceWorkerSteward
+  name: job-name-alt-serviceworker-5

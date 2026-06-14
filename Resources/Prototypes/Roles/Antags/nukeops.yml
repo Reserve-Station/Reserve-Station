@@ -111,6 +111,11 @@
     species:
     - Plasmaman
   guides: [ NuclearOperatives ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: nuclearoperative
 
 - type: antag
   id: NukeopsMedic
@@ -132,6 +137,11 @@
     species:
     - Plasmaman
   guides: [ NuclearOperatives ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: nuclearoperativeagent
 
 - type: antag
   id: NukeopsCommander
@@ -154,6 +164,11 @@
     species:
     - Plasmaman
   guides: [ NuclearOperatives ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: nuclearoperativecommander
 
 - type: startingGear
   id: SyndicateOperativeGearFullNoUplink

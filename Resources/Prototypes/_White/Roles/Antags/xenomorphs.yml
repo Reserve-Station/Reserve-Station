@@ -2,4 +2,7 @@
   id: Xenomorph
   name: roles-antag-xenomorph-name
   antagonist: true
+  setPreference: false
   objective: roles-antag-xenomorph-objective
+  # Reserve - antag UI
+  category: Team

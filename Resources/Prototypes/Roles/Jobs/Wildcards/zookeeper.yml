@@ -70,6 +70,11 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: MonkeyDay
     prototype: MonkeyCubeBox
+  alternateTitles: # Reserve - alternate titles
+  - ZookeeperAnimalControl
+  - ZookeeperMenagerist
+  - ZookeeperXenobiologist
+  - ZookeeperWildlifeSpecialist
 
 - type: startingGear
   id: ZookeeperGear
@@ -94,3 +99,18 @@
     belt: ClothingBeltStorageWaistbag
     gloves: ClothingHandsGlovesColorBrown
 
+- type: jobAlternateTitle
+  id: ZookeeperAnimalControl
+  name: job-name-alt-zookeeper-1
+
+- type: jobAlternateTitle
+  id: ZookeeperMenagerist
+  name: job-name-alt-zookeeper-2
+
+- type: jobAlternateTitle
+  id: ZookeeperXenobiologist
+  name: job-name-alt-zookeeper-3
+
+- type: jobAlternateTitle
+  id: ZookeeperWildlifeSpecialist
+  name: job-name-alt-zookeeper-4

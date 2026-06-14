@@ -12,25 +12,43 @@
   id: LoneAbductorAntag
   name: abductor-lone-ghost-role-name
   antagonist: true
+  setPreference: false # Reserve edit
   objective: roles-antag-abductor-objective
+  category: Solo
 
 - type: antag
   id: AbductorAgentAntag
   name: abductor-agent-ghost-role-name
   antagonist: true
+  setPreference: true # Reserve edit
   objective: roles-antag-abductor-objective
+  guides: [ Abductors ] # Reserve edit
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Shitmed/Objects/Weapons/Melee/wonderprod.rsi
+    state: icon
 
 - type: antag
   id: AbductorScientistAntag
   name: abductor-scientist-ghost-role-name
   antagonist: true
+  setPreference: true # Reserve edit
   objective: roles-antag-abductor-objective
+  guides: [ Abductors ] # Reserve edit
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Shitmed/Objects/Misc/gizmo.rsi
+    state: icon
 
 - type: antag
   id: AbductorVictimAntag
   name: abductor-victim-role-name
   antagonist: true
+  setPreference: false # Reserve edit
   objective: roles-antag-abductor-victim
+  category: Solo
 
 - type: roleType
   id: AbductorVictimRole

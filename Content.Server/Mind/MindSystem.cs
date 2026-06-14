@@ -63,6 +63,10 @@
 // SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 RichardBlonski <48651647+RichardBlonski@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 pa.pecherskij <pa.pecherskij@interfax.ru>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -473,5 +477,10 @@ public sealed class MindSystem : SharedMindSystem
         oldVComp.MindId = null; // otherwise itll forcefully unvisit you.
         mindComp.VisitingEntity = newVisiting;
         mindComp.OwnedEntity = newReturn ?? mindComp.OwnedEntity;
+    }
+
+    internal bool TryGetMind(EntityUid mindId, out object mind)
+    {
+        throw new NotImplementedException();
     }
 }

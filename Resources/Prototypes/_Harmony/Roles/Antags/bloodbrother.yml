@@ -8,6 +8,11 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 3600 # 1h
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Harmony/Interface/Misc/job_icons.rsi
+    state: BloodBrother
 
 # not actually given out, only used to check the preference
 - type: antag
@@ -19,3 +24,8 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 3600 # 1h
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Harmony/Interface/Misc/job_icons.rsi
+    state: BloodBrother

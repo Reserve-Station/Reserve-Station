@@ -104,6 +104,9 @@
     components:
     - type: SurgerySpeedModifier
       speedModifier: 1.25
+  alternateTitles: # Reserve - alternate titles
+  - ParamedicTraumaSpecialist
+  - ParamedicEmergencyMedicalTechnician
 
 - type: startingGear
   id: ParamedicGear
@@ -125,3 +128,11 @@
     neck: ClothingNeckStethoscope
     outerClothing: ClothingOuterCoatParamedicWB
     gloves: ClothingHandsGlovesLatex
+
+- type: jobAlternateTitle
+  id: ParamedicTraumaSpecialist
+  name: job-name-alt-paramedic-1
+
+- type: jobAlternateTitle
+  id: ParamedicEmergencyMedicalTechnician
+  name: job-name-alt-paramedic-2

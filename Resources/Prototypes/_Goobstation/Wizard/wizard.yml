@@ -41,6 +41,11 @@
     species:
     - Plasmaman
   guides: [ Wizard ]
+  # Reserve - antag UI
+  category: Solo
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: wizard
 
 - type: antag
   id: Apprentice
@@ -48,6 +53,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-apprentice-description
+  category: Solo
 
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]

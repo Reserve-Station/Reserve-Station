@@ -15,3 +15,8 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 18000 # 5h # Goobstation-RoleTime
+  # Reserve - antag UI
+  category: Solo
+  icon:
+    sprite: _Goobstation/Blob/Mobs/blob.rsi
+    state: blob

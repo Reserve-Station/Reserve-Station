@@ -24,6 +24,11 @@
     inverted: true
     species:
     - Plasmaman
+  # Reserve - antag UI
+  category: Solo
+  icon:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: contract-written
 
 - type: startingGear
   id: DevilStartingGear

@@ -14,6 +14,11 @@
     department: Security
     time: 18000 # 5 hours
   guides: [ Shadowlings ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _EinsteinEngines/Shadowling/objectives.rsi
+    state: ascendance_icon
 
 - type: antag
   id: Thrall

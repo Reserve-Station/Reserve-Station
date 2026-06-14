@@ -1,3 +1,7 @@
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Common.Bloodstream;
 using Content.Goobstation.Common.CCVar; // Goobstation
 using Content.Goobstation.Maths.FixedPoint;
@@ -17,6 +21,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Drunk;
 using Content.Shared.Fluids;
+using Content.Shared.Inventory;
 using Content.Shared.Forensics.Components;
 using Content.Shared.HealthExaminable;
 using Content.Shared.Mobs.Systems;
@@ -47,6 +52,7 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedDrunkSystem _drunkSystem = default!;
     [Dependency] private readonly SharedStutteringSystem _stutteringSystem = default!;
+    [Dependency] private readonly EntityLookupSystem _lookup = default!;
 
     private float _bloodlossMultiplier = 4f; // Goobstation
 
@@ -496,6 +502,30 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 dna.Freshness = _timing.CurTime;
             }
             // Goobstation end
+
+            // stain clothes on bleed
+            var stainEv = new SpilledOnEvent(ent.Owner, tempSolution);
+            RaiseLocalEvent(ent.Owner, stainEv);
+
+            // stain neighbors
+            var xform = Transform(ent.Owner);
+            var lookup = _lookup.GetEntitiesInRange(xform.Coordinates, 1.5f);
+            foreach (var uid in lookup)
+            {
+                if (ent.Owner == uid)
+                    continue;
+
+                // only try staining things that have an inventory
+                // event is relayed by InventoryComponent
+                if (!HasComp<InventoryComponent>(ent))
+                    continue;
+
+                var neighborStainEv = new SpilledOnEvent(uid, tempSolution);
+                RaiseLocalEvent(ent, neighborStainEv);
+
+                if (tempSolution.Volume <= 0)
+                    break;
+            }
 
             _puddle.TrySpillAt(ent.Owner, tempSolution, out _, sound: false);
 

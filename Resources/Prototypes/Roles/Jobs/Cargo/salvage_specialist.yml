@@ -89,6 +89,9 @@
   - Salvage
   - Maintenance
   - External
+  alternateTitles: # Reserve - alternate titles
+  - SalvageSpecialistMiner
+
 - type: startingGear
   id: SalvageSpecialistGear
   equipment:
@@ -98,6 +101,7 @@
   storage: # DeltaV: Add mining voucher
     back:
     - MiningVoucher
+
 - type: chameleonOutfit
   id: SalvageSpecialistChameleonOutfit
   job: SalvageSpecialist
@@ -108,3 +112,10 @@
     outerClothing: ClothingOuterWinterMiner
     neck: ClothingNeckScarfStripedBrown
     gloves: ClothingHandsGlovesColorBlack
+  #storage:
+    #back:
+    #- Stuff
+
+- type: jobAlternateTitle
+  id: SalvageSpecialistMiner
+  name: job-name-alt-salvage-1

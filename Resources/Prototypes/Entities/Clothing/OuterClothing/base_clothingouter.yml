@@ -168,6 +168,28 @@
   - type: Sprite
     state: icon
   - type: AllowSuitStorage # DeltaV - allow suit storage for all outer clothing, no whitelist
+  # Reserve start - clothing stains
+  - type: Appearance
+  - type: Stainable # Reserve
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothing
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothing
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 30
+      stain: # Reserve - clothing stains
+        maxVol: 5
+  - type: StainBlocker # Reserve
+    slots: [INNERCLOTHING]
+  # Reserve end - clothing stains
 
 - type: entity
   abstract: true
@@ -186,6 +208,16 @@
   - type: Tag
     tags:
       - WhitelistChameleon
+  - type: Stainable # Reserve
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: suitblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: suitbloodicon
+  - type: StainBlocker # Reserve
+    slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity
   abstract: true
@@ -205,6 +237,14 @@
         type: StorageBoundUserInterface
   - type: StaticPrice
     price: 70
+  - type: Stainable # Reserve
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: coatblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: coatbloodicon
 
 - type: entity
   abstract: true
@@ -226,6 +266,14 @@
     - state: icon-open
       map: ["foldedLayer"]
       visible: false
+  - type: Stainable # Reserve
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: outerclothing
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: outerclothing
 
 - type: entity
   abstract: true
@@ -365,6 +413,8 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: StainBlocker # Reserve
+    slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity
   abstract: true
@@ -410,6 +460,8 @@
   - type: Tag
     tags:
     - PlasmamanSafe # EE Plasmeme Change
+  - type: StainBlocker # Reserve
+    slots: [INNERCLOTHING, FEET, GLOVES]
 
 - type: entity
   parent: ClothingOuterBase

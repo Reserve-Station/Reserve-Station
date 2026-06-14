@@ -75,6 +75,17 @@
   - type: Tag # goob edit
     tags:
     - Mask
+  # Reserve start - clothing stains
+  - type: Appearance
+  - type: Stainable # Reserve
+    clothingVisuals:
+      mask:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: maskblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: maskbloodicon
+  # Reserve end - clothing stains
 
 - type: entity
   abstract: true
@@ -117,6 +128,8 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 10
+      stain: # Reserve - clothing stains
+        maxVol: 5
   - type: Tag
     tags:
     - ClothMade

@@ -8,6 +8,7 @@
 //
 // SPDX-License-Identifier: MIT
 
+using Content.Server.Popups;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.DragDrop;
 using Content.Goobstation.Maths.FixedPoint;

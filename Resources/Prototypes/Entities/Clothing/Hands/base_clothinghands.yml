@@ -113,6 +113,8 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 10
+      stain: # Reserve - clothing stains
+        maxVol: 5
   - type: Tag
     tags:
     - ClothMade
@@ -129,6 +131,17 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
+  # Reserve start - clothing stains
+  - type: Appearance
+  - type: Stainable # Reserve
+    clothingVisuals:
+      gloves:
+      - sprite: _Gabystation/Effects/blood.rsi
+        state: gloveblood
+    iconVisuals:
+    - sprite: _Gabystation/Effects/blood.rsi
+      state: glovebloodicon
+  # Reserve end - clothing stains
 
 - type: entity
   abstract: true

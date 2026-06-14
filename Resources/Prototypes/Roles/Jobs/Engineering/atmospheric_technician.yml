@@ -86,6 +86,8 @@
   - !type:AddComponentSpecial # Goobstation
     components:
     - type: EngineeringStaff
+  alternateTitles: # Reserve - alternate titles
+  - AtmosphericTechnicianFirefighter
 
 - type: startingGear
   id: AtmosphericTechnicianGear
@@ -107,3 +109,7 @@
     neck: ClothingNeckScarfStripedLightBlue
     outerClothing: ClothingOuterSuitAtmosFire
     gloves: ClothingHandsGlovesColorYellow
+
+- type: jobAlternateTitle
+  id: AtmosphericTechnicianFirefighter
+  name: job-name-alt-atmos-1

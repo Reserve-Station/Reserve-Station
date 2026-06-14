@@ -8,3 +8,8 @@
   - !type:OverallPlaytimeRequirement
     time: 43200 # 12h
   guides: [ CosmicCult ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Funkystation/Interface/Lobby/AntagCards.rsi
+    state: cosmiccult

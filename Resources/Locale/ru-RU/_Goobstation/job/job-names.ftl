@@ -1,30 +1,31 @@
-job-name-futureagent = агент будущего
-job-name-salvagediver = утилизатор-десантинк
-job-name-ntr = представитель Nanotrasen
-job-name-bs = офицер Синего Щита
-job-name-overall = общий
-job-name-tider = тайдер
+job-name-futureagent = Агент будущего
+job-name-salvagediver = Утилизатор-десантинк
+job-name-ntr = Представитель Nanotrasen
+job-name-bs = Офицер Синего Щита
+job-name-overall = Общий
+job-name-tider = Тайдер
 
 # Флот
 
-job-name-navyofficer = офицер ВКФ
-job-name-navy-officer-undercover = офицер ВКФ под прикрытием
-job-name-navycaptain = капитан ВКФ
-job-name-diplomat = дипломат
-job-name-inspector = аудитор Центрального Командования
-job-name-nct = карьерный тренер Nanotrasen
+job-name-navyofficer = Офицер ВКФ
+job-name-navy-officer-undercover = Офицер ВКФ под прикрытием
+job-name-special-operations-officer = Офицер спецопераций
+job-name-navycaptain = Капитан ВКФ
+job-name-diplomat = Дипломат
+job-name-inspector = Аудитор Центрального Командования
+job-name-nct = Карьерный тренер Nanotrasen
 
 # Half Life
 
-job-name-hecu = оперативник HECU
-job-name-highcommander = верховный главнокомандующий
-job-name-governmentman = джи-мэн
+job-name-hecu = Оперативник HECU
+job-name-highcommander = Верховный главнокомандующий
+job-name-governmentman = Джи-мэн
 
 # Misc
 
-job-name-conquest = завоеватель
-job-name-mercenarycaptain = капитан наёмников
-job-name-radiohost = радиоведущий
+job-name-conquest = Завоеватель
+job-name-mercenarycaptain = Капитан наёмников
+job-name-radiohost = Радиоведущий
 
 # Таймеры ролей - сделайте их в алфавитном порядке или я вас порежу (не слушайте апстрим, я скопировал и вставил это, сделайте их не в алфавитном порядке :godo:)
 
@@ -34,6 +35,7 @@ JobHecuOperative = Оперативник HECU
 JobNanotrasenCareerTrainer = Карьерный тренер Nanotrasen
 JobNavyOfficer = Офицер ВКФ
 JobNavyOfficerUndercover = Офицер ВКФ под прикрытием
+JobSpecialOperationsOfficer = Офицер спецопераций
 JobNavyCaptain = Капитан ВКФ
 JobDiplomat = Дипломат
 JobGovernmentMan = Джи-мэн

@@ -11,3 +11,8 @@
   setPreference: true
   objective: roles-antag-corporate-agent-description
   guides: [ CorporateAgents ]
+  # Reserve - antag UI
+  category: Solo
+  icon:
+    sprite: Objects/Misc/pens.rsi
+    state: overpriced_pen

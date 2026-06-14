@@ -88,6 +88,12 @@
     inverted: true
     species:
     - Plasmaman
+  # Reserve - antag UI
+  category: Solo
+  icon:
+    sprite: Objects/Weapons/Melee/energykatana.rsi
+    state: icon
+  previewStartingGear: SpaceNinjaGear
 
 #Ninja Gear
 - type: startingGear

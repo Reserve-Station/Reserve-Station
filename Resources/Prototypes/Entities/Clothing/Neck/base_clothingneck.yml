@@ -48,6 +48,8 @@
         reagents:
         - ReagentId: Fiber
           Quantity: 10
+      stain: # Reserve - clothing stains
+        maxVol: 5
   - type: Tag
     tags:
     - ClothMade

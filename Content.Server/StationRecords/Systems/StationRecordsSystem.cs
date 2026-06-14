@@ -22,6 +22,13 @@
 // SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Zachary Higgs <compgeek223@gmail.com>
 // SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
+// SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ferynn <117872973+ferynn@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
+// SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -171,17 +178,42 @@ public sealed partial class StationRecordsSystem : SharedStationRecordsSystem
 
         // when adding a record that already exists use the old one
         // this happens when respawning as the same character
-        if (GetRecordByName(station, name, records) is {} id)
+        if (GetRecordByName(station, name, records) is { } id)
         {
             SetIdKey(idUid, new StationRecordKey(id, station));
             return;
+        }
+
+        string? jobTitle = null;
+
+        Entity<IdCardComponent>? card = null;
+        if (idUid != null && _idCard.TryFindIdCard(idUid.Value, out var cardUid) && TryComp(cardUid, out IdCardComponent? comp))
+        {
+            card = (cardUid, comp);
+        }
+
+        if (card.HasValue)
+        {
+            var cardComp = card.Value.Comp;
+            if (!string.IsNullOrEmpty(cardComp.LocalizedJobTitle))
+                jobTitle = cardComp.LocalizedJobTitle;
+        }
+        if (string.IsNullOrEmpty(jobTitle) && profile.AlternateJobTitle != null &&
+            _prototypeManager.TryIndex<JobAlternateTitlePrototype>(profile.AlternateJobTitle, out var altTitle))
+        {
+            jobTitle = altTitle.LocalizedName(gender);
+        }
+
+        if (string.IsNullOrEmpty(jobTitle))
+        {
+            jobTitle = jobPrototype.LocalizedName;
         }
 
         var record = new GeneralStationRecord()
         {
             Name = name,
             Age = age,
-            JobTitle = jobPrototype.LocalizedName,
+            JobTitle = jobTitle,
             JobIcon = jobPrototype.Icon,
             JobPrototype = jobId,
             Species = species,
