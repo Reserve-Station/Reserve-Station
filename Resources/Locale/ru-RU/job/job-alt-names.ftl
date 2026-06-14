@@ -24,7 +24,7 @@ job-name-alt-qm-5 = Координатор логистики
 
 job-name-alt-cargotech-1 = Курьер
 job-name-alt-cargotech-2 = Пилот шаттла
-job-name-alt-cargotech-3 = Специалист по логистике
+job-name-alt-cargotech-3 = Логист
 
 job-name-alt-salvage-1 = Утилизатор
 
@@ -33,7 +33,7 @@ job-name-alt-ce-1 = Глава инженерного отдела
 job-name-alt-ce-2 = Инженер-бригадир
 job-name-alt-ce-3 = Технический руководитель
 
-job-name-alt-engineer-1 = Специалист по техобслуживанию
+job-name-alt-engineer-1 = Техобслуживающий
 job-name-alt-engineer-2 = Механик
 job-name-alt-engineer-3 = Электрик
 job-name-alt-engineer-4 = Оператор двигателя
@@ -57,7 +57,7 @@ job-name-alt-bartender-1 = Миксолог
 job-name-alt-bartender-2 = Оператор оборудования для регидратации
 job-name-alt-bartender-3 = Бариста
 
-job-name-alt-botanist-1 = Специалист по гидропонике
+job-name-alt-botanist-1 = Гидропонист
 job-name-alt-botanist-2 = Травник
 
 job-name-alt-chaplain-1 = Проповедник

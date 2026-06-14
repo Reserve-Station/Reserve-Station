@@ -103,6 +103,7 @@ public sealed class PresetIdCardSystem : EntitySystem
 
         _accessSystem.SetAccessToJob(uid, job, extended);
 
+        // Reserve start - alternative titles
         if (!TryComp<IdCardComponent>(uid, out var card))
         {
             Log.Warning($"Entity {uid} does not have IdCardComponent, skipping title setup.");
@@ -116,20 +117,21 @@ public sealed class PresetIdCardSystem : EntitySystem
         {
             titleToSet = altTitle.LocalizedName(Gender.Neuter);
         }
-        else if (job.AlternateTitles != null && job.AlternateTitles.Count > 0)
-        {
-            JobAlternateTitlePrototype? altFromJob = null;
-            foreach (var altId in job.AlternateTitles)
-            {
-                if (_prototypeManager.TryIndex(altId, out var proto))
-                {
-                    altFromJob = proto;
-                    break;
-                }
-            }
+        // Disabled this so new cards have a default job name, not first alternative.
+        // else if (job.AlternateTitles != null && job.AlternateTitles.Count > 0)
+        // {
+        //     JobAlternateTitlePrototype? altFromJob = null;
+        //     foreach (var altId in job.AlternateTitles)
+        //     {
+        //         if (_prototypeManager.TryIndex(altId, out var proto))
+        //         {
+        //             altFromJob = proto;
+        //             break;
+        //         }
+        //     }
 
-            titleToSet = altFromJob?.LocalizedName(Gender.Neuter) ?? job.LocalizedName;
-        }
+        //     titleToSet = altFromJob?.LocalizedName(Gender.Neuter) ?? job.LocalizedName;
+        // }
         else
         {
             titleToSet = job.LocalizedName;
@@ -137,6 +139,7 @@ public sealed class PresetIdCardSystem : EntitySystem
 
         if (!string.IsNullOrEmpty(titleToSet))
             _cardSystem.TryChangeJobTitle(uid, titleToSet);
+        // Reserve end - alternative titles
 
         _cardSystem.TryChangeJobDepartment(uid, job);
 
