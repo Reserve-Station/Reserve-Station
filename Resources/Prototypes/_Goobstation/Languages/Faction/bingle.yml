@@ -6,8 +6,8 @@
 - type: language
   id: Bingle
   speech:
-    fontId: Eatday
-    boldFontId: Eatday
+    fontId: ShantellSans
+    boldFontId: ShantellSansBold
     color: "#33528d"
   obfuscation:
     !type:PhraseObfuscation

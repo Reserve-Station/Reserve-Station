@@ -6,9 +6,9 @@
 
 # Calcic (Skeletons)
 - type: font
-  id: LDFComicSans
-  path: /Fonts/_EinsteinEngines/LDFComicSans/LDFComicSans-Medium.ttf
+  id: ComicRelief
+  path: /Fonts/_EinsteinEngines/ComicRelief/ComicRelief-Regular.ttf
 
 - type: font
-  id: LDFComicSansBold
-  path: /Fonts/_EinsteinEngines/LDFComicSans/LDFComicSans-Bold.ttf
+  id: ComicReliefBold
+  path: /Fonts/_EinsteinEngines/ComicRelief/ComicRelief-Bold.ttf

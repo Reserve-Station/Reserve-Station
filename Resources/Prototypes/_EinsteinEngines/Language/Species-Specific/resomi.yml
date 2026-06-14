@@ -10,7 +10,7 @@
   isVisibleLanguage: true
   speech:
     color: "#4DBFD9"
-    fontId: Schoolbell
+    fontId: Pangolin
     fontSize: 14
   obfuscation:
     !type:SyllableObfuscation

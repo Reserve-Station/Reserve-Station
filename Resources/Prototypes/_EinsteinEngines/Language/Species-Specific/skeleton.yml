@@ -8,8 +8,8 @@
   id: Calcic
   isVisibleLanguage: true
   speech:
-    fontId: LDFComicSans
-    boldFontId: LDFComicSansBold
+    fontId: ComicRelief
+    boldFontId: ComicReliefBold
     color: "#e3dac9"
   obfuscation:
     !type:SyllableObfuscation

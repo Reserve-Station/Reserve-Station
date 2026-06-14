@@ -4,7 +4,7 @@ language-Universal-description = Кто ты?
 language-Psychomantic-name = Психомантический
 language-Psychomantic-description = Чистый смысл, свободный от тирании примитивных слов и жестов.
 
-language-Bubblish-name = Пузырящий
+language-Bubblish-name = Пузырчатый
 language-Bubblish-description = Язык слаймов. Будучи смесью булькающих звуков и хлопков, он крайне сложен для воспроизведения людьми без механических приспособлений.
 
 language-RootSpeak-name = Корнеречь
@@ -40,8 +40,8 @@ language-Elyran-description = Официальный язык Республик
 language-Canilunzt-name = Канилунцт
 language-Canilunzt-description = Гортанный язык вульпканин, состоящий из рычания, лая и активного использования ушей и хвоста.
 
-language-Moffic-name = Мотыльковый
-language-Moffic-description = Язык мотыльковых людей, граничащий с полной невнятностью.
+language-Moffic-name = Ткачий
+language-Moffic-description = Язык молей, граничащий с полной невнятностью.
 
 language-RobotTalk-name = Роборечь
 language-RobotTalk-description = Язык двоичных сигналов, недоступный для воспроизведения органическими существами без переводчиков.
@@ -114,7 +114,7 @@ language-Kobold-description = Хсс!
 language-Hissing-name = Шипение
 language-Hissing-description = Хсс!
 
-language-Eldritch-name = Жуткий
+language-Eldritch-name = Багряный
 language-Eldritch-description =
     Язык, который считается давно забытым - теперь единственными, кто говорит на этом оскверненном языке визгов и
     бормотания, являются последователи древнего Бога Крови.

@@ -125,7 +125,7 @@
   isVisibleLanguage: true
   speech:
     color: "#f58c9aee" # Bright red, to push this energy through
-    fontId: Sriracha # relatively energetic, portraying the body movement I suppose
+    fontId: Manrope # relatively energetic, portraying the body movement I suppose
     allowRadio: true # It's actually ok, since message wrap overrides are broken for radio, yipee?
     requireSpeech: false
     messageWrapOverrides:
@@ -221,7 +221,7 @@
   isVisibleLanguage: true
   speech:
     color: "#9a69f5ee" # More or less the color of nobility
-    fontId: GrenzeGotisch # Old and distinguished, but not unreadable
+    fontId: BrahmsGotischCyrillic # Old and distinguished, but not unreadable
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 3
