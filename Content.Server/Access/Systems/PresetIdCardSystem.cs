@@ -85,8 +85,9 @@ public sealed class PresetIdCardSystem : EntitySystem
 
     private void SetupIdName(EntityUid uid, PresetIdCardComponent id)
     {
-        if (id.IdName != null)
-            _cardSystem.TryChangeFullName(uid, id.IdName);
+        if (id.IdName == null)
+            return;
+        _cardSystem.TryChangeFullName(uid, id.IdName);
     }
 
     private void SetupIdAccess(EntityUid uid, PresetIdCardComponent id, bool extended)
@@ -137,7 +138,6 @@ public sealed class PresetIdCardSystem : EntitySystem
         if (!string.IsNullOrEmpty(titleToSet))
             _cardSystem.TryChangeJobTitle(uid, titleToSet);
 
-        _cardSystem.TryChangeJobTitle(uid, job.LocalizedName);
         _cardSystem.TryChangeJobDepartment(uid, job);
 
         if (!string.IsNullOrEmpty(job.Icon) && _prototypeManager.TryIndex(job.Icon, out var jobIcon))
