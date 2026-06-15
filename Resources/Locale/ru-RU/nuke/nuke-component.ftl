@@ -41,3 +41,5 @@ nuke-codes-fax-paper-name = коды ядерной аутентификации
 nuke-slot-component-slot-name-disk = Диск
 nuke-examine-armed = Эй, а почему эта [color=red]красная лампочка[/color] мигает?
 nuke-examine-exploding = Ага... Похоже, уже слишком поздно, приятель.
+
+nuke-disk-component-microwave = Диск немного искрит и шипит, но кажется практически невредимым?

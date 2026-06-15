@@ -31,3 +31,5 @@ objective-hunt-the-cowards-title = Охотьтесь на трусов, убе�
 objective-spread-blood = Разбросайте кровь по { $area }.
 objective-show-power-title = Покажите { $targetName } истинную силу.
 objective-drive-insane-title = Обезумьте { $targetName } своим демоническим шёпотам.
+
+objective-condition-kill-everyone-title = УБИТЬ ВСЕХ

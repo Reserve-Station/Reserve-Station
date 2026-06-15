@@ -132,3 +132,23 @@ holopad-station-bridge = Станция - Мост
 holopad-station-cargo-bay = Станция - Отсек снабжения
 # CentComm
 holopad-centcomm-evac = Центком - эвакуационный шаттл
+
+holopad-window-relay-label = Источник:
+
+holopad-window-filter-line-placeholder = Поиск контакта
+
+holopad-ai-is-unable-to-activate-projector = Вы не можете активировать проектор голопада, он находится слишком далеко от вашего ядра.
+
+holopad-science-artifact-north = Наука - Ксеноархеология Север
+
+holopad-science-artifact-south = Наука - Ксеноархеология Юг
+
+holopad-medical-clinic = Медицина - Клиника
+
+holopad-cargo-mailroom = Карго - Почтовое отделение
+
+holopad-engineering-main = Инженерный - Главная
+
+holopad-security-evac-checkpoint = Безопасность – КПП эвакуации
+
+holopad-security-arrivals-checkpoint = Безопасность – КПП прибытия

@@ -54,3 +54,11 @@ shell-argument-number-invalid = Аргумент { $index } должен быт�
 # Hints
 shell-argument-username-hint = <username>
 shell-argument-username-optional-hint = [username]
+
+shell-must-have-body = У вас должно быть тело для запуска этой команды.
+
+shell-need-exactly-zero-arguments = Эта команда не имеет аргументов.
+
+shell-missing-required-permission = Для этой команды вам понадобится {$perm}!
+
+shell-entity-target-lacks-component = Целевой объект не имеет компонента {INDEFINITE($componentName)} {$componentName}.

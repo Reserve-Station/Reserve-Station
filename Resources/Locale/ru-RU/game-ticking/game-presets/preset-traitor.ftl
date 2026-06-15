@@ -71,3 +71,8 @@ traitor-role-moreinfo = Найти дополнительную информац
 traitor-role-nouplink = У вас нет связи с синдикатом. Запишите его.
 traitor-role-allegiances = Ваши альянсы:
 traitor-role-notes = Заметки от вашего работодателя:
+
+traitor-role-uplink-pen-code = Наведите ручку на комбинацию [color = lightgray]{$code}[/color], чтобы разблокировать аплинк.
+    Градусы представляют собой углы поворота. Аплинк автоматически блокируется при закрытии.
+
+traitor-role-uplink-pen-code-short = Ваш код аплинка — {$code}. Поверните ручку, чтобы разблокировать. Блокируется при закрытии.

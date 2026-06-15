@@ -50,3 +50,15 @@ emergency-shuttle-ui-remaining = Осталось: { $remaining }
 # Map Misc.
 map-name-centcomm = Центральное командование
 map-name-terminal = Терминал прибытия
+
+cmd-delayroundend-desc = Останавливает таймер, который завершает раунд, когда аварийный шаттл стыкуется к ЦК.
+
+cmd-delayroundend-help = Использование: delayroundend
+
+cmd-dockemergencyshuttle-desc = Вызывает аварийный шаттл и пристыковывает его к станции... если сможет.
+
+cmd-dockemergencyshuttle-help = Использование: dockemergencyshuttle
+
+cmd-launchemergencyshuttle-desc = Если возможно, запускает аварийный шаттл.
+
+cmd-launchemergencyshuttle-help = Использование: launchemergencyshuttle

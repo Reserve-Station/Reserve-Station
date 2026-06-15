@@ -77,3 +77,19 @@ accent-dementia-words-33 = волшебник
 accent-dementia-words-replace-33 = какой-то плохой парень, забыл, какой именно
 accent-dementia-words-34 = волшебник
 accent-dementia-words-replace-34 = какой-то плохой парень, забыл, какой именно
+
+accent-dementia-words-35 = юг
+
+accent-dementia-words-replace-35 = где-то
+
+accent-dementia-words-36 = север
+
+accent-dementia-words-replace-36 = где-то
+
+accent-dementia-words-37 = восток
+
+accent-dementia-words-replace-37 = где-то
+
+accent-dementia-words-38 = запад
+
+accent-dementia-words-replace-38 = где-то

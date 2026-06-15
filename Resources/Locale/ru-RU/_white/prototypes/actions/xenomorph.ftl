@@ -1,8 +1,8 @@
 ent-ActionCombatModeToggleXenomorph = { ent-ActionCombatModeToggle }
     .desc = { ent-ActionCombatModeToggle.desc }
 
-ent-ToggleThermalVisionXenomorph = { ent-ActionCombatModeToggle }
-    .desc = { ent-ActionCombatModeToggle.desc }
+ent-ToggleThermalVisionXenomorph = { ent-ToggleThermalVision }
+    .desc = { ent-ToggleThermalVision.desc }
 
 ent-ActionEvolution = Эволюционировать
     .desc = Эволюционирует в высшую касту ксеноморфов.
@@ -20,13 +20,16 @@ ent-ActionSpawnXenomorphEgg = Отложить яйцо (75)
     .desc = Отложить яйцо, чтобы произвести на свет лицехватов, с помощью которых можно оплодотворить добычу.
 
 ent-ActionSpawnWallResin = Построить смоляную стену (50)
-    .desc = Выделяют вязкую, пластичную смолу.
+    .desc = Выделяет вязкую, пластичную смолу.
+
+ent-ActionSpawnResinDoor = Построить смоляную дверь (75)
+    .desc = Выделяет вязкую, пластичную смолу.
 
 ent-ActionSpawnResinMembrane = Построить смоляную мембрану (50)
-    .desc = Выделяют вязкую, пластичную смолу.
+    .desc = Выделяет вязкую, пластичную смолу.
 
 ent-ActionSpawnResinNest = Построить смоляное гнездо (50)
-    .desc = Выделяют вязкую, пластичную смолу.
+    .desc = Выделяет вязкую, пластичную смолу.
 
 ent-ActionTailLash = Удар хвостом
     .desc = Ударь противника хвостом.
@@ -38,7 +41,7 @@ ent-ActionJumpXenomorph = Прыжок
     .desc = Оглушите врагов быстрым прыжком.
 
 ent-ActionTransferPlasma = Передача плазмы (50)
-    .desc = Передаёт плазму вашему другу.
+    .desc = Передаёт плазму вашему сородичу.
 
-ent-ActionXenomorphPromotion = Создать королевского паразита (500)
-    .desc = Создает королевского паразита, чтобы предоставить одному из ваших детей честь стать вашим преторианцем.
+ent-ActionXenomorphPromotion = Повысить до преторианца (500)
+    .desc = Напрямую повышает ксеноморфа до статуса преторианца.

@@ -197,3 +197,15 @@ guide-entry-rules-ban-types = Типы запретов
 guide-entry-rules-ban-durations = Длительность запрета
 guide-entry-writing = Разметка письма
 guide-entry-glossary = Словарь терминов
+
+guide-entry-ressureregulator = Регулятор давления
+
+guide-entry-rules-r18 = R18
+
+guide-entry-rules-r19 = R19
+
+guide-entry-rules-r20 = R20
+
+guide-entry-rules-mrp-m0 = Правила MRP
+
+guide-entry-rules-m1 = М1

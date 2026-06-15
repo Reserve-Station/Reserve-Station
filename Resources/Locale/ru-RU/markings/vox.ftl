@@ -36,3 +36,11 @@ marking-VoxTail-vox_tail = Вокс, Хвост (Средний)
 marking-VoxTail = Вокс, Хвост (Средний)
 marking-VoxTailBig-vox_tail_big = Вокс, Хвост (Большой)
 marking-VoxTailBig = Вокс, Хвост (Большой)
+
+marking-VoxTailSpikes-vox_tail_spikes = Вокс-хвост (шипованный)
+
+marking-VoxTailSpikes = Вокс-хвост (шипованный)
+
+marking-VoxTailDocked-vox_tail_docked = Вокс-хвост (рудиментарный)
+
+marking-VoxTailDocked = Вокс-хвост (рудиментарный)

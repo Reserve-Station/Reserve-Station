@@ -42,3 +42,9 @@ ghostrole-rustwalker-desc = Помогите своему призывателю
 
 # Спи спокойно, Мансур.
 
+heretic-ghoul-briefing-start = Вас призвал в этот мир {CAPITALIZE(THE($ent))}!
+heretic-ghoul-briefing-start-noname = Вы были призваны в этот мир сверхъестественными силами.
+heretic-ghoul-briefing-end = Выполняйте приказы своих хозяев, несмотря ни на что.
+ghostrole-flesh-mimic-name = Мимик плоти
+ghostrole-flesh-mimic-desc = Помогите своему призывателю достичь вознесения. Имейте в виду, что вы умрете со временем.
+ghostrole-fire-shark-desc = Помогите своему призывателю достичь вознесения. Сожгите своих жертв.

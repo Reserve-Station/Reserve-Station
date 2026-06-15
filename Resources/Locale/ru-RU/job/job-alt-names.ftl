@@ -1,4 +1,4 @@
-﻿job-alt-title-reminder =  Мы не рекомендуем вам использовать звание [color=#33ccff]"{$altTitle}"[/color] в качестве предлога для того, чтобы отказываться от вашей основной работы (ваша должность - [color=#ffffff]{$jobName}[/color]).
+job-alt-title-reminder =  Мы не рекомендуем вам использовать звание [color=#33ccff]"{$altTitle}"[/color] в качестве предлога для того, чтобы отказываться от вашей основной работы (ваша должность - [color=#ffffff]{$jobName}[/color]).
 
 job-name-alt-medical-1 = Хирург
 job-name-alt-medical-2 = Медбрат
@@ -114,3 +114,13 @@ job-name-alt-zookeeper-1 = Член службы отлова животных
 job-name-alt-zookeeper-2 = Менажерист
 job-name-alt-zookeeper-3 = Ксенозоолог
 job-name-alt-zookeeper-4 = Специалист по дикой природе
+
+job-name-alt-paramedic-3 = Техник поисково-спасательного дела
+
+job-name-alt-qm-4-f = Мастер снабжения
+
+job-name-alt-qm-4-m = Бригадир по снабжению
+
+job-name-alt-ce-2-f = Инженер-прораб
+
+job-name-alt-ce-2-m = Инженер-прораб

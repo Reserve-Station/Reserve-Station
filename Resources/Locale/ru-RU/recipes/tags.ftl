@@ -143,3 +143,13 @@ construction-graph-tag-fire-helmet = пожарный шлем
 
 # salvage
 construction-graph-tag-spationaut-hardsuit = скафандр косьмонавта
+
+construction-graph-tag-manipulator = манипулятор
+
+construction-graph-tag-apron = фартук
+
+construction-graph-tag-utility-belt = ремень безопасности
+
+construction-graph-tag-mop-basic = швабра
+
+construction-graph-tag-backpack = рюкзак

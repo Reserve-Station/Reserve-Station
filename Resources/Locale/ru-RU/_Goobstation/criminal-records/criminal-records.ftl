@@ -2,3 +2,11 @@ criminal-verb-name = Установить статус разыскиваемо�
 criminal-verb-UI-name = Меню розыска
 criminal-job-error = Должности не обнаружено в криминальных записях
 criminal-name-error = Имени не обнаружено в криминальных записях
+
+criminal-records-status-demote = Понизить в должности
+
+criminal-records-console-demote-reason = Причина понижения
+
+criminal-records-console-demote = {$name} ({$job}) понижен в должности по причине: {$reason}.
+
+criminal-records-console-not-demoted = {$name} ({$job}) больше не понижен.

@@ -172,3 +172,32 @@ ghost-role-information-contractor-name = Контрактник Синдикат
 ghost-role-information-contractor-token = Контрактник Синдиката (Токен)
 ghost-role-information-contractor-description = ЗАПОЛУЧИТЕ ЭТОГО... ассистента..?
 contractor-role-greeting = Вы [color=#611b2b]контрактник Синдиката[/color], охотник за головами, перед вами стоит задача вывести цели со станции, живыми или мертвыми.
+
+ghost-role-information-fillbot-name = заполнительбот
+
+ghost-role-information-fillbot-description = Служи тому, кто тебя создал. Если его негде найти, делай всё, что хочешь.
+
+ghost-role-information-bsd-name = Заместитель Синего Щита
+
+ghost-role-information-bsd-description = Вас вызвал на станцию ​​ПНТ, подчиняйтесь ему, защищайте командование, соблюдайте закон.
+
+ghost-role-information-bsd-rules = Следуйте приказам представителя [color=yellow][bold]NanoTrasen[/bold][/color], команда защиты.
+
+ghost-role-intern-name = Стажер ЦК
+
+ghost-role-nerd-intern-name = ЦК Ботаник Стажер
+
+ghost-role-lead-intern-name = Ведущий стажер ЦК
+
+ghost-role-intern-desc = Вы стажер ЦК, вам мало платят, вы голодны, у вас большой студенческий долг, который нужно выплатить, но у вас нет других вариантов, так что лучше прислушайтесь!
+
+ghost-role-intern-rules = Следуйте приказам представителя [color=yellow][bold]NanoTrasen[/bold][/color] и ЦК, защитите команду, слушайте ведущего стажера.
+
+ghost-role-lead-intern-rules = Выполняйте приказы представителя [color=yellow][bold]NanoTrasen[/bold][/color] и ЦК, защищайте команду, отдавайте приказы другим стажерам.
+
+ghost-role-information-wraith-name-token = Призрак (Токен)
+
+ghost-role-information-sentientanimal-rules = Вы [color={role-type-sentient-animal-color}][bold]{role-type-sentient-animal-name}[/bold][/color]. Вы нейтральное животное, которое может действовать в целях самообороны, но не стремится причинить вред команде.
+    Вы не помните ничего из своей предыдущей жизни и ничего, что узнали, будучи призраком.
+    Вам разрешено запоминать знания об игре в целом, например, как готовить, как использовать предметы и т. д., однако вы не обладаете знаниями продвинутых ролей.
+    Вам абсолютно [color=red]НЕ[/color] разрешено запоминать, скажем, имя, внешний вид и т. д. вашего предыдущего персонажа.

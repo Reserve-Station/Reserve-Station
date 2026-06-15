@@ -127,3 +127,19 @@ chatsan-word-66 = smth
 chatsan-replacement-66 = something
 chatsan-word-67 = allg
 chatsan-replacement-67 = all good
+
+chatsan-word-68 = тс
+
+chatsan-replacement-68 = это дерьмо
+
+chatsan-word-69 = пмо
+
+chatsan-replacement-69 = бесит меня
+
+chatsan-word-70 = сыбау
+
+chatsan-replacement-70 = заткни свою суку задницу
+
+chatsan-word-71 = ICL
+
+chatsan-replacement-71 = я не могу лгать

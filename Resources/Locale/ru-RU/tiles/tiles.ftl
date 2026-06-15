@@ -142,3 +142,7 @@ tiles-white-marble = белая мраморная плитка
 tiles-dark-marble = тёмная мраморная плитка
 tiles-plasma-marble = плазменная мраморная плитка
 tiles-uranium-marble = урановая мраморная плитка
+
+tiles-techmaint-floor-dark = темный пол
+
+tiles-dirt-planet-floor = пол земли планеты

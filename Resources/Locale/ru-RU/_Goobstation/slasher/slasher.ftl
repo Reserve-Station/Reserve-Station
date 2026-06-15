@@ -45,3 +45,19 @@ roles-antag-slasher-name = Мясник
 roles-antag-slasher-objectives = Убивайте и терроризируйте живых как настоящий маньяк!
 
 slasher-cannot-use-guns = Ваша потусторонняя форма отвергает огнестрельное оружие.
+
+slasher-machete-no-hands = У тебя нет рук!
+
+slasher-machete-hands-full = Твои руки заняты!
+
+slasher-machete-already-holding = Ты уже держишь свой мачете!
+
+slasher-soulsteal-unlock-possession = Ваша сила растет. Теперь вы можете овладевать живыми!
+
+slasher-massacre-already-activated = Резня уже активна!
+
+slasher-relentless-grab-activate = Вы готовитесь схватить следующую жертву!
+
+alerts-slasher-seen-name = Статус наблюдателя
+
+alerts-slasher-seen-desc = Показывает, наблюдают ли за вами в данный момент кто-то. Вы не можете войти или выйти из бестелесной формы, пока за вами наблюдают.

@@ -7,3 +7,7 @@ zombie-role-desc = Зловещий мертвец.
 zombie-role-rules = Вы - антагонист. Ищите и кусайте живых людей, чтобы заразить их и превратить в зомби. Работайте сообща с другими зомби, чтобы захватить станцию.
 zombie-permadeath = В этот раз вы мертвы по-настоящему.
 zombification-resistance-coefficient-value = - Шанс [color=violet]инфицирования[/color] снижается на [color=lightblue]{$value}%[/color].
+
+zombie-cured-popup = Зомби-инфекция исчезает бесследно!
+
+zombie-cure-failed-popup = Лекарство не действует!

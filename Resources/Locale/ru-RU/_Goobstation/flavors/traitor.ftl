@@ -85,3 +85,15 @@ traitor-evilchampion-roundend = [color=red]Чемпион Зла[/color]
 
 issuers-corporate-flavor-1 = NanoTrasen
 issuers-corporate-flavor-2 = Центральное командование
+
+traitor-cybersunindustries-roundend = Специалист[color=yellow]a из Cybersun Industries[/color]
+
+traitor-postal-intro = У вас есть Gone Postal.
+
+traitor-postal-goal = Подготовка наконец завершена. Сегодня тот день, когда ты отправишься на почту. Вам предстоит угнать аварийный шаттл и начать новую жизнь без Нанотрасена.
+
+traitor-postal-allies = Если синдикат узнает о вашем плане, они убьют вас и заберут ваш канал связи. Не рискуйте.
+
+traitor-postal-uplink = Вам действительно удалось украсть весь восходящий канал месяц назад. Это, безусловно, должно помочь в достижении ваших целей.
+
+traitor-postal-roundend = [color=white]просто станет полностью Postal[/color]

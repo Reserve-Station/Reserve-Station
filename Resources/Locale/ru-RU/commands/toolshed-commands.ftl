@@ -41,3 +41,27 @@ command-description-mind-get = Grabs the mind from the entity, if any.
 command-description-mind-control = Assumes control of an entity with the given player.
 command-description-addaccesslog = Adds an access log to this entity. Do note that this bypasses the log's default limit and pause check.
 command-description-stationevent-simulate = Simulates N number of rounds in which events will occur and prints the occurrences of every event after.
+
+command-description-stationevent-lsprobtheoretical = Учитывая прототип BasicStationEventScheduler, количество игроков и время раунда, перечисляет вероятность возникновения различных событий на станции на основе указанного количества игроков и времени раунда.
+
+command-description-xenoartifact-list = Перечислите все EntityUids порожденных артефактов.
+
+command-description-xenoartifact-printMatrix = Распечатывает матрицу, отображающую все ребра между узлами.
+
+command-description-xenoartifact-totalResearch = Получает все очки исследования, которые в данный момент можно извлечь из артефакта.
+
+command-description-xenoartifact-averageResearch = Рассчитывает среднее количество очков исследования, сгенерированных ксеноартефактом, которые будут выведены при полной активации.
+
+command-description-xenoartifact-unlockAllNodes = Разблокирует все узлы артефакта.
+
+command-description-jobboard-completeJob = Завершает заданное задание по поиску утиля для станции.
+
+command-description-scale-set = Устанавливает размер спрайта объекта в определенный масштаб (без изменения его фиксации).
+
+command-description-scale-get = Получите масштаб спрайта объекта, заданный ScaleVisualsComponent. Не включает никаких изменений, внесенных непосредственно в SpriteComponent.
+
+command-description-scale-multiply = Умножьте размер спрайта объекта на определенный коэффициент (не меняя его приспособления).
+
+command-description-scale-multiplyvector = Умножьте размер спрайта объекта на определенный 2D-вектор (не меняя его фиксации).
+
+command-description-scale-multiplywithfixture = Умножьте размер спрайта объекта на определенный коэффициент (включая его приспособление).

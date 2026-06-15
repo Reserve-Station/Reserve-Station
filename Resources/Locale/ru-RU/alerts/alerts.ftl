@@ -76,3 +76,15 @@ alerts-revenant-essence-name = Эссенция
 alerts-revenant-essence-desc = Сила душ. Поддерживает вас и используется при использовании способностей. Медленно восстанавливается с течением времени.
 alerts-revenant-corporeal-name = Материальность
 alerts-revenant-corporeal-desc = Вы физически воплотились. Окружающие могут видеть и наносить вам вред.
+
+alerts-knockdown-name = [color=yellow]Сбит с ног[/color]
+
+alerts-knockdown-desc = Ты [color=yellow] в нокдауне[/color]! Что-то подскальзнуло или толкнуло вас, затрудняя ваши движения.
+
+alerts-rooted-name = Лежачий
+
+alerts-rooted-desc = Вы прибиты к земле. Вы не можете поскользнуться, но впитываете жидкость под собой.
+
+alerts-stealthy-name = Карманная кража
+
+alerts-stealthy-desc = Занимаетесь ли вы в настоящее время карманными кражами. Нажмите, чтобы переключиться.

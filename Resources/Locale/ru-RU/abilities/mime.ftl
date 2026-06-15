@@ -3,3 +3,7 @@ mime-invisible-wall-popup = { CAPITALIZE(THE($mime)) } ударяется в н�
 mime-invisible-wall-failed = Вы не можете создать здесь невидимую стену.
 mime-not-ready-repent = Вы еще не готовы покаяться за нарушенный обет.
 mime-ready-to-repent = Вы чувствуете, что готовы снова дать клятву.
+
+mime-invisible-wall-popup-self = Вы прикасаетесь к невидимой стене!
+
+mime-invisible-wall-popup-others = {CAPITALIZE(THE($mime))} упирается в невидимую стену!

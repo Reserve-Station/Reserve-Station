@@ -114,3 +114,17 @@ JobWarden = Смотритель
 JobVisitor = Посетитель
 JobBoxer = Боксёр
 JobZookeeper = Зоотехник
+
+job-name-cluwne = Клювн
+
+job-name-security-clown = Клоун безопасности
+
+job-name-command-maid = Горничная командования
+
+job-name-party-maker = Патимейкер
+
+JobCommandMaid = Горничная командования
+
+JobPartyMaker = Патимейкер
+
+JobSecurityClown = Клоун безопасности

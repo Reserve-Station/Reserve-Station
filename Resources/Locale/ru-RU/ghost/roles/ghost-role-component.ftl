@@ -246,3 +246,15 @@ ghost-role-information-emotional-support-scurret-name = Эмоционально
 ghost-role-information-emotional-support-scurret-description = Поддерживайте экипаж, будьте милым, постоянно говорите "ва".
 ghost-role-information-wizard-name = Волшебник
 ghost-role-information-wizard-desc = ТЫ ВОЛШЕБНИК! Покажи станции, из чего сделана твоя магия.
+
+ghost-role-information-syndie-disaster-victim-name = Жертва катастрофы Синдиката
+
+ghost-role-information-pirate-irs-name = Космический пират
+
+ghost-role-information-pirate-irs-description = Конфисковать ценные активы станции. Арестуйте капитана за уклонение от уплаты налогов.
+
+ghost-role-information-pirate-irs-captain-name = Капитан космических пиратов
+
+ghost-role-information-pirate-irs-captain-description = Руководит процессом грабежа. Арестуйте капитана за уклонение от уплаты налогов.
+
+ghost-role-information-pirate-irs-rules = Вы [color=red][bold]командный антагонист[/bold][/color] вместе с другими пиратами.

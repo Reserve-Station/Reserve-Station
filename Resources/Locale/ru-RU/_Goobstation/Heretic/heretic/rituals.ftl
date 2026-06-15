@@ -63,3 +63,6 @@ heretic-ritual-flesh-ascend = Последний гимн священника
 
 heretic-ritual-void-blade = Мерцание зимы
 heretic-ritual-void-ascend = Вальс в конце времен
+
+heretic-ritual-fail-sacrifice-cosmos = Недостаточно трупов, отмеченных звездами.
+heretic-ritual-fail-cannot-ascend-objectives = Вы должны выполнить свои задачи, чтобы вознестись.

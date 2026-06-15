@@ -23,3 +23,37 @@ lavaland-ruin-big-shuttle = Огромный разрушенный шаттл
 lavaland-ruin-biodome = Биодом
 lavaland-ruin-syndicate = База синдиката
 lavaland-ruin-hierophant = Межпространственный сигнал
+
+lavaland-ruin-abductor = Инопланетный сигнал
+
+lavaland-ruin-cult = Космический сигнал
+
+lavaland-ruin-flesh = Пещера плоти
+
+lavaland-ruin-flora = Пещера Флоры
+
+lavaland-ruin-ice = Ледяная пещера
+
+lavaland-ruin-rock = Скальная пещера
+
+lavaland-ruin-slime = Слизистая пещера
+
+lavaland-ruin-hunt = Дом охотника
+
+lavaland-ruin-stash = Тайник
+
+lavaland-ruin-cargo2 = Грузовой мусор
+
+lavaland-ruin-murder = Пещера убийств
+
+lavaland-ruin-crash = Крушение спасательной капсулы
+
+lavaland-ruin-desk = Обломки станции
+
+lavaland-ruin-generator = Генераторное кладбище
+
+lavaland-ruin-mug = Фабрика кружек
+
+lavaland-ruin-temple = Храм Нар'Си
+
+lavaland-ruin-flock-large = Странные стеклянные руины
