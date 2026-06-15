@@ -1,5 +1,7 @@
 ent-ActionHereticJaunt = Ashen Passage
     .desc = A short range spell that allows you to pass unimpeded through walls.
+ent-ActionHereticJauntLong = Ashen Passage
+    .desc = A long range spell that allows you to pass unimpeded through walls.
 ent-ActionHereticVolcanoBlast = Volcanic Blast
     .desc = Charge up a blast of fire that chains between nearby targets, setting them ablaze.
 ent-ActionHereticNightwatcherRebirth = Nightwatcher's Rebirth

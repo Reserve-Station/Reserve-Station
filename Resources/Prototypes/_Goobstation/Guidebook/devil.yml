@@ -1,6 +1,6 @@
 - type: guideEntry
   id: Devil
-  name: guide-entry-devil
+  name: guide-entry-devil # Reserve edit: localization-fix
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Devil.xml"
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Devil.xml"
@@ -9,7 +9,7 @@
 
 - type: guideEntry
   id: DevilClauses
-  name: guide-entry-devil-clauses
+  name: guide-entry-devil-clauses # Reserve edit: localization-fix
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/DevilClauses.xml"
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/DevilClauses.xml"

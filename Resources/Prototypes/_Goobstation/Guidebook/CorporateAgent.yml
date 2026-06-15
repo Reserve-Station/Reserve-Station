@@ -6,7 +6,7 @@
 
 - type: guideEntry
   id: CorporateAgents
-  name: guide-entry-corporate-agents
+  name: guide-entry-corporate-agents # Reserve edit: localization-fix
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/CorporateAgent.xml"
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/CorporateAgent.xml"

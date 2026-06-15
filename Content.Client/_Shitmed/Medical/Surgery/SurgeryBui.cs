@@ -76,7 +76,7 @@ public sealed class SurgeryBui : BoundUserInterface
         {
             _window = new SurgeryWindow();
             _window.OnClose += Close;
-            _window.Title = Loc.GetString("surgery-ui-window-title");
+            _window.Title = Loc.GetString("surgery-ui-window-title"); // Reserve edit: localization-fix
 
             _window.PartsButton.OnPressed += _ =>
             {
@@ -355,13 +355,13 @@ public sealed class SurgeryBui : BoundUserInterface
 
         if (_entities.TryGetComponent(_part, out MetaDataComponent? partMeta) &&
             _entities.TryGetComponent(_surgery?.Ent, out MetaDataComponent? surgeryMeta))
-            _window.Title = Loc.GetString("surgery-ui-window-title-with-part-surgery",
+            _window.Title = Loc.GetString("surgery-ui-window-title-with-part-surgery", // Reserve edit: localization-fix
                 ("part", partMeta.EntityName),
                 ("surgery", surgeryMeta.EntityName));
         else if (partMeta != null)
-            _window.Title = Loc.GetString("surgery-ui-window-title-with-part", ("part", partMeta.EntityName));
+            _window.Title = Loc.GetString("surgery-ui-window-title-with-part", ("part", partMeta.EntityName)); // Reserve edit: localization-fix
         else
-            _window.Title = Loc.GetString("surgery-ui-window-title");
+            _window.Title = Loc.GetString("surgery-ui-window-title"); // Reserve edit: localization-fix
     }
 
     private enum ViewType

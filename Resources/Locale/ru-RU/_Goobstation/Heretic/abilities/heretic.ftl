@@ -10,6 +10,8 @@ heretic-ability-fail-rust-stage-low = Вы недостаточно сильны
 heretic-ability-fail-target-ghoul = Цель уже гуль!
 heretic-ability-fail-target-no-mind = У цели нет души!
 
+heretic-ability-lose-focus-shadow-cloak = Когда вы теряете фокус, тени вытягивают вас наружу!
+
 heretic-cosmic-rune-fail-star-mark = Заблокировано звёздной меткой!
 heretic-cosmic-rune-fail-unlinked = Руна не присоединена!
 heretic-cosmic-rune-fail-range = Недостаточно близко!
@@ -87,6 +89,8 @@ heretic-speech-rust-plume = Р'СС'Л'ИСЬ!
 heretic-speech-void-blast = З'СТЫ'НЬ!
 heretic-speech-void-phase = РЕК'ЛТ'ВЫЙ СД'В'Г!
 heretic-speech-void-pull = БР'СЬ ИХ К' МН'!!
+heretic-speech-void-prison = ПУСТ'ТН'Я ТЮР'М'!
+heretic-speech-void-conduit = ВР'Т' ПУСТ'ТЫ!
 
 heretic-speech-cosmic-rune = К'СМ'Ч'С'АЯ Р'Н'!
 heretic-speech-star-touch = К'СМ'Ч'С'АЯ 'Н'РГ'!!
@@ -100,3 +104,4 @@ heretic-speech-mansuslink = ПРО'З' РА'УМ!
 heretic-speech-realignment = СБ'ОС!
 heretic-speech-fuckoff = ПО'ЁЛ 'Ы!!
 heretic-speech-ice-spear = 'АРА ЛЬ'А!
+heretic-speech-shapeshft = ПР'ОБР'Ж'Н'Е

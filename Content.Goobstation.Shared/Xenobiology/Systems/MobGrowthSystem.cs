@@ -9,7 +9,7 @@ using Content.Goobstation.Shared.Xenobiology.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
-using Robust.Shared.Localization;
+using Robust.Shared.Localization; // Reserve edit: localization-fix
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
@@ -110,6 +110,7 @@ public sealed partial class MobGrowthSystem : EntitySystem
 
         if (_net.IsServer)
         {
+            // Reserve edit start: localization-fix
             var stageName = string.IsNullOrEmpty(stageData.DisplayName)
                 ? string.Empty
                 : Loc.GetString(stageData.DisplayName);
@@ -117,6 +118,7 @@ public sealed partial class MobGrowthSystem : EntitySystem
             _metaData.SetEntityName(ent, string.IsNullOrEmpty(stageName)
                 ? ent.Comp.BaseEntityName
                 : $"{stageName} {ent.Comp.BaseEntityName}");
+            // Reserve edit end: localization-fix
         }
     }
 

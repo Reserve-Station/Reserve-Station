@@ -555,6 +555,7 @@ namespace Content.Client.HealthAnalyzer.UI
             GroupsContainer.AddChild(groupContainer);
         }
 
+        // Reserve edit start: localization-fix
         private static string GetLocalizedSolutionName(string? name)
         {
             if (string.IsNullOrEmpty(name))
@@ -563,15 +564,16 @@ namespace Content.Client.HealthAnalyzer.UI
             var key = $"health-analyzer-solution-{name}";
             return Loc.TryGetString(key, out var localized) ? localized : name;
         }
+        // Reserve edit end: localization-fix
 
         private void DrawSolutionDiagnostics(Dictionary<NetEntity, Solution> solutions)
         {
-            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo; // Reserve edit: localization-fix
             foreach (var (ent, data) in solutions)
             {
                 var groupTitleText = $"{Loc.GetString(
                     "group-solution-name",
-                    ("solution", GetLocalizedSolutionName(data.Name))
+                    ("solution", GetLocalizedSolutionName(data.Name)) // Reserve edit: localization-fix
                 )}";
 
                 var groupContainer = new BoxContainer

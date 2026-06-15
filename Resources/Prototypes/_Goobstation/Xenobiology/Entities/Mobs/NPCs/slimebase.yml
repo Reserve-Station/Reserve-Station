@@ -172,10 +172,10 @@
       baby:
         nextStage: adult
         sprite: _Goobstation/Xenobiology/Mobs/slimesBaby.rsi
-        displayName: mob-growth-display-baby
+        displayName: mob-growth-display-baby # Reserve edit: localization-fix
       adult:
         sprite: _Goobstation/Xenobiology/Mobs/slimesAdult.rsi
-        displayName: mob-growth-display-adult
+        displayName: mob-growth-display-adult # Reserve edit: localization-fix
   - type: Slime
     breed: MobSlimeXenobioBaby
     breedName: xenobio-breed-undetermined
