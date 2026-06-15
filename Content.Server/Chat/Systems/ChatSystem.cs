@@ -929,19 +929,20 @@ public sealed partial class ChatSystem : SharedChatSystem
             // Wrapped message is the result wrapped in an "x says y" string
             // Floof: handle languages that require LOS
             string result, wrappedMessage;
+            // Reserve edit start: Fix languages in chat
             if (!language.SpeechOverride.RequireLOS && data.Range <= WhisperClearRange
                 || _examineSystem.InRangeUnOccluded(source, listener, WhisperClearRange)
                 || data.Observer)
             {
                 // Scenario 1: the listener can clearly understand the message
                 result = perceivedMessage;
-                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, result, speech, language, colorOverride, canUnderstandLanguage); // Reserve edit: Port from WD, Fix languages in chat
+                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, result, speech, language, colorOverride, canUnderstandLanguage); // Reserve edit: Port from WD
             }
             else if (_examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange)) // UNEDIT FROM Einstein Engines - Language // They are out of date, this has been reverted to current ChatSystem
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
                 result = ObfuscateMessageReadability(perceivedMessage);
-                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", nameIdentity, result, speech, language, colorOverride, canUnderstandLanguage); // Reserve edit: Port from WD, Fix languages in chat
+                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", nameIdentity, result, speech, language, colorOverride, canUnderstandLanguage); // Reserve edit: Port from WD
             }
             else
             {
@@ -950,8 +951,9 @@ public sealed partial class ChatSystem : SharedChatSystem
 
                 // Scenario 3: If listener is too far and has no line of sight, they can't identify the whisperer's identity
                 result = ObfuscateMessageReadability(perceivedMessage);
-                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-unknown-wrap-message", string.Empty, result, speech, language, colorOverride, canUnderstandLanguage); // Reserve edit: Port from WD, Fix languages in chat
+                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-unknown-wrap-message", string.Empty, result, speech, language, colorOverride, canUnderstandLanguage); // Reserve edit: Port from WD
             }
+            // Reserve edit end: Fix languages in chat
 
             _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, false, session.Channel);
         }
@@ -1359,7 +1361,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     {
         language ??= _language.GetLanguage(source);
 
-        // Reserve edit: Fix languages in chat
+        // Reserve edit start: Fix languages in chat
         if (applyLanguageFormatting)
         {
             if (language.SpeechOverride.FontId != null || language.SpeechOverride.BoldFontId != null)
@@ -1409,7 +1411,6 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         // goob end
 
-        // Reserve edit: Fix languages in chat
         var fontType = applyLanguageFormatting
             ? language.SpeechOverride.FontId ?? speech.FontId
             : speech.FontId;
@@ -1421,14 +1422,15 @@ public sealed partial class ChatSystem : SharedChatSystem
         var fontSize = applyLanguageFormatting
             ? loudSpeakFont ?? language.SpeechOverride.FontSize ?? speech.FontSize
             : loudSpeakFont ?? speech.FontSize;
+        // Reserve edit end: Fix languages in chat
 
         return Loc.GetString(wrapId,
             ("color", color),
             ("entityName", entityName),
             ("verb", Loc.GetString(verbId)),
-            ("fontType", fontType), // Reserve edit: Fix languages in chat
+            ("fontType", fontType),
             ("fontSize", fontSize), // goob edit - "loudSpeakFont"
-            ("boldFontType", boldFontType), // Reserve edit: Fix languages in chat
+            ("boldFontType", boldFontType),
             ("message", message),
             ("language", languageDisplay));
     }

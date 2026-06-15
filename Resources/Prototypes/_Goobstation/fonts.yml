@@ -16,6 +16,7 @@
   path: /Fonts/NotoSans/NotoSansSC-Bold.ttf
 
 # Monospace (Silicon)
+# Reserve edit start: Fix languages in chat
 - type: font
   id: MonospaceBold
   path: /Fonts/_Goobstation/NotoSansMono/NotoSansMono-Bold.ttf
@@ -58,3 +59,4 @@
 - type: font
   id: BrahmsGotischCyrillic
   path: /Fonts/_Goobstation/BrahmsGotischCyrillic/BrahmsGotischCyr.otf
+# Reserve edit end: Fix languages in chat

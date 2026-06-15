@@ -1,3 +1,4 @@
+# Reserve edit start: Fix languages in chat
 # Languages spoken by various animals and critters.
 - type: language
   id: Cat
@@ -255,3 +256,4 @@
     - нгх
     - ни
     - брр
+# Reserve edit end: Fix languages in chat

@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Calcic (Skeletons)
+# Reserve edit start: Fix languages in chat
 - type: font
   id: ComicRelief
   path: /Fonts/_EinsteinEngines/ComicRelief/ComicRelief-Regular.ttf
@@ -12,3 +13,4 @@
 - type: font
   id: ComicReliefBold
   path: /Fonts/_EinsteinEngines/ComicRelief/ComicRelief-Bold.ttf
+# Reserve edit end: Fix languages in chat

@@ -289,14 +289,16 @@ public sealed partial class RadioSystem : EntitySystem
     {
         // TODO: code duplication with ChatSystem.WrapMessage
         var speech = _chat.GetSpeechVerb(source, message);
-        var languageColor = Color.White; // Reserve edit: Fix languages in chat
+
+        // Reserve edit start: Fix languages in chat
+        var languageColor = Color.White;
 
         var wrapId = speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap";
         if (applyLanguageFormatting && (language.SpeechOverride.FontId != null || language.SpeechOverride.BoldFontId != null))
-            wrapId = "chat-radio-message-wrap-bolded-language"; // Reserve edit: Fix languages in chat
+            wrapId = "chat-radio-message-wrap-bolded-language";
 
         if (applyLanguageFormatting && language.SpeechOverride.Color is { } colorOverride)
-            languageColor = Color.InterpolateBetween(Color.White, colorOverride, colorOverride.A); // Reserve edit: Fix languages in chat
+            languageColor = Color.InterpolateBetween(Color.White, colorOverride, colorOverride.A);
 
         var languageDisplay = language.IsVisibleLanguage
             ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
@@ -327,7 +329,6 @@ public sealed partial class RadioSystem : EntitySystem
             : Loc.GetString("chat-radio-message-name-with-icon", ("jobIcon", jobIcon), ("jobName", jobName ?? ""), ("name", name));
         // goob end
 
-        // Reserve edit: Fix languages in chat
         var fontType = applyLanguageFormatting
             ? language.SpeechOverride.FontId ?? speech.FontId
             : speech.FontId;
@@ -339,13 +340,14 @@ public sealed partial class RadioSystem : EntitySystem
         var fontSize = applyLanguageFormatting
             ? loudSpeakFont ?? language.SpeechOverride.FontSize ?? speech.FontSize
             : loudSpeakFont ?? speech.FontSize;
+        // Reserve edit end: Fix languages in chat
 
         return Loc.GetString(wrapId,
             ("color", channel.Color),
             ("languageColor", languageColor),
-            ("fontType", fontType), // Reserve edit: Fix languages in chat
+            ("fontType", fontType),
             ("fontSize", fontSize), // goob edit - "loudSpeakFont"
-            ("boldFontType", boldFontType), // Reserve edit: Fix languages in chat
+            ("boldFontType", boldFontType),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", nameString), // goob
