@@ -223,7 +223,7 @@ public sealed partial class RadioSystem : EntitySystem
         var obfuscated = _language.ObfuscateSpeech(content, language);
         // Goobstation - Chat Pings
         // Added GetNetEntity(messageSource), to source
-        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language, jobIcon, jobName, applyLanguageFormatting: false);
+        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language, jobIcon, jobName, applyLanguageFormatting: false); // Reserve edit: Fix languages in chat
         var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, GetNetEntity(messageSource), null);
         var ev = new RadioReceiveEvent(messageSource, channel, msg, notUdsMsg, language, radioSource);
         // Einstein Engines - Language end
@@ -285,18 +285,18 @@ public sealed partial class RadioSystem : EntitySystem
         LanguagePrototype language,
         ProtoId<JobIconPrototype>? jobIcon, // Goob edit
         string? jobName = null,
-        bool applyLanguageFormatting = true) // Gaby Radio icons
+        bool applyLanguageFormatting = true) // Reserve edit: Fix languages in chat
     {
         // TODO: code duplication with ChatSystem.WrapMessage
         var speech = _chat.GetSpeechVerb(source, message);
-        var languageColor = Color.White;
+        var languageColor = Color.White; // Reserve edit: Fix languages in chat
 
         var wrapId = speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap";
         if (applyLanguageFormatting && (language.SpeechOverride.FontId != null || language.SpeechOverride.BoldFontId != null))
-            wrapId = "chat-radio-message-wrap-bolded-language";
+            wrapId = "chat-radio-message-wrap-bolded-language"; // Reserve edit: Fix languages in chat
 
         if (applyLanguageFormatting && language.SpeechOverride.Color is { } colorOverride)
-            languageColor = Color.InterpolateBetween(Color.White, colorOverride, colorOverride.A);
+            languageColor = Color.InterpolateBetween(Color.White, colorOverride, colorOverride.A); // Reserve edit: Fix languages in chat
 
         var languageDisplay = language.IsVisibleLanguage
             ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
@@ -327,6 +327,7 @@ public sealed partial class RadioSystem : EntitySystem
             : Loc.GetString("chat-radio-message-name-with-icon", ("jobIcon", jobIcon), ("jobName", jobName ?? ""), ("name", name));
         // goob end
 
+        // Reserve edit: Fix languages in chat
         var fontType = applyLanguageFormatting
             ? language.SpeechOverride.FontId ?? speech.FontId
             : speech.FontId;
@@ -342,9 +343,9 @@ public sealed partial class RadioSystem : EntitySystem
         return Loc.GetString(wrapId,
             ("color", channel.Color),
             ("languageColor", languageColor),
-            ("fontType", fontType),
+            ("fontType", fontType), // Reserve edit: Fix languages in chat
             ("fontSize", fontSize), // goob edit - "loudSpeakFont"
-            ("boldFontType", boldFontType), // Goob Edit - Custom Bold Fonts
+            ("boldFontType", boldFontType), // Reserve edit: Fix languages in chat
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", nameString), // goob
