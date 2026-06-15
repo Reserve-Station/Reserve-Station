@@ -568,13 +568,15 @@ namespace Content.Client.HealthAnalyzer.UI
 
         private void DrawSolutionDiagnostics(Dictionary<NetEntity, Solution> solutions)
         {
-            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo; // Reserve edit: localization-fix
+            // Reserve edit start: localization-fix
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
             foreach (var (ent, data) in solutions)
             {
                 var groupTitleText = $"{Loc.GetString(
                     "group-solution-name",
-                    ("solution", GetLocalizedSolutionName(data.Name)) // Reserve edit: localization-fix
+                    ("solution", GetLocalizedSolutionName(data.Name))
                 )}";
+            // Reserve edit end: localization-fix
 
                 var groupContainer = new BoxContainer
                 {

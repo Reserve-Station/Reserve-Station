@@ -353,15 +353,17 @@ public sealed class SurgeryBui : BoundUserInterface
         _window.Steps.Visible = type == ViewType.Steps;
         _window.StepsButton.Disabled = type != ViewType.Steps || _previousSurgeries.Count == 0;
 
+        // Reserve edit start: localization-fix
         if (_entities.TryGetComponent(_part, out MetaDataComponent? partMeta) &&
             _entities.TryGetComponent(_surgery?.Ent, out MetaDataComponent? surgeryMeta))
-            _window.Title = Loc.GetString("surgery-ui-window-title-with-part-surgery", // Reserve edit: localization-fix
+            _window.Title = Loc.GetString("surgery-ui-window-title-with-part-surgery",
                 ("part", partMeta.EntityName),
                 ("surgery", surgeryMeta.EntityName));
         else if (partMeta != null)
-            _window.Title = Loc.GetString("surgery-ui-window-title-with-part", ("part", partMeta.EntityName)); // Reserve edit: localization-fix
+            _window.Title = Loc.GetString("surgery-ui-window-title-with-part", ("part", partMeta.EntityName));
         else
-            _window.Title = Loc.GetString("surgery-ui-window-title"); // Reserve edit: localization-fix
+            _window.Title = Loc.GetString("surgery-ui-window-title");
+        // Reserve edit end: localization-fix
     }
 
     private enum ViewType
