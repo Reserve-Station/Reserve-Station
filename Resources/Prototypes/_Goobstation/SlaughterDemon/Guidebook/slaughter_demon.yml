@@ -1,6 +1,6 @@
 - type: guideEntry
   id: SlaughterDemon
-  name: "Slaughter Demon"
+  name: guide-entry-slaughter-demon
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/SlaughterDemon.xml"
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/SlaughterDemon.xml"

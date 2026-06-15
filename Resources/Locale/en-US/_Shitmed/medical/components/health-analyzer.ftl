@@ -33,3 +33,8 @@ condition-body-bleeding-LeftHand = • {$entity}'s left hand is bleeding.
 condition-body-bleeding-RightHand = • {$entity}'s right hand is bleeding.
 condition-body-bleeding-LeftFoot = • {$entity}'s left foot is bleeding.
 condition-body-bleeding-RightFoot = • {$entity}'s right foot is bleeding.
+
+health-analyzer-window-conditions-text = Conditions
+health-analyzer-solution-bloodstream = Bloodstream
+health-analyzer-solution-chemicals = Chemicals
+health-analyzer-solution-stomach = Stomach

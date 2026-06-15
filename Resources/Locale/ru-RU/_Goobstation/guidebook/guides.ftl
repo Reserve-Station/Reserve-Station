@@ -110,3 +110,4 @@ guide-entry-corporate-judo = Корпоративное дзюдо
 guide-entry-capoeira = Капоэйра
 guide-entry-ninjutsu = Ниндзюцу
 guide-entry-dragon-kung-fu = Кунг-фу Дракона
+guide-entry-hell-rip = Адская Геена

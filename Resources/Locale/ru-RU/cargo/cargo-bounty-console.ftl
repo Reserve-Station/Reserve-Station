@@ -16,3 +16,9 @@ bounty-console-flavor-left = Запросы, полученные от мест�
 bounty-console-flavor-right = v1.4
 bounty-manifest-header = [font size=14][bold]Официальный манифест запроса[/bold] (ID#{ $id })[/font]
 bounty-manifest-list-start = Манифест:
+
+bounty-console-tab-available-label = Доступно
+bounty-console-tab-history-label = История
+bounty-console-history-empty-label = История выполненных запросов не найдена
+bounty-console-history-notice-completed-label = [color=limegreen]Выполнено[/color]
+bounty-console-history-notice-skipped-label = [color=red]Пропущено[/color] пользователем { $id }

@@ -555,14 +555,23 @@ namespace Content.Client.HealthAnalyzer.UI
             GroupsContainer.AddChild(groupContainer);
         }
 
+        private static string GetLocalizedSolutionName(string? name)
+        {
+            if (string.IsNullOrEmpty(name))
+                return Loc.GetString("group-solution-unknown");
+
+            var key = $"health-analyzer-solution-{name}";
+            return Loc.TryGetString(key, out var localized) ? localized : name;
+        }
+
         private void DrawSolutionDiagnostics(Dictionary<NetEntity, Solution> solutions)
         {
-            TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
             foreach (var (ent, data) in solutions)
             {
                 var groupTitleText = $"{Loc.GetString(
                     "group-solution-name",
-                    ("solution", data.Name ?? Loc.GetString("group-solution-unknown"))
+                    ("solution", GetLocalizedSolutionName(data.Name))
                 )}";
 
                 var groupContainer = new BoxContainer

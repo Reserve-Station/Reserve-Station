@@ -3,6 +3,8 @@
 examine-name = Это же [bold]{$name}[/bold]!
 examine-can-see = Осмотрев {OBJECT($ent)}, вы можете увидеть:
 examine-can-see-nothing = {CAPITALIZE(SUBJECT($ent))} полностью без ничего!
+examine-present-tex = Это [enttex id="{ $id }" size={ $size }] [bold]{$name}[/bold]!
+examine-present = Это [bold]{$name}[/bold]!
 
 id-examine = - [bold]{$item}[/bold] на {POSS-ADJ($ent)} ремне.
 head-examine = - [bold]{$item}[/bold] на {POSS-ADJ($ent)} голове.

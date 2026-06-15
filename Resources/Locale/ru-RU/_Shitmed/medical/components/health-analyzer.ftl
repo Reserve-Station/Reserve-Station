@@ -33,3 +33,8 @@ condition-body-bleeding-LeftHand = • Левая рука { $entity } кров�
 condition-body-bleeding-RightHand = • Правая рука { $entity } кровоточит.
 condition-body-bleeding-LeftFoot = • Левая нога { $entity } кровоточит.
 condition-body-bleeding-RightFoot = • Правая нога { $entity } кровоточит.
+
+health-analyzer-window-conditions-text = Состояние
+health-analyzer-solution-bloodstream = Кровоток
+health-analyzer-solution-chemicals = Химикаты
+health-analyzer-solution-stomach = Желудок

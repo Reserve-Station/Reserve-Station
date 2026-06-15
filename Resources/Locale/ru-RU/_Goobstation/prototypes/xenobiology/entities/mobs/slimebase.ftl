@@ -1,7 +1,7 @@
 ent-BaseMobSlimeXenobio = базовый слайм
     .desc = Это так похоже на желе. Интересно, каково оно на вкус?
 ent-MobSlimeXenobioBaby = слайм
-    .suffix = Начальный
+    .suffix = Малыш
     .desc = Это так похоже на желе. Интересно, каково оно на вкус?
 ent-MobSlimeXenobioAdult = слайм
     .suffix = Взрослый

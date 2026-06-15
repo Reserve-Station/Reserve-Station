@@ -15,3 +15,6 @@ slime-examined-tamer = [color=green]It looks happy to see you![/color]
 slime-interaction-tame = It seems to like you now!
 
 slime-interaction-tame-fail = It seems to be not interested in you.
+
+mob-growth-display-baby = baby
+mob-growth-display-adult = adult

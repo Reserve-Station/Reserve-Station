@@ -172,10 +172,10 @@
       baby:
         nextStage: adult
         sprite: _Goobstation/Xenobiology/Mobs/slimesBaby.rsi
-        displayName: baby
+        displayName: mob-growth-display-baby
       adult:
         sprite: _Goobstation/Xenobiology/Mobs/slimesAdult.rsi
-        displayName: adult
+        displayName: mob-growth-display-adult
   - type: Slime
     breed: MobSlimeXenobioBaby
     breedName: xenobio-breed-undetermined

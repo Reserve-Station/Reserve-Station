@@ -87,6 +87,7 @@ guide-entry-medicine = Медицина
 guide-entry-brute =
     Продвинутое лечение
     механических повреждений
+guide-entry-plastic = Производство пластика
 guide-entry-botanicals = Ботаника
 guide-entry-cloning = Клонирование
 guide-entry-cryogenics = Криогеника

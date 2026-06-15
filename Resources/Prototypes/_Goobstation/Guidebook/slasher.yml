@@ -1,6 +1,6 @@
 - type: guideEntry
   id: Slasher
-  name: "Slasher"
+  name: guide-entry-slasher
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Slasher.xml"
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Slasher.xml"

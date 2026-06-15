@@ -12,3 +12,5 @@ surgery-ui-window-steps-error-tools = Не хватает инструменто
 surgery-error-laying = Они должны лежать!
 surgery-error-self-surgery = Вы не можете сделать операцию на себе!
 surgery-part-damage-evaded = { $user } уклоняется!
+surgery-ui-window-title-with-part = Хирургия - { $part }
+surgery-ui-window-title-with-part-surgery = Хирургия - { $part }, { $surgery }
