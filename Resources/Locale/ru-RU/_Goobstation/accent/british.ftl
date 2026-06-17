@@ -60,9 +60,9 @@ accent-british-words-10 = мама
 
 accent-british-words-replace-10 = маман
 
-accent-british-words-11 = shopping cart
+accent-british-words-11 = тележка для покупок
 
-accent-british-words-replace-11 = trolly
+accent-british-words-replace-11 = тележка
 
 accent-british-words-12 = рация
 
@@ -170,7 +170,7 @@ accent-british-words-replace-37 = англичания
 
 accent-british-words-38 = английский
 
-accent-british-words-replace-38 = забугорный
+accent-british-words-replace-38 = родной
 
 accent-british-words-39 = деньги
 
@@ -214,7 +214,7 @@ accent-british-words-replace-48 = главный технический госп
 
 accent-british-words-49 = кухня
 
-accent-british-words-replace-49 = столовая палата
+accent-british-words-replace-49 = столовая
 
 accent-british-words-50 = повар
 
@@ -260,7 +260,7 @@ accent-british-words-60 = км
 
 accent-british-words-replace-60 = валютчик
 
-accent-british-words-61 = инт
+accent-british-words-61 = пнт
 
 accent-british-words-replace-61 = представитель знати
 
@@ -312,13 +312,13 @@ accent-british-words-73 = яо
 
 accent-british-words-replace-73 = красная гвардия
 
-accent-british-words-74 = war op
+accent-british-words-74 = война
 
-accent-british-words-replace-74 = the battle of britain
+accent-british-words-replace-74 = битва за британию
 
-accent-british-words-75 = war ops
+accent-british-words-75 = боевые действия
 
-accent-british-words-replace-75 = the battle of britain
+accent-british-words-replace-75 = битва за британию
 
 accent-british-words-76 = маг
 
@@ -348,13 +348,13 @@ accent-british-words-82 = джет
 
 accent-british-words-replace-82 = крылья
 
-accent-british-words-83 = falkland
+accent-british-words-83 = фолкленд
 
-accent-british-words-replace-83 = british territory next to argentina
+accent-british-words-replace-83 = британская территория рядом с аргентиной
 
-accent-british-words-84 = falkland islands
+accent-british-words-84 = фолклендские острова
 
-accent-british-words-replace-84 = british territory next to argentina
+accent-british-words-replace-84 = британская территория рядом с аргентиной
 
 accent-british-words-85 = бингл
 
@@ -424,9 +424,9 @@ accent-british-words-101 = глава персонала
 
 accent-british-words-replace-101 = управляющий людскими ресурсами
 
-accent-british-words-102 = german
+accent-british-words-102 = немец
 
-accent-british-words-replace-102 = jerry
+accent-british-words-replace-102 = фриц
 
 accent-british-words-103 = баре
 
