@@ -43,6 +43,15 @@
     bodyType: static # VDS
     canCollide: true # VDS - from false, so carpets collide with acoustic rays.
   - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 5
+        hard: false # VDS
+        layer:
+        - DoorPassable
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
