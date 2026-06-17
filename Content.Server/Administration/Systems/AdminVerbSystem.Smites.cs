@@ -722,14 +722,14 @@ public sealed partial class AdminVerbSystem
             {
                 Text = maidenName,
                 Category = VerbCategory.Smite,
-                Icon = new SpriteSpecifier.Rsi(new ("/Textures/Clothing/Uniforms/Jumpskirt/janimaid.rsi"), "icon"),
+                Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Uniforms/Jumpskirt/janitor.rsi"), "icon"),  // Reserve edit: Fix janitor translation
                 Act = () =>
                 {
-                    _outfit.SetOutfit(args.Target, "JanitorMaidGear", (_, clothing) =>
+                    _outfit.SetOutfit(args.Target, "JanitorGear", (_, clothing) =>  // Reserve edit: Fix janitor translation
                     {
                         if (HasComp<ClothingComponent>(clothing))
                             EnsureComp<UnremoveableComponent>(clothing);
-                        EnsureComp<ClumsyComponent>(args.Target);
+                        // EnsureComp<ClumsyComponent>(args.Target);  // Reserve edit: Fix janitor translation
                     });
                 },
                 Impact = LogImpact.Extreme,

@@ -1,5 +1,5 @@
 ent-MailCosplayMaid = { ent-BaseMailLarge }
-    .suffix = Косплей, Горничная
+    .suffix = Косплей, Дормработник
     .desc = { ent-BaseMailLarge.desc }
 ent-MailCosplayWizard = { ent-BaseMailLarge }
     .suffix = Косплей, Волшебник
@@ -8,7 +8,7 @@ ent-MailCosplayNurse = { ent-BaseMailLarge }
     .suffix = Косплей, Медсестра
     .desc = { ent-BaseMailLarge.desc }
 ent-MailCosplayTacticalMaid = { ent-BaseMailLarge }
-    .suffix = Косплей, Тактическая горничная
+    .suffix = Косплей, Тактический уборщик
     .desc = { ent-BaseMailLarge.desc }
 ent-MailNoir = { ent-BaseMailLarge }
     .suffix = черна

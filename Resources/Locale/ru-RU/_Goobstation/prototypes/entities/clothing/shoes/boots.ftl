@@ -29,5 +29,5 @@ ent-ClothingShoesColorBlackUnremoveable = { ent-ClothingShoesColorBlack }
     .suffix = Неснимаемый
 ent-ClothingShoesBootsCowboyBrownRobust = аутентичные коричневые ковбойские сапоги
     .desc = Только для настоящих ковбоев.
-ent-ClothingShoesBootsJackGaloshes = галоши Джека
-    .desc = Эта пара боевых ботинок была разработана для элитных горничных нашей станции. Пожалуй, самая желанная вещь на станции.
+ent-ClothingShoesBootsJackGaloshes = подкованные галоши
+    .desc = Эта пара боевых ботинок была разработана для уборщиков, проводящих чистку в боевых условиях. Пожалуй, самая ценная часть экипировки уборщика.
