@@ -96,4 +96,10 @@ public sealed partial class AntagSelector : PanelContainer
     {
         _preferenceSelector.AddChild(selector);
     }
+
+    // Reserve - antag loadouts
+    public void SetLoadoutButton(Button button)
+    {
+        _buttonsContainer.AddChild(button);
+    }
 }
