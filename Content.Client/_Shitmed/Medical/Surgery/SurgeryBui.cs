@@ -76,7 +76,7 @@ public sealed class SurgeryBui : BoundUserInterface
         {
             _window = new SurgeryWindow();
             _window.OnClose += Close;
-            _window.Title = Loc.GetString("surgery-ui-window-title"); // Reserve edit: localization-fix
+            _window.Title = Loc.GetString("surgery-ui-window-title");
 
             _window.PartsButton.OnPressed += _ =>
             {
