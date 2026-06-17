@@ -11,6 +11,6 @@ secretplus-high-description = Если это может случиться, т�
 hermitplus-title = Отшельник
 hermitplus-description = Игровой режим, в котором основное внимание уделяется внутренним угрозам, а не внешним.
 
-secretplus-lowpop-description = Активнее, но менее опасно. Для скелетных экипажей.
+secretplus-lowpop-description = Активнее, но менее опасно. Для не спящих членов экипажа.
 
-secretplus-lowpop-title = Секрет+ малый онлайн
+secretplus-lowpop-title = Секрет+ лоупоп

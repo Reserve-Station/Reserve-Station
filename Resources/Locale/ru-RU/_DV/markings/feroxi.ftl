@@ -386,7 +386,7 @@ marking-FeroxiRFootStripesTiger = Стопа с полосами
 
 marking-FeroxiRFootStripesTiger-feroxi-Rfoot-stripes-tiger = Полосы
 
-marking-FeroxiLLegStripesBlitz = Полосы на икре (левая)
+marking-FeroxiLLegStripesBlitz = Полосы на ноге (левая)
 
 marking-FeroxiRFootTip = Контрастная лапа
 
