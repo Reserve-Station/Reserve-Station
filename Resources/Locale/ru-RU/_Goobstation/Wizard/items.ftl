@@ -9,3 +9,5 @@ sanguine-strike-examine = [color=#c41515]Это оружие было заряж
 scrying-orb-verb-message = Зайти в мир мёртвых
 scrying-orb-verb-text = Активировать шар
 wizard-mirror-guardian-change-species-fail = Вы не можете изменить свой вид после того, как являетесь носителем хранителя!
+
+wizard-mirror-blood-crawl-change-species-fail = Вы не можете изменить вид после использования демонического сердца!

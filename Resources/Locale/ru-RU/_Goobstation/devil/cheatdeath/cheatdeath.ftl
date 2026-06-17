@@ -10,3 +10,5 @@ action-cheat-death-fail-no-lives = На этот раз ты не ускольз
 action-cheat-death-fail-not-dead = Ты не можешь обмануть смерть, пока жив!
 action-cheated-death-dead = { $name } рывками приходит в себя. Кости срастаются, раны зашиваются, органы возвращаются на свои места.
 action-cheated-death-alive = { $name } сильно трясет, все виды ран исчезают во вспышке пламени.
+
+action-cheat-death-holy-damage = Божественное вмешательство предотвращает ваше воскрешение.

@@ -172,3 +172,33 @@ ghost-role-information-contractor-name = Контрактник Синдикат
 ghost-role-information-contractor-token = Контрактник Синдиката (Токен)
 ghost-role-information-contractor-description = ЗАПОЛУЧИТЕ ЭТОГО... ассистента..?
 contractor-role-greeting = Вы [color=#611b2b]контрактник Синдиката[/color], охотник за головами, перед вами стоит задача вывести цели со станции, живыми или мертвыми.
+
+ghost-role-information-bsd-description = Вас вызвал на станцию Представитель NanoTrasen. Подчиняйтесь ему, защищайте командование, следуйте Корпоративному Закону.
+
+ghost-role-information-bsd-name = Офцер "Синий Щит"
+
+ghost-role-information-bsd-rules = Следуйте приказам, данными вам [color=yellow][bold]Представителем NanoTrasen[/bold][/color], защищайте командование.
+
+ghost-role-information-fillbot-description = Подчиняйтесь создателю. Если его нет — действуйте по своей воле.
+
+ghost-role-information-fillbot-name = Клешнебот
+
+ghost-role-information-sentientanimal-rules = Вы — [color={ role-type-sentient-animal-color }][bold]{ role-type-sentient-animal-name }[/bold][/color]. Нейтральное животное,
+    способное действовать в целях самообороны, но в остальном не должны причинять вред экипажу.
+    Вы не помните ничего из своей прошлой жизни, и не помните ничего, что могли увидеть в виде призрака.
+    Вам разрешено помнить общие знания об игре. Например, как готовить, использовать предметы и т.п.
+    Вам категорически [color=red]ЗАПРЕЩЕНО[/color] помнить имя, внешний вид, и прочее своего прошлого персонажа.
+
+ghost-role-information-wraith-name-token = Фантом (Токен)
+
+ghost-role-intern-desc = Вы — стажёр ЦК, плохо оплачиваемый, голодный, с большой студенческой задолженностью, но других вариантов нет, так что лучше слушайтесь!
+
+ghost-role-intern-name = Стажёр ЦК
+
+ghost-role-intern-rules = Следуйте приказам, данными вами [color=yellow][bold]Представителем NanoTrasen[/bold][/color] и ЦК. Защищайте командование, слушайтесь Главу стажёров.
+
+ghost-role-lead-intern-name = Глава стажёров ЦК
+
+ghost-role-lead-intern-rules = Следуйте приказам, данными вами [color=yellow][bold]Представителем NanoTrasen[/bold][/color] и ЦК. Защищай командование, отдавайте приказы другим стажёрам.
+
+ghost-role-nerd-intern-name = Нёрд стажёр ЦК

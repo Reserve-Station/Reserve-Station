@@ -26,3 +26,5 @@ emote-fart-inhale-notice = Вы вдыхаете воздух, чтобы зар
 emote-fart-inhale-disarm-notice = Вы обезвреживаете свой пердеж.
 chat-emote-name-boop = Буп
 chat-emote-name-whirr = Шуметь
+
+chat-emote-msg-bagawk = багаукс!

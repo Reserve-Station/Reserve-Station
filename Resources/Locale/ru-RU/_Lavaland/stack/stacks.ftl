@@ -7,3 +7,37 @@ stack-unprocessed-quartz-ore = необработанный кварц
 stack-unprocessed-uranium-ore = необработанная урановая руда
 stack-unprocessed-bananium-ore = необработанная бананиумовая руда
 stack-unprocessed-coal = необработанный уголь
+
+stack-artifact-fragment-ore = необработанный фрагмент артефакта
+
+stack-ashwood-plank =
+    { $amount ->
+        [1] доски пепельного дерева
+       *[other] досок пепельного дерева
+    }
+
+stack-ice-wing =
+    { $amount ->
+        [1] крыло ледяного наблюдателя
+       *[other] крыльев ледяного наблюдателя
+    }
+
+stack-legion-skull =
+    { $amount ->
+        [1] череп легиона
+       *[other] черепов легиона
+    }
+
+stack-magma-wing =
+    { $amount ->
+        [1] крыло магматического наблюдателя
+       *[other] крыльев магматического наблюдателя
+    }
+
+stack-unprocessed-artifact-fragment-ore = незавершённый фрагмент артефакта
+
+stack-watcher-wing =
+    { $amount ->
+        [1] крыло наблюдателя
+       *[other] крыльев наблюдателя
+    }

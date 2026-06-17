@@ -16,3 +16,23 @@ stack-filter-stack-chunk-size = Размер выводимого стака
 pressure-filter-window-title = Редактировать фильтр давления
 pressure-filter-min-pressure = Минимальное давление
 pressure-filter-max-pressure = Максимальное давление
+
+anchor-filter-examine-disabled = Настроено на пропуск только не закреплённых, но закрепляемых объектов.
+
+anchor-filter-examine-enabled = Настроено на пропуск только закреплённых или закрепляемых объектов.
+
+cuff-filter-examine-disabled = Настроено на пропуск существ только без наручников.
+
+cuff-filter-examine-enabled = Настроено на пропуск существ только в наручниках.
+
+mob-filter-examine-set = Настроено на пропуск существ в состояниях: { $states }
+
+mob-filter-examine-unset = Состояния существ не настроены
+
+mob-filter-window-title = Редактировать фильтр существ
+
+mob-state-Alive = Живой
+
+mob-state-Critical = Критическое состояние
+
+mob-state-Dead = Мёртвый

@@ -42,3 +42,7 @@ rcd-component-vents = Вентили
 rcd-component-deconstruct = демонтаж
 rcd-component-floor-steel = стальной пол
 rcd-component-plating = корпусное покрытие
+
+rcd-component-deconstruct-target-is-bolted = Болты препятствуют демонтированию!
+
+rcd-component-deconstruct-target-no-access = У вас нет доступа чтобы демонтировать это!

@@ -20,3 +20,7 @@ player-panel-delete = Удалить
 player-panel-rejuvenate = Вылечить
 player-panel-false = Нет
 player-panel-true = Да
+
+player-panel-camera = Камера
+
+player-panel-follow = Следовать

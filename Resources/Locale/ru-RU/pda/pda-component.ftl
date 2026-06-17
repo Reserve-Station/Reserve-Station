@@ -30,3 +30,30 @@ comp-pda-ui-unassigned = Не назначено
 pda-notification-message = [font size=12][bold]КПК[/bold] { $header }: [/font]
     "{ $message }"
 
+nano-chat-coin-transfer-amount-placeholder = Введите сумму
+
+nano-chat-coin-transfer-cancel = Отмена
+
+nano-chat-coin-transfer-delivery-failed = Получатель недоступен или не найден
+
+nano-chat-coin-transfer-failed = Системная ошибка при переводе
+
+nano-chat-coin-transfer-insufficient-funds = Недостаточно средств
+
+nano-chat-coin-transfer-invalid-amount = Некорректная сумма перевода
+
+nano-chat-coin-transfer-prompt = Введите сумму кредитов для отправки:
+
+nano-chat-coin-transfer-rate-limit = Слишком много переводов. Подождите
+
+nano-chat-coin-transfer-send = Отправить
+
+nano-chat-coin-transfer-success-recipient = Получено { $amount } кредитов
+
+nano-chat-coin-transfer-success-sender = Отправлено { $amount } кредитов
+
+nano-chat-coin-transfer-title = Отправить кредиты
+
+nano-chat-coin-transfer-unauthorized = Доступ запрещён: вы не владелец этого КПК
+
+nano-chat-send-coin = Отправить кредиты

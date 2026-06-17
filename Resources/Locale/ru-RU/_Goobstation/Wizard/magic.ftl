@@ -44,3 +44,5 @@ spell-summon-simians-maxed-out-message = Ваша сила призыва обе
 dimension-shift-message = Изменение измерений!
 ghosts-summoned-message = Призраки были призваны!
 global-tile-movement-message = Начинает звучать зловещий ритм!
+
+spell-rathen-gut-popup = У вас нет аппендикса, но чем-то всё же пришлось пожертвовать!

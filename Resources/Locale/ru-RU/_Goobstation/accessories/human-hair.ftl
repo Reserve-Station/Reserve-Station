@@ -33,3 +33,13 @@ marking-HumanHairStyledCurls = Уложенные локоны
 marking-HumanHairUnkemptScientist = Неопрятный ученый
 marking-HumanHairWispy = Мудрый
 marking-HumanHairSpikeHawk = Заостренный ирокез
+
+marking-HumanHairClassicBun = Классический пучок
+
+marking-HumanHairLongTwinTails = Длинные хвостики
+
+marking-HumanHairLooseBun = Свободный пучок
+
+marking-HumanHairLowPonytail = Низкий хвост
+
+marking-HumanHairPoofed = Пышный

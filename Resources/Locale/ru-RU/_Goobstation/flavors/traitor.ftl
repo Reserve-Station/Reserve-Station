@@ -85,3 +85,15 @@ traitor-evilchampion-roundend = [color=red]Чемпион Зла[/color]
 
 issuers-corporate-flavor-1 = NanoTrasen
 issuers-corporate-flavor-2 = Центральное командование
+
+traitor-cybersunindustries-roundend = [color=yellow]специалист из Cybersun Industries[/color]
+
+traitor-postal-allies = Если синдикат прознает о вашем плане, они убьют вас и заберут аплинк. Не рискуйте.
+
+traitor-postal-goal = Приготовления, наконец, завершены. Сегодня тот день, когда вы отправитесь в путь. Вы собираетесь захватить эвакуационный шаттл и начать новую жизнь, свободную от Нанотрейзена.
+
+traitor-postal-intro = Ты сошел с ума.
+
+traitor-postal-roundend = [color=white]просто стань абсолютно безумным[/color]
+
+traitor-postal-uplink = Месяц назад вам удалось удачно украсть аплинк. Это, безусловно, должно помочь в достижении ваших целей.

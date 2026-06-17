@@ -71,3 +71,31 @@ air-alarm-ui-thresholds-upper-bound = Верхняя аварийная гран
 air-alarm-ui-thresholds-lower-bound = Нижняя аварийная граница
 air-alarm-ui-thresholds-upper-warning-bound = Верхняя тревожная граница
 air-alarm-ui-thresholds-lower-warning-bound = Нижняя тревожная граница
+
+air-alarm-ui-pressure-bound-both = Оба ограничения
+
+air-alarm-ui-pressure-bound-externalbound = Внешнее ограничение
+
+air-alarm-ui-pressure-bound-internalbound = Внутреннее ограничение
+
+air-alarm-ui-pressure-bound-nobound = Без ограничений
+
+air-alarm-ui-pump-direction-releasing = Выпуск
+
+air-alarm-ui-pump-direction-scrubbing = Фильтрация
+
+air-alarm-ui-pump-direction-siphoning = Откачка
+
+air-alarm-ui-scrubber-deselect-all-gases-label = Выключить все
+
+air-alarm-ui-scrubber-select-all-gases-label = Включить все
+
+air-alarm-ui-thresholds-copy = Скопировать значение границы на все устройства
+
+air-alarm-ui-thresholds-copy-tooltip = Скопировать значение границы сенсора этого устройства на все устройства на этой вкладке воздушной сигнализации.
+
+air-alarm-ui-title = Воздушная сигнализация
+
+air-alarm-ui-widget-gas-filters = Фильтр газов
+
+air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Ошибка выбора режима! [/color][/bold]

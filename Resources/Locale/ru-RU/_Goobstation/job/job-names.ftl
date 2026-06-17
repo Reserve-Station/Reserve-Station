@@ -45,3 +45,11 @@ JobMercenaryCaptain = Капитан наёмников
 JobRoboticist = Робототехник
 JobRadioHost = Радиоведущий
 JobVirologist = Вирусолог
+
+job-name-exec = служебный доступ
+
+job-name-navy-captain = капитан ВКФ
+
+job-name-navy-officer = офицер ЦК
+
+job-name-outercommander = офицер ТСФ

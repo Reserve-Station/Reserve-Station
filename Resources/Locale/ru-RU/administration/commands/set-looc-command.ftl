@@ -4,3 +4,11 @@ set-looc-command-too-many-arguments-error = Слишком много аргум
 set-looc-command-invalid-argument-error = Неверный аргумент.
 set-looc-command-looc-enabled = LOOC чат был включён.
 set-looc-command-looc-disabled = LOOC чат был выключен.
+
+cmd-setlooc-description = Позволяет вам включать или отключать LOOC.
+
+cmd-setlooc-help = Использование: setlooc ИЛИ setlooc [value]
+
+cmd-setlooc-looc-disabled = LOOC чат был отключен.
+
+cmd-setlooc-looc-enabled = LOOC чат был включён.

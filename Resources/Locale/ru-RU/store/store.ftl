@@ -11,3 +11,9 @@ store-ui-button-out-of-stock = { "" } (Нет в наличии)
 store-not-account-owner = Этот { $store } не привязан к вам!
 store-preset-name-uplink = Аплинк
 store-preset-name-spellbook = Книга заклинаний
+
+store-preset-name-spellbook-ghost = Призрачный магазин заклинаний
+
+store-preset-name-uplink-ghost = Аплинк нарушителя
+
+store-ui-refund-text = Возврат

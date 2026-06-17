@@ -49,3 +49,7 @@ construction-graph-tag-ash = пепел
 construction-graph-tag-ice-bucket = ведро для льда
 construction-graph-tag-water-bottle = бутылка с водой
 construction-graph-tag-camera-electronics = микросхема камеры наблюдения
+
+construction-graph-tag-blue = самодельный щит
+
+construction-graph-tag-plushie-carp = плюшевый карп

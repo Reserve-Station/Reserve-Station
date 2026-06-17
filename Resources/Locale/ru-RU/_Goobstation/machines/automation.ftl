@@ -84,3 +84,31 @@ signal-port-name-rad-low = Низкий
 signal-port-description-rad-low = Сигнальный порт устанавливается на HIGH, если давление в баке ниже 66 %, LOW - в противном случае.
 signal-port-name-rad-full = Полный
 signal-port-description-rad-full = Сигнальный порт устанавливается на HIGH, если давление в баке выше 66 %, LOW - в противном случае.
+
+signal-port-description-alt-interact = Порт сигнала для переключения режима альтернативного взаимодействия или установки значения HIGH/LOW.
+
+signal-port-description-automation-slot-bottles = Слот автоматизации ХимМастера для таблеток или жидкостей.
+
+signal-port-description-lathe-print = Порт сигнала, который печатает последний установленный рецепт при импульсе.
+
+signal-port-description-plumbing-dispenser = Слот автоматизации трубы для подачи жидкостей в колбу раздатчика или из неё.
+
+signal-port-description-plumbing-input = Слот автоматизации трубы для подачи жидкостей.
+
+signal-port-description-plumbing-output = Слот автоматизации трубы для вывода жидкостей.
+
+signal-port-description-powered = Этот порт активируется с высоким или низким уровнем, в зависимости от питания.
+
+signal-port-name-alt-interact = Альт. взаимодействие
+
+signal-port-name-automation-slot-bottles = Предмет: Хранилище
+
+signal-port-name-lathe-print = Напечатать последний рецепт
+
+signal-port-name-plumbing-dispenser = Труба: Раздатчик
+
+signal-port-name-plumbing-input = Труба: Вход
+
+signal-port-name-plumbing-output = Труба: Выход
+
+signal-port-name-powered = Запитан

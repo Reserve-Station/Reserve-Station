@@ -390,3 +390,33 @@ reagent-effect-guidebook-add-to-chemicals =
         [1] to
        *[-1] от
     } решение
+
+reagent-effect-guidebook-artifact-durability-restore = Restores { $restored } durability in active alien artifact nodes.
+
+reagent-effect-guidebook-artifact-unlock =
+    { $chance ->
+        [1] Помогает
+       *[other] помогают
+    } разблокировать инопланетный артефакт.
+
+reagent-effect-guidebook-emote =
+    { $chance ->
+        [1] Вызывает
+       *[other] вызвать
+    }  у цели [bold][color=white]{ $emote }[/color][/bold]
+
+reagent-effect-guidebook-even-health-change =
+    { $chance ->
+        [1]
+            { $healsordeals ->
+                [heals] Равномерно лечит
+                [deals] Равномерно наносит
+               *[both] Равномерно изменяет здоровье на
+            }
+       *[other]
+            { $healsordeals ->
+                [heals] раномерно лечат
+                [deals] равномерно наносят
+               *[both] равномерно изменяют здоровье на
+            }
+    } { $changes }

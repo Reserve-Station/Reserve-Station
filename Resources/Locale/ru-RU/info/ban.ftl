@@ -76,3 +76,5 @@ server-ban-string-no-pii = { $admin } установил серверный ба
 cmd-ban_exemption_get-arg-player = <player>
 # Kick on ban
 ban-kick-reason = Вы были забанены
+
+cmd-banlist-hint = <name/user ID>

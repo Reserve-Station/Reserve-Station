@@ -21,3 +21,41 @@ lathe-category-command = Командование
 lathe-category-hats = Шляпы
 lathe-category-jumpsuits = Комбинезоны
 lathe-category-neck = Шея
+
+lathe-category-boxes = Коробки
+
+lathe-category-clothing = Одежда
+
+lathe-category-computers = Компьютеры
+
+lathe-category-concrete = Бетон
+
+lathe-category-dark = Тёмная
+
+lathe-category-engineering = Инженерия
+
+lathe-category-general = Общее
+
+lathe-category-magazines = Магазины
+
+lathe-category-maints = Техи
+
+lathe-category-marble = Marble
+
+lathe-category-medical = Медицина
+
+lathe-category-research = Исследования
+
+lathe-category-security = Безопасность
+
+lathe-category-service = Сервис
+
+lathe-category-steel = Стальная
+
+lathe-category-supply = Снабжение
+
+lathe-category-tiles = Плитка
+
+lathe-category-white = Белая
+
+lathe-category-wood = Деревянная

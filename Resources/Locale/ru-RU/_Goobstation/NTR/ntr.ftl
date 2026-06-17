@@ -112,3 +112,11 @@ ntr-console-insufficient-reagent-debug = Недостаточно реагент
 ntr-console-task-fail = Не удалось загрузить задачу.
 ntr-bounty-console-menu-title = Консоль заданий ПNT
 ntr-bounty-console-print-button = Принять
+
+ntr-executive-cassette-desc = Кассетный плеер для прослушивания музыки, пока вы заключаете важные сделки.
+
+ntr-executive-cassette-name = Административный кассетный плеер
+
+ntr-experimental-hardsuit-desc = NanoTrasen тестирует экспериментальный экокостюм, собранный из блюспейс-проводящих пластин, созданный путём обратной инженерии скафандра Дредноут от CyberSun.
+
+ntr-experimental-hardsuit-name = Заказать скафандр

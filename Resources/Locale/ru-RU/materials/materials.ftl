@@ -35,3 +35,9 @@ materials-raw-uranium = руда урана
 materials-raw-bananium = руда бананиума
 materials-raw-salt = каменная соль
 materials-raw-diamond = необработанные алмазы
+
+materials-cotton = шёлк
+
+materials-reinforced-uranium-glass = укреплённое урановое стекло
+
+materials-uranium-glass = урановое стекло

@@ -29,3 +29,7 @@ research-technology-extended-communication = Расширенные коммун
 research-technology-bluespace-munitions = Блюспейс-аммуниция
 research-technology-radio-music-communication = Радиомузыкальные коммуникации
 research-technology-cloning = Биологическая реконструкция
+
+research-technology-service-energy-chem = Органический электросинтез
+
+research-technology-xeno-compatibility = Ксеносовместимость

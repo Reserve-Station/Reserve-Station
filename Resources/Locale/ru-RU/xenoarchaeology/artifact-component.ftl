@@ -21,3 +21,7 @@ artifact-node-class-3 = [color=#a9ff38]Пневматический[/color]
 artifact-node-class-4 = [color=#2bfff8]Архонский[/color]
 artifact-node-class-5 = [color=#7883ff]Люминарный[/color]
 artifact-node-class-6 = [color=#be78ff]Демиург[/color]
+
+cmd-unlocknode-artifact-hint = <artifact uid>
+
+cmd-unlocknode-node-hint = <node uid>

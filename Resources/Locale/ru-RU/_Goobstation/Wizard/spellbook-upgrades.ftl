@@ -60,3 +60,7 @@ spellbook-upgrade-force-wall-name = Улучшение Силовая стена
 spellbook-upgrade-force-wall-desc = Улучшает Силовая стена до максимального уровня 5!
 spellbook-upgrade-simians-name = Улучшение Призыв обезьян
 spellbook-upgrade-simians-desc = Улучшает Призыв обезьян до максимального уровня 5!
+
+spellbook-upgrade-rathen-desc = Улучшает "Секрет Ратена" до максимального 3-го уровня!
+
+spellbook-upgrade-rathen-name = Улучшение "Секрета Ратена"

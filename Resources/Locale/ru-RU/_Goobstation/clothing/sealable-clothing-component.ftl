@@ -17,3 +17,5 @@ sealable-clothing-sealed-toggle-fail = Сначала деактивируйте
 sealable-clothing-not-powered = Костюм не включен!
 sealable-clothing-open-sealed-panel-fail = Панель проводки запечатана слишком плотно!
 sealable-clothing-close-panel-first = Сначала закройте панель проводки!
+
+sealable-clothing-seal-was-broken = Герметизация костюма нарушена!

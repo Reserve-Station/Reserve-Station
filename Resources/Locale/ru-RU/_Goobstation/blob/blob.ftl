@@ -131,3 +131,13 @@ admin-verb-text-make-blob = Создать переносчик блоба
 language-Blob-name = Блоб
 chat-language-Blob-name = Блоб
 language-Blob-description = Блиб боб! Блоб блоб!
+
+blob-alert-shuttle-arrived = Обнаружена биологическая угроза. Весь персонал должен немедленно эвакуироваться.
+
+blob-help-action-desc = Получить базовую информацию об игре за блоба.
+
+blob-help-action-name = Помощь
+
+blob-teleport-to-node-action-desc = Телепортирует вас к случайному узловому блобу.
+
+blob-teleport-to-node-action-name = Телепорт к узлу (0)

@@ -38,3 +38,7 @@ accent-mobster-words-16 = идёт
 accent-mobster-words-replace-16 = шкандыбает
 accent-mobster-words-17 = тут
 accent-mobster-words-replace-17 = тута
+
+accent-mobster-suffix-boss-4 = , ачо.
+
+accent-mobster-suffix-boss-5 = , чё как'?

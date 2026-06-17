@@ -124,3 +124,13 @@ chat-speech-verb-wawa-1 = интонирует
 chat-speech-verb-wawa-2 = утверждает
 chat-speech-verb-wawa-3 = обьявляет
 chat-speech-verb-wawa-4 = размышляет
+
+chat-manager-send-ooc-patron-wrap-message-no-icon = OOC: [bold][color={ $patronColor }]{ $playerName }[/color]:[/bold] { $message }
+
+chat-speech-verb-goat-1 = блеет
+
+chat-speech-verb-goat-2 = кряхтит
+
+chat-speech-verb-goat-3 = кричит
+
+chat-speech-verb-name-goat = Коза

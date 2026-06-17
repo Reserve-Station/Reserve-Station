@@ -49,3 +49,78 @@ ent-IDCardTide = ID карта тайдера
     .desc = Самодельная ID-карта, сделанная бог знает из чего.
 ent-IDCardTideUnfinished = незаконченная самодельная ID карта
     .desc = Боже, помилуй.
+
+ent-WoodenHandle = деревянная ручка
+    .desc = Обычная деревянная ручка, которую можно использовать в крафте.
+
+ent-WoodenHandleBat =
+    { ent-WoodenHandle }
+    .desc = { ent-WoodenHandle.desc }
+
+ent-ScrapBase = металлолом
+    .desc = Этот металл готовят к использованию.
+
+ent-ScrapHelmet =
+    { ent-ScrapBase }
+    .desc = { ent-ScrapBase.desc }
+
+ent-ScrapLightVest =
+    { ent-ScrapBase }
+    .desc = { ent-ScrapBase.desc }
+
+ent-ScrapHeavyVest =
+    { ent-ScrapBase }
+    .desc = { ent-ScrapBase.desc }
+
+ent-ScrapBoots =
+    { ent-ScrapBase }
+    .desc = { ent-ScrapBase.desc }
+
+ent-HeatedMadeKitchenKnife = кухонный нож с подогревом
+    .desc = Нож ручной работы, выглядит круто! Вероятно, у вас есть несколько минут, прежде чем он остынет.
+
+ent-ContrabandBag = импровизированная сумка
+    .desc = Импровизированная сумка, сделанная из стали и кабелей таким образом, чтобы блокировать сканеры контрабанды.
+
+ent-ContrabandBagUnfinished = импровизированное что-то
+    .desc = Что-то сделанное из стали и пластика. Вы не уверены, что это должно быть.
+
+ent-MakeshiftDefib = импровизированный дефибриллятор
+    .desc = Ржавый на вид дефибриллятор, сделанный из металлолома. Вы уверены, что это хорошая идея?
+
+ent-MakeshiftDefibUnfinished = импровизированное что-то
+    .desc = Что-то сложное из стали. Вы не совсем уверены, что это такое.
+
+ent-TideFlipperZero = плавник прилива
+    .desc = Самодельное устройство, которое может удалять доступ с дверей.
+
+ent-TideFlipperZeroUnfinished = импровизированное что-то
+    .desc = Пульт дистанционного управления, привязанный к многофункциональному инструменту. Надо быть гением, чтобы понять, что он делает.
+
+ent-MakeshiftJammerUnfinished =
+    { ent-TideFlipperZeroUnfinished }
+    .desc = { ent-TideFlipperZeroUnfinished.desc }
+
+ent-MetalBaseballBat = металлическая бейсбольная бита
+    .desc = Очень прочная и тяжелая металлическая бейсбольная бита, способная надрать задницы. Имеет красивую деревянную ручку.
+
+ent-MakeshiftJammer = импровизированный радиоглушитель
+    .desc = Дешевое на вид устройство, которое может рассылать радиоволны, по сути блокируя весь сигнал. Да, это не особо эффективно.
+
+ent-ToolboxGrey = серый ящик для инструментов
+    .desc = Действительно надежное оружие. Вы чувствуете внезапное желание смыть все на своем пути.
+
+ent-ToolboxGreyUnfinished = незавершенный импровизированный ящик для инструментов
+    .desc = Немного стали, сваренной вместе. Выглядит незаконченным.
+
+ent-ClothingShoesHeavyBoots = штурмовые сапоги
+    .desc = Металл царапает пол, пока вы идете с ними. Кто подумал, что это хорошая идея?
+
+ent-ClothingHeadMakeshiftHelmet = импровизированный легкий шлем
+    .desc = Кусок стали, соединенный проволокой, удивительно прочный и стильный.
+
+ent-ClothingOuterArmorMakeshiftVestLight = импровизированный легкий жилет
+    .desc = Легкий жилет ручной работы из стали и тросов. Прочный, но не такой эффективный.
+
+ent-ClothingOuterArmorMakeshiftVestHeavy = импровизированный тяжелый жилет
+    .desc = Тяжелый импровизированный жилет, способный выдерживать пули.

@@ -59,3 +59,9 @@ names-slasher-dataset-29 = Расколотель Клоунов
 names-slasher-dataset-30 = Жнец Грейтайда
 names-slasher-dataset-31 = Трубогиб
 names-slasher-dataset-32 = Плазморез
+
+names-slasher-dataset-33 = Зубы
+
+names-slasher-title-dataset-29 = Кожа
+
+names-slasher-title-dataset-30 = Мидвич

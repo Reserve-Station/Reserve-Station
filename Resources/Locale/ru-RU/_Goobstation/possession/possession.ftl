@@ -12,3 +12,7 @@ possession-popup-others = Конечности { $target } странным об
 possession-popup-self = Твоя душа изгнана из твоего тела!
 possession-end-popup = { $target } вскакивает и безвольно падает на землю.
 possessed-component-examined = У вас осталось { $timeremaining } секунд в этом теле.
+
+possession-fail-target-immune = Необычный барьер блокирует вашу попытку вселения!
+
+possession-fail-target-polymorphed = Эта форма слишком нестабильна для вселения!

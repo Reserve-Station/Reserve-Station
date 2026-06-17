@@ -15,3 +15,11 @@ advertisement-slotmachine-3 = ЕЩЁ ОДИН СПИН!!
 advertisement-slotmachine-4 = В рехабе они просто не хотят, чтобы вы видели свой успех!
 advertisement-slotmachine-5 = Ещё одна игра, потом можете идти
 advertisement-slotmachine-6 = Подойди поближе и прокрути меня!
+
+clawmachine-fail-generic = Плюшка выпала из крана. Какая жалость...
+
+clawmachine-fail-other = { $user } облажался и выронил игрушку!
+
+clawmachine-fail-self = Вы облажались и выронили игрушку!
+
+coinflipper-win = Победа! Вы выиграли { $amount } кредитов!

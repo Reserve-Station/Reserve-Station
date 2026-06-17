@@ -179,3 +179,9 @@ loadout-group-plasma-tank = Баллон плазмы
 # Salvage/Shaft Miner
 loadout-group-salvage-specialist-jumpsuit = Комбинезон шахтёра
 loadout-group-shaft-miner-jumpsuit = Комбинезон исследователя
+
+loadout-group-virology-envirohelm = Экошлем вирусолога
+
+loadout-group-virology-envirosuit = Экокостюм вирусолога
+
+loadout-group-virology-envirogloves = Экоперчатки вирусолога

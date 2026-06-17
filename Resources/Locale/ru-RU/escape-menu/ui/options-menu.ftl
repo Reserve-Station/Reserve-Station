@@ -398,3 +398,49 @@ ui-options-admin-overlay-ghost-hide-distance = Расстояние полног
 ## ganimed->reserve port - TranslitSystem
 ui-options-toggle-translit-en-to-ru = (Чат) Транслитерирует ваш ввод в латинском алфавите на кириллицу
 ui-options-toggle-translit-ru-to-en = (Чат) Транслитерирует все в окне чата с кириллицы на латиницу
+
+ui-options-admin-player-tab-symbol-setting = Символы антагонистов в колонке персонажей
+
+ui-options-admin-player-tab-symbol-setting-basic = Показывать стандартный символ антагониста
+
+ui-options-admin-player-tab-symbol-setting-off = Без символа антагониста
+
+ui-options-admin-player-tab-symbol-setting-specific = Показывать конкретный символ антагониста
+
+ui-options-filter-bilinear = Билинейный (сглаживание)
+
+ui-options-filter-label = Фильтр масштабирования:
+
+ui-options-filter-nearest = По соседним пикселям (без сглаживания)
+
+ui-options-function-hotbar-shift0 = Слот хотбара Shift+0
+
+ui-options-function-hotbar-shift1 = Слот хотбара Shift+1
+
+ui-options-function-hotbar-shift2 = Слот хотбара Shift+2
+
+ui-options-function-hotbar-shift3 = Слот хотбара Shift+3
+
+ui-options-function-hotbar-shift4 = Слот хотбара Shift+4
+
+ui-options-function-hotbar-shift5 = Слот хотбара Shift+5
+
+ui-options-function-hotbar-shift6 = Слот хотбара Shift+6
+
+ui-options-function-hotbar-shift7 = Слот хотбара Shift+7
+
+ui-options-function-hotbar-shift8 = Слот хотбара Shift+8
+
+ui-options-function-hotbar-shift9 = Слот хотбара Shift+9
+
+ui-options-function-smart-equip-back = Умная экипировка на спину
+
+ui-options-function-swap-hands-reverse = Поменять руки (другое направление)
+
+ui-options-function-toggle-knockdown = Переключить ползание
+
+ui-options-highlight-sound = Проигрывать звук упоминаний
+
+ui-options-hotkey-default-walk = Ходьба по умолчанию
+
+ui-options-function-mapping-enable-pick = Выбрать объект/тайл

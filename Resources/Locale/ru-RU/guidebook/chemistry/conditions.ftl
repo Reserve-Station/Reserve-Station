@@ -65,3 +65,15 @@ reagent-effect-condition-guidebook-blood-reagent-threshold =
             }
     }
 reagent-effect-condition-guidebook-this-reagent = этот реагент
+
+reagent-effect-condition-guidebook-breathing =
+    цель { $isBreathing ->
+        [true] дышит нормально
+       *[false] задыхается
+    }
+
+reagent-effect-condition-guidebook-internals =
+    цель { $usingInternals ->
+        [true] использует дыхательную маску
+       *[false] дышит атмосферным газом
+    }

@@ -38,3 +38,5 @@ examinable-solution-on-examine-volume-puddle = Лужа { $fillLevel ->
         [mostlyempty] [color=#A4A4A4]почти пустая[/color]
        *[empty] [color=gray]пустая[/color]
     }
+
+examinable-solution-recognized = [color={ $color }]{ $chemical }[/color]

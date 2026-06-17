@@ -21,3 +21,7 @@ ent-WallRockChromiteGibtonite = { ent-WallRockChromite }
 ent-WallRockAndesiteGibtonite = { ent-WallRockAndesite }
     .desc = { ent-WallRockAndesite.desc }
     .suffix = { ent-WallRockGibtonite.suffix }
+
+ent-WallNecropolisIndestructible = каменная стена
+    .suffix = Неразрушимый
+    .desc = { ent-BaseWall.desc }

@@ -44,3 +44,49 @@ names-wizard-last-dataset-43 = Белый
 names-wizard-last-dataset-44 = Мудрый
 names-wizard-last-dataset-45 = Ксобех
 names-wizard-last-dataset-46 = Ым Сагош
+
+names-wizard-last-dataset-47 = Император
+
+names-wizard-last-dataset-48 = Светящийся
+
+names-wizard-last-dataset-49 = Грей
+
+names-wizard-last-dataset-50 = Великий
+
+names-wizard-last-dataset-51 = Целитель
+
+names-wizard-last-dataset-52 = Лич
+
+names-wizard-last-dataset-53 = Чародей
+
+names-wizard-last-dataset-54 = Могущественный
+
+names-wizard-last-dataset-55 = Ворон
+
+names-wizard-last-dataset-56 = Красный
+
+names-wizard-last-dataset-57 = Раскаявшийся
+
+names-wizard-last-dataset-58 = Кипящий
+
+names-wizard-last-dataset-59 = Сияющий
+
+names-wizard-last-dataset-60 = Колдунатор
+
+names-wizard-last-dataset-61 = Спиральный Король
+
+names-wizard-last-dataset-62 = Бесконечный
+
+names-wizard-last-dataset-63 = Неостановимый
+
+names-wizard-last-dataset-64 = Плачущий
+
+names-wizard-last-dataset-65 = Белый
+
+names-wizard-last-dataset-66 = Мудрый
+
+names-wizard-last-dataset-67 = Кого Нельзя Называть
+
+names-wizard-last-dataset-68 = Ксобех
+
+names-wizard-last-dataset-69 = Ым Сагош

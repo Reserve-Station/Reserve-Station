@@ -36,3 +36,7 @@ reagent-name-nostalgia = ностальгия
 reagent-desc-nostalgia = Почему это тут?
 reagent-name-tilenol = тиленол
 reagent-desc-tilenol = Вы можете почувствовать, что становитесь более крепким, просто держа это в руках.
+
+reagent-desc-crapotoxin = Вызывается неконтролируемым фикалисом.
+
+reagent-name-crapotoxin = смачный пердёж

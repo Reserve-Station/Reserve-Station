@@ -37,3 +37,11 @@ poll-command-info-not-found = Опрос {$id} не найден.
 # Client Commands
 cmd-polls-desc = Открывает меню общественных опросов.
 cmd-polls-help = Использование: polls
+
+poll-control-seen-by =
+    Просмотрели {$count} {$count ->
+        [one] игрок
+        [few] игрока
+        [many] игроков
+       *[other] игрока
+    }

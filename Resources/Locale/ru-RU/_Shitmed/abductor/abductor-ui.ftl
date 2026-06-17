@@ -48,3 +48,5 @@ abductor-ui-experimentator-not-found = экспериментатор: [color=re
 abductor-ui-victim-none = жертва: [color=red]НЕ ВЫБРАНА[/color]
 abductor-ui-victim-found = жертва: [color=green]{ $victim }[/color]
 abductor-ui-armor-plug-in = [color=red][font size=16]Вам нужно подключить броню похитителя![/font][/color]
+
+abductor-victim-role-name-freeagent = Похищенный абдукторами (свободный антагонист)

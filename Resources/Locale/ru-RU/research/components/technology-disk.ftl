@@ -6,3 +6,5 @@ tech-disk-ui-name = Терминал технологических дисков
 tech-disk-ui-total-label = На выбранном сервере имеется { $amount } очков
 tech-disk-ui-cost-label = Печать каждого диска стоит { $amount } очков
 tech-disk-ui-print-button = Напечать диск
+
+tech-disk-name-format = { $baseName } ({ $technology })

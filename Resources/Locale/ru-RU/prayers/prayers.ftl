@@ -16,3 +16,9 @@ prayer-popup-notify-pray-locked = Вы не чувствуете себя дос
 prayer-popup-subtle-default = Вы слышите голос в своей голове...
 prayer-popup-notify-pray-atheist = Вы не верите в это...
 prayer-popup-notify-pray-ui-message = Послание
+
+prayer-chat-notify-monolith = МОНОЛИТ
+
+prayer-popup-notify-monolith-sent = Ничего не произошло. Громоподобно...
+
+prayer-verbs-worship = Последователи

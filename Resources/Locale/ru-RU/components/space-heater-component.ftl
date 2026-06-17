@@ -13,3 +13,5 @@ comp-space-heater-ui-Medium-power-consumption = Средний
 comp-space-heater-ui-High-power-consumption = Высокий
 comp-space-heater-device-name = Термостат
 comp-space-heater-unanchored = { CAPITALIZE($device) } не закреплён.
+
+comp-space-heater-ui-title = Блок управления температурой

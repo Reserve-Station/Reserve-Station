@@ -41,3 +41,27 @@ command-description-mind-get = Grabs the mind from the entity, if any.
 command-description-mind-control = Assumes control of an entity with the given player.
 command-description-addaccesslog = Adds an access log to this entity. Do note that this bypasses the log's default limit and pause check.
 command-description-stationevent-simulate = Simulates N number of rounds in which events will occur and prints the occurrences of every event after.
+
+command-description-jobboard-completeJob = Завершает указанное задание на доске утилизаторских объявлений для станции.
+
+command-description-scale-get = Получает текущий масштаб спрайта сущности, установленный ScaleVisualsComponent. Не включает изменения SpriteComponent.
+
+command-description-scale-multiply = Умножает масштаб спрайта сущности на заданный коэффициент (без изменения физической модели).
+
+command-description-scale-multiplyvector = Умножает масштаб спрайта сущности на заданный 2D вектор (без изменения физической модели).
+
+command-description-scale-multiplywithfixture = Умножает масштаб спрайта сущности на коэффициент, включая физическую модель.
+
+command-description-scale-set = Устанавливает масштаб спрайта сущности (не меняя её физические параметры).
+
+command-description-stationevent-lsprobtheoretical = Для прототипа BasicStationEventScheduler, количества игроков и времени раунда показывает вероятность событий на станции.
+
+command-description-xenoartifact-averageResearch = Рассчитывает среднее количество очков исследования, которое артефакт выдаст при полной активации.
+
+command-description-xenoartifact-list = Список всех EntityUid созданных артефактов.
+
+command-description-xenoartifact-printMatrix = Выводит матрицу, показывающую связи между узлами артефакта.
+
+command-description-xenoartifact-totalResearch = Получает все исследовательские очки, которые можно извлечь из артефакта прямо сейчас.
+
+command-description-xenoartifact-unlockAllNodes = Разблокирует все узлы артефакта.

@@ -8,3 +8,7 @@ stethoscope-delta-steady = Оно стабильное.
 stethoscope-delta-improving = Оно улучшается.
 stethoscope-delta-worsening = Оно ухудшается.
 stethoscope-combined-status = { $absolute } { $delta }
+
+stethoscope-nothing = Вы ничего не слышите.
+
+stethoscope-raggedy = Вы слышите прерывистое дыхание.

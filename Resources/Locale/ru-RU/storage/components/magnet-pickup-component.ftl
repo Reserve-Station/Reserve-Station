@@ -2,3 +2,5 @@
 
 comp-magnet-pickup-examined-on = Магнит в данный момент [color=darkgreen]включен[/color].
 comp-magnet-pickup-examined-off = Магнит в данный момент [color=darkred]выключен[/color].
+
+comp-magnet-pickup-toggle-verb = Переключить магнит

@@ -12,3 +12,11 @@ changelog-tab-title-Changelog = Список изменений
 changelog-tab-title-Admin = Админское
 changelog-tab-title-Reservelog = Reserve
 changelog-tab-title-ReserveChangelog = Reserve
+
+changelog-tab-title-Maps = Maps
+
+changelog-version-unknown = Неизвестная версия
+
+cmd-changelog-desc = Открывает историю изменений.
+
+cmd-changelog-help = Использование: changelog

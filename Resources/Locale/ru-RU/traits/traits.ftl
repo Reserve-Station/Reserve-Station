@@ -49,3 +49,15 @@ trait-dementia-name = Деменция
 trait-dementia-desc = Я... э-э, о чем это было? О, точно! Ты иногда многое забываешь.
 trait-painnumbness-name = Онемение
 trait-painnumbness-desc = У вас отсутствует какое-либо ощущение боли, вы не осознаете, насколько вам может быть больно.
+
+trait-british-desc = Изысканная речь, превозносящая вас над смердом.
+
+trait-british-name = Британский акцент
+
+trait-monochromacy-desc = У вас полная цветовая слепота. Вы видите только оттенки серого.
+
+trait-monochromacy-name = Монохромазия
+
+trait-newyork-desc = Таки мы здесь ни пгхи чём!
+
+trait-newyork-name = Хитрый говор

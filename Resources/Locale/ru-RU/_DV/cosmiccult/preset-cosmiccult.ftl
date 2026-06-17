@@ -155,3 +155,5 @@ cosmiccult-entropy-unavailable = Ты не можешь сделать это п
 cosmiccult-astral-ascendant = { $name }, восходящий
 cosmiccult-gear-pickup-rejection = { $ITEM } сопротивляется прикосновению { CAPITALIZE(THE($TARGET)) }!
 cosmiccult-gear-pickup = Вы можете почувствовать, как разрываетесь, держа в руках { $ITEM }!
+
+cult-alert-recall-shuttle = Обнаружены высокие концентрации Лямбда-CDM неизвестного происхождения на станции. Все аномальные присутствия должны быть устранены до эвакуации.

@@ -105,3 +105,7 @@ cargo-acquisition-slip-body = [head=3]Детали актива[/head]
     {"[head=3]Детали покупки[/head]"}
     {"[bold]Запросил:[/bold]"} {$orderer}
     {"[bold]Причина:[/bold]"} {$reason}
+
+cargo-console-menu-account-action-transfer-limit-amount = ${ $amount }
+
+cargo-console-menu-account-name-format = [bold][color={ $color }]{ $name }[/color][/bold] [font="Monospace"]\[{ $code }\][/font]
