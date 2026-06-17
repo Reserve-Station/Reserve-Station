@@ -1,4 +1,4 @@
-ent-SpawnerRandomTendrilLavaland = порождатель усиков
+ent-SpawnerRandomTendrilLavaland = спавнер завитков
     .suffix = Лаваленд
     .desc = { ent-MarkerBase.desc }
 ent-LavalandRandomTendrilSpawner = случайный завиток

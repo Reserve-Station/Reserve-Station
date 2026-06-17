@@ -1,6 +1,6 @@
 ent-CrateFunATV = ящик с квадроциклом
     .desc = Четырёх колёсный квадроцикл белого цвета.
-ent-CrateFunSyndicateSegway = ящик с Сегвеем синдиката
+ent-CrateFunSyndicateSegway = ящик с сегвеем синдиката
     .desc = Ящик с двухколесным транспортным средством, который поможет вам скрыться от сотрудников службы безопасности. Или нет.
 ent-CrateFunBingleLoot = бингл
     .desc = { ent-CrateBingle.desc }

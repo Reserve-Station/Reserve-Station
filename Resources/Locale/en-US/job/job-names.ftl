@@ -88,7 +88,7 @@ job-name-cluwne = Cluwne
 
 # event-resctricted jobs
 job-name-security-clown = Security Clown
-job-name-command-maid = Command Maid
+job-name-command-maid = Command Janitor
 job-name-party-maker = Party Maker
 
 # unused jobs
@@ -122,7 +122,7 @@ JobChemist = Chemist
 JobChiefEngineer = Chief Engineer
 JobChiefMedicalOfficer = Chief Medical Officer
 JobClown = Clown
-JobCommandMaid = Command Maid
+JobCommandMaid = Command Janitor
 JobDetective = Detective
 JobBrigmedic = Brigmedic
 JobERTChaplain = ERT Chaplain
