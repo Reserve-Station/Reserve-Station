@@ -3,6 +3,3 @@ steal-target-groups-weapon-multiphase = X-01 мультифазный лазер
 steal-target-groups-weapon-lawbringer = DT-12 "Законодатель"
 steal-target-groups-rapid-syringe-gun = скорострельный шприцемёт
 steal-target-groups-gemini-projector = голопроектор AX-32 "Джемини"
-
-steal-target-groups-executive-briefcase = дипломатический чемодан
-steal-target-groups-weapon-justice = Правосудие

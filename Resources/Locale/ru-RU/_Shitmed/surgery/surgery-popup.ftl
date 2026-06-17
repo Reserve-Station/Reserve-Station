@@ -79,13 +79,3 @@ surgery-popup-step-SurgeryStepInsertPlasmaVessel = { $user } вставляет 
 surgery-popup-step-SurgeryStepInsertEggSack = { $user } вставляет яйцевой мешок в { $part } { $target }!
 surgery-popup-step-SurgeryStepXenoTakeSample = { $user } аккуратно удаляет кусочек { $part } { $target }.
 surgery-popup-step-SurgeryStepGraftXenoSample = { $user } прививает ксеноткань к { $part } { $target }!
-
-surgery-popup-step-SurgeryStepSealBones = {$user} запечатывает кости {$part} {$target}.
-
-surgery-popup-step-SurgeryStepSealSkull = {$user} запечатывает череп {$part} {$target}.
-
-surgery-popup-step-SurgeryStepSealRibcage = {$user} запечатывает грудную клетку на {$part} {$target}.
-
-surgery-popup-procedure-SurgeryRemovePump-step-SurgeryStepRemoveOrgan = {$user} снимает насос с {$part} пользователя {$target}!
-
-surgery-popup-step-SurgeryStepInsertPump = {$user} вставляет насос в {$part} {$target}!

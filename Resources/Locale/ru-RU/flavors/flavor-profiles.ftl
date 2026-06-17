@@ -344,11 +344,3 @@ flavor-complex-bottledlightning = как молния в бутылке
 flavor-complex-punishment = как наказание
 flavor-weh = как вех
 flavor-hew = как гвоздь
-
-flavor-base-trashy = дрянной
-
-flavor-base-motivating = мотивирующий
-
-flavor-complex-dog-food = как корм для собак
-
-flavor-complex-artifact-glue = как раздавленные артефакты

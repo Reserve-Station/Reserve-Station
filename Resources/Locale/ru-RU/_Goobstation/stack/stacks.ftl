@@ -13,18 +13,3 @@ stack-bingle-tile =
         [1] бингл-покрытие
        *[other] бингл-покрытия
     }
-
-stack-hex-nut = {$amount ->
-    [1] шестигранная гайка
-   *[other] шестигранные гайки
-}
-
-stack-screw = {$amount ->
-    [1] винт
-   *[other] винты
-}
-
-stack-canvas-tile = {$amount ->
-    [1] холстовая плитка
-   *[other] холстовые плитки
-}

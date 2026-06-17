@@ -1,1 +1,0 @@
-ent-TorsoArachnid = туловище арахнида

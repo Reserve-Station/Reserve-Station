@@ -56,21 +56,3 @@ thunderdome-revival-decline = Остаться на арене
 thunderdome-join = {$player} зашёл на арену!
 thunderdome-leave = {$player} вышел с арены.
 thunderdome-leave-01 = {$user} пропадает. Кажется, он устал от убийств.
-
-thunderdome-loadout-capo = Капоэйра
-
-thunderdome-loadout-mosin = Кардашев-Мосин
-
-thunderdome-desc-capo = Руководство по капоэйре + 2 медипена.
-
-thunderdome-desc-mosin = Кардашев-Мосин + 2 запасных магазина + ушанка + водка
-
-thunderdome-streak-4 = {$player} доминирует!
-
-thunderdome-streak-6 = {$player} невозможно остановить!
-
-thunderdome-streak-8 = {$player} совершил убийство монстра!
-
-thunderdome-streak-9 = {$player} НЕВЫНОСИМ!
-
-thunderdome-streak-12 = {$player} ПРОСТО МАНЬЯК!

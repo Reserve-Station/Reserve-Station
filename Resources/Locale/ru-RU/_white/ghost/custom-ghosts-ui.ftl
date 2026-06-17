@@ -20,14 +20,3 @@ custom-ghosts-window-show-all-checkbox = Показать всех
 custom-ghosts-window-show-all-checkbox-tooltip = Переключает отображение неразблокированных призраков. Условия разблокировки отображаются при наведении мыши.
 custom-ghost-window-tooltip-to-unlock = Чтобы получить возможность пользоваться этим призраком, вам надо:
 custom-ghosts-button = Выбор призрака
-
--playtime =
-    Ваше текущее время игры: {$pH} {$pH ->
-      *[one] час
-      [few] часа
-      [many] часов
-    } {$pM} {$pM ->
-      *[one] минута
-      [few] минуты
-      [many] минут
-    }

@@ -32,18 +32,5 @@ station-ai-icon-smiley = Все улыбаются
 station-ai-hologram-female = Женская внешность
 station-ai-hologram-male = Мужская внешность
 station-ai-hologram-face = Голова без тела
-station-ai-hologram-cat = Кошка
-station-ai-hologram-dog = Корги
-
-station-ai-hologram-scurret = Слизнекот
-station-ai-hologram-kobold = Кобольд
-station-ai-hologram-monkey = Обезьяна
-station-ai-earlyleave-button = Отключение ИИ
-station-ai-earlyleave-menu-title = Выключение ИИ
-station-ai-earlyleave-menu-text = Вы уверены? Вы будете исключены из раунда, и ваша вакансия будет открыта.
-station-ai-earlyleave-menu-confirm = Подтвердить
-station-ai-earlyleave-menu-deny = Отменить
-station-ai-earlyleave-announcement = {$character} (ИИ станции) перешёл в спящий режим!
-station-ai-earlyleave-announcement-sender = Ядро ИИ
-
-station-ai-eye-name = Глаз ИИ — {$name}
+station-ai-hologram-cat = Форма кошки
+station-ai-hologram-dog = Форма корги

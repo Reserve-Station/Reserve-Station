@@ -4,11 +4,3 @@ set-ooc-command-too-many-arguments-error = Слишком много аргум�
 set-ooc-command-invalid-argument-error = Неверный аргумент.
 set-ooc-command-ooc-enabled = OOC чат был включён.
 set-ooc-command-ooc-disabled = OOC чат был выключен.
-
-cmd-setooc-desc = Позволяет включать или отключать OOC.
-
-cmd-setooc-help = Использование: setooc ИЛИ setooc [value].
-
-cmd-setooc-ooc-enabled = ООС-чат включен.
-
-cmd-setooc-ooc-disabled = ООС-чат отключен.

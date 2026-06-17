@@ -84,31 +84,3 @@ signal-port-name-rad-low = Низкий
 signal-port-description-rad-low = Сигнальный порт устанавливается на HIGH, если давление в баке ниже 66 %, LOW - в противном случае.
 signal-port-name-rad-full = Полный
 signal-port-description-rad-full = Сигнальный порт устанавливается на HIGH, если давление в баке выше 66 %, LOW - в противном случае.
-
-signal-port-name-powered = Запущен
-
-signal-port-description-powered = Этот порт вызывается с помощью HIGH или LOW в зависимости от включения или выключения питания машины.
-
-signal-port-name-plumbing-input = Сантехника: Вход
-
-signal-port-description-plumbing-input = Разъем сантехнической автоматики для закачки жидкостей.
-
-signal-port-name-plumbing-output = Сантехника: Выход
-
-signal-port-description-plumbing-output = Разъем сантехнической автоматики для откачивания жидкостей.
-
-signal-port-name-plumbing-dispenser = Сантехника: Диспенсер
-
-signal-port-description-plumbing-dispenser = Слот для сантехнической автоматики для перекачивания жидкостей в стакан дозатора или из него.
-
-signal-port-name-alt-interact = Альтернативный режим взаимодействия
-
-signal-port-description-alt-interact = Порт сигнала для переключения альтернативного режима взаимодействия или установки значения HIGH/LOW.
-
-signal-port-name-automation-slot-bottles = Предмет: слот для бутылок
-
-signal-port-description-automation-slot-bottles = Слот автоматизации для таблеток химмастера или мензурок.
-
-signal-port-name-lathe-print = Распечатать последний рецепт
-
-signal-port-description-lathe-print = Сигнальный порт, который распечатывает последний установленный рецепт при импульсном режиме.

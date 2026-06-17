@@ -16,5 +16,3 @@ slime-interaction-tame-fail = Похоже, вы его не интересуе�
 
 mob-growth-display-baby = малыш
 mob-growth-display-adult = взрослый
-
-slime-latch-fail-already-latched = Вы не можете зацепиться за {$ent}, его уже ест кто-то другой!

@@ -390,31 +390,3 @@ reagent-effect-guidebook-add-to-chemicals =
         [1] to
        *[-1] от
     } решение
-
-reagent-effect-guidebook-even-health-change =
-    { $chance ->
-        [1] { $healsordeals ->
-            [heals] Равномерно заживляет
-            [deals] Равномерные сделки
-            *[both] Равномерно изменяет здоровье за ​​счет
-        }
-        *[other] { $healsordeals ->
-            [heals] равномерно заживлять
-            [deals] поровну иметь дело
-            *[both] равномерно изменить здоровье,
-        }
-    } { $changes }
-
-reagent-effect-guidebook-emote =
-    { $chance ->
-        [1] заставит
-        *[other] сила
-    } метаболизатор до [bold][color=white]{$emote}[/color][/bold]
-
-reagent-effect-guidebook-artifact-unlock =
-    { $chance ->
-        [1] Помогает
-        *[other] помощь
-    } разблокировать инопланетный артефакт.
-
-reagent-effect-guidebook-artifact-durability-restore = Восстанавливает прочность {$restored} в активных узлах инопланетных артефактов.

@@ -38,7 +38,3 @@ id-card-access-level-station-ai = Искусственный Интеллект
 id-card-access-level-borg = Киборг
 id-card-access-level-basic-silicon = Робот
 id-card-access-level-basic-xenoborg = Ксеноборг
-
-id-card-access-level-genpop-enter = Введите заключенного
-
-id-card-access-level-genpop-leave = Уберите заключенного

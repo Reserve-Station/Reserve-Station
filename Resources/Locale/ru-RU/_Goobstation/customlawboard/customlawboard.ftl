@@ -4,7 +4,3 @@ custom-lawboard-up-arrow = ↑
 custom-lawboard-down-arrow = ↓
 
 custom-lawboard-updated = Плата законов обновлена
-
-custom-lawboard-import = Импорт
-
-custom-lawboard-export = Экспорт

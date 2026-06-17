@@ -16,23 +16,3 @@ stack-filter-stack-chunk-size = Размер выводимого стака
 pressure-filter-window-title = Редактировать фильтр давления
 pressure-filter-min-pressure = Минимальное давление
 pressure-filter-max-pressure = Максимальное давление
-
-anchor-filter-examine-enabled = Он настроен на разрешение только закрепленных, закрепляемых объектов.
-
-anchor-filter-examine-disabled = Он настроен на разрешение только незакрепленных, закрепляемых объектов.
-
-mob-filter-window-title = Изменить фильтр мобов
-
-mob-state-Alive = Живой
-
-mob-state-Dead = Мертвый
-
-mob-state-Critical = Критическое состояние
-
-mob-filter-examine-unset = Состояния мобов не настроены
-
-mob-filter-examine-set = Он настроен на разрешение мобов в следующих состояниях: {$states}
-
-cuff-filter-examine-enabled = Он настроен на то, чтобы допускать только мобов в наручниках.
-
-cuff-filter-examine-disabled = Он настроен так, чтобы разрешать доступ только к мобам, не находящимся в наручниках.

@@ -12,11 +12,3 @@ nullrod-chainsaw-untrained-usage-popup = Ах, и посмотрите, кто �
 alternate-pray-prompt = Молиться { $item }
 alternate-pray-start = { $user } начинает нашептывать в { $item }...
 nullrod-spelldenial-popup = СИЛА БОЖЬЯ ПЕРЕПОЛНЯЕТ ВАС!
-
-nullrod-bulwark-untrained-usage-popup = Вы не можете вынести бремя собственных грехов, не говоря уже об этом куске стали.
-
-nullrod-spear-untrained-usage-popup = НЕИСПРАВНО.
-
-nullrod-dragontail-untrained-usage-popup = Хвост вышел из-под контроля и ударил вас!
-
-nullrod-chainsword-untrained-usage-popup = ОН не принял тебя.

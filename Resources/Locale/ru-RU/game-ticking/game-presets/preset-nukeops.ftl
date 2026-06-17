@@ -28,5 +28,3 @@ nukeops-no-one-ready = Нет готовых игроков! Нельзя зап
 nukeops-role-commander = Командир
 nukeops-role-agent = Агент
 nukeops-role-operator = Оператор
-
-nukeops-roundend-name = ядерный оперативник

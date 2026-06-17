@@ -38,11 +38,3 @@ spellbook-upgrade-fireball-name = Улучшение Огненного шара
 spellbook-upgrade-fireball-description = Позволяет улучшить Огненный шар до максимального 3-го уровня!
 spellbook-upgrade-jaunt-name = Улучшение Эфирной прогулки
 spellbook-upgrade-jaunt-description = Позволяет улучшить Эфирную прогулку до максимального 3-го уровня!
-
-spellbook-tile-toggle-name = Движение плитки
-
-spellbook-tile-toggle-description = Ассистентам это не понравится.
-
-spellbook-curse-of-byond-name = Проклятие Байонда
-
-spellbook-curse-of-byond-description = Обреките свою цель на вечные страдания.

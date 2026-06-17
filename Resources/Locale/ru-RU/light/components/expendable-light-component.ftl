@@ -9,5 +9,3 @@ expendable-light-spent-purple-glowstick-name = погасший фиолетов
 expendable-light-spent-yellow-glowstick-name = погасший жёлтый химсвет
 expendable-light-spent-blue-glowstick-name = погасший синий химсвет
 expendable-light-spent-glowstick-desc = Похоже, этот химсвет погас. Как трагично.
-
-expendable-light-spent-prefix = потратил {$baseName}

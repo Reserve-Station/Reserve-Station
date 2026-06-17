@@ -105,5 +105,3 @@ heretic-speech-realignment = СБ'ОС!
 heretic-speech-fuckoff = ПО'ЁЛ 'Ы!!
 heretic-speech-ice-spear = 'АРА ЛЬ'А!
 heretic-speech-shapeshft = ПР'ОБР'Ж'Н'Е
-
-heretic-blade-break-fail-acended-message = Вы не можете сломать клинки во время вознесения!

@@ -33,9 +33,3 @@ ghost-roles-window-rules-footer = Кнопка станет доступна ч�
 ghost-return-to-body-title = Вернуться в тело
 ghost-return-to-body-text = Вас воскрешают! Вернуться в своё тело?
 ghost-gui-return-to-round-button = Вернуться в раунд
-
-ghost-gui-toggle-lighting-manager-popup-normal = Нормальное освещение
-
-ghost-gui-toggle-lighting-manager-popup-personal-light = Включен персональный свет.
-
-ghost-gui-toggle-lighting-manager-popup-fullbright = Полнояркий режим.

@@ -71,31 +71,3 @@ air-alarm-ui-thresholds-upper-bound = Верхняя аварийная гран
 air-alarm-ui-thresholds-lower-bound = Нижняя аварийная граница
 air-alarm-ui-thresholds-upper-warning-bound = Верхняя тревожная граница
 air-alarm-ui-thresholds-lower-warning-bound = Нижняя тревожная граница
-
-air-alarm-ui-title = Воздушная сигнализация
-
-air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Сбой переключателя режима! [/color][/bold]
-
-air-alarm-ui-pump-direction-siphoning = Перекачивание
-
-air-alarm-ui-pump-direction-scrubbing = Чистка
-
-air-alarm-ui-pump-direction-releasing = Заполнение
-
-air-alarm-ui-pressure-bound-nobound = Без границ
-
-air-alarm-ui-pressure-bound-internalbound = Внутренняя граница
-
-air-alarm-ui-pressure-bound-externalbound = Внешняя граница
-
-air-alarm-ui-pressure-bound-both = Оба
-
-air-alarm-ui-widget-gas-filters = Газовые фильтры
-
-air-alarm-ui-scrubber-select-all-gases-label = Выбрать все
-
-air-alarm-ui-scrubber-deselect-all-gases-label = Отменить выбор всех
-
-air-alarm-ui-thresholds-copy = Копирование порогов на все устройства
-
-air-alarm-ui-thresholds-copy-tooltip = Копирует пороговые значения датчика этого устройства на все устройства на этой вкладке воздушной сигнализации.

@@ -1,4 +1,4 @@
-# Poggers examine system
+﻿# Poggers examine system
 
 examine-name = Это же [bold]{$name}[/bold]!
 examine-can-see = Осмотрев {OBJECT($ent)}, вы можете увидеть:
@@ -50,9 +50,3 @@ humanoid-appearance-component-examine-selfaware = Вы - { $species } { $age }.
 
 examine-handcuffed = [color=orange]{CAPITALIZE(POSS-ADJ($ent))} руки связаны![/color]
 examine-handcuffed-selfaware = [color=orange]Ваши руки связаны![/color]
-
-head-examine-selfaware =
-    • На вашей голове { $id ->
-         [empty] [bold]{$item}[/bold]
-        *[other] [enttex id="{ $id }" size={ $size }][bold]{$item}[/bold]
-    }.

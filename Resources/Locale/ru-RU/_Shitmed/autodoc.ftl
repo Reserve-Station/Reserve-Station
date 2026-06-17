@@ -63,25 +63,3 @@ autodoc-body-symmetry-None = Нет
 autodoc-body-symmetry-Left = Левый
 autodoc-body-symmetry-Right = Правый
 autodoc-submit = Отправить
-
-autodoc-error-reality-breaking = РАЗРУШЕНИЕ РЕАЛЬНОСТИ
-
-autodoc-error-step-invalid-None = ВЫБРАННЫЙ ШАГ НЕВОЗМОЖЕН
-
-autodoc-error-step-invalid-MissingSkills = ОТСУТСТВУЮТ НАВЫКИ
-
-autodoc-error-step-invalid-NeedsOperatingTable = ОТСУТСТВУЕТ ОПЕРАЦИОННЫЙ СТОЛ
-
-autodoc-error-step-invalid-Armor = ТРЕБУЕТСЯ РАЗДЕТЬ ПАЦИЕНТА
-
-autodoc-error-step-invalid-ToolInvalid = ВЫБРАН НЕВЕРНЫЙ ИНСТРУМЕНТ
-
-autodoc-error-step-invalid-SurgeryInvalid = ПАЦИЕНТ НЕ ПОДХОДИТ ДЛЯ ОПЕРАЦИИ
-
-autodoc-error-step-invalid-MissingPreviousSteps = ПРЕДЫДУЩИЕ ШАГИ НЕ ЗАВЕРШЕНЫ
-
-autodoc-error-step-invalid-StepCompleted = ШАГ УЖЕ ЗАВЕРШЕН
-
-autodoc-error-step-invalid-MissingTool = ОТСУТСТВУЕТ ПРАВИЛЬНЫЙ ИНСТРУМЕНТ
-
-autodoc-error-step-invalid-DoAfterFailed = ОШИБКА ВЫПОЛНЕНИЯ

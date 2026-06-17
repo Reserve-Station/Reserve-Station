@@ -27,5 +27,3 @@ rmc-ui-ghost-color-save = Сохранить
 rmc-ui-shoutout-nt = [bold]Нанотрасен финансируется: [color=green]{ $name }[/color]![/bold]
 rmc-ui-discord = Дискорд
 rmc-ui-patreon = Бусти
-
-rmc-ui-save = Сохранить

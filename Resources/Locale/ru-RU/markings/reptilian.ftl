@@ -75,11 +75,3 @@ marking-LizardChestBackspikes = Унатх, грудь, шипы на спине
 marking-LizardSnoutSplotch = Унатх, морда лица (Пятно)
 marking-LizardSnoutSplotch-snout_splotch_primary = Морда
 marking-LizardSnoutSplotch-snout_splotch_secondary = Нос
-
-marking-LizardTailAquatic-tail_aquatic = Хвост Ящерицы (Аква)
-
-marking-LizardTailAquatic = Хвост Ящерицы (Аквай)
-
-marking-LizardChestFin-body_fin = Ящерица Плавник
-
-marking-LizardChestFin = Ящерица Плавник

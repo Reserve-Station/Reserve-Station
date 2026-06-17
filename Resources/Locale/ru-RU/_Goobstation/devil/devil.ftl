@@ -32,7 +32,3 @@ handshake-accept-verb = Принять рукопожатие.
 handshake-decline-verb = Отказаться от рукопожатия.
 handshake-decline-message = Цель отклонила ваше предложение пожать руку.
 not-enough-souls = У вас недостаточно душ, чтобы использовать это заклинание!
-
-objective-condition-weight-title = Заключайте выгодные сделки.
-
-objective-condition-weight-description = Убедитесь, что сделки принесут вам максимальную выгоду.

@@ -15,9 +15,3 @@ bingle-upgrade-success = Вы чувствуете себя сильнее!
 ghost-role-information-bingle-rules = Вы являетесь [color=red][bold]командным антагонистом[/bold][/color] вместе с другими Бинглами
 bingle-pit-grow = Яма становится все больше!
 bingle-pit-end-of-round = Бинглпит рядом с { $location } вырос до уровня [color=cyan]{ $level }[/color] и набрал [color=cyan]{ $points }[/color] очков!
-
-language-Bingle-name = Бингл
-
-language-Bingle-description = Бингл бонгл дингл уиккити ду уиккити да пинг-понг липпи таппи туу та
-
-chat-language-Bingle-name = Бингл

@@ -13,5 +13,3 @@ damage-force-say-numb-2 = оу-
 damage-force-say-numb-3 = уф-
 damage-force-say-numb-4 = ах-
 damage-force-say-numb-5 = ау-
-
-damage-force-say-sleep-1 = ззз...

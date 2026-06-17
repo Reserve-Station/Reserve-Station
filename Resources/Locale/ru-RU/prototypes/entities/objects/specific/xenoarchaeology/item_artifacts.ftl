@@ -1,1 +1,0 @@
-ent-SimpleXenoArtifactItem = { ent-BaseXenoArtifactItem }

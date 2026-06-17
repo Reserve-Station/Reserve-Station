@@ -137,7 +137,3 @@ admin-trick-minigun-fire-description = Заставляет целевое ор�
 admin-trick-set-bullet-amount-description = Быстро устанавливает значение количества незаспавненных патронов в оружии.
 admin-trick-make-animate-description = Анимирует предмет и делает его враждебным на 60 секунд.
 admin-trick-make-inanimate-description = Деанимирует предмет.
-
-admin-smite-crawler-name = Превратить в гусеницу!
-
-admin-smite-crawler-description = Заставляет цель упасть и потерять возможность встать. Уберите им руки для дополнительного эффекта!

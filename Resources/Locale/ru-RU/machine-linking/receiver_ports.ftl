@@ -59,11 +59,3 @@ signal-port-description-logic-input = Входной порт, который п
 signal-port-description-logic-memory-input = Signal to load into the memory cell, when enabled.
 signal-port-name-logic-enable = Enable
 signal-port-description-logic-enable = Only loads the input signal into the memory cell when HIGH.
-
-signal-port-name-trigger-receiver = Курок
-
-signal-port-description-trigger-receiver = Запускает какой-либо механизм на устройстве.
-
-signal-port-name-logic-random-input = Входной сигнал
-
-signal-port-description-logic-random-input = Получает любой сигнал для запуска случайного выхода.
