@@ -980,6 +980,38 @@ namespace Content.Client.Lobby.UI
                         ReloadPreview();
                         SetDirty();
                     };
+
+                    // Reserve - antag loadouts start
+                    var loadoutWindowBtn = new Button()
+                    {
+                        Text = Loc.GetString("loadout-window"),
+                        VerticalAlignment = VAlignment.Center,
+                        HorizontalExpand = true,
+                    };
+
+                    if (!_prototypeManager.TryIndex<RoleLoadoutPrototype>(LoadoutSystem.GetAntagPrototype(antag.ID), out var roleLoadoutProto))
+                    {
+                        loadoutWindowBtn.Disabled = true;
+                    }
+                    else
+                    {
+                        loadoutWindowBtn.OnPressed += _ =>
+                        {
+                            RoleLoadout? loadout = null;
+
+                            Profile?.Loadouts.TryGetValue(LoadoutSystem.GetAntagPrototype(antag.ID), out loadout);
+                            loadout = loadout?.Clone();
+
+                            if (loadout == null)
+                            {
+                                loadout = new RoleLoadout(roleLoadoutProto.ID);
+                                loadout.SetDefault(Profile, _playerManager.LocalSession, _prototypeManager);
+                            }
+                            OpenLoadout(null, loadout, roleLoadoutProto);
+                        };
+                    }
+                    antagSelector.SetLoadoutButton(loadoutWindowBtn);
+                    // Reserve - antag loadouts end
                     antagSelector.SetPreferenceSelector(toggleButton);
                     grid.AddChild(antagSelector);
                 }

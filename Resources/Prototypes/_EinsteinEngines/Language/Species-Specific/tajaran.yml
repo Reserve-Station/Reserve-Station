@@ -125,7 +125,7 @@
   isVisibleLanguage: true
   speech:
     color: "#f58c9aee" # Bright red, to push this energy through
-    fontId: Sriracha # relatively energetic, portraying the body movement I suppose
+    fontId: Manrope # Reserve edit: Fix languages in chat
     allowRadio: true # It's actually ok, since message wrap overrides are broken for radio, yipee?
     requireSpeech: false
     messageWrapOverrides:
@@ -221,7 +221,7 @@
   isVisibleLanguage: true
   speech:
     color: "#9a69f5ee" # More or less the color of nobility
-    fontId: GrenzeGotisch # Old and distinguished, but not unreadable
+    fontId: BrahmsGotischCyrillic # Reserve edit: Fix languages in chat
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 3
@@ -302,7 +302,7 @@
   isVisibleLanguage: true
   speech:
     color: "#b1c472ee" # Green, color of grass, of change, and of spring
-    fontId: RubikDirt # Aptly named
+    fontId: RubikDirt # Reserve edit: Fix languages in chat
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2

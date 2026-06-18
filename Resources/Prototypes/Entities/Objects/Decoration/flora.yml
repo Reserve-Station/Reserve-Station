@@ -121,6 +121,8 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+  - type: AcousticData # VDS
+    absorption: 20
 
 - type: entity
   id: BaseTree
@@ -179,6 +181,9 @@
           Log:
             min: 2
             max: 8
+  - type: AcousticData # VDS
+    absorption: 30
+    reflectRay: true
 
 - type: entity
   parent: BaseTree

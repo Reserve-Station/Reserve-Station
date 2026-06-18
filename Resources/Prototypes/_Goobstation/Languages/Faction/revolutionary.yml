@@ -2,6 +2,10 @@
 
 - type: language
   id: Revolutionary
+  # Reserve edit start: Fix languages in chat
+  speech:
+    color: "#cc2222dd"
+  # Reserve edit end: Fix languages in chat
   obfuscation:
     !type:PhraseObfuscation
     proportion: 0.88

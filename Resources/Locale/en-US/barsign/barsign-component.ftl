@@ -63,9 +63,9 @@ barsign-prototype-description-ale-nath = All right, buddy. I think you've had EI
 barsign-prototype-name-the-net = The Net
 barsign-prototype-description-the-net = You just seem to get caught up in it for hours.
 
-## Maid Cafe
-barsign-prototype-name-maid-cafe = Maid Cafe
-barsign-prototype-description-maid-cafe = Welcome back, master!
+## Cat Cafe
+barsign-prototype-name-maid-cafe = Cat Cafe
+barsign-prototype-description-maid-cafe = Welcome back!
 
 ## Maltese Falcon
 barsign-prototype-name-maltese-falcon = Maltese Falcon

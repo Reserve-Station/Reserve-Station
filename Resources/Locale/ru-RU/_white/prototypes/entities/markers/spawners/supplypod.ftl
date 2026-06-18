@@ -1,4 +1,4 @@
-ent-SpawnStraySupplyPod = нерестилище для бродячих стручков снабжения
+ent-SpawnStraySupplyPod = спавнер капсулы с припасами карго
     .desc = { ent-MarkerBase.desc }
-ent-SpawnStraySupplyPodSyndicate = порождатель синдиката беспризорных контейнеров снабжения
+ent-SpawnStraySupplyPodSyndicate = спавнер капсулы с припасами Синдиката
     .desc = { ent-MarkerBase.desc }

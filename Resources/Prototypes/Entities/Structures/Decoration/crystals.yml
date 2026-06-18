@@ -64,6 +64,9 @@
                   max: 1
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
+    - type: AcousticData # VDS
+      absorption: -10 # makes sense right
+      reflectRay: true
 
 - type: entity
   id: CrystalPink

@@ -3,8 +3,6 @@
 # SPDX-FileCopyrightText: 2025 Marty <martynashagriefer@gmail.com>
 # SPDX-FileCopyrightText: 2025 BombasterDS <deniskaporoshok@gmail.com>
 # SPDX-FileCopyrightText: 2025 CerberusWolfie <wb.johnb.willis@gmail.com>
-# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -14,38 +12,51 @@
   path: /Fonts/NotoSans/NotoSansSC-Regular.ttf
 
 - type: font
-  id: ChelseaMarket # Used for vox font
-  path: /Fonts/_Goobstation/ChelseaMarket/ChelseaMarket.ttf
-
-- type: font
-  id: Schoolbell # Used for resomi font
-  path: /Fonts/_Goobstation/Schoolbell/Schoolbell.ttf
-
-- type: font
   id: NotoSansSCBold
   path: /Fonts/NotoSans/NotoSansSC-Bold.ttf
 
-# Bingles
-- type: font
-  id: Eatday
-  path: /Fonts/_Goobstation/Eatday/Eatday.ttf
-
-# Bubblish (Slimes)
-- type: font
-  id: SourGummy
-  path: /Fonts/_Goobstation/Sour_Gummy/SourGummy-Regular.ttf
-
-- type: font
-  id: SourGummyBold
-  path: /Fonts/_Goobstation/Sour_Gummy/SourGummy-Bold.ttf
-
 # Monospace (Silicon)
+# Reserve edit start: Fix languages in chat
 - type: font
   id: MonospaceBold
   path: /Fonts/_Goobstation/NotoSansMono/NotoSansMono-Bold.ttf
 
+# Bubblish (Slimes) / Bingle
+- type: font
+  id: ShantellSans
+  path: /Fonts/_Goobstation/ShantellSans/ShantellSans-Regular.ttf
+
+- type: font
+  id: ShantellSansBold
+  path: /Fonts/_Goobstation/ShantellSans/ShantellSans-Bold.ttf
+
 # Valyrian Standard (Harpies/Squackroaches)
 - type: font
-  id: Delius
-  path: /Fonts/_Goobstation/Delius/Delius-Regular.ttf
+  id: PlaypenSans
+  path: /Fonts/_Goobstation/PlaypenSans/PlaypenSans-Regular.ttf
 
+# Schechi (Resomi)
+- type: font
+  id: Pangolin
+  path: /Fonts/_Goobstation/Pangolin/Pangolin-Regular.ttf
+
+# Ka'rakk (Vox)
+- type: font
+  id: RubikMarkerHatch
+  path: /Fonts/_Goobstation/RubikMarkerHatch/RubikMarkerHatch-Regular.ttf
+
+# Siik'Tajr
+- type: font
+  id: Manrope
+  path: /Fonts/_Goobstation/Manrope/Manrope-Regular.ttf
+
+# Delvahii
+- type: font
+  id: RubikDirt
+  path: /Fonts/_Goobstation/RubikDirt/RubikDirt-Regular.ttf
+
+# Ya'Ssa
+- type: font
+  id: BrahmsGotischCyrillic
+  path: /Fonts/_Goobstation/BrahmsGotischCyrillic/BrahmsGotischCyr.otf
+# Reserve edit end: Fix languages in chat

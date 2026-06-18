@@ -22,6 +22,7 @@
   speech:
     fontId: Monospace
     boldFontId: MonospaceBold
+    color: "#33cc33dd" # Reserve edit: Fix languages in chat
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2 # reserve edit
@@ -53,6 +54,7 @@
   speech:
     fontId: Monospace
     boldFontId: MonospaceBold
+    color: "#66dd66dd" # Reserve edit: Fix languages in chat
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

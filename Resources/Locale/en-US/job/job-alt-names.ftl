@@ -70,7 +70,7 @@ job-name-alt-chef-3 = Lunch Lady
 job-name-alt-clown-1 = Jester
 job-name-alt-clown-2 = Bouffon
 
-job-name-alt-janitor-1 = Maid
+job-name-alt-janitor-1 = Dormworker
 job-name-alt-janitor-2 = Maintenance Worker
 job-name-alt-janitor-3 = Custodial Technician
 

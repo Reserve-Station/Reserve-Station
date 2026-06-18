@@ -8,8 +8,10 @@
   id: Calcic
   isVisibleLanguage: true
   speech:
-    fontId: LDFComicSans
-    boldFontId: LDFComicSansBold
+    # Reserve edit start: Fix languages in chat
+    fontId: ComicRelief
+    boldFontId: ComicReliefBold
+    # Reserve edit end: Fix languages in chat
     color: "#e3dac9"
   obfuscation:
     !type:SyllableObfuscation

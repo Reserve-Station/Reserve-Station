@@ -1,4 +1,4 @@
-﻿// SPDX-FileCopyrightText: 2020 Bright <nsmoak10@yahoo.com>
+// SPDX-FileCopyrightText: 2020 Bright <nsmoak10@yahoo.com>
 // SPDX-FileCopyrightText: 2020 Bright0 <55061890+Bright0@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2020 Swept <jamesurquhartwebb@gmail.com>
 // SPDX-FileCopyrightText: 2020 V├нctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
@@ -223,7 +223,7 @@ public sealed partial class RadioSystem : EntitySystem
         var obfuscated = _language.ObfuscateSpeech(content, language);
         // Goobstation - Chat Pings
         // Added GetNetEntity(messageSource), to source
-        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language, jobIcon, jobName);
+        var obfuscatedWrapped = WrapRadioMessage(messageSource, channel, name, obfuscated, language, jobIcon, jobName, applyLanguageFormatting: false); // Reserve edit: Fix languages in chat
         var notUdsMsg = new ChatMessage(ChatChannel.Radio, obfuscated, obfuscatedWrapped, GetNetEntity(messageSource), null);
         var ev = new RadioReceiveEvent(messageSource, channel, msg, notUdsMsg, language, radioSource);
         // Einstein Engines - Language end
@@ -284,20 +284,21 @@ public sealed partial class RadioSystem : EntitySystem
         string message,
         LanguagePrototype language,
         ProtoId<JobIconPrototype>? jobIcon, // Goob edit
-        string? jobName = null) // Gaby Radio icons
+        string? jobName = null,
+        bool applyLanguageFormatting = true) // Reserve edit: Fix languages in chat
     {
         // TODO: code duplication with ChatSystem.WrapMessage
         var speech = _chat.GetSpeechVerb(source, message);
-        var languageColor = channel.Color;
 
-        // Goobstation - Bolded Language Overrides begin
+        // Reserve edit start: Fix languages in chat
+        var languageColor = Color.White;
+
         var wrapId = speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap";
-        if (speech.Bold && language.SpeechOverride.BoldFontId != null)
+        if (applyLanguageFormatting && (language.SpeechOverride.FontId != null || language.SpeechOverride.BoldFontId != null))
             wrapId = "chat-radio-message-wrap-bolded-language";
-        // Goobstation end
 
-        if (language.SpeechOverride.Color is { } colorOverride)
-            languageColor = Color.InterpolateBetween(Color.White, colorOverride, colorOverride.A); // Changed first param to Color.White so it shows color correctly.
+        if (applyLanguageFormatting && language.SpeechOverride.Color is { } colorOverride)
+            languageColor = Color.InterpolateBetween(Color.White, colorOverride, colorOverride.A);
 
         var languageDisplay = language.IsVisibleLanguage
             ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
@@ -328,12 +329,25 @@ public sealed partial class RadioSystem : EntitySystem
             : Loc.GetString("chat-radio-message-name-with-icon", ("jobIcon", jobIcon), ("jobName", jobName ?? ""), ("name", name));
         // goob end
 
+        var fontType = applyLanguageFormatting
+            ? language.SpeechOverride.FontId ?? speech.FontId
+            : speech.FontId;
+        var boldFontType = applyLanguageFormatting
+            ? speech.Bold && language.SpeechOverride.BoldFontId != null
+                ? language.SpeechOverride.BoldFontId
+                : language.SpeechOverride.FontId ?? speech.FontId
+            : speech.FontId;
+        var fontSize = applyLanguageFormatting
+            ? loudSpeakFont ?? language.SpeechOverride.FontSize ?? speech.FontSize
+            : loudSpeakFont ?? speech.FontSize;
+        // Reserve edit end: Fix languages in chat
+
         return Loc.GetString(wrapId,
             ("color", channel.Color),
             ("languageColor", languageColor),
-            ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
-            ("fontSize", loudSpeakFont ?? language.SpeechOverride.FontSize ?? speech.FontSize), // goob edit - "loudSpeakFont"
-            ("boldFontType", language.SpeechOverride.BoldFontId ?? language.SpeechOverride.FontId ?? speech.FontId), // Goob Edit - Custom Bold Fonts
+            ("fontType", fontType),
+            ("fontSize", fontSize), // goob edit - "loudSpeakFont"
+            ("boldFontType", boldFontType),
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", nameString), // goob

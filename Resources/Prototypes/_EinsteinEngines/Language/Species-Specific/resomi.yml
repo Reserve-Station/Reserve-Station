@@ -10,7 +10,7 @@
   isVisibleLanguage: true
   speech:
     color: "#4DBFD9"
-    fontId: Schoolbell
+    fontId: Pangolin # Reserve edit: Fix languages in chat
     fontSize: 14
   obfuscation:
     !type:SyllableObfuscation

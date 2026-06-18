@@ -6,8 +6,10 @@
 - type: language
   id: Bingle
   speech:
-    fontId: Eatday
-    boldFontId: Eatday
+    # Reserve edit start: Fix languages in chat
+    fontId: ShantellSans
+    boldFontId: ShantellSansBold
+    # Reserve edit end: Fix languages in chat
     color: "#33528d"
   obfuscation:
     !type:PhraseObfuscation

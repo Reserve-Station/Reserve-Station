@@ -800,7 +800,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         (!CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Parent.Name == "en")
         || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en"));
         // The language-obfuscated message wrapped in a "x says y" string.
-        var wrappedObfuscated = WrapPublicMessage(source, name, obfuscated, speech, language: language, colorOverride); // Reserve edit: Port from WD
+        var wrappedObfuscated = WrapPublicMessage(source, name, obfuscated, speech, language: language, colorOverride, applyLanguageFormatting: false); // Reserve edit: Port from WD, Fix languages in chat
         // Einstein Engines - Language end
 
         SendInVoiceRange(
@@ -929,19 +929,20 @@ public sealed partial class ChatSystem : SharedChatSystem
             // Wrapped message is the result wrapped in an "x says y" string
             // Floof: handle languages that require LOS
             string result, wrappedMessage;
+            // Reserve edit start: Fix languages in chat
             if (!language.SpeechOverride.RequireLOS && data.Range <= WhisperClearRange
                 || _examineSystem.InRangeUnOccluded(source, listener, WhisperClearRange)
                 || data.Observer)
             {
                 // Scenario 1: the listener can clearly understand the message
                 result = perceivedMessage;
-                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, result, speech, language, colorOverride); // Reserve edit: Port from WD
+                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", name, result, speech, language, colorOverride, canUnderstandLanguage); // Reserve edit: Port from WD
             }
             else if (_examineSystem.InRangeUnOccluded(source, listener, WhisperMuffledRange)) // UNEDIT FROM Einstein Engines - Language // They are out of date, this has been reverted to current ChatSystem
             {
                 // Scenario 2: if the listener is too far, they only hear fragments of the message
                 result = ObfuscateMessageReadability(perceivedMessage);
-                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", nameIdentity, result, speech, language, colorOverride); // Reserve edit: Port from WD
+                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", nameIdentity, result, speech, language, colorOverride, canUnderstandLanguage); // Reserve edit: Port from WD
             }
             else
             {
@@ -950,8 +951,9 @@ public sealed partial class ChatSystem : SharedChatSystem
 
                 // Scenario 3: If listener is too far and has no line of sight, they can't identify the whisperer's identity
                 result = ObfuscateMessageReadability(perceivedMessage);
-                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-unknown-wrap-message", string.Empty, result, speech, language, colorOverride); // Reserve edit: Port from WD
+                wrappedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-unknown-wrap-message", string.Empty, result, speech, language, colorOverride, canUnderstandLanguage); // Reserve edit: Port from WD
             }
+            // Reserve edit end: Fix languages in chat
 
             _chatManager.ChatMessageToOne(ChatChannel.Whisper, result, wrappedMessage, source, false, session.Channel);
         }
@@ -1338,42 +1340,51 @@ public sealed partial class ChatSystem : SharedChatSystem
        /// <summary>
     ///     Wraps a message sent by the specified entity into an "x says y" string.
     /// </summary>
-    public string WrapPublicMessage(EntityUid source, string name, string message, SpeechVerbPrototype speech, LanguagePrototype? language = null, Color? colorOverride = null) // Reserve edit: Port from WD
+    public string WrapPublicMessage(EntityUid source, string name, string message, SpeechVerbPrototype speech, LanguagePrototype? language = null, Color? colorOverride = null, bool applyLanguageFormatting = true) // Reserve edit: Port from WD, Fix languages in chat
     {
         var wrapId = speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message"; // Reserve edit: Port from WD
-        return WrapMessage(wrapId, InGameICChatType.Speak, source, name, message, speech, language, colorOverride); // Reserve edit: Port from WD
+        return WrapMessage(wrapId, InGameICChatType.Speak, source, name, message, speech, language, colorOverride, applyLanguageFormatting); // Reserve edit: Port from WD, Fix languages in chat
     }
 
     /// <summary>
     ///     Wraps a message whispered by the specified entity into an "x whispers y" string.
     /// </summary>
-    public string WrapWhisperMessage(EntityUid source, LocId defaultWrap, string entityName, string message, SpeechVerbPrototype speech, LanguagePrototype? language = null, Color? colorOverride = null) // Reserve edit: Port from WD
+    public string WrapWhisperMessage(EntityUid source, LocId defaultWrap, string entityName, string message, SpeechVerbPrototype speech, LanguagePrototype? language = null, Color? colorOverride = null, bool applyLanguageFormatting = true) // Reserve edit: Port from WD, Fix languages in chat
     {
-        return WrapMessage(defaultWrap, InGameICChatType.Whisper, source, entityName, message, speech, language, colorOverride); // Reserve edit: Port from WD
+        return WrapMessage(defaultWrap, InGameICChatType.Whisper, source, entityName, message, speech, language, colorOverride, applyLanguageFormatting); // Reserve edit: Port from WD, Fix languages in chat
     }
 
     /// <summary>
     ///     Wraps a message sent by the specified entity into the specified wrap string.
     /// </summary>
-    public string WrapMessage(LocId wrapId, InGameICChatType chatType, EntityUid source, string entityName, string message, SpeechVerbPrototype speech, LanguagePrototype? language, Color? colorOverride) // Reserve edit: Port from WD
+    public string WrapMessage(LocId wrapId, InGameICChatType chatType, EntityUid source, string entityName, string message, SpeechVerbPrototype speech, LanguagePrototype? language, Color? colorOverride, bool applyLanguageFormatting = true) // Reserve edit: Port from WD, Fix languages in chat
     {
         language ??= _language.GetLanguage(source);
 
-        // Goobstation - Bolded Language Overrides begin
-        if (language.SpeechOverride.BoldFontId != null && speech.Bold)
-            wrapId = "chat-manager-entity-say-bolded-language-wrap-message";
-        // Goobstation end
+        // Reserve edit start: Fix languages in chat
+        if (applyLanguageFormatting)
+        {
+            if (language.SpeechOverride.FontId != null || language.SpeechOverride.BoldFontId != null)
+                wrapId = "chat-manager-entity-say-bolded-language-wrap-message";
 
-        if (language.SpeechOverride.MessageWrapOverrides.TryGetValue(chatType, out var wrapOverride))
-            wrapId = wrapOverride;
+            if (language.SpeechOverride.MessageWrapOverrides.TryGetValue(chatType, out var wrapOverride))
+                wrapId = wrapOverride;
+        }
+        else if (chatType == InGameICChatType.Speak)
+        {
+            wrapId = speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message";
+        }
 
         var verbId = language.SpeechOverride.SpeechVerbOverrides is { } verbsOverride
             ? _random.Pick(verbsOverride).ToString()
             : _random.Pick(speech.SpeechVerbStrings);
         var color = DefaultSpeakColor;
-        colorOverride ??= language.SpeechOverride.Color;
-        if (colorOverride != null)
-            color = Color.InterpolateBetween(color, colorOverride.Value, colorOverride.Value.A);
+        if (applyLanguageFormatting)
+        {
+            colorOverride ??= language.SpeechOverride.Color;
+            if (colorOverride != null)
+                color = Color.InterpolateBetween(color, colorOverride.Value, colorOverride.Value.A);
+        }
         var languageDisplay = language.IsVisibleLanguage
             ? Loc.GetString("chat-manager-language-prefix", ("language", language.ChatName))
             : "";
@@ -1400,13 +1411,26 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         // goob end
 
+        var fontType = applyLanguageFormatting
+            ? language.SpeechOverride.FontId ?? speech.FontId
+            : speech.FontId;
+        var boldFontType = applyLanguageFormatting
+            ? speech.Bold && language.SpeechOverride.BoldFontId != null
+                ? language.SpeechOverride.BoldFontId
+                : language.SpeechOverride.FontId ?? speech.FontId
+            : speech.FontId;
+        var fontSize = applyLanguageFormatting
+            ? loudSpeakFont ?? language.SpeechOverride.FontSize ?? speech.FontSize
+            : loudSpeakFont ?? speech.FontSize;
+        // Reserve edit end: Fix languages in chat
+
         return Loc.GetString(wrapId,
             ("color", color),
             ("entityName", entityName),
             ("verb", Loc.GetString(verbId)),
-            ("fontType", language.SpeechOverride.FontId ?? speech.FontId),
-            ("fontSize", loudSpeakFont ?? language.SpeechOverride.FontSize ?? speech.FontSize), // goob edit - "loudSpeakFont"
-            ("boldFontType", language.SpeechOverride.BoldFontId ?? language.SpeechOverride.FontId ?? speech.FontId), // Goob Edit - Custom Bold Fonts
+            ("fontType", fontType),
+            ("fontSize", fontSize), // goob edit - "loudSpeakFont"
+            ("boldFontType", boldFontType),
             ("message", message),
             ("language", languageDisplay));
     }
