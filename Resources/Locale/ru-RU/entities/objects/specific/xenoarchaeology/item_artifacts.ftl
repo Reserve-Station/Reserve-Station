@@ -7,7 +7,6 @@ ent-ArtifactFragment = фрагмент артефакта
 ent-ArtifactFragment1 = { ent-ArtifactFragment }
     .suffix = Один
     .desc = { ent-ArtifactFragment.desc }
-
 ent-SimpleXenoArtifactItem =
     { ent-BaseXenoArtifactItem }
     .suffix = Простой

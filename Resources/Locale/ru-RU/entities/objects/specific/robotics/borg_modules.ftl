@@ -128,12 +128,9 @@ ent-XenoborgModuleCloakDevice = маскировочный модуль ксен
     .desc = Модуль с устройством, позволяющим ксеноборгам становиться невидимыми на некоторое время.
 ent-XenoborgModuleSuperCloakDevice = продвинутый маскировочный модуль ксеноборга
     .desc = Модуль с устройством, позволяющим ксеноборгам становиться по-настоящему невидимыми на некоторое время.
-
 ent-BorgModuleTreatment = лечащий модуль борга
     .desc = { ent-BaseBorgModule.desc }
-
 ent-BorgModuleDefibrillator = дефибрилляторный модуль борга
     .desc = { ent-BaseBorgModule.desc }
-
 ent-BorgModuleAdvancedTreatment = продвинутый лечащий модуль борга
     .desc = { ent-BaseBorgModule.desc }

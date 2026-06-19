@@ -40,5 +40,4 @@ markings-category-Tail = Хвост
 markings-category-Undershirt = Майка
 markings-category-Underwear = Нижнее белье
 markings-category-Overlay = Наложение
-
 markings-category-Groin = Пах

@@ -115,16 +115,11 @@ JobVisitor = Посетитель
 JobBoxer = Боксёр
 JobZookeeper = Зоотехник
 
-JobCommandMaid = горничная командования
-
+JobCommandMaid = уборщик командования
 JobPartyMaker = патимейкер
-
 JobSecurityClown = клоун СБ
 
 job-name-cluwne = клувень
-
-job-name-command-maid = горничная командования
-
+job-name-command-maid = уборщик командования
 job-name-party-maker = патимейкер
-
 job-name-security-clown = клоун СБ

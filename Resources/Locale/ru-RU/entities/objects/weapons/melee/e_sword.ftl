@@ -28,6 +28,3 @@ ent-EnergySwordDouble = игрушечный двухклинковый меч
 ent-EnergySwordDoubleRed = { ent-EnergySwordDouble }
     .desc = { ent-EnergySwordDouble.desc }
     .suffix = Красный
-
-ent-EnergySwordDoubleBase = double-bladed energy sword
-    .desc = Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.

@@ -1,3 +1,3 @@
 ent-SpawnPointGhostWizard = спавнер роли призрака
-    .suffix = маг
+    .suffix = Волшебник
     .desc = { ent-BaseAntagSpawner.desc }

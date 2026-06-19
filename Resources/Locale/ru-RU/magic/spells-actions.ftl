@@ -6,5 +6,4 @@ action-speech-spell-fireball = ОНИ'СОМА!
 action-speech-spell-summon-guns = ЙОР'НЭ ВЕС-КОРФА
 action-speech-spell-summon-magic = РЬЮГОИН ФЕМА-ВЕРЕКО
 action-speech-spell-mind-swap = ГИН'Ю КАПАН!
-
-action-speech-spell-slip = SLEE PARRI!
+action-speech-spell-slip = СКОЛЛ ССКОО!

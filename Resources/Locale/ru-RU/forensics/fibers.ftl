@@ -27,7 +27,5 @@ fibers-silver = серебряные
 fibers-gold = золотые
 fibers-maroon = бордовые
 fibers-pink = розовые
-
-fibers-kinetic = kinetic
-
+fibers-kinetic = кинетические
 fibers-light-brown = светло-коричневые

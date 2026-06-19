@@ -391,7 +391,7 @@ reagent-effect-guidebook-add-to-chemicals =
        *[-1] от
     } решение
 
-reagent-effect-guidebook-artifact-durability-restore = Restores { $restored } durability in active alien artifact nodes.
+reagent-effect-guidebook-artifact-durability-restore = Восстанавливает { $restored } прочности в активных узлах инопланетного артефакта.
 
 reagent-effect-guidebook-artifact-unlock =
     { $chance ->

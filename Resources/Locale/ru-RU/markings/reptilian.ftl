@@ -75,11 +75,7 @@ marking-LizardChestBackspikes = Унатх, грудь, шипы на спине
 marking-LizardSnoutSplotch = Унатх, морда лица (Пятно)
 marking-LizardSnoutSplotch-snout_splotch_primary = Морда
 marking-LizardSnoutSplotch-snout_splotch_secondary = Нос
-
 marking-LizardChestFin = Унатх, плавник
-
 marking-LizardChestFin-body_fin = Унатх, плавник
-
 marking-LizardTailAquatic = Унатх, хвост (Водный)
-
 marking-LizardTailAquatic-tail_aquatic = Унатх, хвост (Водный)

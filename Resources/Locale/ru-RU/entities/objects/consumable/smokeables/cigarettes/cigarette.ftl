@@ -71,6 +71,5 @@ ent-CigaretteTHC = Романтический роман хиппи
     .desc = { ent-SoakedCigarette.desc }
 ent-CigaretteRadium = Радиевый блеск
     .desc = { ent-SoakedCigarette.desc }
-
 ent-CigaretteIpecac = Бабушкин рождественский фруктовый кекс
     .desc = { ent-SoakedCigarette.desc }

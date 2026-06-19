@@ -60,7 +60,5 @@ steal-target-groups-animal-morty = Морти
 steal-target-groups-animal-renault = Алиса
 steal-target-groups-animal-shiva = Шива
 steal-target-groups-animal-tropico = Тропико
-
 steal-target-groups-clothing-hands-knuckledusters-qm = золотой кастет
-
 steal-target-groups-weapon-launcher-singularity-buster = уничтожитель сингулярности
