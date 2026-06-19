@@ -9,10 +9,10 @@ admin-solutions-window-temperature-label = Температура (К):
 admin-solutions-window-thermal-energy-label = Тепловая энергия (Дж):
 admin-solutions-window-thermals = Thermals
 
-admin-solutions-window-solution-button = Solution
+admin-solutions-window-solution-button = Вещество
 
 admin-solutions-window-solution-button-tooltip = Открывает соответствующий экземпляр серверного Solution в ViewVariables. Полезно для отладки.
 
-admin-solutions-window-vv-button = View Variables
+admin-solutions-window-vv-button = Посмотреть Переменные
 
 admin-solutions-window-vv-button-tooltip = Открывает соответствующую сущность в ViewVariables.
