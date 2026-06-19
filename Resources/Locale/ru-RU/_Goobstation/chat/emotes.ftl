@@ -27,4 +27,4 @@ emote-fart-inhale-disarm-notice = Вы обезвреживаете свой п�
 chat-emote-name-boop = Буп
 chat-emote-name-whirr = Шуметь
 
-chat-emote-msg-bagawk = багаукс!
+chat-emote-msg-bagawk = кудахчет!
