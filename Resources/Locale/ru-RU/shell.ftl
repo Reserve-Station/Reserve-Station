@@ -55,7 +55,7 @@ shell-argument-number-invalid = Аргумент { $index } должен быт�
 shell-argument-username-hint = <username>
 shell-argument-username-optional-hint = [username]
 
-shell-entity-target-lacks-component = Целевая сущность не имеет компонента { $componentName }
+shell-entity-target-lacks-component = Целевая сущность не имеет компонента { $componentName }.
 
 shell-missing-required-permission = Вам нужен { $perm } для этой команды!
 
