@@ -56,23 +56,13 @@ criminal-records-dna-filter = ДНК
 
 criminal-records-console-auto-history = АРЕСТОВАН: { $reason }
 criminal-records-console-unspecified-reason = <причина не указана>
-
 criminal-records-console-dangerous-reason = Причина
-
 criminal-records-console-flavor-left = Сперва арест! Затем вопросы.
-
 criminal-records-console-flavor-right = v2.1
-
 criminal-records-console-search-reason = Причина поиска
-
 criminal-records-console-show-all = Все
-
 criminal-records-job-filter = Должность
-
 criminal-records-species-filter = Вид
-
 criminal-records-status-dangerous = Опасен
-
 criminal-records-status-perma = Пермабриг
-
 criminal-records-status-search = Пропал
