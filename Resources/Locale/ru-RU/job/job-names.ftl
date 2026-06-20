@@ -104,6 +104,16 @@ JobResearchDirector = Научный руководитель
 JobResearchAssistant = Научный ассистент
 JobSalvageSpecialist = Шахтёр
 JobScientist = Учёный
+JobSecurityCadet = Кадет СБ
+JobSecurityOfficer = Офицер СБ
+JobServiceWorker = Сервисный работник
+JobStationEngineer = Инженер
+JobStationAi = Станционный ИИ
+JobTechnicalAssistant = Технический ассистент
+JobWarden = Смотритель
+JobVisitor = Посетитель
+JobBoxer = Боксёр
+JobZookeeper = Зоотехник
 
 JobCommandMaid = уборщик командования
 JobPartyMaker = патимейкер
