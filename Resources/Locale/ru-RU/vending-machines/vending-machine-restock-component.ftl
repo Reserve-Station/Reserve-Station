@@ -8,11 +8,7 @@ vending-machine-restock-done =
         [epicene] закончили
        *[neuter] закончило
     } пополнять { $target }.
-
 vending-machine-restock-done-others = { CAPITALIZE($user) } закончил пополнять { $target }.
-
 vending-machine-restock-done-self = Вы закончили полнять { $target }.
-
 vending-machine-restock-start-others = { CAPITALIZE($user) } начинает пополнять { $target }.
-
 vending-machine-restock-start-self = Вы начинаете пополнять { $target }.

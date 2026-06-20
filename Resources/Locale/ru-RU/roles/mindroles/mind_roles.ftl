@@ -65,6 +65,5 @@ ent-MindRoleHeretic = Роль Еретика
     .desc = { ent-BaseMindRoleAntag.desc }
 ent-MindRoleBrainwashed = Роль с промытыми мозгами
     .desc = { ent-BaseMindRoleAntag.desc }
-
 ent-MindRoleTraitorReinforcement = Роль подкрепление Синдикат
     .desc = { ent-MindRoleTraitor.desc }
