@@ -49,6 +49,3 @@ ent-IDCardTide = ID карта тайдера
     .desc = Самодельная ID-карта, сделанная бог знает из чего.
 ent-IDCardTideUnfinished = незаконченная самодельная ID карта
     .desc = Боже, помилуй.
-ent-ScrapHelmet =
-    { ent-ScrapBase }
-    .desc = { ent-ScrapBase.desc }
