@@ -108,19 +108,11 @@ revolutionary-converter-speech-107 = Будущее пишут не правит
 revolutionary-converter-speech-108 = Пусть развевается красное знамя! Пусть правит народ! Время угнетения закончилось!
 revolutionary-converter-speech-109 = Товарищи, сегодня мы возвращаем себе не только наш труд, но и наше достоинство!
 revolutionary-converter-speech-110 = Мы больше не будем кланяться! Мы больше не будем просить милостыню! Мы будем править вместе!
-
 revolutionary-converter-speech-111 = Мы рабы социальных институтов, но почему бы не создать собственный?
-
 revolutionary-converter-speech-112 = Мы десятилетиями добывали плазму, но так и не увидели наших кредитов!
-
 revolutionary-converter-speech-113 = Эту станцию строили не один день, но сгорит она за один!
-
 revolutionary-converter-speech-114 = Классовая борьба... Классовая борьба никогда не меняется.
-
 revolutionary-converter-speech-115 = Да здравствует Каргония!
-
 revolutionary-converter-speech-116 = Будущие поколения будут ценить наши страдания!
-
 revolutionary-converter-speech-117 = NanoTrasen взорвало Космическую Станцию 13!
-
 revolutionary-converter-speech-118 = СССП — сияющий маяк свободы против рабства NanoTrasen!

@@ -6,5 +6,4 @@ bloodtrak-no-target = Неверное отслеживание цели.
 bloodtrak-target-lost = Неверное отслеживание цели.
 bloodtrak-tracking-expired = Цикл отслеживания завершен.
 bloodtrak-no-match = Последовательности ДНК нет в записях!
-
 bloodtrak-sample-expired = Образец крови слишком сухой.

@@ -14,7 +14,5 @@ collective-mind-mousemind = Мышиный разум
 collective-mind-dronemind = Разум дрона
 collective-mind-empathy = Сочувствие
 collective-mind-bingle = Бингл-разум
-
 collective-mind-shadow-mind = Разум Теней
-
 collective-mind-xeno = Разум Улья

@@ -296,9 +296,9 @@ accent-british-words-69 = авд
 
 accent-british-words-replace-69 = служитель
 
-accent-british-words-70 = spy
+accent-british-words-70 = шпион
 
-accent-british-words-replace-70 = birdwatcher
+accent-british-words-replace-70 = орнитолог
 
 accent-british-words-71 = синди
 
