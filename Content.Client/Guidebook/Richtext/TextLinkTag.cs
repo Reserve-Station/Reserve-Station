@@ -4,6 +4,8 @@
 // SPDX-License-Identifier: MIT
 
 using System.Diagnostics.CodeAnalysis;
+// Reserve edit: guide-book #320
+using Content.Client.UserInterface.ControlExtensions;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -16,9 +18,11 @@ namespace Content.Client.Guidebook.RichText;
 [UsedImplicitly]
 public sealed class TextLinkTag : IMarkupTagHandler
 {
+    // Reserve edit: guide-book #320
+    public static Color LinkColor => Color.CornflowerBlue;
+
     public string Name => "textlink";
 
-    /// <inheritdoc/>
     public bool TryCreateControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
     {
         if (!node.Value.TryGetString(out var text)
@@ -29,11 +33,10 @@ public sealed class TextLinkTag : IMarkupTagHandler
             return false;
         }
 
-        var label = new Label();
-        label.Text = text;
+        var label = new Label { Text = text }; // Reserve edit: guide-book #320
 
         label.MouseFilter = Control.MouseFilterMode.Stop;
-        label.FontColorOverride = Color.CornflowerBlue;
+        label.FontColorOverride = LinkColor; // Reserve edit: guide-book #320
         label.DefaultCursorShape = Control.CursorShape.Hand;
 
         label.OnMouseEntered += _ => label.FontColorOverride = Color.LightSkyBlue;
@@ -44,7 +47,8 @@ public sealed class TextLinkTag : IMarkupTagHandler
         return true;
     }
 
-    private void OnKeybindDown(GUIBoundKeyEventArgs args, string link, Control? control)
+    // Reserve edit start: guide-book #320
+    private static void OnKeybindDown(GUIBoundKeyEventArgs args, string link, Control? control)
     {
         if (args.Function != EngineKeyFunctions.UIClick)
             return;
@@ -52,17 +56,10 @@ public sealed class TextLinkTag : IMarkupTagHandler
         if (control == null)
             return;
 
-        var current = control;
-        while (current != null)
-        {
-            current = current.Parent;
-
-            if (current is not ILinkClickHandler handler)
-                continue;
+        if (control.TryGetParentHandler<ILinkClickHandler>(out var handler))
             handler.HandleClick(link);
-            return;
-        }
     }
+    // Reserve edit end: guide-book #320
 }
 
 public interface ILinkClickHandler

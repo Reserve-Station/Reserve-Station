@@ -91,10 +91,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.DoAfter;
-using Content.Server.Nutrition.Components;
+// Reserve edit: guide-book #320
+using Content.Shared.Nutrition.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Nutrition;
-using Content.Shared.Nutrition.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.DoAfter;
 using Content.Goobstation.Maths.FixedPoint;

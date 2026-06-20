@@ -20,16 +20,17 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Guidebook.Controls;
 
-/// <summary>
-/// Control for embedding a microwave recipe into a guidebook.
-/// </summary>
 [UsedImplicitly, GenerateTypedNameReferences]
-public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, ISearchableControl
+// Reserve edit start: guide-book #320
+public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, ISearchableControl, IGuidebookEntryAnchor
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
 
     private ISawmill _sawmill = default!;
+
+    public IPrototype? AnchorPrototype { get; private set; }
+// Reserve edit end: guide-book #320
 
     public GuideMicrowaveEmbed()
     {
@@ -85,7 +86,11 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
     {
         var entity = _prototype.Index<EntityPrototype>(recipe.Result);
 
-        IconContainer.AddChild(new GuideEntityEmbed(recipe.Result, false, false));
+        // Reserve edit start: guide-book #320
+        AnchorPrototype = entity;
+
+        IconContainer.AddChild(new GuideEntityEmbed(recipe.Result, false, false, registerAsGuideAnchor: false));
+        // Reserve edit end: guide-book #320
         ResultName.SetMarkup(entity.Name);
         ResultDescription.SetMarkup(entity.Description);
     }
@@ -96,20 +101,19 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
         {
             var ingredient = _prototype.Index<EntityPrototype>(product);
 
-            IngredientsGrid.AddChild(new GuideEntityEmbed(product, false, false));
-
-            // solid name
+            IngredientsGrid.AddChild(new GuideEntityEmbed(product, false, false, registerAsGuideAnchor: false)); // Reserve edit: guide-book #320
 
             var solidNameMsg = new FormattedMessage();
             solidNameMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-solid-name-display", ("ingredient", ingredient.Name)));
             solidNameMsg.Pop();
 
-            var solidNameLabel = new RichTextLabel();
+            // Reserve edit start: guide-book #320
+            var solidNameLabel = new GuidebookCrossRefLabel();
             solidNameLabel.SetMessage(solidNameMsg);
+            solidNameLabel.TargetPrototype = ingredient;
+            // Reserve edit end: guide-book #320
 
             IngredientsGrid.AddChild(solidNameLabel);
-
-            // solid quantity
 
             var solidQuantityMsg = new FormattedMessage();
             solidQuantityMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-solid-quantity-display", ("amount", amount)));
@@ -128,8 +132,6 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
         {
             var reagent = _prototype.Index<ReagentPrototype>(product);
 
-            // liquid color
-
             var liquidColorMsg = new FormattedMessage();
             liquidColorMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-reagent-color-display", ("color", reagent.SubstanceColor)));
             liquidColorMsg.Pop();
@@ -140,18 +142,17 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
 
             IngredientsGrid.AddChild(liquidColorLabel);
 
-            // liquid name
-
             var liquidNameMsg = new FormattedMessage();
             liquidNameMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-reagent-name-display", ("reagent", reagent.LocalizedName)));
             liquidNameMsg.Pop();
 
-            var liquidNameLabel = new RichTextLabel();
+            // Reserve edit start: guide-book #320
+            var liquidNameLabel = new GuidebookCrossRefLabel();
             liquidNameLabel.SetMessage(liquidNameMsg);
+            liquidNameLabel.TargetPrototype = reagent;
+            // Reserve edit end: guide-book #320
 
             IngredientsGrid.AddChild(liquidNameLabel);
-
-            // liquid quantity
 
             var liquidQuantityMsg = new FormattedMessage();
             liquidQuantityMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-reagent-quantity-display", ("amount", amount)));

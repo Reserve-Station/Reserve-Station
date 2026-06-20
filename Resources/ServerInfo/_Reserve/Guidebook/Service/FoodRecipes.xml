@@ -4,6 +4,9 @@
 
 Это последняя опубликованная версия сборника рецептов "NanoTrasen Central Command Kitchen de Cuisine's", предназначенного для шеф-поваров, готовящих блюда на судах NanoTrasen.
 
+## Ингредиенты
+<GuideFoodIngredientGroupEmbed/>
+
 ## Пицца
 <GuideMicrowaveGroupEmbed Group="Pizza"/>
 

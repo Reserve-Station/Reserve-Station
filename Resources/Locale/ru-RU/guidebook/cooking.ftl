@@ -12,3 +12,6 @@ guidebook-microwave-reagent-name-display = [bold]{ $reagent }[/bold]
 guidebook-microwave-reagent-quantity-display = × { $amount }u
 guidebook-microwave-solid-name-display = [bold]{ $ingredient }[/bold]
 guidebook-microwave-solid-quantity-display = × { $amount }
+
+guidebook-food-entity-craft-result = [bold]{ $name }[/bold]
+guidebook-food-source-hydroponics = Вырастите из семян [bold]{ $seed }[/bold]

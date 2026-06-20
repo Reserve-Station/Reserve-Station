@@ -41,16 +41,18 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
 
     public GuideReagentReaction(ReactionPrototype prototype, IPrototypeManager protoMan, IEntitySystemManager sysMan) : this(protoMan)
     {
-        var reactantsLabel = ReactantsLabel;
-        SetReagents(prototype.Reactants, ref reactantsLabel, protoMan);
-        var productLabel = ProductsLabel;
+        // Reserve edit start: guide-book #320
+        Container reactantsContainer = ReactantsContainer;
+        SetReagents(prototype.Reactants, ref reactantsContainer, protoMan);
+        Container productsContainer = ProductsContainer;
         var products = new Dictionary<string, FixedPoint2>(prototype.Products);
         foreach (var (reagent, reactantProto) in prototype.Reactants)
         {
             if (reactantProto.Catalyst)
                 products.Add(reagent, reactantProto.Amount);
         }
-        SetReagents(products, ref productLabel, protoMan);
+        SetReagents(products, ref productsContainer, protoMan, addLinks: false);
+        // Reserve edit end: guide-book #320
 
         var mixingCategories = new List<MixingCategoryPrototype>();
         if (prototype.MixingCategories != null)
@@ -66,6 +68,49 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         }
         SetMixingCategory(mixingCategories, prototype, sysMan);
     }
+
+    // Reserve edit start: guide-book #320
+    public GuideReagentReaction(
+        ReactionPrototype prototype,
+        EntProtoId outputEntity,
+        IPrototypeManager protoMan,
+        IEntitySystemManager sysMan) : this(protoMan)
+    {
+        Container reactantsContainer = ReactantsContainer;
+        SetReagents(prototype.Reactants, ref reactantsContainer, protoMan);
+
+        var output = protoMan.Index<EntityPrototype>(outputEntity);
+        var icon = sysMan.GetEntitySystem<SpriteSystem>().GetPrototypeIcon(output).GetFrame(RsiDirection.South, 0);
+        var entContainer = new BoxContainer
+        {
+            Orientation = LayoutOrientation.Horizontal,
+            HorizontalExpand = true,
+            HorizontalAlignment = HAlignment.Center,
+            Children =
+            {
+                new TextureRect { Texture = icon }
+            }
+        };
+        var nameLabel = new RichTextLabel();
+        nameLabel.SetMarkup(Loc.GetString("guidebook-food-entity-craft-result", ("name", output.Name)));
+        entContainer.AddChild(nameLabel);
+        ProductsContainer.AddChild(entContainer);
+        ProductsContainer.Visible = true;
+
+        var mixingCategories = new List<MixingCategoryPrototype>();
+        if (prototype.MixingCategories != null)
+        {
+            foreach (var category in prototype.MixingCategories)
+                mixingCategories.Add(protoMan.Index(category));
+        }
+        else
+        {
+            mixingCategories.Add(protoMan.Index(DefaultMixingCategory));
+        }
+
+        SetMixingCategory(mixingCategories, prototype, sysMan);
+    }
+    // Reserve edit end: guide-book #320
 
     public GuideReagentReaction(EntityPrototype prototype,
         Solution solution,
@@ -92,8 +137,10 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         entContainer.AddChild(nameLabel);
         ReactantsContainer.AddChild(entContainer);
 
-        var productLabel = ProductsLabel;
-        SetReagents(solution.Contents, ref productLabel, protoMan);
+        // Reserve edit start: guide-book #320
+        Container productsContainer = ProductsContainer;
+        SetReagents(solution.Contents, ref productsContainer, protoMan, addLinks: false);
+        // Reserve edit end: guide-book #320
         SetMixingCategory(categories, null, sysMan);
     }
 
@@ -102,9 +149,13 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         IPrototypeManager protoMan,
         IEntitySystemManager sysMan) : this(protoMan)
     {
-        ReactantsLabel.Visible = true;
-        ReactantsLabel.SetMarkup(Loc.GetString("guidebook-reagent-sources-gas-wrapper",
+        // Reserve edit start: guide-book #320
+        var label = new RichTextLabel();
+        label.SetMarkup(Loc.GetString("guidebook-reagent-sources-gas-wrapper",
             ("name", Loc.GetString(prototype.Name).ToLower())));
+
+        ReactantsContainer.Visible = true;
+        ReactantsContainer.AddChild(label);
 
         if (prototype.Reagent != null)
         {
@@ -112,66 +163,79 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
             {
                 { prototype.Reagent, FixedPoint2.New(0.21f) }
             };
-            var productLabel = ProductsLabel;
-            SetReagents(quantity, ref productLabel, protoMan);
+            Container productsContainer = ProductsContainer;
+            SetReagents(quantity, ref productsContainer, protoMan, addLinks: false);
         }
+        // Reserve edit end: guide-book #320
         SetMixingCategory(categories, null, sysMan);
     }
 
-    private void SetReagents(List<ReagentQuantity> reagents, ref RichTextLabel label, IPrototypeManager protoMan)
+    // Reserve edit start: guide-book #320
+    private void SetReagents(List<ReagentQuantity> reagents, ref Container container, IPrototypeManager protoMan, bool addLinks = true)
     {
         var amounts = new Dictionary<string, FixedPoint2>();
         foreach (var (reagent, quantity) in reagents)
         {
             amounts.Add(reagent.Prototype, quantity);
         }
-        SetReagents(amounts, ref label, protoMan);
+        SetReagents(amounts, ref container, protoMan, addLinks);
     }
 
     private void SetReagents(
         Dictionary<string, ReactantPrototype> reactants,
-        ref RichTextLabel label,
-        IPrototypeManager protoMan)
+        ref Container container,
+        IPrototypeManager protoMan,
+        bool addLinks = true)
     {
         var amounts = new Dictionary<string, FixedPoint2>();
         foreach (var (reagent, reactantPrototype) in reactants)
         {
             amounts.Add(reagent, reactantPrototype.Amount);
         }
-        SetReagents(amounts, ref label, protoMan);
+        SetReagents(amounts, ref container, protoMan, addLinks);
     }
 
     [PublicAPI]
     private void SetReagents(
         Dictionary<ProtoId<MixingCategoryPrototype>, ReactantPrototype> reactants,
-        ref RichTextLabel label,
-        IPrototypeManager protoMan)
+        ref Container container,
+        IPrototypeManager protoMan,
+        bool addLinks = true)
     {
         var amounts = new Dictionary<string, FixedPoint2>();
         foreach (var (reagent, reactantPrototype) in reactants)
         {
             amounts.Add(reagent, reactantPrototype.Amount);
         }
-        SetReagents(amounts, ref label, protoMan);
+        SetReagents(amounts, ref container, protoMan, addLinks);
     }
 
-    private void SetReagents(Dictionary<string, FixedPoint2> reagents, ref RichTextLabel label, IPrototypeManager protoMan)
+    private void SetReagents(Dictionary<string, FixedPoint2> reagents, ref Container container, IPrototypeManager protoMan, bool addLinks = true)
     {
-        var msg = new FormattedMessage();
-        var reagentCount = reagents.Count;
-        var i = 0;
         foreach (var (product, amount) in reagents.OrderByDescending(p => p.Value))
         {
+            var productProto = protoMan.Index<ReagentPrototype>(product);
+            var msg = new FormattedMessage();
             msg.AddMarkupOrThrow(Loc.GetString("guidebook-reagent-recipes-reagent-display",
-                ("reagent", protoMan.Index<ReagentPrototype>(product).LocalizedName), ("ratio", amount)));
-            i++;
-            if (i < reagentCount)
-                msg.PushNewline();
+                ("reagent", productProto.LocalizedName), ("ratio", amount)));
+
+            if (addLinks)
+            {
+                var link = new GuidebookCrossRefLabel();
+                link.TargetPrototype = productProto;
+                link.SetMessage(msg);
+                container.AddChild(link);
+            }
+            else
+            {
+                var label = new RichTextLabel();
+                label.SetMessage(msg);
+                container.AddChild(label);
+            }
         }
-        msg.Pop();
-        label.SetMessage(msg);
-        label.Visible = true;
+        container.Visible = true;
     }
+    // Reserve edit end: guide-book #320
 
     private void SetMixingCategory(IReadOnlyList<ProtoId<MixingCategoryPrototype>> mixingCategories, ReactionPrototype? prototype, IEntitySystemManager sysMan)
     {
@@ -188,7 +252,6 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         if (mixingCategories.Count == 0)
             return;
 
-        // only use the first one for the icon.
         if (mixingCategories.First() is { } primaryCategory)
         {
             MixTexture.Texture = sysMan.GetEntitySystem<SpriteSystem>().Frame0(primaryCategory.Icon);

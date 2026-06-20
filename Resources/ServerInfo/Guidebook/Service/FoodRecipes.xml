@@ -22,6 +22,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 This is the latest published version of NanoTrasen Central Command Kitchen de Cuisine's recipe collection for chefs upon NanoTrasen vessels to prepare.
 
+## Ingredients
+<GuideFoodIngredientGroupEmbed/>
+
 ## Pizza Pies
 <GuideMicrowaveGroupEmbed Group="Pizza"/>
 

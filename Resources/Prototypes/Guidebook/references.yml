@@ -43,6 +43,7 @@
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/FoodRecipes.xml"
   filterEnabled: True
   children:
+  - IngredientRecipes
   - PizzaRecipes
   - SavoryRecipes
   - BreadRecipes
@@ -58,6 +59,14 @@
   - OtherRecipes
   - MedicinalRecipes
   - SecretRecipes
+
+- type: guideEntry
+  id: IngredientRecipes
+  name: guide-entry-ingredient-recipes
+  text: "/ServerInfo/Guidebook/Service/IngredientRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/IngredientRecipes.xml"
+  filterEnabled: True
 
 - type: guideEntry
   id: PizzaRecipes

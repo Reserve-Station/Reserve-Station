@@ -1,0 +1,32 @@
+<!--
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<PanelContainer xmlns="https://spacestation14.io"
+              xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+              Margin="5 5 5 5">
+    <PanelContainer.PanelOverride>
+        <gfx:StyleBoxFlat BorderThickness="1" BorderColor="#777777"/>
+    </PanelContainer.PanelOverride>
+
+    <BoxContainer Orientation="Vertical">
+        <PanelContainer HorizontalExpand="True">
+            <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
+                <BoxContainer Name="IconContainer"/>
+                <RichTextLabel Name="IngredientName"/>
+            </BoxContainer>
+            <PanelContainer.PanelOverride>
+                <gfx:StyleBoxFlat BackgroundColor="#393c3f"/>
+            </PanelContainer.PanelOverride>
+        </PanelContainer>
+
+        <BoxContainer Name="SourcesContainer"
+                      Orientation="Vertical"
+                      Margin="10 10 10 0"
+                      HorizontalExpand="True"/>
+
+        <BoxContainer Name="DescriptionContainer" Margin="10">
+            <RichTextLabel Name="IngredientDescription" HorizontalAlignment="Left"/>
+        </BoxContainer>
+    </BoxContainer>
+</PanelContainer>

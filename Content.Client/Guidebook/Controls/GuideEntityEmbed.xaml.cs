@@ -16,6 +16,8 @@ using System.Linq;
 using System.Numerics;
 using Content.Client.ContextMenu.UI;
 using Content.Client.Examine;
+// Reserve edit: guide-book #320
+using Content.Client.Guidebook;
 using Content.Client.Guidebook.Richtext;
 using Content.Client.Verbs.UI;
 using Content.Shared.Input;
@@ -27,6 +29,8 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Input;
 using Robust.Shared.Map;
+// Reserve edit: guide-book #320
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Client.Guidebook.Controls;
@@ -36,17 +40,24 @@ namespace Content.Client.Guidebook.Controls;
 ///     examination, interactions, and captions.
 /// </summary>
 [GenerateTypedNameReferences]
-public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
+// Reserve edit start: guide-book #320
+public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag, IGuidebookEntryAnchor
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IEntitySystemManager _systemManager = default!;
     [Dependency] private readonly IUserInterfaceManager _ui = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     private readonly TagSystem _tagSystem;
     private readonly ExamineSystem _examineSystem;
     private readonly GuidebookSystem _guidebookSystem;
 
+    public IPrototype? AnchorPrototype { get; private set; }
+
     public bool Interactive;
+
+    private bool _registerAsGuideAnchor = true;
+// Reserve edit end: guide-book #320
 
     public Entity<SpriteComponent>? Sprite => View.Entity == null || View.Sprite == null
         ? null
@@ -68,9 +79,12 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         MouseFilter = MouseFilterMode.Stop;
     }
 
-    public GuideEntityEmbed(string proto, bool caption, bool interactive) : this()
+    // Reserve edit start: guide-book #320
+    public GuideEntityEmbed(string proto, bool caption, bool interactive, bool registerAsGuideAnchor = true) : this()
     {
         Interactive = interactive;
+        _registerAsGuideAnchor = registerAsGuideAnchor;
+        BindEntityPrototype(proto);
 
         var ent = _entityManager.SpawnEntity(proto, MapCoordinates.Nullspace);
         View.SetEntity(ent);
@@ -78,6 +92,16 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
         if (caption)
             Caption.Text = _entityManager.GetComponent<MetaDataComponent>(ent).EntityName;
     }
+
+    private void BindEntityPrototype(string protoId, bool registerFromTag = false)
+    {
+        if (!_registerAsGuideAnchor && !registerFromTag)
+            return;
+
+        if (_prototype.TryIndex<EntityPrototype>(protoId, out var entityProto))
+            AnchorPrototype = entityProto;
+    }
+    // Reserve edit end: guide-book #320
 
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
     {
@@ -151,6 +175,9 @@ public sealed partial class GuideEntityEmbed : BoxContainer, IDocumentTag
             control = null;
             return false;
         }
+
+        // Reserve edit: guide-book #320
+        BindEntityPrototype(proto);
 
         var ent = _entityManager.SpawnEntity(proto, MapCoordinates.Nullspace);
 
