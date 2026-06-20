@@ -4,4 +4,4 @@
 
 marking-dogEars = Собачьи уши
 
-marking-dogEarsWag = Собачьи уши(Виляющие)
+marking-dogEarsWag = Собачьи уши (Виляющие)
