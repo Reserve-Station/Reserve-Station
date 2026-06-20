@@ -230,6 +230,7 @@
 # Balloons Factions Edit:
 - type: npcFaction
   id: Balloon
+  # Balloons can't attack
 
 - type: npcFaction
   id: Monkey
