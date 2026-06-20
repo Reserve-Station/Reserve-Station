@@ -230,10 +230,6 @@
 # Balloons Factions Edit:
 - type: npcFaction
   id: Balloon
-  hostile:
-  # Balloons can't attack
-  - Wizard
-  - Xenoborg
 
 - type: npcFaction
   id: Monkey
