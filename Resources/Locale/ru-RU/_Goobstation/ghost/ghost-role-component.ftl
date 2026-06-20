@@ -175,7 +175,7 @@ contractor-role-greeting = Вы [color=#611b2b]контрактник Синди
 
 ghost-role-information-bsd-description = Вас вызвал на станцию Представитель NanoTrasen. Подчиняйтесь ему, защищайте командование, следуйте Корпоративному Закону.
 
-ghost-role-information-bsd-name = Офцер "Синий Щит"
+ghost-role-information-bsd-name = Офицер "Синий Щит"
 
 ghost-role-information-bsd-rules = Следуйте приказам, данными вам [color=yellow][bold]Представителем NanoTrasen[/bold][/color], защищайте командование.
 
