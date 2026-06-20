@@ -239,20 +239,6 @@
   id: Monkey
   hostile:
   - Balloon     # Custom faction specifically for attacking bloons
-  - NanoTrasen
-  - Dragon
-  - Mouse
-  - Passive
-  - PetsNT
-  - SimpleHostile
-  - SimpleNeutral
-  - Syndicate
-  - Xeno
-  - Zombie
-  - Revolutionary
-  - AllHostile
-  - Xenoborg
-  - BloodBrother # Harmony
 
 - type: npcFaction
   id: Xenoborg
