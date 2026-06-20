@@ -1362,18 +1362,13 @@ public sealed partial class ChatSystem : SharedChatSystem
         language ??= _language.GetLanguage(source);
 
         // Reserve edit start: Fix languages in chat
-        if (applyLanguageFormatting)
-        {
-            if (language.SpeechOverride.FontId != null || language.SpeechOverride.BoldFontId != null)
-                wrapId = "chat-manager-entity-say-bolded-language-wrap-message";
+        if (applyLanguageFormatting && (language.SpeechOverride.FontId != null || language.SpeechOverride.BoldFontId != null))
+            wrapId = "chat-manager-entity-say-bolded-language-wrap-message";
 
-            if (language.SpeechOverride.MessageWrapOverrides.TryGetValue(chatType, out var wrapOverride))
-                wrapId = wrapOverride;
-        }
-        else if (chatType == InGameICChatType.Speak)
-        {
+        if (language.SpeechOverride.MessageWrapOverrides.TryGetValue(chatType, out var wrapOverride))
+            wrapId = wrapOverride;
+        else if (!applyLanguageFormatting && chatType == InGameICChatType.Speak)
             wrapId = speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message";
-        }
 
         var verbId = language.SpeechOverride.SpeechVerbOverrides is { } verbsOverride
             ? _random.Pick(verbsOverride).ToString()

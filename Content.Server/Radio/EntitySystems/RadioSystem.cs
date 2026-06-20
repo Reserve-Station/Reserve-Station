@@ -291,7 +291,7 @@ public sealed partial class RadioSystem : EntitySystem
         var speech = _chat.GetSpeechVerb(source, message);
 
         // Reserve edit start: Fix languages in chat
-        var languageColor = Color.White;
+        var languageColor = channel.Color;
 
         var wrapId = speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap";
         if (applyLanguageFormatting && (language.SpeechOverride.FontId != null || language.SpeechOverride.BoldFontId != null))
