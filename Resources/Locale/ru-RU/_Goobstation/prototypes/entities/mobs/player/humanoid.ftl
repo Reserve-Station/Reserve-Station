@@ -95,6 +95,5 @@ ent-RandomHumanoidSpawnerERTMedicalEVANoReq = ОБР медик
 ent-RandomHumanoidSpawnerCBURNUnitNoReq = РХБЗЗ
     .suffix = ОБР, Нет требований
     .desc = { "" }
-
 ent-RandomHumanoidGreyTider = грейтайдер
     .desc = { "" }
