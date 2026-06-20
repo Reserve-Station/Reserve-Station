@@ -1,7 +1,5 @@
 marking-ChitinidAntennasDefault-default = Усики
 marking-ChitinidAntennasDefault = Усики (Обычные)
-marking-ChitinidAntennasDefault-default = Усики
-marking-ChitinidAntennasDefault = Усики (Обычные)
 marking-ChitinidAntennasCurly-curly = Усики
 marking-ChitinidAntennasCurly = Усики (Кудрявые)
 marking-ChitinidAntennasGray-gray = Усики
