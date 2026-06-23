@@ -75,6 +75,7 @@ surgery-popup-step-SurgeryStepMendBrainTissue = {$user} is mending the brain tis
 surgery-popup-step-SurgeryStepRemoveOrgan-failed = You couldn't remove the organ for some reason...
 
 surgery-step-acid-popup = Acidic blood squirts out of {$target}'s {$part}!
+surgery-popup-step-SurgeryStepXenoOpenIncision = {$user} is making an incision on {$target}'s {$part}.
 surgery-popup-step-SurgeryStepXenoCutExoskeleton = {$user} is scoring the exoskeleton of {$target}'s {$part}.
 surgery-popup-step-SurgeryStepXenoClampBleeders = {$user} is clamping acid vessels of {$target}'s {$part}.
 surgery-popup-step-SurgeryStepXenoSeverPlasma = {$user} is severing plasma connections of {$target}'s {$part}.

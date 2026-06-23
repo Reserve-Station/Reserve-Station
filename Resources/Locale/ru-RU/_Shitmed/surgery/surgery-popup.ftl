@@ -55,6 +55,7 @@ surgery-popup-step-SurgeryStepLobotomize = { $user } проводит лобот
 surgery-popup-step-SurgeryStepMendBrainTissue = { $user } восстанавливает мозговую ткань на { $target } { $part }.
 surgery-popup-step-SurgeryStepRemoveOrgan-failed = По какой-то причине у вас не получается удалить орган...
 surgery-step-acid-popup = Из { $part } { $target } брызжет кислотная кровь!
+surgery-popup-step-SurgeryStepXenoOpenIncision = { $user } делает разрез на { $part } { $target }.
 surgery-popup-step-SurgeryStepXenoCutExoskeleton = { $user } делает надрез в экзоскелете { $part } { $target }.
 surgery-popup-step-SurgeryStepXenoClampBleeders = { $user } зажимает кислотные сосуды { $part } { $target }.
 surgery-popup-step-SurgeryStepXenoSeverPlasma = { $user } перерезает плазменные соединения { $part } { $target }.
