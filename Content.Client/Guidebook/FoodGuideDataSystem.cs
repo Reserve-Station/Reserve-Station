@@ -115,6 +115,8 @@ public sealed class FoodGuideDataSystem : EntitySystem
                 if (source.SourceEntity is { } parent && !IsPlant(parent))
                     ids.Add(parent);
             }
+
+            AddSliceProducts(id, ids); // Reserve edit: guide-book #323
         }
 
         return ids
@@ -122,6 +124,26 @@ public sealed class FoodGuideDataSystem : EntitySystem
             .Select(id => _prototypes.Index<EntityPrototype>(id))
             .OrderBy(p => p.Name);
     }
+
+    // Reserve edit start: guide-book #323
+    private void AddSliceProducts(EntProtoId parent, HashSet<EntProtoId> ids)
+    {
+        foreach (var (entityId, sources) in _sources)
+        {
+            if (ids.Contains(entityId))
+                continue;
+
+            foreach (var source in sources)
+            {
+                if (source.Kind != FoodEntitySourceKind.SliceFrom || source.SourceEntity != parent)
+                    continue;
+
+                ids.Add(entityId);
+                break;
+            }
+        }
+    }
+    // Reserve edit end: guide-book #323
 
     private void Rebuild()
     {
@@ -154,8 +176,7 @@ public sealed class FoodGuideDataSystem : EntitySystem
         foreach (var (slice, parent) in pendingSlices)
         {
             AddSource(slice, new FoodEntitySource(FoodEntitySourceKind.SliceFrom, null, parent, null));
-            if (_plantEntities.Contains(parent))
-                _plantEntities.Add(slice);
+            // Reserve remove: guide-book #323
         }
 
         IndexConstructionRollingSources();

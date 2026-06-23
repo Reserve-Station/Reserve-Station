@@ -96,6 +96,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using System.Numerics; // Reserve edit: guide-book #323
 // Reserve edit: guide-book #320
 using Content.Client.Guidebook;
 using Content.Client.Guidebook.RichText;
@@ -148,7 +149,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
         HomeButton.OnPressed += _ =>
         {
             if (_currentGuideEntry != null)
-                ShowGuide(_currentGuideEntry);
+                ShowGuide(_currentGuideEntry, resetState: true);
         };
         // Reserve edit end: guide-book #320
     }
@@ -181,10 +182,11 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
     {
         if (item != null && item.Metadata is GuideEntry entry)
         {
-            // Reserve edit start: guide-book #320
+            // Reserve edit start: guide-book #320, #323
+            SaveCurrentPageState();
             _currentGuideEntry = entry;
             ShowGuide(entry);
-            // Reserve edit end: guide-book #320
+            // Reserve edit end: guide-book #320, #323
 
             var isRulesEntry = entry.RuleEntry;
             ReturnContainer.Visible = isRulesEntry;
@@ -205,12 +207,26 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
         // Reserve edit end: guide-book #320
     }
 
-    private void ShowGuide(GuideEntry entry)
+    // Reserve edit start: guide-book #320, #323
+    public void SaveCurrentPageState()
     {
-        Scroll.SetScrollValue(default);
+        if (_currentGuideEntry == null)
+            return;
+
+        GuidebookPageStateStorage.States[_currentGuideEntry.Id] = new GuidebookPageState(
+            Scroll.GetScrollValue(),
+            SearchBar.Text ?? string.Empty,
+            CollectExpandedCollapsibles(EntryContainer),
+            CollectRevealedEntryAnchors(EntryContainer, SearchBar.Text ?? string.Empty));
+    }
+
+    private void ShowGuide(GuideEntry entry, bool resetState = false)
+    {
+        var pageState = resetState
+            ? GuidebookPageStateStorage.Empty
+            : GuidebookPageStateStorage.States.GetValueOrDefault(entry.Id, GuidebookPageStateStorage.Empty);
         Placeholder.Visible = false;
         EntryContainer.Visible = true;
-        SearchBar.Text = "";
         EntryContainer.RemoveAllChildren();
         // using var file = _resourceManager.ContentFileReadText(entry.Text); // Reserve localized guidebook begin
         // Get localized path
@@ -236,9 +252,172 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
 
         LastEntry = entry.Id;
 
-        // Reserve edit: guide-book #320
+        // Reserve edit: guide-book #320, #323
         _crossReferences.BuildFromPage(EntryContainer);
+        ApplyPageState(pageState);
     }
+
+    // Reserve edit: guide-book #323
+    private void ApplyPageState(GuidebookPageState state)
+    {
+        SearchBar.SetText(state.Search, invokeEvent: false);
+
+        if (!string.IsNullOrEmpty(state.Search))
+            HandleFilter();
+
+        UserInterfaceManager.DeferAction(() =>
+        {
+            ApplyRevealedEntryAnchors(EntryContainer, state.RevealedEntryAnchors);
+            ApplyCollapsibleStates(EntryContainer, state.ExpandedCollapsibles);
+            Scroll.SetScrollValue(state.Scroll);
+        });
+    }
+
+    private static HashSet<string> CollectRevealedEntryAnchors(Control root, string search)
+    {
+        var revealed = new HashSet<string>();
+
+        if (string.IsNullOrWhiteSpace(search))
+            return revealed;
+
+        var query = search.Trim();
+        foreach (var anchor in EnumerateEntryAnchors(root))
+        {
+            if (anchor is not Control { Visible: true } control)
+                continue;
+
+            if (control is not ISearchableControl searchable)
+                continue;
+
+            if (searchable.CheckMatchesSearch(query))
+                continue;
+
+            if (anchor.AnchorPrototype is { } proto)
+                revealed.Add(proto.ID);
+        }
+
+        return revealed;
+    }
+
+    private static void ApplyRevealedEntryAnchors(Control root, HashSet<string> revealed)
+    {
+        if (revealed.Count == 0)
+            return;
+
+        foreach (var anchor in EnumerateEntryAnchors(root))
+        {
+            if (anchor.AnchorPrototype is not { } proto)
+                continue;
+
+            if (!revealed.Contains(proto.ID))
+                continue;
+
+            if (anchor is Control control)
+                control.Visible = true;
+        }
+    }
+
+    private static IEnumerable<IGuidebookEntryAnchor> EnumerateEntryAnchors(Control root)
+    {
+        foreach (var child in root.Children)
+        {
+            if (child is IGuidebookEntryAnchor anchor)
+                yield return anchor;
+
+            foreach (var nested in EnumerateEntryAnchors(child))
+                yield return nested;
+        }
+    }
+
+    private static HashSet<string> CollectExpandedCollapsibles(Control root)
+    {
+        var expanded = new HashSet<string>();
+
+        foreach (var collapsible in EnumerateCollapsibles(root))
+        {
+            if (!IsCollapsibleExpanded(collapsible))
+                continue;
+
+            if (GetCollapsibleKey(collapsible) is { } key)
+                expanded.Add(key);
+        }
+
+        return expanded;
+    }
+
+    private static void ApplyCollapsibleStates(Control root, HashSet<string> expanded)
+    {
+        foreach (var collapsible in EnumerateCollapsibles(root))
+        {
+            if (GetCollapsibleKey(collapsible) is not { } key)
+                continue;
+
+            collapsible.BodyVisible = expanded.Contains(key);
+        }
+    }
+
+    private static IEnumerable<Collapsible> EnumerateCollapsibles(Control root)
+    {
+        foreach (var child in root.Children)
+        {
+            if (child is Collapsible collapsible)
+                yield return collapsible;
+
+            foreach (var nested in EnumerateCollapsibles(child))
+                yield return nested;
+        }
+    }
+
+    private static bool IsCollapsibleExpanded(Collapsible collapsible)
+    {
+        if (collapsible.BodyVisible)
+            return true;
+
+        var heading = GetCollapsibleHeading(collapsible);
+        return heading is { Pressed: true };
+    }
+
+    private static CollapsibleHeading? GetCollapsibleHeading(Collapsible collapsible)
+    {
+        if (collapsible.Heading is CollapsibleHeading heading)
+            return heading;
+
+        foreach (var child in collapsible.Children)
+        {
+            if (child is CollapsibleHeading collapsibleHeading)
+                return collapsibleHeading;
+        }
+
+        return null;
+    }
+
+    private static string? GetCollapsibleKey(Collapsible collapsible)
+    {
+        var sectionId = GetCollapsibleSectionId(collapsible);
+        if (string.IsNullOrEmpty(sectionId))
+            return null;
+
+        if (collapsible.TryGetParentHandler<IGuidebookEntryAnchor>(out var anchor)
+            && anchor.AnchorPrototype is { } anchorPrototype)
+        {
+            return $"{anchorPrototype.ID}|{sectionId}";
+        }
+
+        return sectionId;
+    }
+
+    private static string? GetCollapsibleSectionId(Collapsible collapsible)
+    {
+        for (var control = collapsible.Parent; control is not null; control = control.Parent)
+        {
+            if (!string.IsNullOrEmpty(control.Name))
+                return control.Name;
+        }
+
+        var heading = GetCollapsibleHeading(collapsible);
+        return heading?.Title ?? heading?.Label.Text;
+    }
+    // Reserve edit end: guide-book #320
 
     public void UpdateGuides(
         Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> entries,
@@ -353,11 +532,12 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
     {
         if (Tree.SelectedItem != null && Tree.SelectedItem.Metadata is GuideEntry entry && entry.FilterEnabled)
         {
+            var query = SearchBar.Text?.Trim() ?? string.Empty; // Reserve edit: guide-book #323
             var foundElements = EntryContainer.GetSearchableControls();
 
             foreach (var element in foundElements)
             {
-                element.SetHiddenState(true, SearchBar.Text.Trim());
+                element.SetHiddenState(true, query);
             }
         }
     }
