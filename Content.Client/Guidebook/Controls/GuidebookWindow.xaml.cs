@@ -126,6 +126,9 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
     private Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> _entries = new();
     private readonly GuidebookCrossReferenceIndex _crossReferences = new();
     private GuideEntry? _currentGuideEntry;
+    private List<ProtoId<GuideEntryPrototype>>? _treeRootEntries;
+    private ProtoId<GuideEntryPrototype>? _treeForceRoot;
+    private bool _suppressSelectionReload;
 // Reserve edit end: guide-book #320
 
     private readonly ISawmill _sawmill;
@@ -149,7 +152,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
         HomeButton.OnPressed += _ =>
         {
             if (_currentGuideEntry != null)
-                ShowGuide(_currentGuideEntry, resetState: true);
+                ShowGuide(_currentGuideEntry, resetState: true); // Reserve edit: guide-book #323
         };
         // Reserve edit end: guide-book #320
     }
@@ -183,13 +186,19 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
         if (item != null && item.Metadata is GuideEntry entry)
         {
             // Reserve edit start: guide-book #320, #323
+            if (_suppressSelectionReload
+                || (_currentGuideEntry?.Id == entry.Id && EntryContainer.ChildCount > 0))
+            {
+                ReturnContainer.Visible = entry.RuleEntry;
+                return;
+            }
+
             SaveCurrentPageState();
             _currentGuideEntry = entry;
             ShowGuide(entry);
             // Reserve edit end: guide-book #320, #323
 
-            var isRulesEntry = entry.RuleEntry;
-            ReturnContainer.Visible = isRulesEntry;
+            ReturnContainer.Visible = entry.RuleEntry; // Reserve edit: guide-book #323
         }
         else
             ClearSelectedGuide();
@@ -217,7 +226,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
             Scroll.GetScrollValue(),
             SearchBar.Text ?? string.Empty,
             CollectExpandedCollapsibles(EntryContainer),
-            CollectRevealedEntryAnchors(EntryContainer, SearchBar.Text ?? string.Empty));
+            CollectRevealedEntryAnchors(EntryContainer, SearchBar.Text ?? string.Empty)); // Reserve edit: guide-book #323
     }
 
     private void ShowGuide(GuideEntry entry, bool resetState = false)
@@ -425,9 +434,22 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
         ProtoId<GuideEntryPrototype>? forceRoot = null,
         ProtoId<GuideEntryPrototype>? selected = null)
     {
-        _entries = entries;
-        RepopulateTree(rootEntries, forceRoot);
-        ClearSelectedGuide();
+        // Reserve edit start: guide-book #323
+        var keepPage = CanKeepCurrentPage(entries, rootEntries, forceRoot, selected);
+
+        if (!keepPage)
+        {
+            _entries = entries;
+            RepopulateTree(rootEntries, forceRoot);
+            _treeRootEntries = rootEntries;
+            _treeForceRoot = forceRoot;
+            ClearSelectedGuide();
+        }
+        else
+        {
+            _entries = entries;
+        }
+        // Reserve edit end: guide-book #323
 
         Split.State = SplitContainer.SplitState.Auto;
         if (entries.Count == 1)
@@ -442,12 +464,88 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
             Split.ResizeMode = SplitContainer.SplitResizeMode.RespectChildrenMinSize;
         }
 
+        // Reserve edit start: guide-book #323
+        if (keepPage)
+        {
+            EnsurePageVisible();
+            SyncTreeSelection(selected);
+            return;
+        }
+        // Reserve edit end: guide-book #323
+
         if (selected != null)
         {
             var item = Tree.Items.FirstOrDefault(x => x.Metadata is GuideEntry entry && entry.Id == selected);
             Tree.SetSelectedIndex(item?.Index);
         }
     }
+
+    // Reserve edit start: guide-book #323
+    private bool CanKeepCurrentPage(
+        Dictionary<ProtoId<GuideEntryPrototype>, GuideEntry> entries,
+        List<ProtoId<GuideEntryPrototype>>? rootEntries,
+        ProtoId<GuideEntryPrototype>? forceRoot,
+        ProtoId<GuideEntryPrototype>? selected)
+    {
+        if (selected == null || _currentGuideEntry?.Id != selected)
+            return false;
+
+        if (EntryContainer.ChildCount == 0)
+            return false;
+
+        if (_entries.Count != entries.Count)
+            return false;
+
+        foreach (var key in entries.Keys)
+        {
+            if (!_entries.ContainsKey(key))
+                return false;
+        }
+
+        if (_treeForceRoot != forceRoot)
+            return false;
+
+        return TreeRootsMatch(_treeRootEntries, rootEntries);
+    }
+
+    private static bool TreeRootsMatch(
+        List<ProtoId<GuideEntryPrototype>>? a,
+        List<ProtoId<GuideEntryPrototype>>? b)
+    {
+        if (a == null && b == null)
+            return true;
+
+        if (a == null || b == null)
+            return false;
+
+        return a.SequenceEqual(b);
+    }
+
+    private void EnsurePageVisible()
+    {
+        Placeholder.Visible = false;
+        EntryContainer.Visible = true;
+
+        if (_currentGuideEntry != null)
+            SearchContainer.Visible = _currentGuideEntry.FilterEnabled;
+    }
+
+    private void SyncTreeSelection(ProtoId<GuideEntryPrototype>? selected)
+    {
+        if (selected == null || _currentGuideEntry?.Id != selected)
+            return;
+
+        ReturnContainer.Visible = _currentGuideEntry.RuleEntry;
+
+        if (Tree.SelectedItem?.Metadata is GuideEntry entry && entry.Id == selected)
+            return;
+
+        var item = Tree.Items.FirstOrDefault(x => x.Metadata is GuideEntry e && e.Id == selected);
+        _suppressSelectionReload = true;
+        Tree.SetSelectedIndex(item?.Index);
+        _suppressSelectionReload = false;
+    }
+    // Reserve edit end: guide-book #323
 
     private IEnumerable<GuideEntry> GetSortedEntries(List<ProtoId<GuideEntryPrototype>>? rootEntries)
     {
