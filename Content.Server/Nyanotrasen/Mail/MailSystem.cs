@@ -463,6 +463,7 @@ namespace Content.Server.Mail
             args.Handled = true;
         }
 
+        // Reserve edit start: localization #324
         private void OnComponentInit(EntityUid uid, MailComponent component, ComponentInit args)
         {
             if (!component.RequiresIdUnlock)
