@@ -6,3 +6,4 @@
 silicon-overheating = You feel your circuits overheating!
 silicon-crit = Structural integrity critical!
 silicon-power-low = Power low!
+silicon-no-charge-stand = Without charge, you don't have the strength to stand up!

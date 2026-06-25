@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Papers (letters, ad copy)
-# Reserve edit start: localization #324
+# Reserve edit start: localization #325
 - type: entity
   id: PaperMailNFPowerTool
   name: Hazard Fraught advertisement
@@ -274,4 +274,4 @@
     - stampedColor: '#006600FF'
       stampedName: paper-mail-stamp-delta-sector-admiralty
     content: paper-mail-nf-space-law
-# Reserve edit end: localization #324
+# Reserve edit end: localization #325

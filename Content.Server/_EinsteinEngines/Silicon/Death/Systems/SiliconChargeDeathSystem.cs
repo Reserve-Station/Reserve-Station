@@ -6,14 +6,13 @@
 
 using Content.Server.Power.Components;
 using Content.Shared._EinsteinEngines.Silicon.Systems;
-using Content.Shared.Bed.Sleep;
+// using Content.Shared.Bed.Sleep;
 using Content.Server._EinsteinEngines.Silicon.Charge;
 using Content.Server.Humanoid;
 using Content.Shared.Humanoid;
-using Content.Shared.StatusEffectNew;
+// using Content.Shared.StatusEffectNew;
 // Goobstation Start - Energycrit
 using Content.Goobstation.Shared.Sprinting;
-using Content.Server.Popups;
 using Content.Server.Radio;
 using Content.Shared._EinsteinEngines.Silicon.Death;
 using Content.Shared.Actions;
@@ -28,8 +27,8 @@ namespace Content.Server._EinsteinEngines.Silicon.Death;
 
 public sealed class SiliconDeathSystem : SharedSiliconDeathSystem
 {
-    [Dependency] private readonly SleepingSystem _sleep = default!;
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
+    // [Dependency] private readonly SleepingSystem _sleep = default!;
+    // [Dependency] private readonly StatusEffectsSystem _status = default!;
     [Dependency] private readonly SiliconChargeSystem _silicon = default!;
     [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearanceSystem = default!;
     // Goobstation Start - Energycrit
@@ -37,7 +36,6 @@ public sealed class SiliconDeathSystem : SharedSiliconDeathSystem
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
     // Goobstation End - Energycrit
 
     public override void Initialize()
@@ -93,8 +91,7 @@ public sealed class SiliconDeathSystem : SharedSiliconDeathSystem
         if (args.Cancelled || !ent.Comp.Dead)
             return;
 
-        // todo goobstation ftl this and refactor this fucking mess.
-        _popup.PopupEntity("Without charge, you don't have the strength to stand up",ent.Owner, PopupType.SmallCaution);
+        args.Message = (Loc.GetString("silicon-no-charge-stand"), PopupType.SmallCaution); // Reserve edit: localization #325
         args.Autostand = false;
         args.Cancelled = true;
     }
