@@ -1,4 +1,4 @@
-paper-mail-stamp-christopher-cleanman = Кристофер Клинман
+paper-mail-stamp-christopher-cleanman = Кристофер Чистов
 paper-mail-stamp-craig = крейг
 paper-mail-stamp-chief-friendship-officer = Главный офицер дружбы
 paper-mail-stamp-cuts-with-scalpel = Режет-Скальпелем
