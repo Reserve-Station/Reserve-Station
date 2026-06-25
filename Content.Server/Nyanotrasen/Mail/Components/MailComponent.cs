@@ -26,7 +26,7 @@ namespace Content.Server.Mail.Components
         [DataField]
         public bool IsLocked = true;
 
-        // Reserve edit start: localization #324
+        // Reserve edit start: mail-fix #328
         /// <summary>
         /// Whether this parcel must be unlocked with the recipient's ID before opening.
         /// Set by the mail teleporter; manually spawned mail stays unlocked.
@@ -39,7 +39,7 @@ namespace Content.Server.Mail.Components
         /// </summary>
         [DataField]
         public float OpenDelay = 3f;
-        // Reserve edit end: localization #324
+        // Reserve edit end: mail-fix #328
 
         /// <summary>
         /// Is this parcel profitable to deliver for the station?
