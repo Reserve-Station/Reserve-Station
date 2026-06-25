@@ -28,8 +28,11 @@ namespace Content.Server.Mail
         /// <summary>
         /// EntGotRemovedFromContainerMessage handler - spawn the intended entity after removed from a container.
         /// </summary>
-        private void OnRemovedFromContainer(EntityUid uid, DelayedItemComponent component, ContainerModifiedMessage args)
+        private void OnRemovedFromContainer(EntityUid uid, DelayedItemComponent component, EntGotRemovedFromContainerMessage args)
         {
+            if (TerminatingOrDeleted(uid))
+                return;
+
             Spawn(component.Item, Transform(uid).Coordinates);
         }
 
@@ -54,6 +57,9 @@ namespace Content.Server.Mail
         /// </summary>
         private void OnDamageChanged(EntityUid uid, DelayedItemComponent component, DamageChangedEvent args)
         {
+            if (TerminatingOrDeleted(uid))
+                return;
+
             Spawn(component.Item, Transform(uid).Coordinates);
             EntityManager.DeleteEntity(uid);
         }
