@@ -159,7 +159,7 @@ namespace Content.Server.Mail
             SubscribeLocalEvent<MailComponent, DamageChangedEvent>(OnDamage);
             SubscribeLocalEvent<MailComponent, BreakageEventArgs>(OnBreak);
             SubscribeLocalEvent<MailComponent, GotEmaggedEvent>(OnMailEmagged);
-            SubscribeLocalEvent<MailComponent, ComponentInit>(OnComponentInit); // Reserve edit: mail-fix #328
+            SubscribeLocalEvent<MailComponent, MapInitEvent>(OnMapInit); // Reserve edit: mail-fix #328
             SubscribeLocalEvent<MailComponent, MailForceOpenDoAfterEvent>(OnForceOpenDoAfter); // Reserve edit: mail-fix #328
         }
 
@@ -464,7 +464,7 @@ namespace Content.Server.Mail
         }
 
         // Reserve edit start: mail-fix #328
-        private void OnComponentInit(EntityUid uid, MailComponent component, ComponentInit args)
+        private void OnMapInit(EntityUid uid, MailComponent component, MapInitEvent args)
         {
             if (!component.RequiresIdUnlock)
             {
