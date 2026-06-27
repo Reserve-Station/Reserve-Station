@@ -10,6 +10,7 @@ condition-body-pain-decreased = • Нервы { $woundable } онемели.
 condition-body-pain-increased = • Нервы { $woundable } аномально чувствительны.
 condition-body-unrevivable = - У { $entity } особенно слабое строение. Он не может выдержать удар дефибриллятора.
 condition-body-bleeding = - У { $entity } кровотечение.
+condition-body-low-blood = • У { $entity } [color=red]опасно низкий[/color] уровень крови.
 
 condition-organ-damage-Normal = • { $organ } в порядке.
 condition-organ-damage-Damaged = • { $organ } поврежден.

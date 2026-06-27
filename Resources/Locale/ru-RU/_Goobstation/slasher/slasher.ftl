@@ -5,8 +5,40 @@ ghost-role-information-slasher-description = Убивайте и террори�
 
 slasher-round-end-agent-name = Мясник
 
+slasher-kit-select-title = Выберите образ
+slasher-kit-select-header = Выберите образ. У каждого - своя песня и свой образ.
+slasher-kit-select-button = Выбрать
 
-slasher-summon-meatspike-popup = Ужасный мясной шип вырывается из земли!
+slasher-kit-butcher = Мясник
+slasher-kit-butcher-desc = Классика. Сварочная маска и фартук для беспощадной машины убийств.
+
+slasher-kit-spring = Костюм кролика
+slasher-kit-spring-desc = Поставляется со специальным костюмом на пружинах. Пружины, наверное, выдержат...
+
+slasher-kit-billy = Билли
+slasher-kit-billy-desc = «О, привет.»
+
+slasher-kit-cult = Культист
+slasher-kit-cult-desc = Поставляется со специальной маской. Древние божества с большим интересом наблюдают.
+
+slasher-kit-maintenance = Техник
+slasher-kit-maintenance-desc = В комплекте губная гармошка. «Где-то я уже видел такое...»
+
+slasher-kit-cannibal = Каннибал
+slasher-kit-cannibal-desc = Ужин подан. Секретный ингредиент - экипаж.
+
+slasher-kit-clown = Клоун
+slasher-kit-clown-desc = Оказывается, злить Хонкматерь - плохая идея. Хонк!
+
+slasher-kit-glutton = Обжора
+slasher-kit-glutton-desc = По коридорам бродит нечто голодное. Оно носит чужую кожу и никогда не насыщается.
+
+slasher-kit-hockey = Хоккейная маска
+slasher-kit-hockey-desc = Хоккейная маска и мачете. Чего ещё желать?
+
+slasher-summon-meatspike-popup = Ужасный мясной крюк вырывается из земли!
+
+slasher-machete-no-hands = У вас нет рук!
 
 slasher-staggerarea-victim = По вашему позвоночнику пробегает ужасающий холод!
 slasher-staggerarea-popup = Вы высвобождаете волну ужаса.
@@ -20,7 +52,9 @@ slasher-soulsteal-fail-no-mind = У вашей цели нет души для �
 slasher-soulsteal-start-victim = Вы чувствуете, как вашу душу высасывают...
 slasher-soulsteal-success-victim = Вы чувствуете, как часть вашей души рассеивается.
 slasher-soulsteal-fail-not-valid = Это не подходящая цель!
-slasher-soulsteal-ascendance = КРИТИЧЕСКАЯ ТРЕВОГА: Обнаружено массовое психическое расстройство. Существо беспрецедентной злобной силы достигло критической массы. Всему персоналу рекомендуется вооружиться и передвигаться группами.
+slasher-soulsteal-ascendance = КРИТИЧЕСКАЯ ТРЕВОГА: Обнаружено массовое психическое расстройство. Существо беспрецедентной злобной силы достигло критической массы.
+Всему персоналу рекомендуется вооружиться и передвигаться группами.
+slasher-soulsteal-ascendance-clown = КРИТИЧЕСКАЯ ТРЕВОГА: Зафиксирована беспрецедентная ХОНК-сила. Всему персоналу сообщают: на борту нечто глубоко неуравновешенное. Держитесь крепче. ХОНК.
 
 slasher-massacre-start = Воздух наполняется волной энергии!
 slasher-massacre-end = Атмосфера возвращается в норму.
@@ -31,7 +65,7 @@ slasher-massacre-limb = Мощный удар достигает цели!
 slasher-incorporealize-fail-seen = Вы не можете этого сделать, пока за вами наблюдают!
 slasher-corporealize-fail-camera = Вы не можете материализоваться, когда за вами наблюдает камера!
 slasher-corporealize-fail-nearby = Вы не можете материализоваться, когда кто-то рядом с вами!
-slasher-corporealize-fail-inside-wall = Вы не можете материализоваться, пока рядом с вами твёрдый обьект!
+slasher-corporealize-fail-inside-wall = Вы не можете материализоваться, пока рядом с вами твёрдый объект!
 
 reagent-name-slasherium = Мясниций
 reagent-desc-slasherium = Используется Мясником для самоисцеления.

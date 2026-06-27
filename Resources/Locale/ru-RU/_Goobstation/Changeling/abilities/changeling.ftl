@@ -76,6 +76,9 @@ changeling-adrenaline = Мы вводим в наш организм сильн�
 changeling-chameleon-start = Вы адаптируете свою кожу к условиям окружающей среды.
 changeling-chameleon-end = Ваша кожа теряет прозрачность.
 
+changeling-darkadapt-active = Мы готовимся приспособиться к темноте.
+changeling-darkadapt-inactive = Мы прекращаем подготовку к темноте.
+
 changeling-voidadapt-lowpressure-start = Мы приспосабливаемся к низкому давлению.
 changeling-voidadapt-lowpressure-end = Окружающее давление больше не является низким. Мы отказались от нашей адаптации.
 changeling-voidadapt-lowtemperature-start = Мы приспосабливаемся к низкой температуре.
