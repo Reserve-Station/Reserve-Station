@@ -42,6 +42,9 @@ public sealed class SlasherSystem : EntitySystem
 
         var brain = brains[0];
 
+        if (brain.Comp2.SlotId != "brain")
+            return;
+
         EntityUid? chestPart = null;
         foreach (var (partId, part) in _body.GetBodyChildrenOfType(ent.Owner, BodyPartType.Chest, bodyComp))
         {
@@ -52,9 +55,14 @@ public sealed class SlasherSystem : EntitySystem
         if (chestPart == null)
             return;
 
+        var slotId = brain.Comp2.SlotId;
+
         _body.RemoveOrgan(brain.Owner, brain.Comp2);
-        _body.TryCreateOrganSlot(chestPart, "brain", out _, null);
-        _body.InsertOrgan(chestPart.Value, brain.Owner, "brain");
+        _body.TryCreateOrganSlot(chestPart, slotId, out _, null);
+
+        if (!_body.InsertOrgan(chestPart.Value, brain.Owner, slotId))
+            return;
+
         _standing.Stand(ent.Owner, force: true);
     }
 }

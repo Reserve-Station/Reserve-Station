@@ -6,6 +6,7 @@ using System.Linq;
 using Content.Goobstation.Shared.Slasher.Components;
 using Content.Goobstation.Shared.Slasher.Systems;
 using Content.Goobstation.Shared.Slasher.UI;
+using Content.Server.Ghost.Roles.Components;
 using Content.Shared.Actions;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
@@ -91,6 +92,9 @@ public sealed class SlasherKitSelectSystem : EntitySystem
             return;
 
         var selectedKit = ent.Comp.Kits.Values.ElementAt(args.Index);
+
+        RemComp<GhostTakeoverAvailableComponent>(ent.Owner);
+        RemComp<GhostRoleComponent>(ent.Owner);
 
         EntityManager.AddComponents(ent.Owner, ent.Comp.PostSelectionComponents);
 
