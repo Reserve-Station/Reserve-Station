@@ -77,7 +77,7 @@ changeling-chameleon-start = Вы адаптируете свою кожу к у
 changeling-chameleon-end = Ваша кожа теряет прозрачность.
 
 changeling-darkadapt-active = Мы готовимся приспособиться к темноте.
-changeling-darkadapt-inactive = Мы прекращаем подготовку к темноте.
+changeling-darkadapt-inactive = Мы отказываемся от адаптации к темноте.
 
 changeling-voidadapt-lowpressure-start = Мы приспосабливаемся к низкому давлению.
 changeling-voidadapt-lowpressure-end = Окружающее давление больше не является низким. Мы отказались от нашей адаптации.
