@@ -21,8 +21,8 @@ slasher-kit-billy-desc = «О, привет.»
 slasher-kit-cult = Культист
 slasher-kit-cult-desc = Поставляется со специальной маской. Древние божества с большим интересом наблюдают.
 
-slasher-kit-maintenance = Техник
-slasher-kit-maintenance-desc = В комплекте губная гармошка. «Где-то я уже видел такое...»
+slasher-kit-maintenance = Ричард
+slasher-kit-maintenance-desc = «Тебе действительно нравится причинять людям боль?»
 
 slasher-kit-cannibal = Каннибал
 slasher-kit-cannibal-desc = Ужин подан. Секретный ингредиент - экипаж.
