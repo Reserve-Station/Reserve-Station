@@ -11,7 +11,6 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
-using Content.Shared.Starlight.CCVar;
 using Prometheus;
 using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
@@ -71,7 +70,7 @@ public sealed class SLMoverController : SharedMoverController
 
     // this runs once per substep (2 by default). input doesn't change mid-tick and only the last
     // substep gets networked, so just solve once and coast the rest.
-    private bool _substepGating;
+    private bool _substepGating = true; // Reserve - change if needed
     private GameTick _lastUpdateTick;
     // who was active on the first substep. UpdateAfterSolve nukes the used-set every substep so we
     // re-stamp it on coasted ones, otherwise friction/conveyor start grabbing our movers.
@@ -92,7 +91,7 @@ public sealed class SLMoverController : SharedMoverController
         SubscribeLocalEvent<InputMoverComponent, PlayerAttachedEvent>(OnPlayerAttached);
         SubscribeLocalEvent<InputMoverComponent, PlayerDetachedEvent>(OnPlayerDetached);
 
-        Subs.CVar(_cfg, StarlightCCVars.PhysicsMoverSubstepGating, value => _substepGating = value, true);
+        // Subs.CVar(_cfg, StarlightCCVars.PhysicsMoverSubstepGating, value => _substepGating = value, true); - Reserve
 
         _handleMobMovementJob = new HandleMobMovementJob(this);
     }

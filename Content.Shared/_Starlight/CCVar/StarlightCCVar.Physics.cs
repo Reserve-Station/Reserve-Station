@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Configuration;
 
-namespace Content.Shared.Starlight.CCVar;
+namespace Content.Shared._Starlight.CCVar;
 
 public sealed partial class StarlightCCVars
 {
@@ -14,6 +14,8 @@ public sealed partial class StarlightCCVars
     /// at substeps=2. left as a toggle in case the accel/friction feel ends up off. replicated so the
     /// client gates the same way, otherwise it mispredicts and you rubber-band.
     /// </summary>
-    public static readonly CVarDef<bool> PhysicsMoverSubstepGating =
-        CVarDef.Create("physics.mover_substep_gating", false, CVar.REPLICATED | CVar.SERVER);
+    /// Reserve edit start
+    // public static readonly CVarDef<bool> PhysicsMoverSubstepGating =
+    //     CVarDef.Create("physics.mover_substep_gating", false, CVar.REPLICATED | CVar.SERVER);
+    // Reserve edit end
 }

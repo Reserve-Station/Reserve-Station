@@ -33,7 +33,6 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared.Starlight.CCVar;
 using Robust.Client.Physics;
 using Robust.Client.Player;
 using Robust.Shared.Configuration;
@@ -52,7 +51,7 @@ public sealed class MoverController : SharedMoverController
     // Starlight start
     // same gating as the server, otherwise we predict per-substep, server does it per-tick and we
     // rubber-band. replicated cvar so we just follow whatever the server's set to.
-    private bool _substepGating;
+    private bool _substepGating = true;
     private GameTick _lastUpdateTick;
     // who was active on the first substep. UpdateAfterSolve clears the used-set so we re-stamp it on
     // coasted substeps, else the client friction controller stops skipping our movers.
@@ -72,7 +71,7 @@ public sealed class MoverController : SharedMoverController
         SubscribeLocalEvent<PullableComponent, UpdateIsPredictedEvent>(OnUpdatePullablePredicted);
 
         // Starlight start
-        Subs.CVar(_cfg, StarlightCCVars.PhysicsMoverSubstepGating, value => _substepGating = value, true);
+        // Subs.CVar(_cfg, StarlightCCVars.PhysicsMoverSubstepGating, value => _substepGating = value, true); Reserve - change if needed
         // Starlight end
     }
 
