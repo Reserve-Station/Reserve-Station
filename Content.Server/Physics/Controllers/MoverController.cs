@@ -54,6 +54,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+/* // Reserve
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using Content.Server.Shuttles.Components;
@@ -633,3 +634,4 @@ public sealed class MoverController : SharedMoverController
             || HasComp<PreventPilotComponent>(shuttleUid);
     }
 }
+*/
