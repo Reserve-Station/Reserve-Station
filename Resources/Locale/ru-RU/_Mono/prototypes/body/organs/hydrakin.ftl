@@ -14,4 +14,4 @@ ent-OrganHydrakinHeart = { ent-OrganHumanHeart }
     .desc = { ent-OrganHumanHeart.desc }
 
 ent-OrganHydrakinLungs = лёгкие гидракина
-    .desc = Лёгкие гидракина, способные обрабатывать любой газ без негативных эффектов.
+    .desc = Лёгкие гидракина, способные перерабатывать любые газы без негативных последствий.

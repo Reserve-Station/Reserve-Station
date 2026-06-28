@@ -17,5 +17,5 @@ marking-ResomiFluffHead-fluff_head = Пух из головы Резоми
 marking-ResomiFluffHeadUp = Пух с головы Резоми (вверх)
 marking-ResomiFluffHeadUp-fluff_head_up = Пух головы Резоми (вверх)
 marking-ResomiFeathersBig = Большие хвостовые перья
-marking-ResomiFluffyChest = Пышная грудь
+marking-ResomiFluffyChest = Пышная грудка
 marking-ResomiEars = Большие уши

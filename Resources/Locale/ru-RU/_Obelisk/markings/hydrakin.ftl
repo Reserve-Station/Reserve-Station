@@ -14,7 +14,7 @@ marking-HydrakinTailFins = Плавниковый хвост
 marking-HydrakinEarsDefault = Стандартные уши
 marking-HydrakinEarsOld = Тонкие уши
 marking-HydrakinEarsFin = Плавниковые уши
-marking-HydrakinEarsFrilled = Оборочные уши
+marking-HydrakinEarsFrilled = Воротникообразные уши
 
 marking-HydrakinProtoChest = Киберкин
 

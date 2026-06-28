@@ -16,13 +16,13 @@ slasher-kit-spring = Костюм кролика
 slasher-kit-spring-desc = Поставляется со специальным костюмом на пружинах. Пружины, наверное, выдержат...
 
 slasher-kit-billy = Билли
-slasher-kit-billy-desc = «О, привет.»
+slasher-kit-billy-desc = «Ну привет.»
 
 slasher-kit-cult = Культист
 slasher-kit-cult-desc = Поставляется со специальной маской. Древние божества наблюдают с большим интересом.
 
 slasher-kit-maintenance = Ричард
-slasher-kit-maintenance-desc = «Тебе действительно нравится причинять людям боль?»
+slasher-kit-maintenance-desc = «Тебе нравится причинять людям боль, не так ли?»
 
 slasher-kit-cannibal = Каннибал
 slasher-kit-cannibal-desc = Ужин подан. Секретный ингредиент - экипаж.
@@ -31,7 +31,7 @@ slasher-kit-clown = Клоун
 slasher-kit-clown-desc = Оказывается, злить Хонкматерь - плохая идея. Хонк!
 
 slasher-kit-glutton = Обжора
-slasher-kit-glutton-desc = По коридорам бродит нечто голодное. Оно носит чужую кожу и никогда не насыщается.
+slasher-kit-glutton-desc = По коридорам бродит нечто голодное. Оно носит чужую кожу и никогда не насытится.
 
 slasher-kit-hockey = Хоккейная маска
 slasher-kit-hockey-desc = Хоккейная маска и мачете. Чего ещё желать?
@@ -53,7 +53,7 @@ slasher-soulsteal-start-victim = Вы чувствуете, как вашу ду
 slasher-soulsteal-success-victim = Вы чувствуете, как часть вашей души рассеивается.
 slasher-soulsteal-fail-not-valid = Это не подходящая цель!
 slasher-soulsteal-ascendance = КРИТИЧЕСКАЯ ТРЕВОГА: Обнаружено массовое психическое расстройство. Существо беспрецедентной злобной силы достигло критической массы.
-Всему персоналу рекомендуется вооружиться и передвигаться группами.
+    Всему персоналу рекомендуется вооружиться и передвигаться группами.
 slasher-soulsteal-ascendance-clown = КРИТИЧЕСКАЯ ТРЕВОГА: Зафиксирована беспрецедентная ХОНК-сила. Всему персоналу сообщается: на борту нечто глубоко неуравновешенное. Держитесь крепче. ХОНК.
 
 slasher-massacre-start = Воздух наполняется волной энергии!
