@@ -6,7 +6,7 @@ ghost-role-information-slasher-description = Убивайте и террори�
 slasher-round-end-agent-name = Мясник
 
 slasher-kit-select-title = Выберите образ
-slasher-kit-select-header = Выберите образ. У каждого - своя песня и свой образ.
+slasher-kit-select-header = Выберите образ. У каждого - своя музыкальная тема и обличие.
 slasher-kit-select-button = Выбрать
 
 slasher-kit-butcher = Мясник
@@ -19,7 +19,7 @@ slasher-kit-billy = Билли
 slasher-kit-billy-desc = «О, привет.»
 
 slasher-kit-cult = Культист
-slasher-kit-cult-desc = Поставляется со специальной маской. Древние божества с большим интересом наблюдают.
+slasher-kit-cult-desc = Поставляется со специальной маской. Древние божества наблюдают с большим интересом.
 
 slasher-kit-maintenance = Ричард
 slasher-kit-maintenance-desc = «Тебе действительно нравится причинять людям боль?»
@@ -54,7 +54,7 @@ slasher-soulsteal-success-victim = Вы чувствуете, как часть 
 slasher-soulsteal-fail-not-valid = Это не подходящая цель!
 slasher-soulsteal-ascendance = КРИТИЧЕСКАЯ ТРЕВОГА: Обнаружено массовое психическое расстройство. Существо беспрецедентной злобной силы достигло критической массы.
 Всему персоналу рекомендуется вооружиться и передвигаться группами.
-slasher-soulsteal-ascendance-clown = КРИТИЧЕСКАЯ ТРЕВОГА: Зафиксирована беспрецедентная ХОНК-сила. Всему персоналу сообщают: на борту нечто глубоко неуравновешенное. Держитесь крепче. ХОНК.
+slasher-soulsteal-ascendance-clown = КРИТИЧЕСКАЯ ТРЕВОГА: Зафиксирована беспрецедентная ХОНК-сила. Всему персоналу сообщается: на борту нечто глубоко неуравновешенное. Держитесь крепче. ХОНК.
 
 slasher-massacre-start = Воздух наполняется волной энергии!
 slasher-massacre-end = Атмосфера возвращается в норму.
