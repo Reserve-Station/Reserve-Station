@@ -38,8 +38,6 @@ slasher-kit-hockey-desc = Хоккейная маска и мачете. Чег�
 
 slasher-summon-meatspike-popup = Ужасный мясной крюк вырывается из земли!
 
-slasher-machete-no-hands = У вас нет рук!
-
 slasher-staggerarea-victim = По вашему позвоночнику пробегает ужасающий холод!
 slasher-staggerarea-popup = Вы высвобождаете волну ужаса.
 
