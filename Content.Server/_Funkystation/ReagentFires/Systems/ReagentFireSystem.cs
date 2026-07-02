@@ -2,6 +2,7 @@
 using Content.Server._Funkystation.ReagentFires.Components;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
+using Content.Server.Atmos;
 using Content.Server.Decals;
 using Content.Shared._Funkystation.ReagentFires;
 using Content.Shared.Atmos;

@@ -1,11 +1,12 @@
 ﻿using Content.Server._Funkystation.Atmos.Events;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Shared._Funkystation.Stains.Components;
-using Content.Shared.Atmos;
+using Content.Server.Atmos;
+using Content.Shared.Stains.Components;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Inventory;
+using Content.Shared.Stains;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Funkystation.Stains
@@ -78,7 +79,7 @@ namespace Content.Server._Funkystation.Stains
                     continue;
 
                 if (TryComp<StainableComponent>(slotEnt, out var stain) &&
-                    _solution.TryGetSolution(slotEnt.Value, stain.SolutionName, out _, out var solution))
+                    _solution.TryGetSolution(slotEnt.Value, stain.SolutionId, out _, out var solution))
                 {
                     total += solution.GetSolutionFlammability(_prototypeManager);
                 }
@@ -95,7 +96,7 @@ namespace Content.Server._Funkystation.Stains
 
                 if (TryComp<StainBlockerComponent>(slotEnt, out var blocker))
                 {
-                    if ((blocker.BlockedSlots & slotDef.SlotFlags) != 0)
+                    if ((blocker.Slots & slotDef.SlotFlags) != 0)
                         return true;
                 }
             }
