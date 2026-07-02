@@ -28,14 +28,6 @@ spray-painter-angle-rotation-reset = 0°
 spray-painter-angle-rotation-90-add = +90°
 
 spray-painter-selected-color = Выбранный цвет:
-spray-painter-color-red = красный
-spray-painter-color-yellow = жёлтый
-spray-painter-color-brown = коричневый
-spray-painter-color-green = зелёный
-spray-painter-color-cyan = голубой
-spray-painter-color-blue = синий
-spray-painter-color-white = белый
-spray-painter-color-black = чёрный
 # Categories (tabs)
 spray-painter-tab-category-airlocks = Шлюзы
 spray-painter-tab-category-canisters = Канистры
