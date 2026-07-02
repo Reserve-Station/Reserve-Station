@@ -1,4 +1,8 @@
-﻿using Content.Server._Funkystation.Atmos.Events;
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Server._Funkystation.Atmos.Events;
 using Content.Server._Funkystation.ReagentFires.Components;
 using Content.Server.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;

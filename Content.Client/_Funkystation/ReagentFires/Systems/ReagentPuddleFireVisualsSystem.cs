@@ -1,4 +1,8 @@
-﻿using Content.Shared._Funkystation.ReagentFires;
+// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared._Funkystation.ReagentFires;
 using Robust.Client.GameObjects;
 
 namespace Content.Client._Funkystation.ReagentFires.Systems
