@@ -7,7 +7,7 @@ spray-painter-interact-no-charges = Недостаточно краски.
 spray-painter-interact-nothing-to-remove = Убирать нечего!
 
 spray-painter-on-examined-painted-message = Похоже, его только что покрасили.
-spray-painter-style-not-available = Невозможно применить выбранный стиль к данному типу шлюза.
+spray-painter-style-not-available = Невозможно применить выбранный стиль к этому объекту.
 
 spray-painter-verb-toggle-decals = Переключить нанесение наклеек
 
@@ -69,7 +69,7 @@ spray-painter-style-airlockstandard-maintenance = Технический
 spray-painter-style-airlockstandard-medical = Медицинский
 spray-painter-style-airlockstandard-salvage = Утилизаторский
 spray-painter-style-airlockstandard-science = Научный
-spray-painter-style-airlockstandard-security = Служба Безопасности
+spray-painter-style-airlockstandard-security = Служба безопасности
 spray-painter-style-airlockstandard-virology = Вирусология
 
 spray-painter-style-airlockglass-atmospherics = Атмосферный
@@ -81,7 +81,7 @@ spray-painter-style-airlockglass-engineering = Инженерный
 spray-painter-style-airlockglass-hydroponics = Гидропоника
 spray-painter-style-airlockglass-maintenance = Технический
 spray-painter-style-airlockglass-medical = Медицинский
-spray-painter-style-airlockglass-salvage = Восстановление
+spray-painter-style-airlockglass-salvage = Утилизаторский
 spray-painter-style-airlockglass-science = Научный
 spray-painter-style-airlockglass-security = Служба безопасности
 spray-painter-style-airlockglass-virology = Вирусология
@@ -116,7 +116,7 @@ spray-painter-style-closet-basic = Базовый
 spray-painter-style-closet-biohazard = Биозащита
 spray-painter-style-closet-biohazard-science = Биозащита (научный)
 spray-painter-style-closet-biohazard-virology = Биозащита (вирусология)
-spray-painter-style-closet-biohazard-security = Биозащита (служба безопасности )
+spray-painter-style-closet-biohazard-security = Биозащита (служба безопасности)
 spray-painter-style-closet-biohazard-janitor = Биозащита (уборщик)
 spray-painter-style-closet-bomb = Снаряжение сапёра
 spray-painter-style-closet-bomb-janitor = Снаряжение сапёра (уборщик)
@@ -125,7 +125,7 @@ spray-painter-style-closet-fire = Пожарный
 spray-painter-style-closet-janitor = Уборщик
 spray-painter-style-closet-legal = Юрист
 spray-painter-style-closet-nitrogen = Аварийный (азот)
-spray-painter-style-closet-oxygen = Аварийрный (кислород)
+spray-painter-style-closet-oxygen = Аварийный (кислород)
 spray-painter-style-closet-radiation = Противорадиационный костюм
 spray-painter-style-closet-tool = Инструменты
 
