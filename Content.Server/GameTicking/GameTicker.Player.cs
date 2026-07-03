@@ -255,7 +255,9 @@ namespace Content.Server.GameTicking
 
         public HumanoidCharacterProfile GetPlayerProfile(ICommonSession p)
         {
-            return (HumanoidCharacterProfile) _prefsManager.GetPreferences(p.UserId).SelectedCharacter;
+            // Reserve edit: use enriched spawn prefs so ckey-restricted loadout items auto-apply
+            // even for roles the player has never explicitly saved.
+            return (HumanoidCharacterProfile) _prefsManager.GetSpawnPreferences(p.UserId).SelectedCharacter;
         }
 
         public void PlayerJoinGame(ICommonSession session, bool silent = false)

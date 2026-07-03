@@ -11,6 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 Pies and bars are a great way to fix desserts for a group of people, and to make use of fresh ingredients you have.
 
-<GuideMicrowaveGroupEmbed Group="Pie"/>
+<GuideFoodIngredientGroupEmbed Group="Pie"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

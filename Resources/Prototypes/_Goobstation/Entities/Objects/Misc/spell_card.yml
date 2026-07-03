@@ -4,27 +4,19 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
+  parent: CardBase  # Reserve edit: Fix special animation for cards
   id: SpellCardFun
   name: spell card
-  parent: BaseItem
   description: A spell card in form of an item, that speaks of your presence for all living beings around you.
   components:
   - type: Sprite
     sprite: _Goobstation/Wizard/Projectiles/spellcard.rsi
     state: red
-  # - type: SpecialAnimationOnUse
-  #   overrideText: "Special Attack: 65 STRIKE!!!!"
+  - type: SpecialAnimationOnUse
+    overrideText: "Особая Атака: 65 УДАР!!!!"  # Reserve edit: Fix special animation for cards
   - type: UseDelay
     delay: 5
-  # Reserve: Folder fix start
-  - type: Item
-    size: Tiny
-  - type: Tag
-    tags:
-    - Card
-  # Reserve: Folder fix end
-  # Reserve edit start: Better Recycling
-  - type: PhysicalComposition
-    materialComposition:
-      Cardboard: 5
-  # Reserve edit end: Better Recycling
+  - type: Card  # Reserve edit: Fix special animation for cards
+    name: ent-SpellCardFun
+    flipOnUse: false
+    flipped: false

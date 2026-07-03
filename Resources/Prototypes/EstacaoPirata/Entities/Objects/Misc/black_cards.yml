@@ -206,6 +206,17 @@
     tags:
     - Card
   # Reserve: Folder fix end
+  # Reserve edit start: Fix special animation for cards
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 5
+  - type: Extractable
+    grindableSolutionName: food
+  # Reserve edit start: Fix special animation for cards
   # Reserve edit start: Better Recycling
   - type: PhysicalComposition
     materialComposition:

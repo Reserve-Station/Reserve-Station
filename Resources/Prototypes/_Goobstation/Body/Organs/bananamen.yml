@@ -14,6 +14,8 @@
   - type: Sprite
     sprite: _Goobstation/Mobs/Species/BananaMen/organs.rsi
     state: organ
+  - type: SliceableFood
+    group: Secret  # Reserve edit: Fix recipe categories
 
 - type: entity
   id: OrganBananaMenLiver
@@ -27,6 +29,8 @@
     state: organ
   - type: Metabolizer
     metabolizerTypes: [Human]
+  - type: SliceableFood
+    group: Secret  # Reserve edit: Fix recipe categories
 
 - type: entity
   id: OrganBananaMenHeart
@@ -40,6 +44,8 @@
     state: organ
   - type: Metabolizer
     metabolizerTypes: [Human]
+  - type: SliceableFood
+    group: Secret  # Reserve edit: Fix recipe categories
 
 - type: entity
   id: OrganBananaMenLungs
@@ -52,6 +58,8 @@
     sprite: _Goobstation/Mobs/Species/BananaMen/organs.rsi
     layers:
       - state: organ
+  - type: SliceableFood
+    group: Secret  # Reserve edit: Fix recipe categories
 
 - type: entity
   id: OrganBananaMenKidneys
@@ -64,3 +72,5 @@
     sprite: _Goobstation/Mobs/Species/BananaMen/organs.rsi
     layers:
       - state: organ
+  - type: SliceableFood
+    group: Secret  # Reserve edit: Fix recipe categories

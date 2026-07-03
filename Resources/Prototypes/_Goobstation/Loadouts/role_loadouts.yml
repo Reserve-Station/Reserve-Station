@@ -109,6 +109,7 @@
   - NanotrasenRepresentativeEnvirohelm
   - NanotrasenRepresentativeEnvirosuit
   - NanotrasenRepresentativeEnvirogloves
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 - type: roleLoadout
   id: JobBlueshieldOfficer
@@ -129,6 +130,7 @@
   - BlueshieldOfficerEnvirosuit
   - BlueshieldOfficerEnvirogloves
   - BlueshieldOfficerGloves
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 - type: roleLoadout
   id: JobNanotrasenCareerTrainer
@@ -149,6 +151,7 @@
   - CentComOfficerEnvirohelm
   - CentComOfficerEnvirosuit
   - CentComOfficerEnvirogloves
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 - type: roleLoadout
   id: RoleSurvivalNukieHonkops
@@ -156,6 +159,7 @@
   - SurvivalSyndicate
   - GroupHonkopsMask
   - GroupPocketTankDouble
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 - type: roleLoadout
   id: JobRoboticist
@@ -177,6 +181,7 @@
   - ScientistEnvirohelm
   - ScientistEnvirosuit
   - ScientistEnvirogloves
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 - type: roleLoadout
   id: JobBrigmedic
@@ -199,6 +204,7 @@
   - BrigmedicEnvirohelm
   - BrigmedicEnvirosuit
   - BrigmedicEnvirogloves
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 - type: roleLoadout
   id: JobRadioHost
@@ -214,6 +220,7 @@
   - ServiceWorkerEnvirohelm
   - ServiceWorkerEnvirosuit
   - ServiceWorkerEnvirogloves
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 # gives plasmaman a plasma breathing tank
 # other species get nothing
@@ -230,6 +237,7 @@
   - ClownBackpack
   - SurvivalSecurity
   - GroupSpeciesBreathToolSecurity
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 - type: roleLoadout
   id: JobCommandMaid
@@ -237,6 +245,7 @@
   - CommonBackpack
   - Survival
   - GroupSpeciesBreathTool
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 - type: roleLoadout
   id: JobPartyMaker
@@ -245,6 +254,7 @@
   - CommonBackpack
   - Survival
   - GroupSpeciesBreathTool
+  - UniqueReserveItems  # Reserve edit: Ckey loadout items
 
 - type: roleLoadout
   id: JobVirologist
@@ -264,3 +274,4 @@
    - VirologyEnvirohelm
    - VirologyEnvirosuit
    - VirologyEnvirogloves
+   - UniqueReserveItems  # Reserve edit: Ckey loadout items

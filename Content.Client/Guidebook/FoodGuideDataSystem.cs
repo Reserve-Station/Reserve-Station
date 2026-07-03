@@ -30,7 +30,9 @@ public readonly record struct FoodEntitySource(
     FoodEntitySourceKind Kind,
     ReactionPrototype? Reaction,
     EntProtoId? SourceEntity,
-    string? SeedId);
+    string? SeedId,
+    string Group = "Ingredients"  // Reserve edit: Fix recipe categories
+);
 
 public sealed class FoodGuideDataSystem : EntitySystem
 {
@@ -106,6 +108,9 @@ public sealed class FoodGuideDataSystem : EntitySystem
                 if (!IsPlant(solid))
                     ids.Add(solid);
             }
+
+            if (!IsPlant(recipe.Result))  // Reserve edit: Fix recipe categories
+                ids.Add(recipe.Result);
         }
 
         foreach (var id in ids.ToList())
@@ -115,9 +120,9 @@ public sealed class FoodGuideDataSystem : EntitySystem
                 if (source.SourceEntity is { } parent && !IsPlant(parent))
                     ids.Add(parent);
             }
-
-            AddSliceProducts(id, ids); // Reserve edit: guide-book #323
         }
+
+        AddSliceProducts(ids); // Reserve edit: guide-book #323
 
         return ids
             .Where(HasObtainSource)
@@ -126,7 +131,7 @@ public sealed class FoodGuideDataSystem : EntitySystem
     }
 
     // Reserve edit start: guide-book #323
-    private void AddSliceProducts(EntProtoId parent, HashSet<EntProtoId> ids)
+    private void AddSliceProducts(HashSet<EntProtoId> ids)
     {
         foreach (var (entityId, sources) in _sources)
         {
@@ -135,7 +140,7 @@ public sealed class FoodGuideDataSystem : EntitySystem
 
             foreach (var source in sources)
             {
-                if (source.Kind != FoodEntitySourceKind.SliceFrom || source.SourceEntity != parent)
+                if (source.Kind != FoodEntitySourceKind.SliceFrom)
                     continue;
 
                 ids.Add(entityId);
@@ -151,7 +156,7 @@ public sealed class FoodGuideDataSystem : EntitySystem
         _microwaveByResult.Clear();
         _plantEntities.Clear();
 
-        var pendingSlices = new List<(EntProtoId Slice, EntProtoId Parent)>();
+        var pendingSlices = new Dictionary<string, (EntProtoId Slice, EntProtoId Parent, string? Group)>();  // Reserve edit: Fix recipe categories
 
         foreach (var entity in _prototypes.EnumeratePrototypes<EntityPrototype>())
         {
@@ -161,7 +166,7 @@ public sealed class FoodGuideDataSystem : EntitySystem
             if (entity.TryGetComponent<SliceableFoodComponent>(out var sliceable, _componentFactory)
                 && sliceable.Slice is { } sliceId)
             {
-                pendingSlices.Add((sliceId, entity.ID));
+                pendingSlices[sliceId + entity.ID] = (sliceId, entity.ID, sliceable.Group);  // Reserve edit: Fix recipe categories
             }
 
             if (entity.Components.TryGetValue("Produce", out var produceEntry)
@@ -171,12 +176,6 @@ public sealed class FoodGuideDataSystem : EntitySystem
                 _plantEntities.Add(entity.ID);
                 AddSource(entity.ID, new FoodEntitySource(FoodEntitySourceKind.Hydroponics, null, null, seedNode.Value));
             }
-        }
-
-        foreach (var (slice, parent) in pendingSlices)
-        {
-            AddSource(slice, new FoodEntitySource(FoodEntitySourceKind.SliceFrom, null, parent, null));
-            // Reserve remove: guide-book #323
         }
 
         IndexConstructionRollingSources();
@@ -201,6 +200,22 @@ public sealed class FoodGuideDataSystem : EntitySystem
             }
 
             list.Add(recipe);
+
+            // Reserve edit start: Fix recipe categories - inherit group from parent
+            foreach (var (slice, sliceData) in pendingSlices)
+            {
+                if (sliceData.Parent.ToString() == recipe.Result && sliceData.Group == null)
+                    pendingSlices[slice] = (sliceData.Slice, sliceData.Parent, recipe.Group);
+            }
+            // Reserve edit end: Fix recipe categories - inherit group from parent
+        }
+
+        foreach (var (slice, sliceData) in pendingSlices)  // Reserve edit: Fix recipe categories
+        {
+            AddSource(sliceData.Slice, new FoodEntitySource(
+                FoodEntitySourceKind.SliceFrom, null, sliceData.Parent, null, sliceData.Group is null ? "Ingredients" : sliceData.Group
+            ));
+            // Reserve remove: guide-book #323
         }
 
         foreach (var list in _microwaveByResult.Values)

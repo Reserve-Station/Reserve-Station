@@ -11,6 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 These preparations have interesting medical effects, or are just straight-up medicines.
 
-<GuideMicrowaveGroupEmbed Group="Medicinal"/>
+<GuideFoodIngredientGroupEmbed Group="Medicinal"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

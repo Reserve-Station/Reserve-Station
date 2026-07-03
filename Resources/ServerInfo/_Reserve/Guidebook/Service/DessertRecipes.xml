@@ -1,9 +1,9 @@
 <Document>
 
-# Выпечка и десерты
+# Выпечка & Десерты
 
-Специальное сладкое угощение может значительно поднять боевой дух команды.
+Специальное сладкое угощение может значительно поднять боевой дух экипажа.
 
-<GuideMicrowaveGroupEmbed Group="Dessert"/>
+<GuideFoodIngredientGroupEmbed Group="Dessert"/>
 
 </Document>

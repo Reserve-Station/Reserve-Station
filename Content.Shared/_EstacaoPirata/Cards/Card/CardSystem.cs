@@ -45,7 +45,7 @@ public sealed class CardSystem : EntitySystem
     {
         if (args.IsInDetailsRange && !component.Flipped)
         {
-            args.PushMarkup(Loc.GetString("card-examined", ("target",  Loc.GetString(component.Name))));
+            args.PushMarkup(Loc.GetString("card-examined", ("target", Loc.GetString(component.Name))));
         }
     }
 
@@ -69,7 +69,7 @@ public sealed class CardSystem : EntitySystem
         {
             args.Verbs.Add(new AlternativeVerb()
             {
-                Act = () => JoinCards(args.User, args.Target, component, (EntityUid)args.Using, usingStack),
+                Act = () => JoinCards(args.User, args.Target, component, (EntityUid) args.Using, usingStack),
                 Text = Loc.GetString("card-verb-join"),
                 Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/refresh.svg.192dpi.png")),
                 Priority = 2
@@ -91,6 +91,9 @@ public sealed class CardSystem : EntitySystem
     private void OnUse(EntityUid uid, CardComponent comp, UseInHandEvent args)
     {
         if (args.Handled)
+            return;
+
+        if (!comp.FlipOnUse)  // Reserve edit: Fix special animation for cards
             return;
 
         FlipCard(uid, comp);
@@ -125,7 +128,7 @@ public sealed class CardSystem : EntitySystem
         else if (HasComp<CardHandComponent>(second))
         {
             cardStack = SpawnInSameParent(_cardHand.CardHandBaseName, first);
-            if(TryComp<CardHandComponent>(cardStack, out var stackHand))
+            if (TryComp<CardHandComponent>(cardStack, out var stackHand))
                 stackHand.Flipped = firstComp.Flipped;
             flip = firstComp.Flipped;
         }
@@ -139,7 +142,7 @@ public sealed class CardSystem : EntitySystem
         _cardStack.TransferNLastCardFromStacks(user, secondStack.Cards.Count, second, secondStack, cardStack, stack);
         if (flip != null)
             _cardStack.FlipAllCards(cardStack, stack, flip); //???
-        if(pickup)
+        if (pickup)
             _hands.TryPickupAnyHand(user, cardStack);
     }
 

@@ -5,6 +5,7 @@
 
 spacevillain-menu-title = Space Villain
 spacevillain-menu-label-player = Player
+spacevillain-menu-label-stats = HP: {$hp} MP: {$mp}
 spacevillain-menu-button-attack = ATTACK
 spacevillain-menu-button-heal = HEAL
 spacevillain-menu-button-recharge = RECHARGE

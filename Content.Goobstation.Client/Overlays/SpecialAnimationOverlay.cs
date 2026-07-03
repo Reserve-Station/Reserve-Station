@@ -13,6 +13,7 @@ using Robust.Shared;
 using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using System.Numerics;  // Reserve edit: Fix special animation for cards
 
 namespace Content.Goobstation.Client.Overlays;
 
@@ -24,12 +25,15 @@ public sealed class SpecialAnimationOverlay : Overlay
     [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
+    [Dependency] private readonly IEntityManager _entity = default!;  // Reserve edit: Fix special animation for cards
 
     private readonly SpriteSystem _sprite;
 
     public Queue<SpecialAnimationData> AnimationQueue = new();
 
     private SpecialAnimationData? _currentAnimation;
+
+    private IRenderTexture? _target;  // Reserve edit: Fix special animation for cards
 
     private (Font Font, string Path, int Size)? _font;
 
@@ -84,9 +88,43 @@ public sealed class SpecialAnimationOverlay : Overlay
             uiScale = _uiManager.DefaultUIScale;
 
         var opacity = _currentAnimation.Opacity;
-        var texture = _sprite.Frame0(_currentAnimation.Sprite);
-        var box = UIBox2.FromDimensions(center + _currentAnimation.Position, texture.Size * uiScale * _currentAnimation.Scale);
-        screen.DrawTextureRect(texture, box, Color.White.WithAlpha(opacity));
+        // Reserve edit start: Reserve cards
+        var anime = GetAnimationEntity(_currentAnimation);
+
+        if (anime != null)
+        {
+            EntityUid a = (EntityUid) anime;
+            var targetSize = args.Viewport.RenderTarget.Size;
+            if (_target?.Size != targetSize)
+            {
+                _target = _clyde
+                    .CreateRenderTarget(targetSize,
+                        new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb),
+                        name: nameof(SpecialAnimationOverlay));
+            }
+
+            screen.RenderInRenderTarget(_target,
+                () =>
+            {
+                screen.DrawEntity(
+                    a,
+                    center + _currentAnimation.Position,
+                    Vector2.One * uiScale * _currentAnimation.Scale,
+                    Angle.Zero,
+                    Angle.Zero,
+                    Direction.South,
+                    _entity.GetComponent<SpriteComponent>(a));
+            },
+                Color.Transparent);
+            screen.DrawTexture(_target.Texture, Vector2.Zero, Color.White.WithAlpha(opacity));
+        }
+        else
+        {
+            var texture = _sprite.Frame0(_currentAnimation.Sprite);
+            var box = UIBox2.FromDimensions(center + _currentAnimation.Position, texture.Size * uiScale * _currentAnimation.Scale);
+            screen.DrawTextureRect(texture, box, Color.White.WithAlpha(opacity));
+        }
+        // Reserve edit end: Reserve cards
 
         // Render text
         if (_currentAnimation.Text == null)
@@ -148,4 +186,23 @@ public sealed class SpecialAnimationOverlay : Overlay
 
         animation.LastTime = curTime;
     }
+
+    // Reserve edit start: Reserve cards
+    private EntityUid? GetAnimationEntity(SpecialAnimationData animation)
+    {
+        if (animation.Source == null)
+            return null;
+
+        var source = _entity.GetEntity(animation.Source);
+
+        if (!_entity.TryGetComponent<SpriteComponent>(source, out var sourceSprite))
+            return null;
+
+        // Copy the sprite component from source to the dummy entity.
+        var dummyEnt = _entity.Spawn();
+        var dummySprite = _entity.EnsureComponent<SpriteComponent>(dummyEnt);
+        dummySprite.CopyFrom(sourceSprite);
+        return dummyEnt;
+    }
+    // Reserve edit end: Reserve cards
 }

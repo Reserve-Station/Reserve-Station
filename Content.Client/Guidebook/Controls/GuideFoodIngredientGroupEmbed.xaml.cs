@@ -27,20 +27,27 @@ public sealed partial class GuideFoodIngredientGroupEmbed : BoxContainer, IDocum
         MouseFilter = MouseFilterMode.Stop;
     }
 
-    public GuideFoodIngredientGroupEmbed(bool populate) : this()
+    public GuideFoodIngredientGroupEmbed(string group) : this()
     {
-        if (populate)
-            Populate();
+        Populate(group);
     }
 
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
-        Populate();
+        control = null;
+        if (!args.TryGetValue("Group", out var group))
+        {
+            Logger.Error("Recipe group embed tag is missing group argument");
+            return false;
+        }
+
+        Populate(group);
+
         control = this;
         return true;
     }
 
-    private void Populate()
+    private void Populate(string group)
     {
         GroupContainer.RemoveAllChildren();
 
@@ -51,19 +58,20 @@ public sealed partial class GuideFoodIngredientGroupEmbed : BoxContainer, IDocum
         {
             foreach (var recipe in foodGuide.GetMicrowaveRecipes(entity.ID))
             {
+                if (recipe.Group != group)
+                    continue;
+
                 if (addedRecipes.Add(recipe.ID))
                     GroupContainer.AddChild(new GuideMicrowaveEmbed(recipe));
             }
-
-            if (foodGuide.GetMicrowaveRecipes(entity.ID).Count > 0)
-                continue;
 
             var hasNonMicrowaveSource = false;
             foreach (var source in foodGuide.GetNonPlantSources(entity.ID))
             {
                 if (source.Kind is FoodEntitySourceKind.MixingReaction
                     or FoodEntitySourceKind.SliceFrom
-                    or FoodEntitySourceKind.RollFrom)
+                    or FoodEntitySourceKind.RollFrom
+                    && source.Group == group)
                 {
                     hasNonMicrowaveSource = true;
                     break;
@@ -71,7 +79,7 @@ public sealed partial class GuideFoodIngredientGroupEmbed : BoxContainer, IDocum
             }
 
             if (hasNonMicrowaveSource)
-                GroupContainer.AddChild(new GuideFoodIngredientEmbed(entity));
+                GroupContainer.AddChild(new GuideFoodIngredientEmbed(entity, group));
         }
     }
 }

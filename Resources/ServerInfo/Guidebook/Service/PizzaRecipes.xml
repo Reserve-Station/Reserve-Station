@@ -11,6 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 Pizzas are a great way to prepare food for a large crew, as each pizza is 8 servings.
 
-<GuideMicrowaveGroupEmbed Group="Pizza"/>
+<GuideFoodIngredientGroupEmbed Group="Pizza"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

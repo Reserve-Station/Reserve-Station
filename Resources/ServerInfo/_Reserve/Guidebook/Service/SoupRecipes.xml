@@ -1,9 +1,9 @@
 <Document>
 
-# Супы и тушеные блюда
+# Супы & Рагу
 
 Сытный суп - отличный способ подать к столу жесткое мясо или сохранить нежный вкус.
 
-<GuideMicrowaveGroupEmbed Group="Soup"/>
+<GuideFoodIngredientGroupEmbed Group="Soup"/>
 
 </Document>

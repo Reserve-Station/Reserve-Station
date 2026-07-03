@@ -8,6 +8,47 @@
 
 ## SpaceVillainGame
 
+space-villain-game-title = {$fightVerb} {$enemyName}
+
+space-villain-game-fight-verb-defeat = Defeat
+space-villain-game-fight-verb-annihilate = Annihilate
+space-villain-game-fight-verb-save = Save
+space-villain-game-fight-verb-strike = Strike
+space-villain-game-fight-verb-stop = Stop
+space-villain-game-fight-verb-destroy = Destroy
+space-villain-game-fight-verb-robust = Robust
+space-villain-game-fight-verb-romance = Romance
+space-villain-game-fight-verb-pwn = Pwn
+space-villain-game-fight-verb-own = Own
+
+space-villain-game-enemy-first-the-automatic = the Automatic
+space-villain-game-enemy-first-farmer = Farmer
+space-villain-game-enemy-first-lord = Lord
+space-villain-game-enemy-first-professor = Professor
+space-villain-game-enemy-first-the-cuban = the Cuban
+space-villain-game-enemy-first-the-evil = the Evil
+space-villain-game-enemy-first-the-dread-king = the Dread King
+space-villain-game-enemy-first-the-space = the Space
+space-villain-game-enemy-first-the-great = the Great
+space-villain-game-enemy-first-duke = Duke
+space-villain-game-enemy-first-general = General
+
+space-villain-game-enemy-last-melonoid = Melonoid
+space-villain-game-enemy-last-murdertron = Murdertron
+space-villain-game-enemy-last-sorcerer = Sorcerer
+space-villain-game-enemy-last-ruin = Ruin
+space-villain-game-enemy-last-jeff = Jeff
+space-villain-game-enemy-last-ectoplasm = Ectoplasm
+space-villain-game-enemy-last-crushulon = Crushulon
+space-villain-game-enemy-last-uhangoid = Uhangoid
+space-villain-game-enemy-last-vhakoid = Vhakoid
+space-villain-game-enemy-last-peteoid = Peteoid
+space-villain-game-enemy-last-slime = slime
+space-villain-game-enemy-last-griefer = Griefer
+space-villain-game-enemy-last-erper = ERPer
+space-villain-game-enemy-last-lizard-man = Lizard Man
+space-villain-game-enemy-last-unicorn = Unicorn
+
 space-villain-game-player-attack-message = You attack {$enemyName} for {$attackAmount}!
 space-villain-game-player-heal-message = You use {$magicPointAmount} magic to heal for {$healAmount} damage!
 space-villain-game-player-recharge-message = You regain {$regainedPoints} points

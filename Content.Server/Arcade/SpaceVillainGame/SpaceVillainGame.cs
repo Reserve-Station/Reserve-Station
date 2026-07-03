@@ -33,7 +33,7 @@ public sealed partial class SpaceVillainGame
     private bool _running = true;
 
     [ViewVariables]
-    public string Name => $"{_fightVerb} {_villainName}";
+    public string Name => Loc.GetString("space-villain-game-title", ("fightVerb", _fightVerb), ("enemyName", _villainName)); // Reserve edit: space-vilian-fix
 
     [ViewVariables]
     private readonly string _fightVerb;
@@ -250,7 +250,7 @@ public sealed partial class SpaceVillainGame
                 UpdateUi(
                     uid,
                     Loc.GetString("space-villain-game-player-loses-message"),
-                    Loc.GetString("space-villain-game-enemy-dies-with-player-message ", ("enemyName", _villainName)),
+                    Loc.GetString("space-villain-game-enemy-dies-with-player-message", ("enemyName", _villainName)), // Reserve edit: space-vilian-fix
                     true
                 );
                 _audioSystem.PlayPvs(arcade.GameOverSound, uid, AudioParams.Default.WithVolume(-4f));

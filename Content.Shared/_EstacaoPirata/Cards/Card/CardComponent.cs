@@ -35,6 +35,15 @@ public sealed partial class CardComponent : Component
     [DataField("flipped", readOnly: true), AutoNetworkedField]
     public bool Flipped = false;
 
+    // Reserve edit start: Fix special animation for cards
+
+    /// <summary>
+    /// If it can be flipped on regular use (true) or requires using the verb.
+    /// </summary>
+    [DataField("flipOnUse", readOnly: false), AutoNetworkedField]
+    public bool FlipOnUse = true;
+
+    // Reserve edit end: Fix special animation for cards
 
     /// <summary>
     /// The name of the card.

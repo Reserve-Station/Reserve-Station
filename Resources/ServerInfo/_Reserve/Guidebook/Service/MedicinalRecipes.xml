@@ -4,6 +4,6 @@
 
 Эти препараты обладают интересными медицинскими эффектами или просто являются лекарствами.
 
-<GuideMicrowaveGroupEmbed Group="Medicinal"/>
+<GuideFoodIngredientGroupEmbed Group="Medicinal"/>
 
 </Document>
