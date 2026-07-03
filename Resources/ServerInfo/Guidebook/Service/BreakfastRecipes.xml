@@ -11,6 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 A wonderful way to start a shift! Or perhaps, to treat the crew to brunch midway through.
 
-<GuideMicrowaveGroupEmbed Group="Breakfast"/>
+<GuideFoodIngredientGroupEmbed Group="Breakfast"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

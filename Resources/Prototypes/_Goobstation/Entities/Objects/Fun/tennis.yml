@@ -1,4 +1,8 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   parent: [BaseItem, BaseStash, ClothingMaskBase]
   id: TennisBall
   name: tennis ball
@@ -49,6 +53,11 @@
             volume: 2.25
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  # Reserve edit end: Better Recycling
 
 
 - type: entity

@@ -1,12 +1,13 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseGameRule
   id: BloodBrothers
   components:
   - type: GameRule
     minPlayers: 10
-    delay:
-      min: 240
-      max: 420
   - type: BloodBrotherRule
   - type: AntagRandomObjectives
     sets:
@@ -19,6 +20,7 @@
     - prefRoles: [ BloodBrother ]
       max: 1
       playerRatio: 1
+      chaosScore: 300 # Goobstation
       briefing:
         text: blood-brother-initial-role-greeting
         color: MediumVioletRed

@@ -473,6 +473,11 @@
   - type: Item
     size: Normal
   - type: PacifismAllowedGun
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: FoamWeaponBase
@@ -513,6 +518,11 @@
   abstract: true
   components:
   - type: Sprite
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 150
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: ToyGunBase
@@ -599,6 +609,11 @@
   - type: EmitSoundOnUse # goob edit
     sound:
       path: /Audio/Effects/gib1.ogg
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  # Reserve edit end: Better Recycling
 
 # MISC
 
@@ -633,6 +648,11 @@
     sprite: Objects/Fun/Balls/basketball.rsi
   - type: TileFrictionModifier
     modifier: 0.5
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -663,6 +683,11 @@
   - type: Item
     size: Small
     sprite: Objects/Fun/Balls/football.rsi
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -696,6 +721,11 @@
     sprite: Objects/Fun/Balls/beach_ball.rsi
   - type: TileFrictionModifier
     modifier: 0.05
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -716,6 +746,11 @@
     - Balloon
   - type: StaticPrice
     price: 5000 # Entertainment.
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -734,6 +769,11 @@
   - type: Tag
     tags:
     - Balloon
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -752,6 +792,11 @@
   - type: Tag
     tags:
     - Balloon
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -932,7 +977,12 @@
     graph: DoubleToySwordGraph
     node: esword
     #reserve toy sword tweaks end
-  
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  # Reserve edit end: Better Recycling
+
 - type: entity
   parent: BasePlushie
   id: ToyAmongPequeno
@@ -993,6 +1043,11 @@
       sprite: Objects/Weapons/Melee/cutlass.rsi
     shape:
     - 0,0,0,2
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -1031,6 +1086,11 @@
       sprite: Objects/Fun/card_sword.rsi
     shape:
     - 0,0,1,3
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Cardboard: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -1062,6 +1122,11 @@
     tags:
     - ClownRecorder
     - Payload
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -1099,6 +1164,11 @@
     damage:
       types:
         Blunt: 0
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -1178,6 +1248,11 @@
         density: 30
         mask:
         - ItemMask
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  # Reserve edit end: Better Recycling
 
 - type: entity
   name: banana
@@ -1201,6 +1276,11 @@
   - type: Tag
     tags:
     - Banana
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: DrinkBase
@@ -1240,6 +1320,11 @@
   - type: Tag
     tags:
     - DrinkSpaceGlue
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -1269,3 +1354,8 @@
       params:
         volume: -9
         maxDistance: 3
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 50
+  # Reserve edit end: Better Recycling

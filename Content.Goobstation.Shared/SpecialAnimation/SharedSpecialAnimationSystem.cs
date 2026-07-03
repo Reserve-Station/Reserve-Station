@@ -37,4 +37,22 @@ public abstract class SharedSpecialAnimationSystem : EntitySystem
         string? overrideText = null)
     {
     }
+
+    // Reserve edit start: Fix special animation for cards
+    public virtual void PlayAnimationOnUse(
+        EntityUid user,
+        Filter filter,
+        SpecialAnimationData? animationData = null,
+        string? overrideText = null)
+    {
+    }
+
+    public virtual void PlayAnimationOnUse(
+        EntityUid user,
+        Filter filter,
+        ProtoId<SpecialAnimationPrototype>? animationData = null,
+        string? overrideText = null)
+    {
+    }
+    // Reserve edit end: Fix special animation for cards
 }

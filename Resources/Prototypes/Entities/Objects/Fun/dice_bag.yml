@@ -35,6 +35,11 @@
     whitelist:
       tags:
       - Dice
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 50
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: DiceBag

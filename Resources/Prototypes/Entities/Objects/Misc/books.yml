@@ -177,6 +177,11 @@
     ignoreReagents:
     - Fiber
   # Goobstation Edit End
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 200
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem
@@ -222,6 +227,11 @@
     ignoreReagents:
     - Fiber
   # Goobstation Edit End
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 500
+  # Reserve edit end: Better Recycling
 
 - type: entity
   id: BookSpaceEncyclopedia

@@ -11,6 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 A special sweet treat can go a long way to boosting the crew's morale.
 
-<GuideMicrowaveGroupEmbed Group="Dessert"/>
+<GuideFoodIngredientGroupEmbed Group="Dessert"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

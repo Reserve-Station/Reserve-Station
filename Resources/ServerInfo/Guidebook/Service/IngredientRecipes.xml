@@ -4,6 +4,6 @@
 
 Solid ingredients used in microwave recipes and how to obtain them. For produce grown in hydroponics, see the Botany guide.
 
-<GuideFoodIngredientGroupEmbed/>
+<GuideFoodIngredientGroupEmbed Group="Ingredients"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

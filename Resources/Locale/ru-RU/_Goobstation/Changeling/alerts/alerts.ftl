@@ -16,7 +16,11 @@ alerts-changeling-adrenaline-desc =
 
 alerts-changeling-panacea-name = Анатомическая панацея
 alerts-changeling-panacea-desc =
-    Нефизические повреждения залечиваются! Происходит очищение от болезней, химических веществ и влияния наркотиков. [color=red]Данный эффект не будет работать пока вы в огне или мертвы.[/color]
+    Нефизические повреждения залечиваются! Происходит очищение от болезней, химических веществ и влияния наркотиков. [color=red]Способность прекращает действовать при возгорании или смерти.[/color]
+
+alerts-changeling-darkadapt-name = Адаптация к темноте
+alerts-changeling-darkadapt-desc =
+    Наше тело адаптируется к темноте. [color=yellow]Регенерация химикатов уменьшается на 15%[/color]. [color=red]Способность прекращает действовать при возгорании.[/color]
 
 alerts-changeling-voidadapt-name = Адаптация к пустоте
 alerts-changeling-voidadapt-desc =

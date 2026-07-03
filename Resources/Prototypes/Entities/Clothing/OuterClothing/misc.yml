@@ -158,6 +158,11 @@
   - type: HideClothingLayerClothing
     hiddenSlots:
     - jumpsuit
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Cardboard: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: ClothingOuterBaseToggleable

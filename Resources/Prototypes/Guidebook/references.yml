@@ -45,6 +45,8 @@
   children:
   - IngredientRecipes
   - PizzaRecipes
+  - BurgerRecipes  # Reserve edit: Fix recipe categories
+  - FastfoodRecipes  # Reserve edit: Fix recipe categories
   - SavoryRecipes
   - BreadRecipes
   - BreakfastRecipes
@@ -75,6 +77,24 @@
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/PizzaRecipes.xml"
   filterEnabled: True
+
+# Reserve edit start: Fix recipe categories
+- type: guideEntry
+  id: BurgerRecipes
+  name: guide-entry-burger-recipes
+  text: "/ServerInfo/Guidebook/Service/BurgerRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/BurgerRecipes.xml"
+  filterEnabled: True
+
+- type: guideEntry
+  id: FastfoodRecipes
+  name: guide-entry-fastfood-recipes
+  text: "/ServerInfo/Guidebook/Service/FastfoodRecipes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Service/FastfoodRecipes.xml"
+  filterEnabled: True
+# Reserve edit end: Fix recipe categories
 
 - type: guideEntry
   id: SavoryRecipes

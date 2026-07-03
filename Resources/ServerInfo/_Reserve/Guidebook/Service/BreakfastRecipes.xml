@@ -4,6 +4,6 @@
 
 Прекрасный способ начать смену! А может быть, побаловать команду поздним завтраком в середине смены.
 
-<GuideMicrowaveGroupEmbed Group="Breakfast"/>
+<GuideFoodIngredientGroupEmbed Group="Breakfast"/>
 
 </Document>

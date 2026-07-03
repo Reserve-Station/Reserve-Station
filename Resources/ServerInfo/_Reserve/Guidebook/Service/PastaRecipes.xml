@@ -1,9 +1,9 @@
 <Document>
 
-# Паста и лапша
+# Паста & Лапша
 
 Ничто не сравнится с большой миской лапши.
 
-<GuideMicrowaveGroupEmbed Group="Pasta"/>
+<GuideFoodIngredientGroupEmbed Group="Pasta"/>
 
 </Document>

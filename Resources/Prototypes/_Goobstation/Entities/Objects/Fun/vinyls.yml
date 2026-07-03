@@ -1,4 +1,8 @@
-﻿- type: entity
+# SPDX-FileCopyrightText: 2026 Goob Station Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   abstract: true
   id: BaseVinylDisk
   name: vinyl disk
@@ -41,6 +45,11 @@
   - type: Tag
     tags:
     - VinylSleeveFit
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   abstract: true
@@ -70,6 +79,11 @@
         whitelist:
           tags:
           - VinylSleeveFit
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 100
+  # Reserve edit end: Better Recycling
 
 # Vinyls
 

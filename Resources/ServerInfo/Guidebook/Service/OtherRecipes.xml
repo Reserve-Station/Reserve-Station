@@ -11,6 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 The NanoTrasen Central Command Kitchen de Cuisine is still deliberating on the categorization of these recipes.
 
-<GuideMicrowaveGroupEmbed Group="Other"/>
+<GuideFoodIngredientGroupEmbed Group="Other"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

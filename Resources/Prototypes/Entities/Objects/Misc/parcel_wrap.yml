@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BaseItem
   id: ParcelWrap
@@ -27,6 +31,11 @@
       - FakeNukeDisk # So you can't tell if the nuke disk is real or fake depending on if it can be wrapped or not.
   - type: LimitedCharges
     maxCharges: 30
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 500
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem

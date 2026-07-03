@@ -765,6 +765,11 @@
   - type: Icon
     sprite: Structures/Storage/Crates/toybox.rsi
     state: crate_icon
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 200
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: CrateGeneric

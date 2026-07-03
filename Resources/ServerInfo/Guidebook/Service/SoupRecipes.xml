@@ -11,6 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 A nice hearty bowl of soup is a great way to serve tough meats, or to preserve a delicate flavour.
 
-<GuideMicrowaveGroupEmbed Group="Soup"/>
+<GuideFoodIngredientGroupEmbed Group="Soup"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

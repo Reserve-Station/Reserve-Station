@@ -1,0 +1,9 @@
+ent-BaseMobHydrakin = Урист МакГидра
+    .desc = { ent-BaseMobSpeciesOrganic.desc }
+    .suffix = { species-name-hydrakin }
+ent-MobHydrakin = { ent-BaseMobHydrakin }
+    .desc = { ent-BaseMobHydrakin.desc }
+    .suffix = { species-name-hydrakin }
+ent-MobHydrakinDummy = манекен { ent-BaseMobHydrakin }
+    .desc = { ent-BaseSpeciesDummy.desc }
+    .suffix = { species-name-hydrakin }

@@ -5,51 +5,57 @@
 Это последняя опубликованная версия сборника рецептов "NanoTrasen Central Command Kitchen de Cuisine's", предназначенного для шеф-поваров, готовящих блюда на судах NanoTrasen.
 
 ## Ингредиенты
-<GuideFoodIngredientGroupEmbed/>
+<GuideFoodIngredientGroupEmbed Group="Ingredients"/>
 
 ## Пицца
-<GuideMicrowaveGroupEmbed Group="Pizza"/>
+<GuideFoodIngredientGroupEmbed Group="Pizza"/>
 
-## Вкусные блюда
-<GuideMicrowaveGroupEmbed Group="Savory"/>
+## Бургеры
+<GuideFoodIngredientGroupEmbed Group="Burger"/>
 
-## Хлеб
-<GuideMicrowaveGroupEmbed Group="Breads"/>
+## Фастфуд
+<GuideFoodIngredientGroupEmbed Group="Fastfood"/>
+
+## Солёно-пряные
+<GuideFoodIngredientGroupEmbed Group="Savory"/>
+
+## Хлебобулочные
+<GuideFoodIngredientGroupEmbed Group="Breads"/>
 
 ## Завтраки
-<GuideMicrowaveGroupEmbed Group="Breakfast"/>
+<GuideFoodIngredientGroupEmbed Group="Breakfast"/>
 
-## Еда для Нианов
-<GuideMicrowaveGroupEmbed Group="Moth"/>
+## Еда для нианов
+<GuideFoodIngredientGroupEmbed Group="Moth"/>
 
-## Пасты & Лапша
-<GuideMicrowaveGroupEmbed Group="Pasta"/>
+## Паста & Лапша
+<GuideFoodIngredientGroupEmbed Group="Pasta"/>
 
 ## Выпечка & Десерты
-<GuideMicrowaveGroupEmbed Group="Dessert"/>
+<GuideFoodIngredientGroupEmbed Group="Dessert"/>
 
 ## Супы & Рагу
-<GuideMicrowaveGroupEmbed Group="Soup"/>
+<GuideFoodIngredientGroupEmbed Group="Soup"/>
 
-## Пироги & Тарталетки
-<GuideMicrowaveGroupEmbed Group="Pie"/>
+## Пироги & Тарты
+<GuideFoodIngredientGroupEmbed Group="Pie"/>
 
 ## Батончики & Печенье
-<GuideMicrowaveGroupEmbed Group="BarsAndCookies"/>
+<GuideFoodIngredientGroupEmbed Group="BarsAndCookies"/>
 
 ## Торты
-<GuideMicrowaveGroupEmbed Group="Cake"/>
+<GuideFoodIngredientGroupEmbed Group="Cake"/>
 
 ## Салаты
-<GuideMicrowaveGroupEmbed Group="Salad"/>
+<GuideFoodIngredientGroupEmbed Group="Salad"/>
 
-## Лекарства
-<GuideMicrowaveGroupEmbed Group="Medicinal"/>
+## Лечебные
+<GuideFoodIngredientGroupEmbed Group="Medicinal"/>
 
 ## Другие
-<GuideMicrowaveGroupEmbed Group="Other"/>
+<GuideFoodIngredientGroupEmbed Group="Other"/>
 
-## Секрет
-<GuideMicrowaveGroupEmbed Group="Secret"/>
+## Секретные
+<GuideFoodIngredientGroupEmbed Group="Secret"/>
 
 </Document>

@@ -40,6 +40,11 @@
     state: cigpapers
   - type: Item
     sprite: Objects/Consumable/Smokeables/Cigarettes/paper.rsi
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 50
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: PackPaperRolling

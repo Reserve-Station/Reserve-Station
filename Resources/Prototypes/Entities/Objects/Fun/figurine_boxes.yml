@@ -147,6 +147,12 @@
       - id: ToyFigurineCosmicCultist # DeltaV Figurine
         prob: 0.50
         orGroup: SpacemenFig
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+      Cardboard: 50
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseItem

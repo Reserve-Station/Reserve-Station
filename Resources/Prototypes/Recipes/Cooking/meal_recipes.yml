@@ -193,7 +193,7 @@
   name: cotton bun recipe
   result: FoodCottonBun
   time: 5
-  group: Breads
+  group: Ingredients  # Reserve edit: Fix recipe categories
   solids:
     FoodDoughCottonSlice: 1
 
@@ -233,7 +233,7 @@
   name: appendix burger recipe
   result: FoodBurgerAppendix
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     OrganHumanAppendix: 1
@@ -243,7 +243,7 @@
   name: bacon burger recipe
   result: FoodBurgerBacon
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeatBacon: 1
@@ -254,7 +254,7 @@
   name: baseball burger recipe
   result: FoodBurgerBaseball
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     BaseBallBat: 1
@@ -264,7 +264,7 @@
   name: bearger recipe
   result: FoodBurgerBear
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeatBear: 1
@@ -274,7 +274,7 @@
   name: big bite burger recipe
   result: FoodBurgerBig
   time: 15
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeat: 2
@@ -287,7 +287,7 @@
   name: brain burger recipe
   result: FoodBurgerBrain
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     OrganHumanBrain: 1
@@ -297,7 +297,7 @@
   name: cat burger recipe
   result: FoodBurgerCat
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeat: 1
@@ -308,7 +308,7 @@
   name: cheeseburger recipe
   result: FoodBurgerCheese
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeat: 1
@@ -319,7 +319,7 @@
   name: chicken sandwich recipe
   result: FoodBurgerChicken
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   reagents:
     Mayo: 5
   solids:
@@ -331,7 +331,7 @@
   name: clownburger recipe
   result: FoodBurgerClown
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     ClothingMaskClown: 1
@@ -341,7 +341,7 @@
   name: corgi burger recipe
   result: FoodBurgerCorgi
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeatCorgi: 1
@@ -351,7 +351,7 @@
   name: crab burger recipe
   result: FoodBurgerCrab
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeatCrab: 2
@@ -361,7 +361,7 @@
   name: crazy hamburger recipe
   result: FoodBurgerCrazy
   time: 15
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   reagents:
     OilOlive: 15
   solids:
@@ -378,7 +378,7 @@
   name: duck sandwich recipe
   result: FoodBurgerDuck
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeatDuck: 1
@@ -389,7 +389,7 @@
   name: empowered burger recipe
   result: FoodBurgerEmpowered
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     SheetPlasma1: 2
@@ -399,7 +399,7 @@
   name: fillet-o-carp burger recipe
   result: FoodBurgerCarp
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeatFish: 1
@@ -410,7 +410,7 @@
   name: five alarm burger recipe
   result: FoodBurgerFive
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeat: 1
@@ -421,7 +421,7 @@
   name: ghost burger recipe
   result: FoodBurgerGhost
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     Ectoplasm: 1
@@ -431,7 +431,7 @@
   name: human burger recipe
   result: FoodBurgerHuman
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeatHuman: 1
@@ -441,7 +441,7 @@
   name: jelly burger recipe
   result: FoodBurgerJelly
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodJellyAmanita: 1
@@ -451,7 +451,7 @@
   name: McGuffin recipe
   result: FoodBurgerMcguffin
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   reagents:
     Egg: 12
   solids:
@@ -463,7 +463,7 @@
   name: BBQ rib sandwich recipe
   result: FoodBurgerMcrib
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMealRibs: 1
@@ -474,7 +474,7 @@
   name: mime burger recipe
   result: FoodBurgerMime
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     ClothingMaskMime: 1
@@ -484,7 +484,7 @@
   name: plain burger recipe
   result: FoodBurgerPlain
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeat: 1
@@ -494,7 +494,7 @@
   name: rat burger recipe
   result: FoodBurgerRat
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeatRat: 1
@@ -504,7 +504,7 @@
   name: roburger recipe
   result: FoodBurgerRobot
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     MicroManipulatorStockPart: 2
@@ -515,7 +515,7 @@
   name: soylent burger recipe
   result: FoodBurgerSoy
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodCheeseSlice: 2
@@ -526,7 +526,7 @@
   name: spell burger recipe
   result: FoodBurgerSpell
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     ClothingHeadHatWizard: 1
@@ -536,7 +536,7 @@
   name: super bite burger recipe
   result: FoodBurgerSuper
   time: 25
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   reagents:
     TableSalt: 5
     Egg: 12
@@ -551,7 +551,7 @@
   name: tofu burger recipe
   result: FoodBurgerTofu
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodTofuSlice: 1
@@ -561,7 +561,7 @@
   name: xenoburger recipe
   result: FoodBurgerXeno
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeatXeno: 1
@@ -570,7 +570,7 @@
   id: RecipeMothRoachburger
   name: mothroachburger recipe
   result: FoodBurgerMothRoach
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     MobMothroach: 1
@@ -800,7 +800,7 @@
   name: onion rings recipe
   result: FoodOnionRings
   time: 15
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodOnionSlice: 6  # Reserve edit: Orchid's Garden - Tidy Kitchen
 
@@ -915,6 +915,7 @@
   name: world peazza recipe
   result: FoodPizzaWorldpeas
   time: 30
+  group: Pizza  # Reserve edit: Fix recipe categories
   solids:
     FoodDoughFlat: 1
     FoodWorldPeas: 3
@@ -1533,7 +1534,7 @@
   name: space fries recipe
   result: FoodMealFries
   time: 15
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   reagents:
     TableSalt: 5
   solids:
@@ -1544,7 +1545,7 @@
   name: cheesy fries recipe
   result: FoodMealFriesCheesy
   time: 15
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   reagents:
     TableSalt: 5
   solids:
@@ -1556,7 +1557,7 @@
   name: carrot fries recipe
   result: FoodMealFriesCarrot
   time: 15
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   reagents:
     TableSalt: 5
   solids:
@@ -1567,7 +1568,7 @@
   name: nachos recipe
   result: FoodMealNachos
   time: 10
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   reagents:
     TableSalt: 1
   solids:
@@ -1579,7 +1580,7 @@
   name: cheesy nachos recipe
   result: FoodMealNachosCheesy
   time: 10
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   reagents:
     TableSalt: 1
   solids:
@@ -1592,7 +1593,7 @@
   name: cuban nachos recipe
   result: FoodMealNachosCuban
   time: 10
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   reagents:
     Ketchup: 5
   solids:
@@ -1605,7 +1606,7 @@
   name: popcorn recipe
   result: FoodSnackPopcorn
   time: 20
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodCornSlice: 4  # Reserve edit: Orchid's Garden - Tidy Kitchen
 
@@ -1944,7 +1945,7 @@
   name: warm donk pocket recipe
   result: FoodDonkpocketWarm
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocket: 1
 
@@ -1953,7 +1954,7 @@
   name: warm dank pocket recipe
   result: FoodDonkpocketDankWarm
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocketDank: 1
 
@@ -1962,7 +1963,7 @@
   name: warm spicy donk-pocket recipe
   result: FoodDonkpocketSpicyWarm
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocketSpicy: 1
 
@@ -1971,7 +1972,7 @@
   name: warm teriyaki-pocket recipe
   result: FoodDonkpocketTeriyakiWarm
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocketTeriyaki: 1
 
@@ -1980,7 +1981,7 @@
   name: warm pizza-pocket recipe
   result: FoodDonkpocketPizzaWarm
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocketPizza: 1
 
@@ -1989,7 +1990,7 @@
   name: warm honk-pocket recipe
   result: FoodDonkpocketHonkWarm
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocketHonk: 1
 
@@ -1998,7 +1999,7 @@
   name: warm berry-pocket recipe
   result: FoodDonkpocketBerryWarm
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocketBerry: 1
 
@@ -2007,7 +2008,7 @@
   name: warm stonk-pocket recipe
   result: FoodDonkpocketStonkWarm
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocketStonk: 1
 
@@ -2016,7 +2017,7 @@
   name: warm carp-pocket recipe
   result: FoodDonkpocketCarpWarm
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocketCarp: 1
 
@@ -2025,6 +2026,7 @@
   name: warm moth-pocket recipe
   result: FoodDonkpocketMothWarm
   time: 5
+  group: Moth  # Reserve edit: Fix recipe categories
   solids:
     FoodDonkpocketMoth: 1
 
@@ -2382,6 +2384,7 @@
   name: cannabis butter recipe
   result: FoodCannabisButter
   time: 15
+  group: Ingredients  # Reserve edit: Fix recipe categories
   solids:
     FoodButter: 1
     LeavesCannabis: 6
@@ -2512,6 +2515,7 @@
   name: beef taco recipe
   result: FoodTacoBeef
   time: 10
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodTacoShell: 1
     FoodMeatCutlet: 1
@@ -2522,6 +2526,7 @@
   name: chicken taco recipe
   result: FoodTacoChicken
   time: 10
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodTacoShell: 1
     FoodMeatChickenCutlet: 1
@@ -2532,6 +2537,7 @@
   name: fish taco recipe
   result: FoodTacoFish
   time: 10
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodTacoShell: 1
     FoodMeatFish: 1
@@ -2544,6 +2550,7 @@
   name: rat taco recipe
   result: FoodTacoRat
   time: 10
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodTacoShell: 1
     FoodCheeseSlice: 1
@@ -2554,6 +2561,7 @@
   name: beef taco supreme recipe
   result: FoodTacoBeefSupreme
   time: 10
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodTacoShell: 1
     FoodCheeseSlice: 1
@@ -2567,6 +2575,7 @@
   name: beef taco supreme recipe
   result: FoodTacoChickenSupreme
   time: 10
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     FoodTacoShell: 1
     FoodCheeseSlice: 1
@@ -2612,7 +2621,7 @@
   name: inert meat anomaly recipe
   result: FoodMeatAnomaly
   time: 5
-  group: Savory
+  group: Ingredients  # Reserve edit: Fix recipe categories
   solids:
     AnomalyCoreFleshInert: 1
 
@@ -2621,7 +2630,7 @@
   name: meat anomaly recipe
   result: FoodMeatAnomaly
   time: 5
-  group: Savory
+  group: Ingredients  # Reserve edit: Fix recipe categories
   solids:
     AnomalyCoreFlesh: 1
 
@@ -2639,6 +2648,7 @@
   name: grilled cheese sandwich recipe
   result: FoodBakedGrilledCheeseSandwich
   time: 10
+  group: Bread  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadPlainSlice: 2
     FoodCheeseSlice: 1
@@ -2649,6 +2659,7 @@
   name: cotton grilled cheese sandwich recipe
   result: FoodBakedGrilledCheeseSandwichCotton
   time: 10
+  group: Moth  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadCottonSlice: 2
     FoodCheeseSlice: 1
@@ -2699,7 +2710,7 @@
   name: cotton cake recipe
   result: FoodCakeCotton
   time: 5
-  group: Cake
+  group: Moth  # Reserve edit: Fix recipe categories
   reagents:
     Fiber: 10
   solids:

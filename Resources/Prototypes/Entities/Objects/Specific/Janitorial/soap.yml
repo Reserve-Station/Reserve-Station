@@ -118,6 +118,11 @@
   - type: Residue
     residueAdjective: residue-slippery
     residueColor: residue-green
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Biomass: 3
+  # Reserve edit end: Better Recycling
 
 - type: entity
   name: soap

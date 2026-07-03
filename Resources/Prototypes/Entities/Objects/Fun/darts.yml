@@ -178,6 +178,11 @@
     damage:
       types:
         Blunt: 20
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 10
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: Dart

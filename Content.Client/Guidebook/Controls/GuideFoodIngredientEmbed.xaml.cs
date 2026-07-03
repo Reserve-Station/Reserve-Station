@@ -38,9 +38,9 @@ public sealed partial class GuideFoodIngredientEmbed : PanelContainer, IDocument
         MouseFilter = MouseFilterMode.Stop;
     }
 
-    public GuideFoodIngredientEmbed(EntityPrototype entity) : this()
+    public GuideFoodIngredientEmbed(EntityPrototype entity, string group) : this()
     {
-        GenerateControl(entity);
+        GenerateControl(entity, group);
     }
 
     public bool CheckMatchesSearch(string query)
@@ -56,21 +56,21 @@ public sealed partial class GuideFoodIngredientEmbed : PanelContainer, IDocument
     public bool TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
         control = null;
+        if (!args.TryGetValue("Group", out var group))
+            return false;
+
         if (!args.TryGetValue("Entity", out var id))
             return false;
 
         if (!_prototype.TryIndex<EntityPrototype>(id, out var entity))
             return false;
 
-        if (!_foodGuideData.HasObtainSource(entity.ID) || _foodGuideData.GetMicrowaveRecipes(entity.ID).Count > 0)
-            return false;
-
-        GenerateControl(entity);
+        GenerateControl(entity, group);
         control = this;
         return true;
     }
 
-    private void GenerateControl(EntityPrototype entity)
+    private void GenerateControl(EntityPrototype entity, string group)
     {
         if (!_foodGuideData.HasObtainSource(entity.ID))
         {
@@ -92,11 +92,11 @@ public sealed partial class GuideFoodIngredientEmbed : PanelContainer, IDocument
         {
             switch (source.Kind)
             {
-                case FoodEntitySourceKind.MixingReaction when source.Reaction != null:
+                case FoodEntitySourceKind.MixingReaction when source.Reaction != null && source.Group == group:
                     SourcesContainer.AddChild(
                         new GuideReagentReaction(source.Reaction, entity.ID, _prototype, _entitySystemManager));
                     break;
-                case FoodEntitySourceKind.SliceFrom when source.SourceEntity != null:
+                case FoodEntitySourceKind.SliceFrom when source.SourceEntity != null && source.Group == group:
                     SourcesContainer.AddChild(new GuideFoodEntitySourceReaction(
                         source.SourceEntity.Value,
                         entity.ID,
@@ -104,7 +104,7 @@ public sealed partial class GuideFoodIngredientEmbed : PanelContainer, IDocument
                         _prototype,
                         _entitySystemManager));
                     break;
-                case FoodEntitySourceKind.RollFrom when source.SourceEntity != null:
+                case FoodEntitySourceKind.RollFrom when source.SourceEntity != null && source.Group == group:
                     SourcesContainer.AddChild(new GuideFoodEntitySourceReaction(
                         source.SourceEntity.Value,
                         entity.ID,

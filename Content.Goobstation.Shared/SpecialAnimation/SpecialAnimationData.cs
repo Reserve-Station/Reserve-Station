@@ -96,6 +96,17 @@ public sealed partial class SpecialAnimationData
 
     #endregion
 
+    // Reserve edit start: Fix special animation for cards
+
+    /// <summary>
+    /// Entity to use for a sprite.
+    /// Animation will fail to play if entity doesn't exist on client on its start.
+    /// </summary>
+    [ViewVariables]
+    public NetEntity? Source;
+
+    // Reserve edit end: Fix special animation for cards
+
     /// <summary>
     /// The sprite to use for an animation.
     /// </summary>
@@ -161,4 +172,21 @@ public sealed partial class SpecialAnimationData
         Text = text;
         return this;
     }
+
+    // Reserve edit start: Fix special animation for cards
+
+    /// <summary>
+    /// Sets some sprite source to the animation.
+    /// </summary>
+    /// <remarks>
+    /// Make sure that this entity is loaded in PVS
+    /// for the client that this animation is addressed to.
+    /// </remarks>
+    public SpecialAnimationData WithSource(NetEntity source)
+    {
+        Source = source;
+        return this;
+    }
+
+    // Reserve edit end: Fix special animation for cards
 }

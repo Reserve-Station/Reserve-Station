@@ -471,6 +471,11 @@
     proto: robot
   - type: IdentityBlocker
   - type: IngestionBlocker
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Cardboard: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: [ ClothingHeadHatArmored, ClothingHeadBase, BaseCentcommContraband ] #goob
@@ -657,6 +662,11 @@
     tags:
     - PetWearable
     - CorgiWearable
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: ClothingHeadBase
@@ -1102,6 +1112,11 @@
       Hair: HEAD
       HeadTop : HEAD
       HeadSide : HEAD
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: ClothingHeadBase
@@ -1119,6 +1134,11 @@
       Hair: HEAD
       HeadTop : HEAD
       HeadSide : HEAD
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Paper: 100
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: ClothingHeadBase

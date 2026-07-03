@@ -11,6 +11,7 @@
   name: lollypop recipe
   result: FoodSnackLollypop
   time: 5
+  group: Dessert  # Reserve edit: Fix recipe categories
   solids:
     Paper: 1
   reagents:
@@ -21,6 +22,7 @@
   name: freedom cheese recipe
   result: FoodFreedomCheeseBlock
   time: 5
+  group: Ingredients  # Reserve edit: Fix recipe categories
   solids:
     FoodCheese: 1
     FoodBadRecipe: 1 # Ideally would like it to be Plastic, but gets transformed to FoodBadRecipe anyways.
@@ -30,6 +32,7 @@
   name: 'fried "chicken" recipe'
   result: FoodMeatVoxFried
   time: 10
+  group: Secret  # Reserve edit: Fix recipe categories
   solids:
     LeftLegVox: 1
 
@@ -38,6 +41,7 @@
   name: 'fried "chicken" recipe'
   result: FoodMeatVoxFried
   time: 10
+  group: Secret  # Reserve edit: Fix recipe categories
   solids:
     RightLegVox: 1
 
@@ -46,7 +50,7 @@
   name: nothing burger recipe
   result: FoodBurgerChud
   time: 10
-  group: Savory
+  group: Burger  # Reserve edit: Fix recipe categories
   solids:
     FoodBreadBun: 1
     FoodMeat: 1
@@ -58,6 +62,6 @@
   name: mothdog recipe
   result: FoodSnackMothdog
   time: 5
-  group: Savory
+  group: Fastfood  # Reserve edit: Fix recipe categories
   solids:
     HeadMoth: 1

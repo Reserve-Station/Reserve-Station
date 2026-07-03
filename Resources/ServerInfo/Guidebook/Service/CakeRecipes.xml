@@ -11,6 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 Cakes are a timeless classic, combining fresh ingredients and a delicious tender base to make something that can serve a lot of crewmates.
 
-<GuideMicrowaveGroupEmbed Group="Cake"/>
+<GuideFoodIngredientGroupEmbed Group="Cake"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

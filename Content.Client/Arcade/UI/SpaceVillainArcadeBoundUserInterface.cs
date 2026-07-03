@@ -25,7 +25,6 @@ public sealed class SpaceVillainArcadeBoundUserInterface : BoundUserInterface
 
     public SpaceVillainArcadeBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
-        SendAction(PlayerAction.RequestData);
     }
 
     public void SendAction(PlayerAction action)

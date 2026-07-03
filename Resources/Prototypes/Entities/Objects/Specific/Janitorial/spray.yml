@@ -76,6 +76,11 @@
   - type: ExaminableSolution
     solution: spray
     exactVolume: true
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  # Reserve edit end: Better Recycling
 
 - type: entity
   name: mega spray bottle
@@ -101,7 +106,7 @@
   - type: PhysicalComposition #Goobstation - Recycle update
     materialComposition:
       Plastic: 62
-      
+
 - type: entity
   name: spray bottle
   id: SprayBottleWater

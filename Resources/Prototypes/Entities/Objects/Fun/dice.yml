@@ -45,6 +45,11 @@
     - Dice
   - type: Item
     size: Tiny
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 10
+  # Reserve edit end: Better Recycling
 
 - type: entity
   parent: BaseDice

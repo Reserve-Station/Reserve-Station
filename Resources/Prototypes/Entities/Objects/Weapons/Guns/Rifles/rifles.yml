@@ -409,3 +409,8 @@
   - type: PacifismAllowedGun
   - type: StaticPrice
     price: 100  # Reserve edit: Orchid's Barmania - Service Heaven: It's not a real gun.
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 100
+  # Reserve edit end: Better Recycling

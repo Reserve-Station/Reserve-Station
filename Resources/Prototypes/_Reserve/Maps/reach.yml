@@ -1,0 +1,72 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: gameMap
+  id: ReserveReach
+  mapName: 'Reach-1'
+  mapPath: /Maps/_Reserve/reach.yml
+  minPlayers: 0
+  maxPlayers: 16
+  stations:
+    ReserveReach:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Корабль Рич-1 {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'СТ'
+        - type: StationJobs
+          availableJobs:
+            # NanoTrasen
+            NanotrasenRepresentative: [ 1, 1 ]
+            BlueshieldOfficer: [ 1, 1 ]
+            # Command
+            Captain: [ 1, 1 ]
+            # Cargo
+            CargoTechnician: [ 1, 1 ]
+            SalvageSpecialist: [ 1, 2 ]
+            ShaftMiner: [ 2, 2 ]
+            # Engineering
+            StationEngineer: [ 2, 2 ]
+            AtmosphericTechnician: [ 1, 1 ]
+            # Medical
+            MedicalDoctor: [ 1, 2 ]
+            Psychologist: [ 0, 1 ]
+            Virologist: [ 0, 1 ]
+            Paramedic: [ 0, 1 ]
+            Chemist: [ 1, 1 ]
+            # Science
+            Scientist: [ 1, 1 ]
+            Roboticist: [ 1, 1 ]
+            # Security
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 1, 2 ]
+            Detective: [ 1, 1 ]
+            # Service
+            Bartender: [ 1, 1 ]
+            Botanist: [ 1, 1 ]
+            Chef: [ 1, 1 ]
+            Janitor: [ 1, 1 ]
+            Musician: [ 1, 1 ]
+            # Rare Service
+            Clown: [ 0, 1 ]
+            Mime: [ 0, 1 ]
+            Librarian: [ 0, 1 ]
+            Reporter: [ 0, 1 ]
+            RadioHost: [ 0, 1 ]
+            Boxer: [ 0, 1 ]
+            Lawyer: [ 0, 1 ]
+            Zookeeper: [ 1, 1 ]  # So players can unlock animal loadouts
+            Passenger: [ -1, -1 ]
+            # Silicon
+            Borg: [ 1, 1 ]
+            StationAi: [ 1, 1 ]
+
+        # Goobstation blob-config-start LOW
+        - type: StationBlobConfig
+          stageBegin: 15
+          stageCritical: 200
+          stageTheEnd: 400
+        # Goobstation blob-config-end

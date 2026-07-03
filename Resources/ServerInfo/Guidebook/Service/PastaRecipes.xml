@@ -11,6 +11,6 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 There's nothing like a big bowl of noodles.
 
-<GuideMicrowaveGroupEmbed Group="Pasta"/>
+<GuideFoodIngredientGroupEmbed Group="Pasta"/>  <!--Reserve edit: Fix recipe categories-->
 
 </Document>

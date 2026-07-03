@@ -26,6 +26,21 @@ namespace Content.Server.Mail.Components
         [DataField]
         public bool IsLocked = true;
 
+        // Reserve edit start: mail-fix #328
+        /// <summary>
+        /// Whether this parcel must be unlocked with the recipient's ID before opening.
+        /// Set by the mail teleporter; manually spawned mail stays unlocked.
+        /// </summary>
+        [DataField]
+        public bool RequiresIdUnlock;
+
+        /// <summary>
+        /// How long it takes to force-open a parcel with a sharp item.
+        /// </summary>
+        [DataField]
+        public float OpenDelay = 3f;
+        // Reserve edit end: mail-fix #328
+
         /// <summary>
         /// Is this parcel profitable to deliver for the station?
         /// </summary>

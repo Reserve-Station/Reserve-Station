@@ -206,3 +206,8 @@
     - timer
     sound:
       path: "/Audio/Weapons/Guns/Gunshots/batrifle.ogg"
+  # Reserve edit start: Better Recycling
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+  # Reserve edit end: Better Recycling

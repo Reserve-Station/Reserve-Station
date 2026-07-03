@@ -164,6 +164,8 @@ guide-entry-special = Special
 guide-entry-others = Others
 
 guide-entry-pizza-recipes = Pizzas
+guide-entry-burger-recipes = Burgers
+guide-entry-fastfood-recipes = Fastfood
 guide-entry-savory-recipes = Savory Foods
 guide-entry-bread-recipes = Breads
 guide-entry-breakfast-recipes = Breakfast Foods

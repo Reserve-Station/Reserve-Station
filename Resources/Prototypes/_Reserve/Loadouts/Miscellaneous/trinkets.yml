@@ -17,6 +17,32 @@
     - VinylSleeveBlack
   groupBy: "audio"
 
+- type: entity
+  parent: VinylSleeveWhite
+  id: VinylSleeveGold
+  name: golden vinyl sleeve
+  description: A gleaming pure gold case. It looks like there's already something inside...
+  suffix: Loadout, Trinkets
+  components:
+  - type: Sprite
+    color: "#ffc833"
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 50
+
+- type: loadout
+  id: VinylSleeveGold
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 360000 # 100hr
+  storage:
+    back:
+    - VinylSleeveGold
+  groupBy: "audio"
+
 - type: loadout
   id: DiskCaseFilled
   effects:
@@ -34,10 +60,10 @@
   parent: DiskCase
   id: DiskCaseGold
   name: golden disk case
+  description: A gleaming pure gold case capable of holding as many as three discs. It looks like there's already something inside...
   suffix: Loadout, Trinkets
   components:
   - type: Sprite
-    state: icon_base
     color: "#ffc833"
   - type: EntityTableContainerFill
     containers:
@@ -48,6 +74,9 @@
   - type: Storage
     grid:
     - 0,0,0,2
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 50
 
 - type: loadout
   id: DiskCaseGold
@@ -55,8 +84,8 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobMusician
-      time: 180000 # 50hr
+      role: JobJanitor
+      time: 360000 # 100hr
   storage:
     back:
     - DiskCaseGold
@@ -182,6 +211,21 @@
   groupBy: "games"
 
 - type: loadout
+  id: TennisRacket
+  dummyEntity: BaseTennisRacket
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBoxer
+      time: 180000 # 50hr
+  storage:
+    back:
+    - BaseTennisRacket
+    - BaseTennisRacket
+  groupBy: "games"
+
+- type: loadout
   id: BalloonNT
   effects:
   - !type:JobRequirementLoadoutEffect
@@ -207,15 +251,31 @@
     - BalloonCorgi
   groupBy: "games"
 
+- type: loadout
+  id: SpellCardFun
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLibrarian
+      time: 720000 # 200hr
+  storage:
+    back:
+    - SpellCardFun
+  groupBy: "games"
+
 - type: entity
   parent: d6Dice
   id: d6DiceGold
   name: golden d6
+  description: A small marvel, earned through honest labor. Made of pure gold. Don't believe it? ...There's always the recycler...
   suffix: Loadout, Trinkets
   components:
   - type: Sprite
-    state: d6_6
     color: "#ffc833"
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 50
 
 - type: loadout
   id: d6DiceGold
@@ -236,6 +296,7 @@
   parent: d6Dice
   id: d6DiceRainbow
   name: rainbow d6
+  description: A small marvel, earned through immense effort. It slowly shimmers with all the colors of the rainbow.
   suffix: Loadout, Trinkets
   components:
   - type: PointLight
@@ -243,6 +304,9 @@
     energy: 1
   - type: RgbLightController
     layers: [ 0 ]
+  - type: PhysicalComposition
+    materialComposition:
+      Plasma: 50
 
 - type: loadout
   id: d6DiceRainbow
@@ -351,6 +415,7 @@
   parent: PlushieSharkGrey
   id: PlushieSharkRainbow
   name: rainbow shark soft toy
+  description: A soft, lovely marvel, earned through immense effort. It slowly shimmers with all the colors of the rainbow.
   suffix: Loadout, Trinkets
   components:
   - type: PointLight
@@ -358,6 +423,20 @@
     energy: 2
   - type: RgbLightController
     layers: [ 0 ]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: grey-inhand-left
+        shader: unshaded
+      right:
+      - state: grey-inhand-right
+        shader: unshaded
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 100
+      Plasma: 100
+  - type: StaticPrice
+    price: 50
 
 - type: loadout
   id: PlushieSharkRainbow
@@ -412,6 +491,50 @@
 # region Other
 
 - type: loadout
+  id: Rag
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBartender
+      time: 360000 # 100hr
+  storage:
+    back:
+    - RagItem
+  groupBy: "misc"
+
+- type: entity
+  parent: RagItem
+  id: RagItemGold
+  name: golden rag
+  description: A small marvel, earned through honest labor. Made of pure gold. Don't believe it? ...There's always the recycler...
+  suffix: Loadout, Trinkets
+  components:
+  - type: Sprite
+    layers:
+    - state: rag
+      color: "#ffc833"
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-3
+      visible: false
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 100
+
+- type: loadout
+  id: RagGold
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBartender
+      time: 720000 # 200hr
+  storage:
+    back:
+    - RagItemGold
+  groupBy: "misc"
+
+- type: loadout
   id: Skub
   effects:
   - !type:JobRequirementLoadoutEffect
@@ -437,6 +560,19 @@
 # endregion
 
 # region Smokeables
+
+- type: loadout
+  id: CigarGoldCase
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Command
+      time: 360000 # 100hr
+  storage:
+    back:
+    - CigarGoldCase
+  groupBy: "smokeables"
 
 - type: loadout
   id: Vape
@@ -468,6 +604,7 @@
   parent: Lighter
   id: LighterGold
   name: golden lighter
+  description: A small marvel, earned through honest labor. Made of pure gold. Don't believe it? ...There's always the recycler...
   suffix: Loadout, Trinkets
   components:
   - type: Sprite
@@ -482,6 +619,9 @@
       map: [ "flame" ]
   - type: RandomSprite
     available: []
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 100
 
 - type: loadout
   id: LighterGold

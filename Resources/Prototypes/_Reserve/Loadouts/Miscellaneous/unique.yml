@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Group
+
+- type: loadoutGroup
+  id: UniqueReserveItems
+  name: loadout-group-unique-reserve-items
+  minLimit: 1000  # So any new items are auto-applied.
+  maxLimit: 1000
+  hidden: true
+  loadouts:
+  - Orchito
+
+# endregion
+
+# region Items
+
+- type: loadout
+  id: Orchito
+  effects:
+  - !type:CkeyRequirementLoadoutEffect
+    ckey: [ Ceterai ]
+  storage:
+    back:
+    - DrinkOrchitoGlass
+
+# endregion

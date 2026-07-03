@@ -57,3 +57,4 @@ lavaland-ruin-slime = Пещера слаймов
 lavaland-ruin-stash = Тайник
 
 lavaland-ruin-temple = Храм Нар'Си
+lavaland-ruin-reclaimer = NT-Реклеймер

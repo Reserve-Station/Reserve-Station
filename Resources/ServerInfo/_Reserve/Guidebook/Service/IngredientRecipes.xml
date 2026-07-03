@@ -4,6 +4,6 @@
 
 Твёрдые ингредиенты для рецептов микроволновки и способы их получения. Урожай с гидропоники описан в разделе «Ботаника».
 
-<GuideFoodIngredientGroupEmbed/>
+<GuideFoodIngredientGroupEmbed Group="Ingredients"/>
 
 </Document>

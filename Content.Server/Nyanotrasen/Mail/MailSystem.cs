@@ -27,6 +27,7 @@ using Content.Server.Chat.Systems;
 using Content.Server.Damage.Components;
 using Content.Server._DV.Cargo.Components;
 using Content.Server._DV.Cargo.Systems;
+using Content.Server.Kitchen.Components; // Reserve edit: mail-fix #328
 using Content.Server.Mail.Components;
 using Content.Server.Destructible.Thresholds.Behaviors;
 using Content.Server.Destructible.Thresholds.Triggers;
@@ -43,6 +44,7 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Access;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
+using Content.Shared.DoAfter; // Reserve edit: mail-fix #328
 using Content.Shared.Mail;
 using Content.Shared.Destructible;
 using Content.Shared.Emag.Components;
@@ -133,6 +135,7 @@ namespace Content.Server.Mail
         [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
         [Dependency] private readonly EmagSystem _emag = default!;
         [Dependency] private readonly TurfSystem _turf = default!;
+        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!; // Reserve edit: mail-fix #328
 
         [Dependency] private readonly LogisticStatsSystem _logisticsStatsSystem = default!;
         [Dependency] private readonly RadioSystem _radioSystem = default!; // ImpStation - for radio notifications of new mail
@@ -149,12 +152,14 @@ namespace Content.Server.Mail
 
             SubscribeLocalEvent<MailComponent, ComponentRemove>(OnRemove);
             SubscribeLocalEvent<MailComponent, UseInHandEvent>(OnUseInHand);
+            SubscribeLocalEvent<MailComponent, InteractUsingEvent>(OnInteractUsing); // Reserve edit: mail-fix #328
             SubscribeLocalEvent<MailComponent, AfterInteractUsingEvent>(OnAfterInteractUsing);
             SubscribeLocalEvent<MailComponent, ExaminedEvent>(OnExamined);
             SubscribeLocalEvent<MailComponent, DestructionEventArgs>(OnDestruction);
             SubscribeLocalEvent<MailComponent, DamageChangedEvent>(OnDamage);
             SubscribeLocalEvent<MailComponent, BreakageEventArgs>(OnBreak);
             SubscribeLocalEvent<MailComponent, GotEmaggedEvent>(OnMailEmagged);
+            SubscribeLocalEvent<MailComponent, MailForceOpenDoAfterEvent>(OnForceOpenDoAfter); // Reserve edit: mail-fix #328
         }
 
         public override void Update(float frameTime)
@@ -239,6 +244,20 @@ namespace Content.Server.Mail
             // the priority tape description anymore.
             component.IsPriority = false;
         }
+
+        // Reserve edit start: mail-fix #328
+        /// <summary>
+        /// Force-open mail with a sharp item. Handled on InteractUsing so utensil eating logic on the knife does not run first.
+        /// </summary>
+        private void OnInteractUsing(EntityUid uid, MailComponent component, InteractUsingEvent args)
+        {
+            if (args.Handled || !HasComp<SharpComponent>(args.Used))
+                return;
+
+            if (TryStartForceOpenDoAfter(uid, component, args.User, args.Used))
+                args.Handled = true;
+        }
+        // Reserve edit end: mail-fix #328
 
         /// <summary>
         /// Check the ID against the mail's lock
@@ -443,6 +462,85 @@ namespace Content.Server.Mail
             args.Handled = true;
         }
 
+        // Reserve edit start: mail-fix #328
+        public void InitializeMailOnMapInit(EntityUid uid, MailComponent component)
+        {
+            if (!component.RequiresIdUnlock)
+            {
+                component.IsLocked = false;
+                UpdateAntiTamperVisuals(uid, false);
+            }
+
+            PopulateMailContents(uid, component);
+        }
+
+        private void OnForceOpenDoAfter(EntityUid uid, MailComponent component, MailForceOpenDoAfterEvent args)
+        {
+            if (args.Handled || args.Cancelled || !component.IsEnabled)
+                return;
+
+            if (component.IsLocked)
+            {
+                ExecuteForEachLogisticsStats(uid, (station, logisticStats) =>
+                {
+                    _logisticsStatsSystem.AddTamperedMailLosses(station,
+                        logisticStats,
+                        component.IsProfitable ? component.Penalty : 0);
+                });
+
+                PenalizeStationFailedDelivery(uid, component, "mail-penalty-lock");
+                UnlockMail(uid, component);
+            }
+
+            OpenMail(uid, component, args.User);
+            args.Handled = true;
+        }
+
+        private bool TryStartForceOpenDoAfter(EntityUid uid, MailComponent component, EntityUid user, EntityUid used)
+        {
+            if (!component.IsEnabled)
+                return false;
+
+            var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(component.OpenDelay),
+                new MailForceOpenDoAfterEvent(), uid, uid, used)
+            {
+                NeedHand = true,
+                BreakOnDamage = true,
+                BreakOnMove = true,
+            };
+
+            return _doAfterSystem.TryStartDoAfter(doAfterArgs);
+        }
+
+        private void PopulateMailContents(EntityUid uid, MailComponent component, int fragileDamageThreshold = 40)
+        {
+            if (component.Contents.Count == 0)
+                return;
+
+            var container = _containerSystem.EnsureContainer<Container>(uid, "contents");
+            if (container.ContainedEntities.Count > 0)
+                return;
+
+            foreach (var item in EntitySpawnCollection.GetSpawns(component.Contents, _random))
+            {
+                var entity = Spawn(item, Transform(uid).Coordinates);
+
+                if (!_containerSystem.Insert(entity, container))
+                {
+                    _sawmill.Error($"Can't insert {ToPrettyString(entity)} into mail {ToPrettyString(uid)}! Deleting it.");
+                    QueueDel(entity);
+                }
+                else if (!component.IsFragile && IsEntityFragile(entity, fragileDamageThreshold))
+                {
+                    component.IsFragile = true;
+                }
+            }
+
+            if (component.IsFragile)
+                _appearanceSystem.SetData(uid, MailVisuals.IsFragile, true);
+        }
+        // Reserve edit end: mail-fix #328
+
         /// <summary>
         /// Returns true if the given entity is considered fragile for delivery.
         /// </summary>
@@ -535,21 +633,13 @@ namespace Content.Server.Mail
         {
             var mailComp = EnsureComp<MailComponent>(uid);
 
-            var container = _containerSystem.EnsureContainer<Container>(uid, "contents");
-            foreach (var item in EntitySpawnCollection.GetSpawns(mailComp.Contents, _random))
-            {
-                var entity = EntityManager.SpawnEntity(item, Transform(uid).Coordinates);
+            // Reserve edit start: mail-fix #328
+            mailComp.RequiresIdUnlock = true;
+            mailComp.IsLocked = true;
+            UpdateAntiTamperVisuals(uid, true);
 
-                if (!_containerSystem.Insert(entity, container))
-                {
-                    _sawmill.Error($"Can't insert {ToPrettyString(entity)} into new mail delivery {ToPrettyString(uid)}! Deleting it.");
-                    QueueDel(entity);
-                }
-                else if (!mailComp.IsFragile && IsEntityFragile(entity, component.FragileDamageThreshold))
-                {
-                    mailComp.IsFragile = true;
-                }
-            }
+            PopulateMailContents(uid, mailComp, component.FragileDamageThreshold);
+            // Reserve edit end: mail-fix #328
 
             if (_random.Prob(component.PriorityChance))
                 mailComp.IsPriority = true;

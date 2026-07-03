@@ -23,6 +23,12 @@
     - type: Tag
       tags:
         - TabletopBoard
+    # Reserve edit start: Better Recycling
+    - type: PhysicalComposition
+      materialComposition:
+        Plastic: 100
+        Steel: 25
+    # Reserve edit end: Better Recycling
 
 - type: entity
   id: BaseTabletopPiece # Board piece

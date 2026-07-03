@@ -16,58 +16,64 @@ SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
-<Document>
+<Document> <!--Reserve edit start: Fix recipe categories-->
 
 # Microwave Recipes
 
 This is the latest published version of NanoTrasen Central Command Kitchen de Cuisine's recipe collection for chefs upon NanoTrasen vessels to prepare.
 
 ## Ingredients
-<GuideFoodIngredientGroupEmbed/>
+<GuideFoodIngredientGroupEmbed Group="Ingredients"/>
 
 ## Pizza Pies
-<GuideMicrowaveGroupEmbed Group="Pizza"/>
+<GuideFoodIngredientGroupEmbed Group="Pizza"/>
+
+## Burgers
+<GuideFoodIngredientGroupEmbed Group="Burger"/>
+
+## Fastfood
+<GuideFoodIngredientGroupEmbed Group="Fastfood"/>
 
 ## Savory Cooking
-<GuideMicrowaveGroupEmbed Group="Savory"/>
+<GuideFoodIngredientGroupEmbed Group="Savory"/>
 
 ## Breads
-<GuideMicrowaveGroupEmbed Group="Breads"/>
+<GuideFoodIngredientGroupEmbed Group="Breads"/>
 
 ## Breakfast Foods
-<GuideMicrowaveGroupEmbed Group="Breakfast"/>
+<GuideFoodIngredientGroupEmbed Group="Breakfast"/>
 
 ## Moth Foods
-<GuideMicrowaveGroupEmbed Group="Moth"/>
+<GuideFoodIngredientGroupEmbed Group="Moth"/>
 
 ## Pastas & Noodles
-<GuideMicrowaveGroupEmbed Group="Pasta"/>
+<GuideFoodIngredientGroupEmbed Group="Pasta"/>
 
 ## Pastries & Desserts
-<GuideMicrowaveGroupEmbed Group="Dessert"/>
+<GuideFoodIngredientGroupEmbed Group="Dessert"/>
 
 ## Soups & Stews
-<GuideMicrowaveGroupEmbed Group="Soup"/>
+<GuideFoodIngredientGroupEmbed Group="Soup"/>
 
 ## Pies & Tarts
-<GuideMicrowaveGroupEmbed Group="Pie"/>
+<GuideFoodIngredientGroupEmbed Group="Pie"/>
 
 ## Bars & Cookies
-<GuideMicrowaveGroupEmbed Group="BarsAndCookies"/>
+<GuideFoodIngredientGroupEmbed Group="BarsAndCookies"/>
 
 ## Cakes
-<GuideMicrowaveGroupEmbed Group="Cake"/>
+<GuideFoodIngredientGroupEmbed Group="Cake"/>
 
 ## Salads
-<GuideMicrowaveGroupEmbed Group="Salad"/>
+<GuideFoodIngredientGroupEmbed Group="Salad"/>
 
 ## Medicinal
-<GuideMicrowaveGroupEmbed Group="Medicinal"/>
+<GuideFoodIngredientGroupEmbed Group="Medicinal"/>
 
 ## Other
-<GuideMicrowaveGroupEmbed Group="Other"/>
+<GuideFoodIngredientGroupEmbed Group="Other"/>
 
 ## Secret
-<GuideMicrowaveGroupEmbed Group="Secret"/>
+<GuideFoodIngredientGroupEmbed Group="Secret"/>
 
-</Document>
+</Document> <!--Reserve edit end: Fix recipe categories-->
