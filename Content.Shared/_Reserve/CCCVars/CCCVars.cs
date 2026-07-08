@@ -14,4 +14,7 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<bool> PeacefulRoundEnd =
         CVarDef.Create("game.peaceful_end", true, CVar.SERVERONLY);
+
+    public static readonly CVarDef<bool> GhostTrailsEnabled =
+        CVarDef.Create("ghost.trails_enabled", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

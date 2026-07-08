@@ -9,7 +9,7 @@ namespace Content.Client._Starlight.Trail;
 /// Marks an entity to leave a fading motion trail behind it.
 /// </summary>
 [RegisterComponent]
-public sealed partial class TrailComponent : Component
+public sealed partial class GhostTrailComponent : Component // Reserve - TrailComp -> GhostTrailComp
 {
     /// <summary>If there is a shader, there is not much point in this.</summary>
     [DataField]

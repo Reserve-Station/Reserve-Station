@@ -1,19 +1,19 @@
 using Content.Client._Starlight.Shaders;
 using Content.Client._Starlight.Trail;
-using Content.Shared.Starlight.CCVar;
+using Content.Shared._Reserve.CCCVars; // Reserve
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration;
 
 namespace Content.Client._Starlight.Overlay.Trail;
 
-public sealed class TrailSystem : EntitySystem
+public sealed class GhostTrailSystem : EntitySystem // Reserve - TrailSystem -> GhostTrailSystem
 {
     [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly IStarlightShaderManager _shaderMan = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly SharedTransformSystem _xform = default!;
 
-    private TrailOverlay _overlay = default!;
+    private GhostTrailOverlay _overlay = default!; // Reserve
     private bool _enabled = true;
 
     private const float TeleportThreshold = 3f;
@@ -21,10 +21,10 @@ public sealed class TrailSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        _overlay = new TrailOverlay(EntityManager, _shaderMan);
+        _overlay = new GhostTrailOverlay(EntityManager, _shaderMan); // Reserve
         _overlayMan.AddOverlay(_overlay);
 
-        Subs.CVar(_cfg, StarlightCCVars.TracesEnabled, v =>
+        Subs.CVar(_cfg, CCCVars.GhostTrailsEnabled, v =>
         {
             _enabled = v;
             _overlay.Enabled = v;
@@ -44,7 +44,7 @@ public sealed class TrailSystem : EntitySystem
         if (!_enabled)
             return;
 
-        var query = EntityQueryEnumerator<TrailComponent, TransformComponent>();
+        var query = EntityQueryEnumerator<GhostTrailComponent, TransformComponent>(); // Reserve
         while (query.MoveNext(out var uid, out var trail, out var xform))
         {
             var worldPos = _xform.GetWorldPosition(xform);

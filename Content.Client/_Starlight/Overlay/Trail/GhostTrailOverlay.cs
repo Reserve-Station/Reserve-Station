@@ -7,7 +7,7 @@ using Robust.Shared.GameObjects;
 
 namespace Content.Client._Starlight.Overlay.Trail;
 
-public sealed class TrailOverlay : Robust.Client.Graphics.Overlay
+public sealed class GhostTrailOverlay : Robust.Client.Graphics.Overlay // Reserve - TrailOverlay -> GhostTrailOverlay
 {
     public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities;
 
@@ -16,7 +16,7 @@ public sealed class TrailOverlay : Robust.Client.Graphics.Overlay
     private readonly List<Vector2> _verts = [];
     private readonly List<Vector2> _ribbon = [];
 
-    public TrailOverlay(IEntityManager entMan, IStarlightShaderManager shaderMan)
+    public GhostTrailOverlay(IEntityManager entMan, IStarlightShaderManager shaderMan) // Reserve
     {
         _entMan = entMan;
         _shaderMan = shaderMan;
@@ -36,7 +36,7 @@ public sealed class TrailOverlay : Robust.Client.Graphics.Overlay
         handle.SetTransform(Matrix3x2.Identity);
 
         var drawn = 0;
-        var query = _entMan.EntityQueryEnumerator<TrailComponent>();
+        var query = _entMan.EntityQueryEnumerator<GhostTrailComponent>(); // Reserve
         while (query.MoveNext(out var comp))
         {
             if (comp.Points.Count < 2)
@@ -49,7 +49,7 @@ public sealed class TrailOverlay : Robust.Client.Graphics.Overlay
         }
     }
 
-    private void DrawTrail(DrawingHandleWorld handle, TrailComponent comp, in OverlayDrawArgs args)
+    private void DrawTrail(DrawingHandleWorld handle, GhostTrailComponent comp, in OverlayDrawArgs args) // Reserve
     {
         var points = comp.Points;
         var baseColor = comp.TrailColor;
