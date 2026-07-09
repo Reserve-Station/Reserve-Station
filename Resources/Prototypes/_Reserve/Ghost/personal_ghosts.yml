@@ -13,6 +13,14 @@
   restrictions:
   - !type:CkeyRestriction
     ckey: [ca4tuk, AwareFoxy]
+  trail:
+    color: "#FFFFFF"
+    maxPoints: 40
+    lineWidth: 2.6
+    minDistance: 0.10
+    decayDelay: 2.6
+    decayInterval: 0.15
+    shader: HolyStarsTrail
   name: ca4tuk
   description: ДА
 
@@ -31,6 +39,14 @@
   restrictions:
   - !type:CkeyRestriction
     ckey: [Svarshik]
+  trail:
+    color: "#FFFFFF"
+    maxPoints: 40
+    lineWidth: 2.6
+    minDistance: 0.10
+    decayDelay: 2.6
+    decayInterval: 0.15
+    shader: HolyStarsTrail
   name: Svarshik
   description: Вам кажется.
 
@@ -67,6 +83,14 @@
   restrictions:
   - !type:CkeyRestriction
     ckey: [FXX]
+  trail:
+    color: "#FFFFFF"
+    maxPoints: 40
+    lineWidth: 2.6
+    minDistance: 0.10
+    decayDelay: 2.6
+    decayInterval: 0.15
+    shader: HolyStarsTrail
   name: FXX
   description: Космическая Гидра.
 
@@ -85,6 +109,14 @@
   restrictions:
   - !type:CkeyRestriction
     ckey: [is_already_taken]
+  trail:
+    color: "#FFFFFF"
+    maxPoints: 40
+    lineWidth: 2.6
+    minDistance: 0.10
+    decayDelay: 2.6
+    decayInterval: 0.15
+    shader: HolyStarsTrail
   name: Раймонд Роберт (Is_already_taken)
   description: РП Аллах
 
@@ -103,6 +135,12 @@
   restrictions:
   - !type:CkeyRestriction
     ckey: [PZAKusik]
+  trail:
+    color: "#FFFFFF"
+    maxPoints: 64
+    lineWidth: 0.65
+    minDistance: 0.10
+    shader: NightSkyTrail
   name: Kutos
   description: ...
 
@@ -119,7 +157,15 @@
   proto: MobObserverCkeyThxMqninq
   restrictions:
   - !type:CkeyRestriction
-    ckey: [ _____, ThxMqninq ]
+    ckey: [ MagmaShow, ThxMqninq ]
+  trail:
+    color: "#FFFFFF"
+    maxPoints: 40
+    lineWidth: 2.6
+    minDistance: 0.10
+    decayDelay: 2.6
+    decayInterval: 0.15
+    shader: HolyStarsTrail
   name: ThxMqninq
   description: korovka
 
@@ -137,6 +183,14 @@
   restrictions:
   - !type:CkeyRestriction
     ckey: [perlovka_is_my_name]
+  trail:
+    color: "#FFFFFF"
+    maxPoints: 40
+    lineWidth: 2.6
+    minDistance: 0.10
+    decayDelay: 2.6
+    decayInterval: 0.15
+    shader: HolyStarsTrail
   name: Перловка
   description: Waiting...
 
@@ -155,6 +209,14 @@
   restrictions:
   - !type:CkeyRestriction
     ckey: [Mr_Samuel]
+  trail:
+    color: "#FFFFFF"
+    maxPoints: 40
+    lineWidth: 2.6
+    minDistance: 0.10
+    decayDelay: 2.6
+    decayInterval: 0.15
+    shader: HolyStarsTrail
   name: Гусь в шляпе
   description: ¯\_(ツ)_/¯
 

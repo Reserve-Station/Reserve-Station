@@ -1,8 +1,10 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Starlight.Trail; // Reserve
 using Content.Shared.Ghost;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
+
 namespace Content.Shared._White.CustomGhostSystem;
 
 [Prototype("customGhost")]
@@ -26,6 +28,8 @@ public sealed class CustomGhostPrototype : IPrototype, IInheritingPrototype
     [DataField]
     public List<CustomGhostRestriction>? Restrictions { get; private set; }
 
+    [DataField("trail")] // Reserve
+    public TrailSettings? Trail = null;
 
     public bool CanUse(ICommonSession session) => CanUse(session, out _, out _);
     public bool CanUse(ICommonSession session, out string fullFailReason) => CanUse(session, out fullFailReason, out _);

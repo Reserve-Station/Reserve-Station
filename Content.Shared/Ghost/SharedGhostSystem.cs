@@ -43,6 +43,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Starlight.Trail;
 using Content.Shared.Emoting;
 using Content.Shared.Hands;
 using Content.Shared.Interaction.Events;
@@ -386,4 +387,18 @@ namespace Content.Shared.Ghost
 
     [Serializable, NetSerializable]
     public sealed class GhostReturnToRoundRequest : EntityEventArgs; // Reserve - Respawn
+
+    [Serializable, NetSerializable]
+    public sealed class GhostApplyTrailEvent : EntityEventArgs // Reserve - ghost trail
+    {
+        public NetEntity GhostToApply;
+
+        public TrailSettings? Trail;
+
+        public GhostApplyTrailEvent(NetEntity ghostToApply, TrailSettings? trail)
+        {
+            GhostToApply = ghostToApply;
+            Trail = trail;
+        }
+    }
 }

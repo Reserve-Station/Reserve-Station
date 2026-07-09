@@ -98,6 +98,7 @@ using Content.Server.Ghost.Components;
 using Content.Server.Mind;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles.Jobs;
+using Content.Shared._Starlight.Trail; // Reserve
 using Content.Shared._White.CustomGhostSystem;
 using Content.Shared.Actions;
 using Content.Shared.CCVar;
@@ -728,6 +729,10 @@ namespace Content.Server.Ghost
                     _metaData.SetEntityName(ghost, FormattedMessage.EscapeText(session.Name)); // Goob Sanitize Text
             }
             // WWDP-End
+            var netEntity = GetNetEntity(ghost); // Reserve
+
+            if (customGhost?.Trail != null && _player.TryGetSessionById(mind.Comp.UserId, out var recipient)) // Reserve - ghost trail
+                RaiseNetworkEvent(new GhostApplyTrailEvent(netEntity, customGhost.Trail), recipient);
 
             if (mind.Comp.TimeOfDeath.HasValue)
             {

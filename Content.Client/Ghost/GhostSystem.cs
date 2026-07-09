@@ -38,7 +38,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client._Shitcode.Wizard.Systems;
+using Content.Client._Starlight.Trail; // Reserve
 using Content.Client.Movement.Systems;
+using Content.Shared._Starlight.Trail; // Reserve
 using Content.Shared.Actions;
 using Content.Shared.Ghost;
 using Robust.Client.Console;
@@ -108,6 +110,7 @@ namespace Content.Client.Ghost
 
             SubscribeNetworkEvent<GhostWarpsResponseEvent>(OnGhostWarpsResponse);
             SubscribeNetworkEvent<GhostUpdateGhostRoleCountEvent>(OnUpdateGhostRoleCount);
+            SubscribeNetworkEvent<GhostApplyTrailEvent>(OnApplyTrailEvent);
 
             SubscribeLocalEvent<EyeComponent, ToggleLightingActionEvent>(OnToggleLighting);
             SubscribeLocalEvent<EyeComponent, ToggleFoVActionEvent>(OnToggleFoV);
@@ -225,6 +228,14 @@ namespace Content.Client.Ghost
             GhostRoleCountUpdated?.Invoke(msg);
         }
 
+        private void OnApplyTrailEvent(GhostApplyTrailEvent msg)
+        {
+            var ghost = GetEntity(msg.GhostToApply);
+
+            if (msg.Trail != null)
+                ApplyGhostTrail(ghost, msg.Trail);
+        }
+
         public void RequestWarps()
         {
             RaiseNetworkEvent(new GhostWarpsRequestEvent());
@@ -250,6 +261,25 @@ namespace Content.Client.Ghost
         {
             var msg = new GhostReturnToRoundRequest();
             RaiseNetworkEvent(msg);
+        }
+
+        public void ApplyGhostTrail(EntityUid uid, TrailSettings trailSettings) // Reserve - ghost trail
+        {
+            if (trailSettings != null)
+            {
+                var trail = EnsureComp<GhostTrailComponent>(uid);
+                trail.TrailColor = trailSettings.Color;
+                trail.MaxPoints = trailSettings.MaxPoints;
+                trail.LineWidth = trailSettings.LineWidth;
+                trail.MinDistance = trailSettings.MinDistance;
+                trail.DecayDelay = trailSettings.DecayDelay;
+                trail.DecayInterval = trailSettings.DecayInterval;
+                trail.Shader = trailSettings.Shader;
+            }
+            else
+            {
+                RemComp<GhostTrailComponent>(uid);
+            }
         }
     }
 }

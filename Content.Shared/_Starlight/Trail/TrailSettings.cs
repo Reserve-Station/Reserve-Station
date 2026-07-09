@@ -1,11 +1,11 @@
-using Robust.Shared.Serialization.Manager.Attributes;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Starlight.Trail;
 
 /// <summary>
 /// Data definition for configuring a motion trail on any entity.
 /// </summary>
-[DataDefinition]
+[DataDefinition, Serializable, NetSerializable] // Reserve
 public sealed partial class TrailSettings
 {
     [DataField]
