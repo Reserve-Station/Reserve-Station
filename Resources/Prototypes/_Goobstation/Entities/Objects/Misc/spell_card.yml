@@ -12,8 +12,8 @@
   - type: Sprite
     sprite: _Goobstation/Wizard/Projectiles/spellcard.rsi
     state: red
-  - type: SpecialAnimationOnUse
-    overrideText: "Особая Атака: 65 УДАР!!!!"  # Reserve edit: Fix special animation for cards
+  # - type: SpecialAnimationOnUse  # Reserve edit: Disabled until the range is fixed
+  #   overrideText: "Особая Атака: 65 УДАР!!!!"  # Reserve edit: Fix special animation for cards
   - type: UseDelay
     delay: 5
   - type: Card  # Reserve edit: Fix special animation for cards

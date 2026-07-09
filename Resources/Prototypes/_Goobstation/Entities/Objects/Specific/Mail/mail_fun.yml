@@ -241,6 +241,9 @@
       - id: MobMothroach
         orGroup: Critter
         prob: 0.2
+      - id: MobCockroachBig  # Reserve edit: Madagascar cockroach
+        orGroup: Critter
+        prob: 0.01
       # Small reptiles (weight: 1)
       - id: MobLizard
         orGroup: Critter

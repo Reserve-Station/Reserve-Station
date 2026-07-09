@@ -98,6 +98,7 @@
   tier: 3
   cost: 2500
   recipeUnlocks:
+  - DrinkShakerBluespace
   - BluespaceDrinkShakerAdvanced
   - BluespaceDrinkKettleAdvanced
   position: -3,9

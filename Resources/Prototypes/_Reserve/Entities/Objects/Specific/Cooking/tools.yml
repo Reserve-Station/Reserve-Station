@@ -41,7 +41,7 @@
 - type: entity
   parent: [DrinkKettleAdvanced, BaseCivilianContraband]
   id: BluespaceDrinkKettleAdvanced
-  name: bluespace kettle
+  name: bluespace advanced kettle
   description: This advanced kettle uses bluespace technology to hold more liquid.
   components:
   - type: SolutionContainerManager

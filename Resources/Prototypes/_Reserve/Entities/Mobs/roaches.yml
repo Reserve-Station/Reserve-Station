@@ -1,0 +1,95 @@
+# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: MobCockroach
+  id: MobCockroachBig
+  name: madagascar cockroach
+  suffix: Loadout, Trinkets
+  components:
+  # Size
+  - type: Sprite
+    scale: 1.5, 1.5  # It's big.
+    color: "#aaffff"
+  - type: Item
+    size: Small  # Very big.
+  # Indurance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical  # KILL IT WITH FIRE!!!
+      250: Dead  # IT'S STILL TWITCHING!!! KILL IT KILL IT KILL IT!!!
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.3
+  - type: Bloodstream
+    bloodReagent: InsectBlood
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0.1
+    damageRecovery:
+      types:
+        Asphyxiation: -0.2
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.02
+  # Digestion
+  - type: IgnoreBadFood  # Can eat basically anything.
+  # Ghost role
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    rules: ghost-role-information-sentientanimal-rules # Goobstation Sentient Animal PR
+    mindRoles:
+    - MindRoleGhostRoleSentientAnimal # Goobstation Sentient Animal PR
+  - type: GhostTakeoverAvailable
+  # Abilities
+  - type: FaxableObject
+    insertingState: inserting_mothroach
+  - type: FaxSlip # Goobstation
+    slipChance: 0.3
+  - type: DashAction # Goobstation - dark souls moths
+    actionProto: ActionDashMoth
+  - type: CombatMode
+  - type: CanEscapeInventory
+    baseResistTime: 3
+  - type: Speech
+    speechVerb: Arachnid
+    speechSounds: Arachnid
+    allowedEmotes: ['Chitter', 'Click', 'Flap'] # Goobstation - flap
+  - type: VentCrawler
+    enterDelay: 0.1
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 1 # Goobstation - LET THE HORDES ROAM!!
+  - type: NightVision
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: DodgeWideswing
+    staminaRatio: 1 # roaches are small so can probably evade without much stamina drain
+  - type: DiseaseOnHit # does not infect you unless the mouse has any diseases, which it doesn't by default
+    spreadParams:
+      chance: 0.05 # 1984 lower chance for normal mice so creating the turboplague horde is not as strong
+      power: 1
+      spreadType: Blood
+  - type: DiseaseCarrier
+    effectImmune: true
+  - type: ShowDiseaseIcons # they sense it
+  # Loot
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSlime
+      amount: 3

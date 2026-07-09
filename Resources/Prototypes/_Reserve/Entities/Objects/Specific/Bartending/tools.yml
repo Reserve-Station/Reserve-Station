@@ -42,7 +42,7 @@
 - type: entity
   parent: [DrinkShakerAdvanced, BaseCivilianContraband]
   id: BluespaceDrinkShakerAdvanced
-  name: bluespace shaker
+  name: bluespace advanced shaker
   description: This advanced shaker uses bluespace technology to hold more liquid.
   components:
   - type: SolutionContainerManager

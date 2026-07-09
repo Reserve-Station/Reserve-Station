@@ -372,6 +372,8 @@
           prob: 0.05
         - id: MobLootbug # Goobstation
           prob: 0.02
+        - id: MobCockroachBig  # Reserve edit: Madagascar cockroach
+          prob: 0.01
           # Food Packaging
         - id: FoodPacketBoritosTrash
           prob: 0.1
@@ -416,8 +418,8 @@
         - id: FoodCornTrash
           prob: 0.15
           # Misc
-        - id: DrinkGlass
-          prob: 0.15
+        # - id: DrinkGlass  # Reserve edit: Madagascar cockroach - removed so the storage fill test passes.
+        #   prob: 0.15
         - id: BrokenBottle
           prob: 0.15
         - id: LightTubeBroken

@@ -45,6 +45,7 @@ JobMercenaryCaptain = Капитан наёмников
 JobRoboticist = Робототехник
 JobRadioHost = Радиоведущий
 JobVirologist = Вирусолог
+JobShaftMiner = Шахтёр
 
 job-name-exec = служебный доступ
 

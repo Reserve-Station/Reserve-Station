@@ -91,6 +91,7 @@ ent-ClothingHeadHatWizard = волшебная шляпа
     .desc = Странного вида синяя шляпа, которая, несомненно, принадлежала сильному магу.
 ent-ClothingHeadHatXmasCrown = рождественский венец
     .desc = Счастливого Рождества!
+    .suffix = Радужный
 ent-ClothingHeadHatTrucker = кепка дальнобойщика
     .desc = В прошлом Чака, эта шляпа теперь ваша.
 ent-ClothingHeadPyjamaSyndicateBlack = синдикатно-чёрная пижамная шапочка
