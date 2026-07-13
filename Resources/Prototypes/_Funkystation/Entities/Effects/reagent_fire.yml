@@ -53,6 +53,6 @@
     state: chemsmoke
   renderLayer: 1
   gravity: -1.2
-  spawnOffset: 0, 0.4
+  # Reserve edit: removed spawnOffset field - not defined in ParticleEffectPrototype
   startColor: "#FFFFFF66"
   endColor: "#FFFFFF00"

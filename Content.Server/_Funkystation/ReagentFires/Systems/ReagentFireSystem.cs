@@ -43,6 +43,7 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
         [Dependency] private readonly DamageableSystem _damageable = null!;
 
         private readonly List<EntityUid> _toExtinguish = new();
+        private readonly List<EntityUid> _pendingInit = new(); // Reserve edit: deferred setup for puddles that become flammable during EntityQueryEnumerator iteration
         private readonly string[] _burntDecals = ["burnt1", "burnt2", "burnt3", "burnt4"];
 
         public override void Initialize()
@@ -84,14 +85,27 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
 
             if (flammability <= 0)
             {
+                // Reserve edit: was Extinguish(containerUid) - direct RemComp during EntityQueryEnumerator
+                // iteration (triggered by BurnFlammableReagents -> SolutionChangedEvent) caused fatal crash.
                 if (HasComp<ReagentPuddleFireComponent>(containerUid))
-                {
-                    Extinguish(containerUid);
-                }
+                    _toExtinguish.Add(containerUid);
                 return;
             }
 
-            var fireComp = EnsureComp<ReagentPuddleFireComponent>(containerUid);
+            // Reserve edit: don't add a new component while EntityQueryEnumerator is iterating it -
+            // modifying the component dictionary mid-iteration throws InvalidOperationException.
+            if (!TryComp<ReagentPuddleFireComponent>(containerUid, out var fireComp))
+            {
+                _pendingInit.Add(containerUid);
+                return;
+            }
+
+            UpdateFireComponent(containerUid, fireComp, flammability, selfOxidizing);
+        }
+
+        // Reserve edit: extracted from OnSolutionChanged to share logic with deferred _pendingInit processing
+        private void UpdateFireComponent(EntityUid uid, ReagentPuddleFireComponent fireComp, int flammability, bool selfOxidizing)
+        {
             fireComp.Flammability = flammability;
             fireComp.SelfOxidizing = selfOxidizing;
 
@@ -104,17 +118,17 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
 
             if (fireComp.OnFire)
             {
-                var fireColor = GetFireColor(fireComp.Flammability);
+                var fireColor = GetFireColor(flammability);
                 if (fireComp.FireEffectEntity != null)
                 {
                     _appearance.SetData(fireComp.FireEffectEntity.Value, ReagentPuddleFireVisuals.FireState, fireComp.FireState);
                     _appearance.SetData(fireComp.FireEffectEntity.Value, ReagentPuddleFireVisuals.FireColor, fireColor);
                 }
 
-                if (TryComp<PointLightComponent>(containerUid, out var light))
+                if (TryComp<PointLightComponent>(uid, out var light))
                 {
-                    _light.SetRadius(containerUid, MathF.Max(2f, fireComp.FireState - 1f), light);
-                    _light.SetColor(containerUid, fireColor, light);
+                    _light.SetRadius(uid, MathF.Max(2f, fireComp.FireState - 1f), light);
+                    _light.SetColor(uid, fireColor, light);
                 }
             }
         }
@@ -244,7 +258,6 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
-            _toExtinguish.Clear();
 
             var activeQuery = EntityQueryEnumerator<ReagentPuddleFireComponent, PuddleComponent, TransformComponent>();
             while (activeQuery.MoveNext(out var uid, out var fireComp, out var puddle, out var xform))
@@ -315,6 +328,7 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                     continue;
                 }
 
+                fireComp.Flammability = flammability; // Reserve edit: was missing - fireComp.Flammability was never updated after burn, causing stale fire color
                 fireComp.SelfOxidizing = selfOxidizing;
 
                 if (flammability > 10)
@@ -324,7 +338,7 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                 else
                     fireComp.FireState = 4;
 
-                var fireColor = GetFireColor(fireComp.Flammability);
+                var fireColor = GetFireColor(flammability); // Reserve edit: was GetFireColor(fireComp.Flammability) - stale value
 
                 if (fireComp.FireEffectEntity != null)
                 {
@@ -456,10 +470,29 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                 }
             }
 
+            // Reserve edit: _toExtinguish.Clear() was moved from top of Update to here so items queued
+            // by OnSolutionChanged (outside the iteration) between ticks aren't discarded before processing.
             foreach (var uid in _toExtinguish)
             {
                 Extinguish(uid);
             }
+            _toExtinguish.Clear();
+
+            // Reserve edit: process puddles that became flammable mid-iteration (deferred from _pendingInit)
+            foreach (var uid in _pendingInit)
+            {
+                if (Deleted(uid) || !TryComp<PuddleComponent>(uid, out var pendingPuddle))
+                    continue;
+                if (!_solutionContainerSystem.ResolveSolution(uid, pendingPuddle.SolutionName, ref pendingPuddle.Solution, out var pendingSolution))
+                    continue;
+                var pendingFlammability = pendingSolution.GetSolutionFlammability(_prototypeManager);
+                if (pendingFlammability <= 0)
+                    continue;
+                var pendingSelfOxidizing = pendingSolution.IsSolutionSelfOxidizing(_prototypeManager);
+                var newFireComp = EnsureComp<ReagentPuddleFireComponent>(uid);
+                UpdateFireComponent(uid, newFireComp, pendingFlammability, pendingSelfOxidizing);
+            }
+            _pendingInit.Clear();
         }
     }
 }
