@@ -31,6 +31,7 @@
     - BaseStationNanotrasen
     - BaseStationDeliveries
     - BaseStationWizardTarget # Goobstation
+    - BaseStationServiceJobs  # Reserve edit: Service Job Board
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform
