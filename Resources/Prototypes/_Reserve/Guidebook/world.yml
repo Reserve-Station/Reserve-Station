@@ -1,0 +1,84 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: guideEntry
+  id: World
+  name: guide-entry-world
+  text: "/ServerInfo/_Reserve/Guidebook/World.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/World.xml"
+  children:
+  - Factions
+  # - Species
+  - TauCeti
+
+- type: guideEntry
+  id: TauCeti
+  name: guide-entry-tauceti
+  text: "/ServerInfo/_Reserve/Guidebook/World/TauCeti.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/World/TauCeti.xml"
+
+- type: guideEntry
+  id: Factions
+  name: guide-entry-factions
+  text: "/ServerInfo/_Reserve/Guidebook/World/Factions.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/World/Factions.xml"
+  children:
+  - NanoTrasen
+  - TauCetiFederation
+  - Syndicate
+  # - Revolutionaries
+  # - Conspirators
+  # - Heretics
+  # - CosmicCult
+
+- type: guideEntry
+  id: NanoTrasen
+  name: guide-entry-nanotrasen
+  text: "/ServerInfo/_Reserve/Guidebook/World/Factions/NanoTrasen.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/World/Factions/NanoTrasen.xml"
+  children:
+  - CentralCommand
+  # - Jobs
+
+- type: guideEntry
+  id: CentralCommand
+  name: guide-entry-centralcommand
+  text: "/ServerInfo/_Reserve/Guidebook/World/Factions/CentralCommand.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/World/Factions/CentralCommand.xml"
+  children:
+  - BlueShield
+  - CorporateAgents
+
+- type: guideEntry
+  id: BlueShield
+  name: guide-entry-blueshield
+  text: "/ServerInfo/_Reserve/Guidebook/World/Factions/BlueShield.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/World/Factions/BlueShield.xml"
+
+- type: guideEntry
+  id: TauCetiFederation
+  name: guide-entry-tauceti
+  text: "/ServerInfo/_Reserve/Guidebook/World/Factions/TauCetiFederation.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/World/Factions/TauCetiFederation.xml"
+  children:
+  - OuterCommand
+
+- type: guideEntry
+  id: OuterCommand
+  name: guide-entry-outercommand
+  text: "/ServerInfo/_Reserve/Guidebook/World/Factions/OuterCommand.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/World/Factions/OuterCommand.xml"
+
+- type: guideEntry
+  id: Syndicate
+  name: guide-entry-syndicate
+  text: "/ServerInfo/_Reserve/Guidebook/World/Factions/Syndicate.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/World/Factions/Syndicate.xml"
