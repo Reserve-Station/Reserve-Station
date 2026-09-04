@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Actions;
 using Content.Shared.Actions.Events;
@@ -32,7 +32,7 @@ public sealed partial class FelinidSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    // [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedChargesSystem _sharedChargesSystem = default!;
 

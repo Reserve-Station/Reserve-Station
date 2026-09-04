@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Enchanting.Components;
 using Content.Shared.Mobs.Components;
@@ -11,7 +11,7 @@ namespace Content.Goobstation.Shared.Enchanting.Systems;
 /// </summary>
 public sealed class BonusDamageEnchantSystem : EntitySystem
 {
-    [Dependency] private readonly EnchantingSystem _enchanting = default!;
+    // [Dependency] private readonly EnchantingSystem _enchanting = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

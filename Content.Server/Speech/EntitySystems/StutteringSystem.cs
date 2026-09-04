@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+﻿// SPDX-License-Identifier: MIT
 
 using System.Text;
 using System.Text.RegularExpressions;
@@ -12,11 +12,11 @@ namespace Content.Server.Speech.EntitySystems
 {
     public sealed class StutteringSystem : SharedStutteringSystem
     {
-        [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffectsSystem = default!;
+        // [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusEffectsSystem = default!; // Reserve edit: Fix warnings
         [Dependency] private readonly IRobustRandom _random = default!;
 
         // Regex of characters to stutter.
-        private static readonly Regex Stutter = new(@"[b-df-hj-np-tv-wxyz-б-вд-к-лмн-прст]", // Reserve-Localization
+        private static readonly Regex Stutter = new(@"[b-df-hj-np-tv-wxyz-Р±-РІРґ-Рє-Р»РјРЅ-РїСЂСЃС‚]", // Reserve-Localization
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
         public override void Initialize()

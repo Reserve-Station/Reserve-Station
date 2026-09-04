@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Slasher.Components;
+﻿using Content.Goobstation.Shared.Slasher.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Components;
 using Content.Shared._Shitmed.Medical.Surgery.Wounds.Systems;
 using Content.Shared.Actions;
@@ -46,11 +46,11 @@ public sealed class SlasherMassacreSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
+    // [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
+    // [Dependency] private readonly StatusEffectsSystem _status = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly MovementModStatusSystem _movementModStatus = default!;
 
 

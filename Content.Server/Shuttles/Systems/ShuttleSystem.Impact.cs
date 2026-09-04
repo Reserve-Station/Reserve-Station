@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
 using Content.Server.Shuttles.Components;
@@ -22,7 +22,7 @@ using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using System.Numerics;
+// using System.Numerics; // Reserve edit: Fix warnings
 
 namespace Content.Server.Shuttles.Systems;
 

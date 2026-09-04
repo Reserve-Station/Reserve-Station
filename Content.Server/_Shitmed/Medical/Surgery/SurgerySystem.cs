@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Atmos.Rotting;
 using Content.Server.Body.Systems;
@@ -24,7 +24,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
+    // [Dependency] private readonly PopupSystem _popup = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly WoundSystem _wounds = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
 

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Server.Blob.Components;
 using Content.Goobstation.Shared.Blob;
@@ -40,7 +40,7 @@ public sealed class ZombieBlobSystem : SharedZombieBlobSystem
 {
     [Dependency] private readonly NpcFactionSystem _faction = default!;
     [Dependency] private readonly NPCSystem _npc = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
+    // [Dependency] private readonly MindSystem _mind = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly TagSystem _tagSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IChatManager _chatMan = default!;

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
@@ -57,7 +57,7 @@ public abstract partial class SharedMoverController : VirtualController
     [Dependency] protected readonly SharedGravitySystem _gravity = default!;
     [Dependency] protected readonly SharedTransformSystem _transform = default!;
     [Dependency] private   readonly TagSystem _tags = default!;
-    [Dependency] private   readonly SharedInteractionSystem _interaction = default!; // Tile Movement Change
+    // [Dependency] private   readonly SharedInteractionSystem _interaction = default!; // Tile Movement Change // Reserve edit: Fix warnings
     [Dependency] private   readonly StandingStateSystem _standing = default!; // Goobstation - kil mofs
     [Dependency] private   readonly CommonMomentumSteeringSystem _momentumSteering = default!; // Goobstation - momentum steering
     [Dependency] private   readonly CommonMomentumThrustSystem _momentumThrust = default!; // Goobstation - jetpack thrust falloff
@@ -478,7 +478,7 @@ public abstract partial class SharedMoverController : VirtualController
     // Starlight start
     /// <summary>
     /// Marks an input mover dirty. Virtual so the server can defer dirtying while movers are processed
-    /// on worker threads — Dirty -> DirtyEntity -> EntityDirtied (PVS) is not thread-safe and contends
+    /// on worker threads вЂ” Dirty -> DirtyEntity -> EntityDirtied (PVS) is not thread-safe and contends
     /// across cores. The default behaviour is an immediate dirty.
     /// </summary>
     protected virtual void DirtyMover(EntityUid uid, InputMoverComponent mover) => Dirty(uid, mover);

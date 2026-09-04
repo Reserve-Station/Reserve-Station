@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
@@ -14,7 +14,7 @@ namespace Content.Client._Shitcode.Heretic.UI;
 
 public sealed partial class HereticRitualRuneRadialMenu : RadialMenu
 {
-    [Dependency] private readonly EntityManager _entityManager = default!;
+    // [Dependency] private readonly EntityManager _entityManager = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;

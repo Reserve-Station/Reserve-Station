@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Heretic.Components.PathSpecific;
 using Content.Shared._EinsteinEngines.Silicon.Components;
@@ -36,12 +36,12 @@ public abstract class SharedMansusGraspSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
+    // [Dependency] private readonly IMapManager _mapMan = default!; // Reserve edit: Fix warnings
 
     [Dependency] private readonly SharedDoorSystem _door = default!;
     [Dependency] private readonly DamageableSystem _damage = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
-    [Dependency] private readonly StatusEffectNew.StatusEffectsSystem _statusNew = default!;
+    // [Dependency] private readonly StatusEffectNew.StatusEffectsSystem _statusNew = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly BackStabSystem _backstab = default!;
@@ -51,7 +51,7 @@ public abstract class SharedMansusGraspSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedStarMarkSystem _starMark = default!;
-    [Dependency] private readonly NpcFactionSystem _faction = default!;
+    // [Dependency] private readonly NpcFactionSystem _faction = default!; // Reserve edit: Fix warnings
 
     // Reserve edit start: replace literals with vars
     public static readonly string HereticBladeTag = "HereticBladeBlade";

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Movement;
 using Content.Shared.Damage.Events;
@@ -42,7 +42,7 @@ public abstract class SharedSprintingSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedMoverController _moverController = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    // [Dependency] private readonly INetManager _net = default!; // Reserve edit: Fix warnings
     public override void Initialize()
     {
         SubscribeLocalEvent<SprinterComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshSpeed);

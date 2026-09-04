@@ -14,7 +14,7 @@ public sealed class SpeakOnCollideSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    // [Dependency] private readonly IGameTiming _timing = default!; // Reserve edit: Fix warnings
     public override void Initialize()
     {
         base.Initialize();

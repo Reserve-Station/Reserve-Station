@@ -1,4 +1,4 @@
-using Content.Shared.CartridgeLoader;
+﻿using Content.Shared.CartridgeLoader;
 using Content.Server.DeltaV.CartridgeLoader;
 using Content.Server.CartridgeLoader.Cartridges;
 using Content.Server.CartridgeLoader;
@@ -7,7 +7,7 @@ namespace Content.Server.DeltaV.CartridgeLoader.Cartridges;
 
 public sealed class CrimeAssistCartridgeSystem : EntitySystem
 {
-    [Dependency] private readonly CartridgeLoaderSystem? _cartridgeLoaderSystem = default!;
+    // [Dependency] private readonly CartridgeLoaderSystem? _cartridgeLoaderSystem = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

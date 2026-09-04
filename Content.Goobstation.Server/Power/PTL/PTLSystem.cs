@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Power.PTL;
 using Content.Server.Flash;
@@ -32,7 +32,7 @@ public sealed partial class PTLSystem : EntitySystem
 {
     [Dependency] private readonly GunSystem _gun = default!;
     [Dependency] private readonly IGameTiming _time = default!;
-    [Dependency] private readonly IPrototypeManager _protMan = default!;
+    // [Dependency] private readonly IPrototypeManager _protMan = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly FlashSystem _flash = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly PopupSystem _popup = default!;

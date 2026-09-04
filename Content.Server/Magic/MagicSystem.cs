@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat; // Einstein Engines - Languages
@@ -9,8 +9,8 @@ using Content.Shared.Magic.Events;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 using Content.Shared.Mind;
-using Content.Shared.Tag;
-using Robust.Shared.Prototypes;
+// using Content.Shared.Tag; // Reserve edit: Fix warnings
+// using Robust.Shared.Prototypes; // Reserve edit: Fix warnings
 
 namespace Content.Server.Magic;
 

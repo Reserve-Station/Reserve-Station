@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Construction.Completions;
@@ -21,11 +21,11 @@ using Content.Shared.Hands.EntitySystems;
 namespace Content.Server._Starlight.VentCrawling;
 public sealed class VentCrawlerTubeSystem : EntitySystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    // [Dependency] private readonly IMapManager _mapManager = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedMapSystem _mapSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedVentCrawableSystem _ventCrawableSystem = default!;
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
-    [Dependency] private readonly VentCrawlerTubeSystem _VentCrawlerTubeSystem = default!;
+    // [Dependency] private readonly VentCrawlerTubeSystem _VentCrawlerTubeSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedMoverController _mover = default!;

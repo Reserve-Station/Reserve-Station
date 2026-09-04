@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using System.Text;
@@ -23,7 +23,7 @@ using Content.Shared.Examine;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Verbs;
-using Robust.Shared.Utility;
+// using Robust.Shared.Utility; // Reserve edit: Fix warnings
 using Content.Shared.HealthExaminable;
 using Robust.Shared.Prototypes;
 
@@ -34,7 +34,7 @@ public sealed class PartStatusSystem : EntitySystem
     [Dependency] private readonly WoundSystem _woundSystem = default!;
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly TraumaSystem _trauma = default!;
+    // [Dependency] private readonly TraumaSystem _trauma = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;

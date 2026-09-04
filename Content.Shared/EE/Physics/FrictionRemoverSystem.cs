@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
@@ -8,7 +8,7 @@ namespace Content.Shared.Physics;
 
 public sealed class FrictionRemoverSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    // [Dependency] private readonly SharedPhysicsSystem _physics = default!; // Reserve edit: Fix warnings
 
 
     public override void Initialize()

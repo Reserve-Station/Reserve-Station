@@ -1,4 +1,4 @@
-using Content.Goobstation.Common.Flash;
+﻿using Content.Goobstation.Common.Flash;
 using Content.Goobstation.Shared.Changeling.Actions;
 using Content.Goobstation.Shared.Changeling.Components;
 using Content.Shared.Actions;
@@ -10,9 +10,9 @@ namespace Content.Goobstation.Shared.Changeling.Systems;
 
 public abstract partial class SharedAugmentedEyesightSystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!;
+    // [Dependency] private readonly INetManager _net = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedEyeSystem _eye = default!;
+    // [Dependency] private readonly SharedEyeSystem _eye = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

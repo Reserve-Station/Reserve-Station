@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._DV.CosmicCult.Components;
 using Content.Server.Actions;
@@ -65,7 +65,7 @@ using System.Collections.Immutable;
 using System.Linq;
 using Content.Goobstation.Common.Religion;
 using Content.Server.Station.Systems;
-using Content.Shared.Cuffs.Components;
+// using Content.Shared.Cuffs.Components; // Reserve edit: Fix warnings
 using Content.Server.Cuffs;
 using Content.Shared.Light.Components;
 using Content.Shared.Roles.Components;
@@ -110,7 +110,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     [Dependency] private readonly VisibilitySystem _visibility = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly CuffableSystem _cuffable = default!; // goob edit
+    // [Dependency] private readonly CuffableSystem _cuffable = default!; // goob edit // Reserve edit: Fix warnings
 
     private ISawmill _sawmill = default!;
     private TimeSpan _t3RevealDelay = default!;

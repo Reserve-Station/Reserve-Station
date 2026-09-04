@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Clothing.Systems;
 using Content.Server.Destructible;
@@ -11,7 +11,7 @@ using Content.Shared._Goobstation.Wizard.BindSoul;
 using Content.Shared.Destructible;
 using Content.Shared.Destructible.Thresholds.Triggers;
 using Content.Shared.Humanoid;
-using Content.Shared.IdentityManagement;
+// using Content.Shared.IdentityManagement; // Reserve edit: Fix warnings
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Robust.Shared.GameObjects.Components.Localization;

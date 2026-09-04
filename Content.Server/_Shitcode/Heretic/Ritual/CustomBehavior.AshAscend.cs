@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Atmos.Components;
 using Content.Shared.Atmos.Components;
-using Content.Shared.Atmos.Components;
+// using Content.Shared.Atmos.Components; // Reserve edit: Fix warnings
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Heretic.Prototypes;

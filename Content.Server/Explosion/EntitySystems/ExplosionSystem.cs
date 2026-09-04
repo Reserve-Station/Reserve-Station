@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using System.Numerics;
@@ -60,7 +60,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     [Dependency] private readonly FlammableSystem _flammableSystem = default!;
     [Dependency] private readonly DestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!; // Shitmed Change
+    // [Dependency] private readonly SharedBodySystem _body = default!; // Shitmed Change // Reserve edit: Fix warnings
 
     private EntityQuery<FlammableComponent> _flammableQuery;
     private EntityQuery<PhysicsComponent> _physicsQuery;

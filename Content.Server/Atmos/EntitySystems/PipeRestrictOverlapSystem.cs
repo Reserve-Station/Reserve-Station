@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Atmos.Components;
@@ -20,7 +20,7 @@ namespace Content.Server.Atmos.EntitySystems;
 /// </summary>
 public sealed class PipeRestrictOverlapSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    // [Dependency] private readonly IConfigurationManager _cfg = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly TransformSystem _xform = default!;

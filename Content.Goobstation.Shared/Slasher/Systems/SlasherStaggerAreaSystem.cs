@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Goob Station Contributors
+﻿// SPDX-FileCopyrightText: 2025 Goob Station Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -24,7 +24,7 @@ public sealed class SlasherStaggerAreaSystem : EntitySystem
     public static readonly EntProtoId EffectId = "SlasherSlowdownStatusEffect";
 
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
+    // [Dependency] private readonly SharedStunSystem _stun = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedInteractionSystem _interact = default!;

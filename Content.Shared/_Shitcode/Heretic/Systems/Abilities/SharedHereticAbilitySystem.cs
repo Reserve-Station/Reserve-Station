@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -90,7 +90,7 @@ public abstract partial class SharedHereticAbilitySystem : EntitySystem
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly SharedBloodstreamSystem _blood = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    // [Dependency] private readonly SharedMindSystem _mind = default!; // Reserve edit: Fix warnings
 
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
 

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Shitmed.Body.Events;
 using Content.Shared.Body.Part;
@@ -10,7 +10,7 @@ using System.Linq;
 namespace Content.Shared._Shitmed.BodyEffects;
 public sealed partial class BodyPartEffectSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _compFactory = default!;
+    // [Dependency] private readonly IComponentFactory _compFactory = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly ISerializationManager _serManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     public override void Initialize()

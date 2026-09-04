@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Speech;
 using Robust.Shared.Audio;
@@ -19,7 +19,7 @@ namespace Content.Server.Speech
 {
     public sealed class SpeechSoundSystem : EntitySystem
     {
-        [Dependency] private readonly IConfigurationManager _cfg = default!; // Goob
+        // [Dependency] private readonly IConfigurationManager _cfg = default!; // Goob // Reserve edit: Fix warnings
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
         [Dependency] private readonly IRobustRandom _random = default!;

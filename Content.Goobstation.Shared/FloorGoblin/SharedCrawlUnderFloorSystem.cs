@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._DV.Abilities;
 using Content.Shared._Starlight.VentCrawling;
@@ -24,9 +24,9 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Doors.Components;
 using Content.Shared.Conveyor;
 using Robust.Shared.Physics.Events;
-using Robust.Shared.Physics;
+// using Robust.Shared.Physics; // Reserve edit: Fix warnings
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Systems;
+// using Robust.Shared.Physics.Systems; // Reserve edit: Fix warnings
 
 namespace Content.Goobstation.Shared.FloorGoblin;
 

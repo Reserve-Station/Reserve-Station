@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Shared._EstacaoPirata.Cards.Card;
@@ -12,8 +12,8 @@ namespace Content.Client._EstacaoPirata.Cards.Card;
 /// </summary>
 public sealed class CardSystem : EntitySystem
 {
-    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
-    [Dependency] private readonly CardSpriteSystem _cardSpriteSystem = default!;
+    // [Dependency] private readonly SpriteSystem _spriteSystem = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly CardSpriteSystem _cardSpriteSystem = default!; // Reserve edit: Fix warnings
     /// <inheritdoc/>
     public override void Initialize()
     {

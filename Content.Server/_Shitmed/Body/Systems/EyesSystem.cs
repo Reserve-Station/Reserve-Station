@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Body.Systems;
 using Content.Shared.Body.Organ;
@@ -13,7 +13,7 @@ namespace Content.Server._Shitmed.Body.Systems
 {
     public sealed class EyesSystem : EntitySystem
     {
-        [Dependency] private readonly IEntityManager _entityManager = default!;
+        // [Dependency] private readonly IEntityManager _entityManager = default!; // Reserve edit: Fix warnings
         [Dependency] private readonly BlindableSystem _blindableSystem = default!;
         [Dependency] private readonly BodySystem _bodySystem = default!;
 

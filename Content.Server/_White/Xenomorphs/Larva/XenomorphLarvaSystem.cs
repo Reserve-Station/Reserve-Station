@@ -1,4 +1,4 @@
-using Content.Server.Body.Systems;
+﻿using Content.Server.Body.Systems;
 using Content.Server.DoAfter;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Jittering;
@@ -18,7 +18,7 @@ namespace Content.Server._White.Xenomorphs.Larva;
 
 public sealed class XenomorphLarvaSystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _body = default!;
+    // [Dependency] private readonly BodySystem _body = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly JitteringSystem _jitter = default!;

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Shared.NPC.Prototypes;
@@ -25,7 +25,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Components;
-using Content.Shared.Roles;
+// using Content.Shared.Roles; // Reserve edit: Fix warnings
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Zombies;
 using Content.Shared.Blocking; // Goobstation

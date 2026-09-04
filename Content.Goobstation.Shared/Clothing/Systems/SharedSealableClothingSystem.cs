@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Clothing.Components;
 using Content.Shared.ActionBlocker;
@@ -42,11 +42,11 @@ public abstract class SharedSealableClothingSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly PowerCellSystem _powerCellSystem = default!;
+    // [Dependency] private readonly PowerCellSystem _powerCellSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly ToggleableClothingSystem _toggleableSystem = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
+    // [Dependency] private readonly SharedContainerSystem _containerSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    // [Dependency] private readonly SharedTransformSystem _transformSystem = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

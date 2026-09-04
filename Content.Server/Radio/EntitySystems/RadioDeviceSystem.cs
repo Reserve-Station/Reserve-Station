@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Chat.Systems;
@@ -31,7 +31,7 @@ public sealed class RadioDeviceSystem : SharedRadioDeviceSystem
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly LanguageSystem _language = default!;
+    // [Dependency] private readonly LanguageSystem _language = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!; // Goob
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.

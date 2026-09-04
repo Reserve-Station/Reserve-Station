@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Damage;
@@ -29,7 +29,7 @@ public abstract class SharedTapeRecorderSystem : EntitySystem
     [Dependency] protected readonly SharedAudioSystem Audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly ItemSlotsSystem _slots = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    // [Dependency] private readonly SharedPopupSystem _popup = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 
     protected const string SlotName = "cassette_tape";

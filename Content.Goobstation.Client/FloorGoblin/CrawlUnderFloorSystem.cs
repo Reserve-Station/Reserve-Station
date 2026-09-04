@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.FloorGoblin;
 using Content.Shared._DV.Abilities;
@@ -12,7 +12,7 @@ namespace Content.Goobstation.Client.FloorGoblin;
 
 public sealed partial class HideUnderFloorAbilitySystem : SharedCrawlUnderFloorSystem
 {
-    [Dependency] private readonly AppearanceSystem _appearance = default!;
+    // [Dependency] private readonly AppearanceSystem _appearance = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SpriteSystem _sprite = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;

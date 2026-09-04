@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Antag;
 using Content.Server.Communications;
@@ -46,7 +46,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     // goob edit
-    [Dependency] private readonly StationSystem _stationSystem = default!;
+    // [Dependency] private readonly StationSystem _stationSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     // goob edit end

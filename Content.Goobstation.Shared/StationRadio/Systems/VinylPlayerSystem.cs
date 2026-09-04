@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+﻿// SPDX-FileCopyrightText: 2026 Goob Station Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -21,7 +21,7 @@ public sealed class VinylPlayerSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPowerReceiverSystem _power = default!;
-    [Dependency] private readonly SharedDeviceLinkSystem _deviceLinkSystem = default!;
+    // [Dependency] private readonly SharedDeviceLinkSystem _deviceLinkSystem = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

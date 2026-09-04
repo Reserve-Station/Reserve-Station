@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Administration.Logs;
 using Content.Shared.Damage.Systems;
@@ -27,7 +27,7 @@ namespace Content.Shared.Slippery;
 [UsedImplicitly]
 public sealed class SlipperySystem : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!; // Goobstation
+    // [Dependency] private readonly INetManager _net = default!; // Goobstation // Reserve edit: Fix warnings
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;

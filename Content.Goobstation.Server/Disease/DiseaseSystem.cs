@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Goob Station Contributors
+﻿// SPDX-FileCopyrightText: 2026 Goob Station Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -21,7 +21,7 @@ namespace Content.Goobstation.Server.Disease;
 public sealed partial class DiseaseSystem : SharedDiseaseSystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ContainerSystem _container = default!;
+    // [Dependency] private readonly ContainerSystem _container = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

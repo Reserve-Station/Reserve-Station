@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Silicon;
+﻿using Content.Goobstation.Shared.Silicon;
 using Content.Goobstation.Shared.Silicon.Components;
 using Content.Server.Chat.Systems;
 using Robust.Shared.Player;
@@ -21,7 +21,7 @@ public sealed class StationAiEarlyLeaveSystem : SharedStationAiEarlyLeaveSystem
     [Dependency] private readonly EuiManager _euiManager = default!;
     [Dependency] private readonly StationJobsSystem _jobs = default!;
     [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly RadioSystem _radio = default!;
+    // [Dependency] private readonly RadioSystem _radio = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     private readonly string _alertChannelName = "Command";

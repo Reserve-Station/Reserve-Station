@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Shared.Administration.Logs;
@@ -32,7 +32,7 @@ public sealed class PaperSystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IdentitySystem _identitySystem = default!; // Starlight-edit
+    // [Dependency] private readonly IdentitySystem _identitySystem = default!; // Starlight-edit // Reserve edit: Fix warnings
 
     private static readonly ProtoId<TagPrototype> WriteIgnoreStampsTag = "WriteIgnoreStamps";
     private static readonly ProtoId<TagPrototype> WriteTag = "Write";
@@ -399,7 +399,7 @@ public sealed class PaperSystem : EntitySystem
     }
 
     /// <summary>
-    /// Removes any unfilled [form] and [signature] tags, and converts [check] tags to ☐.
+    /// Removes any unfilled [form] and [signature] tags, and converts [check] tags to вђ.
     /// Called when the paper is stamped to finalize the document.
     /// </summary>
     /// <param name="text">The paper text to clean</param>
@@ -408,7 +408,7 @@ public sealed class PaperSystem : EntitySystem
     {
         return text.Replace("[form]", string.Empty)
                   .Replace("[signature]", string.Empty)
-                  .Replace("[check]", "☐");
+                  .Replace("[check]", "вђ");
     }
 
     # endregion

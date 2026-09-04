@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Shitmed.Objectives.Components;
 using Content.Shared.Mind;
@@ -8,7 +8,7 @@ namespace Content.Server._Shitmed.Objectives.Systems;
 
 public sealed class RoleplayObjectiveSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    // [Dependency] private readonly SharedMindSystem _mind = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

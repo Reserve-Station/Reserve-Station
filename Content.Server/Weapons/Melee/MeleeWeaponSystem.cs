@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Chat.Systems;
 using Content.Server.Movement.Systems;
@@ -11,7 +11,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Player;
 using System.Linq;
 using System.Numerics;
-using Content.Shared.Chat; // Einstein Engines - Languages
+// using Content.Shared.Chat; // Einstein Engines - Languages // Reserve edit: Fix warnings
 
 namespace Content.Server.Weapons.Melee;
 

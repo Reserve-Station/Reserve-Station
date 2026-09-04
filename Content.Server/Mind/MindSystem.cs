@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Administration.Logs;
 using Content.Server.GameTicking;
@@ -19,7 +19,7 @@ using Content.Shared.Tag;
 
 // Goobstation
 using Content.Shared._Goobstation.Wizard.BindSoul;
-using Content.Shared.Mobs.Components;
+// using Content.Shared.Mobs.Components; // Reserve edit: Fix warnings
 using Content.Goobstation.Shared.Mind.Components;
 using Content.Goobstation.Shared.MisandryBox.Thunderdome;
 

@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.PhaseShift;
+﻿using Content.Goobstation.Shared.PhaseShift;
 using Content.Goobstation.Shared.Slasher.Components;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
@@ -60,7 +60,7 @@ public sealed class SlasherIncorporealSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    // [Dependency] private readonly SharedAudioSystem _audio = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly FixtureSystem _fixtures = default!;

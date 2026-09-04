@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.Wraith.Components;
+﻿using Content.Goobstation.Shared.Wraith.Components;
 using Content.Goobstation.Shared.Wraith.Events;
 using Content.Goobstation.Shared.Wraith.Spook;
 using Content.Goobstation.Shared.Wraith.WraithPoints;
@@ -23,7 +23,7 @@ using Robust.Shared.Timing;
 using System.Linq;
 using Content.Shared.Atmos.Components;
 using Content.Server.Atmos.EntitySystems;
-using Content.Shared.Atmos.Components;
+// using Content.Shared.Atmos.Components; // Reserve edit: Fix warnings
 using Content.Shared.Humanoid;
 using Content.Shared.Light.Components;
 using Content.Shared.Storage.Components;

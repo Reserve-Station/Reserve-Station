@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.DragDrop;
 using Content.Server.Construction.Components;
@@ -11,7 +11,7 @@ namespace Content.Goobstation.Server.DragDrop;
 
 public sealed partial class GoobDragDropSystem : SharedGoobDragDropSystem
 {
-    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    // [Dependency] private readonly SharedInteractionSystem _interaction = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

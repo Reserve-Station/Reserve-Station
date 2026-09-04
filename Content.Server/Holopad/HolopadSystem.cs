@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
@@ -7,7 +7,7 @@ using Content.Server.Telephone;
 using Content.Shared.Access.Systems;
 using Content.Shared.Audio;
 using Content.Shared.Chat; // Einstein Engines - Language
-using Content.Shared.Chat;
+// using Content.Shared.Chat; // Reserve edit: Fix warnings
 using Content.Shared.Chat.TypingIndicator;
 using Content.Shared.Holopad;
 using Content.Shared.IdentityManagement;

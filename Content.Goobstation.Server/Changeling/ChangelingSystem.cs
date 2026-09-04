@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Actions;
 using Content.Goobstation.Common.Body;
@@ -78,7 +78,7 @@ using Robust.Shared.Timing;
 using System.Linq;
 using System.Numerics;
 using Content.Goobstation.Common.Grab;
-using Content.Shared.Atmos.Components;
+// using Content.Shared.Atmos.Components; // Reserve edit: Fix warnings
 using Content.Shared.Zombies;
 using Content.Server.Ensnaring;
 
@@ -98,7 +98,7 @@ public sealed partial class ChangelingSystem : SharedChangelingSystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+    // [Dependency] private readonly MobThresholdSystem _mobThreshold = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly DamageableSystem _damage = default!;
     [Dependency] private readonly BloodstreamSystem _blood = default!;

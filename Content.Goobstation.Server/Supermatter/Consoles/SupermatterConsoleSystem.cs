@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Pinpointer;
 using Content.Goobstation.Shared.Supermatter.Components;
@@ -18,12 +18,12 @@ public sealed class SupermatterConsoleSystem : SharedSupermatterConsoleSystem
 {
     [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly NavMapSystem _navMapSystem = default!;
+    // [Dependency] private readonly NavMapSystem _navMapSystem = default!; // Reserve edit: Fix warnings
 
     private const float UpdateTime = 1.0f;
 
     // Note: this data does not need to be saved
-    private float _updateTimer = 1.0f;
+    // private float _updateTimer = 1.0f; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

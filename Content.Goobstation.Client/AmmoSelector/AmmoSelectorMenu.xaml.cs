@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
 using Content.Client.UserInterface.Controls;
@@ -17,7 +17,7 @@ public sealed partial class AmmoSelectorMenu : RadialMenu
 {
     [Dependency] private readonly EntityManager _entManager = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    // [Dependency] private readonly IPlayerManager _playerManager = default!; // Reserve edit: Fix warnings
 
     private SpriteSystem _sprites;
 

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
@@ -9,8 +9,8 @@ namespace Content.Goobstation.Server.StationEvents;
 
 public sealed partial class ChristmasEventSchedulerRule : GameRuleSystem<ChristmasEventSchedulerComponent>
 {
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
+    // [Dependency] private readonly GameTicker _gameTicker = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly ISharedAdminLogManager _adminLog = default!; // Reserve edit: Fix warnings
 
     public override void Update(float frameTime)
     {

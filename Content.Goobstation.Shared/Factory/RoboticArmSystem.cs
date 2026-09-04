@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Factory.Filters;
 using Content.Goobstation.Shared.Factory.Slots;
@@ -21,12 +21,12 @@ namespace Content.Goobstation.Shared.Factory;
 
 public sealed class RoboticArmSystem : EntitySystem
 {
-    [Dependency] private readonly AutomationSystem _automation = default!;
+    // [Dependency] private readonly AutomationSystem _automation = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly AutomationFilterSystem _filter = default!;
     [Dependency] private readonly CollisionWakeSystem _wake = default!;
     [Dependency] private readonly ExclusiveSlotsSystem _exclusive = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IMapManager _map = default!;
+    // [Dependency] private readonly IMapManager _map = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly ItemSlotsSystem _slots = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedDeviceLinkSystem _device = default!;

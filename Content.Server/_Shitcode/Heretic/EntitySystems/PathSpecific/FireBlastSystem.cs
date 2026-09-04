@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -12,7 +12,7 @@ using Content.Shared._Shitcode.Heretic.Components;
 using Content.Shared._Shitcode.Heretic.Systems;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Targeting;
-using Content.Shared.Atmos.Components;
+// using Content.Shared.Atmos.Components; // Reserve edit: Fix warnings
 using Content.Shared.Body.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Heretic;

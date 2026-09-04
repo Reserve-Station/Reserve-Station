@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.DoAfter;
 using Content.Server.Item;
@@ -17,9 +17,9 @@ namespace Content.Server.Nyanotrasen.Item.PseudoItem;
 
 public sealed class PseudoItemSystem : SharedPseudoItemSystem
 {
-    [Dependency] private readonly StorageSystem _storage = default!;
-    [Dependency] private readonly ItemSystem _item = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
+    // [Dependency] private readonly StorageSystem _storage = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly ItemSystem _item = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly DoAfterSystem _doAfter = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly CarryingSystem _carrying = default!;
     [Dependency] private readonly PopupSystem _popup = default!;

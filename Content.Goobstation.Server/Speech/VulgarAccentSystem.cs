@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 // CREATED BY Goldminermac
 // https://github.com/space-wizards/space-station-14/pull/31149
@@ -18,7 +18,7 @@ public sealed class VulgarAccentSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ILocalizationManager _loc = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
+    // [Dependency] private readonly ReplacementAccentSystem _replacement = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

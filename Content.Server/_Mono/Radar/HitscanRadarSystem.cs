@@ -1,4 +1,4 @@
-using Robust.Shared.Map;
+﻿using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
 using System.Numerics;
 using Content.Server._Mono.FireControl;
@@ -13,12 +13,12 @@ namespace Content.Server._Mono.Radar;
 /// </summary>
 public sealed partial class HitscanRadarSystem : EntitySystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly RadarBlipSystem _radarBlipSystem = default!;
+    // [Dependency] private readonly IMapManager _mapManager = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly RadarBlipSystem _radarBlipSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    // [Dependency] private readonly SharedPhysicsSystem _physics = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    // [Dependency] private readonly IPrototypeManager _proto = default!; // Reserve edit: Fix warnings
 
     // Dictionary to track entities that should be deleted after a specific time
     private readonly Dictionary<EntityUid, TimeSpan> _pendingDeletions = new();

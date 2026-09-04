@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace Content.Goobstation.Server.Blob.GameTicking;
 
 public sealed class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
 {
-    [Dependency] private readonly MindSystem _mindSystem = default!;
+    // [Dependency] private readonly MindSystem _mindSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly NukeCodePaperSystem _nukeCode = default!;

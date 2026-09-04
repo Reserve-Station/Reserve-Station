@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Goobstation.Common.Religion;
@@ -46,7 +46,7 @@ public abstract class SharedEntropicPlumeSystem : EntitySystem
     [Dependency] private readonly SharedCombatModeSystem _combat = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedHereticSystem _heretic = default!;
+    // [Dependency] private readonly SharedHereticSystem _heretic = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

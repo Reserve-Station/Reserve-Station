@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Weapons.Melee.EnergySword;
 using JetBrains.Annotations;
@@ -10,8 +10,8 @@ namespace Content.Goobstation.Client.Weapons.Melee.EnergySword
     [UsedImplicitly]
     public sealed class EsColorPickerBUI(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
     {
-        [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-        [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
+        // [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // Reserve edit: Fix warnings
+        // [Dependency] private readonly IEntitySystemManager _entitySystem = default!; // Reserve edit: Fix warnings
 
         private EsColorPicker? _window;
         private EntityUid _prototypeView;

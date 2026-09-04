@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using System.Numerics;
@@ -89,7 +89,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly TagSystem _tag = default!;
         [Dependency] private readonly NameModifierSystem _nameMod = default!;
         [Dependency] private readonly GhostVisibilitySystem _ghostVisibility = default!;
-        [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Shitmed Change
+        // [Dependency] private readonly SharedBodySystem _bodySystem = default!; // Shitmed Change // Reserve edit: Fix warnings
         [Dependency] private readonly IServerPreferencesManager _prefs = default!; // WWDP
 
         private EntityQuery<GhostComponent> _ghostQuery;

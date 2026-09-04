@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Teleportation.Components;
 using Content.Shared.Hands.Components;
@@ -20,8 +20,8 @@ public sealed class PocketDimensionSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly LinkedEntitySystem _link = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    // [Dependency] private readonly IMapManager _mapMan = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedTransformSystem _transform = default!; // Reserve edit: Fix warnings
 
     private ISawmill _sawmill = default!;
 

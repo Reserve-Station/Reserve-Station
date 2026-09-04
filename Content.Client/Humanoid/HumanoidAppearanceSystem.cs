@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
 using Content.Client.DisplacementMap;
@@ -20,7 +20,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly DisplacementMapSystem _displacement = default!;
+    // [Dependency] private readonly DisplacementMapSystem _displacement = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()

@@ -1,4 +1,4 @@
-using Content.Goobstation.Shared.DarkLord;
+﻿using Content.Goobstation.Shared.DarkLord;
 using Content.Server.Objectives.Components;
 using Content.Server.Objectives.Systems;
 using Content.Shared.Mind;
@@ -12,7 +12,7 @@ namespace Content.Goobstation.Server.Objectives;
 public sealed class KillTheDarkLordObjectiveSystem : EntitySystem
 {
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly TargetObjectiveSystem _target = default!;
+    // [Dependency] private readonly TargetObjectiveSystem _target = default!; // Reserve edit: Fix warnings
     public override void Initialize()
     {
         SubscribeLocalEvent<KillTheDarkLordObjectiveComponent, ObjectiveGetProgressEvent>(OnGetDarkLordKillProgress);

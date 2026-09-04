@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Changeling.Components;
 using Content.Server.Body.Systems;
@@ -13,7 +13,7 @@ public sealed class ChangelingEggSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly ChangelingSystem _changeling = default!;
+    // [Dependency] private readonly ChangelingSystem _changeling = default!; // Reserve edit: Fix warnings
 
     public override void Update(float frameTime)
     {

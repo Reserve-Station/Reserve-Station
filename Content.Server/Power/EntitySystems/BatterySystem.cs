@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using Content.Server._White.Blocking;
@@ -20,7 +20,7 @@ namespace Content.Server.Power.EntitySystems;
 
 public sealed class BatterySystem : SharedBatterySystem
 {
-    [Dependency] private readonly SharedContainerSystem _containers = default!; // WD EDIT
+    // [Dependency] private readonly SharedContainerSystem _containers = default!; // WD EDIT // Reserve edit: Fix warnings
 
     private EntityQuery<EmpDisabledComponent> _disabledQuery; // Goobstation
 

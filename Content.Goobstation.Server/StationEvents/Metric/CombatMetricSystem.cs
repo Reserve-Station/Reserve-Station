@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Goobstation.Server.StationEvents.Metric.Components;
@@ -11,7 +11,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.NPC.Systems;
 using Content.Shared.NPC.Components;
-using Content.Shared.NPC.Systems;
+// using Content.Shared.NPC.Systems; // Reserve edit: Fix warnings
 using Content.Shared.Roles;
 using Content.Shared.Tag;
 using Robust.Shared.Prototypes;

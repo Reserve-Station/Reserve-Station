@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Goobstation.Shared.CloneProjector;
@@ -60,7 +60,7 @@ public sealed partial class CloneProjectorSystem : SharedCloneProjectorSystem
     [Dependency] private readonly CarryingSystem _carrying = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
     [Dependency] private readonly MobThresholdSystem _thresholds = default!;
-    [Dependency] private readonly GhostRoleSystem _ghost = default!;
+    // [Dependency] private readonly GhostRoleSystem _ghost = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedRoleSystem _role = default!;
 
     private ISawmill _sawmill = default!;

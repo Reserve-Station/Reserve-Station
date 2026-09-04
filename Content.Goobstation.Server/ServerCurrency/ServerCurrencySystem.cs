@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.ServerCurrency;
@@ -29,7 +29,7 @@ namespace Content.Goobstation.Server.ServerCurrency
         [Dependency] private readonly SharedJobSystem _jobs = default!;
         [Dependency] private readonly IPlayerManager _players = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly LinkAccountManager _linkAccount = default!;
+        // [Dependency] private readonly LinkAccountManager _linkAccount = default!; // Reserve edit: Fix warnings
         [Dependency] private readonly GameTicker _gameTicker = default!;
         [Dependency] private readonly LenaApiManager _lenaApiManager = default!; //Reserve
 
@@ -125,7 +125,7 @@ namespace Content.Goobstation.Server.ServerCurrency
                             {
                                 var balance = user.ReserveCoins;
                                 ShowPopup(originalSession, balance, balance + money);
-                                _ = user.ModifyBalance(_lenaApiManager.Wrapper, money, 0, comment: $"Конец раунда #{roundId}");
+                                _ = user.ModifyBalance(_lenaApiManager.Wrapper, money, 0, comment: $"РљРѕРЅРµС† СЂР°СѓРЅРґР° #{roundId}");
                             }
                         }
                         else

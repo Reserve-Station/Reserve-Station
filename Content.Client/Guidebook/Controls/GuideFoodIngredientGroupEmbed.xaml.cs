@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -17,7 +17,7 @@ namespace Content.Client.Guidebook.Controls;
 [UsedImplicitly, GenerateTypedNameReferences]
 public sealed partial class GuideFoodIngredientGroupEmbed : BoxContainer, IDocumentTag
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    // [Dependency] private readonly IPrototypeManager _prototype = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
 
     public GuideFoodIngredientGroupEmbed()

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Atmos;
 using Content.Goobstation.Maths.FixedPoint;
@@ -31,9 +31,9 @@ public sealed class SharedFleshmendSystem : EntitySystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedBloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
+    // [Dependency] private readonly MovementSpeedModifierSystem _movement = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly DamageableSystem _dmg = default!;
-    [Dependency] private readonly WoundSystem _wound = default!;
+    // [Dependency] private readonly WoundSystem _wound = default!; // Reserve edit: Fix warnings
 
     private EntityQuery<DamageableComponent> _damageableQuery;
     private EntityQuery<MobStateComponent> _mobstateQuery;

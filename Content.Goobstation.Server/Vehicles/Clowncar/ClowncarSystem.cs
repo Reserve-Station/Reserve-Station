@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Goobstation.Shared.Vehicles;
@@ -24,7 +24,7 @@ public sealed class ClowncarSystem : SharedClowncarSystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    // [Dependency] private readonly SharedAudioSystem _audioSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
 
     /// <inheritdoc/>

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Blob;
 using Content.Goobstation.Shared.Blob;
@@ -19,8 +19,8 @@ public sealed class BlobMobSystem : SharedBlobMobSystem
 {
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly INetManager _netMan = default!;
-    [Dependency] private readonly RadioSystem _radioSystem = default!;
+    // [Dependency] private readonly INetManager _netMan = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly RadioSystem _radioSystem = default!; // Reserve edit: Fix warnings
     private EntityQuery<BlobSpeakComponent> _activeBSpeak;
 
     public override void Initialize()

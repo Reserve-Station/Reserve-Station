@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
 using Content.Goobstation.Shared.Blob.Components;
@@ -14,7 +14,7 @@ namespace Content.Goobstation.Shared.Blob;
 public abstract class SharedBlobMobSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
+    // [Dependency] private readonly SharedAudioSystem _audioSystem = default!; // Reserve edit: Fix warnings
     private EntityQuery<BlobTileComponent> _tileQuery;
     private EntityQuery<BlobMobComponent> _mobQuery;
 

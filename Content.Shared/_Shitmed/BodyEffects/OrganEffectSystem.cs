@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 // We keep this clone of the other system since I don't know yet if I'll need organ specific functions in the future.
 // will delete or refactor as time goes on.
@@ -14,10 +14,10 @@ using Robust.Shared.Network;
 namespace Content.Shared._Shitmed.BodyEffects;
 public sealed partial class OrganEffectSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _compFactory = default!;
-    [Dependency] private readonly ISerializationManager _serManager = default!;
+    // [Dependency] private readonly IComponentFactory _compFactory = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly ISerializationManager _serManager = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    // [Dependency] private readonly INetManager _net = default!; // Reserve edit: Fix warnings
     public override void Initialize()
     {
         base.Initialize();

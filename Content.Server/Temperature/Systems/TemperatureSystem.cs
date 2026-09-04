@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Goobstation.Common.Temperature.Components;
@@ -29,7 +29,7 @@ public sealed partial class TemperatureSystem : SharedTemperatureSystem
 
     private EntityQuery<TemperatureImmunityComponent> _immuneQuery; // DeltaV
 
-    [Dependency] private readonly SpellbladeSystem _spellblade = default!; // Goobstation
+    // [Dependency] private readonly SpellbladeSystem _spellblade = default!; // Goobstation // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

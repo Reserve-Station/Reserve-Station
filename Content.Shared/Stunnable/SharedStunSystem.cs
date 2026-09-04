@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Shared.ActionBlocker;
@@ -38,7 +38,7 @@ public abstract partial class SharedStunSystem : EntitySystem
 {
     public static readonly EntProtoId StunId = "StatusEffectStunned";
 
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
+    // [Dependency] private readonly IComponentFactory _componentFactory = default!; // Reserve edit: Fix warnings
     [Dependency] protected readonly ActionBlockerSystem Blocker = default!;
     [Dependency] protected readonly AlertsSystem Alerts = default!;
     [Dependency] protected readonly IGameTiming GameTiming = default!;

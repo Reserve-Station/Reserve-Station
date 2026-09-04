@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using System.Threading;
@@ -11,7 +11,7 @@ using Content.Server.Atmos.EntitySystems;
 using Content.Server.Emp;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.Popups;
-using Content.Shared.Atmos.Components;
+// using Content.Shared.Atmos.Components; // Reserve edit: Fix warnings
 using Content.Shared.Damage;
 using Content.Shared.Interaction;
 using Content.Shared.Item;

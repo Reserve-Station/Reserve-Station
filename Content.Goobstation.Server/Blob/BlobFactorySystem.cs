@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Goobstation.Server.Blob.Components;
@@ -19,7 +19,7 @@ namespace Content.Goobstation.Server.Blob;
 
 public sealed class BlobFactorySystem : EntitySystem
 {
-    [Dependency] private readonly PopupSystem _popup = default!;
+    // [Dependency] private readonly PopupSystem _popup = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
 
@@ -70,7 +70,7 @@ public sealed class BlobFactorySystem : EntitySystem
         if (TryComp<BlobbernautComponent>(blobbernaut, out var blobbernautComponent))
         {
             blobbernautComponent.Factory = uid;
-            blobbernautComponent.Color = blobCoreComponent.ChemСolors[blobCoreComponent.CurrentChem];
+            blobbernautComponent.Color = blobCoreComponent.ChemРЎolors[blobCoreComponent.CurrentChem];
             Dirty(blobbernaut, blobbernautComponent);
         }
         if (TryComp<MeleeWeaponComponent>(blobbernaut, out var meleeWeaponComponent))
@@ -163,7 +163,7 @@ public sealed class BlobFactorySystem : EntitySystem
         blobPod.Factory = uid; //Reserve edit - blob factory port
         FillSmokeGas((pod, blobPod), blobCoreComponent.CurrentChem);
 
-        //smokeOnTrigger.SmokeColor = blobCoreComponent.ChemСolors[blobCoreComponent.CurrentChem];
+        //smokeOnTrigger.SmokeColor = blobCoreComponent.ChemРЎolors[blobCoreComponent.CurrentChem];
         component.Accumulator = 0;
     }
 }

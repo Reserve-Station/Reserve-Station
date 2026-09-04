@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
@@ -28,7 +28,7 @@ public sealed class BlobTileSystem : SharedBlobTileSystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly BlobCoreSystem _blobCoreSystem = default!;
     [Dependency] private readonly BlobCoreActionSystem _blobCoreActionSystem = default!;
-    [Dependency] private readonly AudioSystem _audioSystem = default!;
+    // [Dependency] private readonly AudioSystem _audioSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly EmpSystem _empSystem = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
     [Dependency] private readonly TransformSystem _transform = default!;

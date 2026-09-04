@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -68,7 +68,7 @@ public sealed class SLMoverController : SharedMoverController
     [Dependency] private readonly IParallelManager _parallel = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    // [Dependency] private readonly IConfigurationManager _cfg = default!; // Reserve edit: Fix warnings
 
     private HandleMobMovementJob _handleMobMovementJob;
 
@@ -156,7 +156,7 @@ public sealed class SLMoverController : SharedMoverController
             return;
 
         // A relay source mutates *another* entity's mover component (its relay target), so it can't be
-        // run concurrently with that target. Everything else — including ordinary players — is pure
+        // run concurrently with that target. Everything else вЂ” including ordinary players вЂ” is pure
         // value computation in the parallel pass (writes are applied on the main thread during scatter),
         // so it no longer needs to be spun serially.
         if (prioritized || RelayQuery.HasComp(source.Owner))

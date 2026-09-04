@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Xenobiology.Components;
 using Content.Goobstation.Shared.Xenobiology.Systems;
@@ -25,7 +25,7 @@ namespace Content.Goobstation.Server.Xenobiology.SlimeGrinder;
 // -js
 public sealed partial class SlimeGrinderSystem : EntitySystem
 {
-    [Dependency] private readonly XenobiologySystem _xenobio = default!;
+    // [Dependency] private readonly XenobiologySystem _xenobio = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedJitteringSystem _jitteringSystem = default!;
     [Dependency] private readonly SharedAudioSystem _sharedAudioSystem = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambientSoundSystem = default!;

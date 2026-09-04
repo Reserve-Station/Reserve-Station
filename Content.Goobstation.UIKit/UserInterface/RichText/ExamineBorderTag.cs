@@ -1,10 +1,10 @@
-using Robust.Client.UserInterface.RichText;
+﻿using Robust.Client.UserInterface.RichText;
 
 namespace Content.Goobstation.UIKit.UserInterface.RichText;
 
 public sealed class ExamineBorderTag : IMarkupTagHandler
 {
-    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
+    // [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!; // Reserve edit: Fix warnings
 
     public const string TagName = "examineborder";
 

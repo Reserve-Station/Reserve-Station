@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Server.Store.Components;
@@ -10,11 +10,11 @@ using Content.Shared.Popups;
 using Content.Shared.Stacks;
 using Content.Shared.Store.Components;
 using Content.Shared.Store.Events;
-using Content.Shared.UserInterface;
+// using Content.Shared.UserInterface; // Reserve edit: Fix warnings
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using System.Linq;
+// using System.Linq; // Reserve edit: Fix warnings
 using Content.Server._White.StoreDiscount;
 using Content.Shared.Mind;
 using Content.Shared.Polymorph;

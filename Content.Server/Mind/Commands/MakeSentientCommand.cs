@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+﻿// SPDX-License-Identifier: MIT
 
 using Content.Server.Administration;
 using Content.Server._EinsteinEngines.Language;
@@ -18,7 +18,7 @@ namespace Content.Server.Mind.Commands;
 public sealed class MakeSentientCommand : LocalizedEntityCommands
 {
     [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    // [Dependency] private readonly IEntityManager _entManager = default!; // Reserve edit: Fix warnings
 
     public override string Command => "makesentient";
 

@@ -1,4 +1,4 @@
-using Content.Shared._Goobstation.Wizard.Projectiles;
+﻿using Content.Shared._Goobstation.Wizard.Projectiles;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Events;
 using Content.Shared.Jittering;
@@ -18,7 +18,7 @@ public abstract class SharedBerserkerImplantSystem : EntitySystem
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    // [Dependency] private readonly SharedAudioSystem _audio = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedJitteringSystem _jitter = default!;
 
     public override void Initialize()

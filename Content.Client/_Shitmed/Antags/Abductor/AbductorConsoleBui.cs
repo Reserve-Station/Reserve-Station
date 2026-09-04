@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Shitmed.Antags.Abductor;
 using JetBrains.Annotations;
@@ -13,7 +13,7 @@ namespace Content.Client._Shitmed.Antags.Abductor;
 [UsedImplicitly]
 public sealed class AbductorConsoleBui : BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entities = default!;
+    // [Dependency] private readonly IEntityManager _entities = default!; // Reserve edit: Fix warnings
 
     [ViewVariables]
     private AbductorConsoleWindow? _window;

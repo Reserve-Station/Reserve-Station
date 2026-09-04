@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Kirill <kirill@example.com>
+﻿// SPDX-FileCopyrightText: 2025 Kirill <kirill@example.com>
 // SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Tim <timfalken@hotmail.com>
 //
@@ -37,7 +37,7 @@ public sealed class PlantAnalyzerSystem : AbstractAnalyzerSystem<PlantAnalyzerCo
     [Dependency] private readonly PaperSystem _paperSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly LabelSystem _labelSystem = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    // [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
 
     public override void Initialize()

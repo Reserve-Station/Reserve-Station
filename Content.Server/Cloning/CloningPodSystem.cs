@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Cloning; // Goobstation
 using Content.Server.Atmos.EntitySystems;
@@ -43,7 +43,7 @@ public sealed class CloningPodSystem : EntitySystem
     [Dependency] private readonly EuiManager _euiManager = null!;
     [Dependency] private readonly CloningConsoleSystem _cloningConsoleSystem = default!;
     [Dependency] private readonly ContainerSystem _containerSystem = default!;
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+    // [Dependency] private readonly MobStateSystem _mobStateSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly PowerReceiverSystem _powerReceiverSystem = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphereSystem = default!;

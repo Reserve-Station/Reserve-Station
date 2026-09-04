@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Pirates;
 using Content.Goobstation.Shared.Pirates.Roles;
-using Content.Goobstation.Shared.Pirates.Roles;
+// using Content.Goobstation.Shared.Pirates.Roles; // Reserve edit: Fix warnings
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;

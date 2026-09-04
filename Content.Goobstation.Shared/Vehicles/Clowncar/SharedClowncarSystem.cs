@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Actions;
 using Content.Shared.Buckle.Components;
@@ -42,16 +42,16 @@ namespace Content.Goobstation.Shared.Vehicles.Clowncar;
  */
 public abstract partial class SharedClowncarSystem : EntitySystem
 {
-    [Dependency] private readonly IComponentFactory _factory = default!;
+    // [Dependency] private readonly IComponentFactory _factory = default!; // Reserve edit: Fix warnings
 
     [Dependency] protected readonly SharedAppearanceSystem AppearanceSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    // [Dependency] private readonly SharedTransformSystem _transformSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
-    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly SharedCombatModeSystem _combatSystem = default!;
+    // [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedHandsSystem _handsSystem = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedStunSystem _stunSystem = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedAudioSystem _audioSystem = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedCombatModeSystem _combatSystem = default!; // Reserve edit: Fix warnings
 
     /// <inheritdoc/>
     public override void Initialize()

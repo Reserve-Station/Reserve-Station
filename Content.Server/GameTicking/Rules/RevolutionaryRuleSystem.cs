@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Administration.Logs;
 using Content.Server.Antag;
@@ -62,10 +62,10 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoleSystem _role = default!;
-    [Dependency] private readonly RoundEndSystem _roundEnd = default!;
+    // [Dependency] private readonly RoundEndSystem _roundEnd = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
-    [Dependency] private readonly SharedRevolutionarySystem _revolutionarySystem = default!;
+    // [Dependency] private readonly SharedRevolutionarySystem _revolutionarySystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly ChatSystem _chatSystem = default!;
 
     //Used in OnPostFlash, no reference to the rule component is available

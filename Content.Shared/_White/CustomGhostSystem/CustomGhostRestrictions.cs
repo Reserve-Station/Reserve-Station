@@ -1,4 +1,4 @@
-using Content.Shared.Players.PlayTimeTracking;
+﻿using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Roles;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -121,7 +121,7 @@ public sealed partial class PlaytimeJobRestriction : CustomGhostRestriction
 public sealed partial class PlaytimeDepartmentRestriction : CustomGhostRestriction
 {
     private static ISharedPlaytimeManager? _playtime = null;
-    private static IConfigurationManager? _cfg = null;
+    // private static IConfigurationManager? _cfg = null; // Reserve edit: Fix warnings
     private static IPrototypeManager? _proto = null;
 
     [DataField(required: true)]
