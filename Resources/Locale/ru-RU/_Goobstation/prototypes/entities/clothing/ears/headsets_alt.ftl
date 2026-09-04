@@ -1,7 +1,8 @@
 ent-ClothingHeadsetAltLoudspeaker = { ent-ClothingHeadsetAlt }
     .desc = { ent-ClothingHeadsetAlt.desc }
-ent-ClothingHeadsetAltSyndicateCommander = кроваво-красная полноразмерная гарнитура командира
+ent-ClothingHeadsetAltSyndicateCommander = { ent-ClothingHeadsetAltSyndicate } командира
     .desc = { ent-ClothingHeadsetAltSyndicate.desc }
+    .suffix = Синдикат
 ent-ClothingHeadsetChronolegioneer = полноразмерная футуристичная гарнитура
     .desc = Гарнитура из будущего, способная принимать большинство частот станции.
 ent-ClothingHeadsetChronolegioneerUnremoveable = { ent-ClothingHeadsetChronolegioneer }

@@ -1,7 +1,7 @@
 ent-ClothingHeadHatBeretEliteNavyOfficer = берет элитного офицера флота
     .desc = Синий берет с серебряным щитом силовиков NanoTrasen.
 ent-ClothingHeadHatBeretNavyOfficer = берет офицера флота
-    .desc = Черный берет с серебрянным щитом силовиков NanoTrasen.
+    .desc = Чёрный берет с серебрянным щитом силовиков NanoTrasen.
 ent-ClothingHeadHatBeretNavyCaptain = берет капитана флота
     .desc = Крахмально белый берет.
 ent-ClothingHeadHatBeretBlueshield = берет офицера Синего Щита

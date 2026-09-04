@@ -1,3 +1,3 @@
-ent-RandomHumanoidVisitorAlien = Глорпщит
-    .suffix = Случайный вид
+ent-RandomHumanoidVisitorAlien = роль призрака - посетитель, пришелец
     .desc = { "" }
+    .suffix = Случайная внешность

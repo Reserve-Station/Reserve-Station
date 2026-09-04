@@ -17,11 +17,11 @@ selectable-set-thief-chameleon-description =
     Включает: полный комплект одежды хамелеона,
     проектор хамелеона и ID-карту агента.
     Маскируйся под кого угодно и что угодно.
-selectable-set-thief-syndie-name = Набор синдиката
+selectable-set-thief-syndie-name = Набор Синдиката
 selectable-set-thief-syndie-description =
     Безделушки из отвергнутого прошлого или украденные у беззаботного агента?
     Ты завел кое-какие связи. Виски, эх...
-    Включает: ЕМАГ, взломщик доступа, сигареты Interdyne, кодовое слово синдиката,
+    Включает: ЕМАГ, взломщик доступа, сигареты Interdyne, кодовое слово Синдиката,
     радиоподавитель, зажигалку и странные красные кристаллы.
 selectable-set-thief-sleeper-name = Набор слипера
 selectable-set-thief-sleeper-description =

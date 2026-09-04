@@ -1,6 +1,6 @@
 ent-ClothingHandsGlovesEnvirogloves = экоперчатки плазменные
     .desc = Скрывают эти вызывающе костлявые руки.
-ent-ClothingHandsGlovesEnviroglovesBlack = черные экоперчатки
+ent-ClothingHandsGlovesEnviroglovesBlack = чёрные экоперчатки
     .desc = Скрывают эти вызывающе костлявые руки.
 ent-ClothingHandsGlovesEnviroglovesCombat = боевые экоперчатки
     .desc = Specially designed envirogloves for combat and shock-protection.

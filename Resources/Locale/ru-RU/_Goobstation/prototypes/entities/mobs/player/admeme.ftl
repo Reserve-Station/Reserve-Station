@@ -1,29 +1,40 @@
-ent-RandomHumanoidSpawnerNavyOfficer = Офицер военно-морского флота
-    .suffix = Центральное Командование
+# Военно-морской флот
+
+ent-RandomHumanoidSpawnerNavyOfficer = роль призрака - офицер военно-морского флота
     .desc = { "" }
-ent-RandomHumanoidSpawnerNavyCaptain = Капитан военно-морского флота
-    .suffix = ТОЛЬКО ДЛЯ АДМИНИСТРАТОРА, НИ ХРЕНА НЕ ДЕЛАЙ
+    .suffix = ЦентКом, Адмем
+ent-RandomHumanoidSpawnerNavyCaptain = роль призрака - капитан военно-морского флота
     .desc = { "" }
-ent-RandomHumanoidSpawnerNavyOfficerUndercover = Офицер военно-морского флота под прикрытием
-    .suffix = Центральное Командование
+    .suffix = ЦентКом, Адмем
+ent-RandomHumanoidSpawnerNavyOfficerUndercover = роль призрака - офицер военно-морского флота под прикрытием
     .desc = { "" }
-ent-RandomHumanoidSpawnerSpecialOperationsOfficers = Офицер Специальных Операций
-    .suffix = Центральное Командование
+    .suffix = ЦентКом, Адмем
+ent-RandomHumanoidSpawnerSpecialOperationsOfficers = роль призрака - офицер специальных операций
     .desc = { "" }
-ent-RandomHumanoidSpawnerDiplomat = Дипломат
-    .suffix = Центральное Командование
+    .suffix = ЦентКом, Адмем
+
+# ЦентКом
+
+ent-RandomHumanoidSpawnerDiplomat = роль призрака - дипломат
     .desc = { "" }
-ent-RandomHumanoidSpawnerInspector = Инспектор
-    .suffix = Центральное Командование
+    .suffix = ЦентКом, Адмем
+ent-RandomHumanoidSpawnerInspector = роль призрака - инспектор
     .desc = { "" }
-ent-RandomHumanoidSpawnerChronolegioneer = хроно-легионер
+    .suffix = ЦентКом, Адмем
+
+# Другое
+
+ent-RandomHumanoidSpawnerChronolegioneer = роль призрака - хронолегионер
     .desc = { "" }
-ent-RandomHumanoidHECUSpawner = Оперативник HECU
-    .suffix = Контроль
+    .suffix = Адмем, Red Alert 2
+
+ent-RandomHumanoidHECUSpawner = роль призрака - оперативник HECU
     .desc = { "" }
-ent-TheGmanSpawer = Г-мэн
-    .suffix = Адмемы
+    .suffix = ОБР, Адмем, Half Life
+ent-TheGmanSpawer = роль призрака - Г-мэн
     .desc = { "" }
-ent-ConquestSpawner = Завоеватель
-    .suffix = Адмемы
+    .suffix = Адмем, Half Life
+
+ent-ConquestSpawner = роль призрака - завоеватель
     .desc = { "" }
+    .suffix = Адмем, Неуязвимый, Империя Вилтрум

@@ -84,7 +84,7 @@ ent-ClothingUniformJumpskirtHosFormal = торжественное платье 
     .desc = Платье для особых случаев.
 # Corvax-HiddenDesc-Start
 ent-ClothingUniformJumpskirtOperative = юбка-комбинезон оперативника
-    .desc = Униформа элитных агентов синдиката, выполняющих тактические операции в глубоком космосе.
+    .desc = Униформа элитных агентов Синдиката, выполняющих тактические операции в глубоком космосе.
 ent-ClothingUniformJumpskirtTacticool = тактическая юбка-комбинезон
     .desc = Униформа для оперативных LARPеров, выполняющих тактические кражи изолированных перчаток в глубоком космосе.
 ent-ClothingUniformJumpskirtAtmos = юбка-комбинезон атмосферного техника

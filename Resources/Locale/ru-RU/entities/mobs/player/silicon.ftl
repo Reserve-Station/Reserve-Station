@@ -42,10 +42,11 @@ ent-PlayerBorgDerelict = { ent-BorgChassisDerelict }
     .suffix = Батарея, Модуль
     .desc = { ent-BorgChassisDerelict.desc }
 ent-PlayerBorgDerelictGhostRole = { ent-PlayerBorgDerelict }
-    .suffix = Гост роль
+    .suffix = Роль призрака
     .desc = { ent-PlayerBorgDerelict.desc }
-ent-PlayerBorgSyndicateInvasionGhostRoleSpawner = спавнер роли борга вторжения синдиката
+ent-PlayerBorgSyndicateInvasionGhostRoleSpawner = борг вторжения Синдиката
     .desc = { ent-MarkerBase.desc }
+    .suffix = Роль призрака
 
 ent-PlayerStationAiAssembly = каркас ядра ИИ
     .desc = Незавершённое компьютерное ядро для размещения искусственного интеллекта.

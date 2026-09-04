@@ -1,3 +1,3 @@
-ent-RandomHumanoidSpawnerSwatMedic = Медик ОКГ
-    .suffix = Роль ОБР, Резерв
+ent-RandomHumanoidSpawnerSwatMedic = роль призрака - медик ОКГ
     .desc = { "" }
+    .suffix = ОБР, Резерв, Адмем

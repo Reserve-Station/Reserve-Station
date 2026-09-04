@@ -179,7 +179,7 @@ objective-issuer-lord-singuloth = [color=#320022]Лорд Сингулот[/colo
 
 ghost-role-information-dark-lord-name = Тёмный лорд
 ghost-role-information-dark-lord-description = Агент Синдиката, созданный в честь повелителя Ситхов, используй свою силу молнии и энергетический меч для достижения своих целей!
-dark-lord-role-greeting = Вы [color=#880808]Тёмный лорд[/color], отправленный синдикатом на эту станцию для выполнения своей грязной работы. Проверьте своё меню персонажа на предмет ваших целей.
+dark-lord-role-greeting = Вы [color=#880808]Тёмный лорд[/color], отправленный Синдикатом на эту станцию для выполнения своей грязной работы. Проверьте своё меню персонажа на предмет ваших целей.
 
 ghost-role-information-chosen-one-name = Избранный
 ghost-role-information-chosen-one-description = Специальный агент, посланный NanoTrasen на станцию, чтобы победить Тёмного лорда.

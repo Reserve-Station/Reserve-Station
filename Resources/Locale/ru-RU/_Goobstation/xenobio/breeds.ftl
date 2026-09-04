@@ -38,6 +38,6 @@ xenobio-breed-oil = масляная слизь
 
 xenobio-breed-light-pink = светло-розовая слизь
 
-xenobio-breed-black = черная слизь
+xenobio-breed-black = чёрная слизь
 
 xenobio-breed-adamantine = адамантитовая слизь

@@ -1,5 +1,5 @@
-ent-LavalandWeaponLootSpawner = спавнер лут оружие
-    .suffix = Лаваленд
+ent-LavalandWeaponLootSpawner = спавнер добычи
+    .suffix = Лаваленд, Оружие
     .desc = { ent-MarkerBase.desc }
 
 ent-CrusherWeaponLootSpawner = { ent-LavalandWeaponLootSpawner }-крушитель

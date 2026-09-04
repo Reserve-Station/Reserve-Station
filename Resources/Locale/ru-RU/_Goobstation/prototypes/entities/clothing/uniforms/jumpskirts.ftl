@@ -1,13 +1,13 @@
 ent-CentcomAgentSkirt = юбка-комбинезон агента ЦентКом
     .desc = Юбка, которую носят юристы ЦентКом. Пахнет горелым кофе.
 ent-ClothingUniformJumpskirtNanotrasenRepresentative = юбка-комбинезон представителя NanoTrasen
-    .desc = Черная юбка, которую носят чиновники.
+    .desc = Чёрная юбка, которую носят чиновники.
 ent-ClothingUniformJumpskirtBlueshieldOfficer = юбка-комбинезон офицера Синего Щита
     .desc = Серо-синяя юбка с короткими рукавами из прочного материала.
 ent-ClothingUniformSkirtMailCarrier = юбка-комбинезон почтальона
     .desc = Враг собак - везде.
 ent-ClothingUniformJumpskirtReporter = платье репортёра
-    .desc = Экстравагантное черное платье, призванное привлечь внимание как можно большего количества людей.
+    .desc = Экстравагантное чёрное платье, призванное привлечь внимание как можно большего количества людей.
 ent-ClothingUniformJumpskirtTrainer = юбка-комбинезон профессионального тренера
     .desc = Юбка, предназначенная для профессиональных тренеров Nanotrasen. Наполняет вас чувством гордости.
 ent-ClothingUniformJumpskirtCommandMaid = юбка-комбинезон уборщика командования

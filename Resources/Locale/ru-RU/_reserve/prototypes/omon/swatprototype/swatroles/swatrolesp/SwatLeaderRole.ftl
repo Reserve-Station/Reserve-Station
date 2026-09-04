@@ -1,3 +1,3 @@
-ent-RandomHumanoidSpawnerSwatLeader = Лидер ОКГ
-    .suffix = Роль ОБР, Резерв
+ent-RandomHumanoidSpawnerSwatLeader = роль призрака - лидер ОКГ
     .desc = { "" }
+    .suffix = ОБР, Резерв, Адмем

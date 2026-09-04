@@ -31,11 +31,11 @@ ent-ShadowkinCube = Shadowkin cube
 
 ent-SlimeCubeBox = коробка кубиков слаймов
     .desc = Кубики слаймов фирмы Drymate. Просто добавь воды!
-ent-SlimeCubeBoxSyndie = коробка кубиков слаймов синдиката
+ent-SlimeCubeBoxSyndie = коробка кубиков слаймов Синдиката
     .desc = Кубики слаймов фирмы Interdyne. Просто добавь воды!
 ent-SlimeCubeWrapped = кубик слайма
     .desc = Разверни чтобы получить кубик слайма.
-ent-SlimeCubeWrappedSyndie = кубик слайма синдиката
+ent-SlimeCubeWrappedSyndie = кубик слайма Синдиката
     .desc = Разверни чтобы получить кубик слайма.
 ent-SlimeCube = кубик слайма
     .desc = { ent-MonkeyCube.desc }

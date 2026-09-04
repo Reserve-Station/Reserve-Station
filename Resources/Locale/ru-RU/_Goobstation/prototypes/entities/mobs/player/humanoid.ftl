@@ -1,7 +1,12 @@
-ent-LostFrontierSalvagerSpawner = спавнер потерявшийся утилизатор Фронтира
+# Фронтир
+
+ent-LostFrontierSalvagerSpawner = спавнер - потерявшийся утилизатор Фронтира
     .desc = { ent-MarkerBase.desc }
-ent-RandomHumanoidLostFrontierSalvager = роль призрака потерявшийся утилизатор Фронтира
+ent-RandomHumanoidLostFrontierSalvager = роль призрака - потерявшийся утилизатор Фронтира
     .desc = { "" }
+
+# Базовые тела
+
 ent-MobHumanRandom = { ent-MobHuman }
     .suffix = Случайная внешность, { species-name-human }
     .desc = { ent-MobHuman.desc }
@@ -53,47 +58,58 @@ ent-MobChitinidRandom = { ent-MobChitinid }
 ent-MobFeroxiRandom = { ent-MobFeroxi }
     .suffix = Случайная внешность, { species-name-feroxi }
     .desc = { ent-MobFeroxi.desc }
-ent-RandomHumanoidSpawnerDeathSquadNoReq = Эскадрон Смерти
-    .suffix = ОБР, Эскадрон смерти, Нет требований
+
+# ЦентКом, гост роли
+
+ent-RandomHumanoidSpawnerDeathSquadNoReq = { ent-RandomHumanoidSpawnerDeathSquad }
     .desc = { ent-RandomHumanoidSpawnerDeathSquad.desc }
-ent-RandomHumanoidSpawnerERTLeaderNoReq = Лидер ОБР дублёр
-    .suffix = ОБР, Базовый, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerDeathSquad.suffix }, Нет требований
+
+ent-RandomHumanoidSpawnerERTLeaderNoReq = { ent-RandomHumanoidSpawnerERTLeader } дублёр
     .desc = { ent-RandomHumanoidSpawnerERTLeader.desc }
-ent-RandomHumanoidSpawnerERTLeaderEVANoReq = Лидер ОБР дублёр
-    .suffix = ОБР, Бронескафандр, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTLeader.suffix }, Нет требований
+ent-RandomHumanoidSpawnerERTLeaderEVANoReq = { ent-RandomHumanoidSpawnerERTLeaderNoReq }
     .desc = { ent-RandomHumanoidSpawnerERTLeaderNoReq.desc }
-ent-RandomHumanoidSpawnerERTChaplainNoReq = ОБР священник
-    .suffix = ОБР, Базовый, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTLeaderEVA.suffix }, Нет требований
+
+ent-RandomHumanoidSpawnerERTChaplainNoReq = { ent-RandomHumanoidSpawnerERTChaplain }
     .desc = { ent-RandomHumanoidSpawnerERTLeader.desc }
-ent-RandomHumanoidSpawnerERTChaplainEVANoReq = ОБР священник
-    .suffix = ОБР, Экокостюм
+    .suffix = { ent-RandomHumanoidSpawnerERTChaplain.suffix }, Нет требований
+ent-RandomHumanoidSpawnerERTChaplainEVANoReq = { ent-RandomHumanoidSpawnerERTChaplainNoReq }
     .desc = { ent-RandomHumanoidSpawnerERTChaplainNoReq.desc }
-ent-RandomHumanoidSpawnerERTJanitorNoReq = ОБР уборщик
-    .suffix = ОБР, Базовый, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTChaplainEVA.suffix }, Нет требований
+
+ent-RandomHumanoidSpawnerERTJanitorNoReq = { ent-RandomHumanoidSpawnerERTJanitor }
     .desc = { ent-RandomHumanoidSpawnerERTLeaderNoReq.desc }
-ent-RandomHumanoidSpawnerERTJanitorEVANoReq = ОБР уборщик
-    .suffix = ОБР, Экокостюм, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTJanitor.suffix }, Нет требований
+ent-RandomHumanoidSpawnerERTJanitorEVANoReq = { ent-RandomHumanoidSpawnerERTJanitorNoReq }
     .desc = { ent-RandomHumanoidSpawnerERTJanitorNoReq.desc }
-ent-RandomHumanoidSpawnerERTEngineerNoReq = ОБР инженер
-    .suffix = ОБР, Базовый, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTJanitorEVA.suffix }, Нет требований
+
+ent-RandomHumanoidSpawnerERTEngineerNoReq = { ent-RandomHumanoidSpawnerERTEngineer }
     .desc = { ent-RandomHumanoidSpawnerERTLeaderNoReq.desc }
-ent-RandomHumanoidSpawnerERTEngineerEVANoReq = ОБР инженер
-    .suffix = ОБР, Экокостюм, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTEngineer.suffix }, Нет требований
+ent-RandomHumanoidSpawnerERTEngineerEVANoReq = { ent-RandomHumanoidSpawnerERTEngineerNoReq }
     .desc = { ent-RandomHumanoidSpawnerERTEngineerNoReq.desc }
-ent-RandomHumanoidSpawnerERTSecurityNoReq = ОБР
-    .suffix = ОБР, Базовый, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTEngineerEVA.suffix }, Нет требований
+
+ent-RandomHumanoidSpawnerERTSecurityNoReq = { ent-RandomHumanoidSpawnerERTSecurity }
     .desc = { ent-RandomHumanoidSpawnerERTLeaderNoReq.desc }
-ent-RandomHumanoidSpawnerERTSecurityEVANoReq = ОБР
-    .suffix = ОБР, Бронескафандр, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTSecurity.suffix }, Нет требований
+ent-RandomHumanoidSpawnerERTSecurityEVANoReq = { ent-RandomHumanoidSpawnerERTSecurity }
     .desc = { ent-RandomHumanoidSpawnerERTSecurity.desc }
-ent-RandomHumanoidSpawnerERTMedicalNoReq = ОБР медик
-    .suffix = ОБР, Базовый, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTSecurityEVA.suffix }, Нет требований
+
+ent-RandomHumanoidSpawnerERTMedicalNoReq = { ent-RandomHumanoidSpawnerERTMedical }
     .desc = { ent-RandomHumanoidSpawnerERTLeaderNoReq.desc }
-ent-RandomHumanoidSpawnerERTMedicalEVANoReq = ОБР медик
-    .suffix = ОБР, Бронескафандр, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTMedical.suffix }, Нет требований
+ent-RandomHumanoidSpawnerERTMedicalEVANoReq = { ent-RandomHumanoidSpawnerERTMedical }
     .desc = { ent-RandomHumanoidSpawnerERTMedical.desc }
-ent-RandomHumanoidSpawnerCBURNUnitNoReq = РХБЗЗ
-    .suffix = ОБР, Нет требований
+    .suffix = { ent-RandomHumanoidSpawnerERTMedicalEVA.suffix }, Нет требований
+
+ent-RandomHumanoidSpawnerCBURNUnitNoReq = { ent-RandomHumanoidSpawnerCBURNUnit }
     .desc = { "" }
-ent-RandomHumanoidGreyTider = грейтайдер
+    .suffix = { ent-RandomHumanoidSpawnerCBURNUnit.suffix }, Нет требований
+
+ent-RandomHumanoidGreyTider = роль призрака - грейтайдер
     .desc = { "" }

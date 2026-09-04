@@ -16,4 +16,4 @@ ent-ClothingOuterArmorHereticCosmos = { ent-ClothingOuterArmorHeretic }
     .suffix = Космос
     .desc = { ent-ClothingOuterArmorHeretic.desc }
 ent-ClothingOuterArmorCloakVoid = плащ пустоты
-    .desc = Черные, как смола, они не отражают свет. Снаружи они покрыты руническими символами. С каждой вспышкой вы перестаете понимать, что видите.
+    .desc = Чёрные, как смола, они не отражают свет. Снаружи они покрыты руническими символами. С каждой вспышкой вы перестаете понимать, что видите.

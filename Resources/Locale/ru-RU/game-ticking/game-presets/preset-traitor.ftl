@@ -68,7 +68,7 @@ traitor-role-uplink-implant-short = Ваш аплинк был импланти�
 traitor-role-uplink-radio-short = Вам выдан старомодный радио-аплинк. Доступ к нему можно получить из инвентаря.
 traitor-role-uplink-telecrystals-short = Вам выдали горсть чистых телекристаллов. Они бесполезны без аплинка, но вы можете обменять их у другого агента Синдиката.
 traitor-role-moreinfo = Найти дополнительную информацию о своей роли в меню персонажа.
-traitor-role-nouplink = У вас нет связи с синдикатом. Запишите его.
+traitor-role-nouplink = У вас нет связи с Синдикатом. Запишите его.
 traitor-role-allegiances = Ваши альянсы:
 traitor-role-notes = Заметки от вашего работодателя:
 traitor-role-uplink-pen-code = Прокрутите ручку на комбинацию [color = lightgray]{ $code }[/color], чтобы разблокировать аплинк.
