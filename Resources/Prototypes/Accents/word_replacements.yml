@@ -705,6 +705,10 @@
     reserve-chatsan-word-242: reserve-chatsan-replacement-242
     reserve-chatsan-word-243: reserve-chatsan-replacement-243
     reserve-chatsan-word-244: reserve-chatsan-replacement-244
+    reserve-chatsan-word-245: reserve-chatsan-replacement-245
+    reserve-chatsan-word-246: reserve-chatsan-replacement-246
+    reserve-chatsan-word-247: reserve-chatsan-replacement-247
+    reserve-chatsan-word-248: reserve-chatsan-replacement-248
 
 - type: accent
   id: liar
