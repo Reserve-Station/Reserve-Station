@@ -478,7 +478,7 @@
     reserve-chatsan-word-15: reserve-chatsan-replacement-15
     reserve-chatsan-word-16: reserve-chatsan-replacement-16
     reserve-chatsan-word-17: reserve-chatsan-replacement-17
-    #    reserve-chatsan-word-18: reserve-chatsan-replacement-18 # Reserve - Vahter edit
+    reserve-chatsan-word-18: reserve-chatsan-replacement-18
     reserve-chatsan-word-19: reserve-chatsan-replacement-19
     reserve-chatsan-word-20: reserve-chatsan-replacement-20
     reserve-chatsan-word-21: reserve-chatsan-replacement-21
@@ -518,7 +518,7 @@
     reserve-chatsan-word-55: reserve-chatsan-replacement-55
     reserve-chatsan-word-56: reserve-chatsan-replacement-56
     reserve-chatsan-word-57: reserve-chatsan-replacement-57
-#    reserve-chatsan-word-58: reserve-chatsan-replacement-58 # Reserve - Vahter edit
+    reserve-chatsan-word-58: reserve-chatsan-replacement-58
     reserve-chatsan-word-59: reserve-chatsan-replacement-59
     reserve-chatsan-word-60: reserve-chatsan-replacement-60
     reserve-chatsan-word-61: reserve-chatsan-replacement-61
@@ -527,8 +527,8 @@
     reserve-chatsan-word-64: reserve-chatsan-replacement-64
     reserve-chatsan-word-65: reserve-chatsan-replacement-65
     reserve-chatsan-word-66: reserve-chatsan-replacement-66
-#    reserve-chatsan-word-67: reserve-chatsan-replacement-67 # Reserve - Vahter edit
-#    reserve-chatsan-word-68: reserve-chatsan-replacement-68 # Reserve - Vahter edit
+    reserve-chatsan-word-67: reserve-chatsan-replacement-67
+    reserve-chatsan-word-68: reserve-chatsan-replacement-68
     reserve-chatsan-word-69: reserve-chatsan-replacement-69
     reserve-chatsan-word-70: reserve-chatsan-replacement-70
     reserve-chatsan-word-71: reserve-chatsan-replacement-71
@@ -540,7 +540,7 @@
     reserve-chatsan-word-77: reserve-chatsan-replacement-77
     reserve-chatsan-word-78: reserve-chatsan-replacement-78
     reserve-chatsan-word-79: reserve-chatsan-replacement-79
-#    reserve-chatsan-word-80: reserve-chatsan-replacement-80 # Reserve - Vahter edit | почему это вообще заменяется
+    reserve-chatsan-word-80: reserve-chatsan-replacement-80
     reserve-chatsan-word-81: reserve-chatsan-replacement-81
     reserve-chatsan-word-82: reserve-chatsan-replacement-82
     reserve-chatsan-word-83: reserve-chatsan-replacement-83
@@ -549,12 +549,12 @@
     reserve-chatsan-word-86: reserve-chatsan-replacement-86
     reserve-chatsan-word-87: reserve-chatsan-replacement-87
     reserve-chatsan-word-88: reserve-chatsan-replacement-88
-    reserve-chatsan-word-89: reserve-chatsan-replacement-89 # чем ближе крах империи...
+    reserve-chatsan-word-89: reserve-chatsan-replacement-89
     reserve-chatsan-word-90: reserve-chatsan-replacement-90
     reserve-chatsan-word-91: reserve-chatsan-replacement-91
     reserve-chatsan-word-92: reserve-chatsan-replacement-92
-#    reserve-chatsan-word-93: reserve-chatsan-replacement-93 # Reserve - Vahter edit
-#    reserve-chatsan-word-94: reserve-chatsan-replacement-94 # Reserve - Vahter edit
+    reserve-chatsan-word-93: reserve-chatsan-replacement-93
+    reserve-chatsan-word-94: reserve-chatsan-replacement-94
     reserve-chatsan-word-95: reserve-chatsan-replacement-95
     reserve-chatsan-word-96: reserve-chatsan-replacement-96
     reserve-chatsan-word-97: reserve-chatsan-replacement-97
@@ -582,7 +582,7 @@
     reserve-chatsan-word-119: reserve-chatsan-replacement-119
     reserve-chatsan-word-120: reserve-chatsan-replacement-120
     reserve-chatsan-word-121: reserve-chatsan-replacement-121
-#    reserve-chatsan-word-122: reserve-chatsan-replacement-122 # Reserve - Vahter edit
+    reserve-chatsan-word-122: reserve-chatsan-replacement-122
     reserve-chatsan-word-123: reserve-chatsan-replacement-123
     reserve-chatsan-word-124: reserve-chatsan-replacement-124
     reserve-chatsan-word-125: reserve-chatsan-replacement-125
@@ -596,6 +596,119 @@
     reserve-chatsan-word-133: reserve-chatsan-replacement-133
     reserve-chatsan-word-134: reserve-chatsan-replacement-134
     reserve-chatsan-word-135: reserve-chatsan-replacement-135
+    reserve-chatsan-word-136: reserve-chatsan-replacement-136
+    reserve-chatsan-word-137: reserve-chatsan-replacement-137
+    reserve-chatsan-word-138: reserve-chatsan-replacement-138
+    reserve-chatsan-word-139: reserve-chatsan-replacement-139
+    reserve-chatsan-word-140: reserve-chatsan-replacement-140
+    reserve-chatsan-word-141: reserve-chatsan-replacement-141
+    reserve-chatsan-word-142: reserve-chatsan-replacement-142
+    reserve-chatsan-word-143: reserve-chatsan-replacement-143
+    reserve-chatsan-word-144: reserve-chatsan-replacement-144
+    reserve-chatsan-word-145: reserve-chatsan-replacement-145
+    reserve-chatsan-word-146: reserve-chatsan-replacement-146
+    reserve-chatsan-word-147: reserve-chatsan-replacement-147
+    reserve-chatsan-word-148: reserve-chatsan-replacement-148
+    reserve-chatsan-word-149: reserve-chatsan-replacement-149
+    reserve-chatsan-word-150: reserve-chatsan-replacement-150
+    reserve-chatsan-word-151: reserve-chatsan-replacement-151
+    reserve-chatsan-word-152: reserve-chatsan-replacement-152
+    reserve-chatsan-word-153: reserve-chatsan-replacement-153
+    reserve-chatsan-word-154: reserve-chatsan-replacement-154
+    reserve-chatsan-word-155: reserve-chatsan-replacement-155
+    reserve-chatsan-word-156: reserve-chatsan-replacement-156
+    reserve-chatsan-word-157: reserve-chatsan-replacement-157
+    reserve-chatsan-word-158: reserve-chatsan-replacement-158
+    reserve-chatsan-word-159: reserve-chatsan-replacement-159
+    reserve-chatsan-word-160: reserve-chatsan-replacement-160
+    reserve-chatsan-word-161: reserve-chatsan-replacement-161
+    reserve-chatsan-word-162: reserve-chatsan-replacement-162
+    reserve-chatsan-word-163: reserve-chatsan-replacement-163
+    reserve-chatsan-word-164: reserve-chatsan-replacement-164
+    reserve-chatsan-word-165: reserve-chatsan-replacement-165
+    reserve-chatsan-word-166: reserve-chatsan-replacement-166
+    reserve-chatsan-word-167: reserve-chatsan-replacement-167
+    reserve-chatsan-word-168: reserve-chatsan-replacement-168
+    reserve-chatsan-word-169: reserve-chatsan-replacement-169
+    reserve-chatsan-word-170: reserve-chatsan-replacement-170
+    reserve-chatsan-word-171: reserve-chatsan-replacement-171
+    reserve-chatsan-word-172: reserve-chatsan-replacement-172
+    reserve-chatsan-word-173: reserve-chatsan-replacement-173
+    reserve-chatsan-word-174: reserve-chatsan-replacement-174
+    reserve-chatsan-word-175: reserve-chatsan-replacement-175
+    reserve-chatsan-word-176: reserve-chatsan-replacement-176
+    reserve-chatsan-word-177: reserve-chatsan-replacement-177
+    reserve-chatsan-word-178: reserve-chatsan-replacement-178
+    reserve-chatsan-word-179: reserve-chatsan-replacement-179
+    reserve-chatsan-word-180: reserve-chatsan-replacement-180
+    reserve-chatsan-word-181: reserve-chatsan-replacement-181
+    reserve-chatsan-word-182: reserve-chatsan-replacement-182
+    reserve-chatsan-word-183: reserve-chatsan-replacement-183
+    reserve-chatsan-word-184: reserve-chatsan-replacement-184
+    reserve-chatsan-word-185: reserve-chatsan-replacement-185
+    reserve-chatsan-word-186: reserve-chatsan-replacement-186
+    reserve-chatsan-word-187: reserve-chatsan-replacement-187
+    reserve-chatsan-word-188: reserve-chatsan-replacement-188
+    reserve-chatsan-word-189: reserve-chatsan-replacement-189
+    reserve-chatsan-word-190: reserve-chatsan-replacement-190
+    reserve-chatsan-word-191: reserve-chatsan-replacement-191
+    reserve-chatsan-word-192: reserve-chatsan-replacement-192
+    reserve-chatsan-word-193: reserve-chatsan-replacement-193
+    reserve-chatsan-word-194: reserve-chatsan-replacement-194
+    reserve-chatsan-word-195: reserve-chatsan-replacement-195
+    reserve-chatsan-word-196: reserve-chatsan-replacement-196
+    reserve-chatsan-word-197: reserve-chatsan-replacement-197
+    reserve-chatsan-word-198: reserve-chatsan-replacement-198
+    reserve-chatsan-word-199: reserve-chatsan-replacement-199
+    reserve-chatsan-word-200: reserve-chatsan-replacement-200
+    reserve-chatsan-word-201: reserve-chatsan-replacement-201
+    reserve-chatsan-word-202: reserve-chatsan-replacement-202
+    reserve-chatsan-word-203: reserve-chatsan-replacement-203
+    reserve-chatsan-word-204: reserve-chatsan-replacement-204
+    reserve-chatsan-word-205: reserve-chatsan-replacement-205
+    reserve-chatsan-word-206: reserve-chatsan-replacement-206
+    reserve-chatsan-word-207: reserve-chatsan-replacement-207
+    reserve-chatsan-word-208: reserve-chatsan-replacement-208
+    reserve-chatsan-word-209: reserve-chatsan-replacement-209
+    reserve-chatsan-word-210: reserve-chatsan-replacement-210
+    reserve-chatsan-word-211: reserve-chatsan-replacement-211
+    reserve-chatsan-word-212: reserve-chatsan-replacement-212
+    reserve-chatsan-word-213: reserve-chatsan-replacement-213
+    reserve-chatsan-word-214: reserve-chatsan-replacement-214
+    reserve-chatsan-word-215: reserve-chatsan-replacement-215
+    reserve-chatsan-word-216: reserve-chatsan-replacement-216
+    reserve-chatsan-word-217: reserve-chatsan-replacement-217
+    reserve-chatsan-word-218: reserve-chatsan-replacement-218
+    reserve-chatsan-word-219: reserve-chatsan-replacement-219
+    reserve-chatsan-word-220: reserve-chatsan-replacement-220
+    reserve-chatsan-word-221: reserve-chatsan-replacement-221
+    reserve-chatsan-word-222: reserve-chatsan-replacement-222
+    reserve-chatsan-word-223: reserve-chatsan-replacement-223
+    reserve-chatsan-word-224: reserve-chatsan-replacement-224
+    reserve-chatsan-word-225: reserve-chatsan-replacement-225
+    reserve-chatsan-word-226: reserve-chatsan-replacement-226
+    reserve-chatsan-word-227: reserve-chatsan-replacement-227
+    reserve-chatsan-word-228: reserve-chatsan-replacement-228
+    reserve-chatsan-word-229: reserve-chatsan-replacement-229
+    reserve-chatsan-word-230: reserve-chatsan-replacement-230
+    reserve-chatsan-word-231: reserve-chatsan-replacement-231
+    reserve-chatsan-word-232: reserve-chatsan-replacement-232
+    reserve-chatsan-word-233: reserve-chatsan-replacement-233
+    reserve-chatsan-word-234: reserve-chatsan-replacement-234
+    reserve-chatsan-word-235: reserve-chatsan-replacement-235
+    reserve-chatsan-word-236: reserve-chatsan-replacement-236
+    reserve-chatsan-word-237: reserve-chatsan-replacement-237
+    reserve-chatsan-word-238: reserve-chatsan-replacement-238
+    reserve-chatsan-word-239: reserve-chatsan-replacement-239
+    reserve-chatsan-word-240: reserve-chatsan-replacement-240
+    reserve-chatsan-word-241: reserve-chatsan-replacement-241
+    reserve-chatsan-word-242: reserve-chatsan-replacement-242
+    reserve-chatsan-word-243: reserve-chatsan-replacement-243
+    reserve-chatsan-word-244: reserve-chatsan-replacement-244
+    reserve-chatsan-word-245: reserve-chatsan-replacement-245
+    reserve-chatsan-word-246: reserve-chatsan-replacement-246
+    reserve-chatsan-word-247: reserve-chatsan-replacement-247
+    reserve-chatsan-word-248: reserve-chatsan-replacement-248
 
 - type: accent
   id: liar
