@@ -4,6 +4,9 @@ using System.Net;
 using System.Net.Sockets;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
+using Content.Server.ADT.Discord;
+using Content.Server.ADT.Discord.Bans;
+using Content.Server.ADT.Discord.Bans.PayloadGenerators;
 using Content.Server.Chat.Managers;
 using Content.Server.EUI;
 using Content.Shared.Administration;
@@ -21,6 +24,8 @@ public sealed class BanPanelEui : BaseEui
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly IAdminManager _admins = default!;
+    [Dependency] private readonly Content.Server.Database.IServerDbManager _dbManager = default!;
+    [Dependency] private readonly IDiscordBanInfoSender _discordBanInfoSender = default!;
 
     private readonly ISawmill _sawmill;
 
@@ -164,6 +169,23 @@ public sealed class BanPanelEui : BaseEui
 
             _banManager.CreateServerBan((CreateServerBanInfo) banInfo);
         }
+
+        // Reserve edit start: ADT - discord webhook
+        var lastServerBan = await _dbManager.GetLastBanAsync();
+        var newServerBanId = lastServerBan is not null ? lastServerBan.Id + 1 : 1;
+
+        var banInfoDiscord = new BanInfo
+        {
+            BanId = newServerBanId.ToString()!,
+            Target = ban.Target!,
+            Player = Player,
+            Minutes = ban.BanDurationMinutes,
+            Reason = ban.Reason,
+            Expires = DateTimeOffset.Now + TimeSpan.FromMinutes(ban.BanDurationMinutes)
+        };
+        // Reserve edit end: ADT - discord webhook
+
+        await _discordBanInfoSender.SendBanInfoAsync<PanelBanPayloadGenerator>(banInfoDiscord);
 
         Close();
     }
