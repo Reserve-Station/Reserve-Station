@@ -406,6 +406,8 @@
       allowNonHumans: true
       multiAntagSetting: NotExclusive
       startingGear: ThiefGear
+      roleLoadout:
+      - AntagThief
       components:
       - type: Pacified
       - type: Thieving

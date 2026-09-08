@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: roleLoadout
+  id: AntagBlob
+  groups:
+  - TrinketsBlob
+
+- type: loadoutGroup
+  id: TrinketsBlob
+  name: loadout-group-trinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - PaperSuicideNoteBlob
+
+# region Bones
+
+- type: entity
+  parent: Paper
+  id: PaperSuicideNoteBlob
+  name: suicide note
+  suffix: Loadout, Trinkets, Blob
+  components:
+    - type: Paper
+      content: doc-text-suicide-note-blob
+
+- type: loadout
+  id: PaperSuicideNoteBlob
+  storage:
+    back:
+    - PaperSuicideNoteBlob
+
+# endregion
