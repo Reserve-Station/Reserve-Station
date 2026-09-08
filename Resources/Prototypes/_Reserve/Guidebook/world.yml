@@ -51,7 +51,7 @@
     ru-RU: "/ServerInfo/_Reserve/Guidebook/World/Factions/CentralCommand.xml"
   children:
   - BlueShield
-  - CorporateAgents
+  # - CorporateAgents
 
 - type: guideEntry
   id: BlueShield
