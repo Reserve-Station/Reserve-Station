@@ -45,7 +45,7 @@ public sealed partial class NinjutsuSneakAttackComponent : Component
     public string AssassinateComboName = "Assassinate";
 
     [DataField]
-    public string TakedownComboName = "Ninjutsu-Takedown"; // Reserve edit: localization #
+    public string TakedownComboName = "Ninjutsu-Takedown"; // Reserve edit: localization #359
 
     [DataField]
     public ProtoId<AlertPrototype> Alert = "SneakAttack";

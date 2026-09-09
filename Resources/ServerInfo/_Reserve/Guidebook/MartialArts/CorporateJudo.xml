@@ -50,7 +50,7 @@
     Можно выполнить только [bold]стоя[/bold]. Работает только против [bold]стоящих противников[/bold], нанося урон [color=Purple][bold]выносливости[/bold][/color] и [bold]сбивая их с ног[/bold].
     Длительность сбивания зависит от их сопротивления [color=Purple][bold]выносливости[/bold][/color].
 
-  ### Рычаг руки
+  ### Захват рычагом руки
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
