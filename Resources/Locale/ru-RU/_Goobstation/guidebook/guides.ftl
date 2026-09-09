@@ -111,3 +111,6 @@ guide-entry-capoeira = Капоэйра
 guide-entry-ninjutsu = Ниндзюцу
 guide-entry-dragon-kung-fu = Кунг-фу Дракона
 guide-entry-hell-rip = Адская Геена
+
+guide-entry-antag-revealing-conditions = Условия раскрытия антагов
+guide-entry-xenobiology = Ксенобиология

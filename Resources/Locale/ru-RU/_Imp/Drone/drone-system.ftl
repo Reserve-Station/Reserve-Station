@@ -1,9 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2025 fishbait <gnesse@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 drone-active = Дрон технического обслуживания. Кажется, он совершенно не заинтересован вами.
 drone-dormant = Бездействующий дрон техобслуживания. Кто знает, когда он проснётся?
 drone-activated = Дрон оживает с характерным жужжанием!

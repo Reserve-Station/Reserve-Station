@@ -1,7 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Goob Station Contributors
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 #A leftover file from the Hermit revert, was renamed and made to store spawning tables for any addtional gamemode created.
 
 - type: entityTable
@@ -24,26 +20,25 @@
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
     - id: ClosetSkeleton
-    # - id: DragonSpawn removed for low pop Too little sec
+   # - id: DragonSpawn removed for low pop Too little sec
     - id: KingRatMigration
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
-    # - id: RevenantSpawn
+    #- id: RevenantSpawn
     - id: SleeperAgents
-    # - id: ZombieOutbreak removed for low pop too little sec
-    # - id: LoneOpsSpawn removed for low pop too little sec
-    - id: DerelictCyborgSpawn
-    # - id: BlobSpawn # Goobstation - removed for low pop too little sec
+   # - id: ZombieOutbreak removed for low pop too little sec
+   # - id: LoneOpsSpawn removed for low pop too little sec
+    #- id: BlobSpawn # Goobstation - removed for low pop too little sec
     - id: LoneAbductorSpawn
     - id: DuoAbductorSpawn
     - id: BingleSpawn
-    # - id: SlaughterDemonMidround
-    # - id: XenomorphsInfestation #  removed for low pop too little sec
+   #- id: SlaughterDemonMidround
+   #- id: XenomorphsInfestation #  removed for low pop too little sec
     - id: SlasherSpawn
     - id: SpacePirates
-    # - id: SingulothKnightsMidround
-    # - id: DarkLordMidround
+    #- id: SingulothKnightsMidround
+    #- id: DarkLordMidround
     - id: MimeAssassinMidround
     - id: DarkPriestMidround
-    # - id: VoxRaidersMidround
+    #- id: VoxRaidersMidround
     - id: TunnelClownMidround

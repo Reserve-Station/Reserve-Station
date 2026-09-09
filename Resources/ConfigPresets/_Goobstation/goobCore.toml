@@ -88,4 +88,7 @@ enabled = true
 enabled = true
 
 [voice]
-barks_enabled = true
+# barks_enabled = true # Reserve edit - use the other barks
+
+[biomass]
+easy_mode = false

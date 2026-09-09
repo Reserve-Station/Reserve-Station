@@ -1,0 +1,25 @@
+ent-SlasherSlowdownStatusEffect = замедление от маньяка
+    .desc = { "" }
+ent-TentacleSlowdownStatusEffect = замедление от щупалец
+    .desc = { "" }
+ent-MartialArtsGenericSlowdownEffect = замедление от боевых искусств
+    .desc = { "" }
+ent-OrgansDamagedSlowdownEffect = замедление от повреждённых органов
+    .desc = { "" }
+ent-ShadowCloakSlowdownEffect = замедление от покрова тени
+    .desc = { "" }
+ent-ShadowlingGlareSlowdownEffect = замедление от тенеморфа
+    .desc = { "" }
+ent-CurseWeaknessSlowDownEffect = замедление от ослабления
+    .desc = { "" }
+ent-DisgustSlowDownEffect = замедление от отвращения
+    .desc = { "" }
+ent-TriclorSlowdownEffect = замедление от трихлора
+    .desc = { "" }
+
+ent-NitriumStatusEffect = ускорение от нитриума
+    .desc = { "" }
+ent-NitrousStatusEffect = ускорение от азота
+    .desc = { "" }
+ent-SlasherStatusEffectKillSpeed = ускорение маньяка от убийства
+    .desc = { "" }

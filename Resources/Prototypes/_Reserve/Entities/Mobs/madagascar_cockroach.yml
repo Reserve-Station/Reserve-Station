@@ -1,0 +1,236 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Organs
+
+- type: entity
+  parent: BaseAnimalOrgan
+  id: OrganCockroachBigInnards
+  name: innards
+  description: A mess of insect equivalents of organs. Ew.
+  suffix: Cockroach, Organ, Stomach, Liver, Kidneys, Heart, Egg sack
+  components:
+  - type: Sprite
+    sprite: _White/Mobs/Species/Xenomorph/organs.rsi
+    state: egg_sack
+    scale: 0.25, 0.25
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 30
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Toxin
+          Quantity: 5
+  - type: Organ  # Shitmed
+    intCap: 35
+    integrity: 35
+    integrityThresholds:
+      Normal: 35
+      Damaged: 19
+      Destroyed: 0
+    slotId: stomach
+    onAdd:
+    - type: EggLayer
+      eggSpawn:
+      - id: MobCockroachBig
+      hungerUsage: 20
+      eggLayAction: MouseMultiply
+      hungerRequired: true
+  - type: EggSack  # Only for surgery whitelist, doesn't do anything.
+  - type: Heart  # Shitmed
+  - type: Stomach
+  - type: Metabolizer
+    maxPoisonsProcessable: 6
+    metabolizerTypes: [ Plant ]
+    removeEmpty: true
+    groups:
+      - id: Food
+      - id: Drink
+      - id: Medicine
+      - id: Poison
+      - id: Narcotic
+      - id: Alcohol
+        rateModifier: 0.1
+  - type: Tag
+    tags:
+    - Meat
+    - Organ
+    - Stomach
+    - Heart
+    - Liver
+    - Kidneys
+  - type: Item
+    size: Small
+    heldPrefix: stomach
+
+- type: entity
+  parent: OrganAnimalLungs
+  id: OrganCockroachBigInnardsLungs
+  name: innards
+  description: A mess of insect equivalents of organs. Ew.
+  suffix: Cockroach, Organ, Lungs
+  components:
+  - type: Sprite
+    sprite: _White/Mobs/Species/Xenomorph/organs.rsi
+    layers:
+    - state: egg_sack
+    scale: 0.25, 0.25
+
+# endregion
+
+# region Body
+
+- type: body
+  id: CockroachBig
+  name: madagascar cockroach
+  root: chest
+  slots:
+    chest:
+      part: ChestAnimal
+      connections:
+      - groin
+      organs:
+        lungs: OrganCockroachBigInnardsLungs
+    groin:
+      part: GroinAnimal
+      connections:
+      - legs
+      organs:
+        stomach: OrganCockroachBigInnards
+    legs:
+      part: LegsAnimal
+      connections:
+      - feet
+    feet:
+      part: FeetAnimal
+
+# endregion
+
+# region Entity
+
+- type: entity
+  parent: MobCockroach
+  id: MobCockroachBig
+  name: madagascar cockroach
+  description: Antisanitary conditions have hit a new low. These giants like to infest vents, spread diseases, bite, multiply... Wait, they CAN FLY?!
+  suffix: Loadout, Trinkets
+  components:
+  # Size
+  - type: Sprite
+    scale: 1.5, 1.5  # It's big.
+    color: "#aaffff"
+  - type: Item
+    size: Small  # Very big.
+  # Indurance
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical  # KILL IT WITH FIRE!!!
+      250: Dead  # IT'S STILL TWITCHING!!! KILL IT KILL IT KILL IT!!!
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 40
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 0.1
+    damageRecovery:
+      types:
+        Asphyxiation: -0.2
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.02
+  # Digestion
+  - type: IgnoreBadFood  # Can eat basically anything.
+  # Ghost role
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ent-MobCockroachBig
+    description: ent-MobCockroachBig.desc
+    rules: ghost-role-information-sentientanimal-rules
+    mindRoles:
+    - MindRoleGhostRoleSentientAnimal
+  - type: GhostTakeoverAvailable
+  # Abilities - Fax
+  - type: FaxableObject
+    insertingState: inserting_mothroach
+  - type: FaxSlip
+    slipChance: 0.3
+  # Abilities - Actions
+  - type: DashAction  # Dark souls roaches
+    actionProto: ActionDashMoth
+  - type: CanEscapeInventory
+    baseResistTime: 3
+  - type: Speech
+    speechVerb: Arachnid
+    speechSounds: Arachnid
+    allowedEmotes: ['Chitter', 'Click', 'Flap']
+  - type: VentCrawler
+    enterDelay: 0.1
+  - type: NightVision
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: Body
+    prototype: CockroachBig
+  # Abilities - Combat
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 1
+  - type: DodgeWideswing
+    staminaRatio: 1  # Roaches are small so can probably evade without much stamina drain.
+  # Abilities - Disease
+  - type: DiseaseOnHit  # Does not infect you unless the roach has any diseases, which it doesn't by default.
+    spreadParams:
+      chance: 0.05  # Low chance for roaches so creating the turboplague horde is not as strong.
+      power: 1
+      spreadType: Blood
+  - type: DiseaseCarrier
+    effectImmune: true
+  - type: ShowDiseaseIcons  # They sense it.
+  # Loot
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSlime
+      amount: 3
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Slime
+          Quantity: 5
+        - ReagentId: UnstableMutagen
+          Quantity: 5
+
+# endregion
+
+# region Spawner
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobCockroachBig
+  name: madagascar cockroach spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCockroachBig
+
+# endregion

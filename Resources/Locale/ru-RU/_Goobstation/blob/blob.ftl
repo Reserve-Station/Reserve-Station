@@ -124,8 +124,8 @@ objective-condition-fail = { $condition } | [color=red]Неудача![/color] (
 
 # Admin Verbs
 
-admin-verb-make-blob = Превратить цель в носителя Блоба.
-admin-verb-text-make-blob = Создать переносчик блоба
+admin-verb-make-blob = Превратить цель в носителя блоба.
+admin-verb-text-make-blob = Сделать блобом
 
 # Language
 language-Blob-name = Блоб

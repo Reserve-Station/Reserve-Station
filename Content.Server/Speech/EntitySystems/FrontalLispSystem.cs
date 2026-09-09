@@ -1,9 +1,3 @@
-// SPDX-FileCopyrightText: 2023 dahnte <70238020+dahnte@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Redrover1760 <39284090+Redrover1760@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text.RegularExpressions;
@@ -30,6 +24,7 @@ public sealed class FrontalLispSystem : EntitySystem
         SubscribeLocalEvent<FrontalLispComponent, AccentGetEvent>(OnAccent);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0026:Use of uncached static Regex function", Justification = "It's okay.")]  // Reserve-Localization
     private void OnAccent(EntityUid uid, FrontalLispComponent component, AccentGetEvent args)
     {
         var message = args.Message;

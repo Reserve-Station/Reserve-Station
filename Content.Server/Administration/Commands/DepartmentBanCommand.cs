@@ -1,20 +1,7 @@
-// SPDX-FileCopyrightText: 2022 Júlio César Ueti <52474532+Mirino97@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: MIT
 
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration;
-using Content.Server.ADT.Discord;
-using Content.Server.ADT.Discord.Bans;
-using Content.Server.ADT.Discord.Bans.PayloadGenerators;
-using Content.Server.Database;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.Roles;
@@ -31,8 +18,6 @@ public sealed class DepartmentBanCommand : IConsoleCommand
     [Dependency] private readonly IPlayerLocator _locator = default!;
     [Dependency] private readonly IBanManager _banManager = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IServerDbManager _dbManager = default!;
-    [Dependency] private readonly IDiscordBanInfoSender _discordBanInfoSender = default!;
 
     public string Command => "departmentban";
     public string Description => Loc.GetString("cmd-departmentban-desc");
@@ -109,34 +94,20 @@ public sealed class DepartmentBanCommand : IConsoleCommand
         var targetUid = located.UserId;
         var targetHWid = located.LastHWId;
 
-        // If you are trying to remove the following variable, please don't. It's there because the note system groups role bans by time, reason and banning admin.
-        // Without it the note list will get needlessly cluttered.
-        var now = DateTimeOffset.UtcNow;
-        //Start-ADT-Tweak: логи банов для диса
-        var lastRoleBan = await _dbManager.GetLastServerRoleBanAsync();
-        var startRoleBanId = lastRoleBan is not null ? lastRoleBan.Id + 1 : 1;
-        var currentRoleBanId = startRoleBanId;
-        var roleBanIds = new List<int?>();
-        //End-ADT-Tweak
+        var banInfo = new CreateRoleBanInfo(reason);
+        if (minutes > 0)
+            banInfo.WithMinutes(minutes);
+        banInfo.AddUser(targetUid, located.Username);
+        banInfo.WithBanningAdmin(shell.Player?.UserId);
+        banInfo.AddHWId(targetHWid);
+        banInfo.WithSeverity(severity);
+
         foreach (var job in departmentProto.Roles)
         {
-            roleBanIds.Add(currentRoleBanId++); //ADT-Tweak
-            _banManager.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, now);
+            banInfo.AddJob(job);
         }
-        //Start-ADT-Tweak: логи банов для диса
-        var banInfo = new BanInfo
-        {
-            BanId = roleBanIds.Count > 0 ? string.Join(", ", roleBanIds) : string.Empty,
-            Target = target,
-            Player = shell.Player,
-            Minutes = minutes,
-            Reason = reason,
-            Expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes),
-            AdditionalInfo = new() { { "department", department } }
-        };
 
-        await _discordBanInfoSender.SendBanInfoAsync<DepartmentBanPayloadGenerator>(banInfo);
-        //End-ADT-Tweak
+        _banManager.CreateRoleBan(banInfo);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

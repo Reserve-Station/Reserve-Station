@@ -1,7 +1,3 @@
-// SPDX-FileCopyrightText: 2022 Alex Evgrashin <aevgrashin@yandex.ru>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text.RegularExpressions;
@@ -27,6 +23,7 @@ public sealed class LizardAccentSystem : EntitySystem
         SubscribeLocalEvent<LizardAccentComponent, AccentGetEvent>(OnAccent);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0026:Use of uncached static Regex function", Justification = "It's okay.")]  // Reserve-Localization
     private void OnAccent(EntityUid uid, LizardAccentComponent component, AccentGetEvent args)
     {
         var message = args.Message;

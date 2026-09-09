@@ -1,0 +1,13 @@
+discord-profile-title = Профиль: { $player } ({ $ckey }){ $badges }
+discord-profile-title-not-connected = Профиль: { $player } (не привязан)
+discord-profile-characters = Персонажи
+discord-profile-character = - **{ $name }** ({ $gender }, { $species }-{ $job }, { $age } лет)
+discord-profile-no-characters = Персонажи не найдены.
+discord-profile-no-job = Разнорабочий
+discord-profile-balance = Баланс
+discord-profile-inventory = Токены
+discord-profile-token = { $token } x{ $count }
+discord-profile-no-tokens = Токены не найдены.
+discord-profile-no-data = Данные профиля отсутствуют.
+discord-profile-player-not-found = Игрок с идентификатором `{ $player }` не найден.
+discord-profile-player-required = Сначала привяжите свой аккаунт через /link.

@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2023 Vasilis <vasilis@pikachu.systems>
-# SPDX-FileCopyrightText: 2024 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 name: Update Contrib and Patreons in credits
@@ -21,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     # Hey there fork dev! If you like to include your own contributors in this then you can probably just change this to your own repo
     # Do this in dump_github_contributors.ps1 too into your own repo
-    if: github.repository == 'echotry-ss14/Reserve-Station/' # Reserve edit
+    if: github.repository == 'Reserve-Station/Reserve-Station/' # Reserve edit
 
     steps:
       - uses: actions/checkout@v4.2.2

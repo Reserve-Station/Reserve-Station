@@ -1,15 +1,13 @@
-﻿// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
-//
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Reserve.Antag;
 
-[Prototype("antagonist")]
+[Prototype]
 public sealed partial class AntagonistPrototype : IPrototype
 {
-    [IdDataField] public string ID { get; } = default!;
+    [IdDataField] public string ID { set; get; } = default!;
 
     /// <summary>
     ///     Name string to display in ghost teleport menu .

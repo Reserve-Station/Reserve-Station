@@ -30,3 +30,6 @@ ent-WeaponLauncherAdmemeImmovableRodSlow = пускатель неподвижн
     .suffix = Адмемы
 ent-WeaponLauncherSingularityBuster = ракетная установка "Уничтожитель Синглуярности"
     .desc = Экспериментальная ракетная установка, предназначенная для стрельбы ракетами, способными дезинтегрировать сингулярность или теслу.
+ent-WeaponLauncherHydraLethal = { ent-WeaponLauncherHydra }
+    .desc = { ent-WeaponLauncherHydra.desc }
+    .suffix = Осколочная граната

@@ -1,8 +1,3 @@
-// SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: MIT
 
 using static Content.Shared.Arcade.SharedSpaceVillainArcadeComponent;
@@ -33,7 +28,7 @@ public sealed partial class SpaceVillainGame
     private bool _running = true;
 
     [ViewVariables]
-    public string Name => Loc.GetString("space-villain-game-title", ("fightVerb", _fightVerb), ("enemyName", _villainName)); // Reserve edit: space-vilian-fix
+    public string Name => $"{_fightVerb} {_villainName}";
 
     [ViewVariables]
     private readonly string _fightVerb;
@@ -250,7 +245,7 @@ public sealed partial class SpaceVillainGame
                 UpdateUi(
                     uid,
                     Loc.GetString("space-villain-game-player-loses-message"),
-                    Loc.GetString("space-villain-game-enemy-dies-with-player-message", ("enemyName", _villainName)), // Reserve edit: space-vilian-fix
+                    Loc.GetString("space-villain-game-enemy-dies-with-player-message", ("enemyName", _villainName)),
                     true
                 );
                 _audioSystem.PlayPvs(arcade.GameOverSound, uid, AudioParams.Default.WithVolume(-4f));

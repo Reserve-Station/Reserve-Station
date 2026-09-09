@@ -48,13 +48,13 @@ knowledge-path-void-s3-desc =
     Grants you Void Phase, a long range targeted teleport spell.
     Additionally causes damage to heathens around your original and target destination.
 
-#knowledge-path-void-s3-name = Aristocrat's Way
-#knowledge-path-void-s3-desc =
-#    I found a thread of cold breath. It lead me to a strange shrine, all made of crystals.
-#    Translucent and white, a depiction of a nobleman stood before me.
+# knowledge-path-void-s3-name = Aristocrat's Way
+# knowledge-path-void-s3-desc =
+#     I found a thread of cold breath. It lead me to a strange shrine, all made of crystals.
+#     Translucent and white, a depiction of a nobleman stood before me.
 #
-#    Grants you immunity to cold temperatures, and removes your need to breathe.
-#    You can still take damage due to a lack of pressure.
+#     Grants you immunity to cold temperatures, and removes your need to breathe.
+#     You can still take damage due to a lack of pressure.
 
 knowledge-path-void-s4-name = Mark of Void
 knowledge-path-void-s4-desc =
@@ -64,13 +64,13 @@ knowledge-path-void-s4-desc =
     When triggered, gives the victim the Curse of Void, which will mute and slowly freeze them to death.
     You no longer need to breathe/
 
-#knowledge-path-void-s5-name = Void Blast
-#knowledge-path-void-s5-desc =
-#    Every door I open racks my body. I am afraid of what is behind them. Someone is expecting me,
-#    and my legs start to drag. Is that... snow?
+# knowledge-path-void-s5-name = Void Blast
+# knowledge-path-void-s5-desc =
+#     Every door I open racks my body. I am afraid of what is behind them. Someone is expecting me,
+#     and my legs start to drag. Is that... snow?
 #
-#    Grants you Void Blast, a spell that shoots out a freezing blast in a cone in front of you,
-#    freezing the ground and cursing any victims within.
+#     Grants you Void Blast, a spell that shoots out a freezing blast in a cone in front of you,
+#     freezing the ground and cursing any victims within.
 
 knowledge-path-void-s5-name = Void Prison
 knowledge-path-void-s5-desc =

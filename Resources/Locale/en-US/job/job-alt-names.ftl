@@ -1,5 +1,7 @@
 ﻿job-alt-title-reminder =  Do not use your [color=#33ccff]"{$altTitle}"[/color] title as an excuse to forego your duties as [color=#ffffff]{$jobName}[/color].
 
+job-name-alt-cmo-1 = Lead Doctor
+
 job-name-alt-medical-1 = Surgeon
 job-name-alt-medical-2 = Nurse
 job-name-alt-medical-3 = Physician
@@ -12,6 +14,10 @@ job-name-alt-paramedic-2 = Emergency Medical Technician
 job-name-alt-paramedic-3 = Search & Rescue Technician
 
 job-name-alt-virologist-1 = Pandemologist
+
+job-name-alt-psychologist-1 = Therapist
+job-name-alt-psychologist-2 = Guidance Counselor
+job-name-alt-psychologist-3 = Psychiatrist
 
 job-name-alt-qm-1 = Requisitions Officer
 job-name-alt-qm-2 = Deck Chief
@@ -57,6 +63,8 @@ job-name-alt-secoff-1 = Hall Monitor
 job-name-alt-warden-1 = Dispatcher
 
 job-name-alt-detective-1 = Forensic Investigator
+
+job-name-alt-brigmedic-1 = Battle Medic
 
 job-name-alt-assistant-1 = Passenger
 job-name-alt-assistant-2 = Visitor
@@ -120,11 +128,13 @@ job-name-alt-boxer-3 = Life Coach
 job-name-alt-boxer-4 = Personal Trainer
 job-name-alt-boxer-5 = Heel
 
-job-name-alt-psychologist-1 = Therapist
-job-name-alt-psychologist-2 = Guidance Counselor
-job-name-alt-psychologist-3 = Psychiatrist
-
 job-name-alt-zookeeper-1 = Animal Control
 job-name-alt-zookeeper-2 = Menagerist
 job-name-alt-zookeeper-3 = Xenozoologist
 job-name-alt-zookeeper-4 = Wildlife Specialist
+
+job-name-alt-bso-1 = Blueshield Agent
+job-name-alt-bso-2 = Blueshield Bodyguard
+
+job-name-alt-ntr-1 = Nanotrasen Agent
+job-name-alt-ntr-2 = Nanotrasen Official

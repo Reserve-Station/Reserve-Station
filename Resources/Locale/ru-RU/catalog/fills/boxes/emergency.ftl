@@ -70,3 +70,7 @@ ent-BoxSurvivalSyndicateNitrogen = { ent-BoxSurvivalSyndicate }
 ent-BoxSurvivalSyndicateWaterVapor = { ent-BoxSurvivalSyndicate }
     .suffix = Синдикат, Водяной Пар H2O
     .desc = { ent-BoxSurvivalSyndicate.desc }
+
+ent-BoxSurvivalMilitaryDouble = { ent-BoxCardboardSmall }
+    .desc = Коробка с базовым набором выживания. Согласно этикетке, она содержит двойной аварийный баллон.
+    .suffix = Военный Кислород O2

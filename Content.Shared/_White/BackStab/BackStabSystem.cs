@@ -1,7 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Spatison <137375981+Spatison@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
@@ -31,6 +27,8 @@ public sealed class BackStabSystem : EntitySystem
     public static readonly SoundSpecifier BackstabSound =
         new SoundPathSpecifier("/Audio/_Goobstation/Weapons/Effects/guillotine.ogg");
 
+    public static readonly string BackstabDamageType = "Slash"; // Reserve - replace literals with vars
+
     public override void Initialize()
     {
         base.Initialize();
@@ -52,7 +50,7 @@ public sealed class BackStabSystem : EntitySystem
 
         var damage = total * ent.Comp.DamageMultiplier;
 
-        args.BonusDamage += new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>("Slash"), damage - total);
+        args.BonusDamage += new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>(BackstabDamageType), damage - total); // Reserve - replace literals with vars
     }
 
     public bool TryBackstab(EntityUid target,

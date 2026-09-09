@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 advertisement-gibb-1 = Восхитительно!
 advertisement-gibb-2 = Рекомендовано по крайней мере одним врачом!
 advertisement-gibb-3 = Продано более 1 миллиона напитков!

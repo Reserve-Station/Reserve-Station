@@ -56,9 +56,8 @@ shell-argument-username-hint = <username>
 shell-argument-username-optional-hint = [username]
 
 shell-entity-target-lacks-component = Целевая сущность не имеет компонента { $componentName }.
-
 shell-missing-required-permission = Вам нужен { $perm } для этой команды!
-
 shell-must-have-body = У вас должно быть тело для использования этой команды.
-
 shell-need-exactly-zero-arguments = Эта команда принимает ноль аргументов.
+shell-can-only-run-from-pre-round-lobby = Эту команду можно выполнить только пока игра в предраундовом лобби.
+shell-can-only-run-while-round-is-active = Эту команду можно выполнить только пока игра в раунде.

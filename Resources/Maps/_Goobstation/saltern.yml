@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Goob Station Contributors
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 meta:
@@ -7354,7 +7352,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -14.940454,-39.485104
       parent: 2
-- proto: BoxFolderBlue
+- proto: BoxFolderBlueEmpty
   entities:
   - uid: 510
     components:
@@ -23548,8 +23546,6 @@ entities:
     - type: Transform
       pos: 12.5,9.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 1977
 - proto: Carpet
   entities:
   - uid: 3634
@@ -33841,7 +33837,7 @@ entities:
       parent: 5429
     - type: Physics
       canCollide: False
-- proto: EnergyChemDispenser
+- proto: ChemDispenser
   entities:
   - uid: 4447
     components:
@@ -52804,21 +52800,13 @@ entities:
     - type: Transform
       pos: 7.2571726,18.545927
       parent: 2
-- proto: MaterialSilo
+- proto: MachineMaterialSilo
   entities:
   - uid: 1977
     components:
     - type: Transform
       pos: 23.5,9.5
       parent: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        8182:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
-        3633:
-        - - MaterialSilo
-          - MaterialSiloUtilizer
 - proto: MaterialWoodPlank1
   entities:
   - uid: 8126
@@ -53268,8 +53256,6 @@ entities:
     - type: Transform
       pos: 18.5,13.5
       parent: 2
-    - type: SiloUtilizer
-      silo: 1977
 - proto: OxygenCanister
   entities:
   - uid: 8183

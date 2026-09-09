@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
@@ -10,10 +7,10 @@ namespace Content.Shared.Mail;
 /// <summary>
 /// Generic random weighting dataset to use.
 /// </summary>
-[Prototype("mailDeliveryPool")]
-public sealed class MailDeliveryPoolPrototype : IPrototype
+[Prototype]
+public sealed partial class MailDeliveryPoolPrototype : IPrototype
 {
-    [IdDataFieldAttribute] public string ID { get; } = default!;
+    [IdDataFieldAttribute] public string ID { set; get; } = default!;
 
     /// <summary>
     /// Mail that can be sent to everyone.

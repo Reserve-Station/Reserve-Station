@@ -1,7 +1,8 @@
 job-name-futureagent = Агент будущего
 job-name-salvagediver = Утилизатор-десантинк
-job-name-ntr = Представитель Nanotrasen
-job-name-bs = Офицер Синего Щита
+job-name-ntr = Представитель NanoTrasen
+job-name-bs = Агент Синего Щита
+job-name-bso = Офицер Синего Щита
 job-name-overall = Общий
 job-name-tider = Тайдер
 
@@ -13,7 +14,7 @@ job-name-special-operations-officer = Офицер спецопераций
 job-name-navycaptain = Капитан ВКФ
 job-name-diplomat = Дипломат
 job-name-inspector = Аудитор Центрального Командования
-job-name-nct = Карьерный тренер Nanotrasen
+job-name-nct = Карьерный тренер NanoTrasen
 
 # Half Life
 
@@ -30,9 +31,9 @@ job-name-radiohost = Радиоведущий
 # Таймеры ролей - сделайте их в алфавитном порядке или я вас порежу (не слушайте апстрим, я скопировал и вставил это, сделайте их не в алфавитном порядке :godo:)
 
 JobBlueshieldOfficer = Офицер Синего Щита
-JobNanotrasenRepresentative = Представитель Nanotrasen
+JobNanotrasenRepresentative = Представитель NanoTrasen
 JobHecuOperative = Оперативник HECU
-JobNanotrasenCareerTrainer = Карьерный тренер Nanotrasen
+JobNanotrasenCareerTrainer = Карьерный тренер NanoTrasen
 JobNavyOfficer = Офицер ВКФ
 JobNavyOfficerUndercover = Офицер ВКФ под прикрытием
 JobSpecialOperationsOfficer = Офицер спецопераций

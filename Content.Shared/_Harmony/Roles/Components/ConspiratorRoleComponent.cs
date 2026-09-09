@@ -2,7 +2,7 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Harmony.Roles.Components;

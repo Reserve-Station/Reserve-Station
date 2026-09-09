@@ -1,7 +1,7 @@
 station-report-text =
     {"["}color=#1b67a5]░░██░░ [head=2]Oфициальный документ[/head]
     ▀████▀ [head=3]Тема: Отчёт о работе станции[/head]
-    ▄█▀▀█▄ [head=3]Рецензент: Представитель Nanotrasen[/head]
+    ▄█▀▀█▄ [head=3]Рецензент: Представитель NanoTrasen[/head]
     {"["}/color]──────────────────────────────────────────
     • [color=#9fed58][bold]Общий отчёт[/bold][/color]
     >[mono][/mono]
@@ -15,4 +15,4 @@ station-report-text =
     >[mono][/mono]
     • [color=#c96dbf][bold]Отчёт о работе научного отдела[/bold][/color]
     >[mono][/mono]
-    Подписано: [color=Green]имя представителя Nanotrasen[/color]
+    Подписано: [color=Green]имя представителя NanoTrasen[/color]

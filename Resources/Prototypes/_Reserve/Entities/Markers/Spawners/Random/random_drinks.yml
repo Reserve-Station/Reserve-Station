@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # region Cans
@@ -213,7 +211,7 @@
     layers:
       - state: green
       - sprite: Objects/Consumable/Drinks/mug_rainbow.rsi
-        state: icon-0
+        state: icon
   - type: RandomSpawner
     prototypes:
       - DrinkMug

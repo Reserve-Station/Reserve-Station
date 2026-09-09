@@ -1,150 +1,9 @@
-// SPDX-FileCopyrightText: 2020 20kdc <asdd2808@gmail.com>
-// SPDX-FileCopyrightText: 2021 Leo <lzimann@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Metal Gear Sloth <metalgearsloth@gmail.com>
-// SPDX-FileCopyrightText: 2021 Remie Richards <remierichards@gmail.com>
-// SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-// SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Javier Guardia Fernández <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Julian Giebel <j.giebel@netrocks.info>
-// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
-// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Sailor <109166122+Equivocateur@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 12rabbits <53499656+12rabbits@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
-// SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Alex Evgrashin <aevgrashin@yandex.ru>
-// SPDX-FileCopyrightText: 2024 Alex Pavlenko <diraven@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 ArkiveDev <95712736+ArkiveDev@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Dimastra <65184747+Dimastra@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Dimastra <dimastra@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Doomsdrayk <robotdoughnut@comcast.net>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Firewatch <54725557+musicmanvr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 JIPDawg <51352440+JIPDawg@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 JIPDawg <JIPDawg93@gmail.com>
-// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
-// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Krunklehorn <42424291+Krunklehorn@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 MendaxxDev <153332064+MendaxxDev@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
-// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Moomoobeef <62638182+Moomoobeef@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mr. 27 <koolthunder019@gmail.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
-// SPDX-FileCopyrightText: 2024 Partmedia <kevinz5000@gmail.com>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 PoTeletubby <151896601+PoTeletubby@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 PopGamer46 <yt1popgamer@gmail.com>
-// SPDX-FileCopyrightText: 2024 PursuitInAshes <pursuitinashes@gmail.com>
-// SPDX-FileCopyrightText: 2024 QueerNB <176353696+QueerNB@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Redfire1331 <125223432+Redfire1331@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Saphire Lattice <lattice@saphi.re>
-// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Spessmann <156740760+Spessmann@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2024 Winkarst <74284083+Winkarst-cpu@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 coolboy911 <85909253+coolboy911@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
-// SPDX-FileCopyrightText: 2024 lunarcomets <140772713+lunarcomets@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 neutrino <67447925+neutrino-laser@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
-// SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 stellar-novas <stellar_novas@riseup.net>
-// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 BombasterDS2 <bombasterds.github@mail.ru>
-// SPDX-FileCopyrightText: 2025 Cinkafox <70429757+Cinkafox@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 DrSmugleaf <drsmugleaf@gmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Ichaie <167008606+Ichaie@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
-// SPDX-FileCopyrightText: 2025 JORJ949 <159719201+JORJ949@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 John Willis <143434770+CerberusWolfie@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Kirill <kirill@example.com>
-// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 MarkerWicker <markerWicker@proton.me>
-// SPDX-FileCopyrightText: 2025 MortalBaguette <169563638+MortalBaguette@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2025 PJB3005 <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 Panela <107573283+AgentePanela@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2025 Poips <Hanakohashbrown@gmail.com>
-// SPDX-FileCopyrightText: 2025 PuroSlavKing <103608145+PuroSlavKing@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Sara Aldrete's Top Guy <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-// SPDX-FileCopyrightText: 2025 Whisper <121047731+QuietlyWhisper@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 blobadoodle <me@bloba.dev>
-// SPDX-FileCopyrightText: 2025 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2025 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 kamkoi <poiiiple1@gmail.com>
-// SPDX-FileCopyrightText: 2025 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 shibe <95730644+shibechef@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 tetra <169831122+Foralemes@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Lyndomen <49795619+Lyndomen@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Quantum-cross <7065792+Quantum-cross@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Tay <td12233a@gmail.com>
-// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
@@ -152,7 +11,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
-using Content.Shared._RMC14.LinkAccount;
 using Content.Shared._White.CustomGhostSystem;
 using Content.Shared._White.Bark;
 using Content.Shared.Administration.Logs;
@@ -401,7 +259,7 @@ namespace Content.Server.Database
                 }
             }
 
-            var altTitles = profile.AltTitles
+            var altTitles = profile.AltTitles  // Reserve: Alternate Job Titles
                 .GroupBy(r => r.RoleName)
                 .ToDictionary(
                     g => new ProtoId<JobPrototype>(g.Key),
@@ -434,6 +292,8 @@ namespace Content.Server.Database
                 loadouts[role.RoleName] = loadout;
             }
 
+            // var barkVoice = profile.BarkVoice ?? SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks // Reserve - use other barks
+
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
@@ -456,7 +316,7 @@ namespace Content.Server.Database
                 spawnPriority,
                 jobs,
                 (PreferenceUnavailableMode) profile.PreferenceUnavailable,
-                altTitles,
+                altTitles,  // Reserve: Alternate Job Titles
                 antags.ToHashSet(),
                 traits.ToHashSet(),
                 loadouts,
@@ -610,7 +470,7 @@ namespace Content.Server.Database
         /// </summary>
         /// <param name="id">The ban id to look for.</param>
         /// <returns>The ban with the given id or null if none exist.</returns>
-        public abstract Task<ServerBanDef?> GetServerBanAsync(int id);
+        public abstract Task<BanDef?> GetBanAsync(int id);
 
         /// <summary>
         ///     Looks up an user's most recent received un-pardoned ban.
@@ -622,11 +482,12 @@ namespace Content.Server.Database
         /// <param name="hwId">The legacy HWId of the user.</param>
         /// <param name="modernHWIds">The modern HWIDs of the user.</param>
         /// <returns>The user's latest received un-pardoned ban, or null if none exist.</returns>
-        public abstract Task<ServerBanDef?> GetServerBanAsync(
+        public abstract Task<BanDef?> GetBanAsync(
             IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds);
+            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
+            BanType type);
 
         /// <summary>
         ///     Looks up an user's ban history.
@@ -639,18 +500,19 @@ namespace Content.Server.Database
         /// <param name="modernHWIds">The modern HWIDs of the user.</param>
         /// <param name="includeUnbanned">Include pardoned and expired bans.</param>
         /// <returns>The user's ban history.</returns>
-        public abstract Task<List<ServerBanDef>> GetServerBansAsync(
+        public abstract Task<List<BanDef>> GetBansAsync(
             IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
             ImmutableArray<ImmutableArray<byte>>? modernHWIds,
-            bool includeUnbanned);
+            bool includeUnbanned,
+            BanType type);
 
-        public abstract Task<ServerBanDef?> GetLastServerBanAsync(); //ADT-Tweak: Логи банов для диса
-        public abstract Task AddServerBanAsync(ServerBanDef serverBan);
-        public abstract Task AddServerUnbanAsync(ServerUnbanDef serverUnban);
+        public abstract Task<BanDef?> GetLastBanAsync(); //ADT-Tweak: Логи банов для диса
+        public abstract Task<BanDef> AddBanAsync(BanDef ban);
+        public abstract Task AddUnbanAsync(UnbanDef unban);
 
-        public async Task EditServerBan(int id, string reason, NoteSeverity severity, DateTimeOffset? expiration, Guid editedBy, DateTimeOffset editedAt)
+        public async Task EditBan(int id, string reason, NoteSeverity severity, DateTimeOffset? expiration, Guid editedBy, DateTimeOffset editedAt)
         {
             await using var db = await GetDb();
 
@@ -713,62 +575,23 @@ namespace Content.Server.Database
             return flags ?? ServerBanExemptFlags.None;
         }
 
-        #endregion
-
-        #region Role Bans
-        /*
-         * ROLE BANS
-         */
-        /// <summary>
-        ///     Looks up a role ban by id.
-        ///     This will return a pardoned role ban as well.
-        /// </summary>
-        /// <param name="id">The role ban id to look for.</param>
-        /// <returns>The role ban with the given id or null if none exist.</returns>
-        public abstract Task<ServerRoleBanDef?> GetServerRoleBanAsync(int id);
-
-        /// <summary>
-        ///     Looks up an user's role ban history.
-        ///     This will return pardoned role bans based on the <see cref="includeUnbanned"/> bool.
-        ///     Requires one of <see cref="address"/>, <see cref="userId"/>, or <see cref="hwId"/> to not be null.
-        /// </summary>
-        /// <param name="address">The IP address of the user.</param>
-        /// <param name="userId">The NetUserId of the user.</param>
-        /// <param name="hwId">The Hardware Id of the user.</param>
-        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
-        /// <param name="includeUnbanned">Whether expired and pardoned bans are included.</param>
-        /// <returns>The user's role ban history.</returns>
-        public abstract Task<List<ServerRoleBanDef>> GetServerRoleBansAsync(IPAddress? address,
-            NetUserId? userId,
-            ImmutableArray<byte>? hwId,
-            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
-            bool includeUnbanned);
-
-        public abstract Task<ServerRoleBanDef?> GetLastServerRoleBanAsync(); //ADT-Tweak: Логи банов для диса
-        public abstract Task<ServerRoleBanDef> AddServerRoleBanAsync(ServerRoleBanDef serverRoleBan);
-        public abstract Task AddServerRoleUnbanAsync(ServerRoleUnbanDef serverRoleUnban);
-
-        public async Task EditServerRoleBan(int id, string reason, NoteSeverity severity, DateTimeOffset? expiration, Guid editedBy, DateTimeOffset editedAt)
+        protected static List<Expression<Func<Ban, object>>> GetBanDefIncludes(BanType? type = null)
         {
-            await using var db = await GetDb();
-            var roleBanDetails = await db.DbContext.RoleBan
-                .Where(b => b.Id == id)
-                .Select(b => new { b.BanTime, b.PlayerUserId })
-                .SingleOrDefaultAsync();
+            List<Expression<Func<Ban, object>>> list =
+            [
+                b => b.Players!,
+                b => b.Rounds!,
+                b => b.Hwids!,
+                b => b.Unban!,
+                b => b.Addresses!,
+            ];
 
-            if (roleBanDetails == default)
-                return;
+            if (type != BanType.Server)
+                list.Add(b => b.Roles!);
 
-            await db.DbContext.RoleBan
-                .Where(b => b.BanTime == roleBanDetails.BanTime && b.PlayerUserId == roleBanDetails.PlayerUserId)
-                .ExecuteUpdateAsync(setters => setters
-                    .SetProperty(b => b.Severity, severity)
-                    .SetProperty(b => b.Reason, reason)
-                    .SetProperty(b => b.ExpirationTime, expiration.HasValue ? expiration.Value.UtcDateTime : (DateTime?)null)
-                    .SetProperty(b => b.LastEditedById, editedBy)
-                    .SetProperty(b => b.LastEditedAt, editedAt.UtcDateTime)
-                );
+            return list;
         }
+
         #endregion
 
         #region Playtime
@@ -889,6 +712,19 @@ namespace Content.Server.Database
             if (player == null)
                 return null;
 
+            return MakePlayerRecord(player.UserId, player);
+        }
+
+        protected PlayerRecord MakePlayerRecord(Guid userId, Player? player)
+        {
+            if (player == null)
+            {
+                // We don't have a record for this player in the database.
+                // This is possible, for example, when banning people that never connected to the server.
+                // Just return fallback data here, I guess.
+                return new PlayerRecord(new NetUserId(userId), default, userId.ToString(), default, null, null);
+            }
+
             return new PlayerRecord(
                 new NetUserId(player.UserId),
                 new DateTimeOffset(NormalizeDatabaseTime(player.FirstSeenTime)),
@@ -972,7 +808,7 @@ namespace Content.Server.Database
             ConnectionDenyReason? denied,
             int serverId);
 
-        public async Task AddServerBanHitsAsync(int connection, IEnumerable<ServerBanDef> bans)
+        public async Task AddServerBanHitsAsync(int connection, IEnumerable<BanDef> bans)
         {
             await using var db = await GetDb();
 
@@ -1586,81 +1422,17 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 entity.Dismissed);
         }
 
-        public async Task<ServerBanNoteRecord?> GetServerBanAsNoteAsync(int id)
+        public async Task<BanNoteRecord?> GetBanAsNoteAsync(int id)
         {
             await using var db = await GetDb();
 
-            var ban = await db.DbContext.Ban
-                .Include(ban => ban.Unban)
-                .Include(ban => ban.Round)
-                .ThenInclude(r => r!.Server)
-                .Include(ban => ban.CreatedBy)
-                .Include(ban => ban.LastEditedBy)
-                .Include(ban => ban.Unban)
+            var ban = await BanRecordQuery(db.DbContext)
                 .SingleOrDefaultAsync(b => b.Id == id);
 
             if (ban is null)
                 return null;
 
-            var player = await db.DbContext.Player.SingleOrDefaultAsync(p => p.UserId == ban.PlayerUserId);
-            return new ServerBanNoteRecord(
-                ban.Id,
-                MakeRoundRecord(ban.Round),
-                MakePlayerRecord(player),
-                ban.PlaytimeAtNote,
-                ban.Reason,
-                ban.Severity,
-                MakePlayerRecord(ban.CreatedBy),
-                ban.BanTime,
-                MakePlayerRecord(ban.LastEditedBy),
-                ban.LastEditedAt,
-                ban.ExpirationTime,
-                ban.Hidden,
-                MakePlayerRecord(ban.Unban?.UnbanningAdmin == null
-                    ? null
-                    : await db.DbContext.Player.SingleOrDefaultAsync(p =>
-                        p.UserId == ban.Unban.UnbanningAdmin.Value)),
-                ban.Unban?.UnbanTime);
-        }
-
-        public async Task<ServerRoleBanNoteRecord?> GetServerRoleBanAsNoteAsync(int id)
-        {
-            await using var db = await GetDb();
-
-            var ban = await db.DbContext.RoleBan
-                .Include(ban => ban.Unban)
-                .Include(ban => ban.Round)
-                .ThenInclude(r => r!.Server)
-                .Include(ban => ban.CreatedBy)
-                .Include(ban => ban.LastEditedBy)
-                .Include(ban => ban.Unban)
-                .SingleOrDefaultAsync(b => b.Id == id);
-
-            if (ban is null)
-                return null;
-
-            var player = await db.DbContext.Player.SingleOrDefaultAsync(p => p.UserId == ban.PlayerUserId);
-            var unbanningAdmin =
-                ban.Unban is null
-                ? null
-                : await db.DbContext.Player.SingleOrDefaultAsync(b => b.UserId == ban.Unban.UnbanningAdmin);
-
-            return new ServerRoleBanNoteRecord(
-                ban.Id,
-                MakeRoundRecord(ban.Round),
-                MakePlayerRecord(player),
-                ban.PlaytimeAtNote,
-                ban.Reason,
-                ban.Severity,
-                MakePlayerRecord(ban.CreatedBy),
-                ban.BanTime,
-                MakePlayerRecord(ban.LastEditedBy),
-                ban.LastEditedAt,
-                ban.ExpirationTime,
-                ban.Hidden,
-                new[] { ban.RoleId.Replace(BanManager.JobPrefix, null) },
-                MakePlayerRecord(unbanningAdmin),
-                ban.Unban?.UnbanTime);
+            return await MakeBanNoteRecord(db.DbContext, ban);
         }
 
         public async Task<List<IAdminRemarksRecord>> GetAllAdminRemarks(Guid player)
@@ -1681,8 +1453,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                     .ToListAsync()).Select(MakeAdminNoteRecord));
             notes.AddRange(await GetActiveWatchlistsImpl(db, player));
             notes.AddRange(await GetMessagesImpl(db, player));
-            notes.AddRange(await GetServerBansAsNotesForUser(db, player));
-            notes.AddRange(await GetGroupedServerRoleBansAsNotesForUser(db, player));
+            notes.AddRange(await GetBansAsNotesForUser(db, player));
             return notes;
         }
         public async Task EditAdminNote(int id, string message, NoteSeverity severity, bool secret, Guid editedBy, DateTimeOffset editedAt, DateTimeOffset? expiryTime)
@@ -1765,7 +1536,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
-        public async Task HideServerBanFromNotes(int id, Guid deletedBy, DateTimeOffset deletedAt)
+        public async Task HideBanFromNotes(int id, Guid deletedBy, DateTimeOffset deletedAt)
         {
             await using var db = await GetDb();
 
@@ -1774,19 +1545,6 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             ban.Hidden = true;
             ban.LastEditedById = deletedBy;
             ban.LastEditedAt = deletedAt.UtcDateTime;
-
-            await db.DbContext.SaveChangesAsync();
-        }
-
-        public async Task HideServerRoleBanFromNotes(int id, Guid deletedBy, DateTimeOffset deletedAt)
-        {
-            await using var db = await GetDb();
-
-            var roleBan = await db.DbContext.RoleBan.Where(roleBan => roleBan.Id == id).SingleAsync();
-
-            roleBan.Hidden = true;
-            roleBan.LastEditedById = deletedBy;
-            roleBan.LastEditedAt = deletedAt.UtcDateTime;
 
             await db.DbContext.SaveChangesAsync();
         }
@@ -1808,8 +1566,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                     .Include(note => note.Player)
                     .ToListAsync()).Select(MakeAdminNoteRecord));
             notesCol.AddRange(await GetMessagesImpl(db, player));
-            notesCol.AddRange(await GetServerBansAsNotesForUser(db, player));
-            notesCol.AddRange(await GetGroupedServerRoleBansAsNotesForUser(db, player));
+            notesCol.AddRange(await GetBansAsNotesForUser(db, player));
             return notesCol;
         }
 
@@ -1872,98 +1629,70 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
+        private static IQueryable<Ban> BanRecordQuery(ServerDbContext dbContext)
+        {
+            return dbContext.Ban
+                .Include(ban => ban.Unban)
+                .Include(ban => ban.Rounds!)
+                .ThenInclude(r => r.Round)
+                .ThenInclude(r => r!.Server)
+                .Include(ban => ban.Addresses)
+                .Include(ban => ban.Players)
+                .Include(ban => ban.Roles)
+                .Include(ban => ban.Hwids)
+                .Include(ban => ban.CreatedBy)
+                .Include(ban => ban.LastEditedBy)
+                .Include(ban => ban.Unban);
+        }
+
+        private async Task<BanNoteRecord> MakeBanNoteRecord(ServerDbContext dbContext, Ban ban)
+        {
+            var playerRecords = await AsyncSelect(ban.Players,
+                async bp => MakePlayerRecord(bp.UserId,
+                    await dbContext.Player.SingleOrDefaultAsync(p => p.UserId == bp.UserId)));
+
+            return new BanNoteRecord(
+                ban.Id,
+                ban.Type,
+                [.. ban.Rounds!.Select(br => MakeRoundRecord(br.Round!))],
+                [.. playerRecords],
+                ban.PlaytimeAtNote,
+                ban.Reason,
+                ban.Severity,
+                MakePlayerRecord(ban.CreatedBy!),
+                NormalizeDatabaseTime(ban.BanTime),
+                MakePlayerRecord(ban.LastEditedBy!),
+                NormalizeDatabaseTime(ban.LastEditedAt),
+                NormalizeDatabaseTime(ban.ExpirationTime),
+                ban.Hidden,
+                ban.Unban?.UnbanningAdmin == null
+                    ? null
+                    : MakePlayerRecord(
+                        ban.Unban.UnbanningAdmin.Value,
+                        await dbContext.Player.SingleOrDefaultAsync(p => p.UserId == ban.Unban.UnbanningAdmin.Value)),
+                NormalizeDatabaseTime(ban.Unban?.UnbanTime),
+                [.. ban.Roles!.Select(br => new BanRoleDef(br.RoleType, br.RoleId))]);
+        }
+
         // These two are here because they get converted into notes later
-        protected async Task<List<ServerBanNoteRecord>> GetServerBansAsNotesForUser(DbGuard db, Guid user)
+        protected async Task<List<BanNoteRecord>> GetBansAsNotesForUser(DbGuard db, Guid user)
         {
             // You can't group queries, as player will not always exist. When it doesn't, the
             // whole query returns nothing
-            var player = await db.DbContext.Player.SingleOrDefaultAsync(p => p.UserId == user);
-            var bans = await db.DbContext.Ban
-                .Where(ban => ban.PlayerUserId == user && !ban.Hidden)
-                .Include(ban => ban.Unban)
-                .Include(ban => ban.Round)
-                .ThenInclude(r => r!.Server)
-                .Include(ban => ban.CreatedBy)
-                .Include(ban => ban.LastEditedBy)
-                .Include(ban => ban.Unban)
+            var bans = await BanRecordQuery(db.DbContext)
+                .AsSplitQuery()
+                .Where(ban => ban.Players!.Any(bp => bp.UserId == user) && !ban.Hidden)
                 .ToArrayAsync();
 
-            var banNotes = new List<ServerBanNoteRecord>();
+            var banNotes = new List<BanNoteRecord>();
             foreach (var ban in bans)
             {
-                var banNote = new ServerBanNoteRecord(
-                    ban.Id,
-                    MakeRoundRecord(ban.Round),
-                    MakePlayerRecord(player),
-                    ban.PlaytimeAtNote,
-                    ban.Reason,
-                    ban.Severity,
-                    MakePlayerRecord(ban.CreatedBy),
-                    NormalizeDatabaseTime(ban.BanTime),
-                    MakePlayerRecord(ban.LastEditedBy),
-                    NormalizeDatabaseTime(ban.LastEditedAt),
-                    NormalizeDatabaseTime(ban.ExpirationTime),
-                    ban.Hidden,
-                    MakePlayerRecord(ban.Unban?.UnbanningAdmin == null
-                        ? null
-                        : await db.DbContext.Player.SingleOrDefaultAsync(
-                            p => p.UserId == ban.Unban.UnbanningAdmin.Value)),
-                    NormalizeDatabaseTime(ban.Unban?.UnbanTime));
+                var banNote = await MakeBanNoteRecord(db.DbContext, ban);
 
                 banNotes.Add(banNote);
             }
 
             return banNotes;
-        }
-
-        protected async Task<List<ServerRoleBanNoteRecord>> GetGroupedServerRoleBansAsNotesForUser(DbGuard db, Guid user)
-        {
-            // Server side query
-            var bansQuery = await db.DbContext.RoleBan
-                .Where(ban => ban.PlayerUserId == user && !ban.Hidden)
-                .Include(ban => ban.Unban)
-                .Include(ban => ban.Round)
-                .ThenInclude(r => r!.Server)
-                .Include(ban => ban.CreatedBy)
-                .Include(ban => ban.LastEditedBy)
-                .Include(ban => ban.Unban)
-                .ToArrayAsync();
-
-            // Client side query, as EF can't do groups yet
-            var bansEnumerable = bansQuery
-                    .GroupBy(ban => new { ban.BanTime, CreatedBy = (Player?) ban.CreatedBy, ban.Reason, Unbanned = ban.Unban == null })
-                    .Select(banGroup => banGroup)
-                    .ToArray();
-
-            List<ServerRoleBanNoteRecord> bans = new();
-            var player = await db.DbContext.Player.SingleOrDefaultAsync(p => p.UserId == user);
-            foreach (var banGroup in bansEnumerable)
-            {
-                var firstBan = banGroup.First();
-                Player? unbanningAdmin = null;
-
-                if (firstBan.Unban?.UnbanningAdmin is not null)
-                    unbanningAdmin = await db.DbContext.Player.SingleOrDefaultAsync(p => p.UserId == firstBan.Unban.UnbanningAdmin.Value);
-
-                bans.Add(new ServerRoleBanNoteRecord(
-                    firstBan.Id,
-                    MakeRoundRecord(firstBan.Round),
-                    MakePlayerRecord(player),
-                    firstBan.PlaytimeAtNote,
-                    firstBan.Reason,
-                    firstBan.Severity,
-                    MakePlayerRecord(firstBan.CreatedBy),
-                    NormalizeDatabaseTime(firstBan.BanTime),
-                    MakePlayerRecord(firstBan.LastEditedBy),
-                    NormalizeDatabaseTime(firstBan.LastEditedAt),
-                    NormalizeDatabaseTime(firstBan.ExpirationTime),
-                    firstBan.Hidden,
-                    banGroup.Select(ban => ban.RoleId.Replace(BanManager.JobPrefix, null)).ToArray(),
-                    MakePlayerRecord(unbanningAdmin),
-                    NormalizeDatabaseTime(firstBan.Unban?.UnbanTime)));
-            }
-
-            return bans;
         }
 
         #endregion
@@ -2058,6 +1787,73 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         }
 
+        // Reserve edit start: Full discord bot integration
+        public async Task<ulong?> GetLinkedDiscordId(Guid player, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+            var linked = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.PlayerId == player, cancel);
+            return linked?.DiscordId;
+        }
+        // Reserve edit end: Full discord bot integration
+
+        // Reserve edit start: Discord bot account linking
+        private static readonly TimeSpan LinkingCodeLifetime = TimeSpan.FromMinutes(10);
+
+        public async Task<NetUserId?> GetLinkedPlayerId(ulong discordId, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+            var linked = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.DiscordId == discordId, cancel);
+            return linked == null ? null : new NetUserId(linked.PlayerId);
+        }
+
+        public async Task<(LinkAccountCodeResult Result, NetUserId? PlayerId)> ConsumeLinkingCode(Guid code, ulong discordId, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            var linking = await db.DbContext.RMCLinkingCodes.SingleOrDefaultAsync(l => l.Code == code, cancel);
+            if (linking == null)
+                return (LinkAccountCodeResult.CodeNotFound, null);
+
+            if (DateTime.UtcNow - linking.CreationTime > LinkingCodeLifetime)
+                return (LinkAccountCodeResult.CodeExpired, null);
+
+            var existingForDiscord = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.DiscordId == discordId, cancel);
+            if (existingForDiscord != null && existingForDiscord.PlayerId != linking.PlayerId)
+                return (LinkAccountCodeResult.DiscordAlreadyLinked, null);
+
+            var existingForPlayer = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.PlayerId == linking.PlayerId, cancel);
+            if (existingForPlayer != null)
+            {
+                existingForPlayer.DiscordId = discordId;
+            }
+            else
+            {
+                if (!await db.DbContext.RMCDiscordAccounts.AnyAsync(d => d.Id == discordId, cancel))
+                    db.DbContext.RMCDiscordAccounts.Add(new RMCDiscordAccount { Id = discordId });
+
+                db.DbContext.RMCLinkedAccounts.Add(new RMCLinkedAccount { PlayerId = linking.PlayerId, DiscordId = discordId });
+            }
+
+            db.DbContext.RMCLinkingCodes.Remove(linking);
+            await db.DbContext.SaveChangesAsync(cancel);
+
+            return (LinkAccountCodeResult.Success, new NetUserId(linking.PlayerId));
+        }
+
+        // Unlink a Discord account from a player
+        public async Task<bool> UnlinkDiscordAccount(ulong discordId, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+            var linked = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.DiscordId == discordId, cancel);
+            if (linked == null)
+                return false;
+
+            db.DbContext.RMCLinkedAccounts.Remove(linked);
+            await db.DbContext.SaveChangesAsync(cancel);
+            return true;
+        }
+        // Reserve edit end: Discord bot account linking
+
         public async Task<RMCPatron?> GetPatron(Guid player, CancellationToken cancel)
         {
             await using var db = await GetDb(cancel);
@@ -2088,6 +1884,103 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             patron.GhostColor = color?.ToArgb();
             await db.DbContext.SaveChangesAsync();
         }
+
+        // Goob start
+        public async Task SetGhostCosmetics(Guid player, string? particles, string? hat, string? mask)
+        {
+            await using var db = await GetDb();
+            var patron = await db.DbContext.RMCPatrons.FirstOrDefaultAsync(p => p.PlayerId == player);
+            if (patron == null)
+                return;
+
+            patron.GhostParticles = particles;
+            patron.GhostHat = hat;
+            patron.GhostMask = mask;
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<List<RMCPatronTier>> GetPatronTiers()
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.RMCPatronTiers.ToListAsync();
+        }
+
+        public async Task<int> AddPatronTier(RMCPatronTier tier)
+        {
+            await using var db = await GetDb();
+            db.DbContext.RMCPatronTiers.Add(tier);
+            await db.DbContext.SaveChangesAsync();
+            return tier.Id;
+        }
+
+        public async Task<bool> UpdatePatronTier(RMCPatronTier tier)
+        {
+            await using var db = await GetDb();
+            var existing = await db.DbContext.RMCPatronTiers.FirstOrDefaultAsync(t => t.Id == tier.Id);
+            if (existing == null)
+                return false;
+
+            existing.Name = tier.Name;
+            existing.Icon = tier.Icon;
+            existing.DiscordRole = tier.DiscordRole;
+            existing.Priority = tier.Priority;
+            existing.ShowOnCredits = tier.ShowOnCredits;
+            existing.GhostColor = tier.GhostColor;
+            existing.GhostCosmetics = tier.GhostCosmetics;
+            existing.GhostParticles = tier.GhostParticles;
+            existing.LobbyMessage = tier.LobbyMessage;
+            existing.RoundEndShoutout = tier.RoundEndShoutout;
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<int> CountPatronsInTier(int tierId)
+        {
+            await using var db = await GetDb();
+            return await db.DbContext.RMCPatrons.CountAsync(p => p.TierId == tierId);
+        }
+
+        public async Task<bool> DeletePatronTier(int tierId)
+        {
+            await using var db = await GetDb();
+            var tier = await db.DbContext.RMCPatronTiers.FirstOrDefaultAsync(t => t.Id == tierId);
+            if (tier == null)
+                return false;
+
+            db.DbContext.RMCPatronTiers.Remove(tier);
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> SetPatron(Guid player, int? tierId)
+        {
+            await using var db = await GetDb();
+            var patron = await db.DbContext.RMCPatrons.FirstOrDefaultAsync(p => p.PlayerId == player);
+
+            if (tierId == null)
+            {
+                if (patron == null)
+                    return false;
+
+                db.DbContext.RMCPatrons.Remove(patron);
+                await db.DbContext.SaveChangesAsync();
+                return true;
+            }
+
+            if (patron == null)
+            {
+                patron = new RMCPatron { PlayerId = player, TierId = tierId.Value };
+                db.DbContext.RMCPatrons.Add(patron);
+            }
+            else
+            {
+                patron.TierId = tierId.Value;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+            return true;
+        }
+        // Goob end
 
         public async Task SetLobbyMessage(Guid player, string message)
         {
@@ -2413,7 +2306,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .Select(s => s.PollId)
                 .ToListAsync(cancel);
 
-            return [..ids];
+            return [.. ids];
         }
 
         public async Task<int> GetPollSeenCountAsync(int pollId, CancellationToken cancel = default)
@@ -2468,6 +2361,20 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         public virtual void Shutdown()
         {
 
+        }
+
+        private static async Task<IEnumerable<TResult>> AsyncSelect<T, TResult>(
+            IEnumerable<T>? enumerable,
+            Func<T, Task<TResult>> selector)
+        {
+            var results = new List<TResult>();
+
+            foreach (var item in enumerable ?? [])
+            {
+                results.Add(await selector(item));
+            }
+
+            return [.. results];
         }
     }
 }

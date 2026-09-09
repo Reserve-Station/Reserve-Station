@@ -8,3 +8,11 @@ voice-mask-popup-success = Имя успешно изменено.
 voice-mask-popup-failure = Имя не может быть изменено.
 voice-mask-icon-label = Должность (для иконки рации)
 voice-mask-name-current-name = Текущее имя
+
+voice-mask-name-change-toggle = Переключить голосовую маску
+
+voice-mask-name-change-accent-toggle = Блокировать акцент
+
+voice-mask-popup-toggle = Голосовая маска переключена
+
+voice-mask-popup-accent-toggle = Переключен акцент.

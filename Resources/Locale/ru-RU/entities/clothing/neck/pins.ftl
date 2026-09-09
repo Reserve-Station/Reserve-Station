@@ -1,6 +1,5 @@
 ent-ClothingNeckPinBase = нагрудный значок
     .desc = Значок с булавкой.
-# make this right later
 ent-ClothingNeckLGBTPin = { ent-ClothingNeckPinBase }
     .desc = Разноцветный металлический значок с булавкой.
 ent-ClothingNeckAllyPin = { ent-ClothingNeckLGBTPin }
@@ -47,3 +46,5 @@ ent-ClothingNeckAutismPin = { ent-ClothingNeckPinBase } "аутизм"
     .desc = Значок в честь дня распространения информации о проблеме аутизма.
 ent-ClothingNeckGoldAutismPin = золотой { ent-ClothingNeckPinBase } "аутизм"
     .desc = { ent-ClothingNeckAutismPin.desc }
+ent-SprayFlowerPin = значок с цветком
+    .desc = Милый значок с цветком. Кажется, с ним что-то не так...

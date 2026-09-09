@@ -1193,8 +1193,8 @@
         #      id: WindoorSecureMailLocked
         - !type:MappingTemplatePrototype
           id: SignMail
-        - !type:MappingTemplatePrototype
-          id: BoxMailCapsulePrimed # Reserve edit
+        # - !type:MappingTemplatePrototype
+        #   id: BoxMailCapsulePrimed # Reserve edit
         - !type:MappingTemplatePrototype
           id: VendingMachineMailDrobe # Reserve edit
         - !type:MappingTemplatePrototype

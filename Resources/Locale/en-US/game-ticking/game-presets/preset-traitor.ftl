@@ -46,45 +46,19 @@ traitor-death-match-end-round-description-entry = {$originalName}'s PDA, with {$
 
 # TraitorRole
 traitor-role-greeting =
-    You are an agent sent by {$corporation} on behalf of [color = darkred]The Syndicate.[/color]
-    Your objectives and codewords are listed in the character menu.
-    Use your uplink to buy the tools you'll need for this mission.
-    Death to Nanotrasen!
-traitor-role-greeting-implant =
-    You are an agent sent by {$corporation} on behalf of [color = darkred]The Syndicate.[/color]
-    Your objectives and codewords are listed in the character menu.
-    Use your implanted uplink to buy the tools you'll need for this mission.
-    Death to Nanotrasen!
-traitor-role-greeting-radio =
-    You are an agent sent by {$corporation} on behalf of [color = darkred]The Syndicate.[/color]
-    Your objectives and codewords are listed in your character menu.
-    Use your radio uplink to buy what you need to accomplish your objectives.
-    Death to Nanotrasen!
-traitor-role-greeting-telecrystals =
-    You are an agent sent by {$corporation} on behalf of [color = darkred]The Syndicate.[/color]
-    Your objectives and codewords are listed in your character menu.
-    You have been provided with a handful of pure telecrystals instead of an uplink. They are useless on their own, but you might find another Syndicate agent willing to trade them for something useful.
+    You are an agent sent by [color = darkred]The Syndicate[/color] on behalf of {$corporation}.
+    Your objectives and codewords are listed in the character menu. Use your uplink to buy the tools you'll need for this mission.
     Death to Nanotrasen!
 traitor-role-codewords =
     The codewords are: [color = lightgray]
     {$codewords}.[/color]
     Codewords can be used in regular conversation to identify yourself discreetly to other traitors.
 traitor-role-uplink-code =
-    Your uplink code is [color=white]{$code}[/color]. Set it as your PDA ringtone to access the black market.
-    Remember to lock it after, or the stations crew will easily open it too!
-traitor-role-uplink-pen-code =
-    Spin your pen to the combination [color = lightgray]{$code}[/color] to unlock your uplink.
-    The degrees represent rotation angles. The uplink locks automatically when closed.
+    Set your ringtone to the notes [color = lightgray]{$code}[/color] to lock or unlock your uplink.
+    Remember to lock it after, or the station's crew will easily open it too!
 traitor-role-uplink-implant =
     Your uplink implant has been activated, access it from your hotbar.
     The uplink is secure unless someone removes it from your body.
-traitor-role-uplink-radio =
-    Your old-fashioned radio uplink has been provided, keep it safe.
-    It can be accessed directly from your hand or inventory.
-traitor-role-uplink-telecrystals =
-    You have been provided with a handful of pure telecrystals instead of an uplink.
-    They are useless on their own, but you might find another Syndicate agent willing to trade them for something useful.
-    Use the codewords to identify potential allies.
 
 # don't need all the flavour text for character menu
 traitor-role-codewords-short =
@@ -93,9 +67,7 @@ traitor-role-codewords-short =
 
 traitor-role-uplink-code-short = Your uplink code is {$code}. Set it as your PDA ringtone to access the black market.
 traitor-role-uplink-pen-code-short = Your pen uplink code is {$code}. Spin the pen to unlock. Locks when closed.
-traitor-role-uplink-implant-short = Your uplink was implanted. Access it from your hotbar.
-traitor-role-uplink-radio-short = You've been provided with an old-fashioned radio uplink. Access it from your inventory.
-traitor-role-uplink-telecrystals-short = You've been provided with a handful of pure telecrystals. They are useless without an uplink, but you might trade them with another Syndicate agent.
+traitor-role-uplink-implant-short = Your uplink was implanted. Access it from the action menu.
 
 traitor-role-moreinfo =
     Find more information about your role in the character menu.

@@ -1,8 +1,5 @@
-// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -84,6 +81,8 @@ namespace Content.Client.UserInterface.Systems.Chat
             new KeyValuePair<string, string>("y", "ы"),
             new KeyValuePair<string, string>("z", "з")
         };
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0026:Use of uncached static Regex function", Justification = "It's okay.")]  // Reserve-Localization
         private static string Transliterate(string message, IReadOnlyList<KeyValuePair<string, string>> keysandvalues)
         {
             foreach (var (key, value) in keysandvalues)

@@ -1,6 +1,3 @@
-# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-# SPDX-FileCopyrightText: 2025 loltart <lo1tartyt@gmail.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 
@@ -14,5 +11,5 @@
   # Reserve - antag UI
   category: Solo
   icon:
-    sprite: Objects/Misc/pens.rsi
-    state: overpriced_pen
+    sprite: _Goobstation/Clothing/OuterClothing/Modsuits/corporate.rsi
+    state: helmet-sealed

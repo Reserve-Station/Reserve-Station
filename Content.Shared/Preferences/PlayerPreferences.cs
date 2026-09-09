@@ -1,6 +1,7 @@
+// SPDX-License-Identifier: MIT
+
 using Content.Shared._White.CustomGhostSystem;
 using Content.Shared.Construction.Prototypes;
-using Content.Shared.Ghost;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -62,6 +63,10 @@ namespace Content.Shared.Preferences
 
         public Color AdminOOCColor { get; set; }
         public ProtoId<CustomGhostPrototype> CustomGhost { get; set; } = "default"; // WWDP EDIT
+
+        /// <summary>
+        ///    List of favorite items in the construction menu.
+        /// </summary>
         public List<ProtoId<ConstructionPrototype>> ConstructionFavorites { get; set; } = [];
 
         public int IndexOfCharacter(ICharacterProfile profile)

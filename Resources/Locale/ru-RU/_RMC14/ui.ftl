@@ -15,7 +15,7 @@ rmc-ui-lobby-message-description =
     Если вы не уверены, спросите в AHelp! (F1)
 rmc-ui-shoutout = Выкрик в конце раунда
 rmc-ui-shoutout-nt-title = Имя, которое будет использоваться для кричалки «Нанотрасен» в конце раунда.
-rmc-ui-shoutout-nt-description = Отображается в конце раунда как «Nanotrasen финансируется: », затем ваше имя.
+rmc-ui-shoutout-nt-description = Отображается в конце раунда как «NanoTrasen финансируется: », затем ваше имя.
 rmc-ui-shoutout-example = Пример:
 rmc-ui-shoutout-info =
     Каждое имя выбирается случайным образом среди всех меценатов этого уровня.

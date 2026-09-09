@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -141,6 +138,7 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0030:Consider using the non-generic variant of this method", Justification = "Both metadata and transform are using it.")]
         private void OnRulePlayerSpawning(RulePlayerSpawningEvent ev)
         {
             var query = EntityQueryEnumerator<BattleRoyaleRuleComponent, GameRuleComponent>();
@@ -251,7 +249,7 @@ namespace Content.Server._CorvaxNext.BattleRoyale.Rules
             });
 
             // Remove negative traits
-            RemComp<PainNumbnessComponent>(player);
+            RemComp<PainNumbnessStatusEffectComponent>(player);
             RemComp<PermanentBlindnessComponent>(player);
             RemComp<NarcolepsyComponent>(player);
 

@@ -52,4 +52,4 @@ ent-BarSignSpacebucks = { ent-BaseBarSign } "Спейсбакс"
 ent-BarSignMaltroach = { ent-BaseBarSign } "Пивная Моль"
     .desc = Сквик!
 ent-BarSignWhiskeyEchoes = { ent-BaseBarSign } "Виски Эхо"
-    .desc = Элитный бар для элитных опер... Подождите, это же станция Nanotrasen. Почему эта вывеска в базе данных?
+    .desc = Элитный бар для элитных опер... Подождите, это же станция NanoTrasen. Почему эта вывеска в базе данных?

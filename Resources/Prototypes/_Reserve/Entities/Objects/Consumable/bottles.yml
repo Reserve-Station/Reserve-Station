@@ -1,11 +1,9 @@
-# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # region Empty
 
 - type: entity
-  parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
+  parent: [DrinkBaseOpenable, DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
   id: DrinkBottle
   name: bottle
   description: Hopefully no microplastics inside.

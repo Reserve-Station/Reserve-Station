@@ -10,7 +10,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._White.Bark;
 
 [Prototype]
-public sealed class BarkVoicePrototype : IPrototype
+public sealed partial class BarkVoicePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
@@ -23,7 +23,7 @@ public sealed class BarkVoicePrototype : IPrototype
 }
 
 [Prototype]
-public sealed class BarkListPrototype : IPrototype
+public sealed partial class BarkListPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

@@ -69,12 +69,12 @@ construction-graph-tag-potato = картофель
 construction-graph-tag-wheat-bushel = пучок пшеницы
 construction-graph-tag-corgi-hide = шкура корги
 soil-construction-graph-any-mushroom = любой гриб
-
+construction-graph-tag-mop-basic = швабра
 # toys
 construction-graph-tag-rubber-ducky = резиновая уточка
 construction-graph-tag-ghost = плюшевое привидение
 construction-graph-tag-ectoplasm = эктоплазма
-construction-graph-tag-lizard-plushie = плюшевая ящерица
+construction-graph-tag-lizard-plushie = плюшевый унатх
 
 # carpet
 construction-graph-tag-black-carpet = черный ковер
@@ -146,5 +146,10 @@ construction-graph-tag-spationaut-hardsuit = скафандр утилизато
 construction-graph-tag-apron = фартук
 construction-graph-tag-backpack = рюкзак
 construction-graph-tag-manipulator = манипулятор
-construction-graph-tag-mop-basic = швабра
 construction-graph-tag-utility-belt = пояс для инструментов
+
+construction-graph-tag-boxhug = коробка обнимашек
+construction-graph-tag-core-pinpointer-piece = часть пинпоинтера ядра
+construction-graph-tag-station-ai-core-electronics = микросхема ядра станционного ИИ
+construction-graph-tag-turret-control-electronics = микросхема панели управления охранной турели
+construction-graph-tag-centrifuge-compatible = пробирка

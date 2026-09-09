@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: MIT
 
 using System.Numerics;
@@ -284,7 +281,7 @@ public abstract class SharedAbsorbentSystem : EntitySystem
         var (_, absorber, useDelay) = absorbEnt;
 
         Solution puddleSplit;
-        var isRemoved = false;
+        // var isRemoved = false; // Reserve - removed unused var
         if (absorber.UseAbsorberSolution)
         {
             // No reason to mop something that 1) can evaporate, 2) is an absorber, and 3) is being mopped with
@@ -339,7 +336,7 @@ public abstract class SharedAbsorbentSystem : EntitySystem
                 // Spawn a *sparkle*
                 PredictedSpawnAttachedTo(absorber.MoppedEffect, Transform(target).Coordinates);
                 PredictedQueueDel(target);
-                isRemoved = true;
+                // isRemoved = true; // Reserve - removed unused var
             }
         }
 

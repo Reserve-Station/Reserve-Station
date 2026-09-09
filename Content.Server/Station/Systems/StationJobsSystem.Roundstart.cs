@@ -1,23 +1,3 @@
-// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 Mervill <mervills.email@gmail.com>
-// SPDX-FileCopyrightText: 2022 Moony <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2022 Veritius <veritiusgaming@gmail.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Moony <moony@hellomouse.net>
-// SPDX-FileCopyrightText: 2023 Riggle <27156122+RigglePrime@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 LordCarve <27449516+LordCarve@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -56,10 +36,11 @@ public sealed partial class StationJobsSystem
         _jobsByWeight = new Dictionary<int, HashSet<string>>();
         foreach (var job in _prototypeManager.EnumeratePrototypes<JobPrototype>())
         {
-            if (!_jobsByWeight.ContainsKey(job.Weight))
-                _jobsByWeight.Add(job.Weight, new HashSet<string>());
+            int weight = JobLogicComparer.Instance.Round(job.Weight);  // Reserve edit: Fix Assistant job order
+            if (!_jobsByWeight.ContainsKey(weight))  // Reserve edit: Fix Assistant job order
+                _jobsByWeight.Add(weight, new HashSet<string>());  // Reserve edit: Fix Assistant job order
 
-            _jobsByWeight[job.Weight].Add(job.ID);
+            _jobsByWeight[weight].Add(job.ID);  // Reserve edit: Fix Assistant job order
         }
 
         _orderedWeights = _jobsByWeight.Keys.OrderByDescending(i => i).ToList();
@@ -388,7 +369,7 @@ public sealed partial class StationJobsSystem
                 if (!(priority == selectedPriority || selectedPriority is null))
                     continue;
 
-                if (!_prototypeManager.TryIndex(jobId, out var job))
+                if (!_prototypeManager.Resolve(jobId, out var job))
                     continue;
 
                 // Check if this job is blacklisted for the player's session || GOOBSTATION
@@ -401,10 +382,10 @@ public sealed partial class StationJobsSystem
                 if (!job.CanBeAntag && (!_player.TryGetSessionById(player, out session) || antagBlocked.Contains(session)))
                     continue;
 
-                if (weight is not null && job.Weight != weight.Value)
+                if (weight is not null && job.Weight - job.Weight % 5 != weight)  // Reserve edit: Fix Assistant job order - round down to 5 so 2 = 4 = 0, etc.
                     continue;
 
-                if (!(roleBans == null || !roleBans.Contains(jobId)))
+                if (!(roleBans == null || !roleBans.Contains(jobId))) //TODO: Replace with IsRoleBanned
                     continue;
 
                 availableJobs ??= new List<string>(profile.JobPriorities.Count);

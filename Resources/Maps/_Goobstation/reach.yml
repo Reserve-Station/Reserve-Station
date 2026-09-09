@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Goob Station Contributors
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 meta:
@@ -11890,7 +11888,7 @@ entities:
     - type: Transform
       pos: 8.5,-8.5
       parent: 2
-- proto: MaterialSilo
+- proto: MachineMaterialSilo
   entities:
   - uid: 872
     components:

@@ -29,18 +29,16 @@ public sealed class MappingVisibilityUIController : UIController
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IEyeManager _eyeManager = default!;
     [Dependency] private readonly ILightManager _lightManager = default!;
+    private readonly SpriteSystem _sprite = default!;  // Reserve edit: fix warnings
 
     private MappingVisibilityWindow? _window;
     private MappingScreen? _mappingScreen; // WD EDIT
 
-    [ValidatePrototypeId<TagPrototype>]
-    private const string WallTag = "Wall";
+    private static readonly ProtoId<TagPrototype> WallTag = "Wall";  // Reserve edit: fix warnings
 
-    [ValidatePrototypeId<TagPrototype>]
-    private const string CableTag = "Cable";
+    private static readonly ProtoId<TagPrototype> CableTag = "Cable";  // Reserve edit: fix warnings
 
-    [ValidatePrototypeId<TagPrototype>]
-    private const string DisposalTag = "Disposal";
+    private static readonly ProtoId<TagPrototype> DisposalTag = "Disposal";  // Reserve edit: fix warnings
 
     // WD EDIT START
     private bool _entitiesVisible = true;
@@ -170,7 +168,7 @@ public sealed class MappingVisibilityUIController : UIController
         {
             _mappingScreen.TileDecalSeparator.Visible = _tilesVisible && _decalsVisible;
         }
-         // WD EDIT END
+        // WD EDIT END
     }
 
     private void OnToggleEntitiesLayerPressed(BaseButton.ButtonEventArgs args)  // WD EDIT - OnToggleEntitiesPressed -> OnToggleEntitiesLayerPressed
@@ -190,9 +188,9 @@ public sealed class MappingVisibilityUIController : UIController
             _window.Airlocks.Pressed = false;
         }
 
-        while (query.MoveNext(out _, out var sprite))
+        while (query.MoveNext(out var uid, out _))  // Reserve edit: fix warnings
         {
-            sprite.Visible = args.Button.Pressed;
+            _sprite.SetVisible(uid, args.Button.Pressed);
         }
     }
 
@@ -219,9 +217,9 @@ public sealed class MappingVisibilityUIController : UIController
     {
         var query = _entityManager.AllEntityQueryEnumerator<TComp, SpriteComponent>();
 
-        while (query.MoveNext(out _, out _, out var sprite))
+        while (query.MoveNext(out var uid, out _, out _))  // Reserve edit: fix warnings
         {
-            sprite.Visible = args.Button.Pressed;
+            _sprite.SetVisible(uid, args.Button.Pressed);
         }
     }
 
@@ -230,10 +228,10 @@ public sealed class MappingVisibilityUIController : UIController
         var query = _entityManager.AllEntityQueryEnumerator<TagComponent, SpriteComponent>();
         var tagSystem = _entityManager.EntitySysManager.GetEntitySystem<TagSystem>();
 
-        while (query.MoveNext(out var uid, out _, out var sprite))
+        while (query.MoveNext(out var uid, out _, out _))  // Reserve edit: fix warnings
         {
             if (tagSystem.HasTag(uid, tag))
-                sprite.Visible = args.Button.Pressed;
+                _sprite.SetVisible(uid, args.Button.Pressed);
         }
     }
 }

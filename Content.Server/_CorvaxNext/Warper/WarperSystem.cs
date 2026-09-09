@@ -1,15 +1,10 @@
-// SPDX-FileCopyrightText: 2025 Kill_Me_I_Noobs <118206719+Vonsant@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server.Ghost.Components;
 using Content.Shared.Warps;
 using Content.Server.Popups;
 using Content.Shared.Ghost;
 using Content.Shared.Interaction;
 using Robust.Shared.Map;
-using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
@@ -17,23 +12,25 @@ using System.Numerics;
 
 namespace Content.Server._CorvaxNext.Warper;
 
-public class WarperSystem : EntitySystem
+public sealed class WarperSystem : EntitySystem
 {
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly WarpPointSystem _warpPointSystem = default!;
+    private ISawmill _sawmill = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<WarperComponent, InteractHandEvent>(OnInteractHand);
+        _sawmill = Logger.GetSawmill("warper");
     }
 
     private void OnInteractHand(EntityUid uid, WarperComponent component, InteractHandEvent args)
     {
         if (component.ID is null)
         {
-            Logger.DebugS("warper", "Warper has no destination");
+            _sawmill.Debug("Warper has no destination");
             _popupSystem.PopupEntity(Loc.GetString("warper-goes-nowhere", ("warper", args.Target)), args.User, Filter.Entities(args.User), true);
             return;
         }
@@ -41,7 +38,7 @@ public class WarperSystem : EntitySystem
         var dest = _warpPointSystem.FindWarpPoint(component.ID);
         if (dest is null)
         {
-            Logger.DebugS("warper", String.Format("Warp destination '{0}' not found", component.ID));
+            _sawmill.Debug(String.Format("Warp destination '{0}' not found", component.ID));
             _popupSystem.PopupEntity(Loc.GetString("warper-goes-nowhere", ("warper", args.Target)), args.User, Filter.Entities(args.User), true);
             return;
         }
@@ -51,7 +48,7 @@ public class WarperSystem : EntitySystem
         entMan.TryGetComponent<TransformComponent>(dest.Value, out destXform);
         if (destXform is null)
         {
-            Logger.DebugS("warper", String.Format("Warp destination '{0}' has no transform", component.ID));
+            _sawmill.Debug(String.Format("Warp destination '{0}' has no transform", component.ID));
             _popupSystem.PopupEntity(Loc.GetString("warper-goes-nowhere", ("warper", args.Target)), args.User, Filter.Entities(args.User), true);
             return;
         }
@@ -64,7 +61,7 @@ public class WarperSystem : EntitySystem
             if (!entMan.HasComponent<GhostComponent>(args.User))
             {
                 // Normal ghosts cannot interact, so if we're here this is already an admin ghost.
-                Logger.DebugS("warper", String.Format("Player tried to warp to '{0}', which is not on a running map", component.ID));
+                _sawmill.Debug("warper", String.Format("Player tried to warp to '{0}', which is not on a running map", component.ID));
                 _popupSystem.PopupEntity(Loc.GetString("warper-goes-nowhere", ("warper", args.Target)), args.User, Filter.Entities(args.User), true);
                 return;
             }

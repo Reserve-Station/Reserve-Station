@@ -1,6 +1,6 @@
 - type: guideEntry
   id: Xenobiology
-  name: "Xenobiology"
+  name: guide-entry-xenobiology # Reserve
   text: "/ServerInfo/_Goobstation/Guidebook/Science/Xenobiology.xml"
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/Xenobiology.xml"

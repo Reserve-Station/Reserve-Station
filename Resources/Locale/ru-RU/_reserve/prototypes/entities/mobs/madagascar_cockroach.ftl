@@ -1,0 +1,11 @@
+ent-MobCockroachBig = мадагаскарский { ent-MobCockroach }
+    .desc = Антисанитария пробила новое дно. Эти гиганты любят лазать по вентиляциям, переносить болезни, кусаться, размножаться... Подожди, они что, умеют ЛЕТАТЬ?!
+    .suffix = Лодаут, Безделушки, Большой
+ent-SpawnMobCockroachBig = спавнер { ent-MobCockroachBig }
+    .desc = { ent-MarkerBase.desc }
+ent-OrganCockroachBigInnards = внутренности
+    .desc = Беспорядочная куча эквивалентов органов насекомого.
+    .suffix = Таракан, Орган, Желудок, Печень, Почки, Сердце, Яйцекладка
+ent-OrganCockroachBigInnardsLungs = { ent-OrganCockroachBigInnards }
+    .desc = { ent-OrganCockroachBigInnards.desc }
+    .suffix = Таракан, Орган, Лёгкие

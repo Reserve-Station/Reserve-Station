@@ -1,15 +1,3 @@
-// SPDX-FileCopyrightText: 2019 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-// SPDX-FileCopyrightText: 2020 Tyler Young <tyler.young@impromptu.ninja>
-// SPDX-FileCopyrightText: 2020 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Acruid <shatter66@gmail.com>
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Paul Ritter <ritter.paul1@googlemail.com>
-// SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: MIT
 
 using System.Net;
@@ -34,6 +22,12 @@ namespace Content.Server.MoMMI
         [Dependency] private readonly ITaskManager _taskManager = default!;
 
         private readonly HttpClient _httpClient = new();
+        private ISawmill _sawmill = default!;
+
+        public void Initialize()
+        {
+            _sawmill = Logger.GetSawmill("MoMMI");
+        }
 
         void IPostInjectInit.PostInject()
         {
@@ -62,7 +56,7 @@ namespace Content.Server.MoMMI
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                Logger.WarningS("mommi", "MoMMI URL specified but not password!");
+                _sawmill.Warning("MoMMI URL specified but not password!");
                 return;
             }
 
@@ -129,35 +123,43 @@ namespace Content.Server.MoMMI
 
         private sealed class MoMMIMessageBase
         {
-            [JsonInclude] [JsonPropertyName("password")]
+            [JsonInclude]
+            [JsonPropertyName("password")]
             public string Password = null!;
 
-            [JsonInclude] [JsonPropertyName("type")]
+            [JsonInclude]
+            [JsonPropertyName("type")]
             public string Type = null!;
 
-            [JsonInclude] [JsonPropertyName("contents")]
+            [JsonInclude]
+            [JsonPropertyName("contents")]
             public object Contents = null!;
         }
 
         private sealed class MoMMIMessageOOC
         {
-            [JsonInclude] [JsonPropertyName("sender")]
+            [JsonInclude]
+            [JsonPropertyName("sender")]
             public string Sender = null!;
 
-            [JsonInclude] [JsonPropertyName("contents")]
+            [JsonInclude]
+            [JsonPropertyName("contents")]
             public string Contents = null!;
         }
 
         private sealed class OOCPostMessage
         {
 #pragma warning disable CS0649
-            [JsonInclude] [JsonPropertyName("password")]
+            [JsonInclude]
+            [JsonPropertyName("password")]
             public string Password = null!;
 
-            [JsonInclude] [JsonPropertyName("sender")]
+            [JsonInclude]
+            [JsonPropertyName("sender")]
             public string Sender = null!;
 
-            [JsonInclude] [JsonPropertyName("contents")]
+            [JsonInclude]
+            [JsonPropertyName("contents")]
             public string Contents = null!;
 #pragma warning restore CS0649
         }

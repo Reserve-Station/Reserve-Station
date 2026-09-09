@@ -1,18 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Tim <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 Timfa <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 Tim <timfalken@hotmail.com>
-// SPDX-FileCopyrightText: 2025 amogus <113782077+whateverusername0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
-// SPDX-FileCopyrightText: 2025 whateverusername0 <whateveremail>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -48,6 +33,7 @@ public sealed class ResourceSiphonSystem : EntitySystem
     [Dependency] private readonly TransformSystem _xform = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
+    [Dependency] private readonly SharedStackSystem _stack = default!;
 
     private float _tickTimer = 1f;
 
@@ -188,8 +174,7 @@ public sealed class ResourceSiphonSystem : EntitySystem
         DeactivateSiphon(ent, "broken");
 
         var speso = Spawn("SpaceCash", Transform(ent).Coordinates);
-        if (TryComp<StackComponent>(speso, out var stack))
-            stack.Count = (int) ent.Comp.Credits;
+        _stack.SetCount(speso, (int) ent.Comp.Credits);
     }
     #endregion
 

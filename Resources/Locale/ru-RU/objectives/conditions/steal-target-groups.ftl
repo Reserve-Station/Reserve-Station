@@ -43,7 +43,7 @@ steal-target-groups-wanted-list-cartridge = картридж Список раз
 # Thief structures
 steal-target-groups-teg = часть термоэлектрического генератора
 steal-target-groups-freezer-heater = нагреватель или охладитель
-steal-target-groups-altar-nanotrasen = алтарь Nanotrasen (любой)
+steal-target-groups-altar-nanotrasen = алтарь NanoTrasen (любой)
 steal-target-groups-nuclear-bomb = ядерная боеголовка
 steal-target-groups-fax-machine-captain = факс дальнего действия капитана
 steal-target-groups-chem-dispenser = химический раздатчик
@@ -60,5 +60,10 @@ steal-target-groups-animal-morty = Морти
 steal-target-groups-animal-renault = Алиса
 steal-target-groups-animal-shiva = Шива
 steal-target-groups-animal-tropico = Тропико
+
 steal-target-groups-clothing-hands-knuckledusters-qm = золотой кастет
 steal-target-groups-weapon-launcher-singularity-buster = уничтожитель сингулярности
+steal-target-groups-weapon-energy-magnum = энергетический магнум
+steal-target-groups-officer-handguns = пистолет службы безопасности
+steal-target-groups-belt-ce = пояс для инструментов старшего инженера
+steal-target-groups-captain-sword = сабля капитана

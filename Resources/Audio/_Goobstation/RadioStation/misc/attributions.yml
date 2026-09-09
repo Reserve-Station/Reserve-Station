@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Goob Station Contributors
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - files: ["commander_announcement.ogg", "commander_figurines.ogg", "commander_resignation.ogg", "commander_support.ogg", "trial_of_heisenbee.ogg", "xg_onboarding1.ogg", "xg_onboarding2.ogg", "xg_onboarding3.ogg", "xg_onboarding4.ogg"]

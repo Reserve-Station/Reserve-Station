@@ -32,17 +32,18 @@ rcd-component-windows-and-grilles = Окна и решётки
 rcd-component-airlocks = Шлюзы
 rcd-component-electrical = Электроприборы
 rcd-component-lighting = Освещение
-rcd-component-piping = Трубопроводы
+rcd-component-piping = Трубопровод
 rcd-component-atmosphericutility = Атмосферное оборудование
 rcd-component-pumps = Насосы и клапаны
-rcd-component-vents = Вентили
+rcd-component-vents = Вентиляция
 
 ### Prototype names (note: constructable items will be puralized)
 
-rcd-component-deconstruct = демонтаж
-rcd-component-floor-steel = стальной пол
-rcd-component-plating = корпусное покрытие
+rcd-component-deconstruct = Демонтаж
+rcd-component-floor-steel = Стальной пол
+rcd-component-plating = Корпусное покрытие
+rcd-component-pumpsvalves = Контроль труб
 
 rcd-component-deconstruct-target-is-bolted = Болты препятствуют демонтированию!
-
 rcd-component-deconstruct-target-no-access = У вас нет доступа чтобы демонтировать это!
+rcd-component-cannot-build-identical-entity = Эта постройка уже есть тут!

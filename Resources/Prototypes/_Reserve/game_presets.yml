@@ -1,0 +1,71 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Gear
+
+- type: startingGear
+  id: EmptyNudeGear
+  equipment: {}
+
+# region Rules
+
+- type: entity
+  parent: BaseGameRule
+  id: Pirate
+  components:
+  - type: ActivePirateRule
+  - type: AntagLoadProfileRule
+    speciesOverride: Human
+    alwaysUseSpeciesOverride: true
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: SpawnPointPirateCaptain
+      pickPlayer: false
+      min: 5
+      max: 5
+      mindRoles:
+      - MindRolePirate
+      startingGear: PirateGear
+      roleLoadout:
+      - AntagTraitor
+      unequipOldGear: true
+      components:
+      - type: RandomMetadata
+        nameSegments:
+        - NamesDeathCommando
+  - type: Tag
+    tags:
+    - MidroundAntag
+
+# endregion
+
+# region Presets
+
+- type: gamePreset
+  id: Thief
+  name: roles-antag-thief-name
+  description: roles-antag-thief-objective
+  showInVote: false
+  rules:
+  - DummyNonAntagChance
+  - Thief
+  #- SubGamemodesRuleNoWizard # Goob
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: CorporateAgent
+  name: roles-antag-corporate-agent-name
+  description: roles-antag-corporate-agent-description
+  showInVote: false
+  rules:
+  - DummyNonAntagChance
+  - CorporateAgent
+  #- SubGamemodesRuleNoWizard # Goob
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+# endregion

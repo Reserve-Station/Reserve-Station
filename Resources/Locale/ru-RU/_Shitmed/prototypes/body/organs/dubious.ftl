@@ -1,4 +1,4 @@
-ent-OrganDubiousBase = Загадочная железа
+ent-OrganDubiousBase = загадочная железа
     .desc = Подозрительная инопланетная железа, заменяющая сердце.
 ent-OrganDubiousHealth = { ent-OrganDubiousBase }
     .desc = { ent-OrganDubiousBase.desc }

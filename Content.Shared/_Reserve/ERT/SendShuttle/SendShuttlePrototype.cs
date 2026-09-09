@@ -3,11 +3,11 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Reserve.ERT.SendShuttlePrototype;
 
 [Prototype("shuttleType")]
-public sealed class SendShuttlePrototype : IPrototype
+public sealed partial class SendShuttlePrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { set; get; } = default!;
 
 
     [DataField]

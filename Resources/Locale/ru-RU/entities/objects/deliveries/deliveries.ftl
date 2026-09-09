@@ -4,3 +4,16 @@ ent-PackageDelivery = посылка
     .desc = { ent-BaseDelivery.desc }
 ent-LetterDelivery = письмо
     .desc = { ent-BaseDelivery.desc }
+ent-MailAdminFun = { ent-LetterDelivery }
+    .suffix = Адмем
+    .desc = { ent-LetterDelivery.desc }
+ent-MailLargeAdminFun = { ent-PackageDelivery }
+    .suffix = Адмем
+    .desc = { ent-PackageDelivery.desc }
+
+ent-DeliveryModifierPriority = приоритет
+    .desc = Компоненты, которые добавляются приоритетным посылкам.
+ent-DeliveryModifierFragile = хрупкость
+    .desc = Компоненты, которые добавляются хрупким посылкам.
+ent-DeliveryModifierBomb = бомба
+    .desc = Компоненты, добавляемые, когда почта является бомбой.

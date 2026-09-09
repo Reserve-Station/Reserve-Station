@@ -1,6 +1,3 @@
-# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
@@ -19,11 +16,8 @@
     maxFillLevels: 1
     changeColor: true
     emptySpriteName: medipen_empty
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 5
-    onlyAffectsMobs: false
-    injectOnly: true
+  - type: Injector
+    currentTransferAmount: 5
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -48,11 +42,8 @@
     maxFillLevels: 1
     changeColor: true
     emptySpriteName: penacid_empty
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 10
-    onlyAffectsMobs: false
-    injectOnly: true
+  - type: Injector
+    currentTransferAmount: 10
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -77,11 +68,8 @@
     maxFillLevels: 1
     changeColor: true
     emptySpriteName: stimpen_empty
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 15
-    onlyAffectsMobs: false
-    injectOnly: true
+  - type: Injector
+    currentTransferAmount: 15
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -106,11 +94,8 @@
     maxFillLevels: 1
     changeColor: true
     emptySpriteName: morphen_empty
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 30
-    onlyAffectsMobs: false
-    injectOnly: true
+  - type: Injector
+    currentTransferAmount: 30
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -135,11 +120,8 @@
     maxFillLevels: 1
     changeColor: true
     emptySpriteName: microstimpen_empty
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 5
-    onlyAffectsMobs: false
-    injectOnly: true
+  - type: Injector
+    currentTransferAmount: 5
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -164,11 +146,8 @@
     maxFillLevels: 1
     changeColor: true
     emptySpriteName: microstimpen_empty
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 8
-    onlyAffectsMobs: false
-    injectOnly: true
+  - type: Injector
+    currentTransferAmount: 8
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -193,11 +172,8 @@
     maxFillLevels: 1
     changeColor: true
     emptySpriteName: microstimpen_empty
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 12
-    onlyAffectsMobs: false
-    injectOnly: true
+  - type: Injector
+    currentTransferAmount: 12
   - type: SolutionContainerManager
     solutions:
       pen:
@@ -222,11 +198,8 @@
     maxFillLevels: 1
     changeColor: true
     emptySpriteName: microstimpen_empty
-  - type: Hypospray
-    solutionName: pen
-    transferAmount: 20
-    onlyAffectsMobs: false
-    injectOnly: true
+  - type: Injector
+    currentTransferAmount: 20
   - type: SolutionContainerManager
     solutions:
       pen:

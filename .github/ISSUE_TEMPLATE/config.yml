@@ -1,14 +1,9 @@
-# SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-# SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-# SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-#
 # SPDX-License-Identifier: MIT
 
 contact_links:
-  - name: Report a Security Vulnerability
-    url: https://github.com/space-wizards/space-station-14/blob/master/SECURITY.md
-    about: Please report security vulnerabilities privately so we can fix them before they are publicly disclosed.
-  - name: Request a Feature
-    url: https://discord.gg/rGvu9hKffJ
-    about: Submit feature requests on our Discord server (https://discord.gg/rGvu9hKffJ).
+  - name: Сообщить об уязвимости
+    url: https://github.com/red-wing-ss14/Reserve-Station?tab=security-ov-file
+    about: Пожалуйста, свяжитесь с нашей администрацией о любых уязвимостях приватно, чтобы избежать дополнительных рисков.
+  - name: Предложить изменение
+    url: https://discord.gg/WXZvqzZ2Fc
+    about: Предложить нововведения и изменения можно на нашем сервере. Хочешь, чтобы твой запрос кто-то обязательно реализовал? Посети наш баунти трекер!

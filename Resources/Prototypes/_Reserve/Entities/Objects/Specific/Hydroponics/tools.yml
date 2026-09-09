@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # region Watering Cans
@@ -122,17 +120,21 @@
   components:
   - type: Sprite
     sprite: Objects/Tools/Hydroponics/sprays.rsi
-    state: nolabelspray
+    layers:
+    - state: nolabelspray
   - type: SolutionContainerManager
     solutions:
-      spray:
+      drink:
         maxVol: 50
         reagents:
         - ReagentId: Sedin
           Quantity: 10
   - type: DrainableSolution
-    solution: spray
+    solution: drink
   - type: Item
     sprite: Objects/Tools/Hydroponics/sprays.rsi
+  - type: SolutionContainerVisuals
+    maxFillLevels: 0
+    inHandsMaxFillLevels: 0
 
 # endregion

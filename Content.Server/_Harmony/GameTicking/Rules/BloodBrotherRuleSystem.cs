@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
@@ -27,7 +25,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Preferences;
-using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
 using Robust.Shared.Utility;
@@ -277,7 +275,7 @@ public sealed class BloodBrotherRuleSystem : GameRuleSystem<BloodBrotherRuleComp
             _preferencesManager.TryGetCachedPreferences(targetMind.UserId.Value, out var preferences))
         {
 
-            var profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
+            var profile = (HumanoidCharacterProfile) preferences.SelectedCharacter;
 
             if (profile.AntagPreferences.Contains(entity.Comp.RequiredAntagPreference!.Value) != true)
             {

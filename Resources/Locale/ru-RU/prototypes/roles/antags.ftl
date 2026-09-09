@@ -9,7 +9,7 @@ roles-antag-generic-free-agent-name = Свободный агент
 
 roles-antag-generic-team-antagonist-name = Командный антагонист
 
-roles-antag-generic-silicon-antagonist-name = Синтетик антагонист
+roles-antag-generic-silicon-antagonist-name = Синтет антагонист
 
 ## goob edited
 roles-antag-syndicate-agent-name = Агент Синдиката
@@ -59,3 +59,9 @@ roles-antag-thief-objective = Вы — преступный отброс, кле
 
 roles-antag-dragon-name = Космический дракон
 roles-antag-dragon-objective = Создайте армию карпов для захвата квадранта.
+
+roles-antag-mothership-core-name = Материнский корабль
+roles-antag-mothership-core-objective = Используйте своих ксеноборгов чтобы создать ещё больше ксеноборгов.
+
+roles-antag-xenoborg-name = Ксеноборг
+roles-antag-xenoborg-objective = Помогайте материнскому кораблю создавать ещё больше ксеноборгов.

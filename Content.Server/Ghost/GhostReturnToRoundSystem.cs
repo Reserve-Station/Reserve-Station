@@ -1,7 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Administration.Logs;
@@ -94,12 +90,12 @@ public sealed class GhostReturnToRoundSystem : EntitySystem
         }
         else
         {
-        // WD EDIT START
-        message = timeLeft.Minutes > 0
-        ? Loc.GetString("ghost-respawn-minutes-left", ("time", timeLeft.Minutes))
-        : Loc.GetString("ghost-respawn-seconds-left", ("time", timeLeft.Seconds));
-        wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
-        // WD EDIT END
+            // WD EDIT START
+            message = timeLeft.Minutes > 0
+            ? Loc.GetString("ghost-respawn-minutes-left", ("time", timeLeft.Minutes))
+            : Loc.GetString("ghost-respawn-seconds-left", ("time", timeLeft.Seconds));
+            wrappedMessage = Loc.GetString("chat-manager-server-wrap-message", ("message", message));
+            // WD EDIT END
         }
     }
 }

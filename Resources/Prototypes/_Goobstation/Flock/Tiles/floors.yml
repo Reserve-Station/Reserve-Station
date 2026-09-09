@@ -11,7 +11,7 @@
 
 - type: entity
   id: FloorFlockZone2
-  name: tiles-flockzone-floor-light
+  name: flockzone floor light  # Reserve edit: test fixes
   description: It hums with power.
   placement:
     mode: SnapgridCenter

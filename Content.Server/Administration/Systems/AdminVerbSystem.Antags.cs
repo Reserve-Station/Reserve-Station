@@ -1,90 +1,9 @@
-// SPDX-FileCopyrightText: 2022 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 drakewill <drake@drakewill-crl>
-// SPDX-FileCopyrightText: 2022 drakewill-CRL <46307022+drakewill-CRL@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 moonheart08 <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Colin-Tel <113523727+Colin-Tel@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 EmoGarbage404 <retron404@gmail.com>
-// SPDX-FileCopyrightText: 2023 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Tom Leys <tom@crump-leys.com>
-// SPDX-FileCopyrightText: 2023 Ygg01 <y.laughing.man.y@gmail.com>
-// SPDX-FileCopyrightText: 2023 coolmankid12345 <55817627+coolmankid12345@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 coolmankid12345 <coolmankid12345@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 deltanedas <deltanedas@laptop>
-// SPDX-FileCopyrightText: 2023 deltanedas <user@zenith>
-// SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 keronshb <54602815+keronshb@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 AJCM <AJCM@tutanota.com>
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Alex Pavlenko <diraven@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Boaz1111 <149967078+Boaz1111@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ciac32 <aknoxlor@gmail.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
-// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ghagliiarghii <68826635+Ghagliiarghii@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 MilenVolf <63782763+MilenVolf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 PoTeletubby <108604614+PoTeletubby@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Rainfall <rainfey0+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Rainfey <rainfey0+github@gmail.com>
-// SPDX-FileCopyrightText: 2024 Redfire1331 <125223432+Redfire1331@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
-// SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 crazybrain23 <44417085+crazybrain23@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
-// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 neutrino <67447925+neutrino-laser@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 no <165581243+pissdemon@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
-// SPDX-FileCopyrightText: 2024 redfire1331 <Redfire1331@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
-// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 AftrLite <61218133+AftrLite@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <aviu00@protonmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2025 Pancake <Pangogie@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 SX_7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-// SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Shared.Pirates.Roles; // Reserve edit: Fix antag verbs
 using Content.Server._Goobstation.Wizard.Components;
 using Content.Server._DV.CosmicCult.Components; // DeltaV
 using Content.Server._Harmony.GameTicking.Rules.Components; // Harmony
-using Content.Server.Administration.Commands;
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules.Components;
@@ -99,6 +18,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Roles.Components;
 
 namespace Content.Server.Administration.Systems;
 
@@ -114,13 +34,29 @@ public sealed partial class AdminVerbSystem
     private static readonly EntProtoId DefaultNukeOpRule = "LoneOpsSpawn";
     private static readonly EntProtoId DefaultRevsRule = "Revolutionary";
     private static readonly EntProtoId DefaultThiefRule = "Thief";
+    private static readonly EntProtoId DefaultChangelingRule = "Changeling";
     private static readonly EntProtoId ParadoxCloneRuleId = "ParadoxCloneSpawn";
-    private static readonly EntProtoId DefaultConspiratorRule = "Conspirators"; // Harmony
+    private static readonly EntProtoId DefaultWizardRule = "Wizard";
+    private static readonly EntProtoId DefaultNinjaRule = "NinjaSpawn";
     private static readonly ProtoId<StartingGearPrototype> PirateGearId = "PirateGear";
     // Harmony start
-    [ValidatePrototypeId<EntityPrototype>]
-    private const string DefaultBloodBrotherRule = "BloodBrothers";
+    private static readonly EntProtoId DefaultConspiratorRule = "Conspirators";
+    private static readonly EntProtoId DefaultBloodBrotherRule = "BloodBrothers";
     // Harmony end
+    // Reserve edit start: Fix antag verbs
+    private static readonly EntProtoId DefaultCorporateAgentRule = "CorporateAgent";
+    private static readonly EntProtoId DefaultWizardApprenticeRule = "ApprenticeRule";
+    private static readonly EntProtoId DefaultPirateCaptainRule = "PiratesSpawn";
+    private static readonly EntProtoId DefaultPirateRule = "Pirate";
+    private static readonly EntProtoId DefaultNukeOpCommandRule = "Nukeops";
+    private static readonly EntProtoId DefaultNukeOpHonkRule = "Honkops";
+    private static readonly EntProtoId DefaultContractorRule = "ContractorSpawnMidround";
+    private static readonly EntProtoId DefaultMimeAssassinRule = "MimeAssassinMidround";
+    private static readonly EntProtoId DefaultTunnelClownRule = "TunnelClownMidround";
+    private static readonly EntProtoId DefaultAbductorRule = "LoneAbductorSpawn";
+    private static readonly EntProtoId DefaultAbductorVictimRule = "AbductorVictim";
+    private static readonly EntProtoId DefaultDarkPriestRule = "DarkPriestMidround";
+    // Reserve edit end: Fix antag verbs
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -141,7 +77,7 @@ public sealed partial class AdminVerbSystem
         var traitorName = Loc.GetString("admin-verb-text-make-traitor");
         Verb traitor = new()
         {
-            Text = traitorName,
+            Text = "011. " + traitorName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/job_icons.rsi"), "Syndicate"),
             Act = () =>
@@ -149,14 +85,14 @@ public sealed partial class AdminVerbSystem
                 _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultTraitorRule);
             },
             Impact = LogImpact.High,
-            Message = string.Join(": ", traitorName,  Loc.GetString("admin-verb-make-traitor")),
+            Message = string.Join(": ", traitorName, Loc.GetString("admin-verb-make-traitor")),
         };
         args.Verbs.Add(traitor);
 
         var initialInfectedName = Loc.GetString("admin-verb-text-make-initial-infected");
         Verb initialInfected = new()
         {
-            Text = initialInfectedName,
+            Text = "054. " + initialInfectedName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "InitialInfected"),
             Act = () =>
@@ -171,7 +107,7 @@ public sealed partial class AdminVerbSystem
         var zombieName = Loc.GetString("admin-verb-text-make-zombie");
         Verb zombie = new()
         {
-            Text = zombieName,
+            Text = "055. " + zombieName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Zombie"),
             Act = () =>
@@ -186,9 +122,9 @@ public sealed partial class AdminVerbSystem
         var nukeOpName = Loc.GetString("admin-verb-text-make-nuclear-operative");
         Verb nukeOp = new()
         {
-            Text = nukeOpName,
+            Text = "013. " + nukeOpName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Head/Hardsuits/syndicate.rsi"), "icon"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "NukeOps"), // Reserve edit: Fix antag verbs
             Act = () =>
             {
                 _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultNukeOpRule);
@@ -201,13 +137,14 @@ public sealed partial class AdminVerbSystem
         var pirateName = Loc.GetString("admin-verb-text-make-pirate");
         Verb pirate = new()
         {
-            Text = pirateName,
+            Text = "052. " + pirateName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Head/Hats/pirate.rsi"), "icon"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Pirate"), // Reserve edit: Fix antag verbs
             Act = () =>
             {
-                // pirates just get an outfit because they don't really have logic associated with them
-                _outfit.SetOutfit(args.Target, PirateGearId);
+                // // pirates just get an outfit because they don't really have logic associated with them
+                // _outfit.SetOutfit(args.Target, PirateGearId);
+                _antag.ForceMakeAntag<PirateRoleComponent>(targetPlayer, DefaultPirateRule);
             },
             Impact = LogImpact.High,
             Message = string.Join(": ", pirateName, Loc.GetString("admin-verb-make-pirate")),
@@ -217,7 +154,7 @@ public sealed partial class AdminVerbSystem
         var headRevName = Loc.GetString("admin-verb-text-make-head-rev");
         Verb headRev = new()
         {
-            Text = headRevName,
+            Text = "020. " + headRevName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "HeadRevolutionary"),
             Act = () =>
@@ -232,9 +169,9 @@ public sealed partial class AdminVerbSystem
         var thiefName = Loc.GetString("admin-verb-text-make-thief");
         Verb thief = new()
         {
-            Text = thiefName,
+            Text = "001. " + thiefName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Clothing/Hands/Gloves/Color/black.rsi"), "icon"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/job_icons.rsi"), "Thief"), // Reserve edit: Fix antag verbs
             Act = () =>
             {
                 _antag.ForceMakeAntag<ThiefRuleComponent>(targetPlayer, DefaultThiefRule);
@@ -247,7 +184,7 @@ public sealed partial class AdminVerbSystem
         var paradoxCloneName = Loc.GetString("admin-verb-text-make-paradox-clone");
         Verb paradox = new()
         {
-            Text = paradoxCloneName,
+            Text = "016. " + paradoxCloneName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "ParadoxClone"),
             Act = () =>
@@ -264,6 +201,38 @@ public sealed partial class AdminVerbSystem
             Impact = LogImpact.High,
             Message = string.Join(": ", paradoxCloneName, Loc.GetString("admin-verb-make-paradox-clone")),
         };
+        /* Goobwizard
+        var wizardName = Loc.GetString("admin-verb-text-make-wizard");
+        Verb wizard = new()
+        {
+            Text = wizardName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Wizard"),
+            Act = () =>
+            {
+                // Wizard has no rule components as of writing, but I gotta put something here to satisfy the machine so just make it wizard mind rule :)
+                _antag.ForceMakeAntag<WizardRoleComponent>(targetPlayer, DefaultWizardRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", wizardName, Loc.GetString("admin-verb-make-wizard")),
+        };
+        args.Verbs.Add(wizard);
+        */
+
+        var ninjaName = Loc.GetString("admin-verb-text-make-space-ninja");
+        Verb ninja = new()
+        {
+            Text = "002. " + ninjaName, // Reserve edit: Fix antag verbs
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Ninja"), // Reserve edit: Fix antag verbs
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<NinjaRoleComponent>(targetPlayer, DefaultNinjaRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", ninjaName, Loc.GetString("admin-verb-make-space-ninja")),
+        };
+        args.Verbs.Add(ninja);
 
         if (HasComp<HumanoidAppearanceComponent>(args.Target)) // only humanoids can be cloned
             args.Verbs.Add(paradox);
@@ -272,9 +241,9 @@ public sealed partial class AdminVerbSystem
         var hereticName = Loc.GetString("admin-verb-text-make-heretic");
         Verb heretic = new()
         {
-            Text = hereticName,
+            Text = "003. " + hereticName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Heretic/Blades/eldritch_blade.rsi"), "icon"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/job_icons.rsi"), "Heretic"), // Reserve edit: Fix antag verbs
             Act = () =>
             {
                 _antag.ForceMakeAntag<HereticRuleComponent>(targetPlayer, "Heretic");
@@ -288,9 +257,9 @@ public sealed partial class AdminVerbSystem
         var wizardName = Loc.GetString("admin-verb-text-make-wizard");
         Verb wizard = new()
         {
-            Text = wizardName,
+            Text = "044. " + wizardName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Clothing/Head/Hats/wizardhat.rsi"), "icon"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Wizard/StatusIcons/10x10.rsi"), "wizard"), // Reserve edit: Fix antag verbs
             Act = () =>
             {
                 _antag.ForceMakeAntag<WizardRuleComponent>(targetPlayer, "Wizard");
@@ -304,7 +273,7 @@ public sealed partial class AdminVerbSystem
         var cosmicCultName = Loc.GetString("admin-verb-text-make-cosmiccultist");
         Verb cosmiccult = new()
         {
-            Text = cosmicCultName,
+            Text = "062. " + cosmicCultName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(new("/Textures/_DV/CosmicCult/Icons/antag_icons.rsi"), "CosmicCult"),
             Act = () =>
@@ -316,11 +285,11 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(cosmiccult);
         // End DeltaV Additions
-	    // Harmony start
+        // Harmony start
         var conspiratorName = Loc.GetString("admin-verb-text-make-conspirator");
         Verb conspirator = new()
         {
-            Text = conspiratorName,
+            Text = "017. " + conspiratorName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(new("/Textures/_Harmony/Interface/Misc/job_icons.rsi"), "Conspirator"),
             Act = () =>
@@ -335,7 +304,7 @@ public sealed partial class AdminVerbSystem
         var bloodBrotherName = Loc.GetString("admin-verb-text-make-blood-brother");
         Verb bloodBrother = new()
         {
-            Text = bloodBrotherName,
+            Text = "018. " + bloodBrotherName, // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(new("/Textures/_Harmony/Interface/Misc/job_icons.rsi"), "BloodBrother"),
             Act = () =>
@@ -347,5 +316,179 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(bloodBrother);
         // Harmony end
+        // Reserve start
+        var corporateAgentName = Loc.GetString("admin-verb-text-make-corporate-agent");
+        Verb corporateAgent = new()
+        {
+            Text = "019. " + corporateAgentName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "CorporateAgent"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<TraitorRuleComponent>(targetPlayer, DefaultCorporateAgentRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", corporateAgentName, Loc.GetString("admin-verb-make-corporate-agent")),
+        };
+        args.Verbs.Add(corporateAgent);
+
+        var wizardApprenticeName = Loc.GetString("admin-verb-text-make-wizard-apprentice");
+        Verb wizardApprentice = new()
+        {
+            Text = "045. " + wizardApprenticeName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Wizard/StatusIcons/10x10.rsi"), "apprentice"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<WizardRuleComponent>(targetPlayer, DefaultWizardApprenticeRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", wizardApprenticeName, Loc.GetString("admin-verb-make-wizard-apprentice")),
+        };
+        args.Verbs.Add(wizardApprentice);
+
+        var contractorName = Loc.GetString("admin-verb-text-make-contractor");
+        Verb contractor = new()
+        {
+            Text = "012. " + contractorName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Contractor"),
+            Act = () =>
+            {
+                _outfit.SetOutfit(args.Target, "EmptyNudeGear");
+                _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultContractorRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", contractorName, Loc.GetString("admin-verb-make-contractor")),
+        };
+        args.Verbs.Add(contractor);
+
+        var nukeOpCommandName = Loc.GetString("admin-verb-text-make-nuclear-operative-command");
+        Verb nukeOpCommand = new()
+        {
+            Text = "014. " + nukeOpCommandName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "NukeOpsCommander"),
+            Act = () =>
+            {
+                _outfit.SetOutfit(args.Target, "EmptyNudeGear");
+                _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultNukeOpCommandRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", nukeOpCommandName, Loc.GetString("admin-verb-make-nuclear-operative-command")),
+        };
+        args.Verbs.Add(nukeOpCommand);
+
+        var nukeOpHonkName = Loc.GetString("admin-verb-text-make-nuclear-operative-command-honk");
+        Verb nukeOpHonk = new()
+        {
+            Text = "015. " + nukeOpHonkName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "NukeOpsClown"),
+            Act = () =>
+            {
+                _outfit.SetOutfit(args.Target, "EmptyNudeGear");
+                _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultNukeOpHonkRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", nukeOpHonkName, Loc.GetString("admin-verb-make-nuclear-operative-command-honk")),
+        };
+        args.Verbs.Add(nukeOpHonk);
+
+        var pirateCaptainName = Loc.GetString("admin-verb-text-make-pirate-captain");
+        Verb pirateCaptain = new()
+        {
+            Text = "051. " + pirateCaptainName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "PirateCaptain"),
+            Act = () =>
+            {
+                _outfit.SetOutfit(args.Target, "EmptyNudeGear");
+                _antag.ForceMakeAntag<PirateRoleComponent>(targetPlayer, DefaultPirateCaptainRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", pirateCaptainName, Loc.GetString("admin-verb-make-pirate-captain")),
+        };
+        args.Verbs.Add(pirateCaptain);
+
+        var mimeAssassinName = Loc.GetString("admin-verb-text-make-mime-assassin");
+        Verb mimeAssassin = new()
+        {
+            Text = "007. " + mimeAssassinName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "MimeAssassin"),
+            Act = () =>
+            {
+                _outfit.SetOutfit(args.Target, "MimeAssassinGear");
+                _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultMimeAssassinRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", mimeAssassinName, Loc.GetString("admin-verb-make-mime-assassin")),
+        };
+        args.Verbs.Add(mimeAssassin);
+
+        var tunnelClownName = Loc.GetString("admin-verb-text-make-tunnel-clown");
+        Verb tunnelClown = new()
+        {
+            Text = "008. " + tunnelClownName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "ClownTunnel"),
+            Act = () =>
+            {
+                _outfit.SetOutfit(args.Target, "TunnelClownAntagGear");
+                _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultTunnelClownRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", tunnelClownName, Loc.GetString("admin-verb-make-tunnel-clown")),
+        };
+        args.Verbs.Add(tunnelClown);
+
+        var darkPriestName = Loc.GetString("admin-verb-text-make-dark-priest");
+        Verb darkPriest = new()
+        {
+            Text = "050. " + darkPriestName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "ChaplainDark"),
+            Act = () =>
+            {
+                _outfit.SetOutfit(args.Target, "DarkPriestAntagGear");
+                _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultDarkPriestRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", darkPriestName, Loc.GetString("admin-verb-make-dark-priest")),
+        };
+        args.Verbs.Add(darkPriest);
+
+        var abductorName = Loc.GetString("admin-verb-text-make-abductor");
+        Verb abductor = new()
+        {
+            Text = "009. " + abductorName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Abductor"),
+            Act = () =>
+            {
+                _outfit.SetOutfit(args.Target, "EmptyNudeGear");
+                _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultAbductorRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", abductorName, Loc.GetString("admin-verb-make-abductor")),
+        };
+        args.Verbs.Add(abductor);
+
+        var abductorVictimName = Loc.GetString("admin-verb-text-make-abductor-victim");
+        Verb abductorVictim = new()
+        {
+            Text = "010. " + abductorVictimName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "AbductorVictim"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<NukeopsRuleComponent>(targetPlayer, DefaultAbductorVictimRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", abductorVictimName, Loc.GetString("admin-verb-make-abductor-victim")),
+        };
+        args.Verbs.Add(abductorVictim);
+        // Reserve end
     }
 }

@@ -1,8 +1,4 @@
 <!--
-SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
@@ -14,7 +10,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns:style="clr-namespace:Content.Client.Stylesheets"
     VerticalExpand="True" HorizontalExpand="True"
     Title="{Loc gs-balanceui-title}"
-    SetSize="430 580" >
+    SetSize="490 600" > <!-- Reserve edit: Better shop UI -->
     <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True">
         <controls:StripeBack>
             <PanelContainer>
@@ -85,7 +81,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
         <!-- Admin Panel -->
         <BoxContainer Name="Admin" Visible="True" Orientation="Vertical">
-            <Label Text="Admin:" StyleClasses="LabelHeading" />
+            <Label Text="{Loc gs-balanceui-admin-add-title}" StyleClasses="LabelHeading" /> <!-- Reserve edit: Better shop UI -->
             <Label Text="{Loc gs-balanceui-admin-add-label}" />
             <BoxContainer HorizontalAlignment="Center">
                 <LineEdit Name="AdminAddPlayer" PlaceHolder="{Loc gs-balanceui-admin-add-player}" MinWidth="220" />

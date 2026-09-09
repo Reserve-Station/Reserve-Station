@@ -12,3 +12,9 @@ contraband-examinable-verb-message = Проверить легальность �
 contraband-examinable-verb-text = Легальность
 contraband-examine-text-Clown = [color=yellow]Этот предмет принадлежит клоуну, верните его, прежде чем он расстроится.[/color]
 contraband-job-plural = { $job }
+comp-hands-examine-and = и
+contraband-examine-text-Highly-Illegal =
+    { $type ->
+        *[item] [color={$color}]Этот предмет является крайне незаконной контрабандой![/color]
+        [reagent] [color={$color}]Этот реагент является крайне незаконной контрабандой![/color]
+    }

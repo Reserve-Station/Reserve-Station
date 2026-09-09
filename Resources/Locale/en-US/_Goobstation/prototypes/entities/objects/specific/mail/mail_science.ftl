@@ -1,3 +1,3 @@
-ent-MailScienceRareMaterials = { ent-BaseMail }
+ent-MailScienceRareMaterials = { ent-LetterDelivery }
     .suffix = Редкие материалы
-    .desc = { ent-BaseMail.desc }
+    .desc = { ent-LetterDelivery.desc }

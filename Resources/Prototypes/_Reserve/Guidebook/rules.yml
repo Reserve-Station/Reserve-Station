@@ -1,15 +1,3 @@
-# SPDX-FileCopyrightText: 2024 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Kira Gbedan <161087999+Verbalase@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 basic pack <159909786+packmore@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: guideEntry # Default for forks and stuff. Should not be listed anywhere if the server is using a custom ruleset.
@@ -57,133 +45,133 @@
 
 - type: guideEntry
   id: RuleReserve0
-  name: "Не будь мудаком!"
+  name: guide-entry-rules-reserve0
   ruleEntry: true
   priority: 1
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve0.xml"
 
 - type: guideEntry
   id: RuleReserve1
-  name: "Гриф"
+  name: guide-entry-rules-reserve1
   ruleEntry: true
   priority: 2
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve1.xml"
 
 - type: guideEntry
   id: RuleReserve2
-  name: "Убийство"
+  name: guide-entry-rules-reserve2
   ruleEntry: true
   priority: 3
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve2.xml"
 
 - type: guideEntry
   id: RuleReserve3
-  name: "Нарушение игровой атмосферы"
+  name: guide-entry-rules-reserve3
   ruleEntry: true
   priority: 4
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve3.xml"
 
 - type: guideEntry
   id: RuleReserve31
-  name: "Игра на победку"
+  name: guide-entry-rules-reserve31
   ruleEntry: true
   priority: 5
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve31.xml"
 
 - type: guideEntry
   id: RuleReserve32
-  name: "Метагейм"
+  name: guide-entry-rules-reserve32
   ruleEntry: true
   priority: 6
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve32.xml"
 
 - type: guideEntry
   id: RuleReserve33 #Not used
-  name: "Ограничение на профессиональные навыки"
+  name: guide-entry-rules-reserve33
   ruleEntry: true
   priority: 7
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve33.xml"
 
 - type: guideEntry
   id: RuleReserve34
-  name: "IC в LOOC"
+  name: guide-entry-rules-reserve34
   ruleEntry: true
   priority: 8
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve34.xml"
 
 - type: guideEntry
-  id: "RuleReserve35"
-  name: "Мультиаккаунт"
+  id: RuleReserve35
+  name: guide-entry-rules-reserve35
   ruleEntry: true
   priority: 9
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve35.xml"
 
 - type: guideEntry
   id: RuleReserve36
-  name: "Выход из роли"
+  name: guide-entry-rules-reserve36
   ruleEntry: true
   priority: 10
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve36.xml"
 
 - type: guideEntry
   id: RuleReserve37
-  name: "Безграмотность"
+  name: guide-entry-rules-reserve37
   ruleEntry: true
   priority: 11
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve37.xml"
 
 - type: guideEntry
   id: RuleReserve38
-  name: "Поддержание уважительной обстановки"
+  name: guide-entry-rules-reserve38
   ruleEntry: true
   priority: 12
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve38.xml"
 
 - type: guideEntry
   id: RuleReserve4
-  name: "Логика персонажей"
+  name: guide-entry-rules-reserve4
   ruleEntry: true
   priority: 13
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve4.xml"
 
 - type: guideEntry
   id: RuleReserve5
-  name: "Взаимодействие с ССД персонажами"
+  name: guide-entry-rules-reserve5
   ruleEntry: true
   priority: 13
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve5.xml"
 
 - type: guideEntry
   id: RuleReserve6
-  name: "Ответственная игра за антагониста"
+  name: guide-entry-rules-reserve6
   ruleEntry: true
   priority: 15
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve6.xml"
 
 - type: guideEntry
   id: RuleReserve7
-  name: "Самоантагонизм"
+  name: guide-entry-rules-reserve7
   ruleEntry: true
   priority: 16
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve7.xml"
 
 - type: guideEntry
   id: RuleReserve8
-  name: "Валидхант"
+  name: guide-entry-rules-reserve8
   ruleEntry: true
   priority: 17
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve8.xml"
 
 - type: guideEntry
   id: RuleReserve9
-  name: "ERP"
+  name: guide-entry-rules-reserve9
   ruleEntry: true
   priority: 18
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve9.xml"
 
 - type: guideEntry
   id: RuleReserve10
-  name: "Нечестная игра"
+  name: guide-entry-rules-reserve10
   ruleEntry: true
   priority: 19
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/RuleReserve10.xml"

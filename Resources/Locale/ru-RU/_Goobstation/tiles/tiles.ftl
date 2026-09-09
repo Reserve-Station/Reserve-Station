@@ -9,3 +9,9 @@ tiles-lattice-diagonal-SW = диагональная решётка ЮЗ
 tiles-lattice-diagonal-SE = диагональная решётка ЮВ
 
 tiles-canvas-floor = холстовый пол
+
+tiles-flockzone-floor-steel = стальной пол флокзоны
+
+tiles-flockzone-floor-light = светящийся пол флокзоны
+
+tiles-flockzone-floor-diagonal = диагональный пол флокзоны

@@ -1,14 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Sara Aldrete's Top Guy <malchanceux@protonmail.com>
-// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -52,6 +41,7 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
                 Admin.Visible = false;
 
             GiftButton.OnPressed += _ => Transfer(GiftPlayer.Text, int.Parse((string)GiftAmmount.Text));
+
             AdminAddButton.OnPressed += _ => AdminAdd(AdminAddPlayer.Text, int.Parse((string)AdminAddAmmount.Text));
 
             _serverCur.ClientBalanceChange += UpdatePlayerBalance;
@@ -100,7 +90,7 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
                     // Reset button text after delay
                     Timer.Spawn(TimeSpan.FromSeconds(DoubleClickTimeWindow), () =>
                     {
-                        if (_buttonClickTimes.TryGetValue(button, out var clickData))
+                        if (_buttonClickTimes.ContainsKey(button))
                         {
                             button.Text = Loc.GetString(listing.Name, ("price", listing.Price));
                             _buttonClickTimes.Remove(button);
@@ -155,6 +145,7 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
                 var listing = _protoManager.EnumeratePrototypes<TokenListingPrototype>()
                     .FirstOrDefault(x => Loc.GetString(x.Name, ("price", x.Price)) == button.Text);
 
+
                 if (listing != null)
                     button.Disabled = balance < listing.Price;
             }
@@ -170,6 +161,5 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
                 UpdateButtonStates();
             });
         }
-
     }
 }

@@ -165,13 +165,13 @@ loadout-group-ntr-jumpsuit = Представитель NanoTrasen,
 loadout-group-ntr-belt = Представитель NanoTrasen, пояс
 loadout-group-ntr-shoes = Представитель NanoTrasen, обувь
 # NanoTrasen Career Trainer
-loadout-group-nct-head = Карьерный тренер Nanotrasen, головной убор
-loadout-group-nct-backpack = Карьерный тренер Nanotrasen, рюкзак
-loadout-group-nct-jumpsuit = Карьерный тренер Nanotrasen, комбинезон
-loadout-group-nct-outerclothing = Карьерный тренер Nanotrasen, верхняя одежда
-loadout-group-nct-belt = Карьерный тренер Nanotrasen, пояс
-loadout-group-nct-gloves = Карьерный тренер Nanotrasen, перчатки
-loadout-group-nct-shoes = Карьерный тренер Nanotrasen, обувь
+loadout-group-nct-head = Карьерный тренер NanoTrasen, головной убор
+loadout-group-nct-backpack = Карьерный тренер NanoTrasen, рюкзак
+loadout-group-nct-jumpsuit = Карьерный тренер NanoTrasen, комбинезон
+loadout-group-nct-outerclothing = Карьерный тренер NanoTrasen, верхняя одежда
+loadout-group-nct-belt = Карьерный тренер NanoTrasen, пояс
+loadout-group-nct-gloves = Карьерный тренер NanoTrasen, перчатки
+loadout-group-nct-shoes = Карьерный тренер NanoTrasen, обувь
 # Blueshield Officer
 loadout-group-bso-envirohelm = Офицер Синего Щита, экошлем
 loadout-group-bso-envirosuit = Офицер Синего Щита, экокостюм
@@ -196,6 +196,7 @@ loadout-group-captain-envirohelm = Капитан, экошлем
 loadout-group-captain-envirosuit = Капитан, экокостюм
 loadout-group-captain-envirogloves = Капитан, экоперчатки
 loadout-group-captain-gloves = Капитан, перчатки
+loadout-group-captain-shoes = Капитан, обувь
 loadout-group-captain-mask = Капитан, маска
 # Chemist
 loadout-group-chemist-envirohelm = Химик, экошлем

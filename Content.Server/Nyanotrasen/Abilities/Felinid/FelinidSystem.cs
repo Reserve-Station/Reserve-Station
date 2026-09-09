@@ -1,10 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Actions;
@@ -18,18 +11,16 @@ using Content.Shared.Hands;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
-using Content.Server.Body.Components;
-using Content.Server.Chemistry.Containers.EntitySystems;
-using Content.Server.Medical;
-using Content.Server.Nutrition.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Server.Popups;
 using Content.Shared.Body.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Content.Shared.Charges.Systems;
+using Content.Shared.Medical;
 
-namespace Content.Server.Abilities.Felinid;
+namespace Content.Server.Nyanotrasen.Abilities.Felinid;
 
 public sealed partial class FelinidSystem : EntitySystem
 {
@@ -37,7 +28,7 @@ public sealed partial class FelinidSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly HungerSystem _hungerSystem = default!;
     [Dependency] private readonly VomitSystem _vomitSystem = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionSystem = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionSystem = default!;
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
@@ -57,16 +48,16 @@ public sealed partial class FelinidSystem : EntitySystem
         SubscribeLocalEvent<HairballComponent, GettingPickedUpAttemptEvent>(OnHairballPickupAttempt);
     }
 
-    private Queue<EntityUid> RemQueue = new();
+    private Queue<EntityUid> _remQueue = new();
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        foreach (var cat in RemQueue)
+        foreach (var cat in _remQueue)
         {
             RemComp<CoughingUpHairballComponent>(cat);
         }
-        RemQueue.Clear();
+        _remQueue.Clear();
 
         foreach (var (hairballComp, catComp) in EntityQuery<CoughingUpHairballComponent, FelinidComponent>())
         {
@@ -76,7 +67,7 @@ public sealed partial class FelinidSystem : EntitySystem
 
             hairballComp.Accumulator = 0;
             SpawnHairball(hairballComp.Owner, catComp);
-            RemQueue.Enqueue(hairballComp.Owner);
+            _remQueue.Enqueue(hairballComp.Owner);
         }
     }
 
@@ -170,9 +161,9 @@ public sealed partial class FelinidSystem : EntitySystem
         var hairball = EntityManager.SpawnEntity(component.HairballPrototype, Transform(uid).Coordinates);
         var hairballComp = Comp<HairballComponent>(hairball);
 
-        if (TryComp<BloodstreamComponent>(uid, out var bloodstream) && bloodstream.ChemicalSolution.HasValue)
+        if (TryComp<BloodstreamComponent>(uid, out var bloodstream) && bloodstream.BloodSolution.HasValue)
         {
-            var temp = _solutionSystem.SplitSolution(bloodstream.ChemicalSolution.Value, 20);
+            var temp = _solutionSystem.SplitSolution(bloodstream.BloodSolution.Value, 20);
 
             if (_solutionSystem.TryGetSolution(hairball, hairballComp.SolutionName, out var hairballSolution))
             {

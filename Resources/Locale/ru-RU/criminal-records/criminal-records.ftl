@@ -66,3 +66,10 @@ criminal-records-species-filter = Вид
 criminal-records-status-dangerous = Опасен
 criminal-records-status-perma = Пермабриг
 criminal-records-status-search = Пропал
+criminal-records-status-hostile = Враждебен
+criminal-records-status-eliminated = Ликвидирован
+
+criminal-records-console-hostile = { $name } ({ $job }) пометили враждебным, причина: { $reason }, ответственный: { $officer }.
+criminal-records-console-not-hostile = { $name } ({ $job }) больше не помечен враждебным, ответственный: { $officer }.
+criminal-records-console-eliminated = { $name } ({ $job }) пометили ликвидированным, ответственный: { $officer }.
+criminal-records-console-not-eliminated = { $name } ({ $job }) больше не помечен ликвидированным, ответственный: { $officer }.

@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Palladinium <patrick.chieppe@hotmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Administration.Notes;
@@ -37,7 +34,7 @@ public sealed class WatchlistWebhookManager : IWatchlistWebhookManager
     private string _webhookUrl = default!;
     private TimeSpan _bufferTime;
 
-    private List<WatchlistConnection> watchlistConnections = new();
+    private List<WatchlistConnection> _watchlistConnections = new();
     private TimeSpan? _bufferStartTime;
 
     public void Initialize()
@@ -68,7 +65,7 @@ public sealed class WatchlistWebhookManager : IWatchlistWebhookManager
         if (watchlists.Count == 0)
             return;
 
-        watchlistConnections.Add(new WatchlistConnection(e.Session.Name, watchlists));
+        _watchlistConnections.Add(new WatchlistConnection(e.Session.Name, watchlists));
 
         if (_bufferTime > TimeSpan.Zero)
         {
@@ -104,10 +101,10 @@ public sealed class WatchlistWebhookManager : IWatchlistWebhookManager
             var webhookIdentifier = webhookData.Value.ToIdentifier();
 
             var messageBuilder = new StringBuilder(Loc.GetString("discord-watchlist-connection-header",
-                    ("players", watchlistConnections.Count),
+                    ("players", _watchlistConnections.Count),
                     ("serverName", _baseServer.ServerName)));
 
-            foreach (var connection in watchlistConnections)
+            foreach (var connection in _watchlistConnections)
             {
                 messageBuilder.Append('\n');
 
@@ -131,7 +128,7 @@ public sealed class WatchlistWebhookManager : IWatchlistWebhookManager
 
         // Clear the buffered list regardless of whether the message is sent successfully
         // This prevents infinitely buffering connections if we fail to send a message
-        watchlistConnections.Clear();
+        _watchlistConnections.Clear();
     }
 
     private sealed class WatchlistConnection

@@ -285,6 +285,11 @@
   icon: { sprite: Objects/Fun/Instruments/structureinstruments.rsi, state: daw-base } # Goobstation
   result: DawInstrumentMachineCircuitboard
 
+- type: latheRecipe
+  parent: [BaseCircuitboardRecipe]
+  id: SmartFridgeCircuitboard
+  result: SmartFridgeCircuitboard
+
 # Bar
 - type: latheRecipe
   parent: [ BaseCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
@@ -536,3 +541,11 @@
   id: HolopadMachineCircuitboard
   icon: { sprite:  Structures/Machines/holopad.rsi, state: base } # Goobstation
   result: HolopadMachineCircuitboard
+
+# Reserve start - clothing stains
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseGeneralMachineRecipeCategory ]
+  id: WashingMachineCircuitboard
+  icon: { sprite:  Structures/Furniture/washing_machine.rsi, state: base } # Goobstation
+  result: WashingMachineCircuitboard
+# Reserve end - clothing stains

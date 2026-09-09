@@ -1,11 +1,7 @@
-# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 #Librarian
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailBooksGuide
   suffix: Guidebooks
   components:
@@ -55,7 +51,7 @@
       orGroup: bookguide
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailBooksAuthor
   suffix: Authorbooks
   components:
@@ -156,7 +152,7 @@
       orGroup: bookauthor
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailLuxuryPen # Also for lawyer. reporter and command staff
   suffix: Luxury Pen
   components:
@@ -182,7 +178,7 @@
 
 #Chaplain
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailWitchery
   suffix: Bible, Witchery
   components:
@@ -194,7 +190,7 @@
 
 #Clown and Mime
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailBikehorn
   suffix: BikeHorn
   components:
@@ -208,7 +204,7 @@
       prob: 0.05
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailClownHonkSupplement
   suffix: Honk
   components:
@@ -220,7 +216,7 @@
     - id: FoodBanana
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailMimeArtsCrafts
   suffix: Mime Arts
   components:
@@ -231,7 +227,7 @@
       maxAmount: 5
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailMimeBottleOfNothing
   suffix: Bottle of Nothing
   components:
@@ -241,7 +237,7 @@
 
 #Botanist
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailMutatedProduce
   suffix: Mutated Produce
   components:
@@ -291,7 +287,7 @@
       prob: 0.05
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailBotanistChemicalBottles
   suffix: Botanist Chemicals
   components:
@@ -307,7 +303,7 @@
       orGroup: Chemical
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailBotanistSeeds
   suffix: Seeds
   components:
@@ -355,7 +351,7 @@
       orGroup: Seeds
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailKudzuDeterrent
   suffix: Antikudzu
   components:
@@ -365,7 +361,7 @@
 
 # Janitor
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailSoaps # Also for clown and mime
   suffix: Soaps
   components:
@@ -378,7 +374,7 @@
       orGroup: Ad
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailSoapsOmega # Also for clown and mime
   suffix: Omega Soap
   components:
@@ -392,7 +388,7 @@
 
 # Musician
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailInstrumentLarge
   suffix: Instruments, Large
   components:

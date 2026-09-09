@@ -2,8 +2,8 @@
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                 Margin="1"
-                MinWidth="340"
-                HorizontalExpand="True">
+                MinWidth="300"
+                HorizontalExpand="True"> <!-- Reserve edit: New Antagonist Cards -->
     <PanelContainer.PanelOverride>
         <gfx:StyleBoxFlat BackgroundColor="#202028"
                           BorderColor="#202028"
@@ -50,7 +50,7 @@
                     <!-- please dont hate me for the way i state the background color here i couldnt be assed -->
                 <gfx:StyleBoxFlat BackgroundColor="#2F2F3B" ContentMarginLeftOverride="6" ContentMarginTopOverride="6" ContentMarginRightOverride="6" ContentMarginBottomOverride="6" />
             </PanelContainer.PanelOverride>
-            <RichTextLabel Name="AntagDescription" MaxWidth="360" HorizontalExpand="True" VerticalExpand="True" VerticalAlignment="Top" />
+            <RichTextLabel Name="AntagDescription" MinWidth="200" HorizontalExpand="True" VerticalExpand="True" VerticalAlignment="Top" /> <!-- Reserve edit: New Antagonist Cards -->
         </PanelContainer>
     </BoxContainer>
 </PanelContainer>

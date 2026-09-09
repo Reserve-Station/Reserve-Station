@@ -1,6 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: guideEntry
   id: Abductors
   name: guide-entry-abductors
   text: "/ServerInfo/_Shitmed/Guidebook/Antagonist/Abductors.xml"
-  localizedText:
-    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Abductors.xml"

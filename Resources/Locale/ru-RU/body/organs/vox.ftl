@@ -10,3 +10,9 @@ ent-OrganVoxLiver = { ent-OrganHumanLiver }
 ent-OrganVoxHeart = { ent-OrganHumanHeart }
     .suffix = Вокс
     .desc = Странное сердце вокса.
+
+ent-OrganVoxTongueA = язык
+    .desc = Мясная мышца, в основном используемая для крика.
+
+ent-OrganVoxTongueB = язык
+    .desc = Мясная мышца, в основном используемая для крика.

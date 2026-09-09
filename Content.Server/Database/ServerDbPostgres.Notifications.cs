@@ -1,7 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Julian Giebel <juliangiebel@live.de>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Data;
@@ -77,7 +73,7 @@ public sealed partial class ServerDbPostgres
 
                     await _notificationConnection.OpenAsync(cancellationToken);
                     _reconnectWaitTime = TimeSpan.Zero;
-                    _notifyLog.Verbose($"Notification connection opened...");
+                    _notifyLog.Verbose("Notification connection opened...");
                 }
 
                 foreach (var channel in NotificationChannels)
@@ -96,7 +92,7 @@ public sealed partial class ServerDbPostgres
             catch (OperationCanceledException)
             {
                 // Abort loop on cancel.
-                _notifyLog.Verbose($"Shutting down notification listener due to cancellation");
+                _notifyLog.Verbose("Shutting down notification listener due to cancellation");
                 return;
             }
             catch (Exception e)

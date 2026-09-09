@@ -1,4 +1,5 @@
 # Types
+
 mixing-verb-default-mix = смешивание
 mixing-verb-default-grind = измельчение
 mixing-verb-default-juice = выжимание
@@ -14,3 +15,5 @@ mixing-verb-shake = встряхивание
 default-mixing-success = Вы смешиваете { $mixed } используя { $mixer }.
 bible-mixing-success = Вы благословляете { $mixed } используя { $mixer }.
 spoon-mixing-success = Вы размешиваете { $mixed } используя { $mixer }.
+
+handheld-centrifuge-success = Вы разделяете вещества при помощи { $mixed }.

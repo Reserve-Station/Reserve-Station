@@ -16,3 +16,7 @@ credits-window-attributions-files = [color=white]Файлы:[/color] { $files }
 credits-window-attributions-license = [color=white]Лицензия:[/color] { $license }
 credits-window-attributions-source = [color=white]Источник:[/color] { $source }
 credits-window-attributions-tab = Авторство
+
+credits-window-immortals-title = В память о
+credits-window-previous-page-button = Пред. страница
+credits-window-next-page-button = След. страница

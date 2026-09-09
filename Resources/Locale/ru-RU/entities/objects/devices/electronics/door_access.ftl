@@ -121,3 +121,6 @@ ent-DoorElectronicsRobotics = { ent-DoorElectronics }
 ent-DoorElectronicsJournalism = { ent-DoorElectronics }
     .suffix = Репортёр, Закрыт
     .desc = { ent-DoorElectronics.desc }
+ent-DoorElectronicsXenoborg = { ent-DoorElectronics }
+    .desc = { ent-DoorElectronics.desc }
+    .suffix = Ксеноборг, Закрыт

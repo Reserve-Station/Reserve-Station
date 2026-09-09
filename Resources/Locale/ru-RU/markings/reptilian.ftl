@@ -79,3 +79,8 @@ marking-LizardChestFin = Унатх, плавник
 marking-LizardChestFin-body_fin = Унатх, плавник
 marking-LizardTailAquatic = Унатх, хвост (Водный)
 marking-LizardTailAquatic-tail_aquatic = Унатх, хвост (Водный)
+
+marking-LizardSnoutVisageSharp = Унатх, маска (Заострённая)
+marking-LizardSnoutVisageSharp-visage_sharp = Унатх, маска (Заострённая)
+marking-LizardSnoutVisageRound = Унатх, маска (Круглая)
+marking-LizardSnoutVisageRound-visage_round = Унатх, маска (Круглая)

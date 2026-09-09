@@ -6,4 +6,6 @@ decal-placer-window-enable-auto = Использовать автонастро�
 decal-placer-window-enable-snap = Привязка к тайлу
 decal-placer-window-enable-cleanable = Стираемый
 decal-placer-window-palette = Палитра
+
 palette-color-picker-window-title = Палитры
+palette-color-picker-window-label = Палитра

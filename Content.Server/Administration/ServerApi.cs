@@ -1,16 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
-// SPDX-FileCopyrightText: 2024 Myzumi <34660019+Myzumi@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 Whatstone <166147148+whatston3@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Whatstone <whatston3@gmail.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -39,10 +26,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
-using Content.Server.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Server.Chat.Managers;
-using Content.Shared.Administration;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Database;
 using Content.Shared.Database;
@@ -975,12 +960,19 @@ public sealed partial class ServerApi : IPostInjectInit
                 return;
             }
 
-            var lastServerBan = await _dbManager.GetLastServerBanAsync();
+            var lastServerBan = await _dbManager.GetLastBanAsync();
             var newServerBanId = lastServerBan is not null ? lastServerBan.Id + 1 : 1;
 
             try
             {
-                _bans.CreateServerBan(targetUid, target, adminUserId, null, targetHWid, minutes, severity, reason);
+                var banInfo = new CreateServerBanInfo(reason);
+                banInfo.WithBanningAdmin(adminUserId);
+                banInfo.AddUser(targetUid, target);
+                banInfo.AddHWId(targetHWid);
+                if (minutes > 0)
+                    banInfo.WithMinutes(minutes);
+                banInfo.WithSeverity(severity);
+                _bans.CreateServerBan(banInfo);
             }
             catch (Exception ex)
             {
@@ -988,7 +980,7 @@ public sealed partial class ServerApi : IPostInjectInit
                 return;
             }
 
-            var banInfo = new BanInfo
+            var banInfoDiscord = new BanInfo
             {
                 BanId = newServerBanId.ToString()!,
                 Target = target,
@@ -998,7 +990,7 @@ public sealed partial class ServerApi : IPostInjectInit
                 Expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes)
             };
 
-            await _discordBanInfoSender.SendBanInfoAsync<ServerBanPayloadGenerator>(banInfo);
+            await _discordBanInfoSender.SendBanInfoAsync<ServerBanPayloadGenerator>(banInfoDiscord);
             await RespondOk(context);
             _sawmill.Info($"{actor.Name} banned {body.NickName} for {body.Time} minutes. Reason: {body.Reason}");
         });

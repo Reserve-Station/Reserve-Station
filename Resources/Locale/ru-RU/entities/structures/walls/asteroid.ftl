@@ -314,3 +314,7 @@ ent-WallRockAndesiteArtifactFragment = { ent-WallRockAndesite }
 ent-WallRockAndesiteSalt = { ent-WallRockAndesite }
     .desc = Рудная жила, богатая солью.
     .suffix = Соль
+
+ent-IronSandstone = железный песчаный камень
+    .desc = { ent-AsteroidRock.desc }
+    .suffix = нет руды

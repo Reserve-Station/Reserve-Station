@@ -1,19 +1,13 @@
-// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.EntityEffects;
 using Content.Shared.Electrocution;
-using Content.Shared.Electrocution;
+using Robust.Shared.Physics;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.EntityEffects.Effects;
 
-public sealed partial class Electrocute : EntityEffect
+public sealed partial class Electrocute : EntityEffectBase<Electrocute>
 {
     [DataField] public int ElectrocuteTime = 2;
 
@@ -26,24 +20,22 @@ public sealed partial class Electrocute : EntityEffect
 
     [DataField] public float ElectrocutionChance = 1f; // Reserve edit - ElectrocutionChance
 
-    protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
         => Loc.GetString("reagent-effect-guidebook-electrocute", ("chance", Probability), ("time", ElectrocuteTime));
+}
 
-    public override bool ShouldLog => true;
+public sealed partial class ElectrocuteSystem : EntityEffectSystem<FixturesComponent, Electrocute>
+{
+    [Dependency] private readonly SharedElectrocutionSystem _electrocution = default!;
 
-    public override void Effect(EntityEffectBaseArgs args)
+    protected override void Effect(Entity<FixturesComponent> entity, ref EntityEffectEvent<Electrocute> args)
     {
-        if (args is EntityEffectReagentArgs reagentArgs)
-        {
-            reagentArgs.EntityManager.System<SharedElectrocutionSystem>().TryDoElectrocution(reagentArgs.TargetEntity, null,
-                Math.Max((reagentArgs.Quantity * ElectrocuteDamageScale).Int(), 1), TimeSpan.FromSeconds(ElectrocuteTime), Refresh, electrocutionChance: ElectrocutionChance, ignoreInsulation: true); //Reserve edit - electrocutionChance
-
-            if (reagentArgs.Reagent != null)
-                reagentArgs.Source?.RemoveReagent(reagentArgs.Reagent.ID, reagentArgs.Quantity);
-        } else
-        {
-            args.EntityManager.System<SharedElectrocutionSystem>().TryDoElectrocution(args.TargetEntity, null,
-                Math.Max(ElectrocuteDamageScale, 1), TimeSpan.FromSeconds(ElectrocuteTime), Refresh, ignoreInsulation: true);
-        }
+        var effect = args.Effect;
+        _electrocution.TryDoElectrocution(entity, null,
+            Math.Max((int) (args.Scale * effect.ElectrocuteDamageScale), 1),
+            TimeSpan.FromSeconds(effect.ElectrocuteTime),
+            effect.Refresh,
+            electrocutionChance: effect.ElectrocutionChance,
+            ignoreInsulation: true);
     }
 }

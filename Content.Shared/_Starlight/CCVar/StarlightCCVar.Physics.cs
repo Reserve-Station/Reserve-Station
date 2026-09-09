@@ -6,6 +6,7 @@ using Robust.Shared.Configuration;
 
 namespace Content.Shared._Starlight.CCVar;
 
+[CVarDefs]
 public sealed partial class StarlightCCVars
 {
     // Taken from https://github.com/RMC-14/RMC-14

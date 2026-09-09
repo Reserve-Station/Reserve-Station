@@ -1,34 +1,10 @@
-// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Galactic Chimp <63882831+GalacticChimp@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 moonheart08 <moonheart08@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 KrasnoshchekovPavel <119816022+KrasnoshchekovPavel@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 icekot8 <93311212+icekot8@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Kyle Tyo <akikai297@gmail.com>
-// SPDX-FileCopyrightText: 2025 Myra <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2025 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ThxMqninq <mlakomkin8@gmail.com>
-// SPDX-FileCopyrightText: 2025 echotry <48294642+echotry-ss14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
-// SPDX-FileCopyrightText: 2025 pathetic meowmeow <uhhadd@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Robust.Shared;
+using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Localizations
@@ -36,10 +12,12 @@ namespace Content.Shared.Localizations
     public sealed class ContentLocalizationManager
     {
         [Dependency] private readonly ILocalizationManager _loc = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!;
 
-        // If you want to change your codebase's language, do it here.
-        private const string Culture = "ru-RU"; // Reserve-Localization
-        private const string FallbackCulture = "en-US"; // Reserve-Localization
+        private const string FallbackCultureName = "en-US";
+        private const string ForkDefaultCultureName = "ru-RU"; // Reserve-Localization
+
+        private CultureInfo _culture = CultureInfo.GetCultureInfo(ForkDefaultCultureName, predefinedOnly: false);
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -54,17 +32,28 @@ namespace Content.Shared.Localizations
 
         public void Initialize()
         {
-            var culture = new CultureInfo(Culture);
-            var fallbackCulture = new CultureInfo(FallbackCulture); // Reserve-Localization
+            _cfg.OverrideDefault(CVars.LocCultureName, ForkDefaultCultureName);
 
-            _loc.LoadCulture(culture);
-            _loc.LoadCulture(fallbackCulture); // Reserve-Localization
-            _loc.SetFallbackCluture(fallbackCulture); // Reserve-Localization
-            _loc.AddFunction(culture, "MANY", FormatMany); // Reserve-Localization: To prevent problems in auto-generated locale files
+            _culture = _loc.SetDefaultCulture();
+            AddSharedFunctions(_culture);
+
+            var cultureEn = CultureInfo.GetCultureInfo(FallbackCultureName, predefinedOnly: false);
+            if (!_loc.HasCulture(cultureEn))
+                _loc.LoadCulture(cultureEn);
+
+            if (!_culture.NameEquals(cultureEn))
+                _loc.SetFallbackCluture(cultureEn);
+
+            AddSharedFunctions(cultureEn); // Reserve - fallback FTL (en-US guidebook) needs the same functions
+
+            _cfg.OnValueChanged(CVars.LocCultureName, OnCultureChanged);
+        }
+
+        private void AddSharedFunctions(CultureInfo culture)
+        {
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
-            // NOTE: ENERGYWATTHOURS() still takes a value in joules, but formats as watt-hours.
             _loc.AddFunction(culture, "ENERGYWATTHOURS", FormatEnergyWattHours);
             _loc.AddFunction(culture, "UNITS", FormatUnits);
             _loc.AddFunction(culture, "TOSTRING", args => FormatToString(culture, args));
@@ -72,27 +61,21 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
+            _loc.AddFunction(culture, "MAKEPLURAL", FormatMakePlural); // Reserve
+            _loc.AddFunction(culture, "MANY", FormatMany); // Reserve
+        }
 
-            _loc.AddFunction(fallbackCulture, "PRESSURE", FormatPressure);
-            _loc.AddFunction(fallbackCulture, "POWERWATTS", FormatPowerWatts);
-            _loc.AddFunction(fallbackCulture, "POWERJOULES", FormatPowerJoules);
-            _loc.AddFunction(fallbackCulture, "ENERGYWATTHOURS", FormatEnergyWattHours);
-            _loc.AddFunction(fallbackCulture, "UNITS", FormatUnits);
-            _loc.AddFunction(fallbackCulture, "TOSTRING", args => FormatToString(fallbackCulture, args));
-            _loc.AddFunction(fallbackCulture, "LOC", FormatLoc);
-            _loc.AddFunction(fallbackCulture, "NATURALFIXED", FormatNaturalFixed);
-            _loc.AddFunction(fallbackCulture, "NATURALPERCENT", FormatNaturalPercent);
-            _loc.AddFunction(fallbackCulture, "PLAYTIME", FormatPlaytime);
+        private void OnCultureChanged(string code)
+        {
+            var culture = CultureInfo.GetCultureInfo(code, predefinedOnly: false);
+            if (!_loc.HasCulture(culture))
+            {
+                _loc.LoadCulture(culture);
+                AddSharedFunctions(culture);
+            }
 
-            /*
-             * The following language functions are specific to the english localization. When working on your own
-             * localization you should NOT modify these, instead add new functions specific to your language/culture.
-             * This ensures the english translations continue to work as expected when fallbacks are needed.
-             */
-            var cultureEn = new CultureInfo("en-US");
-
-            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
-            _loc.AddFunction(cultureEn, "MANY", FormatMany);
+            _loc.SetCulture(culture);
+            _culture = culture;
         }
 
         private ILocValue FormatMany(LocArgs args)
@@ -112,8 +95,8 @@ namespace Content.Shared.Localizations
         private ILocValue FormatNaturalPercent(LocArgs args)
         {
             var number = ((LocValueNumber) args.Args[0]).Value * 100;
-            var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
-            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
+            var maxDecimals = (int) Math.Floor(((LocValueNumber) args.Args[1]).Value);
+            var formatter = (NumberFormatInfo) NumberFormatInfo.GetInstance(_culture).Clone();
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)) + "%");
         }
@@ -121,8 +104,8 @@ namespace Content.Shared.Localizations
         private ILocValue FormatNaturalFixed(LocArgs args)
         {
             var number = ((LocValueNumber) args.Args[0]).Value;
-            var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
-            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
+            var maxDecimals = (int) Math.Floor(((LocValueNumber) args.Args[1]).Value);
+            var formatter = (NumberFormatInfo) NumberFormatInfo.GetInstance(_culture).Clone();
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)));
         }
@@ -175,7 +158,7 @@ namespace Content.Shared.Localizations
                 <= 0 => string.Empty,
                 1 => list[0],
                 2 => $"{list[0]} или {list[1]}", // reserve edit, or -> или
-                _ => $"{string.Join(" или ", list)}" // reserve edit, or -> или
+                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, или {list[^1]}" // reserve edit, or -> или
             };
         }
 
@@ -193,7 +176,7 @@ namespace Content.Shared.Localizations
         public static string FormatPlaytime(TimeSpan time)
         {
             time = TimeSpan.FromMinutes(Math.Ceiling(time.TotalMinutes));
-            var hours = (int)time.TotalHours;
+            var hours = (int) time.TotalHours;
             var minutes = time.Minutes;
             return Loc.GetString($"zzzz-fmt-playtime", ("hours", hours), ("minutes", minutes));
         }

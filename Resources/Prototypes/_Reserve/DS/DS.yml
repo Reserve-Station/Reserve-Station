@@ -130,8 +130,8 @@
   components:
   - type: Sprite
     state: combat_hypo
-  - type: Hypospray
-    transferAmount: 10
+  - type: Injector
+    currentTransferAmount: 10
   - type: UseDelay
     delay: 1
   - type: SolutionContainerManager
@@ -232,7 +232,7 @@
             Toxin: -12
             Airloss: -8
             Brute: -3
-      - !type:ModifyBleedAmount
+      - !type:ModifyBleed
         amount: -1
       - !type:ModifyBloodLevel
         amount: 2
@@ -246,26 +246,26 @@
         type: Remove
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentThresholdCondition
           reagent: ChloralHydrate
           min: 1
         reagent: ChloralHydrate
         amount: -20
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentThresholdCondition
           reagent: Nocturine
           min: 1
         reagent: Nocturine
         amount: -20
       - !type:AdjustTemperature
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           max: 293.15
         amount: 1000
       - !type:AdjustTemperature
         conditions:
-        - !type:Temperature
+        - !type:TemperatureCondition
           min: 293.15
         amount: -1000
 
@@ -279,15 +279,17 @@
     maxItemSize: Normal
     grid:
     - 0,0,2,3
-  - type: StorageFill
-    contents:
-      - id: FoodSnackNutribrick
-      - id: FoodSnackMREBrownie
-      - id: FoodTinMRE
-      - id: FoodSnackEnergy
-      - id: DrinkMREFlask
-      - id: DrinkIcedTeaCan
-      - id: DrinkEnergyDrinkCan
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: FoodSnackNutribrick
+        - id: FoodSnackMREBrownie
+        - id: FoodTinMRE
+        - id: FoodSnackEnergy
+        - id: DrinkMREFlask
+        - id: DrinkIcedTeaCan
+        - id: DrinkEnergyDrinkCan
 
 #ПРОТОКОЛ
 - type: entity

@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Reserve Station 14 Contributors
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text;
@@ -15,7 +13,7 @@ public sealed class ScrollingTextButton : Button
 {
     private const int ScrollThreshold = 17; // Start scrolling if text is longer than this
     private const float ScrollSpeed = 5f; // Characters per second
-    
+
     private readonly StringBuilder _scrollBuilder = new();
     private string _originalText = string.Empty;
     private float _scrollOffset = 0f;
@@ -26,7 +24,7 @@ public sealed class ScrollingTextButton : Button
     public ScrollingTextButton()
     {
         ClipText = true;
-        
+
         OnMouseEntered += _ =>
         {
             _isHovered = true;
@@ -47,7 +45,7 @@ public sealed class ScrollingTextButton : Button
         {
             _originalText = value;
             _shouldScroll = value.Length >= ScrollThreshold;
-            _textWithSpacing = value + "     "; 
+            _textWithSpacing = value + "     ";
             base.Text = value;
         }
     }
@@ -61,13 +59,13 @@ public sealed class ScrollingTextButton : Button
 
         // Character-based scrolling
         _scrollOffset += ScrollSpeed * args.DeltaSeconds;
-        
+
         if (_scrollOffset >= _textWithSpacing.Length)
         {
             _scrollOffset -= _textWithSpacing.Length;
         }
 
-        var offset = (int)_scrollOffset;
+        var offset = (int) _scrollOffset;
         _scrollBuilder.Clear();
         _scrollBuilder.Append(_textWithSpacing, offset, _textWithSpacing.Length - offset);
         _scrollBuilder.Append(_textWithSpacing, 0, offset);

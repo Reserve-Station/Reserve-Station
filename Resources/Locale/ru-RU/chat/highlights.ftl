@@ -1,6 +1,6 @@
 # Goob start
 # Central Command
-highlights-nanotrasen-representative = Представитель Nanotrasen, "Центральное командование", "ПНТ", "НТ", "Центком", Мостик, "Командование"
+highlights-nanotrasen-representative = Представитель NanoTrasen, "Центральное командование", "ПНТ", "НТ", "Центком", Мостик, "Командование"
 highlights-blueshield-officer = Офицер Синий Щит, "Центральное Командование", "ОСЩ", "Центком", Мостик, "Командование"
 
 

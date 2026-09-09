@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Reserve.Inventory.UI;
@@ -18,21 +16,24 @@ public sealed class GhostInventorySystem : EntitySystem
     [Dependency] private readonly LenaApiManager _lenaApi = default!;
     [Dependency] private readonly EuiManager _euiManager = default!;
 
+    private static readonly string ActionGhostInventory = "ActionGhostInventory";
+
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<GhostComponent, PlayerAttachedEvent>(OnGhostPlayerAttached);
+        // Reserve: GhostComponent+PlayerAttachedEvent занят GhostCosmeticsSystem
+        SubscribeLocalEvent<ActorComponent, PlayerAttachedEvent>(OnGhostPlayerAttached);
         SubscribeLocalEvent<GhostComponent, GhostInventoryActionEvent>(OnGhostInventoryAction);
     }
 
-    private void OnGhostPlayerAttached(EntityUid uid, GhostComponent _, PlayerAttachedEvent args)
+    private void OnGhostPlayerAttached(EntityUid uid, ActorComponent _, PlayerAttachedEvent args)
     {
-        if (!_lenaApi.IsIntegrationEnabled)
+        if (!HasComp<GhostComponent>(uid) || !_lenaApi.IsIntegrationEnabled)
             return;
 
         EntityUid? actionEntity = null;
-        _actions.AddAction(uid, ref actionEntity, "ActionGhostInventory");
+        _actions.AddAction(uid, ref actionEntity, ActionGhostInventory);
     }
 
     private void OnGhostInventoryAction(EntityUid uid, GhostComponent _, GhostInventoryActionEvent args)

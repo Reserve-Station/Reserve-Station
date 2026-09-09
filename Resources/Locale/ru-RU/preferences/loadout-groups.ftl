@@ -2,6 +2,7 @@
 loadout-group-species-restriction = Этот предмет недоступен для вашей текущей расы.
 # Miscellaneous
 loadout-group-trinkets = Безделушки
+loadout-group-jobtrinkets = Рабочие безделушки
 loadout-group-glasses = Очки
 loadout-group-backpack = Рюкзак
 loadout-group-instruments = Инструменты
@@ -175,3 +176,7 @@ loadout-group-reporter-jumpsuit = Репортёр, комбинезон
 loadout-group-psychologist-jumpsuit = Психолог, комбинезон
 loadout-group-boxer-jumpsuit = Боксёр, комбинезон
 loadout-group-boxer-gloves = Боксёр, перчатки
+
+loadout-group-survival-military = См. строку 14, никто не увидит это, так что :3
+loadout-group-chaplain-bible = Священная книга
+loadout-group-cargo-technician-id = Грузчик, ID

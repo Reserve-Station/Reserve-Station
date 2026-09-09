@@ -12,3 +12,5 @@ ent-BlastDoorCentralCommand = { ent-BlastDoor }
 ent-BlastDoorOpenCentralCommand = { ent-BlastDoorCentralCommand }
     .desc = { ent-BlastDoorCentralCommand.desc }
     .suffix = Открытый, { ent-BlastDoorCentralCommand.suffix }
+ent-BlastDoorXeno = ксеногермозатвор
+    .desc = Не потеряйте руку!

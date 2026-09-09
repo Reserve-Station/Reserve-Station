@@ -46,3 +46,25 @@ ent-PlayerBorgDerelictGhostRole = { ent-PlayerBorgDerelict }
     .desc = { ent-PlayerBorgDerelict.desc }
 ent-PlayerBorgSyndicateInvasionGhostRoleSpawner = спавнер роли борга вторжения синдиката
     .desc = { ent-MarkerBase.desc }
+
+ent-PlayerStationAiAssembly = каркас ядра ИИ
+    .desc = Незавершённое компьютерное ядро для размещения искусственного интеллекта.
+
+ent-PlayerEngineeringBorgDerelict = { ent-EngineeringBorgChassisDerelict }
+    .desc = { ent-EngineeringBorgChassisDerelict.desc }
+    .suffix = Батарея, Модуль
+ent-PlayerJanitorBorgDerelict = { ent-JanitorBorgChassisDerelict }
+    .desc = { ent-JanitorBorgChassisDerelict.desc }
+    .suffix = Батарея, Модуль
+ent-PlayerMedicalBorgDerelict = { ent-MedicalBorgChassisDerelict }
+    .desc = { ent-MedicalBorgChassisDerelict.desc }
+    .suffix = Батарея, Модуль
+ent-PlayerMiningBorgDerelict = { ent-MiningBorgChassisDerelict }
+    .desc = { ent-MiningBorgChassisDerelict.desc }
+    .suffix = Батарея, Модуль
+ent-PlayerSyndicateAssaultBorgDerelict = { ent-SyndicateAssaultBorgChassisDerelict }
+    .desc = { ent-SyndicateAssaultBorgChassisDerelict.desc }
+    .suffix = Батарея, Модуль
+ent-PlayerBorgSyndicateDerelictGhostRole = { ent-PlayerSyndicateAssaultBorgDerelict }
+    .desc = { ent-PlayerSyndicateAssaultBorgDerelict.desc }
+    .suffix = Роль призрака

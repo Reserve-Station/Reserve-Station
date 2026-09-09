@@ -1,11 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -60,9 +52,9 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
 
     private ISawmill _logger = default!;
 
-    [ValidatePrototypeId<EntityPrototype>] private const string BlobCaptureObjective = "BlobCaptureObjective";
-    [ValidatePrototypeId<EntityPrototype>] private const string MobObserverBlobController = "MobObserverBlobController";
-    [ValidatePrototypeId<AlertPrototype>] private const string BlobHealth = "BlobHealth";
+    private static readonly EntProtoId BlobCaptureObjective = "BlobCaptureObjective";
+    private static readonly EntProtoId MobObserverBlobController = "MobObserverBlobController";
+    private static readonly ProtoId<AlertPrototype> BlobHealth = "BlobHealth";
 
     public override void Initialize()
     {
@@ -91,7 +83,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
 
     private void OnStartup(Entity<BlobObserverComponent> ent, ref ComponentStartup args)
     {
-        _hands.AddHand(ent.Owner,"BlobHand",HandLocation.Middle);
+        _hands.AddHand(ent.Owner, "BlobHand", HandLocation.Middle);
 
         ent.Comp.VirtualItem = Spawn(MobObserverBlobController, Transform(ent).Coordinates);
         var comp = EnsureComp<BlobObserverControllerComponent>(ent.Comp.VirtualItem);
@@ -125,7 +117,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
         }
 
         blobObserverComponent.Core = (blobCoreUid, core);
-        Dirty(observer,blobObserverComponent);
+        Dirty(observer, blobObserverComponent);
 
 
         var isNewMind = false;
@@ -158,7 +150,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
         SendBlobBriefing(mindId);
 
         var blobRule = EntityQuery<GameTicking.BlobRuleComponent>().FirstOrDefault();
-        blobRule?.Blobs.Add((mindId,mind));
+        blobRule?.Blobs.Add((mindId, mind));
 
         _mindSystem.TransferTo(mindId, observer, true, mind: mind);
         if (_actorSystem.TryGetSessionById(args.UserId, out var session))
@@ -273,9 +265,9 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
 
         observerComponent.IsProcessingMoveEvent = true;
 
-        var job = new BlobObserverMover(EntityManager, _blocker, _transform,this, MoverJobTime)
+        var job = new BlobObserverMover(EntityManager, _blocker, _transform, this, MoverJobTime)
         {
-            Observer = (uid,observerComponent),
+            Observer = (uid, observerComponent),
             NewPosition = args.NewPosition
         };
 
@@ -316,7 +308,7 @@ public sealed class BlobObserverSystem : SharedBlobObserverSystem
 
         foreach (var tileref in centerTile)
         {
-            foreach (var ent in _mapSystem.GetAnchoredEntities(gridUid.Value, grid,tileref.GridIndices))
+            foreach (var ent in _mapSystem.GetAnchoredEntities(gridUid.Value, grid, tileref.GridIndices))
             {
                 if (!_tileQuery.HasComponent(ent))
                     continue;

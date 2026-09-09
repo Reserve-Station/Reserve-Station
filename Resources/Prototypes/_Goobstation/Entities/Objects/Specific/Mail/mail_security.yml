@@ -1,11 +1,7 @@
-# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailRestraints
   suffix: Restraints
   components:
@@ -16,7 +12,7 @@
     - id: ClothingEyesBlindfold
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailSecurityDonuts
   suffix: Donuts
   components:
@@ -25,7 +21,7 @@
     - id: FoodBoxDonut
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailSecurityFlashlight
   suffix: Seclite
   components:
@@ -34,7 +30,7 @@
     - id: FlashlightSeclite
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailSecurityNonlethalsKit
   suffix: Non lethals
   components:
@@ -48,18 +44,18 @@
       maxAmount: 2
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailSecuritySpaceLaw
   suffix: Spacelaw
   components:
   - type: Mail
     contents:
     - id: BookSpaceLaw
-    - id: PaperMailNFSpaceLaw 
+    - id: PaperMailNFSpaceLaw
 
 # Warden
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailWardenCrowdControl
   suffix: Beanbags
   components:
@@ -69,7 +65,7 @@
 
 # Detective
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailDetectiveForensicSupplement
   suffix: Forensic Pads
   components:

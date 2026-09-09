@@ -56,7 +56,7 @@
       sprite: Objects/Weapons/Melee/e_sword_double-inhands.rsi
     - type: Appearance
     - type: FlipOnHit # WD EDIT
-    - type: ToggleableLightVisuals
+    - type: ToggleableVisuals
       spriteLayer: blade
       inhandVisuals:
         left:

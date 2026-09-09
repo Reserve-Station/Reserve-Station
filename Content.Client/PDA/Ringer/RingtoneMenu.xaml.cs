@@ -1,16 +1,3 @@
-// SPDX-FileCopyrightText: 2022 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 TheDarkElites <73414180+TheDarkElites@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2022 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2023 TemporalOroboros <TemporalOroboros@gmail.com>
-// SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 João Fernandez <joaorbfernandez@gmail.com>
-// SPDX-FileCopyrightText: 2025 Milon <milonpl.git@proton.me>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
-//
 // SPDX-License-Identifier: MIT
 
 using System.Linq;
@@ -58,12 +45,12 @@ namespace Content.Client.PDA.Ringer
                     if (!isValid)
                     {
                         input.Text = PreviousNoteInputs[index];
-                        input.AddStyleClass("Caution");
+                        input.AddStyleClass("highlight");
                     }
                     else
                     {
                         PreviousNoteInputs[index] = input.Text;
-                        input.RemoveStyleClass("Caution");
+                        input.RemoveStyleClass("highlight");
                     }
 
                     input.CursorPosition = input.Text.Length;
@@ -82,7 +69,7 @@ namespace Content.Client.PDA.Ringer
                     if (!IsNote(input.Text))
                     {
                         input.Text = PreviousNoteInputs[index];
-                        input.RemoveStyleClass("Caution");
+                        input.RemoveStyleClass("highlight");
                     }
                 };
 
@@ -91,7 +78,7 @@ namespace Content.Client.PDA.Ringer
                     if (!IsNote(input.Text))
                     {
                         input.Text = PreviousNoteInputs[index];
-                        input.RemoveStyleClass("Caution");
+                        input.RemoveStyleClass("highlight");
                     }
                     input.CursorPosition = input.Text.Length;
                 };

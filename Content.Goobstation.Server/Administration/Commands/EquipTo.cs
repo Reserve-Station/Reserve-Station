@@ -1,7 +1,3 @@
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-// SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -22,6 +18,7 @@ public sealed class EquipTo : LocalizedCommands
 
     public const string CommandName = "equipto";
     public override string Command => CommandName;
+    public const string DefaultInvTemplate = "human";
 
     public override void Execute(IConsoleShell shell, string argStr, string[] args)
     {
@@ -137,7 +134,7 @@ public sealed class EquipTo : LocalizedCommands
         var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
         if (args.Length != 4
-            || !prototypeManager.TryIndex<InventoryTemplatePrototype>("human", out var inventoryTemplate))
+            || !prototypeManager.TryIndex<InventoryTemplatePrototype>(DefaultInvTemplate, out var inventoryTemplate))
             return CompletionResult.Empty;
 
         var options = inventoryTemplate.Slots.Select(c => c.Name).OrderBy(c => c).ToArray();

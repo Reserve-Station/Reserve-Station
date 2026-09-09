@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 gluesniffler <linebarrelerenthusiast@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System;
@@ -34,11 +31,14 @@ internal struct CustomWordWrap
     // We need to keep track of some data to split it into two words.
     public (int breakIndex, int wordSizePixels)? ForceSplitData = null;
 
+    private ISawmill _sawmill = default!;
+
     public CustomWordWrap(float maxSizeX)
     {
         this = default;
         _maxSizeX = maxSizeX;
         LastRune = new Rune('A');
+        _sawmill = Logger.GetSawmill("customwordwrap");
     }
 
     public void NextRune(Rune rune, out int? breakLine, out int? breakNewLine, out bool skip)
@@ -138,20 +138,20 @@ internal struct CustomWordWrap
         {
             if (!WordStartBreakIndex.HasValue)
             {
-                Logger.Error(
+                _sawmill.Error(
                     "Assert fail inside RichTextEntry.Update, " +
                     "wordStartBreakIndex is null on method end w/ word wrap required. " +
                     "Dumping relevant stuff. Send this to PJB.");
-                // Logger.Error($"Message: {Message}");
-                Logger.Error($"maxSizeX: {_maxSizeX}");
-                Logger.Error($"maxUsedWidth: {MaxUsedWidth}");
-                Logger.Error($"breakIndexCounter: {BreakIndexCounter}");
-                Logger.Error("wordStartBreakIndex: null (duh)");
-                Logger.Error($"wordSizePixels: {WordSizePixels}");
-                Logger.Error($"posX: {PosX}");
-                Logger.Error($"lastChar: {LastRune}");
-                Logger.Error($"forceSplitData: {ForceSplitData}");
-                // Logger.Error($"LineBreaks: {string.Join(", ", LineBreaks)}");
+                // _sawmill.Error($"Message: {Message}");
+                _sawmill.Error($"maxSizeX: {_maxSizeX}");
+                _sawmill.Error($"maxUsedWidth: {MaxUsedWidth}");
+                _sawmill.Error($"breakIndexCounter: {BreakIndexCounter}");
+                _sawmill.Error("wordStartBreakIndex: null (duh)");
+                _sawmill.Error($"wordSizePixels: {WordSizePixels}");
+                _sawmill.Error($"posX: {PosX}");
+                _sawmill.Error($"lastChar: {LastRune}");
+                _sawmill.Error($"forceSplitData: {ForceSplitData}");
+                // _sawmill.Error($"LineBreaks: {string.Join(", ", LineBreaks)}");
 
                 throw new Exception(
                     "wordStartBreakIndex can only be null if the word begins at a new line," +
@@ -168,7 +168,7 @@ internal struct CustomWordWrap
             MaxUsedWidth = Math.Max(MaxUsedWidth, PosX);
         }
 
-        return (int)MaxUsedWidth;
+        return (int) MaxUsedWidth;
     }
 
     private static bool IsWordBoundary(Rune a, Rune b)

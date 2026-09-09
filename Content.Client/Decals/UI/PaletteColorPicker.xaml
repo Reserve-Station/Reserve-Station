@@ -1,7 +1,4 @@
 <!--
-SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-
 SPDX-License-Identifier: MIT
 -->
 
@@ -12,7 +9,7 @@ SPDX-License-Identifier: MIT
     <BoxContainer Orientation="Vertical">
         <ItemList Name="PaletteList" VerticalExpand="True" Access="Public"/>
         <BoxContainer Orientation="Horizontal">
-            <Label Text="Palette"/>
+            <Label Text="{Loc 'palette-color-picker-window-label'}"/> <!-- Reserve edit: Fix admin menus -->
             <OptionButton Name="Palettes"/>
         </BoxContainer>
     </BoxContainer>

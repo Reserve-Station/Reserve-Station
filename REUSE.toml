@@ -1,7 +1,7 @@
 version = 1
-SPDX-PackageName = "Goob Station"
-SPDX-PackageSupplier = "Aidenkrz <administrator@goobstation.com>"
-SPDX-PackageDownloadLocation = "https://www.goobstation.com"
+SPDX-PackageName = "Reserve Station"
+SPDX-PackageSupplier = "Ceterai <ceterai@protonmail.com>"
+SPDX-PackageDownloadLocation = "https://ccdn.reserve-station.space/fork/reserve"
 
 [[annotations]]
 path = ["Resources/Audio/**", "Resources/Textures/**"]

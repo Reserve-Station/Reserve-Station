@@ -1,17 +1,13 @@
-// SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Threading;
 using Robust.Shared.Audio;
 using Content.Shared.Storage;
-using Content.Shared.Mail;
 
 namespace Content.Server.Mail.Components
 {
     [RegisterComponent]
-    public sealed partial class MailComponent : SharedMailComponent
+    public sealed partial class MailComponent : Component
     {
         [DataField]
         public string Recipient = "None";
@@ -128,6 +124,6 @@ namespace Content.Server.Mail.Components
         /// </summary>
         public bool IsEnabled = true;
 
-        public CancellationTokenSource? priorityCancelToken;
+        public CancellationTokenSource? PriorityCancelToken;
     }
 }

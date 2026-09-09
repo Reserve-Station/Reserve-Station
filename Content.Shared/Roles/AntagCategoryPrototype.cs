@@ -7,7 +7,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.Roles
 {
     [Prototype]
-    public sealed class AntagCategoryPrototype : IPrototype
+    public sealed partial class AntagCategoryPrototype : IPrototype
     {
         [IdDataField]
         public string ID { get; set; } = string.Empty;

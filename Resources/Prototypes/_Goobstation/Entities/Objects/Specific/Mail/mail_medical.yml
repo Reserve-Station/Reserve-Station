@@ -1,11 +1,7 @@
-# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailMedicalBasicSupplies
   suffix: Base Medics
   components:
@@ -19,7 +15,7 @@
       maxAmount: 5
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailMedicalMedicinePills
   suffix: Pills
   components:
@@ -33,7 +29,7 @@
       maxAmount: 2
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailMedicalEmergencyPens
   suffix: Medipens
   components:
@@ -43,7 +39,7 @@
       maxAmount: 3
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailMedicalStabilizers
   suffix: Stabilizers
   components:
@@ -58,7 +54,7 @@
 
 # Chemist
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailMedicalChemistrySupplement
   suffix: Chemical Supplies
   components:

@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # region Alt recipes for existing food
@@ -176,6 +174,34 @@
   solids:
     FoodButterSlice: 1
     FoodCheeseSlice: 1
+
+# Pizza
+
+- type: microwaveMealRecipe
+  id: RecipeSassysagePizza
+  name: sassysage pizza recipe
+  result: FoodPizzaSassysage
+  time: 30
+  group: Pizza
+  solids:
+    FoodDoughFlat: 1
+    FoodMeatSalamiSlice: 3
+    FoodCheeseSlice: 1
+    FoodPotatoSlice: 2
+    FoodTomatoSlice: 3
+
+- type: microwaveMealRecipe
+  id: RecipeArnoldPizza
+  name: Arnold pizza recipe
+  result: FoodPizzaArnold
+  time: 30
+  group: Pizza
+  reagents:
+    Blackpepper: 15
+  solids:
+    FoodDoughFlat: 1
+    FoodChiliPepper: 3
+    FoodTomatoSlice: 4
 
 # endregion
 

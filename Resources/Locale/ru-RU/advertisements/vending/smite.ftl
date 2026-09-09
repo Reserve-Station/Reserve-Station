@@ -1,9 +1,3 @@
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-# SPDX-FileCopyrightText: 2025 Alpaccalypse <21291379+Alpaccalypse@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 advertisement-smite-1 = СМАЙТ! Подави свою жажду!
 advertisement-smite-2 = Невероятный аромат лимона и лайма!
 advertisement-smite-3 = Продано более 1 миллиона напитков!

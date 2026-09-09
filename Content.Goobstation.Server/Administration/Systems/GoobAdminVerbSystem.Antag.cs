@@ -1,11 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2025 Roudenn <romabond091@gmail.com>
-// SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
-// SPDX-FileCopyrightText: 2025 SolsticeOfTheWinter <solsticeofthewinter@gmail.com>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
@@ -13,14 +5,17 @@ using Content.Goobstation.Common.Blob;
 using Content.Goobstation.Server.Changeling.GameTicking.Rules;
 using Content.Goobstation.Server.Devil.GameTicking.Rules;
 using Content.Goobstation.Server.Shadowling.Rules;
+using Content.Goobstation.Server.Slasher.Components; // Reserve edit: Fix antag verbs
 using Content.Server.Administration.Managers;
 using Content.Server.Antag;
 using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared.Administration;
+using Content.Server.Clothing.Systems; // Reserve edit: Fix antag verbs
 using Content.Shared.Database;
 using Content.Shared.Mind.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes; // Reserve edit: Fix antag verbs
 using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Server.Administration.Systems;
@@ -29,6 +24,9 @@ public sealed partial class GoobAdminVerbSystem
 {
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly IAdminManager _admin = default!;
+    [Dependency] private readonly OutfitSystem _outfit = default!; // Reserve edit: Fix antag verbs
+
+    private static readonly EntProtoId DefaultSlasherRule = "TokenSlasherSpawn"; // Reserve edit: Fix antag verbs
 
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
     {
@@ -38,16 +36,16 @@ public sealed partial class GoobAdminVerbSystem
         // Changelings
         Verb ling = new()
         {
-            Text = Loc.GetString("admin-verb-text-make-changeling"),
+            Text = "063. " + Loc.GetString("admin-verb-text-make-changeling"), // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/_Goobstation/Changeling/changeling_abilities.rsi"), "transform"),
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Misc/job_icons.rsi"), "Changeling"), // Reserve edit: Fix antag verbs
             Act = () =>
             {
                 if (!HasComp<SiliconComponent>(args.Target))
                     _antag.ForceMakeAntag<ChangelingRuleComponent>(targetPlayer, "Changeling");
             },
             Impact = LogImpact.High,
-            Message = Loc.GetString("admin-verb-make-changeling"),
+            Message = string.Join(": ", Loc.GetString("admin-verb-text-make-changeling"), Loc.GetString("admin-verb-make-changeling")), // Reserve edit: Fix antag verbs
         };
         if (!HasComp<SiliconComponent>(args.Target))
             args.Verbs.Add(ling);
@@ -55,15 +53,15 @@ public sealed partial class GoobAdminVerbSystem
         // Blob
         Verb blobAntag = new()
         {
-            Text = Loc.GetString("admin-verb-text-make-blob"),
+            Text = "061. " + Loc.GetString("admin-verb-text-make-blob"), // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new("/Textures/_Goobstation/Blob/Actions/blob.rsi"), "blobFactory"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Blob"), // Reserve edit: Fix antag verbs
             Act = () =>
             {
                 EnsureComp<BlobCarrierComponent>(args.Target).HasMind = HasComp<ActorComponent>(args.Target);
             },
             Impact = LogImpact.High,
-            Message = Loc.GetString("admin-verb-text-make-blob"),
+            Message = string.Join(": ", Loc.GetString("admin-verb-text-make-blob"), Loc.GetString("admin-verb-make-blob")), // Reserve edit: Fix antag verbs
         };
         if (!HasComp<SiliconComponent>(args.Target))
             args.Verbs.Add(blobAntag);
@@ -71,34 +69,51 @@ public sealed partial class GoobAdminVerbSystem
         // Devil
         Verb devilAntag = new()
         {
-            Text = Loc.GetString("admin-verb-text-make-devil"),
+            Text = "004. " + Loc.GetString("admin-verb-text-make-devil"), // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new("_Goobstation/Actions/devil.rsi"), "summon-contract"),
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Devil"), // Reserve edit: Fix antag verbs
             Act = () =>
             {
                 _antag.ForceMakeAntag<DevilRuleComponent>(targetPlayer, "Devil");
             },
             Impact = LogImpact.High,
-            Message = Loc.GetString("admin-verb-make-devil"),
+            Message = string.Join(": ", Loc.GetString("admin-verb-text-make-devil"), Loc.GetString("admin-verb-make-devil")), // Reserve edit: Fix antag verbs
         };
         args.Verbs.Add(devilAntag);
 
         // Einstein Engines - Shadowlings
         Verb shadowling = new()
         {
-            Text = Loc.GetString("admin-verb-text-make-shadowling"),
+            Text = "005. " + Loc.GetString("admin-verb-text-make-shadowling"), // Reserve edit: Fix antag verbs
             Category = VerbCategory.Antag,
             Icon = new SpriteSpecifier.Rsi(
-                new("/Textures/_EinsteinEngines/Shadowling/shadowling_abilities.rsi"),
-                "engage_hatch"),
+                new("/Textures/Interface/Misc/job_icons.rsi"), "Shadowling"), // Reserve edit: Fix antag verbs
             Act = () =>
             {
                 _antag.ForceMakeAntag<ShadowlingRuleComponent>(targetPlayer, "Shadowling");
             },
             Impact = LogImpact.High,
-            Message = Loc.GetString("admin-verb-make-shadowling"),
+            Message = string.Join(": ", Loc.GetString("admin-verb-text-make-shadowling"), Loc.GetString("admin-verb-make-shadowling")), // Reserve edit: Fix antag verbs
         };
         args.Verbs.Add(shadowling);
+
+        // Reserve start
+        var slasherName = Loc.GetString("admin-verb-text-make-slasher");
+        Verb slasher = new()
+        {
+            Text = "006. " + slasherName,
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new("/Textures/Interface/Misc/job_icons.rsi"), "Slasher"),
+            Act = () =>
+            {
+                _outfit.SetOutfit(args.Target, "EmptyNudeGear");
+                _antag.ForceMakeAntag<AntagLockerSpawnComponent>(targetPlayer, DefaultSlasherRule);
+            },
+            Impact = LogImpact.High,
+            Message = string.Join(": ", slasherName, Loc.GetString("admin-verb-make-slasher")),
+        };
+        args.Verbs.Add(slasher);
+        // Reserve end
     }
 
     public bool AntagVerbAllowed(GetVerbsEvent<Verb> args, [NotNullWhen(true)] out ICommonSession? target)

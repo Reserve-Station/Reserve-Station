@@ -1,0 +1,11 @@
+ent-MobCockroachBig = madagascar { ent-MobCockroach }
+    .desc = Antisanitary conditions have hit a new low. These giants like to infest vents, spread diseases, bite, multiply... Wait, they CAN FLY?!
+    .suffix = Loadout, Trinkets
+ent-SpawnMobCockroachBig = { ent-MobCockroachBig } spawner
+    .desc = { ent-MarkerBase.desc }
+ent-OrganCockroachBigInnards = innards
+    .desc = A mess of insect equivalents of organs. Ew.
+    .suffix = Cockroach, Organ, Stomach, Liver, Kidneys, Heart, Egg sack
+ent-OrganCockroachBigInnardsLungs = { ent-OrganCockroachBigInnards }
+    .desc = { ent-OrganCockroachBigInnards.desc }
+    .suffix = Cockroach, Organ, Lungs

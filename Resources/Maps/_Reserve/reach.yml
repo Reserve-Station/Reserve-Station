@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 meta:
@@ -2838,6 +2836,8 @@ entities:
       parent: 2733
     - type: StorageFill
       contents: []
+    - type: EntityTableContainerFill
+      containers: {}
     - type: Storage
       storedItems:
         976:
@@ -3002,6 +3002,8 @@ entities:
       parent: 2
     - type: StorageFill
       contents: []
+    - type: EntityTableContainerFill
+      containers: {}
     - type: Storage
       storedItems:
         2709:
@@ -8907,6 +8909,8 @@ entities:
       parent: 2733
     - type: StorageFill
       contents: []
+    - type: EntityTableContainerFill
+      containers: {}
     - type: Storage
       storedItems:
         2741:
@@ -13859,6 +13863,10 @@ entities:
     - type: Transform
       pos: 5.41286,-8.437588
       parent: 2
+    - type: StorageFill
+      contents: []
+    - type: EntityTableContainerFill
+      containers: {}
     - type: Storage
       storedItems:
         2758:

@@ -209,20 +209,28 @@ ent-FloorTileItemAstroSnow = астро-снег
 ent-FloorTileItemWoodLarge = большой деревянный пол
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemWhiteMarble = белая мраморная плитка
-    .desc = Выточенный, отполированный квадрат из лучшего космического мрамора. Лучше его не потерять.
+    .desc = Вырезанный и отполированный квадрат из лучшего космического мрамора. Лучше не терять.
 ent-FloorTileItemDarkMarble = тёмная мраморная плитка
-    .desc = { ent-FloorTileItemWhiteMarble.desc }
+    .desc = Вырезанный и отполированный квадрат из лучшего космического мрамора. Лучше не терять.
 ent-FloorTileItemPlasmaMarble = плазменная мраморная плитка
-    .desc = { ent-FloorTileItemWhiteMarble.desc }
+    .desc = Вырезанный и отполированный квадрат из лучшего космического мрамора. Пропитан плазмой для дополнительного... чего-то там.
 ent-FloorTileItemUraniumMarble = урановая мраморная плитка
-    .desc = { ent-FloorTileItemWhiteMarble.desc }
+    .desc = Вырезанный и отполированный квадрат из лучшего космического мрамора. Пропитан ураном для максимальной крутости!
 
-ent-FloorTileItemSteelLingering0 = { ent-FloorTileItemSteel }
-    .desc = { ent-FloorTileItemSteel.desc }
-    .suffix = Не исчезают закончившись, 0
-ent-FloorTileItemWhiteLingering0 = { ent-FloorTileItemWhite }
-    .desc = { ent-FloorTileItemWhite.desc }
-    .suffix = Не исчезают закончившись, 0
-ent-FloorTileItemDarkLingering0 = { ent-FloorTileItemDark }
+ent-FloorTileItemIronsandConcrete = железопесчаная бетонная плитка
+    .desc = { ent-FloorTileItemBase.desc }
+ent-FloorTileItemAstroIronsand = астро-железный песок
+    .desc = Фальшивый красный песок. Импортирован с фальшивого Марса.
+
+ent-FloorTileItemDarkAstroGrass = тёмная астро-трава
+    .desc = Искусственная трава, отлично прячущая провода, поставляется с реалистичными НаноТравинками!
+ent-FloorTileItemLightAstroGrass = светлая астро-трава
+    .desc = Искусственная трава, отлично прячущая провода, поставляется с реалистичными НаноТравинками!
+ent-FloorTileItemDesertAstroSand = пустынный астро-песок
+    .desc = Искусственный песок, разработан с целью быть прекрасным.
+
+ent-FloorTileItemXeno = ксенопол
+    .desc = { ent-FloorTileItemBase.desc }
+
+ent-FloorTileItemDarkSquiggly = тёмная волнистая стальная плитка
     .desc = { ent-FloorTileItemDark.desc }
-    .suffix = Не исчезают закончившись, 0

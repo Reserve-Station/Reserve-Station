@@ -54,7 +54,7 @@
     energy: 1.5
     color: "#7500ff"
     netsync: false
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: blade
     inhandVisuals:
       left:

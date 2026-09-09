@@ -33,7 +33,11 @@ reagent-effect-guidebook-immunity-modifier =
     { $chance ->
         [1] Изменяет
         *[other] изменяют
-    } скорость усиления иммунитета на {NATURALFIXED($gainrate, 5)}, силу на {NATURALFIXED($strength, 5)} как минимум на {NATURALFIXED($time, 3)} {MANY("секунд", $time)}
+    } скорость усиления иммунитета на {NATURALFIXED($gainrate, 5)}, силу на {NATURALFIXED($strength, 5)} как минимум на {NATURALFIXED($time, 3)} { $time ->
+        [one] секунду
+        [few] секунды
+       *[other] секунд
+    }
 
 reagent-effect-guidebook-disease-progress-change =
     { $chance ->

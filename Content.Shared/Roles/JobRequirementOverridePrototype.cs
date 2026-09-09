@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Prototypes;
@@ -18,8 +15,8 @@ public sealed partial class JobRequirementOverridePrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     [DataField]
-    public Dictionary<ProtoId<JobPrototype>, HashSet<JobRequirement>> Jobs = new ();
+    public Dictionary<ProtoId<JobPrototype>, HashSet<JobRequirement>> Jobs = new();
 
     [DataField]
-    public Dictionary<ProtoId<AntagPrototype>, HashSet<JobRequirement>> Antags = new ();
+    public Dictionary<ProtoId<AntagPrototype>, HashSet<JobRequirement>> Antags = new();
 }

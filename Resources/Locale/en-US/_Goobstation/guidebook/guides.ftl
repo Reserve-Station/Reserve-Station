@@ -109,3 +109,7 @@ guide-entry-space-law-violations-minor = 1ХХ codes (minor)
 guide-entry-space-law-violations-average = 2ХХ codes (average)
 guide-entry-space-law-violations-serious = 3ХХ codes (serious)
 
+guide-entry-antag-revealing-conditions = Antag Revealing Conditions
+guide-entry-xenobiology = Xenobiology
+guide-entry-bingle = Bingles
+

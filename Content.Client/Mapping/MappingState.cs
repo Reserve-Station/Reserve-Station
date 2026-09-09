@@ -1,83 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Alzore <140123969+Blackern5000@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Brandon Hu <103440971+Brandon-Huu@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 CaasGit <87243814+CaasGit@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Cojoke <83733158+Cojoke-dot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Emisse <99158783+Emisse@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 EmoGarbage404 <retron404@gmail.com>
-// SPDX-FileCopyrightText: 2024 Eoin Mcloughlin <helloworld@eoinrul.es>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Hrosts <35345601+Hrosts@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ian <ignaz.k@live.de>
-// SPDX-FileCopyrightText: 2024 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Joel Zimmerman <JoelZimmerman@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 JustCone <141039037+JustCone14@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Killerqu00 <47712032+Killerqu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ko4ergaPunk <62609550+Ko4ergaPunk@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Kukutis96513 <146854220+Kukutis96513@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Lye <128915833+Lyroth001@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 MerrytheManokit <167581110+MerrytheManokit@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mervill <mervills.email@gmail.com>
-// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 MureixloI <132683811+MureixloI@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 NakataRin <45946146+NakataRin@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 OrangeMoronage9622 <whyteterry0092@gmail.com>
-// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Preston Smith <92108534+thetolbean@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Psychpsyo <60073468+Psychpsyo@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Repo <47093363+Titian3@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 RiceMar1244 <138547931+RiceMar1244@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Simon <63975668+Simyon264@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Stalen <33173619+stalengd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 TakoDragon <69509841+BackeTako@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Thomas <87614336+Aeshus@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Unkn0wn_Gh0st <shadowstalkermll@gmail.com>
-// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2024 Vigers Ray <60344369+VigersRay@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 dffdff2423 <dffdff2423@gmail.com>
-// SPDX-FileCopyrightText: 2024 eoineoineoin <github@eoinrul.es>
-// SPDX-FileCopyrightText: 2024 foboscheshir <156405958+foboscheshir@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <comedian_vs_clown@hotmail.com>
-// SPDX-FileCopyrightText: 2024 nikthechampiongr <32041239+nikthechampiongr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
-// SPDX-FileCopyrightText: 2024 saintmuntzer <47153094+saintmuntzer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 shamp <140359015+shampunj@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 strO0pwafel <153459934+strO0pwafel@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 stroopwafel <j.o.luijkx@student.tudelft.nl>
-// SPDX-FileCopyrightText: 2024 themias <89101928+themias@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 to4no_fix <156101927+chavonadelal@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 voidnull000 <18663194+voidnull000@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 J <billsmith116@gmail.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
-// SPDX-FileCopyrightText: 2025 poeMota <142114334+poeMota@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 poemota <142114334+poeMota@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 /// Reserve - File heavily edited by PR: Mapping editor.
@@ -119,7 +39,9 @@ using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Serialization.Markdown.Value;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using static System.StringComparison;
 using static Robust.Client.UserInterface.Controls.BaseButton;
+using static Robust.Client.UserInterface.Controls.LineEdit;
 using static Robust.Client.UserInterface.Controls.OptionButton;
 using static Robust.Shared.Input.Binding.PointerInputCmdHandler;
 using Vector2 = System.Numerics.Vector2;
@@ -167,14 +89,18 @@ public sealed class MappingState : GameplayStateBase
     private readonly Dictionary<Type, List<MappingPrototype>> _allPrototypes = new();
     private readonly Dictionary<IPrototype, MappingPrototype> _allPrototypesDict = new();
     private readonly Dictionary<Type, Dictionary<string, MappingPrototype>> _idDict = new();
+    private readonly List<MappingPrototype> _prototypes = new();
     private (TimeSpan At, MappingSpawnButton Button)? _lastClicked;
     private (Control, MappingPrototypeList)? _scrollTo;
+    private bool _updatePlacement;
+    private bool _updateEraseDecal;
     private bool _tileErase;
     private int _decalIndex;
 
     private MappingScreen Screen => (MappingScreen) UserInterfaceManager.ActiveScreen!;
     private MainViewport Viewport => UserInterfaceManager.ActiveScreen!.GetWidget<MainViewport>()!;
 
+    public CursorState State { get; set; }
     public CursorMeta Meta { get; }
 
     public MappingState()
@@ -403,19 +329,19 @@ public sealed class MappingState : GameplayStateBase
         Sort(mappings, entitiesTemplate);
         mappings.Clear();
         Screen.Entities.UpdateVisible(
-            new (entitiesTemplate.Children?.Count > 0 ? [entitiesTemplate, entities] : [entities]),
+            new(entitiesTemplate.Children?.Count > 0 ? [entitiesTemplate, entities] : [entities]),
             _allPrototypes.GetOrNew(typeof(EntityPrototype)));
 
         Sort(mappings, tilesTemplate);
         mappings.Clear();
         Screen.Tiles.UpdateVisible(
-            new (tilesTemplate.Children?.Count > 0 ? [tilesTemplate, tiles] : [tiles]),
+            new(tilesTemplate.Children?.Count > 0 ? [tilesTemplate, tiles] : [tiles]),
             _allPrototypes.GetOrNew(typeof(ContentTileDefinition)));
 
         Sort(mappings, decalsTemplate);
         mappings.Clear();
         Screen.Decals.UpdateVisible(
-            new (decalsTemplate.Children?.Count > 0 ? [decalsTemplate, decals] : [decals]),
+            new(decalsTemplate.Children?.Count > 0 ? [decalsTemplate, decals] : [decals]),
             _allPrototypes.GetOrNew(typeof(DecalPrototype)));
     }
 
@@ -710,38 +636,38 @@ public sealed class MappingState : GameplayStateBase
             switch (prototype)
             {
                 case EntityPrototype entityPrototype:
-                {
-                    if (_idDict.GetOrNew(typeof(EntityPrototype)).TryGetValue(entityPrototype.ID, out var entity))
                     {
-                        Screen.Entities.FavoritesPrototype.Children.Add(entity);
-                        entity.Parents ??= new List<MappingPrototype>();
-                        entity.Parents.Add(Screen.Entities.FavoritesPrototype);
-                        entity.Favorite = true;
+                        if (_idDict.GetOrNew(typeof(EntityPrototype)).TryGetValue(entityPrototype.ID, out var entity))
+                        {
+                            Screen.Entities.FavoritesPrototype.Children.Add(entity);
+                            entity.Parents ??= new List<MappingPrototype>();
+                            entity.Parents.Add(Screen.Entities.FavoritesPrototype);
+                            entity.Favorite = true;
+                        }
+                        break;
                     }
-                    break;
-                }
                 case DecalPrototype decalPrototype:
-                {
-                    if (_idDict.GetOrNew(typeof(DecalPrototype)).TryGetValue(decalPrototype.ID, out var decal))
                     {
-                        Screen.Decals.FavoritesPrototype.Children.Add(decal);
-                        decal.Parents ??= new List<MappingPrototype>();
-                        decal.Parents.Add(Screen.Decals.FavoritesPrototype);
-                        decal.Favorite = true;
+                        if (_idDict.GetOrNew(typeof(DecalPrototype)).TryGetValue(decalPrototype.ID, out var decal))
+                        {
+                            Screen.Decals.FavoritesPrototype.Children.Add(decal);
+                            decal.Parents ??= new List<MappingPrototype>();
+                            decal.Parents.Add(Screen.Decals.FavoritesPrototype);
+                            decal.Favorite = true;
+                        }
+                        break;
                     }
-                    break;
-                }
                 case ContentTileDefinition tileDefinition:
-                {
-                    if (_idDict.GetOrNew(typeof(ContentTileDefinition)).TryGetValue(tileDefinition.ID, out var tile))
                     {
-                        Screen.Tiles.FavoritesPrototype.Children.Add(tile);
-                        tile.Parents ??= new List<MappingPrototype>();
-                        tile.Parents.Add(Screen.Tiles.FavoritesPrototype);
-                        tile.Favorite = true;
+                        if (_idDict.GetOrNew(typeof(ContentTileDefinition)).TryGetValue(tileDefinition.ID, out var tile))
+                        {
+                            Screen.Tiles.FavoritesPrototype.Children.Add(tile);
+                            tile.Parents ??= new List<MappingPrototype>();
+                            tile.Parents.Add(Screen.Tiles.FavoritesPrototype);
+                            tile.Favorite = true;
+                        }
+                        break;
                     }
-                    break;
-                }
             }
         }
     }
@@ -869,20 +795,20 @@ public sealed class MappingState : GameplayStateBase
         switch (prototype)
         {
             case EntityPrototype entity:
-            {
-                var placementId = Screen.EntityPlacementMode.SelectedId;
-
-                var placement = new PlacementInformation
                 {
-                    PlacementOption = placementId > 0 ? EntitySpawnWindow.InitOpts[placementId] : entity.PlacementMode,
-                    EntityType = entity.ID,
-                    IsTile = false
-                };
+                    var placementId = Screen.EntityPlacementMode.SelectedId;
 
-                _decal.SetActive(false);
-                _placement.BeginPlacing(placement);
-                break;
-            }
+                    var placement = new PlacementInformation
+                    {
+                        PlacementOption = placementId > 0 ? EntitySpawnWindow.InitOpts[placementId] : entity.PlacementMode,
+                        EntityType = entity.ID,
+                        IsTile = false
+                    };
+
+                    _decal.SetActive(false);
+                    _placement.BeginPlacing(placement);
+                    break;
+                }
             case DecalPrototype decal:
                 _placement.Clear();
 
@@ -890,18 +816,18 @@ public sealed class MappingState : GameplayStateBase
                 Screen.SelectDecal(decal.ID);
                 break;
             case ContentTileDefinition tile:
-            {
-                var placement = new PlacementInformation
                 {
-                    PlacementOption = "AlignTileAny",
-                    TileType = tile.TileId,
-                    IsTile = true
-                };
+                    var placement = new PlacementInformation
+                    {
+                        PlacementOption = "AlignTileAny",
+                        TileType = tile.TileId,
+                        IsTile = true
+                    };
 
-                _decal.SetActive(false);
-                _placement.BeginPlacing(placement);
-                break;
-            }
+                    _decal.SetActive(false);
+                    _placement.BeginPlacing(placement);
+                    break;
+                }
             default:
                 _placement.Clear();
                 break;
@@ -1223,15 +1149,11 @@ public sealed class MappingState : GameplayStateBase
                     switch (button.Prototype)
                     {
                         case EntityPrototype:
-                        {
                             OnSelected(Screen.Entities, button);
                             break;
-                        }
                         case ContentTileDefinition:
-                        {
                             OnSelected(Screen.Tiles, button);
                             break;
-                        }
                     }
 
                     return true;
@@ -1259,7 +1181,7 @@ public sealed class MappingState : GameplayStateBase
 
         if (uid == EntityUid.Invalid ||
             _entityManager.GetComponentOrNull<MetaDataComponent>(uid) is not
-                { EntityPrototype: { } prototype } ||
+            { EntityPrototype: { } prototype } ||
             !_allPrototypesDict.TryGetValue(prototype, out button))
         {
             // we always block other input handlers if pick mode is enabled
@@ -1483,6 +1405,7 @@ public sealed class MappingState : GameplayStateBase
     }
 
 
+    // TODO this doesn't handle pressing down multiple state hotkeys at the moment
     public enum CursorState
     {
         None,

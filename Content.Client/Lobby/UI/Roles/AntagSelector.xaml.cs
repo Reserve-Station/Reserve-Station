@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Message;
@@ -54,6 +52,7 @@ public sealed partial class AntagSelector : PanelContainer
             _iconWrapper.SetHeight = height;
             _iconPanel.SetWidth = height;
             _iconPanel.SetHeight = height;
+            _antagDescription.SetWidth = _iconPanel.Width + _buttonsContainer.Width; // Reserve edit: New Antagonist Cards
         };
     }
 
@@ -67,14 +66,14 @@ public sealed partial class AntagSelector : PanelContainer
         _antagName.Text = name;
 
         // Scale font size based on name length to fit available space
-        var baseSize = 20;
-        var maxLength = 18;
+        var baseSize = 16; // Reserve edit: New Antagonist Cards
+        var maxLength = 14; // Reserve edit: New Antagonist Cards
 
         if (name.Length > maxLength)
         {
             // Scale down the font size based on how much longer the name is
-            var scaleFactor = (float)maxLength / name.Length;
-            var newSize = (int)(baseSize * scaleFactor);
+            var scaleFactor = (float) maxLength / name.Length; // Reserve edit: New Antagonist Cards
+            var newSize = (int) (baseSize * scaleFactor); // Reserve edit: New Antagonist Cards
             // Don't go smaller than 12
             newSize = Math.Max(newSize, 12);
 

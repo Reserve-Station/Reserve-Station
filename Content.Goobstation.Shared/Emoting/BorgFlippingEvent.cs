@@ -1,4 +1,4 @@
-using Content.Shared.Emoting;
+using Content.Shared.Chat;
 using Content.Shared.Silicons.Borgs.Components;
 
 namespace Content.Goobstation.Shared.Emoting
@@ -15,7 +15,7 @@ namespace Content.Goobstation.Shared.Emoting
         public float Cost;
         public BeforeEmoteEvent BeforeEmote;
 
-        public BorgFlippingEvent(EntityUid borg, BorgChassisComponent borgChassis, float cost,  BeforeEmoteEvent beforeEmote)
+        public BorgFlippingEvent(EntityUid borg, BorgChassisComponent borgChassis, float cost, BeforeEmoteEvent beforeEmote)
         {
             Borg = borg;
             BorgChassis = borgChassis;

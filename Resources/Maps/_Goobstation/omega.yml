@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Goob Station Contributors
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 meta:
@@ -38682,7 +38680,7 @@ entities:
       parent: 5984
     - type: Physics
       canCollide: False
-- proto: EnergyChemDispenser
+- proto: ChemDispenser
   entities:
   - uid: 4963
     components:
@@ -63637,7 +63635,7 @@ entities:
     - type: Transform
       pos: 8.48969,29.428799
       parent: 2
-- proto: MaterialSilo
+- proto: MachineMaterialSilo
   entities:
   - uid: 13785
     components:

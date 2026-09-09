@@ -9,4 +9,4 @@ revolutionaries-win-announcement =
 
     Viva la revolution!
 revolutionaries-win-sender = Коммандование Синдиката
-revolutionaries-sender-cc = Отдел лояльности Nanotrasen
+revolutionaries-sender-cc = Отдел лояльности NanoTrasen

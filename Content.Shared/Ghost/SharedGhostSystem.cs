@@ -1,46 +1,3 @@
-// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
-// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
-// SPDX-FileCopyrightText: 2022 Illiux <newoutlook@gmail.com>
-// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Rank #1 Jonestown partygoer <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
-// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
-// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 RadsammyT <radsammyt@gmail.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Starlight.Trail;
@@ -161,109 +118,109 @@ namespace Content.Shared.Ghost
     {
     }
 
-     // Reserve-Start
-     /// <summary>
-     /// An player body a ghost can warp to.
-     /// This is used as part of <see cref="GhostWarpsResponseEvent"/>
-     /// </summary>
-     [Serializable, NetSerializable]
-     public struct GhostWarpPlayer
-     {
-         public GhostWarpPlayer(NetEntity entity, string playerName, string playerJobName, string playerDepartmentID, bool isGhost, bool isLeft, bool isDead, bool isAlive)
-         {
-             Entity = entity;
-             Name = playerName;
-             JobName = playerJobName;
-             DepartmentID = playerDepartmentID;
+    // Reserve-Start
+    /// <summary>
+    /// An player body a ghost can warp to.
+    /// This is used as part of <see cref="GhostWarpsResponseEvent"/>
+    /// </summary>
+    [Serializable, NetSerializable]
+    public struct GhostWarpPlayer
+    {
+        public GhostWarpPlayer(NetEntity entity, string playerName, string playerJobName, string playerDepartmentID, bool isGhost, bool isLeft, bool isDead, bool isAlive)
+        {
+            Entity = entity;
+            Name = playerName;
+            JobName = playerJobName;
+            DepartmentID = playerDepartmentID;
 
-             IsGhost = isGhost;
-             IsLeft = isLeft;
-             IsDead = isDead;
-             IsAlive = isAlive;
-         }
+            IsGhost = isGhost;
+            IsLeft = isLeft;
+            IsDead = isDead;
+            IsAlive = isAlive;
+        }
 
-         /// <summary>
-         /// The entity representing the warp point.
-         /// This is passed back to the server in <see cref="GhostWarpToTargetRequestEvent"/>
-         /// </summary>
-         public NetEntity Entity { get; }
+        /// <summary>
+        /// The entity representing the warp point.
+        /// This is passed back to the server in <see cref="GhostWarpToTargetRequestEvent"/>
+        /// </summary>
+        public NetEntity Entity { get; }
 
-         /// <summary>
-         /// The display player name to be surfaced in the ghost warps menu
-         /// </summary>
-         public string Name { get; }
+        /// <summary>
+        /// The display player name to be surfaced in the ghost warps menu
+        /// </summary>
+        public string Name { get; }
 
-         /// <summary>
-         /// The display player job to be surfaced in the ghost warps menu
-         /// </summary>
+        /// <summary>
+        /// The display player job to be surfaced in the ghost warps menu
+        /// </summary>
 
-         public string JobName { get; }
+        public string JobName { get; }
 
-         /// <summary>
-         /// The display player department to be surfaced in the ghost warps menu
-         /// </summary>
-         public string DepartmentID { get; set; }
+        /// <summary>
+        /// The display player department to be surfaced in the ghost warps menu
+        /// </summary>
+        public string DepartmentID { get; set; }
 
-         /// <summary>
-         /// Is player is ghost
-         /// </summary>
-         public bool IsGhost { get;  }
+        /// <summary>
+        /// Is player is ghost
+        /// </summary>
+        public bool IsGhost { get; }
 
-         /// <summary>
-         /// Is player body alive
-         /// </summary>
-         public bool IsAlive { get;  }
+        /// <summary>
+        /// Is player body alive
+        /// </summary>
+        public bool IsAlive { get; }
 
-         /// <summary>
-         /// Is player body dead
-         /// </summary>
-         public bool IsDead { get;  }
+        /// <summary>
+        /// Is player body dead
+        /// </summary>
+        public bool IsDead { get; }
 
-         /// <summary>
-         /// Is player left from body
-         /// </summary>
-         public bool IsLeft { get;  }
-     }
+        /// <summary>
+        /// Is player left from body
+        /// </summary>
+        public bool IsLeft { get; }
+    }
 
-     [Serializable, NetSerializable]
-     public struct GhostWarpGlobalAntagonist
-     {
-         public GhostWarpGlobalAntagonist(NetEntity entity, string playerName, string antagonistName, string antagonistDescription, string prototypeID)
-         {
-             Entity = entity;
-             Name = playerName;
-             AntagonistName = antagonistName;
-             AntagonistDescription = antagonistDescription;
-             PrototypeID = prototypeID;
-         }
+    [Serializable, NetSerializable]
+    public struct GhostWarpGlobalAntagonist
+    {
+        public GhostWarpGlobalAntagonist(NetEntity entity, string playerName, string antagonistName, string antagonistDescription, string prototypeID)
+        {
+            Entity = entity;
+            Name = playerName;
+            AntagonistName = antagonistName;
+            AntagonistDescription = antagonistDescription;
+            PrototypeID = prototypeID;
+        }
 
-         /// <summary>
-         /// The entity representing the warp point.
-         /// This is passed back to the server in <see cref="GhostWarpToTargetRequestEvent"/>
-         /// </summary>
-         public NetEntity Entity { get; }
+        /// <summary>
+        /// The entity representing the warp point.
+        /// This is passed back to the server in <see cref="GhostWarpToTargetRequestEvent"/>
+        /// </summary>
+        public NetEntity Entity { get; }
 
-         /// <summary>
-         /// The display player name to be surfaced in the ghost warps menu
-         /// </summary>
-         public string Name { get; }
+        /// <summary>
+        /// The display player name to be surfaced in the ghost warps menu
+        /// </summary>
+        public string Name { get; }
 
-         /// <summary>
-         /// The display antagonist name to be surfaced in the ghost warps menu
-         /// </summary>
-         public string AntagonistName { get; }
+        /// <summary>
+        /// The display antagonist name to be surfaced in the ghost warps menu
+        /// </summary>
+        public string AntagonistName { get; }
 
-         /// <summary>
-         /// The display antagonist description to be surfaced in the ghost warps menu
-         /// </summary>
-         public string AntagonistDescription { get; }
+        /// <summary>
+        /// The display antagonist description to be surfaced in the ghost warps menu
+        /// </summary>
+        public string AntagonistDescription { get; }
 
-         /// <summary>
-         /// A antagonist prototype id
-         /// </summary>
-         public string PrototypeID { get; }
+        /// <summary>
+        /// A antagonist prototype id
+        /// </summary>
+        public string PrototypeID { get; }
 
-     }
+    }
     // Reserve-End
 
     /// <summary>
@@ -296,7 +253,7 @@ namespace Content.Shared.Ghost
         /// <summary>
         /// Display name to be surfaced in the ghost warps menu
         /// </summary>
-        public string Description { get;  } // Reserve-Edit | IsWarpPoint > Description
+        public string Description { get; } // Reserve-Edit | IsWarpPoint > Description
     }
 
     /// <summary>
@@ -306,7 +263,7 @@ namespace Content.Shared.Ghost
     [Serializable, NetSerializable]
     public sealed class GhostWarpsResponseEvent : EntityEventArgs
     {
-/* // Reserve-Remove
+        /* // Reserve-Remove
         public GhostWarpsResponseEvent(List<GhostWarp> warps)
         {
             Warps = warps;
@@ -316,7 +273,7 @@ namespace Content.Shared.Ghost
         /// A list of warp points.
         /// </summary>
         public List<GhostWarp> Warps { get; }
-*/
+        */
 
         // Reserve-Start
         public GhostWarpsResponseEvent(List<GhostWarpPlayer> players, List<GhostWarpPlace> places, List<GhostWarpGlobalAntagonist> antagonists)

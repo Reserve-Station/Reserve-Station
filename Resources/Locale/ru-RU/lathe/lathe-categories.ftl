@@ -1,11 +1,7 @@
 # Generic
-lathe-category-ammo = Боеприпасы
 lathe-category-circuitry = Электроника
 lathe-category-lights = Лампы
-lathe-category-mechs = Мехи
-lathe-category-modules = Модули
 lathe-category-parts = Компоненты
-lathe-category-robotics = Робототехника
 lathe-category-tools = Инструменты
 lathe-category-weapons = Вооружение
 lathe-category-machines = Оборудование
@@ -13,6 +9,31 @@ lathe-category-machines = Оборудование
 lathe-category-food = Пища
 lathe-category-chemicals = Химикаты
 lathe-category-materials = Материалы
+# Circuit imprinter
+lathe-category-computers = Компьютеры
+lathe-category-engineering = Инженерия
+lathe-category-general = Общее
+lathe-category-medical = Медицина
+lathe-category-research = Исследования
+lathe-category-security = Безопасность
+lathe-category-service = Сервис
+lathe-category-supply = Снабжение
+# Cutter
+lathe-category-concrete = Бетон
+lathe-category-dark = Тёмная
+lathe-category-maints = Техи
+lathe-category-steel = Стальная
+lathe-category-white = Белая
+lathe-category-wood = Деревянная
+lathe-category-marble = Мрамор
+# Science
+lathe-category-mechs = Мехи
+lathe-category-modules = Модули
+lathe-category-robotics = Робототехника
+# Security TechFab
+lathe-category-ammo = Боеприпасы
+lathe-category-boxes = Коробки
+lathe-category-magazines = Магазины
 # Uniform
 lathe-category-bedsheets = Одеяла
 lathe-category-carpets = Ковры
@@ -21,22 +42,12 @@ lathe-category-command = Командование
 lathe-category-hats = Шляпы
 lathe-category-jumpsuits = Комбинезоны
 lathe-category-neck = Шея
-lathe-category-boxes = Коробки
-lathe-category-clothing = Одежда
-lathe-category-computers = Компьютеры
-lathe-category-concrete = Бетон
-lathe-category-dark = Тёмная
-lathe-category-engineering = Инженерия
-lathe-category-general = Общее
-lathe-category-magazines = Магазины
-lathe-category-maints = Техи
-lathe-category-marble = Мраморная
-lathe-category-medical = Медицина
-lathe-category-research = Исследования
-lathe-category-security = Безопасность
-lathe-category-service = Сервис
-lathe-category-steel = Стальная
-lathe-category-supply = Снабжение
-lathe-category-tiles = Плитка
-lathe-category-white = Белая
-lathe-category-wood = Деревянная
+# Tiles
+lathe-category-circuit-tile = Микросхема
+lathe-category-concrete-tile = Бетон
+lathe-category-dark-tile = Тёмная
+lathe-category-faux-tile = Искусственная
+lathe-category-maints-tile = Техи
+lathe-category-steel-tile = Сталь
+lathe-category-white-tile = Белая
+lathe-category-wood-tile = Деревянная

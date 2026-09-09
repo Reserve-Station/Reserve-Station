@@ -35,6 +35,7 @@ using Robust.Shared.Timing;
 using FixedPoint2 = Content.Goobstation.Maths.FixedPoint.FixedPoint2;
 using System.Linq;
 using Content.Server.Light.Components;
+using Content.Shared.Light.Components;
 using Robust.Server.GameObjects;
 using Content.Shared.Inventory;
 using Content.Shared.Roles;

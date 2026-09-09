@@ -195,11 +195,10 @@ marking-HumanHairVeryshortovereyealternate = Очень короткая (Чер
 marking-HumanHairVlongfringe = Очень короткая (Чёлка)
 marking-HumanHairVolaju = Воладзю
 marking-HumanHairWisp = Пряди
-
 marking-HumanHairBAlt = До плеч (Над глазом)
-
 marking-HumanHairLongWithBangs = Длинная с чёлкой
-
 marking-HumanHairNiko = Нико
-
 marking-HumanHairPulato = Пулато
+marking-HumanHairBaby = Малыш
+marking-HumanHairCube = Куб
+marking-HumanHairOverEyePigtail = Хвостик (Через глаз)

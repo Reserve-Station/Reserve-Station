@@ -1,6 +1,3 @@
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-//
 // SPDX-License-Identifier: MIT
 
 /// Reserve - File heavily edited by PR: Mapping editor.
@@ -14,23 +11,23 @@ namespace Content.Shared.Mapping;
 /// <summary>
 /// This is a prototype for predefining the start content of the “templates” section in the map editor.
 /// </summary>
-[Prototype("mappingTemplate")]
+[Prototype]
 public sealed partial class MappingTemplatePrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { set; get; } = default!;
 
     /// <summary>
     /// Used to allocate root objects to the corresponding sections of the map editor interface.
     /// </summary>
     [DataField]
-    public TemplateType? RootType { get; }
+    public TemplateType? RootType { set; get; }
 
     /// <summary>
     /// Prototypes for which this one will be a parent.
     /// </summary>
     [DataField]
-    public List<MappingTemplatePrototype> Children { get; } = new ();
+    public List<MappingTemplatePrototype> Children { set; get; } = new();
 }
 
 [Serializable]

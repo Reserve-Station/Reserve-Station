@@ -3,8 +3,8 @@ role-type-solo-antagonist-name = Соло-антагонист
 role-type-team-antagonist-name = Командный антагонист
 role-type-free-agent-name = Свободный агент
 role-type-familiar-name = Фамильяр
-role-type-silicon-name = Синтетик
-role-type-silicon-antagonist-name = Изменённый синтетик
+role-type-silicon-name = Синтет
+role-type-silicon-antagonist-name = Изменённый синтет
 role-type-update-message = Ваша роль: [color = { $color }]{ $role }[/color]
 # If you change a color here, you might want to also change it in role_types.yml
 role-type-crew-aligned-color = #eeeeee
@@ -30,3 +30,5 @@ role-subtype-survivor = Выживший
 role-subtype-subverted = Изменённый
 role-subtype-paradox-clone = Клон
 role-subtype-wizard = Волшебник
+
+role-subtype-xenoborg = Ксеноборг

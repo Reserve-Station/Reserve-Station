@@ -1,12 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Effects;
@@ -31,7 +22,7 @@ public sealed class ThrownLightningSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<ThrownLightningComponent, ThrowDoHitEvent>(OnHit);
-        SubscribeLocalEvent<ThrownLightningComponent, ThrownEvent>(OnThrown);
+        SubscribeLocalEvent<ThrownLightningComponent, ThrowEvent>(OnThrown);
         SubscribeLocalEvent<ThrownLightningComponent, StopThrowEvent>(OnStopThrow);
     }
 
@@ -47,7 +38,7 @@ public sealed class ThrownLightningSystem : EntitySystem
         Dirty(ent.Owner, trail);
     }
 
-    private void OnThrown(Entity<ThrownLightningComponent> ent, ref ThrownEvent args)
+    private void OnThrown(Entity<ThrownLightningComponent> ent, ref ThrowEvent args)
     {
         if (TryComp(ent, out TrailComponent? trail))
         {
@@ -66,11 +57,6 @@ public sealed class ThrownLightningSystem : EntitySystem
     {
         if (Deleting(ent))
             return;
-
-        if (args.Handled)
-            return;
-
-        args.Handled = true;
 
         if (!TryComp(args.Target, out StatusEffectsComponent? status))
             return;

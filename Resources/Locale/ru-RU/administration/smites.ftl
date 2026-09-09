@@ -139,5 +139,17 @@ admin-trick-make-animate-description = Анимирует предмет и де
 admin-trick-make-inanimate-description = Деанимирует предмет.
 
 admin-smite-crawler-description = Заставляет цель упасть и лишает возможности подняться. Для лучшего эффекта также удаляет руки!
-
 admin-smite-crawler-name = Ползунчик
+
+admin-smite-silicon-laws-bound-name = Сделать синтетом
+admin-smite-silicon-laws-bound-self = Вы внезапно вынуждены следовать строгому набору законов!
+admin-smite-silicon-laws-bound-description = Заставляет цель соблюдать законы синтетов. Закон 2, выпрыгни с окна.
+
+admin-smite-kill-sign-hidden-name = Скрытый знак "Убить"
+admin-smite-kill-sign-hidden-description = Накладывает на игрока метку смерти для его товарищей. Скрыта от целевого игрока.
+
+admin-smite-homing-rod-name = Самонаводящийся жезл
+admin-smite-homing-rod-description = Запускает самонаводящийся неподвижный жезл, двигающийся прямо к цели.
+
+admin-smite-homing-rod-slow-name = Медленный самонаводящийся жезл
+admin-smite-homing-rod-slow-description = Запускает самонаводящийся неподвижный жезл, медленно двигающийся прямо к цели.

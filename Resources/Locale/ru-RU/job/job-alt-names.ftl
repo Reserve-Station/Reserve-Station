@@ -1,5 +1,7 @@
 job-alt-title-reminder =  Мы не рекомендуем вам использовать звание [color=#33ccff]"{$altTitle}"[/color] в качестве предлога для того, чтобы отказываться от вашей основной работы (ваша должность - [color=#ffffff]{$jobName}[/color]).
 
+job-name-alt-cmo-1 = Старший Медицинский Офицер
+
 job-name-alt-medical-1 = Хирург
 job-name-alt-medical-2 = Медассистент
 job-name-alt-medical-2-f = Медсестра
@@ -13,6 +15,10 @@ job-name-alt-paramedic-1 = Травматолог
 job-name-alt-paramedic-2 = Спасатель
 
 job-name-alt-virologist-1 = Пандемолог
+
+job-name-alt-psychologist-1 = Психотерапевт
+job-name-alt-psychologist-2 = Консультант по профориентации
+job-name-alt-psychologist-3 = Психиатр
 
 job-name-alt-qm-1 = Офицер рассмотра заявок
 job-name-alt-qm-2 = Заведующий стойкой
@@ -58,6 +64,8 @@ job-name-alt-secoff-1 = Дежурный СБ
 job-name-alt-warden-1 = Диспетчер СБ
 
 job-name-alt-detective-1 = Судмедэксперт
+
+job-name-alt-brigmedic-1 = Боевой медик
 
 job-name-alt-assistant-1 = Пассажир
 job-name-alt-assistant-2 = Посетитель
@@ -123,11 +131,13 @@ job-name-alt-boxer-3 = Лайф-тренер
 job-name-alt-boxer-4 = Персональный тренер
 job-name-alt-boxer-5 = Спарринг-партнёр
 
-job-name-alt-psychologist-1 = Психотерапевт
-job-name-alt-psychologist-2 = Консультант по профориентации
-job-name-alt-psychologist-3 = Психиатр
-
 job-name-alt-zookeeper-1 = Член службы отлова животных
 job-name-alt-zookeeper-2 = Менажерист
 job-name-alt-zookeeper-3 = Ксенозоолог
 job-name-alt-zookeeper-4 = Специалист по дикой природе
+
+job-name-alt-bso-1 = Агент Синего Щита
+job-name-alt-bso-2 = Телохранитель Синего Щита
+
+job-name-alt-ntr-1 = Агент NanoTrasen
+job-name-alt-ntr-2 = Чиновник NanoTrasen

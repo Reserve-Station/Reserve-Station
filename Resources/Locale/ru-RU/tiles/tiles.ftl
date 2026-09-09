@@ -133,6 +133,8 @@ tiles-astro-snow = астро-снег
 tiles-astro-asteroid-sand = астероидный астро-песок
 tiles-astro-asteroid-sand-borderless = астероидный астро-песок без границы
 tiles-wood-large = большой деревянный пол
+tiles-dirt-planet-floor = грязь планеты
+tiles-techmaint-floor-dark = тёмный технический пол
 tiles-xeno-floor = ксено-пол
 tiles-xeno-steel = ксено-стальная плитка
 tiles-xeno-steel-corner = ксено-стальная угловая плитка
@@ -143,6 +145,26 @@ tiles-dark-marble = тёмная мраморная плитка
 tiles-plasma-marble = плазменная мраморная плитка
 tiles-uranium-marble = урановая мраморная плитка
 
-tiles-dirt-planet-floor = грязь планеты
+tiles-dark-astro-grass = тёмная астро-трава
 
-tiles-techmaint-floor-dark = тёмный технический пол
+tiles-light-astro-grass = лёгкая астро-трава
+
+tiles-astro-ironsand = астро-железный песок
+
+tiles-desert-astro-sand = пустынный астро-песок
+
+tiles-xenoborg-floor = ксеноборг-плитка
+
+tiles-ironsand-plating = железный песок
+
+tiles-ironsand-tile = плитка из железного песка
+
+tiles-ironsand-concrete-tile = железопесчаная бетонная плитка
+
+tiles-ironsand-concrete-slab = железопесчаная бетонная плита
+
+tiles-ironsand-concrete-smooth = гладкий бетонный пол из железного песка
+
+tiles-ironsand-packed = утрамбованный железный песок
+
+tiles-ironsand-paved = асфальтированный железный песок

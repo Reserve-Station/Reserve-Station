@@ -1,0 +1,12 @@
+ent-SpeechStatusEffectBase = изменённая речь
+    .desc = { "" }
+ent-StatusEffectStutter = запинание
+    .desc = { "" }
+ent-StatusEffectSlurred = шепелявость
+    .desc = { "" }
+ent-StatusEffectScrambled = запутанность
+    .desc = { "" }
+ent-StatusEffectOwO = мяуканье
+    .desc = { "" }
+ent-StatusEffectBark = гавканье
+    .desc = { "" }

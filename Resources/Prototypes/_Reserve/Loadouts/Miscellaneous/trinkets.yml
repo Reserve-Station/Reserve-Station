@@ -1,5 +1,3 @@
-# SPDX-FileCopyrightText: 2026 Ceterai <ceterai@protonmail.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # region Audio
@@ -162,7 +160,7 @@
   storage:
     back:
     - MetalRing
-  groupBy: "rings"
+  groupBy: "ring"
 
 - type: entity
   parent: SilverRing
@@ -184,7 +182,7 @@
   storage:
     back:
     - PlasticRing
-  groupBy: "rings"
+  groupBy: "ring"
 
 - type: entity
   parent: PlasticRing
@@ -209,7 +207,7 @@
   storage:
     back:
     - FakeDiamondRing
-  groupBy: "rings"
+  groupBy: "ring"
 
 - type: entity
   parent: FakeDiamondRing
@@ -234,7 +232,7 @@
   storage:
     back:
     - FakeRubyRing
-  groupBy: "rings"
+  groupBy: "ring"
 
 - type: entity
   parent: PlasticRing
@@ -259,7 +257,7 @@
   storage:
     back:
     - MimeRing
-  groupBy: "rings"
+  groupBy: "ring"
 
 - type: entity
   parent: PlasticRing
@@ -284,7 +282,7 @@
   storage:
     back:
     - TomatoRing
-  groupBy: "rings"
+  groupBy: "ring"
 
 - type: entity
   parent: PlasticRing
@@ -309,7 +307,7 @@
   storage:
     back:
     - LoveRing
-  groupBy: "rings"
+  groupBy: "ring"
 
 - type: entity
   parent: PlasticRing
@@ -335,7 +333,7 @@
   storage:
     back:
     - RainbowRing
-  groupBy: "rings"
+  groupBy: "ring"
 
 # endregion
 
@@ -346,7 +344,7 @@
   storage:
     back:
     - PokerChips50
-  groupBy: "games"
+  groupBy: "cards"
 
 - type: entity
   parent: CardScAceOfSpadesBlack
@@ -363,21 +361,21 @@
   storage:
     back:
     - CardScAceOfSpadesBlack
-  groupBy: "games"
+  groupBy: "cards"
 
 - type: loadout
   id: MysteryFigureBox
   storage:
     back:
     - MysteryFigureBox
-  groupBy: "games"
+  groupBy: "cards"
 
 - type: loadout
   id: TennisBall
   storage:
     back:
     - TennisBall
-  groupBy: "games"
+  groupBy: "cards"
 
 - type: entity
   parent: BaseTennisRacket
@@ -398,7 +396,7 @@
     back:
     - BaseTennisRacket
     - BaseTennisRacket
-  groupBy: "games"
+  groupBy: "cards"
 
 - type: loadout
   id: BalloonNT
@@ -411,7 +409,7 @@
   storage:
     back:
     - BalloonNT
-  groupBy: "games"
+  groupBy: "cards"
 
 - type: loadout
   id: BalloonCorgi
@@ -424,7 +422,7 @@
   storage:
     back:
     - BalloonCorgi
-  groupBy: "games"
+  groupBy: "cards"
 
 - type: loadout
   id: SpellCardFun
@@ -437,7 +435,7 @@
   storage:
     back:
     - SpellCardFun
-  groupBy: "games"
+  groupBy: "cards"
 
 - type: entity
   parent: d6Dice
@@ -465,7 +463,7 @@
     back:
     - d6DiceGold
     - d6DiceGold
-  groupBy: "games"
+  groupBy: "cards"
 
 - type: entity
   parent: d6Dice
@@ -496,7 +494,7 @@
     back:
     - d6DiceRainbow
     - d6DiceRainbow
-  groupBy: "games"
+  groupBy: "cards"
 
 # endregion
 
@@ -512,7 +510,7 @@
   storage:
     back:
     - PlushieSlime
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: loadout
   id: PlushieDiona
@@ -524,7 +522,7 @@
   storage:
     back:
     - PlushieDiona
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: loadout
   id: PlushieVox
@@ -536,7 +534,7 @@
   storage:
     back:
     - PlushieVox
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: loadout
   id: PlushieHuman
@@ -548,7 +546,7 @@
   storage:
     back:
     - PlushieHuman
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: entity
   parent: BasePlushie
@@ -575,7 +573,7 @@
   storage:
     back:
     - PlushieBread
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: entity
   parent: BasePlushie
@@ -600,7 +598,7 @@
   storage:
     back:
     - PlushiePiano
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: entity
   parent: BasePlushie
@@ -624,7 +622,7 @@
   storage:
     back:
     - PlushieBehonkerEye
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: entity
   parent: BasePlushie
@@ -648,7 +646,7 @@
   storage:
     back:
     - PlushieChest
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: loadout
   id: PlushieAI
@@ -661,7 +659,7 @@
   storage:
     back:
     - ToyAi
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: loadout
   id: PlushieSharkBlue
@@ -673,7 +671,7 @@
   storage:
     back:
     - PlushieSharkBlue
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: loadout
   id: PlushieSharkGrey
@@ -685,7 +683,7 @@
   storage:
     back:
     - PlushieSharkGrey
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: loadout
   id: PlushieSharkPink
@@ -697,7 +695,7 @@
   storage:
     back:
     - PlushieSharkPink
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: entity
   parent: PlushieSharkGrey
@@ -736,7 +734,7 @@
   storage:
     back:
     - PlushieSharkRainbow
-  groupBy: "plush"
+  groupBy: "plushies"
 
 - type: entity
   parent: PlushieGhost
@@ -774,7 +772,7 @@
   storage:
     back:
     - PlushieGhostRainbow
-  groupBy: "plush"
+  groupBy: "plushies"
 
 # endregion
 

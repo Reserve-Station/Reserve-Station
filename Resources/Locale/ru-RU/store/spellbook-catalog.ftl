@@ -1,11 +1,11 @@
 # Spells
+
 spellbook-fireball-name = Огненный шар
 spellbook-fireball-desc = Пусть большинство членов экипажа взорвутся от ярости, когда увидят летящий в них огненный шар!
 spellbook-blink-name = Прыжок
 spellbook-blink-desc = Не моргайте, иначе вы не заметите, как телепортируетесь.
 spellbook-force-wall-name = Силовой барьер
 spellbook-force-wall-desc = Создайте три стены чистой энергии, через которые вы можете пройти, а другие - нет.
-spellbook-polymoprh-spider-name = Полиморф-паук
 spellbook-polymorph-spider-name = Полиморф-паук
 spellbook-polymorph-spider-desc = Превращает вас в паука!
 spellbook-polymorph-rod-name = Полиморф-жезл
@@ -33,16 +33,23 @@ spellbook-event-summon-guns-name = Призыв оружия
 spellbook-event-summon-guns-description = АК-47 для всех! Размещает перед каждым случайное огнестрельное оружие. Отключает возврат средств при покупке!
 spellbook-event-summon-magic-name = Призыв магии
 spellbook-event-summon-magic-description = Размещает перед каждым случайный магический предмет. Что может пойти не так? Отключает возврат средств при покупке!
+
 # Upgrades
+
 spellbook-upgrade-fireball-name = Улучшение Огненного шара
 spellbook-upgrade-fireball-description = Позволяет улучшить Огненный шар до максимального 3-го уровня!
-spellbook-upgrade-jaunt-name = Улучшение Эфирной прогулки
-spellbook-upgrade-jaunt-description = Позволяет улучшить Эфирную прогулку до максимального 3-го уровня!
 
-spellbook-curse-of-byond-description = Обреките вашу цель на вечные муки.
+spellbook-upgrade-jaunt-name = Улучшение Эфирного рывка
+spellbook-upgrade-jaunt-description = Позволяет улучшить Эфирный рывок до максимального 3-го уровня!
+
+spellbook-voidapplause-name = Хлопок пустоты
+spellbook-voidapplause-desc = Поменяйтесь местами с целью, разве вам не захотелось потанцевать буги?
+
+spellbook-slip-name = Скользкая дорожка
+spellbook-slip-desc = Изучите древние приёмы уборщиков и прокляните вашу цель, чтобы та была скользкой.
 
 spellbook-curse-of-byond-name = Проклятие Бьонда
-
-spellbook-tile-toggle-description = Пассажирам это не нравится.
+spellbook-curse-of-byond-description = Обреките вашу цель на вечные муки.
 
 spellbook-tile-toggle-name = Движение по плиткам
+spellbook-tile-toggle-description = Пассажирам это не нравится.

@@ -1,8 +1,3 @@
-// SPDX-FileCopyrightText: 2023 lzk <124214523+lzk228@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
-// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text.RegularExpressions;
@@ -25,6 +20,7 @@ public sealed class MothAccentSystem : EntitySystem
         SubscribeLocalEvent<MothAccentComponent, AccentGetEvent>(OnAccent);
     }
 
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "RA0026:Use of uncached static Regex function", Justification = "It's okay.")]  // Reserve-Localization
     private void OnAccent(EntityUid uid, MothAccentComponent component, AccentGetEvent args)
     {
         var message = args.Message;

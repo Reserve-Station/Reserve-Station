@@ -1,18 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Milon <milonpl.git@proton.me>
-// SPDX-FileCopyrightText: 2024 Skubman <ba.fallaria@gmail.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2025 Kutosss <162154227+Kutosss@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 NazrinNya <137837419+NazrinNya@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
-// SPDX-FileCopyrightText: 2025 Tobias Berger <toby@tobot.dev>
-// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.CartridgeLoader;
@@ -77,7 +62,7 @@ public enum NanoChatUiMessageType : byte
 
 // putting this here because i can
 [Serializable, NetSerializable, DataRecord]
-public struct NanoChatRecipient
+public partial struct NanoChatRecipient
 {
     /// <summary>
     ///     The recipient's unique NanoChat number.
@@ -116,7 +101,7 @@ public struct NanoChatRecipient
 }
 
 [Serializable, NetSerializable, DataRecord]
-public struct NanoChatMessage
+public partial struct NanoChatMessage
 {
     public const int MaxContentLength = 256;
 
@@ -184,7 +169,7 @@ public struct NanoChatMessage
 /// </summary>
 /// <remarks>Used by the LogProbe</remarks>
 [Serializable, NetSerializable, DataRecord]
-public readonly struct NanoChatData(
+public readonly partial struct NanoChatData(
     Dictionary<uint, NanoChatRecipient> recipients,
     Dictionary<uint, List<NanoChatMessage>> messages,
     uint? cardNumber,

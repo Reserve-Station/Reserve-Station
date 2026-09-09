@@ -1,15 +1,3 @@
-// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
-// SPDX-FileCopyrightText: 2024 Fishbait <Fishbait@git.ml>
-// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-// SPDX-FileCopyrightText: 2024 fishbait <gnesse@gmail.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 August Eymann <august.eymann@gmail.com>
-// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
-// SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
-// SPDX-FileCopyrightText: 2025 Misandry <mary@thughunt.ing>
-// SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -96,28 +84,21 @@ public sealed class BlobFactorySystem : EntitySystem
         }
     }
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Phlogiston = "Phlogiston";
+    private static readonly ProtoId<ReagentPrototype> Phlogiston = "Phlogiston";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string TearGas = "TearGas";
+    private static readonly ProtoId<ReagentPrototype> TearGas = "TearGas";
 
-    [ValidatePrototypeId<ReagentPrototype>]
+    private static readonly ProtoId<ReagentPrototype> Lexorin = "Lexorin";
 
-    private const string Lexorin = "Lexorin";
+    private static readonly ProtoId<ReagentPrototype> Mold = "Mold";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Mold = "Mold";
+    private static readonly ProtoId<ReagentPrototype> Bicaridine = "Bicaridine";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Bicaridine = "Bicaridine";
+    private static readonly ProtoId<ReagentPrototype> Aluminium = "Aluminium";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Aluminium = "Aluminium";
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Iron = "Iron";
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Uranium = "Uranium";
+    private static readonly ProtoId<ReagentPrototype> Iron = "Iron";
+
+    private static readonly ProtoId<ReagentPrototype> Uranium = "Uranium";
 
     private void FillSmokeGas(Entity<BlobPodComponent> ent, BlobChemType currentChem)
     {
@@ -128,27 +109,27 @@ public sealed class BlobFactorySystem : EntitySystem
                 blobGas.AddSolution(new Solution(Phlogiston, FixedPoint2.New(30))
                 {
                     Temperature = 1000
-                },_prototypeManager);
+                }, _prototypeManager);
                 break;
             case BlobChemType.ReactiveSpines:
-                blobGas.AddSolution(new Solution(Mold, FixedPoint2.New(30)),_prototypeManager);
+                blobGas.AddSolution(new Solution(Mold, FixedPoint2.New(30)), _prototypeManager);
                 break;
             case BlobChemType.RegenerativeMateria:
-                blobGas.AddSolution(new Solution(Bicaridine, FixedPoint2.New(30)),_prototypeManager);
+                blobGas.AddSolution(new Solution(Bicaridine, FixedPoint2.New(30)), _prototypeManager);
                 break;
             case BlobChemType.ExplosiveLattice:
                 blobGas.AddSolution(new Solution(Lexorin, FixedPoint2.New(30))
                 {
                     Temperature = 1000
-                },_prototypeManager);
+                }, _prototypeManager);
                 break;
             case BlobChemType.ElectromagneticWeb:
-                blobGas.AddSolution(new Solution(Aluminium, FixedPoint2.New(10)){ CanReact = false },_prototypeManager);
-                blobGas.AddSolution(new Solution(Iron, FixedPoint2.New(10)){ CanReact = false },_prototypeManager);
-                blobGas.AddSolution(new Solution(Uranium, FixedPoint2.New(10)){ CanReact = false },_prototypeManager);
+                blobGas.AddSolution(new Solution(Aluminium, FixedPoint2.New(10)) { CanReact = false }, _prototypeManager);
+                blobGas.AddSolution(new Solution(Iron, FixedPoint2.New(10)) { CanReact = false }, _prototypeManager);
+                blobGas.AddSolution(new Solution(Uranium, FixedPoint2.New(10)) { CanReact = false }, _prototypeManager);
                 break;
             default:
-                blobGas.AddSolution(new Solution(TearGas, FixedPoint2.New(30)),_prototypeManager);
+                blobGas.AddSolution(new Solution(TearGas, FixedPoint2.New(30)), _prototypeManager);
                 break;
         }
     }
@@ -180,7 +161,7 @@ public sealed class BlobFactorySystem : EntitySystem
         var blobPod = EnsureComp<BlobPodComponent>(pod);
         blobPod.Core = blobTileComponent.Core.Value;
         blobPod.Factory = uid; //Reserve edit - blob factory port
-        FillSmokeGas((pod,blobPod), blobCoreComponent.CurrentChem);
+        FillSmokeGas((pod, blobPod), blobCoreComponent.CurrentChem);
 
         //smokeOnTrigger.SmokeColor = blobCoreComponent.ChemСolors[blobCoreComponent.CurrentChem];
         component.Accumulator = 0;

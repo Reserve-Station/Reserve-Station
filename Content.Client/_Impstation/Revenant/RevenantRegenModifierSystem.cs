@@ -31,13 +31,13 @@ public sealed class RevenantRegenModifierSystem : EntitySystem
             var ent = GetEntity(witness);
             if (TryComp<SpriteComponent>(ent, out var sprite))
             {
-                var layer = sprite.AddLayer(_witnessIndicator);
+                var layer = _sprite.AddLayer(ent, _witnessIndicator);
 
-                sprite.LayerMapSet(RevenantWitnessVisuals.Key, layer);
-                sprite.LayerSetOffset(layer, new Vector2(0, 0.8f));
-                sprite.LayerSetScale(layer, new Vector2(0.65f, 0.65f));
+                _sprite.LayerMapSet(ent, RevenantWitnessVisuals.Key, layer);
+                _sprite.LayerSetOffset(ent, layer, new Vector2(0, 0.8f));
+                _sprite.LayerSetScale(ent, layer, new Vector2(0.65f, 0.65f));
 
-                Timer.Spawn(TimeSpan.FromSeconds(5), () => sprite.RemoveLayer(RevenantWitnessVisuals.Key));
+                Timer.Spawn(TimeSpan.FromSeconds(5), () => _sprite.RemoveLayer(ent, RevenantWitnessVisuals.Key));
             }
         }
     }

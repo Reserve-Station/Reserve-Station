@@ -62,7 +62,7 @@ ghost-role-information-navy-captain-rules = Вы не связаны никак�
 
 ghost-role-information-special-operations-officer-name = Офицер специальных операций
 ghost-role-information-special-operations-officer-description = Присылайте, инструктируйте и направляйте отряды экстренного реагирования или другие силы Нанотрейзен. Отправляйте ядерные коды или не отправляйте.
-ghost-role-information-special-operations-officer-rules = Доставьте представителя Nanotrasen живым, остальные - просто залог. Приказы[color=#yellow][bold]капитана флота[/bold][/color] могут изменить это.
+ghost-role-information-special-operations-officer-rules = Доставьте представителя NanoTrasen живым, остальные - просто залог. Приказы[color=#yellow][bold]капитана флота[/bold][/color] могут изменить это.
 
 ghost-role-information-navy-officer-name = Офицер флота
 ghost-role-information-navy-officer-description = Отвечайте на факсы и радиосообщения, адресованные Центральному Командованию. Проведите расследование об станции и экипаже.
@@ -106,7 +106,7 @@ ghost-role-information-Hecu-rules = Вы обязаны подчиняться �
 # Карго бингл
 
 ghost-role-cargo-bingle-name = Бингл снабжения
-ghost-role-cargo-bingle-desc = Служите представителю Nanotrasen и его интересам, не кусайте экипаж, помогайте отделу снабжения.
+ghost-role-cargo-bingle-desc = Служите представителю NanoTrasen и его интересам, не кусайте экипаж, помогайте отделу снабжения.
 
 # Роли с шаттлов
 
@@ -182,7 +182,7 @@ ghost-role-information-dark-lord-description = Агент Синдиката, с
 dark-lord-role-greeting = Вы [color=#880808]Тёмный лорд[/color], отправленный синдикатом на эту станцию для выполнения своей грязной работы. Проверьте своё меню персонажа на предмет ваших целей.
 
 ghost-role-information-chosen-one-name = Избранный
-ghost-role-information-chosen-one-description = Специальный агент, посланный Nanotrasen на станцию, чтобы победить Тёмного лорда.
+ghost-role-information-chosen-one-description = Специальный агент, посланный NanoTrasen на станцию, чтобы победить Тёмного лорда.
 chosen-one-role-greeting = Вы [color=#0087FF]Избранный[/color], вы были отправлены на эту станцию, чтобы победить Тёмного лорда, посланного Синдикатом. Проверьте своё меню персонажа на предмет ваших целей.
 objective-condition-dark-lord-kill-title = Убедитесь, что Тёмный лорд {$targetName} умрёт.
 

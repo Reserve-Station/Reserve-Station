@@ -1,17 +1,5 @@
-// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 ShadowCommander <10494922+ShadowCommander@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 Janet Blackquill <uhhadd@gmail.com>
-// SPDX-FileCopyrightText: 2025 MaiaArai <158123176+YaraaraY@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 corresp0nd <46357632+corresp0nd@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 taydeo <td12233a@gmail.com>
-// SPDX-FileCopyrightText: 2026 W.xyz() <84605679+pirakaplant@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Numerics;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Guidebook;
@@ -49,9 +37,9 @@ public sealed partial class RequirementsSelector : BoxContainer
         RobustXamlLoader.Load(this);
         _options = new RadioOptions<int>(RadioOptionsLayout.Horizontal)
         {
-            FirstButtonStyle = StyleBase.ButtonOpenRight,
-            ButtonStyle = StyleBase.ButtonOpenBoth,
-            LastButtonStyle = StyleBase.ButtonOpenLeft,
+            FirstButtonStyle = StyleClass.ButtonOpenRight,
+            ButtonStyle = StyleClass.ButtonOpenBoth,
+            LastButtonStyle = StyleClass.ButtonOpenLeft,
             HorizontalExpand = true,
         };
         //Override default radio option button width
@@ -68,7 +56,7 @@ public sealed partial class RequirementsSelector : BoxContainer
             Text = Loc.GetString("role-timer-locked"),
             Visible = true,
             HorizontalAlignment = HAlignment.Center,
-            StyleClasses = {StyleBase.StyleClassLabelSubText},
+            StyleClasses = { StyleClass.LabelSubText },
         };
 
         _lockStripe = new StripeBack()
@@ -232,7 +220,7 @@ public sealed partial class RequirementsSelector : BoxContainer
         return new Button
         {
             Text = text,
-            MinWidth = 60,
+            MinWidth = 40, // Reserve edit: New Jobs Style
             HorizontalExpand = false,
         };
     }

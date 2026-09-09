@@ -1,7 +1,11 @@
-uploadfolder-command-description = Рекурсивно загружает папку на папку контента сервера.
-uploadfolder-command-help = uploadfolder [папка, в которую вы хотите загрузить файлы userdata/UploadFolder]
+uploadfolder-command-description = Загружает папку из вашей папки UserData рекурсивно в серверный contentDB.
+uploadfolder-command-help = uploadfolder [папка в userdata/UploadFolder, которую вы хотите загрузить]
 uploadfolder-command-wrong-args = Неправильное количество аргументов!
 uploadfolder-command-folder-not-found = Папка { $folder } не найдена!
-uploadfolder-command-resource-upload-disabled = Network Resource Uploading сейчас недоступен. Проверьте серверные CVar'ы.
-uploadfolder-command-file-too-big = Файл { $filename } выше текущего лимита размера! Он должен быть меньше { $sizeLimit } МБ. Пропущено.
-uploadfolder-command-success = Загружено { $fileCount } файлов
+uploadfolder-command-resource-upload-disabled = Загрузка сетевых ресурсов сейчас отключена. Проверьте серверные CVar-ы.
+uploadfolder-command-file-too-big = Файл { $filename } превышает лимит размера! Должно быть меньше { $sizeLimit } МБ. Пропуск.
+uploadfolder-command-success = {$fileCount ->
+    [one] Загружен 1 файл
+    [few] Загружено { $fileCount } файла
+    *[other] Загружено { $fileCount } файлов
+}.

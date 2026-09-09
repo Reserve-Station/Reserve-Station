@@ -1,13 +1,3 @@
-# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 M3739 <47579354+M3739@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2023 OttoMaticode <124523848+OttoMaticode@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Hannah Giovanna Dawson <karakkaraz@gmail.com>
-# SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 nazrin <tikufaev@outlook.com>
-#
 # SPDX-License-Identifier: MIT
 
 - type: guideEntry
@@ -63,7 +53,19 @@
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/Xenoarchaeology.xml"
   children:
-  - ArtifactReports
+    # - ArtifactReports
+    - AnalysisConsole
+    - XenoarchaeologyUnlockingNodes
+
+- type: guideEntry
+  id: XenoarchaeologyUnlockingNodes
+  name: guide-entry-xenoarchaeologyunlockingnodes
+  text: "/ServerInfo/Guidebook/Science/UnlockingNodes.xml"
+
+- type: guideEntry
+  id: AnalysisConsole
+  name: guide-entry-analysisconsole
+  text: "/ServerInfo/Guidebook/Science/AnalysisConsole.xml"
 
 - type: guideEntry
   id: Robotics
@@ -74,12 +76,12 @@
   children:
   - Cyborgs
 
-- type: guideEntry
-  id: ArtifactReports
-  name: guide-entry-artifact-reports
-  text: "/ServerInfo/Guidebook/Science/ArtifactReports.xml"
-  localizedText:
-    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/ArtifactReports.xml"
+# - type: guideEntry
+#   id: ArtifactReports
+#   name: guide-entry-artifact-reports
+#   text: "/ServerInfo/Guidebook/Science/ArtifactReports.xml"
+#   localizedText:
+#     ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/ArtifactReports.xml"
 
 - type: guideEntry
   id: Cyborgs

@@ -17,8 +17,8 @@
   # Reserve - antag UI
   category: Team
   icon:
-    sprite: _EinsteinEngines/Shadowling/objectives.rsi
-    state: ascendance_icon
+    sprite: _EinsteinEngines/Shadowling/shadowling_abilities.rsi
+    state: engage_hatch
 
 - type: antag
   id: Thrall

@@ -11,8 +11,8 @@
   # Reserve - antag UI
   category: Team
   icon:
-    sprite: _Harmony/Interface/Misc/job_icons.rsi
-    state: BloodBrother
+    sprite: _Goobstation/Wraith/actions.rsi
+    state: evil_touch
 
 # not actually given out, only used to check the preference
 - type: antag
@@ -27,5 +27,5 @@
   # Reserve - antag UI
   category: Team
   icon:
-    sprite: _Harmony/Interface/Misc/job_icons.rsi
-    state: BloodBrother
+    sprite: _Goobstation/Wraith/actions.rsi
+    state: possess_object

@@ -66,3 +66,6 @@ ent-XenoborgCircuitBoard = плата законов (Ксеноборг)
 ent-MothershipCircuitBoard = плата законов (Ядро материнского корабля)
     .desc = Электронная плата, хранящая набор законов 'Ядро материнского корабля'.
     .suffix = Адмем
+ent-BaseSiliconLawboard = { ent-BaseElectronics }
+    .desc = Электронная плата, хранящая набор законов.
+    .suffix = { ent-BaseElectronics.suffix }

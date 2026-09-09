@@ -1,9 +1,3 @@
-# SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 gus <august.eymann@gmail.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 name: Mark and Close Stale Pull Requests
 
 on:
@@ -43,23 +37,14 @@ jobs:
 
           # Comment to post when marking a PR as stale
           stale-pr-message: |
-            Этот pull request был автоматически отмечен как устаревший, потому что он не имел
-            любой активности в течение 14 дней. Он будет закрыт через 14 дней, если не будет никакой дальнейшей деятельности.
-            Спасибо за ваши вклады.
+            Этот пулл-реквест был автоматически помечен как старый потому что в нём не было никакой активности уже 14 дней. Он будет автоматически закрыт ещё через 14 дней, если новой активности не появится.
 
-            Вы всегда можете попросить о помощи в нашем развитии [discord](https://discord.gg/4Jn4kxRmvF).
-
-            Если вы хотите оставить это открытым, просто оставьте любой комментарий, и устаревшая этикетка будет удалена.
+            Если нужно чтобы он оставался открытым без активности, достаточно оставить любой комментарий, и метка будет убрана.
           # Comment to post when closing a stale PR
           close-pr-message: |
-            Этот pull request был автоматически закрыт, так как в течение 14 дней не было никакой активности
-            после того, как был отмечен устаревшим.
+            Этот пулл-реквест был автоматически закрыт, потому что оставался без активности 28 дней.
 
-            Пожалуйста, не стесняйтесь открывать новый pull request или открыть новый, если вы все еще хотите, чтобы ваши изменения были рассмотрены.
-
-            Снова, вы всегда можете попросить помощи в нашем [discord](https://discord.gg/RYNBE6fUW2).
-
-            Еще раз спасибо за ваш вклад!
+            Если изменения еще актуальны, пулл-реквест можно открыть снова, попросив разработчика, или сделать полностью новый пулл-реквест.
           # Pull Requests with these labels will never be considered stale
 
           # Set to true to ignore PRs in a milestone (defaults to false)

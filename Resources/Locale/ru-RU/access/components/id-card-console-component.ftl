@@ -9,4 +9,7 @@ id-card-console-window-job-selection-label = Предустановки долж
 access-id-card-console-component-no-hands-error = У вас нет рук.
 id-card-console-privileged-id = Основная ID
 id-card-console-target-id = Целевая ID
-id-card-console-damaged = Нарушена структурная целостность, содержимое выбрасывается наружу.
+id-card-console-damaged = Нарушена структурная целостность, выброс содержимого.
+
+id-card-console-window-select-all-button = Выдать все
+id-card-console-window-deselect-all-button = Убрать все

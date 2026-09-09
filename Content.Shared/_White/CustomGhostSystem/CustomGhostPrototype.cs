@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
@@ -11,20 +9,20 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 
 namespace Content.Shared._White.CustomGhostSystem;
 
-[Prototype("customGhost")]
-public sealed class CustomGhostPrototype : IPrototype, IInheritingPrototype
+[Prototype]
+public sealed partial class CustomGhostPrototype : IPrototype, IInheritingPrototype
 {
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { set; get; } = default!;
 
     [ViewVariables]
     [NeverPushInheritance]
     [AbstractDataField]
-    public bool Abstract { get; }
+    public bool Abstract { set; get; }
 
     [ViewVariables]
     [ParentDataFieldAttribute(typeof(AbstractPrototypeIdArraySerializer<CustomGhostPrototype>))]
-    public string[]? Parents { get; }
+    public string[]? Parents { set; get; }
 
     [DataField]
     public string Category { get; private set; } = "Misc";
@@ -45,9 +43,9 @@ public sealed class CustomGhostPrototype : IPrototype, IInheritingPrototype
             return true;
 
         bool result = true;
-        foreach(var restriction in Restrictions)
+        foreach (var restriction in Restrictions)
         {
-            if(!restriction.CanUse(session, out var failReason))
+            if (!restriction.CanUse(session, out var failReason))
             {
                 result = false;
                 fullFailReason += $"\n{failReason}";
@@ -71,7 +69,8 @@ public sealed class CustomGhostPrototype : IPrototype, IInheritingPrototype
     /// If null, the default of "custom-ghost-[id]-desc" will be used.
     /// </summary>
     [DataField]
-    public string? Description { get; private set; }}
+    public string? Description { get; private set; }
+}
 
 
 public abstract class CustomGhostRestriction

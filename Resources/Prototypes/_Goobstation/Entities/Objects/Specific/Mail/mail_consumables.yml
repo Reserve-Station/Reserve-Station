@@ -1,11 +1,7 @@
-# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailAlcohol
   suffix: Alcohol
   components:
@@ -47,7 +43,7 @@
       amount: 2
 
 - type: entity
-  parent: BaseMailLarge
+  parent: PackageDelivery
   id: MailCakes
   suffix: Cakes
   components:
@@ -104,7 +100,7 @@
       amount: 2
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailCheese #Sometimes i dream about cheese
   suffix: Cheese
   components:
@@ -121,7 +117,7 @@
     - id: KnifePlastic
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailCigarettes
   suffix: Cigs
   components:
@@ -149,7 +145,7 @@
     - id: CheapLighter
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailGoldCigars
   suffix: Cigs, Premium
   components:
@@ -162,7 +158,7 @@
       prob: 0.95
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailCookies
   suffix: Cookies
   components:
@@ -207,7 +203,7 @@
       orGroup: Cookie4
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailMuffins
   suffix: Muffins
   components:
@@ -252,7 +248,7 @@
       orGroup: Muffin4
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailSnacks
   suffix: Snacks
   components:
@@ -364,7 +360,7 @@
       prob: 0.5
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailDonkPockets
   suffix: Donk Pockets
   components:
@@ -399,7 +395,7 @@
       prob: 0.05
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailNFSodaPwrGame
   suffix: Pwrgame
   components:
@@ -410,7 +406,7 @@
     - id: PaperMailNFPwrGameAd
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailNFSodaRedBool
   suffix: Red Bool
   components:
@@ -421,7 +417,7 @@
     - id: PaperMailNFRedBoolAd
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailNFSodaSpaceCola
   suffix: Space Cola
   components:
@@ -431,7 +427,7 @@
     - id: PaperMailNFSpaceColaAd
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailNFSodaSpaceMountainWind
   suffix: Space Mountain Wind
   components:
@@ -441,7 +437,7 @@
     - id: PaperMailNFSpaceMountainWindAd
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailNFSodaSpaceUp
   suffix: Space Up
   components:
@@ -451,7 +447,7 @@
     - id: PaperMailNFSpaceUpAd
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailJoints
   suffix: Joints
   components:
@@ -498,7 +494,7 @@
       prob: 0.15
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailUnusualFood
   suffix: Unusual food
   components:
@@ -562,7 +558,7 @@
       orGroup: Food
 
 - type: entity
-  parent: BaseMail
+  parent: LetterDelivery
   id: MailBakedGoods
   suffix: Baked
   components:
