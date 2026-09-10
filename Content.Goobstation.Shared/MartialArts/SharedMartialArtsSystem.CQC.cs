@@ -219,8 +219,8 @@ public partial class SharedMartialArtsSystem
             || !TryUseMartialArt(ent, proto, out var target, out _))
             return;
 
-        _stun.TryKnockdown(target, TimeSpan.FromSeconds(proto.ParalyzeTime), true, true, proto.DropItems);
-        _stamina.TakeStaminaDamage(target, proto.StaminaDamage, source: ent, applyResistances: true);
+        _stun.TryKnockdown(target, proto.ParalyzeTime, true, true, proto.DropItems);
+        _stamina.TakeStaminaDamage(target, proto.StaminaDamage, source: ent);
         ComboPopup(ent, target, proto.ID); // Reserve edit: localization #359
         ent.Comp.LastAttacks.Clear();
     }
