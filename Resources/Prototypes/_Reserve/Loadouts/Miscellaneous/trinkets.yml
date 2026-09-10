@@ -9,7 +9,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobRadioHost
-      time: 18000 # 5hr
+      time: 5h
   storage:
     back:
     - VinylSleeveBlack
@@ -35,7 +35,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobRadioHost
-      time: 360000 # 100hr
+      time: 50h
   storage:
     back:
     - VinylSleeveGold
@@ -48,7 +48,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobJanitor
-      time: 18000 # 5hr
+      time: 5h
   storage:
     back:
     - DiskCaseFilled
@@ -83,7 +83,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobJanitor
-      time: 360000 # 100hr
+      time: 50h
   storage:
     back:
     - DiskCaseGold
@@ -105,7 +105,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMusician
-      time: 1440000 # 400hr
+      time: 100h
   storage:
     back:
     - OcarinaInstrumentBlue
@@ -129,13 +129,13 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobReporter
-      time: 144000 # 40hr
+      time: 20h
   storage:
     back:
     - MicrophoneInstrumentMicro
   groupBy: "audio"
 
-# endregion
+# endregion Audio
 
 # region Rings
 
@@ -203,7 +203,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobShaftMiner
-      time: 288000 # 80hr
+      time: 80h
   storage:
     back:
     - FakeDiamondRing
@@ -228,7 +228,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobRoboticist
-      time: 288000 # 80hr
+      time: 10h
   storage:
     back:
     - FakeRubyRing
@@ -253,7 +253,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMime
-      time: 288000 # 80hr
+      time: 60h
   storage:
     back:
     - MimeRing
@@ -278,7 +278,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBotanist
-      time: 288000 # 80hr
+      time: 80h
   storage:
     back:
     - TomatoRing
@@ -303,7 +303,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChaplain
-      time: 288000 # 80hr
+      time: 80h
   storage:
     back:
     - LoveRing
@@ -329,13 +329,13 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPartyMaker
-      time: 288000 # 80hr
+      time: 10h
   storage:
     back:
     - RainbowRing
   groupBy: "ring"
 
-# endregion
+# endregion Rings
 
 # region Games
 
@@ -391,7 +391,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBoxer
-      time: 180000 # 50hr
+      time: 25h
   storage:
     back:
     - BaseTennisRacket
@@ -405,7 +405,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobNanotrasenRepresentative
-      time: 180000 # 50hr
+      time: 50h
   storage:
     back:
     - BalloonNT
@@ -418,7 +418,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobHeadOfPersonnel
-      time: 180000 # 50hr
+      time: 50h
   storage:
     back:
     - BalloonCorgi
@@ -431,7 +431,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLibrarian
-      time: 720000 # 200hr
+      time: 100h
   storage:
     back:
     - SpellCardFun
@@ -458,7 +458,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Cargo
-      time: 432000 # 120hr
+      time: 80h
   storage:
     back:
     - d6DiceGold
@@ -489,14 +489,14 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Cargo
-      time: 864000 # 240hr
+      time: 160h
   storage:
     back:
     - d6DiceRainbow
     - d6DiceRainbow
   groupBy: "cards"
 
-# endregion
+# endregion Games
 
 # region Plushies
 
@@ -506,7 +506,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 18000 # 5hr
+      time: 5h
   storage:
     back:
     - PlushieSlime
@@ -518,7 +518,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 54000 # 15hr
+      time: 15h
   storage:
     back:
     - PlushieDiona
@@ -530,7 +530,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 54000 # 15hr
+      time: 15h
   storage:
     back:
     - PlushieVox
@@ -542,7 +542,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 54000 # 15hr
+      time: 15h
   storage:
     back:
     - PlushieHuman
@@ -569,7 +569,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChef
-      time: 360000 # 100hr
+      time: 50h
   storage:
     back:
     - PlushieBread
@@ -594,7 +594,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMusician
-      time: 360000 # 100hr
+      time: 50h
   storage:
     back:
     - PlushiePiano
@@ -618,7 +618,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobSecurityClown
-      time: 144000 # 40hr
+      time: 10h
   storage:
     back:
     - PlushieBehonkerEye
@@ -642,7 +642,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobShaftMiner
-      time: 432000 # 120hr
+      time: 100h
   storage:
     back:
     - PlushieChest
@@ -655,7 +655,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobRoboticist
-      time: 144000 # 40hr
+      time: 30h
   storage:
     back:
     - ToyAi
@@ -667,7 +667,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 180000 # 50hr
+      time: 50h
   storage:
     back:
     - PlushieSharkBlue
@@ -679,7 +679,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 180000 # 50hr
+      time: 50h
   storage:
     back:
     - PlushieSharkGrey
@@ -691,7 +691,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 180000 # 50hr
+      time: 50h
   storage:
     back:
     - PlushieSharkPink
@@ -730,7 +730,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 2160000 # 600hr
+      time: 100h
   storage:
     back:
     - PlushieSharkRainbow
@@ -768,13 +768,13 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 3240000 # 900hr
+      time: 200h
   storage:
     back:
     - PlushieGhostRainbow
   groupBy: "plushies"
 
-# endregion
+# endregion Plushies
 
 # region Drinks
 
@@ -792,7 +792,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBotanist
-      time: 252000 # 70hr
+      time: 70h
   storage:
     back:
     - DrinkOrchitoCan
@@ -804,15 +804,15 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 2700000 # 750hr
+      time: 350h
   storage:
     back:
     - DrinkBrepsiCan
   groupBy: "drinks"
 
-# endregion
+# endregion Drinks
 
-# region Other
+# region Miscellaneous
 
 - type: loadout
   id: Rag
@@ -821,7 +821,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBartender
-      time: 360000 # 100hr
+      time: 60h
   storage:
     back:
     - RagItem
@@ -852,7 +852,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBartender
-      time: 720000 # 200hr
+      time: 100h
   storage:
     back:
     - RagItemGold
@@ -917,7 +917,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChef
-      time: 720000 # 200hr
+      time: 100h
   storage:
     back:
     - ForkGold
@@ -931,7 +931,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 720000 # 200hr
+      time: 150h
   storage:
     back:
     - Skub
@@ -945,7 +945,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPartyMaker
-      time: 144000 # 40hr
+      time: 5h
   storage:
     back:
     - ClothingHeadHatPartyWaterCup
@@ -963,10 +963,14 @@
     - MaterialCotton
   groupBy: "species"
 
+# endregion Miscellaneous
+
+# region Towels
+
 - type: entity
+  parent: BaseTowel
   id: TowelColorBorgNT
   name: wire towel
-  parent: BaseTowel
   components:
   - type: Sprite
     layers:
@@ -1010,16 +1014,16 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Silicon
-      time: 720000 # 200hr
+      time: 100h
   storage:
     back:
     - TowelColorBorgNT
   groupBy: "towels"
 
 - type: entity
+  parent: BaseTowel
   id: TowelColorRoboticist
   name: roboticist towel
-  parent: BaseTowel
   components:
   - type: Sprite
     layers:
@@ -1056,16 +1060,16 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobRoboticist
-      time: 720000 # 200hr
+      time: 50h
   storage:
     back:
     - TowelColorRoboticist
   groupBy: "towels"
 
 - type: entity
+  parent: BaseTowel
   id: TowelColorCaptain
   name: captain's towel
-  parent: BaseTowel
   components:
   - type: Sprite
     layers:
@@ -1102,16 +1106,16 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobCaptain
-      time: 1800000 # 500hr
+      time: 200h
   storage:
     back:
     - TowelColorCaptain
   groupBy: "towels"
 
 - type: entity
+  parent: BaseTowel
   id: TowelColorOuterCommand
   name: outer command towel
-  parent: BaseTowel
   components:
   - type: Sprite
     layers:
@@ -1148,7 +1152,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobOuterCommander
-      time: 14400 # 4hr
+      time: 4h
   storage:
     back:
     - TowelColorOuterCommand
@@ -1161,7 +1165,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Command
-      time: 1440000 # 400hr
+      time: 80h
   storage:
     back:
     - TowelColorNT
@@ -1174,13 +1178,13 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: CentralCommand
-      time: 1440000 # 400hr
+      time: 40h
   storage:
     back:
     - TowelColorCentcom
   groupBy: "towels"
 
-# endregion
+# endregion Towels
 
 # region Candy
 
@@ -1290,7 +1294,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBotanist
-      time: 126000 # 35hr
+      time: 35h
   storage:
     back:
     - FoodSnackLollypopOrchito
@@ -1305,7 +1309,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobJanitor
-      time: 126000 # 35hr
+      time: 35h
   storage:
     back:
     - FoodSnackLollypopBrepsi
@@ -1320,7 +1324,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBartender
-      time: 126000 # 35hr
+      time: 35h
   storage:
     back:
     - FoodSnackLollypopBacchusBlessing
@@ -1334,7 +1338,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 1080000 # 300hr
+      time: 180h
   storage:
     back:
     - FoodSnackLollypopOrchito
@@ -1376,7 +1380,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobVirologist
-      time: 288000 # 80hr
+      time: 40h
   storage:
     back:
     - FoodSnackLollypopAntihol
@@ -1415,7 +1419,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPsychologist
-      time: 36000 # 10hr
+      time: 10h
   storage:
     back:
     - FoodSnackLollypopIce
@@ -1452,7 +1456,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBoxer
-      time: 360000 # 100hr
+      time: 50h
   storage:
     back:
     - FoodSnackLollypopProtein
@@ -1465,13 +1469,13 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobClown
-      time: 1260000 # 350hr
+      time: 50h
   storage:
     back:
     - FoodSnackSwirlLollipop
   groupBy: "candy"
 
-# endregion
+# endregion Candy
 
 # region Smokeables
 
@@ -1482,7 +1486,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Command
-      time: 360000 # 100hr
+      time: 100h
   storage:
     back:
     - CigarGoldCase
@@ -1495,7 +1499,7 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Medical
-      time: 432000 # 120hr
+      time: 40h
   storage:
     back:
     - Vape
@@ -1508,7 +1512,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobDetective
-      time: 72000 # 20hr
+      time: 20h
   storage:
     back:
     - SmokingPipeFilledTobacco
@@ -1544,13 +1548,13 @@
     requirement:
       !type:DepartmentTimeRequirement
       department: Security
-      time: 432000 # 120hr
+      time: 120h
   storage:
     back:
     - LighterGold
   groupBy: "smokeables"
 
-# endregion
+# endregion Smokeables
 
 # region Mobs
 
@@ -1561,7 +1565,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBotanist
-      time: 90000 # 25hr
+      time: 25h
   storage:
     back:
     - MobButterfly
@@ -1573,7 +1577,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobZookeeper
-      time: 36000 # 10hr
+      time: 10h
   storage:
     back:
     - MobSnailMoth
@@ -1585,7 +1589,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBotanist
-      time: 54000 # 15hr
+      time: 15h
   storage:
     back:
     - MobBee
@@ -1603,7 +1607,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobZookeeper
-      time: 72000 # 20hr
+      time: 20h
   storage:
     back:
     - MobHamster
@@ -1623,7 +1627,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobZookeeper
-      time: 180000 # 50hr
+      time: 50h
   storage:
     back:
     - MobMousePink
@@ -1635,7 +1639,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBotanist
-      time: 720000 # 200hr
+      time: 100h
   storage:
     back:
     - MobCockroachBig
@@ -1647,9 +1651,9 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScientist
-      time: 720000 # 200hr
+      time: 100h
   storage:
     back:
     - MobMothroachCecropia
 
-# endregion
+# endregion Mobs
