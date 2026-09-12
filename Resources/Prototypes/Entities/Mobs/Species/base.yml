@@ -256,6 +256,7 @@
   - type: MindControllable # Goobstation
   - type: VisibleContraband # Goobstation
   - type: MomentumSteering # Goobstation - No steer
+  - type: Posing  # Reserve edit: Posing system port
 
 - type: entity
   save: false
