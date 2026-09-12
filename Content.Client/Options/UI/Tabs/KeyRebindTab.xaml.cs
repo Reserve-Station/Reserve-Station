@@ -191,6 +191,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.Drop);
             AddButton(ContentKeyFunctions.ExamineEntity);
             AddButton(ContentKeyFunctions.SwapHands);
+            AddButton(ContentKeyFunctions.OfferItem); // Reserve edit: Offer Item system port from WWDP
             AddButton(ContentKeyFunctions.ResistGrab);
             AddButton(ContentKeyFunctions.SwapHandsReverse);
             AddButton(ContentKeyFunctions.MoveStoredItem);

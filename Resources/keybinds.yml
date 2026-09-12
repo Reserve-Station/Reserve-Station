@@ -280,6 +280,7 @@ binds:
 - function: SmartEquipBack # Goobstation - Smart equip to back
   type: State # Goobstation - Smart equip to back
   key: F # Goobstation - Smart equip to back
+  mod1: Shift # Goobstation - Smart equip to back
 - function: OpenBackpack
   type: State
   key: V
@@ -287,6 +288,9 @@ binds:
   type: State
   key: V
   mod1: Shift
+- function: OfferItem # Reserve edit: Offer Item system port from WWDP
+  type: State
+  key: F
 - function: ShowDebugConsole
   type: State
   key: Tilde
@@ -316,6 +320,7 @@ binds:
 - function: FlipObject
   type: State
   key: F
+  mod1: Alt
 - function: TextCursorLeft
   type: State
   key: Left
