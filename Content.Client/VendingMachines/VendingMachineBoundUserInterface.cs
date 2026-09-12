@@ -6,10 +6,11 @@ using Content.Shared.VendingMachines;
 using Robust.Client.UserInterface;
 using Robust.Shared.Input;
 using System.Linq;
+using Content.Client._Reserve.VendingMachines;
 
 namespace Content.Client.VendingMachines
 {
-    public sealed class VendingMachineBoundUserInterface : BoundUserInterface
+    public sealed class VendingMachineBoundUserInterface : BoundUserInterface, IVendingMachineBoundUi // Reserve edit: Diegetic vending
     {
         [ViewVariables]
         private VendingMachineMenu? _menu;
