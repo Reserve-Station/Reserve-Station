@@ -1,31 +1,51 @@
 <Document>
   # Расы
 
-  Нанотразен нанимает разнообразные разумные виды.
+  NanoTrasen нанимает разнообразные разумные виды.
+
+  ## Игровые Расы
+
+  Эти расы игрок может выбрать при создании персонажа.
 
   <Box>
-  <GuideEntityEmbed Entity="MobArachnid" Caption="Арахнид"/>
-  <GuideEntityEmbed Entity="MobDiona" Caption="Диона"/>
-  <GuideEntityEmbed Entity="MobDwarf" Caption="Дворф"/>
-  <GuideEntityEmbed Entity="MobGingerbread" Caption="Пряник"/>
+    <GuideEntityEmbed Entity="MobDiona" Caption="Диона"/>
+    <GuideEntityEmbed Entity="MobDwarf" Caption="Дворф"/>
+    <GuideEntityEmbed Entity="MobHuman" Caption="Человек"/>
     <GuideEntityEmbed Entity="MobHarpy" Caption="Гарпия"/>
+    <GuideEntityEmbed Entity="MobOni" Caption="Они"/>
+    <GuideEntityEmbed Entity="MobYowie" Caption="Йоуи"/>
+    <GuideEntityEmbed Entity="MobVox" Caption="Вокс"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="MobHuman" Caption="Человек"/>
-  <GuideEntityEmbed Entity="MobIPCDummy" Caption="КПБ"/>
-  <GuideEntityEmbed Entity="MobMoth" Caption="Ниан"/>
-  <GuideEntityEmbed Entity="MobOni" Caption="Они"/>
-  <GuideEntityEmbed Entity="MobReptilian" Caption="Унатх"/>
-  <GuideEntityEmbed Entity="MobResomi" Caption="Резоми"/>
-  <GuideEntityEmbed Entity="MobRodentia" Caption="Грызун"/>
+    <GuideEntityEmbed Entity="MobArachnid" Caption="Арахнид"/>
+    <GuideEntityEmbed Entity="MobChitinid" Caption="Хитинид"/>
+    <GuideEntityEmbed Entity="MobMoth" Caption="Ниан"/>
+    <GuideEntityEmbed Entity="MobIPCDummy" Caption="КПБ"/>
+    <GuideEntityEmbed Entity="PlayerBorgBattery" Caption="Борг"/>
+    <GuideEntityEmbed Entity="MobReptilian" Caption="Унатх"/>
+    <GuideEntityEmbed Entity="MobSlimePerson" Caption="Слаймолюд"/>
   </Box>
   <Box>
-  <GuideEntityEmbed Entity="MobSlimePerson" Caption="Слаймолюд"/>
-  <GuideEntityEmbed Entity="MobTajaran" Caption="Таяр"/>
-  <GuideEntityEmbed Entity="MobVox" Caption="Вокс"/>
-  <GuideEntityEmbed Entity="MobVulpkanin" Caption="Вульпканин"/>
-  <GuideEntityEmbed Entity="MobYowie" Caption="Йоуи"/>
-  <GuideEntityEmbed Entity="MobHydrakin" Caption="Гидракин"/>
+    <GuideEntityEmbed Entity="MobTajaran" Caption="Таяр"/>
+    <GuideEntityEmbed Entity="MobRodentia" Caption="Родентия"/>
+    <GuideEntityEmbed Entity="MobVulpkanin" Caption="Вульпканин"/>
+    <GuideEntityEmbed Entity="MobFeroxi" Caption="Ферокси"/>
+    <GuideEntityEmbed Entity="MobResomi" Caption="Резоми"/>
+    <GuideEntityEmbed Entity="MobShadowkin" Caption="Шэдоукин"/>
+    <GuideEntityEmbed Entity="MobHydrakin" Caption="Гидракин"/>
+  </Box>
+
+  ## Неигровые Расы
+
+  Персонажи этих рас могут встречаться на станции и за её пределами, но игрок может поиграть за них только через [textlink="роли призраков" link="RuleReserve0"] или с помощью действий [bold]администратора[/bold].
+
+  <Box>
+    <GuideEntityEmbed Entity="MobGingerbread" Caption="Пряник"/>
+    <GuideEntityEmbed Entity="MobAbductor" Caption="Пришелец"/>
+    <GuideEntityEmbed Entity="MobFelinid" Caption="Фелинид"/>
+    <GuideEntityEmbed Entity="MobScurret" Caption="Слизнекот"/>
+    <GuideEntityEmbed Entity="MobKobold" Caption="Кобольд"/>
+    <GuideEntityEmbed Entity="MobMonkey" Caption="Обезьяна"/>
   </Box>
 
 </Document>
