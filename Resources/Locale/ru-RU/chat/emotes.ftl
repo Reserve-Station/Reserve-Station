@@ -48,6 +48,7 @@ chat-emote-msg-squeak = пищит
 chat-emote-msg-thump = cтучит своим хвостом
 chat-emote-msg-click = клацает
 chat-emote-msg-clap = хлопает!
+chat-emote-msg-clap-single = хлопнул руками
 chat-emote-msg-snap = щёлкает пальцами
 chat-emote-msg-salute = салютует
 chat-emote-msg-gasp = задыхается
