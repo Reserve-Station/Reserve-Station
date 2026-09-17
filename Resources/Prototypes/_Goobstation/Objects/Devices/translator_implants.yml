@@ -40,10 +40,14 @@
       - NalRasan
       - SiikTajr
       - YaSsa
-      - Cheval # Animal Languages -
-      - Mouse
+      # - Cheval # Animal Languages -  # Reserve edit: Librarian languages fix
+      # - Mouse  # Reserve edit: Librarian languages fix
       - Monkey
       - Kobold
+      - DroneTalk  # Reserve edit: Librarian languages fix
+      - Psychomantic  # Reserve edit: Librarian languages fix
+      - Xeeplian  # Reserve edit: Librarian languages fix
+      - Revolutionary  # Reserve edit: Librarian languages fix
 
     understood:
       - TauCetiBasic # Common Languages -
@@ -77,10 +81,14 @@
       - NalRasan
       - SiikTajr
       - YaSsa
-      - Cheval # Animal Languages -
-      - Mouse
+      # - Cheval # Animal Languages -  # Reserve edit: Librarian languages fix
+      # - Mouse  # Reserve edit: Librarian languages fix
       - Monkey
       - Kobold
+      - DroneTalk  # Reserve edit: Librarian languages fix
+      - Psychomantic  # Reserve edit: Librarian languages fix
+      - Xeeplian  # Reserve edit: Librarian languages fix
+      - Revolutionary  # Reserve edit: Librarian languages fix
 
 
 
