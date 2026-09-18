@@ -1,0 +1,301 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: roleLoadout
+  id: AntagCorporateAgent
+  groups:
+  - TrinketsCorporateAgent
+
+- type: loadoutGroup
+  id: TrinketsCorporateAgent
+  name: loadout-group-trinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - PenAICorporateAgent
+  - FoodSnackLollypopNocturineCorporateAgent
+  - TowelCorporateAgent
+  - TowelColorCentcom
+  - TowelColorNT
+  - RingCorporateAgent
+  - DiskCaseCorporateAgent
+  - BalloonNT
+  - CardBoxNanotrasen
+  - FoodSnackLollypopCentComm
+  - BedsheetCentComm
+  - BoxFolderCentComm
+  - BoxFolderClipboardCentComm
+  - BusinessCardCentComm
+  # - ???
+  # - ???
+
+# region Towel
+
+- type: entity
+  parent: BaseTowel
+  id: TowelColorCorporate
+  name: corporate towel
+  suffix: Loadout, Trinkets, Corporate Agent, CentComm
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#29722e"
+    - state: NTmono
+      color: "#F7C430"
+    - state: iconstripe
+      color: "#940000"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#29722e"
+      right:
+      - state: inhand-right
+        color: "#29722e"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#29722e"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#29722e"
+      belt:
+      - state: equipped-BELT
+        color: "#29722e"
+  - type: Fiber
+    fiberColor: fibers-green
+
+- type: loadout
+  id: TowelCorporateAgent
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 30h
+  storage:
+    back:
+    - TowelColorCorporate
+  groupBy: "towels"
+
+# endregion
+
+# region Candy
+
+- type: entity
+  parent: FoodSnackLollypopNocturine
+  id: FoodSnackLollypopNocturineCorporateAgent
+  name: lollypop
+  description: A plain old lollypop. It's very sugary.
+  suffix: Loadout, Trinkets, Corporate Agent, CentComm, Nocturine
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#29722e"
+
+- type: entity
+  parent: FoodSnackLollypopNocturineCorporateAgent
+  id: FoodSnackLollypopNocturineCorporateAgentDummy
+  categories: [ HideSpawnMenu ]
+  name: three corporate nocturine lollypops
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+      offset: 0, -0.25
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#29722e"
+      offset: 0, -0.25
+    - state: lollypop
+      offset: -0.1, 0.1
+    - state: color
+      color: "#29722e"
+      offset: -0.1, 0.1
+    - state: lollypop
+      offset: 0.25, 0
+    - state: color
+      color: "#29722e"
+      offset: 0.25, 0
+
+- type: loadout
+  id: FoodSnackLollypopNocturineCorporateAgent
+  dummyEntity: FoodSnackLollypopNocturineCorporateAgentDummy
+  storage:
+    back:
+    - FoodSnackLollypopNocturineCorporateAgent
+    - FoodSnackLollypopNocturineCorporateAgent
+    - FoodSnackLollypopNocturineCorporateAgent
+  groupBy: "candy"
+
+# endregion
+
+# region Other
+
+- type: entity
+  parent: FakeDiamondRing
+  id: RingCorporateAgent
+  name: corporate ring
+  suffix: Loadout, Trinkets, Corporate Agent, CentComm
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+        color: "#29722e"
+      - state: gem
+        color: "#940000"
+
+- type: loadout
+  id: RingCorporateAgent
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 150h
+  storage:
+    back:
+    - RingCorporateAgent
+  groupBy: "ring"
+
+- type: entity
+  parent: [PenCentcom, PersonalAI]
+  id: PenAICorporateAgent
+  name: corporate smartpen
+  description: Your corporate pen-pal! Something seems off about it though...
+  suffix: Loadout, Trinkets, Corporate Agent, CentComm, Personal AI, Ghost Role
+  components:
+  - type: Sprite
+    layers: []
+  - type: GenericVisualizer
+    visuals: {}
+
+- type: loadout
+  id: PenAICorporateAgent
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Silicon
+      time: 1h
+  storage:
+    back:
+    - PenAICorporateAgent
+
+- type: entity
+  parent: DiskCase
+  id: DiskCaseCorporateAgent
+  name: corporate disk case
+  description: A very interesting disk case. Seems to have a double bottom for extra discs.
+  suffix: Loadout, Trinkets, Corporate Agent, CentComm
+  components:
+  - type: Sprite
+    color: "#29722e"
+  - type: Storage
+    grid:
+    - 0,0,0,3
+  groupBy: "audio"
+
+- type: loadout
+  id: DiskCaseCorporateAgent
+  storage:
+    back:
+    - DiskCaseCorporateAgent
+
+# endregion
+
+# region CentCom
+
+- type: entity
+  parent: FoodSnackLollypopWrappedCentComm
+  id: FoodSnackLollypopWrappedCentCommDummy
+  categories: [ HideSpawnMenu ]
+  name: three CentComm lollypops
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop-wrapped-centcomm
+      offset: 0, -0.25
+    - state: lollypop-wrapped-centcomm
+      offset: -0.1, 0.1
+    - state: lollypop-wrapped-centcomm
+      offset: 0.25, 0
+
+- type: loadout
+  id: FoodSnackLollypopCentComm
+  dummyEntity: FoodSnackLollypopWrappedCentCommDummy
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChef
+      time: 45h
+  storage:
+    back:
+    - FoodSnackLollypopWrappedCentComm
+    - FoodSnackLollypopWrappedCentComm
+    - FoodSnackLollypopWrappedCentComm
+  groupBy: "candy"
+
+- type: loadout
+  id: BedsheetCentComm
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 40h
+  storage:
+    back:
+    - BedsheetCentcom
+
+- type: loadout
+  id: BoxFolderCentComm
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 60h
+  storage:
+    back:
+    - BoxFolderCentComThreePapers
+  groupBy: "folders"
+
+- type: loadout
+  id: BoxFolderClipboardCentComm
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 80h
+  storage:
+    back:
+    - BoxFolderCentComClipboardThreePapers
+  groupBy: "folders"
+
+# - type: loadout
+#   id: PenCentComm
+#   effects:
+#   - !type:JobRequirementLoadoutEffect
+#     requirement:
+#       !type:OverallPlaytimeRequirement
+#       time: 100h
+#   storage:
+#     back:
+#     - PenCentcom
+
+- type: loadout
+  id: BusinessCardCentComm
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 100h
+  storage:
+    back:
+    - CentralCommandBusinessCard
+
+# endregion
