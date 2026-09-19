@@ -1,0 +1,66 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: PipeBomb
+  id: PipeBombPirate
+  name: hand bomb
+  description: An improvised explosive made from a cannon ball.
+  suffix: Pirate
+  components:
+  - type: Sprite
+    sprite: _Reserve/Entities/Objects/Specific/Pirates/handbomb.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchelLeather
+  id: ClothingBackpackSatchelLeatherFilledPirate
+  suffix: Filled, Pirate
+  components:
+  - type: StorageFill
+    contents:
+    - id: PipeBombPirate
+    - id: PipeBombPirate
+    - id: PipeBombPirate
+    - id: PipeBombPirate
+    - id: MagazineBoxMagnum
+    - id: MagazineBoxMagnum
+    - id: DrinkAleGlass
+    - id: DrinkRumGlass
+    - id: DrinkGrogGlass
+    - id: DrinkTortugaGlass
+    - id: Wrench
+    - id: AppraisalTool
+    - id: PirateHandyFlag
+    - id: WeaponLauncherPirateCannon
+
+- type: entity
+  parent: BaseTowel
+  id: TowelColorPirate
+  name: pirate towel
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#222222"
+    - state: iconstripe
+      color: "#CCCCCC"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#222222"
+      right:
+      - state: inhand-right
+        color: "#222222"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#222222"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#222222"
+      belt:
+      - state: equipped-BELT
+        color: "#222222"
+  - type: Fiber
+    fiberColor: fibers-black
