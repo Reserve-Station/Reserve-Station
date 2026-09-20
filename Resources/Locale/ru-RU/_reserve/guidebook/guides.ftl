@@ -43,3 +43,13 @@ guide-entry-rules-reserve7 = Самоантагонизм
 guide-entry-rules-reserve8 = Валидхант
 guide-entry-rules-reserve9 = ERP
 guide-entry-rules-reserve10 = Нечестная игра
+
+guide-entry-world = Игровой мир
+guide-entry-factions = Корпорации и фракции
+guide-entry-tauceti-federation = Федерация Тау Кита
+guide-entry-outercommand = ВнешКом
+guide-entry-nanotrasen = NanoTrasen
+guide-entry-centralcommand = ЦентКом
+guide-entry-blueshield = Синий Щит
+guide-entry-syndicate = Синдикат
+guide-entry-tauceti = Тау Кита

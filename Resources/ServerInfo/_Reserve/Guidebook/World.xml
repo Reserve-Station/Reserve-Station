@@ -1,0 +1,9 @@
+<Document>
+  # Игровой мир
+  Действия игры разворачиваются вокруг [bold]космических станций[/bold] [color=#004787][bold][textlink="NanoTrasen" link="NanoTrasen"][/bold][/color], занимающихся, в основном, исследованиями, а также другими мелкими заданиями.
+
+  Находятся они в своем большинстве в секторе [color=#F7C430][bold][textlink="Тау Кита" link="TauCeti"][/bold][/color], который является важным центром исследований, торговли и дипломатии в галактике.
+  <Box>
+    <GuideEntityEmbed Entity="BannerNanotrasen" Caption="Логотип NanoTrasen"/>
+  </Box>
+</Document>
