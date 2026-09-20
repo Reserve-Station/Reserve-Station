@@ -1,0 +1,441 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: roleLoadout
+  id: AntagContractor
+  groups:
+  - TrinketsSyndicate
+
+- type: roleLoadout
+  id: AntagNukeops
+  groups:
+  - TrinketsSyndicate
+
+- type: roleLoadout
+  id: AntagNukeopsMedic
+  groups:
+  - TrinketsSyndicate
+
+- type: roleLoadout
+  id: AntagNukeopsCommander
+  groups:
+  - TrinketsSyndicate
+
+- type: loadoutGroup
+  id: TrinketsSyndicate
+  name: loadout-group-trinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - RagSyndicate
+  - FoodSnackLollypopSyndicate
+  - DrinkMugSyndicate
+  - TennisRacketSyndicate
+  - BalloonSyndicate
+  - d6DiceSyndicate
+  - CardBoxSyndicate
+  - CassetteSyndicate
+  - CdDiskSyndicate
+  - BusinessCardSyndicate
+  - FolderSyndicate
+  - TowelSyndicate
+  - TowelSyndicateRed
+  - TowelSyndicateGreen
+  - TowelSyndicateBlack
+  - FlippoSyndicate
+  - CigarCaseSyndicate
+  - NukieRing
+  - PlushieNuke
+  - NukieCan
+
+# region Rag
+
+- type: entity
+  parent: RagItem
+  id: RagItemBloodRed
+  name: blood-red rag
+  description: Would be hard to spot actual blood stains on this one.
+  suffix: Loadout, Trinkets, Syndicate
+  components:
+  - type: Sprite
+    layers:
+    - state: rag
+      color: "#940000"
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-3
+      visible: false
+
+- type: loadout
+  id: RagSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBartender
+      time: 25h
+  storage:
+    back:
+    - RagItemBloodRed
+  groupBy: "misc"
+
+# endregion
+
+# region Drinks
+
+- type: loadout
+  id: NukieCan
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 300h
+  storage:
+    back:
+    - DrinkNukieCan
+  groupBy: "drinks"
+
+- type: loadout
+  id: DrinkMugSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 35h
+  storage:
+    back:
+    - DrinkMugRed
+  groupBy: "drinks"
+
+# endregion
+
+# region Lighter
+
+- type: loadout
+  id: FlippoSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 200h
+  storage:
+    back:
+    - SyndicateFlippo
+  groupBy: "smokeables"
+
+- type: entity
+  id: CigarCaseBloodRed
+  parent: CigarCase
+  name: blood-red cigar case
+  description: For when you came to smoke cigars and kick ass.
+  suffix: Loadout, Trinkets, Syndicate
+  components:
+  - type: Sprite
+    color: "#940000"
+
+- type: loadout
+  id: CigarCaseSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 250h
+  storage:
+    back:
+    - CigarCaseBloodRed
+  groupBy: "smokeables"
+
+# endregion
+
+# region Candy
+
+- type: entity
+  parent: FoodSnackLollypopSyndicate
+  id: FoodSnackLollypopSyndicateDummy
+  categories: [ HideSpawnMenu ]
+  name: three blood-red lollypops
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+      offset: 0, -0.25
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#810e0e"
+      offset: 0, -0.25
+    - state: lollypop
+      offset: -0.1, 0.1
+    - state: color
+      color: "#810e0e"
+      offset: -0.1, 0.1
+    - state: lollypop
+      offset: 0.25, 0
+    - state: color
+      color: "#810e0e"
+      offset: 0.25, 0
+
+- type: loadout
+  id: FoodSnackLollypopSyndicate
+  dummyEntity: FoodSnackLollypopSyndicateDummy
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChef
+      time: 35h
+  storage:
+    back:
+    - FoodSnackLollypopWrappedSyndicate
+    - FoodSnackLollypopWrappedSyndicate
+    - FoodSnackLollypopWrappedSyndicate
+  groupBy: "candy"
+
+# endregion
+
+# region Sports
+
+- type: entity
+  parent: SyndicateTennisRacket
+  id: SyndicateTennisRacketTwoDummy
+  categories: [ HideSpawnMenu ]
+  name: two Syndicate tennis rackets
+
+- type: loadout
+  id: TennisRacketSyndicate
+  dummyEntity: SyndicateTennisRacketTwoDummy
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBoxer
+      time: 5h
+  storage:
+    back:
+    - SyndicateTennisRacket
+    - SyndicateTennisRacket
+  groupBy: "cards"
+
+# endregion
+
+# region Toys
+
+- type: loadout
+  id: BalloonSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 80h
+  storage:
+    back:
+    - BalloonSyn
+  groupBy: "cards"
+
+- type: loadout
+  id: PlushieNuke
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 120h
+  storage:
+    back:
+    - PlushieNuke
+  groupBy: "plushies"
+
+- type: loadout
+  id: CardBoxSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 100h
+  storage:
+    back:
+    - CardBoxSyndicate
+  groupBy: "cards"
+
+# endregion
+
+# region Audio
+
+- type: loadout
+  id: CassetteSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 180h
+  storage:
+    back:
+    - BloodredCassette
+  groupBy: "audio"
+
+- type: loadout
+  id: CdDiskSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobRadioHost
+      time: 10h
+  storage:
+    back:
+    - JVNECdDiskSyndicate
+  groupBy: "audio"
+
+# endregion
+
+# region Dice
+
+- type: entity
+  parent: d6Dice
+  id: d6DiceBloodRed
+  name: blood-red d6
+  description: These dice decide the fates of others.
+  suffix: Loadout, Trinkets, Syndicate
+  components:
+  - type: Sprite
+    color: "#940000"
+
+- type: entity
+  parent: d6DiceBloodRed
+  id: d6DiceBloodRedTwoDummy
+  categories: [ HideSpawnMenu ]
+  name: two blood-red dice
+  components:
+  - type: Sprite
+    layers:
+    - state: d6_6
+      color: "#940000"
+      offset: -0.1, -0.15
+    - state: d6_6
+      color: "#940000"
+      offset: 0.15, 0.1
+
+- type: loadout
+  id: d6DiceSyndicate
+  dummyEntity: d6DiceBloodRedTwoDummy
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 60h
+  storage:
+    back:
+    - d6DiceBloodRed
+    - d6DiceBloodRed
+  groupBy: "cards"
+
+# endregion
+
+# region BusinessCard
+
+- type: loadout
+  id: BusinessCardSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 100h
+  storage:
+    back:
+    - SyndicateBusinessCard
+  groupBy: "folders"
+
+- type: loadout
+  id: FolderSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Command
+      time: 30h
+  storage:
+    back:
+    - BoxFolderRedThreePapers
+  groupBy: "folders"
+
+# endregion
+
+# region Towel
+
+- type: loadout
+  id: TowelSyndicate
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 20h
+  storage:
+    back:
+    - TowelColorSyndicate
+  groupBy: "towels"
+
+- type: loadout
+  id: TowelSyndicateRed
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobRoboticist
+      time: 20h
+  storage:
+    back:
+    - TowelColorRed
+  groupBy: "towels"
+
+- type: loadout
+  id: TowelSyndicateGreen
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 40h
+  storage:
+    back:
+    - TowelColorDarkGreen
+  groupBy: "towels"
+
+- type: loadout
+  id: TowelSyndicateBlack
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 60h
+  storage:
+    back:
+    - TowelColorBlack
+  groupBy: "towels"
+
+# endregion
+
+# region Jewelry
+
+- type: entity
+  parent: PlasticRing
+  id: NukieRing
+  name: nukiering
+  suffix: Loadout, Trinkets, Syndicate
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+        color: "#940000"
+      - state: gem
+        color: "#44aa22"
+
+- type: loadout
+  id: NukieRing
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 150h
+  storage:
+    back:
+    - NukieRing
+  groupBy: "ring"
+
+# endregion
