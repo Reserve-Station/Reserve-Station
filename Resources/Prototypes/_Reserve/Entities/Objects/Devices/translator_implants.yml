@@ -1,0 +1,92 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: ZookeeperTranslatorImplant
+  name: zookeeper translator implant
+  description: An implant giving the ability to understand and speak animalistic languages.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TranslatorImplant
+    spoken:
+      # Half-Animal Languages
+      - Canilunzt
+      - Chittin
+      - NewKinPidgin # = Ka'rakk
+      - Moffic
+      - Nehina
+      - Nekomimetic
+      - SiikMaas
+      - Draconic # = Sinta'Unathi
+      - Schechi
+      - YowKriol
+      # Tajara Languages
+      - Azaziba
+      - Delvahii
+      - NalRasan
+      - SiikTajr
+      - YaSsa
+      # Animal Languages
+      - Cheval
+      - Mouse
+      - Monkey
+      - Kobold
+      - Cat
+      - Dog
+      - Fox
+      - Chicken
+      - Duck
+      - Cow
+      - Sheep
+      - Kangaroo
+      - Pig
+      - Crab
+      - Hissing
+      - Penguin
+      - Deer
+      # Other Languages
+      - Bingle
+      - Xeno
+      - XenoHivemind
+      - Blob
+    understood:
+      # Half-Animal Languages
+      - Canilunzt
+      - Chittin
+      - NewKinPidgin # = Ka'rakk
+      - Moffic
+      - Nehina
+      - Nekomimetic
+      - SiikMaas
+      - Draconic # = Sinta'Unathi
+      - Schechi
+      - YowKriol
+      # Tajara Languages
+      - Azaziba
+      - Delvahii
+      - NalRasan
+      - SiikTajr
+      - YaSsa
+      # Animal Languages
+      - Cheval
+      - Mouse
+      - Monkey
+      - Kobold
+      - Cat
+      - Dog
+      - Fox
+      - Chicken
+      - Duck
+      - Cow
+      - Sheep
+      - Kangaroo
+      - Pig
+      - Crab
+      - Hissing
+      - Penguin
+      - Deer
+      # Other Languages
+      - Bingle
+      - Xeno
+      - XenoHivemind
+      - Blob
