@@ -3,7 +3,7 @@
 - type: gameMap
   id: Atlas
   mapName: Atlas
-  mapPath: /Maps/_Goobstation/atlas.yml
+  mapPath: /Maps/_Reserve/atlas.yml
   minPlayers: 0
   maxPlayers: 20
   stations:
