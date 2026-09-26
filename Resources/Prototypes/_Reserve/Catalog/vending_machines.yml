@@ -175,3 +175,21 @@
     DrinkNothingCan: 3
     DrinkEggCan: 3
     DrinkBloodCan: 3
+
+# region Rare
+
+- type: vendingMachineInventory
+  id: FoodBloodDrinksInventory
+  startingInventory:
+    DrinkBloodCan: 8
+  contrabandInventory:
+    DrinkBloodCan: 2
+
+- type: vendingMachineInventory
+  id: FoodPotatoDrinksInventory
+  startingInventory:
+    DrinkPotatoBoomCan: 8
+  contrabandInventory:
+    DrinkPoisonBoomCan: 2
+
+# endregion Rare
