@@ -93,6 +93,8 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  - type: Item  # Reserve edit: Hold more critters
+    size: Tiny
 
 - type: entity
   name: bee
@@ -1010,6 +1012,7 @@
     - map: ["enum.DamageStateVisualLayers.Base", "movement"]
       state: crab
       sprite: Mobs/Animals/crab.rsi
+    scale: 0.8, 0.8  # Reserve edit: Hold more critters
   - type: SpriteMovement
     movementLayers:
       movement:
@@ -1071,6 +1074,10 @@
       task: RuminantCompound
   - type: Body
     prototype: AnimalHemocyanin
+  - type: Item  # Reserve edit: Hold more critters
+    size: Small
+    storedRotation: 135
+    storedOffset: -2, 0
 
 - type: entity
   name: goat
@@ -2333,6 +2340,9 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: Item  # Reserve edit: Hold more critters
+    size: Small
+    storedOffset: 0, -5
 
 
 - type: entity
@@ -2385,6 +2395,9 @@
       reagents:
       - ReagentId: Blood
         Quantity: 50
+  - type: Item  # Reserve edit: Hold more critters
+    size: Tiny
+    storedOffset: 0, -13
 
 - type: entity
   name: frog
@@ -2460,6 +2473,9 @@
   - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
     growth: 0.05
     maxGrowth: 1.25
+  - type: Item  # Reserve edit: Hold more critters
+    size: Tiny
+    storedOffset: 0, -10
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity

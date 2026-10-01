@@ -1595,28 +1595,16 @@
 # region Mobs
 
 - type: loadout
-  id: Butterfly
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobBotanist
-      time: 90000 # 25hr
+  id: Snail
   storage:
     back:
-    - MobButterfly
+    - MobSnail
 
 - type: loadout
-  id: SnailMoth
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobZookeeper
-      time: 36000 # 10hr
+  id: Slug
   storage:
     back:
-    - MobSnailMoth
+    - MobSlug
 
 - type: loadout
   id: Bee
@@ -1625,16 +1613,82 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobBotanist
-      time: 54000 # 15hr
+      time: 15h
   storage:
     back:
     - MobBee
 
 - type: loadout
-  id: Snail
+  id: Butterfly
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 25h
   storage:
     back:
-    - MobSnail
+    - MobButterfly
+
+- type: loadout
+  id: Frog
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 100h
+  storage:
+    back:
+    - MobFrog
+
+- type: loadout
+  id: CockroachBig
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 150h
+  storage:
+    back:
+    - MobCockroachBig
+
+- type: entity
+  parent: MobBee
+  id: MobBeeRainbow
+  name: rainbow bee
+  suffix: Loadout, Trinkets, AI
+  components:
+  - type: PointLight
+    radius: 1.2
+    energy: 1.5
+  - type: RgbLightController
+    layers: [ 0 ]
+
+- type: loadout
+  id: BeeRainbow
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 200h
+  storage:
+    back:
+    - MobBeeRainbow
+
+- type: loadout
+  id: SnailMoth
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobZookeeper
+      time: 10h
+  storage:
+    back:
+    - MobSnailMoth
 
 - type: loadout
   id: Hamster
@@ -1643,15 +1697,39 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobZookeeper
-      time: 72000 # 20hr
+      time: 20h
   storage:
     back:
     - MobHamster
 
+- type: loadout
+  id: Crab
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobZookeeper
+      time: 30h
+  storage:
+    back:
+    - MobCrab
+
+- type: loadout
+  id: Bat
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobZookeeper
+      time: 40h
+  storage:
+    back:
+    - MobBat
+
 - type: entity
   parent: MobMouse
   id: MobMousePink
-  suffix: Loadout, Trinkets, Pink
+  suffix: Loadout, Trinkets, Pink, AI
   components:
   - type: Sprite
     color: "#ff88ff"
@@ -1663,22 +1741,22 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobZookeeper
-      time: 180000 # 50hr
+      time: 50h
   storage:
     back:
     - MobMousePink
 
 - type: loadout
-  id: CockroachBig
+  id: Lizard
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobBotanist
-      time: 720000 # 200hr
+      role: JobScientist
+      time: 100h
   storage:
     back:
-    - MobCockroachBig
+    - MobLizard
 
 - type: loadout
   id: MothroachCecropia
@@ -1687,7 +1765,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobScientist
-      time: 720000 # 200hr
+      time: 200h
   storage:
     back:
     - MobMothroachCecropia
