@@ -11,6 +11,7 @@
   loadouts:
   - Orchito
   - Stardust
+  - ALittleStar
 
 # endregion
 
@@ -33,5 +34,15 @@
   storage:
     back:
     - PillCanisterStardust
+
+- type: loadout
+  id: ALittleStar
+  effects:
+  - !type:CkeyRequirementLoadoutEffect
+    ckey: [ Ceterai ]
+  storage:
+    back:
+    - DiskCaseALittleStar
+    - VinylSleeveALittleStar
 
 # endregion
