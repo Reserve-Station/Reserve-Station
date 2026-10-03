@@ -167,6 +167,7 @@
       shader: unshaded
 
 - type: entity
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   parent: BasicHitscan
   id: HeavyPulse
   components:
@@ -188,6 +189,7 @@
       state: impact_blue
 
 - type: entity
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   parent: BasicHitscan
   id: LightPulse
   components:
@@ -208,6 +210,7 @@
       state: impact_blue
 
 - type: entity
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   parent: BasicHitscan
   id: LaserSniper
   components:
@@ -228,6 +231,7 @@
       state: impact_blue
 
 - type: entity
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   parent: BasicHitscan
   id: RedMediumSplitLaser
   components:

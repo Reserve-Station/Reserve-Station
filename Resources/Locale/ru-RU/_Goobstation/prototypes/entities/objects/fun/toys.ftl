@@ -1,19 +1,5 @@
-ent-PlushieLouie = плюшевый Луи
-    .desc = Милый плюшевый игрушка в виде крысы. Ты ощущаешь странное желание поздороваться с крысой.
-ent-FoamThrongler = поролоновый Нагибатор
-    .desc = Не тот Нагибатор, которого ты хотел, а тот, которого ты заслуживаешь.
-ent-PlushieDurk = плюшевый Дурк
-    .desc = Милый плюшевый игрушка в виде некоего атмосферного техника. Держа её, ты чувствуешь приближение великого слома вселенной.
-ent-PlushieBlackburn = плюшевый Блэкбёрн
-    .desc = Человеко-лисий гибрид от NanoTrasen, созданный как благотворительность для пострадавших от тирании Юконского восстания.
-ent-PlushieBlackburnKobliska = плюшевая Коблиска
-    .desc = Более стройный Блэкберн, созданный для чистки лисьих нор и траншей; учёные спорят о продолжительности жизни "Коблискинов", первых самодизайнерских особей Восстания.
-ent-PlushieBlackburnMatryoskya = плюшевая Матрёшка
-    .desc = Городская легенда среди ветеранов NanoTrasen; существо, неподконтрольное ни Восстанию, ни корпорации. Теперь в виде плюшевой игрушки.
-ent-PlushieDesislavaBlackburn = плюшевая Десислава
-    .desc = Миниатюрная разновидность Блэкбёрн BKv1, созданная для танкеток и лёгких танков. Эта — в "Darwin 6A2M C7 YKN".
-ent-FoamWonderprod = игрушечный вондерпрод
-    .desc = Если используешь — СБ тебя убьёт.
+# region Plushies
+
 ent-BaseBinglePlushie = { ent-BasePlushie }
     .desc = { ent-BasePlushie.desc }
 ent-PlushieBingle = плюшевый бингл
@@ -28,12 +14,24 @@ ent-PlushieBinglePony = плюшевая бингл-пони
     .desc = Милый плюшевый инопланетянин синего цвета. Тебе хочется сказать "бингл".
 ent-PlushieAbductor = плюшевый абдуктор
     .desc = Глорп Зап Зибл Гларп "Плюш" Блибл.
-ent-GrenadeToy = игрушечная граната
-    .desc = { ent-BaseGrenade.desc }
-ent-BulletGrenadeToy = игрушечный выстрел
-    .desc = { ent-BaseBulletTrigger.desc }
-ent-WeaponLauncherTaiwanPond = тайваньское озеро
-    .desc = ПЛЮХ.
+
+# endregion Plushies
+
+# region Admin plushies
+
+ent-PlushieLouie = плюшевый Луи
+    .desc = Милый плюшевый игрушка в виде крысы. Ты ощущаешь странное желание поздороваться с крысой.
+ent-PlushieDurk = плюшевый Дурк
+    .desc = Милый плюшевый игрушка в виде некоего атмосферного техника. Держа её, ты чувствуешь приближение великого слома вселенной.
+ent-PlushieBlackburn = плюшевый Блэкбёрн
+    .desc = Человеко-лисий гибрид от NanoTrasen, созданный как благотворительность для пострадавших от тирании Юконского восстания.
+ent-PlushieBlackburnKobliska = плюшевая Коблиска
+    .desc = Более стройный Блэкберн, созданный для чистки лисьих нор и траншей; учёные спорят о продолжительности жизни "Коблискинов", первых самодизайнерских особей Восстания.
+ent-PlushieBlackburnMatryoskya = плюшевая Матрёшка
+    .desc = Городская легенда среди ветеранов NanoTrasen; существо, неподконтрольное ни Восстанию, ни корпорации. Теперь в виде плюшевой игрушки.
+ent-PlushieDesislavaBlackburn = плюшевая Десислава
+    .desc = Миниатюрная разновидность Блэкбёрн BKv1, созданная для танкеток и лёгких танков. Эта — в "Darwin 6A2M C7 YKN".
+
 ent-PlushieSamantha = плюшевая Джейн
     .desc = Милый плюшевый офицер блюшилд-ветеран. Навевает непреодолимую тягу к леденцам.
 ent-PlushieJvne = плюшевый Джвне
@@ -57,11 +55,7 @@ ent-PlushieTheHolyCrusader = плюшевый Святой крестоносе�
 ent-PlushieXeve = плюшевый Ксеве Птца
     .suffix = Вуду
     .desc = Та птица что я ненавижу.
-ent-DiscoBeachBall = пляжный диско-шар
-    .desc = Пляжный диско-шар превратит любую вечеринку в Студию 54.
-ent-ThronglerToy = Нагибатор
-    .desc = Зачем ты создал это?
-    .suffix = Игрушка
+
 ent-PlushiePasha = плюшевый уставший вокс
     .desc = Не очень симпатичная мягкая игрушка, напоминающая уставшего вокса. Сильно пахнет никотином.
 ent-PlushieLeguia = плюшевый одинокий угорь
@@ -70,6 +64,18 @@ ent-PlushieTwofish = плюшевый ТуФиш
     .desc = Если присмотреться, похоже на чудака.
 ent-PlushieWachtel = плюшевый Груг
     .desc = Самый пьяный водитель.
+
+ent-PlushieLeoMalone = плюшевый Лео Мэлоун
+    .desc = Отдалённо пахнет властью и порохом. Много лает. Нет, серьёзно. Очень много.
+ent-PlushieRouge = плюшевая Руж
+    .desc = Милый плюшевый офицер Синего Щита-ветеран. Навевает непреодолимую тягу к леденцам.
+ent-PlushieRedstonewolf = плюшевая Айрин
+    .desc = Мягкая плюшевая игрушка, напоминающая красного дракона. Несмотря на то, что это большой змей, он всё равно вехает.
+
+# endregion Admin plushies
+
+# region Evil plushies
+
 ent-EvilPlushieXeve = злобный плюшевый Ксеве
     .suffix = Злобный
     .desc = { ent-PlushieXeve.desc }
@@ -109,6 +115,38 @@ ent-EvilPlushiePasha = злобный плюшевый уставший вокс
 ent-EvilPlushieTwofish = злобный плюшевый ТуФиш
     .suffix = Злобный
     .desc = { ent-PlushieTwofish.desc }
+ent-EvilPlushieLeoMalone = злобный плюшевый Лео Мэлоун
+    .suffix = Злобный
+    .desc = { ent-PlushieLeoMalone.desc }
+ent-EvilPlushieRedstonewolf = злобная плюшевая Айрин
+    .suffix = Злобный
+    .desc = { ent-PlushieRedstonewolf.desc }
+ent-EvilPlushieRouge = злобная плюшевая Руж
+    .suffix = Злобный
+    .desc = { ent-PlushieRouge.desc }
+
+# endregion Evil plushies
+
+# region Other toys
+
+ent-FoamThrongler = поролоновый Нагибатор
+    .desc = Не тот Нагибатор, которого ты хотел, а тот, которого ты заслуживаешь.
+ent-FoamWonderprod = игрушечный вондерпрод
+    .desc = Если используешь — СБ тебя убьёт.
+
+ent-GrenadeToy = игрушечная граната
+    .desc = { ent-BaseGrenade.desc }
+ent-BulletGrenadeToy = игрушечный выстрел
+    .desc = { ent-BaseBulletTrigger.desc }
+ent-WeaponLauncherTaiwanPond = тайваньское озеро
+    .desc = ПЛЮХ.
+
+ent-DiscoBeachBall = пляжный диско-шар
+    .desc = Пляжный диско-шар превратит любую вечеринку в Студию 54.
+ent-ThronglerToy = Нагибатор
+    .desc = Зачем ты создал это?
+    .suffix = Игрушка
+
 ent-ToyMansusGrasp = зелёная хватка
     .desc = Сила Бога розыгрыша, направленная через вашу хватку. Служба Безопасности не оценит розыгрыш.
 ent-ToyBladeEldritch = реплика жуткого клинка
@@ -125,3 +163,5 @@ ent-ToyBladeVoid = реплика пустотного клинка
     .desc = Лишённый какой-либо содержательности, этот клинок отражает комедийность. Это реальное изображение веселья и хаоса, которые возникает после его воплощения.
 ent-ToyCodexCicatrix = кодекс цикатрикс
     .desc = Этот лёгкий том полон загадочных надписей и запутанных диаграмм. Согласно легенде, его можно расшифровать, чтобы раскрыть секреты завесы между мирами.
+
+# endregion Other toys

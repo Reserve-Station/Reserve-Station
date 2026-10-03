@@ -227,8 +227,10 @@ loadout-group-zookeeper-head = Зоотехник, головной убор
 # Boxer
 loadout-group-boxer-envirohelm = Боксёр, экошлем
 loadout-group-boxer-envirosuit = Боксёр, экокостюм
+loadout-group-boxer-helmet = Боксёр, шлем
 # Misc
 loadout-group-plasma-tank = Баллон плазмы
 loadout-group-animals = Животные
 loadout-group-security-neck = СБ, плащ
 loadout-group-security-melee = Оружие ближнего боя
+loadout-group-security-gloves = СБ, перчатки

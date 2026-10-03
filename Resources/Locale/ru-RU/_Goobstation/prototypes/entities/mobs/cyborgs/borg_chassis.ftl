@@ -8,6 +8,7 @@ ent-PlayerBorgUrist = { ent-BorgChassisUrist }
 ent-PlayerBorgUristGhostRole = { ent-PlayerBorgUrist }
     .suffix = Роль призрака
     .desc = { ent-PlayerBorgUrist.desc }
+
 ent-BorgChassisMiningBasic = борг-шахтёр
     .desc = { ent-BorgChassisMining.desc }
 ent-BorgChassisMiningAdvanced = борг-шахтёр "продвинутый"
@@ -22,6 +23,7 @@ ent-BorgChassisMiningSquat = борг-шахтёр "приседающий"
     .desc = { ent-BorgChassisMining.desc }
 ent-BorgChassisMiningNoble = борг-шахтёр "дворянин"
     .desc = { ent-BorgChassisMining.desc }
+
 ent-BorgChassisEngineerBasic = борг-инженер
     .desc = { ent-BorgChassisEngineer.desc }
 ent-BorgChassisEngineerAntique = борг-инженер "антикварный"
@@ -34,20 +36,22 @@ ent-BorgChassisEngineerCricket = борг-инженер "сверчок"
     .desc = { ent-BorgChassisEngineer.desc }
 ent-BorgChassisEngineerRover = борг-инженер "ровер"
     .desc = { ent-BorgChassisEngineer.desc }
+
 ent-BorgChassisJanitorBasic = борг-уборщик
     .desc = { ent-BorgChassisJanitor.desc }
 ent-BorgChassisJanitorMopbot = борг-уборщик "чистобот"
     .desc = { ent-BorgChassisJanitor.desc }
 ent-BorgChassisJanitorStandart = борг-уборщик "стандартный"
     .desc = { ent-BorgChassisJanitor.desc }
-ent-BorgChassisJanitorCustodi = борг-уборщик "кустоди"
+ent-BorgChassisJanitorCustodi = борг-уборщик "кастоди"
     .desc = { ent-BorgChassisJanitor.desc }
 ent-BorgChassisJanitorNoble = борг-уборщик "дворянин"
     .desc = { ent-BorgChassisJanitor.desc }
 ent-BorgChassisJanitorCricket = борг-уборщик "сверчок"
     .desc = { ent-BorgChassisJanitor.desc }
-ent-BorgChassisJanitorRover = борг-уборщик "ровер
+ent-BorgChassisJanitorRover = борг-уборщик "ровер"
     .desc = { ent-BorgChassisJanitor.desc }
+
 ent-BorgChassisMedicalStandart = борг-доктор
     .desc = { ent-BorgChassisMedical.desc }
 ent-BorgChassisMedicalMedbot = борг-доктор "медибот"
@@ -64,6 +68,7 @@ ent-BorgChassisMedicalCricket = борг-доктор "сверчок"
     .desc = { ent-BorgChassisMedical.desc }
 ent-BorgChassisMedicalRover = борг-доктор "ровер"
     .desc = { ent-BorgChassisMedical.desc }
+
 ent-BorgChassisServiceStandart = борг-официант "стандартный"
     .desc = { ent-BorgChassisService.desc }
 ent-BorgChassisServiceBrobot = борг-официант "бро"
@@ -80,3 +85,6 @@ ent-BorgChassisServiceRich = борг-официант "богатей"
     .desc = { ent-BorgChassisService.desc }
 ent-BorgChassisServiceRover = борг-официант "ровер"
     .desc = { ent-BorgChassisService.desc }
+
+ent-BorgChassisSEC = борг СБ
+    .desc = Синтет службы безопасности, созданный для обеспечения соблюдения космического законодательства.

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: BasePlushie
   id: PlushieSanabi
@@ -5,7 +7,7 @@
   description: Важно дойти до конца!
   components:
   - type: Sprite
-    sprite: _Reserve/Fun/sanabi.rsi
+    sprite: _Reserve/Objects/Fun/Plushies/sanabi.rsi
     state: sanabi
   - type: Item
     inhandVisuals:
