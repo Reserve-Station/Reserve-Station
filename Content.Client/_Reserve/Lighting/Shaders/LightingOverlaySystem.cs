@@ -5,7 +5,7 @@
 using Robust.Client.Graphics;
 using Robust.Shared.Prototypes;
 
-namespace Content.Client._Orion.Lighting.Shaders;
+namespace Content.Client._Reserve.Lighting.Shaders;
 
 public sealed class LightingOverlaySystem : EntitySystem
 {

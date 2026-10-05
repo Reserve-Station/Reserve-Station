@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
-using Content.Shared._Orion.Lighting.Shaders;
+using Content.Shared._Reserve.Lighting.Shaders;
 using Content.Shared.CCVar;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -10,7 +10,7 @@ using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using DrawDepth = Content.Shared.DrawDepth.DrawDepth;
 
-namespace Content.Client._Orion.Lighting.Shaders;
+namespace Content.Client._Reserve.Lighting.Shaders;
 
 public sealed class LightingOverlay : Overlay
 {
