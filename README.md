@@ -18,16 +18,10 @@
 
 ---
 
-**Резерв** - это некоммерческий проект с комфортным уровнем РП. Мы нацелены на настоящую РП составляющую игры, которая **не будет** навязываться чересчур строгими правилами, заставляя игроков отыгрывать по стандартному шаблону.
-
-Билд сервера - это сильно модифицированный форк [Goob Station](https://github.com/Goob-Station/Goob-Station), который, в свою очередь, является форком Space Station 14.
+Reserve Station - это хард форк [Goob Station](https://github.com/Goob-Station/Goob-Station), который, в свою очередь, является форком [Space Station 14](https://github.com/space-wizards/space-station-14).
 
 **Space Station 14** - это ремейк SS13, который работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
 Больше про текущую сборку Robust Toolbox, используемую Reserve Station, можно узнать в [Robust Toolbox README](https://github.com/red-wing-ss14/redbox?tab=readme-ov-file).
-
-Билд дополнен многочисленными **уникальными механиками**, **контентом** и **лучшими портами**! [**Кровные Братья**](https://github.com/Reserve-Station/Reserve-Station/pull/264), [**Заговорщики**](https://github.com/Reserve-Station/Reserve-Station/pull/157), [**Горящие жидкости**](https://github.com/Reserve-Station/Reserve-Station/pull/345), [**Бармания Орхидеи**](https://github.com/Reserve-Station/Reserve-Station/pull/278), [**Сад Орхидеи**](https://github.com/Reserve-Station/Reserve-Station/pull/285), [**Прокачанный удобный интерфейс**](https://github.com/Reserve-Station/Reserve-Station/pull/303), [**Система меценатов**](https://github.com/Reserve-Station/Reserve-Station/pull/388), [**Расширенная кастомизация**](https://github.com/Reserve-Station/Reserve-Station/pull/327), [**Своя стилистика**](https://github.com/Reserve-Station/Reserve-Station/pull/362), [**Удобный Дискорд-бот**](https://github.com/Reserve-Station/Reserve-Station/pull/369), [**Королевская битва**](https://github.com/Reserve-Station/Reserve-Station/pull/73) и многое, многое другое!
-
-Кроме того, билд полностью переведён на русский язык, и переводы регулярно обновляются с появлением нового контента.
 
 ## Сборка
 
