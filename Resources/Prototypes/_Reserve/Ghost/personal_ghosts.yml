@@ -1,5 +1,20 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# region Abstract
+
+# Abstract entproto to force transparency on all custom ghosts
+- type: entity
+  abstract: true
+  parent: MobObserver
+  id: MobObserverCkey
+  components:
+  - type: Sprite
+    color: "#ffffffcc" # 0.8 alpha
+
+# endregion Abstract
+
+# region Ca4tuk
+
 - type: customGhost
   id: ca4tuk-ghost
   category: personal
@@ -25,6 +40,10 @@
   - type: Sprite
     sprite: _Reserve/Ghosts/ca4tuk-ghost.rsi
     color: "#F2F2F2"
+
+# endregion Ca4tuk
+
+# region Svarshik
 
 - type: customGhost
   id: svarshik-ghost
@@ -52,49 +71,9 @@
     sprite: _Reserve/Ghosts/svarshik-ghost.rsi
     color: "#999999"
 
-#- type: customGhost
-#  id: duga-ghost
-#  category: personal
-#  proto: MobObserverCkeyDuga
-#  restrictions:
-#  - !type:CkeyRestriction
-#    ckey: [Duga]
-#  name: Duga
-#  desc: Порядок направлений сохранён намеренно. Это метаирония. Он наблюдает сквозь стены, но не туда.
+# endregion Svarshik
 
-#- type: entity
-#  parent: MobObserverCkey
-#  id: MobObserverCkeyDuga
-#  components:
-#  - type: Sprite
-#    sprite: _Reserve/Ghosts/duga-ghost.rsi
-#    color: "#E6E6E6"
-
-- type: customGhost
-  id: fxx-ghost
-  category: personal
-  proto: MobObserverCkeyFXX
-  restrictions:
-  - !type:CkeyRestriction
-    ckey: [FXX]
-  trail:
-    color: "#FFFFFF"
-    maxPoints: 40
-    lineWidth: 2.6
-    minDistance: 0.10
-    decayDelay: 2.6
-    decayInterval: 0.15
-    shader: HolyStarsTrail
-  name: FXX
-  description: Космическая Гидра.
-
-- type: entity
-  parent: MobObserverCkey
-  id: MobObserverCkeyFXX
-  components:
-  - type: Sprite
-    sprite: _Reserve/Ghosts/fxx-ghost.rsi
-    color: "#B3B3B3"
+# region AlreadyTaken
 
 - type: customGhost
   id: already-taken-ghost
@@ -122,6 +101,10 @@
     sprite: _Reserve/Ghosts/already-taken-ghost.rsi
     color: "#CCCCCC"
 
+# endregion AlreadyTaken
+
+# region Kutos
+
 - type: customGhost
   id: pzakusik-ghost
   category: personal
@@ -143,7 +126,11 @@
   id: MobObserverCkeyPZAKusik
   components:
   - type: Sprite
-    sprite: _White/Ghosts/ckey/pzakusik-ghost.rsi
+    sprite: _Reserve/Ghosts/pzakusik-ghost.rsi
+
+# endregion Kutos
+
+# region ThxMqninq
 
 - type: customGhost
   id: thxmqninq-ghost
@@ -169,6 +156,10 @@
   components:
   - type: Sprite
     sprite: _Reserve/Ghosts/thxmqninq-ghost.rsi
+
+# endregion ThxMqninq
+
+# region PerlovkaIsMyName
 
 - type: customGhost
   id: perlovka_is_my_name
@@ -196,6 +187,10 @@
     sprite: _Reserve/Ghosts/perlovka_is_my_name.rsi
     color: "#FFFFFF"
 
+# endregion PerlovkaIsMyName
+
+# region MrSamuel
+
 - type: customGhost
   id: goose-in-a-hat-ghost
   category: personal
@@ -222,6 +217,10 @@
     sprite: _Reserve/Ghosts/goose-in-a-hat-ghost.rsi
     color: "#ffffff88"
 
+# endregion MrSamuel
+
+# region Glagol
+
 - type: customGhost
   id: glagol-ghost
   category: personal
@@ -240,3 +239,48 @@
   - type: Sprite
     sprite: _Reserve/Ghosts/glagol-ghost.rsi
     color: "#ffffff88"
+
+# endregion Glagol
+
+# region Felix163
+
+- type: customGhost
+  id: felix163-ghost
+  category: personal
+  proto: MobObserverCkeyFelix163
+  restrictions:
+  - !type:CkeyRestriction
+    ckey: [felix163]
+  name: felix163
+  description: ползёт, ползёт... # Кошмар
+
+- type: entity
+  parent: MobObserverCkey
+  id: MobObserverCkeyFelix163
+  components:
+  - type: Sprite
+    sprite: _Reserve/Ghosts/felix163-ghost.rsi
+    color: "#ffff" # 1.0 alpha
+
+# endregion Felix163
+
+# region Dexp
+
+# - type: customGhost
+#   id: cyou-ghost
+#   category: personal
+#   proto: MobObserverCkeyCyou
+#   restrictions:
+#   - !type:CkeyRestriction
+#     ckey: [cyou]
+#   name: Марина
+#   description: Я, наверное, открою небольшой оккультный магазин где-нибудь. Где-нибудь далеко от Прехевиля... Может, в Рондоне. Хочу жить в оживлённом месте, среди множества людей. Людей, которые не будут осуждать меня или кого-то ещё вокруг…
+
+# - type: entity
+#   parent: MobObserverCkey
+#   id: MobObserverCkeyCyou # Marina
+#   components:
+#   - type: Sprite
+#     sprite: _Reserve/Ghosts/cyou-ghost.rsi
+
+# endregion Dexp
