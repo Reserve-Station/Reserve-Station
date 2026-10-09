@@ -30,7 +30,7 @@
   - type: ActivePirateRule
   - type: RuleGrids
   - type: LoadMapRule
-    mapPath: /Maps/_Goobstation/Shuttles/pirates_irs.yml
+    mapPath: /Maps/Shuttles/pirate.yml  # Reserve edit: Pirates Enhanced
   - type: AntagLoadProfileRule
     speciesOverride: Human
     alwaysUseSpeciesOverride: true

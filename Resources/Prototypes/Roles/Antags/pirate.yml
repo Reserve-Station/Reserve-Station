@@ -4,20 +4,29 @@
   id: PirateGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPirate
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackSatchelLeatherFilledPirate  # Reserve edit: Pirates Enhanced
     head: ClothingHeadBandBlack
     shoes: ClothingShoesBootsLaceup
+    ears: ClothingHeadsetFreelance  # Reserve edit: Pirates Enhanced
+    outerClothing: ClothingOuterVestWeb  # Reserve edit: Pirates Enhanced
     id: PiratePDA
     belt: ClothingBeltUtility
     pocket1: AppraisalTool
+    pocket2: HandheldGPSBasic  # Reserve edit: Pirates Enhanced
+    suitstorage: WeaponPistolFlintlock  # Reserve edit: Pirates Enhanced
+  inhand:
+    - Cutlass  # Reserve edit: Pirates Enhanced
 
 - type: startingGear
   id: PirateCaptainGear
   parent: PirateGear
   equipment:
     head: ClothingHeadHatPirate
-    pocket2: EnergyCutlass
+    ears: ClothingHeadsetAltFreelancer  # Reserve edit: Pirates Enhanced
     outerClothing: ClothingOuterCoatPirate
+  inhand:
+  - EnergyCutlass  # Reserve edit: Pirates Enhanced
+  - WeaponRevolverPirate  # Reserve edit: Pirates Enhanced
 
 - type: startingGear
   id: PirateFirstmateGear
@@ -25,3 +34,8 @@
   equipment:
     head: ClothingHeadHatPirateTricord
     outerClothing: ClothingOuterCoatGentle
+    ears: ClothingHeadsetAltFreelancer  # Reserve edit: Pirates Enhanced
+    neck: ClothingNeckCloakPirateCap  # Reserve edit: Pirates Enhanced
+  inhand:
+  - CaptainSabre  # Reserve edit: Pirates Enhanced
+  - WeaponShotgunBlunderbuss  # Reserve edit: Pirates Enhanced
