@@ -22,6 +22,7 @@ ent-FoodBurgerBear = медвебургер
     .desc = Лучше всего подавать сырым.
 ent-FoodBurgerCat = котбургер
     .desc = Наконец-то эти кошки и кошколюди на что-то годятся!
+    .suffix = Кошка
 ent-FoodBurgerClown = клоунский бургер
     .desc = Забавный вкус...
 ent-FoodBurgerMime = мимбургер

@@ -1,6 +1,9 @@
-ent-CrateArmoryCombatHardsuit = ящик с боевым скафандром
+ent-CrateArmoryCombatHardsuit = { ent-CrateWeaponSecure } с боевым скафандром
     .desc = Содержит защитный костюм повышенной защиты. Для открытия требуется доступ в оружейную.
-ent-CrateArmoryCombatMedicalHardsuit = ящик с боевым медицинским скафандром
+    .suffix = { ent-CrateWeaponSecure.suffix }
+ent-CrateArmoryCombatMedicalHardsuit = { ent-CrateWeaponSecure } с боевым медицинским скафандром
     .desc = Содержит усовершенствованный медицинский защитный костюм, который обеспечивает меньшую защиту, но гораздо менее громоздок. Для открытия требуется доступ в оружейную.
-ent-CrateArmoryCombatRiotHardsuit = ящик с боевым скафандром для борьбы с беспорядками
+    .suffix = { ent-CrateWeaponSecure.suffix }
+ent-CrateArmoryCombatRiotHardsuit = { ent-CrateWeaponSecure } с боевым скафандром для борьбы с беспорядками
     .desc = Содержит усовершенствованный защитный костюм для спецопераций, обладающий очень высокой степенью защиты, но в то же время очень громоздкий. Для открытия требуется доступ к оружейной.
+    .suffix = { ent-CrateWeaponSecure.suffix }

@@ -1,8 +1,12 @@
 ent-ClothingHeadHelmetHardsuitVoxRaidersCombat = боевой рейдерский шлем
     .desc = Странная голубая одёжка.
+    .suffix = Вокс-рейдеры
 ent-ClothingHeadHelmetHardsuitVoxRaidersEngineer = инженерный рейдерский шлем
     .desc = Странная оранжевая одёжка.
+    .suffix = Вокс-рейдеры
 ent-ClothingHeadHelmetHardsuitVoxRaidersMedical = медицинский рейдерский шлем
     .desc = Странная зелёная одёжка.
+    .suffix = Вокс-рейдеры
 ent-ClothingHeadHelmetHardsuitVoxRaidersStealth = стелс рейдерский шлем
     .desc = Странная серая одёжка.
+    .suffix = Вокс-рейдеры

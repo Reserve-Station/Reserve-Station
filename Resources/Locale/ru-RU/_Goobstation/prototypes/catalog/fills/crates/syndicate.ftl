@@ -1,18 +1,20 @@
-ent-CrateCybersunDarkGygaxBundle = набор Гигакс Cybersun
+ent-CrateCybersunDarkGygaxBundle = { ent-CrateSyndicate } с набором Гигакс Cybersun
     .desc = Содержит набор лёгкого бронированого меха Cybersun - Гигакс.
     .suffix = Заполненный
-ent-CrateCybersunMaulerBundle = набор Маулер Cybersun
+ent-CrateCybersunMaulerBundle = { ent-CrateSyndicate } с набором Маулер Cybersun
     .desc = Содержит набор тяжелого бронированного меха Cybersun - Маулер.
     .suffix = Заполненный
-ent-CrateSyndicateBulkMosin = ящик винтовок Синдиката
+ent-CrateSyndicateBulkMosin = { ent-CrateSyndicate } с винтовками
     .desc = Просто используйте больше винтовок, товарищ.
     .suffix = Заполненный
-ent-CrateSyndicateDreadnought = ящик дредноута Cybersun
-    .desc = Усовершенствованный набор дредноута Cybersun.
+ent-CrateSyndicateDreadnought = { ent-CrateSyndicate } с дредноутом Cybersun
+    .desc = Содержит усовершенствованный набор дредноута Cybersun.
+
 ent-CratePizzaParty = аварийная доставка пиццы
     .desc = В конечном счете, если все остальное не помогло, утешайтесь мыслью о том, что большее количество пиццы решает все проблемы. В набор входит 16 видов пиццы.
-ent-CrateSyndicateUndetermined = ящик с неопределенным набором Синдиката
+
+ent-CrateSyndicateUndetermined = { ent-CrateSyndicate } с неопределенным набором
     .desc = Содержит набор Cиндиката. Какой именно, еще предстоит определить.
-ent-CrateSyndicateStarterKit = ящик с базовым набором Синдиката
+ent-CrateSyndicateStarterKit = { ent-CrateSyndicate } с базовым набором
     .desc = Содержит все, что нужно оперативнику чтобы сеять хаос.
     .suffix = Заполненный

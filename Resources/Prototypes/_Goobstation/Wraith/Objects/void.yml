@@ -4,6 +4,7 @@
   name: ???
   description: It looks unfinished.
   suffix: DO NOT MAP
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: Sprite
     noRot: true

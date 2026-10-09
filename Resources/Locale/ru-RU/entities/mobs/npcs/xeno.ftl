@@ -20,6 +20,6 @@ ent-MobSmallPurpleSnake = космическая гадюка
     .desc = Уменьшенная версия грозной пурпурной змеи из Kepler-283c.
     .suffix = Маленькая
 
-ent-MobXenoLonePraetorianNoGhost = "Дейл"
+ent-MobXenoLonePraetorianNoGhost = преторианец "Дейл"
     .desc = Преторианец, оставшийся после первоначальной зачистки станции. У него в пасти застряла пара окровавленных жетонов с выгравированным именем "Рядовой Дейл".
     .suffix = { ent-SimpleSpaceMobBase.suffix }

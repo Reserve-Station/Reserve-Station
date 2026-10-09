@@ -76,6 +76,7 @@ ent-FoodCakeSpacemanSlice = кусок космонавтского торта
     .desc = Торт из трубы космонавта с глазурью.
 ent-MobCatCake = Корт
     .desc = Это кот. Это торт. Это корт.
+    .suffix = Кошка, Роль призрака
 ent-FoodCakeSuppermatter = суперматерия
     .desc = Чрезвычайно плотная и мощная пища.
 ent-FoodCakeSuppermatterSlice = осколок суперматерии

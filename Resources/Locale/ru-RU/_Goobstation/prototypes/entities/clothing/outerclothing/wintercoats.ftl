@@ -1,8 +1,8 @@
 ent-ClothingOuterWinterCoatMail = зимнее пальто почтальона
     .desc = Оно защитит от холода, но не от собак.
-ent-ClothingOuterWinterCoatTrainer = зимняя куртка профессионального тренера
+ent-ClothingOuterWinterCoatTrainer = зимняя куртка карьерного тренера NanoTrasen
     .desc = Прочная куртка, предназначенная для профессиональных тренеров NanoTrasen. Отлично подходит для обучения новичков.
-ent-ClothingOuterWinterSeniorSecArmored = бронированная зимняя куртка службы безопасности
+ent-ClothingOuterWinterSeniorSecArmored = ветеранская зимняя бронекуртка службы безопасности
     .desc = Прочная, практичная зимняя куртка, предназначенная для защиты старших сотрудников службы безопасности от любых угроз и переохлаждения.
 ent-ClothingOuterWinterCosmic = космическая зимняя куртка
     .desc = Дорогое зимнее пальто машинного пошива.

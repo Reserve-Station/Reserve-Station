@@ -1,2 +1,3 @@
-ent-ActionToggleStealthHardsuit = Стелс скафандр
+ent-ActionToggleStealthHardsuit = стелс-скафандр
     .desc = Переключить ваш стелс скафандр. Следите за тем, чтобы он не разрядился.
+    .suffix = Вокс-рейдеры

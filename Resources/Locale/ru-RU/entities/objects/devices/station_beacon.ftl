@@ -319,4 +319,13 @@ ent-DefaultStationBeaconGhost = { ent-DefaultStationBeacon }
 
 ent-DefaultStationBeaconCentComm = { ent-DefaultStationBeaconGhost }
     .desc = { ent-DefaultStationBeaconGhost.desc }
-    .suffix = Центком
+    .suffix = ЦентКом
+ent-DefaultStationBeaconCentCommAfterhours = { ent-DefaultStationBeaconCentComm }
+    .desc = { ent-DefaultStationBeaconCentComm.desc }
+    .suffix = ЦентКом, После закрытия
+ent-DefaultStationBeaconCentCommThunderdome = { ent-DefaultStationBeaconCentComm }
+    .suffix = ЦентКом, Арена
+    .desc = { ent-DefaultStationBeaconCentComm.desc }
+ent-DefaultStationBeaconCentCommERT = { ent-DefaultStationBeaconCentComm }
+    .suffix = ЦентКом, ОБР
+    .desc = { ent-DefaultStationBeaconCentComm.desc }

@@ -61,18 +61,18 @@ ent-SmallBucketToy = игрушечное ведёрко
     .desc = { ent-Bucket.desc }
     .suffix = Ведро, Технические туннели
 
-ent-PlushieLizardLarge = гигантский плюшевый унатх
+ent-PlushieLizardLarge = гигантский { ent-PlushieLizard }
     .desc = Плюшевый кайдзю-ящер, готовый разрушить хлопковый городок.
-    .suffix = Технические туннели
-ent-PlushieLizardJobMimeLarge = гигантский плюшевый унатх мим
+    .suffix = Технические туннели, Игрушка
+ent-PlushieLizardJobMimeLarge = гигантский { ent-PlushieLizardJobMime }
     .desc = Плюшевый кайдзю-ящер-мим, готовый разрушить хлопковый городок.
-    .suffix = Технические туннели, Орхи Дея
-ent-PlushieSlimeLarge = гигантский плюшевый слайм
+    .suffix = Технические туннели, Игрушка, Орхи Дея
+ent-PlushieSlimeLarge = гигантский { ent-PlushieSlime }
     .desc = Плюшевый кайдзю-слайм, готовый разрушить хлопковый городок.
-    .suffix = Технические туннели
-ent-PlushieSharkBlueLarge = гигантская плюшевая акула
+    .suffix = Технические туннели, Игрушка
+ent-PlushieSharkBlueLarge = гигантская { ent-PlushieSharkBlue }
     .desc = Плюшевая кайдзю-акула, готовая разрушить хлопковый городок.
-    .suffix = Технические туннели
+    .suffix = Технические туннели, Игрушка
 
 ent-FoodBungoPitLarge = косточка гигабунго
     .desc = Похоже на трофей старшего ботаника.
@@ -136,7 +136,7 @@ ent-ToyCarMonoSupronNT = игрушечная машинка NanoTrasen
     .suffix = Технические туннели
 ent-ToyCarMonoSupronSyndicate = кроваво-красная игрушечная машинка
     .desc = { ent-ToyCarMonoSupron.desc }
-    .suffix = Технические туннели
+    .suffix = Технические туннели, Синдикат
 
 ent-BoxToyCarMonoSupron = коробка с игрушечными машинками
     .desc = Коробка, содержащая набор миниатюрных игрушечных машинок.

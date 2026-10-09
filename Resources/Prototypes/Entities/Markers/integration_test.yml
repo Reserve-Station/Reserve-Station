@@ -2,6 +2,7 @@
   parent: MarkerBase
   id: IntegrationTestMarker
   name: Integration Test Marker
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: TestMarker
   - type: Sprite

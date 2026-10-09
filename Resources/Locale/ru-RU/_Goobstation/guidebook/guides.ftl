@@ -1,23 +1,20 @@
-guide-entry-space-law = Космический закон
-guide-entry-medpatches = Медицинские пластыри
-guide-entry-virology = Вирусология
-guide-entry-rules-nrp = НРП правила
-guide-entry-sm = Двигатель Суперматерии
-guide-entry-automation = Автоматизация
-guide-entry-plumbing = Водопровод
+# Названия страниц Руководства
 
-guide-entry-alcoholic-drinks = Алкогольные напитки
-guide-entry-non-alcoholic-drinks = Безалкогольные напитки
+# - Антагонисты
+
 guide-entry-enchanting = Зачарование
-# Goob SOP
+
 # - Основные справочники
+
 guide-entry-sop = СРП
-guide-entry-sop-alert-levels = Коды станции
 guide-entry-sop-emergencies = Чрезвычайные ситуации
 guide-entry-sop-jobs = Профессии
 guide-entry-sop-legal = Закон
 guide-entry-sop-standards = Стандартные процедуры
+guide-entry-rules-nrp = НРП правила
+
 # - Вложенные каталоги
+
 guide-entry-sop-cargo = Отдел снабжения
 guide-entry-sop-command = Командование
 guide-entry-sop-engineering = Инженерный отдел
@@ -25,22 +22,29 @@ guide-entry-sop-medical = Медицинский отдел
 guide-entry-sop-science = Научный отдел
 guide-entry-sop-security = Служба Безопасности
 guide-entry-sop-service = Сервис
+
 # - Уровни оповещения
-guide-entry-sop-greenalert = Зеленый код
+
+guide-entry-sop-alert-levels = Коды станции
+guide-entry-sop-greenalert = Зелёный код
 guide-entry-sop-bluealert = Синий код
-guide-entry-sop-yellowalert = Желтый код
+guide-entry-sop-yellowalert = Жёлтый код
 guide-entry-sop-redalert = Красный код
 guide-entry-sop-deltaalert = Код Дельта
 guide-entry-sop-epsilonalert = Код Эпсилон
-guide-entry-sop-gammaalert = Код гамма
+guide-entry-sop-gammaalert = Код Гамма
 guide-entry-sop-violetalert = Фиолетовый код
 guide-entry-sop-omicronalert = Код Омикрон
+
 # - Стандартные процедуры
+
 guide-entry-sop-demoting = Увольнение/понижение
 guide-entry-sop-evacuation = Эвакуация
 guide-entry-sop-hiring = Трудоустройство/Перевод
 guide-entry-sop-succession = Иерархия командования
+
 # - Чрезвычайные ситуации
+
 guide-entry-sop-confirmedrevs = Революция
 guide-entry-sop-containmentfail = Неудачное сдерживание
 guide-entry-sop-firegasspill = Пожар/разлив газа
@@ -50,16 +54,22 @@ guide-entry-sop-supermatterdelam = Расслаивание СМ
 guide-entry-sop-wardeclaration = Война
 guide-entry-sop-zombieoutbreak = Зомби
 guide-entry-sop-emergencyresponseteam = Отряд Быстрого Реагирования
+
 # - Юридический
+
 guide-entry-sop-execution = Казни
 guide-entry-sop-permabrig = Перманентный бриг
 guide-entry-sop-punishments = Наказания
 guide-entry-sop-searches = Обыски
+
 # - Груз
+
 guide-entry-sop-cargotech = Грузчик
 guide-entry-sop-salvage = Утилизатор
 guide-entry-sop-shaft-miner = Шахтер
+
 # - Командование
+
 guide-entry-sop-ntr = ПНТ
 guide-entry-sop-bso = Офицер "Синий Щит"
 guide-entry-sop-captain = Капитан
@@ -69,24 +79,38 @@ guide-entry-sop-rd = НР
 guide-entry-sop-cmo = ГВ
 guide-entry-sop-ce = СИ
 guide-entry-sop-qm = КМ
-# - Инженерный
+
+# - Инженерия
+
 guide-entry-sop-atmostech = Атмос
 guide-entry-sop-stationengineer = Инженер
+guide-entry-sm = Двигатель Суперматерии
+guide-entry-automation = Автоматизация
+guide-entry-plumbing = Водопровод
+
 # - Медицина
+
 guide-entry-sop-chemist = Химик
 guide-entry-sop-doctorintern = Врач
-# - Science
-guide-entry-sop-roboticist = Роботехник
+guide-entry-medpatches = Медицинские пластыри
+guide-entry-virology = Вирусология
+
 # - Наука
+
+guide-entry-sop-roboticist = Робототехник
 guide-entry-sop-robotocist = Робототехник
 guide-entry-sop-scientist = Ученый
-# - Security
-guide-entry-sop-brigmedic = Бригмедик
+guide-entry-xenobiology = Ксенобиология
+
 # - Безопасность
+
+guide-entry-sop-brigmedic = Бригмедик
 guide-entry-sop-detective = Детектив
 guide-entry-sop-officercadet = Офицер/Кадет
 guide-entry-sop-warden = Смотритель
-# - Обслуживание
+
+# - Сервис
+
 guide-entry-sop-bartender = Бармен
 guide-entry-sop-botanist = Ботаник
 guide-entry-sop-chef = Шеф-повар
@@ -94,14 +118,20 @@ guide-entry-sop-clown = Клоун
 guide-entry-sop-janitor = Уборщик
 guide-entry-sop-librarian = Библиотекарь
 guide-entry-sop-mime = Мим
-guide-entry-sop-reporter = Репортер
+guide-entry-sop-reporter = Репортёр
+guide-entry-alcoholic-drinks = Алкогольные напитки
+guide-entry-non-alcoholic-drinks = Безалкогольные напитки
+
 # - Космический закон
+
+guide-entry-space-law = Космический закон
 guide-entry-space-law-table = Таблица статей
 guide-entry-space-law-violations-minor = 1ХХ статьи (лёгкие)
 guide-entry-space-law-violations-average = 2ХХ статьи (средние)
 guide-entry-space-law-violations-serious = 3ХХ статьи (тяжкие)
 
 # - Боевые искусства
+
 guide-entry-martial-arts = Боевые искусства
 guide-entry-cqc = Рукопашный бой (CQC)
 guide-entry-sleeping-carp = Спящий Карп
@@ -112,5 +142,7 @@ guide-entry-ninjutsu = Ниндзюцу
 guide-entry-dragon-kung-fu = Кунг-фу Дракона
 guide-entry-hell-rip = Адская Геена
 
+# - Антагонисты
+
 guide-entry-antag-revealing-conditions = Условия раскрытия антагов
-guide-entry-xenobiology = Ксенобиология
+guide-entry-bingle = Бинглы
