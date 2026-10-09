@@ -1,0 +1,411 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: roleLoadout
+  id: AntagThief
+  groups:
+  - BagThief
+  - NeckThief
+  - TrinketsThief
+
+- type: loadoutGroup
+  id: TrinketsThief
+  name: loadout-group-trinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - RagThief
+  - DrinkMugThief
+  - FlippoThief
+  - CigarCaseThief
+  - CardBoxThief
+  - d6DiceThief
+  - CrayonThief
+  - FolderThief
+  - TowelThief
+  - RingThief
+  - HeadBandThief
+  - CatHatThief
+
+- type: loadoutGroup
+  id: NeckThief
+  name: lathe-category-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - MaskThief
+  - TieThief
+  - GaiterThief
+  - PonchoThief
+  - PonchoSmallThief
+  - ScarfThief
+
+- type: loadoutGroup
+  id: BagThief
+  name: loadout-group-instruments
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SatchelThief
+  - ToolboxThief
+
+# region Bag
+
+- type: loadout
+  id: SatchelThief
+  storage:
+    back:
+    - SatchelThief
+
+- type: loadout
+  id: ToolboxThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 50h
+  storage:
+    back:
+    - ToolboxThief
+
+# region Rag
+
+- type: entity
+  parent: RagItem
+  id: RagItemBlack
+  name: black rag
+  description: Would be hard to spot fingerprints on this one.
+  suffix: Loadout, Trinkets, Thief
+  components:
+  - type: Sprite
+    layers:
+    - state: rag
+      color: "#535353"
+    - map: ["enum.SolutionContainerLayers.Fill"]
+      state: fill-3
+      visible: false
+
+- type: loadout
+  id: RagThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBartender
+      time: 25h
+  storage:
+    back:
+    - RagItemBlack
+  groupBy: "misc"
+
+# endregion
+
+# region Drinks
+
+- type: loadout
+  id: DrinkMugThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 35h
+  storage:
+    back:
+    - DrinkMugBlack
+  groupBy: "drinks"
+
+# endregion
+
+# region Lighter
+
+- type: entity
+  parent: SpiderclanFlippo
+  id: FlippoThief
+  name: black flippo
+  description: Seems like it was stolen from someone.
+  suffix: Loadout, Trinkets, Thief, Lighter
+
+- type: loadout
+  id: FlippoThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 300h
+  storage:
+    back:
+    - FlippoThief
+  groupBy: "smokeables"
+
+- type: entity
+  parent: CigarCase
+  id: CigarCaseBlack
+  name: black cigar case
+  description: For when you when you want to leave a classy smoketrail.
+  suffix: Loadout, Trinkets, Thief
+  components:
+  - type: Sprite
+    color: "#535353"
+
+- type: loadout
+  id: CigarCaseThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 250h
+  storage:
+    back:
+    - CigarCaseBlack
+  groupBy: "smokeables"
+
+# endregion
+
+# region Toys
+
+- type: loadout
+  id: CardBoxThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 100h
+  storage:
+    back:
+    - CardBoxBlack
+  groupBy: "cards"
+
+- type: entity
+  parent: CrayonBlack
+  id: CrayonBlackThiefDummy
+  categories: [ HideSpawnMenu ]
+  name: four black crayons
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+      offset: 0, -0.25
+    - state: black
+      offset: 0.1, 0.25
+    - state: black
+      offset: -0.25, 0
+    - state: black
+      offset: 0.35, 0
+
+- type: loadout
+  id: CrayonThief
+  dummyEntity: CrayonBlackThiefDummy
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 30h
+  storage:
+    back:
+    - CrayonBlack
+    - CrayonBlack
+    - CrayonBlack
+    - CrayonBlack
+  groupBy: "cards"
+
+# endregion
+
+# region Dice
+
+- type: entity
+  parent: d6Dice
+  id: d6DiceBlack
+  name: black d6
+  description: Can you even see the sides?
+  suffix: Loadout, Trinkets, Thief
+  components:
+  - type: Sprite
+    color: "#535353"
+
+- type: entity
+  parent: d6DiceBlack
+  id: d6DiceBlackTwoDummy
+  categories: [ HideSpawnMenu ]
+  name: two black dice
+  components:
+  - type: Sprite
+    layers:
+    - state: d6_6
+      color: "#939393"
+      offset: -0.1, -0.15
+    - state: d6_6
+      color: "#939393"
+      offset: 0.15, 0.1
+
+- type: loadout
+  id: d6DiceThief
+  dummyEntity: d6DiceBlackTwoDummy
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Cargo
+      time: 60h
+  storage:
+    back:
+    - d6DiceBlack
+    - d6DiceBlack
+  groupBy: "cards"
+
+# endregion
+
+# region Paper
+
+- type: loadout
+  id: FolderThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Command
+      time: 30h
+  storage:
+    back:
+    - BoxFolderBlackThreePapers
+  groupBy: "folders"
+
+# endregion
+
+# region Towel
+
+- type: loadout
+  id: TowelThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 30h
+  storage:
+    back:
+    - TowelColorBlack
+  groupBy: "towels"
+
+# endregion
+
+# region Jewelry
+
+- type: entity
+  parent: PlasticRing
+  id: BlackRing
+  name: black ring
+  suffix: Loadout, Trinkets, Thief
+  components:
+  - type: Sprite
+    layers:
+      - state: ring
+        color: "#535353"
+
+- type: loadout
+  id: RingThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 150h
+  storage:
+    back:
+    - BlackRing
+  groupBy: "ring"
+
+- type: loadout
+  id: HeadBandThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 10h
+  storage:
+    back:
+    - ClothingHeadBandBlack
+  groupBy: "hats"
+
+- type: loadout
+  id: CatHatThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 200h
+  storage:
+    back:
+    - ClothingHeadHatAnimalCat
+  groupBy: "hats"
+
+# endregion
+
+# region Neck
+
+- type: loadout
+  id: MaskThief
+  storage:
+    back:
+    - ClothingMaskBandBlack
+
+- type: entity
+  parent: ClothingNeckTieDet
+  id: ClothingNeckTieThief
+  name: black tie
+  description: This seems stolen...
+  suffix: Loadout, Trinkets, Thief
+
+- type: loadout
+  id: TieThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 20h
+  storage:
+    back:
+    - ClothingNeckTieThief
+
+- type: loadout
+  id: GaiterThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 40h
+  storage:
+    back:
+    - ClothingMaskNeckGaiter
+
+- type: loadout
+  id: PonchoSmallThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 80h
+  storage:
+    back:
+    - ClothingNeckPonchoSmallBlack
+
+- type: loadout
+  id: PonchoThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 120h
+  storage:
+    back:
+    - ClothingNeckPonchoBlack
+
+- type: loadout
+  id: ScarfThief
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:OverallPlaytimeRequirement
+      time: 160h
+  storage:
+    back:
+    - ClothingNeckScarfStripedBlack
+
+# endregion

@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: roleLoadout
+  id: AntagDevil
+  groups:
+  - TrinketsDevil
+
+- type: loadoutGroup
+  id: TrinketsDevil
+  name: loadout-group-trinkets
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - SkullBloodRed
+
+# region Bones
+
+- type: entity
+  parent: HeadSkeleton
+  id: HeadSkeletonBloodRed
+  name: blood-red skull
+  description: Looks like it's fairly fresh...
+  suffix: Loadout, Trinkets, Devil, Demon, Syndicate
+  components:
+  - type: Sprite
+    state: "skull_icon"
+    color: "#940000"
+
+- type: loadout
+  id: SkullBloodRed
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChaplain
+      time: 15h
+  storage:
+    back:
+    - HeadSkeletonBloodRed
+  groupBy: "skulls"
+
+# endregion
