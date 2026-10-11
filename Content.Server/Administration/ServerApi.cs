@@ -33,6 +33,8 @@ using Content.Server.Database;
 using Content.Shared.Database;
 using Content.Server.MoMMI;
 using Content.Shared._Reserve.LenaApi; // Reserve api-ooc-handler
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 
 namespace Content.Server.Administration;
 
@@ -76,6 +78,7 @@ public sealed partial class ServerApi : IPostInjectInit
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly IBanManager _bans = default!;
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     private string _token = string.Empty;
     private ISawmill _sawmill = default!;
@@ -358,6 +361,7 @@ public sealed partial class ServerApi : IPostInjectInit
             var reason = body.Reason ?? "No reason supplied";
             reason += " (kicked by admin)";
 
+            _adminGuard.PlayerKicked(DiscordLogActor.From(player), body.Reason, new DiscordLogActor(new NetUserId(actor.Guid), actor.Name)); // Reserve edit: Reserve Red - AdminGuard
             _netManager.DisconnectChannel(player.Channel, reason);
             await RespondOk(context);
 
@@ -916,6 +920,7 @@ public sealed partial class ServerApi : IPostInjectInit
         }
 
         await _playTimeTracking.AddTimeToTrackerById(userId, body.JobIdPrototype, TimeSpan.FromMinutes(minutes));
+        _adminGuard.PlaytimeChanged(userId, [(body.JobIdPrototype, TimeSpan.FromMinutes(minutes))], false, new DiscordLogActor(new NetUserId(actor.Guid), actor.Name)); // Reserve edit: Reserve Red - AdminGuard
 
         _sawmill.Info($"{actor.Name} using playtime_addrole {body.NickName} {body.JobIdPrototype} {body.Time}");
     }

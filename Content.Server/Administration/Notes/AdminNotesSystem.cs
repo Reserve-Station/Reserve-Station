@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 
 using System.Linq;
-using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration.Commands;
 using Content.Server.Chat.Managers;
 using Content.Server.EUI;
@@ -22,7 +22,7 @@ public sealed class AdminNotesSystem : EntitySystem
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IChatManager _chat = default!;
     [Dependency] private readonly EuiManager _euis = default!;
-    [Dependency] private IBanGuardManager _banGuard = default!; // Reserve edit: Reserve Red - BanGuard
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     public override void Initialize()
     {
@@ -72,7 +72,7 @@ public sealed class AdminNotesSystem : EntitySystem
         foreach (var watchlist in watchlists)
         {
             _chat.SendAdminAlert(Loc.GetString("admin-notes-watchlist", ("player", username), ("message", watchlist.Message)));
-            _banGuard.WatchlistPlayerJoined(e.Session.UserId, watchlist); // Reserve edit: Reserve Red - BanGuard
+            _adminGuard.WatchlistPlayerJoined(e.Session.UserId, watchlist); // Reserve edit: Reserve Red - AdminGuard
         }
 
         var messagesToShow = messages.OrderBy(x => x.CreatedAt).Where(x => !x.Dismissed).ToArray();

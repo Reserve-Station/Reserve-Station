@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.ServerCurrency;
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration;
 using Content.Server.Chat.Managers;
 using Content.Shared.Administration;
@@ -58,6 +60,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IConfigurationManager _configuration = default!; // Reserve-LenaApi
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-gift-command");
         public string Description => Loc.GetString("server-currency-gift-command-description");
@@ -113,6 +116,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
             }
 
             _currencyMan.TransferCurrency(shell.Player.UserId, targetPlayer, amount);
+            _adminGuard.CurrencyTransferred(shell.Player.UserId, targetPlayer, _currencyMan.Stringify(amount)); // Reserve edit: Reserve Red - AdminGuard
 
             var giver = Loc.GetString("server-currency-gift-command-giver", ("player", args[0]), ("amount", _currencyMan.Stringify(amount)));
             var reciever = Loc.GetString("server-currency-gift-command-reciever", ("player", shell.Player.Name), ("amount", _currencyMan.Stringify(amount)));
@@ -139,6 +143,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     public sealed class AddServerCurrencyCommand : IConsoleCommand
     {
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-add-command");
         public string Description => Loc.GetString("server-currency-add-command-description");
@@ -166,6 +171,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
             }
 
             var newCurrency = _currencyMan.Stringify(_currencyMan.AddCurrency(targetPlayer, currency));
+            _adminGuard.AdminCurrencyChanged(targetPlayer, AdminCurrencyAction.Add, _currencyMan.Stringify(currency), newCurrency, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
             shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
         }
 
@@ -184,6 +190,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     public sealed class RemoveServerCurrencyCommand : IConsoleCommand
     {
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-remove-command");
         public string Description => Loc.GetString("server-currency-remove-command-description");
@@ -211,6 +218,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
             }
 
             var newCurrency = _currencyMan.Stringify(_currencyMan.RemoveCurrency(targetPlayer, currency));
+            _adminGuard.AdminCurrencyChanged(targetPlayer, AdminCurrencyAction.Remove, _currencyMan.Stringify(currency), newCurrency, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
             shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
         }
 
@@ -229,6 +237,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     public sealed class SetServerCurrencyCommand : IConsoleCommand
     {
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-set-command");
         public string Description => Loc.GetString("server-currency-set-command-description");
@@ -257,6 +266,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
 
             _currencyMan.SetBalance(targetPlayer, currency);
             var newCurrency = _currencyMan.Stringify(currency);
+            _adminGuard.AdminCurrencyChanged(targetPlayer, AdminCurrencyAction.Set, newCurrency, newCurrency, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
             shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
         }
 

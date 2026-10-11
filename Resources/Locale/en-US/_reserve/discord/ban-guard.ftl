@@ -8,7 +8,6 @@ ban-guard-title-note-added = Added: { $type } #{ $id }
 ban-guard-title-note-modified = Modified: { $type } #{ $id }
 ban-guard-title-note-deleted = Deleted: { $type } #{ $id }
 ban-guard-title-first-join = New player on the server
-ban-guard-title-watchlist = Player under watchlist | ID { $id }
 ban-guard-title-exemption = Ban exemption changed
 ban-guard-title-job-whitelist-added = Job whitelist added
 ban-guard-title-job-whitelist-removed = Job whitelist removed
@@ -44,8 +43,3 @@ ban-guard-note-message-changed = **Text:** { $old } → { $new }
 ban-guard-note-severity-changed = **Severity:** { $old } → { $new }
 ban-guard-note-secret-changed = **Secret:** { $old } → { $new }
 ban-guard-note-expiry-changed = **Expiry:** { $old } → { $new }
-
-ban-guard-round-lobby-restart = pre-round lobby after server restart
-ban-guard-round-lobby = pre-round lobby for round { $id }
-ban-guard-round-in-round = round { $id }
-ban-guard-round-post = post-round { $id }

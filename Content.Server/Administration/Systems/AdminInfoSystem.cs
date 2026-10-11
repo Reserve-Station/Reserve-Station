@@ -2,11 +2,9 @@
 
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
-using Content.Server.Discord;  // Reserve edit: Better webhook send
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
 using Content.Shared.Administration.Events;
-using Content.Shared.CCVar;  // Reserve edit: Better webhook send
 using Content.Shared.Database;
-using Robust.Shared.Configuration;  // Reserve edit: Better webhook send
 
 namespace Content.Server.Administration.Systems;
 
@@ -15,8 +13,7 @@ public sealed class AdminInfoSystem : EntitySystem
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IPlayerLocator _locator = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;  // Reserve edit: Better webhook send
-    [Dependency] private readonly DiscordWebhook _discord = default!;  // Reserve edit: Better webhook send
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     public override void Initialize()
     {
@@ -38,11 +35,9 @@ public sealed class AdminInfoSystem : EntitySystem
         if (main == null)
             return;
 
-        var message = $"{name} is attempting to connect with a userid from {main.Username}";  // Reserve edit: Better webhook send
 
         _adminLog.Add(LogType.AdminMessage, LogImpact.High, $"{name} is attempting to connect with a userid from {main.Username}");
-        _chatManager.SendAdminAlert(message);  // Reserve edit: Better webhook send
-
-        await _discord.SendWebhookMessage(message, _cfg.GetCVar(CCVars.DiscordAdminchatWebhook));  // Reserve edit: Better webhook send
+        _chatManager.SendAdminAlert($"{name} is attempting to connect with a userid from {main.Username}");
+        _adminGuard.UserIdMismatch(name, main.Username); // Reserve edit: Reserve Red - AdminGuard
     }
 }

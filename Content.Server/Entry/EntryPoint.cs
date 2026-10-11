@@ -9,6 +9,7 @@ using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.Database;
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Discord.DiscordLink;
 using Content.Server.EUI;
 using Content.Server.GameTicking;
@@ -54,6 +55,7 @@ namespace Content.Server.Entry
         [Dependency] private readonly IAdminLogManager _adminLog = default!;
         [Dependency] private readonly IAfkManager _afk = default!;
         [Dependency] private readonly IBanManager _ban = default!;
+        [Dependency] private readonly IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
         [Dependency] private readonly IChatManager _chatSan = default!;
         [Dependency] private readonly IChatSanitizationManager _chat = default!;
         [Dependency] private readonly IComponentFactory _factory = default!;
@@ -168,6 +170,7 @@ namespace Content.Server.Entry
             _gameMap.Initialize();
             _entSys.GetEntitySystem<GameTicker>().PostInitialize();
             _ban.Initialize();
+            _adminGuard.Initialize(); // Reserve edit: Reserve Red - AdminGuard
             _connection.PostInit();
             _multiServerKick.Initialize();
             _cvarCtrl.Initialize();

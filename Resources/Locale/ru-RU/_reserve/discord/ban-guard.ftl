@@ -8,7 +8,6 @@ ban-guard-title-note-added = Добавлено: { $type } #{ $id }
 ban-guard-title-note-modified = Изменено: { $type } #{ $id }
 ban-guard-title-note-deleted = Удалено: { $type } #{ $id }
 ban-guard-title-first-join = Новый игрок на сервере
-ban-guard-title-watchlist = За игроком установлено наблюдение | ID { $id }
 ban-guard-title-exemption = Изменено исключение из банов
 ban-guard-title-job-whitelist-added = Выдан вайтлист на роль
 ban-guard-title-job-whitelist-removed = Снят вайтлист с роли
@@ -44,8 +43,3 @@ ban-guard-note-message-changed = **Текст:** { $old } → { $new }
 ban-guard-note-severity-changed = **Серьёзность:** { $old } → { $new }
 ban-guard-note-secret-changed = **Секретная:** { $old } → { $new }
 ban-guard-note-expiry-changed = **Срок действия:** { $old } → { $new }
-
-ban-guard-round-lobby-restart = лобби после перезапуска сервера
-ban-guard-round-lobby = лобби перед раундом { $id }
-ban-guard-round-in-round = раунд { $id }
-ban-guard-round-post = конец раунда { $id }

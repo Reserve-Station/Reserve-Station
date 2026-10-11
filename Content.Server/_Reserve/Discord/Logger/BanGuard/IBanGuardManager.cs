@@ -46,11 +46,6 @@ public interface IBanGuardManager
     void PlayerFirstJoined(string playerName, NetUserId userId, string creationDate);
 
     /// <summary>
-    ///     Зашёл игрок с активным наблюдением (watchlist). Уходит только в админский канал.
-    /// </summary>
-    void WatchlistPlayerJoined(NetUserId player, AdminWatchlistRecord watchlist);
-
-    /// <summary>
     ///     Изменены флаги исключения из банов. Уходит только в админский канал.
     /// </summary>
     void BanExemptionChanged(NetUserId player, ServerBanExemptFlags oldFlags, ServerBanExemptFlags newFlags, NetUserId? admin);

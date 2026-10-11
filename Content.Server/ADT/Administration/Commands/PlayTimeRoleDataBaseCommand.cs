@@ -1,3 +1,5 @@
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Administration;
@@ -14,6 +16,7 @@ public sealed class PlayTimeAddOverallAsyncCommand : IConsoleCommand
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     public string Command => "playtime_addoverall_as";
     public string Description => Loc.GetString("cmd-playtime_addoverall-desc");
@@ -52,6 +55,7 @@ public sealed class PlayTimeAddOverallAsyncCommand : IConsoleCommand
         if (_playerManager.TryGetSessionById(userId, out var player))
         {
             _playTimeTracking.AddTimeToOverallPlaytime(player, TimeSpan.FromMinutes(minutes));
+            _adminGuard.PlaytimeChanged(userId, [(PlayTimeTrackingShared.TrackerOverall, TimeSpan.FromMinutes(minutes))], false, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
             var overall = _playTimeTracking.GetOverallPlaytime(player);
 
             shell.WriteLine(Loc.GetString(
@@ -62,6 +66,7 @@ public sealed class PlayTimeAddOverallAsyncCommand : IConsoleCommand
         else
         {
             await _playTimeTracking.AddTimeToOverallPlaytimeById(userId, TimeSpan.FromMinutes(minutes));
+            _adminGuard.PlaytimeChanged(userId, [(PlayTimeTrackingShared.TrackerOverall, TimeSpan.FromMinutes(minutes))], false, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
             var overall = await _playTimeTracking.GetOverallPlaytimeById(userId);
 
             shell.WriteLine(Loc.GetString(
@@ -91,6 +96,7 @@ public sealed class PlayTimeAddRoleAsyncCommand : IConsoleCommand
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     public string Command => "playtime_addrole_as";
     public string Description => Loc.GetString("cmd-playtime_addrole-desc");
@@ -127,6 +133,7 @@ public sealed class PlayTimeAddRoleAsyncCommand : IConsoleCommand
         }
 
         await _playTimeTracking.AddTimeToTrackerById(userId, args[1], TimeSpan.FromMinutes(minutes));
+        _adminGuard.PlaytimeChanged(userId, [(args[1], TimeSpan.FromMinutes(minutes))], false, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
         var overall = await _playTimeTracking.GetOverallPlaytimeById(userId);
 
         shell.WriteLine(Loc.GetString(

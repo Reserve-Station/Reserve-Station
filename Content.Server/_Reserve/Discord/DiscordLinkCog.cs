@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Threading.Tasks;
+using Content.Server._Reserve.Discord.AdminGuard;
 using Content.Server.Database;
 using NetCord;
 using NetCord.Rest;
@@ -9,9 +10,10 @@ using System.Linq;
 
 namespace Content.Server._Reserve.Discord;
 
-public sealed class DiscordLinkCog
+public sealed partial class DiscordLinkCog
 {
-    [Dependency] private readonly IServerDbManager _database = default!;
+    [Dependency] private IServerDbManager _database = default!;
+    [Dependency] private IAdminGuardManager _adminGuard = default!;
 
     public DiscordLinkCog()
     {
@@ -38,6 +40,9 @@ public sealed class DiscordLinkCog
                 return Ephemeral(Loc.GetString("discord-link-discord-already-linked"));
         }
 
+        if (playerId is { } linkedId)
+            _adminGuard.DiscordAccountLinked(linkedId, discordUserId);
+
         var name = playerId is { } id
             ? (await _database.GetPlayerRecordByUserId(id))?.LastSeenUserName ?? id.ToString()
             : "?";
@@ -51,11 +56,15 @@ public sealed class DiscordLinkCog
     /// </summary>
     public async Task<InteractionCallback> HandleUnlinkAsync(ulong discordUserId)
     {
+        var playerId = await _database.GetLinkedPlayerId(discordUserId, default);
         var unlinked = await _database.UnlinkDiscordAccount(discordUserId, default);
         if (unlinked)
+        {
+            _adminGuard.DiscordAccountUnlinked(playerId, discordUserId);
             return Ephemeral(Loc.GetString("discord-unlink-success"));
-        else
-            return Ephemeral(Loc.GetString("discord-unlink-not-linked"));
+        }
+
+        return Ephemeral(Loc.GetString("discord-unlink-not-linked"));
     }
 
     private static InteractionCallback Ephemeral(string message)
