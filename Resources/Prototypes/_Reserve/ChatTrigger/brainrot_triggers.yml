@@ -1,0 +1,433 @@
+- type: brainrotBotTrigger
+  id: Brainrot1
+  trigger: "[фури; фурриеб; фурриёб; фурье; фурьё]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot2
+  trigger: "[хохол; хохлы; жид; еврей; евреи; русский; русня; кацап; москаль; индус]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot3
+  trigger: сска
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot4
+  trigger: даун
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot5
+  trigger: "[чурка; чурки; хач; хачи; хохлосрач]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot6
+  trigger: "[бро; донатер]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot7
+  trigger: "[трап; трапы; трапу]"
+  description: brainrot-trigger-desc-brainrot21
+
+
+- type: brainrotBotTrigger
+  id: Brainrot8
+  trigger: "[Z;зет;сво]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot9
+  trigger: тцк
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot10
+  trigger: гойда
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot11
+  trigger: лексус
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot12
+  trigger: "[бандера; бандеровцы; вагнер; ватник]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot13
+  trigger: "[путин; зеленский; трамп; навальный; гитлер; адольф гитлер]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot14
+  trigger: "[киев; москва; Афганистан; Албания; Алжир; Аргентина; Армения; Австралия; Австрия; Азербайджан; Багамы; Бахрейн; Бангладеш; Беларусь; Бельгия; Бенин; Бутан; Боливия; Бразилия; Бруней; Болгария; Камбоджа; Канада; Чад; Китай; Колумбия; Конго; Коста-Рика; Хорватия; Кипр; Чехия; Дания; Доминика; Эквадор; Египет; Сальвадор; Экваториальная Гвинея; Эритрея; Эстония; Эфиопия; Финляндия; Франция; Грузия; Германия; Греция; Гватемала; Гвинея; Гаити; Гондурас; Венгрия; Исландия; Индия; Индонезия; Иран; Ирак; Ирландия; Израиль; Италия; Ямайка; Япония; Иордания; Казахстан; Кения; Кувейт; Кыргызстан; Латвия; Либерия; Ливия; Литва; Люксембург; Мадагаскар; Малави; Малайзия; Мальдивы; КНДР; Северная корея; Пакистан; Палау; Филиппины; Польша; Португалия; Катар; Румыния; Россия; Руанда; Сирия; Сирию; Таджикистан; Танзания; Таиланд; Турция; Турцию; Уганда; Украина; Великобритания; Англия; США; Узбекистан; Ватикан; Венесуэла; Вьетнам; Замбия; Зимбабве]"
+  description: brainrot-trigger-desc-generic
+
+
+- type: brainrotBotTrigger
+  id: Brainrot15
+  trigger: "[админ; модер]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot16
+  trigger: "[бан; забанили; мут; замутили]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot17
+  trigger: "[ooc; ic; айси]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot18
+  trigger: "[манал]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot19
+  trigger: "[респавн; респ; респнуться]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot20
+  trigger: "[мабой]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot21
+  trigger: "[лагает; логает; лаги]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot22
+  trigger: "[фриз; фризит]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot23
+  trigger: "[краш; крашнуло]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot24
+  trigger: "[баг; баги; баганутый]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot25
+  trigger: "[абуз; абузить]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot26
+  trigger: "[грифер; грифить]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot27
+  trigger: "[валид; валидхантер]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot28
+  trigger: "[антаг; антагонист; антажка; тритор]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot29
+  trigger: "[ерп; рп; лрп; мрп; хрп]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot30
+  trigger: "[я в ссд; я афк; афк]"
+  description: brainrot-trigger-desc-brainrot14
+
+
+- type: brainrotBotTrigger
+  id: Brainrot31
+  trigger: флекс
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot32
+  trigger: фулл
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot33
+  trigger: хайп
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot34
+  trigger: хз
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot35
+  trigger: "[хил; хилка; хильни; лекни; лекай; хилься]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot36
+  trigger: чек
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot37
+  trigger: чекни
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot38
+  trigger: чел
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot39
+  trigger: шаришь
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot40
+  trigger: "[иба чотко; чотко; чотка; иба чотка]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot41
+  trigger: "[изи; ез; ez]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot42
+  trigger: "[маму ебал; твою мамку ебал; маму трахал; мамку трахал]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot43
+  trigger: "[сигма; сигмо]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot44
+  trigger: тима
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot45
+  trigger: стак
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot46
+  trigger: скибиди
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot47
+  trigger: "[норм; нормас]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot48
+  trigger: база
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot49
+  trigger: "[лол; кек; лмао]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot50
+  trigger: дед инсайд
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot51
+  trigger: рофл
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot52
+  trigger: токсик
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot53
+  trigger: "[агр; агриться]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot54
+  trigger: "[имба; имбовый]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot55
+  trigger: "[скилл; скилл ишью]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot56
+  trigger: "[сорян; сорри]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot57
+  trigger: байт
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot58
+  trigger: "[не шарю; нешарю]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot59
+  trigger: танчить
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot60
+  trigger: "[кринж; кринжово]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot61
+  trigger: жиза
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot62
+  trigger: фута
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot63
+  trigger: гу гу га га
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot64
+  trigger: киси киси мяу мяу
+  description: brainrot-trigger-desc-generic
+
+
+- type: brainrotBotTrigger
+  id: Brainrot65
+  trigger: спс
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot66
+  trigger: пон
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot67
+  trigger: ок
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot68
+  trigger: лан
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot69
+  trigger: всм
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot70
+  trigger: кста
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot71
+  trigger: пж
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot72
+  trigger: "[го; гоу]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot73
+  trigger: прив
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot74
+  trigger: офни
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot75
+  trigger: "[ваще; ващще]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot76
+  trigger: "[пруф; пруфы; пруфани]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot77
+  trigger: "[изоли; изольки]" # НЕ ТРОГАТЬ БЛЯТЬ, ВОЗРАЖЕНИЯ ПРИНИМАЮТСЯ ТОЛЬКО В ФОРМЕ СОЧИНЕНИЯ, 300 СЛОВ МИНИМУМ, С АРГУМЕНТАМИ ТОГО, ЧТО ИЗОЛИ НЕ БРЕЙНРОТ. 
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot78
+  trigger: хай
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot79
+  trigger: ку
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot80
+  trigger: дек
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot81
+  trigger: вард
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot82
+  trigger: "[халява; халявный; халявного; халявная; халявные; халявно]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot83
+  trigger: "[аллах; аллаха; аллаху; аллахом]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot84
+  trigger: "[полиция; полицейский; полицейской; полицейские; полицейского; полиции; полицейскими]"
+  description: brainrot-trigger-desc-police
+
+- type: brainrotBotTrigger
+  id: Brainrot85
+  trigger: "[милиция; милиции; милиционер; милиционеры; милиционера; милиционером]"
+  description: brainrot-trigger-desc-police
+
+- type: brainrotBotTrigger
+  id: Brainrot86
+  trigger: "[нормалда; нормалды; бурмалда; бурмалды]"
+  description: brainrot-trigger-desc-generic

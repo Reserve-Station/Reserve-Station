@@ -1,0 +1,25 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc 'chat-trigger-grammarnazi-title'}"
+                      MinSize="420 240"
+                      SetSize="420 240">
+    <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="8">
+        <RichTextLabel Name="MessageLabel"
+                       HorizontalAlignment="Center" />
+        <PanelContainer StyleClasses="PanelDark">
+            <RichTextLabel Name="DescriptionLabel"
+                           Margin="8"
+                           HorizontalAlignment="Center" />
+        </PanelContainer>
+        <BoxContainer Orientation="Horizontal"
+                      HorizontalAlignment="Center"
+                      SeparationOverride="8">
+            <Button Name="CancelButton"
+                    Text="{Loc 'chat-trigger-cancel-button'}"
+                    MinWidth="120" />
+            <Button Name="SendAnywayButton"
+                    Text="{Loc 'chat-trigger-send-anyway-button'}"
+                    MinWidth="120" />
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

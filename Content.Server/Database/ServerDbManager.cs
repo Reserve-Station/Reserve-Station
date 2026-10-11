@@ -396,6 +396,14 @@ namespace Content.Server.Database
 
         #endregion
 
+        #region Brainrot Triggers
+
+        Task<List<string>> GetBrainrotTriggersAsync(CancellationToken cancel = default);
+        Task AddBrainrotTriggerAsync(string trigger, CancellationToken cancel = default);
+        Task RemoveBrainrotTriggerAsync(string trigger, CancellationToken cancel = default);
+
+        #endregion
+
         #region DB Notifications
 
         void SubscribeToNotifications(Action<DatabaseNotification> handler);
@@ -1317,6 +1325,28 @@ namespace Content.Server.Database
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetPollSeenCountAsync(pollId, cancel));
+        }
+
+        #endregion
+
+        #region Brainrot Triggers
+
+        public Task<List<string>> GetBrainrotTriggersAsync(CancellationToken cancel = default)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetBrainrotTriggersAsync(cancel));
+        }
+
+        public Task AddBrainrotTriggerAsync(string trigger, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddBrainrotTriggerAsync(trigger, cancel));
+        }
+
+        public Task RemoveBrainrotTriggerAsync(string trigger, CancellationToken cancel = default)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.RemoveBrainrotTriggerAsync(trigger, cancel));
         }
 
         #endregion
