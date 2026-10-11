@@ -15,6 +15,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Utility;
 using Content.Server.Discord;
 using Content.Server.Discord.DiscordLink;  // Reserve edit: Maecenas System
+using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
 using Content.Server.ADT.Administration;
 
 namespace Content.Server.GameTicking
@@ -24,6 +25,7 @@ namespace Content.Server.GameTicking
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly DiscordLink _discordLink = default!;  // Reserve edit: Maecenas System
+        [Dependency] private IBanGuardManager _banGuard = default!; // Reserve edit: Reserve Red - BanGuard
 
         private void InitializePlayer()
         {
@@ -83,15 +85,10 @@ namespace Content.Server.GameTicking
                           Loc.GetString("player-first-join-account-date", ("creationDate", creationDate)) //Reserve edit
                         : Loc.GetString("player-join-message", ("name", args.Session.Name)));
 
-                        // Reserve edit start: Better webhook send
-                        if (!string.IsNullOrEmpty(_cfg.GetCVar(CCVars.DiscordAdminchatWebhook)) && firstConnection)
-                        {
-                            var message = Loc.GetString("player-first-join-message-webhook", ("name", args.Session.Name)) + "\n" +
-                                Loc.GetString("player-first-join-account-date", ("creationDate", creationDate)) + "\n" +
-                                $"userid: {args.Session.UserId.ToString()}";
-                            await _discord.SendWebhookMessage(message, _cfg.GetCVar(CCVars.DiscordAdminchatWebhook));
-                        }
-                        // Reserve edit end: Better webhook send
+                        // Reserve edit start: Reserve Red - BanGuard
+                        if (firstConnection)
+                            _banGuard.PlayerFirstJoined(args.Session.Name, args.Session.UserId, creationDate);
+                        // Reserve edit end: Reserve Red - BanGuard
                         await _discordLink.AssignPatronTierAsync(args.Session.UserId);  // Reserve edit: Maecenas System
                     if (session.Channel.IsConnected)  // Reserve edit: Flaky test fixes
                         RaiseNetworkEvent(GetConnectionStatusMsg(), session.Channel);

@@ -508,7 +508,6 @@ namespace Content.Server.Database
             bool includeUnbanned,
             BanType type);
 
-        public abstract Task<BanDef?> GetLastBanAsync(); //ADT-Tweak: Логи банов для диса
         public abstract Task<BanDef> AddBanAsync(BanDef ban);
         public abstract Task AddUnbanAsync(UnbanDef unban);
 

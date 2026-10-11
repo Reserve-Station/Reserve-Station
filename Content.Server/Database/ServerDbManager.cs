@@ -115,7 +115,6 @@ namespace Content.Server.Database
             bool includeUnbanned = true,
             BanType type = BanType.Server);
 
-        Task<BanDef?> GetLastBanAsync(); //ADT-Tweak: Логи банов для диса
         Task<BanDef> AddBanAsync(BanDef ban);
         Task AddUnbanAsync(UnbanDef ban);
 
@@ -606,13 +605,6 @@ namespace Content.Server.Database
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetBansAsync(address, userId, hwId, modernHWIds, includeUnbanned, type));
         }
-        //Start-ADT-Tweak: логи банов для диса
-        public Task<BanDef?> GetLastBanAsync()
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetLastBanAsync());
-        }
-        //End-ADT-Tweak
 
         public Task<BanDef> AddBanAsync(BanDef ban)
         {

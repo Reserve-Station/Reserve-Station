@@ -57,7 +57,7 @@ public sealed class DiscordChatLink : IPostInjectInit
             return;
         }
 
-        _oocChannelId = ulong.Parse(channelId);
+        _oocChannelId = ulong.TryParse(channelId, out var id) ? id : null; // Reserve edit: Reserve Red - BanGuard (неверный ID канала не должен бросать исключение)
     }
 
     private void OnAdminChannelIdChanged(string channelId)
@@ -68,7 +68,7 @@ public sealed class DiscordChatLink : IPostInjectInit
             return;
         }
 
-        _adminChannelId = ulong.Parse(channelId);
+        _adminChannelId = ulong.TryParse(channelId, out var id) ? id : null; // Reserve edit: Reserve Red - BanGuard (неверный ID канала не должен бросать исключение)
     }
 
     private void OnMessageReceived(Message message)

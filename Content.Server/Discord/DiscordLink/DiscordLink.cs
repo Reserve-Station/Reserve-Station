@@ -444,6 +444,35 @@ public sealed class DiscordLink : IPostInjectInit
 
     #endregion
 
+    // Reserve edit start: Reserve Red
+    /// <summary>
+    /// Sends an embed to a Discord channel with the specified ID. Without any mentions.
+    /// </summary>
+    public async Task SendEmbedAsync(ulong channelId, string title, string description, int color, string footer)
+    {
+        if (_client == null)
+            return;
+
+        if (await _client.Rest.GetChannelAsync(channelId) is not TextChannel channel)
+        {
+            _sawmill.Warning("Tried to send an embed to Discord but the channel {Channel} was not found.", channelId);
+            return;
+        }
+
+        await channel.SendMessageAsync(new MessageProperties()
+        {
+            AllowedMentions = AllowedMentionsProperties.None,
+            Embeds =
+            [
+                new EmbedProperties()
+                    .WithTitle(title)
+                    .WithDescription(description)
+                    .WithColor(new NetCord.Color(color))
+                    .WithFooter(new EmbedFooterProperties().WithText(footer)),
+            ],
+        });
+    }
+    // Reserve edit end: Reserve Red
     // Reserve edit start: Maecenas System
     public async Task AssignPatronTierAsync(NetUserId playerId)
     {

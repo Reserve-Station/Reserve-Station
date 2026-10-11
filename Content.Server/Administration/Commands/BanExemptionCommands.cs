@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text;
+using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
 using Content.Server.Database;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
@@ -12,6 +13,7 @@ public sealed class BanExemptionUpdateCommand : LocalizedCommands
 {
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
+    [Dependency] private IBanGuardManager _banGuard = default!; // Reserve edit: Reserve Red - BanGuard
 
     public override string Command => "ban_exemption_update";
 
@@ -44,7 +46,9 @@ public sealed class BanExemptionUpdateCommand : LocalizedCommands
             return;
         }
 
+        var oldFlags = await _dbManager.GetBanExemption(playerData.UserId); // Reserve edit: Reserve Red - BanGuard
         await _dbManager.UpdateBanExemption(playerData.UserId, flags);
+        _banGuard.BanExemptionChanged(playerData.UserId, oldFlags, flags, shell.Player?.UserId); // Reserve edit: Reserve Red - BanGuard
         shell.WriteLine(LocalizationManager.GetString(
             "cmd-ban_exemption_update-success",
             ("player", player),

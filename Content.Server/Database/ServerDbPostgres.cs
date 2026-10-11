@@ -130,17 +130,6 @@ namespace Content.Server.Database
 
             return bans;
         }
-        //Start-ADT-Tweak: логи банов для диса
-        public override async Task<BanDef?> GetLastBanAsync()
-        {
-            await using var db = await GetDbImpl();
-
-            var lastServerBan = db.PgDbContext.Ban.OrderByDescending(x => x.Id).FirstOrDefault();
-
-            return ConvertBan(lastServerBan);
-        }
-        //End-ADT-Tweak
-
         // This has to return IDs instead of direct objects because otherwise all the includes are too complicated.
         private static IQueryable<Ban> MakeBanLookupQuery(
             IPAddress? address,

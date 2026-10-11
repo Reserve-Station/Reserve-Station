@@ -138,17 +138,6 @@ namespace Content.Server.Database
                 .Where(b => BanMatcher.BanMatches(b!, playerInfo))!;
         }
 
-        //Start-ADT-Tweak: логи банов для диса
-        public override async Task<BanDef?> GetLastBanAsync()
-        {
-            await using var db = await GetDbImpl();
-
-            var lastServerBan = db.SqliteDbContext.Ban.OrderByDescending(x => x.Id).FirstOrDefault();
-
-            return ConvertBan(lastServerBan);
-        }
-        //End-ADT-Tweak
-
         private static async Task<List<Ban>> GetAllBans(SqliteServerDbContext db,
             bool includeUnbanned,
             ServerBanExemptFlags? exemptFlags,

@@ -31,9 +31,6 @@ using Content.Server.Chat.Managers;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Database;
 using Content.Shared.Database;
-using Content.Server.ADT.Discord;
-using Content.Server.ADT.Discord.Bans;
-using Content.Server.ADT.Discord.Bans.PayloadGenerators;
 using Content.Server.MoMMI;
 using Content.Shared._Reserve.LenaApi; // Reserve api-ooc-handler
 
@@ -79,7 +76,6 @@ public sealed partial class ServerApi : IPostInjectInit
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly IBanManager _bans = default!;
-    [Dependency] private readonly IDiscordBanInfoSender _discordBanInfoSender = default!;
 
     private string _token = string.Empty;
     private ISawmill _sawmill = default!;
@@ -938,7 +934,6 @@ public sealed partial class ServerApi : IPostInjectInit
                 return;
             }
 
-            var adminName = actor.Name;
             var adminUserId = new NetUserId(actor.Guid);
             var target = body.NickName;
             var reason = body.Reason;
@@ -960,9 +955,6 @@ public sealed partial class ServerApi : IPostInjectInit
                 return;
             }
 
-            var lastServerBan = await _dbManager.GetLastBanAsync();
-            var newServerBanId = lastServerBan is not null ? lastServerBan.Id + 1 : 1;
-
             try
             {
                 var banInfo = new CreateServerBanInfo(reason);
@@ -980,17 +972,6 @@ public sealed partial class ServerApi : IPostInjectInit
                 return;
             }
 
-            var banInfoDiscord = new BanInfo
-            {
-                BanId = newServerBanId.ToString()!,
-                Target = target,
-                AdminName = adminName,
-                Minutes = minutes,
-                Reason = reason,
-                Expires = DateTimeOffset.Now + TimeSpan.FromMinutes(minutes)
-            };
-
-            await _discordBanInfoSender.SendBanInfoAsync<ServerBanPayloadGenerator>(banInfoDiscord);
             await RespondOk(context);
             _sawmill.Info($"{actor.Name} banned {body.NickName} for {body.Time} minutes. Reason: {body.Reason}");
         });

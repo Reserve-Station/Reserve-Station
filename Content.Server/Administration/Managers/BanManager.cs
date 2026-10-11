@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
 using Content.Server.Chat.Managers;
 using Content.Server.Database;
 using Content.Server.GameTicking;
@@ -41,6 +42,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     [Dependency] private readonly IEntitySystemManager _systems = default!;
     [Dependency] private readonly ITaskManager _taskManager = default!;
     [Dependency] private readonly UserDbDataManager _userDbData = default!;
+    [Dependency] private IBanGuardManager _banGuard = default!; // Reserve edit: Reserve Red - BanGuard
 
     private ISawmill _sawmill = default!;
 
@@ -127,7 +129,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     {
         var (banDef, expires) = await CreateBanDef(banInfo, BanType.Server, null);
 
-        await _db.AddBanAsync(banDef);
+        banDef = await _db.AddBanAsync(banDef); // Reserve edit: Reserve Red - BanGuard (нужен реальный ID бана)
 
         if (_cfg.GetCVar(CCVars.ServerBanResetLastReadRules))
         {
@@ -172,6 +174,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _chat.SendAdminAlert(logMessage);
 
         KickMatchingConnectedPlayers(banDef, "newly placed ban");
+
+        _banGuard.BanCreated(banDef); // Reserve edit: Reserve Red - BanGuard
     }
 
     private NoteSeverity GetSeverityForServerBan(CreateBanInfo banInfo, CVarDef<string> defaultCVar)
@@ -238,7 +242,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         var (banDef, expires) = await CreateBanDef(banInfo, BanType.Role, roleDefs);
 
-        await AddRoleBan(banDef);
+        banDef = await AddRoleBan(banDef); // Reserve edit: Reserve Red - BanGuard (нужен реальный ID бана)
 
         var length = expires == null
             ? Loc.GetString("cmd-roleban-inf")
@@ -260,6 +264,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             if (_playerManager.TryGetSessionById(userId, out var session))
                 SendRoleBans(session);
         }
+
+        _banGuard.BanCreated(banDef); // Reserve edit: Reserve Red - BanGuard
     }
 
     private async Task<(BanDef Ban, DateTimeOffset? Expires)> CreateBanDef(
@@ -347,7 +353,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         throw new ArgumentException($"Unknown prototype kind for role bans: {typeof(T)}");
     }
 
-    private async Task AddRoleBan(BanDef banDef)
+    private async Task<BanDef> AddRoleBan(BanDef banDef) // Reserve edit: Reserve Red - BanGuard (возвращает сохранённый бан)
     {
         banDef = await _db.AddBanAsync(banDef);
 
@@ -359,6 +365,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
                 cachedBans.Add(banDef);
             }
         }
+
+        return banDef; // Reserve edit: Reserve Red - BanGuard
     }
 
     public async Task<string> PardonRoleBan(int banId, NetUserId? unbanningAdmin, DateTimeOffset unbanTime)
@@ -387,6 +395,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         }
 
         await _db.AddUnbanAsync(new UnbanDef(banId, unbanningAdmin, DateTimeOffset.Now));
+        _banGuard.BanPardoned(ban, unbanningAdmin); // Reserve edit: Reserve Red - BanGuard
 
         foreach (var user in ban.UserIds)
         {

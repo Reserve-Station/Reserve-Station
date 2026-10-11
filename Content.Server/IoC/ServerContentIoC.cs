@@ -10,7 +10,7 @@ using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Notes;
-using Content.Server.ADT.Discord.Bans;
+using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
@@ -93,7 +93,7 @@ internal static class ServerContentIoC
         deps.Register<DiscordChatLink>();
         deps.Register<LastRolledAntagManager>(); // Goobstation - antag pity
         deps.Register<LinkAccountManager>(); // RMC - Patreon
-        deps.Register<IDiscordBanInfoSender, DiscordBanInfoSender>(); //ADT Tweak: логи банов для диса
+        deps.Register<IBanGuardManager, BanGuardManager>(); // Reserve edit: Reserve Red - BanGuard
         // Orion-Start
         deps.Register<ServerProtectionPunishmentSystem>();
         deps.Register<ChatProtectionSystem>();
