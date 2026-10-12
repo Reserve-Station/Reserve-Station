@@ -6,7 +6,7 @@ cd "$gitroot/BuildChecker" || exit
 
 if [[ $(uname) == MINGW* || $(uname) == CYGWIN* ]]; then
     # Windows
-    py -3 git_helper.py --quiet
+    python git_helper.py --quiet  # Reserve edit
 else
     # Not Windows, so probably some other Unix thing.
     python3 git_helper.py --quiet
