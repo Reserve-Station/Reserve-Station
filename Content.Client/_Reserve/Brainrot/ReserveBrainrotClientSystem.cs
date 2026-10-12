@@ -25,7 +25,12 @@ public sealed class ReserveBrainrotClientSystem : EntitySystem
         foreach (var trigger in msg.Triggers)
         {
             _customTriggers.Add(trigger);
-            _parsedVariants.Add(ChatTriggerHelper.ParseTriggerVariants(trigger));
+            var variants = ChatTriggerHelper.ParseTriggerVariants(trigger);
+            _parsedVariants.Add(variants);
+            foreach (var variant in variants)
+            {
+                ChatTriggerHelper.Precompile(variant);
+            }
         }
     }
 }

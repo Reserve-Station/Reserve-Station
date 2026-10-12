@@ -66,16 +66,20 @@ public sealed class ChatTriggerSystem : EntitySystem
 
     private void RebuildTriggerCaches()
     {
+        ChatTriggerHelper.ClearCache();
+
         _cachedGrammarTriggers.Clear();
         foreach (var proto in _protoManager.EnumeratePrototypes<GrammarnaziBotTriggerPrototype>())
         {
             _cachedGrammarTriggers.Add(new CachedTrigger(proto.Trigger, proto.Description));
+            ChatTriggerHelper.Precompile(proto.Trigger);
         }
 
         _cachedBrainrotTriggers.Clear();
         foreach (var proto in _protoManager.EnumeratePrototypes<BrainrotBotTriggerPrototype>())
         {
             _cachedBrainrotTriggers.Add(new CachedTrigger(proto.Trigger, proto.Description));
+            ChatTriggerHelper.Precompile(proto.Trigger);
         }
     }
 
@@ -96,7 +100,7 @@ public sealed class ChatTriggerSystem : EntitySystem
         {
             foreach (var variant in trigger.Variants)
             {
-                if (!ChatTriggerHelper.MatchesSingleTrigger(text, variant))
+                if (!ChatTriggerHelper.MatchesTrigger(text, variant, out _))
                     continue;
 
                 args.Cancel = true;
@@ -109,11 +113,11 @@ public sealed class ChatTriggerSystem : EntitySystem
         {
             foreach (var variant in trigger.Variants)
             {
-                if (!ChatTriggerHelper.MatchesSingleTrigger(text, variant))
+                if (!ChatTriggerHelper.MatchesTrigger(text, variant, out var matchedWord))
                     continue;
 
                 args.Cancel = true;
-                ShowBrainrotWarning(box, channel, rawText, variant, Loc.GetString(trigger.Description));
+                ShowBrainrotWarning(box, channel, rawText, matchedWord, Loc.GetString(trigger.Description));
                 return;
             }
         }
@@ -122,11 +126,11 @@ public sealed class ChatTriggerSystem : EntitySystem
         {
             foreach (var variant in variants)
             {
-                if (!ChatTriggerHelper.MatchesSingleTrigger(text, variant))
+                if (!ChatTriggerHelper.MatchesTrigger(text, variant, out var matchedWord))
                     continue;
 
                 args.Cancel = true;
-                ShowBrainrotWarning(box, channel, rawText, variant, Loc.GetString("brainrot-trigger-desc-generic"));
+                ShowBrainrotWarning(box, channel, rawText, matchedWord, Loc.GetString("brainrot-trigger-desc-generic"));
                 return;
             }
         }

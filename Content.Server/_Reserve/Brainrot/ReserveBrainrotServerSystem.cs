@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Shared._Reserve.Brainrot;
+using Content.Shared._Reserve.ChatTrigger;
 using Robust.Shared.Asynchronous;
 
 namespace Content.Server._Reserve.Brainrot;
@@ -71,9 +72,13 @@ public sealed class ReserveBrainrotServerSystem : EntitySystem
 
     public async Task AddTrigger(string trigger)
     {
-        var normalized = trigger.Trim().ToLowerInvariant();
-        if (string.IsNullOrEmpty(normalized) || normalized.Length > 512)
+        if (!ChatTriggerHelper.IsValidTrigger(trigger, out var error))
+        {
+            Log.Warning($"Attempted to add invalid brainrot trigger '{trigger}': {error}");
             return;
+        }
+
+        var normalized = ChatTriggerHelper.NormalizeTrigger(trigger);
 
         lock (_lock)
         {
@@ -103,7 +108,7 @@ public sealed class ReserveBrainrotServerSystem : EntitySystem
 
     public async Task RemoveTrigger(string trigger)
     {
-        var normalized = trigger.Trim().ToLowerInvariant();
+        var normalized = ChatTriggerHelper.NormalizeTrigger(trigger);
         if (string.IsNullOrEmpty(normalized))
             return;
 

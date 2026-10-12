@@ -5,7 +5,7 @@
 
 - type: grammarnaziBotTrigger
   id: Grammar2
-  trigger: "[инжинер; инжинеры; инжинера; инжинеру; инжинером; инжинере; инжинеров; инжинерам; инжинерами; инжинерах]"
+  trigger: 'regex:(?<!\p{L})и+н+ж+[иыэ]+н+е+р+[а-яё]*(?!\p{L})'
   description: grammarnazi-trigger-desc-grammar2
 
 - type: grammarnaziBotTrigger
