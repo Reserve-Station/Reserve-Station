@@ -396,6 +396,7 @@ namespace Content.Server.Database
 
         #endregion
 
+        // Reserve edit start: Brainrot Triggers
         #region Brainrot Triggers
 
         Task<List<string>> GetBrainrotTriggersAsync(CancellationToken cancel = default);
@@ -403,6 +404,7 @@ namespace Content.Server.Database
         Task RemoveBrainrotTriggerAsync(string trigger, CancellationToken cancel = default);
 
         #endregion
+        // Reserve edit end: Brainrot Triggers
 
         #region DB Notifications
 
@@ -1329,6 +1331,7 @@ namespace Content.Server.Database
 
         #endregion
 
+        // Reserve edit start: Brainrot Triggers
         #region Brainrot Triggers
 
         public Task<List<string>> GetBrainrotTriggersAsync(CancellationToken cancel = default)
@@ -1350,6 +1353,7 @@ namespace Content.Server.Database
         }
 
         #endregion
+        // Reserve edit end: Brainrot Triggers
 
         public void SubscribeToNotifications(Action<DatabaseNotification> handler)
         {

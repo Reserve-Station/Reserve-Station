@@ -189,7 +189,7 @@ public sealed partial class ChatUIController : UIController
     public event Action<ChatChannel, int?>? UnreadMessageCountsUpdated;
     public event Action<ChatMessage>? MessageAdded;
 
-    public event EventHandler<ChatBeforeMessageSentEventArgs>? BeforeMessageSent;
+    public event EventHandler<ChatBeforeMessageSentEventArgs>? BeforeMessageSent; // Reserve edit: Chat Triggers
 
     public override void Initialize()
     {
@@ -797,8 +797,9 @@ public sealed partial class ChatUIController : UIController
         return (chatChannel, text[1..].TrimStart(), null, null); // Goobstation - Starlight collective mind port
     }
 
-    public void SendMessage(ChatBox box, ChatSelectChannel channel, bool ignoreBeforeMessage = false)
+    public void SendMessage(ChatBox box, ChatSelectChannel channel, bool ignoreBeforeMessage = false) // Reserve edit: Chat Triggers
     {
+        // Reserve edit start: Chat Triggers
         var rawText = box.ChatInput.Input.Text;
         if (string.IsNullOrWhiteSpace(rawText))
             return;
@@ -813,6 +814,7 @@ public sealed partial class ChatUIController : UIController
             if (ev.Cancel)
                 return;
         }
+        // Reserve edit end: Chat Triggers
 
         _typingIndicator?.ClientSubmittedChatText();
 
@@ -1062,6 +1064,7 @@ public sealed partial class ChatUIController : UIController
     }
 }
 
+// Reserve edit start: Chat Triggers
 public sealed class ChatBeforeMessageSentEventArgs : EventArgs
 {
     public ChatBox Box { get; }
@@ -1078,3 +1081,4 @@ public sealed class ChatBeforeMessageSentEventArgs : EventArgs
         Channel = channel;
     }
 }
+// Reserve edit end: Chat Triggers

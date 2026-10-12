@@ -2357,6 +2357,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             OnNotificationReceived?.Invoke(notification);
         }
 
+        // Reserve edit start: Brainrot Triggers
         #region Brainrot Triggers
 
         public async Task<List<string>> GetBrainrotTriggersAsync(CancellationToken cancel = default)
@@ -2390,6 +2391,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         }
 
         #endregion
+        // Reserve edit end: Brainrot Triggers
 
         public virtual void Shutdown()
         {
