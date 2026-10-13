@@ -38,6 +38,22 @@ server-currency-command-error-1 = Unable to find a player by that name.
 server-currency-command-error-2 = Value must be an integer.
 server-currency-command-return = {$player} has {$balance}.
 
+server-currency-operation-gift = transfer
+server-currency-operation-add = give coins
+server-currency-operation-remove = revoke coins
+server-currency-operation-set = set balance
+server-currency-operation-get = get balance
+server-currency-error-format = Coin operation "{$operation}" failed: {$reason} [Error ID: {$id}, {$time} UTC] If this keeps happening, show this message to a maintainer.
+server-currency-error-unexpected = unexpected error ({$type}: {$message}).
+server-currency-error-never-joined = player {$player} has never joined this server, so they have no coin balance.
+server-currency-error-integration-enabled = this command is disabled while the Reserve API integration is enabled.
+server-currency-admin-add-author = You gave {$player} {$amount}. Their balance is now {$balance}.
+server-currency-admin-add-target = An administrator gave you {$amount}. Your balance is now {$balance}.
+server-currency-admin-remove-author = You took {$amount} from {$player}. Their balance is now {$balance}.
+server-currency-admin-remove-target = An administrator took {$amount} from you. Your balance is now {$balance}.
+server-currency-admin-set-author = You set the balance of {$player} to {$balance}.
+server-currency-admin-set-target = An administrator set your balance to {$balance}.
+
 # 65% Update
 
 gs-balanceui-title = Store
