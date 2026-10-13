@@ -11,6 +11,9 @@ public sealed partial class GrammarnaziBotTriggerPrototype : IPrototype
     [DataField(required: true)]
     public string Trigger { get; private set; } = string.Empty;
 
+    [DataField]
+    public string? Replacement { get; private set; }
+
     [DataField(required: true)]
     public LocId Description { get; private set; }
 }

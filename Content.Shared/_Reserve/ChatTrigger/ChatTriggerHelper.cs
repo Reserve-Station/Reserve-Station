@@ -1,7 +1,9 @@
 using System.Collections.Concurrent;
 using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using System.Text.RegularExpressions;
 using Robust.Shared.Log;
+using Robust.Shared.Random;
 
 namespace Content.Shared._Reserve.ChatTrigger;
 
@@ -12,6 +14,9 @@ public static class ChatTriggerHelper
     public static readonly TimeSpan RegexTimeout = TimeSpan.FromMilliseconds(250);
 
     private static readonly ConcurrentDictionary<string, Regex?> RegexCache = new();
+    private static readonly Regex MultipleSpacesRegex = new(@"[ \t]{2,}", RegexOptions.Compiled);
+    private static readonly Regex PunctuationSpaceRegex = new(@"\s+([,.:;!?])", RegexOptions.Compiled);
+    private static readonly Regex DuplicateCommasRegex = new(@",\s*,", RegexOptions.Compiled);
 
     public static bool IsRegexTrigger([NotNullWhen(true)] string? trigger)
     {
@@ -26,7 +31,7 @@ public static class ChatTriggerHelper
         var trimmed = trigger.Trim();
         if (IsRegexTrigger(trimmed))
         {
-            var pattern = trimmed[RegexPrefix.Length..].Trim();
+            var pattern = trimmed.Substring(RegexPrefix.Length).Trim();
             if (string.IsNullOrEmpty(pattern))
                 return string.Empty;
 
@@ -95,7 +100,7 @@ public static class ChatTriggerHelper
 
             if (IsRegexTrigger(variant))
             {
-                var pattern = variant[RegexPrefix.Length..].Trim();
+                var pattern = variant.Substring(RegexPrefix.Length).Trim();
                 if (string.IsNullOrEmpty(pattern))
                 {
                     error = "Regex pattern cannot be empty";
@@ -171,7 +176,7 @@ public static class ChatTriggerHelper
         {
             if (IsRegexTrigger(variant))
             {
-                var pattern = variant[RegexPrefix.Length..].Trim();
+                var pattern = variant.Substring(RegexPrefix.Length).Trim();
                 if (!string.IsNullOrEmpty(pattern))
                     GetOrCompileRegex(pattern);
             }
@@ -189,7 +194,7 @@ public static class ChatTriggerHelper
 
         if (trimmed.StartsWith('[') && trimmed.EndsWith(']'))
         {
-            var inner = trimmed[1..^1];
+            var inner = trimmed.Substring(1, trimmed.Length - 2);
             return inner.Split(';', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
         }
 
@@ -204,7 +209,7 @@ public static class ChatTriggerHelper
 
         if (IsRegexTrigger(trigger))
         {
-            var pattern = trigger[RegexPrefix.Length..].Trim();
+            var pattern = trigger.Substring(RegexPrefix.Length).Trim();
             if (string.IsNullOrEmpty(pattern))
                 return false;
 
@@ -274,5 +279,227 @@ public static class ChatTriggerHelper
     public static bool MatchesSingleTrigger(string? text, string? trigger)
     {
         return MatchesTrigger(text, trigger, out _);
+    }
+
+    public static string MatchCase(string original, string replacement)
+    {
+        if (string.IsNullOrEmpty(original) || string.IsNullOrEmpty(replacement))
+            return replacement;
+
+        var hasLetters = false;
+        var allUpper = true;
+        var firstLetter = '\0';
+        foreach (var c in original)
+        {
+            if (char.IsLetter(c))
+            {
+                if (!hasLetters)
+                    firstLetter = c;
+
+                hasLetters = true;
+                if (!char.IsUpper(c))
+                {
+                    allUpper = false;
+                    break;
+                }
+            }
+        }
+
+        if (hasLetters && allUpper)
+            return replacement.ToUpperInvariant();
+
+        if (hasLetters && char.IsUpper(firstLetter))
+        {
+            for (var i = 0; i < replacement.Length; i++)
+            {
+                if (char.IsLetter(replacement[i]))
+                {
+                    var upper = char.ToUpperInvariant(replacement[i]);
+                    if (upper == replacement[i])
+                        return replacement;
+
+                    var chars = replacement.ToCharArray();
+                    chars[i] = upper;
+                    return new string(chars);
+                }
+            }
+        }
+
+        return replacement;
+    }
+
+    public static string ReplaceTriggerWord(string text, string trigger, string replacement)
+    {
+        if (string.IsNullOrEmpty(text) || string.IsNullOrEmpty(trigger))
+            return text;
+
+        StringBuilder? sb = null;
+        var lastIdx = 0;
+        var idx = 0;
+
+        while (idx <= text.Length - trigger.Length)
+        {
+            idx = text.IndexOf(trigger, idx, StringComparison.OrdinalIgnoreCase);
+            if (idx < 0)
+                break;
+
+            var before = idx == 0 || !char.IsLetterOrDigit(text[idx - 1]);
+            var after = idx + trigger.Length >= text.Length || !char.IsLetterOrDigit(text[idx + trigger.Length]);
+
+            if (before && after)
+            {
+                sb ??= new StringBuilder(text.Length);
+                sb.Append(text, lastIdx, idx - lastIdx);
+                var matchedWord = text.Substring(idx, trigger.Length);
+                sb.Append(MatchCase(matchedWord, replacement));
+                idx += trigger.Length;
+                lastIdx = idx;
+            }
+            else
+            {
+                idx++;
+            }
+        }
+
+        if (sb == null)
+            return text;
+
+        if (lastIdx < text.Length)
+            sb.Append(text, lastIdx, text.Length - lastIdx);
+
+        return sb.ToString();
+    }
+
+    public static string ReplaceTriggerRegex(string text, Regex regex, string replacementPattern)
+    {
+        if (string.IsNullOrEmpty(text) || regex == null)
+            return text;
+
+        try
+        {
+            return regex.Replace(text, match =>
+            {
+                string evaluated;
+                try
+                {
+                    evaluated = match.Result(replacementPattern);
+                }
+                catch
+                {
+                    evaluated = replacementPattern;
+                }
+                return MatchCase(match.Value, evaluated);
+            });
+        }
+        catch (RegexMatchTimeoutException)
+        {
+            LogWarning("Regex trigger replacement timed out");
+            return text;
+        }
+    }
+
+    public static bool TryApplyReplacements(
+        string text,
+        IEnumerable<TriggerReplacementRule> rules,
+        [NotNullWhen(true)] out string? fixedText,
+        IRobustRandom? random = null)
+    {
+        fixedText = null;
+        if (string.IsNullOrWhiteSpace(text))
+            return false;
+
+        var current = text;
+        foreach (var rule in rules)
+        {
+            if (!rule.HasReplacement)
+                continue;
+
+            current = rule.Apply(current, random);
+        }
+
+        if (current != text)
+        {
+            fixedText = current;
+            return true;
+        }
+
+        return false;
+    }
+
+    public static bool HasContent(string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return false;
+
+        foreach (var c in text)
+        {
+            if (char.IsLetterOrDigit(c))
+                return true;
+        }
+
+        return false;
+    }
+
+    public static string SanitizeSpacesAndPunctuation(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return string.Empty;
+
+        // Collapse multiple spaces or tabs into a single space
+        var result = MultipleSpacesRegex.Replace(text, " ");
+
+        // Remove space before punctuation: "слово , слово" -> "слово, слово", "слово !" -> "слово!"
+        result = PunctuationSpaceRegex.Replace(result, "$1");
+
+        // Remove duplicate commas: "слово, , слово" -> "слово, слово"
+        result = DuplicateCommasRegex.Replace(result, ",");
+
+        // Trim leading and trailing whitespace
+        result = result.Trim();
+
+        return result;
+    }
+
+    public static string RemoveTrigger(string text, string? trigger, string? matchedWord)
+    {
+        if (string.IsNullOrWhiteSpace(text))
+            return string.Empty;
+
+        var result = text;
+
+        if (!string.IsNullOrEmpty(matchedWord))
+        {
+            result = ReplaceTriggerWord(result, matchedWord, string.Empty);
+        }
+
+        if (!string.IsNullOrEmpty(trigger))
+        {
+            if (IsRegexTrigger(trigger))
+            {
+                var pattern = trigger.Substring(RegexPrefix.Length).Trim();
+                var regex = GetOrCompileRegex(pattern);
+                if (regex != null)
+                {
+                    try
+                    {
+                        result = regex.Replace(result, string.Empty);
+                    }
+                    catch (RegexMatchTimeoutException)
+                    {
+                        LogWarning("Regex trigger removal timed out");
+                    }
+                }
+            }
+            else
+            {
+                var variants = ParseTriggerVariants(trigger);
+                foreach (var variant in variants)
+                {
+                    result = ReplaceTriggerWord(result, variant, string.Empty);
+                }
+            }
+        }
+
+        return SanitizeSpacesAndPunctuation(result);
     }
 }

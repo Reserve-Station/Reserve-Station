@@ -12,6 +12,10 @@ namespace Content.Client._Reserve.ChatTrigger.UI;
 public sealed partial class GrammarnaziBotWindow : FancyWindow
 {
     public Action? OnSendAnyway;
+    public Action? OnSendWithoutTrigger;
+    public Action? OnFix;
+    public Action? OnCancel;
+    private bool _actionInvoked;
 
     public GrammarnaziBotWindow()
     {
@@ -19,13 +23,45 @@ public sealed partial class GrammarnaziBotWindow : FancyWindow
         CanKeyboardFocus = true;
 
         MessageLabel.SetMessage(FormattedMessage.FromMarkupPermissive(Loc.GetString("chat-trigger-grammarnazi-message")));
-        CancelButton.OnPressed += _ => Close();
+        CancelButton.OnPressed += _ =>
+        {
+            _actionInvoked = true;
+            var cancel = OnCancel;
+            Close();
+            cancel?.Invoke();
+        };
+        FixButton.OnPressed += _ =>
+        {
+            _actionInvoked = true;
+            var fix = OnFix;
+            Close();
+            fix?.Invoke();
+        };
         SendAnywayButton.OnPressed += _ =>
         {
-            OnSendAnyway?.Invoke();
+            _actionInvoked = true;
+            var send = OnSendAnyway;
             Close();
+            send?.Invoke();
         };
-        OnClose += () => OnSendAnyway = null;
+        OnClose += () =>
+        {
+            if (!_actionInvoked)
+                OnCancel?.Invoke();
+
+            OnSendAnyway = null;
+            OnSendWithoutTrigger = null;
+            OnFix = null;
+            OnCancel = null;
+            _actionInvoked = false;
+        };
+    }
+
+    protected override void Opened()
+    {
+        base.Opened();
+        _actionInvoked = false;
+        GrabKeyboardFocus();
     }
 
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
@@ -35,17 +71,47 @@ public sealed partial class GrammarnaziBotWindow : FancyWindow
         if (args.Handled)
             return;
 
-        if (args.Function == EngineKeyFunctions.TextSubmit)
+        if (args.Function == EngineKeyFunctions.TextSubmit ||
+            args.Function == EngineKeyFunctions.TextNewline)
         {
-            OnSendAnyway?.Invoke();
-            Close();
+            if (FixButton.Visible && !FixButton.Disabled && OnFix != null)
+            {
+                _actionInvoked = true;
+                var fix = OnFix;
+                Close();
+                fix?.Invoke();
+            }
+            else if (OnSendWithoutTrigger != null)
+            {
+                _actionInvoked = true;
+                var sendWithout = OnSendWithoutTrigger;
+                Close();
+                sendWithout?.Invoke();
+            }
+            else if (OnSendAnyway != null)
+            {
+                _actionInvoked = true;
+                var send = OnSendAnyway;
+                Close();
+                send?.Invoke();
+            }
+            else
+            {
+                _actionInvoked = true;
+                var cancel = OnCancel;
+                Close();
+                cancel?.Invoke();
+            }
             args.Handle();
         }
         else if (args.Function == EngineKeyFunctions.TextReleaseFocus ||
                  args.Function == EngineKeyFunctions.WindowCloseRecent ||
                  args.Function == ContentKeyFunctions.EscapeContext)
         {
+            _actionInvoked = true;
+            var cancel = OnCancel;
             Close();
+            cancel?.Invoke();
             args.Handle();
         }
     }
@@ -53,5 +119,11 @@ public sealed partial class GrammarnaziBotWindow : FancyWindow
     public void SetDescription(string description)
     {
         DescriptionLabel.SetMessage(FormattedMessage.FromMarkupPermissive(description));
+    }
+
+    public void SetCanFix(bool canFix)
+    {
+        FixButton.Visible = canFix;
+        FixButton.Disabled = !canFix;
     }
 }

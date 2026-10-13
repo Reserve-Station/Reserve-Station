@@ -1,4 +1,5 @@
 chat-trigger-cancel-button = Отмена
+chat-trigger-fix-button = Исправить
 chat-trigger-send-anyway-button = Всё равно отправить
 
 chat-trigger-grammarnazi-title = Grammarnazi
