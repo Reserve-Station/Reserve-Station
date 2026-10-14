@@ -42,16 +42,38 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
         await _gate.WaitAsync();
         try
         {
+            await Safe(action);
+        }
+        finally
+        {
+            _gate.Release();
+        }
+    }
+
+    // Без очереди: вызывается изнутри Guarded, повторный захват очереди зависал бы навсегда
+    private async Task Safe(Func<Task> action)
+    {
+        try
+        {
             await action();
         }
         catch (Exception e)
         {
             _sawmill.Error($"Discord logging failed: {e}");
         }
-        finally
+    }
+
+    public bool UsesBot(DiscordLogChannel channel)
+    {
+        if (!_link.IsConnected)
+            return false;
+
+        return channel switch
         {
-            _gate.Release();
-        }
+            DiscordLogChannel.AdminChat => GetChannelId(CCVars.AdminChatDiscordChannelId) != null,
+            DiscordLogChannel.AdminLogs => (GetChannelId(CCVars.AdminLogsDiscordChannelId) ?? GetChannelId(CCVars.AdminChatDiscordChannelId)) != null,
+            _ => false,
+        };
     }
 
     private bool HasAnyTarget()
@@ -178,11 +200,11 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
         var tasks = new List<Task>(3);
 
         if (channels.HasFlag(DiscordLogChannel.Bans))
-            tasks.Add(Guarded(() => PostWebhook(_cfg.GetCVar(CCVars.DiscordBansWebhook), payload())));
+            tasks.Add(Safe(() => PostWebhook(_cfg.GetCVar(CCVars.DiscordBansWebhook), payload())));
 
         if (channels.HasFlag(DiscordLogChannel.AdminLogs))
         {
-            tasks.Add(Guarded(() => SendVia(
+            tasks.Add(Safe(() => SendVia(
                 GetChannelId(CCVars.AdminLogsDiscordChannelId) ?? GetChannelId(CCVars.AdminChatDiscordChannelId),
                 [CCVars.DiscordAdminLogsWebhook, CCVars.DiscordAdminchatWebhook],
                 payload,
@@ -191,7 +213,7 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
 
         if (channels.HasFlag(DiscordLogChannel.AdminChat))
         {
-            tasks.Add(Guarded(() => SendVia(
+            tasks.Add(Safe(() => SendVia(
                 GetChannelId(CCVars.AdminChatDiscordChannelId),
                 [CCVars.DiscordAdminchatWebhook],
                 payload,

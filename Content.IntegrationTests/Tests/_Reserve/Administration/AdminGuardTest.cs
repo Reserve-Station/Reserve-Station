@@ -112,4 +112,38 @@ public sealed class AdminGuardTest
 
         await pair.CleanReturnAsync();
     }
+
+    /// <summary>
+    ///     Регрессия: при настроенном вебхуке отправка внутри Guarded не должна зависать (повторный захват очереди)
+    ///     и очередь не должна блокироваться для следующих сообщений.
+    /// </summary>
+    [Test]
+    public async Task GuardedSendCompletesWithConfiguredTarget()
+    {
+        await using var pair = await PoolManager.GetServerClient(new PoolSettings { Destructive = true });
+        var server = pair.Server;
+
+        var cfg = server.ResolveDependency<IConfigurationManager>();
+        var logger = server.ResolveDependency<IDiscordLogger>();
+        var logManager = server.ResolveDependency<ILogManager>();
+
+        await server.WaitPost(() =>
+        {
+            logManager.GetSawmill("DISCORD").Level = LogLevel.Fatal;
+            logManager.GetSawmill("discord.logger").Level = LogLevel.Fatal;
+            // Невалидный URL падает мгновенно, без сетевых таймаутов
+            cfg.SetCVar(CCVars.DiscordAdminchatWebhook, "not-a-url");
+            cfg.SetCVar(CCVars.DiscordBansWebhook, "not-a-url");
+        });
+
+        Assert.That(logger.UsesBot(DiscordLogChannel.AdminChat), Is.False);
+
+        for (var i = 0; i < 2; i++)
+        {
+            var task = logger.Guarded(() => logger.SendText("test", DiscordLogChannel.AdminChat | DiscordLogChannel.Bans));
+            await task.WaitAsync(TimeSpan.FromSeconds(30));
+        }
+
+        await pair.CleanReturnAsync();
+    }
 }
