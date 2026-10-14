@@ -14,6 +14,7 @@
     CosmicCult: 0.05 # make it semi often so we can test it
     Honkops: 0.01
     Vampire: 0.05  # Reserve edit: Vampires
+    Pirates: 0.04  # Reserve edit: Pirates Enhanced
 
 
 - type: incompatibleModes

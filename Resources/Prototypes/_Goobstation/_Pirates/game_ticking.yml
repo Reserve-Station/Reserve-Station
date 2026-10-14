@@ -30,11 +30,12 @@
   - type: ActivePirateRule
   - type: RuleGrids
   - type: LoadMapRule
-    mapPath: /Maps/_Goobstation/Shuttles/pirates_irs.yml
+    mapPath: /Maps/_Reserve/Shuttles/pirates_square.yml  # Reserve edit: Pirates Enhanced
   - type: AntagLoadProfileRule
     speciesOverride: Human
     alwaysUseSpeciesOverride: true
   - type: AntagSelection
+    agentName: pirates-roundend-name  # Reserve edit: Pirates Enhanced
     definitions:
     - spawnerPrototype: SpawnPointPirateCaptain
       pickPlayer: false
@@ -43,8 +44,7 @@
       mindRoles:
       - MindRolePirate
       startingGear: PirateCaptainGear
-      roleLoadout:
-      - AntagTraitor
+      unequipOldGear: true  # Reserve edit: Pirates Enhanced
       components:
       - type: RandomMetadata
         nameSegments:
@@ -56,8 +56,7 @@
       mindRoles:
       - MindRolePirate
       startingGear: PirateGear
-      roleLoadout:
-      - AntagTraitor
+      unequipOldGear: true  # Reserve edit: Pirates Enhanced
       components:
       - type: RandomMetadata
         nameSegments:

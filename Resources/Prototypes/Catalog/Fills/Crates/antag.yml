@@ -13,6 +13,8 @@
         - id: ClothingNeckCloakPirateCap
         - id: EnergyCutlass
         - id: MicroBombImplanter
+        - id: HeadSkeletonPirate  # Reserve edit: Pirates Enhanced
+        - id: VinylSleeveSkull  # Reserve edit: Pirates Enhanced
 
 - type: entity
   parent: CratePirate
