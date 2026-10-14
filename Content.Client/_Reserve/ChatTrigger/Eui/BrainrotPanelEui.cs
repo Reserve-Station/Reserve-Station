@@ -1,9 +1,9 @@
 using Content.Client.Eui;
 using Content.Shared.Eui;
-using Content.Shared._Reserve.Brainrot;
+using Content.Shared._Reserve.ChatTrigger;
 using JetBrains.Annotations;
 
-namespace Content.Client._Reserve.Brainrot;
+namespace Content.Client._Reserve.ChatTrigger.Eui;
 
 [UsedImplicitly]
 public sealed class BrainrotPanelEui : BaseEui

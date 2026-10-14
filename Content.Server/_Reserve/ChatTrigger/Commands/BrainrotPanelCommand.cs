@@ -3,7 +3,7 @@ using Content.Server.EUI;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 
-namespace Content.Server._Reserve.Brainrot;
+namespace Content.Server._Reserve.ChatTrigger;
 
 [AdminCommand(AdminFlags.Admin)]
 public sealed class BrainrotPanelCommand : IConsoleCommand

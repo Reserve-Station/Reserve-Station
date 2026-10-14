@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Reserve.Brainrot;
+namespace Content.Shared._Reserve.ChatTrigger;
 
 [Serializable, NetSerializable]
 public sealed class SyncBrainrotTriggersMessage : EntityEventArgs

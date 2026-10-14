@@ -1,4 +1,3 @@
-using Content.Client._Reserve.Brainrot;
 using Content.Client._Reserve.ChatTrigger.UI;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.UserInterface.Systems.Chat.Widgets;

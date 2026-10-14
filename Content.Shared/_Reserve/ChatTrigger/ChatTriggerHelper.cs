@@ -10,6 +10,7 @@ namespace Content.Shared._Reserve.ChatTrigger;
 public static class ChatTriggerHelper
 {
     public const string RegexPrefix = "regex:";
+    public const int MinNonRegexTriggerLength = 2;
 
     public static readonly TimeSpan RegexTimeout = TimeSpan.FromMilliseconds(250);
 
@@ -115,6 +116,11 @@ public static class ChatTriggerHelper
                     error = "Regex trigger pattern cannot match an empty string";
                     return false;
                 }
+            }
+            else if (variant.Trim().Length < MinNonRegexTriggerLength)
+            {
+                error = $"Trigger variant must be at least {MinNonRegexTriggerLength} characters long";
+                return false;
             }
         }
 

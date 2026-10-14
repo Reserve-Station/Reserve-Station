@@ -1,7 +1,7 @@
 using Content.Shared.Eui;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Reserve.Brainrot;
+namespace Content.Shared._Reserve.ChatTrigger;
 
 [NetSerializable, Serializable]
 public sealed class BrainrotPanelEuiState : EuiStateBase

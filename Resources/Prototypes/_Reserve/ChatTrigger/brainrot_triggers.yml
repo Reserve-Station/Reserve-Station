@@ -937,7 +937,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot189
-  trigger: 'regex:(?<!\p{L})(?:lf+|yt+n+|ghb+dt+n+|rf+r|ult+|ns+|xnj+|f+uf+|g[jf]+rf+|\[[jf]+h[jf]+ij+)(?!\p{L})'
+  trigger: 'regex:(?<!\p{L})(?:lf+|yt+n+|ghb+dt+n+|rf+r|ult+|ns+|xnj+|f+uf+|g[jf]+rf+|\[?[jf]+h[jf]+ij+)(?!\p{L})'
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger

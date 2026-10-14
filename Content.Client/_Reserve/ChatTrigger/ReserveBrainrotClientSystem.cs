@@ -1,7 +1,6 @@
-using Content.Shared._Reserve.Brainrot;
 using Content.Shared._Reserve.ChatTrigger;
 
-namespace Content.Client._Reserve.Brainrot;
+namespace Content.Client._Reserve.ChatTrigger;
 
 public sealed class ReserveBrainrotClientSystem : EntitySystem
 {

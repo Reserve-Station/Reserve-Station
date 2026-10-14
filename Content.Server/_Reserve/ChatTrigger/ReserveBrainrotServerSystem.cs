@@ -1,11 +1,10 @@
 using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.Server.GameTicking;
-using Content.Shared._Reserve.Brainrot;
 using Content.Shared._Reserve.ChatTrigger;
 using Robust.Shared.Asynchronous;
 
-namespace Content.Server._Reserve.Brainrot;
+namespace Content.Server._Reserve.ChatTrigger;
 
 public sealed class ReserveBrainrotServerSystem : EntitySystem
 {

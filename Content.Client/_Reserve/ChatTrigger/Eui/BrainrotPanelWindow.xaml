@@ -10,6 +10,7 @@
             <LineEdit Name="AddInput" PlaceHolder="{Loc 'brainrot-panel-placeholder'}" HorizontalExpand="True"/>
             <Button Name="AddBtn" Text="{Loc 'brainrot-panel-add'}"/>
         </BoxContainer>
+        <Label Name="ErrorLabel" Visible="False" FontColorOverride="#FF6666" HorizontalExpand="True"/>
 
         <controls:StripeBack>
             <Label Text="{Loc 'brainrot-panel-heading'}" StyleClasses="LabelHeading" Margin="6 4"/>

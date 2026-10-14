@@ -2,9 +2,9 @@ using Content.Server.EUI;
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration;
 using Content.Shared.Eui;
-using Content.Shared._Reserve.Brainrot;
+using Content.Shared._Reserve.ChatTrigger;
 
-namespace Content.Server._Reserve.Brainrot;
+namespace Content.Server._Reserve.ChatTrigger;
 
 public sealed class BrainrotPanelEui : BaseEui
 {
