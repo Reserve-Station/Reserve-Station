@@ -5,12 +5,12 @@
 
 - type: brainrotBotTrigger
   id: Brainrot2
-  trigger: 'regex:(?<!\p{L})(?:х[оа]+хо*л[аыу]*(?:[вм])?|м[оа]скал[ьяие]*(?:[йм])?|к[оа]ца+п|жид(?:[ауые]|ом|ами|ах|ов|овск[а-яё]*|к[ауи])?|евре[йи][а-яё]*|русн[яе]|индус(?:[ауые]|ом|ами|ах|ов|к[а-яё]*)?)(?!\p{L})'
+  trigger: 'regex:(?<!\p{L})(?:х[оа]+хо*л[аыу]*(?:[вм])?|хохлосрач[а-яё]*|м[оа]скал[ьяие]*(?:[йм])?|к[оа]ца+п|жид(?:[ауые]|ом|ами|ах|ов|овск[а-яё]*|к[ауи])?|евре[йи][а-яё]*|русн[яе]|индус(?:[ауые]|ом|ами|ах|ов|к[а-яё]*)?)(?!\p{L})'
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
   id: Brainrot3
-  trigger: сска
+  trigger: "[сска; сски; сску; сске; сской; ссочка; ссочки; ссочку; ссочке; ссочкой; сс14; сс13; спейсстейшн; спейс стейшн]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -20,7 +20,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot5
-  trigger: "[чурка; чурки; хач; хачи; хохлосрач]"
+  trigger: "[чурка; чурки; хач; хачи]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -31,7 +31,7 @@
 - type: brainrotBotTrigger
   id: Brainrot7
   trigger: "[трап; трапы; трапу; трапа; трапом; трапе; трапов; трапам; трапами; трапах]"
-  replacement: "[трансвестит; трансвеститы; трансвеститу; трансвестита; трансвеститом; трансвестите; трансвеститов; трансвеститам; трансвеститами; трансвеститах]"
+  replacement: "[кроссдрессер; кроссдрессеры; кроссдрессеру; кроссдрессера; кроссдрессером; кроссдрессере; кроссдрессеров; кроссдрессерам; кроссдрессерами; кроссдрессерах]"
   description: brainrot-trigger-desc-brainrot21
 
 - type: brainrotBotTrigger
@@ -101,7 +101,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot19
-  trigger: "[респавн; респ; респнуться]"
+  trigger: "[респавн; респ; респнуться; реснусь; ресай; ресни; ресает; реснет; реснись; ресайся; ресаться; ресы; ресами; ресов]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -111,7 +111,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot21
-  trigger: "[лагает; логает; лаги]"
+  trigger: "[лагает; логает; лаги; пролаг; залагало; залагал; пролагало; пролагал]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -121,7 +121,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot23
-  trigger: "[краш; крашнуло]"
+  trigger: "[краш; крашнуло; крашнет; крашится; крашиться; крашнулась]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -141,7 +141,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot27
-  trigger: "[валид; валидхантер]"
+  trigger: "[валид; валидит; валидхант; валидхантит; валидхантер]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -196,7 +196,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot39
-  trigger: шаришь
+  trigger: "[шаришь; шарит; шарить; не шарю; нешарю]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -226,7 +226,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot45
-  trigger: стак
+  trigger: "[стак; стакается; стакаеться]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -236,7 +236,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot47
-  trigger: "[норм; нормас]"
+  trigger: "[норм; нормас; нормикс; нормис]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -251,22 +251,22 @@
 
 - type: brainrotBotTrigger
   id: Brainrot50
-  trigger: дед инсайд
+  trigger: "[дед инсайд; дединсайд]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
   id: Brainrot51
-  trigger: рофл
+  trigger: "[рофл; рофляночка; рофлить; рофлит]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
   id: Brainrot52
-  trigger: токсик
+  trigger: "[токсик; токс; токсичит]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
   id: Brainrot53
-  trigger: "[агр; агриться]"
+  trigger: "[агр; агриться; агрись; заагрился]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -276,7 +276,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot55
-  trigger: "[скилл; скилл ишью]"
+  trigger: "[скилл; скилл ишью; скилл ишуе; скил; скил ишью; скил ишуе]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -285,18 +285,8 @@
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
-  id: Brainrot57
-  trigger: байт
-  description: brainrot-trigger-desc-generic
-
-- type: brainrotBotTrigger
-  id: Brainrot58
-  trigger: "[не шарю; нешарю]"
-  description: brainrot-trigger-desc-generic
-
-- type: brainrotBotTrigger
   id: Brainrot59
-  trigger: танчить
+  trigger: "[танчить; танковать; танкует; затанчил]"
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -311,17 +301,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot62
-  trigger: фута
-  description: brainrot-trigger-desc-generic
-
-- type: brainrotBotTrigger
-  id: Brainrot63
-  trigger: гу гу га га
-  description: brainrot-trigger-desc-generic
-
-- type: brainrotBotTrigger
-  id: Brainrot64
-  trigger: киси киси мяу мяу
+  trigger: 'regex:(?<!\p{L})(?:фут[аы]|футанари[а-яё]*)(?!\p{L})'
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
@@ -697,7 +677,7 @@
 - type: brainrotBotTrigger
   id: Brainrot139
   trigger: "[фембой; фембои; фембоя; фембою; фембоем; фембое; фембоев; фембоям; фембоями; фембоях; фембойчик; фембойчики; фембойчика; фембойчику; фембойчиком; фембойчике; фембойчиков; фембойчикам; фембойчиками; фембойчиках]"
-  replacement: "[мужеложец; мужеложцы; мужеложца; мужеложцу; мужеложцем; мужеложце; мужеложцев; мужеложцам; мужеложцами; мужеложцах; мужеложец; мужеложцы; мужеложца; мужеложцу; мужеложцем; мужеложце; мужеложцев; мужеложцам; мужеложцами; мужеложцах]"
+  replacement: "[кроссдрессер; кроссдрессеры; кроссдрессера; кроссдрессеру; кроссдрессером; кроссдрессере; кроссдрессеров; кроссдрессерам; кроссдрессерами; кроссдрессерах; кроссдрессер; кроссдрессеры; кроссдрессера; кроссдрессеру; кроссдрессером; кроссдрессере; кроссдрессеров; кроссдрессерам; кроссдрессерами; кроссдрессерах]"
   description: brainrot-trigger-desc-brainrot21
 
 - type: brainrotBotTrigger
