@@ -21,7 +21,7 @@
       settings: default
 
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
+  # categories: [ HideSpawnMenu, Spawner ]  # Reserve edit: Pirates Enhanced
   id: SpawnPointPirateCaptain
   parent: BaseAntagSpawner
   name: Pirate spawn point
