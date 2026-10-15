@@ -18,6 +18,7 @@ public sealed class ReserveBrainrotClientSystem : EntitySystem
 
     private void OnSyncTriggers(SyncBrainrotTriggersMessage msg)
     {
+        ChatTriggerHelper.ClearDynamicCache();
         _customTriggers.Clear();
         _parsedVariants.Clear();
 
@@ -28,8 +29,14 @@ public sealed class ReserveBrainrotClientSystem : EntitySystem
             _parsedVariants.Add(variants);
             foreach (var variant in variants)
             {
-                ChatTriggerHelper.Precompile(variant);
+                ChatTriggerHelper.Precompile(variant, isDynamic: true);
             }
         }
+    }
+
+    public override void Shutdown()
+    {
+        base.Shutdown();
+        ChatTriggerHelper.ClearDynamicCache();
     }
 }

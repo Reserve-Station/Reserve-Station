@@ -11,10 +11,18 @@ public static class ChatTriggerHelper
 {
     public const string RegexPrefix = "regex:";
     public const int MinNonRegexTriggerLength = 2;
+    public const int MaxDynamicCacheEntries = 1000;
 
     public static readonly TimeSpan RegexTimeout = TimeSpan.FromMilliseconds(250);
 
-    private static readonly ConcurrentDictionary<string, Regex?> RegexCache = new();
+    private static readonly ConcurrentDictionary<string, Regex?> StaticRegexCache = new();
+    private static readonly ConcurrentDictionary<string, Regex?> DynamicRegexCache = new();
+
+    public static int StaticCacheCount => StaticRegexCache.Count;
+    public static int DynamicCacheCount => DynamicRegexCache.Count;
+    public static bool HasStaticRegex(string pattern) => StaticRegexCache.ContainsKey(pattern);
+    public static bool HasDynamicRegex(string pattern) => DynamicRegexCache.ContainsKey(pattern);
+
     private static readonly Regex MultipleSpacesRegex = new(@"[ \t]{2,}", RegexOptions.Compiled);
     private static readonly Regex PunctuationSpaceRegex = new(@"\s+([,.:;!?])", RegexOptions.Compiled);
     private static readonly Regex DuplicateCommasRegex = new(@",\s*,", RegexOptions.Compiled);
@@ -108,12 +116,20 @@ public static class ChatTriggerHelper
                     return false;
                 }
 
-                if (!TryCompileRegex(pattern, out var compiled, out error))
+                if (!TryCreateRegex(pattern, out var compiled, out error, isDynamic: true))
                     return false;
 
-                if (compiled.IsMatch(string.Empty))
+                try
                 {
-                    error = "Regex trigger pattern cannot match an empty string";
+                    if (compiled.IsMatch(string.Empty))
+                    {
+                        error = "Regex trigger pattern cannot match an empty string";
+                        return false;
+                    }
+                }
+                catch (RegexMatchTimeoutException)
+                {
+                    error = "Regex trigger validation timed out";
                     return false;
                 }
             }
@@ -127,12 +143,20 @@ public static class ChatTriggerHelper
         return true;
     }
 
-    public static bool TryCompileRegex(string pattern, [NotNullWhen(true)] out Regex? regex, [NotNullWhen(false)] out string? error)
+    public static bool TryCreateRegex(
+        string pattern,
+        [NotNullWhen(true)] out Regex? regex,
+        [NotNullWhen(false)] out string? error,
+        bool isDynamic = true)
     {
         error = null;
         try
         {
-            regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant, RegexTimeout);
+            var options = RegexOptions.IgnoreCase | RegexOptions.CultureInvariant;
+            if (!isDynamic)
+                options |= RegexOptions.Compiled;
+
+            regex = new Regex(pattern, options, RegexTimeout);
             return true;
         }
         catch (ArgumentException e)
@@ -141,6 +165,11 @@ public static class ChatTriggerHelper
             error = e.Message;
             return false;
         }
+    }
+
+    public static bool TryCompileRegex(string pattern, [NotNullWhen(true)] out Regex? regex, [NotNullWhen(false)] out string? error)
+    {
+        return TryCreateRegex(pattern, out regex, out error, isDynamic: true);
     }
 
     private static void LogWarning(string message)
@@ -155,11 +184,22 @@ public static class ChatTriggerHelper
         }
     }
 
-    public static Regex? GetOrCompileRegex(string pattern)
+    public static Regex? GetOrCompileRegex(string pattern, bool isDynamic = false)
     {
-        return RegexCache.GetOrAdd(pattern, p =>
+        var cache = isDynamic ? DynamicRegexCache : StaticRegexCache;
+
+        if (cache.TryGetValue(pattern, out var cached))
+            return cached;
+
+        if (isDynamic && cache.Count >= MaxDynamicCacheEntries)
         {
-            if (TryCompileRegex(p, out var compiled, out var error))
+            LogWarning($"Dynamic regex cache reached maximum capacity ({MaxDynamicCacheEntries}). Clearing dynamic cache to prevent memory exhaustion.");
+            cache.Clear();
+        }
+
+        return cache.GetOrAdd(pattern, p =>
+        {
+            if (TryCreateRegex(p, out var compiled, out var error, isDynamic))
                 return compiled;
 
             LogWarning($"Invalid regex trigger pattern '{p}': {error}");
@@ -169,10 +209,50 @@ public static class ChatTriggerHelper
 
     public static void ClearCache()
     {
-        RegexCache.Clear();
+        StaticRegexCache.Clear();
+        DynamicRegexCache.Clear();
     }
 
-    public static void Precompile(string? triggerOrVariant)
+    public static void ClearStaticCache()
+    {
+        StaticRegexCache.Clear();
+    }
+
+    public static void ClearDynamicCache()
+    {
+        DynamicRegexCache.Clear();
+    }
+
+    public static bool RemoveDynamicRegex(string pattern)
+    {
+        return DynamicRegexCache.TryRemove(pattern, out _);
+    }
+
+    public static void SyncDynamicTriggers(IEnumerable<string> activeTriggersOrVariants)
+    {
+        var activePatterns = new HashSet<string>();
+        foreach (var item in activeTriggersOrVariants)
+        {
+            var variants = ParseTriggerVariants(item);
+            foreach (var v in variants)
+            {
+                if (IsRegexTrigger(v))
+                {
+                    var pattern = v.Substring(RegexPrefix.Length).Trim();
+                    if (!string.IsNullOrEmpty(pattern))
+                        activePatterns.Add(pattern);
+                }
+            }
+        }
+
+        foreach (var key in DynamicRegexCache.Keys)
+        {
+            if (!activePatterns.Contains(key))
+                DynamicRegexCache.TryRemove(key, out _);
+        }
+    }
+
+    public static void Precompile(string? triggerOrVariant, bool isDynamic = false)
     {
         if (string.IsNullOrWhiteSpace(triggerOrVariant))
             return;
@@ -184,7 +264,7 @@ public static class ChatTriggerHelper
             {
                 var pattern = variant.Substring(RegexPrefix.Length).Trim();
                 if (!string.IsNullOrEmpty(pattern))
-                    GetOrCompileRegex(pattern);
+                    GetOrCompileRegex(pattern, isDynamic);
             }
         }
     }
@@ -207,7 +287,7 @@ public static class ChatTriggerHelper
         return new[] { trimmed };
     }
 
-    public static bool MatchesTrigger(string? text, string? trigger, [NotNullWhen(true)] out string? matchedWord)
+    public static bool MatchesTrigger(string? text, string? trigger, [NotNullWhen(true)] out string? matchedWord, bool isDynamic = false)
     {
         matchedWord = null;
         if (string.IsNullOrWhiteSpace(trigger) || string.IsNullOrWhiteSpace(text))
@@ -219,7 +299,7 @@ public static class ChatTriggerHelper
             if (string.IsNullOrEmpty(pattern))
                 return false;
 
-            var regex = GetOrCompileRegex(pattern);
+            var regex = GetOrCompileRegex(pattern, isDynamic);
             if (regex == null)
                 return false;
 
@@ -282,9 +362,9 @@ public static class ChatTriggerHelper
         return false;
     }
 
-    public static bool MatchesSingleTrigger(string? text, string? trigger)
+    public static bool MatchesSingleTrigger(string? text, string? trigger, bool isDynamic = false)
     {
-        return MatchesTrigger(text, trigger, out _);
+        return MatchesTrigger(text, trigger, out _, isDynamic);
     }
 
     public static string MatchCase(string original, string replacement)
@@ -466,7 +546,7 @@ public static class ChatTriggerHelper
         return result;
     }
 
-    public static string RemoveTrigger(string text, string? trigger, string? matchedWord)
+    public static string RemoveTrigger(string text, string? trigger, string? matchedWord, bool isDynamic = false)
     {
         if (string.IsNullOrWhiteSpace(text))
             return string.Empty;
@@ -483,7 +563,7 @@ public static class ChatTriggerHelper
             if (IsRegexTrigger(trigger))
             {
                 var pattern = trigger.Substring(RegexPrefix.Length).Trim();
-                var regex = GetOrCompileRegex(pattern);
+                var regex = GetOrCompileRegex(pattern, isDynamic);
                 if (regex != null)
                 {
                     try

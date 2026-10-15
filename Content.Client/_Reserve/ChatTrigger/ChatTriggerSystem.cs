@@ -141,11 +141,11 @@ public sealed class ChatTriggerSystem : EntitySystem
         {
             foreach (var variant in variants)
             {
-                if (!ChatTriggerHelper.MatchesTrigger(text, variant, out var matchedWord))
+                if (!ChatTriggerHelper.MatchesTrigger(text, variant, out var matchedWord, isDynamic: true))
                     continue;
 
                 args.Cancel = true;
-                ShowBrainrotWarning(box, channel, rawText, variant, matchedWord, Loc.GetString("brainrot-trigger-desc-generic"), null);
+                ShowBrainrotWarning(box, channel, rawText, variant, matchedWord, Loc.GetString("brainrot-trigger-desc-generic"), null, isDynamic: true);
                 return;
             }
         }
@@ -190,7 +190,7 @@ public sealed class ChatTriggerSystem : EntitySystem
         _grammarWindow.GrabKeyboardFocus();
     }
 
-    private void ShowBrainrotWarning(ChatBox box, ChatSelectChannel channel, string originalRawText, string variant, string triggerWord, string description, TriggerReplacementRule? rule)
+    private void ShowBrainrotWarning(ChatBox box, ChatSelectChannel channel, string originalRawText, string variant, string triggerWord, string description, TriggerReplacementRule? rule, bool isDynamic = false)
     {
         if (_brainrotWindow == null || _brainrotWindow.Disposed)
             _brainrotWindow = new BrainrotBotWindow();
@@ -201,7 +201,7 @@ public sealed class ChatTriggerSystem : EntitySystem
         _brainrotWindow.SetTriggerWord(triggerWord);
         _brainrotWindow.SetDescription(description);
         _brainrotWindow.OnFix = () => FixMessage(box, _cachedBrainrotReplacementRules);
-        _brainrotWindow.OnSendWithoutTrigger = () => SendWithoutTrigger(box, channel, originalRawText, variant, triggerWord);
+        _brainrotWindow.OnSendWithoutTrigger = () => SendWithoutTrigger(box, channel, originalRawText, variant, triggerWord, isDynamic);
         _brainrotWindow.OnCancel = () =>
         {
             if (!box.Disposed)
@@ -227,14 +227,14 @@ public sealed class ChatTriggerSystem : EntitySystem
         _brainrotWindow.GrabKeyboardFocus();
     }
 
-    private void SendWithoutTrigger(ChatBox box, ChatSelectChannel channel, string originalRawText, string variant, string triggerWord)
+    private void SendWithoutTrigger(ChatBox box, ChatSelectChannel channel, string originalRawText, string variant, string triggerWord, bool isDynamic = false)
     {
         if (box.Disposed)
             return;
 
         var currentText = box.ChatInput.Input.Text;
         var textToStrip = string.IsNullOrEmpty(currentText) ? originalRawText : currentText;
-        var strippedText = ChatTriggerHelper.RemoveTrigger(textToStrip, variant, triggerWord);
+        var strippedText = ChatTriggerHelper.RemoveTrigger(textToStrip, variant, triggerWord, isDynamic);
 
         var (_, content, _, _) = _chatController != null
             ? _chatController.SplitInputContents(strippedText)
