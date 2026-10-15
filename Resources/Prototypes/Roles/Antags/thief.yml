@@ -21,6 +21,6 @@
   storage:
     back:
     - ThiefBeacon
-    - SatchelThief
+    # - SatchelThief  # Reserve edit: Antag Trinkets
     # - ClothingHandsChameleonThief - Goobedit, since thieves have intrinsic pickpocketing now we don't need these
     - PinpointerThief # Goob edit
