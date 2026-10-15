@@ -1,4 +1,4 @@
-atmos-monitoring-window-title = Монитор атмосферной сети
+atmos-monitoring-window-title = Консоль мониторинга атмосферной сети
 atmos-monitoring-window-station-name = [color=white][font size=14]{ $stationName }[/font][/color]
 atmos-monitoring-window-unknown-location = Неизвестное местоположение
 atmos-monitoring-window-label-gas-opening = Открытие сети
