@@ -832,11 +832,6 @@
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
-  id: Brainrot172
-  trigger: 'regex:(?<!\p{L})обр(?:[ауеы]|ом|ов|ами|ах|овск[а-яё]*)?(?!\p{L})'
-  description: brainrot-trigger-desc-generic
-
-- type: brainrotBotTrigger
   id: Brainrot174
   trigger: 'regex:(?<!\p{L})д[еэ]д[\s\-]*сква+д[а-яё]*(?!\p{L})'
   description: brainrot-trigger-desc-generic
@@ -859,16 +854,6 @@
 - type: brainrotBotTrigger
   id: Brainrot186
   trigger: 'regex:(?<!\p{L})(?:иишн?и?к[а-яё]*|иишк[а-яё]*)(?!\p{L})'
-  description: brainrot-trigger-desc-generic
-
-- type: brainrotBotTrigger
-  id: Brainrot187
-  trigger: 'regex:(?<!\p{L})(?:осщ|бсо|сщ|бс)(?!\p{L})'
-  description: brainrot-trigger-desc-generic
-
-- type: brainrotBotTrigger
-  id: Brainrot188
-  trigger: 'regex:(?<!\p{L})(?:пнт|нтр(?:[ауеы]|ом|ов|ами|ах)?|авд)(?!\p{L})'
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger
