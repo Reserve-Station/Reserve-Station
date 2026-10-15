@@ -17,9 +17,47 @@ public sealed class ChatSanitizationManager : IChatSanitizationManager
     private static readonly (Regex regex, string emoteKey)[] ShorthandToEmote =
     [
         // Reserve-Localization-Start
-        Entry("хд", "chatsan-laughs"),
-        Entry("0_о", "chatsan-wide-eyed"), // cyrillic о
-        Entry("0_o", "chatsan-wide-eyed"),
+        Entry( "хд", "chatsan-laughs" ),
+        Entry( "о-о", "chatsan-wide-eyed" ), // cyrillic о
+        Entry( "о.о", "chatsan-wide-eyed" ), // cyrillic о
+        Entry( "0_о", "chatsan-wide-eyed" ), // cyrillic о
+        Entry( "о/", "chatsan-waves" ), // cyrillic о
+        Entry( "о7", "chatsan-salutes" ), // cyrillic о
+        Entry( "0_o", "chatsan-wide-eyed" ),
+        Entry( "лмао", "chatsan-laughs" ),
+        Entry( "рофл", "chatsan-laughs" ),
+        Entry( "яхз", "chatsan-shrugs" ),
+        Entry( ":0", "chatsan-surprised" ),
+        Entry( ":р", "chatsan-stick-out-tongue" ), // cyrillic р
+        Entry( "кек", "chatsan-laughs" ),
+        Entry( "T_T", "chatsan-cries" ),
+        Entry( "Т_Т", "chatsan-cries" ), // cyrillic T
+        Entry( "=_(", "chatsan-cries" ),
+        Entry( "!с", "chatsan-laughs" ),
+        Entry( "!в", "chatsan-sighs" ),
+        Entry( "!х", "chatsan-claps" ),
+        Entry( "!щ", "chatsan-snaps" ),
+        Entry( "))", "chatsan-smiles-widely" ),
+        Entry( ")", "chatsan-smiles" ),
+        Entry( "((", "chatsan-frowns-deeply" ),
+        Entry( "(", "chatsan-frowns" ),
+        Entry("лол", "chatsan-laughs"),
+        Entry("ахах", "chatsan-laughs"),
+        Entry("хаха", "chatsan-laughs"),
+        Entry("хах", "chatsan-laughs"),
+        Entry("пхпх", "chatsan-laughs"),
+        Entry("хз", "chatsan-shrugs"),
+        Entry("[l", "chatsan-laughs"),
+        Entry("kjk", "chatsan-laughs"),
+        Entry("rtr", "chatsan-laughs"),
+        Entry("f[f[", "chatsan-laughs"),
+        Entry("[f[f", "chatsan-laughs"),
+        Entry("[f[", "chatsan-laughs"),
+        Entry("g[g[", "chatsan-laughs"),
+        Entry("[p", "chatsan-shrugs"),
+        Entry("kvfj", "chatsan-laughs"),
+        Entry("hjak", "chatsan-laughs"),
+        Entry("z[p", "chatsan-shrugs"),
         // Reserve-Localization-End
         Entry(":)", "chatsan-smiles"),
         Entry("xD", "chatsan-laughs"),
