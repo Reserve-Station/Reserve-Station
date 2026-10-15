@@ -61,7 +61,8 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
 
         return !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordBansWebhook))
                || !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordAdminLogsWebhook))
-               || !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordAdminchatWebhook));
+               || !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordAdminchatWebhook))
+               || !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordCustosWebhook));
     }
     public DiscordLogMessage NewMessage(string titleKey, int color, int? id = null, params (string, object)[] titleArgs)
     {
@@ -175,27 +176,36 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
 
     private Task SendTo(DiscordLogChannel channels, Func<WebhookPayload> payload, Func<DiscordLink, ulong, Task> viaBot)
     {
-        var tasks = new List<Task>(3);
+        var tasks = new List<Task>(4);
 
         if (channels.HasFlag(DiscordLogChannel.Bans))
-            tasks.Add(Guarded(() => PostWebhook(_cfg.GetCVar(CCVars.DiscordBansWebhook), payload())));
+            tasks.Add(PostWebhook(_cfg.GetCVar(CCVars.DiscordBansWebhook), payload));
 
         if (channels.HasFlag(DiscordLogChannel.AdminLogs))
         {
-            tasks.Add(Guarded(() => SendVia(
+            tasks.Add(SendVia(
                 GetChannelId(CCVars.AdminLogsDiscordChannelId) ?? GetChannelId(CCVars.AdminChatDiscordChannelId),
                 [CCVars.DiscordAdminLogsWebhook, CCVars.DiscordAdminchatWebhook],
                 payload,
-                viaBot)));
+                viaBot));
         }
 
         if (channels.HasFlag(DiscordLogChannel.AdminChat))
         {
-            tasks.Add(Guarded(() => SendVia(
+            tasks.Add(SendVia(
                 GetChannelId(CCVars.AdminChatDiscordChannelId),
                 [CCVars.DiscordAdminchatWebhook],
                 payload,
-                viaBot)));
+                viaBot));
+        }
+
+        if (channels.HasFlag(DiscordLogChannel.Custos))
+        {
+            tasks.Add(SendVia(
+                GetChannelId(CCVars.CustosDiscordChannelId),
+                [CCVars.DiscordCustosWebhook],
+                payload,
+                viaBot));
         }
 
         return Task.WhenAll(tasks);
@@ -206,20 +216,27 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
     /// </summary>
     private async Task SendVia(ulong? channelId, CVarDef<string>[] webhooks, Func<WebhookPayload> payload, Func<DiscordLink, ulong, Task> viaBot)
     {
-        if (_link.IsConnected && channelId is { } id)
+        try
         {
-            await viaBot(_link, id);
-            return;
+            if (_link.IsConnected && channelId is { } id)
+            {
+                await viaBot(_link, id);
+                return;
+            }
+
+            foreach (var cvar in webhooks)
+            {
+                var url = _cfg.GetCVar(cvar);
+                if (string.IsNullOrWhiteSpace(url))
+                    continue;
+
+                await PostWebhook(url, payload);
+                return;
+            }
         }
-
-        foreach (var cvar in webhooks)
+        catch (Exception e)
         {
-            var url = _cfg.GetCVar(cvar);
-            if (string.IsNullOrWhiteSpace(url))
-                continue;
-
-            await PostWebhook(url, payload());
-            return;
+            _sawmill.Error($"Failed to send discord message via bot/webhook: {e}");
         }
     }
 
@@ -228,15 +245,22 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
         return ulong.TryParse(_cfg.GetCVar(cvar), out var id) && id != 0 ? id : null;
     }
 
-    private async Task PostWebhook(string url, WebhookPayload payload)
+    private async Task PostWebhook(string url, Func<WebhookPayload> payload)
     {
         if (string.IsNullOrWhiteSpace(url))
             return;
 
-        if (await _webhook.GetWebhook(url) is not { } data)
-            return;
+        try
+        {
+            if (await _webhook.GetWebhook(url) is not { } data)
+                return;
 
-        await _webhook.CreateMessage(data.ToIdentifier(), payload);
+            await _webhook.CreateMessage(data.ToIdentifier(), payload());
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Failed to post discord webhook: {e}");
+        }
     }
 
     private static string Truncate(string text, int limit)

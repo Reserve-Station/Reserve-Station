@@ -56,14 +56,21 @@ public sealed class BrainrotPanelEui : BaseEui
         if (!_adminManager.HasAdminFlag(Player, AdminFlags.Admin))
             return;
 
-        switch (msg)
+        try
         {
-            case AddBrainrotTriggerMsg addMsg:
-                await _brainrotSystem.AddTrigger(addMsg.Trigger);
-                break;
-            case RemoveBrainrotTriggerMsg removeMsg:
-                await _brainrotSystem.RemoveTrigger(removeMsg.Trigger);
-                break;
+            switch (msg)
+            {
+                case AddBrainrotTriggerMsg addMsg:
+                    await _brainrotSystem.AddTrigger(addMsg.Trigger, Player);
+                    break;
+                case RemoveBrainrotTriggerMsg removeMsg:
+                    await _brainrotSystem.RemoveTrigger(removeMsg.Trigger, Player);
+                    break;
+            }
+        }
+        catch (Exception e)
+        {
+            Logger.GetSawmill("brainrot.eui").Error($"Error processing brainrot trigger message from {Player.Name}: {e}");
         }
     }
 }

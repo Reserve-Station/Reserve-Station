@@ -24,4 +24,6 @@ public enum DiscordLogChannel
     ///     Админ-чат: бот (канал админ-чата), иначе вебхук админ-чата.
     /// </summary>
     AdminChat = 1 << 2,
+
+    Custos = 1 << 3,
 }
