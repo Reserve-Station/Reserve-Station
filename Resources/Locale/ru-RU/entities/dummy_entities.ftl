@@ -41,9 +41,12 @@ ent-DiskCaseGold = золотой { ent-DiskCase }
     .desc = Блестящая коробочка из чистого золота, способная вместить аж три диска. Кажется, в ней уже что-то лежит...
     .suffix = Лодаут, Безделушки
 
+ent-MobBeeRainbow = радужная { ent-MobBee }
+    .desc = { ent-MobBee.desc }
+    .suffix = Лодаут, Безделушки, AI
 ent-MobMousePink = { ent-MobMouse }
     .desc = { ent-MobMouse.desc }
-    .suffix = Лодаут, Безделушки, Розовая
+    .suffix = Лодаут, Безделушки, Розовая, AI
 
 ent-d6DiceGold = золотая { ent-d6Dice }
     .desc = Маленькое великолепие, заслуженное честным трудом. Сделано из чистого золота. Не верите?.. Всегда есть переработчик...

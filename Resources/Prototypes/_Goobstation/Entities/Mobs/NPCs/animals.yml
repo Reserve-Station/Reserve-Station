@@ -292,6 +292,13 @@
       - Telecrystal
   - type: MobPrice
     price: 500
+  - type: InteractionPopup  # Reserve edit: Hold more critters
+    successChance: 0.5
+    interactSuccessString: petting-success-crab
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
 
 - type: entity
   name: space carp
