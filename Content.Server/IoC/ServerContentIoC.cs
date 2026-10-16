@@ -12,6 +12,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Administration.Notes;
 using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
+using Content.Server._Reserve.Discord.Custos;
 using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - BanGuard / AdminGuard
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
@@ -100,6 +101,7 @@ internal static class ServerContentIoC
         deps.Register<IBanGuardManager, BanGuardManager>();
         deps.Register<IAdminGuardManager, AdminGuardManager>();
         // Reserve edit end: Reserve Red - BanGuard / AdminGuard
+        deps.Register<ICustosManager, CustosManager>(); // Reserve edit: Custos
         // Orion-Start
         deps.Register<ServerProtectionPunishmentSystem>();
         deps.Register<ChatProtectionSystem>();
