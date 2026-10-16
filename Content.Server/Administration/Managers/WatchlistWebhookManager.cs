@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration.Notes;
 using Content.Server.Database;
 using Content.Server.Discord;
@@ -28,6 +29,7 @@ public sealed class WatchlistWebhookManager : IWatchlistWebhookManager
     [Dependency] private readonly DiscordWebhook _discord = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private IDiscordLogger _discordLogger = default!; // Reserve edit: Reserve Red - AdminGuard
 
     private ISawmill _sawmill = default!;
 
@@ -59,6 +61,11 @@ public sealed class WatchlistWebhookManager : IWatchlistWebhookManager
     {
         if (e.NewStatus != SessionStatus.Connected)
             return;
+
+        // Reserve edit start: Reserve Red - AdminGuard (если настроен бот, наблюдение за игроком уходит через AdminGuard в канал админ-чата, вебхук не нужен)
+        if (_discordLogger.UsesBot(DiscordLogChannel.AdminChat))
+            return;
+        // Reserve edit end: Reserve Red - AdminGuard
 
         var watchlists = await _adminNotes.GetActiveWatchlists(e.Session.UserId);
 

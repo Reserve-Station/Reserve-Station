@@ -2,7 +2,7 @@
 
 - type: entity
   id: SpawnPointPirates
-  parent: BaseAntagSpawner  # Reserve edit: Admin Antag Verbs Enhanced
+  parent: MarkerBase  # Reserve edit: Pirates Enhanced
   name: pirates
   components:
   - type: SpawnPoint
@@ -11,19 +11,10 @@
     - state: green
     - sprite: Clothing/Head/Hats/pirate.rsi
       state: icon
-  - type: GhostRole
-    name: ghost-role-information-pirate-irs-name # leaving it like that because i'm too lazy to redo it
-    description: ghost-role-information-pirate-irs-description
-    rules: ghost-role-information-pirate-irs-rules
-    mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
-    raffle:
-      settings: default
 
 - type: entity
-  categories: [ HideSpawnMenu, Spawner ]
   id: SpawnPointPirateCaptain
-  parent: BaseAntagSpawner
+  parent: MarkerBase  # Reserve edit: Pirates Enhanced
   name: Pirate spawn point
   components:
   - type: SpawnPoint
@@ -32,11 +23,3 @@
     - state: green
     - sprite: Mobs/Species/Skeleton/parts.rsi
       state: skull_icon
-  - type: GhostRole
-    name: ghost-role-information-pirate-irs-captain-name # leaving it like that because i'm too lazy to redo it
-    description: ghost-role-information-pirate-irs-captain-description
-    rules: ghost-role-information-pirate-irs-rules
-    mindRoles:
-    - MindRoleGhostRoleTeamAntagonist
-    raffle:
-      settings: default

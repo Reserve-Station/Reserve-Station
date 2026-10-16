@@ -1859,16 +1859,17 @@
 
 - type: startingGear
   id: PirateScoonerAltA
+  parent: BasePirateGear  # Reserve edit: Pirates Enhanced
   equipment:
-    jumpsuit: ClothingUniformJumpsuitPirate
-    shoes: ClothingShoesBootsLaceup
+    # jumpsuit: ClothingUniformJumpsuitPirate  # Reserve edit: Pirates Enhanced
+    # shoes: ClothingShoesBootsLaceup  # Reserve edit: Pirates Enhanced
     head: ClothingHeadBandRed
-    id: PiratePDA
-    back: ClothingBackpackSatchelLeather
-    belt: ClothingBeltUtility
-    ears: ClothingHeadsetFreelance
-    pocket1: WeaponPistolFlintlock
-    pocket2: HandheldGPSBasic
+    # id: PiratePDA  # Reserve edit: Pirates Enhanced
+    # back: ClothingBackpackSatchelLeather  # Reserve edit: Pirates Enhanced
+    # belt: ClothingBeltUtility  # Reserve edit: Pirates Enhanced
+    # ears: ClothingHeadsetFreelance  # Reserve edit: Pirates Enhanced
+    # pocket1: WeaponPistolFlintlock  # Reserve edit: Pirates Enhanced
+    # pocket2: HandheldGPSBasic  # Reserve edit: Pirates Enhanced
   inhand:
     - Cutlass
 
@@ -1896,13 +1897,13 @@
 
 - type: startingGear
   id: PirateCaptainScooner
-  parent: PirateScoonerAltA
+  parent: PirateCaptainGear  # Reserve edit: Pirates Enhanced
   equipment:
-    head: ClothingHeadHatPirate
-    ears: ClothingHeadsetAltFreelancer
+    # head: ClothingHeadHatPirate  # Reserve edit: Pirates Enhanced
+    # ears: ClothingHeadsetAltFreelancer  # Reserve edit: Pirates Enhanced
     neck: ClothingNeckCloakPirateCap
     outerClothing: ClothingOuterVestWeb
-    pocket1: WeaponRevolverPirate
+    # pocket1: WeaponRevolverPirate  # Reserve edit: Pirates Enhanced
 
 ### Other
 

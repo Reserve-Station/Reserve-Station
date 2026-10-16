@@ -35,7 +35,7 @@
    #- id: SlaughterDemonMidround
    #- id: XenomorphsInfestation #  removed for low pop too little sec
     - id: SlasherSpawn
-    - id: SpacePirates
+    - id: PiratesMidroundStart  # Reserve edit: Pirates Enhanced
     #- id: SingulothKnightsMidround
     #- id: DarkLordMidround
     - id: MimeAssassinMidround

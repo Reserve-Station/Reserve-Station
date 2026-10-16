@@ -293,6 +293,8 @@
   - type: PhysicalComposition
     materialComposition:
       Plastic: 25
+  - type: Item
+    size: Small
   - type: StaticPrice
     price: 10
 

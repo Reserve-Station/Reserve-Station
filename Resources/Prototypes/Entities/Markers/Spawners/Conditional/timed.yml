@@ -39,7 +39,7 @@
       # therefore 18m
       # use 50% chance for randomness and balance with halved interval
       chance: 0.5
-      intervalSeconds: 540
+      intervalSeconds: 900  # Reserve edit: Less mice per round - increased from 540 to reduce spawn frequency
       minimumEntitiesSpawned: 1
       maximumEntitiesSpawned: 1
 

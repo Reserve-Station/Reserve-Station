@@ -835,16 +835,16 @@
       factions:
       - Syndicate
     - type: GhostRole
-      name: ghost-role-information-pirate-name
-      description: ghost-role-information-pirate-description
-      rules: ghost-role-information-rules-team-antagonist
+      name: ghost-role-information-pirate-irs-name  # Reserve edit: Pirates Enhanced
+      description: ghost-role-information-pirate-irs-description  # Reserve edit: Pirates Enhanced
+      rules: ghost-role-information-pirate-irs-rules  # Reserve edit: Pirates Enhanced
       mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
+      - MindRolePirate  # Reserve edit: Pirates Enhanced
       raffle:
         settings: default
     - type: Loadout
       prototypes: [ PirateScoonerAltA, PirateScoonerAltB, PirateScoonerAltC, PirateScoonerAltD ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      # roleLoadout: [ RoleSurvivalEVA ]  # Reserve edit: Pirates Enhanced
 
 - type: randomHumanoidSettings
   id: PirateCaptainScooner
@@ -854,16 +854,16 @@
       factions:
       - Syndicate
     - type: GhostRole
-      name: ghost-role-information-pirate-captain-name
-      description: ghost-role-information-pirate-captain-description
-      rules: ghost-role-information-rules-team-antagonist
+      name: ghost-role-information-pirate-irs-captain-name  # Reserve edit: Pirates Enhanced
+      description: ghost-role-information-pirate-irs-captain-description  # Reserve edit: Pirates Enhanced
+      rules: ghost-role-information-pirate-irs-rules  # Reserve edit: Pirates Enhanced
       mindRoles:
-      - MindRoleGhostRoleTeamAntagonist
+      - MindRolePirate  # Reserve edit: Pirates Enhanced
       raffle:
         settings: default
     - type: Loadout
-      prototypes: [ PirateCaptainScooner ]
-      roleLoadout: [ RoleSurvivalEVA ]
+      prototypes: [ PirateCaptainGear, PirateCaptainScooner ]  # Reserve edit: Pirates Enhanced
+      # roleLoadout: [ RoleSurvivalEVA ]  # Reserve edit: Pirates Enhanced
 
 ### Other
 

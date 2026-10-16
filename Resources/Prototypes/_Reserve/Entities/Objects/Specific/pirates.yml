@@ -1,0 +1,617 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Weapons
+
+- type: entity
+  parent: [PipeBomb, BaseCannonBall]
+  id: PipeBombPirate
+  name: hand bomb
+  description: An improvised explosive made from a cannon ball.
+  suffix: Pirate
+  components:
+  - type: Sprite
+    sprite: _Reserve/Entities/Objects/Specific/Pirates/handbomb.rsi
+  - type: CartridgeAmmo
+    proto: BulletCannonBall
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+    - CannonBall
+    - Grenade
+    - HandGrenade
+
+- type: entity
+  parent: WeaponShotgunBlunderbuss
+  id: WeaponShotgunBlunderbussHighCapacity
+  name: magazine blunderbuss
+  description: A close-range tool of destruction.
+  suffix: Pirate
+  components:
+  - type: Sprite
+    scale: 1.2, 1.0
+  - type: BallisticAmmoProvider
+    capacity: 20
+  - type: Gun
+    fireRate: 2.5
+
+- type: entity
+  parent: NavyOfficerSabre
+  id: CutlassSabrePirateCaptainJollyRogerAlabaster
+  name: Alabaster
+  description: A trophy masterpiece of both craftsmanship, history, and freeseeking fury. Its former owner was a legendary pirate captain. Some say he's still guarding his treasure chest...
+  suffix: Pirate, Jolly Roger
+
+# endregion Weapons
+
+# region Fills
+
+- type: entity
+  parent: ClothingBackpackSatchelLeather
+  id: ClothingBackpackSatchelLeatherFilledPirate
+  suffix: Filled, Pirate
+  components:
+  - type: StorageFill
+    contents:
+    - id: PipeBombPirate
+    - id: PipeBombPirate
+    - id: PipeBombPirate
+    - id: PipeBombPirate
+    - id: MagazineBoxMagnum
+    - id: MagazineBoxMagnum
+    - id: DrinkAleGlass
+    - id: DrinkRumGlass
+    - id: DrinkGrogGlass
+    - id: DrinkTortugaGlass
+    - id: TowelColorPirate
+    - id: PirateHandyFlag
+    - id: CannonBall
+    - id: CannonBall
+    - id: CannonBallGlassshot
+    - id: CannonBallGrapeshot
+
+- type: entity
+  parent: ClothingBeltUtility
+  id: ClothingBeltUtilityFilledPirate
+  suffix: Filled, Pirate
+  components:
+  - type: StorageFill
+    contents:
+    - id: Wrench
+    - id: AppraisalTool
+    - id: HandheldGPSBasic
+
+# endregion Fills
+
+# region Trinkets
+
+- type: entity
+  parent: BaseTowel
+  id: TowelColorPirate
+  name: pirate towel
+  suffix: Trinkets, Pirate
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#333333"
+    - state: iconstripe
+      color: "#CCCCCC"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#333333"
+      right:
+      - state: inhand-right
+        color: "#333333"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#333333"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#333333"
+      belt:
+      - state: equipped-BELT
+        color: "#333333"
+  - type: Fiber
+    fiberColor: fibers-black
+
+- type: entity
+  parent: WhiteTabletopPiece
+  id: BlackMarkOfTaxingPirate
+  name: mark of taxing
+  description: A pirate symbol given to those who are about to pay their dues.
+  suffix: Trinkets, Pirate
+  components:
+  - type: Sprite
+    scale: 0.4, 0.4
+    color: "#333333"
+  - type: Item
+    size: Tiny
+
+- type: entity
+  parent: HeadSkeleton
+  id: HeadSkeletonPirateCaptainJollyRoger
+  name: Jolly Roger
+  description: The skull of the infamous pirate Jolly Roger, a reminder of the perils of pirate life.
+  suffix: Trinkets, Skull, Pirate
+  components:
+  - type: Sprite
+    scale: 0.6, 0.6
+    color: "#ccaa88"  # Slightly yellow from age
+  - type: GhostRole
+    prob: 1
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ent-HeadSkeletonPirateCaptainJollyRoger
+    description: ent-HeadSkeletonPirateCaptainJollyRoger.desc
+    rules: ghost-role-information-familiar-rules
+    mindRoles:
+    - MindRolePirate
+  - type: GhostTakeoverAvailable
+
+# endregion Trinkets
+
+# region Guidebooks
+
+- type: entity
+  parent: BaseGuidebook
+  id: GuidebookPirateCodex
+  name: Pirate Codex
+  description: A pirate's guidebook detailing various codes, rules, and lore of pirate life.
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: cover_base
+      color: "#333333"
+    - state: decor_wingette
+      color: "#CCCCCC"
+  - type: Tag
+    tags:
+    - Book
+    - Paper
+  - type: GuideHelp
+    openOnActivation: true
+    guides:
+    - Pirates
+
+# endregion Guidebooks
+
+# region Drinks
+
+- type: entity
+  parent: DrinkBase
+  id: WoodenMug
+  name: wooden mug
+  description: A wooden mug with metal bands reinforcing it. Only a true battleman can handle it!
+  suffix: Pirate, Cossack, Medieval
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Wizard/Objects/evermug.rsi
+    state: icon
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+
+- type: entity
+  parent: WoodenMug
+  id: WoodenMugRum
+  suffix: Pirate, Cossack, Medieval, Rum
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Rum
+          Quantity: 30
+
+- type: entity
+  parent: WoodenMug
+  id: WoodenMugAle
+  suffix: Pirate, Cossack, Medieval, Ale
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Ale
+          Quantity: 30
+
+- type: entity
+  parent: WoodenMug
+  id: WoodenMugGrog
+  suffix: Pirate, Cossack, Medieval, Grog
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Grog
+          Quantity: 30
+
+- type: entity
+  parent: WoodenMug
+  id: WoodenMugTortuga
+  suffix: Pirate, Cossack, Medieval, Tortuga
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Tortuga
+          Quantity: 30
+
+- type: entity
+  parent: MarkerBase
+  id: RandomDrinkWoodenMug
+  name: random drink spawner
+  suffix: Wooden Mug, Pirate, Cossack, Medieval
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: _Goobstation/Wizard/Objects/evermug.rsi
+        state: icon
+  - type: RandomSpawner
+    offset: 0.0
+    prototypes:
+    - WoodenMugRum
+    - WoodenMugAle
+    - WoodenMugGrog
+    - WoodenMugTortuga
+    rarePrototypes:
+    - WoodenMug
+    rareChance: 0.15
+
+# endregion Drinks
+
+# region Pets
+
+# Kesha
+
+- type: startingGear
+  id: MobParrotKeshaGear
+  equipment:
+    ears: ClothingHeadsetFreelance
+
+- type: entity
+  parent: MobParrotBase
+  id: MobParrotKesha
+  name: Kesha the parrot
+  description: Piaaaasssstres, piaasstrres! Best annoying friend of the whole pirate crew.
+  suffix: Pirate Pet, Parrot, AI
+  components:
+  - type: GhostRole
+    prob: 1
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ent-MobParrotKesha
+    description: ent-MobParrotKesha.desc
+    rules: ghost-role-information-sentientanimal-rules
+    mindRoles:
+    - MindRolePirate
+  - type: GhostTakeoverAvailable
+  - type: Vocalizer
+    maxVocalizeInterval: 240
+  - type: RadioVocalizer
+    radioAttemptChance: 0.8
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: Loadout
+    prototypes: [ MobParrotKeshaGear ]
+  - type: Tag
+    tags:
+    - VimPilot
+    - DoorBumpOpener
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobParrotKesha
+  name: Kesha the parrot Spawner
+  suffix: Pirate Pet, Parrot, AI
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+    - state: parrot
+      sprite: Mobs/Animals/parrot/parrot.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobParrotKesha
+
+# Coconut
+
+- type: entity
+  parent: MobCrab
+  id: MobCrabCoconut
+  name: Coconut
+  description: A brave and loyal pirate crab companion. Just... Just don't give it a knife...
+  suffix: Pirate Pet, Crab, AI
+  components:
+  - type: GhostRole
+    prob: 1
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ent-MobCrabCoconut
+    description: ent-MobCrabCoconut.desc
+    rules: ghost-role-information-sentientanimal-rules
+    mindRoles:
+    - MindRolePirate
+  - type: GhostTakeoverAvailable
+  - type: Tag
+    tags:
+    - VimPilot
+    - CannotSuicide
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: LanguageKnowledge
+    speaks:
+    - Crab
+    understands:
+    - Crab
+    - TauCetiBasic
+  - type: VentCrawler
+    enterDelay: 0.5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 5
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobCrabCoconut
+  name: Coconut Spawner
+  suffix: Pirate Pet, Crab, AI
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+    - state: crab
+      sprite: Mobs/Animals/crab.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCrabCoconut
+
+# Barbossa
+
+- type: startingGear
+  id: MobMonkeyBarbossaGear
+  equipment:
+    head: ClothingHeadBandRed
+    ears: ClothingHeadsetFreelance
+    jumpsuit: ClothingUniformJumpsuitPirate
+    back: ClothingBagPet
+    id: PirateIDCard
+
+- type: entity
+  parent: MobMonkey
+  id: MobMonkeyBarbossa
+  name: Barbossa
+  description: A mischievous and cunning pirate monkey companion.
+  suffix: Pirate Pet, Monkey, AI
+  components:
+  - type: GhostRole
+    prob: 1
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ent-MobMonkeyBarbossa
+    description: ent-MobMonkeyBarbossa.desc
+    rules: ghost-role-information-nonantagonist-rules
+    mindRoles:
+    - MindRolePirate
+  - type: GhostTakeoverAvailable
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeat
+      amount: 3
+    - id: DrinkRumBottleFull
+      amount: 1
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - VimPilot
+    - AnomalyHost
+  - type: Loadout
+    prototypes: [ MobMonkeyBarbossaGear ]
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: LanguageKnowledge
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - Kobold
+    - TauCetiBasic
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobMonkeyBarbossa
+  name: Barbossa Spawner
+  suffix: Pirate Pet, Monkey, AI
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+    - state: monkey
+      sprite: Mobs/Animals/monkey.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobMonkeyBarbossa
+
+# Qwertolomeo
+
+- type: startingGear
+  id: MobKoboldQwertolomeoGear
+  equipment:
+    head: ClothingHeadHatPirateTricord
+    ears: ClothingHeadsetFreelance
+    jumpsuit: ClothingUniformJumpsuitPirate
+    back: ClothingBagPet
+    outerClothing: ClothingOuterCoatPirate
+    suitstorage: WeaponShotgunBlunderbussHighCapacity
+    mask: ClothingMaskBandSkull
+    id: PirateIDCard
+  inhand:
+  - WeaponRevolverPirate
+
+- type: entity
+  parent: MobKobold
+  id: MobKoboldQwertolomeo
+  name: Qwertolomeo
+  description: OH NO IT'S GOT A GUN!!!
+  suffix: Pirate Pet, Kobold, AI, Reserve, Qwerty_Asdfg
+  components:
+  - type: GhostRole
+    prob: 1
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ent-MobKoboldQwertolomeo
+    description: ent-MobKoboldQwertolomeo.desc
+    rules: ghost-role-information-nonantagonist-rules
+    mindRoles:
+    - MindRolePirate
+  - type: GhostTakeoverAvailable
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeat
+      amount: 3
+    - id: DrinkRumBottleFull
+      amount: 1
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - VimPilot
+    - AnomalyHost
+  - type: Loadout
+    prototypes: [ MobKoboldQwertolomeoGear ]
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: LanguageKnowledge
+    speaks:
+    - Kobold
+    understands:
+    - Kobold
+    - Monkey
+    - TauCetiBasic
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobKoboldQwertolomeo
+  name: Qwertolomeo Spawner
+  suffix: Pirate Pet, Kobold, AI
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+    - state: kobold
+      sprite: Mobs/Animals/kobold.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobKoboldQwertolomeo
+
+# Any pet spawner
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobPiratePet
+  name: pirate pet spawner
+  suffix: Pirate Pet, AI
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobParrotKesha
+    - MobCrabCoconut
+    - MobMonkeyBarbossa
+    - MobParrotKesha
+    - MobCrabCoconut
+    - MobMonkeyBarbossa
+    - MobKoboldQwertolomeo
+    - MobBandito
+
+# endregion Pets
+
+# region Ghost Roles
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: GhostRolePirates
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Clothing/Head/Hats/pirate.rsi
+      state: icon
+  - type: GhostRole
+    name: ghost-role-information-pirate-irs-name
+    description: ghost-role-information-pirate-irs-description
+    rules: ghost-role-information-pirate-irs-rules
+    mindRoles:
+    - MindRolePirate
+    raffle:
+      settings: default
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: GhostRolePirateCaptain
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Species/Skeleton/parts.rsi
+      state: skull_icon
+  - type: GhostRole
+    name: ghost-role-information-pirate-irs-captain-name
+    description: ghost-role-information-pirate-irs-captain-description
+    rules: ghost-role-information-pirate-irs-rules
+    mindRoles:
+    - MindRolePirate
+    raffle:
+      settings: default
+
+# endregion Ghost Roles

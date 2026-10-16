@@ -4,7 +4,9 @@ using System.Linq;
 using Content.Server._Reserve.Discord.Logger;
 using Content.Server.Database;
 using Content.Shared.Administration;
+using Content.Shared.CCVar;
 using Robust.Server.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Network;
 
@@ -15,6 +17,7 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
     [Dependency] private IDiscordLogger _logger = default!;
     [Dependency] private IConsoleHost _console = default!;
     [Dependency] private IPlayerManager _players = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     private const int ColorPlaytime = 0x3498db;
     private const int ColorPerms = 0x9b59b6;
@@ -266,6 +269,10 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
 
     public void WatchlistPlayerJoined(NetUserId player, AdminWatchlistRecord watchlist)
     {
+        // Без бота этим занимается WatchlistWebhookManager, если для него настроен свой вебхук - не дублируем
+        if (!_logger.UsesBot(ChatChannel) && !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordWatchlistConnectionWebhook)))
+            return;
+
         _ = _logger.Guarded(async () =>
         {
             var lines = new List<string>

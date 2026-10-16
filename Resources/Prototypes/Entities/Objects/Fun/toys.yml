@@ -170,7 +170,7 @@
   - type: DoAfter
   - type: VentriloquistPuppet
   - type: Item
-    size: Normal
+    size: Small  # Reserve edit: Random maints
   - type: Muted
   - type: TypingIndicator
     proto: robot

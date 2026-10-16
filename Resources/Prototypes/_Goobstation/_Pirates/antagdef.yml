@@ -2,9 +2,10 @@
 
 - type: antag
   id: Pirate
+  name: roles-antag-pirate-name  # Reserve edit: Pirates Enhanced
   antagonist: true
-  setPreference: false
-  objective: roles-antag-syndicate-agent-objective
+  setPreference: true  # Reserve edit: Pirates Enhanced
+  objective: roles-antag-pirate-objective  # Reserve edit: Pirates Enhanced
   requirements:
   - !type:OverallPlaytimeRequirement
       time: 10h #10 hrs
@@ -12,6 +13,12 @@
     inverted: true
     species:
     - Plasmaman
+  guides: [ Pirates ]  # Reserve edit: Pirates Enhanced
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: Structures/Wallmounts/flags.rsi
+    state: pirate_flag
 
 - type: entity
   parent: BaseMindRoleAntag

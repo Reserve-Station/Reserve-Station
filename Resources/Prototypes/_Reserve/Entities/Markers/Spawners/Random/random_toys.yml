@@ -1,5 +1,22 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# region Special objects and toys tables for random spawners
+
+- type: entity
+  parent: BaseFlatpack
+  id: TargetDartsFlatpack
+  name: dartboard flatpack
+  description: A flatpack used for constructing a target for playing darts.
+  components:
+  - type: Flatpack
+    entity: TargetDarts
+  - type: Item
+    size: Normal
+
+# endregion Special objects and toys tables for random spawners
+
+# region Tables
+
 - type: entityTable
   id: AllMusicToysTable
   table: !type:GroupSelector
@@ -27,8 +44,15 @@
     - !type:AllSelector
       children:
       - id: BoxDarts
-      - id: TargetDarts
-    - id: ClothingBackpackDuffelTennisGame
+      - id: TargetDartsFlatpack
+    - !type:AllSelector  # From ClothingBackpackDuffelTennisGame
+      children:
+      - id: TennisBall
+        amount: 2
+      - id: BaseTennisRacket
+        amount: 2
+      - id: NTTennisRacket
+        amount: 2
     - !type:GroupSelector
       rolls: 2
       children:
@@ -151,6 +175,10 @@
     chance: 0.8
     offset: 0.0
 
+# endregion Tables
+
+# region Objects
+
 - type: entity
   id: RandomTableTopGame
   name: random board game
@@ -178,8 +206,6 @@
       - CardBoxNanotrasen
     chance: 0.8
     offset: 0.0
-
-# Objects
 
 - type: entity
   id: CrateFunToyBoxRandom
@@ -216,3 +242,5 @@
       - SpaceVillainArcadeFilled
       - ClawMachine
     chance: 1
+
+# endregion Objects

@@ -1,27 +1,50 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: startingGear
-  id: PirateGear
+  id: BasePirateGear  # Reserve edit: Pirates Enhanced
   equipment:
     jumpsuit: ClothingUniformJumpsuitPirate
-    back: ClothingBackpackSatchelLeather
+    back: ClothingBackpackSatchelLeatherFilledPirate  # Reserve edit: Pirates Enhanced
     head: ClothingHeadBandBlack
     shoes: ClothingShoesBootsLaceup
+    ears: ClothingHeadsetFreelance  # Reserve edit: Pirates Enhanced
+    outerClothing: ClothingOuterVestWeb  # Reserve edit: Pirates Enhanced
     id: PiratePDA
-    belt: ClothingBeltUtility
-    pocket1: AppraisalTool
+    belt: ClothingBeltUtilityFilledPirate  # Reserve edit: Pirates Enhanced
+    suitstorage: WeaponShotgunBlunderbuss  # Reserve edit: Pirates Enhanced
+
+# Reserve edit start: Pirates Enhanced
+- type: startingGear
+  id: PirateGear
+  parent: BasePirateGear
+  inhand:
+    - Cutlass
+    - WeaponPistolFlintlock
+# Reserve edit end: Pirates Enhanced
 
 - type: startingGear
   id: PirateCaptainGear
-  parent: PirateGear
+  parent: BasePirateGear  # Reserve edit: Pirates Enhanced
   equipment:
     head: ClothingHeadHatPirate
-    pocket2: EnergyCutlass
+    ears: ClothingHeadsetAltFreelancer  # Reserve edit: Pirates Enhanced
     outerClothing: ClothingOuterCoatPirate
+    pocket1: GuidebookPirateCodex  # Reserve edit: Pirates Enhanced
+    pocket2: BlackMarkOfTaxingPirate  # Reserve edit: Pirates Enhanced
+    suitstorage: WeaponShotgunBlunderbussHighCapacity  # Reserve edit: Pirates Enhanced
+  inhand:
+  - CaptainSabre  # Reserve edit: Pirates Enhanced - EnergyCutlass is already in CratePirateChestCaptain
+  - WeaponRevolverPirate  # Reserve edit: Pirates Enhanced
 
 - type: startingGear
   id: PirateFirstmateGear
-  parent: PirateGear
+  parent: BasePirateGear  # Reserve edit: Pirates Enhanced
   equipment:
     head: ClothingHeadHatPirateTricord
     outerClothing: ClothingOuterCoatGentle
+    ears: ClothingHeadsetAltFreelancer  # Reserve edit: Pirates Enhanced
+    neck: ClothingNeckCloakPirateCap  # Reserve edit: Pirates Enhanced
+    pocket1: GuidebookPirateCodex  # Reserve edit: Pirates Enhanced
+  inhand:
+  - NavyOfficerSabre  # Reserve edit: Pirates Enhanced
+  - WeaponRevolverPirate  # Reserve edit: Pirates Enhanced

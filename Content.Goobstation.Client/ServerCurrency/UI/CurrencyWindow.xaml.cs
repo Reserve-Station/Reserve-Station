@@ -40,9 +40,9 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
             if (!isAdmin)
                 Admin.Visible = false;
 
-            GiftButton.OnPressed += _ => Transfer(GiftPlayer.Text, int.Parse((string)GiftAmmount.Text));
+            GiftButton.OnPressed += _ => Transfer(GiftPlayer.Text, GiftAmmount.Text); // Reserve edit: Coin transfer ovehaul
 
-            AdminAddButton.OnPressed += _ => AdminAdd(AdminAddPlayer.Text, int.Parse((string)AdminAddAmmount.Text));
+            AdminAddButton.OnPressed += _ => AdminAdd(AdminAddPlayer.Text, AdminAddAmmount.Text); // Reserve edit: Coin transfer ovehaul
 
             _serverCur.ClientBalanceChange += UpdatePlayerBalance;
 
@@ -104,25 +104,28 @@ namespace Content.Goobstation.Client.ServerCurrency.UI
             }
         }
 
-        private void Transfer(string player, int value)
+        // Reserve edit start: Coin transfer ovehaul
+        // The server validates the arguments and reports failures to the chat.
+        private void Transfer(string player, string value)
         {
-            if (player == null || value == 0)
+            if (string.IsNullOrWhiteSpace(player) || string.IsNullOrWhiteSpace(value))
                 return;
 
-            _consoleHost.ExecuteCommand("gift " + player + " " + value);
+            _consoleHost.ExecuteCommand($"gift {player.Trim()} {value.Trim()}");
 
             UpdatePlayerBalance();
         }
 
-        private void AdminAdd(string player, int value)
+        private void AdminAdd(string player, string value)
         {
-            if (!isAdmin || player == null || value == 0)
+            if (!isAdmin || string.IsNullOrWhiteSpace(player) || string.IsNullOrWhiteSpace(value))
                 return;
 
-            _consoleHost.ExecuteCommand("balance:add " + player + " " + value);
+            _consoleHost.ExecuteCommand($"balance:add {player.Trim()} {value.Trim()}");
 
             UpdatePlayerBalance();
         }
+        // Reserve edit end: Coin transfer ovehaul
 
         private void UpdatePlayerBalance() // Goobstation - Goob Coin
         {

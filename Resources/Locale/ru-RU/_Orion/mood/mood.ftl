@@ -52,7 +52,7 @@ mood-effect-MobSlipped = { GENDER($entity) ->
    *[neuter] Я поскользнулось! В следующий раз буду осторожнее.
 }
 
-mood-effect-MobVomit = Моя еда ужасно на вкус, когда выходит обратно.
+mood-effect-MobVomit = Еда оставляет отвратительное послевкусие, когда выходит обратно.
 
 mood-effect-MobLowPressure = Кажется, всё моё тело вот-вот лопнет!
 
@@ -71,7 +71,7 @@ mood-effect-BeingHugged = Обнимашки — это здорово.
 
 mood-effect-BeingPet = Кто-то меня погладил!
 
-mood-effect-ArcadePlay = Мне было весело играть в интересную аркадную игру.
+mood-effect-ArcadePlay = Мне было весело играть в интересную аркаду.
 
 mood-effect-GotBlessed = Меня благословили.
 
@@ -88,7 +88,7 @@ mood-effect-CultFocused = Тёмные боги, дайте мне силы!
 mood-effect-TraitSanguine = Мне нечего бояться. В конце концов всё определённо будет хорошо!
 
 mood-effect-HeirloomSecure = Моя реликвия в безопасности, а с ней и воспоминания о тех, кто был до меня.
-mood-effect-HeirloomLost = Я не могу найти свою реликвию, как же теперь прошлое будет в безопасности?
+mood-effect-HeirloomLost = Я не могу найти свою реликвию. Как же теперь прошлое будет в безопасности?
 mood-effect-HeirloomNeutral = Моей реликвии нет, но, возможно, однажды она вернётся.
 
 # Зависимости
@@ -139,7 +139,7 @@ mood-effect-SpaceDrugsBenefit =
 # Плазмочеловек
 # Plasmaman
 mood-effect-PlasmamanIngestPlasma =
-    Моё тело омолодилось от свежей плазмы, текущей по моему телу.
+    Моё тело омолодилось от свежей плазмы, текущей по моим костям.
 
 mood-effect-PlasmamanIngestMilk =
     Я чувствую, как кальций из молока восстанавливает мои кости. Это просто восхитительно!

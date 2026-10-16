@@ -62,7 +62,22 @@ namespace Content.Goobstation.Server.ServerCurrency
         /// <inheritdoc/>
         public (int, int) TransferCurrency(NetUserId sourceUserId, NetUserId targetUserId, int amount)
         {
-            var newAccountValues = (ModifyBalance(sourceUserId, -amount), ModifyBalance(targetUserId, amount));
+            // Reserve edit start: Coin transfer ovehaul
+            var sourceBalance = ModifyBalance(sourceUserId, -amount);
+            int targetBalance;
+            try
+            {
+                targetBalance = ModifyBalance(targetUserId, amount);
+            }
+            catch
+            {
+                // Don't let coins vanish if crediting the receiver failed.
+                ModifyBalance(sourceUserId, amount);
+                throw;
+            }
+
+            var newAccountValues = (sourceBalance, targetBalance);
+            // Reserve edit end: Coin transfer ovehaul
             _sawmill.Info($"Transferring {amount} currency from {sourceUserId} to {targetUserId}. Current balances: {newAccountValues.Item1}, {newAccountValues.Item2}");
             return newAccountValues;
         }

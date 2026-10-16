@@ -18,6 +18,11 @@ public interface IDiscordLogger
     Task Guarded(Func<Task> action);
 
     /// <summary>
+    ///     Будет ли сообщение в этот канал отправлено через бота (а не вебхук).
+    /// </summary>
+    bool UsesBot(DiscordLogChannel channel);
+
+    /// <summary>
     ///     Создаёт сообщение с локализованным заголовком (аргумент <c>$id</c> + <paramref name="titleArgs"/>)
     ///     и подвалом "сервер (раунд)".
     /// </summary>

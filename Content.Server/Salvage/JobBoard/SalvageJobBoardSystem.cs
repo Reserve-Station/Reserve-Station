@@ -51,14 +51,17 @@ public sealed class SalvageJobBoardSystem : EntitySystem
 
     private void OnSold(ref EntitySoldEvent args)
     {
-        if (!TryComp<SalvageJobsDataComponent>(args.Station, out var salvageJobsData))
+        // Reserve edit start: Pirates Enhanced
+        if (args.Station is not { } station ||
+            !TryComp<SalvageJobsDataComponent>(station, out var salvageJobsData))
             return;
+        // Reserve edit end: Pirates Enhanced
 
         foreach (var sold in args.Sold)
         {
-            if (!FulfillsSalvageJob(sold, (args.Station, salvageJobsData), out var jobId))
+            if (!FulfillsSalvageJob(sold, (station, salvageJobsData), out var jobId))
                 continue;
-            TryCompleteSalvageJob((args.Station, salvageJobsData), jobId.Value);
+            TryCompleteSalvageJob((station, salvageJobsData), jobId.Value);
         }
     }
 
@@ -112,12 +115,12 @@ public sealed class SalvageJobBoardSystem : EntitySystem
             // don't worry abooouuuuut it (it'll be O K !)
             var high = i != ent.Comp.RankThresholds.Count - 1
                 ? ent.Comp.RankThresholds.Keys.ElementAt(i + 1)
-                :  _prototypeManager.EnumeratePrototypes<CargoBountyPrototype>()
+                : _prototypeManager.EnumeratePrototypes<CargoBountyPrototype>()
                 .Count(p => ent.Comp.RankThresholds.Values
                     .Select(r => r.BountyGroup)
                     .Contains(p.Group));
 
-            return (completedCount - low) / (float)(high - low);
+            return (completedCount - low) / (float) (high - low);
         }
 
         return 1f;
@@ -176,7 +179,7 @@ public sealed class SalvageJobBoardSystem : EntitySystem
             _cargo.UpdateBankAccount(
                 (ent.Owner, stationBankAccount),
                 jobProto.Reward,
-                _cargo.CreateAccountDistribution((ent,  stationBankAccount)));
+                _cargo.CreateAccountDistribution((ent, stationBankAccount)));
         }
 
         // We ranked up!
