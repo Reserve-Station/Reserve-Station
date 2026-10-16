@@ -71,6 +71,7 @@
   </Box>
 
   <Box>
+    <GuideEntityEmbed Entity="Musket"/>
     <GuideEntityEmbed Entity="Cutlass"/>
     <GuideEntityEmbed Entity="WeaponPistolFlintlock"/>
     <GuideEntityEmbed Entity="WeaponShotgunBlunderbuss"/>
@@ -81,6 +82,7 @@
   </Box>
 
   <Box>
+    <GuideEntityEmbed Entity="WeaponMakeshiftLaser" Caption="лазерный пистоль"/>
     <GuideEntityEmbed Entity="CaptainSabre"/>
     <GuideEntityEmbed Entity="PipeBombPirate"/>
     <GuideEntityEmbed Entity="WeaponRevolverPirate"/>
@@ -92,6 +94,7 @@
 
   <Box>
     <GuideEntityEmbed Entity="EnergyCutlass" Caption="энергосабля"/>
+    <GuideEntityEmbed Entity="CutlassSabrePirateCaptainJollyRogerAlabaster"/>
     <GuideEntityEmbed Entity="WeaponShotgunBlunderbussHighCapacity"/>
     <GuideEntityEmbed Entity="WeaponLauncherPirateCannon"/>
   </Box>
@@ -124,12 +127,14 @@
     <GuideEntityEmbed Entity="AppraisalTool" Caption=""/>
     <GuideEntityEmbed Entity="Wrench" Caption=""/>
     <GuideEntityEmbed Entity="HandheldGPSBasic" Caption=""/>
+    <GuideEntityEmbed Entity="WeaponGrapplingGun" Caption=""/>
   </Box>
   <Box>
     <GuideEntityEmbed Entity="PirateHandyFlag" Caption=""/>
     <GuideEntityEmbed Entity="TowelColorPirate" Caption=""/>
     <GuideEntityEmbed Entity="ClothingHeadHatPirate" Caption=""/>
     <GuideEntityEmbed Entity="ClothingNeckCloakPirateCap" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadBandSkull" Caption=""/>
   </Box>
 
   Другое снаряжение включает в себя инструменты для грабежа и пиратскую атрибутику.
@@ -160,7 +165,7 @@
   ## Весёлый Роджер
 
   <Box>
-    <GuideEntityEmbed Entity="HeadSkeletonPirate" Caption=""/>
+    <GuideEntityEmbed Entity="HeadSkeletonPirateCaptainJollyRoger" Caption=""/>
   </Box>
 
   Всё, что осталось от старого пиратского капитана. Или не всё? Даже после своей условной смерти, он всё ещё продолжает сторожить [bold][color=#cc8c78]Пиратский сундук капитана[/color][/bold].
@@ -203,5 +208,13 @@
   - [bold]Инженерная[/bold] удобно совмещена с [bold]Залом изъятия прибыли[/bold] с сифоном прибыли и консолью продаж;
   - [bold]Просторная оружейная[/bold], забитая доверху, и [bold]Атмосферный бар[/bold], кишащий выпивкой;
   - Во всех помещениях присутствуют [bold]выключатели света[/bold] - благодаря ним свет можно выключить [bold]на всем шаттле[/bold].
+
+  ## Тривия
+
+  - [bold][color=#cc8c78]Метательные бомбочки[/color][/bold] можно не только бросать - их можно [color=#cc8c78]зарядить в любую пушку и выстрелить, как ядро[/color]. Правда, сила будет такая же, как и у обычного ядра.
+  - Вам совершенно не обязательно запускать [bold][color=#cc8c78]Сифон прибыли[/color][/bold] - вы можете грабить только физическое имущество станции, [color=#cc8c78]не закрепляя шхуну в одном месте[/color].
+  - [bold][color=#cc8c78]Алебастр[/color][/bold] - это именная сабля пирата по имени [bold][color=#cc8c78]Весёлый Роджер[/color][/bold], павшего от собственного орудия. Победивший его пират продал саблю на [bold][color=#cc8c78]Чёрный рынок[/color][/bold], а [bold][color=#cc8c78]Сундук Роджера[/color][/bold] забрал себе, спрятав в нём его голову. Так и сторожит неупокоенный череп пирата свой сундук до сих пор, изнутри.
+  - [bold][color=#cc8c78]Чёрная метка[/color][/bold], конечно же, в далекие времена имела немного другое значение. Но после смерти пиратства прошло очень много времени, и при появлении [bold][color=#cc8c78]Космических пиратов[/color][/bold] она обрела новое значение.
+  - [bold][color=#cc8c78]Квертоломео[/color][/bold] назван в честь одного из [color=#cc8c78]волонтёров Резерва[/color] и является изменённой версией имени [color=#cc8c78]Бартоломео[/color].
 
 </Document>

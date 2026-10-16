@@ -13,7 +13,7 @@
         - id: ClothingNeckCloakPirateCap
         - id: EnergyCutlass
         - id: MicroBombImplanter
-        - id: HeadSkeletonPirate  # Reserve edit: Pirates Enhanced
+        - id: HeadSkeletonPirateCaptainJollyRoger  # Reserve edit: Pirates Enhanced
         - id: VinylSleeveSkull  # Reserve edit: Pirates Enhanced
 
 - type: entity
@@ -27,7 +27,7 @@
       entity_storage: !type:AllSelector
         children:
         - id: WeaponLauncherPirateCannon
-          amount: 2
+        - id: WeaponGrapplingGun  # Reserve edit: Pirates Enhanced
         - id: ClothingOuterCoatGentle
         - id: Cutlass
           amount: 2

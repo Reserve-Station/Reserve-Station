@@ -8,8 +8,8 @@ meta:
   engineVersion: 292.0.0
   forkId: ""
   forkVersion: ""
-  time: 10/14/2026 21:37:03
-  entityCount: 890
+  time: 10/16/2026 01:56:03
+  entityCount: 916
 maps:
 - 1
 grids:
@@ -71,7 +71,7 @@ entities:
           version: 7
         0,0:
           ind: 0,0
-          tiles: eQAAAAAAAHkAAAAAAAAdAAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkAAAAAAABoAAAAAAAAeQAAAAAAAFkAAAAAAABZAAAAAAAAWQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5AAAAAAAAaAAAAAAAAHkAAAAAAAAdAAAAAAAAHQAAAAAAAB0AAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAAGgAAAAAAAB5AAAAAAAAWQAAAAAAAFkAAAAAAABZAAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkAAAAAAAB5AAAAAAAAHQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5AAAAAAAAUAAAAAAAAFAAAAAAAABQAAAAAAAAUAAAAAAAAHkAAAAAAABgAAAAAAAAHQAAAAAAAHkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHQAAAAAAAFAAAAAAAABQAAAAAAAAUAAAAAAAAFAAAAAAAAAdAAAAAAAAHQAAAAAAAGAAAAAAAAB5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkAAAAAAABQAAAAAAAAUAAAAAAAAFAAAAAAAABQAAAAAAAAeQAAAAAAAEAAAAAAAABZAAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5AAAAAAAAHQAAAAAAAHkAAAAAAABoAAAAAAAAaAAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHQAAAAAAAHkAAAAAAAB5AAAAAAAAaAAAAAAAAGgAAAAAAAB5AAAAAAAAeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0AAAAAAABAAAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5AAAAAAAAOQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAAAAAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAeQAAAAAAAHkAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
+          tiles: eQAAAAAAAHkAAAAAAAAdAAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkAAAAAAABoAAAAAAAAeQAAAAAAAFkAAAAAAABZAAAAAAAAWQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5AAAAAAAAaAAAAAAAAHkAAAAAAAAdAAAAAAAAHQAAAAAAAB0AAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAAGgAAAAAAAB5AAAAAAAAWQAAAAAAAFkAAAAAAABZAAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkAAAAAAAB5AAAAAAAAHQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5AAAAAAAAUAAAAAAAAFAAAAAAAABQAAAAAAAAUAAAAAAAAHkAAAAAAABgAAAAAAAAHQAAAAAAAHkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHQAAAAAAAFAAAAAAAABQAAAAAAAAUAAAAAAAAFAAAAAAAAAdAAAAAAAAHQAAAAAAAGAAAAAAAAB5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkAAAAAAABQAAAAAAAAUAAAAAAAAFAAAAAAAABQAAAAAAAAeQAAAAAAAEAAAAAAAABZAAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5AAAAAAAAHQAAAAAAAHkAAAAAAABoAAAAAAAAaAAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHQAAAAAAAHkAAAAAAAB5AAAAAAAAaAAAAAAAAGgAAAAAAAB5AAAAAAAAeAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0AAAAAAABAAAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB5AAAAAAAAOQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeQAAAAAAAAAAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAeQAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHkAAAAAAAB5AAAAAAAAeQAAAAAAAHkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAeQAAAAAAAHkAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==
           version: 7
         0,-1:
           ind: 0,-1
@@ -612,6 +612,8 @@ entities:
   entities:
   - uid: 21
     components:
+    - type: MetaData
+      name: ЛКП Мостика и Оружейной
     - type: Transform
       parent: 2
       pos: -0.5,5.5
@@ -619,20 +621,27 @@ entities:
       fixtures: {}
   - uid: 22
     components:
+    - type: MetaData
+      name: ЛКП Бара и Капитанской
     - type: Transform
       parent: 2
       pos: -9.5,0.5
     - type: Fixtures
       fixtures: {}
-  - uid: 24
+  - uid: 82
     components:
+    - type: MetaData
+      name: ЛКП Инженерной и Сифона
     - type: Transform
       parent: 2
-      pos: 0.5,-0.5
+      rot: 1.5707963267948966 rad
+      pos: -5.5,-1.5
     - type: Fixtures
       fixtures: {}
   - uid: 879
     components:
+    - type: MetaData
+      name: ЛКП Реи, Меда и Брига
     - type: Transform
       parent: 2
       rot: 3.141592653589793 rad
@@ -705,6 +714,16 @@ entities:
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 7.5,5.5
+- proto: BlankHandyFlag
+  entities:
+  - uid: 228
+    components:
+    - type: MetaData
+      name: белый флаг
+      desc: Ручной флаг из белой ткани, использующийся для мирных переговоров.
+    - type: Transform
+      parent: 2
+      pos: -0.57083166,12.047354
 - proto: BoozeDispenser
   entities:
   - uid: 33
@@ -762,7 +781,28 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: -3.588971,4.6360464
+      pos: -3.2769234,4.5133786
+- proto: BoxMRE
+  entities:
+  - uid: 898
+    components:
+    - type: Transform
+      parent: 2
+      pos: -4.309931,7.828155
+- proto: Broomstick
+  entities:
+  - uid: 899
+    components:
+    - type: Transform
+      parent: 2
+      pos: -8.579191,3.2486033
+- proto: Bucket
+  entities:
+  - uid: 900
+    components:
+    - type: Transform
+      parent: 2
+      pos: -8.501066,3.7798533
 - proto: CableApcExtension
   entities:
   - uid: 35
@@ -975,16 +1015,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -0.5,9.5
-  - uid: 81
-    components:
-    - type: Transform
-      parent: 2
-      pos: 0.5,-0.5
-  - uid: 82
-    components:
-    - type: Transform
-      parent: 2
-      pos: 0.5,-1.5
   - uid: 83
     components:
     - type: Transform
@@ -1290,11 +1320,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -2.5,-4.5
-  - uid: 146
-    components:
-    - type: Transform
-      parent: 2
-      pos: -5.5,6.5
   - uid: 147
     components:
     - type: Transform
@@ -1395,6 +1420,16 @@ entities:
     - type: Transform
       parent: 2
       pos: 4.5,4.5
+  - uid: 233
+    components:
+    - type: Transform
+      parent: 2
+      pos: -4.5,-1.5
+  - uid: 234
+    components:
+    - type: Transform
+      parent: 2
+      pos: -5.5,-1.5
   - uid: 314
     components:
     - type: Transform
@@ -1434,6 +1469,11 @@ entities:
       pos: 1.5358834,5.585895
 - proto: CableHV
   entities:
+  - uid: 81
+    components:
+    - type: Transform
+      parent: 2
+      pos: 0.5,-0.5
   - uid: 166
     components:
     - type: Transform
@@ -1459,16 +1499,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 0.5,-1.5
-  - uid: 171
-    components:
-    - type: Transform
-      parent: 2
-      pos: 1.5,-1.5
-  - uid: 172
-    components:
-    - type: Transform
-      parent: 2
-      pos: 1.5,-2.5
   - uid: 173
     components:
     - type: Transform
@@ -1478,7 +1508,7 @@ entities:
     components:
     - type: Transform
       parent: 2
-      pos: 3.5,-2.5
+      pos: -3.5,-3.5
   - uid: 175
     components:
     - type: Transform
@@ -1629,6 +1659,81 @@ entities:
     - type: Transform
       parent: 2
       pos: -5.5,-4.5
+  - uid: 901
+    components:
+    - type: Transform
+      parent: 2
+      pos: -2.5,-3.5
+  - uid: 902
+    components:
+    - type: Transform
+      parent: 2
+      pos: -1.5,-3.5
+  - uid: 903
+    components:
+    - type: Transform
+      parent: 2
+      pos: -0.5,-3.5
+  - uid: 904
+    components:
+    - type: Transform
+      parent: 2
+      pos: 0.5,-3.5
+  - uid: 905
+    components:
+    - type: Transform
+      parent: 2
+      pos: 1.5,-3.5
+  - uid: 906
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,-3.5
+  - uid: 907
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,-1.5
+  - uid: 908
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,-0.5
+  - uid: 909
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,0.5
+  - uid: 910
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,1.5
+  - uid: 911
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,2.5
+  - uid: 912
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,3.5
+  - uid: 913
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,4.5
+  - uid: 914
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,5.5
+  - uid: 915
+    components:
+    - type: Transform
+      parent: 2
+      pos: 2.5,6.5
 - proto: CableMV
   entities:
   - uid: 205
@@ -1726,41 +1831,11 @@ entities:
     - type: Transform
       parent: 2
       pos: 1.5,6.5
-  - uid: 228
-    components:
-    - type: Transform
-      parent: 2
-      pos: -3.5,-2.5
-  - uid: 229
-    components:
-    - type: Transform
-      parent: 2
-      pos: -2.5,-2.5
-  - uid: 230
-    components:
-    - type: Transform
-      parent: 2
-      pos: -1.5,-2.5
-  - uid: 231
-    components:
-    - type: Transform
-      parent: 2
-      pos: -0.5,-2.5
   - uid: 232
     components:
     - type: Transform
       parent: 2
-      pos: 0.5,-2.5
-  - uid: 233
-    components:
-    - type: Transform
-      parent: 2
-      pos: 0.5,-1.5
-  - uid: 234
-    components:
-    - type: Transform
-      parent: 2
-      pos: 0.5,-0.5
+      pos: -5.5,-1.5
   - uid: 791
     components:
     - type: Transform
@@ -2177,13 +2252,6 @@ entities:
       pos: -7.5,-6.5
     - type: Fixtures
       fixtures: {}
-  - uid: 811
-    components:
-    - type: Transform
-      parent: 2
-      pos: 1.5,-6.5
-    - type: Fixtures
-      fixtures: {}
   - uid: 850
     components:
     - type: Transform
@@ -2196,6 +2264,22 @@ entities:
     - type: Transform
       parent: 2
       pos: -0.5,8.5
+    - type: Fixtures
+      fixtures: {}
+  - uid: 919
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: -2.5,-6.5
+    - type: Fixtures
+      fixtures: {}
+  - uid: 920
+    components:
+    - type: Transform
+      parent: 2
+      rot: 3.141592653589793 rad
+      pos: 0.5,-6.5
     - type: Fixtures
       fixtures: {}
 - proto: ClosetWallWardrobePrisonFilled
@@ -2258,6 +2342,13 @@ entities:
       pos: -6.50084,2.62934
     - type: Physics
       canCollide: False
+- proto: ClothingHeadHelmetBasic
+  entities:
+  - uid: 230
+    components:
+    - type: Transform
+      parent: 2
+      pos: -0.28136182,0.38161087
 - proto: ClothingHeadHelmetPodWars
   entities:
   - uid: 284
@@ -2329,6 +2420,7 @@ entities:
     components:
     - type: MetaData
       name: пиратский бронетренч
+      desc: Бронированный плащ, выкупленный с чёрного рынка. Хорошо защищён и украшен золотыми узорами.
     - type: Transform
       parent: 2
       pos: -4.3583775,9.599632
@@ -2483,6 +2575,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -5.5,-2.5
+- proto: CutlassSabrePirateCaptainJollyRogerAlabaster
+  entities:
+  - uid: 892
+    components:
+    - type: Transform
+      parent: 2
+      pos: -3.7290943,4.621317
 - proto: DataSiphon
   entities:
   - uid: 803
@@ -2499,22 +2598,6 @@ entities:
       pos: -9.5,10.5
     - type: FaxMachine
       name: Пираты
-- proto: FireExtinguisher
-  entities:
-  - uid: 325
-    components:
-    - type: Transform
-      parent: 2
-      pos: -4.625556,7.7085676
-    - type: Physics
-      canCollide: False
-  - uid: 326
-    components:
-    - type: Transform
-      parent: 2
-      pos: -4.391181,7.6616926
-    - type: Physics
-      canCollide: False
 - proto: FirelockGlass
   entities:
   - uid: 829
@@ -2626,6 +2709,28 @@ entities:
       pos: 6.5,7.5
     - type: Fixtures
       fixtures: {}
+- proto: FoodTinMRE
+  entities:
+  - uid: 325
+    components:
+    - type: Transform
+      parent: 2
+      pos: -4.700556,7.71878
+  - uid: 326
+    components:
+    - type: Transform
+      parent: 2
+      pos: -4.591181,7.56253
+  - uid: 896
+    components:
+    - type: Transform
+      parent: 2
+      pos: 7.428394,6.04841
+  - uid: 897
+    components:
+    - type: Transform
+      parent: 2
+      pos: 7.662769,5.89216
 - proto: GasMixerFlipped
   entities:
   - uid: 328
@@ -3218,11 +3323,6 @@ entities:
       pos: -6.5,9.5
 - proto: GeneratorBasic15kW
   entities:
-  - uid: 426
-    components:
-    - type: Transform
-      parent: 2
-      pos: 0.5,-1.5
   - uid: 427
     components:
     - type: Transform
@@ -3235,11 +3335,11 @@ entities:
       pos: -1.5,-1.5
 - proto: GeneratorWallmountAPU
   entities:
-  - uid: 429
+  - uid: 24
     components:
     - type: Transform
       parent: 2
-      pos: 3.5,-2.5
+      pos: 0.5,-0.5
 - proto: GravityGeneratorMini
   entities:
   - uid: 817
@@ -3518,6 +3618,13 @@ entities:
     - type: Transform
       parent: 2
       pos: -6.4735312,8.663931
+- proto: Musket
+  entities:
+  - uid: 891
+    components:
+    - type: Transform
+      parent: 2
+      pos: -3.4487984,4.5758786
 - proto: NitrogenCanister
   entities:
   - uid: 469
@@ -3567,6 +3674,7 @@ entities:
     components:
     - type: MetaData
       name: документация "РСПК-1984"
+      desc: Полное описание характеристик шаттла и его особенностей.
     - type: Transform
       parent: 858
     - type: Paper
@@ -3631,6 +3739,24 @@ entities:
         [/color]
     - type: Physics
       canCollide: False
+  - uid: 918
+    components:
+    - type: MetaData
+      name: ОСТОРОЖНО С ТУРЕЛЯМИ!!!
+      desc: Записка с очень важным предупреждением.
+    - type: Transform
+      parent: 2
+      pos: -1.6685644,4.1861067
+    - type: Paper
+      content: >2-
+
+        [head=1]ОСТОРОЖНО!!![/head]
+
+
+        Мы выкупили турели с рынка, но они не настроены. Будут атаковать [bold]ВСЕХ[/bold].
+
+
+        Пользуемся осторожно. Кинули - сломали - и не попадаемся на огонь.
 - proto: PaperBin5
   entities:
   - uid: 475
@@ -3647,6 +3773,20 @@ entities:
       pos: -8.944835,10.493841
 - proto: PirateFlag
   entities:
+  - uid: 172
+    components:
+    - type: Transform
+      parent: 2
+      pos: -0.5,-0.5
+    - type: Fixtures
+      fixtures: {}
+  - uid: 744
+    components:
+    - type: Transform
+      parent: 2
+      pos: 3.5,-2.5
+    - type: Fixtures
+      fixtures: {}
   - uid: 776
     components:
     - type: Transform
@@ -3659,13 +3799,6 @@ entities:
     - type: Transform
       parent: 2
       pos: 2.5,8.5
-    - type: Fixtures
-      fixtures: {}
-  - uid: 781
-    components:
-    - type: Transform
-      parent: 2
-      pos: -0.5,-0.5
     - type: Fixtures
       fixtures: {}
   - uid: 782
@@ -3693,6 +3826,32 @@ entities:
       parent: 2
       rot: 3.141592653589793 rad
       pos: 1.5,11.5
+- proto: PokerChips10
+  entities:
+  - uid: 893
+    components:
+    - type: Transform
+      parent: 2
+      pos: -7.354079,-2.9779143
+- proto: PokerChips50
+  entities:
+  - uid: 894
+    components:
+    - type: Transform
+      parent: 2
+      pos: -7.713454,-2.3060393
+- proto: PortableGeneratorJrPacman
+  entities:
+  - uid: 171
+    components:
+    - type: Transform
+      parent: 2
+      pos: 0.5,-1.5
+  - uid: 916
+    components:
+    - type: Transform
+      parent: 2
+      pos: -0.5,9.5
 - proto: PosterContrabandRevolver
   entities:
   - uid: 478
@@ -4003,6 +4162,11 @@ entities:
       pos: -7.7015424,-1.7386751
 - proto: RandomMaintenanceObjectSpawner75
   entities:
+  - uid: 229
+    components:
+    - type: Transform
+      parent: 2
+      pos: 3.5,3.5
   - uid: 818
     components:
     - type: Transform
@@ -4613,6 +4777,25 @@ entities:
     - type: Transform
       parent: 2
       pos: -3.5,-1.5
+- proto: SmokeGrenade
+  entities:
+  - uid: 146
+    components:
+    - type: Transform
+      parent: 2
+      pos: -0.27107504,3.9602432
+  - uid: 231
+    components:
+    - type: Transform
+      parent: 2
+      pos: -0.15014291,3.805603
+- proto: SpaceCash10
+  entities:
+  - uid: 895
+    components:
+    - type: Transform
+      parent: 2
+      pos: -7.291579,-1.7904143
 - proto: SpawnMobPiratePet
   entities:
   - uid: 857
@@ -4721,12 +4904,16 @@ entities:
   entities:
   - uid: 793
     components:
+    - type: MetaData
+      name: носовая подстанция
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
       pos: 0.5,9.5
   - uid: 813
     components:
+    - type: MetaData
+      name: кормовая подстанция
     - type: Transform
       parent: 2
       rot: 1.5707963267948966 rad
@@ -5001,6 +5188,16 @@ entities:
     - type: Transform
       parent: 2
       pos: -8.5,12.5
+  - uid: 773
+    components:
+    - type: Transform
+      parent: 2
+      pos: 6.5,10.5
+  - uid: 781
+    components:
+    - type: Transform
+      parent: 2
+      pos: -9.5,12.5
 - proto: ToiletDirtyWaterFilled
   entities:
   - uid: 775
@@ -5788,17 +5985,16 @@ entities:
       pos: 5.5,10.5
 - proto: WallPlastitaniumDiagonal
   entities:
+  - uid: 429
+    components:
+    - type: Transform
+      parent: 2
+      pos: -10.5,12.5
   - uid: 438
     components:
     - type: Transform
       parent: 2
       pos: 2.5,15.5
-  - uid: 744
-    components:
-    - type: Transform
-      parent: 2
-      rot: -1.5707963267948966 rad
-      pos: 6.5,10.5
   - uid: 745
     components:
     - type: Transform
@@ -5880,11 +6076,6 @@ entities:
       parent: 2
       rot: -1.5707963267948966 rad
       pos: 7.5,-0.5
-  - uid: 773
-    components:
-    - type: Transform
-      parent: 2
-      pos: -9.5,12.5
   - uid: 774
     components:
     - type: Transform
@@ -5933,7 +6124,7 @@ entities:
       name: пиратский лазерный пистоль
     - type: Transform
       parent: 2
-      pos: -4.3887444,4.004726
+      pos: -4.527108,3.7737446
 - proto: WeaponRevolverPirate
   entities:
   - uid: 766
@@ -5953,15 +6144,6 @@ entities:
     - type: Transform
       parent: 2
       pos: -4.5263147,4.6892104
-- proto: WelderMini
-  entities:
-  - uid: 769
-    components:
-    - type: Transform
-      parent: 2
-      pos: -6.391465,2.47309
-    - type: Physics
-      canCollide: False
 - proto: WeldingFuelTankFull
   entities:
   - uid: 770

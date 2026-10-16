@@ -64,7 +64,7 @@
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
     - id: SlasherSpawn # Goobstation - The Slasher
-    - id: SpacePirates # Goobstation - you probably can read whom this rule spawns
+    - id: PiratesMidroundStart # Goobstation - you probably can read whom this rule spawns  # Reserve edit: Pirates Enhanced
     - id: SingulothKnightsMidround # Goobstation - New Midrounds
     #- id: DarkLordMidround # Goobstation - New Midrounds
     - id: MimeAssassinMidround # Goobstation - New Midrounds

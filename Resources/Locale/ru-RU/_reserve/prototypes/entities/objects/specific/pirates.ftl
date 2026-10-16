@@ -1,10 +1,14 @@
 ent-PipeBombPirate = метательная бомбочка
     .desc = Самодельная взрывчатка, сделанная из пушечного ядра.
-    .suffix = Пират
+    .suffix = Оружие, Граната, Пушечное ядро, Пират
 
 ent-WeaponShotgunBlunderbussHighCapacity = магазинный мушкетон
     .desc = Инструмент разрушения на близкой дистанции.
-    .suffix = Пират
+    .suffix = Оружие, Дробовик, Пират
+
+ent-CutlassSabrePirateCaptainJollyRogerAlabaster = Алебастр
+    .desc = Трофейное произведение мастерства, истории и ярости охоты за сокровищами. Его бывший владелец был легендарным пиратским капитаном. Говорят, он всё ещё охраняет свой сундук с сокровищами.
+    .suffix = Оружие, Сабля, Меч, Пират, Абордаж, Весёлый Роджер
 
 ent-ClothingBackpackSatchelLeatherFilledPirate = { ent-ClothingBackpackSatchelLeather }
     .desc = { ent-ClothingBackpackSatchelLeather.desc }
@@ -21,7 +25,7 @@ ent-BlackMarkOfTaxingPirate = чёрная метка
     .desc = Пиратский символ, даваемый тем, кому скоро придётся платить свои долги.
     .suffix = Безделушки, Пират
 
-ent-HeadSkeletonPirate = Весёлый Роджер
+ent-HeadSkeletonPirateCaptainJollyRoger = Весёлый Роджер
     .desc = Череп печально известного пирата Весёлого Роджера, напоминающий об опасностях пиратской жизни.
     .suffix = Безделушки, Череп, Пират
 
@@ -79,3 +83,10 @@ ent-SpawnMobKoboldQwertolomeo = спавнер - { ent-MobKoboldQwertolomeo }
 ent-SpawnMobPiratePet = спавнер - пиратский питомец
     .desc = { ent-MarkerBase.desc }
     .suffix = Пиратский питомец, ИИ
+
+ent-GhostRolePirates = { ent-BaseAntagSpawner }
+    .desc = { ent-BaseAntagSpawner.desc }
+    .suffix = Пират, Роль призрака
+ent-GhostRolePirateCaptain = { ent-BaseAntagSpawner }
+    .desc = { ent-BaseAntagSpawner.desc }
+    .suffix = Пират, Капитан, Роль призрака

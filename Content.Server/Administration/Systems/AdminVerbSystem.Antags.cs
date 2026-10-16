@@ -50,8 +50,8 @@ public sealed partial class AdminVerbSystem
     // Reserve edit start: Fix antag verbs
     private static readonly EntProtoId DefaultCorporateAgentRule = "CorporateAgent";
     private static readonly EntProtoId DefaultWizardApprenticeRule = "ApprenticeRule";
-    private static readonly EntProtoId DefaultPirateCaptainRule = "PiratesSpawn";
-    private static readonly EntProtoId DefaultPirateRule = "Pirate";
+    private static readonly EntProtoId DefaultPirateCaptainRule = "PiratesMidround";
+    private static readonly EntProtoId DefaultPirateRule = "PirateSingleAntagVerb";
     private static readonly EntProtoId DefaultNukeOpCommandRule = "Nukeops";
     private static readonly EntProtoId DefaultNukeOpHonkRule = "Honkops";
     private static readonly EntProtoId DefaultContractorRule = "ContractorSpawnMidround";

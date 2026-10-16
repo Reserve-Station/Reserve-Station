@@ -33,7 +33,7 @@
 
 # region Rules
 
-# Roundstart pirates. For midround pirates, see PiratesSpawn.
+# Roundstart pirates. For midround pirates, see PiratesMidround.
 
 - type: entity
   parent: BaseGameRule
@@ -48,16 +48,16 @@
     alwaysUseSpeciesOverride: true
   - type: GameRule
     minPlayers: 15
+    chaosScore: 650
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
     agentName: pirates-roundend-name
     definitions:
     - prefRoles: [ PirateCaptain ]
       fallbackRoles: [ Pirate ]
-      spawnerPrototype: SpawnPointPirateCaptain
+      spawnerPrototype: GhostRolePirateCaptain
       min: 1
       max: 1
-      playerRatio: 2
       blacklist:
         components:
         - CommandStaff
@@ -73,10 +73,10 @@
         - NamesDeathCommando
     - prefRoles: [ Pirate ]
       fallbackRoles: [ PirateCaptain ]
-      spawnerPrototype: SpawnPointPirates
-      min: 5
+      spawnerPrototype: GhostRolePirates
+      min: 2
       max: 5
-      playerRatio: 4
+      playerRatio: 7
       blacklist:
         components:
         - CommandStaff
@@ -98,7 +98,7 @@
 
 - type: entity
   parent: BaseGameRule
-  id: Pirate
+  id: PirateSingleAntagVerb
   components:
   - type: ActivePirateRule
   - type: AntagLoadProfileRule
@@ -106,7 +106,7 @@
     alwaysUseSpeciesOverride: true
   - type: AntagSelection
     definitions:
-    - spawnerPrototype: SpawnPointPirates
+    - spawnerPrototype: GhostRolePirates
       pickPlayer: false
       min: 5
       max: 5

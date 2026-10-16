@@ -2,7 +2,7 @@
 
 - type: entity
   parent: BaseGameRule
-  id: SpacePirates
+  id: PiratesMidroundStart  # Reserve edit: Pirates Enhanced - was SpacePirates
   components:
   - type: StationEvent
     weight: 3
@@ -25,7 +25,7 @@
 
 - type: entity
   parent: BaseGameRule
-  id: PiratesSpawn
+  id: PiratesMidround  # Reserve edit: Pirates Enhanced - was PiratesSpawn
   components:
   - type: ActivePirateRule
   - type: RuleGrids
@@ -37,8 +37,7 @@
   - type: AntagSelection
     agentName: pirates-roundend-name  # Reserve edit: Pirates Enhanced
     definitions:
-    - spawnerPrototype: SpawnPointPirateCaptain
-      pickPlayer: false
+    - spawnerPrototype: GhostRolePirateCaptain  # Reserve edit: Pirates Enhanced
       min: 1
       max: 1
       mindRoles:
@@ -49,10 +48,10 @@
       - type: RandomMetadata
         nameSegments:
         - NamesDeathCommando
-    - spawnerPrototype: SpawnPointPirates  # Reserve edit: Admin Antag Verbs Enhanced
-      pickPlayer: false
-      min: 5
+    - spawnerPrototype: GhostRolePirates  # Reserve edit: Admin Antag Verbs Enhanced
+      min: 2  # Reserve edit: Admin Antag Verbs Enhanced
       max: 5
+      playerRatio: 7  # Reserve edit: Admin Antag Verbs Enhanced
       mindRoles:
       - MindRolePirate
       startingGear: PirateGear
@@ -64,6 +63,7 @@
   - type: Tag
     tags:
     - MidroundAntag
+  - type: GhostPingRule  # Reserve edit: Pirates Enhanced
 
 - type: entity
   parent: BikeHorn

@@ -26,7 +26,7 @@ public sealed partial class PendingPirateRuleSystem : GameRuleSystem<PendingPira
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly CargoSystem _cargo = default!;
 
-    private static readonly EntProtoId PirateSpawnRule = "PiratesSpawn";
+    private static readonly EntProtoId PirateSpawnRule = "PiratesMidround";  // Reserve edit: Pirates Enhanced - was PiratesSpawn
 
     public override void Update(float frameTime)
     {
