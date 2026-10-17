@@ -107,7 +107,9 @@ ent-Cardwall = картонная стена
 
 ent-WallXenoborg = ксеноборг-стена
     .desc = { ent-WallPlastitanium.desc }
-    .suffix = { ent-WallPlastitanium.suffix }
+ent-WallXenoborgDiagonal = { ent-WallXenoborg }
+    .desc = { ent-WallXenoborg.desc }
+    .suffix = Диагональ
 
 ent-WallSolidChitin = твёрдый хитин
     .desc = { ent-BaseWall.desc }

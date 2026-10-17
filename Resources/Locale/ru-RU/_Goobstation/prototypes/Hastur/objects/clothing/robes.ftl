@@ -1,2 +1,3 @@
 ent-ClothingOuterHasturRobes = жёлтые одеяния
     .desc = Оно зовёт тебя...
+    .suffix = Адмем, Хастур, Король в Жёлтом

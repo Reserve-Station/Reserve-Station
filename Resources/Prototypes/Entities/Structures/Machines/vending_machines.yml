@@ -1395,7 +1395,7 @@
   id: VendingMachineSovietSoda
   name: ВОДА
   description: An old vending machine containing sweet water.
-  suffix: VODA
+  suffix: VODA, Water
   components:
   - type: VendingMachine
     pack: BodaInventory

@@ -4,34 +4,40 @@ ent-MiningDrill = шахтёрский бур
     .desc = Мощный инструмент, служащий для быстрого бурения горных пород.
 ent-MiningDrillDiamond = шахтёрский бур с алмазным покрытием
     .desc = Значительно более эффективный шахтёрский бур с алмазным покрытием.
+
 ent-BaseWeaponCrusher = крушитель
     .desc = Ранняя версия протокинетического ускорителя.
 ent-WeaponCrusher = { ent-BaseWeaponCrusher }
     .desc = { ent-BaseWeaponCrusher.desc }
+    .suffix = Оружие, Пулемёт, Лаваленд
 ent-WeaponCrusherDagger = кинжал-крушитель
     .desc = Уменьшенная версия протокинетического крушителя. Использует кинетическую энергию для высокочастотной вибрации лезвия.
+    .suffix = Оружие, Кинжал, Нож, Лаваленд
 ent-WeaponCrusherGlaive = глефа-крушитель
     .desc = Ранняя версия протокинетического ускорителя в виде глефы.
+    .suffix = Оружие, Глефа, Лаваленд
 ent-WeaponCrusherHammer = молот-крушитель
     .desc = Мощное двуручное оружие, наносящее отбрасывание и более сильный урон, чем обычный крушитель.
+    .suffix = Оружие, Молот, Лаваленд
 ent-WeaponCrusherHalberd = алебарда-крушитель
     .desc = Универсальное оружие, сочетающее в себе мощь крушителя и дальность действия копья.
+    .suffix = Оружие, Алебарда, Топор, Лаваленд
 
 ent-CrusherRandomUpgradesFill = { ent-BaseWeaponCrusher }
     .desc = { ent-BaseWeaponCrusher.desc }
     .suffix = Случайные улучшения
 ent-WeaponCrusherFilledRandom = { ent-WeaponCrusher }
     .desc = { ent-WeaponCrusher.desc }
-    .suffix = Случайное
-ent-WeaponCrusherGlaiveFilledRandom = { ent-WeaponCrusherDagger }
-    .desc = { ent-WeaponCrusherDagger.desc }
-    .suffix = Случайное
+    .suffix = { ent-CrusherRandomUpgradesFill.suffix }, { ent-WeaponCrusher.suffix }
+ent-WeaponCrusherGlaiveFilledRandom = { ent-WeaponCrusherGlaive }
+    .desc = { ent-WeaponCrusherGlaive.desc }
+    .suffix = { ent-CrusherRandomUpgradesFill.suffix }, { ent-WeaponCrusherGlaive.suffix }
 ent-WeaponCrusherHammerFilledRandom = { ent-WeaponCrusherHammer }
     .desc = { ent-WeaponCrusherHammer.desc }
-    .suffix = Случайное
+    .suffix = { ent-CrusherRandomUpgradesFill.suffix }, { ent-WeaponCrusherHammer.suffix }
 ent-WeaponCrusherHalberdFilledRandom = { ent-WeaponCrusherHalberd }
     .desc = { ent-WeaponCrusherHalberd.desc }
-    .suffix = Случайное
+    .suffix = { ent-CrusherRandomUpgradesFill.suffix }, { ent-WeaponCrusherHalberd.suffix }
 
 # Main upgrade frame
 

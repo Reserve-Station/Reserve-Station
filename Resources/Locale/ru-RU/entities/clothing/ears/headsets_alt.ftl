@@ -19,5 +19,6 @@ ent-ClothingHeadsetAltSyndicate = кроваво-красная полнораз
     .suffix = Синдикат
 ent-ClothingHeadsetAltFreelancer = полноразмерная гарнитура фрилансера
     .desc = { ent-ClothingHeadsetAlt.desc }
+    .suffix = Фрилансер, Пират, Казак
 ent-ClothingHeadsetAltWizard = полноразмерная гарнитура мага
     .desc = { ent-ClothingHeadsetAlt.desc }

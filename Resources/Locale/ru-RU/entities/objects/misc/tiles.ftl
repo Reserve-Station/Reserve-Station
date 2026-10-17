@@ -221,6 +221,8 @@ ent-FloorTileItemIronsandConcrete = железопесчаная бетонна�
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemAstroIronsand = астро-железный песок
     .desc = Фальшивый красный песок. Импортирован с фальшивого Марса.
+ent-FloorTileItemAstroIronsandBorderless = { ent-FloorTileItemAstroIronsand } без границы
+    .desc = { ent-FloorTileItemAstroIronsand.desc }
 
 ent-FloorTileItemDarkAstroGrass = тёмная астро-трава
     .desc = Искусственная трава, отлично прячущая провода, поставляется с реалистичными НаноТравинками!
@@ -230,6 +232,19 @@ ent-FloorTileItemDesertAstroSand = пустынный астро-песок
     .desc = Искусственный песок, разработан с целью быть прекрасным.
 
 ent-FloorTileItemXeno = ксенопол
+    .desc = { ent-FloorTileItemBase.desc }
+    .suffix = Ксеноморф
+ent-FloorTileItemXenoSteel = стальной ксенопол
+    .desc = { ent-FloorTileItemBase.desc }
+    .suffix = Ксеноморф
+ent-FloorTileItemXenoSteelCorner = угловой стальной ксенопол
+    .desc = { ent-FloorTileItemBase.desc }
+    .suffix = Ксеноморф
+ent-FloorTileItemXenoMaint = ксенопол техобслуживания
+    .desc = { ent-FloorTileItemBase.desc }
+    .suffix = Ксеноморф
+
+ent-FloorTileItemXenoborg = ксеноборг-пол
     .desc = { ent-FloorTileItemBase.desc }
 
 ent-FloorTileItemDarkSquiggly = тёмная волнистая стальная плитка

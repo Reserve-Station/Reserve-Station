@@ -1,4 +1,4 @@
-goobstation-clarke-bounty-desc = Местной шахтерской колонии в секторе Сол требуется еще несколько мехов. Пришлите нам Кларка.
+goobstation-clarke-bounty-desc = Местной шахтёрской колонии в секторе Сол требуется ещё несколько мехов. Пришлите нам Кларка.
 goobstation-clarke-bounty-name = Кларк
 goobstation-durand-bounty-desc = Силам обеспечения Транквилити требуется дополнительная оборонительная мощь на фронте. Мы запрашиваем «Дюранд».
 goobstation-durand-bounty-name = Дюранд

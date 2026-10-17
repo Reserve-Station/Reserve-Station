@@ -1,0 +1,9 @@
+ent-MaterialAshwoodStick1 = палка из пепельного дерева
+    .desc = Сырьё.
+    .suffix = Один
+ent-MaterialAshwoodStick10 = палка из пепельного дерева
+    .desc = { ent-MaterialAshwoodStick1.desc }
+    .suffix = 10
+ent-MaterialAshwoodStick = палка из пепельного дерева
+    .desc = { ent-MaterialAshwoodStick1.desc }
+    .suffix = Полный

@@ -22,7 +22,7 @@ comp-kitchen-spike-meat-name = мясо { $victim }
 
 comp-kitchen-spike-begin-hook-self-other = { CAPITALIZE($victim) } начинает насаживать { REFLEXIVE($victim) } себя на { $hook }!
 
-comp-kitchen-spike-begin-hook-other-self = Вы начинаете насаживать себя { CAPITALIZE($victim) } на { $hook }!
+comp-kitchen-spike-begin-hook-other-self = Вы начинаете насаживать { CAPITALIZE($victim) } на { $hook }!
 
 comp-kitchen-spike-begin-hook-other = { CAPITALIZE($user) } начинает насаживать { CAPITALIZE($victim) } на { $hook }!
 

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: ClothingBackpack
   id: ClothingDeathSquadronBackpack
@@ -5,7 +7,7 @@
   description: A spacious backpack utilizing Bluespace technology.
   components:
   - type: Sprite
-    sprite: _Reserve/Back/Backpacks/deathsquad-backpack.rsi
+    sprite: _Reserve/Clothing/Back/Backpacks/deathsquad-backpack.rsi
   - type: Storage
     grid:
     - 0,0,13,7

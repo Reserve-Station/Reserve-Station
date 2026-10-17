@@ -1,6 +1,6 @@
 ent-PartShadowling = часть тела тенеморфа
     .desc = { ent-PartHuman.desc }
-ent-ChestShadowling = грудь тенеморфа
+ent-ChestShadowling = грудная клетка тенеморфа
     .desc = { ent-BaseChest.desc }
 ent-GroinShadowling = пах тенеморфа
     .desc = { ent-BaseGroin.desc }

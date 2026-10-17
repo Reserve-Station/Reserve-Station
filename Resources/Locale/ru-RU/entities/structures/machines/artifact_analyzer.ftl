@@ -5,3 +5,4 @@ ent-MachineArtifactCrusher = дробитель артефактов
 
 ent-MachineArtifactCrusherXenoborg = дробитель тел
     .desc = Лучше не совать туда голову...
+    .suffix = Ксеноборг

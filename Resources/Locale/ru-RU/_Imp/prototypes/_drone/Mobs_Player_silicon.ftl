@@ -1,4 +1,5 @@
 ent-PlayerSiliconBase = { "" }
     .desc = { "" }
-ent-Drone = дрон
-    .desc = { ent-PlayerSiliconBase.desc }
+ent-Drone = технический дрон
+    .desc = Небольшой дрон общего технического обслуживания станции.
+    .suffix = Робототехника

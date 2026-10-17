@@ -10,7 +10,7 @@ reagent-name-orchito = орхито
 reagent-desc-orchito = Освежающий безалкогольный мохито-спешл Орхидеи на чайной основе.
 reagent-name-orchito-shared-suffix = Орхито, { orchito-shared-suffix }
 reagent-name-stardust-orchito = звёздное орхито
-reagent-desc-stardust-orchito = Освежающий темный коктейль с неизвестными свойствами. Пить только с загадочным лицом.
+reagent-desc-stardust-orchito = Освежающий тёмный коктейль с неизвестными свойствами. Пить только с загадочным лицом.
 reagent-name-stardust-orchito-shared-suffix = Звёздное Орхито, { orchito-shared-suffix }
 task-ntr-orchito-desc = Отправить 30 ед. коктейля "Орхито" на ЦК.
 

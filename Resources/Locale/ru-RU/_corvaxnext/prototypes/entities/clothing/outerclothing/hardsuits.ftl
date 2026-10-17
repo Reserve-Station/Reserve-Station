@@ -1,8 +1,12 @@
 ent-ClothingOuterHardsuitVoxRaidersCombat = боевой рейдерский скафандр
     .desc = Странная голубая одёжка.
+    .suffix = Вокс-рейдер
 ent-ClothingOuterHardsuitVoxRaidersEngineer = инженерный рейдерский скафандр
     .desc = Странная оранжевая одёжка.
+    .suffix = Вокс-рейдер
 ent-ClothingOuterHardsuitVoxRaidersMedical = медицинский рейдерский скафандр
     .desc = Странная зелёная одёжка.
+    .suffix = Вокс-рейдер
 ent-ClothingOuterHardsuitVoxRaidersStealth = стелс рейдерский скафандр
     .desc = Странная серая одёжка.
+    .suffix = Вокс-рейдер

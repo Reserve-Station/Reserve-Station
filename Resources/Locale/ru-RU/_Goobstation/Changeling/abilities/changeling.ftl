@@ -52,7 +52,7 @@ changeling-stasis-enter-fail = Не можем войти в стазис!
 changeling-stasis-exit = Мы выходим из регенеративного стазиса, очищаемся от ран и повреждений...
 changeling-stasis-exit-fail = Мы не в стазисе!
 changeling-stasis-exit-fail-dead = Мы чувствуем себя... пустыми. Всё кончено.
-changeling-stasis-exit-fail-time = Наше тело всё еще восстанавливается!
+changeling-stasis-exit-fail-time = Наше тело всё ещё восстанавливается!
 changeling-stasis-exit-defib = Нас охватывает шок. Наш стазис был прерван!
 
 changeling-fail-hands = Нужно освободить руки.
@@ -86,7 +86,7 @@ changeling-voidadapt-lowtemperature-end = Температура станови�
 
 changeling-hivemind-start = Вы настраиваете свои мозговые волны на частоту гибридного разума.
 
-changeling-lastresort-activate = ТЕКУЩЕЕ ТЕЛО БУДЕТ ПОТЕРЯНО! Используй еще раз, чтобы подтвердить.
+changeling-lastresort-activate = ТЕКУЩЕЕ ТЕЛО БУДЕТ ПОТЕРЯНО! Используй ещё раз, чтобы подтвердить.
 
 changeling-onfire = Наши клетки корчатся в агонии, не в состоянии выполнить действие!
 changeling-voidadapt-onfire = Наша адаптация становится слишком болезненной, чтобы её можно было поддерживать! Мы отказываемся от неё!

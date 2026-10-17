@@ -1,0 +1,9 @@
+ent-MaterialFlowersAsh1 = пепельные цветы
+    .desc = Сырьё.
+    .suffix = Один
+ent-MaterialFlowersAsh10 = пепельные цветы
+    .desc = { ent-MaterialFlowersAsh1.desc }
+    .suffix = 10
+ent-MaterialFlowersAsh = пепельные цветы
+    .desc = { ent-MaterialFlowersAsh1.desc }
+    .suffix = Полный

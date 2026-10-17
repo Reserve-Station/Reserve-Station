@@ -1,8 +1,8 @@
-ent-ClothingBackpackSatchelCentcomm = сумка centcomm
-    .desc = Дорогая темно-зеленая сумка. Пахнет факсом.
+ent-ClothingBackpackSatchelCentcomm = сумка офицера ЦентКом
+    .desc = Дорогая тёмно-зелёная сумка. Пахнет факсом.
 ent-ClothingBackpackSatchelNanorep = сумка представителя NanoTrasen
-    .desc = Дорогой темно-зеленый рюкзак. Пахнет факсом.
+    .desc = Дорогая тёмно-зелёная сумка. Пахнет факсом.
 ent-ClothingBackpackSatchelBlueshield = сумка офицера Синего Щита
     .desc = Очень прочная сумка, пахнет энергетическим пистолетом.
-ent-ClothingSatchelSmuggler = Сумка
+ent-ClothingSatchelSmuggler = сумка контрабандиста
     .desc = Сумка которую можно прятать под полом.

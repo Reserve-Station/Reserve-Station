@@ -8,14 +8,14 @@ chuuni-invocation-psychic = С помощью тайны сокрытого я �
 chuuni-invocation-mime = О, тишина! Прими мою душу и подчеркни мой жест. Позволь мне создать иллюзию и манипулировать восприятием!
 chuuni-invocation-restoration = Я взываю к имени богини милосердия, услышь мою мольбу и даруй свое благословение этой душе! Божественная милость!
 chuuni-invocation-evocation = Узрите абсолютную мощь Повелителя Темного Пламени! Я призываю древние силы хаоса и разрушения обрушить свой гнев на моих врагов!
-chuuni-invocation-explosion = Тьма чернее чёрного и темнее мрака, я умоляю тебя, соединись с моим темно-красным цветом. Я желаю, чтобы мой поток энергии стал разрушительной силой: разрушительной силой, не имеющей себе равных! Обрати все творение в пепел! Взрыв!!!
+chuuni-invocation-explosion = Тьма чернее чёрного и темнее мрака, я умоляю тебя, соединись с моим тёмно-красным цветом. Я желаю, чтобы мой поток энергии стал разрушительной силой: разрушительной силой, не имеющей себе равных! Обрати все творение в пепел! Взрыв!!!
 chuuni-invocation-transmutation = Я взываю к закону эквивалентного обмена, к равновесию космоса. Принося эту жертву, я требую нового творения. Раскрой тайну трансмутации!
 chuuni-invocation-translocation = Силой пространственных разломов я изгибаю ткань реальности и перемещаюсь по измерениям! Пусть ничто не стоит на моем пути к цели!
 chuuni-invocation-conjuration = Оком судьбы я вижу сквозь нити судеб. Ничто не может укрыться от меня. Стань свидетелем меня, стань свидетелем чуда проявления!
 chuuni-invocation-necromancy = Я - Повелитель Мертвых, Повелитель Костей, Повелитель Теней. Я приказываю легионам проклятых восстать из могил и служить мне!
 chuuni-invocation-forbidden = Я отрекаюсь от законов этого мира и принимаю хаос старых богов! Позволь запретной силе течь сквозь меня и разрушать все на своем пути!
 chuuni-invocation-sanguine = Я закрываю свой глаз повязкой, чтобы скрыть свою истинную силу, но теперь я обрушу ее на тебя. Я наслаждаюсь жизненной силой своей жертвы и становлюсь сильнее с каждой каплей!
-chuuni-invocation-chuuni = По приказу темного лорда я призываю проклятие Чууни. Пусть все мои заклинания будут испорчены силой иллюзии. О, Реальность! Подчинись моей воле!
+chuuni-invocation-chuuni = По приказу тёмного лорда я призываю проклятие Чууни. Пусть все мои заклинания будут испорчены силой иллюзии. О, Реальность! Подчинись моей воле!
 chat-manager-entity-say-wrap-message-chuuni = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }: [font={ $fontType } size={ $fontSize }]"[BubbleContent][color=hotpink]{ $message }[/color][/BubbleContent]"[/font]
 chat-manager-entity-say-bold-wrap-message-chuuni = [BubbleHeader][bold][Name]{ $entityName }[/Name][/bold][/BubbleHeader] { $verb }: [font={ $fontType } size={ $fontSize }]"[BubbleContent][color=hotpink][bold]{ $message }[/bold][/color][/BubbleContent]"[/font]
 chat-manager-entity-whisper-wrap-message-chuuni = [font size=11][italic][BubbleHeader][Name]{ $entityName }[/Name][/BubbleHeader] шепчет: "[BubbleContent][color=hotpink]{ $message }[/color][/BubbleContent]"[/italic][/font]

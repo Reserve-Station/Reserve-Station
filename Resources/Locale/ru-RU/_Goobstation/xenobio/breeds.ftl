@@ -10,11 +10,11 @@ xenobio-breed-blue = синяя слизь
 
 xenobio-breed-metal = металлическая слизь
 
-xenobio-breed-yellow = желтая слизь
+xenobio-breed-yellow = жёлтая слизь
 
-xenobio-breed-dark-purple = темно-фиолетовая слизь
+xenobio-breed-dark-purple = тёмно-фиолетовая слизь
 
-xenobio-breed-dark-blue = темно-синяя слизь
+xenobio-breed-dark-blue = тёмно-синяя слизь
 
 xenobio-breed-silver = серебряная слизь
 
@@ -28,7 +28,7 @@ xenobio-breed-pyrite = пиритовая слизь
 
 xenobio-breed-red = красная слизь
 
-xenobio-breed-green = зеленая слизь
+xenobio-breed-green = зелёная слизь
 
 xenobio-breed-pink = розовая слизь
 

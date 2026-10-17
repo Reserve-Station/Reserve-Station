@@ -1,2 +1,3 @@
 ent-FlockTelemarker = странный светящийся маркер
     .desc = Я не знаю, что это...
+    .suffix = Стая

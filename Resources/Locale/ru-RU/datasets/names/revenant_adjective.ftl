@@ -1,7 +1,7 @@
 names-revenant-adjective-dataset-1 = бездонной
 names-revenant-adjective-dataset-2 = бездонной
 names-revenant-adjective-dataset-3 = жестокой
-names-revenant-adjective-dataset-4 = темной
+names-revenant-adjective-dataset-4 = тёмной
 names-revenant-adjective-dataset-5 = бесконечной
 names-revenant-adjective-dataset-6 = вечной
 names-revenant-adjective-dataset-7 = огненной
