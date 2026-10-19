@@ -38,8 +38,9 @@
     - Hair
     - Snout
   - type: MeleeWeapon
-    altDisarm: false
+    altDisarm: true # Reserve edit: Yowie tweaks
     heavyStaminaCost: 1.5
+    attackRate: 0.500 # Reserve edit: Yowie tweaks
     damage:
       types:
         Blunt: 10
