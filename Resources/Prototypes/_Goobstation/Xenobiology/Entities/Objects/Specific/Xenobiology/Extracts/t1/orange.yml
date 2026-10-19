@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: OrangeSlimeExtract
   parent: BaseSlimeExtract
@@ -35,19 +37,16 @@
           proto: Ignite5
       - !type:Flash
         maxRange: 7
-        rangePerUnit: 1
+        rangePerUnit: 7
         sound: /Audio/_Goobstation/Wizard/zapbang.ogg
     - reagents: [ Blood ]
       methods: [ Touch, Injection ]
       effects:
       - !type:NestedEffect
         proto: XenobioExtractReagent
-      - !type:RelaySolution
-        name: extract
-        effects:
-        - !type:AdjustReagent
-          reagent: CapsaicinOil
-          amount: 30
+      - !type:AdjustReagent
+        reagent: CapsaicinOil
+        amount: 15
   - type: Tag
     tags:
     - XenobiologyOrangeExtract

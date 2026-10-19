@@ -1,5 +1,7 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  parent: [ OrganHumanHeart, BasePowerCell ]
+  parent: [ BaseHumanOrgan, BasePowerCell ]
   id: XenobioVolatileOrgan
   name: volatile organ
   suffix: Full
@@ -10,7 +12,7 @@
     - sprite: _Goobstation/Xenobiology/Specific/Xenobiology/volatile_organ.rsi
       state: icon
   - type: GenericVisualizer
-    visuals: { } # disable battery visuals
+    visuals: {} # disable battery visuals
   - type: Item
     size: Normal
   - type: Battery
@@ -23,7 +25,7 @@
   - type: SolutionContainerManager
     solutions:
       battery:
-        maxVol: 15
+        maxVol: 5
       food:
         maxVol: 15
         reagents:
@@ -35,14 +37,6 @@
       - ReagentId: Slime
         Quantity: 15
   - type: Organ
-    onAdd:
-    - type: LightningArcShooter
-      arcDepth: 1
-      maxLightningArc: 3
-      shootMinInterval: 90
-      shootMaxInterval: 300
-      shootRange: 5
-      lightningPrototype: Lightning
     intCap: 32
     integrity: 32
     integrityThresholds:
@@ -65,8 +59,8 @@
   components:
   - type: Sprite
     layers:
-    - sprite: _Goobstation/Xenobiology/Specific/Xenobiology/goo_ball.rsi
-      state: icon
+      - sprite: _Goobstation/Xenobiology/Specific/Xenobiology/goo_ball.rsi
+        state: icon
   - type: Item
     size: Normal
   - type: Damageable
@@ -81,20 +75,14 @@
   - type: UseDelay
     delay: 0.5
   - type: EmitSoundOnUse
-    sound:
+    sound: &desecration
       collection: desecration
       params:
         variation: 0.125
   - type: EmitSoundOnLand
-    sound:
-      collection: desecration
-      params:
-        variation: 0.125
+    sound: *desecration
   - type: EmitSoundOnCollide
-    sound:
-      collection: desecration
-      params:
-        variation: 0.125
+    sound: *desecration
   - type: Destructible
     thresholds:
     - trigger:
@@ -149,10 +137,6 @@
   - type: Sprite
     sprite: _Goobstation/Xenobiology/Specific/Xenobiology/floors.rsi
     state: icon-sepia
-  - type: UserInterface
-    interfaces:
-      enum.StackCustomSplitUiKey.Key:
-        type: StackCustomSplitBoundUserInterface
   - type: SpawnAfterInteract
     prototype: FloorSepiaEntity
     removeOnInteract: true
@@ -174,7 +158,7 @@
   parent: BaseItem
   id: XenobioVolatileRedExtractJelly
   name: volatile red slime jelly
-  description: Using this on a piece of clothing seems to remove any potential slowdowns. Hovewer, subjects wearing such clothing were burnt to a crisp after a scientist lit his cigarette.
+  description: Using this on a piece of clothing seems to remove potential slowdowns. Hovewer, subjects wearing such clothing were burnt to a crisp after a scientist lit his cigarette.
   components:
   - type: Sprite
     layers:
@@ -185,7 +169,6 @@
     coatingName: clothing-coating-xenobio-volatile
     components:
     - type: VeryFlammable
-    - type: SpeedModifierImmunity
 
 - type: entity
   parent: BaseItem
@@ -198,5 +181,4 @@
     state: icon
   - type: StaticPrice
     price: 10000 # goida
-
 # todo mind transfer potion

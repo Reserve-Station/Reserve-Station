@@ -49,7 +49,6 @@
   cost: 5000
   recipeUnlocks:
   - SlimeScannerXenobio
-  - XenobiologyBountyComputerCircuitboard
   - SlimeGrinderMachineCircuitboard
   - ClothingBackpackXenoBioTank
   position: -3,3

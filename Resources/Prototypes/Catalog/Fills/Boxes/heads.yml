@@ -114,6 +114,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
+        - id: XenobiologyBountyComputerCircuitboard
         - id: CircuitImprinterMachineCircuitboard
         - id: ProtolatheMachineCircuitboard
         - id: ResearchComputerCircuitboard

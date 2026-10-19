@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: reagent
+  parent: Nutriment
+  id: Nutrislime
+  name: xenobio-reagent-nutrislime-name
+  desc: xenobio-reagent-nutrislime-desc
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: slimy
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Slime, Animal ]
+        factor: 15
+  pricePerUnit: 20

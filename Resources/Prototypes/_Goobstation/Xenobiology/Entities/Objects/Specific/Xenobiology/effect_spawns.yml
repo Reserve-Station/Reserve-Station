@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: XenoExtractChronofield
   parent: Chronofield
@@ -78,6 +80,7 @@
     color: teal
 
 - type: entity
+  name: random hostile mob spawner
   id: RHostileMobSpawner
   parent: MarkerBase
   components:
@@ -87,12 +90,16 @@
     prototype: RandomHostileMobSpawner
 
 - type: entity
-  name: random hostile mob spawner
-  id: RandomHostileMobSpawner
   parent: MarkerBase
+  id: RandomHostileMobSpawner
+  name: random hostile mob spawner
   components:
   - type: RandomSpawner
     prototypes:
+    - MobGorillaAngry
+    - MobBearSpace
+    - MobKangarooSpace
+    - MobAdultSlimesYellowAngry
     - MobAngryBee
     - MobBrullbar
     - MobWhiteWolf
@@ -102,10 +109,6 @@
     - MobCarpMagic
     - MobCarpHolo
     - MobCarpRainbow
-    - MobGhoulStalker
-    - MobGhoulProphet
-    - MobGhoulFireShark
-    - MobGhoulRustWalker
     - ReagentSlimeSpawner
     - MobAbomination
     - MobHivebot
@@ -121,14 +124,13 @@
     - MobTomatoKiller
     - MobRatKing
     - MobTick
-    - MobXenomorphHunter
-    - MobXenomorphFaceHugger # trollage
     - MobPurpleSnake
     - MobSmallPurpleSnake
     - MobBingle
     offset: 0.0
 
 - type: entity
+  name: random neutral mob spawner
   id: RNeutralMobSpawner
   parent: MarkerBase
   components:
@@ -138,9 +140,9 @@
     prototype: RandomNeutralMobSpawner
 
 - type: entity
-  name: random neutral mob spawner
-  id: RandomNeutralMobSpawner
   parent: MarkerBase
+  id: RandomNeutralMobSpawner
+  name: random neutral mob spawner
   components:
   - type: RandomSpawner
     prototypes:
@@ -149,7 +151,6 @@
     - MobKangaroo
     - MobMonkey
     - MobKobold
-    - MobScurret  # Reserve edit: Super Scurret - let scurrets spawn from golden slime
     - MobMouse
     - MobMouseCancer
     - MobGiantSpider
@@ -158,15 +159,14 @@
     - MobReindeerBuck
     - MobReindeerDoe
     - MobCockroach
-    - MobSquackroach
     - MobSlimeXenobioBabyGrey
     - MobSnail
     - MobSnailSpeed
     - MobSnailMoth
-    - MobXenomorphMaid
     offset: 0.0
 
 - type: entity
+  name: random passive mob spawner
   id: RPassiveMobSpawner
   parent: MarkerBase
   components:
@@ -176,9 +176,9 @@
     prototype: RandomPassiveMobSpawner
 
 - type: entity
-  name: random passive mob spawner
-  id: RandomPassiveMobSpawner
   parent: MarkerBase
+  id: RandomPassiveMobSpawner
+  name: random passive mob spawner
   components:
   - type: RandomSpawner
     prototypes:

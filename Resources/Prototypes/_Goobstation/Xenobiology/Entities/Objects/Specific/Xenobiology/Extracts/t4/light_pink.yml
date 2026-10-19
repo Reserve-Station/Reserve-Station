@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: LightPinkSlimeExtract
   parent: BaseSlimeExtract
@@ -14,7 +16,7 @@
       methods: [ Touch, Injection ]
       effects:
       - !type:NestedEffect
-        proto: XenobioExtractReagent
+        proto: XenobioExtractReaction
       - !type:DoSmokeEffect
         duration: 15
         spreadAmount: 50
@@ -28,20 +30,20 @@
       effects:
       - !type:NestedEffect
         proto: XenobioExtractReagent
-      - !type:RelaySolution
-        name: extract
-        effects:
-        - !type:AdjustReagent
-          reagent: Cognizine
-          amount: 10
+      - !type:AdjustReagent
+        reagent: Cognizine
+        amount: 10
     - reagents: [ Blood ]
       methods: [ Touch, Injection ]
       effects:
       - !type:NestedEffect
-        proto: XenobioExtractReaction
+        proto: XenobioExtractEvil
+      - !type:Jitter
+        time: 3
+        frequency: 20
       - !type:RelayNearby
         compName: Dna
-        range: 30
+        range: 3
         effect: !type:ScrambleDna
   - type: Tag
     tags:

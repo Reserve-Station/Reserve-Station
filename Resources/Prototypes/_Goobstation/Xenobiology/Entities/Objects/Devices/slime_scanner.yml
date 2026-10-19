@@ -1,4 +1,6 @@
-﻿- type: entity
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
   parent: BaseItem
   id: SlimeScannerXenobio
   name: slime scanner
@@ -6,6 +8,7 @@
   components:
   - type: SlimeScanner
   - type: Sprite
+    noRot: true
     sprite: _Goobstation/Xenobiology/Specific/Xenobiology/slime_scanner.rsi
     layers:
     - state: icon

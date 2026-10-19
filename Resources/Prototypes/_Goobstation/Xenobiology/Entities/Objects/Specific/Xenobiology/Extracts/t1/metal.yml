@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: MetalSlimeExtract
   parent: BaseSlimeExtract
@@ -21,7 +23,7 @@
         number: 15
       - !type:SpawnEntity
         entity: SheetRGlass1
-        number: 5
+        number: 5 # pick up that can freeman
     - reagents: [ Plasma ]
       methods: [ Touch, Injection ]
       effects:
@@ -32,7 +34,7 @@
         number: 15
       - !type:SpawnEntity
         entity: SheetPlasteel1
-        number: 5
+        number: 5 # pick up that can freeman
     - reagents: [ Blood ]
       methods: [ Touch, Injection ]
       effects:

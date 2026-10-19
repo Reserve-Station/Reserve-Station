@@ -2,21 +2,19 @@
 
 using System.Diagnostics;
 using Content.Client.DamageState;
-using Content.Goobstation.Shared.Xenobiology;
-using Content.Goobstation.Shared.Xenobiology.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Shared.Prototypes;
+using Content.Goobstation.Shared.Xenobiology;
+using Content.Goobstation.Shared.Xenobiology.Components;
 
 namespace Content.Goobstation.Client.Xenobiology;
 
 /// <summary>
 /// This handles visual changes in slimes between breeds.
 /// </summary>
-public sealed class XenoSlimeVisualizerSystem : VisualizerSystem<SlimeComponent>
+public sealed partial class XenoSlimeVisualizerSystem : VisualizerSystem<SlimeComponent>
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private SpriteSystem _sprite = default!;
 
     protected override void OnAppearanceChange(EntityUid uid, SlimeComponent component, ref AppearanceChangeEvent args)
     {
@@ -29,11 +27,13 @@ public sealed class XenoSlimeVisualizerSystem : VisualizerSystem<SlimeComponent>
         if (!AppearanceSystem.TryGetData<string>(uid, XenoSlimeVisuals.Shader, out var shader, args.Component))
             return;
         var spriteComp = args.Sprite;
-        var newShader = _proto.Index<ShaderPrototype>(shader).InstanceUnique();
+        var newShader = ProtoMan.Index<ShaderPrototype>(shader).InstanceUnique();
 
         var layerExists = _sprite.LayerMapTryGet(uid, DamageStateVisualLayers.Base, out var layerKey, false);
         if (!layerExists)
             return;
         spriteComp.LayerSetShader(layerKey, newShader);
+        spriteComp.GetScreenTexture = true;
+        spriteComp.RaiseShaderEvent = true;
     }
 }

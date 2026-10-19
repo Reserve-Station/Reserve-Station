@@ -1,19 +1,17 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Shared.Xenobiology;
 using Content.Goobstation.Shared.Xenobiology.Components;
 using Content.Server.NPC;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.HTN.PrimitiveTasks;
-using Content.Shared.DoAfter;
 
 namespace Content.Goobstation.Server.Xenobiology.HTN;
 
 public sealed partial class SlimeLatchOperator : HTNOperator
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
+    [Dependency] private IEntityManager _entManager = default!;
     private SlimeLatchSystem _slimeLatch = default!;
-
-    private EntityQuery<SlimeComponent> _slimeQuery = default!;
 
     [DataField]
     public string LatchKey = string.Empty;
@@ -22,8 +20,6 @@ public sealed partial class SlimeLatchOperator : HTNOperator
     {
         base.Initialize(sysManager);
         _slimeLatch = sysManager.GetEntitySystem<SlimeLatchSystem>();
-
-        _slimeQuery = _entManager.GetEntityQuery<SlimeComponent>();
     }
 
     public override HTNOperatorStatus Update(NPCBlackboard blackboard, float frameTime)
@@ -33,13 +29,13 @@ public sealed partial class SlimeLatchOperator : HTNOperator
         var owner = blackboard.GetValue<EntityUid>(NPCBlackboard.Owner);
         var target = blackboard.GetValue<EntityUid>(LatchKey);
 
-        if (!_slimeQuery.TryComp(owner, out var slime))
+        if (!_entManager.TryGetComponent<SlimeComponent>(owner, out var slime))
             return HTNOperatorStatus.Failed;
 
         if (_slimeLatch.IsLatched((owner, slime), target))
             return HTNOperatorStatus.Finished;
 
-        if (_entManager.HasComponent<ActiveDoAfterComponent>(owner))
+        if (_entManager.HasComponent<BeingLatchedComponent>(target))
             return HTNOperatorStatus.Continuing;
 
         return _slimeLatch.NpcTryLatch((owner, slime), target)

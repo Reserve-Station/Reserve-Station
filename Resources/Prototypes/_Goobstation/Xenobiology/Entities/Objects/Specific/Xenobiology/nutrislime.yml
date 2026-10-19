@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: FoodInjectableBase
+  id: Nutrislime
+  name: nutrislime
+  description: Perfect for feeding slimes, one clump should be enough for a baby slime to grow up and replicate.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Xenobiology/Specific/Xenobiology/nutrislime.rsi
+    state: icon
+  - type: Item
+    sprite: _Goobstation/Xenobiology/Specific/Xenobiology/nutrislime.rsi
+    size: Small
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutrislime
+          Quantity: 15

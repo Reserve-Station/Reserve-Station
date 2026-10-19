@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: CeruleanSlimeExtract
   parent: BaseSlimeExtract
@@ -15,9 +17,11 @@
       effects:
       - !type:NestedEffect
         proto: XenobioExtractReaction
-      - !type:CreateGas
-        gas: Pluoxium
-        moles: 55
+      - !type:RelayNearby
+        compName: Body
+        range: 7
+        effect: !type:Oxygenate
+          factor: 10
     - reagents: [ Plasma ]
       methods: [ Touch, Injection ]
       effects:
@@ -33,12 +37,9 @@
       effects:
       - !type:NestedEffect
         proto: XenobioExtractReagent
-      - !type:RelaySolution
-        name: extract
-        effects:
-        - !type:AdjustReagent
-          reagent: XenobioJellyCerulean
-          amount: 1
+      - !type:AdjustReagent
+        reagent: XenobioJellyCerulean
+        amount: 1
   - type: Tag
     tags:
     - XenobiologyCeruleanExtract

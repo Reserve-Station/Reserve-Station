@@ -1,6 +1,3 @@
-xenobio-reagent-slime-toxin-name = Slime toxin
-xenobio-reagent-slime-toxin-desc = The toxin that slime introduces into victim’s blood during the hunt, maintains the victim in a critical state even with zero blood volume. It also has hallucinogenic and sedative effects.
-
 xenobio-reagent-jelly-purple-name = Slime steroid
 xenobio-reagent-jelly-purple-desc = This is a potent chemical mix that will cause a slime to produce one more extract when processed, for a maximum of four extra. The steroid only works on live slimes.
 
@@ -33,3 +30,6 @@ xenobio-reagent-toxin-advanced-desc = Turns any humanoid that ingests enough of 
 
 xenobio-reagent-genderfluid-name = Gender fluid
 xenobio-reagent-genderfluid-desc = Swaps genders of the person ingesting it. If this existed 100 years ago, humankind would probably have achieved world peace.
+
+xenobio-reagent-nutrislime-name = nutrislime
+xenobio-reagent-nutrislime-desc = Highly condensed superfood, specifically designed for slimes to eat.

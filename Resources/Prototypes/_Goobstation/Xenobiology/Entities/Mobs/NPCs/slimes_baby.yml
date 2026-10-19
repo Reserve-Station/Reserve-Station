@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   parent: MobSlimeXenobioBabyPending
   id: MobSlimeXenobioBabyGrey
@@ -5,6 +7,16 @@
   components:
   - type: PendingSlimeSpawn
     breed: GreyMutation
+
+- type: entity
+  id: MobSlimeXenobioBabyGreySpawner
+  name: grey slime spawner
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 3
+  - type: SpawnOnDespawn
+    prototype: MobSlimeXenobioBabyGrey
 
 - type: entity
   parent: MobSlimeXenobioBabyPending

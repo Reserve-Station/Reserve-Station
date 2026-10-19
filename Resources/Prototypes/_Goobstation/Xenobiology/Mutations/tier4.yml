@@ -1,7 +1,8 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-oil
   id: OilMutation
-  breedName: oil slime
   producedExtract: OilSlimeExtract
   components:
   - type: Slime
@@ -15,9 +16,8 @@
     - OilMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-light-pink
   id: LightPinkMutation
-  breedName: light pink slime
   producedExtract: LightPinkSlimeExtract
   components:
   - type: Slime
@@ -29,9 +29,8 @@
     - LightPinkMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-black
   id: BlackMutation
-  breedName: black slime
   producedExtract: BlackSlimeExtract
   components:
   - type: Slime
@@ -43,9 +42,8 @@
     - BlackMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-adamantine
   id: AdamantineMutation
-  breedName: adamantine slime
   producedExtract: AdamantineSlimeExtract
   components:
   - type: Slime

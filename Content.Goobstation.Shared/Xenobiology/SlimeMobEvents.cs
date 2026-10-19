@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Robust.Shared.Serialization;
 using Content.Shared.Actions;
 using Content.Shared.DoAfter;
-using Robust.Shared.Serialization;
 
 namespace Content.Goobstation.Shared.Xenobiology;
 
@@ -12,14 +12,9 @@ public sealed partial class SlimeLatchEvent : EntityTargetActionEvent
     public float Damage = 5;
 }
 
-public sealed partial class EatCorpseEvent : EntityTargetActionEvent;
-
 public sealed partial class XenoVacEvent : EntityTargetActionEvent;
 
 public sealed partial class XenoVacClearEvent : InstantActionEvent;
 
 [Serializable, NetSerializable]
 public sealed partial class SlimeLatchDoAfterEvent : SimpleDoAfterEvent;
-
-[Serializable, NetSerializable]
-public sealed partial class EatCorpseDoAfterEvent : SimpleDoAfterEvent;

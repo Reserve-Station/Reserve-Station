@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Linq;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.Goobstation.Shared.Xenobiology.Components;
 
@@ -16,8 +15,8 @@ public sealed partial class MobGrowthComponent : Component
     /// <summary>
     /// What hunger threshold must be reached to grow?
     /// </summary>
-    [DataField(required: true), AutoNetworkedField]
-    public float HungerRequired = 100f;
+    [DataField(required: true)]
+    public float HungerRequired;
 
     /// <summary>
     /// How much hunger does growing consume?
