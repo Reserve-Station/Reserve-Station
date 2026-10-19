@@ -195,6 +195,7 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
                 var rate = entry.MetabolismRate * group.MetabolismRateModifier;
 
                 // Remove $rate, as long as there's enough reagent there to actually remove that much
+                var removalBefore = mostToRemove;
                 mostToRemove = FixedPoint2.Clamp(rate, 0, quantity);
 
                 var scale = (float) mostToRemove;
@@ -228,6 +229,12 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
                 // Goob end
 
                 var actualEntity = ent.Comp2?.Body ?? solutionEntityUid.Value;
+
+                if (!CanMetabolizeEffect(actualEntity, ent, soln.Value, entry.Conditions))
+                {
+                    mostToRemove = removalBefore;
+                    continue;
+                }
 
                 // do all effects, if conditions apply
                 foreach (var effect in entry.Effects)
