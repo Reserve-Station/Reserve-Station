@@ -81,7 +81,7 @@ public sealed class PartStatusSystem : EntitySystem
 
         _chat.ChatMessageToOne(
             ChatChannel.Emotes,
-            text.ToMarkup(),
+            text.ToString(),
             text.ToMarkup(),
             EntityUid.Invalid,
             false,
@@ -212,7 +212,15 @@ public sealed class PartStatusSystem : EntitySystem
             titlestring += "-styleless";
         }
 
-        message.AddText(Loc.GetString(titlestring, ("entity", Identity.Name(entity, EntityManager))));
+        var title = Loc.GetString(titlestring, ("entity", styling
+            ? FormattedMessage.EscapeText(Identity.Name(entity, EntityManager))
+            : Identity.Name(entity, EntityManager)));
+
+        if (styling)
+            message.AddMarkupPermissive(title);
+        else
+            message.AddText(title);
+
         message.PushNewline();
         AddLine(message);
         CreateBodyPartMessage(partStatusSet, entity == examiner, ref message, !styling);
@@ -257,10 +265,15 @@ public sealed class PartStatusSystem : EntitySystem
                 ? localizedPart
                 : partStatus.PartName;
 
-            message.AddText("    " + Loc.GetString(locString,
+            var line = Loc.GetString(locString,
                 ("possessive", possessive),
                 ("part", partName),
-                ("status", statusDescription)));
+                ("status", statusDescription));
+
+            if (styleless)
+                message.AddText("    " + line);
+            else
+                message.AddMarkupPermissive("    " + line);
             // Reserve edit end: localization #359
 
             message.PushNewline();
