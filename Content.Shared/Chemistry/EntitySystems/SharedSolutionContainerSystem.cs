@@ -1157,7 +1157,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
             existed = false;
             container = AddComp<SolutionContainerManagerComponent>(uid);
             container.Containers.Add(name);
-            if (NetManager.IsClient && !IsClientSide(uid))
+            if (NetManager.IsClient && !IsClientSide(uid))  // Reserve edit: Part Status and Chemicals show
                 return false;
         }
         else if (!existed)
