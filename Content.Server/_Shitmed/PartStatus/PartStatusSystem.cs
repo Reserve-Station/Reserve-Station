@@ -212,6 +212,8 @@ public sealed class PartStatusSystem : EntitySystem
             titlestring += "-styleless";
         }
 
+        // Reserve edit start: Part Status and Chemicals show
+        // message.AddText(Loc.GetString(titlestring, ("entity", Identity.Name(entity, EntityManager))));
         var title = Loc.GetString(titlestring, ("entity", styling
             ? FormattedMessage.EscapeText(Identity.Name(entity, EntityManager))
             : Identity.Name(entity, EntityManager)));
@@ -220,6 +222,7 @@ public sealed class PartStatusSystem : EntitySystem
             message.AddMarkupPermissive(title);
         else
             message.AddText(title);
+        // Reserve edit end: Part Status and Chemicals show
 
         message.PushNewline();
         AddLine(message);
