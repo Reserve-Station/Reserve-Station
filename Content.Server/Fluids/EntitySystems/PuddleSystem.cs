@@ -680,14 +680,25 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             return;
 
         if (!_inventory.TryGetSlotEntity(ent.Owner, "shoes", out var shoes) ||
-            !TryComp<StainableComponent>(shoes, out var stain))
+            !TryComp<StainableComponent>(shoes, out var stain) ||
+            !_solutionContainerSystem.TryGetSolution(shoes.Value, stain.SolutionId, out _, out var shoeSolution))
             return;
 
-        var transferAmount = FixedPoint2.Min(stain.StainVolume, solution.Volume);
-        var splitSol = _solutionContainerSystem.SplitSolution(puddle.Comp.Solution.Value, transferAmount);
+        var space = shoeSolution.AvailableVolume;
+        if (space <= FixedPoint2.Zero || puddle.Comp.Solution is not { } puddleSolution)
+            return;
+
+        var transferAmount = FixedPoint2.Min(stain.StainVolume, FixedPoint2.Min(space, solution.Volume));
+        if (transferAmount <= FixedPoint2.Zero)
+            return;
+
+        var splitSol = _solutionContainerSystem.SplitSolution(puddleSolution, transferAmount);
         var spilledEvent = new SpilledOnEvent(puddle, splitSol);
         var relayedEvent = new InventoryRelayedEvent<SpilledOnEvent>(spilledEvent, ent.Owner);
         RaiseLocalEvent(shoes.Value, relayedEvent);
+
+        if (splitSol.Volume > FixedPoint2.Zero)
+            _solutionContainerSystem.TryAddSolution(puddleSolution, splitSol);
     }
 
     private bool TryGetPuddleOnTileChange(MoveEvent args, out Entity<PuddleComponent> puddle)

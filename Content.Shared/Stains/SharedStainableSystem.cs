@@ -163,8 +163,14 @@ public abstract partial class SharedStainableSystem : EntitySystem
         if (taken.Volume <= FixedPoint2.Zero)
             return;
 
-        // A full stain mixes and drips the excess instead of refusing the new liquid.
-        Solution.TryMixAndOverflow(target, taken, target.Comp.Solution.MaxVolume, out _);
+        if (!Solution.TryMixAndOverflow(target, taken, target.Comp.Solution.MaxVolume, out var overflow))
+        {
+            source.AddSolution(taken, _prototype);
+            return;
+        }
+
+        if (overflow.Volume > FixedPoint2.Zero)
+            source.AddSolution(overflow, _prototype);
     }
 
     private bool HasFlammableReagent(Solution solution)

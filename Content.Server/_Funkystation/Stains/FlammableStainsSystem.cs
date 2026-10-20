@@ -10,9 +10,13 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.IgnitionSource;
+using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.Stains;
 using Content.Shared.Stains.Components;
+using Content.Shared.Temperature;
+using Content.Shared.Weapons.Melee.Events;
 using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
@@ -63,6 +67,10 @@ namespace Content.Server._Funkystation.Stains
             base.Initialize();
             SubscribeLocalEvent<InventoryComponent, TileFireEvent>(OnTileFire, before: [typeof(FlammableSystem)]);
             SubscribeLocalEvent<GridAtmosphereComponent, TileExposedEvent>(OnTileExposed);
+            // RW edit start: fire-nerf
+            SubscribeLocalEvent<InventoryComponent, InteractUsingEvent>(OnDirectFlame);
+            SubscribeLocalEvent<IgnitionSourceComponent, MeleeHitEvent>(OnHotMelee);
+            // RW edit end: fire-nerf
         }
 
         // RW edit start: fire-nerf
@@ -85,6 +93,46 @@ namespace Content.Server._Funkystation.Stains
                 BurnWornStains(uid, inventory);
             }
         }
+
+        // RW edit start: fire-nerf
+        private void OnDirectFlame(Entity<InventoryComponent> ent, ref InteractUsingEvent args)
+        {
+            var isHot = new IsHotEvent();
+            RaiseLocalEvent(args.Used, isHot);
+            if (!isHot.IsHot)
+                return;
+
+            TryIgniteSoaked(ent.Owner, GetFlameTemperature(args.Used));
+        }
+
+        private void OnHotMelee(Entity<IgnitionSourceComponent> ent, ref MeleeHitEvent args)
+        {
+            if (!ent.Comp.Ignited)
+                return;
+
+            foreach (var hit in args.HitEntities)
+                TryIgniteSoaked(hit, ent.Comp.Temperature);
+        }
+
+        /// <summary>
+        /// A flame pressed against the person, not a spark on the tile. Every worn stain can catch.
+        /// </summary>
+        private void TryIgniteSoaked(EntityUid target, float temperature)
+        {
+            if (!TryComp<InventoryComponent>(target, out var inventory))
+                return;
+
+            ApplyStainFire(target, inventory, SlotFlags.WITHOUT_POCKET, temperature);
+        }
+
+        private float GetFlameTemperature(EntityUid source)
+        {
+            if (TryComp<IgnitionSourceComponent>(source, out var ignition))
+                return ignition.Temperature;
+
+            return 700f;
+        }
+        // RW edit end: fire-nerf
 
         private void OnTileFire(EntityUid uid, InventoryComponent component, ref TileFireEvent args)
         {
