@@ -1115,7 +1115,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
     {
         // Networked entities receive solution entities from the server.
         // Client-side entities, including vending-machine previews, never do, so their fill layer stays hidden.
-        if (NetManager.IsClient && !IsClientSide(entity))
+        if (NetManager.IsClient && !IsClientSide(entity))  // Reserve edit: Part Status and Chemicals show
             return;
 
         if (entity.Comp.Solutions is not { } prototypes)
