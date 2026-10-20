@@ -11,12 +11,12 @@ using Content.Shared.Inventory;
 using Content.Shared.Interaction.Events;
 
 namespace Content.Goobstation.Server.BlockHandsOnBuckle;
-public sealed class BlockHandsOnBuckleSystem : EntitySystem
+public sealed partial class BlockHandsOnBuckleSystem : EntitySystem
 {
 
-    [Dependency] private readonly SharedVirtualItemSystem _virtualItem = default!;
-    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
-    // [Dependency] private readonly InventorySystem _inventorySystem = default!; // Reserve edit: Fix warnings
+    [Dependency] private SharedVirtualItemSystem _virtualItem = default!;
+    [Dependency] private SharedHandsSystem _handsSystem = default!;
+    // [Dependency] private InventorySystem _inventorySystem = default!; // Reserve edit: Fix warnings
     public override void Initialize()
     {
         base.Initialize();
@@ -39,13 +39,13 @@ public sealed class BlockHandsOnBuckleSystem : EntitySystem
             }
         }
     }
-    
+
     private void OnUnstrapped(Entity<BlockHandsOnBuckleComponent> ent, ref UnstrappedEvent args)
     {
         _virtualItem.DeleteInHandsMatching(args.Buckle.Owner, ent.Owner);
 
     }
-    
+
     private void OnCanAttack(EntityUid uid, BuckleComponent buckle, ref AttackAttemptEvent args)
     {
         if (buckle.BuckledTo != null

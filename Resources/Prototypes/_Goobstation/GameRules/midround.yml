@@ -434,6 +434,7 @@
     - Diona
     - Harpy
     - Plasmaman
+    - Synth
     forceMaxSize: true
   - type: AntagObjectives
     objectives:
@@ -691,6 +692,7 @@
     - Diona
     - Harpy
     - Plasmaman
+    - Synth
   - type: AntagObjectives
     objectives:
     - ContractorRansomObjective

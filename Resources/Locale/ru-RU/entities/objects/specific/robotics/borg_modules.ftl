@@ -93,6 +93,7 @@ ent-BorgModuleAdvancedTreatment = продвинутый лечащий моду
 
 ent-BorgModuleArtistry = художественный модуль борга
     .desc = Модуль для занятий искусством, пока станция горит!
+    .suffix = Художник, Рисование
 ent-BorgModuleInflatable = надувной модуль борга
     .desc = { ent-BaseBorgModule.desc }
 ent-BorgModuleAdvancedTopical = продвинутый модуль первой помощи борга

@@ -9,8 +9,8 @@ namespace Content.Goobstation.Server.StationEvents;
 
 public sealed partial class ChristmasEventSchedulerRule : GameRuleSystem<ChristmasEventSchedulerComponent>
 {
-    // [Dependency] private readonly GameTicker _gameTicker = default!; // Reserve edit: Fix warnings
-    // [Dependency] private readonly ISharedAdminLogManager _adminLog = default!; // Reserve edit: Fix warnings
+    // [Dependency] private GameTicker _gameTicker = default!; // Reserve edit: Fix warnings
+    // [Dependency] private ISharedAdminLogManager _adminLog = default!; // Reserve edit: Fix warnings
 
     public override void Update(float frameTime)
     {

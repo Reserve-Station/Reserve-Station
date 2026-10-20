@@ -30,11 +30,11 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     public Action<string>? OnTechnologyCardPressed;
     public Action? OnServerButtonPressed;
 
-    [Dependency] private readonly IEntityManager _entity = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IGameTiming _timing = default!; // Reserve edit: rnd-console #344
-    [Dependency] private readonly IConfigurationManager _cfg = default!; // Reserve edit: rnd-console #344
+    [Dependency] private IEntityManager _entity = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IGameTiming _timing = default!; // Reserve edit: rnd-console #344
+    [Dependency] private IConfigurationManager _cfg = default!; // Reserve edit: rnd-console #344
 
     private readonly ResearchSystem _research;
     private readonly SpriteSystem _sprite;

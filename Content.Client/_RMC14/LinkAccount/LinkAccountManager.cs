@@ -15,6 +15,7 @@ public sealed class LinkAccountManager : IPostInjectInit
     public bool Linked { get; private set; }
     public Color? GhostColor { get; set; }  // Reserve edit: Maecenas System
     public SharedRMCGhostCosmetics? GhostCosmetics { get; set; } // Goob - ghost cosmetics  // Reserve edit: Maecenas System
+    public string? OocIcon { get; set; } // Goob - ooc icon selection  // Reserve edit: Maecenas System
     public SharedRMCLobbyMessage? LobbyMessage { get; set; }  // Reserve edit: Maecenas System
     public SharedRMCRoundEndShoutouts? RoundEndShoutout { get; set; }  // Reserve edit: Maecenas System
 
@@ -32,6 +33,7 @@ public sealed class LinkAccountManager : IPostInjectInit
         Linked = ev.Patron?.Linked ?? false;
         GhostColor = ev.Patron?.GhostColor;
         GhostCosmetics = ev.Patron?.GhostCosmetics; // Goob - ghost cosmetics
+        OocIcon = ev.Patron?.OocIcon; // Goob - ooc icon selection
         LobbyMessage = ev.Patron?.LobbyMessage;
         RoundEndShoutout = ev.Patron?.RoundEndShoutout;
         Updated?.Invoke();
@@ -54,6 +56,7 @@ public sealed class LinkAccountManager : IPostInjectInit
                (tier.GhostColor ||
                 tier.GhostCosmetics || // Goob - ghost cosmetics
                 tier.GhostParticles || // Goob - ghost cosmetics
+                tier.OocIcons || // Goob - ooc icon selection
                 tier.LobbyMessage ||
                 tier.RoundEndShoutout ||
                 tier is not null  // Reserve edit: Maecenas System

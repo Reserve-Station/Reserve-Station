@@ -21,13 +21,13 @@ using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Shared.MisandryBox.PlaytimeDegrade;
 
-public sealed class PlaytimeDegradeSystem : EntitySystem
+public sealed partial class PlaytimeDegradeSystem : EntitySystem
 {
-    [Dependency] private readonly ISharedPlaytimeManager _playtime = default!;
-    [Dependency] private readonly MobThresholdSystem _mob = default!;
-    [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
-    [Dependency] private readonly SharedJobSystem _job = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private ISharedPlaytimeManager _playtime = default!;
+    [Dependency] private MobThresholdSystem _mob = default!;
+    [Dependency] private MovementSpeedModifierSystem _movement = default!;
+    [Dependency] private SharedJobSystem _job = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
 
     public override void Initialize()
     {

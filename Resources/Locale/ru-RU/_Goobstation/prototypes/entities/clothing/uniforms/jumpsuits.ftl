@@ -83,3 +83,6 @@ ent-ClothingUniformJumpsuitGoldenLiaison = золотой комбинезон �
 ent-ClothingUniformJumpsuitMonk = брюки монаха
     .desc = Простые брюки, не намного лучше старого мешка.
     .suffix = Священник
+ent-ClothingUniformJumpsuitHawaiGreen = зелёная гавайская рубашка
+    .desc = Зелёный цвет ЦентКом™.
+    .suffix = ЦентКом

@@ -2,9 +2,9 @@
 
 namespace Content.Goobstation.UIKit.UserInterface.RichText;
 
-public sealed class ExamineBorderTag : IMarkupTagHandler
+public sealed partial class ExamineBorderTag : IMarkupTagHandler
 {
-    // [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!; // Reserve edit: Fix warnings
+    // [Dependency] private IEntitySystemManager _entitySystemManager = default!; // Reserve edit: Fix warnings
 
     public const string TagName = "examineborder";
 

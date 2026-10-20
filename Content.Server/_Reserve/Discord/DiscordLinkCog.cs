@@ -1,12 +1,14 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using System.Threading.Tasks;
+using Content.Goobstation.Common.Patrons;
 using Content.Server._Reserve.Discord.AdminGuard;
 using Content.Server.Database;
 using NetCord;
 using NetCord.Rest;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Content.Server._Reserve.Discord;
 
@@ -14,6 +16,7 @@ public sealed partial class DiscordLinkCog
 {
     [Dependency] private IServerDbManager _database = default!;
     [Dependency] private IAdminGuardManager _adminGuard = default!;
+    [Dependency] private IPrototypeManager _prototypes = default!;
 
     public DiscordLinkCog()
     {
@@ -99,13 +102,13 @@ public sealed partial class DiscordLinkCog
         }
 
         // Get all patron tiers
-        var patronTiers = await _database.GetPatronTiers();
+        var patronTiers = _prototypes.EnumeratePrototypes<PatronTierPrototype>();
 
         foreach (var patronTier in patronTiers)
         {
             if (member.RoleIds.Contains(patronTier.DiscordRole))
             {
-                await _database.SetPatron(playerId, patronTier.Id);
+                await _database.SetPatron(playerId, patronTier.DatabaseId);
                 return;
             }
         }

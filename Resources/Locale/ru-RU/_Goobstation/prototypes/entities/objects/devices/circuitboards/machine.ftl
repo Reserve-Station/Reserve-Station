@@ -61,3 +61,6 @@ ent-TelecomTransmitterCircuitboard = телекоммуникационный п
 ent-StasisOperatingTableCircuitboard = стазисный операционный стол (машинная плата)
     .desc = { ent-BaseMachineCircuitboard.suffix }
     .suffix = { ent-BaseMachineCircuitboard.suffix }
+ent-PhotocopierMachineCircuitboard = ксерокс (машинная плата)
+    .desc = Печатная плата ксерокса.
+    .suffix = { ent-BaseMachineCircuitboard.suffix }

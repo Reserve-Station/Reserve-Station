@@ -14,15 +14,15 @@ using System.Numerics;  // Reserve edit: Fix special animation for cards
 
 namespace Content.Goobstation.Client.Overlays;
 
-public sealed class SpecialAnimationOverlay : Overlay
+public sealed partial class SpecialAnimationOverlay : Overlay
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IResourceCache _cache = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IClyde _clyde = default!;
-    [Dependency] private readonly IConfigurationManager _configManager = default!;
-    [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
-    [Dependency] private readonly IEntityManager _entity = default!;  // Reserve edit: Fix special animation for cards
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IResourceCache _cache = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IClyde _clyde = default!;
+    [Dependency] private IConfigurationManager _configManager = default!;
+    [Dependency] private IUserInterfaceManager _uiManager = default!;
+    [Dependency] private IEntityManager _entity = default!;  // Reserve edit: Fix special animation for cards
 
     private readonly SpriteSystem _sprite;
 

@@ -13,11 +13,11 @@ using Robust.Shared.Random;
 namespace Content.Goobstation.Server.MisandryBox;
 
 // Now that's a mouthful
-public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
+public sealed partial class CatEmoteSpamCountermeasureSystem : EntitySystem
 {
-    [Dependency] private readonly ThunderstrikeSystem _thunderstrike = default!;
-    [Dependency] private readonly IRobustRandom _rand = default!;
-    [Dependency] private readonly SharedStaminaSystem _stamina = default!;  // Reserve edit: Flip & spin antispam
+    [Dependency] private ThunderstrikeSystem _thunderstrike = default!;
+    [Dependency] private IRobustRandom _rand = default!;
+    [Dependency] private SharedStaminaSystem _stamina = default!;  // Reserve edit: Flip & spin antispam
 
     private const float ClearInterval = 20.0f;
     private const float PitchModulo = 0.08f;
@@ -158,6 +158,13 @@ public sealed class CatEmoteSpamCountermeasureSystem : EntitySystem
     /// <param name="killOverride">Optional override for the kill parameter. If null, uses DrasticMeasures</param>
     private void Smite(EntityUid uid, bool? killOverride = null)
     {
-        _thunderstrike.Smite(uid, kill: killOverride ?? DrasticMeasures);
+        var kill = killOverride ?? DrasticMeasures;
+        if (kill)
+        {
+            var ev = new EmoteSpamSmitedEvent();
+            RaiseLocalEvent(uid, ref ev);
+        }
+
+        _thunderstrike.Smite(uid, kill: kill);
     }
 }

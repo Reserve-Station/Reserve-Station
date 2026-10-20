@@ -8,7 +8,7 @@ namespace Content.Goobstation.Shared.Wires.Systems;
 
 public sealed partial class RequirePanelSystem : EntitySystem
 {
-    // [Dependency] private readonly ItemSlotsSystem _itemSlots = default!; // Reserve edit: Fix warnings
+    // [Dependency] private ItemSlotsSystem _itemSlots = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

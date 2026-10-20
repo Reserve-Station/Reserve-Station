@@ -8,12 +8,12 @@ using Content.Shared.Toggleable;
 
 namespace Content.Goobstation.Shared.Augments;
 
-public sealed class AugmentActionSystem : EntitySystem
+public sealed partial class AugmentActionSystem : EntitySystem
 {
-    // [Dependency] private readonly ActionContainerSystem _actionContainer = default!; // Reserve edit: Fix warnings
-    [Dependency] private readonly AugmentSystem _augment = default!;
-    [Dependency] private readonly ItemToggleSystem _toggle = default!;
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
+    // [Dependency] private ActionContainerSystem _actionContainer = default!; // Reserve edit: Fix warnings
+    [Dependency] private AugmentSystem _augment = default!;
+    [Dependency] private ItemToggleSystem _toggle = default!;
+    [Dependency] private SharedActionsSystem _actions = default!;
 
     public override void Initialize()
     {

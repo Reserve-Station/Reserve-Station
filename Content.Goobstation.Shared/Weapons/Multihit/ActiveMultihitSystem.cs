@@ -9,9 +9,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Shared.Weapons.Multihit;
 
-public sealed class ActiveMultihitSystem : EntitySystem
+public sealed partial class ActiveMultihitSystem : EntitySystem
 {
-    // [Dependency] private readonly INetManager _net = default!; // Reserve edit: Fix warnings
+    // [Dependency] private INetManager _net = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

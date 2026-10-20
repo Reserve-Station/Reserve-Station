@@ -98,6 +98,7 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleColor: "#ffffbf60" # Goob
   metabolisms:
     Drink:
       effects:

@@ -13,3 +13,7 @@ ent-debugRotation4 = дебаг: поворот 4
 ent-debugRotationTex = дебаг: поворот Tex
     .desc = { "" }
     .suffix = DEBUG
+
+ent-ESDebugScreenshake = дебаг: дрожание экрана
+    .desc = Оооо моя голова болиииит...
+    .suffix = ES, DEBUG

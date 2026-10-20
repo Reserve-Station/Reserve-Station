@@ -57,4 +57,4 @@ ent-ToySoundMakerSpawner90 = спавнер - игрушка - звуковая
     .suffix = Шанс 90%
 ent-CrayonSpawner90 = спавнер - игрушка - мелок
     .desc = { ent-MarkerBase.desc }
-    .suffix = Шанс 90%
+    .suffix = Шанс 90%, { ent-Crayon.suffix }

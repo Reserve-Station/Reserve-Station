@@ -23,9 +23,9 @@ namespace Content.Goobstation.Server.Administration.Systems;
 
 public sealed partial class GoobAdminVerbSystem
 {
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly IAdminManager _admin = default!;
-    [Dependency] private readonly OutfitSystem _outfit = default!; // Reserve edit: Fix antag verbs
+    [Dependency] private AntagSelectionSystem _antag = default!;
+    [Dependency] private IAdminManager _admin = default!;
+    [Dependency] private OutfitSystem _outfit = default!; // Reserve edit: Fix antag verbs
 
     private static readonly EntProtoId DefaultSlasherRule = "TokenSlasherSpawn"; // Reserve edit: Fix antag verbs
 

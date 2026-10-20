@@ -1,4 +1,7 @@
 - type: guideEntry
   id: GangWars
-  name: "Gang Wars"
+  name: guide-entry-gang-wars  # Reserve edit: Localization
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/GangWars.xml"
+  filterEnabled: True
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/GangWars.xml"

@@ -7,7 +7,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     xmlns:controls="clr-namespace:Content.Client._RMC14.LinkAccount"
     xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
     Title="{Loc 'rmc-ui-patron-perks'}"
-    MinSize="625 475">
+    MinSize="700 475"> <!-- Reserve edit: Maecenas System -->
     <TabContainer Name="Tabs" Access="Public">
         <!-- Reserve edit start: Maecenas System -->
         <BoxContainer Name="MainTab" Access="Public" Orientation="Vertical" Margin="5">
@@ -61,6 +61,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <SpriteView Name="GhostCosmeticsPreview" Access="Public" Scale="3 3" SetSize="128 128"
                             OverrideDirection="South" />
             </PanelContainer>
+        </BoxContainer>
+        <!-- Goob end -->
+        <!-- Goob start - ooc icon selection -->
+        <BoxContainer Name="OocIconTab" Access="Public" Orientation="Vertical" Margin="5">
+            <Label Text="{Loc 'goob-ui-ooc-icon-description'}" />
+            <BoxContainer Orientation="Horizontal" Margin="0 10 0 0">
+                <Label Text="{Loc 'goob-ui-ooc-icon-selected'}" VerticalAlignment="Center" />
+                <AnimatedTextureRect Name="OocIconPreview" Access="Public" SetSize="32 32" Margin="8 0"
+                                     VerticalAlignment="Center" />
+                <Label Name="OocIconSelectedName" Access="Public" VerticalAlignment="Center" />
+            </BoxContainer>
+            <ScrollContainer VerticalExpand="True" HScrollEnabled="False" Margin="0 10 0 0">
+                <BoxContainer Name="OocIconList" Access="Public" Orientation="Vertical" />
+            </ScrollContainer>
+            <BoxContainer Orientation="Horizontal" Margin="0 10 0 0">
+                <Button Name="OocIconDefaultButton" Access="Public" Text="{Loc 'goob-ui-ooc-icon-default'}"
+                        HorizontalExpand="True" />
+                <Button Name="OocIconSaveButton" Access="Public" Text="{Loc 'rmc-ui-save'}"
+                        HorizontalExpand="True" Disabled="True" />
+            </BoxContainer>
         </BoxContainer>
         <!-- Goob end -->
     </TabContainer>

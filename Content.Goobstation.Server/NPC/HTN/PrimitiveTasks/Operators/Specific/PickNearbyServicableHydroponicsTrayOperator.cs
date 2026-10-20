@@ -15,8 +15,8 @@ namespace Content.Goobstation.Server.NPC.HTN.PrimitiveTasks.Operators.Specific;
 
 public sealed partial class PickNearbyServicableHydroponicsTrayOperator : HTNOperator
 {
-    [Dependency] private readonly IEntityManager _entManager = default!;
-    // [Dependency] private readonly IPrototypeManager _prototypeManager = default!; // Reserve edit: Fix warnings
+    [Dependency] private IEntityManager _entManager = default!;
+    // [Dependency] private IPrototypeManager _prototypeManager = default!; // Reserve edit: Fix warnings
 
     private EntityLookupSystem _lookup = default!;
     private PathfindingSystem _pathfinding = default!;

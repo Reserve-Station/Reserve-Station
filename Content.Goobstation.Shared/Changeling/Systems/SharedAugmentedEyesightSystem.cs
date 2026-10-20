@@ -10,9 +10,9 @@ namespace Content.Goobstation.Shared.Changeling.Systems;
 
 public abstract partial class SharedAugmentedEyesightSystem : EntitySystem
 {
-    // [Dependency] private readonly INetManager _net = default!; // Reserve edit: Fix warnings
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    // [Dependency] private readonly SharedEyeSystem _eye = default!; // Reserve edit: Fix warnings
+    // [Dependency] private INetManager _net = default!; // Reserve edit: Fix warnings
+    [Dependency] private SharedActionsSystem _actions = default!;
+    // [Dependency] private SharedEyeSystem _eye = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

@@ -14,14 +14,15 @@ using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Shared.MisandryBox.Smites;
 
-public sealed class ThunderstrikeSystem : EntitySystem
+public sealed partial class ThunderstrikeSystem : EntitySystem
 {
-    [Dependency] private readonly IFullScreenImageJumpscare _jumpscare = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedElectrocutionSystem _elect = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private IFullScreenImageJumpscare _jumpscare = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private IRobustRandom _random = default!;  // Reserve edit: Better thunderstrike (#280)
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPointLightSystem _light = default!;
+    [Dependency] private SharedElectrocutionSystem _elect = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     private const string Sound = "/Audio/_Goobstation/Effects/Smites/Thunderstrike/thunderstrike.ogg";
     private const string God = "/Textures/_Goobstation/MisandryBox/For he does not need no fucking rsi.png";
@@ -32,7 +33,7 @@ public sealed class ThunderstrikeSystem : EntitySystem
     }
 
     // efcc go get u alaye...
-    public void Smite(EntityUid mumu, bool kill = true, TransformComponent? transform = null,string ltg = God)
+    public void Smite(EntityUid mumu, bool kill = true, TransformComponent? transform = null, string ltg = God)
     {
         if (!Resolve(mumu, ref transform))
             return;

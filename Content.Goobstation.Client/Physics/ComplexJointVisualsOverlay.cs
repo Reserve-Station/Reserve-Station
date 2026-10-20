@@ -48,7 +48,7 @@ public sealed class ComplexJointVisualsOverlay : Overlay
         var curTime = _timing.CurTime;
         while (query.MoveNext(out var uid, out var beam, out var xform))
         {
-            var coords = _transform.GetRenderMapCoordinates((uid, xform));
+            var coords = _transform.GetMapCoordinates(uid, xform);
 
             foreach (var (netTarget, data) in beam.Data)
             {
@@ -56,7 +56,7 @@ public sealed class ComplexJointVisualsOverlay : Overlay
                     !xformQuery.TryComp(target.Value, out var targetXforn))
                     continue;
 
-                var targetCoords = _transform.GetRenderMapCoordinates((target.Value, targetXforn));
+                var targetCoords = _transform.GetMapCoordinates(target.Value, targetXforn);
 
                 if (targetCoords.MapId != coords.MapId)
                     continue;

@@ -63,6 +63,7 @@ public sealed class HungerSystem : EntitySystem
     private void OnShutdown(EntityUid uid, HungerComponent component, ComponentShutdown args)
     {
         _alerts.ClearAlertCategory(uid, component.HungerAlertCategory);
+        _movementSpeedModifier.RefreshMovementSpeedModifiers(uid); // Goob
     }
 
     private void OnRefreshMovespeed(EntityUid uid, HungerComponent component, RefreshMovementSpeedModifiersEvent args)
@@ -72,7 +73,7 @@ public sealed class HungerSystem : EntitySystem
             return;
         // Reserve edit end: Mood System port
 
-        if (component.CurrentThreshold > HungerThreshold.Starving)
+        if (component.CurrentThreshold > HungerThreshold.Starving || component.LifeStage > ComponentLifeStage.Running) // Goob
             return;
 
         if (_jetpack.IsUserFlying(uid))

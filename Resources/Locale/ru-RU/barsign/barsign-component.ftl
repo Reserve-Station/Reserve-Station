@@ -91,8 +91,8 @@ barsign-prototype-description-lv426 = Выпить с модной маской 
 
 ## The Wiggle Roomm
 
-barsign-prototype-name-wiggle-room = Комната Виггль
-barsign-prototype-description-wiggle-room = MoMMI маневрируют в танце.
+barsign-prototype-name-wiggle-room = Комната Виггля
+barsign-prototype-description-wiggle-room = Арахниды зажигают!
 
 ## The Lightbulb
 

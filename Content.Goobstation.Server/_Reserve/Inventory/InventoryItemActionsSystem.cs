@@ -19,14 +19,14 @@ using Robust.Shared.Player;
 
 namespace Content.Goobstation.Server._Reserve.Inventory;
 
-public sealed class InventoryItemActionsSystem : EntitySystem
+public sealed partial class InventoryItemActionsSystem : EntitySystem
 {
-    [Dependency] private readonly LenaApiManager _lenaApi = default!;
-    [Dependency] private readonly EuiManager _euiManager = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private LenaApiManager _lenaApi = default!;
+    [Dependency] private EuiManager _euiManager = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private AntagSelectionSystem _antagSelection = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private IEntityManager _entMan = default!;
 
     public override void Initialize()
     {

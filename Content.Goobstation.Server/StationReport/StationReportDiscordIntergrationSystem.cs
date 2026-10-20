@@ -8,12 +8,12 @@ using Robust.Shared.Configuration;
 
 namespace Content.Goobstation.Server.StationReportDiscordIntergrationSystem;
 
-public sealed class StationReportDiscordIntergrationSystem : EntitySystem
+public sealed partial class StationReportDiscordIntergrationSystem : EntitySystem
 {
     //thank you Timfa for writing this code
     private static readonly HttpClient Client = new();  // Reserve edit: Fix Station Report Discord integration
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly ILogManager _logManager = default!;  // Reserve edit: Fix Station Report Discord integration
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private ILogManager _logManager = default!;  // Reserve edit: Fix Station Report Discord integration
     private ISawmill _sawmill = default!;  // Reserve edit: Fix Station Report Discord integration
 
     private string? _webhookUrl;

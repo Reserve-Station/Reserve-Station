@@ -16,11 +16,11 @@ using Robust.Shared.Configuration; // Reserve-LenaApi
 namespace Content.Goobstation.Server.ServerCurrency.Commands
 {
     [AnyCommand]
-    public sealed class BalanceServerCurrencyCommand : IConsoleCommand
+    public sealed partial class BalanceServerCurrencyCommand : IConsoleCommand
     {
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
-        [Dependency] private readonly IChatManager _chatManager = default!;
-        [Dependency] private readonly IConfigurationManager _configuration = default!; // Reserve-LenaApi
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IChatManager _chatManager = default!;
+        [Dependency] private IConfigurationManager _configuration = default!; // Reserve-LenaApi
         public string Command => Loc.GetString("server-currency-balance-command");
         public string Description => Loc.GetString("server-currency-balance-command-description");
         public string Help => Loc.GetString("server-currency-balance-command-help");
@@ -56,13 +56,14 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AnyCommand] // Reserve edit: Coin transfer ovehaul
-    public sealed class GiftServerCurrencyCommand : IConsoleCommand
+    [AnyCommand]
+    public sealed partial class GiftServerCurrencyCommand : IConsoleCommand
     {
         private const string Operation = "server-currency-operation-gift"; // Reserve edit: Coin transfer ovehaul
 
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
-        [Dependency] private readonly IConfigurationManager _configuration = default!; // Reserve-LenaApi
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IChatManager _chatManager = default!;
+        [Dependency] private IConfigurationManager _configuration = default!; // Reserve-LenaApi
         [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-gift-command");
@@ -134,7 +135,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
             CurrencyCommandHelper.NotifyIfOnline(resolved.UserId, reciever);
             CurrencyCommandHelper.Succeed(shell, giver);
         }
-                    // Reserve edit end: Coin transfer ovehaul
+        // Reserve edit end: Coin transfer ovehaul
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
         {
@@ -148,11 +149,11 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     }
 
     [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
-    public sealed class AddServerCurrencyCommand : IConsoleCommand
+    public sealed partial class AddServerCurrencyCommand : IConsoleCommand
     {
         private const string Operation = "server-currency-operation-add"; // Reserve edit: Coin transfer ovehaul
 
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
         [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-add-command");
@@ -206,11 +207,11 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     }
 
     [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
-    public sealed class RemoveServerCurrencyCommand : IConsoleCommand
+    public sealed partial class RemoveServerCurrencyCommand : IConsoleCommand
     {
         private const string Operation = "server-currency-operation-remove"; // Reserve edit: Coin transfer ovehaul
 
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
         [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-remove-command");
@@ -264,11 +265,11 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     }
 
     [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
-    public sealed class SetServerCurrencyCommand : IConsoleCommand
+    public sealed partial class SetServerCurrencyCommand : IConsoleCommand
     {
         private const string Operation = "server-currency-operation-set"; // Reserve edit: Coin transfer ovehaul
 
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
         [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-set-command");
@@ -322,11 +323,11 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     }
 
     [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
-    public sealed class GetServerCurrencyCommand : IConsoleCommand
+    public sealed partial class GetServerCurrencyCommand : IConsoleCommand
     {
         private const string Operation = "server-currency-operation-get"; // Reserve edit: Coin transfer ovehaul
 
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
 
         public string Command => Loc.GetString("server-currency-get-command");
         public string Description => Loc.GetString("server-currency-get-command-description");

@@ -83,6 +83,7 @@ namespace Content.Shared.Input
         // Reserve edit end: Posing system port
         public static readonly BoundKeyFunction VoicePushToTalk = "VoicePushToTalk"; // Goobstation - Voice chat
         public static readonly BoundKeyFunction VoicePushToTalkRadio = "VoicePushToTalkRadio"; // Goobstation - Voice chat
+        public static readonly BoundKeyFunction NamePeek = "NamePeek"; // Goob
 
         // Shitmed Change Start
         public static readonly BoundKeyFunction TargetHead = "TargetHead";

@@ -6,11 +6,11 @@ using Robust.Shared.Physics.Events;
 
 namespace Content.Goobstation.Shared.Wraith.Other;
 
-public sealed class DamageOnCollideSystem : EntitySystem
+public sealed partial class DamageOnCollideSystem : EntitySystem
 {
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    // [Dependency] private readonly TagSystem _tag = default!; // Reserve edit: Fix warnings
+    [Dependency] private DamageableSystem _damageable  = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    // [Dependency] private TagSystem _tag = default!; // Reserve edit: Fix warnings
     /// <inheritdoc/>
     public override void Initialize()
     {

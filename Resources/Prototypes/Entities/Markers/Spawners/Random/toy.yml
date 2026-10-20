@@ -146,6 +146,7 @@
       - id: PlushieSvarshikEvaLarge
     # Reserve edit end: Reserve Plushies
     - id: PlushieSanabi  # Reserve edit: Reserve Plushies
+    - id: PlushieSynth  # Reserve edit: Upstream 20261020
 
 # Weh!
 - type: entityTable

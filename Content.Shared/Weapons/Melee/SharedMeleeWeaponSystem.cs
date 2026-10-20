@@ -736,6 +736,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem // Goob - p
         if (damageResult.GetTotal() > FixedPoint2.Zero)
         {
             DoDamageEffect(targets, user, targetXform);
+            DoMeleeScreenshake(user, targets); // Goob
         }
     }
 
@@ -938,6 +939,8 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem // Goob - p
             _meleeSound.PlayHitSound(target, user, GetHighestDamageSound(appliedDamage, _protoManager), hitEvent.HitSoundOverride, component);
         }
 
+        DoMeleeScreenshake(user, targets); // Goob
+
         if (appliedDamage.GetTotal() > FixedPoint2.Zero)
         {
             DoDamageEffect(targets, user, Transform(targets[0]));
@@ -1102,7 +1105,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem // Goob - p
         // Goobstation end
 
         PhysicalShove(user, target);
-        Interaction.DoContactInteraction(user, target);
+        Interaction.DoContactInteraction(user, target, null, true); // Goob
 
         if (MobState.IsIncapacitated(target))
             return true;

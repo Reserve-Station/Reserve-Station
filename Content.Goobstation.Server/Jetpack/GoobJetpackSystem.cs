@@ -13,15 +13,15 @@ using Robust.Shared.Random;
 
 namespace Content.Goobstation.Server.Jetpack;
 
-public sealed class GoobJetpackSystem : EntitySystem
+public sealed partial class GoobJetpackSystem : EntitySystem
 {
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly WoundSystem _wound = default!;
-    [Dependency] private readonly SharedBodySystem _body = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedJetpackSystem _jetpack = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
+    [Dependency] private WoundSystem _wound = default!;
+    [Dependency] private SharedBodySystem _body = default!;
+    [Dependency] private IRobustRandom _random = default!;
 
     private EntityQuery<WoundableComponent> _woundableQuery;
 

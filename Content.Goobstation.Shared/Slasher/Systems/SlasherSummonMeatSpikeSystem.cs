@@ -13,13 +13,13 @@ namespace Content.Goobstation.Shared.Slasher.Systems;
 /// <summary>
 /// Handles summoning a meat spike at the slasher's position.
 /// </summary>
-public sealed class SlasherSummonMeatSpikeSystem : EntitySystem
+public sealed partial class SlasherSummonMeatSpikeSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    // [Dependency] private readonly INetManager _net = default!; // Reserve edit: Fix warnings
+    [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    // [Dependency] private INetManager _net = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {
