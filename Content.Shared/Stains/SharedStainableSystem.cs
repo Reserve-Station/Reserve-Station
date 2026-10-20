@@ -4,6 +4,7 @@ using Content.Goobstation.Maths.FixedPoint; // Reserve - for FixedPoint2
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Fluids;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
@@ -212,12 +213,29 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
     private void OnWashed(Entity<StainableComponent> ent, ref WashingMachineIsBeingWashed args)
     {
-        if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var solution))
-            return;
+        if (Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var solution))
+        {
+            WashingForensics(ent, solution.Value, args.WashingMachine);
+            Solution.RemoveAllSolution(solution.Value);
+            UpdateVisuals(ent);
+        }
 
-        WashingForensics(ent, solution.Value, args.WashingMachine);
-        Solution.RemoveAllSolution(solution.Value);
-        UpdateVisuals(ent);
+        // RW edit start: fire-nerf
+        // Hoods and hardsuit helmets live on the suit, not in its pockets.
+        foreach (var attached in EnumerateAttachedClothing(ent.Owner))
+        {
+            if (!TryComp<StainableComponent>(attached, out var stain))
+                continue;
+
+            if (!Solution.TryGetSolution(attached, stain.SolutionId, out var attachedSolution, out var attachedStain) || attachedStain.Volume <= 0)
+                continue;
+
+            WashingForensics((attached, stain), attachedSolution.Value, args.WashingMachine);
+            Solution.RemoveAllSolution(attachedSolution.Value);
+            UpdateVisuals((attached, stain));
+            DirtyOwnerAppearance(attached);
+        }
+        // RW edit end: fire-nerf
     }
 
     protected virtual void StainForensics(Entity<StainableComponent> ent, Entity<SolutionComponent> solution)
@@ -253,8 +271,10 @@ public abstract partial class SharedStainableSystem : EntitySystem
             return;
         if (!args.CanAccess || !args.CanInteract)
             return;
-        if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out _, out var stainSolution) || stainSolution.Volume <= 0)
+        // RW edit start: fire-nerf
+        if (!HasStain(ent) && !AttachedHasStain(ent.Owner))
             return;
+        // RW edit end: fire-nerf
 
         var user = args.User;
         var verb = new Verb
@@ -283,17 +303,57 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
         args.Handled = true;
 
-        if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var stainSoln, out var stainSolution))
-            return;
+        var spilled = TryWring(ent, args.User);
 
-        if (stainSolution.Volume <= 0)
-            return;
+        // RW edit start: fire-nerf
+        foreach (var attached in EnumerateAttachedClothing(ent.Owner))
+        {
+            if (!TryComp<StainableComponent>(attached, out var stain))
+                continue;
+
+            spilled |= TryWring((attached, stain), args.User);
+        }
+        // RW edit end: fire-nerf
+
+        if (spilled)
+            _popup.PopupEntity(Loc.GetString("stain-verb-wring-success", ("item", ent.Owner)), args.User, args.User);
+    }
+
+    // RW edit start: fire-nerf
+    private bool HasStain(Entity<StainableComponent> ent)
+    {
+        return Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out _, out var stainSolution) && stainSolution.Volume > 0;
+    }
+
+    private bool AttachedHasStain(EntityUid clothing)
+    {
+        foreach (var attached in EnumerateAttachedClothing(clothing))
+        {
+            if (TryComp<StainableComponent>(attached, out var stain) && HasStain((attached, stain)))
+                return true;
+        }
+
+        return false;
+    }
+
+    private IEnumerable<EntityUid> EnumerateAttachedClothing(EntityUid clothing)
+    {
+        if (!TryComp<ToggleableClothingComponent>(clothing, out var toggleable))
+            yield break;
+
+        foreach (var (attached, _) in toggleable.ClothingUids)
+            yield return attached;
+    }
+    // RW edit end: fire-nerf
+
+    private bool TryWring(Entity<StainableComponent> ent, EntityUid user)
+    {
+        if (!Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out var stainSoln, out var stainSolution) || stainSolution.Volume <= 0)
+            return false;
 
         var puddleSolution = Solution.SplitSolution(stainSoln.Value, stainSolution.Volume);
-
         UpdateVisuals(ent);
-
-        if (_puddle.TrySpillAt(args.User, puddleSolution, out _))
-            _popup.PopupEntity(Loc.GetString("stain-verb-wring-success", ("item", ent.Owner)), args.User, args.User);
+        DirtyOwnerAppearance(ent.Owner);
+        return _puddle.TrySpillAt(user, puddleSolution, out _);
     }
 }
