@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-using System.Linq;
 
 namespace Content.Goobstation.Shared.Xenobiology.Components;
 

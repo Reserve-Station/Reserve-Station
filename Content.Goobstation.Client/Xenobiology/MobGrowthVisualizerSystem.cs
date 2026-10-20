@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.DamageState;
-using Robust.Client.GameObjects;
 using Content.Goobstation.Shared.Xenobiology;
 using Content.Goobstation.Shared.Xenobiology.Components;
 using Content.Shared.Mobs;
+using Robust.Client.GameObjects;
 
 namespace Content.Goobstation.Client.Xenobiology;
 

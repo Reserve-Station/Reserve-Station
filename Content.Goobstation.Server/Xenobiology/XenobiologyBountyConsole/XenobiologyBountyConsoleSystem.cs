@@ -2,7 +2,6 @@
 
 using System.Linq;
 using Content.Goobstation.Shared.Xenobiology.XenobiologyBountyConsole;
-using Robust.Shared.Prototypes;
 using Content.Server.Research.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared.Access.Components;
@@ -14,6 +13,7 @@ using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Goobstation.Server.Xenobiology.XenobiologyBountyConsole;

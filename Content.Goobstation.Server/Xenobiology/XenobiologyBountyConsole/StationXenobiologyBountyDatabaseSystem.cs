@@ -3,12 +3,12 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Goobstation.Shared.Xenobiology.XenobiologyBountyConsole;
-using Robust.Shared.Prototypes;
 using Content.Server.NameIdentifier;
 using Content.Shared.Cargo;
 using Content.Shared.IdentityManagement;
 using Content.Shared.NameIdentifier;
 using JetBrains.Annotations;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Goobstation.Server.Xenobiology.XenobiologyBountyConsole;

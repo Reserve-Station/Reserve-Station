@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Robust.Shared.Network;
 using Content.Goobstation.Shared.Xenobiology.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
 namespace Content.Goobstation.Shared.Xenobiology.Systems;

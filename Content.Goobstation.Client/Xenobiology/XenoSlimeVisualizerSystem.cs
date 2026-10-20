@@ -2,10 +2,10 @@
 
 using System.Diagnostics;
 using Content.Client.DamageState;
-using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
 using Content.Goobstation.Shared.Xenobiology;
 using Content.Goobstation.Shared.Xenobiology.Components;
+using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 
 namespace Content.Goobstation.Client.Xenobiology;
 
@@ -33,7 +33,7 @@ public sealed partial class XenoSlimeVisualizerSystem : VisualizerSystem<SlimeCo
         if (!layerExists)
             return;
         spriteComp.LayerSetShader(layerKey, newShader);
-        spriteComp.GetScreenTexture = true;
-        spriteComp.RaiseShaderEvent = true;
+        spriteComp.GetScreenTexture = true;  // Reserve edit: Trauma Xenobio
+        spriteComp.RaiseShaderEvent = true;  // Reserve edit: Trauma Xenobio
     }
 }

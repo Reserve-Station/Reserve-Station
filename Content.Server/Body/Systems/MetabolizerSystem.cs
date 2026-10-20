@@ -195,7 +195,7 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
                 var rate = entry.MetabolismRate * group.MetabolismRateModifier;
 
                 // Remove $rate, as long as there's enough reagent there to actually remove that much
-                var removalBefore = mostToRemove;
+                var removalBefore = mostToRemove; // Reserve edit: Trauma Xenobio
                 mostToRemove = FixedPoint2.Clamp(rate, 0, quantity);
 
                 var scale = (float) mostToRemove;
@@ -230,11 +230,13 @@ public sealed class MetabolizerSystem : SharedMetabolizerSystem
 
                 var actualEntity = ent.Comp2?.Body ?? solutionEntityUid.Value;
 
+                // Reserve edit start: Trauma Xenobio
                 if (!CanMetabolizeEffect(actualEntity, ent, soln.Value, entry.Conditions))
                 {
                     mostToRemove = removalBefore;
                     continue;
                 }
+                // Reserve edit end: Trauma Xenobio
 
                 // do all effects, if conditions apply
                 foreach (var effect in entry.Effects)

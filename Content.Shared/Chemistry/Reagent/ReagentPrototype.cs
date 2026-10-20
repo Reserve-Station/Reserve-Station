@@ -6,7 +6,7 @@ using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Contraband;
-using Content.Shared.EntityConditions;
+using Content.Shared.EntityConditions; // Reserve edit: Trauma Xenobio
 using Content.Shared.EntityEffects;
 using Content.Shared.Localizations;
 using Content.Shared.Nutrition;
@@ -306,11 +306,13 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField("effects", required: true)]
         public EntityEffect[] Effects = default!;
 
+        // Reserve edit start: Trauma Xenobio
         /// <summary>
         /// Checked before any effect. A failed check also skips removing the reagent.
         /// </summary>
         [DataField]
         public EntityCondition[] Conditions = [];
+        // Reserve edit end: Trauma Xenobio
 
         public string EntityEffectFormat => "guidebook-reagent-effect-description";
 
