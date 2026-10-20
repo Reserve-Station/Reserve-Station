@@ -1170,7 +1170,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
         SolutionComponent solutionComp;
         if (solutionSlot.ContainedEntity is not { } solutionId)
         {
-            if (NetManager.IsClient && !IsClientSide(uid))
+            if (NetManager.IsClient && !IsClientSide(uid))  // Reserve edit: Part Status and Chemicals show
                 return false;
             prototype ??= new() { MaxVolume = maxVol };
             prototype.Name = name;
