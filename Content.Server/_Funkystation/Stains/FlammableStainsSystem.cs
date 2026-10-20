@@ -194,7 +194,7 @@ namespace Content.Server._Funkystation.Stains
 
         /// <summary>
         /// Ignitability is the mixture (a drop of pure fuel is still fuel).
-        /// Strength is that mixture scaled by how full the stain capacity is.
+        /// Strength is that mixture scaled by how full the stain capacity is, then by the clothing fire scale.
         /// </summary>
         private void GetStainFire(StainableComponent stain, Solution solution, out float ignitability, out float strength)
         {
@@ -221,6 +221,8 @@ namespace Content.Server._Funkystation.Stains
                 ignitability += proto.Flammability * (qty / volume);
                 strength += proto.Flammability * (qty / capacity);
             }
+
+            strength *= stain.FireScale;
         }
 
         /// <summary>

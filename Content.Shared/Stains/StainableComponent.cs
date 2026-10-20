@@ -20,6 +20,15 @@ public sealed partial class StainableComponent : Component
     [DataField]
     public FixedPoint2 StainVolume = 0.5f;
 
+    // RW edit start: fire-nerf
+    /// <summary>
+    /// Share of a burning stain that becomes fire stacks on the wearer.
+    /// Cloth is 1. Plated and sealed clothing uses less.
+    /// </summary>
+    [DataField]
+    public float FireScale = 1f;
+    // RW edit end: fire-nerf
+
     [DataField]
     public Dictionary<string, List<PrototypeLayerData>> ClothingVisuals = new();
 

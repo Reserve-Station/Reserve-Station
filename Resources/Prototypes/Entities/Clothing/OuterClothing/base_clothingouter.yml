@@ -70,6 +70,7 @@
     tags:
       - WhitelistChameleon
   - type: Stainable # Reserve
+    fireScale: 0.35 # RW edit: fire-nerf
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -186,6 +187,8 @@
 # SlotBlocker blocked until UI change
 #  - type: SlotBlock
 #    slots: [innerclothing, feet]
+  - type: Stainable
+    fireScale: 0.15 # RW edit: fire-nerf
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
