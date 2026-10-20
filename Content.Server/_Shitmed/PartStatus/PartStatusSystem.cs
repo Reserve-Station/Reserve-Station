@@ -81,7 +81,7 @@ public sealed class PartStatusSystem : EntitySystem
 
         _chat.ChatMessageToOne(
             ChatChannel.Emotes,
-            text.ToString(),
+            text.ToString(),  // Reserve edit: Part Status and Chemicals show
             text.ToMarkup(),
             EntityUid.Invalid,
             false,
