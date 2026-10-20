@@ -268,7 +268,7 @@ public sealed class PartStatusSystem : EntitySystem
                 ? localizedPart
                 : partStatus.PartName;
 
-            var line = Loc.GetString(locString,
+            var line = Loc.GetString(locString,  // Reserve edit: Part Status and Chemicals show
                 ("possessive", possessive),
                 ("part", partName),
                 ("status", statusDescription));
