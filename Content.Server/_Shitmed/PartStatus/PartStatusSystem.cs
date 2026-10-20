@@ -271,12 +271,14 @@ public sealed class PartStatusSystem : EntitySystem
             var line = Loc.GetString(locString,  // Reserve edit: Part Status and Chemicals show
                 ("possessive", possessive),
                 ("part", partName),
-                ("status", statusDescription));
+                ("status", statusDescription));  // Reserve edit: Part Status and Chemicals show
 
+            // Reserve edit start: Part Status and Chemicals show
             if (styleless)
                 message.AddText("    " + line);
             else
                 message.AddMarkupPermissive("    " + line);
+            // Reserve edit end: Part Status and Chemicals show
             // Reserve edit end: localization #359
 
             message.PushNewline();
