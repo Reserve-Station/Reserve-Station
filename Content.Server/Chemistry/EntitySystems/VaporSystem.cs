@@ -19,6 +19,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Spawners;
 using System.Numerics;
 using Content.Goobstation.Shared.Chemistry;
+using Content.Server.Stains;
 
 namespace Content.Server.Chemistry.EntitySystems
 {
@@ -32,6 +33,7 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private readonly ThrowingSystem _throwing = default!;
         [Dependency] private readonly ReactiveSystem _reactive = default!;
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+        [Dependency] private readonly StainableSystem _stainable = default!; // RW edit: fire-nerf
 
         public override void Initialize()
         {
@@ -51,6 +53,12 @@ namespace Content.Server.Chemistry.EntitySystems
             {
                 var solution = soln.Comp.Solution;
                 _reactive.DoEntityReaction(args.OtherEntity, solution, ReactionMethod.Touch);
+
+                // RW edit start: fire-nerf
+                // The cloud keeps its own solution for the tile. Clothing gets a copy, water included, so fuel stains dilute.
+                if (solution.Volume > FixedPoint2.Zero)
+                    _stainable.SoakWornClothing(args.OtherEntity, solution.Clone());
+                // RW edit end: fire-nerf
 
                 var ev = new VaporCheckEyeProtectionEvent(); // Goobstation - Start
                 RaiseLocalEvent(args.OtherEntity, ev);

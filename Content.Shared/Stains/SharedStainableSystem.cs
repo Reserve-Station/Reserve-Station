@@ -3,6 +3,7 @@
 using Content.Goobstation.Maths.FixedPoint; // Reserve - for FixedPoint2
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Fluids;
 using Content.Shared.Inventory;
 using Content.Shared.Item;
@@ -13,6 +14,7 @@ using Content.Shared.Stains.Components; // Gaby
 using Content.Shared.Verbs; // Gaby
 using Content.Shared.DoAfter; // Gaby
 using Content.Shared.Popups; // Gaby
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility; // Gaby
 
 namespace Content.Shared.Stains;
@@ -27,6 +29,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Gaby
     [Dependency] private readonly SharedPuddleSystem _puddle = default!; // Gaby
     [Dependency] private readonly SharedPopupSystem _popup = default!; // Gaby
+    [Dependency] private readonly IPrototypeManager _prototype = default!; // RW edit: fire-nerf
 
     public override void Initialize()
     {
@@ -95,27 +98,85 @@ public abstract partial class SharedStainableSystem : EntitySystem
         DirtyOwnerAppearance(ent.Owner); // Gaby
     }
 
-    private void TransferStain(Entity<SolutionComponent> target, Solution source, FixedPoint2 amount)
+    // RW edit start: fire-nerf
+    /// <summary>
+    /// Wets worn clothing from a spray. Slots that already hold flammable liquid are soaked first,
+    /// so a small extinguisher puff reaches the fuel instead of the first slots in inventory order.
+    /// </summary>
+    public void SoakWornClothing(EntityUid wearer, Solution spray)
     {
-        // Call SplitSolution on the solution object directly, not the system.
-        var taken = source.SplitSolution(amount);
+        if (spray.Volume <= FixedPoint2.Zero || !TryComp<InventoryComponent>(wearer, out var inventory))
+            return;
 
-        // Filter out water
-        // Iterate backwards to remove items while iterating
-        for (var i = taken.Contents.Count - 1; i >= 0; i--)
-        {
-            if (taken.Contents[i].Reagent.Prototype == "Water")
-            {
-                taken.RemoveReagent(taken.Contents[i].Reagent, taken.Contents[i].Quantity);
-            }
-        }
+        SoakMatching(wearer, inventory, spray, flammableOnly: true);
+        SoakMatching(wearer, inventory, spray, flammableOnly: false);
+    }
 
-        // Transfer the remaining reagents to the target
-        if (taken.Volume > 0)
+    public void RefreshStainVisuals(EntityUid clothing)
+    {
+        if (!TryComp<StainableComponent>(clothing, out var stain))
+            return;
+
+        UpdateVisuals((clothing, stain));
+    }
+
+    private void SoakMatching(EntityUid wearer, InventoryComponent inventory, Solution spray, bool flammableOnly)
+    {
+        foreach (var slot in inventory.Slots)
         {
-            Solution.TryAddSolution(target, taken);
+            if (spray.Volume <= FixedPoint2.Zero)
+                return;
+
+            if ((slot.SlotFlags & SlotFlags.WITHOUT_POCKET) == 0)
+                continue;
+
+            if (!_inventory.TryGetSlotEntity(wearer, slot.Name, out var slotEnt, inventory))
+                continue;
+
+            if (!TryComp<StainableComponent>(slotEnt, out var stain))
+                continue;
+
+            if (IsStainBlocked((slotEnt.Value, stain)))
+                continue;
+
+            if (!Solution.TryGetSolution(slotEnt.Value, stain.SolutionId, out var target, out var solution))
+                continue;
+
+            if (flammableOnly && !HasFlammableReagent(solution))
+                continue;
+
+            var amount = stain.StainVolume;
+            if (amount > spray.Volume)
+                amount = spray.Volume;
+
+            TransferStain(target.Value, spray, amount);
+            UpdateVisuals((slotEnt.Value, stain));
+            DirtyOwnerAppearance(slotEnt.Value);
         }
     }
+
+    private void TransferStain(Entity<SolutionComponent> target, Solution source, FixedPoint2 amount)
+    {
+        // SplitSolution mutates the source. Water stays in the portion so it can dilute fuel.
+        var taken = source.SplitSolution(amount);
+        if (taken.Volume <= FixedPoint2.Zero)
+            return;
+
+        // A full stain mixes and drips the excess instead of refusing the new liquid.
+        Solution.TryMixAndOverflow(target, taken, target.Comp.Solution.MaxVolume, out _);
+    }
+
+    private bool HasFlammableReagent(Solution solution)
+    {
+        foreach (var (reagent, _) in solution.Contents)
+        {
+            if (_prototype.TryIndex<ReagentPrototype>(reagent.Prototype, out var proto) && proto.Flammability > 0)
+                return true;
+        }
+
+        return false;
+    }
+    // RW edit end: fire-nerf
 
     private bool IsStainBlocked(Entity<StainableComponent> item) // Gaby
     {
