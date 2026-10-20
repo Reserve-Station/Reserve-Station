@@ -17,6 +17,30 @@ stack-ashwood-plank =
        *[other] досок пепельного дерева
     }
 
+stack-ashwood-stick =
+    { $amount ->
+        [1] палка из пепельного дерева
+       *[other] палок из пепельного дерева
+    }
+
+stack-wood-stick =
+    { $amount ->
+        [1] деревянная палка
+       *[other] деревянных палок
+    }
+
+stack-flowers-ash =
+    { $amount ->
+        [1] пепельный цветок
+       *[other] пепельных цветов
+    }
+
+stack-flowers-pale =
+    { $amount ->
+        [1] бледный цветок
+       *[other] бледных цветов
+    }
+
 stack-ice-wing =
     { $amount ->
         [1] крыло ледяного наблюдателя

@@ -30,3 +30,5 @@ ent-BulletAnaconda = пуля (.40 неказистая)
     .desc = { ent-BaseBullet.desc }
 ent-BulletChargeGlaive = болт лича
     .desc = { ent-BulletCharge.desc }
+ent-BulletPlasmaRifle = болт плазменной винтовки
+    .desc = { ent-BaseBullet.desc }

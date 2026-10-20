@@ -1,17 +1,21 @@
-ent-BaseWeaponSniper = BaseWeaponSniper
+ent-BaseWeaponSniper = снайперская винтовка
     .desc = Дерзай — налетай, целься и стреляй.
+    .suffix = Оружие, Винтовка
+
 ent-WeaponSniperMosin = Кардашёв-Мосин
     .desc = Оружие охоты, или бесконечной окопной войны. Использует патроны калибра .30 винтовочный.
-    .suffix = Винтовка
+    .suffix = Оружие, Винтовка
 ent-WeaponSniperHristov = Христов
     .desc = Портативная крупнокалиберная снайперская винтовка. Стреляет мощными бронебойными патронами, калибра .60 крупнокалиберный.
-    .suffix = Винтовка
-ent-WeaponPistolFlintlock = кремнёвый пистолет
+    .suffix = Оружие, Винтовка
+
+ent-WeaponPistolFlintlock = кремниевый пистолет
     .desc = Спутник пирата. Яррр! Использует патроны калибра .60 крупнокалиберный.
-    .suffix = Пистолет, Винтовка
+    .suffix = Оружие, Пистолет, Винтовка, Пират
 ent-WeaponPistolFlintlockEmpty = { ent-WeaponPistolFlintlock }
     .desc = { ent-WeaponPistolFlintlock.desc }
-    .suffix = Пустой, Пистолет, Винтовка
+    .suffix = Оружие, Пистолет, Винтовка, Пират, Пустой
+
 ent-Musket = мушкет
     .desc = Это должно было оказаться в музее задолго до твоего рождения. Использует патроны калибра .60 крупнокалиберный.
-    .suffix = Винтовка
+    .suffix = Оружие, Винтовка, Пират

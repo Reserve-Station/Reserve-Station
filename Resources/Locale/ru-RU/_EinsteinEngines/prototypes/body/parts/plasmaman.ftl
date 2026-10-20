@@ -1,6 +1,6 @@
 ent-PartPlasmaman = часть тела плазмамена
     .desc = { ent-BaseItem.desc }
-ent-ChestPlasmaman = торс плазмамена
+ent-ChestPlasmaman = грудная клетка плазмамена
     .desc = { ent-PartPlasmaman.desc }
 ent-GroinPlasmaman = пах плазмамена
     .desc = { ent-PartPlasmaman.desc }

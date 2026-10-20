@@ -1,5 +1,5 @@
 ent-BaseBiomeSpawner = спавнер биома
-    .desc = { "" }
+    .desc = Спавнит в выбранном тайле декорации определённого биома.
 ent-BiomeSpawnerCaves = { ent-BaseBiomeSpawner }
     .suffix = Пещеры
     .desc = { ent-BaseBiomeSpawner.desc }

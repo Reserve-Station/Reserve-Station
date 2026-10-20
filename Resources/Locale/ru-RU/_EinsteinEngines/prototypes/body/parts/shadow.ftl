@@ -1,6 +1,6 @@
 ent-PartShadow = часть тела тени
     .desc = { ent-PartHuman.desc }
-ent-ChestShadow = грудь тени
+ent-ChestShadow = грудная клетка тени
     .desc = { ent-BaseChest.desc }
 ent-GroinShadow = пах тени
     .desc = { ent-BaseGroin.desc }

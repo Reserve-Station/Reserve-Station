@@ -301,7 +301,7 @@
   - type: Paper
     stampState: paper_stamp-syndicate
     stampedBy:
-    - stampedName: ДСО
+    - stampedName: ЭСКАДРОН СМЕРТИ
       stampedColor: "#800000"
     content: "[color=#1b487e]███░███░░░░██░░░░[/color]\n[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]     Бланк документа[/head]\n[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]    NanoTrasen[/head]\n[color=#1b487e]░░░░██░░██░██░██░[/color]              [bold]    ДСО-ЭС ТФ-832[/bold]\n[color=#1b487e]░░░░██░░░████░███[/color][bold][color=#A52A2A]        СОВЕРШЕННО СЕКРЕТНО[/color][/bold]\n====================================================\n                                         [head=3]ПРОТОКОЛ МИССИИ[/head]\n====================================================\n[head=3]Основная цель[/head]\nЗащита репутации NanoTrasen любой ценой. Полное уничтожение объекта.\n[bold]Взаимодействие с экипажем[/bold]\nПолная ликвидация. Без исключений.\n[bold]Вербальный контант с экипажем[/bold]\nЗапрещен.\n[bold]Применение корабельной артилерии[/bold]\nБез ограничений.\n[bold]Запрос БСА[/bold]\nПо необходимости.\n[bold]Уничтожение станции[/bold]\nВ обязательном порядке."
 
@@ -314,7 +314,7 @@
   - type: Paper
     stampState: paper_stamp-syndicate
     stampedBy:
-    - stampedName: ДСО
+    - stampedName: ЭСКАДРОН СМЕРТИ
       stampedColor: "#800000"
 
 ###СТРУКТУРЫ
@@ -335,7 +335,7 @@
         params:
           volume: -1
 
-#ПЛАТА ДСО
+#ПЛАТА Эскадрона смерти
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsDSO

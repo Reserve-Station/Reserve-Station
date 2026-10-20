@@ -152,14 +152,3 @@ gangwar-tipoff-nanochat-message = Не спрашивай, откуда я эт�
 
 quickhack-no-charges = Зарядов не осталось.
 quickhack-failed = Не удалось отправить сигнал.
-
-# Действия
-
-ent-ActionGangMemberToggleOverlay = Переключить видение
-    .desc = Переключить видение вашей территории.
-
-ent-ActionGangLeaderSummonLocker = Вызвать шкафчик
-    .desc = Вызвать шкафчик вашей банды. Если он уже установлен, переместите его вместо этого.
-
-ent-ActionGangLeaderMemberOffer = Вербовать
-    .desc = Предложите кому-то место в вашей банде. Вы можете вербовать только трёх участников.

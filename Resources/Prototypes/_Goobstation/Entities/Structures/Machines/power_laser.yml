@@ -94,6 +94,7 @@
       path: /Audio/Ambience/Objects/engine_hum.ogg
 
 - type: entity
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   parent: BasicHitscan
   id: PTL
   components:

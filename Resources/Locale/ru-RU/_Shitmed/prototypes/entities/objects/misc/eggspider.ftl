@@ -1,2 +1,3 @@
-ent-EggSpiderFertilized = паучье яйцо
-    .desc = Это драгоценный камень? Это яйцо? Выглядит дорого.
+ent-EggSpiderFertilized = { ent-EggSpider }
+    .desc = { ent-EggSpider.desc }
+    .suffix = Оплодотворённый

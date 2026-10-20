@@ -4,3 +4,6 @@ ent-SpawnPointGhostBingle = { ent-BaseAntagSpawner }
 ent-SpawnPointGhostBinglePrime = { ent-SpawnPointGhostBingle }
     .suffix = Бингл прайм
     .desc = { ent-SpawnPointGhostBingle.desc }
+ent-SpawnPointGhostTurkle = { ent-BaseAntagSpawner }
+    .suffix = Тюркл
+    .desc = { ent-MarkerBase.desc }

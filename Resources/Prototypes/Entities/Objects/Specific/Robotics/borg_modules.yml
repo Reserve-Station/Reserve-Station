@@ -688,6 +688,7 @@
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-tools-module }
 
 - type: entity
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   id: BorgModuleConstructionMaterialPlaceholder
   parent: BaseItem
   components:

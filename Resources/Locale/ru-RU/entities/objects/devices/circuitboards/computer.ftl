@@ -99,6 +99,8 @@ ent-StationAiUploadCircuitboard = консоль загрузки ИИ (конс
 
 ent-XenoborgCameraMonitorCircuitboard = монитор камер ксеноборгов (консольная плата)
     .desc = Консольная плата для монитора камер ксеноборгов.
+ent-ComputerXenoborgsControlCircuitboard = консоль управления ксеноборгами (консольная плата)
+    .desc = Консольная плата для консоли управления ксеноборгами.
 
 ent-WizardCommsComputerCircuitboard = консоль связи волшебника (консольная плата)
     .desc = Консольная плата для консоли связи волшебника.

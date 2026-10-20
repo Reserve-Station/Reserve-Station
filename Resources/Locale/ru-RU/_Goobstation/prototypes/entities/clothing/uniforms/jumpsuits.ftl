@@ -1,5 +1,5 @@
 ent-ClothingUniformJumpsuitDurathread = комбинезон из дюраткани
-    .desc = Комбинезон из дюраткани . Его эластичные волокна обеспечивают некоторую защиту владельцу.
+    .desc = Комбинезон из дюраткани. Его эластичные волокна обеспечивают некоторую защиту владельцу.
 ent-ClothingUniformJumpsuitResonant = резонансный комбинезон
     .desc = Давай не будем играть слишком грубо. Ни ты, ни я пока не можем этого добиться…
 ent-ClothingUniformJumpsuitWestern = аутентичный комбинезон ковбоя
@@ -20,27 +20,31 @@ ent-ClothingUniformJumpsuitBlueshieldOfficer = комбинезон офицер
     .desc = Серо-синий комбинезон с короткими рукавами, изготовленный из прочного материала.
 ent-ClothingUniformJumpsuitBlueshieldShirt = голубая рубашка офицера Синего Щита
     .desc = Официальная форма охранника. Довольно безопасно и довольно занято.
-ent-ClothingUniformMailCarrier = униформа почтальона
+ent-ClothingUniformMailCarrier = комбинезон почтальона
     .desc = Враг собак - везде.
-ent-ClothingUniformHecu = униформа HECU
+ent-ClothingUniformHecu = комбинезон HECU
     .desc = Убить Фримена.
     .suffix = Адмем, Халф-Лайф
+
 ent-ClothingUniformJumpsuitNavyGold = комбинезон офицера флота
     .desc = Комбинезон, который носят высокопоставленные члены Центрального Командования. Остальное засекречено.
 ent-ClothingUniformJumpsuitSpecOps = комбинезон офицера специальных операций
     .desc = Комбинезон, который носят высокопоставленные офицеры специальных операций. Остальное засекречено.
 ent-ClothingUniformJumpsuitDiplomat = костюм дипломата
-    .desc = Костюм, который носят Дипломаты Центрального Командования,.
+    .desc = Костюм, который носят Дипломаты Центрального Командования.
 ent-ClothingUniformJumpsuitCentralCommandLiaison = комбинезон связного ЦентКом
-    .desc = По слухам, начальник Центкома, впервые увидев форму Внешнего Командования, так позеленел от зависти, что даже окрасил её в зелёный цвет.
-ent-ClothingUniformJumpsuitTrainer = комбинезон профессионального тренера
+    .desc = По слухам, начальник ЦентКома, впервые увидев форму Внешнего Командования, так позеленел от зависти, что даже окрасил её в зелёный цвет.
+ent-ClothingUniformJumpsuitTrainer = комбинезон карьерного тренера NanoTrasen
     .desc = Костюм, предназначенный для профессиональных тренеров NanoTrasen. Наполняет вас чувством гордости.
+
 ent-ClothingUniformJumpsuitDevil = дьявольский костюм
     .desc = Стильный чёрный костюм, сшитый из материалов, не характерных для этого мира. Теплый на ощупь.
-ent-ClothingUniformJumpsuitMercer = уличная одежда на Манхэттене
+ent-ClothingUniformJumpsuitMercer = уличная одежда Манхэттена
     .desc = Только тот, кто попытался бы сбежать с самым смертоносным биологическим оружием на Земле, захотел бы носить это.
+    .suffix = Прототип, Алекс Мерсер
 ent-ClothingCostumeAbductor = костюм пришельца
     .desc = На бирке написано: "Компания Donk Co. не несет ответственности за любые нарушения безопасности, вызванные этим продуктом".
+
 ent-ClothingUniformJumpsuitHoSSummer = летняя рубашка главы службы безопасности
     .desc = Индивидуальный летний наряд главы службы безопасности, на случай, если становится жарко во время погони за грейтайдами.
 ent-ClothingUniformJumpsuitRDSummer = летняя рубашка научного руководителя
@@ -53,6 +57,7 @@ ent-ClothingUniformJumpsuitHoPSummer = летняя рубашка главы п
     .desc = Индивидуальный летний наряд главы персонала, чтобы с комфортом заниматься бумажной работой.
 ent-ClothingUniformJumpsuitCESummer = летняя рубашка старшего инженера
     .desc = Индивидуальный летний наряд старшего инженера, чтобы просто лечь и полюбоваться теслой под пивко.
+
 ent-ClothingUniformJumpsuitPassengerQuarterzip = комбинезон на молнии
     .desc = Комбинезон на молнии для искушенного ассистента.
 ent-ClothingUniformJumpsuitAncientUnremoveable = { ent-ClothingUniformJumpsuitAncient }
@@ -60,12 +65,14 @@ ent-ClothingUniformJumpsuitAncientUnremoveable = { ent-ClothingUniformJumpsuitAn
     .desc = { ent-ClothingUniformJumpsuitAncient.desc }
 ent-ClothingUniformJumpsuitOuterCommand = комбинезон внешнего командования
     .desc = Элегантный фиолетовый костюм с эмблемой Терра-Гов.
+
 ent-ClothingUniformOverallsCargo = { ent-ClothingUniformJumpsuitCargo } на лямках
     .desc = { ent-ClothingUniformJumpsuitCargo.desc }
 ent-ClothingUniformOverallsShaftMiner = { ent-ClothingUniformJumpsuitShaftMiner } на лямках
     .desc = { ent-ClothingUniformJumpsuitShaftMiner.desc }
 ent-ClothingUniformOverallsSalvageSpecialist = { ent-ClothingUniformJumpsuitSalvageSpecialist } на лямках
     .desc = { ent-ClothingUniformJumpsuitSalvageSpecialist.desc }
+
 ent-ClothingUniformJumpsuitResearchDirectorAlt = водолазка научного руководителя
     .desc = Это водолазка, которую носят те, кто обладает необходимыми знаниями для того, чтобы занять должность научного руководителя. Ее ткань обеспечивает незначительную защиту от биологических загрязнений.
     .suffix = Альтернативный
@@ -73,3 +80,6 @@ ent-ClothingUniformJumpsuitVeteranSecurity = воздушный комбинез
     .desc = Воздушная версия стандартного комбинезона службы безопасности, обычно выдаваемая в смены, когда отсутствуют атмосферные техники.
 ent-ClothingUniformJumpsuitGoldenLiaison = золотой комбинезон ЦентКом
     .desc = Бело-золотой мундир безупречного кроя, который носят высокопоставленные чины Центрального командования.
+ent-ClothingUniformJumpsuitMonk = брюки монаха
+    .desc = Простые брюки, не намного лучше старого мешка.
+    .suffix = Священник

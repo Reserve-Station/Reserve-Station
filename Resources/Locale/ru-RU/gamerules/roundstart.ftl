@@ -1,5 +1,5 @@
-ent-BaseGameRule = { "" }
-    .desc = { "" }
+ent-BaseGameRule = игровое правило
+    .desc = Обычное игровое правило.
 ent-RespawnDeadRule = { ent-BaseGameRule }
     .desc = { ent-BaseGameRule.desc }
 ent-SubGamemodesRule = { ent-BaseGameRule }

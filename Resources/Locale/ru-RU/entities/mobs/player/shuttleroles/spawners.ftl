@@ -190,10 +190,10 @@ ent-SyndieVisitorSpawner = спавнер - роль призрака
 
 ent-PirateScoonerSpawner = спавнер - роль призрака
     .desc = { ent-MarkerBase.desc }
-    .suffix = Пират, Шхуна
+    .suffix = Пират
 ent-PirateCaptainScoonerSpawner = спавнер - роль призрака
     .desc = { ent-MarkerBase.desc }
-    .suffix = Пират, Капитан пиратов, Шхуна
+    .suffix = Пират, Капитан
 
 # Адмемы
 

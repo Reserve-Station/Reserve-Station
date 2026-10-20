@@ -1,10 +1,12 @@
 ent-ClothingBeltMilitaryWebbingCMO = медицинская РПС главного врача
     .desc = Медицинский РПС с глубокими карманами для использования парамедиками и медицинскими работниками.
+
 ent-ClothingBeltDeathsquadWebbing = РПС эскадрона смерти
     .desc = Надёжный и долговечный РПС, содержащий все необходимое для поддержания вас в бою. Скорее всего, он вам не понадобится.
     .suffix = НЕ МАППИТЬ
 ent-ClothingBeltSecurityWebbingMedical = РПС медика ОБР
     .desc = Медицинский РПС с различными глубокими карманами для использования членами отрядов ОБР.
+
 ent-ClothingBeltCorporateJudo = пояс корпоративного дзюдо
     .desc = Дарует носящему знания корпоративного дзюдо.
 ent-ClothingBeltChemBagSyndi = медицинская сумка Синдиката
@@ -13,21 +15,39 @@ ent-ClothingBeltSheathHeadOfSecurity = ножны главы службы без
     .desc = Прочные ножны, предназначенные для хранения энергетического меча главы службы безопасности.
 ent-ClothingBeltMilitaryRigGrenadier = пояс гренадёра
     .desc = Специальная поясная разгрузка позволяет разместить столько гранат, что ваша рука устанет метать их все. Также в нем можно хранить пистолет и магазины к нему.
+
 ent-ClothingBeltChemBagXenobiology = сумка для ксенобиологии
     .desc = Устойчивая к слизи сумка, предназначенная для использования ксенобиологами. Пахнет... плазмой?
 ent-ClothingBeltChemBagXenobiologyHolding = бездонная сумка для ксенобиологии
     .desc =  Большая, устойчивая к слизи сумка, предназначенная для использования ксенобиологами. Пахнет экстрактом блюспейса и обезьяньей шерстью.
-ent-ClothingBeltMilitaryWebbingBSOFilled = РПС Синего Щита
-    .desc = Разгрузка, используемая подразделениями Центрального Командования.
+
+ent-ClothingBeltMilitaryWebbingBSO = РПС Синего Щита
+    .desc = Комплект тактической разгрузки, которую носят вспомогательные подразделения Центрального Командования.
+    .suffix = Пустой
+ent-ClothingBeltMilitaryWebbingBSOFilled = { ent-ClothingBeltMilitaryWebbingBSO }
+    .desc = { ent-ClothingBeltMilitaryWebbingBSO.desc }
+    .suffix = Медикаменты, Заполненный
+ent-ClothingBeltMilitaryWebbingFilled = { ent-ClothingBeltMilitaryWebbingBSO }
+    .desc = { ent-ClothingBeltMilitaryWebbingBSO.desc }
+    .suffix = Заполненный
+
+ent-ClothingBeltUtilityAtmos = пояс атмосферного техника
+    .desc = Вмещает все инструменты, необходимые для растущей (средних лет) атмос-кошкодевочки.
+ent-ClothingBeltUtilityAtmosFilled = { ent-ClothingBeltUtilityAtmos }
+    .desc = { ent-ClothingBeltUtilityAtmos.desc }
+    .suffix = Заполненный
+
 ent-ClothingBeltUtilityFilledUnremoveable = { ent-ClothingBeltUtilityFilled }
     .desc = { ent-ClothingBeltUtilityFilled.desc }
     .suffix = Неснимаемый
+
 ent-ClothingBeltSecurityWebbingContractor = РПС контрактника
     .desc = Нагрудный РПС с глубокими карманами и взрывозащищенностью, часто используется контрактниками и охотниками за головами.
     .suffix = Синдикат
 ent-ClothingBeltSecurityWebbingContractorFilled = { ent-ClothingBeltSecurityWebbingContractor }
     .desc = { ent-ClothingBeltSecurityWebbingContractor.desc }
     .suffix = Синдикат, Заполненный
+
 ent-ClothingBeltWhipping = ремень для порки
     .desc = Где ремень, там и путь.
     .suffix = Адмем

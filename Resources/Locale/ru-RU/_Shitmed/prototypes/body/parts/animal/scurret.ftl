@@ -1,6 +1,6 @@
 ent-PartScurret = часть тела слизнекота
     .desc = { ent-PartHuman.desc }
-ent-ChestScurret = грудь слизнекота
+ent-ChestScurret = грудная клетка слизнекота
     .desc = { ent-BaseChest.desc }
 ent-GroinScurret = пах слизнекота
     .desc = { ent-BaseGroin.desc }

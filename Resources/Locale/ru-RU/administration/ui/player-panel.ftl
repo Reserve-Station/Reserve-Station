@@ -6,6 +6,8 @@ player-panel-rolebans = Всего банов ролей: { $totalRoleBans }
 player-panel-notes = Всего заметок: { $totalNotes }
 player-panel-playtime = Наиграно времени: { $days }д:{ $hours }ч:{ $minutes }м
 player-panel-shared-connections = Общие соединения: { $sharedConnections }
+player-panel-trust-score = Уровень доверия: {TOSTRING($trustScore, "P0")}
+
 player-panel-copy-username = Копировать
 player-panel-show-notes = Заметки
 player-panel-show-bans = Показать баны

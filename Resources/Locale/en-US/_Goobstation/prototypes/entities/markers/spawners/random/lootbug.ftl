@@ -1,2 +1,3 @@
-ent-SpawnLootLootbug = Создатель лута для мародеров
+ent-SpawnLootLootbug = спавнер - лут - { ent-MobLootbug }
     .desc = { ent-MarkerBase.desc }
+    .suffix = { ent-MobLootbug.suffix }

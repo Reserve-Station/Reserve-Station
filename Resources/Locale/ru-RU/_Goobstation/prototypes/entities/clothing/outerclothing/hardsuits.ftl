@@ -21,6 +21,7 @@ ent-ClothingSingulothArmor = доспехи рыцаря Cингулота
     .desc = Церемониальные доспехи ордена рыцарей Сингулота, сделанные из чистого кованого адамантия.
 ent-ClothingOuterHardsuitVoxRaiderStealth = стелс-костюм вокса-рейдера
     .desc = Гладкий, чёрный костюм. Кажется, у него есть хвост, и он очень тяжелый.
+    .suffix = Вокс-рейдер
 ent-ClothingOuterHardsuitDetective = скафандр детектива
     .desc = Скафандр, сшитый на заказ для детектива. От него сильно пахнет алкоголем и сигаретами.
 ent-ClothingOuterHardsuitContractor = скафандр контрактника

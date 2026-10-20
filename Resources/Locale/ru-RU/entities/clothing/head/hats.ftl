@@ -10,6 +10,7 @@ ent-ClothingHeadHatSecurityTrooper = шляпа патрульного
     .desc = Широкополая шляпа Патрульных NanoTrasen, идёт в комплекте с чехлом, но вы его потеряли.
 ent-ClothingHeadHatCasa = каса
     .desc = Конусообразная шляпа.
+    .suffix = Пират
 ent-ClothingHeadHatBeretRND = берет учёного
     .desc = Берет для настоящих учёных.
 ent-ClothingHeadHatBeretEngineering = берет инженера

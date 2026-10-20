@@ -1,5 +1,5 @@
 ent-BriefcaseSyndieLobbyingBundlePlasmamanFilled = { ent-BriefcaseSyndie }
-    .suffix = Синдикат, Кредиты, Плазмемен
+    .suffix = Синдикат, Кредиты, Плазмамен
     .desc = { ent-BriefcaseSyndie.desc }
 ent-ClothingOuterCoatJensenFilled = { ent-ClothingOuterCoatJensen }
     .suffix = Флаг Синдиката

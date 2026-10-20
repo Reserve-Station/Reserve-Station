@@ -102,11 +102,11 @@ ent-RandomHumanoidClownTroupeBanana = роль призрака - бананов
     .desc = { ent-RandomHumanoidVisitorClown.desc }
     .suffix = Труппа Банановых Клоунов
 
-ent-RandomHumanoidPirateScooner = роль призрака - пират
-    .suffix = Шхуна
+ent-RandomHumanoidPirateScooner = роль призрака
+    .suffix = Пират
     .desc = { "" }
-ent-RandomHumanoidPirateCaptainScooner = роль призрака - капитан пиратов
-    .suffix = Шхуна
+ent-RandomHumanoidPirateCaptainScooner = роль призрака
+    .suffix = Пират, Капитан
     .desc = { "" }
 
 ent-RandomHumanoidVisitorBlackmarketeer = роль призрака - торговец чёрного рынка

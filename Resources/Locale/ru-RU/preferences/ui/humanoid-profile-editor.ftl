@@ -63,3 +63,5 @@ trait-category-speech = Черты речи
 trait-category-quirks = Причуды
 trait-category-religion = Религия
 trait-category-mood = Черты настроения
+
+character-gender-requirement = Требование к полу персонажа

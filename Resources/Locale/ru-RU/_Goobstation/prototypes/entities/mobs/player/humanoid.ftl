@@ -49,6 +49,9 @@ ent-MobYowieRandom = { ent-MobYowie }
 ent-MobVoxRandom = { ent-MobVox }
     .suffix = Случайная внешность, { species-name-vox }
     .desc = { ent-MobVox.desc }
+ent-MobHydrakinRandom = { ent-MobHydrakin }
+    .suffix = Случайная внешность, { species-name-hydrakin }
+    .desc = { ent-MobHydrakin.desc }
 ent-MobShadowkinRandom = { ent-MobShadowkin }
     .suffix = Случайная внешность, { species-name-shadowkin }
     .desc = { ent-MobShadowkin.desc }
@@ -113,3 +116,4 @@ ent-RandomHumanoidSpawnerCBURNUnitNoReq = { ent-RandomHumanoidSpawnerCBURNUnit }
 
 ent-RandomHumanoidGreyTider = роль призрака - грейтайдер
     .desc = { "" }
+    .suffix = Грейтайд

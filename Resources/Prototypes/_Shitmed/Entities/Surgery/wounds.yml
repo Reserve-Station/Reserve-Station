@@ -370,6 +370,7 @@
 
 - type: entity
   id: TraumaShrapnel
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: Trauma
     traumaType: Shrapnel
@@ -378,6 +379,7 @@
 
 - type: entity
   id: TraumaBraindeath
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: Trauma
     traumaType: Braindeath

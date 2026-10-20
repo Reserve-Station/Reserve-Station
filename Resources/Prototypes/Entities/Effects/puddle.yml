@@ -134,6 +134,7 @@
 - type: entity
   id: PuddleSparkle
   name: sparkle
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   placement:
     mode: SnapgridCenter
   components:

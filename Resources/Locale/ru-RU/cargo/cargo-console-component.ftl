@@ -1,7 +1,7 @@
 ## UI
 
 cargo-console-menu-title = Консоль заказа грузов
-cargo-console-menu-flavor-left = Заказывай еще больше пицц чем обычно!
+cargo-console-menu-flavor-left = Заказывай ещё больше пицц чем обычно!
 cargo-console-menu-flavor-right = v2.1
 cargo-console-menu-account-name-label = Имя аккаунта:{ " " }
 cargo-console-menu-account-name-none-text = Нет
@@ -55,7 +55,7 @@ cargo-console-fund-transfer-user-unknown = Неизвестно
 
 # GoobStation - cooldown on Cargo Orders (specifically gamba)
 cargo-console-cooldown-count = Невозможно заказать более одного {$product} за раз.
-cargo-console-cooldown-active = Заказы на {$product} не могут быть размещены в течение еще {$timeCount} {$timeUnits}.
+cargo-console-cooldown-active = Заказы на {$product} не могут быть размещены в течение ещё {$timeCount} {$timeUnits}.
 
 cargo-console-paper-reason-default = Нет
 cargo-console-paper-approver-default = Вы

@@ -1,2 +1,3 @@
-ent-SpawnMobDrone = Создатель дронов
+ent-SpawnMobDrone = спавнер - { ent-Drone }
     .desc = { ent-MarkerBase.desc }
+    .suffix = Робототехника

@@ -60,7 +60,7 @@ traitor-wafflecorporation-roundend = [color=orange]сотрудник «Waffle C
 
 traitor-wafflecorporationterrorist-intro = Вы - террорист «Waffle Co.».
 traitor-wafflecorporationterrorist-goal = Нашим инвесторам нужна демонстрация нашего обещания уничтожить NanoTrasen. Давайте устроим им громкую демонстрацию!
-traitor-wafflecorporationterrorist-allies = Большинству других агентов Синдиката доверять нельзя, за исключением членов «Мародеров Горлекса».
+traitor-wafflecorporationterrorist-allies = Большинству других агентов Синдиката доверять нельзя, за исключением членов «Мародёров Горлекса».
 traitor-wafflecorporationterrorist-uplink = Для выполнения задания вам предоставлен канал связи с Синдикатом, расположенный в вашем КПК.
 traitor-wafflecorporationterrorist-roundend = [color=red]террорист «Waffle Co.»[/color].
 

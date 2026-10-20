@@ -5,6 +5,7 @@
 - type: entity
   parent: BasicHitscan
   id: SMGLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -24,6 +25,7 @@
 - type: entity
   parent: BasicHitscan
   id: SMGLaserIon
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -44,6 +46,7 @@
 - type: entity
   parent: BasicHitscan
   id: SMGLaserXray
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -65,6 +68,7 @@
 - type: entity
   parent: BasicHitscan
   id: SMGLaserOvercharged
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -88,6 +92,7 @@
 - type: entity
   parent: BasicHitscan
   id: SMGLaserBluespace
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -109,6 +114,7 @@
 - type: entity
   parent: BasicHitscan
   id: SMGLaserPulse
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -130,6 +136,7 @@
 - type: entity
   parent: BasicHitscan
   id: SniperRedLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -149,6 +156,7 @@
 - type: entity
   parent: BasicHitscan
   id: SniperIonLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -168,6 +176,7 @@
 - type: entity
   parent: BasicHitscan
   id: SniperXrayLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -188,6 +197,7 @@
 - type: entity
   parent: BasicHitscan
   id: SniperOverchargedLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -210,6 +220,7 @@
 - type: entity
   parent: BasicHitscan
   id: SniperBluespaceLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -230,6 +241,7 @@
 - type: entity
   parent: BasicHitscan
   id: SniperPulseLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -251,6 +263,7 @@
 - type: entity
   parent: BasicHitscan
   id: LMGLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -270,6 +283,7 @@
 - type: entity
   parent: BasicHitscan
   id: LMGLaserBluespace
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -291,6 +305,7 @@
 - type: entity
   parent: BasicHitscan
   id: RevolverRedLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -310,6 +325,7 @@
 - type: entity
   parent: BasicHitscan
   id: RevolverIonLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -329,6 +345,7 @@
 - type: entity
   parent: BasicHitscan
   id: RevolverXrayLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -349,6 +366,7 @@
 - type: entity
   parent: BasicHitscan
   id: RevolverOverchargedLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -371,6 +389,7 @@
 - type: entity
   parent: BasicHitscan
   id: RevolverBluespaceLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -392,6 +411,7 @@
 - type: entity
   parent: BasicHitscan
   id: HeavyRedLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -412,6 +432,7 @@
 - type: entity
   parent: BasicHitscan
   id: MediumOverchargedLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:
@@ -433,6 +454,7 @@
 - type: entity
   parent: BasicHitscan
   id: MediumRedLaser
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: HitscanBasicDamage
     damage:

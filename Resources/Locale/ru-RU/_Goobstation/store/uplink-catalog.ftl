@@ -1,10 +1,10 @@
 # Surplus Voidsuits
 
 uplink-hardsuit-syndiemedic-name = Скафандр агента Горлекса
-uplink-hardsuit-syndiemedic-desc = Лишний боевой скафандр медика от Мародеров Горлекса.
+uplink-hardsuit-syndiemedic-desc = Лишний боевой скафандр медика от Мародёров Горлекса.
 
 uplink-hardsuit-syndiecommander-name = Скафандр командира Горлекса
-uplink-hardsuit-syndiecommander-desc = Лишний боевой скафандр командира от Мародеров Горлекса. Слишком громоздкий, чтобы поместить его в набор, поэтому в комплект не входят баллоны!
+uplink-hardsuit-syndiecommander-desc = Лишний боевой скафандр командира от Мародёров Горлекса. Слишком громоздкий, чтобы поместить его в набор, поэтому в комплект не входят баллоны!
 
 # Cybersun Stealth
 

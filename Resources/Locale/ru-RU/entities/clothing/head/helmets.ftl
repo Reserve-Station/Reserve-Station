@@ -45,6 +45,7 @@ ent-ClothingHeadHelmetRaid = рейдерский шлем Синдиката
     .desc = Бронированный шлем для использования с рейдерским костюмом Синдиката. Очень стильный.
 ent-ClothingHeadHelmetBone = костяной шлем
     .desc = Круто выглядящий шлем, сделанный из черепов ваших врагов.
+    .suffix = Скелет
 ent-ClothingHeadHelmetPodWars = шлем Броненосец II
     .desc = Шлем Броненосец II, реликвия войн подов.
 ent-ClothingHeadHelmetJustice = шлем правосудия
