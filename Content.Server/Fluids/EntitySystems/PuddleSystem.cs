@@ -43,10 +43,10 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
-    // RW edit start: fire-nerf
+    // Reserve edit start: fire-nerf
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
-    // RW edit end: fire-nerf
+    // Reserve edit end: fire-nerf
 
 
     private static readonly ProtoId<ReagentPrototype> Blood = "Blood";
@@ -79,10 +79,10 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         SubscribeLocalEvent<PuddleComponent, SpreadNeighborsEvent>(OnPuddleSpread);
         SubscribeLocalEvent<PuddleComponent, SlipEvent>(OnPuddleSlip);
-        // RW edit start: fire-nerf
+        // Reserve edit start: fire-nerf
         SubscribeLocalEvent<StandingStateComponent, MoveEvent>(OnCrawlInPuddle);
         SubscribeLocalEvent<InventoryComponent, MoveEvent>(OnStepInPuddle);
-        // RW edit end: fire-nerf
+        // Reserve edit end: fire-nerf
     }
 
     // TODO: This can be predicted once https://github.com/space-wizards/RobustToolbox/pull/5849 is merged
@@ -643,7 +643,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         return false;
     }
 
-    // RW edit start: fire-nerf
+    // Reserve edit start: fire-nerf
     private void OnCrawlInPuddle(Entity<StandingStateComponent> ent, ref MoveEvent args)
     {
         if (!_standing.IsDown(ent.Owner))
@@ -720,5 +720,5 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         puddle = (puddleUid, puddleComp);
         return true;
     }
-    // RW edit end: fire-nerf
+    // Reserve edit end: fire-nerf
 }

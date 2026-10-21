@@ -99,7 +99,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
         DirtyOwnerAppearance(ent.Owner); // Gaby
     }
 
-    // RW edit start: fire-nerf
+    // Reserve edit start: fire-nerf
     /// <summary>
     /// Wets worn clothing from a spray. Slots that already hold flammable liquid are soaked first,
     /// so a small extinguisher puff reaches the fuel instead of the first slots in inventory order.
@@ -183,7 +183,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
         return false;
     }
-    // RW edit end: fire-nerf
+    // Reserve edit end: fire-nerf
 
     private bool IsStainBlocked(Entity<StainableComponent> item) // Gaby
     {
@@ -226,7 +226,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
             UpdateVisuals(ent);
         }
 
-        // RW edit start: fire-nerf
+        // Reserve edit start: fire-nerf
         // Hoods and hardsuit helmets live on the suit, not in its pockets.
         foreach (var attached in EnumerateAttachedClothing(ent.Owner))
         {
@@ -241,7 +241,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
             UpdateVisuals((attached, stain));
             DirtyOwnerAppearance(attached);
         }
-        // RW edit end: fire-nerf
+        // Reserve edit end: fire-nerf
     }
 
     protected virtual void StainForensics(Entity<StainableComponent> ent, Entity<SolutionComponent> solution)
@@ -277,10 +277,10 @@ public abstract partial class SharedStainableSystem : EntitySystem
             return;
         if (!args.CanAccess || !args.CanInteract)
             return;
-        // RW edit start: fire-nerf
+        // Reserve edit start: fire-nerf
         if (!HasStain(ent) && !AttachedHasStain(ent.Owner))
             return;
-        // RW edit end: fire-nerf
+        // Reserve edit end: fire-nerf
 
         var user = args.User;
         var verb = new Verb
@@ -311,7 +311,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
         var spilled = TryWring(ent, args.User);
 
-        // RW edit start: fire-nerf
+        // Reserve edit start: fire-nerf
         foreach (var attached in EnumerateAttachedClothing(ent.Owner))
         {
             if (!TryComp<StainableComponent>(attached, out var stain))
@@ -319,13 +319,13 @@ public abstract partial class SharedStainableSystem : EntitySystem
 
             spilled |= TryWring((attached, stain), args.User);
         }
-        // RW edit end: fire-nerf
+        // Reserve edit end: fire-nerf
 
         if (spilled)
             _popup.PopupEntity(Loc.GetString("stain-verb-wring-success", ("item", ent.Owner)), args.User, args.User);
     }
 
-    // RW edit start: fire-nerf
+    // Reserve edit start: fire-nerf
     private bool HasStain(Entity<StainableComponent> ent)
     {
         return Solution.TryGetSolution(ent.Owner, ent.Comp.SolutionId, out _, out var stainSolution) && stainSolution.Volume > 0;
@@ -350,7 +350,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
         foreach (var (attached, _) in toggleable.ClothingUids)
             yield return attached;
     }
-    // RW edit end: fire-nerf
+    // Reserve edit end: fire-nerf
 
     private bool TryWring(Entity<StainableComponent> ent, EntityUid user)
     {

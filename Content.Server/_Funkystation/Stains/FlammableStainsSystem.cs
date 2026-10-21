@@ -30,7 +30,7 @@ namespace Content.Server._Funkystation.Stains
         [Dependency] private readonly SharedSolutionContainerSystem _solution = null!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = null!;
         [Dependency] private readonly EntityLookupSystem _lookup = null!;
-        // RW edit start: fire-nerf
+        // Reserve edit start: fire-nerf
         [Dependency] private readonly SharedHandsSystem _hands = null!;
         [Dependency] private readonly SharedContainerSystem _container = null!;
         [Dependency] private readonly StainableSystem _stains = null!;
@@ -60,20 +60,20 @@ namespace Content.Server._Funkystation.Stains
         private const float StainBurnPerFlammability = 0.1f;
 
         private float _burnAccumulator;
-        // RW edit end: fire-nerf
+        // Reserve edit end: fire-nerf
 
         public override void Initialize()
         {
             base.Initialize();
             SubscribeLocalEvent<InventoryComponent, TileFireEvent>(OnTileFire, before: [typeof(FlammableSystem)]);
             SubscribeLocalEvent<GridAtmosphereComponent, TileExposedEvent>(OnTileExposed);
-            // RW edit start: fire-nerf
+            // Reserve edit start: fire-nerf
             SubscribeLocalEvent<InventoryComponent, InteractUsingEvent>(OnDirectFlame);
             SubscribeLocalEvent<IgnitionSourceComponent, MeleeHitEvent>(OnHotMelee);
-            // RW edit end: fire-nerf
+            // Reserve edit end: fire-nerf
         }
 
-        // RW edit start: fire-nerf
+        // Reserve edit start: fire-nerf
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
@@ -94,7 +94,7 @@ namespace Content.Server._Funkystation.Stains
             }
         }
 
-        // RW edit start: fire-nerf
+        // Reserve edit start: fire-nerf
         private void OnDirectFlame(Entity<InventoryComponent> ent, ref InteractUsingEvent args)
         {
             var isHot = new IsHotEvent();
@@ -132,7 +132,7 @@ namespace Content.Server._Funkystation.Stains
 
             return 700f;
         }
-        // RW edit end: fire-nerf
+        // Reserve edit end: fire-nerf
 
         private void OnTileFire(EntityUid uid, InventoryComponent component, ref TileFireEvent args)
         {
@@ -318,7 +318,7 @@ namespace Content.Server._Funkystation.Stains
 
             return flags;
         }
-        // RW edit end: fire-nerf
+        // Reserve edit end: fire-nerf
 
         private bool IsSlotStainBlocked(EntityUid wearer, SlotDefinition slotDef, InventoryComponent inv)
         {

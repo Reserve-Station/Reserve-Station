@@ -54,11 +54,11 @@ namespace Content.Server.Chemistry.EntitySystems
                 var solution = soln.Comp.Solution;
                 _reactive.DoEntityReaction(args.OtherEntity, solution, ReactionMethod.Touch);
 
-                // RW edit start: fire-nerf
+                // Reserve edit start: fire-nerf
                 // The cloud keeps its own solution for the tile. Clothing gets a copy, water included, so fuel stains dilute.
                 if (solution.Volume > FixedPoint2.Zero)
                     _stainable.SoakWornClothing(args.OtherEntity, solution.Clone());
-                // RW edit end: fire-nerf
+                // Reserve edit end: fire-nerf
 
                 var ev = new VaporCheckEyeProtectionEvent(); // Goobstation - Start
                 RaiseLocalEvent(args.OtherEntity, ev);

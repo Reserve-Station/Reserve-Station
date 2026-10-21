@@ -12,10 +12,10 @@ public sealed partial class IgnitionSourceSystem : SharedIgnitionSourceSystem
 {
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    // RW edit start: fire-nerf
+    // Reserve edit start: fire-nerf
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedEntityStorageSystem _entityStorage = default!;
-    // RW edit end: fire-nerf
+    // Reserve edit end: fire-nerf
 
     public override void Update(float frameTime)
     {
@@ -27,10 +27,10 @@ public sealed partial class IgnitionSourceSystem : SharedIgnitionSourceSystem
             if (!comp.Ignited)
                 continue;
 
-            // RW edit start: fire-nerf
+            // Reserve edit start: fire-nerf
             if (IsFlameSealed(uid))
                 continue;
-            // RW edit end: fire-nerf
+            // Reserve edit end: fire-nerf
 
             if (xform.GridUid is { } gridUid)
             {
@@ -41,7 +41,7 @@ public sealed partial class IgnitionSourceSystem : SharedIgnitionSourceSystem
         }
     }
 
-    // RW edit start: fire-nerf
+    // Reserve edit start: fire-nerf
     private bool IsFlameSealed(EntityUid uid)
     {
         var current = uid;
@@ -62,5 +62,5 @@ public sealed partial class IgnitionSourceSystem : SharedIgnitionSourceSystem
 
         return false;
     }
-    // RW edit end: fire-nerf
+    // Reserve edit end: fire-nerf
 }

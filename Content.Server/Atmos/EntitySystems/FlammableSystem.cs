@@ -469,10 +469,10 @@ namespace Content.Server.Atmos.EntitySystems
                 if (curTime > flammable.ResistCompleteTime)
                 {
                     flammable.ResistCompleteTime = null;
-                    // RW edit start: fire-nerf
+                    // Reserve edit start: fire-nerf
                     if (flammable.FirestackFade > 0f)
                         flammable.FireStacks -= flammable.FirestackFade * 10f;
-                    // RW edit end: fire-nerf
+                    // Reserve edit end: fire-nerf
                     UpdateAppearance(uid, flammable);
                 }
 
