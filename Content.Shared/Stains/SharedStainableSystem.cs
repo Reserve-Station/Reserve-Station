@@ -30,7 +30,7 @@ public abstract partial class SharedStainableSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Gaby
     [Dependency] private readonly SharedPuddleSystem _puddle = default!; // Gaby
     [Dependency] private readonly SharedPopupSystem _popup = default!; // Gaby
-    [Dependency] private readonly IPrototypeManager _prototype = default!; // RW edit: fire-nerf
+    [Dependency] private readonly IPrototypeManager _prototype = default!; // Reserve edit: fire-nerf
 
     public override void Initialize()
     {
