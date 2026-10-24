@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SeedBase
+  name: packet of plump helmet spores
+  id: PlumpHelmetSeeds
+  components:
+    - type: Seed
+      seedId: plumphelmet
+    - type: Sprite
+      sprite: _Reserve/Objects/Specific/Hydroponics/plump_helmet.rsi
