@@ -1081,228 +1081,228 @@ DrinkHotCoco: RandomDrinkCup
 ShelfWallFreezerWhite: ShelfWallFreezerWhiteFilledRandom
 ShelfWallFreezerDark: ShelfWallFreezerDarkFilledRandom
 
-# # 2026-10-24 Reserve Station edit: Halloween on Reserve  # Uncomment on Halloween
-# Poweredlight: PoweredlightHalloween
-# PoweredSmallLight: PoweredSmallLightHalloween
-# Lamp: RandomHalloweenCandleBundleSpawner
-# LampGold: RandomHalloweenCandleBundleSpawner
-# PottedPlant0: RandomHalloweenDecorSpawner
-# PottedPlant1: RandomHalloweenDecorSpawner
-# PottedPlant2: RandomHalloweenDecorSpawner
-# PottedPlant3: RandomHalloweenDecorSpawner
-# PottedPlant4: RandomHalloweenDecorSpawner
-# PottedPlant5: RandomHalloweenDecorSpawner
-# PottedPlant6: RandomHalloweenDecorSpawner
-# PottedPlant7: RandomHalloweenDecorSpawner
-# PottedPlant8: RandomHalloweenDecorSpawner
-# PottedPlant10: RandomHalloweenDecorSpawner
-# PottedPlant11: RandomHalloweenDecorSpawner
-# PottedPlant12: RandomHalloweenDecorSpawner
-# PottedPlant13: RandomHalloweenDecorSpawner
-# PottedPlant14: RandomHalloweenDecorSpawner
-# PottedPlant15: RandomHalloweenDecorSpawner
-# PottedPlant16: RandomHalloweenDecorSpawner
-# PottedPlant17: RandomHalloweenDecorSpawner
-# PottedPlant18: RandomHalloweenDecorSpawner
-# PottedPlant19: RandomHalloweenDecorSpawner
-# PottedPlant20: RandomHalloweenDecorSpawner
-# PottedPlant21: RandomHalloweenDecorSpawner
-# PottedPlant22: RandomHalloweenDecorSpawner
-# PottedPlant23: RandomHalloweenDecorSpawner
-# PottedPlant24: RandomHalloweenDecorSpawner
-# PottedPlant26: RandomHalloweenDecorSpawner
-# PottedPlant27: RandomHalloweenDecorSpawner
-# PottedPlant28: RandomHalloweenDecorSpawner
-# PottedPlant29: RandomHalloweenDecorSpawner
-# PottedPlant30: RandomHalloweenDecorSpawner
-# PottedPlantRandom: RandomHalloweenDecorSpawner
-# PottedPlantRandomPlastic: RandomHalloweenDecorSpawner
-# FoodCartHot: RandomHalloweenDecorSpawner
-# FoodCartCold: RandomHalloweenDecorSpawner
-# CandyBowl: CandyBucketFilledAny
-# CandyBowlFilledLollypopsMystery: CandyBucketFilledAny
-# FoodBoxDonut: RandomHalloweenTableDecorSpawner
-# PlushieSpawner50: RandomHalloweenTableDecorSpawner
-# RandomDrinkCan: RandomHalloweenTableDecorSpawner
-# RandomDrinkBottle: RandomHalloweenTableDecorSpawner
-# RandomDrinkGlass: RandomHalloweenTableDecorSpawner
-# RandomDrinkCarton: RandomHalloweenTableDecorSpawner
-# RandomDrinkSoda: RandomHalloweenTableDecorSpawner
-# RandomDrinkJuice: RandomHalloweenTableDecorSpawner
-# RandomDrinkCup: RandomHalloweenTableDecorSpawner
-# RandomFoodBakedSingle: RandomHalloweenTableDecorSpawner
-# RandomFoodBakedWhole: RandomHalloweenTableDecorSpawner
-# RandomFoodMeal: RandomHalloweenTableDecorSpawner
-# RandomFoodSingle: RandomHalloweenTableDecorSpawner
-# RandomFoodBreakfast: RandomHalloweenTableDecorSpawner
-# Table: TableWeb
-# TableWood: TableWeb
-# TableCarpet: TableWeb
-# ChairWood: ChairWeb
-# ComfyChair: ChairWeb
-# Stool: ChairCursed
-# StoolBar: ChairCursed
-# CratePlastic: RandomHalloweenCrateSpawner
-# # CrateGenericSteel: RandomHalloweenCrateSpawner  # This breaks Packed for some reason.
-# CrateHydroponics: RandomHalloweenCrateSpawner
-# CrateEngineering: RandomHalloweenCrateSpawner
-# CrateMedical: RandomHalloweenCrateSpawner
-# CrateScience: RandomHalloweenCrateSpawner
-# RandomPosterAny: RandomPosterSpooky
-# RandomPosterLegit: RandomPosterSpooky
-# RandomPosterContraband: RandomPosterSpooky
-# FloraTree: FloraAshtree
-# Carpet: CarpetBlack
-# CurtainsRed: CurtainsBlack
-# CurtainsRedOpen: CurtainsBlackOpen
-# TableFancyRed: TableFancyBlack
-# CarpetOrange: CarpetBlack
-# CurtainsOrange: CurtainsBlack
-# CurtainsOrangeOpen: CurtainsBlackOpen
-# TableFancyOrange: TableFancyBlack
-# PosterContrabandFreeTonto: RandomPosterSpooky
-# # PosterContrabandAtmosiaDeclarationIndependence: RandomPosterSpooky
-# # PosterContrabandFunPolice: RandomPosterSpooky
-# # PosterContrabandRealExomorph: RandomPosterSpooky
-# # PosterContrabandSyndicateRecruitment: RandomPosterSpooky
-# # PosterContrabandClown: RandomPosterSpooky
-# # PosterContrabandSmoke: RandomPosterSpooky
-# # PosterContrabandGreyTide: RandomPosterSpooky
-# PosterContrabandMissingGloves: RandomPosterSpooky
-# PosterContrabandHackingGuide: RandomPosterSpooky
-# PosterContrabandRIPBadger: RandomPosterSpooky
-# PosterContrabandAmbrosiaVulgaris: RandomPosterSpooky
-# PosterContrabandDonutCorp: RandomPosterSpooky
-# PosterContrabandEAT: RandomPosterSpooky
-# # PosterContrabandTools: RandomPosterSpooky
-# # PosterContrabandPower: RandomPosterSpooky
-# # PosterContrabandSpaceCube: RandomPosterSpooky
-# # PosterContrabandCommunistState: RandomPosterSpooky
-# # PosterContrabandLamarr: RandomPosterSpooky
-# PosterContrabandBorgFancy: RandomPosterSpooky
-# PosterContrabandBorgFancyv2: RandomPosterSpooky
-# PosterContrabandKosmicheskayaStantsiya: RandomPosterSpooky
-# PosterContrabandRebelsUnite: RandomPosterSpooky
-# PosterContrabandC20r: RandomPosterSpooky
-# PosterContrabandHaveaPuff: RandomPosterSpooky
-# PosterContrabandRevolver: RandomPosterSpooky
-# PosterContrabandDDayPromo: RandomPosterSpooky
-# PosterContrabandSyndicatePistol: RandomPosterSpooky
-# PosterContrabandEnergySwords: RandomPosterSpooky
-# PosterContrabandRedRum: RandomPosterSpooky
-# PosterContrabandCC64KAd: RandomPosterSpooky
-# PosterContrabandPunchShit: RandomPosterSpooky
-# PosterContrabandTheGriffin: RandomPosterSpooky
-# # PosterContrabandFreeDrone: RandomPosterSpooky
-# # PosterContrabandRouny: RandomPosterSpooky
-# PosterContrabandRobustSoftdrinks: RandomPosterSpooky
-# PosterContrabandShamblersJuice: RandomPosterSpooky
-# PosterContrabandPwrGame: RandomPosterSpooky
-# PosterContrabandSunkist: RandomPosterSpooky
-# PosterContrabandSpaceCola: RandomPosterSpooky
-# PosterContrabandSpaceUp: RandomPosterSpooky
-# # PosterContrabandKudzu: RandomPosterSpooky
-# # PosterContrabandMaskedMen: RandomPosterSpooky
-# # PosterContrabandUnreadableAnnouncement: RandomPosterSpooky
-# # PosterContrabandFreeSyndicateEncryptionKey: RandomPosterSpooky
-# # PosterContrabandBountyHunters: RandomPosterSpooky
-# # PosterContrabandTheBigGasTruth: RandomPosterSpooky
-# # PosterContrabandWehWatches: RandomPosterSpooky
-# # PosterContrabandVoteWeh: RandomPosterSpooky
-# PosterContrabandBeachStarYamamoto: RandomPosterSpooky
-# PosterContrabandHighEffectEngineering: RandomPosterSpooky
-# PosterContrabandNuclearDeviceInformational: RandomPosterSpooky
-# # PosterContrabandRevolt: RandomPosterSpooky
-# # PosterContrabandRise: RandomPosterSpooky
-# PosterContrabandMoth: RandomPosterSpooky
-# PosterContrabandCybersun600: RandomPosterSpooky
-# PosterContrabandDonk: RandomPosterSpooky
-# # PosterContrabandEnlistGorlex: RandomPosterSpooky
-# # PosterContrabandInterdyne: RandomPosterSpooky
-# PosterContrabandWaffleCorp: RandomPosterSpooky
-# # PosterContrabandMissingSpacepen: RandomPosterSpooky
-# # PosterContrabandExoAcid: RandomPosterSpooky
-# # PosterContrabandExoRun: RandomPosterSpooky
-# # PosterContrabandExoChomp: RandomPosterSpooky
-# # PosterContrabandGoobChuckler: RandomPosterSpooky
-# # PosterContrabandGoobYakub: RandomPosterSpooky
-# PosterContrabandGoobRedFOSS: RandomPosterSpooky
-# # PosterLegitHereForYourSafety: RandomPosterSpooky
-# # PosterLegitNanotrasenLogo: RandomPosterSpooky
-# # PosterLegitCleanliness: RandomPosterSpooky
-# # PosterLegitHelpOthers: RandomPosterSpooky
-# PosterLegitBuild: RandomPosterSpooky
-# PosterLegitBlessThisSpess: RandomPosterSpooky
-# # PosterLegitScience: RandomPosterSpooky
-# # PosterLegitIan: RandomPosterSpooky
-# # PosterLegitObey: RandomPosterSpooky
-# # PosterLegitWalk: RandomPosterSpooky
-# # PosterLegitStateLaws: RandomPosterSpooky
-# # PosterLegitLoveIan: RandomPosterSpooky
-# # PosterLegitSpaceCops: RandomPosterSpooky
-# PosterLegitUeNo: RandomPosterSpooky
-# PosterLegitGetYourLEGS: RandomPosterSpooky
-# # PosterLegitDoNotQuestion: RandomPosterSpooky
-# # PosterLegitWorkForAFuture: RandomPosterSpooky
-# # PosterLegitSoftCapPopArt: RandomPosterSpooky
-# # PosterLegitSafetyInternals: RandomPosterSpooky
-# # PosterLegitSafetyEyeProtection: RandomPosterSpooky
-# # PosterLegitSafetyReport: RandomPosterSpooky
-# # PosterLegitReportCrimes: RandomPosterSpooky
-# PosterLegitIonRifle: RandomPosterSpooky
-# PosterLegitFoamForceAd: RandomPosterSpooky
-# PosterLegitCohibaRobustoAd: RandomPosterSpooky
-# PosterLegit50thAnniversaryVintageReprint: RandomPosterSpooky
-# PosterLegitFruitBowl: RandomPosterSpooky
-# PosterLegitPDAAd: RandomPosterSpooky
-# PosterLegitEnlist: RandomPosterSpooky
-# PosterLegitNanomichiAd: RandomPosterSpooky
-# PosterLegit12Gauge: RandomPosterSpooky
-# PosterLegitHighClassMartini: RandomPosterSpooky
-# PosterLegitTheOwl: RandomPosterSpooky
-# PosterLegitNoERP: RandomPosterSpooky
-# PosterLegitCarbonDioxide: RandomPosterSpooky
-# PosterLegitDickGumshue: RandomPosterSpooky
-# PosterLegitThereIsNoGasGiant: RandomPosterSpooky
-# PosterLegitJustAWeekAway: RandomPosterSpooky
-# PosterLegitSecWatch: RandomPosterSpooky
-# PosterLegitVacation: RandomPosterSpooky
-# PosterLegitRenault: RandomPosterSpooky
-# PosterLegitNTTGC: RandomPosterSpooky
-# PosterLegitSafetyMothDelam: RandomPosterSpooky
-# PosterLegitSafetyMothEpi: RandomPosterSpooky
-# PosterLegitSafetyMothPiping: RandomPosterSpooky
-# PosterLegitSafetyMothMeth: RandomPosterSpooky
-# PosterLegitSafetyMothHardhat: RandomPosterSpooky
-# PosterLegitSafetyMothSSD: RandomPosterSpooky
-# PosterLegitGoobWorkHard: RandomPosterSpooky
-# PosterLegitGoobMakeshift: RandomPosterSpooky
-# PosterLegitGoobCan: RandomPosterSpooky
-# PosterLegitGoobFaded: RandomPosterSpooky
-# PosterLegitGoobCandle: RandomPosterSpooky
-# PosterLegitGoobSuperMatter: RandomPosterSpooky
-# PosterLegitGoobWatching: RandomPosterSpooky
-# PosterLegitGoobSpaceAsshole: RandomPosterSpooky
-# PosterLegitGoobSmokeBreak: RandomPosterSpooky
-# # PosterLegitGoobWallMeat: RandomPosterSpooky
-# PosterLegitGoobCoolS: RandomPosterSpooky
-# PosterLegitGoobBigBrotherAI: RandomPosterSpooky
-# PosterLegitGoobDurkPlush: RandomPosterSpooky
-# PosterLegitGoobWelderBomb: RandomPosterSpooky
-# PosterLegitGoobLokoAdvertisement: RandomPosterSpooky
-# PosterLegitGoobLouieVote: RandomPosterSpooky
-# PosterLegitGoobSlowDownClown: RandomPosterSpooky
-# PosterLegitGoobNTRAdvert: RandomPosterSpooky
-# PosterLegitOppenhopper: RandomPosterSpooky
-# PosterLegitTyrone: RandomPosterSpooky
-# PosterLegitHelio: RandomPosterSpooky
-# # PosterLegitBotanyFear: RandomPosterSpooky
-# WaterCooler: RandomBloodCooler
-# SteelBench: SteelBenchWebbed
-# BenchComfy: SteelBenchWebbed
-# BenchRedComfy: SteelBenchWebbed
-# BenchBlueComfy: SteelBenchWebbed
-# BenchColorfulComfy: SteelBenchWebbed
-# StatueVenusRed: RandomStatueReaper
-# StatueVenusBlue: RandomStatueReaper
-# Bucket: RandomPumpkinBucket
+# 2026-10-24 Reserve Station edit: Halloween on Reserve
+Poweredlight: PoweredlightHalloween
+PoweredSmallLight: PoweredSmallLightHalloween
+Lamp: RandomHalloweenCandleBundleSpawner
+LampGold: RandomHalloweenCandleBundleSpawner
+PottedPlant0: RandomHalloweenDecorSpawner
+PottedPlant1: RandomHalloweenDecorSpawner
+PottedPlant2: RandomHalloweenDecorSpawner
+PottedPlant3: RandomHalloweenDecorSpawner
+PottedPlant4: RandomHalloweenDecorSpawner
+PottedPlant5: RandomHalloweenDecorSpawner
+PottedPlant6: RandomHalloweenDecorSpawner
+PottedPlant7: RandomHalloweenDecorSpawner
+PottedPlant8: RandomHalloweenDecorSpawner
+PottedPlant10: RandomHalloweenDecorSpawner
+PottedPlant11: RandomHalloweenDecorSpawner
+PottedPlant12: RandomHalloweenDecorSpawner
+PottedPlant13: RandomHalloweenDecorSpawner
+PottedPlant14: RandomHalloweenDecorSpawner
+PottedPlant15: RandomHalloweenDecorSpawner
+PottedPlant16: RandomHalloweenDecorSpawner
+PottedPlant17: RandomHalloweenDecorSpawner
+PottedPlant18: RandomHalloweenDecorSpawner
+PottedPlant19: RandomHalloweenDecorSpawner
+PottedPlant20: RandomHalloweenDecorSpawner
+PottedPlant21: RandomHalloweenDecorSpawner
+PottedPlant22: RandomHalloweenDecorSpawner
+PottedPlant23: RandomHalloweenDecorSpawner
+PottedPlant24: RandomHalloweenDecorSpawner
+PottedPlant26: RandomHalloweenDecorSpawner
+PottedPlant27: RandomHalloweenDecorSpawner
+PottedPlant28: RandomHalloweenDecorSpawner
+PottedPlant29: RandomHalloweenDecorSpawner
+PottedPlant30: RandomHalloweenDecorSpawner
+PottedPlantRandom: RandomHalloweenDecorSpawner
+PottedPlantRandomPlastic: RandomHalloweenDecorSpawner
+FoodCartHot: RandomHalloweenDecorSpawner
+FoodCartCold: RandomHalloweenDecorSpawner
+CandyBowl: CandyBucketFilledAny
+CandyBowlFilledLollypopsMystery: CandyBucketFilledAny
+FoodBoxDonut: RandomHalloweenTableDecorSpawner
+PlushieSpawner50: RandomHalloweenTableDecorSpawner
+RandomDrinkCan: RandomHalloweenTableDecorSpawner
+RandomDrinkBottle: RandomHalloweenTableDecorSpawner
+RandomDrinkGlass: RandomHalloweenTableDecorSpawner
+RandomDrinkCarton: RandomHalloweenTableDecorSpawner
+RandomDrinkSoda: RandomHalloweenTableDecorSpawner
+RandomDrinkJuice: RandomHalloweenTableDecorSpawner
+RandomDrinkCup: RandomHalloweenTableDecorSpawner
+RandomFoodBakedSingle: RandomHalloweenTableDecorSpawner
+RandomFoodBakedWhole: RandomHalloweenTableDecorSpawner
+RandomFoodMeal: RandomHalloweenTableDecorSpawner
+RandomFoodSingle: RandomHalloweenTableDecorSpawner
+RandomFoodBreakfast: RandomHalloweenTableDecorSpawner
+Table: TableWeb
+TableWood: TableWeb
+TableCarpet: TableWeb
+ChairWood: ChairWeb
+ComfyChair: ChairWeb
+Stool: ChairCursed
+StoolBar: ChairCursed
+CratePlastic: RandomHalloweenCrateSpawner
+# CrateGenericSteel: RandomHalloweenCrateSpawner  # This breaks Packed for some reason.
+CrateHydroponics: RandomHalloweenCrateSpawner
+CrateEngineering: RandomHalloweenCrateSpawner
+CrateMedical: RandomHalloweenCrateSpawner
+CrateScience: RandomHalloweenCrateSpawner
+RandomPosterAny: RandomPosterSpooky
+RandomPosterLegit: RandomPosterSpooky
+RandomPosterContraband: RandomPosterSpooky
+FloraTree: FloraAshtree
+Carpet: CarpetBlack
+CurtainsRed: CurtainsBlack
+CurtainsRedOpen: CurtainsBlackOpen
+TableFancyRed: TableFancyBlack
+CarpetOrange: CarpetBlack
+CurtainsOrange: CurtainsBlack
+CurtainsOrangeOpen: CurtainsBlackOpen
+TableFancyOrange: TableFancyBlack
+PosterContrabandFreeTonto: RandomPosterSpooky
+# PosterContrabandAtmosiaDeclarationIndependence: RandomPosterSpooky
+# PosterContrabandFunPolice: RandomPosterSpooky
+# PosterContrabandRealExomorph: RandomPosterSpooky
+# PosterContrabandSyndicateRecruitment: RandomPosterSpooky
+# PosterContrabandClown: RandomPosterSpooky
+# PosterContrabandSmoke: RandomPosterSpooky
+# PosterContrabandGreyTide: RandomPosterSpooky
+PosterContrabandMissingGloves: RandomPosterSpooky
+PosterContrabandHackingGuide: RandomPosterSpooky
+PosterContrabandRIPBadger: RandomPosterSpooky
+PosterContrabandAmbrosiaVulgaris: RandomPosterSpooky
+PosterContrabandDonutCorp: RandomPosterSpooky
+PosterContrabandEAT: RandomPosterSpooky
+# PosterContrabandTools: RandomPosterSpooky
+# PosterContrabandPower: RandomPosterSpooky
+# PosterContrabandSpaceCube: RandomPosterSpooky
+# PosterContrabandCommunistState: RandomPosterSpooky
+# PosterContrabandLamarr: RandomPosterSpooky
+PosterContrabandBorgFancy: RandomPosterSpooky
+PosterContrabandBorgFancyv2: RandomPosterSpooky
+PosterContrabandKosmicheskayaStantsiya: RandomPosterSpooky
+PosterContrabandRebelsUnite: RandomPosterSpooky
+PosterContrabandC20r: RandomPosterSpooky
+PosterContrabandHaveaPuff: RandomPosterSpooky
+PosterContrabandRevolver: RandomPosterSpooky
+PosterContrabandDDayPromo: RandomPosterSpooky
+PosterContrabandSyndicatePistol: RandomPosterSpooky
+PosterContrabandEnergySwords: RandomPosterSpooky
+PosterContrabandRedRum: RandomPosterSpooky
+PosterContrabandCC64KAd: RandomPosterSpooky
+PosterContrabandPunchShit: RandomPosterSpooky
+PosterContrabandTheGriffin: RandomPosterSpooky
+# PosterContrabandFreeDrone: RandomPosterSpooky
+# PosterContrabandRouny: RandomPosterSpooky
+PosterContrabandRobustSoftdrinks: RandomPosterSpooky
+PosterContrabandShamblersJuice: RandomPosterSpooky
+PosterContrabandPwrGame: RandomPosterSpooky
+PosterContrabandSunkist: RandomPosterSpooky
+PosterContrabandSpaceCola: RandomPosterSpooky
+PosterContrabandSpaceUp: RandomPosterSpooky
+# PosterContrabandKudzu: RandomPosterSpooky
+# PosterContrabandMaskedMen: RandomPosterSpooky
+# PosterContrabandUnreadableAnnouncement: RandomPosterSpooky
+# PosterContrabandFreeSyndicateEncryptionKey: RandomPosterSpooky
+# PosterContrabandBountyHunters: RandomPosterSpooky
+# PosterContrabandTheBigGasTruth: RandomPosterSpooky
+# PosterContrabandWehWatches: RandomPosterSpooky
+# PosterContrabandVoteWeh: RandomPosterSpooky
+PosterContrabandBeachStarYamamoto: RandomPosterSpooky
+PosterContrabandHighEffectEngineering: RandomPosterSpooky
+PosterContrabandNuclearDeviceInformational: RandomPosterSpooky
+# PosterContrabandRevolt: RandomPosterSpooky
+# PosterContrabandRise: RandomPosterSpooky
+PosterContrabandMoth: RandomPosterSpooky
+PosterContrabandCybersun600: RandomPosterSpooky
+PosterContrabandDonk: RandomPosterSpooky
+# PosterContrabandEnlistGorlex: RandomPosterSpooky
+# PosterContrabandInterdyne: RandomPosterSpooky
+PosterContrabandWaffleCorp: RandomPosterSpooky
+# PosterContrabandMissingSpacepen: RandomPosterSpooky
+# PosterContrabandExoAcid: RandomPosterSpooky
+# PosterContrabandExoRun: RandomPosterSpooky
+# PosterContrabandExoChomp: RandomPosterSpooky
+# PosterContrabandGoobChuckler: RandomPosterSpooky
+# PosterContrabandGoobYakub: RandomPosterSpooky
+PosterContrabandGoobRedFOSS: RandomPosterSpooky
+# PosterLegitHereForYourSafety: RandomPosterSpooky
+# PosterLegitNanotrasenLogo: RandomPosterSpooky
+# PosterLegitCleanliness: RandomPosterSpooky
+# PosterLegitHelpOthers: RandomPosterSpooky
+PosterLegitBuild: RandomPosterSpooky
+PosterLegitBlessThisSpess: RandomPosterSpooky
+# PosterLegitScience: RandomPosterSpooky
+# PosterLegitIan: RandomPosterSpooky
+# PosterLegitObey: RandomPosterSpooky
+# PosterLegitWalk: RandomPosterSpooky
+# PosterLegitStateLaws: RandomPosterSpooky
+# PosterLegitLoveIan: RandomPosterSpooky
+# PosterLegitSpaceCops: RandomPosterSpooky
+PosterLegitUeNo: RandomPosterSpooky
+PosterLegitGetYourLEGS: RandomPosterSpooky
+# PosterLegitDoNotQuestion: RandomPosterSpooky
+# PosterLegitWorkForAFuture: RandomPosterSpooky
+# PosterLegitSoftCapPopArt: RandomPosterSpooky
+# PosterLegitSafetyInternals: RandomPosterSpooky
+# PosterLegitSafetyEyeProtection: RandomPosterSpooky
+# PosterLegitSafetyReport: RandomPosterSpooky
+# PosterLegitReportCrimes: RandomPosterSpooky
+PosterLegitIonRifle: RandomPosterSpooky
+PosterLegitFoamForceAd: RandomPosterSpooky
+PosterLegitCohibaRobustoAd: RandomPosterSpooky
+PosterLegit50thAnniversaryVintageReprint: RandomPosterSpooky
+PosterLegitFruitBowl: RandomPosterSpooky
+PosterLegitPDAAd: RandomPosterSpooky
+PosterLegitEnlist: RandomPosterSpooky
+PosterLegitNanomichiAd: RandomPosterSpooky
+PosterLegit12Gauge: RandomPosterSpooky
+PosterLegitHighClassMartini: RandomPosterSpooky
+PosterLegitTheOwl: RandomPosterSpooky
+PosterLegitNoERP: RandomPosterSpooky
+PosterLegitCarbonDioxide: RandomPosterSpooky
+PosterLegitDickGumshue: RandomPosterSpooky
+PosterLegitThereIsNoGasGiant: RandomPosterSpooky
+PosterLegitJustAWeekAway: RandomPosterSpooky
+PosterLegitSecWatch: RandomPosterSpooky
+PosterLegitVacation: RandomPosterSpooky
+PosterLegitRenault: RandomPosterSpooky
+PosterLegitNTTGC: RandomPosterSpooky
+PosterLegitSafetyMothDelam: RandomPosterSpooky
+PosterLegitSafetyMothEpi: RandomPosterSpooky
+PosterLegitSafetyMothPiping: RandomPosterSpooky
+PosterLegitSafetyMothMeth: RandomPosterSpooky
+PosterLegitSafetyMothHardhat: RandomPosterSpooky
+PosterLegitSafetyMothSSD: RandomPosterSpooky
+PosterLegitGoobWorkHard: RandomPosterSpooky
+PosterLegitGoobMakeshift: RandomPosterSpooky
+PosterLegitGoobCan: RandomPosterSpooky
+PosterLegitGoobFaded: RandomPosterSpooky
+PosterLegitGoobCandle: RandomPosterSpooky
+PosterLegitGoobSuperMatter: RandomPosterSpooky
+PosterLegitGoobWatching: RandomPosterSpooky
+PosterLegitGoobSpaceAsshole: RandomPosterSpooky
+PosterLegitGoobSmokeBreak: RandomPosterSpooky
+# PosterLegitGoobWallMeat: RandomPosterSpooky
+PosterLegitGoobCoolS: RandomPosterSpooky
+PosterLegitGoobBigBrotherAI: RandomPosterSpooky
+PosterLegitGoobDurkPlush: RandomPosterSpooky
+PosterLegitGoobWelderBomb: RandomPosterSpooky
+PosterLegitGoobLokoAdvertisement: RandomPosterSpooky
+PosterLegitGoobLouieVote: RandomPosterSpooky
+PosterLegitGoobSlowDownClown: RandomPosterSpooky
+PosterLegitGoobNTRAdvert: RandomPosterSpooky
+PosterLegitOppenhopper: RandomPosterSpooky
+PosterLegitTyrone: RandomPosterSpooky
+PosterLegitHelio: RandomPosterSpooky
+# PosterLegitBotanyFear: RandomPosterSpooky
+WaterCooler: RandomBloodCooler
+SteelBench: SteelBenchWebbed
+BenchComfy: SteelBenchWebbed
+BenchRedComfy: SteelBenchWebbed
+BenchBlueComfy: SteelBenchWebbed
+BenchColorfulComfy: SteelBenchWebbed
+StatueVenusRed: RandomStatueReaper
+StatueVenusBlue: RandomStatueReaper
+Bucket: RandomPumpkinBucket

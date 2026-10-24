@@ -52,10 +52,10 @@
         weight: 0.01
       - id: SpawnMobBatAnyAngry  # Reserve edit: Halloween on Reserve
         weight: 0.005
-      # - id: SpawnMobBatAny  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
-      #   weight: 2.5
-      # - id: SpawnMobBatAnyAngry  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
-      #   weight: 1.0
+      - id: SpawnMobBatAny  # Reserve edit: Halloween on Reserve
+        weight: 2.5
+      - id: SpawnMobBatAnyAngry  # Reserve edit: Halloween on Reserve
+        weight: 1.0
 # Events always spawn a critter regardless of Probability https://github.com/space-wizards/space-station-14/issues/28480 I added the Rat King to their own event with a player cap.
 
 - type: entity
@@ -103,16 +103,16 @@
       - id: MobBatVampireAngry  # Reserve edit: Halloween on Reserve
         weight: 0.01
       # Reserve edit end: Halloween on Reserve
-      # # Reserve edit start: Halloween on Reserve  # Uncomment on Halloween
-      # - id: SpawnMobBatAny
-      #   weight: 2.5
-      # - id: SpawnMobBatAnyAngry
-      #   weight: 1.0
-      # - id: MobBatVampire
-      #   weight: 1.0
-      # - id: MobBatVampireAngry
-      #   weight: 1.0
-      # # Reserve edit end: Halloween on Reserve
+      # Reserve edit start: Halloween on Reserve
+      - id: SpawnMobBatAny
+        weight: 2.5
+      - id: SpawnMobBatAnyAngry
+        weight: 1.0
+      - id: MobBatVampire
+        weight: 1.0
+      - id: MobBatVampireAngry
+        weight: 1.0
+      # Reserve edit end: Halloween on Reserve
     specialEntries:
     - id: SpawnPointGhostRatKing
       prob: 0.001
@@ -166,10 +166,10 @@
         weight: 0.01
       - id: MobSmallSpiderAngry  # Reserve edit: Arachnageddon
         weight: 0.002
-      # - id: MobSmallSpider  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
-      #   weight: 2.5
-      # - id: MobSmallSpiderAngry  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
-      #   weight: 1.0
+      - id: MobSmallSpider  # Reserve edit: Halloween on Reserve
+        weight: 2.5
+      - id: MobSmallSpiderAngry  # Reserve edit: Halloween on Reserve
+        weight: 1.0
 
 - type: entity
   id: SnailMigrationLowPop
@@ -199,10 +199,10 @@
       - id: MobSnail
       - id: MobSnailSpeed
       - id: MobSnailMoth
-      # - id: MobSmallSpider  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
-      #   weight: 2.5
-      # - id: MobSmallSpiderAngry  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
-      #   weight: 1.0
+      - id: MobSmallSpider  # Reserve edit: Halloween on Reserve
+        weight: 2.5
+      - id: MobSmallSpiderAngry  # Reserve edit: Halloween on Reserve
+        weight: 1.0
 
 - type: entity
   id: SnailMigration
@@ -240,7 +240,7 @@
       # Goobstation
       - id: MobSnailInstantDeath
         weight: 0.0004
-      # - id: MobSmallSpider  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
-      #   weight: 2.5
-      # - id: MobSmallSpiderAngry  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
-      #   weight: 1.0
+      - id: MobSmallSpider  # Reserve edit: Halloween on Reserve
+        weight: 2.5
+      - id: MobSmallSpiderAngry  # Reserve edit: Halloween on Reserve
+        weight: 1.0

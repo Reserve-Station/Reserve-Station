@@ -41,8 +41,8 @@
     - id: VendingMachineIceCream  # Reserve
     - id: VendingMachineJellyDonuts  # Reserve
     # Reserve: Orchid's Barmania - Vendichaos end
-    # - id: RandomVendingMachineHalloween # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
-    #   weight: 6.0
+    - id: RandomVendingMachineHalloween # Reserve edit: Halloween on Reserve
+      weight: 6.0
 # Reserve edit end: Random maints
 
 - type: entity
