@@ -1,9 +1,11 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
-  id: BaseSlimeExtract
+  abstract: true
   parent: BaseItem
+  id: BaseSlimeExtract
   name: slime extract
   description: Goo extracted from a slime. Legends claim these to have "magical powers".
-  abstract: true
   components:
   - type: Item
     size: Small
@@ -13,7 +15,7 @@
       state: core
       color: "#828282"
   - type: Appearance
-  - type: SolutionContainerManager # If you are removing this in favor of upstream, delete RelaySolution on every single xenobio extract rection
+  - type: SolutionContainerManager
     solutions:
       extract:
         maxVol: 100
@@ -25,7 +27,7 @@
     solution: extract
   - type: SlimeExtract
   - type: Reactive
-    scaleOverride: 1
+    scaleOverride: 1 # don't light someone on fire 20x as hard if injecting 20u
   - type: StatusEffects # used for jittering and stuff
     allowed:
     - Jitter

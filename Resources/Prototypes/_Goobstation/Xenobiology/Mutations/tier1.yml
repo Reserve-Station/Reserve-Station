@@ -1,7 +1,8 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-orange
   id: OrangeMutation
-  breedName: orange slime
   producedExtract: OrangeSlimeExtract
   components:
   - type: Slime
@@ -16,9 +17,8 @@
     - RedMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-purple
   id: PurpleMutation
-  breedName: purple slime
   producedExtract: PurpleSlimeExtract
   components:
   - type: Slime
@@ -33,9 +33,8 @@
     - GreenMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-blue
   id: BlueMutation
-  breedName: blue slime
   producedExtract: BlueSlimeExtract
   components:
   - type: Slime
@@ -50,9 +49,8 @@
     - PinkMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-metal
   id: MetalMutation
-  breedName: metal slime
   producedExtract: MetalSlimeExtract
   components:
   - type: Slime

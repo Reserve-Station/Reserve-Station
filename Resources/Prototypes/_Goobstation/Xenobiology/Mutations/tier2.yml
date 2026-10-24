@@ -1,7 +1,8 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-yellow
   id: YellowMutation
-  breedName: yellow slime
   producedExtract: YellowSlimeExtract
   components:
   - type: Slime
@@ -15,9 +16,8 @@
     - BluespaceMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-dark-purple
   id: DarkPurpleMutation
-  breedName: dark purple slime
   producedExtract: DarkPurpleSlimeExtract
   components:
   - type: Slime
@@ -31,9 +31,8 @@
     - SepiaMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-dark-blue
   id: DarkBlueMutation
-  breedName: dark blue slime
   producedExtract: DarkBlueSlimeExtract
   components:
   - type: Slime
@@ -47,9 +46,8 @@
     - CeruleanMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-silver
   id: SilverMutation
-  breedName: silver slime
   producedExtract: SilverSlimeExtract
   components:
   - type: Slime
@@ -64,10 +62,10 @@
     - MetalMutation
     - PyriteMutation
 
+# These don't upgrade anymore so might consider it tier 2.5
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-bluespace
   id: BluespaceMutation
-  breedName: bluespace slime
   producedExtract: BluespaceSlimeExtract
   components:
   - type: Slime
@@ -81,9 +79,8 @@
     - BluespaceMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-sepia
   id: SepiaMutation
-  breedName: sepia slime
   producedExtract: SepiaSlimeExtract
   components:
   - type: Slime
@@ -97,9 +94,8 @@
     - SepiaMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-cerulean
   id: CeruleanMutation
-  breedName: cerulean slime
   producedExtract: CeruleanSlimeExtract
   components:
   - type: Slime
@@ -111,9 +107,8 @@
     - CeruleanMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-pyrite
   id: PyriteMutation
-  breedName: pyrite slime
   producedExtract: PyriteSlimeExtract
   components:
   - type: Slime

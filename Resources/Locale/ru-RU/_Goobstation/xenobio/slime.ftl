@@ -6,12 +6,6 @@ slime-latch-fail-target-dead = Вы не хотите сьесть {$ent}, он�
 
 slime-latch-fail-max-entities = Вы не можете сьесть {$ent}, вы уже полны!
 
-slime-eat-corpse-success = {THE($eater)} пытается оторвать что-то от {THE($target)}!
-
-slime-eat-corpse-fail-not-eatable = {THE($target)} не выглядит съедобным.
-
-slime-eat-corpse-fail-not-dead = {THE($target)} должен быть мёртв!
-
 slime-examined-stomach = [color=red]Вы можете видеть, как что-то движется внутри него![/color]
 
 slime-examined-tamer = [color=green]Он рад вас видеть![/color]
@@ -20,7 +14,31 @@ slime-interaction-tame = Кажется, теперь вы ему нравите
 
 slime-interaction-tame-fail = Похоже, вы его не интересуете.
 
+slime-breed-grey = серый слайм
+slime-breed-orange = оранжевый слайм
+slime-breed-purple = фиолетовый слайм
+slime-breed-blue = синий слайм
+slime-breed-metal = металлический слайм
+slime-breed-yellow = жёлтый слайм
+slime-breed-dark-purple = тёмно-фиолетовый слайм
+slime-breed-dark-blue = тёмно-синий слайм
+slime-breed-silver = серебряный слайм
+slime-breed-bluespace = блюспейс слайм
+slime-breed-sepia = слайм сепия
+slime-breed-cerulean = лазурный слайм
+slime-breed-pyrite = пиритовый слайм
+slime-breed-red = красный слайм
+slime-breed-green = зелёный слайм
+slime-breed-pink = розовый слайм
+slime-breed-gold = золотой слайм
+slime-breed-oil = масляный слайм
+slime-breed-light-pink = светло-розовый слайм
+slime-breed-black = чёрный слайм
+slime-breed-adamantine = адамантитовый слайм
+
+ent-Nutrislime = нутрислайм
+    .desc = Идеальная еда для слаймов. Одного комка хватает, чтобы детёныш вырос и разделился.
+
 mob-growth-display-baby = малыш
 mob-growth-display-adult = взрослый
-
-slime-latch-fail-already-latched = Вы не можете прицепиться к {$ent}, к нему уже прицепился кто-то другой!
+mob-growth-name = { $stage } { $name }

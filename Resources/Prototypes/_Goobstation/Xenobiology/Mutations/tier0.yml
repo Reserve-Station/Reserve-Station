@@ -1,8 +1,9 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 # Literally the first base
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-grey
   id: GreyMutation
-  breedName: grey slime
   producedExtract: GreySlimeExtract
   components:
   - type: Slime
@@ -15,3 +16,5 @@
     - PurpleMutation
     - BlueMutation
     - MetalMutation
+
+# TODO add rainbow here for Smile

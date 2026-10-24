@@ -1568,7 +1568,7 @@
     - VimPilot
     - DoorBumpOpener
     - AnomalyHost
-    - XenobioSlimeFavoriteFood # Goobstation
+    # - XenobioSlimeFavoriteFood # Goobstation # Reserve edit: Trauma Xenobio
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -1591,7 +1591,7 @@
   - type: Crawler
   - type: StatusIcon
   - type: DiseaseCarrier # Goobstation
-  - type: XenovacTarget # Goobstation - Xenobio
+  - type: XenoVacTarget # Reserve edit: Trauma Xenobio
 
 - type: entity
   name: monkey
