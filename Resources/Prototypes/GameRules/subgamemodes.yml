@@ -26,6 +26,8 @@
       allowNonHumans: true
       multiAntagSetting: NotExclusive
       startingGear: ThiefGear
+      roleLoadout:
+      - AntagThief
       jobBlacklist: [ Chaplain ] # GOOBSTATION
       blacklist: # GOOBSTATION
         components:
