@@ -1,0 +1,883 @@
+- type: brainrotBotTrigger
+  id: Brainrot1
+  trigger: 'regex:(?<!\p{L})(?:фур+и+[а-яё]*|фурри[а-яё]*|фурье|фурьё)(?!\p{L})' # фурри, фурье
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot2
+  trigger: 'regex:(?<!\p{L})(?:х[оа]+хо*л[аыу]*(?:[вм])?|хохлосрач[а-яё]*|м[оа]скал[ьяие]*(?:[йм])?|к[оа]ца+п|жид(?:[ауые]|ом|ами|ах|ов|овск[а-яё]*|к[ауи])?|евре[йи][а-яё]*|русн[яе]|индус(?:[ауые]|ом|ами|ах|ов|к[а-яё]*)?)(?!\p{L})' # хохол, хохлосрач, москаль, кацап, жид, еврей, русня, индус
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot3
+  trigger: "[сска; сски; сску; сске; сской; ссочка; ссочки; ссочку; ссочке; ссочкой; сс14; сс13; спейсстейшн; спейс стейшн]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot4
+  trigger: даун
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot5
+  trigger: "[чурка; чурки; хач; хачи]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot6
+  trigger: 'regex:(?<!\p{L})(?:бр+о+|бр[ау]+х+|донатер)(?!\p{L})' # бро, брах, донатер
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot7
+  trigger: "[трап; трапы; трапу; трапа; трапом; трапе; трапов; трапам; трапами; трапах]"
+  replacement: "[кроссдрессер; кроссдрессеры; кроссдрессеру; кроссдрессера; кроссдрессером; кроссдрессере; кроссдрессеров; кроссдрессерам; кроссдрессерами; кроссдрессерах]"
+  description: brainrot-trigger-desc-brainrot21
+
+- type: brainrotBotTrigger
+  id: Brainrot8
+  trigger: 'regex:(?<!\p{L})(?:[сs][вv][оo]+|zo+v|зет|сво|z+)(?!\p{L})' # сво, зов, зет, z
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot9
+  trigger: тцк
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot10
+  trigger: 'regex:(?<!\p{L})[гg][аоao]+[йyi][дd][ауeayеы]+(?!\p{L})' # гойда
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot11
+  trigger: лексус
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot12
+  trigger: "[бандера; бандеровцы; вагнер; ватник]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot13
+  trigger: 'regex:(?<!\p{L})(?:пу+т[иеэ]+н|пу+тл[иеэ]+р|з[иеэ]л[иеэ]нск[иеэ]й|з[иеэ]л[иеэ]боба|[гх]итлер|трамп|навальный|адольф\s+гитлер)(?!\p{L})' # путин, путлер, зеленский, зелебоба, гитлер, трамп, навальный
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot14
+  trigger: "[киев; москва; Афганистан; Албания; Алжир; Аргентина; Армения; Австралия; Австрия; Азербайджан; Багамы; Бахрейн; Бангладеш; Беларусь; Бельгия; Бенин; Бутан; Боливия; Бразилия; Бруней; Болгария; Камбоджа; Канада; Чад; Китай; Колумбия; Конго; Коста-Рика; Хорватия; Кипр; Чехия; Дания; Доминика; Эквадор; Египет]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot14_2
+  trigger: "[Сальвадор; Экваториальная Гвинея; Эритрея; Эстония; Эфиопия; Финляндия; Франция; Грузия; Германия; Греция; Гватемала; Гвинея; Гаити; Гондурас; Венгрия; Исландия; Индия; Индонезия; Иран; Ирак; Ирландия; Израиль; Италия; Ямайка; Япония; Иордания; Казахстан; Кения; Кувейт; Кыргызстан; Латвия; Либерия; Ливия; Литва; Люксембург]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot14_3
+  trigger: "[Мадагаскар; Малави; Малайзия; Мальдивы; КНДР; Северная корея; Пакистан; Палау; Филиппины; Польша; Португалия; Катар; Румыния; Россия; Руанда; Сирия; Сирию; Таджикистан; Танзания; Таиланд; Турция; Турцию; Уганда; Украина; Великобритания; Англия; США; Узбекистан; Ватикан; Венесуэла; Вьетнам; Замбия; Зимбабве]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot15
+  trigger: 'regex:(?<!\p{L})(?:адм[ие]+н(?:[ауые]|ом|ов|ами|ах|к[а-яё]*|ск[а-яё]*|ит[а-яё]*|ул[а-яё]*)?|модер(?:[ауые]|ом|ов|ами|ах|к[а-яё]*|ск[а-яё]*|тор[а-яё]*)?)(?!\p{L})' # админ, модер
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot16
+  trigger: 'regex:(?<!\p{L})(?:ба+н(?:[ауые]|ом|ов|ами|ах|ит[а-яё]*|ь[а-яё]*|щик[а-яё]*)?|забан[а-яё]*|забанят|перм(?:[ауы]|ач[а-яё]*|ы)?|заперм[а-яё]*|мут(?:[ауые]|ом|ов|ами|ах|ит[а-яё]*|ь[а-яё]*)?|замут[а-яё]*)(?!\p{L})' # бан, пермач, мут
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot17
+  trigger: "[ooc; ic; айси]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot18
+  trigger: "[манал]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot19
+  trigger: "[респавн; респ; респнуться; реснусь; ресай; ресни; ресает; реснет; реснись; ресайся; ресаться; ресы; ресами; ресов]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot20
+  trigger: "[мабой]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot21
+  trigger: "[лагает; логает; лаги; пролаг; залагало; залагал; пролагало; пролагал]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot22
+  trigger: "[фриз; фризит]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot23
+  trigger: "[краш; крашнуло; крашнет; крашится; крашиться; крашнулась]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot24
+  trigger: "[баг; баги; баганутый]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot25
+  trigger: "[абуз; абузить]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot26
+  trigger: 'regex:(?<!\p{L})(?:гри+ф+[а-яё]*|грифинг)(?!\p{L})' # гриф, грифинг
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot27
+  trigger: "[валид; валидит; валидхант; валидхантит; валидхантер]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot28
+  trigger: 'regex:(?<!\p{L})(?:а+нта+[жш]+к[ау]*|антаг[а-яё]*|тритор[а-яё]*)(?!\p{L})' # антаг, тритор
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot29
+  trigger: 'regex:(?<!\p{L})(?:[лмх]*рп|нонрп|нрп|ерп)(?!\p{L})' # рп, нонрп, нрп, ерп
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot30
+  trigger: 'regex:(?<!\p{L})(?:я\s+в\s+ссд|я\s+афк|аф[еэ]*ка*)(?!\p{L})' # ссд, афк
+  description: brainrot-trigger-desc-brainrot14
+
+- type: brainrotBotTrigger
+  id: Brainrot31
+  trigger: флекс
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot32
+  trigger: фулл
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot33
+  trigger: хайп
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot34
+  trigger: 'regex:(?<!\p{L})х+з+(?:-*х+з+)*(?!\p{L})' # хз
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot35
+  trigger: 'regex:(?<!\p{L})(?:ле+кни+|ле+ка+й+|хил(?:[ауые]|ом|ов|ит[а-яё]*|ь[а-яё]*|к[а-яё]*|ер[а-яё]*)?)(?!\p{L})' # лекать, хил
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot36
+  trigger: 'regex:(?<!\p{L})(?:че+ка+[ей][а-яё]*|че+кни+[а-яё]*|че+ка+т[ьл][а-яё]*|чекнув?ш?[а-яё]*)(?!\p{L})' # чекать
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot38
+  trigger: 'regex:(?<!\p{L})(?:че+лик[а-яё]*|че+ликс[а-яё]*|че+л(?:[ауые]|ом|ов|ами|ах)?)(?!\p{L})' # чел, челик
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot39
+  trigger: "[шаришь; шарит; шарить; не шарю; нешарю]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot40
+  trigger: "[иба чотко; чотко; чотка; иба чотка]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot41
+  trigger: 'regex:(?<!\p{L})(?:и+з+и+|ез|ez)(?!\p{L})' # изи, ез
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot42
+  trigger: "[маму ебал; твою мамку ебал; маму трахал; мамку трахал]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot43
+  trigger: 'regex:(?<!\p{L})сигм[аоуые][а-яё]*(?!\p{L})' # сигма
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot44
+  trigger: тима
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot45
+  trigger: "[стак; стакается; стакаеться]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot46
+  trigger: 'regex:(?<!\p{L})[сш]+к[еи]+б[еи]+д[еи]+[а-яё]*(?!\p{L})' # скибиди
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot47
+  trigger: "[норм; нормас; нормикс; нормис]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot48
+  trigger: база
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot49
+  trigger: 'regex:(?<!\p{L})(?:л[оае]+л+|ке+к+|лмао)(?!\p{L})' # лол, кек, лмао
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot50
+  trigger: "[дед инсайд; дединсайд]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot51
+  trigger: "[рофл; рофляночка; рофлить; рофлит]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot52
+  trigger: "[токсик; токс; токсичит]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot53
+  trigger: "[агр; агриться; агрись; заагрился]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot54
+  trigger: 'regex:(?<!\p{L})и+мба+[а-яё]*(?!\p{L})' # имба
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot55
+  trigger: "[скилл; скилл ишью; скилл ишуе; скил; скил ишью; скил ишуе]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot56
+  trigger: "[сорян; сорри]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot59
+  trigger: "[танчить; танковать; танкует; затанчил]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot60
+  trigger: 'regex:(?<!\p{L})кри+н[жг]е*[а-яё]*(?!\p{L})' # кринж
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot61
+  trigger: жиза
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot62
+  trigger: 'regex:(?<!\p{L})(?:фут[аы]|футанари[а-яё]*)(?!\p{L})' # фута, футанари
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot65
+  trigger: 'regex:(?<!\p{L})с[эеы]*п[эеы]*с[эеы]*(?!\p{L})' # спс
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot66
+  trigger: 'regex:(?<!\p{L})по+н(?!\p{L})' # пон
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot67
+  trigger: 'regex:(?<!\p{L})(?:оке*|о+кда+)(?!\p{L})' # ок, окда
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot68
+  trigger: 'regex:(?<!\p{L})ла*д*н(?!\p{L})' # лан, ладно
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot69
+  trigger: 'regex:(?<!\p{L})всм\?*(?!\p{L})' # всм
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot70
+  trigger: 'regex:(?<!\p{L})кста*(?!\p{L})' # кста
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot71
+  trigger: 'regex:(?<!\p{L})(?:пж+л*с*т*|п[аэе]+ж[аэе]+)(?!\p{L})' # пж
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot72
+  trigger: 'regex:(?<!\p{L})го+[уw]*(?!\p{L})' # го
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot73
+  trigger: 'regex:(?<!\p{L})(?:пр[ие]+в+|пр)(?!\p{L})' # прив
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot74
+  trigger: офни
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot75
+  trigger: "[ваще; ващще]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot76
+  trigger: "[пруф; пруфы; пруфани]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot77
+  trigger: "[изоли; изольки]" # НЕ ТРОГАТЬ БЛЯТЬ, ВОЗРАЖЕНИЯ ПРИНИМАЮТСЯ ТОЛЬКО В ФОРМЕ СОЧИНЕНИЯ, 300 СЛОВ МИНИМУМ, С АРГУМЕНТАМИ ТОГО, ЧТО ИЗОЛИ НЕ БРЕЙНРОТ. 
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot78
+  trigger: 'regex:(?<!\p{L})ха+й+(?!\p{L})' # хай
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot79
+  trigger: ку
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot80
+  trigger: дек
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot81
+  trigger: вард
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot82
+  trigger: "[халява; халявный; халявного; халявная; халявные; халявно]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot83
+  trigger: "[аллах; аллаха; аллаху; аллахом]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot84
+  trigger: "[полиция; полицейский; полицейской; полицейские; полицейского; полиции; полицейскими]"
+  description: brainrot-trigger-desc-police
+
+- type: brainrotBotTrigger
+  id: Brainrot85
+  trigger: "[милиция; милиции; милиционер; милиционеры; милиционера; милиционером]"
+  description: brainrot-trigger-desc-police
+
+- type: brainrotBotTrigger
+  id: Brainrot86
+  trigger: "[нормалда; нормалды; бурмалда; бурмалды]"
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot87
+  trigger: 'regex:(?<!\p{L})пл[ие]*[зсc]+(?!\p{L})' # плиз
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot88
+  trigger: 'regex:(?<!\p{L})в+т+ф+(?!\p{L})' # втф
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot89
+  trigger: 'regex:(?<!\p{L})в[аэе]+т[аэе]+ф[аэе]+к*(?!\p{L})' # ватфак
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot90
+  trigger: 'regex:(?<!\p{L})х[аэе]+л+о+у*(?!\p{L})' # хелоу
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot91
+  trigger: 'regex:(?<!\p{L})ся[бп]к*и*(?!\p{L})' # сяб
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot92
+  trigger: 'regex:(?<!\p{L})с[еэ]+нк(?:\s*ю|с)?(?!\p{L})' # сенкс
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot93
+  trigger: 'regex:(?<!\p{L})нзчт*(?!\p{L})' # нзчт
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot94
+  trigger: 'regex:(?<!\p{L})е+с+(?!\p{L})' # ес
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot95
+  trigger: 'regex:(?<!\p{L})збс[ыь]*(?!\p{L})' # збс
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot96
+  trigger: 'regex:(?<!\p{L})крче*(?!\p{L})' # крч, короче
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot97
+  trigger: 'regex:(?<!\p{L})(?:мб|м[еэ]+йби+)(?!\p{L})' # мб, мейби
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot98
+  trigger: 'regex:(?<!\p{L})о+ч+н*(?!\p{L})' # оч
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot99
+  trigger: 'regex:(?<!\p{L})(?:по+к|бб)(?!\p{L})' # пока, бб
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot100
+  trigger: 'regex:(?<!\p{L})по+х+(?!\p{L})' # пох
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot101
+  trigger: 'regex:(?<!\p{L})я+сна*(?!\p{L})' # ясно
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot102
+  trigger: 'regex:(?<!\p{L})чзх+\?*(?!\p{L})' # чзх
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot103
+  trigger: 'regex:(?<!\p{L})[гg][гg]+(?!\p{L})' # гг
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot104
+  trigger: 'regex:(?<!\p{L})хня+(?!\p{L})' # хня
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot105
+  trigger: 'regex:(?<!\p{L})у+жо*с+(?!\p{L})' # ужос
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot106
+  trigger: 'regex:(?<!\p{L})(?:ч[оё]+|шо+|шт[оа]+|чта+|ч[аеи]+во+|ч[аи]+го+)(?!\p{L})' # чо, шо, што, чего
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot107
+  trigger: 'regex:(?<!\p{L})ме+м(?:[аеыуо]+(?:[вм]|ми|х)?|[вм]|чик[а-яё]*|ес[а-яё]*)?(?!\p{L})' # мем
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot108
+  trigger: 'regex:(?<!\p{L})но+у+п*(?!\p{L})' # ноу, ноуп
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot109
+  trigger: 'regex:(?<!\p{L})у+в[ыи]+н*с*к*[а-яё]*(?!\p{L})' # увинск
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot110
+  trigger: 'regex:(?<!\p{L})а+у+т(?!\p{L})' # аут
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot111
+  trigger: 'regex:(?<!\p{L})педал[ьи][а-яё]*(?!\p{L})' # педали
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot112
+  trigger: 'regex:(?<!\p{L})(?:р?дм+|д[эе]+[зд]ма+т?ч)(?!\p{L})' # дм, рдм, дезматч
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot113
+  trigger: 'regex:(?<!\p{L})афаик(?!\p{L})' # афаик
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot114
+  trigger: 'regex:(?<!\p{L})фри+ки+л+[а-яё]*(?!\p{L})' # фрикилл
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot115
+  trigger: 'regex:(?<!\p{L})набег(?:ато+р+[а-яё]*)?(?!\p{L})' # набег, набегатор
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot116
+  trigger: 'regex:(?<!\p{L})(?:ан)?роба+ст[а-яё]*(?!\p{L})' # робаст
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot117
+  trigger: 'regex:(?<!\p{L})мета(?:инф[а-яё]*)?(?!\p{L})' # мета, метаинфа
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot118
+  trigger: 'regex:(?<!\p{L})пг+(?!\p{L})' # пг
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot119
+  trigger: 'regex:(?<!\p{L})[лп]км(?!\p{L})' # лкм, пкм
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot120
+  trigger: 'regex:(?<!\p{L})варн(?:[ауые]|ом|ов|ами|ах|ит[а-яё]*|ул[а-яё]*)?(?!\p{L})' # варн
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot121
+  trigger: 'regex:(?<!\p{L})пдк(?!\p{L})' # пдк
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot122
+  trigger: 'regex:(?<!\p{L})какиш[а-яё]*(?!\p{L})' # какиш
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot123
+  trigger: 'regex:(?<!\p{L})щовель[а-яё]*(?!\p{L})' # щовель
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot124
+  trigger: 'regex:(?<!\p{L})угар(?:[ауе]|ом|а(?:ть|ю|ешь|ет|ем|ете|ют)|нул[а-яё]*)?(?!\p{L})' # угар
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot125
+  trigger: 'regex:(?<!\p{L})[уа]+э+(?!\p{L})' # уэ, аэ
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot126
+  trigger: 'regex:(?<!\p{L})скуф[а-яё]*(?!\p{L})' # скуф
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot127
+  trigger: 'regex:(?<!\p{L})кф[сц](?!\p{L})' # кфс, кфц
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot128
+  trigger: 'regex:(?<!\p{L})ди[сз]балан[сз][а-яё]*(?!\p{L})' # дисбаланс
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot129
+  trigger: 'regex:(?<!\p{L})плаки(?:-плаки)?(?!\p{L})' # плаки-плаки
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot130
+  trigger: 'regex:(?<!\p{L})найк\s+про(?!\p{L})' # найк про
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot131
+  trigger: 'regex:(?<!\p{L})пикми(?!\p{L})' # пикми
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot132
+  trigger: 'regex:(?<!\p{L})с[уа]+с+(?!\p{L})' # сус, сас
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot133
+  trigger: 'regex:(?<!\p{L})пов(?!\p{L})' # пов
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot134
+  trigger: 'regex:(?<!\p{L})1488(?!\p{L})' # 1488
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot135
+  trigger: 'regex:(?<!\p{L})гигачад[а-яё]*(?!\p{L})' # гигачад
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot136
+  trigger: 'regex:(?<!\p{L})(?:соя|соев[а-яё]*)(?!\p{L})' # соя, соевый
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot137
+  trigger: 'regex:(?<!\p{L})абоб[а-яё]*(?!\p{L})' # абоба
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot138
+  trigger: 'regex:(?<!\p{L})ф[ие]моз[а-яё]*(?!\p{L})' # фимоз
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot139
+  trigger: "[фембой; фембои; фембоя; фембою; фембоем; фембое; фембоев; фембоям; фембоями; фембоях; фембойчик; фембойчики; фембойчика; фембойчику; фембойчиком; фембойчике; фембойчиков; фембойчикам; фембойчиками; фембойчиках]"
+  replacement: "[кроссдрессер; кроссдрессеры; кроссдрессера; кроссдрессеру; кроссдрессером; кроссдрессере; кроссдрессеров; кроссдрессерам; кроссдрессерами; кроссдрессерах; кроссдрессер; кроссдрессеры; кроссдрессера; кроссдрессеру; кроссдрессером; кроссдрессере; кроссдрессеров; кроссдрессерам; кроссдрессерами; кроссдрессерах]"
+  description: brainrot-trigger-desc-brainrot21
+
+- type: brainrotBotTrigger
+  id: Brainrot140
+  trigger: 'regex:(?<!\p{L})[вv][еe]+[нn][оo]+[мm]+[а-яё]*(?!\p{L})' # веном
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot141
+  trigger: 'regex:(?<!\p{L})чиназ[еэ]с[а-яё]*(?!\p{L})' # чиназес
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot142
+  trigger: 'regex:(?<!\p{L})доп\s+доп\s+ес\s+ес(?!\p{L})' # доп доп ес ес
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot143
+  trigger: 'regex:(?<!\p{L})сахур[а-яё]*(?!\p{L})' # сахур
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot144
+  trigger: 'regex:(?<!\p{L})сикс\s+с[еэ]в[еэ]н(?!\p{L})' # сикс севен
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot145
+  trigger: 'regex:(?<!\p{L})[cс][oо][cс][oо](?!\p{L})' # сосо
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot146
+  trigger: 'regex:(?<!\p{L})[аa]+[зz][оo]+[вv][а-яё]*(?!\p{L})' # азов
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot147
+  trigger: 'regex:(?<!\p{L})к[оа]+рв[ау]+[кх]+c*[а-яё]*(?!\p{L})' # корвакс
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot148
+  trigger: 'regex:(?<!\p{L})(?:мк+|в+д+п*|вп+)(?!\p{L})' # мк, вд, вдп, вп
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot149
+  trigger: 'regex:(?<!\p{L})вайт[\s\-_]*дри+м+[а-яё]*(?!\p{L})' # вайтдрим
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot150
+  trigger: 'regex:(?<!\p{L})вег[ауио]+й*[а-яё]*(?!\p{L})' # вега
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot151
+  trigger: 'regex:(?<!\p{L})(?:с*ща+с*|сча+с*)(?!\p{L})' # щас, счас
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot152
+  trigger: 'regex:(?<!\p{L})(?:пу+-?пу+-?пу+|пу+-?пу+|пу+к|п[её]+рд)(?!\p{L})' # пу-пу-пу, пук, перд
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot153
+  trigger: 'regex:(?<!\p{L})се+к+(?!\p{L})' # сек
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot154
+  trigger: 'regex:(?<!\p{L})доллар[а-яё]*(?!\p{L})' # доллар
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot155
+  trigger: 'regex:(?<!\p{L})[кзжс]к(?!\p{L})' # кк, зк, жк, ск
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot156
+  trigger: 'regex:(?<!\p{L})клун[яиею]+(?!\p{L})' # клуня
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot157
+  trigger: 'regex:(?<!\p{L})арт[ауыо]+в*(?!\p{L})' # арт
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot158
+  trigger: 'regex:(?<!\p{L})ска+ф(?:[ауые]|ом|ов|ами|ах)?(?!\p{L})' # скаф
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot159
+  trigger: 'regex:(?<!\p{L})[эе]+ва+к(?:[ауыеи]|ом|ов|ами|ах)?(?!\p{L})' # эвак
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot160
+  trigger: 'regex:(?<!\p{L})щи+тку+р+[а-яё]*(?!\p{L})' # щиткур
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot161
+  trigger: 'regex:(?<!\p{L})ме+д(?!\p{L})' # мед
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot162
+  trigger: 'regex:(?<!\p{L})хи+мк[ауе]+(?!\p{L})' # химка
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot163
+  trigger: 'regex:(?<!\p{L})абдук(?:[ауи]|ов|ами|ах)?(?!\p{L})' # абдук
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot164
+  trigger: 'regex:(?<!\p{L})аном[ауеы]+(?!\p{L})' # анома
+  description: brainrot-trigger-desc-generic
+
+
+- type: brainrotBotTrigger
+  id: Brainrot167
+  trigger: 'regex:(?<!\p{L})синдики?(?!\p{L})' # синдик
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot168
+  trigger: 'regex:(?<!\p{L})та[уо][\s\-_]?с[еэ]т[ие]+[а-яё]*(?!\p{L})' # таусети
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot169
+  trigger: 'regex:(?<!\p{L})опз(?!\p{L})' # опз
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot170
+  trigger: 'regex:(?<!\p{L})ас+[ие]к[а-яё]*(?!\p{L})' # асик
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot171
+  trigger: 'regex:(?<!\p{L})б[оа]тан(?:[ауые]|ом|ов|ами|ах|ск[а-яё]*)?(?!\p{L})' # ботан
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot174
+  trigger: 'regex:(?<!\p{L})д[еэ]д[\s\-]*сква+д[а-яё]*(?!\p{L})' # дедсквад
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot175
+  trigger: 'regex:(?<!\p{L})(?:нюкер[а-яё]*|яо|нюк[а-яё]*)(?!\p{L})' # нюкер, яо, нюк
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot176
+  trigger: 'regex:(?<!\p{L})опер(?:[ауые]|ом|ов|ами|ах|ск[а-яё]*)?(?!\p{L})' # опер
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot179
+  trigger: 'regex:(?<!\p{L})пассик[а-яё]*(?!\p{L})' # пассик
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot186
+  trigger: 'regex:(?<!\p{L})(?:иишн?и?к[а-яё]*|иишк[а-яё]*)(?!\p{L})' # иишник, иишка
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot189
+  trigger: 'regex:(?<!\p{L})(?:lf+|yt+n+|ghb+dt+n+|rf+r|ult+|ns+|xnj+|f+uf+|g[jf]+rf+|\[?[jf]+h[jf]+ij+)(?!\p{L})' # раскладка (да, нет, привет, как, где, ты, что, ага, пока, хорошо)
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot190
+  trigger: 'regex:(?<!\p{L})чи+л+(?:[ауеы]|ом|ит[а-яё]*|им[а-яё]*|я[а-яё]*|ь[а-яё]*)?(?!\p{L})' # чилл
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot191
+  trigger: 'regex:(?<!\p{L})ка+мб[еэ]+к[а-яё]*(?!\p{L})' # камбэк
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot192
+  trigger: 'regex:(?<!\p{L})и+нж(?:[ауыеи]|ом|ов|ами|ах|ск[а-яё]*)?(?!\p{L})' # инж
+  description: brainrot-trigger-desc-generic
+
+- type: brainrotBotTrigger
+  id: Brainrot193
+  trigger: 'regex:(?<!\p{L})фембой[а-яё]*(?!\p{L})' # фембой
+  description: brainrot-trigger-desc-brainrot21
+

@@ -1117,7 +1117,10 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     public string SanitizeMessageReplaceWords(string message)
     {
-        if (string.IsNullOrEmpty(message)) return message;
+        if (!_configurationManager.GetCVar(CCVars.ChatSanitizerEnabled) ||
+            !_configurationManager.GetCVar(CCVars.ChatSanitizerWordReplacementsEnabled) ||
+            string.IsNullOrEmpty(message))
+            return message;
 
         var msg = message;
 

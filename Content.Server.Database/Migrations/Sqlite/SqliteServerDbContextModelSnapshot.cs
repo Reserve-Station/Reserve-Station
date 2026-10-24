@@ -785,6 +785,28 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("blacklist", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.BrainrotTrigger", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Trigger")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("trigger");
+
+                    b.HasKey("Id")
+                        .HasName("PK_brainrot_triggers");
+
+                    b.HasIndex("Trigger")
+                        .IsUnique()
+                        .HasDatabaseName("IX_brainrot_triggers_trigger");
+
+                    b.ToTable("brainrot_triggers", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.ConnectionLog", b =>
                 {
                     b.Property<int>("Id")

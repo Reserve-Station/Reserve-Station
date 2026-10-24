@@ -52,6 +52,7 @@ namespace Content.Server.Database
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
         public DbSet<DBJobAlternateTitle> DBJobAlternateTitle { get; set; } = null!;  // Reserve: Alternate Job Titles
+        public DbSet<BrainrotTrigger> BrainrotTriggers { get; set; } = default!; // Reserve: Brainrot Triggers
 
         // RMC14
         public DbSet<RMCDiscordAccount> RMCDiscordAccounts { get; set; } = default!;
