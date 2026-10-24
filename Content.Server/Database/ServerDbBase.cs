@@ -2464,6 +2464,42 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             OnNotificationReceived?.Invoke(notification);
         }
 
+        // Reserve edit start: Brainrot Triggers
+        #region Brainrot Triggers
+
+        public async Task<List<string>> GetBrainrotTriggersAsync(CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            return await db.DbContext.BrainrotTriggers
+                .Select(t => t.Trigger)
+                .ToListAsync(cancel);
+        }
+
+        public async Task AddBrainrotTriggerAsync(string trigger, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var exists = await db.DbContext.BrainrotTriggers.AnyAsync(t => t.Trigger == trigger, cancel);
+            if (exists)
+                return;
+
+            db.DbContext.BrainrotTriggers.Add(new BrainrotTrigger { Trigger = trigger });
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task RemoveBrainrotTriggerAsync(string trigger, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var entry = await db.DbContext.BrainrotTriggers.FirstOrDefaultAsync(t => t.Trigger == trigger, cancel);
+            if (entry != null)
+            {
+                db.DbContext.BrainrotTriggers.Remove(entry);
+                await db.DbContext.SaveChangesAsync(cancel);
+            }
+        }
+
+        #endregion
+        // Reserve edit end: Brainrot Triggers
+
         public virtual void Shutdown()
         {
 

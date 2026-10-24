@@ -1,0 +1,53 @@
+- type: grammarnaziBotTrigger
+  id: Grammar1
+  trigger: "[шатл; шатлы; шатла; шатлу; шатлом; шатле; шатлов; шатлам; шатлами; шатлах]"
+  replacement: "[шаттл; шаттлы; шаттла; шаттлу; шаттлом; шаттле; шаттлов; шаттлам; шаттлами; шаттлах]"
+  description: grammarnazi-trigger-desc-grammar1
+
+- type: grammarnaziBotTrigger
+  id: Grammar2
+  trigger: 'regex:(?<!\p{L})и+н+ж+[иыэ]+н+е+р+(?<suffix>[а-яё]*)(?!\p{L})'
+  replacement: 'инженер${suffix}'
+  description: grammarnazi-trigger-desc-grammar2
+
+- type: grammarnaziBotTrigger
+  id: Grammar3
+  trigger: "[разгермитизация; разгермитизации; разгермитизацию; разгермитизацией; разгермитизатор; разгермитизировало; разгермитизировано]"
+  replacement: "[разгерметизация; разгерметизации; разгерметизацию; разгерметизацией; разгерметизатор; разгерметизировало; разгерметизировано]"
+  description: grammarnazi-trigger-desc-grammar3
+
+- type: grammarnaziBotTrigger
+  id: Grammar4
+  trigger: "[медецинский; медецинская; медецинское; медецинские; медецинского; медецинской; медецинскому; медецинским; медецинских; медецинскими; медецина; медецины; медецине; медецину]"
+  replacement: "[медицинский; медицинская; медицинское; медицинские; медицинского; медицинской; медицинскому; медицинским; медицинских; медицинскими; медицина; медицины; медицине; медицину]"
+  description: grammarnazi-trigger-desc-grammar4
+
+- type: grammarnaziBotTrigger
+  id: Grammar5
+  trigger: "[зделать; зделаю; зделаешь; зделает; зделаем; зделаете; зделают; зделал; зделала; зделали; зделай; зделайте]"
+  replacement: "[сделать; сделаю; сделаешь; сделает; сделаем; сделаете; сделают; сделал; сделала; сделали; сделай; сделайте]"
+  description: grammarnazi-trigger-desc-grammar5
+
+- type: grammarnaziBotTrigger
+  id: Grammar6
+  trigger: "[расса; рассы; рассе; рассу; рассой; расс; рассам; рассами; рассах]"
+  replacement: "[раса; расы; расе; расу; расой; рас; расам; расами; расах]"
+  description: grammarnazi-trigger-desc-grammar6
+
+- type: grammarnaziBotTrigger
+  id: Grammar7
+  trigger: "[петомец; петомца; петомцу; петомцем; петомце; петомцы; петомцев; петомцам; петомцами; петомцах]"
+  replacement: "[питомец; питомца; питомцу; питомцем; питомце; питомцы; питомцев; питомцам; питомцами; питомцах]"
+  description: grammarnazi-trigger-desc-grammar7
+
+- type: grammarnaziBotTrigger
+  id: Grammar9
+  trigger: "[асистент; асистента; асистенту; асистентом; асистенте; асистенты; асистентов; асистентам; асистентами; асистентах]"
+  replacement: "[ассистент; ассистента; ассистенту; ассистентом; ассистенте; ассистенты; ассистентов; ассистентам; ассистентами; ассистентах]"
+  description: grammarnazi-trigger-desc-grammar9
+
+- type: grammarnaziBotTrigger
+  id: Grammar10
+  trigger: "[какой нибудь; какой то; какой либо; кое что; кто нибудь; кто то; кто либо; где нибудь; где то; где либо; куда нибудь; куда то; куда либо; когда нибудь; когда то; как нибудь; как то]"
+  replacement: "[какой-нибудь; какой-то; какой-либо; кое-что; кто-нибудь; кто-то; кто-либо; где-нибудь; где-то; где-либо; куда-нибудь; куда-то; куда-либо; когда-нибудь; когда-то; как-нибудь; как-то]"
+  description: grammarnazi-trigger-desc-grammar10
