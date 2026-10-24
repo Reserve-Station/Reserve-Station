@@ -288,6 +288,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieCaptain
+  - BoxFolderBlueCaptainsThoughts
 
 - type: loadoutGroup
   id: HoPHead
@@ -338,6 +339,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieHeadOfPersonnel
+  - BoxFolderBlueHoP
 
 # Civilian
 - type: loadoutGroup
@@ -457,6 +459,9 @@
   minLimit: 0
   loadouts:
   - LizardPlushieBartender
+  - DrinkBeerBottleFullOfHolding
+  - Rag
+  - RagGold
   - BartenderGoldenShaker
 
 - type: loadoutGroup
@@ -503,6 +508,8 @@
   minLimit: 0
   loadouts:
   - LizardPlushieChef
+  - FoodCheeseSliceOld  # Reserve edit: Better trinket loadout
+  - UtensilSetGold
 
 - type: loadoutGroup
   id: LibrarianJumpsuit
@@ -520,6 +527,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieLibrarian
+  - PlushieLamp
 
 - type: loadoutGroup
   id: LawyerJumpsuit
@@ -701,6 +709,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieBotanist
+  - TomatoRing  # Reserve edit: Better trinket loadout
 
 - type: loadoutGroup
   id: ClownHead
@@ -761,9 +770,20 @@
   id: ClownJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
+  maxLimit: 2  # Reserve edit: Better trinket loadout
   loadouts:
   - LizardPlushieClown
   - FlowerWaterClown
+  # Reserve edit start: Better trinket loadout
+  - DrinkEggCanClown
+  - TrashBananaPeelClown
+  - WhoopieCushionClown
+  - PlasticBananaClown
+  - CrazyGlueClown
+  - RubberChickenClown
+  - FoodBurgerClown
+  - FoodFrozenSnowconeClown
+  # Reserve edit end: Better trinket loadout
 
 - type: loadoutGroup
   id: MimeHead
@@ -831,8 +851,21 @@
   id: MimeJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0
+  maxLimit: 2  # Reserve edit: Better trinket loadout
   loadouts:
   - LizardPlushieMime
+  # Reserve edit start: Better trinket loadout
+  - DrinkNothingCanMime
+  - TrashMimanaPeelMime
+  - CrayonMime
+  - MimeRingMime
+  - ButtonRedBigMime
+  - CrayonMimeBig
+  - FoodBurgerMime
+  - FoodFrozenSnowconeMime
+  - FoodTartMime
+  - BoxAdvMimeryMime
+  # Reserve edit end: Better trinket loadout
 
 - type: loadoutGroup
   id: MusicianJumpsuit
@@ -890,6 +923,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieMusician
+  - BoxFolderBlackMusicNotebook  # Reserve edit: Better trinket loadout
 
 # Cargo
 - type: loadoutGroup
@@ -999,6 +1033,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieCargoTechnician
+  - BoxEnvelope
 
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
@@ -1205,6 +1240,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieAtmosphericTechnician
+  - PlushieAtmosian  # Reserve edit: Better trinket loadout
 
 - type: loadoutGroup
   id: SurvivalExtended
@@ -1896,6 +1932,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushiePsychologist
+  - OrganHumanBrainPlastic  # Reserve edit: Better trinket loadout
 
 # Other
 - type: loadoutGroup
