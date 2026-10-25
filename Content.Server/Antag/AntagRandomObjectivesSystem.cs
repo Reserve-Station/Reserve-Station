@@ -38,9 +38,9 @@ public sealed class AntagRandomObjectivesSystem : EntitySystem
             if (!_random.Prob(set.Prob))
                 continue;
 
-            for (var pick = 0; pick < set.MaxPicks; pick++)
+            for (var pick = 0; pick < set.MaxPicks; pick++) // Reserve edit: syndicate-objectives #468
             {
-                var remainingDifficulty = Math.Max(ent.Comp.MaxDifficulty - difficulty, 0f);
+                var remainingDifficulty = Math.Max(ent.Comp.MaxDifficulty - difficulty, 0f); // Reserve edit: syndicate-objectives #468
                 if (_objectives.GetRandomObjective(mindId, mind, set.Groups, remainingDifficulty) is not { } objective)
                 // Reserve edit start: syndicate-objectives #468
                 {
