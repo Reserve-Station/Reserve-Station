@@ -17,4 +17,4 @@ namespace Content.Shared.Objectives;
 /// If anything is null it will be logged and return null.
 /// </remarks>
 [Serializable, NetSerializable]
-public record struct ObjectiveInfo(string Title, string Description, SpriteSpecifier Icon, float Progress, int ServerCurrency, bool PartialCurrency); //Goobstation
+public record struct ObjectiveInfo(string Title, string Description, SpriteSpecifier Icon, float Progress, int ServerCurrency, bool PartialCurrency, bool Optional); //Goobstation, Reserve edit: syndicate-objectives #468

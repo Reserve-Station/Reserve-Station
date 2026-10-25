@@ -38,16 +38,24 @@ public sealed class AntagRandomObjectivesSystem : EntitySystem
             if (!_random.Prob(set.Prob))
                 continue;
 
-            for (var pick = 0; pick < set.MaxPicks && ent.Comp.MaxDifficulty > difficulty; pick++)
+            for (var pick = 0; pick < set.MaxPicks; pick++)
             {
-                var remainingDifficulty = ent.Comp.MaxDifficulty - difficulty;
+                var remainingDifficulty = Math.Max(ent.Comp.MaxDifficulty - difficulty, 0f);
                 if (_objectives.GetRandomObjective(mindId, mind, set.Groups, remainingDifficulty) is not { } objective)
+                // Reserve edit start: syndicate-objectives #468
+                {
+                    if (remainingDifficulty <= 0)
+                        break;
+
                     continue;
+                }
 
                 _mind.AddObjective(mindId, mind, objective);
-                var adding = Comp<ObjectiveComponent>(objective).Difficulty;
+                var comp = Comp<ObjectiveComponent>(objective);
+                var adding = comp.Optional ? 0f : comp.Difficulty;
                 difficulty += adding;
                 Log.Debug($"Added objective {ToPrettyString(objective):objective} to {ToPrettyString(args.EntityUid):player} with {adding} difficulty");
+                // Reserve edit end: syndicate-objectives #468
             }
         }
     }
