@@ -12,7 +12,7 @@ ent-TraitorFluffTrustPersonObjective = Вотритесь в доверие к �
 
 objective-fluff-trust-person-title = Вотритесь в доверие к { $targetName }, { CAPITALIZE($job) }.
 
-ent-TraitorFluffRumorPersonObjective = Распространите слух, что этот человек — агент синдиката.
+ent-TraitorFluffRumorPersonObjective = Распространите слух, что этот человек — агент Синдиката.
     .desc = Подозрение не должно пасть на вас.
 
 objective-fluff-rumor-person-title = Распространите слух, что { $targetName }, { CAPITALIZE($job) }, — агент синдиката.
