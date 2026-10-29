@@ -168,10 +168,10 @@
     anchored: true
   # Reserve start - revert puddle visuals
   - type: Sprite
+    drawdepth: Puddles
     layers:
     - sprite: Fluids/puddle.rsi
       state: splat0
-    drawdepth: Puddles
     color: "#FFFFFF80"
   # Reserve end
   - type: Physics
