@@ -7,7 +7,7 @@ ent-TraitorFluffInfiltrateObjective = Всю смену проникайте в 
 ent-TraitorFluffImpersonateObjective = Всю смену выдавайте себя за другого человека.
     .desc = Не позвольте выдать себя.
 
-ent-TraitorFluffTrustPersonObjective = Втеритесь в доверие к человеку.
+ent-TraitorFluffTrustPersonObjective = Вотритесь в доверие к человеку.
     .desc = К концу смены этот человек должен считать вас союзником.
 
 objective-fluff-trust-person-title = Втеритесь в доверие к { $targetName }, { CAPITALIZE($job) }.
