@@ -1,3 +1,4 @@
+using Content.Client.IconSmoothing;
 using Content.Goobstation.Common.Footprints;
 using Content.Shared._ES.Fluids;
 using Content.Shared.Fluids;
@@ -9,8 +10,7 @@ namespace Content.Client.Fluids;
 
 public sealed partial class PuddleSystem
 {
-    private readonly IRobustRandom _puddleRandom = new RobustRandom();
-
+    [Dependency] private readonly IconSmoothSystem _smooth = default!; // reserve
     private void UpdatePuddleSprite(Entity<SpriteComponent> ent, float volume, IReadOnlyDictionary<Enum, object> appearanceData)
     {
         if (HasComp<FootprintComponent>(ent))
@@ -20,32 +20,44 @@ public sealed partial class PuddleSystem
             return;
         }
 
-        var spriteSetId = DefaultPuddleSpriteSet;
-        if (appearanceData.TryGetValue(PuddleVisuals.SpriteSet, out var spriteSetObj) && spriteSetObj is string spriteSetString)
-            spriteSetId = spriteSetString;
+        // Reserve start - revert puddle visuals
+        _sprite.LayerSetRotation(ent.AsNullable(), 0, Angle.Zero);
 
-        if (!ProtoMan.TryIndex(spriteSetId, out var spriteSet) && !ProtoMan.TryIndex(DefaultPuddleSpriteSet, out spriteSet))
-            return;
-
-        var (sprites, size) = volume switch
+        // Update smoothing and sprite based on volume.
+        if (TryComp<IconSmoothComponent>(ent, out var smooth))
         {
-            < LowThreshold => (spriteSet.SmallSprites, 0),
-            < MediumThreshold => (spriteSet.MediumSprites, 1),
-            _ => (spriteSet.LargeSprites, 2),
-        };
-
-        if (sprites.Count > 0)
-        {
-            _puddleRandom.SetSeed(SharedRandomExtensions.HashCodeCombine(GetNetEntity(ent).Id, size));
-            _sprite.LayerSetSprite(ent.AsNullable(), 0, _puddleRandom.Pick(sprites));
-            _sprite.LayerSetRotation(ent.AsNullable(), 0, _puddleRandom.NextAngle().RoundToCardinalAngle());
+            if (volume < LowThreshold)
+            {
+                _sprite.LayerSetRsiState(ent.AsNullable(), 0, $"{smooth.StateBase}a");
+                _smooth.SetEnabled(ent, false, smooth);
+            }
+            else if (volume < MediumThreshold)
+            {
+                _sprite.LayerSetRsiState(ent.AsNullable(), 0, $"{smooth.StateBase}b");
+                _smooth.SetEnabled(ent, false, smooth);
+            }
+            else
+            {
+                if (!smooth.Enabled)
+                {
+                    _sprite.LayerSetRsiState(ent.AsNullable(), 0, $"{smooth.StateBase}0");
+                    _smooth.SetEnabled(ent, true, smooth);
+                    _smooth.DirtyNeighbours(ent, smooth);
+                }
+            }
         }
 
-        var baseColor = spriteSet.BaseColor;
+        var baseColor = Color.White;
 
-        if (spriteSet.Recolor && appearanceData.TryGetValue(PuddleVisuals.SolutionColor, out var colorObj))
-            _sprite.SetColor(ent.AsNullable(), (Color) colorObj * baseColor);
+        if (appearanceData.TryGetValue(PuddleVisuals.SolutionColor, out var colorObj))
+        {
+            var color = (Color) colorObj;
+            _sprite.SetColor(ent.AsNullable(), color * baseColor);
+        }
         else
-            _sprite.SetColor(ent.AsNullable(), baseColor);
+        {
+            _sprite.SetColor(ent.AsNullable(), ent.Comp.Color * baseColor);
+        }
+        // Reserve end
     }
 }
