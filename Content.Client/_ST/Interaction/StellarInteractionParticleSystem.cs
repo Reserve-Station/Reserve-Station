@@ -144,13 +144,13 @@ public sealed partial class StellarInteractionParticleSystem : EntitySystem
         if (_container.IsEntityOrParentInContainer(performer, xform: performerXform))
             return null;
 
-        if (_container.IsEntityOrParentInContainer(target, xform: targetXform))
+        // Reserve edit start
+        if (_container.IsEntityOrParentInContainer(target, xform: targetXform)
+            && type != StellarInteractionParticleType.InHand)
         {
-            if (type == StellarInteractionParticleType.Pull)
-                return null;
-
-            type = StellarInteractionParticleType.InHand;
+            return null;
         }
+        // Reserve edit end
 
         if (type == StellarInteractionParticleType.InHand && _inHandScale <= 0f)
             return null;

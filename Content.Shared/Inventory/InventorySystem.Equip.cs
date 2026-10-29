@@ -99,7 +99,7 @@ public abstract partial class InventorySystem
             if (!TryUnequip(actor, ev.Slot, out var item, predicted: true, inventory: inventory, checkDoafter: true, triggerHandContact: true))
                 return;
 
-            _handsSystem.PickupOrDrop(actor, item.Value);
+            _handsSystem.PickupOrDrop(actor, item.Value, fromInventory: true); // Reserve edit
             return;
         }
 

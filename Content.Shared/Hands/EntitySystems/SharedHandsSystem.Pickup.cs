@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics;
+using Content.Shared._ST.Interaction;
 using Content.Shared.Database;
 using Content.Shared.Hands.Components;
 using Content.Shared.Item;
@@ -51,7 +52,8 @@ public abstract partial class SharedHandsSystem
         bool animateUser = false,
         bool animate = true,
         HandsComponent? handsComp = null,
-        ItemComponent? item = null)
+        ItemComponent? item = null,
+        bool? fromInventory = null) // Reserve edit
     {
         if (!Resolve(uid, ref handsComp, false))
             return false;
@@ -59,7 +61,7 @@ public abstract partial class SharedHandsSystem
         if (!TryGetEmptyHand((uid, handsComp), out var hand))
             return false;
 
-        return TryPickup(uid, entity, hand, checkActionBlocker, animateUser, animate, handsComp, item);
+        return TryPickup(uid, entity, hand, checkActionBlocker, animateUser, animate, handsComp, item, fromInventory); // Reserve edit
     }
 
     /// <summary>
@@ -73,7 +75,8 @@ public abstract partial class SharedHandsSystem
         bool animateUser = false,
         bool animate = true,
         HandsComponent? handsComp = null,
-        ItemComponent? item = null)
+        ItemComponent? item = null,
+        bool? fromInventory = null) // Reserve edit
     {
         if (!Resolve(uid, ref handsComp, false))
             return false;
@@ -107,7 +110,7 @@ public abstract partial class SharedHandsSystem
                 _storage.PlayPickupAnimation(entity, initialPosition, xform.Coordinates, itemXform.LocalRotation, uid);
             }
         }
-        DoPickup(uid, handId, entity, handsComp);
+        DoPickup(uid, handId, entity, handsComp, fromInventory: fromInventory); // Reserve edit
 
         return true;
     }
@@ -229,11 +232,12 @@ public abstract partial class SharedHandsSystem
         bool animate = true,
         bool dropNear = false,
         HandsComponent? handsComp = null,
-        ItemComponent? item = null)
+        ItemComponent? item = null,
+        bool? fromInventory = null) // Reserve edit
     {
         if (uid == null
             || !Resolve(uid.Value, ref handsComp, false)
-            || !TryPickupAnyHand(uid.Value, entity, checkActionBlocker, animateUser, animate, handsComp, item))
+            || !TryPickupAnyHand(uid.Value, entity, checkActionBlocker, animateUser, animate, handsComp, item, fromInventory)) // Reserve edit
         {
             // TODO make this check upwards for any container, and parent to that.
             // Currently this just checks the direct parent, so items can still teleport through containers.
@@ -268,10 +272,28 @@ public abstract partial class SharedHandsSystem
         return !itemEv.Cancelled;
     }
 
+    // Reserve edit start
+    public bool IsInUserInventory(EntityUid user, EntityUid entity)
+    {
+        if (entity == user)
+            return false;
+
+        while (ContainerSystem.TryGetContainingContainer((entity, null, null), out var container))
+        {
+            if (container.Owner == user)
+                return !TryGetHand((user, null), container.ID, out _);
+
+            entity = container.Owner;
+        }
+
+        return false;
+    }
+    // Reserve edit end
+
     /// <summary>
     ///     Puts an entity into the player's hand, assumes that the insertion is allowed. In general, you should not be calling this function directly.
     /// </summary>
-    public virtual void DoPickup(EntityUid uid, string hand, EntityUid entity, HandsComponent? hands = null, bool log = true)
+    public virtual void DoPickup(EntityUid uid, string hand, EntityUid entity, HandsComponent? hands = null, bool log = true, bool? fromInventory = null) // Reserve edit
     {
         if (!Resolve(uid, ref hands))
             return;
@@ -282,13 +304,21 @@ public abstract partial class SharedHandsSystem
         if (handContainer.ContainedEntities.FirstOrNull() != null)
             return;
 
+        // Reserve edit start
+        var isFromInventory = fromInventory ?? IsInUserInventory(uid, entity);
+        // Reserve edit end
+
         if (!ContainerSystem.Insert(entity, handContainer))
         {
             Log.Error($"Failed to insert {ToPrettyString(entity)} into users hand container when picking up. User: {ToPrettyString(uid)}. Hand: {hand}.");
             return;
         }
 
-        _interactionSystem.DoContactInteraction(uid, entity, null, true); // Goob - Possibly fires twice if manually picked up via interacting with the object
+        // Reserve edit start
+        _interactionSystem.DoContactInteraction(uid, entity, null, true,
+            interactionParticles: isFromInventory,
+            interactionParticleType: StellarInteractionParticleType.InHand);
+        // Reserve edit end
 
         if (log)
             _adminLogger.Add(LogType.Pickup, LogImpact.Low, $"{ToPrettyString(uid):user} picked up {ToPrettyString(entity):entity}");
