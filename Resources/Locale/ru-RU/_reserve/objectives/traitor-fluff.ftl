@@ -1,4 +1,4 @@
-ent-TraitorFluffCodewordsObjective = На протяжении всей смены используй кодовые слова в своей речи.
+ent-TraitorFluffCodewordsObjective = На протяжении всей смены используйте кодовые слова в своей речи.
     .desc = Не срывайтесь на обычную речь.
 
 ent-TraitorFluffInfiltrateObjective = Всю смену проникайте в другие отделы.
