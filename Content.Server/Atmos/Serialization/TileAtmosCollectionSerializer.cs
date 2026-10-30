@@ -107,6 +107,7 @@ public sealed partial class TileAtmosCollectionSerializer : ITypeSerializer<Dict
         return tiles;
     }
 
+    // Reserve edit start
     private sealed class GasMixtureComparer : IComparer<GasMixture>, IEqualityComparer<GasMixture>
     {
         public static readonly GasMixtureComparer Instance = new();
@@ -158,10 +159,12 @@ public sealed partial class TileAtmosCollectionSerializer : ITypeSerializer<Dict
             return hashCode.ToHashCode();
         }
     }
+    // Reserve edit end
 
     public DataNode Write(ISerializationManager serializationManager, Dictionary<Vector2i, TileAtmosphere> value, IDependencyCollection dependencies,
         bool alwaysWrite = false, ISerializationContext? context = null)
     {
+        // Reserve edit start
         var mixIndices = new Dictionary<GasMixture, int>(GasMixtureComparer.Instance);
         var rawMixes = new List<GasMixture>();
         foreach (var (_, tile) in value)
@@ -230,6 +233,7 @@ public sealed partial class TileAtmosCollectionSerializer : ITypeSerializer<Dict
         };
 
         return map;
+        // Reserve edit end
     }
 
     [DataDefinition]
