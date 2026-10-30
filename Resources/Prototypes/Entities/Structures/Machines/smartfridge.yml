@@ -119,6 +119,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: Airtight
+    noAirWhenFullyAirBlocked: false
 
 - type: entity
   parent: SmartFridge
