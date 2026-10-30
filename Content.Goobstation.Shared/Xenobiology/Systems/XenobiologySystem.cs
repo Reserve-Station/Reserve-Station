@@ -23,18 +23,18 @@ namespace Content.Goobstation.Shared.Xenobiology.Systems;
 /// </summary>
 public sealed partial class XenobiologySystem : EntitySystem
 {
-    [Dependency] private HungerSystem _hunger = default!;
+    [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
-    [Dependency] private MobStateSystem _mobState = default!;
-    [Dependency] private SharedContainerSystem _containerSystem = default!;
+    [Dependency] private MobStateSystem _mob = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private MetaDataSystem _meta = default!;
+    [Dependency] private HungerSystem _hunger = default!;
+    [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
     [Dependency] private SharedJitteringSystem _jitter = default!;
     [Dependency] private INetManager _net = default!;
-    [Dependency] private MetaDataSystem _meta = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
-    [Dependency] private IGameTiming _timing = default!;
 
     private TimeSpan _updateInterval;
 
@@ -42,11 +42,11 @@ public sealed partial class XenobiologySystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeTaming();
-        SubscribeBreeding();
+        Subs.CVar(_cfg, GoobCVars.BreedingInterval, x => _updateInterval = TimeSpan.FromSeconds(x), true);
 
         SubscribeLocalEvent<SlimeComponent, ExaminedEvent>(OnExamined);
-        Subs.CVar(_cfg, GoobCVars.BreedingInterval, x => _updateInterval = TimeSpan.FromSeconds(x), true);
+        InitializeBreeding();
+        InitializeTaming();
     }
 
     public override void Update(float frameTime)
@@ -73,7 +73,7 @@ public sealed partial class XenobiologySystem : EntitySystem
     /// <param name="slime">The slime entity.</param>
     /// <returns>Grey if no breed can be found.</returns>
     public EntProtoId GetProducedExtract(Entity<SlimeComponent> slime)
-        => _proto.Resolve(slime.Comp.Breed, out var breedPrototype)
+        => ProtoMan.Resolve(slime.Comp.Breed, out var breedPrototype)
             ? breedPrototype.ProducedExtract
             : slime.Comp.DefaultExtract;
 }

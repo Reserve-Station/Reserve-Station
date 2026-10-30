@@ -1,7 +1,8 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-red
   id: RedMutation
-  breedName: red slime
   producedExtract: RedSlimeExtract
   components:
   - type: Slime
@@ -14,9 +15,8 @@
     - OilMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-green
   id: GreenMutation
-  breedName: green slime
   producedExtract: GreenSlimeExtract
   components:
   - type: Slime
@@ -29,9 +29,8 @@
     - BlackMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-pink
   id: PinkMutation
-  breedName: pink slime
   producedExtract: PinkSlimeExtract
   components:
   - type: Slime
@@ -44,9 +43,8 @@
     - LightPinkMutation
 
 - type: breed
-  parent: BaseMutation
+  breedName: slime-breed-gold
   id: GoldMutation
-  breedName: gold slime
   producedExtract: GoldSlimeExtract
   components:
   - type: Slime

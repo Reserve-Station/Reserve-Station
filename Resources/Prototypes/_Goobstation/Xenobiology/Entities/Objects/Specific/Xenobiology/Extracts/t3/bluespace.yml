@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: BluespaceSlimeExtract
   parent: BaseSlimeExtract
@@ -38,6 +40,7 @@
           - BorgBrain # no teleporting MMIs
         range: 7
         effect: !type:RandomTeleport
+        # TODO: in the future check that its not occluded, i dont care to port it rn
   - type: Tag
     tags:
     - XenobiologyBluespaceExtract

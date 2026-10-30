@@ -240,13 +240,11 @@
       tags:
       - Syringe
       - Dropper
-      - MonkeyCube
       components:
       - SyringeGun
       - SurgeryTool
       - SolutionTransfer
       - SlimeExtract
-      - XenoVacuum
 
 - type: entity
   parent: ClothingBeltChemBagXenobiology

@@ -114,6 +114,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
+        - id: XenobiologyBountyComputerCircuitboard # Reserve edit: Trauma Xenobio
         - id: CircuitImprinterMachineCircuitboard
         - id: ProtolatheMachineCircuitboard
         - id: ResearchComputerCircuitboard

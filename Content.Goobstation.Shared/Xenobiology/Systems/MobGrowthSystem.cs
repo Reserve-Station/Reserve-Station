@@ -4,7 +4,6 @@ using Content.Goobstation.Shared.Xenobiology.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
-using Robust.Shared.Localization; // Reserve edit: localization-fix
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
@@ -13,7 +12,7 @@ namespace Content.Goobstation.Shared.Xenobiology.Systems;
 // This handles mob growth between development stages.
 public sealed partial class MobGrowthSystem : EntitySystem
 {
-    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private IGameTiming _timing = default!;
     [Dependency] private HungerSystem _hunger = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private MobStateSystem _mobState = default!;
@@ -29,7 +28,7 @@ public sealed partial class MobGrowthSystem : EntitySystem
 
     private void OnMobGrowthInit(Entity<MobGrowthComponent> ent, ref ComponentInit args)
     {
-        ent.Comp.NextGrowthTime = _gameTiming.CurTime + ent.Comp.GrowthInterval;
+        ent.Comp.NextGrowthTime = _timing.CurTime + ent.Comp.GrowthInterval;
         ent.Comp.BaseEntityName = Name(ent);
 
         if (!ent.Comp.Stages.ContainsKey(ent.Comp.CurrentStage))
@@ -46,21 +45,22 @@ public sealed partial class MobGrowthSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        var now = _timing.CurTime;
         var query = EntityQueryEnumerator<MobGrowthComponent, HungerComponent>();
-        while (query.MoveNext(out var uid, out var growth, out var hungerComp))
+        while (query.MoveNext(out var uid, out var growth, out var hunger))
         {
-            if (_gameTiming.CurTime < growth.NextGrowthTime)
+            if (now < growth.NextGrowthTime)
                 continue;
 
-            growth.NextGrowthTime = _gameTiming.CurTime + growth.GrowthInterval;
+            growth.NextGrowthTime = now + growth.GrowthInterval;
 
             if (_mobState.IsDead(uid)
-                || _hunger.GetHunger(hungerComp) < growth.HungerRequired
+                || _hunger.GetHunger(hunger) <= growth.HungerRequired
                 || !growth.Stages.TryGetValue(growth.CurrentStage, out var currentData)
                 || string.IsNullOrEmpty(currentData.NextStage))
                 continue;
 
-            DoGrowth((uid, growth, hungerComp));
+            DoGrowth((uid, growth, hunger));
         }
     }
 
@@ -105,15 +105,8 @@ public sealed partial class MobGrowthSystem : EntitySystem
 
         if (_net.IsServer)
         {
-            // Reserve edit start: localization-fix
-            var stageName = string.IsNullOrEmpty(stageData.DisplayName)
-                ? string.Empty
-                : Loc.GetString(stageData.DisplayName);
-
-            _metaData.SetEntityName(ent, string.IsNullOrEmpty(stageName)
-                ? ent.Comp.BaseEntityName
-                : $"{stageName} {ent.Comp.BaseEntityName}");
-            // Reserve edit end: localization-fix
+            var stageName = stageData.DisplayName is { } display ? Loc.GetString(display) : string.Empty;
+            _metaData.SetEntityName(ent, Loc.GetString("mob-growth-name", ("stage", stageName), ("name", ent.Comp.BaseEntityName)));
         }
     }
 

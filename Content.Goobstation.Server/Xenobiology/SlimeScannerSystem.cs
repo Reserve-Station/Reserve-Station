@@ -1,22 +1,19 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Goobstation.Shared.Xenobiology.Components;
+using Robust.Shared.Utility;
 using Content.Goobstation.Shared.Xenobiology.Components.Equipment;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 using System.Linq;
 using System.Text;
 
-namespace Content.Goobstation.Shared.Xenobiology.Systems;
-
+namespace Content.Goobstation.Server.Xenobiology;
 public sealed partial class SlimeScannerSystem : EntitySystem
 {
-    [Dependency] private ExamineSystemShared _examine = default!;
-    [Dependency] private IPrototypeManager _proto = default!;
-
-    private StringBuilder _sb = new();
+    [Dependency] private ExamineSystemShared _examineSystem = default!;
 
     public override void Initialize()
     {
@@ -51,35 +48,33 @@ public sealed partial class SlimeScannerSystem : EntitySystem
     private void TrySendTooltip(EntityUid player, EntityUid target, string message)
     {
         var markup = FormattedMessage.FromMarkupOrThrow(message);
-        _examine.SendExamineTooltip(player, target, markup, false, true);
+        _examineSystem.SendExamineTooltip(player, target, markup, false, true);
     }
 
     private string GenerateSlimeMarkup(Entity<SlimeComponent> ent)
     {
-        var mutationChancePercent = MathF.Floor(ent.Comp.MutationChance * 100f);
+        var mutationChance = MathF.Floor(ent.Comp.MutationChance * 100f);
 
         var sb = new StringBuilder();
 
-        sb.AppendLine(Loc.GetString("slime-scanner-examine-slime-description", ("color", ent.Comp.SlimeColor.ToHex()), ("name", _proto.Index(ent.Comp.Breed).BreedName)));
+        sb.AppendLine(Loc.GetString("slime-scanner-examine-slime-description", ("color", ent.Comp.SlimeColor.ToHex()), ("name", Loc.GetString(ProtoMan.Index(ent.Comp.Breed).BreedName))));
 
         // all this shit for a good looking examine text. imagine.
-        sb.Append($"{Loc.GetString("slime-scanner-examine-slime-mutations", ("chance", mutationChancePercent))} ");
+        sb.Append($"{Loc.GetString("slime-scanner-examine-slime-mutations", ("chance", mutationChance))} ");
         var mutations = ent.Comp.PotentialMutations.ToList();
         for (int i = 0; i < mutations.Count; i++)
         {
-            var info = _proto.Index(mutations[i]);
+            var info = ProtoMan.Index(mutations[i]);
 
             var color = "white";
             // todo make the colors work
             if (info.Components.TryGetComponent(nameof(SlimeComponent), out var sc))
-                color = ((SlimeComponent) sc).SlimeColor.ToHex();
+                color = ((SlimeComponent) sc!).SlimeColor.ToHex();
 
-            sb.Append($"[color={color}]{info.BreedName}[/color]");
+            sb.Append($"[color={color}]{Loc.GetString(info.BreedName)}[/color]");
 
-            if (i == mutations.Count - 1)
-                sb.AppendLine(".");
-            else
-                sb.Append(", ");
+            if (i == mutations.Count - 1) sb.AppendLine(".");
+            else sb.Append(", ");
         }
 
         sb.AppendLine(Loc.GetString("slime-scanner-examine-slime-extracts", ("num", ent.Comp.ExtractsProduced)));
@@ -89,12 +84,12 @@ public sealed partial class SlimeScannerSystem : EntitySystem
 
     private string GenerateExtractMarkup(Entity<SlimeExtractComponent> ent)
     {
-        _sb.Clear();
+        var sb = new StringBuilder();
 
         if (!TryComp<ReactiveComponent>(ent, out var reactive) || reactive.Reactions == null)
         {
-            _sb.AppendLine(Loc.GetString("slime-scanner-examine-extract-unreactive"));
-            return _sb.ToString();
+            sb.AppendLine(Loc.GetString("slime-scanner-examine-extract-unreactive"));
+            return sb.ToString();
         }
 
         var reactions = reactive.Reactions;
@@ -108,27 +103,23 @@ public sealed partial class SlimeScannerSystem : EntitySystem
             for (int j = 0; j < reagents.Count; j++)
             {
                 var reagent = reagents[j];
-                if (!_proto.TryIndex<ReagentPrototype>(reagent, out var rid))
+                if (!ProtoMan.TryIndex<ReagentPrototype>(reagent, out var rid))
                     continue;
 
-                _sb.Append($"[color={rid.SubstanceColor.ToHex()}]{rid.ID.ToLower()}[/color]");
+                sb.Append($"[color={rid.SubstanceColor.ToHex()}]{rid.ID.ToLower()}[/color]");
 
                 if (reagents.Count <= 1)
                     continue;
 
                 // jic
-                if (i == reagents.Count - 1)
-                    _sb.Append("; ");
-                else
-                    _sb.Append(", ");
+                if (i == reagents.Count - 1) sb.Append("; ");
+                else sb.Append(", ");
             }
 
-            if (i == reactions.Count - 1)
-                _sb.AppendLine(".");
-            else
-                _sb.Append(", ");
+            if (i == reactions.Count - 1) sb.AppendLine(".");
+            else sb.Append(", ");
         }
 
-        return _sb.ToString();
+        return sb.ToString();
     }
 }

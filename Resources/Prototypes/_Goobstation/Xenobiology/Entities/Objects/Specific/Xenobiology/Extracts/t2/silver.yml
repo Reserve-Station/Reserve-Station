@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
 - type: entity
   id: SilverSlimeExtract
   parent: BaseSlimeExtract
@@ -15,16 +17,13 @@
       methods: [ Touch, Injection ]
       effects:
       - !type:NestedEffect
-        proto: XenobioExtractEvil
+        proto: XenobioExtractEvilBase
       - !type:Jitter
         time: 5
         frequency: 20
-      - !type:DoSmokeEffect
-        duration: 10
-        spreadAmount: 75
-        smokePrototype: AluminiumMetalFoam
-      - !type:PlaySoundEffect
-        sound: /Audio/Effects/extinguish.ogg
+      - !type:ModifyStatusEffect
+        time: 5
+        effectProto: XenobioMetalFoamStatusEffect
     - reagents: [ Plasma ]
       methods: [ Touch, Injection ]
       effects:

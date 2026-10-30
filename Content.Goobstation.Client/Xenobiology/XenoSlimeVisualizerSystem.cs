@@ -6,7 +6,6 @@ using Content.Goobstation.Shared.Xenobiology;
 using Content.Goobstation.Shared.Xenobiology.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
-using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Client.Xenobiology;
 
@@ -15,7 +14,6 @@ namespace Content.Goobstation.Client.Xenobiology;
 /// </summary>
 public sealed partial class XenoSlimeVisualizerSystem : VisualizerSystem<SlimeComponent>
 {
-    [Dependency] private IPrototypeManager _proto = default!;
     [Dependency] private SpriteSystem _sprite = default!;
 
     protected override void OnAppearanceChange(EntityUid uid, SlimeComponent component, ref AppearanceChangeEvent args)
@@ -29,11 +27,13 @@ public sealed partial class XenoSlimeVisualizerSystem : VisualizerSystem<SlimeCo
         if (!AppearanceSystem.TryGetData<string>(uid, XenoSlimeVisuals.Shader, out var shader, args.Component))
             return;
         var spriteComp = args.Sprite;
-        var newShader = _proto.Index<ShaderPrototype>(shader).InstanceUnique();
+        var newShader = ProtoMan.Index<ShaderPrototype>(shader).InstanceUnique();
 
         var layerExists = _sprite.LayerMapTryGet(uid, DamageStateVisualLayers.Base, out var layerKey, false);
         if (!layerExists)
             return;
         spriteComp.LayerSetShader(layerKey, newShader);
+        spriteComp.GetScreenTexture = true;  // Reserve edit: Trauma Xenobio
+        spriteComp.RaiseShaderEvent = true;  // Reserve edit: Trauma Xenobio
     }
 }

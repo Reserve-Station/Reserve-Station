@@ -1,0 +1,34 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.EntityEffects;
+using Robust.Shared.Prototypes;
+
+namespace Content.Goobstation.Shared.EntityEffects;
+
+/// <summary>
+/// Deletes the target entity.
+/// Trauma keeps this effect in Content.Trauma.Shared. Reserve has no equivalent, and xenobiology extract reactions call it.
+/// </summary>
+public sealed partial class Delete : EntityEffectBase<Delete>
+{
+    [DataField]
+    public bool Queued;
+
+    public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
+        => Loc.GetString("entity-effect-guidebook-delete-entity", ("chance", Probability));
+}
+
+public sealed class DeleteEffectSystem : EntityEffectSystem<MetaDataComponent, Delete>
+{
+    protected override void Effect(Entity<MetaDataComponent> ent, ref EntityEffectEvent<Delete> args)
+    {
+        if (TerminatingOrDeleted(ent, ent.Comp))
+            return;
+
+        var meta = ent.AsNullable();
+        if (args.Effect.Queued)
+            PredictedQueueDel(meta);
+        else
+            PredictedDel(meta);
+    }
+}
