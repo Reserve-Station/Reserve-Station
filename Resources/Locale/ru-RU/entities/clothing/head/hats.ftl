@@ -35,6 +35,7 @@ ent-ClothingHeadHatCaptain = капитанская каска
     .desc = Хорошо быть королём.
 ent-ClothingHeadHatCardborg = шлем картонного борга
     .desc = Шляпа, сделанная из коробки.
+    .suffix = Косплей
 ent-ClothingHeadHatCentcom = фирменная шапка ЦентКом
     .desc = Хорошо быть императором.
 ent-ClothingHeadHatChef = поварской колпак
@@ -49,29 +50,39 @@ ent-ClothingHeadHatHopcap = фуражка главы персонала
     .desc = Большая, стильная фуражка главы персонала.
 ent-ClothingHeadHatHoshat = шляпа главы службы безопасности
     .desc = Верная фуражка стандартного образца начальника службы безопасности. Чтобы показать офицерам, кто здесь командует.
+
 ent-ClothingHeadHatOutlawHat = шляпа негодяя
     .desc = Шляпа, в которой вы выглядите словно носите пистолет с одной и ещё девятнадцатью зарубками.
+    .suffix = Косплей
 ent-ClothingHeadHatWitch1 = { ent-ClothingHeadHatWitch }
     .desc = { ent-ClothingHeadHatWitch.desc }
-    .suffix = Хэллоуин
+    .suffix = Хэллоуин, Косплей
 ent-ClothingHeadHatPaper = бумажная шляпа
     .desc = Шляпа, сделанная из бумаги.
+    .suffix = Косплей
 ent-ClothingHeadHatPirate = пиратская шляпа
     .desc = Йо-хо-хо и бутылка рома!
+    .suffix = Косплей
 ent-ClothingHeadHatPlaguedoctor = шляпа чумного доктора
     .desc = Когда-то их использовали врачи, лечившие чуму.
+    .suffix = Косплей
 ent-ClothingHeadHatRedwizard = красная волшебная шляпа
     .desc = Странного вида красная шляпа, которая, несомненно, принадлежала настоящему магу.
+    .suffix = Косплей
 ent-ClothingHeadHatSantahat = колпак Санты
     .desc = Праздничный колпак, который носит Санта-Клаус.
+    .suffix = Косплей
 ent-ClothingHeadHatSombrero = сомбреро
     .desc = Идеально подходит для космической Мексики, si?
+    .suffix = Косплей
+
 ent-ClothingHeadHatSurgcapBlue = хирургическая шапочка
     .desc = Синяя шапочка, которую хирурги надевают на операции. Не даёт их волосам щекотать ваши внутренние органы.
 ent-ClothingHeadHatSurgcapGreen = хирургическая шапочка
     .desc = Зелёная шапочка, которую хирурги надевают на операции. Не даёт их волосам щекотать ваши внутренние органы.
 ent-ClothingHeadHatSurgcapPurple = хирургическая шапочка
     .desc = Фиолетовая шапочка, которую хирурги надевают на операции. Не даёт их волосам щекотать ваши внутренние органы.
+
 ent-ClothingHeadHatTophat = цилиндр
     .desc = Стильный чёрный цилиндр.
 ent-ClothingHeadHatUshanka = ушанка
@@ -84,43 +95,57 @@ ent-ClothingHeadHatWarden = фуражка смотрителя
     .desc = Фуражка офицера полиции. Эта фуражка подчёркивает, что вы - ЗАКОН.
 ent-ClothingHeadHatWitch = шляпа ведьмы
     .desc = Колдовская шляпа.
-    .suffix = Хэллоуин
+    .suffix = Хэллоуин, Косплей
 ent-ClothingHeadHatWizardFake = поддельная волшебная шляпа
     .desc = На ней блёстками написано ВАЛШЕБНАЯ. Комплектуется классной бородой.
+    .suffix = Косплей
 ent-ClothingHeadHatWizardBase = { ent-ClothingHeadBase }
     .desc = { ent-ClothingHeadBase.desc }
-    .suffix = Wizard Clothes
+    .suffix = Одежда волшебника
 ent-ClothingHeadHatWizard = волшебная шляпа
     .desc = Странного вида синяя шляпа, которая, несомненно, принадлежала сильному магу.
+    .suffix = Косплей
 ent-ClothingHeadHatXmasCrown = рождественский венец
     .desc = Счастливого Рождества!
     .suffix = Радужный
+
 ent-ClothingHeadHatTrucker = кепка дальнобойщика
     .desc = В прошлом Чака, эта шляпа теперь ваша.
+
 ent-ClothingHeadPyjamaSyndicateBlack = синдикатно-чёрная пижамная шапочка
     .desc = Чтобы держать твою предательскую голову в тепле.
 ent-ClothingHeadPyjamaSyndicatePink = синдикатно-розовая пижамная шапочка
     .desc = Чтобы держать твою предательскую голову в тепле.
 ent-ClothingHeadPyjamaSyndicateRed = синдикатно-красная пижамная шапочка
     .desc = Чтобы держать твою предательскую голову в тепле.
+
 ent-ClothingHeadPaperSack = шапка из бумажного пакета
     .desc = Бумажный пакет с грубо вырезанными отверстиями для глаз. Применяется для сокрытия личности или уродства.
 ent-ClothingHeadPaperSackSmile = улыбающаяся шапка из бумажного пакета
     .desc = Бумажный пакет с грубо вырезанными отверстиями для глаз и нарисованной улыбкой на лицевой стороне. Совсем не жуткая.
+
 ent-ClothingHeadFishCap = кепка рыбака
     .desc = Женщины боятся меня. Рыбы боятся меня. Мужчины отворачиваются от меня. Когда я иду, ни один зверь не осмеливается издать ни звука в моём присутствии. Я один на этой бесплодной Земле.
 ent-ClothingHeadWehcellentCap = вехликолепная кепка
     .desc = Это была сетчатая шляпа! Тайдеры носят такие носят постоянно! У неё дырки сзади для вентиляции - сквознячок и всё такое!
+
 ent-ClothingHeadNurseHat = шапочка медсестры
     .desc = Почему-то мне кажется, что я не должна покидать это место.
+    .suffix = Косплей
 ent-ClothingHeadRastaHat = шапка-растаманка
     .desc = Пятнашка баксов косячок, гони в лапу пятачок.
+    .suffix = Косплей
+
 ent-ClothingHeadSafari = шляпа для сафари
     .desc = Защищает глаза от солнца. Делает вас мишенью для аборигенов.
+
 ent-ClothingHeadHatJester = шутовской колпак
     .desc = Колпак с бубенцами, чтобы придать костюму веселья.
+    .suffix = Клоун
 ent-ClothingHeadHatJesterAlt = { ent-ClothingHeadHatJester }
     .desc = { ent-ClothingHeadHatJester.desc }
+    .suffix = Клоун
+
 ent-ClothingHeadHatBeretCmo = берет главного врача
     .desc = Бирюзовый берет с крестом на передней части. Его вид успокаивает и внушает надежду, что вас обязательно вылечат.
 ent-ClothingHeadHatPirateTricord = пиратская треуголка
@@ -129,6 +154,8 @@ ent-ClothingHeadHatWatermelon = арбузный шлем
     .desc = Небрежно отрезанная половина арбуза, выпотрошенная изнутри, для ношения в качестве шлема. Она способна смягчить удар по голове.
 ent-ClothingHeadHatHolyWatermelon = арбузный ореол
     .desc = Святые угодники.
+    .suffix = Нимб, Святой
+
 ent-ClothingHeadHatSyndie = шапка Синдиката
     .desc = Сувенирная шапка из Синдиленда, производство которой уже закрыто.
 ent-ClothingHeadHatSyndieMAA = фуражка мастера по оружию
@@ -146,6 +173,7 @@ ent-ClothingHeadHatCentcomcap = фуражка ЦентКом
     .desc = Экстравагантная, причудливая фуражка офицера Центрального командования.
 ent-ClothingHeadHatGladiator = гладиаторский шлем
     .desc = Защищает голову от суровых пепельных ветров и игрушечных копий.
+
 ent-ClothingHeadHatPartyRed = красный праздничный колпак
     .desc = Радость, распространите!
 ent-ClothingHeadHatPartyYellow = жёлтый праздничный колпак
@@ -156,11 +184,13 @@ ent-ClothingHeadHatPartyBlue = синий праздничный колпак
     .desc = { ent-ClothingHeadHatPartyRed.desc }
 ent-ClothingHeadHatPartyWaterCup = праздничный стаканчик для воды
     .desc = Не такой полный, как хотелось бы...
+
 ent-ClothingHeadHatGreyFlatcap = серая плоская кепка
     .desc = В моде как у рабочего класса, так и у стариков навроде Дженкинса.
     .suffix = Казак
 ent-ClothingHeadHatBrownFlatcap = коричневая плоская кепка
     .desc = Тупой клоун! Ты выставил меня в плохом свете!
+
 ent-ClothingHeadHatCowboyBrown = коричневая ковбойская шляпа
     .desc = Эта шляпа слишком тесна для нас двоих.
 ent-ClothingHeadHatCowboyBlack = чёрная ковбойская шляпа
@@ -171,14 +201,22 @@ ent-ClothingHeadHatCowboyRed = красная ковбойская шляпа
     .desc = { ent-ClothingHeadHatCowboyBrown.desc }
 ent-ClothingHeadHatCowboyWhite = белая ковбойская шляпа
     .desc = { ent-ClothingHeadHatCowboyBrown.desc }
+
 ent-ClothingHeadHatCowboyBountyHunter = ковбойская шляпа охотника за головами
     .desc = { ent-ClothingHeadHatCowboyBrown.desc }
+    .suffix = Косплей
+
 ent-ClothingHeadHatStrawHat = соломенная шляпа
     .desc = Модная шляпа для жарких деньков! Не рекомендуется носить около источников огня.
     .suffix = Пират, Казак
+
 ent-ClothingHeadHatBeretMedic = берет врача
     .desc = Белый берет, призывающий вас к чистоте.
+
 ent-ClothingHeadHatSolidHeadband = головная повязка солида
     .desc = Надевая это, вы будете чувствовать себя невидимкой! (ОГОВОРКА: НА САМОМ ДЕЛЕ ЭТО НЕ ДЕЛАЕТ ВЛАДЕЛЬЦА НЕВИДИМЫМ)
+    .suffix = Косплей
+
 ent-ClothingHeadPropellerHat = кепка с пропеллером
     .desc = Ты самый лучший мальчик.
+    .suffix = Косплей

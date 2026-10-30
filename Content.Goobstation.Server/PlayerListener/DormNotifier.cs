@@ -232,10 +232,10 @@ public sealed partial class DormNotifier : EntitySystem
 
         var message = expedited
             ? Loc.GetString("dorm-condemned-expedited",
-                ("dorm", Comp<DormNotifierMarkerComponent>(condemn.Marker).Name),
+                ("dorm", Loc.GetString(Comp<DormNotifierMarkerComponent>(condemn.Marker).Name)),  // Reserve edit: Localization
                 ("sinners", sinners))
             : Loc.GetString("dorm-condemned",
-                ("dorm", Comp<DormNotifierMarkerComponent>(condemn.Marker).Name));
+                ("dorm", Loc.GetString(Comp<DormNotifierMarkerComponent>(condemn.Marker).Name)));  // Reserve edit: Localization
 
         _chat.DispatchGlobalAnnouncement(message, colorOverride: Color.Red);
     }

@@ -9,6 +9,7 @@ surgery-ui-window-steps-error-skills = У вас нет хирургически
 surgery-ui-window-steps-error-table = Для этого вам нужен операционный стол.
 surgery-ui-window-steps-error-armor = Вам нужно снять с них броню!
 surgery-ui-window-steps-error-tools = Не хватает инструментов.
+surgery-ui-window-steps-error-missing-tool = Для этого шага требуется {$tool}!
 surgery-error-laying = Они должны лежать!
 surgery-error-self-surgery = Вы не можете сделать операцию на себе!
 surgery-part-damage-evaded = { $user } уклоняется!

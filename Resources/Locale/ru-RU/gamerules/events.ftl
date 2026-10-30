@@ -62,5 +62,16 @@ ent-GreytideVirus = Вирус грейтайда
     .desc = { ent-BaseStationEventShortDelay.desc }
 ent-SmugglerStashVariationPass = Смена тайника контрабандиста
     .desc = { ent-BaseGameRule.desc }
-ent-DerelictCyborgSpawn = Брошенный киборг
+
+ent-DerelictCyborgSpawn = Брошенный борг
+    .desc = { ent-BaseGameRule.desc }
+ent-DerelictEngineerCyborgSpawn = Брошенный борг-инженер
+    .desc = { ent-BaseGameRule.desc }
+ent-DerelictGenericCyborgSpawn = Брошенный борг
+    .desc = { ent-BaseGameRule.desc }
+ent-DerelictJanitorCyborgSpawn = Брошенный борг-уборщик
+    .desc = { ent-BaseGameRule.desc }
+ent-DerelictMedicalCyborgSpawn = Брошенный борг-доктор
+    .desc = { ent-BaseGameRule.desc }
+ent-DerelictMiningCyborgSpawn = Брошенный борг-шахтёр
     .desc = { ent-BaseGameRule.desc }
