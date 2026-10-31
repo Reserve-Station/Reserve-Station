@@ -3,6 +3,7 @@ using Content.Client.Chat.UI;
 using Content.Client.Examine;
 using Content.Client.Silicons.StationAi;
 using Content.Goobstation.Common.CCVar;
+using Content.Goobstation.Shared.Blob.Components; // Reserve edit
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Flash.Components;
 using Content.Shared.Humanoid;
@@ -126,6 +127,7 @@ public sealed class ESNamePeekOverlay : Overlay
             if (!_entityManager.TryGetComponent<TransformComponent>(ent, out var xform)
                 || !_entityManager.TryGetComponent<SpriteComponent>(ent, out var sprite)
                 || !sprite.Visible
+                || sprite.ContainerOccluded // Reserve edit: hidden mobs, e.g. floor goblins under tiles
                 || sprite.Color.A <= 0f)
                 continue;
 
@@ -134,6 +136,10 @@ public sealed class ESNamePeekOverlay : Overlay
                 continue;
 
             if (!_stationAi.IsVisibleToLocalAi(ent))
+                continue;
+
+            // Reserve edit: blob tiles get a MobState, but they are not creatures
+            if (_entityManager.HasComponent<BlobTileComponent>(ent))
                 continue;
 
             var mapPos = _transform.GetMapCoordinates((ent, xform));
