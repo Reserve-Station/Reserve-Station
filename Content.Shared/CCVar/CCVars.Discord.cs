@@ -119,13 +119,19 @@ public sealed partial class CCVars
         CVarDef.Create("discord.admin_logs_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
     // Reserve edit end: Reserve Red - BanGuard
 
-    // Reserve edit start: Custos
+    // Reserve start: Brainrot trigger logs
     public static readonly CVarDef<string> CustosDiscordChannelId =
         CVarDef.Create("discord.custos_channel_id", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
     public static readonly CVarDef<string> DiscordCustosWebhook =
         CVarDef.Create("discord.custos_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
-    // Reserve edit end: Custos
+
+    public static readonly CVarDef<string> BrainrotDiscordChannelId =
+        CVarDef.Create("discord.brainrot_channel_id", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    public static readonly CVarDef<string> DiscordBrainrotWebhook =
+        CVarDef.Create("discord.brainrot_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+    // Reserve end
 
     /// <summary>
     ///     URL of the Discord webhook which will receive station news acticles at the round end.
