@@ -21,7 +21,7 @@
 **Резерв** - это некоммерческий проект с комфортным уровнем РП. Мы нацелены на настоящую РП составляющую игры, которая **не будет** навязываться чересчур строгими правилами, заставляя игроков отыгрывать по стандартному шаблону.
 
 Билд сервера - это сильно модифицированный форк [Goob Station](https://github.com/Goob-Station/Goob-Station), который, в свою очередь, является форком Space Station 14.
-
+пывпвпыпвыпыпывп
 **Space Station 14** - это ремейк SS13, который работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
 Больше про текущую сборку Robust Toolbox, используемую Reserve Station, можно узнать в [Robust Toolbox README](https://github.com/red-wing-ss14/redbox?tab=readme-ov-file).
 
