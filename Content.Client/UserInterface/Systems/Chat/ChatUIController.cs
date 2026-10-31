@@ -806,6 +806,7 @@ public sealed partial class ChatUIController : UIController
 
         (var prefixChannel, var text, var _, var _) = SplitInputContents(rawText); // Goobstation - Starlight collective mind port
         var targetChannel = prefixChannel != ChatSelectChannel.None ? prefixChannel : channel;
+        targetChannel = MapLocalIfGhost(targetChannel); // Reserve
 
         if (!ignoreBeforeMessage && BeforeMessageSent != null)
         {
