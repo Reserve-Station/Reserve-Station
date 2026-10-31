@@ -1,9 +1,9 @@
 ent-PartFelinid = часть тела фелинида
     .desc = { ent-BaseItem.desc }
 ent-ChestFelinid = грудная клетка фелинида
-    .desc = { ent-PartFelinidBase.desc }
+    .desc = { ent-PartFelinid.desc }
 ent-GroinFelinid = пах фелинида
-    .desc = { ent-PartFelinidBase.desc }
+    .desc = { ent-PartFelinid.desc }
 ent-HeadFelinid = голова фелинида
     .desc = { ent-PartFelinid.desc }
 ent-LeftArmFelinid = левая рука фелинида

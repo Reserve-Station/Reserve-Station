@@ -1,9 +1,9 @@
 ent-PartMoth = часть тела нианы
     .desc = { ent-BasePart.desc }
 ent-ChestMoth = грудная клетка ниана
-    .desc = { ent-PartMothBase.desc }
+    .desc = { ent-PartMoth.desc }
 ent-GroinMoth = пах ниана
-    .desc = { ent-PartMothBase.desc }
+    .desc = { ent-PartMoth.desc }
 ent-HeadMoth = голова нианы
     .desc = { ent-PartMoth.desc }
 ent-LeftArmMoth = левая рука нианы

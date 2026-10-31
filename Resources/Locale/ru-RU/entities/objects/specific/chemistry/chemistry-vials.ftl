@@ -1,5 +1,5 @@
-ent-BaseChemistryVial = { ent-DrinkBaseMaterialGlass }
-    .desc = { ent-DrinkBaseMaterialGlass.desc }
+ent-BaseChemistryVial = { ent-DrinkBase }
+    .desc = { ent-DrinkBase.desc }
 ent-ChemistryEmptyVial = пробирка
     .desc = Маленькая пробирка.
 ent-ChemistryEmptyVialSmall = мини пробирка
