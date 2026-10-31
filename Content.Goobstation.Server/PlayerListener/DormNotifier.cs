@@ -6,6 +6,7 @@ using System.Threading;
 using Content.Goobstation.Common.CCVar;
 using Content.Server.Afk;
 using Content.Server.Chat.Systems;
+using Content.Server.Pinpointer; // Reserve edit
 using Content.Server.GameTicking.Events;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -38,6 +39,7 @@ public sealed partial class DormNotifier : EntitySystem
     [Dependency] private IAfkManager _afk = default!;
     [Dependency] private ContainerSystem _container = default!;
     [Dependency] private ChatSystem _chat = default!;
+    [Dependency] private NavMapSystem _navMap = default!; // Reserve edit
 
     private HashSet<CancellationTokenSource> _tokens = [];
 
@@ -230,12 +232,19 @@ public sealed partial class DormNotifier : EntitySystem
         var names = condemn.Condemned.Select(uid => MetaData(uid).EntityName).ToList();
         var sinners = string.Join(", ", names);
 
+        // Reserve edit start - mapped markers often have no name, fall back to the nearest nav beacon
+        var dorm = Comp<DormNotifierMarkerComponent>(condemn.Marker).Name;
+        dorm = string.IsNullOrWhiteSpace(dorm)
+            ? _navMap.GetNearestBeaconString(condemn.Marker, onlyName: true)
+            : Loc.GetString(dorm);
+
         var message = expedited
             ? Loc.GetString("dorm-condemned-expedited",
-                ("dorm", Loc.GetString(Comp<DormNotifierMarkerComponent>(condemn.Marker).Name)),  // Reserve edit: Localization
+                ("dorm", dorm),
                 ("sinners", sinners))
             : Loc.GetString("dorm-condemned",
-                ("dorm", Loc.GetString(Comp<DormNotifierMarkerComponent>(condemn.Marker).Name)));  // Reserve edit: Localization
+                ("dorm", dorm));
+        // Reserve edit end
 
         _chat.DispatchGlobalAnnouncement(message, colorOverride: Color.Red);
     }

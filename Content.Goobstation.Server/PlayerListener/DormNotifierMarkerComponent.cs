@@ -6,7 +6,7 @@ namespace Content.Goobstation.Server.PlayerListener;
 public sealed partial class DormNotifierMarkerComponent : Component
 {
     [DataField]
-    public string Name = "dorm-notifier-default";  // Reserve edit: Localization
+    public string Name = "";
 
     /// <summary>
     /// Tile range to check for players
