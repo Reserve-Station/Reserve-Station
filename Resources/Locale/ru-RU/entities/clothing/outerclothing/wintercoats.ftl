@@ -96,3 +96,6 @@ ent-ClothingOuterWinterColorWhite = белая зимняя куртка
     .desc = { ent-ClothingOuterWinterCoatToggleable.desc }
 ent-ClothingOuterWinterColorYellow = жёлтая зимняя куртка
     .desc = { ent-ClothingOuterWinterCoatToggleable.desc }
+
+ent-ClothingOuterLabWinterCMO = зимний халат главного врача
+    .desc = Большой и дорогой лабораторный халат, снабжённый дополнительным утеплителем для особо холодных операционных.

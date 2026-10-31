@@ -97,7 +97,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Left
-    toolName: "a left arm"
+    toolName: "surgery-tool-name-left-arm" # Reserve edit: localization key
     baseLayerId: MobPizzaLArm
   - type: Sprite
     sprite: _Shitmed/Mobs/Species/Misc/Pizza/parts.rsi
@@ -112,7 +112,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Right
-    toolName: "a right arm"
+    toolName: "surgery-tool-name-right-arm" # Reserve edit: localization key
     baseLayerId: MobPizzaRArm
   - type: Sprite
     sprite: _Shitmed/Mobs/Species/Misc/Pizza/parts.rsi

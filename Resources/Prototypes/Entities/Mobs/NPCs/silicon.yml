@@ -340,6 +340,19 @@
   - type: HTN
     rootTask:
       task: CleanbotCompound
+  # Reserve edit start - маска маленького моба: проезжает под дверьми, как мыши
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        density: 50
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  # Reserve edit end
   - type: DrainableSolution
     solution: drainBuffer
   - type: InteractionPopup

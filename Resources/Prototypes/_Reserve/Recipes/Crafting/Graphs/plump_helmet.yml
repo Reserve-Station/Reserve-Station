@@ -1,0 +1,16 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# hollow out a plump helmet with a knife to get a wearable helmet
+- type: constructionGraph
+  id: PlumpHelmetHelmet
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: helmet
+      steps:
+      - tool: Slicing
+        doAfter: 2
+
+  - node: helmet
+    entity: ClothingHeadHelmetPlump

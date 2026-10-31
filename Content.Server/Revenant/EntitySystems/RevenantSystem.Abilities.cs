@@ -386,7 +386,8 @@ public sealed partial class RevenantSystem
             //chucks shit
             if (items.HasComponent(ent) &&
                 TryComp<PhysicsComponent>(ent, out var phys) && phys.BodyType != BodyType.Static)
-                _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec());
+                _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec(),
+                    predicted: false); // Trauma
 
             //reserve Revenant buff start
             //flicker lights

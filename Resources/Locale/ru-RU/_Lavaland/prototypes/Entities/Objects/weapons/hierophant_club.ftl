@@ -1,7 +1,9 @@
-ent-LavalandHierophantClub = посох иерофанта
-    .desc = Поймал тебя, хоп
+ent-LavalandHierophantClub = иерофант
+    .desc = Поймал тебя, хоп!
+    .suffix = Оружие, Посох, Иерофант, Лаваленд
 ent-LavalandHierophantClubTeleportMarker = таинственный маркер
     .desc = Что это вообще такое?
+    .suffix = Иерофант
 ent-LavalandHierophantMarker = таинственный маркер
     .desc = Что это вообще такое?
     .suffix = Иерофант

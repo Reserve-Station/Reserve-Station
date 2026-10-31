@@ -1,5 +1,6 @@
 ﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Bed.Sleep;
 using System.Linq;
 using Content.Goobstation.Common.Weapons.DelayedKnockdown;
 using Content.Goobstation.Shared.Overlays;
@@ -82,7 +83,6 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
     [Dependency] private readonly SharedBodySystem _body = default!;
     // [Dependency] private readonly PhysicsSystem _phys = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusNew = default!; // Reserve edit: rainbow status effect migration
     [Dependency] private readonly ThrowingSystem _throw = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly StationSystem _station = default!;
@@ -91,6 +91,7 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly ProtectiveBladeSystem _pblade = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private readonly Content.Shared.StatusEffectNew.StatusEffectsSystem _statusNew = default!;
     [Dependency] private readonly BloodstreamSystem _blood = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
@@ -551,7 +552,7 @@ public sealed partial class HereticAbilitySystem : SharedHereticAbilitySystem
                 _statusEffect.TryRemoveTime(uid, "KnockedDown", reduction, status);
 
                 _statusEffect.TryRemoveStatusEffect(uid, "Pacified", status);
-                _statusEffect.TryRemoveStatusEffect(uid, "ForcedSleep", status);
+                _statusNew.TryRemoveStatusEffect(uid, SleepingSystem.StatusEffectForcedSleeping);
                 _statusEffect.TryRemoveStatusEffect(uid, "SlowedDown", status);
                 _statusEffect.TryRemoveStatusEffect(uid, "BlurryVision", status);
                 _statusEffect.TryRemoveStatusEffect(uid, "TemporaryBlindness", status);

@@ -45,6 +45,9 @@ public sealed partial class MoodSystem : EntitySystem
     [Dependency] private SharedJetpackSystem _jetpack = default!;
     [Dependency] private SharedRoleSystem _roleSystem = default!;
 
+    private const float SanityUpdateInterval = 0.2f;
+    private float _sanityUpdateAccumulator;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -78,13 +81,21 @@ public sealed partial class MoodSystem : EntitySystem
         if (!_config.GetCVar(CCVars.MoodEnabled))
             return;
 
+        _sanityUpdateAccumulator += frameTime;
+        if (_sanityUpdateAccumulator < SanityUpdateInterval)
+            return;
+
+        // Pass the full interval and reset the accumulator, skip tick processing without losing accuracy
+        var sanityDt = _sanityUpdateAccumulator;
+        _sanityUpdateAccumulator = 0f;
+
         var query = EntityQueryEnumerator<MoodComponent, MobStateComponent>();
         while (query.MoveNext(out var uid, out var mood, out var mobState))
         {
             if (mobState.CurrentState == MobState.Dead)
                 continue;
 
-            ProcessSanity(uid, mood, frameTime);
+            ProcessSanity(uid, mood, sanityDt);
         }
     }
 
@@ -625,7 +636,7 @@ public sealed partial class MoodSystem : EntitySystem
         return true;
     }
 
-    private void ProcessSanity(EntityUid uid, MoodComponent component, float frameTime)
+    private void ProcessSanity(EntityUid uid, MoodComponent component, float dt)
     {
         if (component.CurrentMoodThreshold == MoodThreshold.Dead
             || !component.SanityDeltaPerSecond.TryGetValue(component.CurrentMoodThreshold, out var deltaPerSecond))
@@ -651,10 +662,10 @@ public sealed partial class MoodSystem : EntitySystem
             };
         }
 
-        SetSanity(uid, component, component.CurrentSanity + deltaPerSecond * frameTime, sanityTarget, frameTime);
+        SetSanity(uid, component, component.CurrentSanity + deltaPerSecond * dt, sanityTarget, dt);
     }
 
-    private void SetSanity(EntityUid uid, MoodComponent component, float value, float target, float frameTime)
+    private void SetSanity(EntityUid uid, MoodComponent component, float value, float target, float dt)
     {
         var min = component.MinSanity;
         var max = component.MaxSanity;
@@ -664,7 +675,7 @@ public sealed partial class MoodSystem : EntitySystem
 
         if (boundedTarget > component.CurrentSanity && clamped < boundedTarget)
         {
-            var step = Math.Max(component.SanityRecoveryRate * frameTime, 0f);
+            var step = Math.Max(component.SanityRecoveryRate * dt, 0f);
             clamped = Math.Min(clamped + step, boundedTarget);
         }
 

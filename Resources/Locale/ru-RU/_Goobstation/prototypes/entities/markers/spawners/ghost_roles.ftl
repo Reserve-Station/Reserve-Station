@@ -2,6 +2,7 @@ ent-GhostBarSpawner = точка появления призрачного ба�
     .desc = { ent-MarkerBase.desc }
 ent-SpawnPointGhostDerelictCyborgSyndicate = { ent-BaseAntagSpawner }
     .desc = { ent-BaseAntagSpawner.desc }
+    .suffix = Заброшенный киборг Синдиката
 ent-SpawnPointGhostSlaughterDemon = { ent-BaseAntagSpawner }
     .desc = { ent-BaseAntagSpawner.desc }
     .suffix = Демон резни

@@ -15,39 +15,16 @@ namespace Content.Client.Popups;
 /// <summary>
 /// Handles screens-space popups. World popups are handled via PopupOverlay.
 /// </summary>
-public sealed class PopupUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
+public sealed partial class PopupUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>
 {
     [UISystemDependency] private readonly PopupSystem? _popup = default!;
-
-    private IConfigurationManager _configManager = default!;  // Reserve edit: Upstream 20261020
-    private Font _smallFont = default!;
-    private Font _mediumFont = default!;
-    private Font _largeFont = default!;
-    private Font _runechatSmallFont = default!;  // Reserve edit: Upstream 20261020
-    private Font _runechatMediumFont = default!;  // Reserve edit: Upstream 20261020
-    private Font _runechatLargeFont = default!;  // Reserve edit: Upstream 20261020
 
     private PopupRootControl? _popupControl;
 
     public override void Initialize()
     {
         base.Initialize();
-        var cache = IoCManager.Resolve<IResourceCache>();
-        // Reserve edit start: Upstream 20261020 - Popup font should check the Runechat setting
-        // _smallFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/_Reserve/Grand9KPixelUnicode.otf"), 10); // Goob  // Reserve edit: Cyrillic Runechat support
-        // _mediumFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/_Reserve/Grand9KPixelUnicode.otf"), 12); // Goob  // Reserve edit: Cyrillic Runechat support
-        // _largeFont = new VectorFont(cache.GetResource<FontResource>("/Fonts/_Reserve/Grand9KPixelUnicode.otf"), 14); // Goob  // Reserve edit: Cyrillic Runechat support
-        _configManager = IoCManager.Resolve<IConfigurationManager>();
-
-        var defaultFont = cache.GetResource<FontResource>("/Fonts/NotoSans/NotoSans-Regular.ttf");
-        var runechatFont = cache.GetResource<FontResource>("/Fonts/_Reserve/Grand9KPixelUnicode.otf");  // Reserve edit: Cyrillic Runechat support
-        _smallFont = new VectorFont(defaultFont, 10);
-        _mediumFont = new VectorFont(defaultFont, 12);
-        _largeFont = new VectorFont(defaultFont, 14);
-        _runechatSmallFont = new VectorFont(runechatFont, 12);  // Reserve edit: Cyrillic Runechat support
-        _runechatMediumFont = new VectorFont(runechatFont, 14);  // Reserve edit: Cyrillic Runechat support
-        _runechatLargeFont = new VectorFont(runechatFont, 16);  // Reserve edit: Cyrillic Runechat support
-        // Reserve edit end: Upstream 20261020 - Popup font should check the Runechat setting
+        InitializeRunechat(); // Goob
     }
 
     public void OnStateEntered(GameplayState state)
@@ -74,37 +51,14 @@ public sealed class PopupUIController : UIController, IOnStateEntered<GameplaySt
         var alpha = MathF.Min(1f, 1f - MathF.Max(0f, popup.TotalTime - lifetime / 2) * 2 / lifetime);
 
         var updatedPosition = position - new Vector2(0f, MathF.Min(8f, 12f * (popup.TotalTime * popup.TotalTime + popup.TotalTime)));
-        // var font = _smallFont;  // Reserve edit: Upstream 20261020
-        var useRunechat = _configManager.GetCVar(GoobCVars.ChatRunechat);  // Reserve edit: Upstream 20261020
-        var font = useRunechat ? _runechatSmallFont : _smallFont;  // Reserve edit: Upstream 20261020
-        var color = Color.White.WithAlpha(alpha);
-        var outline = new TextOutline(2f, Color.Black.WithAlpha(alpha)); // Goob
-
-        switch (popup.Type)
-        {
-            case PopupType.SmallCaution:
-                color = Color.Red;
-                break;
-            case PopupType.Medium:
-                font = useRunechat ? _runechatMediumFont : _mediumFont;  // Reserve edit: Upstream 20261020
-                color = Color.LightGray;
-                break;
-            case PopupType.MediumCaution:
-                font = useRunechat ? _runechatMediumFont : _mediumFont;  // Reserve edit: Upstream 20261020
-                color = Color.Red;
-                break;
-            case PopupType.Large:
-                font = useRunechat ? _runechatLargeFont : _largeFont;  // Reserve edit: Upstream 20261020
-                color = Color.LightGray;
-                break;
-            case PopupType.LargeCaution:
-                font = useRunechat ? _runechatLargeFont : _largeFont;  // Reserve edit: Upstream 20261020
-                color = Color.Red;
-                break;
-        }
+        // Goob start
+        var (font, color, outlineThickness) = GetPopupStyle(popup.Type, _runechat, _runechatFontSize, _runechatOutlineScale);
+        TextOutline? outline = outlineThickness > 0f ? new TextOutline(outlineThickness, Color.Black.WithAlpha(alpha)) : null;
+        var offset = _runechat ? popup.RandomOffset : Vector2.Zero;
 
         var dimensions = handle.GetDimensions(font, popup.Text, scale);
-        handle.DrawString(font, updatedPosition - dimensions / 2f + popup.RandomOffset, popup.Text, scale, color.WithAlpha(alpha), useRunechat ? outline : null); // Goob  // Reserve edit: Upstream 20261020
+        handle.DrawString(font, updatedPosition - dimensions / 2f + offset, popup.Text, scale, color.WithAlpha(alpha), outline);
+        // Goob end
     }
 
     /// <summary>

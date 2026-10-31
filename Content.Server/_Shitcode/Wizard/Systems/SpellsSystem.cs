@@ -699,9 +699,9 @@ public sealed class SpellsSystem : SharedSpellsSystem
 
             Stun.KnockdownOrStun(target, stunTime, true);
 
-            if (!fart.SuperFarted)
+            if (!fart.Buttless)
             {
-                fart.FartInhale = true;
+                fart.Inhaled = true;
                 _chat.TryEmoteWithChat(target, "FartSuper", ignoreActionBlocker: true, forceEmote: true);
             }
             else

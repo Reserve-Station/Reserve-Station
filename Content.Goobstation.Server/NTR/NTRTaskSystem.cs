@@ -46,6 +46,11 @@ public sealed partial class NtrTaskSystem : EntitySystem
 
     private const string NameIdentifierGroup = "Task";
 
+    // Reserve start: update throttle
+    private const float UpdateInterval = 1f;
+    private float _updateTimer = UpdateInterval;
+    // Reserve end
+
     public override void Initialize()
     {
         SubscribeLocalEvent<NtrClientAccountComponent, NtrAccountBalanceUpdatedEvent>(OnBalanceUpdated);
@@ -152,6 +157,16 @@ public sealed partial class NtrTaskSystem : EntitySystem
     #region Task Lifecycle
     public override void Update(float frameTime)
     {
+        // Reserve start: update throttle
+        base.Update(frameTime);
+
+        _updateTimer += frameTime;
+        if (_updateTimer < UpdateInterval)
+            return;
+
+        _updateTimer -= UpdateInterval;
+        // Reserve end
+
         var query = EntityQueryEnumerator<NtrTaskDatabaseComponent>();
         while (query.MoveNext(out var uid, out var db))
         {

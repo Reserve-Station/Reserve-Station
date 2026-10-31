@@ -17,3 +17,13 @@ public interface ISurgeryToolComponent
     /// </summary>
     public float Speed { get; set; }
 }
+
+// Reserve edit start - ToolName holds a localization key
+public static class SurgeryToolNameExtensions
+{
+    public static string GetLocalizedToolName(this ISurgeryToolComponent comp)
+    {
+        return Loc.TryGetString(comp.ToolName, out var name) ? name : comp.ToolName;
+    }
+}
+// Reserve edit end

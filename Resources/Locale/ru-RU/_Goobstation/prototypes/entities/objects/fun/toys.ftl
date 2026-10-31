@@ -195,6 +195,10 @@ ent-WeaponLauncherTaiwanPond = тайваньское озеро
     .desc = ПЛЮХ.
     .suffix = Игрушка
 
+ent-ToyKnife = игрушечный нож
+    .desc = Аквамариновый пластиковый нож. Нап! Стаб! Лук!
+    .suffix = Игрушка, Андертейл, Undertale
+
 ent-DiscoBeachBall = пляжный диско-шар
     .desc = Пляжный диско-шар превратит любую вечеринку в Студию 54.
     .suffix = Игрушка

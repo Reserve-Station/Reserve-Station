@@ -101,6 +101,6 @@ public sealed partial class BackEquipSystem : EntitySystem
             return;
         }
         _inventory.TryUnequip(uid, equipmentSlot, inventory: inventory, predicted: true, checkDoafter: true);
-        _hands.TryPickup(uid, slotItem, handsComp: hands);
+        _hands.TryPickup(uid, slotItem, handsComp: hands, fromInventory: true); // Reserve edit
     }
 }

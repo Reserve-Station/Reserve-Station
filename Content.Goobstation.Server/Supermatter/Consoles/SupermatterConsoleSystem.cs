@@ -23,7 +23,7 @@ public sealed partial class SupermatterConsoleSystem : SharedSupermatterConsoleS
     private const float UpdateTime = 1.0f;
 
     // Note: this data does not need to be saved
-    // private float _updateTimer = 1.0f; // Reserve edit: Fix warnings
+    private float _updateTimer = UpdateTime; // Reserve: update throttle
 
     public override void Initialize()
     {
@@ -33,6 +33,7 @@ public sealed partial class SupermatterConsoleSystem : SharedSupermatterConsoleS
         SubscribeLocalEvent<SupermatterConsoleComponent, ComponentInit>(OnConsoleInit);
         SubscribeLocalEvent<SupermatterConsoleComponent, EntParentChangedMessage>(OnConsoleParentChanged);
         SubscribeLocalEvent<SupermatterConsoleComponent, SupermatterConsoleFocusChangeMessage>(OnFocusChangedMessage);
+        SubscribeLocalEvent<SupermatterConsoleComponent, BoundUIOpenedEvent>(OnUIOpened); // Reserve: ui refresh
 
         // Grid events
         SubscribeLocalEvent<GridSplitEvent>(OnGridSplit);
@@ -46,8 +47,24 @@ public sealed partial class SupermatterConsoleSystem : SharedSupermatterConsoleS
     private void OnConsoleParentChanged(EntityUid uid, SupermatterConsoleComponent component, EntParentChangedMessage args) =>
         InitalizeConsole(uid, component);
 
-    private void OnFocusChangedMessage(EntityUid uid, SupermatterConsoleComponent component, SupermatterConsoleFocusChangeMessage args) =>
+    // Reserve start
+    private void OnFocusChangedMessage(EntityUid uid, SupermatterConsoleComponent component, SupermatterConsoleFocusChangeMessage args)
+    {
+        if (component.FocusSupermatter == args.FocusSupermatter)
+            return;
+
         component.FocusSupermatter = args.FocusSupermatter;
+        UpdateUIState(uid, component);
+    }
+
+    private void OnUIOpened(EntityUid uid, SupermatterConsoleComponent component, BoundUIOpenedEvent args)
+    {
+        if (args.UiKey is not SupermatterConsoleUiKey.Key)
+            return;
+
+        UpdateUIState(uid, component);
+    }
+    // Reserve end
 
     private void OnGridSplit(ref GridSplitEvent args)
     {
@@ -75,14 +92,30 @@ public sealed partial class SupermatterConsoleSystem : SharedSupermatterConsoleS
     {
         base.Update(frameTime);
 
+        // Reserve start: update throttle
+        _updateTimer += frameTime;
+        if (_updateTimer < UpdateTime)
+            return;
+
+        _updateTimer -= UpdateTime;
+        // Reserve end
+
         // Keep a list of UI entries for each gridUid, in case multiple consoles stand on the same grid
         var supermatterEntriesForEachGrid = new Dictionary<EntityUid, SupermatterConsoleEntry[]>();
 
         var query = AllEntityQuery<SupermatterConsoleComponent, TransformComponent>();
         while (query.MoveNext(out var ent, out var entConsole, out var entXform))
         {
-            if (entXform?.GridUid == null)
+            // Reserve start: off-grid console
+            if (entXform.GridUid == null)
+            {
+                if (TryComp<AppearanceComponent>(ent, out var offGridAppearance))
+                    _appearance.SetData(ent, SupermatterConsoleVisuals.ComputerLayerScreen, (int)SupermatterStatusType.Inactive, offGridAppearance);
+
+                UpdateUIState(ent, Array.Empty<SupermatterConsoleEntry>(), entConsole, entXform);
                 continue;
+            }
+            // Reserve end
 
             // Make a list of alarm state data for all the supermatters on the grid
             if (!supermatterEntriesForEachGrid.TryGetValue(entXform.GridUid.Value, out var supermatterEntries))
@@ -120,15 +153,34 @@ public sealed partial class SupermatterConsoleSystem : SharedSupermatterConsoleS
         if (!_userInterfaceSystem.IsUiOpen(uid, SupermatterConsoleUiKey.Key))
             return;
 
-        var gridUid = xform.GridUid!.Value;
-
-        // Gathering remaining data to be send to the client
-        var focusSupermatterData = GetFocusSupermatterData(uid, GetEntity(component.FocusSupermatter), gridUid);
+        // Reserve start: off-grid console
+        SupermatterFocusData? focusSupermatterData = null;
+        if (xform.GridUid != null)
+        {
+            var gridUid = xform.GridUid.Value;
+            focusSupermatterData = GetFocusSupermatterData(uid, GetEntity(component.FocusSupermatter), gridUid);
+        }
+        // Reserve end
 
         // Set the UI state
         _userInterfaceSystem.SetUiState(uid, SupermatterConsoleUiKey.Key,
             new SupermatterConsoleBoundInterfaceState(supermatterStateData, focusSupermatterData));
     }
+
+    // Reserve start: ui refresh
+    public void UpdateUIState(EntityUid uid, SupermatterConsoleComponent? component = null, TransformComponent? xform = null)
+    {
+        if (!_userInterfaceSystem.IsUiOpen(uid, SupermatterConsoleUiKey.Key)
+            || !Resolve(uid, ref component, ref xform))
+            return;
+
+        var supermatterEntries = xform.GridUid != null
+            ? GetSupermatterStateData(xform.GridUid.Value).ToArray()
+            : Array.Empty<SupermatterConsoleEntry>();
+
+        UpdateUIState(uid, supermatterEntries, component, xform);
+    }
+    // Reserve end
 
     private List<SupermatterConsoleEntry> GetSupermatterStateData(EntityUid gridUid)
     {
@@ -160,7 +212,10 @@ public sealed partial class SupermatterConsoleSystem : SharedSupermatterConsoleS
         if (focusSupermatter == null)
             return null;
 
-        var focusSupermatterXform = Transform(focusSupermatter.Value);
+        // Reserve start: focus transform
+        if (!TryComp(focusSupermatter.Value, out TransformComponent? focusSupermatterXform))
+            return null;
+        // Reserve end
 
         if (!focusSupermatterXform.Anchored
             || focusSupermatterXform.GridUid != gridUid

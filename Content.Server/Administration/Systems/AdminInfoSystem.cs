@@ -37,7 +37,7 @@ public sealed class AdminInfoSystem : EntitySystem
 
 
         _adminLog.Add(LogType.AdminMessage, LogImpact.High, $"{name} is attempting to connect with a userid from {main.Username}");
-        _chatManager.SendAdminAlert($"{name} is attempting to connect with a userid from {main.Username}");
+        _chatManager.SendAdminAlert(Loc.GetString("admin-guard-userid-mismatch", ("name", name), ("main", main.Username))); // Reserve edit
         _adminGuard.UserIdMismatch(name, main.Username); // Reserve edit: Reserve Red - AdminGuard
     }
 }

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Solutions;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
@@ -150,6 +151,15 @@ public abstract partial class SharedPuddleSystem
 
         // Optionally allow further melee handling occur
         args.Handled = entity.Comp.PreventMelee;
+
+        // Reserve edit start: swinging at nothing (the floor) spills a puddle.
+        if (hitCount == 0 && args.Direction == null)
+        {
+            var puddleEv = new SpillableCreatePuddleOnHitEvent(args.User, args.Coords, totalSplit.Float());
+            RaiseLocalEvent(entity, ref puddleEv);
+            return;
+        }
+        // Reserve edit end
 
         // First update the hit count so anything that is not reactive wont count towards the total!
         foreach (var hit in args.HitEntities)

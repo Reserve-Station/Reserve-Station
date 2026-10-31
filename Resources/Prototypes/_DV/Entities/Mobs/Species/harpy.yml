@@ -129,7 +129,7 @@
   - type: Speech
     # speechSounds: Harpy Reserve edit
     speechVerb: Harpy
-    allowedEmotes: ['Chirp', 'Trill', 'Warble', 'Wurble', 'Mars', 'Squeak', 'Bagawk', 'Click', 'Flap', 'Gnash', 'Honk', 'Beep', 'Buzz', 'Squish', 'Bubble', 'Pop', 'Chitter'] # Goob - more harpy emotes  # Reserve edit: Disable intentional belching
+    allowedEmotes: ['Chirp', 'Trill', 'Warble', 'Wurble', 'Bagawk', 'Flap', 'Scree', 'Call', 'Squawk', 'Quack'] # Goob - bird and human emotes only  # Reserve edit: Disable intentional belching
   - type: Vocal
     sounds:
       Male: SoundsHarpyMale

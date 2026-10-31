@@ -52,7 +52,7 @@
   - type: BodyPart
     partType: Chest
     # Shitmed Change Start
-    toolName: "a chest"
+    toolName: "surgery-tool-name-chest" # Reserve edit: localization key
     containerName: "chest_slot"
     children:
       groin:
@@ -115,7 +115,7 @@
   - type: BodyPart
     partType: Groin
     # Shitmed Change Start
-    toolName: "a groin"
+    toolName: "surgery-tool-name-groin" # Reserve edit: localization key
     containerName: "groin_slot"
     children:
       right leg:
@@ -176,7 +176,7 @@
     state: "head_m"
   - type: BodyPart
     partType: Head
-    toolName: "a head" # Shitmed Change
+    toolName: "surgery-tool-name-head" # Shitmed Change, Reserve edit: localization key
     organs: # Shitmed Change
       brain:
         id: brain
@@ -237,7 +237,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Left
-    toolName: "a left arm" # Shitmed Change
+    toolName: "surgery-tool-name-left-arm" # Shitmed Change, Reserve edit: localization key
     children: # Shitmed Change
       left hand:
         id: left hand
@@ -274,7 +274,7 @@
   - type: BodyPart
     partType: Arm
     symmetry: Right
-    toolName: "a right arm" # Shitmed Change
+    toolName: "surgery-tool-name-right-arm" # Shitmed Change, Reserve edit: localization key
     children: # Shitmed Change
       right hand:
         id: right hand
@@ -311,7 +311,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Left
-    toolName: "a left hand" # Shitmed Change
+    toolName: "surgery-tool-name-left-hand" # Shitmed Change, Reserve edit: localization key
   - type: WoundableVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     occupiedLayer: LHand
@@ -344,7 +344,7 @@
   - type: BodyPart
     partType: Hand
     symmetry: Right
-    toolName: "a right hand" # Shitmed Change
+    toolName: "surgery-tool-name-right-hand" # Shitmed Change, Reserve edit: localization key
   - type: Woundable
     integrity: 60
     integrityCap: 60
@@ -377,7 +377,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
-    toolName: "a left leg" # Shitmed Change
+    toolName: "surgery-tool-name-left-leg" # Shitmed Change, Reserve edit: localization key
     children: # Shitmed Change
       left foot:
         id: left foot
@@ -415,7 +415,7 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
-    toolName: "a right leg" # Shitmed Change
+    toolName: "surgery-tool-name-right-leg" # Shitmed Change, Reserve edit: localization key
     children: # Shitmed Change
       right foot:
         id: right foot
@@ -453,7 +453,7 @@
   - type: BodyPart
     partType: Foot
     symmetry: Left
-    toolName: "a left foot" # Shitmed Change
+    toolName: "surgery-tool-name-left-foot" # Shitmed Change, Reserve edit: localization key
   - type: WoundableVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     occupiedLayer: LFoot
@@ -486,7 +486,7 @@
   - type: BodyPart
     partType: Foot
     symmetry: Right
-    toolName: "a right foot" # Shitmed Change
+    toolName: "surgery-tool-name-right-foot" # Shitmed Change, Reserve edit: localization key
   - type: WoundableVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
     occupiedLayer: RFoot

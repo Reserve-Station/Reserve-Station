@@ -60,3 +60,5 @@ spell-rathen-gut-popup = You have no appendix, but something had to give!
 ghosts-summoned-message = Ghosts have been summoned!
 dimension-shift-message = Dimensions shift!
 global-tile-movement-message = An ominous beat starts playing!
+
+ice-cube-melt = The ice melts away!

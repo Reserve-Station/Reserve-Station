@@ -33,3 +33,25 @@ ent-ClothingOuterBrassArmor = латунная броня
 
 ent-ClothingOuterSteelTile = костюм из стальной плитки
     .desc = Костюм, созданный для слияния с плиткой станции.
+
+ent-ClothingOuterArmorDeku = дурацкий геройский костюм
+    .desc = Герой номер один явно не здешних мест. Вы чувствуете себя лузером, нося это.
+    .suffix = Геройская академия, Деку, Косплей
+ent-ClothingOuterArmorInvincible = костюм незаробастываемого
+    .desc = На удивление заробастываемый.
+    .suffix = Неуязвимый, Косплей
+ent-ClothingOuterArmorCommando = костюм коммандо
+    .desc = Двойные пистолеты в комплект не входят.
+    .suffix = Risk of Rain, Косплей
+ent-ClothingOuterArmorCombineElite = костюм элитного солдата
+    .desc = Гражданским не положено оружие.
+    .suffix = Халф-Лайф, Комбайн, Косплей
+ent-ClothingOuterArmorCombineEliteAdmin = броня элитного солдата
+    .desc = Админам не положено проигрывать.
+    .suffix = Халф-Лайф, Комбайн, Адмем, Настоящий
+ent-ClothingOuterArmorDivingSuit = костюм скафандра ныряльщика
+    .desc = Реплика подводного скафандра из субмаринной эры Европы.
+    .suffix = Баротравма, Косплей
+ent-ClothingOuterArmorHuskDivingSuit = костюм заражённого скафандра ныряльщика
+    .desc = Реплика подводного скафандра, заселённого давно вымершим инопланетным паразитом. Звучит знакомо.
+    .suffix = Баротравма, Косплей

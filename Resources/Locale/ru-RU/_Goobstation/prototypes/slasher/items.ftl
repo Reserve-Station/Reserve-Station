@@ -177,3 +177,15 @@ ent-ClothingUniformSlasherHockey = изношенный комбинезон
 ent-ClothingOuterSlasherHockey = плащ хоккейного мясника
     .desc = Тяжелый, изношенный плащ. Что-то тёмное пачкает воротник, а швы выглядят грубо, как будто их делали в темноте.
     .suffix = Мясник
+
+ent-SlasherKitchenKnife = { ent-KitchenKnife }
+    .desc = Универсальный поварской нож, нашедший гораздо более жестокое применение.
+    .suffix = Мясник, Бугимен
+
+ent-ClothingHeadHatSlasherMaskBoogeyman = маска бугимена
+    .desc = Эту маску без особых признаков носит существо из-под кровати. Оно наблюдает, и оно ждёт.
+    .suffix = Мясник, Бугимен
+
+ent-ClothingUniformSlasherBoogeyman = потрёпанный костюм
+    .desc = Тёмный, рваный наряд, который словно впитывает окружающий его свет.
+    .suffix = Мясник, Бугимен

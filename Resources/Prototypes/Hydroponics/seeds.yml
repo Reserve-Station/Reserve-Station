@@ -900,6 +900,8 @@
   packetPrototype: ChanterelleSeeds
   productPrototypes:
     - FoodMushroom
+  mutationPrototypes: # Reserve edit
+    - plumphelmet # Reserve edit
   lifespan: 35
   maturation: 10
   production: 7

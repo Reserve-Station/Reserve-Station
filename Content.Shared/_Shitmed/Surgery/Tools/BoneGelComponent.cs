@@ -7,7 +7,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class BoneGelComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => "bone gel";
+    public string ToolName => "surgery-tool-name-bone-gel"; // Reserve edit
 
     [DataField]
     public bool? Used { get; set; } = null;

@@ -96,7 +96,7 @@
           max: 0.1
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: BZ
@@ -106,8 +106,7 @@
         - !type:BloodReagentThresholdCondition
           reagent: NitrosylPlasmide
           max: 0.1
-        key: ForcedSleep
-        component: ForcedSleeping
+        effectProto: StatusEffectForcedSleeping
         time: 10
         type: Add
       - !type:Oxygenate
@@ -212,7 +211,7 @@
           max: 0.1
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: BZ
@@ -222,8 +221,7 @@
         - !type:BloodReagentThresholdCondition
           reagent: NitrosylPlasmide
           max: 0.1
-        key: ForcedSleep
-        component: ForcedSleeping
+        effectProto: StatusEffectForcedSleeping
         time: 10
         type: Add
       - !type:Oxygenate
@@ -275,7 +273,7 @@
         visualType: Medium
         messages: [ "effect-sleepy" ]
         probability: 0.01
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: Healium
@@ -283,8 +281,7 @@
         - !type:BloodReagentThresholdCondition
           reagent: NitrosylPlasmide
           max: 0.01
-        key: ForcedSleep
-        component: ForcedSleeping
+        effectProto: StatusEffectForcedSleeping
         time: 1
         type: Add
       - !type:Drunk
@@ -333,7 +330,7 @@
         visualType: Medium
         messages: [ "effect-sleepy" ]
         probability: 0.01
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: Healium
@@ -341,8 +338,7 @@
         - !type:BloodReagentThresholdCondition
           reagent: NitrosylPlasmide
           max: 0.01
-        key: ForcedSleep
-        component: ForcedSleeping
+        effectProto: StatusEffectForcedSleeping
         time: 1
         type: Add
       - !type:Drunk

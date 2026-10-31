@@ -166,11 +166,14 @@
   - type: Transform
     noRot: true
     anchored: true
+  # Reserve start - revert puddle visuals
   - type: Sprite
     drawdepth: Puddles
     layers:
-    - sprite: _ES/Effects/puddle.rsi # Goob
-      state: large-2 # Goob
+    - sprite: Fluids/puddle.rsi
+      state: splat0
+    color: "#FFFFFF80"
+  # Reserve end
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -184,6 +187,14 @@
         layer:
         - SlipLayer
         hard: false
+  # Reserve start - revert puddle visuals
+  - type: IconSmooth
+    key: puddles
+    additionalKeys:
+    - walls
+    base: splat
+    mode: CardinalFlags
+  # Reserve end
   - type: SolutionContainerManager
     solutions:
       puddle:

@@ -24,6 +24,7 @@ public sealed partial class BlockHandsOnBuckleSystem : EntitySystem
         SubscribeLocalEvent<BlockHandsOnBuckleComponent, UnstrappedEvent>(OnUnstrapped);
 
         SubscribeLocalEvent<BuckleComponent, AttackAttemptEvent>(OnCanAttack);
+        SubscribeLocalEvent<BuckleComponent, ConsciousAttemptEvent>(OnConsciousAttempt);
     }
 
     private void OnBuckled(Entity<BlockHandsOnBuckleComponent> ent, ref StrappedEvent args)
@@ -48,8 +49,18 @@ public sealed partial class BlockHandsOnBuckleSystem : EntitySystem
 
     private void OnCanAttack(EntityUid uid, BuckleComponent buckle, ref AttackAttemptEvent args)
     {
-        if (buckle.BuckledTo != null
-            && HasComp<BlockHandsOnBuckleComponent>(buckle.BuckledTo.Value))
+        if (IsHandsBlocked(buckle))
             args.Cancel();
+    }
+
+    private void OnConsciousAttempt(EntityUid uid, BuckleComponent buckle, ref ConsciousAttemptEvent args)
+    {
+        if (IsHandsBlocked(buckle))
+            args.Cancelled = true;
+    }
+
+    private bool IsHandsBlocked(BuckleComponent buckle)
+    {
+        return buckle.BuckledTo is { } strap && HasComp<BlockHandsOnBuckleComponent>(strap);
     }
 }

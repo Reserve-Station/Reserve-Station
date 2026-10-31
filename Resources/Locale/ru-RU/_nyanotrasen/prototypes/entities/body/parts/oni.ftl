@@ -1,9 +1,9 @@
 ent-PartOni = часть тела они
     .desc = { ent-BaseItem.desc }
 ent-ChestOni = грудная клетка они
-    .desc = { ent-PartOniBase.desc }
+    .desc = { ent-PartOni.desc }
 ent-GroinOni = пах они
-    .desc = { ent-PartOniBase.desc }
+    .desc = { ent-PartOni.desc }
 ent-HeadOni = голова они
     .desc = { ent-PartOni.desc }
 ent-LeftArmOni = левая рука они

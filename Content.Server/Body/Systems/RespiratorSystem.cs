@@ -413,7 +413,7 @@ public sealed partial class RespiratorSystem : EntitySystem // Goob - made parti
         if (ent.Comp.SuffocationCycles >= 2)
             _adminLogger.Add(LogType.Asphyxiation, $"{ToPrettyString(ent):entity} stopped suffocating");
 
-        // _damageableSys.ChangeDamage(ent.Owner, ent.Comp.DamageRecovery); // Reserve edit: Soft Crit port
+        _damageableSys.ChangeDamage(ent.Owner, CalculateSuffocationRecovery(ent.Owner, ent.Comp), targetPart: TargetBodyPart.All, ignoreBlockers: true); // Reserve edit: Soft Crit port
 
         var ev = new StopSuffocatingEvent();
         RaiseLocalEvent(ent, ref ev);

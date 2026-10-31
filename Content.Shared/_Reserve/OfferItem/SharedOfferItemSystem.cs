@@ -5,6 +5,7 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     // Keep a list of active users who are currently offering to avoid multiple simultaneous offers.
     private readonly HashSet<EntityUid> _activeOfferers = new();
@@ -35,6 +37,10 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        // Reserve edit - on the client Update reruns on every predicted tick and spams the cancel popups
+        if (_net.IsClient)
+            return;
 
         var query = EntityQueryEnumerator<OfferItemComponent>();
         while (query.MoveNext(out var uid, out var offer))
@@ -148,7 +154,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
         _activeUnofferers.Add(uid);
 
-        if (component.Item != null)
+        if (_net.IsServer && component.Item != null && !TerminatingOrDeleted(component.Item.Value)) // Reserve edit
         {
             _popup.PopupEntity(Loc.GetString("offer-item-no-give",
                 ("item", Identity.Entity(component.Item.Value, EntityManager)),
@@ -157,7 +163,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
                 ("user", Identity.Entity(uid, EntityManager)),
                 ("item", Identity.Entity(component.Item.Value, EntityManager))), uid, component.Target.Value);
         }
-        else if (offerItem.Item != null)
+        else if (_net.IsServer && offerItem.Item != null && !TerminatingOrDeleted(offerItem.Item.Value)) // Reserve edit
         {
             _popup.PopupEntity(Loc.GetString("offer-item-no-give",
                 ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),
@@ -189,7 +195,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (component.Target == null)
             return;
 
-        if (offerItem.Item != null)
+        if (_net.IsServer && offerItem.Item != null && !TerminatingOrDeleted(offerItem.Item.Value)) // Reserve edit
         {
             _popup.PopupEntity(Loc.GetString("offer-item-no-give",
                 ("item", Identity.Entity(offerItem.Item.Value, EntityManager)),

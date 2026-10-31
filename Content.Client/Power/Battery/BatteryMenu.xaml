@@ -2,8 +2,10 @@
                       xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
-                      SetSize="650 330"
-                      Resizable="False">
+                      SetSize="720 330"
+                      MinSize="720 330"
+                      Resizable="True">
+    <!-- Reserve edit: wider and resizable window, so longer translated labels are not cut off -->
     <BoxContainer Orientation="Vertical">
         <!-- Top row: main content -->
         <BoxContainer Name="MainContent" Orientation="Horizontal" VerticalExpand="True" Margin="4">

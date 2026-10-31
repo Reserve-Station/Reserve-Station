@@ -136,7 +136,7 @@ public sealed class PartStatusSystem : EntitySystem
 
         foreach (var woundable in _woundSystem.GetAllWoundableChildren(rootPart))
         {
-            if (!TryComp<BodyPartComponent>(woundable, out var bodyPartComponent)) // Reserve edit: localization #359
+            if (!TryComp<BodyPartComponent>(woundable, out var bodyPartComponent))
                 continue;
 
             // Reserve edit start: localization #359

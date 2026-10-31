@@ -6,6 +6,7 @@ using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
+using Content.Goobstation.Maths.FixedPoint;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -89,6 +90,22 @@ namespace Content.Shared.Body.Systems
                 {
                     stomach.ReagentDeltas.Remove(item);
                 }
+
+                // Reserve start: reagents that appeared inside the stomach (e.g. reaction products)
+                // have no delta and would never be digested, so start tracking any untracked amount.
+                foreach (var reagent in stomachSolution.Contents)
+                {
+                    var tracked = FixedPoint2.Zero;
+                    foreach (var delta in stomach.ReagentDeltas)
+                    {
+                        if (delta.ReagentQuantity.Reagent == reagent.Reagent)
+                            tracked += delta.ReagentQuantity.Quantity;
+                    }
+
+                    if (reagent.Quantity > tracked)
+                        stomach.ReagentDeltas.Add(new StomachComponent.ReagentDelta(new(reagent.Reagent, reagent.Quantity - tracked)));
+                }
+                // Reserve end
 
                 _solutionContainerSystem.UpdateChemicals(stomach.Solution.Value);
 

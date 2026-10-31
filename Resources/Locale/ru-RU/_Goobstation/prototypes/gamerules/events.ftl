@@ -13,3 +13,6 @@ ent-Conspirators = Заговорщики
     .desc = { ent-BaseGameRule.desc }
 ent-BloodBrothers = Кровные братья
     .desc = { ent-BaseGameRule.desc }
+
+ent-ThunderdomeRule = Арена
+    .desc = { ent-BaseGameRule.desc }

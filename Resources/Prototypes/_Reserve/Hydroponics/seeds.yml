@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: seed
+  id: plumphelmet
+  name: seeds-plumphelmet-name
+  noun: seeds-noun-spores
+  displayName: seeds-plumphelmet-display-name
+  plantRsi: _Reserve/Objects/Specific/Hydroponics/plump_helmet.rsi
+  packetPrototype: PlumpHelmetSeeds
+  productPrototypes:
+    - FoodPlumpHelmet
+  lifespan: 40
+  maturation: 10
+  production: 7
+  yield: 4
+  potency: 10
+  growthStages: 3
+  # underground mushroom - likes it dark and cool
+  idealLight: 3
+  lightTolerance: 6
+  waterConsumption: 0.60
+  nutrientConsumption: 0.50
+  idealHeat: 288
+  chemicals:
+    Nutriment:
+      Min: 2
+      Max: 20
+      PotencyDivisor: 5
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25

@@ -15,7 +15,7 @@
     threshold: 1
   - type: Item
     heldPrefix: empty
-    size: Normal
+    size: Normal  # Reserve edit: Halloween on Reserve
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -26,10 +26,10 @@
   - type: Storage
     maxItemSize: Small
     grid:
-    - 0,0,3,2
+    - 0,0,3,2  # Reserve edit: Halloween on Reserve
     quickInsert: true  # Reserve edit: Halloween on Reserve
     areaInsert: true  # Reserve edit: Halloween on Reserve
-    whitelist:
+    whitelist:  # Reserve edit: Halloween on Reserve
       components:
         - Pill
       tags:

@@ -189,6 +189,8 @@ public sealed partial class ChatUIController : UIController
     public event Action<ChatChannel, int?>? UnreadMessageCountsUpdated;
     public event Action<ChatMessage>? MessageAdded;
 
+    public event EventHandler<ChatBeforeMessageSentEventArgs>? BeforeMessageSent; // Reserve edit: Chat Triggers
+
     public override void Initialize()
     {
         _sawmill = Logger.GetSawmill("chat");
@@ -795,19 +797,30 @@ public sealed partial class ChatUIController : UIController
         return (chatChannel, text[1..].TrimStart(), null, null); // Goobstation - Starlight collective mind port
     }
 
-    public void SendMessage(ChatBox box, ChatSelectChannel channel)
+    public void SendMessage(ChatBox box, ChatSelectChannel channel, bool ignoreBeforeMessage = false) // Reserve edit: Chat Triggers
     {
+        // Reserve edit start: Chat Triggers
+        var rawText = box.ChatInput.Input.Text;
+        if (string.IsNullOrWhiteSpace(rawText))
+            return;
+
+        (var prefixChannel, var text, var _, var _) = SplitInputContents(rawText); // Goobstation - Starlight collective mind port
+        var targetChannel = prefixChannel != ChatSelectChannel.None ? prefixChannel : channel;
+
+        if (!ignoreBeforeMessage && BeforeMessageSent != null)
+        {
+            var ev = new ChatBeforeMessageSentEventArgs(box, rawText, text, targetChannel);
+            BeforeMessageSent.Invoke(this, ev);
+            if (ev.Cancel)
+                return;
+        }
+        // Reserve edit end: Chat Triggers
+
         _typingIndicator?.ClientSubmittedChatText();
 
-        var text = box.ChatInput.Input.Text;
         box.ChatInput.Input.Clear();
         box.ChatInput.Input.ReleaseKeyboardFocus();
         UpdateSelectedChannel(box);
-
-        if (string.IsNullOrWhiteSpace(text))
-            return;
-
-        (var prefixChannel, text, var _, var _) = SplitInputContents(text); // Goobstation - Starlight collective mind port
 
         // Check if message is longer than the character limit
         if (text.Length > MaxMessageLength)
@@ -1050,3 +1063,22 @@ public sealed partial class ChatUIController : UIController
         public Queue<SpeechBubbleData> MessageQueue { get; } = new();
     }
 }
+
+// Reserve edit start: Chat Triggers
+public sealed class ChatBeforeMessageSentEventArgs : EventArgs
+{
+    public ChatBox Box { get; }
+    public string RawText { get; }
+    public string Text { get; }
+    public ChatSelectChannel Channel { get; }
+    public bool Cancel { get; set; }
+
+    public ChatBeforeMessageSentEventArgs(ChatBox box, string rawText, string text, ChatSelectChannel channel)
+    {
+        Box = box;
+        RawText = rawText;
+        Text = text;
+        Channel = channel;
+    }
+}
+// Reserve edit end: Chat Triggers

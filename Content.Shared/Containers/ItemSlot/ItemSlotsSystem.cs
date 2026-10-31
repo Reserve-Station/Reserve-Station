@@ -642,11 +642,16 @@ namespace Content.Shared.Containers.ItemSlots
                 return TryStartEjectDoAfter(slot, uid, user);
             // Lavaland Change end
 
+            // Reserve edit start
+            var fromInventory = user != null
+                && _handsSystem.IsInUserInventory(user.Value, uid);
+            // Reserve edit end
+
             if (!TryEject(uid, slot, user, out var item, excludeUserAudio, doAfter))
                 return false;
 
             if (user != null)
-                _handsSystem.PickupOrDrop(user.Value, item.Value);
+                _handsSystem.PickupOrDrop(user.Value, item.Value, fromInventory: fromInventory); // Reserve edit
 
             return true;
         }

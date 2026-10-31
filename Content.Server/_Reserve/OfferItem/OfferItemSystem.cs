@@ -29,6 +29,9 @@ public sealed class OfferItemSystem : SharedOfferItemSystem
                 {
                     UnReceive(offerItem.Target.Value, offerItem: offerItem);
                     offerItem.IsInOfferMode = false;
+                    // Reserve edit - UnReceive can return early, leaving the offer stuck and re-checked every tick
+                    offerItem.Hand = null;
+                    offerItem.Item = null;
                     Dirty(uid, offerItem);
                 }
                 else

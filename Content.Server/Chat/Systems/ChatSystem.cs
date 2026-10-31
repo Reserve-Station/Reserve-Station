@@ -820,7 +820,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("entity", ent),
             ("message", FormattedMessage.RemoveMarkupPermissive(action))); // Goob - Fix (malformed markup throws)
 
-        if (checkEmote && !TryEmoteChatInput(source, action, forced)) // goob edit
+        if (checkEmote && !TryEmoteChatInput(source, action))
             return;
 
         SendInVoiceRange(
@@ -1117,7 +1117,10 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     public string SanitizeMessageReplaceWords(string message)
     {
-        if (string.IsNullOrEmpty(message)) return message;
+        if (!_configurationManager.GetCVar(CCVars.ChatSanitizerEnabled) ||
+            !_configurationManager.GetCVar(CCVars.ChatSanitizerWordReplacementsEnabled) ||
+            string.IsNullOrEmpty(message))
+            return message;
 
         var msg = message;
 

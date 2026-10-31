@@ -75,7 +75,7 @@ public sealed class MapTextSystem : SharedMapTextSystem
 
         if (useRunechat && string.Equals(fontId, SharedMapTextComponent.DefaultFont, StringComparison.Ordinal))
         {
-            component.CachedFont = new VectorFont(_resourceCache.GetResource<FontResource>(RunechatSheetlet.FontPath), component.FontSize);
+            component.CachedFont = new VectorFont(_resourceCache.GetResource<FontResource>(RunechatStyle.FontPath), component.FontSize);
             return;
         }
         // Reserve edit end: Runechat MapText
