@@ -168,7 +168,7 @@ public abstract partial class SharedSurgerySystem
             args.Invalid = StepInvalidReason.MissingTool;
 
             if (reg.Component is ISurgeryToolComponent required)
-                args.Popup = Loc.GetString("surgery-ui-window-steps-error-missing-tool", ("tool", required.ToolName));
+                args.Popup = Loc.GetString("surgery-ui-window-steps-error-missing-tool", ("tool", required.GetLocalizedToolName())); // Reserve edit
             else
                 Log.Error($"Surgery step {ToPrettyString(ent)} wants bad component {reg.Component} which isn't a ISurgeryTool");
 
