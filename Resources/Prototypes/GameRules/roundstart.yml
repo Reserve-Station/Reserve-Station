@@ -239,6 +239,8 @@
   - type: AntagRandomObjectives
     sets:
     - groups: TraitorObjectiveGroups
+    - groups: TraitorFluffObjectiveGroups # Reserve edit: syndicate-objectives
+      maxPicks: 1
     maxDifficulty: 5
   - type: AntagSelection
     agentName: traitor-round-end-agent-name

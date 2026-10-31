@@ -56,6 +56,33 @@
     RandomTraitorProgressObjective: 1
     RandomTraitorTargetAliveObjective: 0.5 # Goobstation - protect a player that is targeted by another traitor
 
+# Reserve edit start: syndicate-objectives
+- type: weightedRandom
+  id: TraitorFluffObjectiveGroups
+  weights:
+    TraitorFluffObjectiveGroup: 1
+
+- type: weightedRandom
+  id: TraitorFluffObjectiveGroup
+  weights:
+    TraitorFluffCodewordsObjective: 1
+    TraitorFluffInfiltrateObjective: 1
+    TraitorFluffImpersonateObjective: 1
+    TraitorFluffTrustPersonObjective: 1
+    TraitorFluffRumorPersonObjective: 1
+    TraitorFluffDistractPersonObjective: 1
+    TraitorFluffFramePersonObjective: 1
+    TraitorFluffSabotageDepartmentObjective: 1
+    TraitorFluffBlameDepartmentObjective: 1
+    TraitorFluffFakeHelpDepartmentObjective: 1
+    TraitorFluffPanicDepartmentObjective: 1
+    TraitorFluffRumorsObjective: 1
+    TraitorFluffNanoChatObjective: 1
+    TraitorFluffOtherHandsObjective: 1
+    TraitorFluffNicknameObjective: 1
+    TraitorFluffThreatsDepartmentObjective: 1
+# Reserve edit end: syndicate-objectives
+
 #Thief groups
 - type: weightedRandom
   id: ThiefObjectiveGroups
