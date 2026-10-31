@@ -25,5 +25,13 @@ public enum DiscordLogChannel
     /// </summary>
     AdminChat = 1 << 2,
 
+    /// <summary>
+    ///     я потом придумаю
+    /// </summary>
     Custos = 1 << 3,
+
+    /// <summary>
+    ///     добавление и удаление триггеров
+    /// </summary>
+    Brainrot = 1 << 4,
 }
