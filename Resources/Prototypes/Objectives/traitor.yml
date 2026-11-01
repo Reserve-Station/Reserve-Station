@@ -11,6 +11,39 @@
     roles:
     - TraitorRole
 
+# Reserve edit start: syndicate-objectives
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseTraitorFluffObjective
+  components:
+  - type: Objective
+    difficulty: 0
+    optional: true
+    serverCurrency: 0
+    issuer: objective-issuer-syndicate-fluff
+  - type: RoleRequirement
+    roles:
+    - TraitorRole
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorFluffObjective
+  id: BaseTraitorPersonFluffObjective
+  components:
+  - type: TargetObjective
+    title: objective-fluff-trust-person-title
+  - type: PickRandomPerson
+
+- type: entity
+  abstract: true
+  parent: BaseTraitorFluffObjective
+  id: BaseTraitorDepartmentFluffObjective
+  components:
+  - type: PickObjectiveDepartment
+    title: objective-fluff-sabotage-department-title
+# Reserve edit end: syndicate-objectives
+
 - type: entity
   abstract: true
   parent: [BaseTraitorObjective, BaseSocialObjective]
@@ -382,3 +415,199 @@
   - type: StealCondition
     stealGroup: NukeDisk
     owner: objective-condition-steal-station
+
+# Reserve edit start: syndicate-objectives
+- type: entity
+  parent: BaseTraitorFluffObjective
+  id: TraitorFluffCodewordsObjective
+  name: Use the codewords in your speech for the whole shift.
+  description: Do not slip into ordinary speech.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Ears/Headsets/medical.rsi
+      state: icon_alt
+
+- type: entity
+  parent: BaseTraitorFluffObjective
+  id: TraitorFluffInfiltrateObjective
+  name: Spend the shift getting into other departments.
+  description: Do it however you like.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Devices/door_remote.rsi
+      state: door_remotebase
+
+- type: entity
+  parent: BaseTraitorFluffObjective
+  id: TraitorFluffImpersonateObjective
+  name: Spend the shift pretending to be someone else.
+  description: Do not let anyone expose you.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/id_cards.rsi
+      state: ert_commander
+
+- type: entity
+  parent: BaseTraitorPersonFluffObjective
+  id: TraitorFluffTrustPersonObjective
+  name: Win this person's trust.
+  description: By the end of the shift this person should consider you an ally.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/folders.rsi
+      state: folder-colormap
+  - type: TargetObjective
+    title: objective-fluff-trust-person-title
+
+- type: entity
+  parent: BaseTraitorPersonFluffObjective
+  id: TraitorFluffRumorPersonObjective
+  name: Spread a rumor that this person is a Syndicate agent.
+  description: Do not name yourself in that rumor.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/stamps.rsi
+      state: stamp-cap
+  - type: TargetObjective
+    title: objective-fluff-rumor-person-title
+
+- type: entity
+  parent: BaseTraitorPersonFluffObjective
+  id: TraitorFluffDistractPersonObjective
+  name: Do not let this person work in peace.
+  description: Distract them, confuse them, waste their time, but do not kill them.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Tools/emag.rsi
+      state: icon
+  - type: TargetObjective
+    title: objective-fluff-distract-person-title
+
+- type: entity
+  parent: BaseTraitorPersonFluffObjective
+  id: TraitorFluffFramePersonObjective
+  name: Frame this person.
+  description: By the end of the shift the suspicion should point only at them. Do not let yourself be exposed.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Devices/forensic_scanner.rsi
+      state: forensicnew
+  - type: TargetObjective
+    title: objective-fluff-frame-person-title
+
+- type: entity
+  parent: BaseTraitorDepartmentFluffObjective
+  id: TraitorFluffSabotageDepartmentObjective
+  name: Sabotage a department for the whole shift.
+  description: The department should end the shift worse than it started.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/fireaxe.rsi
+      state: icon
+  - type: PickObjectiveDepartment
+    title: objective-fluff-sabotage-department-title
+
+- type: entity
+  parent: BaseTraitorDepartmentFluffObjective
+  id: TraitorFluffBlameDepartmentObjective
+  name: Make a department blame the others for its troubles.
+  description: The suspicion must not fall on you.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Specific/Cargo/mail.rsi
+      state: icon
+  - type: PickObjectiveDepartment
+    title: objective-fluff-blame-department-title
+
+- type: entity
+  parent: BaseTraitorDepartmentFluffObjective
+  id: TraitorFluffFakeHelpDepartmentObjective
+  name: Pretend to help a department while doing nothing.
+  description: Leave as soon as they start checking on you.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Specific/Medical/hypospray.rsi
+      state: hypo
+  - type: PickObjectiveDepartment
+    title: objective-fluff-fake-help-department-title
+
+- type: entity
+  parent: BaseTraitorDepartmentFluffObjective
+  id: TraitorFluffPanicDepartmentObjective
+  name: Spread panic through a department with a lie.
+  description: Keep the lie alive until the end of the shift.
+  components:
+  - type: Objective
+    icon:
+      sprite: Mobs/Ghosts/ghost_human.rsi
+      state: icon
+  - type: PickObjectiveDepartment
+    title: objective-fluff-panic-department-title
+
+- type: entity
+  parent: BaseTraitorFluffObjective
+  id: TraitorFluffRumorsObjective
+  name: Become the station's main source of rumors.
+  description: Appear in every major rumor on the station.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Fun/Instruments/otherinstruments.rsi
+      state: red_phone
+
+- type: entity
+  parent: BaseTraitorFluffObjective
+  id: TraitorFluffNanoChatObjective
+  name: Answer NanoChat all shift as if you were someone else.
+  description: Do not break character.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Devices/pda.rsi
+      state: pda
+
+- type: entity
+  parent: BaseTraitorFluffObjective
+  id: TraitorFluffOtherHandsObjective
+  name: Work only through other people's hands.
+  description: None of your actions should be done in your own name.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Weapons/Melee/stunbaton.rsi
+      state: stunbaton_on
+
+- type: entity
+  parent: BaseTraitorFluffObjective
+  id: TraitorFluffNicknameObjective
+  name: By the end of the shift the station must have an unknown saboteur with any nickname.
+  description: That nickname must not give you away.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Mask/ninja.rsi
+      state: icon
+
+- type: entity
+  parent: BaseTraitorDepartmentFluffObjective
+  id: TraitorFluffThreatsDepartmentObjective
+  name: Keep a department's workers under constant threat.
+  description: Do not give yourself away.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Devices/encryption_keys.rsi
+      state: crypt_gray
+  - type: PickObjectiveDepartment
+    title: objective-fluff-threats-department-title
+# Reserve edit end: syndicate-objectives
