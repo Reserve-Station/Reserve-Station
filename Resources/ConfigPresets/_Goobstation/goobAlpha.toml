@@ -3,5 +3,5 @@ hostname = "Goob Alpha ᴇᴜ-ᴡ"
 desc = "😱"
 defaultpreset = "TheWatcher"
 
-[goob]
-window_title = "Goob Alpha"
+# [goob]
+# window_title = "Goob Alpha"

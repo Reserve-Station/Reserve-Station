@@ -4,5 +4,5 @@ desc = "The illustrious Goob Station MRP, a resplendent sanctuary ordained solel
 defaultpreset = "TheWatcher"
 preset_round_cooldowns = "TheTempest:5"
 
-[goob]
-window_title = "Goob Basileus"
+# [goob]
+# window_title = "Goob Basileus"
