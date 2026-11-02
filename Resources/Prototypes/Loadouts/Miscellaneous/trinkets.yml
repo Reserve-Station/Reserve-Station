@@ -397,7 +397,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 500h # 500hr
+      time: 120h  # Reserve: Better trinket loadout
   storage:
     back:
     - FoodSnackLollypopWrappedRainbow
@@ -411,7 +411,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobSalvageSpecialist
-      time: 100h # 100hr
+      time: 50h  # Reserve: Better trinket loadout
   storage:
     back:
     - FoodSnackLollypopWrappedCarp
@@ -426,7 +426,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 10h # Reserve
+      time: 10h  # Reserve: Better trinket loadout
   storage:
     back:
     - TowelColorWhite
@@ -439,7 +439,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPassenger
-      time: 100h
+      time: 50h  # Reserve: Better trinket loadout
   storage:
     back:
     - TowelColorGray
@@ -452,7 +452,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobChaplain
-      time: 100h
+      time: 50h  # Reserve: Better trinket loadout
   storage:
     back:
     - TowelColorBlack
@@ -504,7 +504,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobClown
-      time: 100h
+      time: 75h  # Reserve: Better trinket loadout
   storage:
     back:
     - TowelColorYellow
@@ -517,7 +517,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLibrarian
-      time: 100h
+      time: 50h  # Reserve: Better trinket loadout
   storage:
     back:
     - TowelColorDarkGreen
@@ -582,7 +582,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobLawyer
-      time: 100h
+      time: 50h  # Reserve: Better trinket loadout
   storage:
     back:
     - TowelColorMaroon
@@ -595,7 +595,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobMime
-      time: 100h
+      time: 80h  # Reserve: Better trinket loadout
   storage:
     back:
     - TowelColorMime
@@ -607,7 +607,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 500h
+      time: 220h  # Reserve: Better trinket loadout
   storage:
     back:
     - TowelColorSilver
@@ -619,7 +619,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:OverallPlaytimeRequirement
-      time: 1000h
+      time: 320h  # Reserve: Better trinket loadout
   storage:
     back:
     - TowelColorGold
