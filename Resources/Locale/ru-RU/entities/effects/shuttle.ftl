@@ -1,2 +1,2 @@
-ent-FtlVisualizerEntity = { "" }
+ent-FtlVisualizerEntity = FTL-визуализатор
     .desc = Визуализатор прибывающих шаттлов. Вы не должны этого видеть!

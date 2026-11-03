@@ -526,7 +526,7 @@
 
 - type: brainrotBotTrigger
   id: Brainrot109
-  trigger: 'regex:(?<!\p{L})у+в[ыи]+н*с*к*[а-яё]*(?!\p{L})' # увинск
+  trigger: '[увы; увынск; увинск]'
   description: brainrot-trigger-desc-generic
 
 - type: brainrotBotTrigger

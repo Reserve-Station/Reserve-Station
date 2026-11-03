@@ -1,5 +1,5 @@
-ent-PlayerSiliconBase = { "" }
-    .desc = { "" }
+ent-PlayerSiliconBase = дрон
+    .desc = Базовый синтет.
 ent-Drone = технический дрон
     .desc = Небольшой дрон общего технического обслуживания станции.
     .suffix = Робототехника

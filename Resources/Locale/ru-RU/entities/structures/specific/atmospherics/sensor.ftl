@@ -1,5 +1,5 @@
-ent-AirSensorBase = { "" }
-    .desc = { "" }
+ent-AirSensorBase = сенсор воздуха
+    .desc = Воздушный сенсор. Чувствует воздух.
 ent-AirSensor = сенсор воздуха
     .desc = Воздушный сенсор. Чувствует воздух.
 ent-AirSensorAssembly = корпус сенсора воздуха

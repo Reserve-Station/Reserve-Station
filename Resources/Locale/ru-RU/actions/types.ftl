@@ -1,5 +1,5 @@
-ent-BaseSuicideAction = { "" }
-    .desc = { "" }
+ent-BaseSuicideAction = Покинуть этот мир
+    .desc = Неужели всё настолько плохо?
 ent-ActionScream = Крикнуть
     .desc = ААААААААААААААААААААААААА
 ent-ActionTurnUndead = Обратиться в зомби

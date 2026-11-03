@@ -1,7 +1,7 @@
 ent-HotPotato = горячая картошка
     .desc = После активации вы не сможете бросить эту бомбу с часовым механизмом - ударьте ею кого-нибудь другого, чтобы спасти себя! Не обожгите руки!
-ent-HotPotatoEffect = { "" }
-    .desc = { "" }
+ent-HotPotatoEffect = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }
 
 ent-TrashBananaPeelExplosive = банановая кожура
     .desc = { ent-TrashBananaPeel.desc }

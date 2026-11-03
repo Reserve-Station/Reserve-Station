@@ -274,7 +274,7 @@ public sealed partial class MarkingPicker : Control
         var sortedMarkings = GetMarkings(_selectedMarkingCategory).Values.Where(m =>
             m.ID.ToLower().Contains(filter.ToLower()) ||
             GetMarkingName(m).ToLower().Contains(filter.ToLower())
-        ).OrderBy(p => Loc.GetString(GetMarkingName(p))).ToList();
+        ).OrderBy(p => GetMarkingName(p)).ToList();  // Reserve edit - GetMarkingName is already localized.
 
         // Check if we're out of points
         var pointsLeft = _currentMarkings.PointsLeft(_selectedMarkingCategory);

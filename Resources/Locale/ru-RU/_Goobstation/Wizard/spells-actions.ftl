@@ -28,5 +28,5 @@ action-speech-spell-gorilla-form = Б'НАНА-СЛЕМА!
 action-speech-spell-summon-stick-minions = Вставайте, мои создания! Из страницы в реальность!
 action-speech-spell-tile-toggle = РУК'КАТ!
 action-speech-spell-curse-of-byond = ПРОКЛЯТИЕ BYOND!!
-
 action-speech-spell-rathen = АРС НАТХ!!!
+action-speech-spell-summon-supermatter = GY'T OH'O RI'LER'!!!

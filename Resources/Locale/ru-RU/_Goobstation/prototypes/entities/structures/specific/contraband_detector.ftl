@@ -1,13 +1,13 @@
 ent-ContrabandDetector = детектор контрабанды
     .desc = Входите с уверенностью, выходите с СБшниками, преследующими вас.
-    .suffix = разблокирован
+    .suffix = Разблокирован
 ent-ContrabandDetectorSecure = { ent-ContrabandDetector }
+    .desc = { ent-ContrabandDetector.desc }
     .suffix = Безопасный
-    .desc = { ent-ContrabandDetector.desc }
 ent-ContrabandDetectorAnchored = { ent-ContrabandDetector }
-    .suffix = заблокирован
     .desc = { ent-ContrabandDetector.desc }
+    .suffix = Заблокирован
 ent-ContrabandDetectorFrame = рамка детектора контрабанды
-    .desc = { "" }
+    .desc = Деталь детектора.
 ent-ContrabandDetectorCircuitboard = плата детектора контрабанды
     .desc = Электронная плата, используемая в детекторе контрабанды.

@@ -4,5 +4,5 @@ ent-ExecutiveBriefcaseEmpty = дипломатический чемодан
 ent-ExecutiveBriefcaseDebug = { ent-ExecutiveBriefcaseEmpty }
     .suffix = DEBUG
     .desc = { ent-ExecutiveBriefcaseEmpty.desc }
-ent-StorePresetNTR = { "" }
-    .desc = { "" }
+ent-StorePresetNTR = магазин представителя
+    .desc = Сеть NanoNeT, предоставляющая доступ к корпоративному снаряжению.

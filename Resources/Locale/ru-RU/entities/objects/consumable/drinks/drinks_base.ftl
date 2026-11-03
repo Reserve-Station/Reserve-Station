@@ -1,15 +1,15 @@
 
-ent-DrinkBaseEmptyTrash = { "" }
+ent-DrinkBaseEmptyTrash = { ent-DrinkBase }
     .suffix = Пустой
-    .desc = { "" }
-ent-DrinkBaseOpenable = { "" }
-    .desc = { "" }
+    .desc = { ent-DrinkBase.desc }
+ent-DrinkBaseOpenable = { ent-DrinkBase }
+    .desc = { ent-DrinkBase.desc }
 ent-DrinkBaseOpenableOpen = { ent-DrinkBaseOpenable }
     .desc = { ent-DrinkBaseOpenable.desc }
-ent-DrinkVisualsOpenable = { "" }
-    .desc = { "" }
-ent-DrinkVisualsFill = { "" }
-    .desc = { "" }
+ent-DrinkVisualsOpenable = { ent-DrinkBase }
+    .desc = { ent-DrinkBase.desc }
+ent-DrinkVisualsFill = { ent-DrinkBase }
+    .desc = { ent-DrinkBase.desc }
 ent-DrinkVisualsFillOverlay = { ent-DrinkVisualsFill }
     .desc = { ent-DrinkVisualsFill.desc }
 ent-DrinkVisualsFillFilled = { ent-DrinkVisualsFill }

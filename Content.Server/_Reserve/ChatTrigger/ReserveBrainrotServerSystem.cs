@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Server._Reserve.Discord.Custos;
 using Content.Server._Reserve.Discord.Logger;
 using Content.Server.Database;
 using Content.Server.GameTicking;
@@ -16,7 +15,12 @@ public sealed class ReserveBrainrotServerSystem : EntitySystem
 {
     [Dependency] private readonly IServerDbManager _db = default!;
     [Dependency] private readonly ITaskManager _taskManager = default!;
-    [Dependency] private readonly ICustosManager _custos = default!;
+    [Dependency] private readonly IDiscordLogger _discordLogger = default!;
+
+    private const int ColorTriggerAdded = 0x2ecc71;
+    private const int ColorTriggerRemoved = 0xe74c3c;
+    private const int ColorSuspicious = 0xf39c12;
+    private const int ColorCritical = 0x9b59b6;
 
     private readonly List<string> _customTriggers = new();
     private readonly object _lock = new();
@@ -93,7 +97,7 @@ public sealed class ReserveBrainrotServerSystem : EntitySystem
         if (!ChatTriggerHelper.IsValidTrigger(trigger, out var error))
         {
             Log.Warning($"Attempted to add invalid brainrot trigger '{trigger}': {error}");
-            _custos.TriggerRejected(trigger, actor, error);
+            LogTriggerRejected(trigger, actor, error);
             return;
         }
 
@@ -123,7 +127,7 @@ public sealed class ReserveBrainrotServerSystem : EntitySystem
                 OnTriggersChanged?.Invoke();
             });
 
-            _custos.TriggerAdded(normalized, actor, isSuspicious, suspiciousReason);
+            LogTriggerAdded(normalized, actor, isSuspicious, suspiciousReason);
         }
         catch (Exception e)
         {
@@ -205,11 +209,11 @@ public sealed class ReserveBrainrotServerSystem : EntitySystem
 
             if (shouldAlertMassRemoval)
             {
-                _custos.TriggerMassRemovalAlert(removalCount, MassRemovalWindow, actor, removedTriggers);
+                LogTriggerMassRemovalAlert(removalCount, MassRemovalWindow, actor, removedTriggers);
             }
             else
             {
-                _custos.TriggerRemoved(normalized, actor);
+                LogTriggerRemoved(normalized, actor);
             }
         }
         catch (Exception e)
@@ -231,23 +235,106 @@ public sealed class ReserveBrainrotServerSystem : EntitySystem
                 var pattern = clean.Substring(ChatTriggerHelper.RegexPrefix.Length).Trim();
                 if (pattern is ".*" or ".+" or "^.*$" or "^.+$" or @"\w+" or @"\s+" or @"\S+" or @"[\s\S]*")
                 {
-                    reason = Loc.GetString("custos-suspicious-reason-broad-regex", ("pattern", pattern));
+                    reason = Loc.GetString("brainrot-log-suspicious-reason-broad-regex", ("pattern", pattern));
                     return true;
                 }
 
                 if (pattern.Length <= 2)
                 {
-                    reason = Loc.GetString("custos-suspicious-reason-short-regex", ("pattern", pattern));
+                    reason = Loc.GetString("brainrot-log-suspicious-reason-short-regex", ("pattern", pattern));
                     return true;
                 }
             }
             else if (clean.Length <= 2)
             {
-                reason = Loc.GetString("custos-suspicious-reason-short-trigger", ("trigger", clean));
+                reason = Loc.GetString("brainrot-log-suspicious-reason-short-trigger", ("trigger", clean));
                 return true;
             }
         }
 
         return false;
     }
+
+    #region Logging
+
+    private void LogTriggerAdded(string trigger, DiscordLogActor actor, bool suspicious = false, string? suspiciousReason = null)
+    {
+        Log.Debug($"Brainrot: trigger '{trigger}' added by {actor.Name ?? "System"} (suspicious: {suspicious})");
+
+        _ = _discordLogger.Guarded(async () =>
+        {
+            var titleKey = suspicious ? "brainrot-log-title-trigger-suspicious" : "brainrot-log-title-trigger-added";
+            var color = suspicious ? ColorSuspicious : ColorTriggerAdded;
+            var channel = suspicious ? DiscordLogChannel.Custos : DiscordLogChannel.Brainrot;
+
+            var msg = _discordLogger.NewMessage(titleKey, color);
+            msg.Add("brainrot-log-trigger", ("trigger", trigger));
+            msg.Add("brainrot-log-by", ("admin", await _discordLogger.ActorLabel(actor)));
+
+            if (suspicious && !string.IsNullOrWhiteSpace(suspiciousReason))
+            {
+                msg.Add("brainrot-log-reason", ("reason", suspiciousReason));
+            }
+
+            await _discordLogger.Send(msg, channel);
+        });
+    }
+
+    private void LogTriggerRejected(string trigger, DiscordLogActor actor, string? reason = null)
+    {
+        Log.Debug($"Brainrot: rejected trigger '{trigger}' from {actor.Name ?? "System"}: {reason}");
+
+        _ = _discordLogger.Guarded(async () =>
+        {
+            var msg = _discordLogger.NewMessage("brainrot-log-title-trigger-rejected", ColorSuspicious);
+            msg.Add("brainrot-log-trigger", ("trigger", trigger));
+            msg.Add("brainrot-log-by", ("admin", await _discordLogger.ActorLabel(actor)));
+
+            if (!string.IsNullOrWhiteSpace(reason))
+            {
+                msg.Add("brainrot-log-reason", ("reason", reason));
+            }
+
+            await _discordLogger.Send(msg, DiscordLogChannel.Custos);
+        });
+    }
+
+    private void LogTriggerRemoved(string trigger, DiscordLogActor actor)
+    {
+        Log.Debug($"Brainrot: trigger '{trigger}' removed by {actor.Name ?? "System"}");
+
+        _ = _discordLogger.Guarded(async () =>
+        {
+            var msg = _discordLogger.NewMessage("brainrot-log-title-trigger-removed", ColorTriggerRemoved);
+            msg.Add("brainrot-log-trigger", ("trigger", trigger));
+            msg.Add("brainrot-log-by", ("admin", await _discordLogger.ActorLabel(actor)));
+
+            await _discordLogger.Send(msg, DiscordLogChannel.Brainrot);
+        });
+    }
+
+    private void LogTriggerMassRemovalAlert(int count, TimeSpan window, DiscordLogActor actor, IReadOnlyList<string>? recentTriggers)
+    {
+        Log.Debug($"Brainrot: mass trigger removal detected by {actor.Name ?? "System"}: {count} in {window.TotalSeconds}s");
+
+        _ = _discordLogger.Guarded(async () =>
+        {
+            var msg = _discordLogger.NewMessage("brainrot-log-title-trigger-mass-removed", ColorCritical);
+            msg.Add("brainrot-log-by", ("admin", await _discordLogger.ActorLabel(actor)));
+            msg.Add("brainrot-log-count", ("count", count.ToString()), ("seconds", Math.Round(window.TotalSeconds).ToString()));
+
+            if (recentTriggers is { Count: > 0 })
+            {
+                var formatted = recentTriggers.Select(t => $"`{t.Replace('`', '\'')}`");
+                var listStr = string.Join(", ", formatted);
+                if (listStr.Length > 800)
+                    listStr = listStr[..797] + "…";
+                msg.Add("brainrot-log-recent-list", ("triggers", listStr));
+            }
+
+            await _discordLogger.Send(msg, DiscordLogChannel.Custos);
+        });
+    }
+
+    #endregion
 }

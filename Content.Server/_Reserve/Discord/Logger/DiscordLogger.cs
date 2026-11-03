@@ -73,6 +73,8 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
             DiscordLogChannel.AdminChat => GetChannelId(CCVars.AdminChatDiscordChannelId) != null,
             DiscordLogChannel.AdminLogs => (GetChannelId(CCVars.AdminLogsDiscordChannelId) ?? GetChannelId(CCVars.AdminChatDiscordChannelId)) != null,
             DiscordLogChannel.Custos => GetChannelId(CCVars.CustosDiscordChannelId) != null,
+            // АААААА ТУТ ВСЕ КОММЕНТАРИИ НА CS:GO ЯЗЫКЕ ЧТО ДЕЛАТЬ СПАСИТЕ АААААААА
+            DiscordLogChannel.Brainrot => (GetChannelId(CCVars.BrainrotDiscordChannelId) ?? GetChannelId(CCVars.CustosDiscordChannelId)) != null,
             _ => false,
         };
     }
@@ -85,7 +87,8 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
         return !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordBansWebhook))
                || !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordAdminLogsWebhook))
                || !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordAdminchatWebhook))
-               || !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordCustosWebhook));
+               || !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordCustosWebhook))
+               || !string.IsNullOrWhiteSpace(_cfg.GetCVar(CCVars.DiscordBrainrotWebhook));
     }
     public DiscordLogMessage NewMessage(string titleKey, int color, int? id = null, params (string, object)[] titleArgs)
     {
@@ -199,7 +202,7 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
 
     private Task SendTo(DiscordLogChannel channels, Func<WebhookPayload> payload, Func<DiscordLink, ulong, Task> viaBot)
     {
-        var tasks = new List<Task>(4);
+        var tasks = new List<Task>(5);
 
         if (channels.HasFlag(DiscordLogChannel.Bans))
             tasks.Add(Safe(() => PostWebhook(_cfg.GetCVar(CCVars.DiscordBansWebhook), payload())));
@@ -227,6 +230,15 @@ public sealed partial class DiscordLogger : IDiscordLogger, IPostInjectInit
             tasks.Add(Safe(() => SendVia(
                 GetChannelId(CCVars.CustosDiscordChannelId),
                 [CCVars.DiscordCustosWebhook],
+                payload,
+                viaBot)));
+        }
+
+        if (channels.HasFlag(DiscordLogChannel.Brainrot))
+        {
+            tasks.Add(Safe(() => SendVia(
+                GetChannelId(CCVars.BrainrotDiscordChannelId) ?? GetChannelId(CCVars.CustosDiscordChannelId),
+                [CCVars.DiscordBrainrotWebhook, CCVars.DiscordCustosWebhook],
                 payload,
                 viaBot)));
         }

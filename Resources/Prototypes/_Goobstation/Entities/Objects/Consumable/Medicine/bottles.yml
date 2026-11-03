@@ -169,7 +169,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-name-heartbreakertoxin
+    currentLabel: reagent-name-heartbreaker-toxin  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -184,7 +184,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-name-mindbreakertoxin
+    currentLabel: reagent-name-mindbreaker-toxin  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -230,7 +230,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-name-spacedrugs
+    currentLabel: reagent-name-space-drugs  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:

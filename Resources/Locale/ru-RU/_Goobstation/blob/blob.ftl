@@ -1,16 +1,11 @@
 objective-issuer-blob = Блоб
 
-ghost-role-information-blobbernaut-name = Блоббернаут
-ghost-role-information-blobbernaut-description = Вы - Блоббернаут. Вы должны защищать ядро блоба.
-
-ghost-role-information-blob-name = Блоб
-ghost-role-information-blob-description = Вы — носитель блоба. Поглотите станцию.
-
 roles-antag-blob-name = Блоб
 roles-antag-blob-objective = Вы — паразитическое космическое существо, преследующее единственную цель: пожирать.
     Распространяйтесь из своего ядра, поглощайте структуру станции одну за другой и ассимилируйте или уничтожьте всё живое на борту. Неустанно расширяйтесь. Защищайте своё ядро ​​любой ценой. Оставьте после себя лишь биомассу.
 
 guide-entry-blob = Блоб
+
 # Popups
 blob-target-normal-blob-invalid = Неправильный тип блоба, выберите нормальный блоб.
 blob-target-factory-blob-invalid = Неправильный тип блоба, выберите фабричный блоб.
@@ -88,12 +83,18 @@ blob-chem-cryogenicpoison-info =
 blob-alert-out-off-station = Блоб был удален, потому что был найден за пределами станции!
 
 # Announcment
-blob-alert-recall-shuttle = Аварийный шаттл не может быть отправлен, пока на станции присутствует биологическая опасность пятого уровня.
+blob-alert-block-shuttle = Аварийный шаттл не может быть отправлен, пока на станции присутствует биологическая опасность пятого уровня.
 blob-alert-detect = Подтверждена вспышка биологической опасности пятого уровня на борту станции. Весь персонал должен сдержать вспышку.
 blob-alert-critical = Уровень биологической опасности критический, на станцию отправлены коды ядерной аутентификации. Центральное командование приказывает всему оставшемуся персоналу активировать механизм самоуничтожения.
 blob-alert-critical-NoNukeCode = Уровень биологической опасности критический. Центральное командование приказывает всему оставшемуся персоналу найти укрытие и ожидать возвращения.
+blob-alert-shuttle-arrived = Обнаружена биологическая угроза. Весь экипаж должен немедленно эвакуироваться.
 
 # Ghost role
+ghost-role-information-blob-name = Блоб
+ghost-role-information-blob-description = Вы — носитель блоба. Поглотите станцию.
+ghost-role-information-blobbernaut-name = Блоббернаут
+ghost-role-information-blobbernaut-description = Вы - Блоббернаут. Вы должны защищать ядро блоба.
+
 blob-carrier-role-name = Переносчик блобов
 blob-carrier-role-desc = Существо, зараженное блобом.
 blob-carrier-role-rules = Вы - антагонист. У вас есть 4 минуты, прежде чем вы превратитесь в блоб. Используйте это время, чтобы найти безопасное место на станции. Имейте в виду, что сразу после превращения вы будете очень слабы.
@@ -144,7 +145,6 @@ objective-condition-success = { $condition } | [color=green]Успех![/color]
 objective-condition-fail = { $condition } | [color=red]Неудача![/color] ({ $progress }%)
 
 # Admin Verbs
-
 admin-verb-make-blob = Превратить цель в носителя блоба.
 admin-verb-text-make-blob = Сделать блобом
 
@@ -153,12 +153,8 @@ language-Blob-name = Блоб
 chat-language-Blob-name = Блоб
 language-Blob-description = Блиб боб! Блоб блоб!
 
-blob-alert-shuttle-arrived = Обнаружена биологическая угроза. Весь персонал должен немедленно эвакуироваться.
-
-blob-help-action-desc = Получить базовую информацию об игре за блоба.
-
+# Actions
 blob-help-action-name = Помощь
-
-blob-teleport-to-node-action-desc = Телепортирует вас к случайному узловому блобу.
-
+blob-help-action-desc = Получить базовую информацию об игре за блоба.
 blob-teleport-to-node-action-name = Телепорт к узлу (0)
+blob-teleport-to-node-action-desc = Телепортирует вас к случайному узловому блобу.

@@ -3,6 +3,6 @@ ent-UnfinishedMachineFrame = каркас машины
     .suffix = Незаконченный
 ent-MachineFrame = каркас машины
     .suffix = Готовый
-    .desc = { "" }
+    .desc = Готовая основа для создания машины.
 ent-MachineFrameDestroyed = разрушенный каркас машины
     .desc = { ent-BaseStructureDynamic.desc }
