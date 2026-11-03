@@ -21,13 +21,24 @@
   chatTriggers:
     - cough
     - coughs
-    - coughed 
+    - coughed
     - cough.
     - coughs.
     - coughed.
     - cough!
     - coughs!
     - coughed!
+    # Reserve-Localization-Start
+    - кашляет
+    - кашлянул
+    - кашлянула
+    - кашлянули
+    - кашлянуло
+    - закашлял
+    - закашляла
+    - закашляли
+    - закашляло
+    # Reserve-Localization-End
 
 - type: emote
   id: CatMeow
@@ -68,6 +79,13 @@
   chatTriggers:
     - yawn
     - yawns
+    # Reserve-Localization-Start
+    - зевает
+    - зевнул
+    - зевнула
+    - зевнули
+    - зевнуло
+    # Reserve-Localization-End
 
 - type: emote
   id: Snore

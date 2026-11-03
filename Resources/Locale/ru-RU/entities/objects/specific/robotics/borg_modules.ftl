@@ -1,7 +1,7 @@
 ent-BaseBorgModule = модуль борга
     .desc = Техническая деталь, дающая боргам новые способности.
-ent-BaseProviderBorgModule = { "" }
-    .desc = { "" }
+ent-BaseProviderBorgModule = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
 ent-ActionBorgSwapModule = Сменить модуль
     .desc = Выбор этого модуля позволит вам использовать предоставляемые им инструменты.
 

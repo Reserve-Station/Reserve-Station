@@ -1,2 +1,2 @@
 ent-dragshadow = drag shadow
-    .desc = { "" }
+    .desc = ...

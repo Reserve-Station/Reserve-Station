@@ -1,5 +1,5 @@
-ent-ScryingOrbBase = { "" }
-    .desc = { "" }
+ent-ScryingOrbBase = сфера
+    .desc = Она точно волшебная?
     .suffix = Волшебник
 ent-PonderingOrbWizard = сфера для размышлений
     .desc = Обдумайте свои планы относительно станции с помощью этого дальнозоркого артефакта.

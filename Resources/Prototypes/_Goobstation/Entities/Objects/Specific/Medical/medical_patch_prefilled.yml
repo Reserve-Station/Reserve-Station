@@ -32,7 +32,7 @@
   suffix: Bicaridine
   components:
   - type: Label
-    currentLabel: Bicaridine 30u
+    currentLabel: patch-label-bicaridine  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -48,7 +48,7 @@
   suffix: Dermaline
   components:
   - type: Label
-    currentLabel: Dermaline 30u
+    currentLabel: patch-label-dermaline  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:

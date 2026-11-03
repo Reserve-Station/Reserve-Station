@@ -1,5 +1,5 @@
-ent-MobSiliconBase = { "" }
-    .desc = { "" }
+ent-MobSiliconBase = бот
+    .desc = Маленький синтет.
 ent-MobFireBot = пожарбот
     .desc = Маленький бот для тушения пожаров. Он выглядит довольно встревоженным.
 ent-MobHonkBot = хонкбот

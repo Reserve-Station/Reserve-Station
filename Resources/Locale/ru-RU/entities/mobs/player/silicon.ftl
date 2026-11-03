@@ -1,11 +1,11 @@
-ent-AiHeld = { "" }
+ent-AiHeld = компонент
     .desc = Компоненты добавляются/удаляются из сущности, которая помещается в ядро ИИ.
-ent-AiHeldIntellicard = { "" }
+ent-AiHeldIntellicard = компонент
     .desc = Компоненты добавляются/удаляются из сущности, которая помещается в интелкарту.
-ent-AiHolder = { "" }
+ent-AiHolder = компонент
     .desc = Управляет взаимодействием ИИ на голокартах + ядрах ИИ
-ent-PlayerStationAiPreview = { "" }
-    .desc = { "" }
+ent-PlayerStationAiPreview = ядро ИИ
+    .desc = Последние достижения в области искусственного интеллекта.
 ent-Intellicard = интелкарта
     .desc = Устройство для хранения ИИ.
     .suffix = Пустой

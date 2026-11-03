@@ -1,23 +1,21 @@
-ent-BaseHardlightArrow = { "" }
-    .desc = { "" }
-ent-BaseHardlightEmbeddableArrow = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-BaseHardlightArrow = твердосветная стрела
+    .desc = Стрела, сделанная из твёрдого света.
+ent-BaseHardlightEmbeddableArrow = { ent-BaseHardlightArrow }
+    .desc = { ent-BaseHardlightArrow.desc }
+
 ent-ArrowEnergy = энергетическая стрела
-    .desc = Стрела, сделанная из твердого света.
+    .desc = { ent-BaseHardlightArrow.desc }
 ent-ArrowDisabler = оглушающая стрела
-    .desc = Стрела, сделанная из твердого света. Эта оглушает жертву.
-# Reserve edit: localization-fix
+    .desc = { ent-BaseHardlightArrow.desc } Эта оглушает жертву.
 ent-ArrowFiery = огненная стрела
-    .desc = Стрела, сделанная из твердого света. Эта поджигает жертву
-# Reserve edit: localization-fix
+    .desc = { ent-BaseHardlightArrow.desc } Эта поджигает жертву
 ent-ArrowFreeze = ледяная стрела
-    .desc = Стрела, сделанная из твердого света. Эта замораживает жертву.
+    .desc = { ent-BaseHardlightArrow.desc } Эта замораживает жертву.
 ent-ArrowExplosive = взрывная стрела
-    .desc = Стрела, сделанная из твердого света. Эта взрывается, но не будет лететь долго.
-# Reserve edit: localization-fix
+    .desc = { ent-BaseHardlightArrow.desc } Эта взрывается, но не будет лететь долго.
 ent-ArrowXray = рентгеновская стрела
-    .desc = Стрела, сделанная из твердого света. Эта проходит через стены.
+    .desc = { ent-BaseHardlightArrow.desc } Эта проходит через стены.
 ent-ArrowBee = пчелиная стрела
-    .desc = Стрела, сделанная из твердого света. Эта... О боже... ПЧЕЛЫ!!!
+    .desc = { ent-BaseHardlightArrow.desc } Эта... О боже... ПЧЕЛЫ!!!
 ent-ArrowIon = ионная стрела
-    .desc = Стрела из твёрдого света. Вызывает ЭМИ-разряд при контакте.
+    .desc = { ent-BaseHardlightArrow.desc } Вызывает ЭМИ-разряд при контакте.

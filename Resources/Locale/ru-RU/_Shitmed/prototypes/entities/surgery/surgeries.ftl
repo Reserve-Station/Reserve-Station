@@ -196,3 +196,8 @@ ent-SurgeryXenoRemoveEggSack = Удалить яйцекладку
     .desc = { ent-SurgeryBase.desc }
 ent-SurgeryXenoTakeSample = Взять образец ткани
     .desc = { ent-SurgeryBase.desc }
+
+ent-SurgeryRemoveButt = Удалить ягодицы
+    .desc = { ent-SurgeryBase.desc }
+ent-SurgeryInsertButt = Присоединить ягодицы
+    .desc = { ent-SurgeryBase.desc }

@@ -1,2 +1,2 @@
 ent-ExplosionLight = вспышка взрыва
-    .desc = { "" }
+    .desc = БЛЭМ!

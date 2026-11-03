@@ -3,10 +3,10 @@ ent-DrinkBottlePlasticBaseFull = { ent-DrinkBase }
     .suffix = Полный
 ent-DrinkBottleGlassBaseFull = { ent-DrinkBottlePlasticBaseFull }
     .desc = { ent-DrinkBottlePlasticBaseFull.desc }
-ent-DrinkBottleVisualsOpenable = { "" }
-    .desc = { "" }
-ent-DrinkBottleVisualsAll = { "" }
-    .desc = { "" }
+ent-DrinkBottleVisualsOpenable = { ent-DrinkBase }
+    .desc = { ent-DrinkBase.desc }
+ent-DrinkBottleVisualsAll = { ent-DrinkBase }
+    .desc = { ent-DrinkBase.desc }
 
 ent-DrinkAbsintheBottleFull = бутылка Джейлбрейк Верте
     .desc = Всего один глоток этого напитка, и вы сразу понимаете, что хорошо проведёте время.

@@ -1,2 +1,2 @@
 ent-FloorBananiumEntity = бананиумовый пол
-    .desc = { "" }
+    .desc = Не ешь его или с него.
