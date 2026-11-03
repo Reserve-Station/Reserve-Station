@@ -1,6 +1,6 @@
 ent-ClickTestBase = дебаг: тест клика
     .suffix = DEBUG
-    .desc = { "" }
+    .desc = Ну что ты щёлкаешь, как дятел?
 ent-ClickTestRotatingCornerVisible = дебаг: тест клика, RotatingCornerVisible
     .desc = { ent-ClickTestBase.desc }
 ent-ClickTestRotatingCornerVisibleNoRot = дебаг: тест клика, RotatingCornerVisibleNoRot

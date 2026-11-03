@@ -2,7 +2,7 @@
 
 chat-emote-name-scream = Кричать
 chat-emote-name-laugh = Смеяться
-chat-emote-name-honk = Хонк
+chat-emote-name-honk = Хонкать
 chat-emote-name-sigh = Вздыхать
 chat-emote-name-whistle = Свистеть
 chat-emote-name-crying = Плакать
@@ -27,12 +27,16 @@ chat-emote-name-buzztwo = Бип буп
 chat-emote-name-ping = Пинг
 chat-emote-name-sneeze = Чихать
 chat-emote-name-cough = Кашлять
-chat-emote-name-catmeow = Кошачье мяуканье
-chat-emote-name-cathisses = Кошачье шипение
-chat-emote-name-monkeyscreeches = Обезьяньи крики
-chat-emote-name-robotbeep = Робот
+chat-emote-name-catmeow = Мяукать
+chat-emote-name-cathisses = Шипеть
+chat-emote-name-monkeyscreeches = Кричать по-обезьяньи
+chat-emote-name-robotbeep = Робот-бип
 chat-emote-name-yawn = Зевать
 chat-emote-name-snore = Храпеть
+chat-emote-name-hiss = Шипеть
+chat-emote-name-mew = Мьюить
+chat-emote-name-growl = Рычать
+chat-emote-name-purr = Мурчать
 
 # Сообщение
 
@@ -56,12 +60,12 @@ chat-emote-msg-deathgasp = замирает и бездыханно оседае
 chat-emote-msg-deathgasp-monkey = издаёт слабый взвизг, оседает и замирает...
 chat-emote-msg-deathgasp-scurret = издаёт последнее 'ва', оседает и замирает...
 chat-emote-msg-buzz = жужжит!
-chat-emote-msg-weh = вэс!
-chat-emote-msg-hew = хэвс!
+chat-emote-msg-weh = вехает!
+chat-emote-msg-hew = хевает!
 chat-emote-msg-chirp = щебечет!
 chat-emote-msg-beep = пищит
-chat-emote-msg-chime = издаёт звон
-chat-emote-msg-buzzestwo = издаёт бип-буп.
+chat-emote-msg-chime = звенит
+chat-emote-msg-buzzestwo = издаёт бип-буп
 chat-emote-msg-ping = издаёт пинг
 chat-emote-msg-sneeze = чихает
 chat-emote-msg-cough = кашляет
@@ -70,3 +74,6 @@ chat-emote-msg-cathisses = шипит
 chat-emote-msg-monkeyscreeches = кричит
 chat-emote-msg-yawn = зевает
 chat-emote-msg-snore = храпит
+chat-emote-msg-mew = мьюит
+chat-emote-msg-growl = рычит
+chat-emote-msg-purr = мурчит

@@ -3,19 +3,19 @@
 cargo-console-menu-title = Консоль заказа грузов
 cargo-console-menu-flavor-left = Заказывай ещё больше пицц чем обычно!
 cargo-console-menu-flavor-right = v2.1
-cargo-console-menu-account-name-label = Имя аккаунта:{ " " }
+cargo-console-menu-account-name-label = Имя аккаунта
 cargo-console-menu-account-name-none-text = Нет
 
-cargo-console-menu-shuttle-name-label = Название шаттла:{ " " }
+cargo-console-menu-shuttle-name-label = Название шаттла
 cargo-console-menu-shuttle-name-none-text = Нет
-cargo-console-menu-points-label = Кредиты:{ " " }
+cargo-console-menu-points-label = Кредиты
 cargo-console-menu-points-amount = ${ $amount }
-cargo-console-menu-shuttle-status-label = Статус шаттла:{ " " }
+cargo-console-menu-shuttle-status-label = Статус шаттла
 cargo-console-menu-shuttle-status-away-text = Отбыл
-cargo-console-menu-order-capacity-label = Объём заказов:{ " " }
+cargo-console-menu-order-capacity-label = Объём заказов
 cargo-console-menu-call-shuttle-button = Активировать телепад
 cargo-console-menu-permissions-button = Доступы
-cargo-console-menu-categories-label = Категории:{ " " }
+cargo-console-menu-categories-label = Категории:
 cargo-console-menu-search-bar-placeholder = Поиск
 cargo-console-menu-requests-label = Запросы
 cargo-console-menu-orders-label = Заказы

@@ -173,3 +173,23 @@ ent-SyringeRomerol = { ent-PrefilledSyringe }
 ent-SyringeStimulants = { ent-PrefilledSyringe }
     .suffix = hyperzine
     .desc = { ent-PrefilledSyringe.desc }
+
+pill-label-dexalin = { reagent-name-dexalin } 10u
+pill-label-dylovene = { reagent-name-dylovene } 10u
+pill-label-hyronalin = { reagent-name-hyronalin } 10u
+pill-label-potassium-iodide = { reagent-name-potassium-iodide } 10u
+pill-label-iron = { reagent-name-iron } 10u
+pill-label-copper = { reagent-name-copper } 10u
+pill-label-kelotane = { reagent-name-kelotane } 10u
+pill-label-dermaline = { reagent-name-dermaline } 10u
+pill-label-tricordrazine = { reagent-name-tricordrazine } 10u
+pill-label-bicaridine = { reagent-name-bicaridine } 10u
+pill-label-charcoal = { reagent-name-charcoal } 10u
+pill-label-ibuprofen = { reagent-name-ibuprofen } 10u
+pill-label-tramadol = { reagent-name-tramadol } 7.5u
+pill-label-oxycodone = { reagent-name-oxycodone } 5u
+
+syringe-label-lethal-injection = Lethal Injection
+
+patch-label-bicaridine = { reagent-name-bicaridine } 30u
+patch-label-dermaline = { reagent-name-dermaline } 30u

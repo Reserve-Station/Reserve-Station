@@ -218,7 +218,9 @@
     - warbling
     - warbled
     #Reserve translation begin
+    - скрип
     - поскрипывает
+    - скрипит
     #Reserve translation end
 
 - type: emote
@@ -246,6 +248,8 @@
     - урчит
     - заурчал
     - заурчала
+    - заурчали
+    - заурчало
     #Reserve translation end
 
 - type: emote # Mono
@@ -266,6 +270,14 @@
   - bagawks
   - bawk
   - bawks
+  # Reserve translation begin
+  - курлык
+  - кудах
+  - курлычет
+  - кудахчет
+  - курлыкает
+  - кудахтает
+  # Reserve translation end
 
 - type: emote
   id: Gulp
@@ -283,9 +295,13 @@
     - gulps
     - gulp
     #Reserve translation begin
+    - глоть
+    - глотает
     - сглатывает
     - сглотнул
     - сглотнула
+    - сглотнули
+    - сглотнуло
     #Reserve translation end
 
 - type: emote
@@ -302,6 +318,12 @@
     - is surprised
     - exclamation marks
     - exclamation mark
+    # Reserve translation begin
+    - удивляется
+    - выглядит удивлённым
+    - выглядит удивлённой
+    - выглядят удивлёнными
+    # Reserve translation end
 
 - type: emote
   id: Hoot
@@ -320,6 +342,14 @@
     - hoot
     - hooting
     - hooted
+    # Reserve translation begin
+    - уух
+    - ухает
+    - ухнул
+    - ухнула
+    - ухнули
+    - ухнуло
+    # Reserve translation end
 
 - type: emote
   id: Scree
@@ -336,6 +366,9 @@
     - screes
     - screeing
     - screed
+    # Reserve translation begin
+    - скрии
+    # Reserve translation end
 
 - type: emote
   id: Call
@@ -352,6 +385,13 @@
     - calls
     - calling
     - called
+    # Reserve translation begin
+    - зовёт
+    - позвал
+    - позвала
+    - позвали
+    - позвало
+    # Reserve translation end
 
 - type: emote
   id: Squawk
@@ -368,6 +408,11 @@
     - squawks
     - squawking
     - squawked
+    # Reserve translation begin
+    - сквок
+    - сквокает
+    - сквочет
+    # Reserve translation end
 
 - type: emote
   id: Quack
@@ -384,6 +429,14 @@
     - quacks
     - quacking
     - quacked
+    # Reserve translation begin
+    - кря
+    - крякает
+    - крякнул
+    - крякнула
+    - крякнули
+    - крякнуло
+    # Reserve translation end
 
 - type: emote
   id: Snort
@@ -400,6 +453,15 @@
     - snorts
     - snorting
     - snorted
+    # Reserve translation begin
+    - шмыг
+    - шмыгает
+    - шмыгает носом
+    - шмыгнул носом
+    - шмыгнула носом
+    - шмыгнули носом
+    - шмыгнуло носом
+    # Reserve translation end
 
 - type: emote
   id: Squee
@@ -416,6 +478,10 @@
     - squees
     - squeeing
     - squeed
+    # Reserve translation begin
+    - скуии
+    - скуиит
+    # Reserve translation end
 
 - type: emote
   id: Stomp
@@ -432,6 +498,14 @@
     - stomps
     - stomping
     - stomped
+    # Reserve translation begin
+    - топ
+    - топает
+    - топнул
+    - топнула
+    - топнули
+    - топнуло
+    # Reserve translation end
 
 - type: emote
   id: Gekker
@@ -450,6 +524,20 @@
     - gekkers
     - gekkering
     - gekkered
+    # Reserve translation begin
+    - гекет
+    - гекает
+    - гекнул
+    - гекнула
+    - гекнули
+    - гекнуло
+    - геккет
+    - геккает
+    - геккнул
+    - геккнула
+    - геккнули
+    - геккнуло
+    # Reserve translation end
 
 - type: emote
   id: Yap
@@ -468,6 +556,11 @@
     - yaps
     - yapping
     - yapped
+    # Reserve translation begin
+    - болтает
+    - несёт чушь
+    - бредит
+    # Reserve translation end
 
 - type: emote
   id: Gurgle
@@ -486,6 +579,14 @@
     - gurgles
     - gurgling
     - gurgled
+    # Reserve translation begin
+    - булькает
+    - бульчит
+    - булькнул
+    - булькнула
+    - булькнули
+    - булькнуло
+    # Reserve translation end
 
 - type: emote
   id: Liss
@@ -504,6 +605,14 @@
     - lisses
     - lissing
     - lissed
+    # Reserve translation begin
+    - лисс
+    - лиссит
+    - лисснул
+    - лисснула
+    - лисснули
+    - лисснуло
+    # Reserve translation end
 
 - type: emote
   id: Lurr
@@ -522,6 +631,14 @@
     - lurrs
     - lurring
     - lurred
+    # Reserve translation begin
+    - лурр
+    - луррит
+    - луррнул
+    - луррнула
+    - луррнули
+    - луррнуло
+    # Reserve translation end
 
 - type: emote
   id: Snicker
@@ -540,6 +657,15 @@
     - snickers
     - snickering
     - snickered
+    # Reserve translation begin
+    - хихи
+    - хи-хи
+    - хихикает
+    - хихикнул
+    - хихикнула
+    - хихикнули
+    - хихикнуло
+    # Reserve translation end
 
 - type: emote
   id: Multichirp
@@ -555,6 +681,14 @@
     - chirps a chorus
     - chirps in a chorus
     - chorus of chirps
+    # Reserve translation begin
+    - щебечет хором
+    - множественно щебечет
+    - мультищебечет
+    - чирикает хором
+    - множественно щебчирикаетечет
+    - мультичирикает
+    # Reserve translation end
 
 - type: emote
   id: SyndieBorgLaugh
@@ -566,6 +700,10 @@
   chatTriggers:
     - synlaugh
     - synlaughs
+    # Reserve translation begin
+    - синсмеётся
+    - синсмеется
+    # Reserve translation end
 
 - type: emote
   id: Hum
@@ -585,6 +723,17 @@
     - hums
     - humming
     - hummed
+    # Reserve translation begin
+    - гудит
+    - погудел
+    - погудела
+    - погудели
+    - погудело
+    - загудел
+    - загудела
+    - загудели
+    - загудело
+    # Reserve translation end
 
 - type: emote
   id: Sniff
@@ -604,3 +753,17 @@
     - sniffs
     - sniffing
     - sniffed
+    # Reserve translation begin
+    - нюх
+    - нюхает
+    - занюхивает
+    - принюхивается
+    - нюхнул
+    - нюхнула
+    - нюхнули
+    - нюхнуло
+    - понюхал
+    - понюхала
+    - понюхали
+    - понюхало
+    # Reserve translation end

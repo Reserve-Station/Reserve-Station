@@ -1,7 +1,7 @@
-ent-WeaponArcStatic = { "" }
-    .desc = { "" }
-ent-WeaponArcAnimated = { "" }
-    .desc = { "" }
+ent-WeaponArcStatic = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }
+ent-WeaponArcAnimated = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }
 ent-WeaponArcThrust = { ent-WeaponArcStatic }
     .desc = { ent-WeaponArcStatic.desc }
 ent-WeaponArcSlash = { ent-WeaponArcStatic }

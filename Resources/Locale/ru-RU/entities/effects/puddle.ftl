@@ -25,7 +25,7 @@ ent-PuddleFlour = { ent-PuddleTemporary }
     .desc = { ent-PuddleTemporary.desc }
     .suffix = Мука
 ent-PuddleSparkle = Блеск
-    .desc = { "" }
+    .desc = Признак крайней чистоты.
 ent-Puddle = лужа
     .desc = Лужа жидкости.
 

@@ -1,2 +1,2 @@
-ent-BaseDebris = { "" }
-    .desc = { "" }
+ent-BaseDebris = обломки
+    .desc = Разруха...

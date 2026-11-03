@@ -24,14 +24,8 @@
     - yelling
     # Reserve-Localization-Start
     - кричит
-    - кричит.
-    - кричит!
     - орёт
-    - орёт.
-    - орёт!
     - визжит
-    - визжит.
-    - визжит!
     # Reserve-Localization-End
 
 - type: emote
@@ -63,10 +57,11 @@
     - смеется
     - смеётся
     - хохочет
-    - хихикает
-    - хихикнул
-    - хихикнула
     - ржёт
+    - заржал
+    - заржала
+    - заржали
+    - заржало
     # Reserve-Localization-End
 
 - type: emote
@@ -90,6 +85,9 @@
     - хонк
     - хонкает
     - хонкнул
+    - хонкнула
+    - хонкнули
+    - хонкнуло
     # Reserve-Localization-End
 
 - type: emote
@@ -112,6 +110,8 @@
     - вздыхает
     - вздохнул
     - вздохнула
+    - вздохнули
+    - вздохнуло
     # Reserve-Localization-End
 
 - type: emote
@@ -134,7 +134,10 @@
     - свистит
     - свистнул
     - свистнула
+    - свистнули
+    - свистнуло
     - присвистывает
+    - насвистывает
     # Reserve-Localization-End
 
 - type: emote
@@ -160,6 +163,13 @@
     - плачет
     - рыдает
     - хныкает
+    - хнычет
+    - ревет
+    - ревёт
+    - заревел
+    - заревела
+    - заревели
+    - заревело
     # Reserve-Localization-End
 
 - type: emote
@@ -231,9 +241,6 @@
    # Reserve-Localization-Start
    - пищит
    - скуик
-   - скуик!
-   - скрипит
-   - скрип
    # Reserve-Localization-End
 
 - type: emote
@@ -367,12 +374,12 @@
     - clapped
     # Reserve-Localization-Start
     - хлопает
-    - хлопнул
-    - хлопнула
     - хлопает в ладоши
-    - хлопнул в ладоши
-    - хлопнула в ладоши
     - апплодирует
+    - похлопал
+    - похлопала
+    - похлопали
+    - похлопало
     # Reserve-Localization-End
 
 - type: emote
@@ -390,6 +397,17 @@
   chatTriggers:
     - clap
     - claps their hands together
+    # Reserve-Localization-Start
+    - хлоп
+    - хлопнул
+    - хлопнула
+    - хлопнули
+    - хлопнуло
+    - хлопнул в ладоши
+    - хлопнула в ладоши
+    - хлопнули в ладоши
+    - хлопнуло в ладоши
+    # Reserve-Localization-End
 
 - type: emote
   id: Snap
@@ -456,8 +474,12 @@
     - стучит хвостом
     - стукнул хвостом
     - стукнула хвостом
+    - стукнули хвостом
+    - стукнуло хвостом
     - стукнул своим хвостом
     - стукнула своим хвостом
+    - стукнули своим хвостом
+    - стукнуло своим хвостом
     # Reserve-Localization-End
 
 - type: emote
@@ -480,6 +502,8 @@
     - отдаёт честь
     - отдал честь
     - отдала честь
+    - отдали честь
+    - отдало честь
     # Reserve-Localization-End
 
 - type: emote
@@ -512,6 +536,13 @@
   chatMessages: ["chat-emote-msg-deathgasp"]
   chatTriggers:
   - deathgasp
+  # Reserve-Localization-Start
+  - умирает
+  - умер
+  - умерла
+  - умерли
+  - умерло
+  # Reserve-Localization-End
 
 - type: emote
   id: MonkeyDeathgasp
@@ -563,6 +594,14 @@
   chatTriggers: # Floof - you can weh now
     - weh
     - wehs
+    # Reserve-Localization-Start
+    - вех
+    - вехает
+    - вехнул
+    - вехнула
+    - вехнули
+    - вехнуло
+    # Reserve-Localization-End
 
 - type: emote
   id: Hew
@@ -593,6 +632,15 @@
     - chirping
     # Reserve-Localization-Start
     - чирикает
+    - чирикнул
+    - чирикнула
+    - чирикнули
+    - чирикнуло
+    - щебечет
+    - защебетал
+    - защебетала
+    - защебетали
+    - защебетало
     # Reserve-Localization-End
 
 # Machine Emotes
@@ -615,6 +663,11 @@
     - beeping
     # Reserve-Localization-Start
     - бип
+    - бипает
+    - бипнул
+    - бипнула
+    - бипнули
+    - бипнуло
     # Reserve-Localization-End
 
 - type: emote
@@ -635,6 +688,11 @@
     - chiming
     # Reserve-Localization-Start
     - дзынь
+    - дзынькает
+    - дзынькнул
+    - дзынькнула
+    - дзынькнули
+    - дзынькнуло
     # Reserve-Localization-End
 
 - type: emote
@@ -684,4 +742,6 @@
     - pinging
     # Reserve-Localization-Start
     - пинг
+    - пингает
+    - пингует
     # Reserve-Localization-End

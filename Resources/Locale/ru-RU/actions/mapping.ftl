@@ -1,5 +1,5 @@
 ent-BaseMentalAction = Действие
-    .desc = { "" }
+    .desc = Работает силой мысли.
 ent-BaseMappingAction = { ent-BaseMentalAction }
     .desc = { ent-BaseMentalAction.desc }
 ent-BaseMappingDecalAction = { ent-BaseMappingAction }

@@ -1,4 +1,4 @@
-names-slasher-title-dataset-1 = { "" } 
+names-slasher-title-dataset-1 = Полуночный
 names-slasher-title-dataset-2 = Бухты Гавани
 names-slasher-title-dataset-3 = Технического Тоннеля
 names-slasher-title-dataset-4 = Ящика с Инструментами
