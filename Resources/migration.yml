@@ -1082,8 +1082,8 @@ ShelfWallFreezerWhite: ShelfWallFreezerWhiteFilledRandom
 ShelfWallFreezerDark: ShelfWallFreezerDarkFilledRandom
 
 # 2026-10-24 Reserve Station edit: Halloween on Reserve
-Poweredlight: PoweredlightHalloween
-PoweredSmallLight: PoweredSmallLightHalloween
+# Poweredlight: PoweredlightHalloween  # Возвращено обычное освещение
+# PoweredSmallLight: PoweredSmallLightHalloween  # Возвращено обычное освещение
 Lamp: RandomHalloweenCandleBundleSpawner
 LampGold: RandomHalloweenCandleBundleSpawner
 PottedPlant0: RandomHalloweenDecorSpawner
