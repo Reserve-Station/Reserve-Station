@@ -101,7 +101,7 @@ ent-FoodSnackLollypopIce = ледяной леденец
     .suffix = Лодаут, Безделушки
 ent-FoodSnackLollypopProtein = протеиновый леденец
     .desc = СОДЕРЖИТ ДОБАВЛЕННЫЙ САХАР?!?!
-    .suffix = Лодаут, Безделушки
+    .suffix = Лодаут, Безделушки, Спорт
 
 ent-TowelColorBorgNT = полотенце из проволоки
     .desc = { ent-BaseTowel.desc }

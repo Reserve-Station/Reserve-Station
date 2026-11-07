@@ -80,6 +80,10 @@ ent-SpawnCandyBucket = спавнер - любое { ent-CandyBucket }
     .desc = { ent-MarkerBase.desc }
     .suffix = Хэллоуин, Тыква, Случайное
 
+ent-FoodDonutJellyPumpkin = желейный тыквенный пончик
+    .desc = Вкуснее всего с тыквенным пряным латте.
+    .suffix = Хэллоуин
+
 ent-HalloweenLightTube = { ent-LedLightTube }
     .desc = { ent-LedLightTube.desc }
     .suffix = Хэллоуин
@@ -132,6 +136,7 @@ ent-RandomBloodCooler = спавнер - случайный { ent-BloodCooler }
 ent-MobTomatoKillerMutant = помидор-мутант
     .desc = Такого на руки не возьмёшь...
     .suffix = Хэллоуин, Адмем, Злой, AI
+
 ent-MobFlyingCutlass = летучая сабля
     .desc = Абордажная сабля с призрачными крыльями.
     .suffix = Хэллоуин, Адмем, AI
@@ -210,6 +215,9 @@ ent-MobPumpkinKiller = тыква-убийца
 ent-MobPumpkinKillerSurreal = странная { ent-MobPumpkinKiller }
     .desc = { ent-MobPumpkinKiller.desc }
     .suffix = { ent-MobPumpkinKiller.suffix }
+ent-MobPumpkinKillerMutant = тыква-мутант
+    .desc = { ent-MobPumpkinKiller.desc }
+    .suffix = Хэллоуин, Адмем, Босс, Злой, AI
 
 ent-MobCthulhuEyeSmall = злобный глаз
     .desc = Влажный немигающий глаз, парящий в воздухе.

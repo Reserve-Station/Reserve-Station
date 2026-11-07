@@ -91,19 +91,19 @@ ent-BoxSurvivalSlotsOrchiDea = { ent-BoxSurvivalSlots } Орхи
 
 ent-DrinkFitnessShakerGold = золотой { ent-DrinkFitnessShakerBlack }
     .desc = Цветной фитнес-шейкер для смешивания протеиновых напитков.
-    .suffix = Технические туннели
+    .suffix = Технические туннели, Спорт
 ent-DrinkFitnessShakerSyndicate = кроваво-красный { ent-DrinkFitnessShakerBlack }
     .desc = Цветной фитнес-шейкер для смешивания протеиновых напитков.
-    .suffix = Технические туннели
+    .suffix = Технические туннели, Спорт, Синдикат
 ent-DrinkFitnessShakerPink = розовый { ent-DrinkFitnessShakerBlack }
     .desc = Цветной фитнес-шейкер для смешивания протеиновых напитков.
-    .suffix = Технические туннели
+    .suffix = Технические туннели, Спорт
 ent-DrinkFitnessShakerNT = { ent-DrinkFitnessShakerBlack } NanoTrasen
     .desc = Цветной фитнес-шейкер для смешивания протеиновых напитков.
-    .suffix = Технические туннели
+    .suffix = Технические туннели, Спорт
 ent-DrinkFitnessShakerLarge = большой { ent-DrinkFitnessShakerBlack }
     .desc = Увеличенный фитнес-шейкер для смешивания протеиновых напитков.
-    .suffix = Технические туннели
+    .suffix = Технические туннели, Спорт
 
 ent-BoxDrinkFitnessShaker = коробка с фитнес-шейкерами
     .desc = Коробка, содержащая набор фитнес-шейкеров разных цветов и размеров.

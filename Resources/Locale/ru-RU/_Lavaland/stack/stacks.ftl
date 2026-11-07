@@ -37,8 +37,8 @@ stack-flowers-ash =
 
 stack-flowers-pale =
     { $amount ->
-        [1] бледный цветок
-       *[other] бледных цветов
+        [1] блеклый цветок
+       *[other] блеклых цветов
     }
 
 stack-ice-wing =

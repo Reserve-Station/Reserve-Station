@@ -42,6 +42,7 @@ ent-FoodMealMemoryleek = лукотечка памяти
     .desc = Это должно освежить твою память.
 ent-DisgustingSweptSoup = солёно-сладкий мисо-кольный суп
     .desc = Господи Иисусе.
+    .suffix = Food
 ent-FoodMealQueso = кесо
     .desc = Классический соус для обмакивания, с которым невозможно ошибиться.
 ent-FoodMealSashimi = сашими

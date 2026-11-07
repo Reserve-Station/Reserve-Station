@@ -426,6 +426,35 @@
 
 # endregion Candy buckets
 
+# region Food
+
+- type: entity
+  parent: FoodDonutBase
+  id: FoodDonutJellyPumpkin
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - pumpkin
+  - type: Sprite
+    state: jelly-beige
+    color: "#ffcccc"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 1
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Sugar
+          Quantity: 1
+
+# endregion Food
+
 # region Lights
 
 - type: entity
@@ -708,7 +737,10 @@
     - id: FoodCakePumpkinSlice
     - id: FoodPiePumpkinSlice
     - id: FoodPumpkinSlice
+      weight: 0.35
+    - id: FoodCakeBrainSlice
       weight: 0.5
+    - id: FoodDonutJellyPumpkin
 
 - type: entityTable
   id: RandomHalloweenDrinkLarge
@@ -723,6 +755,8 @@
     - id: FoodSoupTomatoBlood
       weight: 0.5
     - id: FoodSoupEyeball
+    - id: FoodCakeBrain
+      weight: 0.5
     - id: FoodCakePumpkin
       weight: 0.5
     - id: FoodPiePumpkin
@@ -1630,6 +1664,54 @@
     seedId: pumpkinKiller
 
 - type: entity
+  parent: MobPumpkinKiller
+  id: MobPumpkinKillerMutant
+  components:
+  - type: GhostRole
+    prob: 1.0
+    raffle:
+      settings: default
+  - type: Sprite
+    scale: 2, 2
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: PumpkinFlesh
+        Quantity: 250
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      300: Dead
+  - type: Butcherable
+    spawned:
+    - id: FoodPumpkinSlice
+      amount: 20
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 240
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodPumpkinSlice:
+            min: 16
+            max: 20
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: gib
+  - type: MeleeWeapon
+    hidden: true
+    damage:
+      groups:
+        Brute: 38
+    animation: WeaponArcBite
+
+- type: entity
   parent: PumpkinKillerSeeds
   id: PumpkinKillerSeedsSurreal
   components:
@@ -1816,16 +1898,18 @@
     CandyBucketFilledAny: 4
     FoodCakePumpkinSlice: 3
     FoodPiePumpkinSlice: 3
+    FoodDonutJellyPumpkin: 3
+    FoodPumpkinSlice: 6
     DrinkPumpkinSpiceLatte: 4
-    PlushiePumpkin: 2
     DrinkPumpkinFleshGlass: 4
     DrinkPumpkinSoup: 4
     DrinkPumpkinBoomCan: 4
+    DrinkJuicePumpkinBottleFull: 2
+    PlushiePumpkin: 2
     ClothingHeadHatPumpkin: 2
     PumpkinBucket: 3
-    FoodPumpkinSlice: 6
-    DrinkJuicePumpkinBottleFull: 2
     PumpkinBucketSurreal: 1
+    PumpkinLanternSmall: 2
 
 - type: vendingMachineInventory
   id: HalloweenSpookyVendingInventory
@@ -1845,6 +1929,7 @@
     VinylSleeveDevil: 1
     VinylSleeveSkull: 1
     VinylSleeveVampire: 1
+    FoodCakeBrainSlice: 2
     PlushieGhostBurger: 2
     PlushieCosmicCult: 1
     PlushieLeguia: 1

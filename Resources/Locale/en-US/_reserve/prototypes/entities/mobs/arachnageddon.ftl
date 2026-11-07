@@ -53,6 +53,9 @@ ghost-role-information-black-death-rules = You are a [color={role-type-team-anta
 ent-MobArachnidWeb = web knight
     .desc = A spider in web armor that wove it themselves.
     .suffix = Halloween, Arachnageddon, Admeme
+ent-MobArachnidWebHostile = { ent-MobArachnidWeb }
+    .desc = { ent-MobArachnidWeb.desc }
+    .suffix = { ent-MobArachnidWeb.suffix }, Evil, AI
 
 ghost-role-information-arachnageddon-arachnid-name = Web Knight
 ghost-role-information-arachnageddon-arachnid-description = You wove your own web armor. Unfortunately, its durability leaves much to be desired...
@@ -68,6 +71,9 @@ ghost-role-information-arachnageddon-arachnid-rich-description = You love luxury
 ent-MobArachnidAncient = predecessor
     .desc = An ancient guardian with incredible strength.
     .suffix = Halloween, Arachnageddon, Admeme, Lavaland
+ent-MobArachnidAncientHostile = { ent-MobArachnidAncient }
+    .desc = { ent-MobArachnidAncient.desc }
+    .suffix = { ent-MobArachnidAncient.suffix }, Evil, AI
 
 ghost-role-information-arachnageddon-arachnid-ancient-name = Predecessor
 ghost-role-information-arachnageddon-arachnid-ancient-description = You are an ancient guardian with incredible strength. Your task is to protect Lavaland.

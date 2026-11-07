@@ -469,6 +469,20 @@
     prototypes: [ArachnidWebGear]
   - type: RandomHumanoidAppearance
 
+- type: entity
+  parent: MobArachnidWeb
+  id: MobArachnidWebHostile
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+  - type: CombatMode
+
 - type: startingGear
   id: ArachnidRichGear
   equipment:
@@ -525,6 +539,11 @@
   - type: Loadout
     prototypes: [ArachnidAncientGear]
   - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: MobArachnidAncient
+  id: MobArachnidAncientHostile
+  components:
   - type: InputMover
   - type: MobMover
   - type: NpcFactionMember
