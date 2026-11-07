@@ -27,7 +27,8 @@
       startingGear: WizardGear
       unequipOldGear: true
       roleLoadout:
-      - RoleSurvivalEVA
+      # - RoleSurvivalEVA
+      - AntagWizard
       components:
       - type: Wizard
       - type: CanEnchant
@@ -86,7 +87,8 @@
       startingGear: WizardGear
       unequipOldGear: true
       roleLoadout:
-      - RoleSurvivalEVA
+      # - RoleSurvivalEVA
+      - AntagWizard
       components:
       - type: Wizard
       - type: RandomMetadata
