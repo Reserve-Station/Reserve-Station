@@ -26,7 +26,7 @@
     pocket1: RitualDagger
     id: VisitorPDA
   inhand:
-  - Machete
+  - WeaponCrusherGlaive
 
 - type: startingGear
   parent: CossackGear
@@ -155,6 +155,18 @@
   - FoodSnackLollypopWeh
 
 - type: startingGear
+  parent: HelldiverGear
+  id: BoneCarnivalSkeletonHelldiverGear
+  inhand:
+  - WeaponSubMachineGunM7S
+
+- type: startingGear
+  parent: OuterCommanderGear
+  id: BoneCarnivalSkeletonOuterCommanderGear
+  inhand:
+  - NavyOfficerSabre
+
+- type: startingGear
   id: BoneCarnivalSkeletonSanabiGear
   equipment:
     head: ClothingHeadSanabi
@@ -199,9 +211,117 @@
   equipment:
     head: ClothingHeadHatPumpkin
 
+- type: startingGear
+  id: BoneCarnivalSkeletonAncientWarriorGear
+  equipment:
+    head: ClothingHeadHatHelmetAncient
+    jumpsuit: ClothingUniformJumpsuitCossack
+    outerClothing: ClothingOuterArmorAncient
+    shoes: ClothingShoesBootsSalvage
+    id: VisitorPDA
+  inhand:
+  - HolyClaymore
+
+- type: startingGear
+  id: BoneCarnivalSkeletonNTSRAGear
+  equipment:
+    head: ClothingHeadHelmetAncient
+    jumpsuit: ClothingUniformJumpsuitMilitaryColorRed
+    outerClothing: ClothingOuterHardsuitAncientEVA
+    shoes: ClothingShoesBootsWork
+    suitstorage: DoubleEmergencyOxygenTankFilled
+    id: VisitorPDA
+
+- type: startingGear
+  id: BoneCarnivalSkeletonSkyrimGuardGear
+  equipment:
+    head: ClothingHeadHatHelmetBrass
+    jumpsuit: ClothingUniformJumpsuitCossack
+    outerClothing: ClothingOuterBrassArmor
+    shoes: ClothingShoesBootsSalvage
+    id: VisitorPDA
+  inhand:
+  - Claymore
+
+- type: startingGear
+  id: BoneCarnivalSkeletonDekuHeroGear
+  equipment:
+    head: ClothingHeadHatDeku
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+    outerClothing: ClothingOuterArmorDeku
+    shoes: ClothingShoesSwat
+    id: VisitorPDA
+
+- type: startingGear
+  id: BoneCarnivalSkeletonCommandoGear
+  equipment:
+    head: ClothingHeadHatCommandoHelmet
+    jumpsuit: ClothingUniformJumpsuitColorBlack
+    outerClothing: ClothingOuterArmorCommando
+    shoes: ClothingShoesSwat
+    id: VisitorPDA
+  inhand:
+  - WeaponPistolDualetta
+  - WeaponPistolDualetta
+
+- type: startingGear
+  id: BoneCarnivalSkeletonEliteCombineGear
+  equipment:
+    head: ClothingHeadHatEliteHelmetAdmin
+    jumpsuit: ClothingUniformJumpsuitMilitaryColorBlackAlt
+    outerClothing: ClothingOuterArmorCombineEliteAdmin
+    shoes: ClothingShoesSwat
+    id: VisitorPDA
+  inhand:
+  - WeaponEnergyIonRifle
+
+- type: startingGear
+  id: BoneCarnivalSkeletonDiverGear
+  equipment:
+    head: ClothingHeadHatHuskDivingSuitHelmet
+    jumpsuit: ClothingUniformJumpsuitMilitaryColorBlackAlt
+    outerClothing: ClothingOuterArmorDivingSuit
+    shoes: ClothingShoesBootsSalvage
+    id: VisitorPDA
+
+- type: startingGear
+  id: BoneCarnivalSkeletonDiverHuskGear
+  equipment:
+    head: ClothingHeadHatDivingSuitHelmet
+    jumpsuit: ClothingUniformJumpsuitMilitaryColorBlackAlt
+    outerClothing: ClothingOuterArmorHuskDivingSuit
+    shoes: ClothingShoesBootsSalvage
+    id: VisitorPDA
+  inhand:
+  - Wrench
+
+- type: startingGear
+  id: BoneCarnivalSkeletonToadGear
+  equipment:
+    head: ClothingHeadHelmetPlump
+    jumpsuit: ClothingUniformJumpsuitSeniorResearcher
+    shoes: ClothingShoesBootsSalvage
+    id: VisitorPDA
+  inhand:
+  - ToyHammer
+
 # endregion Gear
 
 # region Entities
+
+- type: entity
+  id: MobSkeletonHostile
+  abstract: true
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+  - type: CombatMode
 
 - type: entity
   id: MobSkeletonGladiator
@@ -219,6 +339,10 @@
   - type: Loadout
     prototypes: [BoneCarnivalSkeletonGladiatorGear]
   - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonGladiator]
+  id: MobSkeletonGladiatorHostile
 
 - type: entity
   id: MobSkeletonCossack
@@ -270,15 +394,10 @@
   - type: Loadout
     prototypes: [BoneCarnivalSkeletonCultistGear]
   - type: RandomHumanoidAppearance
-  - type: InputMover
-  - type: MobMover
-  - type: NpcFactionMember
-    factions:
-    - SimpleHostile
-  - type: HTN
-    rootTask:
-      task: SimpleHumanoidHostileCompound
-  - type: CombatMode
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonCultist]
+  id: MobSkeletonCultistHostile
 
 - type: entity
   id: MobSkeletonGentleman
@@ -400,6 +519,10 @@
   - type: RandomHumanoidAppearance
 
 - type: entity
+  parent: [MobSkeletonHostile, MobSkeletonNinja]
+  id: MobSkeletonNinjaHostile
+
+- type: entity
   id: MobSkeletonFarEasternPirate
   parent: MobSkeletonPerson
   components:
@@ -468,6 +591,10 @@
   - type: RandomHumanoidAppearance
 
 - type: entity
+  parent: [MobSkeletonHostile, MobSkeletonTemplar]
+  id: MobSkeletonTemplarHostile
+
+- type: entity
   id: MobSkeletonKnight
   parent: MobSkeletonPerson
   components:
@@ -483,6 +610,10 @@
   - type: Loadout
     prototypes: [BoneCarnivalSkeletonKnightGear]
   - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonKnight]
+  id: MobSkeletonKnightHostile
 
 - type: entity
   id: MobSkeletonWeh
@@ -515,8 +646,12 @@
       settings: default
   - type: GhostTakeoverAvailable
   - type: Loadout
-    prototypes: [HelldiverGear]
+    prototypes: [BoneCarnivalSkeletonHelldiverGear]
   - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonHelldiver]
+  id: MobSkeletonHelldiverHostile
 
 - type: entity
   id: MobSkeletonOuterCommander
@@ -532,8 +667,12 @@
       settings: default
   - type: GhostTakeoverAvailable
   - type: Loadout
-    prototypes: [OuterCommanderGear]
+    prototypes: [BoneCarnivalSkeletonOuterCommanderGear]
   - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonOuterCommander]
+  id: MobSkeletonOuterCommanderHostile
 
 - type: entity
   id: MobSkeletonSnakeWarrior
@@ -553,6 +692,10 @@
   - type: RandomHumanoidAppearance
 
 - type: entity
+  parent: [MobSkeletonHostile, MobSkeletonSnakeWarrior]
+  id: MobSkeletonSnakeWarriorHostile
+
+- type: entity
   id: MobSkeletonSanabi
   parent: MobSkeletonPerson
   components:
@@ -570,6 +713,10 @@
   - type: RandomHumanoidAppearance
 
 - type: entity
+  parent: [MobSkeletonHostile, MobSkeletonSanabi]
+  id: MobSkeletonSanabiHostile
+
+- type: entity
   id: MobSkeletonHECUOperative
   parent: MobSkeletonPerson
   components:
@@ -585,6 +732,10 @@
   - type: Loadout
     prototypes: [HECUOperativeGear]
   - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonHECUOperative]
+  id: MobSkeletonHECUOperativeHostile
 
 - type: entity
   id: MobSkeletonPumpkin
@@ -619,5 +770,168 @@
   - type: Loadout
     prototypes: [BoneCarnivalSkeletonGhostRiderGear]
   - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: MobSkeletonPerson
+  id: MobSkeletonAncientWarrior
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-ancient-warrior-name
+    description: ghost-role-information-skeleton-ancient-warrior-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [BoneCarnivalSkeletonAncientWarriorGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonAncientWarrior]
+  id: MobSkeletonAncientWarriorHostile
+
+- type: entity
+  parent: MobSkeletonPerson
+  id: MobSkeletonNTSRA
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-NTSRA-name
+    description: ghost-role-information-skeleton-NTSRA-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [BoneCarnivalSkeletonNTSRAGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: MobSkeletonPerson
+  id: MobSkeletonSkyrimGuard
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-skyrim-guard-name
+    description: ghost-role-information-skeleton-skyrim-guard-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [BoneCarnivalSkeletonSkyrimGuardGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonSkyrimGuard]
+  id: MobSkeletonSkyrimGuardHostile
+
+- type: entity
+  parent: MobSkeletonPerson
+  id: MobSkeletonDekuHero
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-deku-hero-name
+    description: ghost-role-information-skeleton-deku-hero-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [BoneCarnivalSkeletonDekuHeroGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: MobSkeletonPerson
+  id: MobSkeletonCommando
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-commando-name
+    description: ghost-role-information-skeleton-commando-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [BoneCarnivalSkeletonCommandoGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonCommando]
+  id: MobSkeletonCommandoHostile
+
+- type: entity
+  parent: MobSkeletonPerson
+  id: MobSkeletonEliteCombine
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-elite-combine-name
+    description: ghost-role-information-skeleton-elite-combine-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [BoneCarnivalSkeletonEliteCombineGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonEliteCombine]
+  id: MobSkeletonEliteCombineHostile
+
+- type: entity
+  parent: MobSkeletonPerson
+  id: MobSkeletonDiver
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-diver-name
+    description: ghost-role-information-skeleton-diver-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [BoneCarnivalSkeletonDiverGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonDiver]
+  id: MobSkeletonDiverHostile
+  components:
+  - type: Loadout
+    prototypes: [BoneCarnivalSkeletonDiverHuskGear]
+
+- type: entity
+  parent: MobSkeletonPerson
+  id: MobSkeletonToad
+  components:
+  - type: GhostRole
+    name: ghost-role-information-skeleton-toad-name
+    description: ghost-role-information-skeleton-toad-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [BoneCarnivalSkeletonToadGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: [MobSkeletonHostile, MobSkeletonToad]
+  id: MobSkeletonToadHostile
 
 # endregion Entities
