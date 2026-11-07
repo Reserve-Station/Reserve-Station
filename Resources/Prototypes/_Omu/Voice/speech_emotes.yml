@@ -11,6 +11,14 @@
     - rattles
     - rattle
     - rattled
+    # Reserve translation begin
+    - трещит
+    - потрескивает
+    - протрещал
+    - протрещала
+    - протрещали
+    - протрещало
+    # Reserve translation end
 
 - type: emote # Omu
   id: ReptilianScreech
@@ -26,3 +34,10 @@
     - screeches
     - screeching
     - screeched
+    # Reserve translation begin
+    - скрежечет
+    - проскрежетал
+    - проскрежетала
+    - проскрежетали
+    - проскрежетало
+    # Reserve translation end

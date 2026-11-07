@@ -1,7 +1,9 @@
 ent-MobWeldbot = сварбот
     .desc = Не замена инженеру, но лучше, чем ничего.
+    .suffix = Минибот, AI
 ent-SpawnMobWeldbot = спавнер сварбота
     .desc = { ent-MarkerBase.desc }
+    .suffix = Минибот
 ent-SpawnMobWeldbotChance10 = { ent-SpawnMobWeldbot }
     .desc = { ent-SpawnMobWeldbot.desc }
-    .suffix = Шанс 10%
+    .suffix = Минибот, Шанс 10%
