@@ -53,6 +53,9 @@ ghost-role-information-black-death-rules = Вы [color={ role-type-team-antagoni
 ent-MobArachnidWeb = паутинный рыцарь
     .desc = Паук в паутинной броне, который сплёл её сам.
     .suffix = Хэллоуин, Арахнагеддон, Арахнид, Адмем
+ent-MobArachnidWebHostile = { ent-MobArachnidWeb }
+    .desc = { ent-MobArachnidWeb.desc }
+    .suffix = { ent-MobArachnidWeb.suffix }, Злой, AI
 
 ghost-role-information-arachnageddon-arachnid-name = Паутинный рыцарь
 ghost-role-information-arachnageddon-arachnid-description = Вы сами сплели себе свою паутинную броню. Жаль, прочность её оставляет желать лучшего...
@@ -68,6 +71,9 @@ ghost-role-information-arachnageddon-arachnid-rich-description = Вы любит
 ent-MobArachnidAncient = предтечь
     .desc = Древний страж, обладающий невероятной силой.
     .suffix = Хэллоуин, Арахнагеддон, Арахнид, Древний, Адмем, Лаваленд
+ent-MobArachnidAncientHostile = { ent-MobArachnidAncient }
+    .desc = { ent-MobArachnidAncient.desc }
+    .suffix = { ent-MobArachnidAncient.suffix }, Злой, AI
 
 ghost-role-information-arachnageddon-arachnid-ancient-name = Предтечь
 ghost-role-information-arachnageddon-arachnid-ancient-description = Вы - древний страж с невероятной силой. Ваша задача — защищать Лаваленд.

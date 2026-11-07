@@ -80,6 +80,10 @@ ent-SpawnCandyBucket = spawner for any { ent-CandyBucket }
     .desc = { ent-MarkerBase.desc }
     .suffix = Halloween, Pumpkin, Random
 
+ent-FoodDonutJellyPumpkin = pumpkin jelly-donut
+    .desc = Goes great with pumpkin spice latte.
+    .suffix = Halloween
+
 ent-HalloweenLightTube = { ent-LedLightTube }
     .desc = { ent-LedLightTube.desc }
     .suffix = Halloween
@@ -132,6 +136,7 @@ ent-RandomBloodCooler = random blood cooler spawner
 ent-MobTomatoKillerMutant = mutant killer tomato
     .desc = You won't be able to pick this one up...
     .suffix = Halloween, Admeme, Hostile, AI
+
 ent-MobFlyingCutlass = flying cutlass
     .desc = A boarding cutlass with spectral wings.
     .suffix = Halloween, Admeme, AI
@@ -150,18 +155,22 @@ ent-MobFlyingLaserGun = flying laser gun
 ent-MobFlyingLaserGunHostile = { ent-MobFlyingLaserGun }
     .desc = A flying laser gun that pursues and shoots its targets.
     .suffix = Halloween, Admeme, Hostile, AI
+
 ent-MobFlyingGhostBurger = { ent-FoodBurgerGhost }
     .desc = Too spooky to stay on the plate, but still edible.
     .suffix = Halloween, Admeme, AI
 ent-MobFlyingGhostBurgerHostile = { ent-MobFlyingGhostBurger }
     .desc = You can't hide...
     .suffix = Halloween, Admeme, Hostile, AI
+
 ent-MobPlushieCeteraiOrchiDeaMimeEvil = evil { ent-PlushieCeteraiOrchiDeaMime }
     .desc = It seems like she loves you a little too much...
     .suffix = { ent-PlushieCeteraiOrchiDeaMime.suffix }, Halloween, Admeme, Hostile, AI
+
 ent-SpiritCandleDecor = { ent-SpiritCandle }
     .desc = A decorative candle for ritual gatherings.
     .suffix = Halloween, Admeme, Decorative
+
 ent-PlushiePumpkin = pumpkin plushie
     .desc = A stuffed toy shaped like a pumpkin.
     .suffix = Halloween, { ent-BasePlushie.suffix }
@@ -206,6 +215,9 @@ ent-MobPumpkinKiller = pumpkin killer
 ent-MobPumpkinKillerSurreal = surreal { ent-MobPumpkinKiller }
     .desc = { ent-MobPumpkinKiller.desc }
     .suffix = { ent-MobPumpkinKiller.suffix }
+ent-MobPumpkinKillerMutant = pumpkin mutant
+    .desc = { ent-MobPumpkinKiller.desc }
+    .suffix = Halloween, Admeme, Boss, Evil, AI
 
 ent-MobCthulhuEye = floating eye
     .desc = A wet, unblinking eye that drifts through the air.
