@@ -129,7 +129,7 @@ public abstract class SharedObjectivesSystem : EntitySystem
             return null;
         }
 
-        return new ObjectiveInfo(title, description, comp.Icon, progress,comp.ServerCurrency, comp.ServerCurrencyRewardPartial); //goobstation
+        return new ObjectiveInfo(title, description, comp.Icon, progress,comp.ServerCurrency, comp.ServerCurrencyRewardPartial, comp.Optional); //goobstation, reserve edit: syndicate-objectives #468
     }
 
     /// <summary>
@@ -138,6 +138,12 @@ public abstract class SharedObjectivesSystem : EntitySystem
     /// </summary>
     public float? GetProgress(EntityUid uid, Entity<MindComponent> mind)
     {
+        // Reserve edit start: syndicate-objectives #468
+        // Optional objectives are not tracked. A missing progress handler would drop them from the character menu.
+        if (TryComp<ObjectiveComponent>(uid, out var objective) && objective.Optional)
+            return 0f;
+        // Reserve edit end: syndicate-objectives #468
+
         var ev = new ObjectiveGetProgressEvent(mind, mind.Comp);
         RaiseLocalEvent(uid, ref ev);
         if (ev.Progress != null)
