@@ -1,5 +1,6 @@
 ent-FoodSnackProteinbar = протеиновый батончик
     .desc = Протеиновые батончики марки ОпухМАКС, гарантированно заставят вас чувствовать себя самоуверенно.
+    .suffix = Спорт
 ent-FoodSnackLunacakeWrapped = упакованный лунный пирожок
     .desc = Теперь с содержанием реголита на 20% меньше, вызывающего судебные иски!
 ent-FoodSnackLunacake = лунный пирожок
@@ -47,6 +48,10 @@ ent-FoodSnackAncientHotdog = космический хот-дог
     .desc = Этот, вероятно, лишь немного менее опасен для употребления, чем когда он был только что приготовлен.
 ent-FoodSnackAncientTaco = космическое тако
     .desc = Интересно, что оболочка стала мягкой, а содержимое — несвежим.
+ent-FoodSnackMothdog = мольдог
+    .desc = Проживает свои лучшие годы.
+    .suffix = Ниан, Таракамоль
+
 ent-FoodPacketLunacakeTrash = обёртка от лунного пирожка
     .desc = { ent-FoodPacketTrash.desc }
 ent-FoodPacketMochicakeTrash = обёртка от мочи-пирожка
@@ -73,5 +78,4 @@ ent-FoodPacketStickTrash = палочка
     .desc = { ent-FoodPacketLunacakeTrash.desc }
 ent-FoodPacketProteinbarTrash = обёртка от протеинового батончика
     .desc = { ent-FoodPacketLunacakeTrash.desc }
-ent-FoodSnackMothdog = мольдог
-    .desc = Проживает свои лучшие годы.
+    .suffix = Спорт

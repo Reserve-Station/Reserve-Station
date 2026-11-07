@@ -16,6 +16,6 @@ ent-ArrowExplosive = взрывная стрела
 ent-ArrowXray = рентгеновская стрела
     .desc = { ent-BaseHardlightArrow.desc } Эта проходит через стены.
 ent-ArrowBee = пчелиная стрела
-    .desc = { ent-BaseHardlightArrow.desc } Эта... О боже... ПЧЕЛЫ!!!
+    .desc = { ent-BaseHardlightArrow.desc } Эта... О боже... ПЧЁЛЫ!!!
 ent-ArrowIon = ионная стрела
     .desc = { ent-BaseHardlightArrow.desc } Вызывает ЭМИ-разряд при контакте.

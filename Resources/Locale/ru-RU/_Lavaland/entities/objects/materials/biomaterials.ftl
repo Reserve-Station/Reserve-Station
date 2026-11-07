@@ -8,8 +8,8 @@ ent-MaterialFlowersAsh10 = { ent-MaterialFlowersAsh }
     .desc = { ent-MaterialFlowersAsh.desc }
     .suffix = 10, Лаваленд
 
-ent-MaterialFlowersPale = бледные цветы
-    .desc = Собранные в купу бледные цветы.
+ent-MaterialFlowersPale = блеклые цветы
+    .desc = Собранные в купу блеклые цветы.
     .suffix = Полный, Лаваленд
 ent-MaterialFlowersPale1 = { ent-MaterialFlowersPale }
     .desc = { ent-MaterialFlowersPale.desc }
