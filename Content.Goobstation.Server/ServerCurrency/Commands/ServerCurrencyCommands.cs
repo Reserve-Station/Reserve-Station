@@ -148,7 +148,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
+    [AdminCommand(AdminFlags.Host)] // Reserve edit: Coin transfer ovehaul
     public sealed partial class AddServerCurrencyCommand : IConsoleCommand
     {
         private const string Operation = "server-currency-operation-add"; // Reserve edit: Coin transfer ovehaul
@@ -206,7 +206,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
+    [AdminCommand(AdminFlags.Host)] // Reserve edit: Coin transfer ovehaul
     public sealed partial class RemoveServerCurrencyCommand : IConsoleCommand
     {
         private const string Operation = "server-currency-operation-remove"; // Reserve edit: Coin transfer ovehaul
@@ -264,7 +264,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
+    [AdminCommand(AdminFlags.Host)] // Reserve edit: Coin transfer ovehaul
     public sealed partial class SetServerCurrencyCommand : IConsoleCommand
     {
         private const string Operation = "server-currency-operation-set"; // Reserve edit: Coin transfer ovehaul
@@ -322,7 +322,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
+    [AdminCommand(AdminFlags.Host)] // Reserve edit: Coin transfer ovehaul
     public sealed partial class GetServerCurrencyCommand : IConsoleCommand
     {
         private const string Operation = "server-currency-operation-get"; // Reserve edit: Coin transfer ovehaul
