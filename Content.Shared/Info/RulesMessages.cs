@@ -17,11 +17,14 @@ public sealed class SendRulesInformationMessage : NetMessage
     public string CoreRules { get; set; } = string.Empty;
     public bool ShouldShowRules { get; set; }
 
+    public bool ShouldShowNewPlayerGuide { get; set; } // Reserve: new player guide
+
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {
         PopupTime = buffer.ReadFloat();
         CoreRules = buffer.ReadString();
         ShouldShowRules = buffer.ReadBoolean();
+        ShouldShowNewPlayerGuide = buffer.ReadBoolean(); // Reserve: new player guide
     }
 
     public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
@@ -29,6 +32,7 @@ public sealed class SendRulesInformationMessage : NetMessage
         buffer.Write(PopupTime);
         buffer.Write(CoreRules);
         buffer.Write(ShouldShowRules);
+        buffer.Write(ShouldShowNewPlayerGuide); // Reserve: new player guide
     }
 }
 

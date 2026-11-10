@@ -3,26 +3,39 @@
 using Content.Client.Administration.Managers; // Reserve edit
 using Content.Client.Gameplay;
 using Content.Client.Info;
+using Content.Client.Lobby;
+using Content.Client._Reserve.NewPlayerGuide;
 using Content.Shared.Administration; // Reserve edit
+using Content.Shared.CCVar;
 using Content.Shared.Guidebook;
 using Content.Shared.Info;
+using Content.Shared._Reserve.CCCVars;
 using Robust.Client.Console;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
 
 namespace Content.Client.UserInterface.Systems.Info;
 
-public sealed class InfoUIController : UIController, IOnStateExited<GameplayState>
+public sealed class InfoUIController : UIController, IOnStateExited<GameplayState>, IOnStateExited<LobbyState> // Reserve: IOnStateExited<GameplayState> -> IOnStateExited<GameplayState>, IOnStateExited<LobbyState>
 {
     [Dependency] private readonly IClientAdminManager _adminManager = default!; // Reserve edit
     [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!; // Reserve: new player guide
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     private RulesPopup? _rulesPopup;
     private RulesAndInfoWindow? _infoWindow;
+    // Reserve start: new player guide
+    private NewPlayerGuidePopup? _newPlayerGuidePopup;
+    private bool _newPlayerGuideAutoShown;
+    private bool _newPlayerGuideSettingsChanged;
+    private float _rulesTimer;
+    // Reserve end
 
     private static readonly ProtoId<GuideEntryPrototype> DefaultRuleset = "DefaultRulesetReserve"; // Reserve edit
 
@@ -47,11 +60,40 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
 
                 OnAcceptPressed();
             });
+
+        // Reserve start: new player guide
+        _consoleHost.RegisterCommand("newplayerguide",
+            "Opens the new player setup guide.",
+            "newplayerguide",
+            (_, _, _) =>
+            {
+                // Don't stack the guide over an already open rules popup, or over itself.
+                if (_rulesPopup != null || _newPlayerGuidePopup != null)
+                    return;
+
+                ShowNewPlayerGuide(false, autoShown: false);
+            });
+        // Reserve end
     }
 
     private void OnRulesInformationMessage(SendRulesInformationMessage message)
     {
         RulesEntryId = message.CoreRules;
+        // Reserve start: new player guide
+        _rulesTimer = message.PopupTime;
+
+        if (_newPlayerGuidePopup != null)
+        {
+            _newPlayerGuidePopup.ShowRulesAfter |= message.ShouldShowRules;
+            return;
+        }
+
+        if (message.ShouldShowNewPlayerGuide && !_cfg.GetCVar(CCCVars.NewPlayerGuideSeen))
+        {
+            ShowNewPlayerGuide(message.ShouldShowRules, autoShown: true);
+            return;
+        }
+        // Reserve end
 
         if (message.ShouldShowRules)
             ShowRules(message.PopupTime);
@@ -59,12 +101,90 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
 
     public void OnStateExited(GameplayState state)
     {
+        CloseNewPlayerGuidePopup(); // Reserve: new player guide
+
         if (_infoWindow == null)
             return;
 
         _infoWindow.Dispose();
         _infoWindow = null;
     }
+
+    // Reserve start: new player guide
+    public void OnStateExited(LobbyState state)
+    {
+        CloseNewPlayerGuidePopup();
+    }
+
+    private void ShowNewPlayerGuide(bool showRulesAfter, bool autoShown)
+    {
+        if (_newPlayerGuidePopup != null)
+            return;
+
+        _newPlayerGuideAutoShown = autoShown;
+        _newPlayerGuidePopup = new NewPlayerGuidePopup
+        {
+            ShowRulesAfter = showRulesAfter,
+        };
+        _newPlayerGuidePopup.OnClosed += OnNewPlayerGuideClosed;
+        UIManager.WindowRoot.AddChild(_newPlayerGuidePopup);
+        LayoutContainer.SetAnchorPreset(_newPlayerGuidePopup, LayoutContainer.LayoutPreset.Wide);
+    }
+
+    private void OnNewPlayerGuideClosed()
+    {
+        if (_newPlayerGuidePopup == null)
+            return;
+
+        _newPlayerGuideSettingsChanged = _newPlayerGuidePopup.SettingsChanged;
+
+        if (_newPlayerGuideAutoShown)
+        {
+            _cfg.SetCVar(CCCVars.NewPlayerGuideSeen, true);
+            _newPlayerGuideSettingsChanged = true;
+        }
+
+        CloseNewPlayerGuidePopup();
+    }
+
+    private void CloseNewPlayerGuidePopup()
+    {
+        if (_newPlayerGuidePopup == null)
+            return;
+
+        var pendingRules = _newPlayerGuidePopup.ShowRulesAfter;
+        var saveConfig = _newPlayerGuideSettingsChanged || _newPlayerGuidePopup.SettingsChanged;
+
+        _newPlayerGuidePopup.OnClosed -= OnNewPlayerGuideClosed;
+        _newPlayerGuidePopup.Orphan();
+        _newPlayerGuidePopup = null;
+        _newPlayerGuideAutoShown = false;
+        _newPlayerGuideSettingsChanged = false;
+
+        if (saveConfig)
+            _cfg.SaveToFile();
+
+        if (pendingRules)
+            ShowRulesDeferred();
+    }
+
+    private void ShowRulesDeferred()
+    {
+        Timer.Spawn(TimeSpan.Zero, () =>
+        {
+            if (!_netManager.IsConnected)
+                return;
+
+            ShowRules(GetRulesPopupTime());
+        });
+    }
+
+    private float GetRulesPopupTime()
+    {
+        return _rulesTimer > 0f ? _rulesTimer : _cfg.GetCVar(CCVars.RulesWaitTime);
+    }
+
+    // Reserve end
 
     private void ShowRules(float time)
     {

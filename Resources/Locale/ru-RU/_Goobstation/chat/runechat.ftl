@@ -2,6 +2,7 @@ ui-options-runechat = Речь в стиле Runechat
 ui-options-runechat-font-size = Размер шрифта
 ui-options-runechat-outline = Ширина обводки
 ui-options-runechat-preview = Предпросмотр
+ui-options-runechat-preview-speaker-name = Джон Доу
 ui-options-runechat-preview-normal = Обычная речь
 ui-options-runechat-preview-normal-text = Привет!
 ui-options-runechat-preview-loud = Громкая речь
