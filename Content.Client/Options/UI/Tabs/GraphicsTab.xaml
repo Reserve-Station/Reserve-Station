@@ -21,6 +21,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <CheckBox Name="ParallaxLowQualityCheckBox" Text="{Loc 'ui-options-parallax-low-quality'}" />
                 <CheckBox Name="AmbientOcclusionCheckBox" Text="{Loc 'ui-options-ambient-occlusion'}" />
                 <CheckBox Name="LightGlowCheckBox" Text="{Loc 'ui-options-light-glow'}" /> <!-- Reserve add: Lighting shader port-->
+                <!-- Reserve start: mood visual effects -->
+                <CheckBox Name="MoodVisualEffectsCheckBox"
+                          Text="{Loc 'ui-options-mood-visual-effects'}"
+                          ToolTip="{Loc 'ui-options-mood-visual-effects-tooltip'}" />
+                <!-- Reserve end -->
 
                 <!-- Interface -->
                 <Label Text="{Loc 'ui-options-interface-label'}" StyleClasses="LabelKeyText"/>

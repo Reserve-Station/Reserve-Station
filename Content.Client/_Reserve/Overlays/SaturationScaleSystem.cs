@@ -44,51 +44,72 @@ public sealed class SaturationScaleSystem : EntitySystem
 
     private void HandleMoodEffectsUpdated(bool moodEffectsEnabled)
     {
-        if (_overlayMan.HasOverlay<SaturationScaleOverlay>() && !moodEffectsEnabled)
-            _overlayMan.RemoveOverlay(_overlay);
-
         _moodEffectsEnabled = moodEffectsEnabled;
+
+        // The CVar can be toggled mid-round, so re-evaluate the overlay instead of only removing it.
+        UpdateOverlayVisibility();
     }
 
     private void RoundRestartCleanup(RoundRestartCleanupEvent ev)
     {
-        if (!_moodEffectsEnabled)
-            return;
-
-        _overlayMan.RemoveOverlay(_overlay);
+        RemoveOverlay();
     }
 
     private void OnPlayerDetached(EntityUid uid, SaturationScaleOverlayComponent component, PlayerDetachedEvent args)
     {
-        if (!_moodEffectsEnabled)
-            return;
-
-        _overlayMan.RemoveOverlay(_overlay);
+        RemoveOverlay();
     }
 
     private void OnPlayerAttached(EntityUid uid, SaturationScaleOverlayComponent component, PlayerAttachedEvent args)
     {
-        if (!_moodEffectsEnabled)
-            return;
-
-        if (!_overlayMan.HasOverlay<SaturationScaleOverlay>())
-            _overlayMan.AddOverlay(_overlay);
+        AddOverlay();
     }
 
     private void OnShutdown(EntityUid uid, SaturationScaleOverlayComponent component, ComponentShutdown args)
     {
-        if (uid != _playerMan.LocalEntity || !_moodEffectsEnabled)
+        if (uid != _playerMan.LocalEntity)
             return;
 
-        _overlayMan.RemoveOverlay(_overlay);
+        RemoveOverlay();
     }
 
     private void OnInit(EntityUid uid, SaturationScaleOverlayComponent component, ComponentInit args)
     {
-        if (uid != _playerMan.LocalEntity || !_moodEffectsEnabled)
+        if (uid != _playerMan.LocalEntity)
             return;
 
+        AddOverlay();
+    }
+
+    /// <summary>
+    ///     Brings the overlay in line with the current mood effects CVar and the local player state.
+    /// </summary>
+    private void UpdateOverlayVisibility()
+    {
+        if (_moodEffectsEnabled
+            && _playerMan.LocalEntity is { } player
+            && HasComp<SaturationScaleOverlayComponent>(player))
+        {
+            AddOverlay();
+            return;
+        }
+
+        RemoveOverlay();
+    }
+
+    private void AddOverlay()
+    {
+        if (!_moodEffectsEnabled || _overlayMan.HasOverlay<SaturationScaleOverlay>())
+            return;
+
+        _overlayMan.AddOverlay(_overlay);
+    }
+
+    private void RemoveOverlay()
+    {
         if (!_overlayMan.HasOverlay<SaturationScaleOverlay>())
-            _overlayMan.AddOverlay(_overlay);
+            return;
+
+        _overlayMan.RemoveOverlay(_overlay);
     }
 }

@@ -24,6 +24,7 @@ public sealed partial class GraphicsTab : Control
         Control.AddOptionCheckBox(CVars.DisplayVSync, VSyncCheckBox);
         Control.AddOptionCheckBox(CCVars.AmbientOcclusion, AmbientOcclusionCheckBox);
         Control.AddOptionCheckBox(CCVars.EnableLightsGlowing, LightGlowCheckBox); // Reserve add: Lighting shader port
+        Control.AddOptionCheckBox(CCVars.MoodVisualEffects, MoodVisualEffectsCheckBox); // Reserve: mood visual effects
         Control.AddOption(new OptionFullscreen(Control, _cfg, FullscreenCheckBox));
         Control.AddOption(new OptionLightingQuality(Control, _cfg, DropDownLightingQuality));
         Control.AddOption(new OptionParticleQuality(Control, _cfg, DropDownParticleQuality)); // Starfall: Particle quality.
