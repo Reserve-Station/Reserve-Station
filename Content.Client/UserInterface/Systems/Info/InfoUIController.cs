@@ -3,7 +3,6 @@
 using Content.Client.Administration.Managers; // Reserve edit
 using Content.Client.Gameplay;
 using Content.Client.Info;
-using Content.Client.Lobby;
 using Content.Client._Reserve.NewPlayerGuide;
 using Content.Shared.Administration; // Reserve edit
 using Content.Shared.CCVar;
@@ -20,7 +19,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Client.UserInterface.Systems.Info;
 
-public sealed class InfoUIController : UIController, IOnStateExited<GameplayState>, IOnStateExited<LobbyState> // Reserve: IOnStateExited<GameplayState> -> IOnStateExited<GameplayState>, IOnStateExited<LobbyState>
+public sealed class InfoUIController : UIController, IOnStateExited<GameplayState>
 {
     [Dependency] private readonly IClientAdminManager _adminManager = default!; // Reserve edit
     [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
@@ -33,8 +32,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     // Reserve start: new player guide
     private NewPlayerGuidePopup? _newPlayerGuidePopup;
     private bool _newPlayerGuideAutoShown;
-    private bool _newPlayerGuideSettingsChanged;
-    private float _rulesTimer;
+    private float? _rulesPopupTime;
     // Reserve end
 
     private static readonly ProtoId<GuideEntryPrototype> DefaultRuleset = "DefaultRulesetReserve"; // Reserve edit
@@ -49,6 +47,9 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
 
         _netManager.RegisterNetMessage<RulesAcceptedMessage>();
         _netManager.RegisterNetMessage<SendRulesInformationMessage>(OnRulesInformationMessage);
+        // Reserve start: new player guide
+        _netManager.Disconnect += OnNetDisconnect;
+        // Reserve end
 
         _consoleHost.RegisterCommand("fuckrules",
             "",
@@ -80,7 +81,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     {
         RulesEntryId = message.CoreRules;
         // Reserve start: new player guide
-        _rulesTimer = message.PopupTime;
+        _rulesPopupTime = message.PopupTime;
 
         if (_newPlayerGuidePopup != null)
         {
@@ -101,7 +102,9 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
 
     public void OnStateExited(GameplayState state)
     {
-        CloseNewPlayerGuidePopup(); // Reserve: new player guide
+        // Reserve start: new player guide
+        // Not closed here: the guide survives state changes and is only dropped on disconnect.
+        // Reserve end
 
         if (_infoWindow == null)
             return;
@@ -111,11 +114,6 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     }
 
     // Reserve start: new player guide
-    public void OnStateExited(LobbyState state)
-    {
-        CloseNewPlayerGuidePopup();
-    }
-
     private void ShowNewPlayerGuide(bool showRulesAfter, bool autoShown)
     {
         if (_newPlayerGuidePopup != null)
@@ -136,36 +134,38 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
         if (_newPlayerGuidePopup == null)
             return;
 
-        _newPlayerGuideSettingsChanged = _newPlayerGuidePopup.SettingsChanged;
+        // Marking the guide as seen has to be persisted even when no setting was changed.
+        var seen = _newPlayerGuideAutoShown;
 
-        if (_newPlayerGuideAutoShown)
-        {
+        if (seen)
             _cfg.SetCVar(CCCVars.NewPlayerGuideSeen, true);
-            _newPlayerGuideSettingsChanged = true;
-        }
 
-        CloseNewPlayerGuidePopup();
+        CloseNewPlayerGuidePopup(forceSave: seen);
     }
 
-    private void CloseNewPlayerGuidePopup()
+    private void CloseNewPlayerGuidePopup(bool forceSave = false)
     {
         if (_newPlayerGuidePopup == null)
             return;
 
         var pendingRules = _newPlayerGuidePopup.ShowRulesAfter;
-        var saveConfig = _newPlayerGuideSettingsChanged || _newPlayerGuidePopup.SettingsChanged;
+        var saveConfig = forceSave || _newPlayerGuidePopup.SettingsChanged;
 
         _newPlayerGuidePopup.OnClosed -= OnNewPlayerGuideClosed;
         _newPlayerGuidePopup.Orphan();
         _newPlayerGuidePopup = null;
         _newPlayerGuideAutoShown = false;
-        _newPlayerGuideSettingsChanged = false;
 
         if (saveConfig)
             _cfg.SaveToFile();
 
         if (pendingRules)
             ShowRulesDeferred();
+    }
+
+    private void OnNetDisconnect(object? sender, NetDisconnectedArgs args)
+    {
+        CloseNewPlayerGuidePopup();
     }
 
     private void ShowRulesDeferred()
@@ -181,7 +181,8 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
 
     private float GetRulesPopupTime()
     {
-        return _rulesTimer > 0f ? _rulesTimer : _cfg.GetCVar(CCVars.RulesWaitTime);
+        // The value from the server wins, including 0 (no countdown).
+        return _rulesPopupTime ?? _cfg.GetCVar(CCVars.RulesWaitTime);
     }
 
     // Reserve end

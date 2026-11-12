@@ -119,8 +119,15 @@ public sealed partial class NewPlayerGuidePopup : Control
         PageContainer.AddChild(page);
     }
 
+    /// <summary>
+    ///     Writes the setting straight into the config: the guide has its own controls. An options window that
+    ///     is already open keeps the old value though, and will write it back on Apply.
+    /// </summary>
     private void SetSetting<T>(CVarDef<T> cvar, T value) where T : notnull
     {
+        if (EqualityComparer<T>.Default.Equals(_cfg.GetCVar(cvar), value))
+            return;
+
         _cfg.SetCVar(cvar, value);
         SettingsChanged = true;
     }

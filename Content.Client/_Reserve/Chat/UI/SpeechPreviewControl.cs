@@ -20,6 +20,7 @@ public sealed class SpeechPreviewControl : BoxContainer
     private float _outline;
     private bool _fancyBubbles;
     private bool _nameBackground;
+    private bool _hasState;
 
     public SpeechPreviewControl()
     {
@@ -45,9 +46,21 @@ public sealed class SpeechPreviewControl : BoxContainer
 
     /// <summary>
     ///     Rebuilds the preview from explicit values, for callers that preview unsaved settings.
+    ///     Does nothing when the values already match what is rendered.
     /// </summary>
     public void SetState(bool runechat, int fontSize, float outline, bool fancyBubbles, bool nameBackground)
     {
+        if (_hasState &&
+            _runechat == runechat &&
+            _fontSize == fontSize &&
+            _outline == outline &&
+            _fancyBubbles == fancyBubbles &&
+            _nameBackground == nameBackground)
+        {
+            return;
+        }
+
+        _hasState = true;
         _runechat = runechat;
         _fontSize = fontSize;
         _outline = outline;
