@@ -119,6 +119,21 @@ public sealed partial class CCVars
         CVarDef.Create("discord.admin_logs_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
     // Reserve edit end: Reserve Red - BanGuard
 
+    // Reserve edit start: Reserve Red - AdminGuard
+    /// <summary>
+    ///     Discord channel ID (bot) for admin security logs: admin sessions with IPs, host logins, blocked permission changes.
+    ///     No fallback to other channels - keep it restricted.
+    /// </summary>
+    public static readonly CVarDef<string> AdminSecurityDiscordChannelId =
+        CVarDef.Create("discord.admin_security_channel_id", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    ///     Webhook for admin security logs, used when the bot channel is not available. No fallback.
+    /// </summary>
+    public static readonly CVarDef<string> DiscordAdminSecurityWebhook =
+        CVarDef.Create("discord.admin_security_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+    // Reserve edit end: Reserve Red - AdminGuard
+
     // Reserve start: Brainrot trigger logs
     public static readonly CVarDef<string> CustosDiscordChannelId =
         CVarDef.Create("discord.custos_channel_id", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
