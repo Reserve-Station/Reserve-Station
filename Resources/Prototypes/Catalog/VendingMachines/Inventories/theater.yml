@@ -67,6 +67,20 @@
     ClothingOuterSuitPickle: 1
     ClothingOuterSuitTutu: 2 # Goob
     ClothingHeadHatTinfoilHat: 2 # Goobstation
+    ClothingHeadHatDeku: 1 #Goobstation
+    ClothingOuterArmorDeku: 1 #Goobstation
+    ClothingOuterArmorInvincible: 1 #Goobstation
+    ClothingHeadHatInvincible: 1 #Goobstation
+    ClothingOuterArmorCombineElite: 1 #Goobstation
+    ClothingOuterArmorDivingSuit: 1 #Goobstation
+    ClothingOuterArmorHuskDivingSuit: 1
+    ClothingUniformJumpsuitLash: 1 #Goobstation
+    ClothingUniformJumpsuitKris: 1 #Goobstation
+    ToyKnife: 1 #Goobstation
+    ClothingUniformJumpsuitFrisk: 1 #Goobstation
+    ClothingUniformJumpsuitGoku: 2 # Goobstaiton
+    ClothingMaskPlague: 1 # Goobstation - Halloween
+    ClothingOuterPlagueSuit: 1  #Goobstation - Halloween
   contrabandInventory:
     ClothingHeadHatRichard: 1
     ClothingShoesBling: 1
@@ -88,6 +102,8 @@
     ClothingUniformJumpsuitResonant: 1 # Goobstation
     ClothingOuterArmorHereticCostume: 1 # Goobstation
     ToyBladeEldritch: 1 # Goobstation
+    ClothingUniformJumpsuitChara: 1 #Goobstation - About time.
+    KitchenKnife: 1 #Goobstation -  Here we are!
   emaggedInventory: # goob
     ClothingOuterPonchoClassicRobust: 1
     ClothingHeadHatCowboyBrownRobust: 1
