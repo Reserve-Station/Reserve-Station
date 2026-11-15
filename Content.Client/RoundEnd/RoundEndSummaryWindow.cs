@@ -2,6 +2,7 @@
 
 using System.Linq;
 using System.Numerics;
+using Content.Client._Reserve.UserInterface.RichText; // Reserve edit: cmdlink protection
 using Content.Client.Message;
 using Content.Shared.GameTicking;
 using Robust.Client.UserInterface.Controls;
@@ -86,7 +87,7 @@ namespace Content.Client.RoundEnd
             if (!string.IsNullOrEmpty(roundEnd))
             {
                 var roundEndLabel = new RichTextLabel();
-                roundEndLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(roundEnd), tagsAllowed: null); // Goob
+                roundEndLabel.SetMessage(FormattedMessage.FromMarkupOrThrow(roundEnd), tagsAllowed: SafeMarkupTags.WithoutCommandLinks); // Goob // Reserve edit: cmdlink protection
                 roundEndSummaryContainer.AddChild(roundEndLabel);
             }
 

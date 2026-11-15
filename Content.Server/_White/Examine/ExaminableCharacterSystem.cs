@@ -189,6 +189,15 @@ public sealed class ExaminableCharacterSystem : EntitySystem
                 continue;
             }
 
+            // Reserve edit start: cmdlink protection
+            if (name.Equals("cmdlink", StringComparison.OrdinalIgnoreCase))
+            {
+                if (!node.Closing)
+                    _sb.Append(FormattedMessage.EscapeText(node.Value.StringValue ?? ""));
+                continue;
+            }
+            // Reserve edit end
+
             _sb.Append('[');
             if (node.Closing)
                 _sb.Append('/');
