@@ -1,0 +1,41 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:parallax="clr-namespace:Content.Client.Parallax"
+         VerticalExpand="True" HorizontalExpand="True"
+         MouseFilter="Stop">
+    <parallax:ParallaxControl SpeedX="20"/>
+    <Control VerticalExpand="True"
+             HorizontalExpand="True"
+             MaxWidth="960"
+             MaxHeight="860"
+             Margin="16">
+        <PanelContainer StyleClasses="windowPanel"/>
+        <BoxContainer Orientation="Vertical" Margin="24 20 24 20" SeparationOverride="10">
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                    <Label Name="TitleLabel" StyleClasses="LabelHeadingBigger"/>
+                    <Label Name="SubtitleLabel" StyleClasses="LabelSubText"/>
+                </BoxContainer>
+                <Label Name="PageCounterLabel"
+                       StyleClasses="LabelSubText"
+                       VerticalAlignment="Center"/>
+            </BoxContainer>
+            <PanelContainer StyleClasses="LowDivider"/>
+            <ScrollContainer Name="Scroll"
+                             HScrollEnabled="False"
+                             HorizontalExpand="True"
+                             VerticalExpand="True">
+                <BoxContainer Name="PageContainer"
+                              Orientation="Vertical"
+                              HorizontalExpand="True"
+                              VerticalExpand="True"/>
+            </ScrollContainer>
+            <PanelContainer StyleClasses="LowDivider"/>
+            <BoxContainer Orientation="Horizontal" SeparationOverride="8" HorizontalExpand="True">
+                <Button Name="SkipButton" Text="{Loc 'new-player-guide-skip'}"/>
+                <Control HorizontalExpand="True"/>
+                <Button Name="BackButton" Text="{Loc 'new-player-guide-back'}"/>
+                <Button Name="NextButton" Text="{Loc 'new-player-guide-next'}"/>
+            </BoxContainer>
+        </BoxContainer>
+    </Control>
+</Control>

@@ -2,6 +2,7 @@ ui-options-runechat = Runechat-style speech
 ui-options-runechat-font-size = Runechat font size
 ui-options-runechat-outline = Runechat outline thickness
 ui-options-runechat-preview = Preview
+ui-options-runechat-preview-speaker-name = John Doe
 ui-options-runechat-preview-normal = Normal
 ui-options-runechat-preview-normal-text = Hello there!
 ui-options-runechat-preview-loud = Loud

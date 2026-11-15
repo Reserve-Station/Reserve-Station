@@ -19,4 +19,10 @@ public sealed class CCCVars
 
     public static readonly CVarDef<bool> GhostTrailsEnabled =
         CVarDef.Create("ghost.trails_enabled", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    ///     Whether the player has already dismissed the new player setup guide.
+    /// </summary>
+    public static readonly CVarDef<bool> NewPlayerGuideSeen =
+        CVarDef.Create("ui.new_player_guide_seen", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }
