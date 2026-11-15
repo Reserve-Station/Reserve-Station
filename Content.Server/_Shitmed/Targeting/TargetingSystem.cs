@@ -22,11 +22,19 @@ public sealed class TargetingSystem : SharedTargetingSystem
 
     private void OnTargetChange(TargetChangeEvent message, EntitySessionEventArgs args)
     {
-        if (!TryComp<TargetingComponent>(GetEntity(message.Uid), out var target))
+        // Reserve start: validate target change
+        if (args.SenderSession.AttachedEntity is not { } player || message.Uid != GetNetEntity(player))
+            return;
+
+        if (!IsValidTargetPart(message.BodyPart))
+            return;
+
+        if (!TryComp<TargetingComponent>(player, out var target))
             return;
 
         target.Target = message.BodyPart;
-        Dirty(GetEntity(message.Uid), target);
+        Dirty(player, target);
+        // Reserve end
     }
 
     private void OnMobStateChange(EntityUid uid, TargetingComponent component, MobStateChangedEvent args)
