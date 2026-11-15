@@ -12,8 +12,8 @@ public_url = "https://diadem.goobstation.com/voice/"
 radio_enabled = true
 radio_common = false
 
-[news]
-pinned = "VoiceChat,PatreonSupport"
+# [news]
+# pinned = "VoiceChat,PatreonSupport"
 
-[goob]
-window_title = "Goob Diadem"
+# [goob]
+# window_title = "Goob Diadem"
