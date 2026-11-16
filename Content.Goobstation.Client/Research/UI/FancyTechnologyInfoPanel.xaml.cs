@@ -92,7 +92,7 @@ public sealed partial class FancyTechnologyInfoPanel : Control
     {
         base.ExitedTree();
 
-    ResearchButton.OnPressed -= OnResearchPressed; // Reserve edit: rnd-console #344
+        ResearchButton.OnPressed -= OnResearchPressed; // Reserve edit: rnd-console #344
     }
 
     // Reserve edit start: rnd-console #344
