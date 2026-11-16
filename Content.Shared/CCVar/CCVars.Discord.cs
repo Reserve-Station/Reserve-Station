@@ -42,13 +42,13 @@ public sealed partial class CCVars
     ///     URL of the Discord webhook which will relay all custom votes. If left empty, disables the webhook.
     /// </summary>
     public static readonly CVarDef<string> DiscordVoteWebhook =
-        CVarDef.Create("discord.vote_webhook", string.Empty, CVar.SERVERONLY);
+        CVarDef.Create("discord.vote_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL); // Reserve edit: Make all webhooks confidential
 
     /// <summary>
     ///     URL of the Discord webhook which will relay all votekick votes. If left empty, disables the webhook.
     /// </summary>
     public static readonly CVarDef<string> DiscordVotekickWebhook =
-        CVarDef.Create("discord.votekick_webhook", string.Empty, CVar.SERVERONLY);
+        CVarDef.Create("discord.votekick_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL); // Reserve edit: Make all webhooks confidential
 
     /// <summary>
     ///     URL of the Discord webhook which will relay round restart messages.
@@ -138,7 +138,7 @@ public sealed partial class CCVars
     ///     If left empty, disables the webhook.
     /// </summary>
     public static readonly CVarDef<string> DiscordNewsWebhook =
-        CVarDef.Create("discord.news_webhook", string.Empty, CVar.SERVERONLY);
+        CVarDef.Create("discord.news_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL); // Reserve edit: Make all webhooks confidential
 
     /// <summary>
     ///     HEX color of station news discord webhook's embed.
