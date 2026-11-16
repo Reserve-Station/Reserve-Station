@@ -1113,7 +1113,9 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
 
     public void EnsureAllSolutions(Entity<SolutionContainerManagerComponent> entity)
     {
-        if (NetManager.IsClient)
+        // Networked entities receive solution entities from the server.
+        // Client-side entities, including vending-machine previews, never do, so their fill layer stays hidden.
+        if (NetManager.IsClient && !IsClientSide(entity))  // Reserve edit: Part Status and Chemicals show
             return;
 
         if (entity.Comp.Solutions is not { } prototypes)
@@ -1155,7 +1157,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
             existed = false;
             container = AddComp<SolutionContainerManagerComponent>(uid);
             container.Containers.Add(name);
-            if (NetManager.IsClient)
+            if (NetManager.IsClient && !IsClientSide(uid))  // Reserve edit: Part Status and Chemicals show
                 return false;
         }
         else if (!existed)
@@ -1168,7 +1170,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
         SolutionComponent solutionComp;
         if (solutionSlot.ContainedEntity is not { } solutionId)
         {
-            if (NetManager.IsClient)
+            if (NetManager.IsClient && !IsClientSide(uid))  // Reserve edit: Part Status and Chemicals show
                 return false;
             prototype ??= new() { MaxVolume = maxVol };
             prototype.Name = name;

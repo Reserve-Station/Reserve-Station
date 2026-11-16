@@ -132,7 +132,8 @@ namespace Content.Server.Kitchen.EntitySystems
                         if (solution.Volume > containerSolution.AvailableVolume)
                             continue;
 
-                        _destructible.DestroyEntity(item);
+                        // Reserve edit - destroyed after the loop, so a revenant's ectoplasm still sees the salt ground with it
+                        toDelete.Add(item);
                     }
 
                     _solutionContainersSystem.TryAddSolution(containerSoln.Value, solution);
@@ -140,7 +141,7 @@ namespace Content.Server.Kitchen.EntitySystems
 
                 // Begin Imp
                 foreach (var item in toDelete)
-                    Del(item);
+                    _destructible.DestroyEntity(item); // Reserve edit - was Del, upstream now destroys ground items
                 foreach (var (item, amount) in toSet)
                     _stackSystem.SetCount(item, amount); // Setting to 0 will QueueDel
                 // End Imp

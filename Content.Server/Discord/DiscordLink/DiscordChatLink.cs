@@ -25,9 +25,9 @@ public sealed class DiscordChatLink : IPostInjectInit
     {
         _discordLink.OnMessageReceived += OnMessageReceived;
 
-        #if DEBUG
+#if DEBUG
         _discordLink.RegisterCommandCallback(OnDebugCommandRun, "debug");
-        #endif
+#endif
 
         _configurationManager.OnValueChanged(CCVars.OocDiscordChannelId, OnOocChannelIdChanged, true);
         _configurationManager.OnValueChanged(CCVars.AdminChatDiscordChannelId, OnAdminChannelIdChanged, true);
@@ -41,13 +41,13 @@ public sealed class DiscordChatLink : IPostInjectInit
         _configurationManager.UnsubValueChanged(CCVars.AdminChatDiscordChannelId, OnAdminChannelIdChanged);
     }
 
-    #if DEBUG
+#if DEBUG
     private void OnDebugCommandRun(CommandReceivedEventArgs ev)
     {
         var args = string.Join('\n', ev.Arguments);
         _sawmill.Info($"Provided arguments: \n{args}");
     }
-    #endif
+#endif
 
     private void OnOocChannelIdChanged(string channelId)
     {
@@ -57,7 +57,7 @@ public sealed class DiscordChatLink : IPostInjectInit
             return;
         }
 
-        _oocChannelId = ulong.Parse(channelId);
+        _oocChannelId = ulong.TryParse(channelId, out var id) ? id : null; // Reserve edit: Reserve Red - BanGuard (неверный ID канала не должен бросать исключение)
     }
 
     private void OnAdminChannelIdChanged(string channelId)
@@ -68,7 +68,7 @@ public sealed class DiscordChatLink : IPostInjectInit
             return;
         }
 
-        _adminChannelId = ulong.Parse(channelId);
+        _adminChannelId = ulong.TryParse(channelId, out var id) ? id : null; // Reserve edit: Reserve Red - BanGuard (неверный ID канала не должен бросать исключение)
     }
 
     private void OnMessageReceived(Message message)

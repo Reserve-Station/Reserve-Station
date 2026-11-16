@@ -92,6 +92,7 @@
     horizontalRotation: 90
   - type: HumanoidAppearance
     species: Human
+  - type: Wagging # Goob
   - type: TypingIndicator
   - type: SlowOnDamage
     speedModifierThresholds:
@@ -142,7 +143,6 @@
     - Vulgarity # Goobstation - add Profanol
     - Brainrotted # Goobstation - skibidi rizz ohio update
     - Adrenaline
-    - Brainrotted # Goobstation - skibidi rizz ohio update
     - Dementia # Goobstation - Amnestic spray!
   - type: Body
     prototype: Human
@@ -252,10 +252,12 @@
     penetrateDamage: 50
     damagePenalty: 0.2
   - type: ExaminableCharacter # WWDP
+  - type: OfferItem  # Reserve edit: Offer Item system port from WWDP
   - type: Sprinter # Goobstation
   - type: MindControllable # Goobstation
   - type: VisibleContraband # Goobstation
   - type: MomentumSteering # Goobstation - No steer
+  - type: Posing  # Reserve edit: Posing system port
 
 - type: entity
   save: false
@@ -347,6 +349,7 @@
     - Parasite
   - type: ObraDinnBody # Goobstation
   # </Goobstation>
+  - type: Mood  # Reserve edit: Mood System port
 
 - type: entity
   save: false

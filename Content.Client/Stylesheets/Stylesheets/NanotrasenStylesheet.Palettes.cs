@@ -2,7 +2,7 @@
 
 namespace Content.Client.Stylesheets.Stylesheets;
 
-public sealed partial class NanotrasenStylesheet
+public partial class NanotrasenStylesheet
 {
     public override ColorPalette PrimaryPalette => ReserveRedStylesheet.PrimaryPalette; // Reserve edit: ReserveRedStyle
     public override ColorPalette SecondaryPalette => ReserveRedStylesheet.SecondaryPalette; // Reserve edit: ReserveRedStyle

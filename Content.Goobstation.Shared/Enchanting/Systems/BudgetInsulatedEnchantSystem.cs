@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Enchanting.Components;
 using Content.Shared.Electrocution;
@@ -9,10 +9,10 @@ namespace Content.Goobstation.Shared.Enchanting.Systems;
 /// <summary>
 /// Controls <see cref="BudgetInsulatedEnchantComponent"/> values with the enchant level.
 /// </summary>
-public sealed class BudgetInsulatedEnchantSystem : EntitySystem
+public sealed partial class BudgetInsulatedEnchantSystem : EntitySystem
 {
-    [Dependency] private readonly EnchantingSystem _enchanting = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    // [Dependency] private EnchantingSystem _enchanting = default!; // Reserve edit: Fix warnings
+    [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
     {

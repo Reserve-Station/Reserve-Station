@@ -31,6 +31,7 @@ verb-self-target-pronoun = Yourself
 
 verb-categories-admin = Admin
 verb-categories-debug = Debug
+verb-categories-patron-actions = Patron actions
 verb-categories-examine = Examine
 verb-categories-eject = Eject
 verb-categories-insert = Insert

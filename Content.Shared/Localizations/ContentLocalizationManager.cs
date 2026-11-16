@@ -9,10 +9,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Localizations
 {
-    public sealed class ContentLocalizationManager
+    public sealed partial class ContentLocalizationManager
     {
-        [Dependency] private readonly ILocalizationManager _loc = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private ILocalizationManager _loc = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
 
         private const string FallbackCultureName = "en-US";
         private const string ForkDefaultCultureName = "ru-RU"; // Reserve-Localization
@@ -42,7 +42,7 @@ namespace Content.Shared.Localizations
                 _loc.LoadCulture(cultureEn);
 
             if (!_culture.NameEquals(cultureEn))
-                _loc.SetFallbackCluture(cultureEn);
+                _loc.SetFallbackCulture(cultureEn);
 
             AddSharedFunctions(cultureEn); // Reserve - fallback FTL (en-US guidebook) needs the same functions
 

@@ -26,8 +26,8 @@
       collection: HydrakinWhistle
     DefaultDeathgasp:
       collection: HydrakinDeathgasp
-    Belch: # Frontier
-      collection: Belch # Frontier
+    # Belch: # Frontier  # Reserve edit: Disable intentional belching
+    #   collection: Belch # Frontier
 
 - type: speechSounds
   id: Hydrakin

@@ -1,0 +1,502 @@
+# SPDX-FileCopyrightText: Made by Ceterai on GitHub.
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Title: Orchito
+
+# A tea-based refreshing cocktail made by Orchi Dea - a non-alcoholic version of a regular mojito.
+#
+# Includes:
+#
+# - Orchito (the regular version, can be made by shaking all needed ingredients together)
+# - Stardust Orchito (can be made by mixing orchito with stardust)
+#
+# Disclaimer:
+#
+# - This is a personal item, so all dependent prototypes are not meant to be mapped (with exceptions).
+
+
+
+
+
+# region PROTOTYPES
+
+
+
+
+
+# region Orchito
+
+- type: reagent
+  parent: BaseDrink
+  id: Orchito
+  name: reagent-name-orchito
+  desc: reagent-desc-orchito
+  physicalDesc: reagent-physical-desc-sweet
+  flavor: icedtea
+  color: &orchito-color "#a0f080"
+  metamorphicSprite:
+    sprite: &orchito-rsi _Reserve/Objects/Misc/stardust.rsi
+    state: glass_orchito_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: glass_orchito_fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 5
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.01
+      - !type:ChemAddMoodlet
+        moodPrototype: SweetenerEffect
+
+- type: reaction
+  id: Orchito
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    IcedTea:
+      amount: 3
+    JuiceLemon:
+      amount: 1
+    JuiceLime:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    Orchito: 6
+
+- type: ntrTask
+  id: TaskOrchito
+  proto: TaskBottle
+  reward: 2
+  weight: 0.2
+  cooldown: 300
+  description: task-ntr-orchito-desc
+  reagentTask: true
+  reagents:
+    Orchito: 3000
+  entries:
+  - name: task-ntr-drink-base-name
+    stamps: [ ]
+    whitelist:
+      tags: [ ]
+      components: [ ]
+
+# endregion Orchito
+
+# region Orchito Candy
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSnackOrchito
+  result: FoodSnackOrchito
+  time: 5
+  group: Dessert
+  reagents:
+    Orchito: 5
+
+- type: entity
+  parent: FoodSnackStardust
+  id: FoodSnackOrchito
+  components:
+  - type: Sprite
+    sprite: *orchito-rsi
+    state: item_candy_orchito
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 5
+
+- type: entity
+  parent: FoodSnackLollypopStardust
+  id: FoodSnackLollypopOrchito
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: *orchito-color
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Orchito
+          Quantity: 15
+
+# endregion Orchito Candy
+
+# region Orchito Containers
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkOrchitoGlass
+  suffix: orchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 30
+  - type: Icon
+    sprite: *orchito-rsi
+    state: glass_orchito
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkOrchitoJug
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 300
+  - type: Label
+    currentLabel: reagent-name-orchito
+
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: ChemistryBottleOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 30
+  - type: Label
+    currentLabel: reagent-name-orchito
+
+- type: entity
+  parent: PrefilledSyringe
+  id: SyringeOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 15
+  - type: Label
+    currentLabel: reagent-name-orchito
+
+- type: entity
+  parent: Jug
+  id: JugOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 200
+  - type: Label
+    currentLabel: reagent-name-orchito
+
+- type: entity
+  parent: Bucket
+  id: BucketOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 250
+  - type: Label
+    currentLabel: reagent-name-orchito
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkOrchitoBottleFull
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 100
+  - type: Label
+    currentLabel: reagent-name-orchito
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkOrchitoCarton
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 50
+  - type: Label
+    currentLabel: reagent-name-orchito
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 30
+  - type: Label
+    currentLabel: reagent-name-orchito
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkOrchitoCup
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Orchito
+          Quantity: 20
+
+# endregion Orchito Containers
+
+# region Stardust Orchito
+
+- type: reagent
+  parent: BaseDrink
+  id: StardustOrchito
+  name: reagent-name-stardust-orchito
+  desc: reagent-desc-stardust-orchito
+  physicalDesc: reagent-physical-desc-enigmatic
+  flavor: stardust
+  color: &stardust-orchito-color "#02667f"
+  metamorphicSprite:
+    sprite: *orchito-rsi
+    state: glass_orchito_stardust_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: glass_orchito_stardust_fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Stardust
+        amount: 1.15
+      - !type:SatiateThirst
+        factor: 4
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: 0.01
+      - !type:ChemAddMoodlet
+        moodPrototype: SweetenerEffect
+
+- type: reaction
+  id: StardustOrchito
+  reactants:
+    Orchito:
+      amount: 2
+    Stardust:
+      amount: 1
+  products:
+    StardustOrchito: 3
+
+# endregion Stardust Orchito
+
+# region Stardust Orchito Candy
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSnackStardustOrchito
+  result: FoodSnackStardustOrchito
+  time: 5
+  group: Dessert
+  reagents:
+    StardustOrchito: 5
+
+- type: entity
+  parent: FoodSnackStardust
+  id: FoodSnackStardustOrchito
+  components:
+  - type: Sprite
+    sprite: *orchito-rsi
+    state: item_candy_orchito_stardust
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 5
+
+- type: entity
+  parent: FoodSnackLollypopStardust
+  id: FoodSnackLollypopStardustOrchito
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: *stardust-orchito-color
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: StardustOrchito
+          Quantity: 15
+
+# endregion Stardust Orchito Candy
+
+# region Stardust Orchito Containers
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkStardustOrchitoGlass
+  suffix: stardust orchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 30
+  - type: Icon
+    sprite: *orchito-rsi
+    state: glass_orchito_stardust
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkStardustOrchitoJug
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 300
+  - type: Label
+    currentLabel: reagent-name-stardust-orchito
+
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: ChemistryBottleStardustOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 30
+  - type: Label
+    currentLabel: reagent-name-stardust-orchito
+
+- type: entity
+  parent: PrefilledSyringe
+  id: SyringeStardustOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 15
+  - type: Label
+    currentLabel: reagent-name-stardust-orchito
+
+- type: entity
+  parent: Jug
+  id: JugStardustOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 200
+  - type: Label
+    currentLabel: reagent-name-stardust-orchito
+
+- type: entity
+  parent: Bucket
+  id: BucketStardustOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 250
+  - type: Label
+    currentLabel: reagent-name-stardust-orchito
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkStardustOrchitoBottleFull
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 100
+  - type: Label
+    currentLabel: reagent-name-stardust-orchito
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkStardustOrchitoCarton
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 50
+  - type: Label
+    currentLabel: reagent-name-stardust-orchito
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleStardustOrchito
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 30
+  - type: Label
+    currentLabel: reagent-name-stardust-orchito
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkStardustOrchitoCup
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustOrchito
+          Quantity: 20
+
+# endregion Stardust Orchito Containers

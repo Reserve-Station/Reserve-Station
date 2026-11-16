@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # - type: emote
-#   id: FartInhale
-#   name: chat-emote-name-fart-inhale
+#   id: Fart
+#   name: chat-emote-name-fart
 #   category: Farts
-#   icon: _Goobstation/Interface/Emotes/fart-in.png
+#   icon: _Goobstation/Interface/Emotes/fart.png
 #   whitelist:
 #     components:
 #     - Vocal
@@ -12,34 +12,59 @@
 #     components:
 #     - BorgChassis
 #     - Silicon
-#   chatMessages: ["chat-emote-msg-fart-inhale"]
+#   chatMessages: ["chat-emote-msg-fart"]
+#   event: !type:JiggleEmoteEvent # Goobstation
+#     pulses:
+#     - impulse: 0,25
+#     - delay: 0.06
+#       impulse: 12,0
+#     - delay: 0.12
+#       impulse: -18,0
+#     - delay: 0.18
+#       impulse: 18,0
+#     - delay: 0.24
+#       impulse: -12,0
 #   chatTriggers:
-#     - inhale anally
-#     - inhales anally
-#     - inhaling anally
-#     - inhaled anally
-#     - anally inhale
-#     - anally inhales
-#     - anally inhaling
-#     - anally inhaled
-#     - farts backward
-#     - fart backward
-#     - fart in
-#     - farts in
-#     - farting in
-#     - farted in
-#     - inhales through the rear
-#     - inhales through rear
-#     - inhales through the butt
-#     - inhales through butt
-#     - inhales through the anus
-#     - inhales through anus
-#     - inhales through the rectum
-#     - inhales through rectum
-#     - inhales through the ass
-#     - inhales through ass
-#     - buttreathes in
-#     - breathes in through butt
+#     - fart
+#     - farts
+#     - farting
+#     - farted
+#     - toot
+#     - toots
+#     - tooted
+#     - tooting
+#     - pass gas
+#     - passes gas
+#     - passing gas
+#     - passed gas
+#     - break wind
+#     - breaks wind
+#     - breaking wind
+#     - broke wind
+#     - flatulate
+#     - flatulates
+#     - flatulating
+#     - flatulated
+#     - let one rip
+#     - lets one rip
+#     - letting one rip
+#     - cut cheese
+#     - cuts cheese
+#     - cutting cheese
+#     - cut the cheese
+#     - cuts the cheese
+#     - cutting the cheese
+#     - let out a stinker
+#     - lets out a stinker
+#     - letting out a stinker
+#     - exhales anally
+#     - burps from the rear
+#     - burps from the butt
+#     - bowel howl
+#     - bowel howls
+#     - bowel howling
+#     - bowel howled
+#     - accelerates climate change
 
 # - type: emote
 #   id: FartSuper
@@ -71,6 +96,51 @@
 #     - ultra farts
 #     - ultra farted
 #     - ultra farting
+
+- type: emote
+  id: Fart
+  name: chat-emote-name-flap
+  category: Farts
+  icon: Interface/Emotes/chitter.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+    - Silicon
+  chatMessages: []
+  chatTriggers: []
+
+- type: emote
+  id: FartSuper
+  name: chat-emote-name-flap
+  category: Farts
+  icon: Interface/Emotes/chitter.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+    - Silicon
+  chatMessages: []
+  chatTriggers: []
+
+- type: emote
+  id: FartInhale
+  name: chat-emote-name-flap
+  category: Farts
+  icon: Interface/Emotes/chitter.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+    - Silicon
+  chatMessages: []
+  chatTriggers: []
 
 - type: emote
   id: Flap
@@ -148,7 +218,9 @@
     - warbling
     - warbled
     #Reserve translation begin
+    - скрип
     - поскрипывает
+    - скрипит
     #Reserve translation end
 
 - type: emote
@@ -176,6 +248,8 @@
     - урчит
     - заурчал
     - заурчала
+    - заурчали
+    - заурчало
     #Reserve translation end
 
 - type: emote # Mono
@@ -196,6 +270,14 @@
   - bagawks
   - bawk
   - bawks
+  # Reserve translation begin
+  - курлык
+  - кудах
+  - курлычет
+  - кудахчет
+  - курлыкает
+  - кудахтает
+  # Reserve translation end
 
 - type: emote
   id: Gulp
@@ -213,9 +295,13 @@
     - gulps
     - gulp
     #Reserve translation begin
+    - глоть
+    - глотает
     - сглатывает
     - сглотнул
     - сглотнула
+    - сглотнули
+    - сглотнуло
     #Reserve translation end
 
 - type: emote
@@ -232,3 +318,452 @@
     - is surprised
     - exclamation marks
     - exclamation mark
+    # Reserve translation begin
+    - удивляется
+    - выглядит удивлённым
+    - выглядит удивлённой
+    - выглядят удивлёнными
+    # Reserve translation end
+
+- type: emote
+  id: Hoot
+  name: Hoot
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/caw.png
+  whitelist:
+    tags:
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ hoots. ]
+  chatTriggers:
+    - hoots
+    - hoot
+    - hooting
+    - hooted
+    # Reserve translation begin
+    - уух
+    - ухает
+    - ухнул
+    - ухнула
+    - ухнули
+    - ухнуло
+    # Reserve translation end
+
+- type: emote
+  id: Scree
+  name: chat-emote-name-scree
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/caw.png
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-scree"]
+  chatTriggers:
+    - scree
+    - screes
+    - screeing
+    - screed
+    # Reserve translation begin
+    - скрии
+    # Reserve translation end
+
+- type: emote
+  id: Call
+  name: chat-emote-name-call
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/caw.png
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-call"]
+  chatTriggers:
+    - call
+    - calls
+    - calling
+    - called
+    # Reserve translation begin
+    - зовёт
+    - позвал
+    - позвала
+    - позвали
+    - позвало
+    # Reserve translation end
+
+- type: emote
+  id: Squawk
+  name: chat-emote-name-squawk
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/caw.png
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-squawk"]
+  chatTriggers:
+    - squawk
+    - squawks
+    - squawking
+    - squawked
+    # Reserve translation begin
+    - сквок
+    - сквокает
+    - сквочет
+    # Reserve translation end
+
+- type: emote
+  id: Quack
+  name: chat-emote-name-quack
+  category: Vocal
+  available: false
+  icon: _Goobstation/Interface/Emotes/caw.png
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-quack"]
+  chatTriggers:
+    - quack
+    - quacks
+    - quacking
+    - quacked
+    # Reserve translation begin
+    - кря
+    - крякает
+    - крякнул
+    - крякнула
+    - крякнули
+    - крякнуло
+    # Reserve translation end
+
+- type: emote
+  id: Snort
+  name: chat-emote-name-snort
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/sigh.png
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-snort"]
+  chatTriggers:
+    - snort
+    - snorts
+    - snorting
+    - snorted
+    # Reserve translation begin
+    - шмыг
+    - шмыгает
+    - шмыгает носом
+    - шмыгнул носом
+    - шмыгнула носом
+    - шмыгнули носом
+    - шмыгнуло носом
+    # Reserve translation end
+
+- type: emote
+  id: Squee
+  name: chat-emote-name-squee
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/squeak.png
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-squee"]
+  chatTriggers:
+    - squee
+    - squees
+    - squeeing
+    - squeed
+    # Reserve translation begin
+    - скуии
+    - скуиит
+    # Reserve translation end
+
+- type: emote
+  id: Stomp
+  name: chat-emote-name-stomp
+  category: Hands
+  available: false
+  icon: Interface/Emotes/tailslap.png
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-stomp"]
+  chatTriggers:
+    - stomp
+    - stomps
+    - stomping
+    - stomped
+    # Reserve translation begin
+    - топ
+    - топает
+    - топнул
+    - топнула
+    - топнули
+    - топнуло
+    # Reserve translation end
+
+- type: emote
+  id: Gekker
+  name: chat-emote-name-gekker
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    tags:
+    - VulpEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-gekker"]
+  chatTriggers:
+    - gekker
+    - gekkers
+    - gekkering
+    - gekkered
+    # Reserve translation begin
+    - гекет
+    - гекает
+    - гекнул
+    - гекнула
+    - гекнули
+    - гекнуло
+    - геккет
+    - геккает
+    - геккнул
+    - геккнула
+    - геккнули
+    - геккнуло
+    # Reserve translation end
+
+- type: emote
+  id: Yap
+  name: chat-emote-name-yap
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/bark.png
+  whitelist:
+    tags:
+    - VulpEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-yap"]
+  chatTriggers:
+    - yap
+    - yaps
+    - yapping
+    - yapped
+    # Reserve translation begin
+    - болтает
+    - несёт чушь
+    - бредит
+    # Reserve translation end
+
+- type: emote
+  id: Gurgle
+  name: chat-emote-name-gurgle
+  category: Vocal
+  icon: Interface/Emotes/weh.png
+  whitelist:
+    tags:
+    - ReptilianEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-gurgle"]
+  chatTriggers:
+    - gurgle
+    - gurgles
+    - gurgling
+    - gurgled
+    # Reserve translation begin
+    - булькает
+    - бульчит
+    - булькнул
+    - булькнула
+    - булькнули
+    - булькнуло
+    # Reserve translation end
+
+- type: emote
+  id: Liss
+  name: chat-emote-name-liss
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/hiss.png
+  whitelist:
+    tags:
+    - ReptilianEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-liss"]
+  chatTriggers:
+    - liss
+    - lisses
+    - lissing
+    - lissed
+    # Reserve translation begin
+    - лисс
+    - лиссит
+    - лисснул
+    - лисснула
+    - лисснули
+    - лисснуло
+    # Reserve translation end
+
+- type: emote
+  id: Lurr
+  name: chat-emote-name-lurr
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/purr.png
+  whitelist:
+    tags:
+    - ReptilianEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-lurr"]
+  chatTriggers:
+    - lurr
+    - lurrs
+    - lurring
+    - lurred
+    # Reserve translation begin
+    - лурр
+    - луррит
+    - луррнул
+    - луррнула
+    - луррнули
+    - луррнуло
+    # Reserve translation end
+
+- type: emote
+  id: Snicker
+  name: chat-emote-name-snicker
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    tags:
+    - ReptilianEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-snicker"]
+  chatTriggers:
+    - snicker
+    - snickers
+    - snickering
+    - snickered
+    # Reserve translation begin
+    - хихи
+    - хи-хи
+    - хихикает
+    - хихикнул
+    - хихикнула
+    - хихикнули
+    - хихикнуло
+    # Reserve translation end
+
+- type: emote
+  id: Multichirp
+  name: chat-emote-name-multichirp
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/chirp.png
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-multichirp"]
+  chatTriggers:
+    - chirps a chorus
+    - chirps in a chorus
+    - chorus of chirps
+    # Reserve translation begin
+    - щебечет хором
+    - множественно щебечет
+    - мультищебечет
+    - чирикает хором
+    - множественно щебчирикаетечет
+    - мультичирикает
+    # Reserve translation end
+
+- type: emote
+  id: SyndieBorgLaugh
+  name: chat-emote-name-synth-laugh
+  category: Vocal
+  available: false
+  icon: Interface/Emotes/laugh.png
+  chatMessages: ["chat-emote-msg-laugh"]
+  chatTriggers:
+    - synlaugh
+    - synlaughs
+    # Reserve translation begin
+    - синсмеётся
+    - синсмеется
+    # Reserve translation end
+
+- type: emote
+  id: Hum
+  name: chat-emote-name-hum
+  category: Vocal
+  icon: Interface/Emotes/whistle.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+    - Silicon
+  chatMessages: ["chat-emote-msg-hum"]
+  chatTriggers:
+    - hum
+    - hums
+    - humming
+    - hummed
+    # Reserve translation begin
+    - гудит
+    - погудел
+    - погудела
+    - погудели
+    - погудело
+    - загудел
+    - загудела
+    - загудели
+    - загудело
+    # Reserve translation end
+
+- type: emote
+  id: Sniff
+  name: chat-emote-name-sniff
+  category: Vocal
+  icon: Interface/Emotes/sigh.png
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+    - Silicon
+  chatMessages: ["chat-emote-msg-sniff"]
+  chatTriggers:
+    - sniff
+    - sniffs
+    - sniffing
+    - sniffed
+    # Reserve translation begin
+    - нюх
+    - нюхает
+    - занюхивает
+    - принюхивается
+    - нюхнул
+    - нюхнула
+    - нюхнули
+    - нюхнуло
+    - понюхал
+    - понюхала
+    - понюхали
+    - понюхало
+    # Reserve translation end

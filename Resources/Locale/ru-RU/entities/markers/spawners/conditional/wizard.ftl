@@ -1,2 +1,3 @@
-ent-SpawnPointWizard = волшебник
-    .desc = { ent-MarkerBase.desc }
+ent-SpawnPointWizard = { ent-BaseAntagSpawner }
+    .desc = { ent-BaseAntagSpawner.desc }
+    .suffix = Волшебник

@@ -6,6 +6,7 @@ using Content.Client.Research;
 using Content.Client.UserInterface.Controls;
 using Content.Goobstation.Common.Research;
 using Content.Goobstation.Shared.Research;
+using Content.Goobstation.UIKit.UserInterface.Controls.NodeTree;
 using Content.Shared.Access.Systems;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -16,7 +17,6 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Configuration; // Reserve edit: rnd-console #344
-using Robust.Shared.Input;
 using Robust.Shared; // Reserve edit: rnd-console #344
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing; // Reserve edit: rnd-console #344
@@ -30,51 +30,22 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
     public Action<string>? OnTechnologyCardPressed;
     public Action? OnServerButtonPressed;
 
-    [Dependency] private readonly IEntityManager _entity = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IGameTiming _timing = default!; // Reserve edit: rnd-console #344
-    [Dependency] private readonly IConfigurationManager _cfg = default!; // Reserve edit: rnd-console #344
+    [Dependency] private IEntityManager _entity = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IGameTiming _timing = default!; // Reserve edit: rnd-console #344
+    [Dependency] private IConfigurationManager _cfg = default!; // Reserve edit: rnd-console #344
 
     private readonly ResearchSystem _research;
     private readonly SpriteSystem _sprite;
     private readonly AccessReaderSystem _accessReader;
 
-    /// <summary>
-    /// Console entity
-    /// </summary>
     public EntityUid Entity;
-
-    /// <summary>
-    /// Currently selected tech
-    /// Exsists for better UI refreshing
-    /// </summary>
     public ProtoId<TechnologyPrototype>? CurrentTech;
 
-    /// <summary>
-    /// All technologies and their availablity
-    /// </summary>
-    public Dictionary<string, ResearchAvailability> List = new();
-
-    /// <summary>
-    /// Cached research points
-    /// </summary>
-    public int Points = 0;
-
-    /// <summary>
-    /// Is tech currently being dragged
-    /// </summary>
-    private bool _draggin;
-
-    /// <summary>
-    /// Global position that all tech relates to.
-    /// For dragging mostly
-    /// </summary>
-    private Vector2 _position = new Vector2(45, 250);
-    private float _zoom = 1f;
-    private const float MinZoom = 0.5f;
-    private const float MaxZoom = 2f;
-    private const float ZoomSpeed = 0.125f;
+    private readonly Dictionary<string, NodeTreeButton> _nodes = new();
+    private Dictionary<string, ResearchAvailability> _researches = new();
+    private int? _points;
 
     private string? _lastClickedTechId; // Reserve edit: rnd-console #344
     private TimeSpan _lastClickTime; // Reserve edit: rnd-console #344
@@ -86,230 +57,165 @@ public sealed partial class FancyResearchConsoleMenu : FancyWindow
         _research = _entity.System<ResearchSystem>();
         _sprite = _entity.System<SpriteSystem>();
         _accessReader = _entity.System<AccessReaderSystem>();
+
         StaticSprite.SetFromSpriteSpecifier(new SpriteSpecifier.Rsi(new("_Goobstation/Interface/rnd-static.rsi"), "static"));
         StaticSprite.DisplayRect.CanShrink = true;
         StaticSprite.DisplayRect.Stretch = TextureRect.StretchMode.Scale;
 
         ServerButton.OnPressed += _ => OnServerButtonPressed?.Invoke();
-        DragContainer.OnKeyBindDown += OnKeybindDown;
-        DragContainer.OnKeyBindUp += OnKeybindUp;
-        RecenterButton.OnPressed += _ => Recenter();
-
-        UpdatePanels(List);
-        Recenter();
+        RecenterButton.OnPressed += _ => TechTree.Recenter();
     }
 
     public void SetEntity(EntityUid entity)
         => Entity = entity;
 
-    public void UpdatePanels(Dictionary<string, ResearchAvailability> dict)
+    public void UpdateState(int points, Dictionary<string, ResearchAvailability> researches, bool force = false)
     {
-        DragContainer.RemoveAllChildren();
-        List = dict;
+        if (force || !SameResearches(researches))
+            UpdatePanels(researches, force);
 
-        foreach (var tech in List)
-        {
-            var proto = _prototype.Index<TechnologyPrototype>(tech.Key);
-
-            var control = new FancyResearchConsoleItem(proto, _sprite, tech.Value);
-            DragContainer.AddChild(control);
-
-            ApplyItemLayout(control); // Reserve edit: rnd-console #344
-            control.SelectAction += SelectTech;
-
-            if (tech.Key == CurrentTech)
-                SelectTech(proto, tech.Value);
-        }
+        if (force || _points != points)
+            UpdateInformationPanel(points);
     }
 
-    public void UpdateInformationPanel(int points)
+    private bool SameResearches(Dictionary<string, ResearchAvailability> researches)
     {
-        Points = points;
+        return _researches.Count == researches.Count
+            && _researches.All(r => researches.TryGetValue(r.Key, out var availability) && availability == r.Value);
+    }
+
+    private void UpdatePanels(Dictionary<string, ResearchAvailability> researches, bool rebuild)
+    {
+        _researches = researches;
+
+        if (rebuild || !_nodes.Keys.ToHashSet().SetEquals(researches.Keys))
+            BuildTree();
+
+        foreach (var (id, availability) in researches)
+        {
+            if (_nodes.TryGetValue(id, out var node))
+                node.State = ToNodeState(availability);
+        }
+
+        if (CurrentTech is { } current
+            && researches.TryGetValue(current, out var currentAvailability)
+            && _prototype.TryIndex(current, out var currentProto))
+            SelectTech(currentProto, currentAvailability);
+    }
+
+    private void BuildTree()
+    {
+        TechTree.Clear();
+        _nodes.Clear();
+
+        foreach (var id in _researches.Keys)
+        {
+            if (!_prototype.TryIndex<TechnologyPrototype>(id, out var proto))
+                continue;
+
+            var node = new NodeTreeButton();
+            node.Icon.Texture = _sprite.Frame0(proto.Icon);
+            node.OnPressed += _ => OnNodePressed(proto); // Reserve edit: rnd-console #344
+            TechTree.AddNode(node, (Vector2) proto.Position);
+            _nodes[id] = node;
+        }
+
+        foreach (var id in _researches.Keys)
+        {
+            if (!_nodes.TryGetValue(id, out var node) || !_prototype.TryIndex<TechnologyPrototype>(id, out var proto))
+                continue;
+
+            foreach (var prereq in proto.TechnologyPrerequisites)
+            {
+                if (_nodes.TryGetValue(prereq, out var prereqNode))
+                    TechTree.AddEdge(prereqNode, node);
+            }
+        }
+
+        TechTree.Recenter();
+    }
+
+    private static NodeTreeState ToNodeState(ResearchAvailability availability)
+    {
+        return availability switch
+        {
+            ResearchAvailability.Researched => NodeTreeState.Unlocked,
+            ResearchAvailability.Available => NodeTreeState.Available,
+            ResearchAvailability.PrereqsMet => NodeTreeState.Unaffordable,
+            _ => NodeTreeState.Locked,
+        };
+    }
+
+    private void UpdateInformationPanel(int points)
+    {
+        _points = points;
 
         var amountMsg = new FormattedMessage();
         amountMsg.AddMarkupOrThrow(Loc.GetString("research-console-menu-research-points-text",
             ("points", points)));
         ResearchAmountLabel.SetMessage(amountMsg);
 
+        TierDisplayContainer.RemoveAllChildren();
         if (!_entity.TryGetComponent(Entity, out TechnologyDatabaseComponent? database))
             return;
 
-        TierDisplayContainer.RemoveAllChildren();
         foreach (var disciplineId in database.SupportedDisciplines)
         {
             var discipline = _prototype.Index<TechDisciplinePrototype>(disciplineId);
             var tier = _research.GetTierCompletionPercentage(database, discipline, _prototype);
 
-            // i'm building the small-ass control here to spare me some mild annoyance in making a new file
-            var texture = new TextureRect
-            {
-                TextureScale = new Vector2(2, 2),
-                VerticalAlignment = VAlignment.Center
-            };
             var label = new RichTextLabel();
-            texture.Texture = _sprite.Frame0(discipline.Icon);
             label.SetMessage(Loc.GetString("research-console-tier-percentage", ("perc", tier)));
 
-            var control = new BoxContainer
+            TierDisplayContainer.AddChild(new BoxContainer
             {
                 Children =
                 {
-                    texture,
-                    label,
-                    new Control
+                    new TextureRect
                     {
-                        MinWidth = 10
-                    }
-                }
-            };
-            TierDisplayContainer.AddChild(control);
+                        Texture = _sprite.Frame0(discipline.Icon),
+                        TextureScale = new Vector2(2, 2),
+                        VerticalAlignment = VAlignment.Center,
+                    },
+                    label,
+                    new Control { MinWidth = 10 },
+                },
+            });
         }
     }
 
-    #region Drag handle
-    protected override void MouseMove(GUIMouseMoveEventArgs args)
+    // Reserve edit start: rnd-console #344 - double-click a node to research it
+    private void OnNodePressed(TechnologyPrototype proto)
     {
-        base.MouseMove(args);
-
-        if (!_draggin)
-            return;
-
-        _position += args.Relative;
-
-        // Move all tech
-        foreach (var child in DragContainer.Children)
-        {
-            LayoutContainer.SetPosition(child, child.Position + args.Relative);
-        }
-    }
-
-    protected override void MouseWheel(GUIMouseWheelEventArgs args)
-    {
-        base.MouseWheel(args);
-
-        // Reserve edit start: rnd-console #344
-        var mousePos = args.GlobalPixelPosition.Position;
-        if (!DragContainer.GlobalPixelRect.Contains((int) mousePos.X, (int) mousePos.Y))
-            return;
-        // Reserve edit end: rnd-console #344
-
-        var oldZoom = _zoom;
-
-        if (args.Delta.Y > 0)
-            _zoom += ZoomSpeed;
-        else
-            _zoom -= ZoomSpeed;
-
-        _zoom = Math.Clamp(_zoom, MinZoom, MaxZoom);
-
-        if (MathHelper.CloseTo(oldZoom, _zoom))
-            return;
-
-        ApplyZoomToAllItems(); // Reserve edit: rnd-console #344
-        args.Handle();
-    }
-
-    /// <summary>
-    /// Raised when LMB is pressed at <see cref="DragContainer"/>
-    /// </summary>
-    private void OnKeybindDown(GUIBoundKeyEventArgs args)
-    {
-        if (args.Function == EngineKeyFunctions.Use)
-            _draggin = true;
-    }
-
-    /// <summary>
-    /// Raised when LMB is unpressed at <see cref="DragContainer"/>
-    /// </summary>
-    private void OnKeybindUp(GUIBoundKeyEventArgs args)
-    {
-        if (args.Function == EngineKeyFunctions.Use)
-            _draggin = false;
-    }
-
-    protected override DragMode GetDragModeFor(Vector2 relativeMousePos)
-        => _draggin ? DragMode.None : base.GetDragModeFor(relativeMousePos);
-    #endregion
-
-    /// <summary>
-    /// Selects a tech prototype and opens info panel
-    /// </summary>
-    /// <param name="proto">Tech proto</param>
-    /// <param name="availability">Tech availablity</param>
-    public void SelectTech(TechnologyPrototype proto, ResearchAvailability availability)
-    {
-        // Reserve edit start: rnd-console #344
         var now = _timing.RealTime;
         var delay = TimeSpan.FromMilliseconds(_cfg.GetCVar(CVars.DoubleClickDelay));
         var isDoubleClick = _lastClickedTechId == proto.ID && now - _lastClickTime <= delay;
 
-        _lastClickedTechId = proto.ID;
+        _lastClickedTechId = isDoubleClick ? null : proto.ID; // a third click starts a new pair
         _lastClickTime = now;
 
-        if (!_player.LocalEntity.HasValue)
-        {
-            InfoContainer.RemoveAllChildren();
-            return;
-        }
-
-        CurrentTech = proto.ID;
-        var control = OpenInfoPanel(proto, availability);
-
+        var panel = SelectTech(proto, _researches.GetValueOrDefault(proto.ID, ResearchAvailability.Unavailable));
         if (isDoubleClick)
-            control.TryResearch();
-        // Reserve edit end: rnd-console #344
-    }
-
-    // Reserve edit start: rnd-console #344
-    private FancyTechnologyInfoPanel OpenInfoPanel(TechnologyPrototype proto, ResearchAvailability availability)
-    {
-        InfoContainer.RemoveAllChildren();
-
-        var control = new FancyTechnologyInfoPanel(proto, _accessReader.IsAllowed(_player.LocalEntity!.Value, Entity), availability, _sprite);
-        control.BuyAction += args => OnTechnologyCardPressed?.Invoke(args.ID);
-        InfoContainer.AddChild(control);
-        return control;
-    }
-
-    private Vector2 GetItemPosition(TechnologyPrototype proto)
-        => _position + proto.Position * 150 * _zoom;
-
-    private void ApplyItemLayout(FancyResearchConsoleItem item)
-    {
-        LayoutContainer.SetPosition(item, GetItemPosition(item.Prototype));
-        item.SetScale(_zoom);
-    }
-
-    private void ApplyZoomToAllItems()
-    {
-        foreach (var child in DragContainer.Children)
-        {
-            if (child is FancyResearchConsoleItem research)
-                ApplyItemLayout(research);
-        }
+            panel?.TryResearch();
     }
     // Reserve edit end: rnd-console #344
 
-    /// <summary>
-    /// Sets <see cref="_position"/> to its default value
-    /// </summary>
-    public void Recenter()
+    private FancyTechnologyInfoPanel? SelectTech(TechnologyPrototype proto, ResearchAvailability availability) // Reserve edit: rnd-console #344 - returns the panel
     {
-        _position = new(45, 250);
-        ApplyZoomToAllItems(); // Reserve edit: rnd-console #344
-    }
-
-    public override void Close()
-    {
-        base.Close();
-
-        _lastClickedTechId = null; // Reserve edit: rnd-console #344
-        DragContainer.RemoveAllChildren();
         InfoContainer.RemoveAllChildren();
-    }
+        if (_player.LocalEntity is not { } user)
+            return null; // Reserve edit: rnd-console #344
 
-    private sealed partial class DisciplineButton(TechDisciplinePrototype proto) : Button
-    {
-        public TechDisciplinePrototype Proto = proto;
+        if (CurrentTech is { } previous && _nodes.TryGetValue(previous, out var previousNode))
+            previousNode.Selected = false;
+
+        CurrentTech = proto.ID;
+        if (_nodes.TryGetValue(proto.ID, out var node))
+            node.Selected = true;
+
+        var control = new FancyTechnologyInfoPanel(proto, _accessReader.IsAllowed(user, Entity), availability, _sprite);
+        control.BuyAction += args => OnTechnologyCardPressed?.Invoke(args.ID);
+        InfoContainer.AddChild(control);
+        return control; // Reserve edit: rnd-console #344
     }
 }

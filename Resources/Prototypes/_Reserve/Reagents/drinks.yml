@@ -1,22 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Orchito start
-- type: reagent
-  id: Orchito
-  name: reagent-name-orchito
-  parent: BaseDrink
-  desc: reagent-desc-orchito
-  physicalDesc: reagent-physical-desc-sweet
-  flavor: icedtea
-  color: "#a0f080"
-  metamorphicSprite:
-    sprite: _Reserve/Objects/Consumable/Drinks/orchito.rsi
-    state: icon_empty
-  metamorphicMaxFillLevels: 6
-  metamorphicFillBaseName: fill-
-  metamorphicChangeColor: false
-# Orchito end
-
 # Orchid's Barmania - Visual Fixes start
 - type: reagent
   id: Milkshake

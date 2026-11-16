@@ -33,7 +33,8 @@ public sealed class VoidConduitOverlay : Overlay
         _xform = _entMan.System<TransformSystem>();
         _sprite = _entMan.System<SpriteSystem>();
 
-        _unshadedShader = _prototype.Index<ShaderPrototype>("unshaded").Instance();
+        var protoIdUnshaded = "unshaded";  // Reserve edit: Fix warnings
+        _unshadedShader = _prototype.Index<ShaderPrototype>(protoIdUnshaded).Instance();  // Reserve edit: Fix warnings
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -45,13 +46,11 @@ public sealed class VoidConduitOverlay : Overlay
 
         var handle = args.WorldHandle;
 
-        var xformQuery = _entMan.GetEntityQuery<TransformComponent>();
-
         handle.UseShader(_unshadedShader);
         var query = _entMan.EntityQueryEnumerator<VoidConduitComponent, TransformComponent>();
-        while (query.MoveNext(out _, out var conduit, out var xform))
+        while (query.MoveNext(out var uid, out var conduit, out var xform))
         {
-            var (pos, rot) = _xform.GetWorldPositionRotation(xform, xformQuery);
+            var (pos, rot) = _xform.GetWorldPositionRotation(xform);
 
             var texture = _sprite.GetFrame(conduit.OverlaySprite, _timing.CurTime);
 

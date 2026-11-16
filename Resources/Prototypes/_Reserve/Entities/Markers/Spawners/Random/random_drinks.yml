@@ -394,3 +394,84 @@
     rareChance: 0.05
 
 # endregion
+
+# region Bottles
+
+- type: entity
+  parent: MarkerBase
+  id: RandomDrinkBottleNonAlcohol
+  name: random drink spawner
+  suffix: Bottle, Non-Alcoholic
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Transform
+    anchored: false
+  - type: Sprite
+    layers:
+      - state: green
+      - sprite: Objects/Consumable/Drinks/colabottle.rsi
+        state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomAllNonAlcoholTable
+      prob: 0.8
+
+- type: entityTable
+  id: RandomAllNonAlcoholTable
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: RandomCommonNonAlcoholTable
+      weight: 0.95
+    - !type:NestedSelector
+      tableId: RandomRareNonAlcoholTable
+      weight: 0.05
+
+- type: entityTable
+  id: RandomCommonNonAlcoholTable
+  table: !type:GroupSelector
+    children:
+    - id: DrinkJuiceBluePumpkinBottleFull
+    - id: DrinkJuiceMultifruitBottleFull
+    - id: DrinkBlueBoomBottleFull
+    - id: DrinkMangoBoomBottleFull
+    - id: DrinkLemonLimeStillBottleFull
+    - id: DrinkSupermaxBottleFull
+
+- type: entityTable
+  id: RandomRareNonAlcoholTable
+  table: !type:GroupSelector
+    children:
+    - id: DrinkPoisonBoomBottleFull
+    - id: DrinkJuicePumpkinBottleFull
+
+- type: entity
+  parent: RandomDrinkBottleNonAlcohol
+  id: RandomDrinkBottleAll
+  name: random drink spawner
+  suffix: Bottle, All
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomAllBottleTable
+      prob: 0.8
+
+- type: entityTable
+  id: RandomAllBottleTable
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: RandomCommonNonAlcoholTable
+      weight: 0.95
+    - !type:NestedSelector
+      tableId: RandomRareNonAlcoholTable
+      weight: 0.05
+    - !type:NestedSelector
+      tableId: RandomCommonAlcoholTable
+      weight: 0.95
+    - !type:NestedSelector
+      tableId: RandomRareAlcoholTable
+      weight: 0.05
+
+# endregion

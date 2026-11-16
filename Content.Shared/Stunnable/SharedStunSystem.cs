@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Shared.ActionBlocker;
@@ -38,7 +38,7 @@ public abstract partial class SharedStunSystem : EntitySystem
 {
     public static readonly EntProtoId StunId = "StatusEffectStunned";
 
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
+    // [Dependency] private readonly IComponentFactory _componentFactory = default!; // Reserve edit: Fix warnings
     [Dependency] protected readonly ActionBlockerSystem Blocker = default!;
     [Dependency] protected readonly AlertsSystem Alerts = default!;
     [Dependency] protected readonly IGameTiming GameTiming = default!;
@@ -69,7 +69,7 @@ public abstract partial class SharedStunSystem : EntitySystem
         SubscribeLocalEvent<StunnedComponent, PickupAttemptEvent>(OnAttempt);
         SubscribeLocalEvent<StunnedComponent, IsEquippingAttemptEvent>(OnEquipAttempt);
         SubscribeLocalEvent<StunnedComponent, IsUnequippingAttemptEvent>(OnUnequipAttempt);
-        SubscribeLocalEvent<MobStateComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<StunnedStatusEffectComponent, MobStateChangedEvent>(OnMobStateChanged); // Reserve edit: Soft Crit port
 
         // New Status Effect subscriptions
         SubscribeLocalEvent<StunnedStatusEffectComponent, StatusEffectAppliedEvent>(OnStunStatusApplied);
@@ -89,7 +89,7 @@ public abstract partial class SharedStunSystem : EntitySystem
         args.Cancelled = true;
     }
 
-    private void OnMobStateChanged(EntityUid uid, MobStateComponent component, MobStateChangedEvent args)
+    private void OnMobStateChanged(Entity<StunnedStatusEffectComponent> ent, ref MobStateChangedEvent args) // Reserve edit: Soft Crit port: Ent
     {
         switch (args.NewMobState)
         {
@@ -97,14 +97,11 @@ public abstract partial class SharedStunSystem : EntitySystem
                 {
                     break;
                 }
-            case MobState.Critical:
+            case MobState.SoftCritical: // Reserve edit: Soft Crit port
+            case MobState.HardCritical: // Reserve edit: Soft Crit port
+            case MobState.Dead: // Reserve edit: Soft Crit port: Merge duplicates
                 {
-                    _status.TryRemoveStatusEffect(uid, StunId);
-                    break;
-                }
-            case MobState.Dead:
-                {
-                    _status.TryRemoveStatusEffect(uid, StunId);
+                    _status.TryRemoveStatusEffect(ent, StunId); // Reserve edit: Soft Crit port
                     break;
                 }
             case MobState.Invalid:

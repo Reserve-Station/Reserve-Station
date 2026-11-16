@@ -19,7 +19,7 @@
     distance: 1
     speed: 20
   - type: Item
-    size: Normal
+    size: Small  # Reserve edit: Random maints
     sprite: _Goobstation/Objects/Fun/tennis_racket.rsi
   - type: PhysicalComposition
     materialComposition:

@@ -1,5 +1,5 @@
-ent-DiseaseBehaviorDebug = { "" }
-    .desc = { "" }
+ent-DiseaseBehaviorDebug = заболевание
+    .desc = Отладочное заболевание.
 ent-DiseaseBehaviorTurboCancer = турборак
     .desc = Со временем наносит генетический и тупой урон. На короткое время.
 ent-DiseaseBehaviorSpreadDebug = дебаг заражение

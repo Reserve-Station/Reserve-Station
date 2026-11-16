@@ -1,22 +1,32 @@
 ent-ClothingHeadBandBase = { ent-ClothingHeadBaseButcherable }
     .desc = { ent-ClothingHeadBaseButcherable.desc }
+
 ent-ClothingHeadBandBlack = чёрная бандана
     .desc = { ent-ClothingHeadBandBase.desc }
+    .suffix = Пират, Вор
 ent-ClothingHeadBandBlue = синяя бандана
     .desc = { ent-ClothingHeadBandBase.desc }
+    .suffix = Ботаник
 ent-ClothingHeadBandBotany = бандана ботаника
     .desc = { ent-ClothingHeadBandBase.desc }
 ent-ClothingHeadBandGold = золотая бандана
     .desc = { ent-ClothingHeadBandBase.desc }
+    .suffix = Жёлтая
 ent-ClothingHeadBandGreen = зелёная бандана
     .desc = { ent-ClothingHeadBandBase.desc }
+    .suffix = Ботаник
 ent-ClothingHeadBandGrey = серая бандана
     .desc = { ent-ClothingHeadBandBase.desc }
+    .suffix = Пират
 ent-ClothingHeadBandRed = красная бандана
     .desc = { ent-ClothingHeadBandBase.desc }
+    .suffix = Пират
+ent-ClothingHeadBandBrown = коричневая бандана
+    .desc = { ent-ClothingHeadBandBase.desc }
+    .suffix = Пират
+
 ent-ClothingHeadBandSkull = бандана с черепом
     .desc = { ent-ClothingHeadBandBase.desc }
+    .suffix = Пират
 ent-ClothingHeadBandMerc = бандана наёмника
-    .desc = { ent-ClothingHeadBandBase.desc }
-ent-ClothingHeadBandBrown = коричневая бандана
     .desc = { ent-ClothingHeadBandBase.desc }

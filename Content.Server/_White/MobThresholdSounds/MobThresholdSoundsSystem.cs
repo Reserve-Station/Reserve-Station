@@ -1,9 +1,7 @@
-// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Maths.FixedPoint;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -11,10 +9,10 @@ using Robust.Shared.Audio.Systems;
 
 namespace Content.Server._White.MobThresholdSounds;
 
-public sealed class MobThresholdSoundsSystem : EntitySystem
+public sealed partial class MobThresholdSoundsSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
 
     public override void Initialize()
     {

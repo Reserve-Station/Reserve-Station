@@ -5,6 +5,7 @@ using Content.Shared.Buckle.Components;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
 using Content.Shared.Damage.ForceSay;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Emoting;
 using Content.Shared.Hands;
 using Content.Shared.Interaction;
@@ -71,7 +72,8 @@ public partial class MobStateSystem
         switch (ent.Comp.CurrentState)
         {
             case MobState.Dead:
-            case MobState.Critical:
+            case MobState.SoftCritical: // Reserve edit: Soft Crit port
+            case MobState.HardCritical: // Reserve edit: Soft Crit port
                 args.Cancelled = true;
                 break;
         }
@@ -84,7 +86,8 @@ public partial class MobStateSystem
             case MobState.Alive:
                 //unused
                 break;
-            case MobState.Critical:
+            case MobState.SoftCritical: // Reserve edit: Soft Crit port
+            case MobState.HardCritical: // Reserve edit: Soft Crit port
                 _standing.Stand(target);
                 break;
             case MobState.Dead:
@@ -111,35 +114,32 @@ public partial class MobStateSystem
         switch (state)
         {
             case MobState.Alive:
-            {
                 _standing.Stand(target);
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Alive);
                 break;
-            }
-            case MobState.Critical:
-            {
-                Down(target);
+            case MobState.SoftCritical: // Reserve edit: Soft Crit port
+                _standing.Down(target);
                 RaiseLocalEvent(target, ref ev); // Goobstation
-                _appearance.SetData(target, MobStateVisuals.State, MobState.Critical);
+                _appearance.SetData(target, MobStateVisuals.State, MobState.SoftCritical); // Reserve edit: Soft Crit port
                 break;
-            }
+            // Reserve edit start: Soft Crit port
+            case MobState.HardCritical:
+                _standing.Down(target);
+                RaiseLocalEvent(target, ref ev); // Goobstation
+                _appearance.SetData(target, MobStateVisuals.State, MobState.HardCritical);
+                break;
+            // Reserve edit end: Soft Crit port
             case MobState.Dead:
-            {
                 EnsureComp<CollisionWakeComponent>(target);
                 Down(target);
                 RaiseLocalEvent(target, ref ev); // Goobstation
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Dead);
                 break;
-            }
             case MobState.Invalid:
-            {
                 //unused;
                 break;
-            }
             default:
-            {
                 throw new NotImplementedException();
-            }
         }
     }
 
@@ -156,7 +156,11 @@ public partial class MobStateSystem
         // Incapacitated or dead targets get stripped two or three times as fast. Makes stripping corpses less tedious.
         if (IsDead(target, component))
             args.Multiplier /= 3;
-        else if (IsCritical(target, component))
+        // Reserve edit start: Soft Crit port
+        else if (IsHardCritical(target, component))
+            args.Multiplier /= 3;
+        // Reserve edit end: Soft Crit port
+        else if (IsSoftCritical(target, component)) // Reserve edit: Soft Crit port
             args.Multiplier /= 2;
     }
 
@@ -176,9 +180,17 @@ public partial class MobStateSystem
         switch (component.CurrentState)
         {
             case MobState.Dead:
-            case MobState.Critical:
+            // Reserve edit start: Soft Crit port
+            case MobState.HardCritical:
                 args.Cancel();
                 break;
+            // Reserve edit end: Soft Crit port
+            // Reserve edit start: Soft Crit port
+            case MobState.SoftCritical:
+                if (args is not UpdateCanMoveEvent)
+                    args.Cancel();
+                break;
+                // Reserve edit end: Soft Crit port
         }
     }
 

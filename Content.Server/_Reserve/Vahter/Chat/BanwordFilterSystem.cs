@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -42,8 +42,8 @@ public sealed class BanwordFilterSystem : EntitySystem
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly VomitSystem _vomit = default!;
-    [Dependency] private readonly ExplosionSystem _explosionSystem = default!;
+    // [Dependency] private readonly VomitSystem _vomit = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly ExplosionSystem _explosionSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
     [Dependency] private readonly INetManager _net = default!;
 

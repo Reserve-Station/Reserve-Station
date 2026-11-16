@@ -12,5 +12,20 @@ ent-BlastDoorCentralCommand = { ent-BlastDoor }
 ent-BlastDoorOpenCentralCommand = { ent-BlastDoorCentralCommand }
     .desc = { ent-BlastDoorCentralCommand.desc }
     .suffix = Открытый, { ent-BlastDoorCentralCommand.suffix }
+
 ent-BlastDoorXeno = ксеногермозатвор
     .desc = Не потеряйте руку!
+    .suffix = Ксеноморф
+ent-BlastDoorXenoOpen = { ent-BlastDoorXeno }
+    .desc = { ent-BlastDoorXeno.desc }
+    .suffix = Ксеноморф, Открытый
+ent-BlastDoorXenoFrame = каркас ксеногермозатвора
+    .desc = { ent-BlastDoorXeno.desc }
+    .suffix = Ксеноморф
+
+ent-BlastDoorXenoborg = { ent-BlastDoor }
+    .desc = Не потеряйте руку!
+    .suffix = Ксеноборг
+ent-BlastDoorXenoborgOpen = { ent-BlastDoorXenoborg }
+    .desc = { ent-BlastDoorXenoborg.desc }
+    .suffix = Ксеноборг, Открытый

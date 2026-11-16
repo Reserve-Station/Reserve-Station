@@ -1,4 +1,4 @@
-using Content.Goobstation.Common.Religion;
+﻿using Content.Goobstation.Common.Religion;
 using Content.Server._DV.CosmicCult.Components;
 using Content.Server.EUI;
 using Content.Server.Polymorph.Components;
@@ -21,25 +21,26 @@ using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Timing;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._DV.CosmicCult;
 
 public sealed class DeconversionSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    // [Dependency] private readonly IEntityManager _entityManager = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    // [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly SharedJitteringSystem _jittering = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedToolSystem _tools = default!;
-    [Dependency] private readonly UseDelaySystem _delay = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly IPlayerManager _playerMan = default!;
-    [Dependency] private readonly EuiManager _euiMan = default!;
+    // [Dependency] private readonly UseDelaySystem _delay = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedStunSystem _stun = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedMindSystem _mind = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly IPlayerManager _playerMan = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly EuiManager _euiMan = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly PolymorphSystem _polymorph = default!;
 
     public override void Initialize()
@@ -124,7 +125,8 @@ public sealed class DeconversionSystem : EntitySystem
             _popup.PopupEntity(Loc.GetString("cleanse-deconvert-attempt-notcorrupted", ("target", Identity.Entity(target.Value, EntityManager))), args.User, args.User);
             _popup.PopupCoordinates(Loc.GetString("cleanse-deconvert-attempt-rebound"), targetPosition, PopupType.MediumCaution);
             _damageable.TryChangeDamage(args.User, censer.FailedDeconversionDamage, true);
-            _damageable.TryChangeDamage(args.Target, censer.FailedDeconversionDamage, true);
+            if (args.Target is not null) // Goob edit for new damageable and lazy
+                _damageable.TryChangeDamage(args.Target.Value, censer.FailedDeconversionDamage, true);
         }
         args.Handled = true;
     }

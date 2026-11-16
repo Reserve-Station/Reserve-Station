@@ -1,5 +1,5 @@
 ent-AdminInstantEffectBase = моментальный эффект
-    .desc = { "" }
+    .desc = Что произошло?
 ent-AdminInstantEffectEMP = { ent-AdminInstantEffectBase }
     .suffix = ЭМИ
     .desc = { ent-AdminInstantEffectBase.desc }

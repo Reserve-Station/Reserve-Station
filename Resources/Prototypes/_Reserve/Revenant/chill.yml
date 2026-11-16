@@ -1,0 +1,49 @@
+# Revenant "Chill" ability: freezes the air, covers the floor in frost and chills everyone nearby.
+
+- type: entity
+  parent: BaseAction
+  id: ActionRevenantChill
+  name: Chill
+  description: Freezes everything around you. People nearby are chilled to the bone and slow down. Costs 30 Essence.
+  components:
+  - type: Action
+    itemIconStyle: NoItem # bought actions live in the mind, without this the icon is drawn tiny in the corner
+    useDelay: 20
+    icon:
+      sprite: _Reserve/Interface/Actions/revenant.rsi
+      state: chill
+  - type: InstantAction
+    event: !type:RevenantChillActionEvent
+
+- type: listing
+  id: RevenantChill
+  name: revenant-chill-name
+  description: revenant-chill-desc
+  productAction: ActionRevenantChill
+  cost:
+    StolenEssence: 15
+  categories:
+  - RevenantAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+# Purely visual frost left on the floor, melts away on its own.
+- type: entity
+  id: RevenantFrost
+  name: frost
+  description: A thin layer of unnaturally cold frost.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/ice_crust.rsi
+    layers:
+    - state: ice
+    drawdepth: FloorObjects
+    color: "#e8dcff50"
+  - type: Clickable
+  - type: Transform
+    anchored: true
+  - type: TimedDespawn
+    lifetime: 20

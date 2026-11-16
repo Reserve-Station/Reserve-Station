@@ -1,6 +1,6 @@
-ent-BaseSimpleMob = { "" }
+ent-BaseSimpleMob = существо
     .suffix = ИИ
-    .desc = { "" }
+    .desc = Оно живое?..
 ent-SimpleSpaceMobBase = { ent-BaseSimpleMob }
     .suffix = ИИ
     .desc = { ent-BaseSimpleMob.desc }

@@ -8,11 +8,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Client.ChronoLegionnaire.Overlays;
 
-public sealed class StasisOverlay : Overlay
+public sealed partial class StasisOverlay : Overlay
 {
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPlayerManager _playerManager = default!;
 
     public override bool RequestScreenTexture => true;
 
@@ -23,7 +23,8 @@ public sealed class StasisOverlay : Overlay
     public StasisOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _coloredScreenBorder = _prototypeManager.Index<ShaderPrototype>("WideColoredScreenBorder").InstanceUnique();
+        var protoId = "WideColoredScreenBorder";  // Reserve edit: Fix warnings
+        _coloredScreenBorder = _prototypeManager.Index<ShaderPrototype>(protoId).InstanceUnique();  // Reserve edit: Fix warnings
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

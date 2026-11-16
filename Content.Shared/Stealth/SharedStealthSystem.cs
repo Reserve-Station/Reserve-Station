@@ -63,7 +63,7 @@ public abstract class SharedStealthSystem : EntitySystem
 
     private void OnMobStateChanged(EntityUid uid, StealthComponent component, MobStateChangedEvent args)// Goobstation - Stealth change
     {
-        if (args.NewMobState == MobState.Dead || args.NewMobState == MobState.Critical)
+        if (args.NewMobState is MobState.Dead or MobState.SoftCritical or MobState.HardCritical) // Reserve edit: Soft Crit port
         {
             if (args.NewMobState == MobState.Dead)
                 component.Enabled = component.EnabledOnDeath;

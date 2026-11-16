@@ -3,7 +3,7 @@
   name: guide-entry-wraith
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Wraith.xml"
   localizedText:
-    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Wraith.xml"
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Wraith.xml" # Reserve edit - was _Goobstation, which is the English text
   children:
   - Plaguebringer
   - Harbinger
@@ -16,32 +16,32 @@
   name: guide-entry-plaguebringer
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Plaguebringer.xml"
   localizedText:
-    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Plaguebringer.xml"
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Plaguebringer.xml" # Reserve edit - was _Goobstation, which is the English text
 
 - type: guideEntry
   id: Harbinger
   name: guide-entry-harbinger
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Harbinger.xml"
   localizedText:
-    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Harbinger.xml"
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Harbinger.xml" # Reserve edit - was _Goobstation, which is the English text
 
 - type: guideEntry
   id: Trickster
   name: guide-entry-trickster
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Trickster.xml"
   localizedText:
-    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Trickster.xml"
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Trickster.xml" # Reserve edit - was _Goobstation, which is the English text
 
 - type: guideEntry
   id: VoidSummons
   name: guide-entry-void-summons
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/VoidSummons.xml"
   localizedText:
-    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/VoidSummons.xml"
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/VoidSummons.xml" # Reserve edit - was _Goobstation, which is the English text
 
 - type: guideEntry
   id: RevenantWraith
   name: guide-entry-revenant
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/revenant.xml"
   localizedText:
-    ru-RU: "/ServerInfo/_Goobstation/Guidebook/Antagonist/revenant.xml"
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/revenant.xml" # Reserve edit - was _Goobstation, which is the English text

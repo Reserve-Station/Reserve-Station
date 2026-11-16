@@ -2,10 +2,10 @@
 global-antagonist-wizard-description = Старый сумашедший из Федерации Магов, обученный смертельным заклинаниям.
 
 global-antagonist-nukeops-name = Ядерный оперативник
-global-antagonist-nukeops-description = Элитный наемник Синдиката.
+global-antagonist-nukeops-description = Элитный наёмник Синдиката.
 
 global-antagonist-loneops-name = Одинокий оперативник
-global-antagonist-loneops-description = Элитный наемник Синдиката, один против всей станции.
+global-antagonist-loneops-description = Элитный наёмник Синдиката, один против всей станции.
 
 global-antagonist-ninja-name = Ниндзя
 global-antagonist-ninja-description = Напичканный высокими технологиями элитный боец.
@@ -57,6 +57,9 @@ global-antagonist-devil-description = Һеҙ әһәмиәтһеҙ.
 
 global-antagonist-abductor-name = Абдуктор
 global-antagonist-abductor-description = Зондирование в процессе.
+
+global-antagonist-vampire-name = Вампир
+global-antagonist-vampire-description = Кровососущее создание ночи.
 
 global-antagonist-ghost-role-name = Внестанционный
 global-antagonist-ghost-role-description = Роли для призраков, чаще всего не несут никакого влияния на станцию.

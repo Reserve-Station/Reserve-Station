@@ -6,6 +6,6 @@ ent-BaseMobXenomorphAdult = { ent-BaseMobXenomorph }
     .desc = { ent-BaseMobXenomorph.desc }
     .suffix = { ent-BaseMobXenomorph.suffix }
 
-ent-BaseMobXenomorphDungeon = { "" }
-    .desc = { "" }
+ent-BaseMobXenomorphDungeon = { ent-SimpleSpaceMobBase }
+    .desc = { ent-SimpleSpaceMobBase.desc }
     .suffix = { roles-antag-xenomorph-name }, Подземелья

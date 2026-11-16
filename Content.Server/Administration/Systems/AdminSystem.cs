@@ -2,6 +2,7 @@
 
 using System.Linq;
 using Content.Server.Administration.Managers;
+using Content.Server._Reserve.Administration; // Reserve edit
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Hands.Systems;
@@ -253,6 +254,16 @@ public sealed class AdminSystem : EntitySystem
             startingRole = _jobs.MindTryGetJobName(mindId);
         }
 
+        // Reserve edit start: extra antag info for admins
+        string? antagNote = null;
+        if (session?.AttachedEntity is { } attached)
+        {
+            var noteEv = new GetAdminAntagNoteEvent();
+            RaiseLocalEvent(attached, ref noteEv);
+            antagNote = noteEv.Note;
+        }
+        // Reserve edit end
+
         // Connection status and playtime
         var connected = session != null && session.Status is SessionStatus.Connected or SessionStatus.InGame;
 
@@ -281,7 +292,8 @@ public sealed class AdminSystem : EntitySystem
             connected,
             _roundActivePlayers.Contains(data.UserId),
             HasComp<GhostComponent>(session?.AttachedEntity), // Goobstation
-            overallPlaytime);
+            overallPlaytime,
+            antagNote); // Reserve edit
     }
 
     private void OnPanicBunkerChanged(bool enabled)

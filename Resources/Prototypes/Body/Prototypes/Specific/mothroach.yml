@@ -10,8 +10,8 @@
       connections: # Shitmed
       - groin
       organs:
-        lungs: OrganAnimalLungs
-        heart: OrganAnimalHeart
+        lungs: OrganInsectInnardsLungs  # Reserve edit: Proper small animal organs
+        heart: OrganAnimalHeartSmall  # Reserve edit: Proper small animal organs
     # <Shitmed>
     groin:
       part: GroinAnimal
@@ -19,8 +19,8 @@
       - legs
       organs:
         stomach: OrganMothStomach
-        liver: OrganAnimalLiver
-        kidneys: OrganAnimalKidneys
+        liver: OrganAnimalLiverSmall  # Reserve edit: Proper small animal organs
+        kidneys: OrganAnimalKidneysSmall  # Reserve edit: Proper small animal organs
     legs:
       part: LegsAnimal
       connections:

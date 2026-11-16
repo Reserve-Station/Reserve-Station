@@ -25,10 +25,13 @@ ent-PuddleFlour = { ent-PuddleTemporary }
     .desc = { ent-PuddleTemporary.desc }
     .suffix = Мука
 ent-PuddleSparkle = Блеск
-    .desc = { "" }
+    .desc = Признак крайней чистоты.
 ent-Puddle = лужа
     .desc = Лужа жидкости.
 
 ent-PuddleFluorosulfuricAcid = { ent-PuddleTemporary }
     .desc = { ent-PuddleTemporary.desc }
-    .suffix = фторсерная кислота (15 ед.)
+    .suffix = Фторсерная кислота, 15 ед.
+ent-PuddleFluorosulfuricAcidSmall = { ent-PuddleFluorosulfuricAcid }
+    .desc = { ent-PuddleFluorosulfuricAcid.desc }
+    .suffix = Фторсерная кислота, 5 ед.

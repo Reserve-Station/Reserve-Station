@@ -1,0 +1,407 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Blood
+
+- type: entity
+  parent: WeldingFuelTank
+  id: BloodTankFull
+  name: blood tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Blood
+          Quantity: 1500
+
+- type: entity
+  parent: WeldingFuelTankHighCapacity
+  id: BloodTankHighCapacity
+  name: high-capacity blood tank
+  description: A highly pressurized blood tank made to hold gargantuan amounts of blood.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Blood
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion Blood
+
+# region THC
+
+- type: entity
+  parent: GenericTank
+  id: THCTankFull
+  name: THC tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: THC
+          Quantity: 1500
+
+- type: entity
+  parent: WaterTankHighCapacity
+  id: THCTankHighCapacity
+  name: high-capacity THC tank
+  description: A highly pressurized THC tank made to hold gargantuan amounts of THC.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: THC
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion THC
+
+# region Beer
+
+- type: entity
+  parent: GenericTank
+  id: BeerTankFull
+  name: beer tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Beer
+          Quantity: 1500
+
+- type: entity
+  parent: WaterTankHighCapacity
+  id: BeerTankHighCapacity
+  name: high-capacity beer tank
+  description: A highly pressurized beer tank made to hold gargantuan amounts of beer.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Beer
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion Beer
+
+# region Wine
+
+- type: entity
+  parent: GenericTank
+  id: WineTankFull
+  name: wine tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Wine
+          Quantity: 1500
+
+- type: entity
+  parent: WaterTankHighCapacity
+  id: WineTankHighCapacity
+  name: high-capacity wine tank
+  description: A highly pressurized wine tank made to hold gargantuan amounts of wine.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Wine
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion Wine
+
+# region Nothing
+
+- type: entity
+  parent: GenericTank
+  id: NothingTankFull
+  name: nothing tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Nothing
+          Quantity: 1500
+
+- type: entity
+  parent: WaterTankHighCapacity
+  id: NothingTankHighCapacity
+  name: high-capacity nothing tank
+  description: A highly pressurized nothing tank made to hold gargantuan amounts of nothing.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Nothing
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion Nothing
+
+# region Egg
+
+- type: entity
+  parent: WaterTank
+  id: EggTankFull
+  name: egg tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Egg
+          Quantity: 1500
+
+- type: entity
+  parent: WaterTankHighCapacity
+  id: EggTankHighCapacity
+  name: high-capacity egg tank
+  description: A highly pressurized egg tank made to hold gargantuan amounts of egg.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Egg
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion Egg
+
+# region GroundBee
+
+- type: entity
+  parent: WeldingFuelTank
+  id: GroundBeeTankFull
+  name: ground bee tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: GroundBee
+          Quantity: 1500
+
+- type: entity
+  parent: WeldingFuelTankHighCapacity
+  id: GroundBeeTankHighCapacity
+  name: high-capacity ground bee tank
+  description: A highly pressurized ground bee tank made to hold gargantuan amounts of ground bees.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: GroundBee
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion GroundBee
+
+# region SpaceLube
+
+- type: entity
+  parent: GenericTank
+  id: SpaceLubeTankFull
+  name: space lube tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: SpaceLube
+          Quantity: 1500
+
+- type: entity
+  parent: WaterTankHighCapacity
+  id: SpaceLubeTankHighCapacity
+  name: high-capacity space lube tank
+  description: A highly pressurized space lube tank made to hold gargantuan amounts of space lube.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: SpaceLube
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion SpaceLube
+
+# region Oil
+
+- type: entity
+  parent: GenericTank
+  id: OilTankFull
+  name: oil tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Oil
+          Quantity: 1500
+
+- type: entity
+  parent: WaterTankHighCapacity
+  id: OilTankHighCapacity
+  name: high-capacity oil tank
+  description: A highly pressurized oil tank made to hold gargantuan amounts of oil.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Oil
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion Oil
+
+# region UnstableMutagen
+
+- type: entity
+  parent: GenericTank
+  id: UnstableMutagenTankFull
+  name: unstable mutagen tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: UnstableMutagen
+          Quantity: 1500
+
+- type: entity
+  parent: WaterTankHighCapacity
+  id: UnstableMutagenTankHighCapacity
+  name: high-capacity unstable mutagen tank
+  description: A highly pressurized unstable mutagen tank made to hold gargantuan amounts of unstable mutagen.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: UnstableMutagen
+          Quantity: 10000
+        maxVol: 10000
+
+# endregion UnstableMutagen
+
+# Compounds
+
+# region Clown
+
+- type: entity
+  parent: WeldingFuelTank
+  id: ClownTankFull
+  name: clown tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Laughter
+          Quantity: 740
+        - ReagentId: Bananadine
+          Quantity: 555
+        - ReagentId: Honk
+          Quantity: 185
+        - ReagentId: Happiness
+          Quantity: 20
+
+- type: entity
+  parent: WeldingFuelTankHighCapacity
+  id: ClownTankHighCapacity
+  name: high-capacity clown tank
+  description: A highly pressurized clown tank made to hold gargantuan amounts of clown liquid.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Laughter
+          Quantity: 4940
+        - ReagentId: Bananadine
+          Quantity: 3705
+        - ReagentId: Honk
+          Quantity: 1235
+        - ReagentId: Happiness
+          Quantity: 120
+        maxVol: 10000
+
+# endregion Clown
+
+# region Animal
+
+- type: entity
+  parent: WaterTank
+  id: AnimalTankFull
+  name: animal tank
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Felinase
+          Quantity: 500
+        - ReagentId: CorgiJuice
+          Quantity: 500
+        - ReagentId: JuiceThatMakesYouWeh
+          Quantity: 500
+
+- type: entity
+  parent: WaterTankHighCapacity
+  id: AnimalTankHighCapacity
+  name: high-capacity animal tank
+  description: A highly pressurized animal tank made to hold gargantuan amounts of animal liquid.
+  suffix: Full, Maintenance Tunnels
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Felinase
+          Quantity: 3300
+        - ReagentId: CorgiJuice
+          Quantity: 3300
+        - ReagentId: JuiceThatMakesYouWeh
+          Quantity: 3400
+        maxVol: 10000
+
+# endregion Animal

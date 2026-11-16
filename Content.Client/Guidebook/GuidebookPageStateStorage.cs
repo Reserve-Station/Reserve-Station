@@ -20,4 +20,7 @@ internal static class GuidebookPageStateStorage
     internal static readonly Dictionary<ProtoId<GuideEntryPrototype>, GuidebookPageState> States = new();
 
     internal static readonly GuidebookPageState Empty = new(default, string.Empty, [], []);
+
+    // Reserve edit: guide-book tree state. Null means the tree state was never saved.
+    internal static HashSet<string>? ExpandedTreeEntries;
 }

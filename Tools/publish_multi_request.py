@@ -1,14 +1,8 @@
 #!/usr/bin/env python3
-# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
-#
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 import requests
 import os
-import subprocess
 from typing import Iterable
 
 PUBLISH_TOKEN = os.environ["PUBLISH_TOKEN"]
@@ -76,12 +70,10 @@ def get_files_to_publish() -> Iterable[str]:
 def get_engine_version() -> str:
     import xml.etree.ElementTree as ET
     tree = ET.parse(os.path.join("RobustToolbox", "MSBuild", "Robust.Engine.Version.props"))
-    version = tree.getroot().find(".//Version").text.strip()
-    return version
-    # proc = subprocess.run(["git", "describe","--tags", "--abbrev=0"], stdout=subprocess.PIPE, cwd="RobustToolbox", check=True, encoding="UTF-8")
-    # tag = proc.stdout.strip()
-    # assert tag.startswith("v")
-    # return tag[1:] # Cut off v prefix.
+    raw_version = tree.getroot().find(".//Version")
+    if raw_version is not None and raw_version.text:
+        return raw_version.text.strip()
+    return "0.0.0"
 
 if __name__ == '__main__':
     main()

@@ -66,6 +66,11 @@ alerts-ensnared-desc = You're [color=yellow]ensnared[/color] and is impairing yo
 alerts-buckled-name = [color=yellow]Buckled[/color]
 alerts-buckled-desc = You've been [color=yellow]buckled[/color] to something. Click the alert to unbuckle unless you're [color=yellow]handcuffed.[/color]
 
+# Reserve edit start: Offer Item system port from WWDP
+alerts-offer-name = Offer
+alerts-offer-desc = Someone is offering you an item. Click to accept it.
+# Reserve edit end: Offer Item system port from WWDP
+
 alerts-crit-name = [color=red]Critical Condition[/color]
 alerts-crit-desc = You're severely injured and unconscious.
 
@@ -106,10 +111,10 @@ alerts-muted-name = Muted
 alerts-muted-desc = You have lost the ability to speak.
 
 alerts-vow-silence-name = Vow of Silence
-alerts-vow-silence-desc = You have taken a vow forbidding verbal or written communication as part of initiation into the Mystiko Tagma Mimon. Click to break your vow.
+alerts-vow-silence-desc = You have taken a vow forbidding verbal communication as part of initiation into the Mystiko Tagma Mimon. Click to break your vow.
 
 alerts-vow-broken-name = Vow Broken
-alerts-vow-broken-desc = You've broken your vows to Mimes everywhere. You can speak and write, but you've lost your powers for at least 5 entire minutes!!! Click to try and retake your vow.
+alerts-vow-broken-desc = You've broken your vows to Mimes everywhere. You can speak, but you've lost your powers for at least 5 entire minutes!!! Click to try and retake your vow.
 
 alerts-pulled-name = Pulled
 alerts-pulled-desc = You're being pulled. Move to break free.

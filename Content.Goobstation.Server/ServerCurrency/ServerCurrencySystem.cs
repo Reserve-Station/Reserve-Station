@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.ServerCurrency;
@@ -21,17 +21,17 @@ namespace Content.Goobstation.Server.ServerCurrency
     /// <summary>
     /// Connects <see cref="ServerCurrencyManager"/> to the simulation state.
     /// </summary>
-    public sealed class ServerCurrencySystem : EntitySystem
+    public sealed partial class ServerCurrencySystem : EntitySystem
     {
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
-        [Dependency] private readonly PopupSystem _popupSystem = default!;
-        [Dependency] private readonly SharedMindSystem _mind = default!;
-        [Dependency] private readonly SharedJobSystem _jobs = default!;
-        [Dependency] private readonly IPlayerManager _players = default!;
-        [Dependency] private readonly IConfigurationManager _cfg = default!;
-        [Dependency] private readonly LinkAccountManager _linkAccount = default!;
-        [Dependency] private readonly GameTicker _gameTicker = default!;
-        [Dependency] private readonly LenaApiManager _lenaApiManager = default!; //Reserve
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private PopupSystem _popupSystem = default!;
+        [Dependency] private SharedMindSystem _mind = default!;
+        [Dependency] private SharedJobSystem _jobs = default!;
+        [Dependency] private IPlayerManager _players = default!;
+        [Dependency] private IConfigurationManager _cfg = default!;
+        // [Dependency] private LinkAccountManager _linkAccount = default!; // Reserve edit: Fix warnings
+        [Dependency] private GameTicker _gameTicker = default!;
+        [Dependency] private LenaApiManager _lenaApiManager = default!; //Reserve
 
         private int _goobcoinsPerPlayer = 10;
         private int _goobcoinsNonAntagMultiplier = 1;
@@ -72,7 +72,7 @@ namespace Content.Goobstation.Server.ServerCurrency
             var lowPopMultiplier = 1.0 - (_players.PlayerCount / (double)_players.MaxPlayers);
 
             var query = EntityQueryEnumerator<MindContainerComponent>();
-            var roundId = _gameTicker.RoundId; // Reserve-LenaApi 
+            var roundId = _gameTicker.RoundId; // Reserve-LenaApi
 
             while (query.MoveNext(out var uid, out var mindContainer))
             {
@@ -125,7 +125,7 @@ namespace Content.Goobstation.Server.ServerCurrency
                             {
                                 var balance = user.ReserveCoins;
                                 ShowPopup(originalSession, balance, balance + money);
-                                _ = user.ModifyBalance(_lenaApiManager.Wrapper, money, 0, comment: $"Конец раунда #{roundId}");
+                                _ = user.ModifyBalance(_lenaApiManager.Wrapper, money, 0, comment: $"РљРѕРЅРµС† СЂР°СѓРЅРґР° #{roundId}");
                             }
                         }
                         else

@@ -1,10 +1,11 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Penalties.Components;
 using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
@@ -14,10 +15,10 @@ namespace Content.Goobstation.Shared.Penalties.Systems;
 
 public sealed partial class OuterSlotPenaltySystem : EntitySystem
 {
-    [Dependency] private readonly ClothingSystem _clothingSystem = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly ClothingSpeedModifierSystem _clothingSpeedModifierSystem = default!;
+    // [Dependency] private ClothingSystem _clothingSystem = default!; // Reserve edit: Fix warnings
+    // [Dependency] private DamageableSystem _damageableSystem = default!; // Reserve edit: Fix warnings
+    // [Dependency] private SharedPopupSystem _popupSystem = default!; // Reserve edit: Fix warnings
+    // [Dependency] private ClothingSpeedModifierSystem _clothingSpeedModifierSystem = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

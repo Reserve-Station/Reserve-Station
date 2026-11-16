@@ -23,7 +23,8 @@ public sealed partial class UltraVisionOverlay : Overlay
     public UltraVisionOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _ultraVisionShader = _prototypeManager.Index<ShaderPrototype>("UltraVision").Instance().Duplicate();
+        var protoId = "UltraVision";  // Reserve edit: Fix warnings
+        _ultraVisionShader = _prototypeManager.Index<ShaderPrototype>(protoId).Instance().Duplicate();  // Reserve edit: Fix warnings
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

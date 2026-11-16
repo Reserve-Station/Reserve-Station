@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Chemistry.Components;
+using Content.Shared._Funkystation.WallStains; // Goob
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -19,6 +20,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Spawners;
 using System.Numerics;
 using Content.Goobstation.Shared.Chemistry;
+using Content.Server.Stains;
 
 namespace Content.Server.Chemistry.EntitySystems
 {
@@ -32,6 +34,7 @@ namespace Content.Server.Chemistry.EntitySystems
         [Dependency] private readonly ThrowingSystem _throwing = default!;
         [Dependency] private readonly ReactiveSystem _reactive = default!;
         [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+        [Dependency] private readonly StainableSystem _stainable = default!; // RW edit: fire-nerf
 
         public override void Initialize()
         {
@@ -44,16 +47,31 @@ namespace Content.Server.Chemistry.EntitySystems
         {
             if (!TryComp(entity.Owner, out SolutionContainerManagerComponent? contents)) return;
 
+            if (!entity.Comp.ReactedEntities.Add(args.OtherEntity)) // Goob check
+                return;
+
             foreach (var (_, soln) in _solutionContainerSystem.EnumerateSolutions((entity.Owner, contents)))
             {
                 var solution = soln.Comp.Solution;
                 _reactive.DoEntityReaction(args.OtherEntity, solution, ReactionMethod.Touch);
+
+                // Reserve edit start: fire-nerf
+                // The cloud keeps its own solution for the tile. Clothing gets a copy, water included, so fuel stains dilute.
+                if (solution.Volume > FixedPoint2.Zero)
+                    _stainable.SoakWornClothing(args.OtherEntity, solution.Clone());
+                // Reserve edit end: fire-nerf
 
                 var ev = new VaporCheckEyeProtectionEvent(); // Goobstation - Start
                 RaiseLocalEvent(args.OtherEntity, ev);
 
                 if (!ev.Protected)
                     _reactive.DoEntityReaction(args.OtherEntity, solution, ReactionMethod.Eyes); // Goobstation - End
+
+                if ((args.OtherFixture.CollisionLayer & (int) CollisionGroup.Impassable) != 0 && args.OtherFixture.Hard && solution.Volume > 0) // Goob
+                {
+                    var wallSplash = new SplashOnWallEvent(Transform(entity.Owner).Coordinates, solution.Clone()); // Goob
+                    RaiseLocalEvent(ref wallSplash); // Goob
+                }
             }
 
             // Check for collision with a impassable object (e.g. wall) and stop
@@ -81,7 +99,8 @@ namespace Content.Server.Chemistry.EntitySystems
                 _physics.SetLinearDamping(vapor, physics, 0f);
                 _physics.SetAngularDamping(vapor, physics, 0f);
 
-                _throwing.TryThrow(vapor, dir, speed, user: user);
+                _throwing.TryThrow(vapor, dir, speed, user: user,
+                    predicted: false); // Trauma
 
                 var distance = (target.Position - _transformSystem.GetWorldPosition(vaporXform)).Length();
                 var time = (distance / physics.LinearVelocity.Length());

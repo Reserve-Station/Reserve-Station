@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using Content.Goobstation.Common.Stunnable;
 using Content.Shared.Damage.Components;
 using Content.Shared.Jittering;
@@ -32,8 +32,8 @@ public sealed class MovementModStatusSystem : EntitySystem
 
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly StatusEffectsSystem _status = default!;
-    [Dependency] private readonly SharedStutteringSystem _stutter = default!; // goob edit
-    [Dependency] private readonly SharedJitteringSystem _jitter = default!; // goob edit
+    // [Dependency] private readonly SharedStutteringSystem _stutter = default!; // goob edit // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedJitteringSystem _jitter = default!; // goob edit // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

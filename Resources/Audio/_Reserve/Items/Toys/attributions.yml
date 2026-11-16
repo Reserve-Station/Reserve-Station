@@ -1,0 +1,16 @@
+- files: ["ara.ogg"]
+  license: "CC0-1.0"
+  copyright: "Downloaded from Myinstants."
+  source: "https://www.myinstants.com/en/instant/ara-ara-12667/"
+- files: ["bwaaa.ogg"]
+  license: "CC0-1.0"
+  copyright: "Bocchi The Bwaaa by shinari on YouTube."
+  source: "https://www.youtube.com/watch?v=cam7zgBbuA0"
+- files: ["honk.ogg"]
+  license: "CC0-1.0"
+  copyright: "Goose honk from Untitled Goose Game. Downloaded from Myinstants."
+  source: "https://www.myinstants.com/en/instant/goose-honk-44161/"
+- files: ["yamol.ogg"]
+  license: "CC0-1.0"
+  copyright: "Recorded by Geoffroy with Corvax TTS."
+  source: "https://github.com/space-syndicate/space-station-14-next"

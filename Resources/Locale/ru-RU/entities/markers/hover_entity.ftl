@@ -1,2 +1,2 @@
-ent-hoverentity = hover entity
-    .desc = { "" }
+ent-hoverentity = сущность наведения
+    .desc = Стрелка, указывающая на сущность.

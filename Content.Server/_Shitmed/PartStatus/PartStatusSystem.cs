@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using System.Text;
@@ -23,9 +23,10 @@ using Content.Shared.Examine;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Verbs;
-using Robust.Shared.Utility;
+// using Robust.Shared.Utility; // Reserve edit: Fix warnings
 using Content.Shared.HealthExaminable;
 using Robust.Shared.Prototypes;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server._Shitmed.PartStatus;
 
@@ -34,9 +35,8 @@ public sealed class PartStatusSystem : EntitySystem
     [Dependency] private readonly WoundSystem _woundSystem = default!;
     [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly TraumaSystem _trauma = default!;
+    // [Dependency] private readonly TraumaSystem _trauma = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
 
     private static readonly IReadOnlyList<BodyPartType> BodyPartOrder = new List<BodyPartType>
@@ -81,7 +81,7 @@ public sealed class PartStatusSystem : EntitySystem
 
         _chat.ChatMessageToOne(
             ChatChannel.Emotes,
-            text.ToMarkup(),
+            text.ToString(),  // Reserve edit: Part Status and Chemicals show
             text.ToMarkup(),
             EntityUid.Invalid,
             false,
@@ -110,7 +110,7 @@ public sealed class PartStatusSystem : EntitySystem
             Category = VerbCategory.Examine,
             Disabled = !detailsRange,
             Message = detailsRange ? null : Loc.GetString("health-examinable-verb-disabled"),
-            Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png"))
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png"))
         };
 
         args.Verbs.Add(verb);
@@ -136,9 +136,19 @@ public sealed class PartStatusSystem : EntitySystem
 
         foreach (var woundable in _woundSystem.GetAllWoundableChildren(rootPart))
         {
-            if (!TryComp<BodyPartComponent>(woundable, out var bodyPartComponent) ||
-                !TryComp<BoneComponent>(woundable.Comp.Bone.ContainedEntities.FirstOrNull(), out var bone))
+            if (!TryComp<BodyPartComponent>(woundable, out var bodyPartComponent))
                 continue;
+
+            // Reserve edit start: localization #359
+            var boneSeverity = BoneSeverity.Normal;
+            if (!HasComp<BonelessComponent>(woundable))
+            {
+                if (!TryComp<BoneComponent>(woundable.Comp.Bone.ContainedEntities.FirstOrNull(), out var bone))
+                    continue;
+
+                boneSeverity = bone.BoneSeverity;
+            }
+            // Reserve edit end: localization #359
 
             var partName = bodyPartComponent.ParentSlot?.Id ?? bodyPartComponent.PartType.ToString().ToLower();
             var (damageSeverities, isBleeding) = AnalyzeWounds(woundable);
@@ -149,7 +159,7 @@ public sealed class PartStatusSystem : EntitySystem
                 partName,
                 woundable.Comp.WoundableSeverity,
                 damageSeverities,
-                bone.BoneSeverity,
+                boneSeverity, // Reserve edit: localization #359
                 isBleeding));
         }
 
@@ -168,9 +178,12 @@ public sealed class PartStatusSystem : EntitySystem
                 || wound.Comp.WoundSeverity == WoundSeverity.Healed)
                 continue;
 
-            if (!damageSeverities.TryGetValue(wound.Comp.DamageType, out var existingSeverity) ||
+            // Reserve edit start: localization #359
+            var groupId = wound.Comp.DamageGroup.Value.Id;
+            if (!damageSeverities.TryGetValue(groupId, out var existingSeverity) ||
                 wound.Comp.WoundSeverity > existingSeverity)
-                damageSeverities[_proto.Index(wound.Comp.DamageGroup).LocalizedName] = wound.Comp.WoundSeverity;
+                damageSeverities[groupId] = wound.Comp.WoundSeverity;
+            // Reserve edit end: localization #359
 
             if (TryComp<BleedInflicterComponent>(wound, out var bleeds) && bleeds.IsBleeding)
                 isBleeding = true;
@@ -199,7 +212,18 @@ public sealed class PartStatusSystem : EntitySystem
             titlestring += "-styleless";
         }
 
-        message.AddText(Loc.GetString(titlestring, ("entity", Identity.Name(entity, EntityManager))));
+        // Reserve edit start: Part Status and Chemicals show
+        // message.AddText(Loc.GetString(titlestring, ("entity", Identity.Name(entity, EntityManager))));
+        var title = Loc.GetString(titlestring, ("entity", styling
+            ? FormattedMessage.EscapeText(Identity.Name(entity, EntityManager))
+            : Identity.Name(entity, EntityManager)));
+
+        if (styling)
+            message.AddMarkupPermissive(title);
+        else
+            message.AddText(title);
+        // Reserve edit end: Part Status and Chemicals show
+
         message.PushNewline();
         AddLine(message);
         CreateBodyPartMessage(partStatusSet, entity == examiner, ref message, !styling);
@@ -238,10 +262,24 @@ public sealed class PartStatusSystem : EntitySystem
                 locString += "-styleless";
             }
 
-            message.AddText("    " + Loc.GetString(locString,
+            // Reserve edit start: localization #359
+            var partKey = "body-part-" + partStatus.PartName.Replace(" ", "-");
+            var partName = Loc.TryGetString(partKey, out var localizedPart)
+                ? localizedPart
+                : partStatus.PartName;
+
+            var line = Loc.GetString(locString,  // Reserve edit: Part Status and Chemicals show
                 ("possessive", possessive),
-                ("part", partStatus.PartName),
-                ("status", statusDescription)));
+                ("part", partName),
+                ("status", statusDescription));  // Reserve edit: Part Status and Chemicals show
+
+            // Reserve edit start: Part Status and Chemicals show
+            if (styleless)
+                message.AddText("    " + line);
+            else
+                message.AddMarkupPermissive("    " + line);
+            // Reserve edit end: Part Status and Chemicals show
+            // Reserve edit end: localization #359
 
             message.PushNewline();
         }

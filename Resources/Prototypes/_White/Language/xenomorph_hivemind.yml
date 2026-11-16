@@ -8,5 +8,7 @@
     minSyllables: 1
     maxSyllables: 8 # I was crazy once
     replacement:
-    - s
-    - S
+    # Reserve edit start
+    - с
+    - С
+    # Reserve edit end

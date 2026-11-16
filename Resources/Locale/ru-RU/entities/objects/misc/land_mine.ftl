@@ -1,5 +1,5 @@
-ent-BaseLandMine = { "" }
-    .desc = { "" }
+ent-BaseLandMine = мина
+    .desc = Напольная мина.
 ent-LandMineKick = кикающая мина
     .desc = { ent-BaseLandMine.desc }
 ent-LandMineModular = модульная мина

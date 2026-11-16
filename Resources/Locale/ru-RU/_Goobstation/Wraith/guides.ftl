@@ -5,4 +5,5 @@ guide-entry-harbinger = Путь предвестника
 guide-entry-trickster = Путь лжеца
 
 guide-entry-void-summons = Призыв бездны
-guide-entry-revenant = Фантом
+# Reserve edit - was "Фантом" like the parent page, renamed so it is not confused with the standalone revenant antagonist
+guide-entry-revenant = Ревенант Предвестника

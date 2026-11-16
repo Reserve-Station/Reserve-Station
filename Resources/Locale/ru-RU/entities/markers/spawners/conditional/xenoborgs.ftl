@@ -1,4 +1,6 @@
-ent-SpawnPointXenoborg = ксеноборг
+ent-SpawnPointXenoborg = { ent-BaseAntagSpawner }
     .desc = { ent-MarkerBase.desc }
-ent-SpawnPointMothershipCore = ядро материнского корабля
+    .suffix = Ксеноборг
+ent-SpawnPointMothershipCore = { ent-BaseAntagSpawner }
     .desc = { ent-MarkerBase.desc }
+    .suffix = Ядро материнского корабля

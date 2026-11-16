@@ -62,7 +62,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
                     <PanelContainer VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                                    Margin="0 75" StyleClasses="AngleRect">
+                                    Margin="0 45" StyleClasses="BackgroundPanel" Name="LobbyMessagePanel" Access="Public" Visible="False"> <!-- Reserve edit: Maecenas System -->
+                        <PanelContainer.PanelOverride>
+                            <graphics:StyleBoxFlat BackgroundColor="#20202888" /> <!-- Reserve edit: Maecenas System -->
+                        </PanelContainer.PanelOverride>
                         <RichTextLabel Name="LobbyMessageLabel" Access="Public" Margin="5" />
                     </PanelContainer>
                     <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" SeparationOverride="4"> <!-- Goobstation - Lobby Background Credits -->
@@ -99,6 +102,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                         <Button Name="AHelpButton" Access="Public" Text="{Loc 'ui-lobby-ahelp-button'}"
                                 StyleClasses="ButtonBig" />
                         <vote:VoteCallMenuButton Name="CallVoteButton" StyleClasses="ButtonBig" />
+                        <cc:CommandButton Command="achievements" StyleClasses="ButtonBig" Text="{Loc 'achievements-button'}" /> <!-- Goobstation - Achievements -->
                         <Button Name="OptionsButton" Access="Public" StyleClasses="ButtonBig"
                                 Text="{Loc 'ui-lobby-options-button'}" />
                         <Button Name="LeaveButton" Access="Public" StyleClasses="ButtonBig"

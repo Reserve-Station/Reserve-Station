@@ -1,5 +1,5 @@
 ent-VoidPortalBase = портал предвестника
-    .desc = { "" }
+    .desc = Загадочный разлом.
 ent-VoidPortalEmpty = { ent-VoidPortalBase }
     .desc = { ent-VoidPortalBase.desc }
 ent-VoidPortalSkeletonGoonWraith = { ent-VoidPortalBase }

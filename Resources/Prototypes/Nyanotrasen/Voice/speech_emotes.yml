@@ -2,37 +2,42 @@
 # vocal emotes
 - type: emote
   id: Hiss
-  name: Hiss
+  name: chat-emote-name-cathisses  # Reserve-Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/hiss.png
   whitelist:
     tags:
     - FelinidEmotes
-    - HarpyEmotes
     - ReptilianEmotes
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [hisses.]
+  chatMessages: ["chat-emote-msg-cathisses"]  # Reserve-Localization
   chatTriggers:
     - hiss
     - hisses
     - hissing
     - hissed
+    # Reserve-Localization-Start
+    - шипит
+    - зашипел
+    - зашипела
+    - зашипели
+    - зашипело
+    # Reserve-Localization-End
 
 - type: emote
   id: Meow
-  name: Meow
+  name: chat-emote-name-catmeow  # Reserve-Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/meow.png
   whitelist:
     tags:
     - FelinidEmotes
-    - HarpyEmotes
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [meows.]
+  chatMessages: ["chat-emote-msg-catmeow"]  # Reserve-Localization
   chatTriggers:
     - meow
     - meows
@@ -44,60 +49,90 @@
     - nyas
     - mraow
     - mraows
+    # Reserve-Localization-Start
+    - мявкает
+    - мяфкает
+    - мяукает
+    - някает
+    - мяукнул
+    - мяукнула
+    - мяукнули
+    - мяукнуло
+    # Reserve-Localization-End
 
 - type: emote
   id: Mew
-  name: Mew
+  name: chat-emote-name-mew  # Reserve-Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/mew.png
   whitelist:
     tags:
     - FelinidEmotes
-    - HarpyEmotes
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [mews.]
+  chatMessages: ["chat-emote-msg-mew"]  # Reserve-Localization
   chatTriggers:
     - mew
     - mews
     - mewing
     - mewed
+    # Reserve-Localization-Start
+    - мюкает
+    - мьювит
+    - мьюит
+    # Reserve-Localization-End
 
 - type: emote
   id: Growl
-  name: Growl
+  name: chat-emote-name-growl  # Reserve-Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/growl.png
   whitelist:
     tags:
     - FelinidEmotes
-    - HarpyEmotes
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [growls.]
+  chatMessages: ["chat-emote-msg-growl"]  # Reserve-Localization
   chatTriggers:
     - growl
     - growls
     - growling
     - growled
+    # Reserve-Localization-Start
+    - рычит
+    - рявкает
+    - зарычал
+    - зарычала
+    - зарычали
+    - зарычало
+    # Reserve-Localization-End
 
 - type: emote
   id: Purr
-  name: Purr
+  name: chat-emote-name-purr  # Reserve-Localization
   category: Vocal
   icon: _Goobstation/Interface/Emotes/purr.png
   whitelist:
     tags:
     - FelinidEmotes
-    - HarpyEmotes
+    - ReptilianEmotes # Omu
   blacklist:
     components:
     - BorgChassis
-  chatMessages: [purrs.]
+  chatMessages: ["chat-emote-msg-purr"]  # Reserve-Localization
   chatTriggers:
     - purr
     - purrs
     - purring
     - purred
+    # Reserve-Localization-Start
+    - мурчит
+    - мурлычет
+    - мурлыкает
+    - замурчал
+    - замурчала
+    - замурчали
+    - замурчало
+    # Reserve-Localization-End

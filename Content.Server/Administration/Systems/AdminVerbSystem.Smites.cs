@@ -28,7 +28,6 @@ using Content.Shared.Body.Part;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clumsy;
 using Content.Shared.Cluwne;
-using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Electrocution;
@@ -59,6 +58,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Spawners;
 using Robust.Shared.Utility;
+using Content.Shared.Damage.Components;
 using Timer = Robust.Shared.Timing.Timer;
 using Content.Shared.Speech.Components;
 using Content.Shared.Temperature.Components;
@@ -229,7 +229,7 @@ public sealed partial class AdminVerbSystem
                 Act = () =>
                 {
                     int damageToDeal;
-                    if (!_mobThresholdSystem.TryGetThresholdForState(args.Target, MobState.Critical, out var criticalThreshold))
+                    if (!_mobThresholdSystem.TryGetThresholdForState(args.Target, MobState.HardCritical, out var criticalThreshold)) // Reserve edit: Soft Crit port
                     {
                         // We can't crit them so try killing them.
                         if (!_mobThresholdSystem.TryGetThresholdForState(args.Target, MobState.Dead,

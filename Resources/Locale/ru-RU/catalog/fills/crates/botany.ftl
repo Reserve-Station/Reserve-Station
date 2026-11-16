@@ -1,10 +1,12 @@
-ent-CrateHydroponicsSeedsExotic = ящик экзотических семян
+ent-CrateHydroponicsSeedsExotic = { ent-CrateHydroSecure } экзотических семян
     .desc = Мечта любого практикующего ботаника. Содержит много экзотических семян. Чтобы открыть необходим уровень доступа Гидропоника.
-ent-CrateHydroponicsSeedsMedicinal = ящик лекарственных семян
+    .suffix = { ent-CrateHydroSecure.suffix }
+ent-CrateHydroponicsSeedsMedicinal = { ent-CrateHydroSecure } лекарственных семян
     .desc = Мечта любого начинающего химика. Сила медицины у вас под рукой! Чтобы открыть необходим уровень доступа Гидропоника.
-ent-CrateHydroponicsTools = ящик снаряжения для гидропоники
+    .suffix = { ent-CrateHydroSecure.suffix }
+ent-CrateHydroponicsTools = { ent-CrateHydroponics } с снаряжением
     .desc = Припасы для выращивания превосходного сада! Содержит несколько спреев с химикатами для растений, топорик, грабли, косу, несколько пар кожаных перчаток и ботанический фартук.
-ent-CrateHydroponicsSeeds = ящик семян
+ent-CrateHydroponicsSeeds = { ent-CrateHydroponics } семян
     .desc = Большие дела начинаются с малого. Содержит 12 различных семян.
-ent-CrateHydroponicsTray = ящик с гидропонным лотком
+ent-CrateHydroponicsTray = { ent-CrateHydroponics } с гидропонным лотком
     .desc = Содержит в себе упакованный гидропонный лоток.

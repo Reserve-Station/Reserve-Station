@@ -10,7 +10,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class TweezersComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => "tweezers";
+    public string ToolName => "surgery-tool-name-tweezers"; // Reserve edit
     [DataField]
     public bool? Used { get; set; } = null;
     [DataField]

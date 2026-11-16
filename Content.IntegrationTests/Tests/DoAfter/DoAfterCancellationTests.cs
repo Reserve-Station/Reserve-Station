@@ -89,6 +89,7 @@ public sealed class DoAfterCancellationTests : InteractionTest
         return;
         // Goob edit end
 
+        /* Reserve edit: Fix warnings
         // Second DoAfter cancels the first.
         await Server.WaitPost(() => InteractSys.UserInteraction(SEntMan.GetEntity(Player), SEntMan.GetCoordinates(TargetCoords), SEntMan.GetEntity(Target)));
         Assert.That(ActiveDoAfters.Count(), Is.EqualTo(0));
@@ -98,6 +99,7 @@ public sealed class DoAfterCancellationTests : InteractionTest
         await InteractUsing(Pry);
         Assert.That(ActiveDoAfters.Count(), Is.EqualTo(0));
         await AssertTile(Plating);
+        */
     }
 
     [Test]

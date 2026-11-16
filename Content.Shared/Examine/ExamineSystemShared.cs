@@ -2,6 +2,7 @@
 
 using System.Linq;
 using Content.Goobstation.Common.Examine; // Goobstation Change
+using Content.Shared._Reserve.Examine; // Reserve edit
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Ghost;
 using Content.Shared.Interaction;
@@ -117,6 +118,11 @@ namespace Content.Shared.Examine
             if (Comp<TransformComponent>(examiner).MapID != target.MapId)
                 return false;
 
+            // Reserve edit start: examiners that see through walls can examine through them too
+            if (HasComp<ExamineThroughWallsComponent>(examiner))
+                return _transform.GetMapCoordinates(examiner).InRange(target, GetExaminerRange(examiner));
+            // Reserve edit end
+
             // Do target InRangeUnoccluded which has different checks.
             if (examined != null)
             {
@@ -211,7 +217,7 @@ namespace Content.Shared.Examine
                     continue;
                 }
 
-                var bBox = o.BoundingBox;
+                var bBox = o.LocalBounds;
                 bBox = bBox.Translated(_transform.GetWorldPosition(result.HitEntity));
 
                 if (bBox.Contains(origin.Position) || bBox.Contains(other.Position))

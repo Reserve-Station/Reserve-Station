@@ -110,8 +110,9 @@ public sealed class GhostRoleSystem : EntitySystem
                         RegisterGhostRole((component, ghostRole));
                     break;
                 }
-            case MobState.Critical:
-            case MobState.Dead:
+            case MobState.SoftCritical: // Reserve edit: Soft Crit port
+            case MobState.HardCritical: // Reserve edit: Soft Crit port
+            case MobState.Dead: // Reserve edit: Soft Crit port
                 UnregisterGhostRole((component, ghostRole));
                 break;
         }
@@ -645,7 +646,7 @@ public sealed class GhostRoleSystem : EntitySystem
 
         foreach (var (id, (uid, role)) in _ghostRoles)
         {
-            if (metaQuery.GetComponent(uid).EntityPaused)
+            if (metaQuery.CompOrNull(uid)?.EntityPaused != false)
                 continue;
 
 

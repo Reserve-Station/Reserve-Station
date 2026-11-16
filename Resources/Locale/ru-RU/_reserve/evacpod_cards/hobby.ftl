@@ -1,6 +1,6 @@
 card-ep_hobby_ahelp = хобби: Общение с богами и мистика
 card-ep_hobby_meleeWeapon = хобби: Холодное оружие
-card-ep_hobby_blackMagic = хобби: Черная магия
+card-ep_hobby_blackMagic = хобби: Чёрная магия
 card-ep_hobby_flood = хобби: Флудить в чатах
 card-ep_hobby_mashrooms = хобби: Грибы и гомеопатия
 card-ep_hobby_martialArts = хобби: Боевые искусства

@@ -9,7 +9,6 @@ using Content.Shared.Atmos.Rotting;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Inventory;
-
 using Content.Shared.Medical.CPR;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
@@ -21,7 +20,9 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Shared.Traits.Assorted;
 using Content.Shared._Shitmed.Targeting;
-using Content.Shared.Nutrition.EntitySystems; // Shitmed Change
+using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server.Medical.CPR;
 
@@ -115,19 +116,19 @@ public sealed class CPRSystem : EntitySystem
         }
 
         if (!performer.Comp.CPRHealing.Empty)
-            _damageable.TryChangeDamage(args.Target, performer.Comp.CPRHealing, true, origin: performer, targetPart: TargetBodyPart.All); // Shitmed Change
+            _damageable.TryChangeDamage(args.Target.Value, performer.Comp.CPRHealing, true, origin: performer, targetPart: TargetBodyPart.All); // Shitmed Change
 
         if (performer.Comp.RotReductionMultiplier > 0)
             _rottingSystem.ReduceAccumulator(
-                (EntityUid)args.Target, performer.Comp.DoAfterDuration * performer.Comp.RotReductionMultiplier);
+                (EntityUid) args.Target, performer.Comp.DoAfterDuration * performer.Comp.RotReductionMultiplier);
 
         if (_robustRandom.Prob(performer.Comp.ResuscitationChance)
-            && _mobThreshold.TryGetThresholdForState((EntityUid)args.Target, MobState.Dead, out var threshold)
+            && _mobThreshold.TryGetThresholdForState((EntityUid) args.Target, MobState.Dead, out var threshold)
             && TryComp<DamageableComponent>(args.Target, out var damageableComponent)
             && TryComp<MobStateComponent>(args.Target, out var state)
             && !HasComp<UnrevivableComponent>(args.Target)
             && _mobThreshold.CheckVitalDamage(args.Target.Value, damageableComponent) < threshold) // GoobStation
-            _mobStateSystem.ChangeMobState(args.Target.Value, MobState.Critical, state, performer);
+            _mobStateSystem.ChangeMobState(args.Target.Value, MobState.SoftCritical, state, performer); // Reserve edit: Soft Crit port
 
         var isAlive = _mobStateSystem.IsAlive(args.Target.Value);
         args.Repeat = !isAlive;

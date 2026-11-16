@@ -1,0 +1,37 @@
+ent-RandomBotanistTool = { ent-RandomInstruments }
+    .suffix = Botanist, Hydroponics
+    .desc = { ent-MarkerBase.desc }
+ent-RandomJanitorTool = { ent-RandomInstruments }
+    .suffix = Janitor
+    .desc = { ent-MarkerBase.desc }
+ent-RandomAtmosTool = { ent-RandomInstruments }
+    .suffix = Atmospherics
+    .desc = { ent-MarkerBase.desc }
+ent-RandomChefTool = { ent-RandomInstruments }
+    .suffix = Chef
+    .desc = { ent-MarkerBase.desc }
+ent-RandomBartenderTool = { ent-RandomInstruments }
+    .suffix = Bartender
+    .desc = { ent-MarkerBase.desc }
+
+ent-GeneratorBasic15kWChance = generator spawner
+    .suffix = 15 kW, 50% chance to spawn
+    .desc = { ent-MarkerBase.desc }
+ent-SolarPanelChance = solar panel spawner
+    .suffix = 10% chance to be broken
+    .desc = { ent-MarkerBase.desc }
+ent-RandomCanister = random gas canister spawner
+    .desc = { ent-MarkerBase.desc }
+
+ent-LockerFreezerFilledRandom = { ent-LockerFreezer }
+    .desc = { ent-LockerFreezer.desc }
+    .suffix = { ent-LockerFreezer.suffix }, Filled, Random
+ent-CrateFreezerFilledRandom = { ent-CrateFreezer }
+    .desc = { ent-CrateFreezer.desc }
+    .suffix = Filled, Random
+ent-ShelfWallFreezerWhiteFilledRandom = { ent-ShelfWallFreezerWhite }
+    .desc = { ent-ShelfWallFreezerWhite.desc }
+    .suffix = { ent-ShelfWallFreezerWhite.suffix }, Filled, Random
+ent-ShelfWallFreezerDarkFilledRandom = { ent-ShelfWallFreezerDark }
+    .desc = { ent-ShelfWallFreezerDark.desc }
+    .suffix = { ent-ShelfWallFreezerDark.suffix }, Filled, Random

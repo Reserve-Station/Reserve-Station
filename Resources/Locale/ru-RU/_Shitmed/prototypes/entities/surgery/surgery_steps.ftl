@@ -1,5 +1,5 @@
-ent-SurgeryStepBase = { "" }
-    .desc = { "" }
+ent-SurgeryStepBase = Базовый шаг хирургии
+    .desc = Часть хирургической процедуры.
 ent-SurgeryStepOpenIncisionScalpel = Разрез скальпелем
     .desc = { ent-SurgeryStepBase.desc }
 ent-SurgeryStepClampBleeders = Зажать кровоточащие сосуды

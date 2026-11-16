@@ -4,9 +4,9 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Client.BerserkerImplant;
 
-public sealed class BerserkerImplantOverlay : Overlay
+public sealed partial class BerserkerImplantOverlay : Overlay
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     public override bool RequestScreenTexture => true;
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
@@ -20,7 +20,8 @@ public sealed class BerserkerImplantOverlay : Overlay
     {
         IoCManager.InjectDependencies(this);
 
-        _blurShader = _prototype.Index<ShaderPrototype>("BlurryVisionX").InstanceUnique();
+        var protoIdBlurryVisionX = "BlurryVisionX";  // Reserve edit: Fix warnings
+        _blurShader = _prototype.Index<ShaderPrototype>(protoIdBlurryVisionX).InstanceUnique();  // Reserve edit: Fix warnings
     }
 
     protected override void Draw(in OverlayDrawArgs args)

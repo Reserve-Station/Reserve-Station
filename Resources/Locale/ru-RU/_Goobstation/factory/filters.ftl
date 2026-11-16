@@ -1,4 +1,4 @@
-automation-filter-examine-empty = [color=red]Этот фильтр еще не настроен[/color].
+automation-filter-examine-empty = [color=red]Этот фильтр ещё не настроен[/color].
 automation-filter-examine-string = Этот фильтр настроен на '{ $name }'.
 stack-filter-examine = Этот фильтр настроен на минимальное количество [color=green]{ $size }[/color] элементов в стаке.
 combined-filter-examine = Этот фильтр устанавливается на { INDEFINITE($gate) } [color=green]{ $gate }[/color] сравнение со своими входами.

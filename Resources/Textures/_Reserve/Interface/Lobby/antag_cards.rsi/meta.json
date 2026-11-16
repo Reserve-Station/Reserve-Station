@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made for Reserve Station, uses the revenant icon from space-station-14 (Mobs/Ghosts/revenant.rsi)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "revenant"
+    }
+  ]
+}

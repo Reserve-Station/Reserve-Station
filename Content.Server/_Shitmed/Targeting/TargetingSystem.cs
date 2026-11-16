@@ -42,7 +42,7 @@ public sealed class TargetingSystem : SharedTargetingSystem
                 changed = true;
             }
         }
-        else if (args is { OldMobState: MobState.Dead, NewMobState: MobState.Alive or MobState.Critical })
+        else if (args is { OldMobState: MobState.Dead, NewMobState: MobState.Alive or MobState.SoftCritical or MobState.HardCritical }) // Reserve edit: Soft Crit port
         {
             component.BodyStatus = _woundSystem.GetWoundableStatesOnBodyPainFeels(uid);
             changed = true;

@@ -184,6 +184,8 @@
         Blunt: 1
     clumsySound:
       path: /Audio/Animals/wawa_protest.ogg
+  - type: Sprinter  # Reserve edit: Super Scurret - let scurrets sprint
+    staminaDrainRate: 2
 
 
 # Spawnable scurrets have a random name and colour.
@@ -217,6 +219,9 @@
   # Strips the name identifier from them, so they're just "Confident Waters" rather than "Confident Waters (123)"
   - type: NameIdentifier
     group: null
+  - type: NpcFactionMember  # Reserve edit: Super Scurret - let wild scurrets eat mice and self-defend
+    factions:
+    - PetsNT
 
 # Emotional Support Scurrets have a ghost role and equipment. At the moment, these are intended to be used for admemes, but
 # feel free to hook them into random content.

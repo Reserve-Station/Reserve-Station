@@ -73,6 +73,7 @@ public sealed class CargoTest
         var cargo = entManager.System<CargoSystem>();
 
         var bounties = protoManager.EnumeratePrototypes<CargoBountyPrototype>().ToList();
+        var skippedCargoProducts = new[] { "FunToyBox" };  // Reserve edit: Random maints
 
         await server.WaitAssertion(() =>
         {
@@ -82,6 +83,9 @@ public sealed class CargoTest
             {
                 foreach (var proto in protoManager.EnumeratePrototypes<CargoProductPrototype>())
                 {
+                    if (skippedCargoProducts.Contains(proto.ID))  // Reserve edit: Random maints
+                        continue;
+
                     var ent = entManager.SpawnEntity(proto.Product, new MapCoordinates(Vector2.Zero, mapId));
 
                     foreach (var bounty in bounties)
@@ -153,7 +157,7 @@ public sealed class CargoTest
 
         var entManager = server.ResolveDependency<IEntityManager>();
         var mapSystem = server.System<SharedMapSystem>();
-        var mapManager = server.ResolveDependency<IMapManager>();
+        var mapManager = server.System<SharedMapSystem>();
         var protoManager = server.ResolveDependency<IPrototypeManager>();
         var componentFactory = server.ResolveDependency<IComponentFactory>();
         var whitelist = entManager.System<EntityWhitelistSystem>();

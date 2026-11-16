@@ -61,8 +61,8 @@
           - type: Heretic
           - type: Ghoul
           guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow # Reserve edit: Fix overlay narcotics
         time: 50.0
         type: Remove
         conditions:

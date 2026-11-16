@@ -1,5 +1,5 @@
 ent-BaseRune = руна
-    .desc = { "" }
+    .desc = Кто её нарисовал?..
 
 ent-CollideRune = { ent-BaseRune } столкновения
     .desc = { ent-BaseRune.desc }

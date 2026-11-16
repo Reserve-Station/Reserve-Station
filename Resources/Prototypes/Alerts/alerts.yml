@@ -190,6 +190,17 @@
   name: alerts-buckled-name
   description: alerts-buckled-desc
 
+# Reserve edit start: Offer Item system port from WWDP
+- type: alert
+  id: Offer
+  clickEvent: !type:AcceptOfferAlertEvent
+  icons:
+  - sprite: /Textures/_Reserve/Interface/Alerts/offer_item.rsi
+    state: offer_item
+  name: alerts-offer-name
+  description: alerts-offer-desc
+# Reserve edit end: Offer Item system port from WWDP
+
 - type: alert
   id: HumanCrit
   category: Health

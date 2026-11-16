@@ -17,11 +17,11 @@ selectable-set-thief-chameleon-description =
     Включает: полный комплект одежды хамелеона,
     проектор хамелеона и ID-карту агента.
     Маскируйся под кого угодно и что угодно.
-selectable-set-thief-syndie-name = Набор синдиката
+selectable-set-thief-syndie-name = Набор Синдиката
 selectable-set-thief-syndie-description =
     Безделушки из отвергнутого прошлого или украденные у беззаботного агента?
     Ты завел кое-какие связи. Виски, эх...
-    Включает: ЕМАГ, взломщик доступа, сигареты Interdyne, кодовое слово синдиката,
+    Включает: ЕМАГ, взломщик доступа, сигареты Interdyne, кодовое слово Синдиката,
     радиоподавитель, зажигалку и странные красные кристаллы.
 selectable-set-thief-sleeper-name = Набор слипера
 selectable-set-thief-sleeper-description =
@@ -137,18 +137,11 @@ selectable-set-blueshield-syringe-description =
     Идеально для лечения союзников или отравления врагов.
     Включает: боевой шприц и несколько флаконов с лекарствами.
 
-# Синий щит скафандры
-
-selectable-set-blueshield-hardsuit-light-name = бронированный боевой костюм
-selectable-set-blueshield-hardsuit-light-description = Бронированный боевой костюм, дающий больше скорости за счет меньшей защиты.
-selectable-set-blueshield-modsuit-name = MOD Синего Щита
-selectable-set-blueshield-modsuit-description = MOD требующий питания.
-
 # ERT
 
 selectable-set-ert-ballistic-name = баллистический набор
 selectable-set-ert-ballistic-description =
-    Надежный, эффективный и компактный. Энни прикроет вас.
+    надёжный, эффективный и компактный. Энни прикроет вас.
     Включает: .30 калиберную винтовку Энни,
     запасные магазины и N1984.
 selectable-set-ert-pulse-name = импульсный набор
@@ -212,7 +205,7 @@ selectable-set-research-director-modsuit-name = скафандр MOD «Мине�
 selectable-set-research-director-modsuit-desc =
     Модульный скафандр идеально подходит для того, чтобы превратить вас в исследовательский танк,
     даже самые опасные эксперименты не причинят вам вреда,
-    а самый худший из ассистентов дважды подумает, прежде чем вломиться в НИО.
+    а самый худший из ассистентов дважды подумает, прежде чем вломиться в РнД.
 
 selectable-set-syndicate-western-description = Зажгите вестерн голо-сигару, приподнимите шляпу и позвольте музыке играть.
     Содержит: вестерн голо-сигару, ключ шифрования Синдиката,

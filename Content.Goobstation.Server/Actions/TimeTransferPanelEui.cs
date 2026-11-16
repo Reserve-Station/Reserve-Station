@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Linq; // Reserve edit: Reserve Red - AdminGuard
 using Content.Goobstation.Shared.Administration;
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration;
 using Content.Server.Administration.Commands;
 using Content.Server.Administration.Managers;
@@ -12,12 +15,13 @@ using Robust.Shared.Network;
 
 namespace Content.Goobstation.Server.Actions;
 
-public sealed class TimeTransferPanelEui : BaseEui
+public sealed partial class TimeTransferPanelEui : BaseEui
 {
-    [Dependency] private readonly IAdminManager _adminMan = default!;
-    [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly IPlayerLocator _playerLocator = default!;
-    [Dependency] private readonly IServerDbManager _databaseMan = default!;
+    [Dependency] private IAdminManager _adminMan = default!;
+    [Dependency] private ILogManager _log = default!;
+    [Dependency] private IPlayerLocator _playerLocator = default!;
+    [Dependency] private IServerDbManager _databaseMan = default!;
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     private readonly ISawmill _sawmill;
 
@@ -78,6 +82,7 @@ public sealed class TimeTransferPanelEui : BaseEui
         }
 
         await _databaseMan.UpdatePlayTimes(updateList);
+        _adminGuard.PlaytimeChanged(userId, updateList.Select(u => (u.Tracker, u.Time)).ToList(), true, DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
 
         _sawmill.Info($"{Player.Name} ({Player.UserId} saved {updateList.Count} trackers for {userId})");
 
@@ -96,10 +101,12 @@ public sealed class TimeTransferPanelEui : BaseEui
         }
 
         var updateList = new List<PlayTimeUpdate>();
+        var added = new List<(string, TimeSpan)>(); // Reserve edit: Reserve Red - AdminGuard
 
         foreach (var data in timeData)
         {
             var time = TimeSpan.FromMinutes(PlayTimeCommandUtilities.CountMinutes(data.TimeString));
+            added.Add((data.PlaytimeTracker, time)); // Reserve edit: Reserve Red - AdminGuard
             if (playTimeDict.TryGetValue(data.PlaytimeTracker, out var addTime))
                 time += addTime;
 
@@ -107,6 +114,7 @@ public sealed class TimeTransferPanelEui : BaseEui
         }
 
         await _databaseMan.UpdatePlayTimes(updateList);
+        _adminGuard.PlaytimeChanged(userId, added, false, DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
 
         _sawmill.Info($"{Player.Name} ({Player.UserId} saved {updateList.Count} trackers for {userId})");
 

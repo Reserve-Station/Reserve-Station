@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created for surreal Halloween content.",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "off"
+    },
+    {
+      "name": "normal"
+    },
+    {
+      "name": "normal-unshaded"
+    },
+    {
+      "name": "broken"
+    },
+    {
+      "name": "panel"
+    },
+    {
+      "name": "deny-unshaded"
+    },
+    {
+      "name": "eject-unshaded"
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 ent-WeaponAlien = пистолет прищельца
-    .desc = { ent-BaseWeaponBattery.desc }
+    .desc = Считается ли это военным преступлением? Возможно.
+    .suffix = Оружие, Пистолет, Энергетический, Абдуктор
 ent-WeaponDecloner = деклонер
-    .desc = { ent-BaseWeaponBattery.desc }
+    .desc = Считается ли это военным преступлением? Абсолютно.
+    .suffix = Оружие, Пистолет-пулемёт, Энергетический, Абдуктор

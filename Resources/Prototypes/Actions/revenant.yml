@@ -13,6 +13,7 @@
   description: Breaks windows, tiles, and opens nearby containers. Costs 30 Essence. #Goob edit
   components:
   - type: Action
+    itemIconStyle: NoItem # Reserve edit
     useDelay: 15
     icon: Interface/Actions/defile.png
   - type: InstantAction
@@ -25,6 +26,7 @@
   description: Summons lightning from nearby lights. Costs 40 Essence. #Goob edit
   components:
   - type: Action # Reserve edit
+    itemIconStyle: NoItem # bought actions live in the mind, without this the icon is drawn tiny in the corner
     icon: Interface/Actions/overloadlight.png
   - type: InstantAction
     event: !type:RevenantOverloadLightsActionEvent
@@ -48,6 +50,7 @@
   description: Causes nearby mechanisms to malfunction. Costs 60 Essence. #Goob edit
   components:
   - type: Action
+    itemIconStyle: NoItem # Reserve edit
     icon: Interface/Actions/malfunction.png
     useDelay: 20
   - type: InstantAction

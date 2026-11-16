@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Fluids.Components;
+using Content.Shared._Funkystation.WallStains; // Goob
 using Content.Server.Spreader;
 using Content.Goobstation.Common.Footprints;
 using Content.Shared.Chemistry;
@@ -15,9 +16,12 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Inventory;
 using Content.Shared.Maps;
 using Content.Shared.Popups;
 using Content.Shared.Slippery;
+using Content.Shared.Stains;
+using Content.Shared.Standing;
 using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -40,6 +44,10 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TurfSystem _turf = default!;
+    // Reserve edit start: fire-nerf
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!;
+    // Reserve edit end: fire-nerf
 
 
     private static readonly ProtoId<ReagentPrototype> Blood = "Blood";
@@ -48,8 +56,10 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
     private static readonly ProtoId<ReagentPrototype> CopperBlood = "CopperBlood";
 
+    // goobstation
     private static readonly ProtoId<ReagentPrototype> BloodChangeling = "BloodChangeling"; // goobstation
 
+    // goobstation
     private static readonly ProtoId<ReagentPrototype> BlackBlood = "BlackBlood"; // goobstation
 
     private static string[] _standoutReagents = [Blood, Slime, CopperBlood, BloodChangeling, BlackBlood]; // goobstation - added BloodChangeling, BlackBlood
@@ -70,6 +80,10 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         SubscribeLocalEvent<PuddleComponent, SpreadNeighborsEvent>(OnPuddleSpread);
         SubscribeLocalEvent<PuddleComponent, SlipEvent>(OnPuddleSlip);
+        // Reserve edit start: fire-nerf
+        SubscribeLocalEvent<StandingStateComponent, MoveEvent>(OnCrawlInPuddle);
+        SubscribeLocalEvent<InventoryComponent, MoveEvent>(OnStepInPuddle);
+        // Reserve edit end: fire-nerf
     }
 
     // TODO: This can be predicted once https://github.com/space-wizards/RobustToolbox/pull/5849 is merged
@@ -479,6 +493,9 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
         _color.RaiseEffect(spilled.GetColor(_prototypeManager), targets,
             Filter.Pvs(entity, entityManager: EntityManager));
 
+        var wallSplash = new SplashOnWallEvent(coordinates, spilled.Clone()); // Goob
+        RaiseLocalEvent(ref wallSplash); // Goob
+
         return TrySpillAt(coordinates, spilled, out puddleUid, sound);
     }
 
@@ -629,4 +646,83 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
 
         return false;
     }
+
+    // Reserve edit start: fire-nerf
+    private void OnCrawlInPuddle(Entity<StandingStateComponent> ent, ref MoveEvent args)
+    {
+        if (!_standing.IsDown(ent.Owner))
+            return;
+
+        if (!TryGetPuddleOnTileChange(args, out var puddle))
+            return;
+
+        var isSuperSlippery = TryComp<SlipperyComponent>(puddle, out var slippery) && slippery.SlipData.SuperSlippery;
+        var slippedEv = new SlippedEvent(puddle, isSuperSlippery);
+        RaiseLocalEvent(ent.Owner, slippedEv);
+
+        if (!HasComp<ReactiveComponent>(ent.Owner) || HasComp<SlidingComponent>(ent.Owner))
+            return;
+
+        if (!_solutionContainerSystem.ResolveSolution(puddle.Owner, puddle.Comp.SolutionName, ref puddle.Comp.Solution, out var solution) ||
+            puddle.Comp.Solution is not { } puddleSolution)
+            return;
+
+        var splitSol = _solutionContainerSystem.SplitSolution(puddleSolution, solution.Volume * 0.15f);
+        Reactive.DoEntityReaction(ent.Owner, splitSol, ReactionMethod.Touch);
+    }
+
+    private void OnStepInPuddle(Entity<InventoryComponent> ent, ref MoveEvent args)
+    {
+        if (_standing.IsDown(ent.Owner))
+            return;
+
+        if (!TryGetPuddleOnTileChange(args, out var puddle))
+            return;
+
+        if (!_solutionContainerSystem.ResolveSolution(puddle.Owner, puddle.Comp.SolutionName, ref puddle.Comp.Solution, out var solution) ||
+            solution.Volume <= FixedPoint2.Zero)
+            return;
+
+        if (!_inventory.TryGetSlotEntity(ent.Owner, "shoes", out var shoes) ||
+            !TryComp<StainableComponent>(shoes, out var stain) ||
+            !_solutionContainerSystem.TryGetSolution(shoes.Value, stain.SolutionId, out _, out var shoeSolution))
+            return;
+
+        var space = shoeSolution.AvailableVolume;
+        if (space <= FixedPoint2.Zero || puddle.Comp.Solution is not { } puddleSolution)
+            return;
+
+        var transferAmount = FixedPoint2.Min(stain.StainVolume, FixedPoint2.Min(space, solution.Volume));
+        if (transferAmount <= FixedPoint2.Zero)
+            return;
+
+        var splitSol = _solutionContainerSystem.SplitSolution(puddleSolution, transferAmount);
+        var spilledEvent = new SpilledOnEvent(puddle, splitSol);
+        var relayedEvent = new InventoryRelayedEvent<SpilledOnEvent>(spilledEvent, ent.Owner);
+        RaiseLocalEvent(shoes.Value, relayedEvent);
+
+        if (splitSol.Volume > FixedPoint2.Zero)
+            _solutionContainerSystem.TryAddSolution(puddleSolution, splitSol);
+    }
+
+    private bool TryGetPuddleOnTileChange(MoveEvent args, out Entity<PuddleComponent> puddle)
+    {
+        puddle = default;
+
+        var gridUid = args.NewPosition.GetGridUid(EntityManager);
+        if (gridUid is not { } gridId || !TryComp<MapGridComponent>(gridId, out var grid))
+            return false;
+
+        if (args.OldPosition.GetGridUid(EntityManager) != gridId ||
+            _map.CoordinatesToTile(gridId, grid, args.OldPosition) == _map.CoordinatesToTile(gridId, grid, args.NewPosition))
+            return false;
+
+        var tile = _map.GetTileRef(gridId, grid, args.NewPosition);
+        if (!TryGetPuddle(tile, out var puddleUid) || !_puddleQuery.TryGetComponent(puddleUid, out var puddleComp))
+            return false;
+
+        puddle = (puddleUid, puddleComp);
+        return true;
+    }
+    // Reserve edit end: fire-nerf
 }

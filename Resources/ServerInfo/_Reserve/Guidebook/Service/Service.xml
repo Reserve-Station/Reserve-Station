@@ -3,11 +3,12 @@
 [color=#9fed58]Отдел Сервиса[/color] поддерживает чистоту, эффективность и порядок на станции, чтобы все остальные отделы могли лучше справляться со своей работой и держать персонал в тонусе. Они также выполняют большую часть бумажной работы на станции.
 
 ## Персонал
-[color=#9fed58]Отдел Сервиса[/color] состоит из работников сферы обслуживания, поваров, ботаников, барменов, уборщиков, священников, клоунов, мимов, музыкантов, юристов, библиотекарей и пассажиров. Отделом Сервиса руководит Глава Персонала.
+[color=#9fed58]Отдел Сервиса[/color] состоит из работников сферы обслуживания, развлечения и помощи экипажу. Отделом Сервиса руководит Глава Персонала.
 
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineChef" Caption="Шеф-Повар"/>
     <GuideEntityEmbed Entity="ToyFigurineBotanist" Caption="Ботаник"/>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfPersonnel" Caption="Глава Персонала"/>
     <GuideEntityEmbed Entity="ToyFigurineBartender" Caption="Бармен"/>
     <GuideEntityEmbed Entity="ToyFigurineJanitor" Caption="Уборщик"/>
   </Box>
@@ -16,12 +17,15 @@
     <GuideEntityEmbed Entity="ToyFigurineClown" Caption="Клоун"/>
     <GuideEntityEmbed Entity="ToyFigurineMime" Caption="Мим"/>
     <GuideEntityEmbed Entity="ToyFigurineMusician" Caption="Музыкант"/>
+    <GuideEntityEmbed Entity="ToyFigurineBoxer" Caption="Боксёр"/>
+    <GuideEntityEmbed Entity="ToyFigurineLawyer" Caption="Зоотехник"/>
   </Box>
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineLawyer" Caption="Адвокат"/>
     <GuideEntityEmbed Entity="ToyFigurineLibrarian" Caption="Библиотекарь"/>
+    <GuideEntityEmbed Entity="ToyFigurineLawyer" Caption="Репортёр"/>
     <GuideEntityEmbed Entity="ToyFigurinePassenger" Caption="Ассистент"/>
-    <GuideEntityEmbed Entity="ToyFigurineHeadOfPersonnel" Caption="Глава Персонала"/>
+    <GuideEntityEmbed Entity="ToyFigurineLawyer" Caption="Радиоведущий"/>
   </Box>
 
 ## Работаем вместе
@@ -31,4 +35,27 @@
 Адвокат может пригласить мима поиграть в шарады, чтобы убедить судью в невиновности своего клиента.
 
 Много [color=#a4885c]сотрудничества[/color] необходимо как внутри, так и вне [color=#9fed58]отдела Сервиса[/color]. Часто [color=#9fed58]отдел Сервиса[/color] требуют другие отделы, так что будьте начеку.
+
+## Праздник для станции
+[color=#9fed58]Сервис[/color] может организовывать различные мероприятия и праздники для всей станции. Это может включать в себя концерты, кулинарные шоу, выставки и другие развлечения, которые помогают поддерживать моральный дух и сплочённость команды.
+Для более удобного создания таких событий была создана [color=#9fed58][bold]Консоль сервисных событий[/bold][/color].
+  <Box>
+    <GuideEntityEmbed Entity="ComputerServiceJobBoard"/>
+  </Box>
+Её можно построить, распечатав [color=#9fed58]плату консоли сервисных событий[/color] в [color=#9fed58]сервисном ТехФабе[/color] и собрав её на месте.
+  <Box>
+    <GuideEntityEmbed Entity="ServiceJobBoardComputerCircuitboard"/>
+  </Box>
+
+## ТехФаб
+[color=#9fed58]Сервисный ТехФаб[/color] позволяет создавать различные предметы и оборудование, необходимые для работы [color=#9fed58]отдела Сервиса[/color] и для [color=#a4885c]обслуживания экипажа[/color]. Здесь можно распечатать всё от посуды и кухонных принадлежностей до простой электроники и всяких безделушек.
+  <Box>
+    <GuideEntityEmbed Entity="ServiceTechFab"/>
+  </Box>
+
+## Консоль заказов
+[color=#9fed58]Консоль сервисных заказов[/color] позволяет заказывать у [color=#a4885c]отдела Снабжения[/color] необходимые ресурсы и материалы для работы [color=#9fed58]отдела Сервиса[/color].
+  <Box>
+    <GuideEntityEmbed Entity="ComputerCargoOrdersService"/>
+  </Box>
 </Document>

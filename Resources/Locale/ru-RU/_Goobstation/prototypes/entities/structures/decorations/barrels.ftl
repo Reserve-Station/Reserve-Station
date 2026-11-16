@@ -1,4 +1,4 @@
-ent-BaseBarrel = черная бочка
+ent-BaseBarrel = чёрная бочка
     .desc = Сделай бочку!
 ent-BarrelPlanks = { ent-BaseBarrel }
     .desc = { ent-BaseBarrel.desc }

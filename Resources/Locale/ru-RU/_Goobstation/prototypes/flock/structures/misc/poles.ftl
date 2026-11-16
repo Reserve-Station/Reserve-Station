@@ -1,8 +1,12 @@
 ent-BaseFlockPole = волокнистый столб
     .desc = Хм. Странно.
+    .suffix = Стая
 ent-FlockPoleEnd = { ent-BaseFlockPole }
     .desc = { ent-BaseFlockPole.desc }
+    .suffix = { ent-BaseFlockPole.suffix }
 ent-BaseFlockPoleBroken = { ent-BaseFlockPole }
     .desc = { ent-BaseFlockPole.desc }
+    .suffix = { ent-BaseFlockPole.suffix }
 ent-FlockPoleBroken2 = { ent-BaseFlockPole }
     .desc = { ent-BaseFlockPole.desc }
+    .suffix = { ent-BaseFlockPole.suffix }

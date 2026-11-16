@@ -254,6 +254,7 @@
     - state: ai
   - type: ConditionalSpawner
     prototypes:
+    - MobPossumMorty  # Reserve edit: Better spawners
     - MobPossumMortyOld
 
 - type: entity

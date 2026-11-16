@@ -1,5 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# region Tables
+
 - type: entityTable
   id: BotanistToolTable
   table: !type:GroupSelector
@@ -48,6 +50,10 @@
       weight: 1.2
     - id: ChemistryBottleDylovene
     - id: AugmentBotanyPanel
+      weight: 0.8
+    - id: BorgModuleGardening
+      weight: 0.8
+    - id: BorgModuleHarvesting
       weight: 0.8
     - id: SprayBottleWater
       amount: 2
@@ -273,6 +279,8 @@
       weight: 0.8
     - id: ClothingOuterJacketChef
       weight: 0.8
+    - id: BorgModuleLollypop
+      weight: 0.8
     - id: DrinkKettleAdvanced
     - id: BluespaceDrinkKettleAdvanced
       weight: 0.6
@@ -313,11 +321,15 @@
     - id: BluespaceDrinkKettleAdvanced
       weight: 0.4
 
+# endregion Tables
+
+# region Tools
+
 - type: entity
+  parent: MarkerBase
   id: RandomBotanistTool
   name: random tool
   suffix: Botanist, Hydroponics
-  parent: MarkerBase
   placement:
     mode: PlaceFree
   components:
@@ -333,10 +345,10 @@
       tableId: BotanistToolTable
 
 - type: entity
+  parent: MarkerBase
   id: RandomJanitorTool
   name: random tool
   suffix: Janitor
-  parent: MarkerBase
   placement:
     mode: PlaceFree
   components:
@@ -352,10 +364,10 @@
       tableId: JanitorToolTable
 
 - type: entity
+  parent: MarkerBase
   id: RandomAtmosTool
   name: random tool
   suffix: Atmos
-  parent: MarkerBase
   placement:
     mode: PlaceFree
   components:
@@ -371,10 +383,10 @@
       tableId: AtmosToolTable
 
 - type: entity
+  parent: MarkerBase
   id: RandomChefTool
   name: random tool
   suffix: Chef
-  parent: MarkerBase
   placement:
     mode: PlaceFree
   components:
@@ -390,10 +402,10 @@
       tableId: ChefToolTable
 
 - type: entity
+  parent: MarkerBase
   id: RandomBartenderTool
   name: random tool
   suffix: Bartender
-  parent: MarkerBase
   placement:
     mode: PlaceFree
   components:
@@ -408,13 +420,15 @@
     table: !type:NestedSelector
       tableId: BartenderToolTable
 
-# Objects
+# endregion Tools
+
+# region Objects
 
 - type: entity
+  parent: MarkerBase
   id: GeneratorBasic15kWChance
   name: generator spawner
   suffix: 15kW, 50% chance to spawn
-  parent: MarkerBase
   components:
   - type: Sprite
     layers:
@@ -427,10 +441,10 @@
     chance: 0.5
 
 - type: entity
+  parent: MarkerBase
   id: SolarPanelChance
   name: solar panel spawner
   suffix: 10% to be broken
-  parent: MarkerBase
   components:
   - type: Sprite
     layers:
@@ -446,9 +460,9 @@
     rareChance: 0.15
 
 - type: entity
+  parent: MarkerBase
   id: RandomCanister
   name: random gas canister spawner
-  parent: MarkerBase
   components:
   - type: Sprite
     layers:
@@ -475,6 +489,10 @@
       - PluoxiumCanister
     rareChance: 0.25
     offset: 0.0
+
+# endregion Objects
+
+# region Freezers
 
 - type: entityTable
   id: RandomFrozenSnackTable
@@ -540,8 +558,8 @@
       prob: 0.01
 
 - type: entity
-  id: LockerFreezerFilledRandom
   parent: LockerFreezer
+  id: LockerFreezerFilledRandom
   suffix: Filled, Random
   components:
   - type: EntityTableContainerFill
@@ -550,11 +568,33 @@
         tableId: FillFreezer
 
 - type: entity
-  id: CrateFreezerFilledRandom
   parent: CrateFreezer
+  id: CrateFreezerFilledRandom
   suffix: Filled, Random
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
         tableId: FillFreezer
+
+- type: entity
+  parent: ShelfWallFreezerWhite
+  id: ShelfWallFreezerWhiteFilledRandom
+  suffix: Filled, Random
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: FillFreezer
+
+- type: entity
+  parent: ShelfWallFreezerDark
+  id: ShelfWallFreezerDarkFilledRandom
+  suffix: Filled, Random
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: FillFreezer
+
+# endregion Freezers

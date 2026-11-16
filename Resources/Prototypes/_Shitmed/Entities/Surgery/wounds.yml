@@ -335,36 +335,42 @@
 
 - type: entity
   id: BoneDamage
+  categories: [ HideSpawnMenu ] #Goobstation - clean up spawn menu
   components:
   - type: Trauma
     traumaType: BoneDamage
 
 - type: entity
   id: OrganDamage
+  categories: [ HideSpawnMenu ] #Goobstation - clean up spawn menu
   components:
   - type: Trauma
     traumaType: OrganDamage
 
 - type: entity
   id: VeinsDamage
+  categories: [ HideSpawnMenu ] #Goobstation - clean up spawn menu
   components:
   - type: Trauma
     traumaType: VeinsDamage
 
 - type: entity
   id: NerveDamage
+  categories: [ HideSpawnMenu ] #Goobstation - clean up spawn menu
   components:
   - type: Trauma
     traumaType: NerveDamage
 
 - type: entity
   id: Dismemberment
+  categories: [ HideSpawnMenu ] #Goobstation - clean up spawn menu
   components:
   - type: Trauma
     traumaType: Dismemberment
 
 - type: entity
   id: TraumaShrapnel
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: Trauma
     traumaType: Shrapnel
@@ -373,6 +379,7 @@
 
 - type: entity
   id: TraumaBraindeath
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: Trauma
     traumaType: Braindeath

@@ -165,13 +165,13 @@ public partial class ConsciousnessSystem
 
         var newMobState = consciousness.IsConscious
             ? MobState.Alive
-            : MobState.Critical;
+            : MobState.SoftCritical; // Reserve edit: Soft Crit port
 
         if (consciousness.PassedOut)
-            newMobState = MobState.Critical;
+            newMobState = MobState.SoftCritical; // Reserve edit: Soft Crit port
 
         if (consciousness.ForceUnconscious)
-            newMobState = MobState.Critical;
+            newMobState = MobState.SoftCritical; // Reserve edit: Soft Crit port
 
         if (consciousness.Consciousness <= 0 && !consciousness.ForceConscious)
             newMobState = MobState.Dead;

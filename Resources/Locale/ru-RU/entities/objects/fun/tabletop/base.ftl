@@ -1,6 +1,6 @@
 ent-BaseBoardEntity = доска
     .desc = Пустая доска.
-ent-BaseTabletopPiece = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-BaseTabletopPiece = фигурка
+    .desc = Базовый элемент настольных игр.
 ent-BaseBoardTabletop = базовая доска
-    .desc = { "" }
+    .desc = Это базовая доска для настольных игр.

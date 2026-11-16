@@ -32,9 +32,10 @@
         volume: -4
   # _Reserve MoreAnonces (sound and alert upgrades) end
     earliestStart: 15
-    weight: 6
+    weight: 5  # Reserve edit: Less mice per round - reduced from 6 to decrease spawn frequency
     duration: 30 # DeltaV: was 50, used as a delay now
     chaos: # Goobstation
+      Infestation: 40
       Mess: 10 # there's 15 morbillion mice usually and they're easy to kill
     eventType: Neutral # Goobstation
   # Goobstation
@@ -46,6 +47,16 @@
       - id: SpawnMobMouse
       - id: MobMouseCancer
         weight: 0.02
+      - id: SpawnMobScurret  # Reserve edit: Super Scurret - let scurrets spawn from infestation
+        weight: 0.01
+      - id: SpawnMobBatAny  # Reserve edit: Halloween on Reserve
+        weight: 0.01
+      - id: SpawnMobBatAnyAngry  # Reserve edit: Halloween on Reserve
+        weight: 0.005
+      # - id: SpawnMobBatAny  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
+      #   weight: 2.5
+      # - id: SpawnMobBatAnyAngry  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
+      #   weight: 1.0
 # Events always spawn a critter regardless of Probability https://github.com/space-wizards/space-station-14/issues/28480 I added the Rat King to their own event with a player cap.
 
 - type: entity
@@ -66,6 +77,7 @@
     duration: 30 # DeltaV: was 50, used as a delay now
     minimumPlayers: 30 # Hopefully this is enough for the Rat King's potential Army (it was not, raised from 15 -> 30)
     chaos: # Goobstation
+      Infestation: 30
       Mess: 10
       Hostile: 1 # low chance to spawn rat king
     eventType: HostilesSpawn # Goobstation
@@ -81,6 +93,28 @@
         weight: 0.02
       - id: MobLootbug # Goobstation
         weight: 0.08
+      - id: SpawnMobScurret  # Reserve edit: Super Scurret - let scurrets spawn from infestation
+        weight: 0.01
+      # Reserve edit start: Halloween on Reserve
+      - id: SpawnMobBatAny
+        weight: 0.02
+      - id: SpawnMobBatAnyAngry  # Reserve edit: Halloween on Reserve
+        weight: 0.01
+      - id: MobBatVampire  # Reserve edit: Halloween on Reserve
+        weight: 0.01
+      - id: MobBatVampireAngry  # Reserve edit: Halloween on Reserve
+        weight: 0.01
+      # Reserve edit end: Halloween on Reserve
+      # # Reserve edit start: Halloween on Reserve  # Uncomment on Halloween
+      # - id: SpawnMobBatAny
+      #   weight: 2.5
+      # - id: SpawnMobBatAnyAngry
+      #   weight: 1.0
+      # - id: MobBatVampire
+      #   weight: 1.0
+      # - id: MobBatVampireAngry
+      #   weight: 1.0
+      # # Reserve edit end: Halloween on Reserve
     specialEntries:
     - id: SpawnPointGhostRatKing
       prob: 0.001
@@ -101,8 +135,8 @@
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
     chaos: # Goobstation
+      Infestation: 30
       Mess: 15
-      Hostile: 2
     eventType: Neutral # Goobstation
   # Goobstation
   - type: GameRule
@@ -130,6 +164,14 @@
         weight: 0.01
       - id: MobCockroachBig  # Reserve edit: Madagascar cockroach
         weight: 0.01
+      - id: MobSmallSpider  # Reserve edit: Arachnageddon
+        weight: 0.01
+      - id: MobSmallSpiderAngry  # Reserve edit: Arachnageddon
+        weight: 0.002
+      # - id: MobSmallSpider  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
+      #   weight: 2.5
+      # - id: MobSmallSpiderAngry  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
+      #   weight: 1.0
 
 - type: entity
   id: SnailMigrationLowPop
@@ -147,7 +189,7 @@
     weight: 6
     duration: 30 # DeltaV: was 50, used as a delay now
     chaos: # Goobstation
-      Friend: -5
+      Infestation: 10
       Mess: 5
     eventType: Neutral # Goobstation
   # Goobstation
@@ -159,6 +201,10 @@
       - id: MobSnail
       - id: MobSnailSpeed
       - id: MobSnailMoth
+      # - id: MobSmallSpider  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
+      #   weight: 2.5
+      # - id: MobSmallSpiderAngry  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
+      #   weight: 1.0
 
 - type: entity
   id: SnailMigration
@@ -178,6 +224,7 @@
     duration: 30 # DeltaV: was 50, used as a delay now
     minimumPlayers: 30
     chaos: # Goobstation
+      Infestation: 15
       Mess: 5
       Hostile: 1 # the very low gib snail prob
     eventType: Chaotic # Goobstation
@@ -196,3 +243,7 @@
       # Goobstation
       - id: MobSnailInstantDeath
         weight: 0.0004
+      # - id: MobSmallSpider  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
+      #   weight: 2.5
+      # - id: MobSmallSpiderAngry  # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
+      #   weight: 1.0

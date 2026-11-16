@@ -15,6 +15,8 @@
   name: armor vest
   description: A standard Type I armored vest that provides decent protection against most types of damage.
   components:
+  - type: Stainable
+    fireScale: 0.5 # Reserve edit: fire-nerf
   - type: Sprite
     sprite: Clothing/OuterClothing/Armor/security.rsi
   - type: Clothing
@@ -370,7 +372,7 @@
     color: "#80ff80"
     radius: 5
     energy: 2
-    mask: /Textures/Effects/LightMasks/cone.png
+    lightMask: ConeSingle
     autoRot: true
     netsync: false
   - type: LightBehaviour

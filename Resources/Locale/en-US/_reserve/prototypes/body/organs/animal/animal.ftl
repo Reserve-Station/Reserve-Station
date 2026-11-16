@@ -1,0 +1,22 @@
+ent-OrganInsectInnards = innards
+    .desc = A mess of insect equivalents of organs. Ew.
+    .suffix = Cockroach, Organ, Stomach, Liver, Kidneys, Heart, Egg sack
+ent-OrganInsectInnardsLungs = innards
+    .desc = A mess of insect equivalents of organs. Ew.
+    .suffix = Cockroach, Organ, Lungs
+
+ent-OrganAnimalLungsSmall = small animal lungs
+    .desc = { ent-OrganAnimalLungs.desc }
+    .suffix = Organ, Lungs
+ent-OrganAnimalStomachSmall = small animal stomach
+    .desc = { ent-OrganAnimalStomach.desc }
+    .suffix = Organ, Stomach
+ent-OrganAnimalLiverSmall = small animal liver
+    .desc = { ent-OrganAnimalLiver.desc }
+    .suffix = Organ, Liver
+ent-OrganAnimalHeartSmall = small animal heart
+    .desc = { ent-OrganAnimalHeart.desc }
+    .suffix = Organ, Heart
+ent-OrganAnimalKidneysSmall = small animal kidneys
+    .desc = { ent-OrganAnimalKidneys.desc }
+    .suffix = Organ, Kidneys

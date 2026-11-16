@@ -12,7 +12,7 @@
 
   ## Особые способности
 
-  ### Dragon Power
+  ### Сила Дракона
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookDragonPower" Caption=""/>
@@ -23,16 +23,16 @@
 
   ## Комбо
 
-  ### Dragon Claw
+  ### Коготь дракона
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
     <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
   </Box>
 
-    Наносит массивный [color=Purple][bold]Stamina[/bold][/color] урон и [color=Yellow][bold]значительно замедляет[/bold][/color] противника.
+    Наносит массивный урон [color=Purple][bold]выносливости[/bold][/color] и [color=Yellow][bold]значительно замедляет[/bold][/color] противника.
 
-  ### Dragon Tail
+  ### Хвост дракона
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>
@@ -40,9 +40,9 @@
     <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
   </Box>
 
-    Наносит [color=Orange][bold]Blunt[/bold][/color] урон и [color=Purple][bold]Stamina[/bold][/color] урон. [bold]Сбивает противника с ног[/bold], если он стоит, и применяет [color=Yellow][bold]короткое оглушение[/bold][/color] в противном случае.
+    Наносит [color=Orange][bold]тупой[/bold][/color] урон и урон [color=Purple][bold]выносливости[/bold][/color]. [bold]Сбивает противника с ног[/bold], если он стоит, и применяет [color=Yellow][bold]короткое оглушение[/bold][/color] в противном случае.
 
-  ### Dragon Strike
+  ### Удар дракона
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>

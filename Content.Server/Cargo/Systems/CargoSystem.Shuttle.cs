@@ -8,6 +8,7 @@ using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Events;
 using Content.Shared.Cargo.Prototypes;
 using Content.Shared.CCVar;
+using Content.Shared.Stacks;  // Reserve edit: Pirates Enhanced
 using JetBrains.Annotations;
 using Content.Shared.GameTicking;
 using Robust.Shared.Audio;
@@ -22,6 +23,7 @@ public sealed partial class CargoSystem
      */
 
     private static readonly SoundPathSpecifier ApproveSound = new("/Audio/Effects/Cargo/ping.ogg");
+    private static readonly ProtoId<StackPrototype> CreditStack = "Credit"; // Reserve edit: Pirates Enhanced
     private bool _lockboxCutEnabled;
 
     private void InitializeShuttle()
@@ -135,7 +137,7 @@ public sealed partial class CargoSystem
 
     #region Station
 
-    private bool SellPallets(EntityUid gridUid, EntityUid station, out HashSet<(EntityUid, OverrideSellComponent?, double)> goods)
+    private bool SellPallets(EntityUid gridUid, EntityUid? station, out HashSet<(EntityUid, OverrideSellComponent?, double)> goods) // Reserve edit: Pirates Enhanced
     {
         GetPalletGoods(gridUid, out var toSell, out goods);
 
@@ -153,7 +155,7 @@ public sealed partial class CargoSystem
         return true;
     }
 
-    private void GetPalletGoods(EntityUid gridUid, out HashSet<EntityUid> toSell,  out HashSet<(EntityUid, OverrideSellComponent?, double)> goods)
+    private void GetPalletGoods(EntityUid gridUid, out HashSet<EntityUid> toSell, out HashSet<(EntityUid, OverrideSellComponent?, double)> goods)
     {
         goods = new HashSet<(EntityUid, OverrideSellComponent?, double)>();
         toSell = new HashSet<EntityUid>();
@@ -220,11 +222,13 @@ public sealed partial class CargoSystem
     {
         var xform = Transform(uid);
 
-        if (_station.GetOwningStation(uid) is not { } station ||
-            !TryComp<StationBankAccountComponent>(station, out var bankAccount))
-        {
-            return;
-        }
+        // Reserve edit start: Pirates Enhanced - commented out
+        // if (_station.GetOwningStation(uid) is not { } station ||
+        //     !TryComp<StationBankAccountComponent>(station, out var bankAccount))
+        // {
+        //     return;
+        // }
+        // Reserve edit end: Pirates Enhanced
 
         if (xform.GridUid is not { } gridUid)
         {
@@ -234,31 +238,51 @@ public sealed partial class CargoSystem
             return;
         }
 
-        if (!SellPallets(gridUid, station, out var goods))
-            return;
-
-        var baseDistribution = CreateAccountDistribution((station, bankAccount));
-        foreach (var (_, sellComponent, value) in goods)
+        // Reserve edit start: Pirates Enhanced
+        var station = _station.GetOwningStation(uid);
+        StationBankAccountComponent? bankAccount = null;
+        if (station is { } stationUid &&
+            TryComp<StationBankAccountComponent>(stationUid, out var foundBankAccount))
         {
-            Dictionary<ProtoId<CargoAccountPrototype>, double> distribution;
-            if (sellComponent != null)
-            {
-                var cut = _lockboxCutEnabled ? bankAccount.LockboxCut : bankAccount.PrimaryCut;
-                distribution = new Dictionary<ProtoId<CargoAccountPrototype>, double>
-                {
-                    { sellComponent.OverrideAccount, cut },
-                    { bankAccount.PrimaryAccount, 1.0 - cut },
-                };
-            }
-            else
-            {
-                distribution = baseDistribution;
-            }
-
-            UpdateBankAccount((station, bankAccount), (int) Math.Round(value), distribution, false);
+            bankAccount = foundBankAccount;
         }
 
-        Dirty(station, bankAccount);
+        if (!SellPallets(gridUid, bankAccount == null ? null : station, out var goods))
+            return;
+
+        if (station is { } bankStation && bankAccount is { } account)
+        {
+            var baseDistribution = CreateAccountDistribution((bankStation, account));
+            foreach (var (_, sellComponent, value) in goods)
+            {
+                Dictionary<ProtoId<CargoAccountPrototype>, double> distribution;
+                if (sellComponent != null)
+                {
+                    var cut = _lockboxCutEnabled ? account.LockboxCut : account.PrimaryCut;
+                    distribution = new Dictionary<ProtoId<CargoAccountPrototype>, double>
+                    {
+                        { sellComponent.OverrideAccount, cut },
+                        { account.PrimaryAccount, 1.0 - cut },
+                    };
+                }
+                else
+                {
+                    distribution = baseDistribution;
+                }
+
+                UpdateBankAccount((bankStation, account), (int) Math.Round(value), distribution, false);
+            }
+
+            Dirty(bankStation, account);
+        }
+        else
+        {
+            var amount = goods.Sum(item => (int) Math.Round(item.Item3));
+            if (amount > 0)
+                _stack.SpawnAtPosition(amount, CreditStack, xform.Coordinates);
+        }
+        // Reserve edit end: Pirates Enhanced
+
         _audio.PlayPvs(ApproveSound, uid);
         UpdatePalletConsoleInterface(uid);
     }
@@ -271,4 +295,4 @@ public sealed partial class CargoSystem
 /// deleted but after the price has been calculated.
 /// </summary>
 [ByRefEvent]
-public readonly record struct EntitySoldEvent(HashSet<EntityUid> Sold, EntityUid Station);
+public readonly record struct EntitySoldEvent(HashSet<EntityUid> Sold, EntityUid? Station); // Reserve edit: Pirates Enhanced

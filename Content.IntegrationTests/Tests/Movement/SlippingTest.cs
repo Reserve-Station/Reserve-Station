@@ -24,7 +24,7 @@ public sealed class SlippingTest : MovementTest
         await SpawnTarget("TrashBananaPeel");
 
         var modifier = Comp<MovementSpeedModifierComponent>(Player).SprintSpeedModifier;
-        Assert.That(modifier, Is.EqualTo(1), "Player is not moving at full speed.");
+        Assert.That(modifier, Is.GreaterThanOrEqualTo(1f), "Player is not moving at full speed."); // Reserve edit: Mood System port - Was EqualTo
 
         // Player is to the left of the banana peel.
         Assert.That(Delta(), Is.GreaterThan(0.5f));

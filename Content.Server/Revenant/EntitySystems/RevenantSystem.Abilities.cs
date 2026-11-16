@@ -42,6 +42,9 @@ using Content.Shared.StatusEffect;
 using Content.Shared.Flash.Components;
 using Robust.Shared.Audio.Systems;
 using Content.Goobstation.Shared.Wraith.Components;
+using Content.Server.Atmos.EntitySystems; // Reserve edit
+using Content.Server.Temperature.Systems; // Reserve edit
+using Content.Shared.Temperature.Components; // Reserve edit
 
 namespace Content.Server.Revenant.EntitySystems;
 
@@ -64,6 +67,8 @@ public sealed partial class RevenantSystem
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
     [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private readonly AtmosphereSystem _atmosphere = default!; // Reserve edit
+    [Dependency] private readonly TemperatureSystem _temperature = default!; // Reserve edit
 
     private static readonly ProtoId<StatusEffectPrototype> RevenantEssenceRegen = "EssenceRegen";
 
@@ -82,6 +87,7 @@ public sealed partial class RevenantSystem
         SubscribeLocalEvent<RevenantComponent, RevenantBloodWritingEvent>(OnBloodWritingAction); // Imp
         SubscribeLocalEvent<RevenantComponent, RevenantAnimateEvent>(OnAnimateAction); // Imp
         SubscribeLocalEvent<RevenantComponent, RevenantHauntActionEvent>(OnHauntAction); // Imp
+        SubscribeLocalEvent<RevenantComponent, RevenantChillActionEvent>(OnChillAction); // Reserve edit
     }
 
     private void OnInteract(EntityUid uid, RevenantComponent component, UserActivateInWorldEvent args)
@@ -236,7 +242,7 @@ public sealed partial class RevenantSystem
             return;
         DamageSpecifier dspec = new();
         dspec.DamageDict.Add("Cold", damage.Value);
-        _damage.TryChangeDamage(args.Args.Target, dspec, true, origin: uid);
+        _damage.ChangeDamage(args.Args.Target.Value, dspec, true, origin: uid);
 
         PlayHauntSound(uid, component);
 
@@ -380,7 +386,8 @@ public sealed partial class RevenantSystem
             //chucks shit
             if (items.HasComponent(ent) &&
                 TryComp<PhysicsComponent>(ent, out var phys) && phys.BodyType != BodyType.Static)
-                _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec());
+                _throwing.TryThrow(ent, _random.NextAngle().ToWorldVec(),
+                    predicted: false); // Trauma
 
             //reserve Revenant buff start
             //flicker lights
@@ -441,6 +448,20 @@ public sealed partial class RevenantSystem
             var comp = EnsureComp<RevenantOverloadedLightsComponent>(allLight.First());
             comp.Target = ent; //who they gon fire at?
         }
+
+        // Reserve edit start - lights react even with nobody around: they flicker and some burst
+        foreach (var light in _lookup.GetEntitiesInRange<PoweredLightComponent>(xform.Coordinates, component.OverloadRadius))
+        {
+            // Lights about to zap someone have to stay intact
+            if (HasComp<RevenantOverloadedLightsComponent>(light))
+                continue;
+
+            if (_random.Prob(component.OverloadBreakChance))
+                _poweredLight.TryDestroyBulb(light, light.Comp);
+            else
+                _ghost.DoGhostBooEvent(light);
+        }
+        // Reserve edit end
     }
 
     private void OnBlightAction(EntityUid uid, RevenantComponent component, RevenantBlightActionEvent args)
@@ -477,6 +498,65 @@ public sealed partial class RevenantSystem
         }
     }
 
+    // Reserve edit start
+    /// <summary>
+    /// Freezes the area around the revenant: the air gets colder, frost covers the floor
+    /// and everyone nearby gets chilled to the bone, which slows them down.
+    /// </summary>
+    private void OnChillAction(EntityUid uid, RevenantComponent component, RevenantChillActionEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!TryUseAbility(uid, component, component.ChillCost, component.ChillDebuffs))
+            return;
+
+        args.Handled = true;
+        PlayHauntSound(uid, component);
+
+        var xform = Transform(uid);
+        var center = _transformSystem.GetWorldPosition(xform);
+
+        // Cold air and frost on the floor
+        if (TryComp<MapGridComponent>(xform.GridUid, out var grid))
+        {
+            var box = Box2.CenteredAround(center, new Vector2(component.ChillRadius * 2, component.ChillRadius * 2));
+            foreach (var tile in _mapSystem.GetTilesIntersecting(xform.GridUid.Value, grid, box))
+            {
+                var tileCenter = _turf.GetTileCenter(tile);
+                if ((_transformSystem.ToMapCoordinates(tileCenter).Position - center).Length() > component.ChillRadius)
+                    continue;
+
+                if (_atmosphere.GetTileMixture(xform.GridUid, xform.MapUid, tile.GridIndices, true) is { } air
+                    && air.Temperature > component.ChillAirMinTemperature)
+                {
+                    air.Temperature = MathF.Max(air.Temperature - component.ChillAirTemperatureDrop, component.ChillAirMinTemperature);
+                }
+
+                if (_turf.IsSpace(tile)
+                    || _turf.IsTileBlocked(tile, CollisionGroup.Impassable)
+                    || !_random.Prob(component.ChillFrostChance))
+                    continue;
+
+                Spawn(component.ChillFrostPrototype, tileCenter);
+            }
+        }
+
+        // Chill everyone nearby to the bone
+        foreach (var victim in _lookup.GetEntitiesInRange<TemperatureComponent>(xform.Coordinates, component.ChillRadius))
+        {
+            if (victim.Owner == uid
+                || !HasComp<MobStateComponent>(victim)
+                || victim.Comp.CurrentTemperature <= component.ChillBodyMinTemperature)
+                continue;
+
+            var temp = MathF.Max(victim.Comp.CurrentTemperature - component.ChillBodyTemperatureDrop, component.ChillBodyMinTemperature);
+            _temperature.ForceChangeTemperature(victim, temp, victim.Comp);
+            _popup.PopupEntity(Loc.GetString("revenant-chill-victim"), victim, victim, PopupType.MediumCaution);
+        }
+    }
+    // Reserve edit end
+
     // Begin Imp Changes
     private void OnBloodWritingAction(EntityUid uid, RevenantComponent component, RevenantBloodWritingEvent args)
     {
@@ -509,10 +589,37 @@ public sealed partial class RevenantSystem
         if (args.Handled)
             return;
 
+        // Reserve edit start - animate every item around the revenant instead of a single target
+        var coords = _transformSystem.GetMapCoordinates(uid);
+        var items = new List<(EntityUid Uid, float Dist)>();
+        foreach (var item in _lookup.GetEntitiesInRange<ItemComponent>(coords, comp.AnimateRadius))
+        {
+            if (!_revenantAnimated.CanAnimateObject(item))
+                continue;
+
+            var dist = (_transformSystem.GetMapCoordinates(item).Position - coords.Position).LengthSquared();
+            items.Add((item, dist));
+        }
+
+        if (items.Count == 0)
+        {
+            _popup.PopupEntity(Loc.GetString("revenant-animate-no-items"), uid, uid);
+            return;
+        }
+
+        // Only charge essence and start the cooldown when something will actually be animated
+        if (!TryUseAbility(uid, comp, comp.AnimateCost, comp.AnimateDebuffs))
+            return;
+
+        args.Handled = true;
         PlayHauntSound(uid, comp); //Reserve edit
 
-        if (_revenantAnimated.CanAnimateObject(args.Target) && TryUseAbility(uid, comp, comp.AnimateCost, comp.AnimateDebuffs))
-            _revenantAnimated.TryAnimateObject(args.Target, comp.AnimateTime, (uid, comp));
+        items.Sort((a, b) => a.Dist.CompareTo(b.Dist));
+        for (var i = 0; i < Math.Min(items.Count, comp.AnimateMaxItems); i++)
+        {
+            _revenantAnimated.TryAnimateObject(items[i].Uid, comp.AnimateTime, (uid, comp));
+        }
+        // Reserve edit end
     }
     // End Imp Changes
 }

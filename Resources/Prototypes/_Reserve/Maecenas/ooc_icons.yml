@@ -1,0 +1,553 @@
+# CentComm
+
+- type: oocIcon
+  id: OocIconCentCommOfficer
+  name: ooc-icon-cent-comm-officer
+  icon:
+    sprite: /Textures/_Goobstation/Interface/Misc/ooc_icons.rsi
+    state: androidonator
+  tier: MaecenasX
+
+- type: oocIcon
+  id: OocIconCentCommAI
+  name: ooc-icon-cent-comm-ai
+  icon:
+    sprite: /Textures/_Goobstation/Interface/Misc/ooc_icons.rsi
+    state: harel
+  tier: MaecenasX
+
+# Antagonists
+
+- type: oocIcon
+  id: OocIconCultMaster
+  name: ooc-icon-cult-master
+  icon:
+    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
+    state: HereticMaster
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconBloodBrother
+  name: ooc-icon-blood-brother
+  icon:
+    sprite: /Textures/_Harmony/Interface/Misc/job_icons.rsi
+    state: BloodBrother
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconConspirator
+  name: ooc-icon-conspirator
+  icon:
+    sprite: /Textures/_Harmony/Interface/Misc/job_icons.rsi
+    state: Conspirator
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconAbductor
+  name: ooc-icon-abductor
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Abductor
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconBlob
+  name: ooc-icon-blob
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Blob
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconChaplainDark
+  name: ooc-icon-chaplain-dark
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: ChaplainDark
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconClownTunnel
+  name: ooc-icon-clown-tunnel
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: ClownTunnel
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconContractor
+  name: ooc-icon-contractor
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Contractor
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconCorporateAgent
+  name: ooc-icon-corporate-agent
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: CorporateAgent
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconDarkLord
+  name: ooc-icon-dark-lord
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: DarkLord
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconDemonLaughter
+  name: ooc-icon-demon-laughter
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: DemonLaughter
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconDemonSlaughter
+  name: ooc-icon-demon-slaughter
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: DemonSlaughter
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconDevil
+  name: ooc-icon-devil
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Devil
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconHeretic
+  name: ooc-icon-heretic
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Heretic
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconMimeAssassin
+  name: ooc-icon-mime-assassin
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: MimeAssassin
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconNinja
+  name: ooc-icon-ninja
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Ninja
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconNukeOps
+  name: ooc-icon-nuke-ops
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: NukeOps
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconNukeOpsClown
+  name: ooc-icon-nuke-ops-clown
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: NukeOpsClown
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconNukeOpsCommander
+  name: ooc-icon-nuke-ops-commander
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: NukeOpsCommander
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconNukeOpsMedic
+  name: ooc-icon-nuke-ops-medic
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: NukeOpsMedic
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconPirate
+  name: ooc-icon-pirate
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Pirate
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconPirateCaptain
+  name: ooc-icon-pirate-captain
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: PirateCaptain
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconShadowling
+  name: ooc-icon-shadowling
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Shadowling
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconSlasher
+  name: ooc-icon-slasher
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Slasher
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconThief
+  name: ooc-icon-thief
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Thief
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconVampire
+  name: ooc-icon-vampire
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Vampire
+  tier: Maecenas5
+
+- type: oocIcon
+  id: OocIconGangHead
+  name: ooc-icon-gang-head
+  icon:
+    sprite: /Textures/_Goobstation/Gangs/gang_markers.rsi
+    state: gang_head
+  tier: Maecenas5
+
+# Other
+
+- type: oocIcon
+  id: OocIconIanHead
+  name: ooc-icon-ian-head
+  icon:
+    sprite: /Textures/_Goobstation/Interface/Misc/ooc_icons.rsi
+    state: baptr0b0t
+  tier: MaecenasX
+
+- type: oocIcon
+  id: OocIconLambda
+  name: ooc-icon-lambda
+  icon:
+    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
+    state: lambda
+  tier: Maecenas2
+
+- type: oocIcon
+  id: OocIconAbductorVictim
+  name: ooc-icon-abductor-victim
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: AbductorVictim
+  tier: Maecenas2
+
+- type: oocIcon
+  id: OocIconChosenOne
+  name: ooc-icon-chosen-one
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: ChosenOne
+  tier: Maecenas2
+
+- type: oocIcon
+  id: OocIconPartyMaker
+  name: ooc-icon-party-maker
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: PartyMaker
+  tier: Maecenas3
+
+- type: oocIcon
+  id: OocIconSeniorEngineer
+  name: ooc-icon-senior-engineer
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: SeniorEngineer
+  tier: Maecenas4
+
+- type: oocIcon
+  id: OocIconSeniorPhysician
+  name: ooc-icon-senior-physician
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: SeniorPhysician
+  tier: Maecenas3
+
+- type: oocIcon
+  id: OocIconSeniorResearcher
+  name: ooc-icon-senior-researcher
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: SeniorResearcher
+  tier: Maecenas4
+
+- type: oocIcon
+  id: OocIconSalvageSpecialist
+  name: ooc-icon-salvage-specialist
+  icon:
+    sprite: /Textures/_Lavaland/Interface/Misc/job_icons.rsi
+    state: LavaShaftMiner
+  tier: Maecenas4
+
+- type: oocIcon
+  id: OocIconSingulothKnight
+  name: ooc-icon-singuloth-knight
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: SingulothKnight
+  tier: Maecenas2
+
+# Staff
+
+- type: oocIcon
+  id: OocIconAdmin
+  name: ooc-icon-admin
+  icon:
+    sprite: /Textures/Interface/Misc/job_icons.rsi
+    state: Admin
+  tier: Staff
+
+- type: oocIcon
+  id: OocIconModerator2
+  name: ooc-icon-moderator
+  icon:
+    sprite: /Textures/_Goobstation/Interface/Misc/job_icons.rsi
+    state: Mindcontrolled
+  tier: Staff
+
+# Reserve Station
+
+- type: oocIcon
+  id: OocIconBooster
+  name: ooc-icon-booster
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Booster
+  tier: DiscordBooster
+
+- type: oocIcon
+  id: OocIconContentMaker
+  name: ooc-icon-content-maker
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: ContentMaker
+  tier: ContentMaker
+
+- type: oocIcon
+  id: OocIconDeveloper
+  name: ooc-icon-developer
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Developer
+  tier: Developer
+
+- type: oocIcon
+  id: OocIconDeveloperMaintainer
+  name: ooc-icon-developer-maintainer
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: DeveloperMaintainer
+  tier: DeveloperMaintainer
+
+- type: oocIcon
+  id: OocIconGMSenior
+  name: ooc-icon-gm-senior
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: GMSenior
+  tier: GMSenior
+
+- type: oocIcon
+  id: OocIconGM
+  name: ooc-icon-gm
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: GM
+  tier: GM
+
+- type: oocIcon
+  id: OocIconGMCadet
+  name: ooc-icon-gm-cadet
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: GMCadet
+  tier: GMCadet
+
+- type: oocIcon
+  id: OocIconHost
+  name: ooc-icon-host
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Host
+  tier: Host
+
+- type: oocIcon
+  id: OocIconLeader
+  name: ooc-icon-leader
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Leader
+  tier: Leader
+
+- type: oocIcon
+  id: OocIconMaecenas
+  name: ooc-icon-maecenas
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Maecenas
+  tier: Maecenas1
+
+- type: oocIcon
+  id: OocIconMaecenasPrime
+  name: ooc-icon-maecenas-prime
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: MaecenasPrime
+  tier: MaecenasPrime
+
+- type: oocIcon
+  id: OocIconMC
+  name: ooc-icon-mc
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: MC
+  tier: EventWinner
+
+- type: oocIcon
+  id: OocIconMentor
+  name: ooc-icon-mentor
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Mentor
+  tier: Mentor
+
+- type: oocIcon
+  id: OocIconMindShield
+  name: ooc-icon-mind-shield
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: MindShield
+  tier: MaecenasX
+
+- type: oocIcon
+  id: OocIconModerator
+  name: ooc-icon-moderator
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Moderator
+  tier: Moderator
+
+- type: oocIcon
+  id: OocIconMute
+  name: ooc-icon-mute
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Mute
+  tier: Staff
+
+- type: oocIcon
+  id: OocIconOwner
+  name: ooc-icon-owner
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Owner
+  tier: Owner
+
+- type: oocIcon
+  id: OocIconPartyCard
+  name: ooc-icon-party-card
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: PartyCard
+  tier: PartyCard
+
+- type: oocIcon
+  id: OocIconReservePride
+  name: ooc-icon-reserve-pride
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: ReservePride
+  tier: MaecenasPride
+
+- type: oocIcon
+  id: OocIconReservePride2
+  name: ooc-icon-reserve-pride
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: ReservePride2
+  tier: MaecenasPride
+
+- type: oocIcon
+  id: OocIconReservePride3
+  name: ooc-icon-reserve-pride
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: ReservePride3
+  tier: MaecenasPride
+
+- type: oocIcon
+  id: OocIconReservePride4
+  name: ooc-icon-reserve-pride
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: ReservePride4
+  tier: MaecenasPride
+
+- type: oocIcon
+  id: OocIconSentry
+  name: ooc-icon-sentry
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Sentry
+  tier: Sentry
+
+- type: oocIcon
+  id: OocIconSentryCadet
+  name: ooc-icon-sentry-cadet
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: SentryCadet
+  tier: SentryCadet
+
+- type: oocIcon
+  id: OocIconSwamp
+  name: ooc-icon-swamp
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: Swamp
+  tier: Maecenas2
+
+- type: oocIcon
+  id: OocIconWL
+  name: ooc-icon-wl
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: WL
+  tier: WL
+
+- type: oocIcon
+  id: OocIconWLModerator
+  name: ooc-icon-wl-moderator
+  icon:
+    sprite: /Textures/_Reserve/Interface/Misc/ooc_icons.rsi
+    state: WLModerator
+  tier: Staff

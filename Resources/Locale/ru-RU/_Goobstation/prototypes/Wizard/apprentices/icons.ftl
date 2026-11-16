@@ -1,2 +1,2 @@
 ent-ApprenticeIconChaos = хаос
-    .desc = { "" }
+    .desc = Чистейший.

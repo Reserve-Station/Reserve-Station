@@ -29,6 +29,7 @@ using Robust.Shared.Utility;
 namespace Content.IntegrationTests.Tests
 {
     [TestFixture]
+    [Category("MapTests")]
     public sealed class PostMapInitTest
     {
         private const bool SkipTestMaps = true;
@@ -75,6 +76,7 @@ namespace Content.IntegrationTests.Tests
         {
             "/Maps/centcomm.yml",
             "/Maps/bagel.yml", // Contains mime's rubber stamp --> Either fix this, remove the category, or remove this comment if intentional.
+            "/Maps/gate.yml", // Contains positronic brain and LSE-1200c "Perforator"
             "/Maps/meta.yml", // Contains warden's rubber stamp
             "/Maps/reach.yml", // Contains handheld crew monitor
             "/Maps/Shuttles/ShuttleEvent/cruiser.yml", // Contains LSE-1200c "Perforator"
@@ -92,6 +94,7 @@ namespace Content.IntegrationTests.Tests
             "/Maps/_Goobstation/Nonstations/wizden.yml", // Obviously
             "/Maps/_Lavaland/Lavaland/ruin_toyshop.yml", // I think we might want to glob these, idk
             "/Maps/_Goobstation/loop.yml",
+            "/Maps/_Goobstation/gate.yml",
             "/Maps/_Goobstation/Shuttles/consul.yml", // Contains HEINOUS amounts of centcomm contraband. Obviously.
             "/Maps/_Goobstation/Shuttles/retort_assault.yml", // ERT ships
             "/Maps/_Goobstation/Shuttles/retort_medical.yml",
@@ -131,6 +134,7 @@ namespace Content.IntegrationTests.Tests
             "Exo",          // okay fine fuck it.
             "Fland",
             "FlandHighPop",
+            "Gate",
             "Kettle",
             "Lambda",         // Not in pool
             "Lavatest",       // Dev map
@@ -150,6 +154,7 @@ namespace Content.IntegrationTests.Tests
             "ReserveSillyIsland", // Reserve Station
             "Saltern",
             "Serpentcrest",
+			"Shoukou",
             "Snowball",
             "TestTeg",        // Dev map
             "Train"           // Not in pool
@@ -176,6 +181,7 @@ namespace Content.IntegrationTests.Tests
               "Exo",
             //  "Fland",        // kill due to mem
               "FlandHighPop",
+              "Gate",
               "Kettle",
             //"Lambda",         // Not in pool
               "Lavatest",       //Dev map
@@ -196,6 +202,7 @@ namespace Content.IntegrationTests.Tests
               "ReserveSillyIsland", // Reserve Station
               "Saltern",
               "Serpentcrest",
+			  "Shoukou",
              // "Snowball", // fuck off not in pool
         };
         // Goobstation edit end
@@ -348,7 +355,7 @@ namespace Content.IntegrationTests.Tests
                 foreach (var yamlEntity in (YamlSequenceNode) yamlEntities)
                 {
                     var protoId = yamlEntity["proto"].AsString();
-                    protoManager.TryIndex(protoId, out var proto, false);
+                    protoManager.TryIndex(protoId, out var proto);
                     if (proto is null || proto.EditorSuffix is null)
                         continue;
                     if (proto.Categories.Contains(dnmCategory) && !DoNotMapWhitelist.Contains(map.ToString()))
@@ -477,7 +484,7 @@ namespace Content.IntegrationTests.Tests
             });
             var server = pair.Server;
 
-            var mapManager = server.ResolveDependency<IMapManager>();
+            var mapManager = server.System<SharedMapSystem>();
             var entManager = server.ResolveDependency<IEntityManager>();
             var mapLoader = entManager.System<MapLoaderSystem>();
             var mapSystem = entManager.System<SharedMapSystem>();

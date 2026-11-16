@@ -1,7 +1,8 @@
-ent-ShowSecurityIcons = { "" }
-    .desc = { "" }
-ent-ShowMedicalIcons = { "" }
-    .desc = { "" }
+ent-ShowSecurityIcons = Показать индикаторы безопасности
+    .desc = Показывать иконки охраны на визоре.
+ent-ShowMedicalIcons = Показать индикаторы здоровья
+    .desc = Показывать медицинские иконки на визоре.
+
 ent-ClothingEyesHudDiagnostic = диагностический визор
     .desc = Окуляр с индикатором на стекле, способный анализировать целостность и состояние роботов и экзокостюмов. Сделан из си-боргия.
 ent-ClothingEyesHudMedical = медицинский визор

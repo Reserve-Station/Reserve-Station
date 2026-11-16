@@ -1,5 +1,5 @@
 ent-BaseLightning = молния
-    .desc = { "" }
+    .desc = { ent-EffectBase.desc }
 ent-Lightning = молния
     .desc = { ent-BaseLightning.desc }
 ent-LightningRevenant = страшная молния

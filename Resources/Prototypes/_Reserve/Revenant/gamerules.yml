@@ -1,0 +1,126 @@
+# Revenant as a real antagonist: a midround event and a roundstart rule, both used by Secret and Secret+.
+# Goob disabled the old RevenantSpawn event "until rework", this replaces it.
+
+- type: antag
+  id: Revenant
+  name: roles-antag-revenant-name
+  antagonist: true
+  setPreference: true # lets players opt in to the roundstart revenant in the lobby
+  objective: roles-antag-revenant-objective
+  guides: [ Revenant ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 5h
+  category: Solo
+  icon: # card for the antag preferences in the character editor
+    sprite: _Reserve/Interface/Lobby/antag_cards.rsi
+    state: revenant
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleRevenant
+  name: Revenant Role
+  components:
+  - type: MindRole
+    antagPrototype: Revenant
+    exclusiveAntag: true
+    roleType: SoloAntagonist
+    subtype: role-subtype-revenant
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostRevenant
+  components:
+  - type: GhostRole
+    name: ghost-role-information-revenant-name
+    description: ghost-role-information-revenant-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleRevenant
+    - MindRoleGhostRoleSoloAntagonistGoob # Goob hour requirement
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Mobs/Ghosts/revenant.rsi
+      state: icon
+
+# Midround: a ghost role pops up somewhere on the station
+- type: entity
+  parent: BaseGameRule
+  id: RevenantMidround
+  components:
+  - type: StationEvent
+    weight: 3.5
+    earliestStart: 30
+    maxOccurrences: 1
+    minimumPlayers: 20
+    duration: null
+    chaos:
+      Hostile: 20
+      Friend: 20
+      Combat: 40
+      Death: 100
+      Medical: 100
+    eventType: HostilesSpawn
+  - type: GameRule
+    chaosScore: 450
+  - type: AntagRandomSpawn
+  - type: AntagSpawner
+    prototype: MobRevenant
+  - type: AntagSelection
+    agentName: revenant-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostRevenant
+      min: 1
+      max: 1
+      pickPlayer: false
+      mindRoles:
+      - MindRoleRevenant
+      briefing:
+        text: revenant-role-greeting
+        color: "#8f63e6"
+  - type: DynamicRuleCost
+    cost: 50
+
+# Roundstart: a lobby player who opted in starts the round as a revenant
+- type: entity
+  parent: BaseGameRule
+  id: RevenantRoundstart
+  components:
+  - type: GameRule
+    minPlayers: 20
+  - type: AntagRandomSpawn
+  - type: AntagSpawner
+    prototype: MobRevenant
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    agentName: revenant-round-end-agent-name
+    definitions:
+    - prefRoles: [ Revenant ]
+      spawnerPrototype: SpawnPointGhostRevenant
+      min: 1
+      max: 1
+      pickPlayer: true
+      chaosScore: 300
+      mindRoles:
+      - MindRoleRevenant
+      briefing:
+        text: revenant-role-greeting
+        color: "#8f63e6"
+
+# Secret picks whole presets, so the roundstart revenant comes paired with traitors, like Goob's hybrid modes
+- type: gamePreset
+  id: TraitorRevenant
+  alias:
+  - traitorrevenant
+  - revenanttraitor
+  name: traitor-revenant-title
+  description: traitor-revenant-description
+  showInVote: false
+  rules:
+  - CalmTraitor
+  - RevenantRoundstart
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - BasicRoundstartVariation

@@ -2,7 +2,7 @@
 
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Standing;
 using Robust.Shared.Timing;
@@ -58,8 +58,32 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!_mobStateQuery.Resolve(target, ref component, false))
             return false;
-        return component.CurrentState == MobState.Critical;
+
+        return component.CurrentState is MobState.SoftCritical or MobState.HardCritical; // Reserve edit: Soft Crit port
     }
+
+    // Reserve edit start: Soft Crit port
+    /// <summary>
+    /// New MobStates, better use these methods!
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="component"></param>
+    public bool IsSoftCritical(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!_mobStateQuery.Resolve(target, ref component, false))
+            return false;
+
+        return component.CurrentState == MobState.SoftCritical;
+    }
+
+    public bool IsHardCritical(EntityUid target, MobStateComponent? component = null)
+    {
+        if (!_mobStateQuery.Resolve(target, ref component, false))
+            return false;
+
+        return component.CurrentState == MobState.HardCritical;
+    }
+    // Reserve edit end: Soft Crit port
 
     /// <summary>
     ///  Check if a Mob is Dead
@@ -84,7 +108,7 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!_mobStateQuery.Resolve(target, ref component, false))
             return false;
-        return component.CurrentState is MobState.Critical or MobState.Dead;
+        return component.CurrentState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead; // Reserve edit: Soft Crit port
     }
 
     /// <summary>

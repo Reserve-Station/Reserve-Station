@@ -1,4 +1,4 @@
-ent-BulletImpactEffectRedDisabler = { "" }
-    .desc = { "" }
-ent-BulletImpactEffectBlueDisabler = { "" }
-    .desc = { "" }
+ent-BulletImpactEffectRedDisabler = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }
+ent-BulletImpactEffectBlueDisabler = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }

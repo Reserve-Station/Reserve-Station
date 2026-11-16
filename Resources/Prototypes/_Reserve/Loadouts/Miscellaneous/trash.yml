@@ -1,0 +1,102 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: Eggshells
+  id: EggshellsVox
+  name: vox eggshells
+  description: What in the world came out of these?!
+  suffix: Trash, Egg
+  components:
+  - type: Sprite
+    color: "#c833ff"
+    scale: 1.5, 1.5
+
+- type: entity
+  parent: Eggshells
+  id: EggshellsUnicowl
+  name: unicowl eggshells
+  description: What in the world came out of these?!
+  suffix: Trash, Egg
+  components:
+  - type: Sprite
+    scale: 1.2, 1.2
+  - type: PointLight
+    radius: 1.2
+    energy: 1.5
+  - type: RgbLightController
+    layers: [ 0 ]
+
+- type: entity
+  parent: FoodPlateSmallTrash
+  id: FoodPlateSmallTrashGold
+  name: broken golden plate
+  suffix: Trash
+  components:
+  - type: Sprite
+    color: "#ffc833"
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 100
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkBottlePink
+  name: pink bottle
+  suffix: Trash
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#ff66c8"
+    - state: fill-1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+
+- type: entity
+  parent: DrinkCan
+  id: DrinkCanGold
+  name: golden can
+  suffix: Trash
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#ffc833"
+  - type: PhysicalComposition
+    materialComposition:
+      Gold: 100
+
+- type: entity
+  parent: PaperScrap
+  id: PaperScrapPink
+  name: pink paper scrap
+  suffix: Trash
+  description: A crumpled up piece of pink paper.
+  components:
+  - type: Sprite
+    color: "#ff66c8"
+
+- type: entity
+  parent: PaperScrap
+  id: PaperScrapRainbow
+  name: rainbow paper scrap
+  suffix: Trash
+  description: A crumpled up piece of rainbow-colored paper.
+  components:
+  - type: PointLight
+    radius: 1.2
+    energy: 1.5
+  - type: RgbLightController
+    layers: [ 0 ]
+
+- type: entity
+  parent: Ash
+  id: DirtPile
+  name: dirt pile
+  suffix: Trash
+  description: A pile of dirt.
+  components:
+  - type: Sprite
+    color: "#8b4513"

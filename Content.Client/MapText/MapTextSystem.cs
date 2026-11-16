@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client.Chat.UI;  // Reserve edit: Runechat MapText
+using Content.Goobstation.Common.CCVar;  // Reserve edit: Runechat MapText
 using Content.Shared.MapText;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -67,12 +69,23 @@ public sealed class MapTextSystem : SharedMapTextSystem
             ? Loc.GetString(component.LocText)
             : component.Text;
 
-        if (!_prototypeManager.TryIndex<FontPrototype>(component.FontId, out var fontPrototype))
+        // Reserve edit start: Runechat MapText
+        var useRunechat = _configManager.GetCVar(GoobCVars.ChatRunechat);
+        var fontId = component.FontId;
+
+        if (useRunechat && string.Equals(fontId, SharedMapTextComponent.DefaultFont, StringComparison.Ordinal))
+        {
+            component.CachedFont = new VectorFont(_resourceCache.GetResource<FontResource>(RunechatStyle.FontPath), component.FontSize);
+            return;
+        }
+        // Reserve edit end: Runechat MapText
+
+        if (!_prototypeManager.TryIndex<FontPrototype>(fontId, out var fontPrototype))  // Reserve edit: Runechat MapText
         {
             component.CachedText = Loc.GetString("map-text-font-error");
             component.Color = Color.Red;
 
-            if(_prototypeManager.TryIndex<FontPrototype>(SharedMapTextComponent.DefaultFont, out var @default))
+            if (_prototypeManager.TryIndex<FontPrototype>(SharedMapTextComponent.DefaultFont, out var @default))
                 component.CachedFont = new VectorFont(_resourceCache.GetResource<FontResource>(@default.Path), 14);
             return;
         }

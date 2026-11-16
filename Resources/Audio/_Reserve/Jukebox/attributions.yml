@@ -52,3 +52,18 @@
   license: "CC-BY-3.0"
   copyright: "Mechanism 8 for Unreal Tournament '99, written by Andrew 'Necros' Sega, Remixed by Rivgane for SS220"
   source: "https://github.com/SerbiaStrong-220"
+
+- files: ["A Little Star - Orchid's Tears.ogg"]
+  license: "CC-BY-NC-ND-4.0"
+  copyright: "Made by Ceterai on GitHub."
+  source: "https://www.youtube.com/watch?v=hUmIY37Tqik"
+
+- files: ["A Little Star - Mira.ogg"]
+  license: "CC-BY-NC-ND-4.0"
+  copyright: "Made by Ceterai on GitHub."
+  source: "https://www.youtube.com/watch?v=ST4YxugM2g8"
+
+- files: ["A Little Star - Verest.ogg"]
+  license: "CC-BY-NC-ND-4.0"
+  copyright: "Made by Ceterai on GitHub."
+  source: "https://www.youtube.com/watch?v=YAItWvKtn_Q"

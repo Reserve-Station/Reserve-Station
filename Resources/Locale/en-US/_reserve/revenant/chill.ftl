@@ -1,0 +1,3 @@
+revenant-chill-name = Chill
+revenant-chill-desc = The air around you freezes, frost covers the floor and every living being nearby is chilled to the bone and slows down. The cold doesn't hurt, but it scares.
+revenant-chill-victim = A grave chill runs through you, your breath turns to mist...

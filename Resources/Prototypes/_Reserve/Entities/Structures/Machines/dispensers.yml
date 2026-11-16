@@ -1,0 +1,219 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SodaDispenserEmpty
+  id: SauceDispenserEmpty
+  name: sauce dispenser
+  description: A dispenser for various sauces and condiments.
+  suffix: Empty
+  components:
+  - type: Sprite
+    state: sauce
+  - type: Machine
+    board: SauceDispenserMachineCircuitboard
+  - type: GuideHelp
+    guides:
+    - Chef
+    - FoodRecipes
+
+- type: entity
+  parent: SauceDispenserEmpty
+  id: SauceDispenser
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: FoodCondimentBottleKetchup
+    - id: FoodCondimentBottleBBQ
+    - id: FoodCondimentBottleHotsauce
+    - id: FoodCondimentBottleMayo
+    - id: FoodCondimentBottleMustard
+    - id: FoodCondimentBottleSoySauce
+
+- type: entity
+  parent: CleanerDispenser
+  id: LaughterDispenser
+  name: laughter dispenser
+  description: A wallmount dispenser capable of dispensing laughter. Refill your mood here.
+  components:
+  - type: Sprite
+    state: laughterdispenser
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Laughter
+          Quantity: 1000
+  - type: ReagentTank
+
+- type: entity
+  parent: EnergyChemDispenser
+  id: EnergyDrinkDispenser
+  name: energy drink dispenser
+  suffix: energy
+  description: A bluespace Drink Dispenser that uses station energy to synthesize basic non-alcoholic still drinks. The future is here and now.
+  components:
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/dispensers.rsi
+    state: drinks
+  - type: Battery
+    maxCharge: 1200
+    startingCharge: 1200
+  - type: GuideHelp
+    guides:
+    - Bartender
+    - Drinks
+  - type: StealTarget
+    stealGroup: BoozeDispenser
+  - type: Machine
+    board: EnergyDrinkDispenserMachineCircuitboard
+  - type: EnergyReagentDispenser
+    reagents:
+      Ice: 3
+      Water: 3
+      Sugar: 3
+      Tea: 4
+      GreenTea: 4
+      CoconutWater: 6
+      Milk: 5
+      MilkSoy: 10
+      Cream: 5
+      Coffee: 9
+      HotCocoa: 8
+      Grenadine: 15
+      RootBeer: 8
+      SodaWater: 4
+      JuiceApple: 9
+      JuiceBanana: 9
+      JuiceBerry: 9
+      JuiceCherry: 9
+      JuiceGrape: 9
+      JuiceLemon: 9
+      JuiceLime: 9
+      JuiceOrange: 9
+      JuiceMango: 9
+      JuicePineapple: 9
+      JuiceWatermelon: 9
+      JuiceBluePumpkin: 10
+      JuiceBungo: 10
+      JuiceCarrot: 7
+      JuiceTomato: 7
+      JuicePotato: 7
+
+- type: entity
+  parent: EnergyDrinkDispenser
+  id: EnergySodaDispenser
+  name: energy soda dispenser
+  suffix: energy
+  description: A bluespace Soda Dispenser that uses station energy to synthesize basic non-alcoholic sodas. The future is here and now.
+  components:
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/dispensers.rsi
+    state: soda
+  - type: Machine
+    board: EnergySodaDispenserMachineCircuitboard
+  - type: EnergyReagentDispenser
+    reagents:
+      SodaWater: 4
+      Cola: 5
+      Brepsi: 8
+      DrGibb: 8
+      EnergyDrink: 12
+      GrapeSoda: 8
+      LemonLime: 8
+      LemonLimeCranberry: 8
+      PwrGame: 8
+      SolDry: 8
+      SpaceMountainWind: 8
+      SpaceUp: 8
+      Starkist: 8
+      ShamblersJuice: 8
+      ShirleyTemple: 10
+      Ice: 3
+      Sugar: 3
+      Tea: 4
+      GreenTea: 4
+      Milk: 5
+      Cream: 5
+      Coffee: 9
+      Grenadine: 15
+      RootBeer: 7
+
+- type: entity
+  parent: EnergyDrinkDispenser
+  id: EnergyBoozeDispenser
+  name: energy booze dispenser
+  suffix: energy
+  description: A bluespace Booze Dispenser that uses station energy to synthesize basic alcoholic drinks. The future is here and now.
+  components:
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/dispensers.rsi
+    state: alcohol
+  - type: Machine
+    board: EnergyBoozeDispenserMachineCircuitboard
+  - type: EnergyReagentDispenser
+    reagents:
+      Ethanol: 5
+      Absinthe: 6
+      Ale: 6
+      Beer: 6
+      BlueCuracao: 13
+      Cognac: 10
+      Gin: 9
+      NTCahors: 15
+      Rum: 8
+      Sake: 14
+      Tequila: 9
+      Vermouth: 12
+      Whiskey: 10
+      Wine: 11
+      Champagne: 15
+      Ice: 3
+      Water: 3
+      Sugar: 3
+      Tea: 4
+      GreenTea: 4
+      CoconutWater: 6
+      Milk: 5
+      MilkSoy: 10
+      Cream: 5
+      Coffee: 9
+      HotCocoa: 8
+      Grenadine: 15
+      RootBeer: 7
+
+- type: entity
+  parent: EnergyDrinkDispenser
+  id: EnergySauceDispenser
+  name: energy sauce dispenser
+  suffix: energy
+  description: A bluespace Sauce Dispenser that uses station energy to synthesize basic sauces. The future is here and now.
+  components:
+  - type: Sprite
+    sprite: _Reserve/Objects/Structures/dispensers.rsi
+    state: sauce
+  - type: Machine
+    board: EnergySauceDispenserMachineCircuitboard
+  - type: EnergyReagentDispenser
+    reagents:
+      Ketchup: 10
+      Mustard: 12
+      Hotsauce: 16
+      HorseradishSauce: 24
+      Mayo: 16
+      Syrup: 18
+      Enzyme: 40
+      Soysauce: 6
+      Butter: 32
+      Sugar: 6
+      TableSalt: 8
+      Blackpepper: 8
+      Vinegar: 20
+      Cream: 10
+      LaughinSyrup: 45
+      Astrotame: 30
+      Oil: 12
+      Cornoil: 18
+      OilOlive: 20
+      FrostOil: 30
+      CapsaicinOil: 30

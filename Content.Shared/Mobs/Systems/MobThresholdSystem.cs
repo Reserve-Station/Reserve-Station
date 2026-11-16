@@ -3,9 +3,10 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Alert;
-using Content.Shared.Damage;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared._Shitmed.Body;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Events;
 using Robust.Shared.GameStates;
@@ -18,6 +19,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Robust.Shared.Serialization;
 using Robust.Shared.Network;
+using Content.Shared.Damage;
 
 namespace Content.Shared.Mobs.Systems;
 
@@ -187,7 +189,7 @@ public sealed partial class MobThresholdSystem : EntitySystem
         if (!Resolve(target, ref thresholdComponent))
             return false;
 
-        return TryGetThresholdForState(target, MobState.Critical, out threshold, thresholdComponent)
+        return TryGetThresholdForState(target, MobState.SoftCritical, out threshold, thresholdComponent) // Reserve edit: Soft Crit port
                || TryGetThresholdForState(target, MobState.Dead, out threshold, thresholdComponent);
     }
 

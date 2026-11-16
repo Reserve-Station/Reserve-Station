@@ -1,5 +1,5 @@
-ent-DiseaseBase = { "" }
-    .desc = { "" }
+ent-DiseaseBase = болячка
+    .desc = Заразная болезнь.
 ent-DiseaseBaseMouse = { ent-DiseaseBase }
     .desc = { ent-DiseaseBase.desc }
 ent-DiseaseFlu = грипп

@@ -115,6 +115,9 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.5
 
 - type: entity
   name: basic slime

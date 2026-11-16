@@ -165,6 +165,7 @@ public sealed class BanPanelEui : BaseEui
             _banManager.CreateServerBan((CreateServerBanInfo) banInfo);
         }
 
+        // Reserve edit: Reserve Red - BanGuard (отправка в Discord перенесена в BanManager, ADT-вебхук удалён)
         Close();
     }
 

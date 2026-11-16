@@ -106,7 +106,7 @@ public sealed class EggLayerSystem : EntitySystem
         {
             if (_hunger.GetHunger(hunger) < egglayer.HungerUsage)
             {
-                _popup.PopupEntity(Loc.GetString("action-popup-lay-egg-too-hungry"), uid, uid);
+                _popup.PopupEntity(Loc.GetString(egglayer.TooHungryPopup), uid, uid); // Reserve edit: Mouse multiply popup
                 return false;
             }
 
@@ -120,8 +120,8 @@ public sealed class EggLayerSystem : EntitySystem
 
         // Sound + popups
         _audio.PlayPvs(egglayer.EggLaySound, uid);
-        _popup.PopupEntity(Loc.GetString("action-popup-lay-egg-user"), uid, uid);
-        _popup.PopupEntity(Loc.GetString("action-popup-lay-egg-others", ("entity", uid)), uid, Filter.PvsExcept(uid), true);
+        _popup.PopupEntity(Loc.GetString(egglayer.LayPopupUser), uid, uid); // Reserve edit: Mouse multiply popup
+        _popup.PopupEntity(Loc.GetString(egglayer.LayPopupOthers, ("entity", uid)), uid, Filter.PvsExcept(uid), true); // Reserve edit: Mouse multiply popup
 
         return true;
     }

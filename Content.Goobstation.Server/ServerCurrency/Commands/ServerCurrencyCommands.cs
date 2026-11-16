@@ -1,10 +1,13 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.ServerCurrency;
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration;
 using Content.Server.Chat.Managers;
 using Content.Shared.Administration;
 using Content.Shared.Chat;
+using System.Threading.Tasks; // Reserve edit: Coin transfer ovehaul
 using Robust.Server.Player;
 using Robust.Shared.Console;
 using Content.Shared._Reserve.LenaApi; // Reserve-LenaApi
@@ -13,11 +16,11 @@ using Robust.Shared.Configuration; // Reserve-LenaApi
 namespace Content.Goobstation.Server.ServerCurrency.Commands
 {
     [AnyCommand]
-    public sealed class BalanceServerCurrencyCommand : IConsoleCommand
+    public sealed partial class BalanceServerCurrencyCommand : IConsoleCommand
     {
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
-        [Dependency] private readonly IChatManager _chatManager = default!;
-        [Dependency] private readonly IConfigurationManager _configuration = default!; // Reserve-LenaApi
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IChatManager _chatManager = default!;
+        [Dependency] private IConfigurationManager _configuration = default!; // Reserve-LenaApi
         public string Command => Loc.GetString("server-currency-balance-command");
         public string Description => Loc.GetString("server-currency-balance-command-description");
         public string Help => Loc.GetString("server-currency-balance-command-help");
@@ -39,7 +42,8 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
                 return;
             }
 
-            if(shell.Player is not { } player){
+            if (shell.Player is not { } player)
+            {
                 shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
                 return;
             }
@@ -52,53 +56,62 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.Host)] // Reserve edit AnyCommand -> AdminFlags.Host
-    public sealed class GiftServerCurrencyCommand : IConsoleCommand
+    [AnyCommand]
+    public sealed partial class GiftServerCurrencyCommand : IConsoleCommand
     {
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
-        [Dependency] private readonly IChatManager _chatManager = default!;
-        [Dependency] private readonly IConfigurationManager _configuration = default!; // Reserve-LenaApi
+        private const string Operation = "server-currency-operation-gift"; // Reserve edit: Coin transfer ovehaul
+
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IChatManager _chatManager = default!;
+        [Dependency] private IConfigurationManager _configuration = default!; // Reserve-LenaApi
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-gift-command");
         public string Description => Loc.GetString("server-currency-gift-command-description");
         public string Help => Loc.GetString("server-currency-gift-command-help");
+        // Reserve edit start: Coin transfer ovehaul
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
+        {
+            CurrencyCommandHelper.Run(shell, Operation, () => ExecuteAsync(shell, args));
+        }
+
+        private async Task ExecuteAsync(IConsoleShell shell, string[] args)
         {
             // Reserve-LenaApi-start
             var apiIntegrationEnabled = _configuration.GetCVar(LenaApiCVars.ApiIntegration);
             if (apiIntegrationEnabled)
             {
-                shell.WriteLine(Loc.GetString("reserve-command-disabled-due-integration-enabled"));
+                CurrencyCommandHelper.Fail(shell, Operation, Loc.GetString("server-currency-error-integration-enabled"));
                 return;
             }
             // Reserve-LenaApi-end
 
             if (args.Length != 2)
             {
-                shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
+                CurrencyCommandHelper.Fail(shell, Operation, $"{Loc.GetString("shell-wrong-arguments-number")} {Help}");
                 return;
             }
 
-            if(shell.Player is not { } player){
-                shell.WriteError(Loc.GetString("shell-cannot-run-command-from-server"));
+            if (shell.Player is not { } player)
+            {
+                CurrencyCommandHelper.Fail(shell, Operation, Loc.GetString("shell-cannot-run-command-from-server"));
                 return;
             }
 
-            var plyMgr = IoCManager.Resolve<IPlayerManager>();
-            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            if (!int.TryParse(args[1], out var amount))
             {
-                shell.WriteError(Loc.GetString("server-currency-command-error-1"));
-                return;
-            } else if (targetPlayer == shell.Player.UserId)
-            {
-                shell.WriteError(Loc.GetString("server-currency-gift-command-error-1"));
+                CurrencyCommandHelper.Fail(shell, Operation, Loc.GetString("server-currency-command-error-2"));
                 return;
             }
 
-            if (!int.TryParse(args[1], out int amount))
+            var target = await CurrencyCommandHelper.ResolveTarget(shell, Operation, args[0]);
+            if (target is not { } resolved)
+                return;
+
+            if (resolved.UserId == player.UserId)
             {
-                shell.WriteError(Loc.GetString("server-currency-command-error-2"));
+                CurrencyCommandHelper.Fail(shell, Operation, Loc.GetString("server-currency-gift-command-error-1"));
                 return;
             }
 
@@ -107,22 +120,22 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
             if (amount == 0)
                 amount = 1; // Trolled
 
-            if (!_currencyMan.CanAfford(shell.Player.UserId, amount, out int balance)){
-                shell.WriteError(Loc.GetString("server-currency-gift-command-error-2", ("balance", balance)));
+            if (!_currencyMan.CanAfford(player.UserId, amount, out var balance))
+            {
+                CurrencyCommandHelper.Fail(shell, Operation, Loc.GetString("server-currency-gift-command-error-2", ("balance", balance)));
                 return;
             }
 
-            _currencyMan.TransferCurrency(shell.Player.UserId, targetPlayer, amount);
+            _currencyMan.TransferCurrency(player.UserId, resolved.UserId, amount);
+            _adminGuard.CurrencyTransferred(player.UserId, resolved.UserId, _currencyMan.Stringify(amount)); // Reserve edit: Reserve Red - AdminGuard
 
-            var giver = Loc.GetString("server-currency-gift-command-giver", ("player", args[0]), ("amount", _currencyMan.Stringify(amount)));
-            var reciever = Loc.GetString("server-currency-gift-command-reciever", ("player", shell.Player.Name), ("amount", _currencyMan.Stringify(amount)));
+            var giver = Loc.GetString("server-currency-gift-command-giver", ("player", resolved.Name), ("amount", _currencyMan.Stringify(amount)));
+            var reciever = Loc.GetString("server-currency-gift-command-reciever", ("player", player.Name), ("amount", _currencyMan.Stringify(amount)));
 
-            if(plyMgr.TryGetSessionById(targetPlayer, out var targetPlayerSession))
-                _chatManager.ChatMessageToOne(ChatChannel.Local, reciever, reciever, EntityUid.Invalid, false, targetPlayerSession.Channel);
-            _chatManager.ChatMessageToOne(ChatChannel.Local, giver, giver, EntityUid.Invalid, false, shell.Player.Channel);
-
-            shell.WriteLine(giver);
+            CurrencyCommandHelper.NotifyIfOnline(resolved.UserId, reciever);
+            CurrencyCommandHelper.Succeed(shell, giver);
         }
+        // Reserve edit end: Coin transfer ovehaul
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
         {
@@ -135,39 +148,52 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.Host)]
-    public sealed class AddServerCurrencyCommand : IConsoleCommand
+    [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
+    public sealed partial class AddServerCurrencyCommand : IConsoleCommand
     {
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        private const string Operation = "server-currency-operation-add"; // Reserve edit: Coin transfer ovehaul
+
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-add-command");
         public string Description => Loc.GetString("server-currency-add-command-description");
         public string Help => Loc.GetString("server-currency-add-command-help");
+        // Reserve edit start: Coin transfer ovehaul
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
+            CurrencyCommandHelper.Run(shell, Operation, () => ExecuteAsync(shell, args));
+        }
+
+        private async Task ExecuteAsync(IConsoleShell shell, string[] args)
+        {
             if (args.Length != 2)
             {
-                shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
+                CurrencyCommandHelper.Fail(shell, Operation, $"{Loc.GetString("shell-wrong-arguments-number")} {Help}");
                 return;
             }
 
-            var plyMgr = IoCManager.Resolve<IPlayerManager>();
-            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            if (!int.TryParse(args[1], out var currency))
             {
-                shell.WriteError(Loc.GetString("server-currency-command-error-1"));
+                CurrencyCommandHelper.Fail(shell, Operation, Loc.GetString("server-currency-command-error-2"));
                 return;
             }
 
-            if (!int.TryParse(args[1], out int currency))
-            {
-                shell.WriteError(Loc.GetString("server-currency-command-error-2"));
+            var target = await CurrencyCommandHelper.ResolveTarget(shell, Operation, args[0]);
+            if (target is not { } resolved)
                 return;
-            }
 
-            var newCurrency = _currencyMan.Stringify(_currencyMan.AddCurrency(targetPlayer, currency));
-            shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
+            var newBalance = _currencyMan.AddCurrency(resolved.UserId, currency);
+            var newCurrency = _currencyMan.Stringify(newBalance);
+            _adminGuard.AdminCurrencyChanged(resolved.UserId, AdminCurrencyAction.Add, _currencyMan.Stringify(currency), newCurrency, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
+
+            CurrencyCommandHelper.NotifyIfOnline(resolved.UserId,
+                Loc.GetString("server-currency-admin-add-target", ("amount", _currencyMan.Stringify(currency)), ("balance", newCurrency)));
+            CurrencyCommandHelper.Succeed(shell,
+                Loc.GetString("server-currency-admin-add-author", ("player", resolved.Name), ("amount", _currencyMan.Stringify(currency)), ("balance", newCurrency)));
         }
+        // Reserve edit end: Coin transfer ovehaul
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
         {
@@ -180,39 +206,52 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.Host)]
-    public sealed class RemoveServerCurrencyCommand : IConsoleCommand
+    [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
+    public sealed partial class RemoveServerCurrencyCommand : IConsoleCommand
     {
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        private const string Operation = "server-currency-operation-remove"; // Reserve edit: Coin transfer ovehaul
+
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-remove-command");
         public string Description => Loc.GetString("server-currency-remove-command-description");
         public string Help => Loc.GetString("server-currency-remove-command-help");
+        // Reserve edit start: Coin transfer ovehaul
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
+            CurrencyCommandHelper.Run(shell, Operation, () => ExecuteAsync(shell, args));
+        }
+
+        private async Task ExecuteAsync(IConsoleShell shell, string[] args)
+        {
             if (args.Length != 2)
             {
-                shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
+                CurrencyCommandHelper.Fail(shell, Operation, $"{Loc.GetString("shell-wrong-arguments-number")} {Help}");
                 return;
             }
 
-            var plyMgr = IoCManager.Resolve<IPlayerManager>();
-            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            if (!int.TryParse(args[1], out var currency))
             {
-                shell.WriteError(Loc.GetString("server-currency-command-error-1"));
+                CurrencyCommandHelper.Fail(shell, Operation, Loc.GetString("server-currency-command-error-2"));
                 return;
             }
 
-            if (!int.TryParse(args[1], out int currency))
-            {
-                shell.WriteError(Loc.GetString("server-currency-command-error-2"));
+            var target = await CurrencyCommandHelper.ResolveTarget(shell, Operation, args[0]);
+            if (target is not { } resolved)
                 return;
-            }
 
-            var newCurrency = _currencyMan.Stringify(_currencyMan.RemoveCurrency(targetPlayer, currency));
-            shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
+            var newBalance = _currencyMan.RemoveCurrency(resolved.UserId, currency);
+            var newCurrency = _currencyMan.Stringify(newBalance);
+            _adminGuard.AdminCurrencyChanged(resolved.UserId, AdminCurrencyAction.Remove, _currencyMan.Stringify(currency), newCurrency, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
+
+            CurrencyCommandHelper.NotifyIfOnline(resolved.UserId,
+                Loc.GetString("server-currency-admin-remove-target", ("amount", _currencyMan.Stringify(currency)), ("balance", newCurrency)));
+            CurrencyCommandHelper.Succeed(shell,
+                Loc.GetString("server-currency-admin-remove-author", ("player", resolved.Name), ("amount", _currencyMan.Stringify(currency)), ("balance", newCurrency)));
         }
+        // Reserve edit end: Coin transfer ovehaul
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
         {
@@ -225,40 +264,52 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.Host)]
-    public sealed class SetServerCurrencyCommand : IConsoleCommand
+    [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
+    public sealed partial class SetServerCurrencyCommand : IConsoleCommand
     {
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        private const string Operation = "server-currency-operation-set"; // Reserve edit: Coin transfer ovehaul
+
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public string Command => Loc.GetString("server-currency-set-command");
         public string Description => Loc.GetString("server-currency-set-command-description");
         public string Help => Loc.GetString("server-currency-set-command-help");
+        // Reserve edit start: Coin transfer ovehaul
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
+            CurrencyCommandHelper.Run(shell, Operation, () => ExecuteAsync(shell, args));
+        }
+
+        private async Task ExecuteAsync(IConsoleShell shell, string[] args)
+        {
             if (args.Length != 2)
             {
-                shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
+                CurrencyCommandHelper.Fail(shell, Operation, $"{Loc.GetString("shell-wrong-arguments-number")} {Help}");
                 return;
             }
 
-            var plyMgr = IoCManager.Resolve<IPlayerManager>();
-            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
+            if (!int.TryParse(args[1], out var currency))
             {
-                shell.WriteError(Loc.GetString("server-currency-command-error-1"));
+                CurrencyCommandHelper.Fail(shell, Operation, Loc.GetString("server-currency-command-error-2"));
                 return;
             }
 
-            if (!int.TryParse(args[1], out int currency))
-            {
-                shell.WriteError(Loc.GetString("server-currency-command-error-2"));
+            var target = await CurrencyCommandHelper.ResolveTarget(shell, Operation, args[0]);
+            if (target is not { } resolved)
                 return;
-            }
 
-            _currencyMan.SetBalance(targetPlayer, currency);
+            _currencyMan.SetBalance(resolved.UserId, currency);
             var newCurrency = _currencyMan.Stringify(currency);
-            shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
+            _adminGuard.AdminCurrencyChanged(resolved.UserId, AdminCurrencyAction.Set, newCurrency, newCurrency, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
+
+            CurrencyCommandHelper.NotifyIfOnline(resolved.UserId,
+                Loc.GetString("server-currency-admin-set-target", ("balance", newCurrency)));
+            CurrencyCommandHelper.Succeed(shell,
+                Loc.GetString("server-currency-admin-set-author", ("player", resolved.Name), ("balance", newCurrency)));
         }
+        // Reserve edit end: Coin transfer ovehaul
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
         {
@@ -271,33 +322,39 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
         }
     }
 
-    [AdminCommand(AdminFlags.Host)]
-    public sealed class GetServerCurrencyCommand : IConsoleCommand
+    [AdminCommand(AdminFlags.Admin)] // Reserve edit: Coin transfer ovehaul
+    public sealed partial class GetServerCurrencyCommand : IConsoleCommand
     {
-        [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        private const string Operation = "server-currency-operation-get"; // Reserve edit: Coin transfer ovehaul
+
+        [Dependency] private ICommonCurrencyManager _currencyMan = default!;
 
         public string Command => Loc.GetString("server-currency-get-command");
         public string Description => Loc.GetString("server-currency-get-command-description");
         public string Help => Loc.GetString("server-currency-get-command-help");
+        // Reserve edit start: Coin transfer ovehaul
 
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
+            CurrencyCommandHelper.Run(shell, Operation, () => ExecuteAsync(shell, args));
+        }
+
+        private async Task ExecuteAsync(IConsoleShell shell, string[] args)
+        {
             if (args.Length != 1)
             {
-                shell.WriteError(Loc.GetString("shell-wrong-arguments-number"));
+                CurrencyCommandHelper.Fail(shell, Operation, $"{Loc.GetString("shell-wrong-arguments-number")} {Help}");
                 return;
             }
 
-            var plyMgr = IoCManager.Resolve<IPlayerManager>();
-            if (!plyMgr.TryGetUserId(args[0], out var targetPlayer))
-            {
-                shell.WriteError(Loc.GetString("server-currency-command-error-1"));
+            var target = await CurrencyCommandHelper.ResolveTarget(shell, Operation, args[0]);
+            if (target is not { } resolved)
                 return;
-            }
 
-            var currency = _currencyMan.Stringify(_currencyMan.GetBalance(targetPlayer));
-            shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", currency)));
+            var currency = _currencyMan.Stringify(_currencyMan.GetBalance(resolved.UserId));
+            CurrencyCommandHelper.Succeed(shell, Loc.GetString("server-currency-command-return", ("player", resolved.Name), ("balance", currency)));
         }
+        // Reserve edit end: Coin transfer ovehaul
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
         {

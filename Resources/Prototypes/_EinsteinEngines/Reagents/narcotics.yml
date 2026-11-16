@@ -56,3 +56,7 @@
         identifier: Suffocation
         amount: -2
         time: 12
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: MorphineBenefit
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: StrongPainkiller

@@ -1,0 +1,22 @@
+ent-OrganInsectInnards = внутренности насекомого
+    .desc = Мешанина из аналогов органов насекомого. Фу.
+    .suffix = Орган, Желудок, Печень, Почки, Сердце
+ent-OrganInsectInnardsLungs = { ent-OrganInsectInnards }
+    .desc = { ent-OrganInsectInnards.desc }
+    .suffix = Орган, Лёгкие
+
+ent-OrganAnimalLungsSmall = лёгкие маленького животного
+    .desc = { ent-OrganAnimalLungs.desc }
+    .suffix = Орган, Лёгкие
+ent-OrganAnimalStomachSmall = желудок маленького животного
+    .desc = { ent-OrganAnimalStomach.desc }
+    .suffix = Орган, Желудок
+ent-OrganAnimalLiverSmall = печень маленького животного
+    .desc = { ent-OrganAnimalLiver.desc }
+    .suffix = Орган, Печень
+ent-OrganAnimalHeartSmall = сердце маленького животного
+    .desc = { ent-OrganAnimalHeart.desc }
+    .suffix = Орган, Сердце
+ent-OrganAnimalKidneysSmall = почки маленького животного
+    .desc = { ent-OrganAnimalKidneys.desc }
+    .suffix = Орган, Почки

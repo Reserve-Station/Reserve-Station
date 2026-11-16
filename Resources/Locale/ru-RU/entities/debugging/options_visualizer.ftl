@@ -1,3 +1,3 @@
 ent-OptionsVisualizerTest = визуализация меню опций
     .suffix = DEBUG
-    .desc = { "" }
+    .desc = Не визуализируй это.

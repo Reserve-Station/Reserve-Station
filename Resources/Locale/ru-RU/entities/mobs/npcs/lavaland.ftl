@@ -1,11 +1,15 @@
 ent-MobWatcherBase = наблюдатель
     .desc = Он будто смотрит прямо сквозь вас.
+    .suffix = Лаваленд, Злой, AI
 ent-MobWatcherLavaland = { ent-MobWatcherBase }
     .desc = { ent-MobWatcherBase.desc }
+    .suffix = Лаваленд, Злой, AI
 ent-MobWatcherIcewing = наблюдатель-ледокрыл
     .desc = { ent-MobWatcherBase.desc }
+    .suffix = Лаваленд, Злой, AI
 ent-MobWatcherMagmawing = наблюдатель-магмакрыл
     .desc = { ent-MobWatcherBase.desc }
+    .suffix = Лаваленд, Злой, AI
 ent-MobWatcherPride = гордый наблюдатель
     .desc = Этот редкий подвид появляется только в июне.
-    .suffix = Адмемы
+    .suffix = Адмемы, Радужный, Лаваленд, Злой, AI

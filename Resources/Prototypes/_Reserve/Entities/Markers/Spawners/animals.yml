@@ -2,8 +2,23 @@
 
 - type: entity
   parent: MarkerBase
+  id: SpawnMobCatShadow
+  name: shadow cat spawner
+  suffix: Halloween, Witch
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobCatShadow
+
+- type: entity
+  parent: MarkerBase
   id: SpawnMobCatAny
-  name: Any Cat Spawner
+  name: cat spawner
+  suffix: Any
   components:
   - type: Sprite
     layers:
@@ -27,7 +42,8 @@
 - type: entity
   parent: MarkerBase
   id: SpawnMobScurret
-  name: Any Scurret Spawner
+  name: scurret spawner
+  suffix: Any
   components:
   - type: Sprite
     layers:
@@ -39,6 +55,242 @@
     rarePrototypes:
     - MobEmotionalSupportScurret
     rareChance: 0.15
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobBat
+  name: bat spawner
+  suffix: Halloween
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobBat
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobMothroachAny
+  name: mothroach spawner
+  suffix: Any
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobMothroach
+    - MobMothroachMustard
+    - MobMothroachLeopard
+    - MobMothroachCecropia
+    - MobMothroachLunar
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobChickenAny
+  name: chicken spawner
+  suffix: Any
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobChicken
+    - MobChicken1
+    - MobChicken2
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobDuckAny
+  name: duck spawner
+  suffix: Any
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobDuckMallard
+    - MobDuckWhite
+    - MobDuckBrown
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobGoose
+  name: goose spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGoose
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobSnake
+  name: snake spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSnake
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobHamster
+  name: hamster spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobHamster
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobPig
+  name: pig spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobPig
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobPossumAny
+  name: possum spawner
+  suffix: Any
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobPossum
+    - MobPossumOld
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobRaccoon
+  name: raccoon spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobRaccoon
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobFox
+  name: fox spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobFox
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobKangarooNormal
+  name: kangaroo spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobKangaroo
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobCatSyndy
+  name: syndicat spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobCatSyndy
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobGiantSpider
+  name: tarantula spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGiantSpider
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobGiantSpiderAngry
+  name: angry tarantula spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGiantSpiderAngry
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobGiantSpiderWizard
+  name: wizard tarantula spawner
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobGiantSpiderWizard
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobPossumPoppy
+  name: Poppy spawner
+  suffix: Safety Possum
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+    - MobPossumPoppy
 
 - type: entity
   parent: SpawnMobBrullbar

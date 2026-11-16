@@ -1,8 +1,9 @@
-ent-CrateScienceBiosuit = ящик научных биозащитных костюмов
+ent-CrateScienceBiosuit = { ent-CrateScienceSecure } с биозащитными костюмами
     .desc = Содержит 2 костюма биологической защиты, чтобы никакая зараза не отвлекала вас от занятия исследованиями. Чтобы открыть, необходим уровень доступа Научный.
-ent-CrateCrewMonitoring = ящик мониторинга экипажа
+    .suffix = { ent-CrateScienceSecure.suffix }
+ent-CrateCrewMonitoring = { ent-CrateScienceSecure } с сервером мониторинга экипажа
     .desc = Содержит упаковки сервера мониторинга экипажа и нескольких консолей мониторинга экипажа. Чтобы открыть, необходим уровень доступа Научный.
-    .suffix = Защищённый
-ent-CrateStationAiCore = ящик ядра станционного ИИ
+    .suffix = { ent-CrateScienceSecure.suffix }
+ent-CrateStationAiCore = { ent-CrateScienceSecure } с ядром станционного ИИ
     .desc = Содержит компоненты для постройки ядра станционного ИИ. Позитронный мозг не входит в комплект. Чтобы открыть, необходим уровень доступа Научный.
     .suffix = { ent-CrateScienceSecure.suffix }

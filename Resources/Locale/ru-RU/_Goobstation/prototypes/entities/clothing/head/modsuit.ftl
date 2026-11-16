@@ -1,5 +1,5 @@
 ent-BaseClothingModsuitHelmet = базовый шлем модсьюта
-    .desc = { "" }
+    .desc = Шлем модсьюта, обеспечивающий защиту головы и прочие функции шлема.
 ent-BaseClothingModsuitHelmetHideIdentity = базовый шлем модсьюта
     .desc = { ent-BaseClothingModsuitHelmet.desc }
 ent-ClothingModsuitHelmetStandard = стандартный шлем MOD

@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Kill_Me_I_Noobs <118206719+Vonsant@users.noreply.github.com>
+﻿// SPDX-FileCopyrightText: 2025 Kill_Me_I_Noobs <118206719+Vonsant@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 Svarshik <96281939+lexaSvarshik@users.noreply.github.com>
 //
@@ -21,7 +21,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Server.GameObjects;
-using Robust.Shared.Prototypes;
+// using Robust.Shared.Prototypes; // Reserve edit: Fix warnings
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Utility;
@@ -30,12 +30,12 @@ namespace Content.Server._CorvaxNext.AdditionalMap;
 
 public sealed partial class StationAdditionalMapSystem : EntitySystem
 {
-    [Dependency] private readonly BiomeSystem _biome = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    // [Dependency] private readonly BiomeSystem _biome = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly IPrototypeManager _proto = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly LinkedEntitySystem _linkedEntity = default!;
-    [Dependency] private readonly StationSystem _station = default!;
+    // [Dependency] private readonly MetaDataSystem _metaData = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly LinkedEntitySystem _linkedEntity = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly StationSystem _station = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
 
     public override void Initialize()

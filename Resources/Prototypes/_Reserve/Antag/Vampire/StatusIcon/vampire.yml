@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: factionIcon
+  id: VampireThrallIcon
+  priority: 1
+  showTo:
+    components:
+      - VampireThrall
+      - Vampire
+  isShaded: true
+  icon:
+    sprite: /Textures/_Reserve/Vampire/hud_icons.rsi
+    state: hudvampirethrall
+
+- type: factionIcon
+  id: VampireMasterIcon
+  priority: 1
+  showTo:
+    components:
+      - VampireThrall
+      - Vampire
+  isShaded: true
+  icon:
+    sprite: /Textures/_Reserve/Vampire/hud_icons.rsi
+    state: hudvampire

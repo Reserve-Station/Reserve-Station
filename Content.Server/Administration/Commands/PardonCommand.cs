@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 
+using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
 using Content.Server.Database;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
@@ -7,9 +8,10 @@ using Robust.Shared.Console;
 namespace Content.Server.Administration.Commands
 {
     [AdminCommand(AdminFlags.Ban)]
-    public sealed class PardonCommand : LocalizedCommands
+    public sealed partial class PardonCommand : LocalizedCommands
     {
         [Dependency] private readonly IServerDbManager _dbManager = default!;
+        [Dependency] private IBanGuardManager _banGuard = default!; // Reserve edit: Reserve Red - BanGuard
 
         public override string Command => "pardon";
 
@@ -53,6 +55,7 @@ namespace Content.Server.Administration.Commands
             }
 
             await _dbManager.AddUnbanAsync(new UnbanDef(banId, player?.UserId, DateTimeOffset.Now));
+            _banGuard.BanPardoned(ban, player?.UserId); // Reserve edit: Reserve Red - BanGuard
 
             shell.WriteLine(Loc.GetString($"cmd-pardon-success", ("id", banId)));
         }

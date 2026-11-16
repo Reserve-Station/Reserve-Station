@@ -1,8 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Doctor-Cpu <77215380+Doctor-Cpu@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2025 GabyChangelog <agentepanela2@gmail.com>
-// SPDX-FileCopyrightText: 2025 Will-Oliver-Br <164823659+Will-Oliver-Br@users.noreply.github.com>
-// SPDX-FileCopyrightText: 2026 YaraaraY <158123176+YaraaraY@users.noreply.github.com>
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Maths.FixedPoint; // Reserve - for FixedPoint2
@@ -24,6 +19,15 @@ public sealed partial class StainableComponent : Component
 
     [DataField]
     public FixedPoint2 StainVolume = 0.5f;
+
+    // Reserve edit start: fire-nerf
+    /// <summary>
+    /// Share of a burning stain that becomes fire stacks on the wearer.
+    /// Cloth is 1. Plated and sealed clothing uses less.
+    /// </summary>
+    [DataField]
+    public float FireScale = 1f;
+    // Reserve edit end: fire-nerf
 
     [DataField]
     public Dictionary<string, List<PrototypeLayerData>> ClothingVisuals = new();

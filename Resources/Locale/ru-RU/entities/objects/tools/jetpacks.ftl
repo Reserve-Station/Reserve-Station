@@ -1,5 +1,5 @@
-ent-JetpackEffect = { "" }
-    .desc = { "" }
+ent-JetpackEffect = { ent-EffectBase.desc }
+    .desc = { ent-EffectBase.desc }
 ent-BaseJetpack = джетпак
     .desc = Это реактивный ранец - джетпак. Вмещает 5 Л газа.
 ent-ActionToggleJetpack = Переключить джетпак

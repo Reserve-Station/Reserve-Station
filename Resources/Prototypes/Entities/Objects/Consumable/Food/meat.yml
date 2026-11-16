@@ -481,6 +481,7 @@
   components:
   - type: Sprite
     state: plain
+    scale: 0.75, 0.75  # Reserve edit: Proper small animal organs
   - type: SolutionContainerManager
     solutions:
       food:

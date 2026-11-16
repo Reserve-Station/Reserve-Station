@@ -25,7 +25,6 @@
 // TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 // SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
-// Nodjak edit
 //************************************************************************
 
 uniform highp float outline_width; // = 2.0;
@@ -40,39 +39,45 @@ void fragment() {
 	highp vec2 ps = TEXTURE_PIXEL_SIZE;
 	highp float a;
 	highp float maxa = col.a;
-    
-    // RESERVE STATION 
-    highp vec4 accumulatedColor = vec4(0.0);
-    highp vec4 avgColor;
-    highp float count = 0.0;
-    
-    highp vec2 offsets[8] = vec2[](
-        vec2(0.0, -outline_width),
-        vec2(-outline_width, -outline_width),
-        vec2(0.0, outline_width),
-        vec2(outline_width, -outline_width),
-        vec2(-outline_width, 0.0),
-        vec2(-outline_width, outline_width),
-        vec2(outline_width, 0.0),
-        vec2(outline_width, outline_width)
-    );
-    
-    for (int i = 0; i < 8; i++) {
-        highp vec2 sampleUV = UV + offsets[i] * ps;
-        highp vec4 sampleColor = texture2D(TEXTURE, sampleUV);
-        a = sampleColor.a;
-        maxa = max(a, maxa);
-        if (a > 0.01) {
-            accumulatedColor += sampleColor;
-            count += 1.0;
-        }
-    }
+	highp float mina = col.a;
 
-    avgColor = accumulatedColor / count;
-    avgColor = mix(avgColor, outline_color, 0.05);
-    
+	// note: these bypass zTexture because only alpha is queried.
+	a = texture2D(TEXTURE, UV + vec2(0.0, -outline_width)*ps).a;
+	maxa = max(a, maxa);
+	mina = min(a, mina);
+
+    a = texture2D(TEXTURE, UV + vec2(-outline_width, -outline_width)*ps).a;
+    maxa = max(a, maxa);
+    mina = min(a, mina);
+
+	a = texture2D(TEXTURE, UV + vec2(0.0, outline_width)*ps).a;
+	maxa = max(a, maxa);
+	mina = min(a, mina);
+
+    a = texture2D(TEXTURE, UV + vec2(outline_width, -outline_width)*ps).a;
+    maxa = max(a, maxa);
+    mina = min(a, mina);
+
+	a = texture2D(TEXTURE, UV + vec2(-outline_width,0.0)*ps).a;
+	maxa = max(a, maxa);
+	mina = min(a, mina);
+
+    a = texture2D(TEXTURE, UV + vec2(-outline_width, outline_width)*ps).a;
+    maxa = max(a, maxa);
+    mina = min(a, mina);
+
+	a = texture2D(TEXTURE, UV + vec2(outline_width, 0.0)*ps).a;
+	maxa = max(a, maxa);
+	mina = min(a, mina);
+
+	a = texture2D(TEXTURE, UV + vec2(outline_width, outline_width)*ps).a;
+	maxa = max(a, maxa);
+	mina = min(a, mina);
+
 	lowp float sampledLight = outline_fullbright ? 1.0 : clamp( (pow( zGrayscale_BT601(lightSample.rgb) * light_whitepoint, light_gamma) / light_whitepoint ) * light_boost, 0.0, 1.0);
-	COLOR = mix(col, avgColor * vec4(vec3(1.0), sampledLight), maxa - col.a);
-    
+	highp float outlineAmount = max(maxa - col.a, 0.0);
+	highp float outlineAlpha = outline_color.a * sampledLight * outlineAmount;
+	highp vec4 outline = vec4(outline_color.rgb * outlineAlpha, outlineAlpha);
+	COLOR = mix(outline, col, step(0.01, col.a));
 	lightSample = vec3(1.0);
 }

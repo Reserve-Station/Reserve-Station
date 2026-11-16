@@ -167,7 +167,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-aloxadone
+    currentLabel: reagent-name-aloxadone  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -182,7 +182,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-ambuzol
+    currentLabel: reagent-name-ambuzol  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -197,7 +197,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-ambuzol-plus
+    currentLabel: reagent-name-ambuzol-plus  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -227,7 +227,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-barozine
+    currentLabel: reagent-name-barozine  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -257,7 +257,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-bruizine
+    currentLabel: reagent-name-bruizine  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -272,7 +272,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-cognizine
+    currentLabel: reagent-name-cognizine  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -647,7 +647,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-oculine
+    currentLabel: reagent-name-oculine  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -677,7 +677,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-opporozidone
+    currentLabel: reagent-name-opporozidone  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -872,7 +872,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-tranexamic-acid
+    currentLabel: reagent-name-tranexamic-acid  # Reserve edit: Localization
   - type: SolutionContainerManager
     solutions:
       drink:

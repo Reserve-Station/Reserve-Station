@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-4.0",
+  "copyright": "Made by Рик Пристли, Энди Чемберс, Джервис Джонсон and Гэвин Торп using ChatGPT and Piskel.",
+  "size": {
+    "x": 45,
+    "y": 60
+  },
+  "states": [
+    {
+    "name": "animated"
+    },
+    {
+      "name": "icon"
+    }
+  ]
+}

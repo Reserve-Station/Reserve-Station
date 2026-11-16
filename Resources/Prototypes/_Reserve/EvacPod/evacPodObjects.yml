@@ -78,7 +78,7 @@
       visible: false
   - type: MultiHandedItem
   - type: Storage
-    maxItemSize: Huge
+    maxItemSize: Large  # Reserve edit: Random maints
     grid:
       - 0,0,15,1
       - 0,3,0,4
@@ -87,6 +87,8 @@
     whitelist:
       tags:
         - EvacPod
+  - type: Item
+    size: Large  # Reserve edit: Random maints
   - type: StorageFill
     contents:
       - id: CardBoxEvacPodCatastrophe

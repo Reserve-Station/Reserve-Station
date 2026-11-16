@@ -1,4 +1,4 @@
 ent-Exclamation = восклицание
-    .desc = { "" }
+    .desc = Повышенный тон!
 ent-WhistleExclamation = восклицание
-    .desc = { "" }
+    .desc = Повышенный тон!

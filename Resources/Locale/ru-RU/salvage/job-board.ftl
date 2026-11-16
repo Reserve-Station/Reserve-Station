@@ -1,7 +1,7 @@
 salvage-job-rank-title-0 = [color=gray]Новичок[/color]
 salvage-job-rank-title-1 = [color=white]Мусорщик[/color]
 salvage-job-rank-title-2 = [color=yellow]Специалист[/color]
-salvage-job-rank-title-MAX = [color=gold]Великий шахтер[/color]
+salvage-job-rank-title-MAX = [color=gold]Великий шахтёр[/color]
 
 job-board-radio-announce = Ранг утилизатора повышен до [bold]{$rank}[/bold]! Новые заказы можно приобрести в отделе снабжения.
 

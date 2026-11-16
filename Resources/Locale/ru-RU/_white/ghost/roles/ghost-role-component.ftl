@@ -18,3 +18,6 @@ ghost-role-information-xenomorph-queen-description = Вы королева кс�
 
 ghost-role-information-xenomorph-sentinel-name = ксеноморф плевальщик
 ghost-role-information-xenomorph-sentinel-description = Вы ксеноморф-плевальщик. Помогайте преторианцу защищать улей и атакуйте гуманоидов, если потребуется.
+
+ghost-role-information-xenomorph-facehugger-name = ксеноморф лицехват
+ghost-role-information-xenomorph-facehugger-description = Вы - лицехват ксеноморфов. Находите гуманоидов для заражения, чтобы ваш улей мог стать сильнее.

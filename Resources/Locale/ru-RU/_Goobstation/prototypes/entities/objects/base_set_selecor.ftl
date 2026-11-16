@@ -1,2 +1,2 @@
-ent-BaseSetSelector = { "" }
-    .desc = { "" }
+ent-BaseSetSelector = селектор набора
+    .desc = Позволяет выбрать один набор вещей из списка.

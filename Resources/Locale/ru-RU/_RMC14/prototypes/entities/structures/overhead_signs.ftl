@@ -1,5 +1,5 @@
 ent-RMCOverheadSign = знак
-    .desc = { "" }
+    .desc = Знак, на котором явно что-то написано.
 ent-RMCOverheadSignNeon = неоновый знак
     .desc = { ent-RMCOverheadSign.desc }
 ent-RMCOverheadSignNeonArcade = неоновый знак "аркада"

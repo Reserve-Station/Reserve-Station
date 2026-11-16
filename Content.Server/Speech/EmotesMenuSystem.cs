@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Chat.Systems;
 using Content.Shared.Chat;
-using Content.Server.Chat.Systems;
+// using Content.Server.Chat.Systems; // Reserve edit: Fix warnings
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Speech;
@@ -28,6 +28,6 @@ public sealed partial class EmotesMenuSystem : EntitySystem
         if (!_prototypeManager.Resolve(msg.ProtoId, out var proto) || proto.ChatTriggers.Count == 0)
             return;
 
-        _chat.TryEmoteWithChat(player.Value, msg.ProtoId); // Goob - emotespam
+        _chat.TryEmoteWithChat(player.Value, msg.ProtoId);
     }
 }

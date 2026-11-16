@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.UI;
@@ -49,6 +51,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly IConGroupController _groupController = default!;
         [Dependency] private readonly IConsoleHost _console = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly SharedMapSystem _map = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -87,6 +90,17 @@ namespace Content.Server.Administration.Systems
             AddAntagVerbs(ev);
         }
 
+        // Reserve edit start: Reserve Red - AdminGuard
+        private void LogFreeze(EntityUid target, EntityUid user, AdminFreezeAction action)
+        {
+            // Заморозка не-игроков (мобов без сессии) в Discord не пишется
+            if (!TryComp(target, out ActorComponent? targetActor))
+                return;
+
+            var admin = DiscordLogActor.From(CompOrNull<ActorComponent>(user)?.PlayerSession);
+            _adminGuard.PlayerFrozen(DiscordLogActor.From(targetActor.PlayerSession), action, admin);
+        }
+        // Reserve edit end: Reserve Red - AdminGuard
         private void AddAdminVerbs(GetVerbsEvent<Verb> args)
         {
             if (!TryComp(args.User, out ActorComponent? actor))
@@ -245,6 +259,7 @@ namespace Content.Server.Administration.Systems
                         Act = () =>
                         {
                             EnsureComp<AdminFrozenComponent>(args.Target);
+                            LogFreeze(args.Target, args.User, AdminFreezeAction.Freeze); // Reserve edit: Reserve Red - AdminGuard
                         },
                         Impact = LogImpact.Medium,
                     });
@@ -262,6 +277,7 @@ namespace Content.Server.Administration.Systems
                         Act = () =>
                         {
                             _freeze.FreezeAndMute(args.Target);
+                            LogFreeze(args.Target, args.User, AdminFreezeAction.FreezeAndMute); // Reserve edit: Reserve Red - AdminGuard
                         },
                         Impact = LogImpact.Medium,
                     });
@@ -278,6 +294,7 @@ namespace Content.Server.Administration.Systems
                         Act = () =>
                         {
                             RemComp<AdminFrozenComponent>(args.Target);
+                            LogFreeze(args.Target, args.User, AdminFreezeAction.Unfreeze); // Reserve edit: Reserve Red - AdminGuard
                         },
                         Impact = LogImpact.Medium,
                     });

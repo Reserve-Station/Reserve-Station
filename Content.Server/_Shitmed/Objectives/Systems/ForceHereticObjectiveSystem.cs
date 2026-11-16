@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Shitmed.Objectives.Components;
 using Content.Server.Administration.Logs;
@@ -11,7 +11,7 @@ namespace Content.Server._Shitmed.Objectives.Systems;
 
 public sealed class ForceHereticObjectiveSystem : EntitySystem
 {
-    [Dependency] private readonly SharedMindSystem _mind = default!;
+    // [Dependency] private readonly SharedMindSystem _mind = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly IAdminLogManager _adminLogManager = default!;
 

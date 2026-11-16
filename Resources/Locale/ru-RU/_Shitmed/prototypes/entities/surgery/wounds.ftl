@@ -1,5 +1,5 @@
 ent-WoundBase = ранение
-    .desc = { "" }
+    .desc = Повреждение, полученное телом.
 ent-Piercing = { ent-WoundBase }
     .desc = { ent-WoundBase.desc }
 ent-ArmorPiercing = { ent-WoundBase }

@@ -5,6 +5,7 @@ using System.Numerics;
 using Content.Shared.Atmos;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Goobstation.Shared.Disease;
@@ -51,7 +52,6 @@ namespace Content.Client.HealthAnalyzer.UI
         public event Action<HealthAnalyzerMode, EntityUid>? OnModeChanged;
         private EntityUid _spriteViewEntity;
 
-        [ValidatePrototypeId<EntityPrototype>]
         private readonly EntProtoId _bodyView = "AlertSpriteView";
 
         private readonly Dictionary<TargetBodyPart, TextureButton> _bodyPartControls;
@@ -436,7 +436,8 @@ namespace Content.Client.HealthAnalyzer.UI
             return mobState switch
             {
                 MobState.Alive => Loc.GetString("health-analyzer-window-entity-alive-text"),
-                MobState.Critical => Loc.GetString("health-analyzer-window-entity-critical-text"),
+                MobState.SoftCritical => Loc.GetString("health-analyzer-window-entity-soft-critical-text"), // Reserve edit: Soft Crit port
+                MobState.HardCritical => Loc.GetString("health-analyzer-window-entity-hard-critical-text"), // Reserve edit: Soft Crit port
                 MobState.Dead => Loc.GetString("health-analyzer-window-entity-dead-text"),
                 _ => Loc.GetString("health-analyzer-window-entity-unknown-text"),
             };

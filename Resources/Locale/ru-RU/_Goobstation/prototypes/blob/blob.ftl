@@ -1,12 +1,12 @@
-ent-SpawnPointGhostBlob = спавнер блоб
-    .suffix = DEBUG, гостроль спавнер
+ent-SpawnPointGhostBlob = { ent-BaseAntagSpawner }
+    .suffix = Блоб, DEBUG
     .desc = { ent-MarkerBase.desc }
 ent-MobBlobPod = блоб-под
     .desc = Обычный боец-блоб.
 ent-MobBlobBlobbernaut = блоббернаут
     .desc = Элитный боец-блоб.
 ent-BaseBlob = основной строительный блоб.
-    .desc = { "" }
+    .desc = Основной строительный блоб.
 ent-NormalBlobTile = обычная блоб плитка
     .desc = Обычная часть блоба, необходимая для изготовления более совершенных плиток.
 ent-CoreBlobTile = ядро блоба

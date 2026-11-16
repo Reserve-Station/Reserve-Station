@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Administration.Logs;
 using Content.Server.GameTicking;
@@ -155,7 +155,7 @@ public sealed class MindSystem : SharedMindSystem
     {
         base.UnVisit(mindId, mind);
 
-        if (!Resolve(mindId, ref mind))
+        if (!Resolve(mindId, ref mind, false)) // Goob - Fix (deleted mind)
             return;
 
         if (mind.VisitingEntity == null)

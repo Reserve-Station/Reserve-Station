@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-3.0",
+  "copyright": "Made by valentinos. on Discord.",
+  "size": {
+    "x": 92,
+    "y": 78
+  },
+  "states": [
+	{ "name": "animated", "delays" :
+        [
+            [0.75, 0.3, 0.3, 0.15, 0.15, 0.15, 0.15, 0.15, 0.3]
+        ]
+    },
+	{ "name": "icon" }
+  ]
+}

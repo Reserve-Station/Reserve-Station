@@ -1,5 +1,5 @@
-ent-BaseObjective = { "" }
-    .desc = { "" }
+ent-BaseObjective = цель
+    .desc = Основная цель.
 ent-BaseLivingObjective = { ent-BaseObjective }
     .desc = { ent-BaseObjective.desc }
 ent-BaseTargetObjective = { ent-BaseObjective }

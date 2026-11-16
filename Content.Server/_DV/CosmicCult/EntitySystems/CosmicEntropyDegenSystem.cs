@@ -1,10 +1,12 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._DV.CosmicCult.Components;
 using Robust.Shared.Timing;
 using Content.Shared.Damage;
 using Robust.Shared.Random;
-using Content.Shared._Shitmed.Targeting; // Shitmed Change
+using Content.Shared._Shitmed.Targeting;
+using Content.Shared.Damage.Systems;
+
 namespace Content.Server._DV.CosmicCult.EntitySystems;
 
 /// <summary>
@@ -14,7 +16,7 @@ namespace Content.Server._DV.CosmicCult.EntitySystems;
 public sealed partial class CosmicEntropyDegenSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    // [Dependency] private readonly IRobustRandom _random = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly DamageableSystem _damageable = default!;
 
     public override void Initialize()

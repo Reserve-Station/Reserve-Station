@@ -1,5 +1,5 @@
-ent-SurgeryBase = { "" }
-    .desc = { "" }
+ent-SurgeryBase = Хирургическая операция
+    .desc = Пошаговая медицинская процедура.
 ent-SurgeryOpenIncision = Открыть разрез
     .desc = { ent-SurgeryBase.desc }
 ent-SurgeryStopBloodOutput = Остановить постоянный выброс крови
@@ -195,4 +195,9 @@ ent-SurgeryXenoRemovePlasmaVessel = Удалить плазменный сосу
 ent-SurgeryXenoRemoveEggSack = Удалить яйцекладку
     .desc = { ent-SurgeryBase.desc }
 ent-SurgeryXenoTakeSample = Взять образец ткани
+    .desc = { ent-SurgeryBase.desc }
+
+ent-SurgeryRemoveButt = Удалить ягодицы
+    .desc = { ent-SurgeryBase.desc }
+ent-SurgeryInsertButt = Присоединить ягодицы
     .desc = { ent-SurgeryBase.desc }

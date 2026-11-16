@@ -6,6 +6,11 @@
   parent: BaseAction # reserve edit
   description: Gives essence and stolen essence for every witness.
   components:
+  - type: Action # reserve edit
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Goobstation/Actions/actions_revenant.rsi
+      state: transmit
   - type: InstantAction
     event: !type:RevenantHauntActionEvent
 
@@ -15,6 +20,9 @@
   parent: BaseAction # reserve edit
   description: Costs 2 Essence per glyph.
   components:
+  - type: Action # reserve edit
+    itemIconStyle: NoItem
+    icon: Interface/Actions/blood-writing.png
   - type: InstantAction
     event: !type:RevenantBloodWritingEvent
 
@@ -22,11 +30,11 @@
   id: ActionRevenantAnimate
   name: Animate
   parent: BaseAction # reserve edit
-  description: Costs 50 Essence.
+  description: Items within 3 tiles hover and hurl themselves at anyone who comes close. Costs 50 Essence. # reserve edit
   components:
-  - type: EntityTargetAction
+  - type: Action # reserve edit
+    itemIconStyle: NoItem
+    icon: Interface/Actions/animate.png
+    useDelay: 10
+  - type: InstantAction # reserve edit - animates every item within 3 tiles instead of one target
     event: !type:RevenantAnimateEvent
-    canTargetSelf: false
-    whitelist:
-      components:
-      - Item

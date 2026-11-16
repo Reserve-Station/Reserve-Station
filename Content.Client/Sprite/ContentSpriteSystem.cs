@@ -5,6 +5,7 @@ using System.Numerics;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Client.Administration.Managers;
+using Content.Client._RMC14.LinkAccount;  // Reserve edit: Maecenas System
 using Content.Shared.Verbs;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -22,6 +23,7 @@ namespace Content.Client.Sprite;
 public sealed class ContentSpriteSystem : EntitySystem
 {
     [Dependency] private readonly IClientAdminManager _adminManager = default!;
+    [Dependency] private readonly LinkAccountManager _linkAccount = default!;  // Reserve edit: Maecenas System
     [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IResourceManager _resManager = default!;
@@ -113,14 +115,25 @@ public sealed class ContentSpriteSystem : EntitySystem
 
     private void GetVerbs(GetVerbsEvent<Verb> ev)
     {
-        if (!_adminManager.IsAdmin())
+        // Reserve edit start: Maecenas System
+        // if (!_adminManager.IsAdmin())
+        //     return;
+
+        var category = _adminManager.IsAdmin()
+            ? VerbCategory.Debug
+            : _linkAccount.Tier is { GhostCosmetics: true }
+                ? VerbCategory.PatronActions
+                : null;
+
+        if (category == null)
             return;
+        // Reserve edit end: Maecenas System
 
         var target = ev.Target;
         Verb verb = new()
         {
             Text = Loc.GetString("export-entity-verb-get-data-text"),
-            Category = VerbCategory.Debug,
+            Category = category,  // Reserve edit: Maecenas System
             Act = async () =>
             {
                 try

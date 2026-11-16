@@ -1,0 +1,27 @@
+- type: antag
+  id: GangLeader
+  name: roles-antag-gang-leader-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-gang-leader-objective
+  requirements:
+  - !type:DepartmentTimeRequirement
+      department: Command
+      time: 7200 # 2h
+  - !type:DepartmentTimeRequirement
+      department: Security
+      time: 7200 # 2h
+  guides: [ GangWars ]
+  # Reserve - antag UI
+  category: Team
+  icon:
+    sprite: _Goobstation/Gangs/gang_tags.rsi
+    state: gangtag12
+
+- type: antag
+  id: GangMember
+  name: roles-antag-gang-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-gang-objective
+  guides: [ GangWars ]

@@ -24,8 +24,8 @@ public sealed class StationReportSystem : EntitySystem
         while (query.MoveNext(out var uid, out var tablet))//finds the first entity with stationreport
         {
             if (!TryComp<PaperComponent>(uid, out var paper))
-               return;
-            
+                return;
+
             stationReportText = paper.Content;
             break;
         }

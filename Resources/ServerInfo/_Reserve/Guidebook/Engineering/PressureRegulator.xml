@@ -11,7 +11,7 @@
 
   Клапан снова [color=red]закроется[/color], когда давление упадёт ниже установленного порога.
 
-  Пропускная способность клапана ограничена [color=orange][protodata="GasPressureRegulator" comp="GasPressureRegulator" member="GasPressureRegulator" member="MaxTransferRate"/] л/с[/color].
+  Пропускная способность клапана ограничена [color=orange][protodata="GasPressureRegulator" comp="GasPressureRegulator" member="MaxTransferRate"/] л/с[/color].
 
   ## Примеры использования
   Клапан обычно используется для предотвращения ситуаций с избыточным давлением в газовых системах, таких как контуры охлаждения [textlink="ТЕГ" link="TEG"] и [textlink="трубы" link="Pipes"], которые могут вызвать сбой в системе (засорение [textlink="насосов" link="Pumps"]).

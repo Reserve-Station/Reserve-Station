@@ -15,6 +15,8 @@ namespace Content.Client.Info
 {
     public sealed class LinkBanner : BoxContainer
     {
+        private readonly LinkAccountManager _linkAccount;
+
         private readonly IConfigurationManager _cfg;
 
         private ValueList<(CVarDef<string> cVar, Button button)> _infoLinks;
@@ -41,13 +43,17 @@ namespace Content.Client.Info
             AddInfoButton("server-info-telegram-button", CCVars.InfoLinksTelegram);
             AddInfoButton("rmc-ui-patreon", CCVars.InfoLinksPatreon);
 
-            var linkAccount = UserInterfaceManager.GetUIController<LinkAccountUIController>();
-            var linkAccountButton = new Button
+            _linkAccount = IoCManager.Resolve<LinkAccountManager>();
+            if (!_linkAccount.Linked)  // Reserve edit: Maecenas System - only show the link account button if the account is not linked
             {
-                Text = Loc.GetString("rmc-ui-link-discord-account"),
-            };
-            linkAccountButton.OnPressed += _ => linkAccount.ToggleWindow();
-            buttons.AddChild(linkAccountButton);
+                var linkAccount = UserInterfaceManager.GetUIController<LinkAccountUIController>();
+                var linkAccountButton = new Button
+                {
+                    Text = Loc.GetString("rmc-ui-link-discord-account"),
+                };
+                linkAccountButton.OnPressed += _ => linkAccount.ToggleWindow();
+                buttons.AddChild(linkAccountButton);
+            }
 
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
             var guidebookButton = new Button() { Text = Loc.GetString("server-info-guidebook-button") };

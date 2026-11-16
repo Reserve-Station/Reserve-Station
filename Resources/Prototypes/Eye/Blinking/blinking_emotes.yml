@@ -1,0 +1,25 @@
+- type: emote
+  id: Blink
+  name: chat-emote-name-blink
+  icon: Interface/Emotes/blink.png
+  chatMessages: ["chat-emote-msg-blink"]
+  chatTriggers:
+  - blink
+  - blinks
+  # Reserve-Localization-Start
+  - моргает
+  - моргает.
+  - моргает!
+  - моргнул
+  - моргнул.
+  - моргнул!
+  - моргнула
+  - моргнула.
+  - моргнула!
+  - моргнули
+  - моргнули.
+  - моргнули!
+  - моргнуло
+  - моргнуло.
+  - моргнуло!
+  # Reserve-Localization-End

@@ -1,0 +1,366 @@
+- type: patronTier
+  id: Staff
+  databaseId: 0
+  name: maecenas-tier-staff
+  discordRole: 1291412108256477205
+  priority: 54
+  icon: OocIconAdmin
+  showOnCredits: true
+  ghostColor: true
+  ghostCosmetics: true
+  oocIconTiers:
+  - Staff
+
+- type: patronTier
+  id: Maecenas1
+  databaseId: 1
+  name: maecenas-tier-1
+  discordRole: 1367602820106162197
+  priority: 50
+  icon: OocIconMaecenas
+  showOnCredits: true
+  ghostColor: false
+  ghostCosmetics: false
+  ghostParticles: false
+  lobbyMessage: false
+  roundEndShoutout: false
+  oocIconTiers:
+  - Maecenas1
+
+- type: patronTier
+  id: Maecenas2
+  databaseId: 2
+  name: maecenas-tier-2
+  discordRole: 1367602908367028285
+  priority: 40
+  icon: OocIconMaecenas
+  showOnCredits: true
+  ghostColor: false
+  ghostCosmetics: false
+  ghostParticles: false
+  lobbyMessage: false
+  roundEndShoutout: true
+  oocIconTiers:
+  - Maecenas2
+  - Maecenas1
+
+- type: patronTier
+  id: Maecenas3
+  databaseId: 3
+  name: maecenas-tier-3
+  discordRole: 1367602936456413194
+  priority: 30
+  icon: OocIconMaecenas
+  showOnCredits: true
+  ghostColor: true
+  ghostCosmetics: false
+  ghostParticles: false
+  lobbyMessage: false
+  roundEndShoutout: true
+  oocIconTiers:
+  - Maecenas3
+  - Maecenas2
+  - Maecenas1
+
+- type: patronTier
+  id: Maecenas4
+  databaseId: 4
+  name: maecenas-tier-4
+  discordRole: 1367603019708895353
+  priority: 20
+  icon: OocIconMaecenas
+  showOnCredits: true
+  ghostColor: true
+  ghostCosmetics: true
+  ghostParticles: false
+  lobbyMessage: false
+  roundEndShoutout: true
+  oocIconTiers:
+  - Maecenas4
+  - Maecenas3
+  - Maecenas2
+  - Maecenas1
+
+- type: patronTier
+  id: Maecenas5
+  databaseId: 5
+  name: maecenas-tier-5
+  discordRole: 1367603044149362798
+  priority: 10
+  icon: OocIconMaecenas
+  showOnCredits: true
+  ghostColor: true
+  ghostCosmetics: true
+  ghostParticles: false
+  lobbyMessage: true
+  roundEndShoutout: true
+  oocIconTiers:
+  - Maecenas5
+  - Maecenas4
+  - Maecenas3
+  - Maecenas2
+  - Maecenas1
+
+- type: patronTier
+  id: MaecenasX
+  databaseId: 6
+  name: maecenas-tier-x
+  discordRole: 1386713156713320702
+  priority: 5
+  icon: OocIconMaecenas
+  showOnCredits: true
+  ghostColor: true
+  ghostCosmetics: true
+  ghostParticles: true
+  lobbyMessage: true
+  roundEndShoutout: true
+  oocIconTiers:
+  - MaecenasX
+  - Maecenas5
+  - Maecenas4
+  - Maecenas3
+  - Maecenas2
+  - Maecenas1
+
+- type: patronTier
+  id: MaecenasPrime
+  databaseId: 7
+  name: maecenas-tier-prime
+  discordRole: 1341839206573670481
+  priority: 53
+  icon: OocIconMaecenasPrime
+  showOnCredits: true
+  oocIconTiers:
+  - MaecenasPrime
+
+- type: patronTier
+  id: MaecenasPride
+  databaseId: 8
+  name: maecenas-tier-pride
+  discordRole: 1325464315909771365
+  priority: 52
+  icon: OocIconReservePride
+  showOnCredits: true
+  oocIconTiers:
+  - MaecenasPride
+
+- type: patronTier
+  id: DiscordBooster
+  databaseId: 9
+  name: maecenas-tier-booster
+  discordRole: 1317919938626977874
+  priority: 51
+  icon: OocIconBooster
+  showOnCredits: true
+  ghostColor: true
+  roundEndShoutout: true
+  oocIconTiers:
+  - DiscordBooster
+
+- type: patronTier
+  id: PartyCard
+  databaseId: 10
+  name: maecenas-tier-party-card
+  discordRole: 1313759569033560175
+  priority: 90
+  icon: OocIconPartyCard
+  showOnCredits: false
+  oocIconTiers:
+  - PartyCard
+
+- type: patronTier
+  id: WL
+  databaseId: 11
+  name: ooc-icon-wl
+  discordRole: 1378353705061191760
+  priority: 91
+  icon: OocIconWL
+  showOnCredits: false
+  oocIconTiers:
+  - WL
+
+- type: patronTier
+  id: ContentMaker
+  databaseId: 12
+  name: ooc-icon-content-maker
+  discordRole: 1325538543187001388
+  priority: 92
+  icon: OocIconContentMaker
+  showOnCredits: true
+  oocIconTiers:
+  - ContentMaker
+
+# Event tiers for special occasions
+
+- type: patronTier  # Generic tier for event winners
+  id: EventWinner
+  databaseId: 101
+  name: maecenas-tier-event-winner
+  discordRole: 111111111111111
+  priority: 101
+  icon: OocIconMC
+  showOnCredits: true
+  ghostCosmetics: true
+  oocIconTiers:
+  - EventWinner
+
+- type: patronTier
+  id: EventHalloween2026
+  databaseId: 102
+  name: maecenas-tier-event-halloween-2026
+  discordRole: 1561567627032264734
+  priority: 102
+  icon: OocIconMC
+  showOnCredits: true
+  ghostCosmetics: true
+  oocIconTiers:
+  - EventWinner
+
+# Staff tiers for administrative roles
+
+- type: patronTier
+  id: Leader
+  databaseId: 61
+  name: ooc-icon-leader
+  discordRole: 1526922665020100698
+  priority: 0
+  icon: OocIconLeader
+  showOnCredits: false
+  ghostColor: true
+  ghostCosmetics: true
+  ghostParticles: true
+  oocIconTiers:
+  - Leader
+
+- type: patronTier
+  id: Owner
+  databaseId: 62
+  name: ooc-icon-owner
+  discordRole: 1468723454537629706
+  priority: 1
+  icon: OocIconOwner
+  showOnCredits: false
+  ghostColor: true
+  ghostCosmetics: true
+  ghostParticles: true
+  oocIconTiers:
+  - Owner
+
+- type: patronTier
+  id: Host
+  databaseId: 63
+  name: ooc-icon-host
+  discordRole: 1416477677581242631
+  priority: 2
+  icon: OocIconHost
+  showOnCredits: false
+  ghostColor: true
+  ghostCosmetics: true
+  ghostParticles: true
+  oocIconTiers:
+  - Host
+
+- type: patronTier
+  id: DeveloperMaintainer
+  databaseId: 64
+  name: ooc-icon-developer-maintainer
+  discordRole: 1344910743564324955
+  priority: 3
+  icon: OocIconDeveloperMaintainer
+  showOnCredits: false
+  ghostColor: true
+  ghostCosmetics: true
+  ghostParticles: true
+  oocIconTiers:
+  - DeveloperMaintainer
+
+- type: patronTier
+  id: Developer
+  databaseId: 65
+  name: ooc-icon-developer
+  discordRole: 1317874921598226524
+  priority: 65
+  icon: OocIconDeveloper
+  showOnCredits: false
+  oocIconTiers:
+  - Developer
+
+- type: patronTier
+  id: GMSenior
+  databaseId: 66
+  name: ooc-icon-gm-senior
+  discordRole: 1494934186824433694
+  priority: 4
+  icon: OocIconGMSenior
+  showOnCredits: false
+  ghostColor: true
+  ghostCosmetics: true
+  ghostParticles: true
+  oocIconTiers:
+  - GMSenior
+
+- type: patronTier
+  id: GM
+  databaseId: 67
+  name: ooc-icon-gm
+  discordRole: 1291339396666363944
+  priority: 67
+  icon: OocIconGM
+  showOnCredits: false
+  oocIconTiers:
+  - GM
+
+- type: patronTier
+  id: GMCadet
+  databaseId: 68
+  name: ooc-icon-gm-cadet
+  discordRole: 1321523727468466260
+  priority: 68
+  icon: OocIconGMCadet
+  showOnCredits: false
+  oocIconTiers:
+  - GMCadet
+
+- type: patronTier
+  id: Moderator
+  databaseId: 69
+  name: ooc-icon-moderator
+  discordRole: 1342222493309730919
+  priority: 69
+  icon: OocIconModerator
+  showOnCredits: false
+  oocIconTiers:
+  - Moderator
+
+- type: patronTier
+  id: Mentor
+  databaseId: 70
+  name: ooc-icon-mentor
+  discordRole: 1291339360414994482
+  priority: 70
+  icon: OocIconMentor
+  showOnCredits: false
+  oocIconTiers:
+  - Mentor
+
+- type: patronTier
+  id: Sentry
+  databaseId: 71
+  name: ooc-icon-sentry
+  discordRole: 1322277458195648536
+  priority: 71
+  icon: OocIconSentry
+  showOnCredits: false
+  oocIconTiers:
+  - Sentry
+
+- type: patronTier
+  id: SentryCadet
+  databaseId: 72
+  name: ooc-icon-sentry-cadet
+  discordRole: 1325870766750695497
+  priority: 72
+  icon: OocIconSentryCadet
+  showOnCredits: false
+  oocIconTiers:
+  - SentryCadet

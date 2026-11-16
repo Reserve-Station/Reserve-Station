@@ -4,3 +4,5 @@
   id: Heretics
   name: guide-entry-heretics
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Heretics.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Heretics.xml"

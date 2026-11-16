@@ -1,0 +1,841 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Plates
+
+- type: entity
+  parent: FoodPlate
+  id: FoodPlateLarge
+  name: extra-large plate
+  description: For the whole family.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 1.25, 1.25
+
+- type: entity
+  parent: FoodPlateSmall
+  id: FoodPlateTiny
+  name: saucer
+  description: A tiny plate, perfect for a cup of tea.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 0.5, 0.5
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+
+- type: entity
+  parent: BoxUtensil
+  id: BoxPlate
+  name: plate box
+  description: A box filled with plates of various sizes.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Storage
+    grid:
+    - 0,0,3,2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: FoodPlateLarge
+          amount: 1
+        - id: FoodPlate
+          amount: 1
+        - id: FoodPlateSmall
+          amount: 2
+        - id: FoodPlateTiny
+          amount: 4
+
+# endregion Plates
+
+# region Anti-Shatter Plates
+
+- type: entity
+  parent: FoodPlateLarge
+  id: FoodPlateLargeSturdy
+  name: extra-large anti-shatter plate
+  description: This plate is extra-sturdy and resistant to shattering.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: FoodPlate
+  id: FoodPlateSturdy
+  name: anti-shatter plate
+  description: This plate is extra-sturdy and resistant to shattering.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: FoodPlateSmall
+  id: FoodPlateSmallSturdy
+  name: small anti-shatter plate
+  description: This plate is extra-sturdy and resistant to shattering.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: FoodPlateTiny
+  id: FoodPlateTinySturdy
+  name: anti-shatter saucer
+  description: This plate is extra-sturdy and resistant to shattering.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Destructible
+    thresholds: []
+
+- type: entity
+  parent: BoxPlate
+  id: BoxPlateSturdy
+  name: anti-shatter plate box
+  description: A box filled with anti-shatter plates of various sizes.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: FoodPlateLargeSturdy
+          amount: 1
+        - id: FoodPlateSturdy
+          amount: 1
+        - id: FoodPlateSmallSturdy
+          amount: 2
+        - id: FoodPlateTinySturdy
+          amount: 4
+
+# endregion Anti-Shatter Plates
+
+# region Cups and Glasses
+
+- type: entity
+  parent: BoxPlate
+  id: BoxCupGlass
+  name: cup and glass box
+  description: A box filled with cups and glasses of various sizes.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Storage
+    grid:
+    - 0,0,3,3
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkTeacupEmpty
+          amount: 2
+        - id: DrinkGlassCoupeShaped
+          amount: 2
+        - id: DrinkGlass
+          amount: 2
+        - id: DrinkShotGlass
+          amount: 2
+
+# endregion Cups and Glasses
+
+# region Anti-Shatter Cups and Glasses
+
+- type: entity
+  parent: DrinkTeacupEmpty
+  id: DrinkTeacupEmptySturdy
+  name: anti-shatter teacup
+  description: This teacup is extra-sturdy and resistant to shattering.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Destructible
+    thresholds: []
+  - type: Sprite
+    scale: 0.9, 1.1
+
+- type: entity
+  parent: DrinkShotGlass
+  id: DrinkShotGlassSturdy
+  name: anti-shatter shot glass
+  description: This shot glass is extra-sturdy and resistant to shattering.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Destructible
+    thresholds: []
+  - type: Sprite
+    scale: 0.9, 1.1
+
+- type: entity
+  parent: DrinkGlassCoupeShaped
+  id: DrinkGlassCoupeShapedSturdy
+  name: anti-shatter coupe glass
+  description: This coupe glass is extra-sturdy and resistant to shattering.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Destructible
+    thresholds: []
+  - type: Sprite
+    scale: 0.9, 1.1
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkGlassSturdy
+  name: anti-shatter glass
+  description: This glass is extra-sturdy and resistant to shattering.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Destructible
+    thresholds: []
+  - type: Sprite
+    scale: 0.9, 1.1
+
+- type: entity
+  parent: BoxCupGlass
+  id: BoxCupGlassSturdy
+  name: anti-shatter cup and glass box
+  description: A box filled with anti-shatter cups and glasses of various sizes.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkTeacupEmptySturdy
+          amount: 2
+        - id: DrinkGlassCoupeShapedSturdy
+          amount: 2
+        - id: DrinkGlassSturdy
+          amount: 2
+        - id: DrinkShotGlassSturdy
+          amount: 2
+
+# endregion Anti-Shatter Cups and Glasses
+
+# region Beakers
+
+- type: entity
+  parent: LargeBeaker
+  id: HugeBeaker
+  name: extra-large beaker
+  description: Used to contain a large amount of chemicals or solutions.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 1.25, 1.25
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 200
+  - type: PhysicalComposition
+    materialComposition:
+      Glass: 100
+  - type: StaticPrice
+    price: 40
+  - type: Item
+    shape:
+    - 0,0,2,2
+
+- type: entity
+  parent: Beaker
+  id: SmallBeakerMeasuringCup
+  name: measuring cup
+  description: A small beaker for accurately measuring liquids.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 0.75, 0.75
+  - type: SolutionContainerManager
+    solutions:
+      beaker:
+        maxVol: 25
+  - type: StaticPrice
+    price: 5
+
+# endregion Beakers
+
+# region Buckets
+
+- type: entity
+  parent: Bucket
+  id: LargeBucket
+  name: large bucket
+  description: A large bucket for carrying liquids or other materials.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 1.15, 1.15
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 350
+  - type: StaticPrice
+    price: 30
+  - type: Item
+    shape:
+    - 0,0,2,2
+
+- type: entity
+  parent: Bucket
+  id: SmallBucketToy
+  name: toy bucket
+  description: A small toy bucket for carrying liquids or other materials.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 0.65, 0.65
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 50
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 25
+  - type: Item
+    size: Small
+  - type: StaticPrice
+    price: 10
+
+# endregion Buckets
+
+# region Plushies
+
+- type: entity
+  parent: PlushieLizard
+  id: PlushieLizardLarge
+  name: giant lizard plushie
+  description: A plush kaiju lizard about to destroy the cotton city.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 1.75, 1.75
+  - type: Item
+    size: Normal
+  - type: MultiHandedItem
+
+- type: entity
+  parent: PlushieLizardJobMime
+  id: PlushieLizardJobMimeLarge
+  name: giant mime lizard plushie
+  description: A plush kaiju lizard about to destroy the cotton city.
+  suffix: Maintenance Tunnels, Orchi Dea
+  components:
+  - type: Sprite
+    scale: 1.75, 1.75
+  - type: Item
+    size: Normal
+  - type: MultiHandedItem
+
+- type: entity
+  parent: PlushieSlime
+  id: PlushieSlimeLarge
+  name: giant slime plushie
+  description: A plush kaiju slime about to destroy the cotton city.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 1.75, 1.75
+  - type: Item
+    size: Normal
+  - type: MultiHandedItem
+
+- type: entity
+  parent: PlushieSharkBlue
+  id: PlushieSharkBlueLarge
+  name: giant shark plushie
+  description: A plush kaiju shark about to destroy the cotton city.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 1.5, 1.5
+  - type: Item
+    size: Normal
+  - type: MultiHandedItem
+
+# endregion Plushies
+
+# region Food
+
+- type: entity
+  parent: FoodBungoPit
+  id: FoodBungoPitLarge
+  name: gigabungo pit
+  description: This feels like a trophy of a chief botanist.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 1.75, 1.75
+  - type: Item
+    size: Normal
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Bungotoxin
+          Quantity: 20
+
+- type: entity
+  parent: BoxPlate
+  id: BoxDrinkCan
+  name: can box
+  description: A box filled with a pack of empty cans.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkCan
+          amount: 6
+
+# endregion Food
+
+# region Orchi Dea
+
+- type: entity
+  parent: BoxPlate
+  id: BoxDrinkOrchitoCan
+  name: Sun In A Glass box
+  description: A box filled with a pack of orchito-flavored canned soda.
+  suffix: Maintenance Tunnels, Orchi Dea
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkOrchitoCan
+          amount: 6
+
+- type: entity
+  parent: BoxSurvivalSlotsEngineering
+  id: BoxSurvivalSlotsOrchiDea
+  name: Orchi Dea's survival box
+  description: An emergency survival box lost by Orchi Dea. Please return when found.
+  suffix: Maintenance Tunnels, Orchi Dea
+  components:
+  - type: ContainerFill
+    containers:
+      water:
+      - DrinkOrchitoCan
+      nutriblock:
+      - PillCanisterStardust
+      flare:
+      - Flare
+      tank:
+      - ExtendedEmergencyOxygenTankFilled
+      mask:
+      - ClothingMaskBreath
+      emergencypen:
+      - EmergencyMedipen
+      spacepen:
+      - SpaceMedipen
+  - type: Sprite
+    state: box_extend
+
+# endregion Orchi Dea
+
+# region Shakers
+
+- type: entity
+  parent: DrinkFitnessShakerBlack
+  id: DrinkFitnessShakerGold
+  name: golden fitness shaker
+  description: A colored fitness shaker for mixing protein drinks.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: "#ffd700"
+
+- type: entity
+  parent: DrinkFitnessShakerBlack
+  id: DrinkFitnessShakerSyndicate
+  name: blood-red fitness shaker
+  description: A colored fitness shaker for mixing protein drinks.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: "#ff0000"
+
+- type: entity
+  parent: DrinkFitnessShakerBlack
+  id: DrinkFitnessShakerPink
+  name: pink fitness shaker
+  description: A colored fitness shaker for mixing protein drinks.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: "#ff77dd"
+    scale: 0.85, 1.15
+
+- type: entity
+  parent: DrinkFitnessShakerBlack
+  id: DrinkFitnessShakerNT
+  name: NanoTrasen fitness shaker
+  description: A colored fitness shaker for mixing protein drinks.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: "#9999ff"
+    scale: 0.95, 1.10
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 60
+
+- type: entity
+  parent: DrinkFitnessShakerBlack
+  id: DrinkFitnessShakerLarge
+  name: large fitness shaker
+  description: A large fitness shaker for mixing protein drinks.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    scale: 1.15, 1.25
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100
+
+- type: entity
+  parent: BoxPlate
+  id: BoxDrinkFitnessShaker
+  name: fitness shaker box
+  description: A box filled with a collection of fitness shakers.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkFitnessShakerBlack
+          amount: 1
+        - id: DrinkFitnessShakerNT
+          amount: 1
+        - id: DrinkFitnessShakerGold
+          amount: 1
+        - id: DrinkFitnessShakerPink
+          amount: 1
+        - id: DrinkFitnessShakerSyndicate
+          amount: 1
+        - id: DrinkFitnessShakerLarge
+          amount: 1
+
+# endregion Shakers
+
+# region Clothing
+
+- type: entity
+  parent: ClothingOuterCoatLab
+  id: ClothingOuterCoatLabPink
+  name: pink coat
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: &pink "#ff77dd"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: *pink
+      right:
+      - state: inhand-right
+        color: *pink
+  - type: Clothing
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: *pink
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+        color: *pink
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-reptilian
+        color: *pink
+      outerClothing-resomi:
+      - state: equipped-OUTERCLOTHING-resomi
+        color: *pink
+
+- type: entity
+  parent: ClothingUniformJumpsuitPsychologist
+  id: ClothingUniformJumpsuitPsychologistPink
+  name: pink button-up shirt
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: *pink
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: *pink
+      right:
+      - state: inhand-right
+        color: *pink
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: *pink
+      jumpsuit-monkey:
+      - state: equipped-INNERCLOTHING-monkey
+        color: *pink
+
+- type: entity
+  parent: ClothingOuterCoatLab
+  id: ClothingOuterCoatLabBlack
+  name: black coat
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: &black "#444444"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: *black
+      right:
+      - state: inhand-right
+        color: *black
+  - type: Clothing
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+        color: *black
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+        color: *black
+      outerClothing-reptilian:
+      - state: equipped-OUTERCLOTHING-reptilian
+        color: *black
+      outerClothing-resomi:
+      - state: equipped-OUTERCLOTHING-resomi
+        color: *black
+
+- type: entity
+  parent: ClothingUniformJumpsuitPsychologist
+  id: ClothingUniformJumpsuitPsychologistBlack
+  name: black button-up shirt
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: *black
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: *black
+      right:
+      - state: inhand-right
+        color: *black
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: *black
+      jumpsuit-monkey:
+      - state: equipped-INNERCLOTHING-monkey
+        color: *black
+
+- type: entity
+  parent: ClothingUniformJumpskirtDressOpenShoulder
+  id: ClothingUniformJumpskirtDressOpenShoulderBlack
+  name: black open-shoulder dress
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: *black
+  - type: Clothing
+    clothingVisuals:
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: *black
+
+# endregion Clothing
+
+# region Toys
+
+- type: entity
+  parent: BasePlushie
+  id: ToyCarMonoSupron
+  name: toy car
+  description: A miniature toy car. You can play with it, or you can collect it, and keep it forever in a package, like a nerd!
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    sprite: _RMC14/Structures/Vehicles/vehicles.rsi
+    state: mizutani_taxi
+    scale: 0.3, 0.3
+  - type: Item
+    storedRotation: -90
+    storedOffset: -3, 1
+  - type: EmitSoundOnUse
+    sound: &ToyCarMonoSupronSound
+      collection: GeneratorTug
+  - type: EmitSoundOnLand
+    sound: *ToyCarMonoSupronSound
+  - type: EmitSoundOnActivate
+    sound: *ToyCarMonoSupronSound
+  - type: EmitSoundOnTrigger
+    sound: *ToyCarMonoSupronSound
+  - type: EmitSoundOnCollide
+    sound: *ToyCarMonoSupronSound
+  - type: MeleeWeapon
+    soundHit: *ToyCarMonoSupronSound
+  - type: Edible
+    useSound: *ToyCarMonoSupronSound
+
+- type: entity
+  parent: ToyCarMonoSupron
+  id: ToyCarMonoSupronPolice
+  name: police toy car
+  components:
+  - type: Sprite
+    state: mizutani_cop
+
+- type: entity
+  parent: ToyCarMonoSupron
+  id: ToyCarMonoSupronNT
+  name: NanoTrasen toy car
+  components:
+  - type: Sprite
+    state: mizutani_blue
+
+- type: entity
+  parent: ToyCarMonoSupron
+  id: ToyCarMonoSupronSyndicate
+  name: blood-red toy car
+  components:
+  - type: Sprite
+    state: mizutani_red
+
+- type: entity
+  parent: BoxCardboard
+  id: BoxToyCarMonoSupron
+  name: toy car box
+  description: A box filled with toy cars of various colors.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    color: "#ffbb99"
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ToyCarMonoSupron
+          amount: 1
+        - id: ToyCarMonoSupronPolice
+          amount: 1
+        - id: ToyCarMonoSupronNT
+          amount: 1
+        - id: ToyCarMonoSupronSyndicate
+          amount: 1
+
+- type: entity
+  parent: BasePlushie
+  id: ToyCow
+  name: toy cow
+  description: A miniature toy cow. You can play with it, or you can collect it, and keep it forever in a package, like a nerd!
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    sprite: Mobs/Animals/cow.rsi
+    state: cow
+    scale: 0.5, 0.5
+  - type: Item
+    storedRotation: 180
+    storedOffset: 0, -1
+  - type: EmitSoundOnUse
+    sound: &ToyCowSound
+      path: /Audio/Animals/cow_moo.ogg
+  - type: EmitSoundOnLand
+    sound: *ToyCowSound
+  - type: EmitSoundOnActivate
+    sound: *ToyCowSound
+  - type: EmitSoundOnTrigger
+    sound: *ToyCowSound
+  - type: EmitSoundOnCollide
+    sound: *ToyCowSound
+  - type: MeleeWeapon
+    soundHit: *ToyCowSound
+  - type: Edible
+    useSound: *ToyCowSound
+
+- type: entity
+  parent: BasePlushie
+  id: ToyXenomorph
+  name: toy xenomorph
+  description: A miniature toy xenomorph. You can play with it, or you can collect it, and keep it forever in a package, like a nerd!
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    sprite: Mobs/Aliens/Xenos/praetorian.rsi
+    state: running
+    scale: 0.4, 0.4
+  - type: Item
+    storedRotation: 180
+    storedOffset: 0, -1
+  - type: EmitSoundOnUse
+    sound: &ToyXenoSound
+      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
+      params:
+        volume: -8
+  - type: EmitSoundOnLand
+    sound: *ToyXenoSound
+  - type: EmitSoundOnActivate
+    sound: *ToyXenoSound
+  - type: EmitSoundOnTrigger
+    sound: *ToyXenoSound
+  - type: EmitSoundOnCollide
+    sound: *ToyXenoSound
+  - type: MeleeWeapon
+    soundHit: *ToyXenoSound
+  - type: Edible
+    useSound: *ToyXenoSound
+
+# endregion Toys
+
+# region Toolbox
+
+- type: entity
+  parent: ToolboxBase
+  id: ToolboxCake
+  name: cakebox
+  description: A plastic cake toolbox, stocked with various tools.
+  suffix: Maintenance Tunnels, Clown
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/cake.rsi
+    layers:
+      - map: [ base ]
+        state: birthday
+  - type: Item
+    sprite: Objects/Consumable/Food/Baked/cake.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: birthday }
+          False: { state: birthday }
+
+- type: entity
+  parent: ToolboxCake
+  id: ToolboxCakeFilled
+  suffix: Maintenance Tunnels, Clown, Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SpoonPlastic
+          amount: 2
+        - id: DrinkColaGlass
+          amount: 2
+        - id: FoodCakeBirthdaySlice
+          amount: 6
+
+# endregion Toolbox

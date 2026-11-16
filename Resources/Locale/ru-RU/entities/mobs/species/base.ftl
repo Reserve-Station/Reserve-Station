@@ -3,4 +3,4 @@ ent-BaseMobSpecies = { ent-BaseMob }
 ent-BaseMobSpeciesOrganic = { ent-BaseMobSpecies }
     .desc = { ent-BaseMobSpecies.desc }
 ent-BaseSpeciesDummy = манекен
-    .desc = { "" }
+    .desc = Манекен для использования в меню редактора персонажей.

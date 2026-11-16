@@ -16,7 +16,6 @@ entity-effect-status-effect-Drowsiness = сонливость
 entity-effect-status-effect-Adrenaline = адреналин
 entity-effect-status-effect-Dementia = деменция
 entity-effect-status-effect-Centered = центрированность
-entity-effect-guidebook-knockdown = станкрит
 entity-effect-status-effect-StaminaModifierStatusEffect = изменённая выносливость
 entity-effect-status-effect-DemonsBlood = кровь демона
 entity-effect-status-effect-Vulgarity = вульгарность

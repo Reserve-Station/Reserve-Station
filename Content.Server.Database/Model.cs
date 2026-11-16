@@ -14,7 +14,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Content.Server.Database
 {
-    public abstract class ServerDbContext : DbContext
+    public abstract partial class ServerDbContext : DbContext // Goob
     {
         protected ServerDbContext(DbContextOptions options) : base(options)
         {
@@ -52,12 +52,14 @@ namespace Content.Server.Database
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
         public DbSet<DBJobAlternateTitle> DBJobAlternateTitle { get; set; } = null!;  // Reserve: Alternate Job Titles
+        public DbSet<BrainrotTrigger> BrainrotTriggers { get; set; } = default!; // Reserve: Brainrot Triggers
 
         // RMC14
         public DbSet<RMCDiscordAccount> RMCDiscordAccounts { get; set; } = default!;
         public DbSet<RMCLinkedAccount> RMCLinkedAccounts { get; set; } = default!;
         public DbSet<RMCPatronTier> RMCPatronTiers { get; set; } = default!;
         public DbSet<RMCPatron> RMCPatrons { get; set; } = default!;
+        public DbSet<RMCPatronTierAssignment> RMCPatronTierAssignments { get; set; } = default!;  // Reserve edit: Maecenas System
         public DbSet<RMCLinkingCodes> RMCLinkingCodes { get; set; } = default!;
         public DbSet<RMCLinkedAccountLogs> RMCLinkedAccountLogs { get; set; } = default!;
         public DbSet<RMCPatronLobbyMessage> RMCPatronLobbyMessages { get; set; } = default!;
@@ -71,6 +73,23 @@ namespace Content.Server.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // Reserve edit start: Maecenas System
+            modelBuilder.Entity<RMCPatronTierAssignment>()
+                .HasKey(e => new { e.PlayerId, e.TierId });
+
+            modelBuilder.Entity<RMCPatronTierAssignment>()
+                .HasOne(e => e.Patron)
+                .WithMany(e => e.TierAssignments)
+                .HasForeignKey(e => e.PlayerId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<RMCPatronTierAssignment>()
+                .HasOne(e => e.Tier)
+                .WithMany(e => e.Assignments)
+                .HasForeignKey(e => e.TierId)
+                .OnDelete(DeleteBehavior.Cascade);
+            // Reserve edit end: Maecenas System
+
             modelBuilder.Entity<Preference>()
                 .HasIndex(p => p.UserId)
                 .IsUnique();
@@ -325,6 +344,7 @@ namespace Content.Server.Database
                 .HasDefaultValue(HwidType.Legacy);
 
             ModelBan.OnModelCreating(modelBuilder);
+            GoobOnModelCreating(modelBuilder); // Goob
 
             // RMC14
             modelBuilder.Entity<RMCLinkedAccount>()

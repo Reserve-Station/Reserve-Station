@@ -55,12 +55,16 @@
     whitelist:
       tags:
       - Document
+      - Card  # Reserve: Folder fix
+      - CD  # Reserve: Folder fix
   - type: ItemMapper
     mapLayers:
       folder-overlay-paper:
         whitelist:
           tags:
           - Document
+          - Card  # Reserve: Folder fix
+          - CD  # Reserve: Folder fix
   - type: PhysicalComposition
     materialComposition:
       Paper: 50

@@ -148,7 +148,11 @@ public sealed partial class IngestionSystem
 
         var position = _transform.GetMapCoordinates(entity);
         var trashes = entity.Comp.Trash;
-        var pickup = user != null && _hands.IsHolding(user.Value, entity, out _);
+        // Reserve edit start - put the trash into the hand that held the food, not into a free one
+        string? foodHand = null;
+        var pickup = user != null && _hands.IsHolding(user.Value, entity, out foodHand);
+        if (pickup && foodHand != null)
+            _hands.DoDrop(user!.Value, foodHand, doDropInteraction: false, log: false);
 
         foreach (var trash in trashes)
         {
@@ -160,9 +164,18 @@ public sealed partial class IngestionSystem
 
             // Put the trash in the user's hand
             // I am 100% confident we don't need this check but rider gets made at me if it's not here.
-            if (user != null)
-                _hands.TryPickupAnyHand(user.Value, spawnedTrash);
+            if (user == null)
+                continue;
+
+            if (foodHand != null && _hands.TryPickup(user.Value, spawnedTrash, foodHand))
+            {
+                foodHand = null;
+                continue;
+            }
+
+            _hands.TryPickupAnyHand(user.Value, spawnedTrash);
         }
+        // Reserve edit end
     }
 
     public void AddTrash(Entity<EdibleComponent> entity, List<EntProtoId> newTrash)

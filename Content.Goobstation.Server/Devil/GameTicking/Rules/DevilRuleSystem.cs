@@ -1,9 +1,9 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Text;
 using Content.Goobstation.Shared.Devil.Roles;
 using Content.Goobstation.Shared.Devil;
-using Content.Goobstation.Shared.Devil.Roles;
+// using Content.Goobstation.Shared.Devil.Roles; // Reserve edit: Fix warnings
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Mind;
@@ -17,12 +17,12 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Server.Devil.GameTicking.Rules;
 
-public sealed class DevilRuleSystem : GameRuleSystem<DevilRuleComponent>
+public sealed partial class DevilRuleSystem : GameRuleSystem<DevilRuleComponent>
 {
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly ObjectivesSystem _objective = default!;
+    [Dependency] private MindSystem _mind = default!;
+    [Dependency] private AntagSelectionSystem _antag = default!;
+    [Dependency] private NpcFactionSystem _npcFaction = default!;
+    [Dependency] private ObjectivesSystem _objective = default!;
     public override void Initialize()
     {
         base.Initialize();

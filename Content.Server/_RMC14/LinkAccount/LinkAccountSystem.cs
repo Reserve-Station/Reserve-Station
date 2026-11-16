@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.CCVar;
 using Content.Server.Chat.Managers;
@@ -21,7 +21,7 @@ namespace Content.Server._RMC14.LinkAccount;
 public sealed class LinkAccountSystem : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
-    [Dependency] private readonly IServerDbManager _db = default!;
+    // [Dependency] private readonly IServerDbManager _db = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly LinkAccountManager _linkAccount = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IGameTiming _timing = default!;

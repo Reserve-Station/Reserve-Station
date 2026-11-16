@@ -502,7 +502,7 @@
         weight: 0.1
       - id: CrateGeneric
         weight: 0.25
-      - id: ClosetMaintenanceFilledRandom
+      - id: RandomMaintenanceObjectSpawner  # Reserve edit: Random maints
         weight: 2
       - !type:GroupSelector
         children:

@@ -9,6 +9,7 @@
   contrabandSeverity: Minor
   flavor: bitter
   color: "#FAFAFA"
+  puddleSpriteSet: Shiny # Goob
   boilingPoint: 212.0  # Dexosyephedrine vape when?
   meltingPoint: 170.0
   metabolisms:
@@ -84,6 +85,8 @@
       - !type:RemoveComponentEffect # goob edit
         component: DelayedKnockdown
         locale: reagent-effect-guidebook-remove-delayed-knockdown
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: StrongStimulant
     Medicine:
       effects:
       # Side effects
@@ -101,6 +104,7 @@
   physicalDesc: reagent-physical-desc-powdery
   flavor: bitter
   color: "#D2FFFA"
+  puddleSpriteSet: Powder # Goob
   boilingPoint: 255.0
   meltingPoint: 36.0
   metabolisms:
@@ -111,7 +115,6 @@
         conditions:
         - !type:MetabolizerTypeCondition # Goobstation - Yowie
           type: [ Yowie ]
-          inverted: true
         damage:
           groups:
             Brute: -1
@@ -174,6 +177,8 @@
       - !type:SuppressPain # Shitmed Change
         amount: 1.2
         time: 10 # it accumulated 1.2*quantity and then exists for 30 seconds.
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: StrongStimulant
     Medicine:
       effects:
       # Side effects
@@ -192,6 +197,7 @@
   contrabandSeverity: Syndicate
   flavor: sharp
   color: "#9A040E"
+  puddleSpriteSet: Acid # Goob
   boilingPoint: 212.0
   meltingPoint: 170.0
   metabolisms:
@@ -202,7 +208,6 @@
         conditions:
         - !type:MetabolizerTypeCondition # Goobstation - Yowie
           type: [ Yowie ]
-          inverted: true
         damage:
           groups:
             Brute: -1
@@ -290,6 +295,8 @@
       - !type:SuppressPain
           amount: 1.2
           time: 30 # it accumulated 1.2*quantity and then exists for 30 seconds.
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: StrongStimulant
     Medicine:
       effects:
       # Main effects
@@ -324,6 +331,7 @@
   flavor: bitter
   flavorMinimum: 0.05
   color: "#808080"
+  puddleSpriteSet: Powder # Goob
   physicalDesc: reagent-physical-desc-crystalline
   plantMetabolism:
   - !type:PlantAdjustNutrition
@@ -357,6 +365,7 @@
   desc: reagent-desc-nicotine
   flavor: bitter
   color: "#C0C0C0"
+  puddleSpriteSet: Powder # Goob
   physicalDesc: reagent-physical-desc-strong-smelling
   plantMetabolism:
   - !type:PlantAdjustHealth
@@ -376,6 +385,8 @@
             Shock: -0.1
             Cold: -0.1
             Radiation: -0.1
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: NicotineBenefit
 
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent
@@ -394,7 +405,6 @@
         conditions:
         - !type:MetabolizerTypeCondition # Goobstation - Yowie
           type: [ Yowie ]
-          inverted: true
         damage:
           groups:
             Brute: -1
@@ -450,6 +460,8 @@
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 5
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: SpaceDrugsBenefit
 
 - type: reagent
   id: Bananadine
@@ -466,7 +478,6 @@
         conditions:
         - !type:MetabolizerTypeCondition # Goobstation - Yowie
           type: [ Yowie ]
-          inverted: true
         damage:
           groups:
             Brute: -1
@@ -501,13 +512,13 @@
         conditions:
         - !type:ReagentCondition
           reagent: Nocturine
-          min: 8
+          min: 4
         - !type:MetabolizerTypeCondition # Goobstation - Yowie
           type: [ Yowie ]
           inverted: true
         effectProto: StatusEffectForcedSleeping
-        time: 6
-        delay: 5
+        time: 8
+        delay: 1
 
 - type: reagent
   id: MuteToxin
@@ -643,6 +654,8 @@
         - !type:ReagentCondition
           reagent: TearGas
           min: 4
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: TearGasEffect
 
 - type: reagent
   id: Happiness
@@ -659,7 +672,6 @@
         conditions:
         - !type:MetabolizerTypeCondition # Goobstation - Yowie
           type: [ Yowie ]
-          inverted: true
         damage:
           groups:
             Brute: -1
@@ -708,6 +720,8 @@
         effectProto: StatusEffectSeeingRainbow
         type: Add
         time: 5
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: PsicodineEffect
 
 - type: reagent # Assmos - /tg/ gases
   id: NitrosylPlasmide
@@ -736,9 +750,9 @@
         key: Drowsiness
         time: 10
         type: Remove
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
-        key: ForcedSleep
+        effectProto: StatusEffectForcedSleeping # Goob
         type: Remove
         time: 10
       - !type:HealthChange

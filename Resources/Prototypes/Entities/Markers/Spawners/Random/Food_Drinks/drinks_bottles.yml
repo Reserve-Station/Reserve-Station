@@ -6,11 +6,13 @@
   suffix: Bottle
   parent: MarkerBase
   placement:
-    mode: AlignTileAny
+    mode: PlaceFree  # Reserve: Orchid's Barmania - Vendichaos
   components:
+  - type: Transform  # Reserve: Orchid's Barmania - Vendichaos
+    anchored: false
   - type: Sprite
     layers:
-      - state: red
+      - state: green  # Reserve: Orchid's Barmania - Vendichaos
       - sprite: Objects/Consumable/Drinks/ginbottle.rsi
         state: icon
   - type: EntityTableSpawner

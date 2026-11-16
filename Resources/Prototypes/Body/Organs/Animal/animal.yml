@@ -134,6 +134,8 @@
   parent: OrganAnimalStomach
   categories: [ HideSpawnMenu ]
   components:
+  - type: Sprite  # Proper small animal organs
+    scale: 0.6, 0.6
   - type: SolutionContainerManager
     solutions:
       stomach:

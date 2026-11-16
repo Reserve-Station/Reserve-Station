@@ -50,6 +50,7 @@
     penetrateDamage: 15 # Kill million mices
     damagePenalty: 0.05
   - type: StunVisuals
+  - type: Posing  # Reserve edit: Posing system port
 
 # The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.
@@ -130,13 +131,18 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Critical
+      100: SoftCritical # Reserve edit: Soft Crit port
+      150: HardCritical # Reserve edit: Soft Crit port
       200: Dead
+  - type: CritStateMovement # Reserve edit: Soft Crit port
   - type: MobStateActions
     actions:
-      Critical:
+      SoftCritical: # Reserve edit: Soft Crit port
       - ActionCritSuccumb
       - ActionCritFakeDeath
+      - ActionCritRageQuit #Reserve
+      HardCritical: # Reserve edit: Soft Crit port
+      - ActionCritSuccumb
       - ActionCritLastWords
       - ActionCritRageQuit #Reserve
   - type: Deathgasp

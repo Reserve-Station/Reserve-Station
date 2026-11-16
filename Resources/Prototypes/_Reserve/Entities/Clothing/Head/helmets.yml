@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetPlump
+  name: plump helmet helmet
+  description: A hollowed-out plump helmet with a strap under the chin. Protects your head a little, and you can always snack on it.
+  components:
+  - type: Sprite
+    sprite: _Reserve/Clothing/Head/Helmets/plump_helmet.rsi
+  - type: Clothing
+    sprite: _Reserve/Clothing/Head/Helmets/plump_helmet.rsi
+  - type: Armor
+    coverage:
+    - Head
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+  # it's still a mushroom - anyone can eat it, not just moths
+  - type: Edible
+    requiresSpecialDigestion: false
+  - type: FlavorProfile
+    flavors:
+      - mushroom
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Vitamin
+          Quantity: 1
+      stain:
+        maxVol: 5
+  - type: Construction
+    graph: PlumpHelmetHelmet
+    node: helmet
+  - type: Tag
+    tags:
+    - Mushroom
+    - WhitelistChameleon

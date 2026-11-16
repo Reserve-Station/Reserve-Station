@@ -8,6 +8,8 @@ public sealed record SharedRMCPatronFull(
     bool Linked,
     Color? GhostColor,
     SharedRMCGhostCosmetics? GhostCosmetics, // Goob - ghost cosmetics
+    string? OocIcon, // Goob - ooc icon selection
     SharedRMCLobbyMessage? LobbyMessage,
-    SharedRMCRoundEndShoutouts? RoundEndShoutout
+    SharedRMCRoundEndShoutouts? RoundEndShoutout,
+    List<SharedRMCPatronTier> Tiers  // Reserve edit: Maecenas System
 );

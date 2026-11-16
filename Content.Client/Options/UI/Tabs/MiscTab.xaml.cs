@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Client._RMC14.LinkAccount;
@@ -18,7 +18,7 @@ namespace Content.Client.Options.UI.Tabs;
 [GenerateTypedNameReferences]
 public sealed partial class MiscTab : Control
 {
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    // [Dependency] private readonly IPlayerManager _playerManager = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly LinkAccountManager _linkAccount = default!;
 
@@ -59,8 +59,7 @@ public sealed partial class MiscTab : Control
         Control.AddOptionCheckBox(CCVars.OpaqueStorageWindow, OpaqueStorageWindowCheckBox);
         Control.AddOptionCheckBox(GoobCVars.AutoFocusSearchOnBuildMenu, AutoFocusSearchOnBuildMenuCheckBox); // Goobstation Change
         Control.AddOptionCheckBox(GoobCVars.LockActionBarDrag, LockActionBarDragCheckBox); // Goobstation
-        Control.AddOptionCheckBox(CCVars.ChatEnableFancyBubbles, FancySpeechBubblesCheckBox);
-        Control.AddOptionCheckBox(CCVars.ChatFancyNameBackground, FancyNameBackgroundsCheckBox);
+        Control.AddOptionPercentSlider(GoobCVars.InHandInteractionParticleScale, InHandInteractionParticleScaleSlider); // Goob
         Control.AddOptionCheckBox(CCVars.StaticStorageUI, StaticStorageUI);
 
         Control.Initialize();

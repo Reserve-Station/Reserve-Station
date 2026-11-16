@@ -88,7 +88,7 @@ public sealed class SiliconDeathSystem : SharedSiliconDeathSystem
         if (args.Cancelled || !ent.Comp.Dead)
             return;
 
-        args.Message = (Loc.GetString("silicon-no-charge-stand"), PopupType.SmallCaution); // Reserve edit: localization #325
+        args.Message = (Loc.GetString("silicon-no-charge-stand"), PopupType.SmallCaution); // Reserve edit: localization #325; localization #359
         args.Autostand = false;
         args.Cancelled = true;
     }

@@ -785,7 +785,7 @@ namespace Content.Client.Lobby.UI
                     {
                         try
                         {
-                            iconTexture = _sprite.Frame0(new SpriteSpecifier.Rsi(new ResPath("_Funkystation/Mobs/Animals/meowl.rsi"), "icon"));
+                            iconTexture = _sprite.Frame0(new SpriteSpecifier.Rsi(new ResPath("_Funkystation/Interface/Lobby/AntagCards.rsi"), "sleeperagent"));
                         }
                         catch
                         {

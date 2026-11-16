@@ -71,14 +71,18 @@ public sealed class MonumentPlacementPreviewOverlay : Overlay
         var outlineRsiState = outlineState ?? $"stage{tier}-placement-ghost-1";
         var starRsiState = starState ?? $"stage{tier}-placement-ghost-2";
 
-        _saturationShader = protoMan.Index<ShaderPrototype>("SaturationShuffle").InstanceUnique();
+        var protoIdSaturation = "SaturationShuffle";  // Reserve edit: Fix warnings
+        var protoIdStars = "MonumentPulse";  // Reserve edit: Fix warnings
+        var protoIdUnshaded = "unshaded";  // Reserve edit: Fix warnings
+
+        _saturationShader = protoMan.Index<ShaderPrototype>(protoIdSaturation).InstanceUnique();  // Reserve edit: Fix warnings
         _saturationShader.SetParameter("tileSize", new Vector2(96, 96));
         _saturationShader.SetParameter("hsv", new Vector3(1.0f, 0.25f, 0.2f));
 
-        _starsShader = protoMan.Index<ShaderPrototype>("MonumentPulse").InstanceUnique();
+        _starsShader = protoMan.Index<ShaderPrototype>(protoIdStars).InstanceUnique();  // Reserve edit: Fix warnings
         _starsShader.SetParameter("tileSize", new Vector2(96, 96));
 
-        _unshadedShader = protoMan.Index<ShaderPrototype>("unshaded").Instance(); //doesn't need a unique instance
+        _unshadedShader = protoMan.Index<ShaderPrototype>(protoIdUnshaded).Instance(); //doesn't need a unique instance  // Reserve edit: Fix warnings
 
         ZIndex = (int) Shared.DrawDepth.DrawDepth.Mobs; //make the overlay render at the same depth as the actual sprite. might want to make it 1 lower if things get wierd with it.
 

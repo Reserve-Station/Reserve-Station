@@ -1,18 +1,22 @@
 ent-OrganVoxLungs = { ent-OrganHumanLungs }
-    .suffix = Вокс
     .desc = Синие, анаэробные лёгкие вокса, используют азот для дыхания. Любая форма газообразного кислорода смертельно токсична при вдыхании.
+    .suffix = Вокс
 ent-OrganVoxStomach = { ent-OrganHumanStomach }
-    .suffix = Вокс
     .desc = Желудок с запахом аммиака.
+    .suffix = Вокс
 ent-OrganVoxLiver = { ent-OrganHumanLiver }
-    .suffix = Вокс
     .desc = Имеет легковоспламеняющийся запах.
-ent-OrganVoxHeart = { ent-OrganHumanHeart }
     .suffix = Вокс
+ent-OrganVoxHeart = { ent-OrganHumanHeart }
     .desc = Странное сердце вокса.
+    .suffix = Вокс
+ent-OrganVoxKidneys = { ent-OrganHumanKidneys }
+    .desc = Пахнут воспламеняемо.
+    .suffix = Вокс
 
 ent-OrganVoxTongueA = язык
     .desc = Мясная мышца, в основном используемая для крика.
-
+    .suffix = Вокс
 ent-OrganVoxTongueB = язык
     .desc = Мясная мышца, в основном используемая для крика.
+    .suffix = Вокс

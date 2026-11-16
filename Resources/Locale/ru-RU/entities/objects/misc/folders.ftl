@@ -2,7 +2,7 @@
 
 ent-BoxFolderBase = папка
     .desc = Папка, заполненная совершенно секретными документами.
-    .suffix = { "" }
+    .suffix = Заполнена
 ent-BoxFolderRed = { ent-BoxFolderBase }
     .desc = { ent-BoxFolderBase.desc }
     .suffix = Красная
@@ -82,10 +82,10 @@ ent-BoxFolderCentCom = { ent-BoxFolderBase } ЦентКом
     .suffix = НЕ МАППИТЬ
 ent-BoxFolderClipboard = планшет
     .desc = Оружие тех, кто действует на передовой бюрократии.
-    .suffix = { "" }
+    .suffix = Пустой
 ent-BoxFolderPlasticClipboard = пластиковый планшет
     .desc = Дешёвый планшет из синего пластика. Подойдёт тем, кто ещё не готов к серьёзной бюрократической ответственности деревянного планшета.
-    .suffix = { "" }
+    .suffix = Пустой
 ent-BoxFolderCentComClipboard = { ent-BoxFolderClipboard } ЦентКом
     .desc = Роскошный планшет, обитый зелёным бархатом. Представители ЦентКом часто носят его с собой, но редко используют.
     .suffix = { ent-BoxFolderClipboard.suffix }

@@ -18,8 +18,9 @@ ent-NetworkConfiguratorUnremoveable = { ent-NetworkConfigurator }
     .desc = { ent-NetworkConfigurator.desc }
 ent-PinpointerStationUnremoveable = { ent-PinpointerStationGoob }
     .desc = Вы - станция. Найдите себя. Нажмите E для активации.
-    .suffix = Неубираемый
-ent-ActionDroneOpenMap = Открытая карта
+    .suffix = Неубираемый, Пинпоинтер, Станция
+
+ent-ActionDroneOpenMap = Открыть карту
     .desc = Посмотрите станцию.
-ent-ActionDronePlayMidi = Воспроизведение MIDI
+ent-ActionDronePlayMidi = Воспроизвести MIDI
     .desc = Внесите свой вклад в творчество.

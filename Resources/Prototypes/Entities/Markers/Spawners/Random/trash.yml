@@ -24,14 +24,142 @@
       - id: FoodSnackLollypopTrash # Goobstation - Lollypops
       - id: FoodPacketLollypopTrash # Goobstation - Lollypops
       - id: BrokenBottle
+      # Reserve edit start: Trashmaxxing
+      - id: FoodFrozenPopsicleTrash
+        weight: 2
+      - id: FoodFrozenSnowconeTrash
+        weight: 2
+      - id: FoodPacketLunacakeTrash
+      - id: FoodPacketMochicakeTrash
+      - id: FoodPacketMooncakeTrash
+      - id: FoodPacketTidegobsTrash
+      - id: FoodPacketSaturnosTrash
+      - id: FoodPacketJoveGelloTrash
+      - id: FoodPacketPlutoniumrodsTrash
+      - id: FoodPacketMarsFroukaTrash
+      - id: FoodPacketVenusTrash
+      - id: FoodPacketOortrocksTrash
+      - id: FoodPacketRedalertnutsTrash
+      - id: FoodPacketStickTrash
+      - id: FoodPacketProteinbarTrash
+      # Cloth and paper
+      - id: RagItem  # Generic rag item for trash
+      - id: MysteryFigureBoxTrash
+      - id: PaperScrap
+        weight: 2
+      - id: PaperScrapPink
+      - id: PaperScrapRainbow
+        weight: 0.25
+      # Cartridges
+      - id: CartridgePistolSpent
+      - id: LightBulbBroken
+        weight: 0.5
+      - id: LightTubeBroken
+        weight: 0.5
+      # Drinks
+      - id: DrinkCan
+      - id: DrinkBrepsiCanEmpty
+      - id: DrinkCanGold
+        weight: 0.5
+      - id: DrinkBottle
+        weight: 0.75
+      - id: DrinkBottlePink
+        weight: 0.5
+      # Reserve edit end: Trashmaxxing
     - !type:GroupSelector
       weight: 5
       children:
       - id: FoodPlateSmallTrash
       - id: FoodBowlBigTrash
+      # Reserve edit start: Trashmaxxing
+      - id: FoodPlateTrash
+        weight: 0.3
+      - id: FoodPlateTin
+        weight: 0.3
+      - id: FoodPlateMuffinTin
+        weight: 0.3
+      - id: FoodPlateSmallTrashGold
+        weight: 0.1
+      # Reserve edit end: Trashmaxxing
     - !type:NestedSelector
       weight: 5
       tableId: AllBananaPeelsTable
+    # Reserve edit start: Trashmaxxing
+    - !type:NestedSelector
+      weight: 5
+      tableId: AllSpentCigarettesTable
+    - !type:NestedSelector
+      weight: 3
+      tableId: AllCannedTrashTable
+    - !type:NestedSelector
+      weight: 3
+      tableId: AllScrapTable
+    - !type:NestedSelector
+      weight: 3
+      tableId: AllOrganicTrashTable
+    # Reserve edit end: Trashmaxxing
+
+# Reserve edit start: Trashmaxxing
+- type: entityTable
+  id: AllSpentCigarettesTable
+  table: !type:GroupSelector
+    children:
+    - id: CigaretteSpent
+      weight: 5
+    - id: MatchstickSpent
+      weight: 3
+    - id: Ash
+      weight: 2
+    - id: CigarSpent
+      weight: 1
+    - id: CigarGoldSpent
+      weight: 0.2
+    - id: DirtPile
+      weight: 1
+
+- type: entityTable
+  id: AllCannedTrashTable
+  table: !type:GroupSelector
+    children:
+    - id: FoodTinPeachesMaintTrash
+    - id: FoodTinPeachesTrash
+    - id: FoodTinBeansTrash
+    - id: FoodTinMRETrash
+    - id: FoodBlackCaviarTrash
+    - id: FoodRedCaviarTrash
+
+- type: entityTable
+  id: AllScrapTable
+  table: !type:GroupSelector
+    children:
+    - id: ScrapBucket
+    - id: ScrapAirlock2
+    - id: ScrapIntercom
+    - id: ScrapMopBucket
+    - id: ScrapFireExtinguisher
+    - id: ScrapCanister1
+    - id: ScrapMedkit
+    - id: ScrapCamera
+    - id: ScrapGeneratorFuelTank
+
+- type: entityTable
+  id: AllOrganicTrashTable
+  table: !type:GroupSelector
+    children:
+    - id: FoodCornTrash
+    - id: Eggshells
+      weight: 2
+    - id: FoodBreadMoldySlice
+      weight: 0.5
+    - id: FoodPizzaMoldySlice
+      weight: 0.5
+    - id: FoodMeatRotten
+      weight: 0.5
+    - id: EggshellsVox
+      weight: 0.5
+    - id: EggshellsUnicowl
+      weight: 0.1
+# Reserve edit end: Trashmaxxing
 
 - type: entityTable # max size 1x2
   id: AllBananaPeelsTable

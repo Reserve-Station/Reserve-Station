@@ -11,7 +11,7 @@ namespace Content.Server.Discord;
 public sealed class DiscordWebhook : IPostInjectInit
 {
     private static readonly JsonSerializerOptions JsonOptions = new JsonSerializerOptions
-        { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+    { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
 
     [Dependency] private readonly ILogManager _log = default!;
 
@@ -141,5 +141,23 @@ public sealed class DiscordWebhook : IPostInjectInit
         }
     }
 
+    // Reserve edit start: Better webhook send
+    /// <summary>
+    ///     Sends a message to a Discord chat via the specified Discord webhook URL.
+    /// </summary>
+    /// <param name="message">The message to send.</param>
+    /// <param name="webhookUrl">The Discord webhook URL to use for sending the message.</param>
+    public async Task SendWebhookMessage(string message, string webhookUrl)
+    {
+        if (!string.IsNullOrEmpty(webhookUrl))
+        {
+            if (await GetWebhook(webhookUrl) is not { } webhookData)
+                return;
+            var payload = new WebhookPayload { Content = message };
+            var identifier = webhookData.ToIdentifier();
+            await CreateMessage(identifier, payload);
+        }
+    }
+    // Reserve edit end: Better webhook send
 
 }

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -29,22 +29,27 @@ using Robust.Shared.Timing;
 
 namespace Content.Goobstation.Server.NTR;
 
-public sealed class NtrTaskSystem : EntitySystem
+public sealed partial class NtrTaskSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
-    [Dependency] private readonly NameIdentifierSystem _nameIdentifier = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IPrototypeManager _prototypes = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    // [Dependency] private ISharedAdminLogManager _adminLogger = default!; // Reserve edit: Fix warnings
+    // [Dependency] private AccessReaderSystem _accessReader = default!; // Reserve edit: Fix warnings
+    [Dependency] private NameIdentifierSystem _nameIdentifier = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private TagSystem _tag = default!;
 
     private const string NameIdentifierGroup = "Task";
+
+    // Reserve start: update throttle
+    private const float UpdateInterval = 1f;
+    private float _updateTimer = UpdateInterval;
+    // Reserve end
 
     public override void Initialize()
     {
@@ -152,6 +157,16 @@ public sealed class NtrTaskSystem : EntitySystem
     #region Task Lifecycle
     public override void Update(float frameTime)
     {
+        // Reserve start: update throttle
+        base.Update(frameTime);
+
+        _updateTimer += frameTime;
+        if (_updateTimer < UpdateInterval)
+            return;
+
+        _updateTimer -= UpdateInterval;
+        // Reserve end
+
         var query = EntityQueryEnumerator<NtrTaskDatabaseComponent>();
         while (query.MoveNext(out var uid, out var db))
         {
@@ -243,13 +258,13 @@ public sealed class NtrTaskSystem : EntitySystem
     {
         taskId = null;
         return TryComp<NtrTaskDatabaseComponent>(uid, out var db)
-               && db.Tasks.FirstOrDefault(t => t.Task == taskProto.ID) is {} taskData
+               && db.Tasks.FirstOrDefault(t => t.Task == taskProto.ID) is { } taskData
                && (taskId = taskData.Id) != null;
     }
     #endregion
 
     #region Document Processing
-    private void OnItemInsertAttempt(EntityUid uid, NtrTaskConsoleComponent component, ItemSlotInsertAttemptEvent args)
+    private void OnItemInsertAttempt(EntityUid uid, NtrTaskConsoleComponent component, ref ItemSlotInsertAttemptEvent args)
     {
         args.Cancelled = true;
         var item = args.Item;
@@ -262,7 +277,9 @@ public sealed class NtrTaskSystem : EntitySystem
 
     private bool TryHandleVial(EntityUid item, EntityUid console, NtrTaskConsoleComponent component)
     {
-        if (!_tag.HasTag(item, "Vial") && !_tag.HasTag(item, "Bottle"))
+        var vialTag = "Vial";  // Reserve edit: Fix warnings
+        var bottleTag = "Bottle";  // Reserve edit: Fix warnings
+        if (!_tag.HasTag(item, vialTag) && !_tag.HasTag(item, bottleTag))  // Reserve edit: Fix warnings
             return false;
 
         var station = _station.GetOwningStation(console);
@@ -468,7 +485,8 @@ public sealed class NtrTaskSystem : EntitySystem
             return false;
         var stringId = id.ToString();
 
-        db.Tasks.Add(new NtrTaskData(task, stringId) {
+        db.Tasks.Add(new NtrTaskData(task, stringId)
+        {
             IsActive = true,
             ActiveTime = _timing.CurTime
         });
@@ -551,7 +569,7 @@ public sealed class NtrTaskSystem : EntitySystem
     #endregion
 }
 
-public sealed class TaskFailedEvent : EntityEventArgs
+public sealed partial class TaskFailedEvent : EntityEventArgs
 {
     public EntityUid User;
     public NtrTaskData Task;

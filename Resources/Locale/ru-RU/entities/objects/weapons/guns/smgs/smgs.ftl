@@ -1,6 +1,6 @@
 ent-BaseWeaponSubMachineGun = BaseSMG
     .desc = Дерзай — налетай, целься и стреляй.
-    .suffix = Пистолет-пулемёт
+    .suffix = Оружие, Пистолет-пулемёт
 ent-WeaponSubMachineGunAtreides = Атрейдес
     .desc = Пле-ке-ке-ке-ке! Использует патроны калибра .35 авто.
     .suffix = { ent-BaseWeaponSubMachineGun.suffix }

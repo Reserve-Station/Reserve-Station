@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Artizzi for Reserve Station",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "energy"
+    },
+    {
+      "name": "disabler"
+    },
+    {
+      "name": "fiery"
+    },
+    {
+      "name": "freeze"
+    },
+    {
+      "name": "explosive"
+    },
+    {
+      "name": "xray"
+    },
+    {
+      "name": "bee"
+    },
+    {
+      "name": "ion"
+    }
+  ]
+}

@@ -1,13 +1,18 @@
 ent-BasePartInorganic = часть тела
-    .desc = { ent-BaseItem.desc }
+    .desc = Неорганическая часть тела.
+    .suffix = Неорганическая
 ent-BaseChestInorganic = грудная клетка
-    .desc = { "" }
+    .desc = { ent-BasePartInorganic.desc }
+    .suffix = Неорганическая
 ent-BaseGroinInorganic = пах
-    .desc = { "" }
+    .desc = { ent-BasePartInorganic.desc }
+    .suffix = Неорганическая
 ent-BaseTorsoInorganic = торс
-    .desc = { "" }
+    .desc = { ent-BasePartInorganic.desc }
+    .suffix = Неорганическая
+
 ent-BasePart = часть тела
-    .desc = { ent-BaseItem.desc }
+    .desc = Похоже, это кому-то принадлежит.
 ent-BaseTorso = туловище
     .desc = { ent-BasePart.desc }
 ent-BaseHead = голова

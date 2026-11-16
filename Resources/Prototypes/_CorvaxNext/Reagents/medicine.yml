@@ -147,8 +147,8 @@
         key: ForcedSleep
         time: 10
         type: Remove
-      - !type:GenericStatusEffect
-        key: SeeingRainbows
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
         time: 10
         type: Remove
       - !type:GenericStatusEffect

@@ -1,2 +1,2 @@
 ent-MobObserverBlobController = наблюдатель блоба
-    .desc = { "" }
+    .desc = Он следит.

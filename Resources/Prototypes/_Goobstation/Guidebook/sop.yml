@@ -390,6 +390,8 @@
   id: ShaftMinerSOP
   name: guide-entry-sop-shaft-miner
   text: "/ServerInfo/_Goobstation/Guidebook/SoP/Jobs/Cargo/ShaftMinerSOP.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/SoP/Jobs/Cargo/ShaftMinerSOP.xml"
 
 # Command SOP Entries
 - type: guideEntry

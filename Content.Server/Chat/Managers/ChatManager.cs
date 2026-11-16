@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+// using Content.Server._Orion.ServerProtection.Chat; // Reserve edit
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Systems;
@@ -57,6 +58,7 @@ internal sealed partial class ChatManager : IChatManager
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly LinkAccountManager _linkAccount = default!; // RMC - Patreon
     [Dependency] private readonly DiscordWebhook _discord = default!; // Reserve edit
+    // [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // Orion // Reserve edit
     [Dependency] private readonly LenaApiManager _lenaApiManager = default!; // Reserve
 
     private ISawmill _sawmill = default!;
@@ -239,8 +241,16 @@ internal sealed partial class ChatManager : IChatManager
 
     public void SendHookAdmin(string sender, string message)
     {
+        // Reserve edit start: Protect admin chat bridge
+        // ADT-Tweak-start: Сортируем в список клиентов только тех кто имеет флаг Adminchat
+        var clients = _adminManager.ActiveAdmins
+            .Where(admin => _adminManager.GetAdminData(admin)?.Flags.HasFlag(AdminFlags.Adminchat) == true)
+            .Select(p => p.Channel);
+        // ADT-Tweak-end
+        // Reserve edit end: Protect admin chat bridge
         var wrappedMessage = Loc.GetString("chat-manager-send-hook-admin-wrap-message", ("senderName", sender), ("message", FormattedMessage.EscapeText(message)));
-        ChatMessageToAll(ChatChannel.AdminChat, message, wrappedMessage, source: EntityUid.Invalid, hideChat: false, recordReplay: false);
+        // ChatMessageToAll(ChatChannel.AdminChat, message, wrappedMessage, source: EntityUid.Invalid, hideChat: false, recordReplay: false); // Reserve edit: Protect admin chat bridge
+        ChatMessageToMany(ChatChannel.AdminChat, message, wrappedMessage, source: EntityUid.Invalid, hideChat: false, recordReplay: true, clients); // Reserve edit: Protect admin chat bridge
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Hook admin from {sender}: {message}");
     }
 
@@ -258,6 +268,13 @@ internal sealed partial class ChatManager : IChatManager
     {
         if (HandleRateLimit(player) != RateLimitStatus.Allowed)
             return;
+
+        /* Reserve edit
+        // Orion-Start
+        if (_chatProtection.CheckOOCMessage(message, player) == true)
+            return;
+        // Orion-End
+        */
 
         // Check if message exceeds the character limit
         if (message.Length > MaxMessageLength)
@@ -302,7 +319,9 @@ internal sealed partial class ChatManager : IChatManager
         }
 
         Color? colorOverride = null;
-        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message", ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+        var wrappedMessage = Loc.GetString("chat-manager-send-ooc-wrap-message",
+            ("playerName", player.Name),
+            ("message", FormattedMessage.EscapeText(message)));
         if (_adminManager.HasAdminFlag(player, AdminFlags.NameColor))
         {
             var prefs = _preferencesManager.GetPreferences(player.UserId);
@@ -310,20 +329,21 @@ internal sealed partial class ChatManager : IChatManager
         }
         // RMC - Heavily modified for patreon.
         if (_netConfigManager.GetClientCVar(player.Channel, CCVars.ShowOocPatronColor) &&
-            _linkAccount.GetPatron(player)?.Tier is { } tier)
+            _linkAccount.GetPatron(player)?.Tier != null) // Goob
         {
-            if (tier.Icon != null)
+            var patronColor = colorOverride?.ToHex() ?? "#aa00ff"; // Goob - admin ooc color overrides patron color
+            if (_linkAccount.GetOocIcon(player.UserId) is { } oocIcon) // Goob
             {
                 wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message",
-                    ("tierIcon", tier.Icon),
-                    ("patronColor", "#aa00ff"),
+                    ("tierIcon", oocIcon), // Goob
+                    ("patronColor", patronColor), // Goob
                     ("playerName", player.Name),
                     ("message", FormattedMessage.EscapeText(message)));
             }
             else
             {
                 wrappedMessage = Loc.GetString("chat-manager-send-ooc-patron-wrap-message-no-icon",
-                    ("patronColor", "#aa00ff"),
+                    ("patronColor", patronColor), // Goob
                     ("playerName", player.Name),
                     ("message", FormattedMessage.EscapeText(message)));
             }
@@ -360,28 +380,14 @@ internal sealed partial class ChatManager : IChatManager
         _mommiLink.SendOOCMessage(player.Name,
             message.Replace("@", "\\@")
                 .Replace("<", "\\<")
-                .Replace("/", "\\/"));
+                .Replace("/", "\\/")); // @ and < are both problematic for discord due to pinging. / is sanitized solely to kneecap links to murder embeds via blunt force
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"OOC from {player:Player}: {message}");
 
         // Reserve ooc-discord start
-        if (!string.IsNullOrEmpty(_configurationManager.GetCVar(CCVars.DiscordOOCChatWebhook)))
+        _ = Task.Run(async () =>
         {
-            var webhookUrl = _configurationManager.GetCVar(CCVars.DiscordOOCChatWebhook);
-            var playerName = player.Name;
-
-            _ = Task.Run(async () =>
-            {
-                if (await _discord.GetWebhook(webhookUrl) is not { } webhookData)
-                    return;
-
-                var payload = new WebhookPayload
-                {
-                    Content = $"`{playerName}`: {message}"
-                };
-
-                await _discord.CreateMessage(webhookData.ToIdentifier(), payload);
-            });
-        }
+            await _discord.SendWebhookMessage($"`{player.Name}`: {message}", _configurationManager.GetCVar(CCVars.DiscordOOCChatWebhook));
+        });
         // Reserve ooc-discord end
     }
 
@@ -389,14 +395,22 @@ internal sealed partial class ChatManager : IChatManager
     {
         if (!_adminManager.IsAdmin(player))
         {
-            _adminLogger.Add(LogType.Chat, LogImpact.Extreme, $"{player:Player} attempted to send admin message but was not admin");
+            _adminLogger.Add(LogType.Chat,
+                LogImpact.Extreme,
+                $"{player:Player} attempted to send admin message but was not admin");
             return;
         }
 
-        var clients = _adminManager.ActiveAdmins.Select(p => p.Channel);
+        // var clients = _adminManager.ActiveAdmins.Select(p => p.Channel); // ADT-Comment
+        // ADT-Tweak-start: Сортируем в список клиентов только тех кто имеет флаг Adminchat
+        var clients = _adminManager.ActiveAdmins
+            .Where(admin => _adminManager.GetAdminData(admin)?.Flags.HasFlag(AdminFlags.Adminchat) == true)
+            .Select(p => p.Channel);
+        // ADT-Tweak-end
         var wrappedMessage = Loc.GetString("chat-manager-send-admin-chat-wrap-message",
-                                        ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
-                                        ("playerName", player.Name), ("message", FormattedMessage.EscapeText(message)));
+            ("adminChannelName", Loc.GetString("chat-manager-admin-channel-name")),
+            ("playerName", player.Name),
+            ("message", FormattedMessage.EscapeText(message)));
 
         foreach (var client in clients)
         {
@@ -412,14 +426,18 @@ internal sealed partial class ChatManager : IChatManager
                 author: player.UserId);
         }
 
-        _discordLink.SendMessage(message, player.Name, ChatChannel.AdminChat);
+        var adminTitle = _adminManager.GetAdminData(player)?.Title ?? "Admin";  // Reserve edit: Use bot instead of webhook
+        _discordLink.SendMessage(message, $"[{adminTitle}] {player.Name}", ChatChannel.AdminChat);  // Reserve edit: Use bot instead of webhook
         _adminLogger.Add(LogType.Chat, $"Admin chat from {player:Player}: {message}");
 
-        if (!string.IsNullOrEmpty(_configurationManager.GetCVar(CCVars.DiscordAdminchatWebhook)))
+        if (  // Reserve edit: Use bot instead of webhook for admin chat when bot admin chat relay is configured
+            string.IsNullOrEmpty(_configurationManager.GetCVar(CCVars.AdminChatDiscordChannelId)) &&
+            !string.IsNullOrEmpty(_configurationManager.GetCVar(CCVars.DiscordAdminchatWebhook))
+        )
         {
             var webhookUrl = _configurationManager.GetCVar(CCVars.DiscordAdminchatWebhook);
             var playerName = player.Name;
-            var adminTitle = _adminManager.GetAdminData(player)?.Title ?? "Admin";
+            // var adminTitle = _adminManager.GetAdminData(player)?.Title ?? "Admin";  // Reserve edit: Use bot instead of webhook
 
             _ = Task.Run(async () =>
             {

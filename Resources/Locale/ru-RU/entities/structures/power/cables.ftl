@@ -1,5 +1,5 @@
-ent-CableBase = { "" }
-    .desc = { "" }
+ent-CableBase = кабель
+    .desc = Базовый кабель.
 ent-CableHV = ВВ кабель
     .desc = Оранжевый высоковольтный кабель.
 ent-CableHVUncuttable = { ent-CableHV }

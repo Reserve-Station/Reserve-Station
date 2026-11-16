@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Heretic;
 using Content.Shared.Mobs;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Content.Shared._Shitmed.Damage;
 using Content.Shared._Shitmed.Targeting;
-using Content.Shared.Atmos.Components;
+// using Content.Shared.Atmos.Components; // Reserve edit: Fix warnings
 
 namespace Content.Server.Heretic.Abilities;
 
@@ -59,13 +59,13 @@ public sealed partial class HereticAbilitySystem
                 !TryComp<MobStateComponent>(look, out var mobstate) || mobstate.CurrentState == MobState.Dead)
                 continue;
 
-            if (mobstate.CurrentState == MobState.Critical)
+            if (mobstate.CurrentState is MobState.SoftCritical or MobState.HardCritical) // Reserve edit: Soft Crit port
                 _mobstate.ChangeMobState(look, MobState.Dead, mobstate);
 
             toHeal += args.HealAmount;
 
             _flammable.AdjustFireStacks(look, args.FireStacks, flam, true, args.FireProtectionPenetration);
-            _dmg.TryChangeDamage(look,
+            _dmg.TryChangeDamage(look.Owner,
                 args.Damage * _body.GetVitalBodyPartRatio(look),
                 true,
                 targetPart: TargetBodyPart.All,
@@ -98,7 +98,7 @@ public sealed partial class HereticAbilitySystem
 
     #region Helper methods
 
-    [ValidatePrototypeId<EntityPrototype>] private static readonly EntProtoId FirePrototype = "HereticFireAA";
+    private static readonly EntProtoId FirePrototype = "HereticFireAA";
 
     public async Task CombustArea(EntityUid ent, int range = 1, bool hollow = true)
     {

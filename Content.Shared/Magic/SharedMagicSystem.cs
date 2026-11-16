@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using System.Numerics;
@@ -58,6 +58,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Spawners;
 using Robust.Shared.Timing;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Shared.Magic;
 
@@ -68,7 +69,6 @@ public abstract class SharedMagicSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!; // Goobstation
     [Dependency] private readonly ISerializationManager _seriMan = default!;
-    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedGunSystem _gunSystem = default!;
@@ -88,11 +88,11 @@ public abstract class SharedMagicSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!; // Goobstation
+    // [Dependency] private readonly DamageableSystem _damageable = default!; // Goobstation // Reserve edit: Fix warnings
     [Dependency] private readonly NpcFactionSystem _faction = default!; // Goobstation
     [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly SharedChargesSystem _charges = default!;
-    [Dependency] private readonly ExamineSystemShared _examine= default!;
+    // [Dependency] private readonly ExamineSystemShared _examine= default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {
@@ -426,7 +426,7 @@ public abstract class SharedMagicSystem : EntitySystem
         // If applicable, this ensures the projectile is parented to grid on spawn, instead of the map.
         var fromMap = _transform.ToMapCoordinates(fromCoords);
 
-        var spawnCoords = _mapManager.TryFindGridAt(fromMap, out var gridUid, out _)
+        var spawnCoords = _mapSystem.TryFindGridAt(fromMap, out var gridUid, out _)
             ? _transform.WithEntityId(fromCoords, gridUid)
             : new(_mapSystem.GetMap(fromMap.MapId), fromMap.Position);
         var userVelocity = _physics.GetMapLinearVelocity(spawnCoords); // Goob edit
@@ -505,7 +505,7 @@ public abstract class SharedMagicSystem : EntitySystem
         if (!_net.IsServer)
             return;
 
-        var ent = Spawn(proto, position.SnapToGrid(EntityManager, _mapManager));
+        var ent = Spawn(proto, position.SnapToGrid(EntityManager));
 
         if (lifetime != null)
         {
@@ -527,10 +527,10 @@ public abstract class SharedMagicSystem : EntitySystem
             if (HasComp(target, data.Component.GetType()))
                 continue;
 
-            var component = (Component)Factory.GetComponent(name);
-            var temp = (object)component;
+            var component = (Component) Factory.GetComponent(name);
+            var temp = (object) component;
             _seriMan.CopyTo(data.Component, ref temp);
-            AddComp(target, (Component)temp!);
+            AddComp(target, (Component) temp!);
         }
     }
 
@@ -661,7 +661,8 @@ public abstract class SharedMagicSystem : EntitySystem
 
             var ent = human.Comp.OwnedEntity.Value;
 
-            if (_tag.HasTag(ent, "InvalidForGlobalSpawnSpell"))
+            var invalidForGlobalSpawnSpellTag = "InvalidForGlobalSpawnSpell";  // Reserve edit: Fix warnings
+            if (_tag.HasTag(ent, invalidForGlobalSpawnSpellTag))  // Reserve edit: Fix warnings
                 continue;
 
             var mapCoords = _transform.GetMapCoordinates(ent);

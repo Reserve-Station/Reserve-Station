@@ -1,2 +1,2 @@
-ent-TetherEntity = { "" }
-    .desc = { "" }
+ent-TetherEntity = шар силовой пушки
+    .desc = Можно считать это её снарядом?

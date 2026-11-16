@@ -9,12 +9,12 @@ ghost-role-information-rogue-ascended-rules = Вы [color=red][bold]Команд
 petting-success-rogue-ascended = Уворачиваясь от хлещущих щупалец и волн астральной энергии, вы каким-то образом ласкаете { THE($TARGET) }.
 petting-failure-rogue-ascended = Форма волны пространства-времени изгибается вокруг вашей руки, и в конечном итоге вы поглаживаете себя.
 rogue-ascended-dendrite-eaten = Зловещий свет вспыхивает к жизни!
-rogue-ascended-infection-fail = Вам нужно ослабить эту цель, чтобы испортить ее!
+rogue-ascended-infection-fail = Вам нужно ослабить эту цель, чтобы испортить её!
 rogue-ascended-infection-alreadyinfected = { CAPITALIZE(THE($target)) } уже испорчен!
 rogue-ascended-infection-error = Вы не можете сделать это сейчас.
 rogue-ascended-infection-notification = { CAPITALIZE(THE($user)) } протягивает свои щупальца к { CAPITALIZE(THE($target)) }!
 rogue-ascended-infection-briefing =
-    Пагубная энергия проникает в вашу психику. Вы были заражены астрально вознесенным!
+    Пагубная энергия проникает в вашу психику. Вы были заражены астрально вознесённым!
     Вы должны действовать в соответствии со своим настроением в меру своих возможностей, независимо от того, являетесь ли вы антагонистом или нет.
 rogue-ascended-shatter-fail = Вы не можете сделать это сейчас.
 rogue-ascended-round-end-agent-name = астральный асцендент

@@ -2,72 +2,72 @@
 
 - type: selectableAmmo
   id: ArrowEnergy
-  desc: Regular hardlight arrow. Deals more damage than other types.
+  desc: selectable-ammo-hardlight-arrow-energy-desc # Reserve edit: Hardlight arrows
   icon:
-    sprite: _Goobstation/Objects/Weapons/Guns/Bow/arrow.rsi
-    state: arrow
+    sprite: _Reserve/Objects/Weapons/Guns/Bow/hardlight_arrows.rsi # Reserve edit: Hardlight arrows
+    state: energy # Reserve edit: Hardlight arrows
   color: "#FFB200"
   protoId: ArrowEnergy
 
 - type: selectableAmmo
   id: ArrowDisabler
-  desc: Disabler hardlight arrow. Deals no damage. Stuns in three hits.
+  desc: selectable-ammo-hardlight-arrow-disabler-desc # Reserve edit: Hardlight arrows
   icon:
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-    state: omnilaser
+    sprite: _Reserve/Objects/Weapons/Guns/Bow/hardlight_arrows.rsi # Reserve edit: Hardlight arrows
+    state: disabler # Reserve edit: Hardlight arrows
   color: "#00B2FF"
   protoId: ArrowDisabler
 
 - type: selectableAmmo
   id: ArrowFiery
-  desc: Fiery hardlight arrow. Deals less damage. Ignites the victim.
+  desc: selectable-ammo-hardlight-arrow-fiery-desc # Reserve edit: Hardlight arrows
   icon:
-    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
-    state: fireball
+    sprite: _Reserve/Objects/Weapons/Guns/Bow/hardlight_arrows.rsi # Reserve edit: Hardlight arrows
+    state: fiery # Reserve edit: Hardlight arrows
   color: red
   protoId: ArrowFiery
 
 - type: selectableAmmo
   id: ArrowFreeze
-  desc: Freezing hardlight arrow. Deals less damage. Freezes the victim.
+  desc: selectable-ammo-hardlight-arrow-freeze-desc # Reserve edit: Hardlight arrows
   icon:
-    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
-    state: ice
+    sprite: _Reserve/Objects/Weapons/Guns/Bow/hardlight_arrows.rsi # Reserve edit: Hardlight arrows
+    state: freeze # Reserve edit: Hardlight arrows
   color: blue
   protoId: ArrowFreeze
 
 - type: selectableAmmo
   id: ArrowExplosive
-  desc: Explosive hardlight arrow. Creates weak explosion on hit.
+  desc: selectable-ammo-hardlight-arrow-explosive-desc # Reserve edit: Hardlight arrows
   icon:
-    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
-    state: frag
+    sprite: _Reserve/Objects/Weapons/Guns/Bow/hardlight_arrows.rsi # Reserve edit: Hardlight arrows
+    state: explosive # Reserve edit: Hardlight arrows
   color: "#7300FF"
   protoId: ArrowExplosive
 
 - type: selectableAmmo
   id: ArrowXray
-  desc: X-ray hardlight arrow. Deals less damage. Pierces through anything.
+  desc: selectable-ammo-hardlight-arrow-xray-desc # Reserve edit: Hardlight arrows
   icon:
-    sprite: Objects/Weapons/Guns/Battery/xray.rsi
-    state: icon
+    sprite: _Reserve/Objects/Weapons/Guns/Bow/hardlight_arrows.rsi # Reserve edit: Hardlight arrows
+    state: xray # Reserve edit: Hardlight arrows
   color: "#1AE51A"
   protoId: ArrowXray
 
 - type: selectableAmmo
   id: ArrowBee
-  desc: Bee hardlight arrow. Summons angry bees when it hits any living entity, except bees themselves.
+  desc: selectable-ammo-hardlight-arrow-bee-desc # Reserve edit: Hardlight arrows
   icon:
-    sprite: _Goobstation/Objects/Weapons/Grenades/beenades.rsi
-    state: icon
+    sprite: _Reserve/Objects/Weapons/Guns/Bow/hardlight_arrows.rsi # Reserve edit: Hardlight arrows
+    state: bee # Reserve edit: Hardlight arrows
   color: yellow
   protoId: ArrowBee
 
 - type: selectableAmmo
   id: ArrowIon
-  desc: Ion hardlight arrow. Deals massive damage to silicons as well as causing small EMP in the area.
+  desc: selectable-ammo-hardlight-arrow-ion-desc # Reserve edit: Hardlight arrows
   icon:
-    sprite: Objects/Magic/magicactions.rsi
-    state: shield
+    sprite: _Reserve/Objects/Weapons/Guns/Bow/hardlight_arrows.rsi # Reserve edit: Hardlight arrows
+    state: ion # Reserve edit: Hardlight arrows
   color: silver
   protoId: ArrowIon

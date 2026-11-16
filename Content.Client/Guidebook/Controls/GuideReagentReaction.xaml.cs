@@ -39,7 +39,7 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
         Container reactantsContainer = ReactantsContainer;
         SetReagents(prototype.Reactants, ref reactantsContainer, protoMan);
         Container productsContainer = ProductsContainer;
-        var products = new Dictionary<string, FixedPoint2>(prototype.Products);
+        var products = new Dictionary<string, FixedPoint2>(prototype.Products.ToDictionary(p => p.Key.Id, p => p.Value));
         foreach (var (reagent, reactantProto) in prototype.Reactants)
         {
             if (reactantProto.Catalyst)
@@ -176,7 +176,7 @@ public sealed partial class GuideReagentReaction : BoxContainer, ISearchableCont
     }
 
     private void SetReagents(
-        Dictionary<string, ReactantPrototype> reactants,
+        Dictionary<ProtoId<ReagentPrototype>, ReactantPrototype> reactants,
         ref Container container,
         IPrototypeManager protoMan,
         bool addLinks = true)

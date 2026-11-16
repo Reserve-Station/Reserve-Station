@@ -17,8 +17,10 @@ public enum MobState : byte
 {
     Invalid = 0,
     Alive = 1,
-    Critical = 2,
-    Dead = 3
+    SoftCritical = 2, // Reserve edit: Soft Crit port
+    Critical = SoftCritical, // Reserve edit: Soft Crit port
+    HardCritical = 3, // Reserve edit: Soft Crit port
+    Dead = 4, // Reserve edit: Soft Crit port
 }
 
 /// <summary>

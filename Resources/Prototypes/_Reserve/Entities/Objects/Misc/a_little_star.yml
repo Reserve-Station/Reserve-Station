@@ -1,0 +1,173 @@
+# SPDX-FileCopyrightText: Made by Ceterai on GitHub.
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Title: A Little Star
+
+# A small album of mine that now lives digitally in form of CD disks and vinyls.
+#
+# Includes:
+#
+# - 3 CD disks featuring each song of the album.
+# - 3 vinyl records featuring each song of the album.
+# - 3 jukebox entries featuring each song of the album.
+# - a CD disk case featuring the full album.
+# - a vinyl sleeve featuring the full album.
+#
+# Disclaimer:
+#
+# - This is a personal item, so all dependent prototypes are not meant to be mapped (with exceptions).
+
+
+
+
+
+# region PROTOTYPES
+
+
+
+
+
+# region CD disks
+
+- type: entity
+  parent: BaseCdDisk
+  id: CdDiskALittleStar1OrchidsTears
+  components:
+  - type: Sprite
+    color: "#20f080"
+  - type: Vinyl
+    song:
+      path: /Audio/_Reserve/Jukebox/A Little Star - Orchid's Tears.ogg
+
+- type: entity
+  parent: BaseCdDisk
+  id: CdDiskALittleStar2Mira
+  components:
+  - type: Sprite
+    color: "#2080f0"
+  - type: Vinyl
+    song:
+      path: /Audio/_Reserve/Jukebox/A Little Star - Mira.ogg
+
+- type: entity
+  parent: BaseCdDisk
+  id: CdDiskALittleStar3Verest
+  components:
+  - type: Sprite
+    color: "#8020f0"
+  - type: Vinyl
+    song:
+      path: /Audio/_Reserve/Jukebox/A Little Star - Verest.ogg
+
+- type: entity
+  parent: DiskCase
+  id: DiskCaseALittleStar
+  components:
+  - type: Sprite
+    color: "#f02080"
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CdDiskALittleStar1OrchidsTears
+        - id: CdDiskALittleStar2Mira
+        - id: CdDiskALittleStar3Verest
+  - type: Storage
+    grid:
+    - 0,0,0,2
+
+# endregion CD disks
+
+# region Vinyl records
+
+- type: entity
+  parent: BaseVinylDisk
+  id: VinylDiskALittleStar1OrchidsTears
+  components:
+  - type: Sprite
+    state: green-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Reserve/Jukebox/A Little Star - Orchid's Tears.ogg
+
+- type: entity
+  parent: BaseVinylDisk
+  id: VinylDiskALittleStar2Mira
+  components:
+  - type: Sprite
+    state: blue-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Reserve/Jukebox/A Little Star - Mira.ogg
+
+- type: entity
+  parent: BaseVinylDisk
+  id: VinylDiskALittleStar3Verest
+  components:
+  - type: Sprite
+    state: purple-vinyl-disk
+  - type: Vinyl
+    song:
+      path: /Audio/_Reserve/Jukebox/A Little Star - Verest.ogg
+
+- type: entity
+  parent: VinylSleeveWhite
+  id: VinylSleeveALittleStar
+  components:
+  - type: Sprite
+    color: "#f02080"
+  - type: EntityTableContainerFill
+    containers:
+      vinyl1: !type:AllSelector
+        children:
+        - id: VinylDiskALittleStar1OrchidsTears
+      vinyl2: !type:AllSelector
+        children:
+        - id: VinylDiskALittleStar2Mira
+      vinyl3: !type:AllSelector
+        children:
+        - id: VinylDiskALittleStar3Verest
+  - type: ContainerContainer
+    containers:
+      vinyl1: &vinylContainer !type:ContainerSlot
+        showEnts: false
+        occludes: true
+        ent: null
+      vinyl2: *vinylContainer
+      vinyl3: *vinylContainer
+  - type: ItemSlots
+    slots:
+      vinyl1: &vinylSlot
+        name: vinyl
+        insertSound: /Audio/_Goobstation/RadioStation/vinyl/vinylEject.ogg
+        ejectSound: /Audio/_Goobstation/RadioStation/vinyl/vinylInsert.ogg
+        whitelist:
+          tags:
+          - VinylSleeveFit
+      vinyl2: *vinylSlot
+      vinyl3: *vinylSlot
+
+# endregion Vinyl records
+
+# region Jukebox
+
+- type: jukebox
+  id: ceterai_a_little_star_1_orchids_tears
+  name: "Ceterai - A Little Star: Orchid's Tears"
+  path:
+    path: /Audio/_Reserve/Jukebox/A Little Star - Orchid's Tears.ogg
+
+- type: jukebox
+  id: ceterai_a_little_star_2_mira
+  name: "Ceterai - A Little Star: Mira"
+  path:
+    path: /Audio/_Reserve/Jukebox/A Little Star - Mira.ogg
+
+- type: jukebox
+  id: ceterai_a_little_star_3_verest
+  name: "Ceterai - A Little Star: Verest"
+  path:
+    path: /Audio/_Reserve/Jukebox/A Little Star - Verest.ogg
+
+# endregion Jukebox

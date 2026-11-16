@@ -15,6 +15,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Goobstation.Common.AlmanacBlade; // Goobstation
 using Content.Goobstation.Common.NTR.Scan;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
@@ -154,6 +155,9 @@ public sealed partial class BotanySystem : EntitySystem
     {
         var totalYield = CalculateTotalYield(proto.Yield, yieldMod);
         var products = new List<EntityUid>();
+
+        var harvestedEv = new PlantHarvestedEvent(); // Goobstation
+        RaiseLocalEvent(ref harvestedEv); // Goobstation
 
         if (totalYield > 1 || proto.HarvestRepeat != HarvestType.NoRepeat)
             proto.Unique = false;

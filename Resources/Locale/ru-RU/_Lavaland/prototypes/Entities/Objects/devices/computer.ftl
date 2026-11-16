@@ -1,2 +1,2 @@
-ent-LavalandShuttleConsoleCircuitboard = консольная плата шахтёрского шаттла
-    .desc = Печатная плата для консоли шахтерского шаттла.
+ent-LavalandShuttleConsoleCircuitboard = консоль шахтёрского шаттла (консольная плата)
+    .desc = Печатная плата для консоли шахтёрского шаттла.

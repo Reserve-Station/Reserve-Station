@@ -134,6 +134,7 @@ loadout-group-mime-envirohelm = Мим, экошлем
 loadout-group-mime-envirosuit = Мим, экокостюм
 loadout-group-mime-envirogloves = Мим, экоперчатки
 loadout-group-mime-gloves = Мим, перчатки
+loadout-group-mime-shoes = Мим, обувь
 # Assistant
 loadout-group-assistant-envirohelm = Пассажир, экошлем
 loadout-group-assistant-envirosuit = Пассажир, экокостюм
@@ -161,7 +162,7 @@ loadout-group-ntr-gloves = Представитель NanoTrasen, перчатк
 loadout-group-ntr-head = Представитель NanoTrasen, головной убор
 loadout-group-ntr-backpack = Представитель NanoTrasen, рюкзак
 loadout-group-ntr-neck = Представитель NanoTrasen, плащ
-loadout-group-ntr-jumpsuit = Представитель NanoTrasen,
+loadout-group-ntr-jumpsuit = Представитель NanoTrasen, комбинезон
 loadout-group-ntr-belt = Представитель NanoTrasen, пояс
 loadout-group-ntr-shoes = Представитель NanoTrasen, обувь
 # NanoTrasen Career Trainer
@@ -226,8 +227,10 @@ loadout-group-zookeeper-head = Зоотехник, головной убор
 # Boxer
 loadout-group-boxer-envirohelm = Боксёр, экошлем
 loadout-group-boxer-envirosuit = Боксёр, экокостюм
+loadout-group-boxer-helmet = Боксёр, шлем
 # Misc
 loadout-group-plasma-tank = Баллон плазмы
 loadout-group-animals = Животные
 loadout-group-security-neck = СБ, плащ
 loadout-group-security-melee = Оружие ближнего боя
+loadout-group-security-gloves = СБ, перчатки

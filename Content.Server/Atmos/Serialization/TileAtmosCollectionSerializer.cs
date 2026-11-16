@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Globalization;
+using System.Linq;
 using Content.Shared.Atmos;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Manager;
@@ -106,10 +107,83 @@ public sealed partial class TileAtmosCollectionSerializer : ITypeSerializer<Dict
         return tiles;
     }
 
+    // Reserve edit start
+    private sealed class GasMixtureComparer : IComparer<GasMixture>, IEqualityComparer<GasMixture>
+    {
+        public static readonly GasMixtureComparer Instance = new();
+
+        public int Compare(GasMixture? x, GasMixture? y)
+        {
+            if (ReferenceEquals(x, y)) return 0;
+            if (x == null) return -1;
+            if (y == null) return 1;
+
+            var cmp = x.Volume.CompareTo(y.Volume);
+            if (cmp != 0) return cmp;
+
+            cmp = x.Temperature.CompareTo(y.Temperature);
+            if (cmp != 0) return cmp;
+
+            cmp = x.Immutable.CompareTo(y.Immutable);
+            if (cmp != 0) return cmp;
+
+            // ReactionResults is intentionally ignored because it is not serialized.
+            for (var i = 0; i < Atmospherics.TotalNumberOfGases; i++)
+            {
+                cmp = x.GetMoles(i).CompareTo(y.GetMoles(i));
+                if (cmp != 0) return cmp;
+            }
+
+            return 0;
+        }
+
+        public bool Equals(GasMixture? x, GasMixture? y)
+        {
+            return Compare(x, y) == 0;
+        }
+
+        public int GetHashCode(GasMixture? obj)
+        {
+            if (obj == null)
+                return 0;
+
+            var hashCode = new HashCode();
+            // ReactionResults is intentionally ignored because it is not serialized.
+            for (var i = 0; i < Atmospherics.TotalNumberOfGases; i++)
+            {
+                hashCode.Add(obj.GetMoles(i));
+            }
+            hashCode.Add(obj.Temperature);
+            hashCode.Add(obj.Immutable);
+            hashCode.Add(obj.Volume);
+            return hashCode.ToHashCode();
+        }
+    }
+    // Reserve edit end
+
     public DataNode Write(ISerializationManager serializationManager, Dictionary<Vector2i, TileAtmosphere> value, IDependencyCollection dependencies,
         bool alwaysWrite = false, ISerializationContext? context = null)
     {
-        var uniqueMixes = new List<GasMixture>();
+        // Reserve edit start
+        var mixIndices = new Dictionary<GasMixture, int>(GasMixtureComparer.Instance);
+        var rawMixes = new List<GasMixture>();
+        foreach (var (_, tile) in value)
+        {
+            if (tile.Air == null) continue;
+
+            if (mixIndices.TryAdd(tile.Air, 0))
+            {
+                rawMixes.Add(tile.Air);
+            }
+        }
+
+        rawMixes.Sort(GasMixtureComparer.Instance);
+
+        for (var i = 0; i < rawMixes.Count; i++)
+        {
+            mixIndices[rawMixes[i]] = i;
+        }
+
         var tileChunks = new Dictionary<Vector2i, TileAtmosChunk>();
         var chunkSize = 4;
 
@@ -117,13 +191,7 @@ public sealed partial class TileAtmosCollectionSerializer : ITypeSerializer<Dict
         {
             if (tile.Air == null) continue;
 
-            var mixIndex = uniqueMixes.IndexOf(tile.Air);
-
-            if (mixIndex == -1)
-            {
-                mixIndex = uniqueMixes.Count;
-                uniqueMixes.Add(tile.Air);
-            }
+            var mixIndex = mixIndices[tile.Air];
 
             var chunkOrigin = SharedMapSystem.GetChunkIndices(gridIndices, chunkSize);
             var tileChunk = tileChunks.GetOrNew(chunkOrigin);
@@ -134,25 +202,38 @@ public sealed partial class TileAtmosCollectionSerializer : ITypeSerializer<Dict
             tileChunk.Data[mixIndex] = mixFlag;
         }
 
-        if (uniqueMixes.Count == 0)
-            uniqueMixes = null;
-        if (tileChunks.Count == 0)
-            tileChunks = null;
+        var uniqueMixes = rawMixes.Count == 0 ? null : rawMixes;
+
+        var dataNode = (MappingDataNode) serializationManager.WriteValue(new TileAtmosData
+        {
+            ChunkSize = chunkSize,
+            UniqueMixes = uniqueMixes,
+        }, alwaysWrite, context);
+
+        if (tileChunks.Count > 0)
+        {
+            var tilesNode = new MappingDataNode(tileChunks.Count);
+            foreach (var (chunkKey, chunk) in tileChunks.OrderBy(kv => kv.Key.Y).ThenBy(kv => kv.Key.X))
+            {
+                var chunkNode = new MappingDataNode(chunk.Data.Count);
+                foreach (var (mixKey, mixVal) in chunk.Data.OrderBy(kv => kv.Key))
+                {
+                    chunkNode.Add(mixKey.ToString(CultureInfo.InvariantCulture), mixVal.ToString(CultureInfo.InvariantCulture));
+                }
+                tilesNode.Add($"{chunkKey.X.ToString(CultureInfo.InvariantCulture)},{chunkKey.Y.ToString(CultureInfo.InvariantCulture)}", chunkNode);
+            }
+
+            dataNode["tiles"] = tilesNode;
+        }
 
         var map = new MappingDataNode
         {
             { "version", 2.ToString(CultureInfo.InvariantCulture) },
-            {
-                "data", serializationManager.WriteValue(new TileAtmosData
-                {
-                    ChunkSize = chunkSize,
-                    UniqueMixes = uniqueMixes,
-                    TilesUniqueMixes = tileChunks,
-                }, alwaysWrite, context)
-            }
+            { "data", dataNode }
         };
 
         return map;
+        // Reserve edit end
     }
 
     [DataDefinition]

@@ -26,6 +26,7 @@ ent-TableStone = каменный стол
     .desc = Буквально самая прочная вещь, которую вы когда-либо видели.
 ent-TableWeb = паутинный стол
     .desc = Очень гладкий и удивительно прочный.
+    .suffix = Хэллоуин
 ent-TableFancyBase = красивый стол
     .desc = Дорого и богато.
 ent-TableFancyBlue = { ent-TableFancyBase }

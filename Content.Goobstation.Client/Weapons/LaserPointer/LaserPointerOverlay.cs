@@ -27,7 +27,8 @@ public sealed class LaserPointerOverlay : Overlay
 
         _transform = entManager.System<TransformSystem>();
 
-        _unshadedShader = prototype.Index<ShaderPrototype>("unshaded").Instance();
+        var protoId = "unshaded";  // Reserve edit: Fix warnings
+        _unshadedShader = prototype.Index<ShaderPrototype>(protoId).Instance();  // Reserve edit: Fix warnings
     }
 
     protected override void Draw(in OverlayDrawArgs args)

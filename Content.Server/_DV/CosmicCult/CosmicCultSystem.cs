@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._DV.CosmicCult.EntitySystems;
 using Content.Server._DV.CosmicCult.Components;
@@ -38,8 +38,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Shared.Popups;
-using Content.Shared.Radio;
+// using Content.Shared.Popups; // Reserve edit: Fix warnings
+// using Content.Shared.Radio; // Reserve edit: Fix warnings
 using Content.Shared.IdentityManagement.Components;
 using Content.Shared.Radio.Components;
 

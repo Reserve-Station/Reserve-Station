@@ -1,6 +1,6 @@
 ent-PartFeroxi = часть тела ферокси
     .desc = { ent-PartHuman.desc }
-ent-ChestFeroxi = грудь ферокси
+ent-ChestFeroxi = грудная клетка ферокси
     .desc = { ent-BaseChest.desc }
 ent-GroinFeroxi = пах ферокси
     .desc = { ent-BaseGroin.desc }

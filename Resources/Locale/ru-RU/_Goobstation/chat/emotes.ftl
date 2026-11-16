@@ -19,6 +19,24 @@ chat-emote-name-yip = Лаять
 chat-emote-name-gulp = Глотать
 chat-emote-name-surprised = Выглядеть удивлённым
 chat-emote-name-bagawk = Кудахтать
+chat-emote-name-blink = Моргнуть
+chat-emote-name-scree = Скрии
+chat-emote-name-call = Позвать
+chat-emote-name-squawk = Сквокнуть
+chat-emote-name-quack = Крякнуть
+chat-emote-name-snort = Шмыгнуть
+chat-emote-name-squee = Скуиить
+chat-emote-name-stomp = Топнуть
+chat-emote-name-gekker = Геккнуть
+chat-emote-name-yap = Болтать
+chat-emote-name-gurgle = Булькнуть
+chat-emote-name-liss = Лисснуть
+chat-emote-name-lurr = Луррнуть
+chat-emote-name-snicker = Хихикнуть
+chat-emote-name-multichirp = Щебетать хором
+chat-emote-name-synth-laugh = Синтетически смеяться
+chat-emote-name-hum = Гудеть
+chat-emote-name-sniff = Понюхать
 
 # Message
 
@@ -39,6 +57,23 @@ chat-emote-msg-flex = напрягает свои мускулы.
 chat-emote-msg-yip = лает!
 chat-emote-msg-gulp = глотает.
 chat-emote-msg-surprised = выглядит удивлённым.
+chat-emote-msg-blink = моргает.
+chat-emote-msg-scree = скриит!
+chat-emote-msg-call = зовёт!
+chat-emote-msg-squawk = сквочет!
+chat-emote-msg-quack = крякает.
+chat-emote-msg-snort = шмыгает.
+chat-emote-msg-squee = скуиит!
+chat-emote-msg-stomp = топает {POSS-ADJ($entity)} ногой.
+chat-emote-msg-gekker = геккает!
+chat-emote-msg-yap = болтает!
+chat-emote-msg-gurgle = булькает.
+chat-emote-msg-liss = лиссит.
+chat-emote-msg-lurr = луррит.
+chat-emote-msg-snicker = хихикает.
+chat-emote-msg-multichirp = щебечет хором!
+chat-emote-msg-hum = гудит.
+chat-emote-msg-sniff = нюхает.
 
 # Misc
 

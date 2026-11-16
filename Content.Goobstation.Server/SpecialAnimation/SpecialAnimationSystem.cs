@@ -10,10 +10,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Goobstation.Server.SpecialAnimation;
 
-public sealed class SpecialAnimationSystem : SharedSpecialAnimationSystem
+public sealed partial class SpecialAnimationSystem : SharedSpecialAnimationSystem
 {
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly IEntityManager _entity = default!;  // Reserve edit: Fix special animation for cards
+    [Dependency] private IPrototypeManager _protoMan = default!;
+    [Dependency] private IEntityManager _entity = default!;  // Reserve edit: Fix special animation for cards
 
     // Reserve edit start: Fix special animation for cards
     public override void Initialize()

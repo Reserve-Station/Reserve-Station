@@ -9,11 +9,11 @@ using Robust.Shared.Network;
 
 namespace Content.Goobstation.Server.ServerCurrency
 {
-    public sealed class ServerCurrencyManager : ICommonCurrencyManager
+    public sealed partial class ServerCurrencyManager : ICommonCurrencyManager
     {
-        [Dependency] private readonly IServerDbManager _db = default!;
-        [Dependency] private readonly ITaskManager _task = default!;
-        [Dependency] private readonly IPlayerManager _player = default!;
+        [Dependency] private IServerDbManager _db = default!;
+        [Dependency] private ITaskManager _task = default!;
+        [Dependency] private IPlayerManager _player = default!;
         private readonly List<Task> _pendingSaveTasks = new();
 
         public event Action? ClientBalanceChange;
@@ -62,7 +62,22 @@ namespace Content.Goobstation.Server.ServerCurrency
         /// <inheritdoc/>
         public (int, int) TransferCurrency(NetUserId sourceUserId, NetUserId targetUserId, int amount)
         {
-            var newAccountValues = (ModifyBalance(sourceUserId, -amount), ModifyBalance(targetUserId, amount));
+            // Reserve edit start: Coin transfer ovehaul
+            var sourceBalance = ModifyBalance(sourceUserId, -amount);
+            int targetBalance;
+            try
+            {
+                targetBalance = ModifyBalance(targetUserId, amount);
+            }
+            catch
+            {
+                // Don't let coins vanish if crediting the receiver failed.
+                ModifyBalance(sourceUserId, amount);
+                throw;
+            }
+
+            var newAccountValues = (sourceBalance, targetBalance);
+            // Reserve edit end: Coin transfer ovehaul
             _sawmill.Info($"Transferring {amount} currency from {sourceUserId} to {targetUserId}. Current balances: {newAccountValues.Item1}, {newAccountValues.Item2}");
             return newAccountValues;
         }

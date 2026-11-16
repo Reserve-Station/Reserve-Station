@@ -1,10 +1,13 @@
 item-jump-into-pocket = ({ CAPITALIZE($target) }) прыгает в ваш карман!
 item-jump-into-hands = ({ CAPITALIZE($target) }) запрыгиваем вам в руки!
-revenant-animate-item-animate = { CAPITALIZE($target) } становится агрессивным!
+# Reserve edit - Animate reworked: items hover and throw themselves, several at once
+revenant-animate-item-animate = { CAPITALIZE($target) } поднимается в воздух!
+# Reserve edit
+revenant-animate-no-items = Рядом нет предметов, которые можно оживить.
 revenant-animate-item-inanimate = { CAPITALIZE($target) } падает, недвижимый.
 alerts-revenant-stasis-name = [color=red]Стазис[/color]
 alerts-revenant-stasis-desc = Вы находитесь в стазисе. Вашей призрачной форме нужно время, чтобы восстановиться.
-revenant-stasis-regenerating = [color=yellow]Энергия ревенанта все еще присутствует![/color]
+revenant-stasis-regenerating = [color=yellow]Энергия ревенанта все ещё присутствует![/color]
 revenant-exorcise-fail = { CAPITALIZE($bible) } не возымела эффекта!
 revenant-exorcise-begin-user = Вы начинаете изгонять { $revenant } с помощью { $bible }...
 revenant-exorcise-begin-other = { CAPITALIZE($user) } начинает изгонять { $revenant } с помощью { $bible }...

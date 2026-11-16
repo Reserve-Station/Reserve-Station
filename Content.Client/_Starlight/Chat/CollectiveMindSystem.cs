@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Chat.Managers;
 using Content.Shared._Starlight.CollectiveMind;
@@ -10,7 +10,7 @@ namespace Content.Client.Chat
     {
         [Dependency] private readonly IChatManager _chatManager = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
-        [Dependency] private readonly CollectiveMindUpdateSystem _collectiveSystem = default!;
+        // [Dependency] private readonly CollectiveMindUpdateSystem _collectiveSystem = default!; // Reserve edit: Fix warnings
 
         public override void Initialize()
         {

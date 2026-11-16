@@ -4,3 +4,12 @@
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Slasher.xml"
   localizedText:
     ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Slasher.xml"
+  children:
+  - SlasherBoogeyman
+
+- type: guideEntry
+  id: SlasherBoogeyman
+  name: guide-entry-slasher-boogeyman # Reserve edit: localization-fix
+  text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Slasher_Boogeyman.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Slasher_Boogeyman.xml"

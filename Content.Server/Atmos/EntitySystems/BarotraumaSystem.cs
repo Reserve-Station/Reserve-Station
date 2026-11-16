@@ -8,7 +8,8 @@ using Content.Server.Atmos.Components;
 using Content.Shared._Goobstation.Wizard.Spellblade;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Inventory;
@@ -284,7 +285,7 @@ namespace Content.Server.Atmos.EntitySystems
                     RaiseLocalEvent(uid, ref resistEv);
 
                     if (resistEv.Cancelled)
-                        return;
+                        continue; // Reserve edit: Barotrauma fix - was return, which skipped everyone else
                     // goob end
 
                     // Deal damage and ignore resistances. Resistance to pressure damage should be done via pressure protection gear.
@@ -306,7 +307,7 @@ namespace Content.Server.Atmos.EntitySystems
                     RaiseLocalEvent(uid, ref resistEv);
 
                     if (resistEv.Cancelled)
-                        return;
+                        continue; // Reserve edit: Barotrauma fix - was return, which skipped everyone else
                     // goob end
 
                     var damageScale = MathF.Min(((pressure / Atmospherics.HazardHighPressure) - 1) * Atmospherics.PressureDamageCoefficient, Atmospherics.MaxHighPressureDamage);

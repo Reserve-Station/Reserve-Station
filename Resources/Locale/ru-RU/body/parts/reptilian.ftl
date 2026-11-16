@@ -1,9 +1,9 @@
 ent-PartReptilian = часть тела унатха
     .desc = { ent-BaseItem.desc }
 ent-ChestReptilian = грудная клетка унатха
-    .desc = { ent-PartReptilianBase.desc }
+    .desc = { ent-PartReptilian.desc }
 ent-GroinReptilian = пах унатха
-    .desc = { ent-PartReptilianBase.desc }
+    .desc = { ent-PartReptilian.desc }
 ent-HeadReptilian = голова унатха
     .desc = { ent-PartReptilian.desc }
 ent-LeftArmReptilian = левая рука унатха

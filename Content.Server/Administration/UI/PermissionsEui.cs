@@ -2,6 +2,8 @@
 
 using System.Linq;
 using System.Threading.Tasks;
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration.Managers;
 using Content.Server.Database;
 using Content.Server.EUI;
@@ -21,6 +23,7 @@ namespace Content.Server.Administration.UI
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         private readonly ISawmill _sawmill;
         private bool _isLoading;
@@ -154,6 +157,7 @@ namespace Content.Server.Administration.UI
             }
 
             await _db.RemoveAdminRankAsync(rr.Id);
+            _adminGuard.AdminRankRemoved(RankData(rank), DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
 
             _adminManager.ReloadAdminsWithRank(rr.Id);
         }
@@ -178,6 +182,7 @@ namespace Content.Server.Administration.UI
                 return;
             }
 
+            var oldRank = RankData(rank); // Reserve edit: Reserve Red - AdminGuard
             rank.Flags = GenRankFlagList(ur.Flags);
             rank.Name = ur.Name;
 
@@ -185,6 +190,7 @@ namespace Content.Server.Administration.UI
 
             var flagText = string.Join(' ', AdminFlagsHelper.FlagsToNames(ur.Flags).Select(f => $"+{f}"));
             _sawmill.Info($"{Player} updated admin rank {rank.Name}/{flagText}.");
+            _adminGuard.AdminRankUpdated(oldRank, new AdminRankData(ur.Name, ur.Flags), DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
 
             _adminManager.ReloadAdminsWithRank(ur.Id);
         }
@@ -207,6 +213,7 @@ namespace Content.Server.Administration.UI
 
             var flagText = string.Join(' ', AdminFlagsHelper.FlagsToNames(ar.Flags).Select(f => $"+{f}"));
             _sawmill.Info($"{Player} added admin rank {rank.Name}/{flagText}.");
+            _adminGuard.AdminRankAdded(new AdminRankData(ar.Name, ar.Flags), DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
         }
 
         private async Task HandleRemoveAdmin(RemoveAdmin ra)
@@ -228,6 +235,7 @@ namespace Content.Server.Administration.UI
 
             var record = await _db.GetPlayerRecordByUserId(ra.UserId);
             _sawmill.Info($"{Player} removed admin {record?.LastSeenUserName ?? ra.UserId.ToString()}");
+            _adminGuard.AdminPermsRemoved(ra.UserId, DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
 
             if (_playerManager.TryGetSessionById(ra.UserId, out var player))
             {
@@ -255,6 +263,7 @@ namespace Content.Server.Administration.UI
                 return;
             }
 
+            var oldPerms = PermsData(admin); // Reserve edit: Reserve Red - AdminGuard
             admin.Title = ua.Title;
             admin.AdminRankId = ua.RankId;
             admin.Flags = GenAdminFlagList(ua.PosFlags, ua.NegFlags);
@@ -274,6 +283,7 @@ namespace Content.Server.Administration.UI
             var flags = AdminFlagsHelper.PosNegFlagsText(ua.PosFlags, ua.NegFlags);
 
             _sawmill.Info($"{Player} updated admin {name} to {title}/{rankName}/{flags}");
+            _adminGuard.AdminPermsUpdated(ua.UserId, oldPerms, new AdminPermsData(ua.Title, rankName, ua.PosFlags, ua.NegFlags, ua.Suspended), DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
 
             if (_playerManager.TryGetSessionById(ua.UserId, out var player))
             {
@@ -332,6 +342,7 @@ namespace Content.Server.Administration.UI
                 return;
             }
 
+            var guardRank = rankName; // Reserve edit: Reserve Red - AdminGuard
             rankName ??= "<no rank>";
 
             var admin = new Admin
@@ -349,6 +360,7 @@ namespace Content.Server.Administration.UI
             var flags = AdminFlagsHelper.PosNegFlagsText(ca.PosFlags, ca.NegFlags);
 
             _sawmill.Info($"{Player} added admin {name} as {title}/{rankName}/{flags}");
+            _adminGuard.AdminPermsAdded(userId, new AdminPermsData(ca.Title, guardRank, ca.PosFlags, ca.NegFlags, ca.Suspended), DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
 
             if (_playerManager.TryGetSessionById(userId, out var player))
             {
@@ -449,6 +461,22 @@ namespace Content.Server.Administration.UI
             return UserAdminFlagCheck(totalFlags);
         }
 
+        // Reserve edit start: Reserve Red - AdminGuard
+        private static AdminRankData RankData(DbAdminRank rank)
+        {
+            return new AdminRankData(rank.Name, AdminFlagsHelper.NamesToFlags(rank.Flags.Select(f => f.Flag)));
+        }
+
+        private static AdminPermsData PermsData(Admin admin)
+        {
+            return new AdminPermsData(
+                admin.Title,
+                admin.AdminRank?.Name,
+                AdminFlagsHelper.NamesToFlags(admin.Flags.Where(f => !f.Negative).Select(f => f.Flag)),
+                AdminFlagsHelper.NamesToFlags(admin.Flags.Where(f => f.Negative).Select(f => f.Flag)),
+                admin.Suspended);
+        }
+        // Reserve edit end: Reserve Red - AdminGuard
         private bool CanTouchRank(DbAdminRank rank)
         {
             var rankFlags = AdminFlagsHelper.NamesToFlags(rank.Flags.Select(f => f.Flag));

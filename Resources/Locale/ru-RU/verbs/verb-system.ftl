@@ -7,6 +7,7 @@ verb-self-target-pronoun = Вы
 
 verb-categories-admin = Админ
 verb-categories-debug = Дебаг
+verb-categories-patron-actions = Меценат-действия
 verb-categories-examine = Осмотреть
 verb-categories-eject = Извлечь
 verb-categories-insert = Вставить

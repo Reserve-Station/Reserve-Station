@@ -40,7 +40,7 @@ ui-options-event-music = Музыка событий
 ui-options-admin-sounds = Музыка админов
 ui-options-bwoink-sound = Звук оповещения админ-помощи
 # Goobstation - Highlight Volume
-ui-options-highlight-volume = Chat Highlight Ping Volume:
+ui-options-highlight-volume = Цвет подсветки имён в IC чате:
 
 ## Graphics menu
 
@@ -56,7 +56,7 @@ ui-options-highlights-color-example = Это выделенный текст!
 ui-options-show-held-item = Показать удерживаемый элемент рядом с курсором
 ui-options-show-combat-mode-indicators = Показать индикатор боевого режима рядом с курсором
 ui-options-opaque-storage-window = Непрозрачность окна хранилища
-ui-options-show-ooc-patron-color = Цветной ник в OOC для патронов с Patreon
+ui-options-show-ooc-patron-color = Иконка и цветной ник в OOC для меценатов
 ui-options-show-looc-on-head = Показывать LOOC-чат над головами персонажей
 ui-options-fancy-speech = Показывать имена в облачках с текстом
 ui-options-fancy-name-background = Добавить фон облачкам с текстом

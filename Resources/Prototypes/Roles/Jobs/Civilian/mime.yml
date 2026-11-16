@@ -20,7 +20,7 @@
   - !type:AddComponentSpecial
     components:
     - type: MimePowers
-      preventWriting: true
+      preventWriting: false  # Reserve edit: Mimes can write again
     - type: FrenchAccent
 
 - type: startingGear

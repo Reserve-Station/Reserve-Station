@@ -22,8 +22,10 @@ public sealed class DeathgaspSystem: EntitySystem
     {
         // don't deathgasp if they arent going straight from crit to dead
         if (component.NeedsCritical // Goobstation
-            && args.OldMobState != MobState.Critical
-            || args.NewMobState != MobState.Dead)
+            // Reserve edit start: Soft Crit port
+            && (args.OldMobState is not MobState.SoftCritical and not MobState.HardCritical
+                || args.NewMobState != MobState.Dead))
+            // Reserve edit end: Soft Crit port
             return;
 
         Deathgasp(uid, component);

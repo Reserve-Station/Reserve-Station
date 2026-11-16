@@ -1,8 +1,8 @@
-ent-BaseRoofMarker = { "" }
-    .desc = { "" }
-ent-RoofMarker = Крыша
+ent-BaseRoofMarker = крыша
+    .desc = Определяет, должен ли сюда попадать планетарный свет.
+ent-RoofMarker = крыша
     .suffix = Включён
     .desc = { ent-BaseRoofMarker.desc }
-ent-NoRoofMarker = Крыша
+ent-NoRoofMarker = крыша
     .suffix = Выключен
     .desc = { ent-BaseRoofMarker.desc }

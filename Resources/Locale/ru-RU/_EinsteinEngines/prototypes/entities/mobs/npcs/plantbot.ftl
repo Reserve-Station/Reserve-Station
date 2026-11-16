@@ -1,7 +1,9 @@
 ent-MobPlantbot = растенибот
     .desc = Лучший друг ботаника!
+    .suffix = Минибот, AI
 ent-SpawnMobPlantbot = спавнер растенибота
     .desc = { ent-MarkerBase.desc }
+    .suffix = Минибот
 ent-SpawnMobPlantbotChance10 = { ent-SpawnMobPlantbot }
     .desc = { ent-SpawnMobPlantbot.desc }
-    .suffix = Шанс 10%
+    .suffix = Минибот, Шанс 10%

@@ -30,7 +30,8 @@ public sealed partial class MobThresholdsComponent : Component
     public Dictionary<MobState, ProtoId<AlertPrototype>> StateAlertDict = new()
     {
         {MobState.Alive, "HumanHealth"},
-        {MobState.Critical, "HumanCrit"},
+        {MobState.SoftCritical, "HumanSoftCrit"}, // Reserve edit: Soft Crit port
+        {MobState.HardCritical, "HumanHardCrit"}, // Reserve edit: Soft Crit port
         {MobState.Dead, "HumanDead"},
     };
 
