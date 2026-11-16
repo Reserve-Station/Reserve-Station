@@ -5,6 +5,7 @@ using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
 using Content.Shared.Roles;
 using Robust.Server.GameStates;
+using Robust.Shared.Configuration; // Reserve: Alternate Job Titles
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -19,6 +20,7 @@ public sealed partial class RoundIntroSystem : EntitySystem
     [Dependency] private PvsOverrideSystem _pvsOverride = default!;
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private SharedRoleSystem _role = default!;
+    [Dependency] private IConfigurationManager _cfg = default!; // Reserve: Alternate Job Titles
 
     private const int MaxCoworkers = 12;
     private static readonly TimeSpan OverrideDuration = TimeSpan.FromSeconds(20);
@@ -43,10 +45,14 @@ public sealed partial class RoundIntroSystem : EntitySystem
     private void OnSpawnComplete(PlayerSpawnCompleteEvent ev)
     {
         ProtoId<JobPrototype>? job = null;
+        string? jobTitle = null; // Reserve: Alternate Job Titles
         if (ev.JobId != null && _proto.HasIndex<JobPrototype>(ev.JobId))
+        {
             job = ev.JobId;
+            jobTitle = ev.Profile.GetLocalizedAlternateTitle(ev.JobId, _proto, _cfg); // Reserve: Alternate Job Titles
+        }
 
-        _pending.Add(new PendingIntro(ev.Player, ev.Mob, job, ev.Station, ev.LateJoin));
+        _pending.Add(new PendingIntro(ev.Player, ev.Mob, job, ev.Station, ev.LateJoin, jobTitle)); // Reserve: Alternate Job Titles
     }
 
     public override void Update(float frameTime)
@@ -120,7 +126,8 @@ public sealed partial class RoundIntroSystem : EntitySystem
                     intro.Antag,
                     false,
                     Name(pending.Station),
-                    pending.LateJoin),
+                    pending.LateJoin,
+                    pending.JobTitle), // Reserve: Alternate Job Titles
                 pending.Session.Channel);
 
             if (!pending.LateJoin)
@@ -167,7 +174,7 @@ public sealed partial class RoundIntroSystem : EntitySystem
                 || !SharesDepartment(departments, otherJob))
                 continue;
 
-            coworkers.Add((other.Entity, new RoundIntroCoworker(GetNetEntity(other.Entity), Name(other.Entity), otherJob, null)));
+            coworkers.Add((other.Entity, new RoundIntroCoworker(GetNetEntity(other.Entity), Name(other.Entity), otherJob, null, other.Pending.JobTitle))); // Reserve: Alternate Job Titles
         }
 
         return coworkers;
@@ -256,7 +263,8 @@ public sealed partial class RoundIntroSystem : EntitySystem
         EntityUid Mob,
         ProtoId<JobPrototype>? Job,
         EntityUid Station,
-        bool LateJoin);
+        bool LateJoin,
+        string? JobTitle); // Reserve: Alternate Job Titles
 
     private readonly record struct ResolvedIntro(
         PendingIntro Pending,

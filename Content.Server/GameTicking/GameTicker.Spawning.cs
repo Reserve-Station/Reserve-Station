@@ -260,13 +260,14 @@ namespace Content.Server.GameTicking
 
             if (lateJoin && !silent)
             {
+                var announcedJob = character.GetLocalizedAlternateTitle(jobId, _prototypeManager, _cfg) ?? jobName; // Reserve: Alternate Job Titles
                 if (jobPrototype.JoinNotifyCrew)
                 {
                     _chatSystem.DispatchStationAnnouncement(station,
                         Loc.GetString("latejoin-arrival-announcement-special",
                             ("character", MetaData(mob).EntityName),
                             ("entity", mob),
-                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))),
+                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(announcedJob))), // Reserve: Alternate Job Titles
                         Loc.GetString("latejoin-arrival-sender"),
                         playDefaultSound: false,
                         colorOverride: Color.Gold);
@@ -277,7 +278,7 @@ namespace Content.Server.GameTicking
                         Loc.GetString("latejoin-arrival-announcement",
                             ("character", MetaData(mob).EntityName),
                             ("entity", mob),
-                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(jobName))),
+                            ("job", CultureInfo.CurrentCulture.TextInfo.ToTitleCase(announcedJob))), // Reserve: Alternate Job Titles
                         Loc.GetString("latejoin-arrival-sender"),
                         playDefaultSound: false);
                 }
