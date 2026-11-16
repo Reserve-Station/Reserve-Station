@@ -1,7 +1,9 @@
 ﻿using Content.Server.Hands.Systems;
+using Content.Server.PDA; // Reserve edit: Proper ID name after "Set Outfit" admin verb
 using Content.Server.Preferences.Managers;
 using Content.Shared._EinsteinEngines.Silicon.IPC;
 using Content.Shared.Access.Components;
+using Content.Shared.Access.Systems; // Reserve edit: Proper ID name after "Set Outfit" admin verb
 using Content.Shared.Clothing;
 using Content.Shared.Hands.Components;
 using Content.Shared.Humanoid;
@@ -29,6 +31,8 @@ public sealed class OutfitSystem : EntitySystem
     [Dependency] private readonly SharedStationSpawningSystem _spawningSystem = default!;
     [Dependency] private readonly SharedStorageSystem _storageSystem = default!; // Goobstation
     [Dependency] private readonly InternalEncryptionKeySpawner _encryptionSystem = default!; // Goobstation
+    [Dependency] private readonly SharedIdCardSystem _idCard = default!; // Reserve edit: Proper ID name after "Set Outfit" admin verb
+    [Dependency] private readonly PdaSystem _pda = default!; // Reserve edit: Proper ID name after "Set Outfit" admin verb
 
     public bool SetOutfit(EntityUid target, string gear, Action<EntityUid, EntityUid>? onEquipped = null, bool unremovable = false,
         bool doSpecial = false // Goobstation?
@@ -61,12 +65,24 @@ public sealed class OutfitSystem : EntitySystem
                     continue;
 
                 var equipmentEntity = EntityManager.SpawnEntity(gearStr, EntityManager.GetComponent<TransformComponent>(target).Coordinates);
-                if (slot.Name == "id" &&
-                    EntityManager.TryGetComponent(equipmentEntity, out PdaComponent? pdaComponent) &&
-                    EntityManager.TryGetComponent<IdCardComponent>(pdaComponent.ContainedId, out var id))
+                // Reserve edit start: Proper ID name after "Set Outfit" admin verb
+                // - Make sure card gets renamed (evein inside of a PDA)
+                // - Set the PDA owner
+                if (slot.Name == "id")
                 {
-                    id.FullName = EntityManager.GetComponent<MetaDataComponent>(target).EntityName;
+                    var ownerName = Name(target);
+                    var cardUid = equipmentEntity;
+                    if (TryComp(equipmentEntity, out PdaComponent? pdaComponent))
+                    {
+                        _pda.SetOwner(equipmentEntity, pdaComponent, target, ownerName);
+                        if (pdaComponent.ContainedId is { } containedId)
+                            cardUid = containedId;
+                    }
+
+                    if (TryComp<IdCardComponent>(cardUid, out var id))
+                        _idCard.TryChangeFullName(cardUid, ownerName, id);
                 }
+                // Reserve edit end: Proper ID name after "Set Outfit" admin verb
 
                 _invSystem.TryEquip(target, equipmentEntity, slot.Name, silent: true, force: true, inventory: inventoryComponent);
                 if (unremovable)
