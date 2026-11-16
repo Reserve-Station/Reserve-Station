@@ -3,7 +3,7 @@
 - type: gameMap
   id: Packed
   mapName: 'Packed'
-  mapPath: /Maps/_Goobstation/packed.yml # Goobstation
+  mapPath: /Maps/_Reserve/packed.yml # Goobstation # Reserve edit:Xenobio sink
   minPlayers: 7
   maxPlayers: 35
   stations:
