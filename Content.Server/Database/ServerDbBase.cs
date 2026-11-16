@@ -30,7 +30,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Database
 {
-    public abstract class ServerDbBase
+    public abstract partial class ServerDbBase // Goob
     {
         private readonly ISawmill _opsLog;
 
@@ -508,7 +508,6 @@ namespace Content.Server.Database
             bool includeUnbanned,
             BanType type);
 
-        public abstract Task<BanDef?> GetLastBanAsync(); //ADT-Tweak: Логи банов для диса
         public abstract Task<BanDef> AddBanAsync(BanDef ban);
         public abstract Task AddUnbanAsync(UnbanDef unban);
 
@@ -1787,11 +1786,80 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         }
 
+        // Reserve edit start: Full discord bot integration
+        public async Task<ulong?> GetLinkedDiscordId(Guid player, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+            var linked = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.PlayerId == player, cancel);
+            return linked?.DiscordId;
+        }
+        // Reserve edit end: Full discord bot integration
+
+        // Reserve edit start: Discord bot account linking
+        private static readonly TimeSpan LinkingCodeLifetime = TimeSpan.FromMinutes(10);
+
+        public async Task<NetUserId?> GetLinkedPlayerId(ulong discordId, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+            var linked = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.DiscordId == discordId, cancel);
+            return linked == null ? null : new NetUserId(linked.PlayerId);
+        }
+
+        public async Task<(LinkAccountCodeResult Result, NetUserId? PlayerId)> ConsumeLinkingCode(Guid code, ulong discordId, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+
+            var linking = await db.DbContext.RMCLinkingCodes.SingleOrDefaultAsync(l => l.Code == code, cancel);
+            if (linking == null)
+                return (LinkAccountCodeResult.CodeNotFound, null);
+
+            if (DateTime.UtcNow - linking.CreationTime > LinkingCodeLifetime)
+                return (LinkAccountCodeResult.CodeExpired, null);
+
+            var existingForDiscord = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.DiscordId == discordId, cancel);
+            if (existingForDiscord != null && existingForDiscord.PlayerId != linking.PlayerId)
+                return (LinkAccountCodeResult.DiscordAlreadyLinked, null);
+
+            var existingForPlayer = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.PlayerId == linking.PlayerId, cancel);
+            if (existingForPlayer != null)
+            {
+                existingForPlayer.DiscordId = discordId;
+            }
+            else
+            {
+                if (!await db.DbContext.RMCDiscordAccounts.AnyAsync(d => d.Id == discordId, cancel))
+                    db.DbContext.RMCDiscordAccounts.Add(new RMCDiscordAccount { Id = discordId });
+
+                db.DbContext.RMCLinkedAccounts.Add(new RMCLinkedAccount { PlayerId = linking.PlayerId, DiscordId = discordId });
+            }
+
+            db.DbContext.RMCLinkingCodes.Remove(linking);
+            await db.DbContext.SaveChangesAsync(cancel);
+
+            return (LinkAccountCodeResult.Success, new NetUserId(linking.PlayerId));
+        }
+
+        // Unlink a Discord account from a player
+        public async Task<bool> UnlinkDiscordAccount(ulong discordId, CancellationToken cancel)
+        {
+            await using var db = await GetDb(cancel);
+            var linked = await db.DbContext.RMCLinkedAccounts.SingleOrDefaultAsync(l => l.DiscordId == discordId, cancel);
+            if (linked == null)
+                return false;
+
+            db.DbContext.RMCLinkedAccounts.Remove(linked);
+            await db.DbContext.SaveChangesAsync(cancel);
+            return true;
+        }
+        // Reserve edit end: Discord bot account linking
+
         public async Task<RMCPatron?> GetPatron(Guid player, CancellationToken cancel)
         {
             await using var db = await GetDb(cancel);
             var patron = await db.DbContext.RMCPatrons
                 .Include(p => p.Tier)
+                .Include(p => p.TierAssignments)  // Reserve edit: Maecenas System
+                .ThenInclude(a => a.Tier)  // Reserve edit: Maecenas System
                 .Include(p => p.LobbyMessage)
                 .Include(p => p.RoundEndNTShoutout)
                 .FirstOrDefaultAsync(p => p.PlayerId == player, cancellationToken: cancel);
@@ -1804,6 +1872,8 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return await db.DbContext.RMCPatrons
                 .Include(p => p.Player)
                 .Include(p => p.Tier)
+                .Include(p => p.TierAssignments)  // Reserve edit: Maecenas System
+                .ThenInclude(a => a.Tier)  // Reserve edit: Maecenas System
                 .ToListAsync();
         }
 
@@ -1832,63 +1902,49 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
-        public async Task<List<RMCPatronTier>> GetPatronTiers()
+        public async Task SetOocIcon(Guid player, string? icon)
         {
             await using var db = await GetDb();
-            return await db.DbContext.RMCPatronTiers.ToListAsync();
-        }
+            var patron = await db.DbContext.RMCPatrons.FirstOrDefaultAsync(p => p.PlayerId == player);
+            if (patron == null)
+                return;
 
-        public async Task<int> AddPatronTier(RMCPatronTier tier)
-        {
-            await using var db = await GetDb();
-            db.DbContext.RMCPatronTiers.Add(tier);
+            patron.OocIcon = icon;
             await db.DbContext.SaveChangesAsync();
-            return tier.Id;
         }
 
-        public async Task<bool> UpdatePatronTier(RMCPatronTier tier)
+        public async Task SyncPatronTiers(List<RMCPatronTier> tiers)
         {
             await using var db = await GetDb();
-            var existing = await db.DbContext.RMCPatronTiers.FirstOrDefaultAsync(t => t.Id == tier.Id);
-            if (existing == null)
-                return false;
+            var existing = await db.DbContext.RMCPatronTiers.ToDictionaryAsync(t => t.Id);
 
-            existing.Name = tier.Name;
-            existing.Icon = tier.Icon;
-            existing.DiscordRole = tier.DiscordRole;
-            existing.Priority = tier.Priority;
-            existing.ShowOnCredits = tier.ShowOnCredits;
-            existing.GhostColor = tier.GhostColor;
-            existing.GhostCosmetics = tier.GhostCosmetics;
-            existing.GhostParticles = tier.GhostParticles;
-            existing.LobbyMessage = tier.LobbyMessage;
-            existing.RoundEndShoutout = tier.RoundEndShoutout;
+            foreach (var tier in tiers)
+            {
+                if (!existing.TryGetValue(tier.Id, out var row))
+                {
+                    db.DbContext.RMCPatronTiers.Add(tier);
+                    continue;
+                }
+
+                row.Name = tier.Name;
+                row.DiscordRole = tier.DiscordRole;
+                row.Priority = tier.Priority;
+                row.ShowOnCredits = tier.ShowOnCredits;
+                row.GhostColor = tier.GhostColor;
+                row.GhostCosmetics = tier.GhostCosmetics;
+                row.GhostParticles = tier.GhostParticles;
+                row.LobbyMessage = tier.LobbyMessage;
+                row.RoundEndShoutout = tier.RoundEndShoutout;
+            }
+
             await db.DbContext.SaveChangesAsync();
-            return true;
-        }
-
-        public async Task<int> CountPatronsInTier(int tierId)
-        {
-            await using var db = await GetDb();
-            return await db.DbContext.RMCPatrons.CountAsync(p => p.TierId == tierId);
-        }
-
-        public async Task<bool> DeletePatronTier(int tierId)
-        {
-            await using var db = await GetDb();
-            var tier = await db.DbContext.RMCPatronTiers.FirstOrDefaultAsync(t => t.Id == tierId);
-            if (tier == null)
-                return false;
-
-            db.DbContext.RMCPatronTiers.Remove(tier);
-            await db.DbContext.SaveChangesAsync();
-            return true;
         }
 
         public async Task<bool> SetPatron(Guid player, int? tierId)
         {
             await using var db = await GetDb();
             var patron = await db.DbContext.RMCPatrons.FirstOrDefaultAsync(p => p.PlayerId == player);
+            var legacyTierId = patron?.TierId;  // Reserve edit: Maecenas System
 
             if (tierId == null)
             {
@@ -1900,20 +1956,123 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 return true;
             }
 
+            // Reserve edit start: Maecenas System
+            var tier = await db.DbContext.RMCPatronTiers.FirstOrDefaultAsync(t => t.Id == tierId.Value);
+            if (tier == null)
+                throw new InvalidOperationException($"Patron tier {tierId.Value} does not exist.");
+            // Reserve edit end: Maecenas System
+
             if (patron == null)
             {
-                patron = new RMCPatron { PlayerId = player, TierId = tierId.Value };
+                patron = new RMCPatron { PlayerId = player, TierId = tier.Id };  // Reserve edit: Maecenas System
                 db.DbContext.RMCPatrons.Add(patron);
             }
+            /* Reserve edit start: Maecenas System
             else
             {
                 patron.TierId = tierId.Value;
             }
+            */
+            // Reserve edit start: Maecenas System
+            var currentPatron = patron ?? throw new InvalidOperationException("Failed to create patron record.");
+            var assignedTierIds = await db.DbContext.RMCPatronTierAssignments
+                .Where(a => a.PlayerId == player)
+                .Select(a => a.TierId)
+                .ToListAsync();
+            if (assignedTierIds.Count == 0 && legacyTierId is { } existingTierId)
+            {
+                assignedTierIds.Add(existingTierId);
+                db.DbContext.RMCPatronTierAssignments.Add(new RMCPatronTierAssignment
+                {
+                    PlayerId = player,
+                    TierId = existingTierId,
+                    Patron = currentPatron,
+                });
+            }
+
+            if (!assignedTierIds.Contains(tier.Id))
+            {
+                assignedTierIds.Add(tier.Id);
+                db.DbContext.RMCPatronTierAssignments.Add(new RMCPatronTierAssignment
+                {
+                    PlayerId = player,
+                    TierId = tier.Id,
+                    Patron = currentPatron,
+                });
+            }
+
+            var primaryTierId = await db.DbContext.RMCPatronTiers
+                .Where(t => assignedTierIds.Contains(t.Id))
+                .OrderBy(t => t.Priority)
+                .ThenBy(t => t.Id)
+                .Select(t => t.Id)
+                .FirstAsync();
+            currentPatron.TierId = primaryTierId;
+            // Reserve edit end: Maecenas System
 
             await db.DbContext.SaveChangesAsync();
             return true;
         }
         // Goob end
+
+        // Reserve edit start: Maecenas System
+        public async Task SetPatronTiers(Guid player, List<int> tierIds)
+        {
+            await using var db = await GetDb();
+            var assignments = tierIds.Distinct().ToList();
+            if (assignments.Count == 0)
+            {
+                var existingPatron = await db.DbContext.RMCPatrons.FirstOrDefaultAsync(p => p.PlayerId == player);
+                if (existingPatron != null)
+                {
+                    db.DbContext.RMCPatrons.Remove(existingPatron);
+                    await db.DbContext.SaveChangesAsync();
+                }
+
+                return;
+            }
+
+            var tiers = await db.DbContext.RMCPatronTiers
+                .Where(t => assignments.Contains(t.Id))
+                .ToListAsync();
+            if (tiers.Count != assignments.Count)
+                throw new InvalidOperationException("One or more assigned patron tiers do not exist.");
+
+            var primaryTier = tiers.OrderBy(t => t.Priority).ThenBy(t => t.Id).First();
+            var patron = await db.DbContext.RMCPatrons.FirstOrDefaultAsync(p => p.PlayerId == player);
+            if (patron == null)
+            {
+                patron = new RMCPatron { PlayerId = player, TierId = primaryTier.Id };
+                db.DbContext.RMCPatrons.Add(patron);
+            }
+            else
+            {
+                patron.TierId = primaryTier.Id;
+            }
+
+            var desiredTierIds = assignments.ToHashSet();
+            var existingAssignments = await db.DbContext.RMCPatronTierAssignments
+                .Where(a => a.PlayerId == player)
+                .ToListAsync();
+            foreach (var existing in existingAssignments)
+            {
+                if (!desiredTierIds.Remove(existing.TierId))
+                    db.DbContext.RMCPatronTierAssignments.Remove(existing);
+            }
+
+            foreach (var tierId in desiredTierIds)
+            {
+                db.DbContext.RMCPatronTierAssignments.Add(new RMCPatronTierAssignment
+                {
+                    PlayerId = player,
+                    TierId = tierId,
+                    Patron = patron,
+                });
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+        // Reserve edit end: Maecenas System
 
         public async Task SetLobbyMessage(Guid player, string message)
         {
@@ -1951,33 +2110,47 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
-        public async Task<List<(string Message, string User)>> GetLobbyMessages()
+        // Goob start - tier perks from prototypes
+        public async Task<List<(string Message, string User, List<int> TierIds)>> GetLobbyMessages()  // Reserve edit: Maecenas System
         {
             await using var db = await GetDb();
             var messages = await db.DbContext.RMCPatronLobbyMessages
                 .Include(p => p.Patron)
                 .ThenInclude(p => p.Player)
-                .Where(p => p.Patron.Tier.LobbyMessage)
+                .Include(p => p.Patron)  // Reserve edit: Maecenas System
+                .ThenInclude(p => p.TierAssignments)  // Reserve edit: Maecenas System
                 .Where(p => !string.IsNullOrWhiteSpace(p.Message))
-                .Select(p => new { p.Message, p.Patron.Player.LastSeenUserName })
-                .Select(p => new ValueTuple<string, string>(p.Message, p.LastSeenUserName))
                 .ToListAsync();
 
-            return messages;
+            return messages.Select(p =>  // Reserve edit: Maecenas System
+            {
+                var tierIds = p.Patron.TierAssignments.Select(a => a.TierId).ToList();
+                if (tierIds.Count == 0)
+                    tierIds.Add(p.Patron.TierId);
+
+                return (p.Message, p.Patron.Player.LastSeenUserName, tierIds);
+            }).ToList();
         }
 
-        public async Task<List<string>> GetShoutouts()
+        public async Task<List<(string Name, List<int> TierIds)>> GetShoutouts()
         {
             await using var db = await GetDb();
             var ntNames = await db.DbContext.RMCPatronRoundEndNTShoutouts
                 .Include(p => p.Patron)
-                .Where(p => p.Patron.Tier.RoundEndShoutout)
+                .ThenInclude(p => p.TierAssignments)  // Reserve edit: Maecenas System
                 .Where(p => !string.IsNullOrWhiteSpace(p.Name))
-                .Select(p => p.Name)
                 .ToListAsync();
 
-            return ntNames;
+            return ntNames.Select(p =>  // Reserve edit: Maecenas System
+            {
+                var tierIds = p.Patron.TierAssignments.Select(a => a.TierId).ToList();
+                if (tierIds.Count == 0)
+                    tierIds.Add(p.Patron.TierId);
+
+                return (p.Name, tierIds);
+            }).ToList();
         }
+        // Goob end
 
         #endregion
 
@@ -2290,6 +2463,42 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         {
             OnNotificationReceived?.Invoke(notification);
         }
+
+        // Reserve edit start: Brainrot Triggers
+        #region Brainrot Triggers
+
+        public async Task<List<string>> GetBrainrotTriggersAsync(CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            return await db.DbContext.BrainrotTriggers
+                .Select(t => t.Trigger)
+                .ToListAsync(cancel);
+        }
+
+        public async Task AddBrainrotTriggerAsync(string trigger, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var exists = await db.DbContext.BrainrotTriggers.AnyAsync(t => t.Trigger == trigger, cancel);
+            if (exists)
+                return;
+
+            db.DbContext.BrainrotTriggers.Add(new BrainrotTrigger { Trigger = trigger });
+            await db.DbContext.SaveChangesAsync(cancel);
+        }
+
+        public async Task RemoveBrainrotTriggerAsync(string trigger, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+            var entry = await db.DbContext.BrainrotTriggers.FirstOrDefaultAsync(t => t.Trigger == trigger, cancel);
+            if (entry != null)
+            {
+                db.DbContext.BrainrotTriggers.Remove(entry);
+                await db.DbContext.SaveChangesAsync(cancel);
+            }
+        }
+
+        #endregion
+        // Reserve edit end: Brainrot Triggers
 
         public virtual void Shutdown()
         {

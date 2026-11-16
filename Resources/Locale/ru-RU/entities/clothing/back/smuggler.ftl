@@ -1,5 +1,5 @@
-ent-BaseSubfloorAnchorStorage = { "" }
-    .desc = { "" }
+ent-BaseSubfloorAnchorStorage = хранилище под напольной плиткой
+    .desc = Небольшое вместилище для предметов, которое можно спрятать под напольной плиткой.
 ent-BaseSubfloorAnchorStorageAnchored = { ent-BaseSubfloorAnchorStorage }
     .desc = { ent-BaseSubfloorAnchorStorage.desc }
 ent-ClothingBackpackSatchelSmuggler = сумка контрабандиста
@@ -17,6 +17,6 @@ ent-ClothingBackpackDuffelClownSmuggler = клоунский вещмешок к
 ent-ClothingBackpackSatchelSmugglerFilled = { ent-ClothingBackpackSatchelSmuggler }
     .suffix = Контрабанда, Не Маппить
     .desc = { ent-ClothingBackpackSatchelSmuggler.desc }
-ent-RandomSatchelSpawner = спавнер случайная сумка контрабандиста
+ent-RandomSatchelSpawner = спавнер - случайная сумка контрабандиста
     .suffix = Не Маппить
     .desc = { ent-MarkerBase.desc }

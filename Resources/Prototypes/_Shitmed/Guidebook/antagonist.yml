@@ -4,3 +4,5 @@
   id: Abductors
   name: guide-entry-abductors
   text: "/ServerInfo/_Shitmed/Guidebook/Antagonist/Abductors.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Abductors.xml"

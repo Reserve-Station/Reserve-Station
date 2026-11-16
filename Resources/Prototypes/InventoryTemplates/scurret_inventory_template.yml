@@ -56,8 +56,8 @@
     uiWindowPos: 2,0
     strippingWindowPos: 2,5
     dependsOn: jumpsuit
-    dependsOnComponents:
-    - type: AllowSuitStorage
+    # dependsOnComponents:  # Reserve edit: Super Scurret - this and dependsOn jumpsuit is a broken combo
+    # - type: AllowSuitStorage
     displayName: Suit Storage
   - name: back
     slotTexture: back

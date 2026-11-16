@@ -1,3 +1,3 @@
 ent-ClothingBackpackDuffelMilitary = армейский вещмешок
     .desc = Большой вещмешок для хранения любого армейского снаряжения.
-    .suffix = { "" }
+    .suffix = Королевская битва, Battle Royale

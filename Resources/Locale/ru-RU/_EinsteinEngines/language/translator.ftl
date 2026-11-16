@@ -1,5 +1,5 @@
-translator-component-shutoff = { $translator } отключен.
-translator-component-turnon = { $translator } включен.
+translator-component-shutoff = { $translator } отключён.
+translator-component-turnon = { $translator } включён.
 
 translator-implanter-refuse = { $implanter } больше не действует на { $target }.
 translator-implanter-success = { $implanter } успешно введен в { $target }.

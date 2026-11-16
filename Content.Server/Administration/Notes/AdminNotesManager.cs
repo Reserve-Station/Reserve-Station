@@ -2,6 +2,7 @@
 
 using System.Text;
 using System.Threading.Tasks;
+using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
 using Content.Server.Administration.Managers;
 using Content.Server.Database;
 using Content.Server.EUI;
@@ -25,6 +26,7 @@ public sealed class AdminNotesManager : IAdminNotesManager, IPostInjectInit
     [Dependency] private readonly EuiManager _euis = default!;
     [Dependency] private readonly IEntitySystemManager _systems = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
+    [Dependency] private IBanGuardManager _banGuard = default!; // Reserve edit: Reserve Red - BanGuard
 
     public const string SawmillId = "admin.notes";
 
@@ -165,6 +167,7 @@ public sealed class AdminNotesManager : IAdminNotesManager, IPostInjectInit
             seen
         );
         NoteAdded?.Invoke(note);
+        _banGuard.NoteAdded(note, createdBy.UserId); // Reserve edit: Reserve Red - BanGuard
     }
 
     private async Task<SharedAdminNote?> GetAdminRemark(int id, NoteType type)
@@ -210,6 +213,7 @@ public sealed class AdminNotesManager : IAdminNotesManager, IPostInjectInit
 
         _sawmill.Info($"{deletedBy.Name} has deleted {type} {noteId}");
         NoteDeleted?.Invoke(note);
+        _banGuard.NoteDeleted(note, deletedBy.UserId); // Reserve edit: Reserve Red - BanGuard
     }
 
     public async Task ModifyAdminRemark(int noteId, NoteType type, ICommonSession editedBy, string message, NoteSeverity? severity, bool secret, DateTime? expiryTime)
@@ -297,6 +301,7 @@ public sealed class AdminNotesManager : IAdminNotesManager, IPostInjectInit
             ExpiryTime = expiryTime
         };
         NoteModified?.Invoke(newNote);
+        _banGuard.NoteModified(note, newNote, editedBy.UserId); // Reserve edit: Reserve Red - BanGuard
     }
 
     public async Task<List<IAdminRemarksRecord>> GetAllAdminRemarks(Guid player)

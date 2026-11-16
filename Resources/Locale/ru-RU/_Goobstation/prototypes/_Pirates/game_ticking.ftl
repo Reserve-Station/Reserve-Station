@@ -1,6 +1,7 @@
-ent-SpacePirates = { ent-BaseGameRule }
+ent-PiratesMidroundStart = Пираты - предвестие
     .desc = { ent-BaseGameRule.desc }
-ent-PiratesSpawn = { ent-BaseGameRule }
+ent-PiratesMidround = Пираты - спавн
     .desc = { ent-BaseGameRule.desc }
 ent-BikeHornRansom = { ent-BikeHorn }
     .desc = { ent-BikeHorn.desc }
+    .suffix = Пират, Выкуп

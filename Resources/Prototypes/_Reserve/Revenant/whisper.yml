@@ -1,0 +1,42 @@
+# Revenant "Whisper" ability: a message only the target can see, like a voice in their head.
+# Built on Goob's telepathy (same as the Wraith and Slaughter Demon whispers).
+
+- type: entity
+  parent: ActionTelepathy
+  id: ActionRevenantWhisper
+  name: Whisper
+  description: Whisper a message straight into someone's head. Only they will hear it.
+  components:
+  - type: Action
+    useDelay: 5
+    sound: !type:SoundPathSpecifier
+      path: /Audio/_Goobstation/Wraith/wraithwhisper2.ogg
+    icon:
+      sprite: _Reserve/Interface/Actions/revenant.rsi
+      state: whisper
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:TelepathyWhisperEvent
+  - type: TelepathyAction
+    targetWhitelist:
+      components:
+      - MobState
+    dialogueTitle: revenant-whisper-title
+    popupWhisperSelf: revenant-whisper-self
+    popupWhisperFlavor: revenant-whisper-flavor
+    popupType: MediumCaution
+    messageColor: "#9B30FF"
+    messageFontSize: 16
+
+- type: listing
+  id: RevenantWhisper
+  name: revenant-whisper-name
+  description: revenant-whisper-desc
+  productAction: ActionRevenantWhisper
+  cost:
+    StolenEssence: 5
+  categories:
+  - RevenantAbilities
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

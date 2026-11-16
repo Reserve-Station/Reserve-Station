@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Starlight.VentCrawling.Components;
+using Content.Shared.Atmos; // Reserve edit: Vent crawl air
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 
@@ -54,6 +55,14 @@ public sealed partial class VentCrawlerHolderComponent : Component
 
     [DataField("speed")]
     public float Speed = 0.15f;
+
+    // Reserve edit start: Vent crawl air
+    /// <summary>
+    /// The gas of the current pipe as the crawler feels it, see BeingVentCrawSystem.
+    /// </summary>
+    [ViewVariables]
+    public readonly GasMixture Air = new();
+    // Reserve edit end: Vent crawl air
 }
 
 [ByRefEvent]

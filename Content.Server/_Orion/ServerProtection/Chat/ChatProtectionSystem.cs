@@ -29,7 +29,7 @@ public sealed class ChatProtectionSystem : EntitySystem
     private readonly List<ChatProtectionListPrototype> _index = new();
     private readonly HashSet<string> _icWords = new();
     private readonly HashSet<string> _oocWords = new();
-    
+
     private bool _protectionEnabled;
     private bool _eraseEnabled;
     private bool _banEnabled;
@@ -44,7 +44,7 @@ public sealed class ChatProtectionSystem : EntitySystem
 
         _log = Logger.GetSawmill("serverprotection.chat_protection");
         _proto.PrototypesReloaded += OnPrototypesReloaded;
-        
+
         _cfg.OnValueChanged(CCVars.ChatProtectionEnabled, value => _protectionEnabled = value, true);
         _cfg.OnValueChanged(CCVars.ChatProtectionBanEnabled, value => _banEnabled = value, true);
         _cfg.OnValueChanged(CCVars.ChatProtectionKickEnabled, value => _kickEnabled = value, true);

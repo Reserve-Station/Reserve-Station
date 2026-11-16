@@ -32,8 +32,8 @@ ent-ActionMakeRevenant = Стать Ревенантом
 
 # Plaguebringer actions
 
-ent-BaseCurseAction = { "" }
-    .desc = { "" }
+ent-BaseCurseAction = Проклять
+    .desc = Прокляните живое существо.
 ent-ActionCurseBlindness = Проклять ослеплением
     .desc = Прокляните живое существо слепотой.
 ent-ActionCurseWeakness = Проклять слабостью
@@ -131,5 +131,5 @@ ent-BloodWritingTimes = { ent-BloodWriting0 }
 ent-BloodWritingTriangle = { ent-BloodWriting0 }
 
 ent-WraithDeathEffect = смерть
-    .desc = { "" }
+    .desc = { ent-EffectBase.desc }
     .suffix = Эффект

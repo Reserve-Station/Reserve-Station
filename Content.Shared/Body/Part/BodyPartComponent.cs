@@ -30,7 +30,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     public BodyPartSlot? ParentSlot;
 
     [DataField]
-    public string ToolName { get; set; } = "A body part";
+    public string ToolName { get; set; } = "surgery-tool-name-body-part"; // Reserve edit
 
     [DataField]
     public string SlotId = string.Empty;

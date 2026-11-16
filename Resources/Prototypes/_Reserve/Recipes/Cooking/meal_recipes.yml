@@ -175,6 +175,18 @@
     FoodButterSlice: 1
     FoodCheeseSlice: 1
 
+- type: microwaveMealRecipe
+  id: RecipeFoodMealMilkape
+  name: milk ape recipe
+  result: FoodMealMilkape
+  time: 10
+  group: Dessert
+  reagents:
+    Milk: 10
+  solids:
+    FoodBanana: 1
+    FoodCocoaBeans: 2
+
 # Pizza
 
 - type: microwaveMealRecipe
@@ -202,6 +214,91 @@
     FoodDoughFlat: 1
     FoodChiliPepper: 3
     FoodTomatoSlice: 4
+
+# Pies
+
+- type: microwaveMealRecipe
+  id: RecipeFoodPiePlump
+  name: plump pie recipe
+  result: FoodPiePlump
+  time: 15
+  group: Pie
+  solids:
+    FoodDoughPie: 1
+    FoodPlumpHelmet: 3
+    FoodPlateTin: 1
+
+# Breakfast
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBakedWaffleSoylent
+  name: soylent waffle recipe
+  result: FoodBakedWaffleSoylent
+  time: 10
+  group: Breakfast
+  reagents:
+    Flour: 5
+    Milk: 5
+    SodaWater: 5
+  solids:
+    FoodMeatHuman: 1
+
+# Breads
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBreadNutriBatard
+  name: nutri-batard recipe
+  result: FoodBreadNutriBatard
+  time: 15
+  group: Breads
+  reagents:
+    TableSalt: 5
+    Blackpepper: 5
+  solids:
+    FoodDough: 1
+    FoodSnackNutribrick: 1
+
+- type: microwaveMealRecipe
+  id: RecipeFoodBreadCottonNutriBatard
+  name: cotton nutri-batard recipe
+  result: FoodBreadCottonNutriBatard
+  time: 15
+  group: Breads
+  reagents:
+    TableSalt: 5
+    Blackpepper: 5
+  solids:
+    FoodDoughCotton: 1
+    FoodSnackNutribrick: 1
+
+# Savory
+
+- type: microwaveMealRecipe
+  id: RecipeFoodMealPigblanket
+  name: pig in a blanket recipe
+  result: FoodMealPigblanket
+  time: 10
+  group: Savory
+  solids:
+    FoodDoughSlice: 1
+    FoodMeatSausage: 1
+    FoodButterSlice: 1
+
+# endregion
+
+# region Recipes for new food
+
+- type: microwaveMealRecipe
+  id: RecipeFoodMeatSausage
+  name: sausage recipe
+  result: FoodMeatSausage
+  time: 5
+  group: Ingredients
+  reagents:
+    TableSalt: 5
+    Blackpepper: 5
+  solids:
+    FoodMeatMeatball: 1
 
 # endregion
 

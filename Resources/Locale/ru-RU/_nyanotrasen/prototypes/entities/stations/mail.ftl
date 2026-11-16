@@ -1,2 +1,2 @@
-ent-BaseStationMail = { "" }
-    .desc = { "" }
+ent-BaseStationMail = почтомат
+    .desc = Станционный почтомат.

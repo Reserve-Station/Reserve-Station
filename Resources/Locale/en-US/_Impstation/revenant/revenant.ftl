@@ -2,7 +2,10 @@
 item-jump-into-pocket = {CAPITALIZE(THE($target))} jumps into your pocket!
 item-jump-into-hands = {CAPITALIZE(THE($target))} jumps into your hands!
 
-revenant-animate-item-animate = {CAPITALIZE(THE($target))} becomes aggressive!
+# Reserve edit - Animate reworked: items hover and throw themselves, several at once
+revenant-animate-item-animate = {CAPITALIZE(THE($target))} rises into the air!
+# Reserve edit
+revenant-animate-no-items = There is nothing nearby to animate.
 revenant-animate-item-inanimate = {CAPITALIZE(THE($target))} falls inert.
 
 alerts-revenant-stasis-name = [color=red]Stasis[/color]

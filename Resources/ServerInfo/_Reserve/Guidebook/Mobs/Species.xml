@@ -33,6 +33,7 @@
     <GuideEntityEmbed Entity="MobResomi" Caption="Резоми"/>
     <GuideEntityEmbed Entity="MobShadowkin" Caption="Шэдоукин"/>
     <GuideEntityEmbed Entity="MobHydrakin" Caption="Гидракин"/>
+    <GuideEntityEmbed Entity="MobSynth" Caption="Синт"/>
   </Box>
 
   ## Неигровые Расы

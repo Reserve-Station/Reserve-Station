@@ -15,6 +15,7 @@ using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Network;
 using Robust.Shared.Utility;
+using Content.Shared.Item;
 
 namespace Content.Shared.Hands.EntitySystems;
 
@@ -120,7 +121,10 @@ public abstract partial class SharedHandsSystem
             return;
 
         if (ContainerSystem.TryGetContainer(ent, handName, out var container))
+        {
+            ContainerSystem.EmptyContainer(container, force: true); // Goob - fix glued item deleted on hand remove
             ContainerSystem.ShutdownContainer(container);
+        }
 
         ent.Comp.SortedHands.Remove(handName);
         if (ent.Comp.ActiveHandId == handName)
@@ -451,6 +455,52 @@ public abstract partial class SharedHandsSystem
 
         return free;
     }
+
+    // Reserve edit start: Fix crawling
+    public ProtoId<ItemSizePrototype>? GetHeldItemSize(Entity<HandsComponent?> ent, string handId)
+    {
+        var item = GetHeldItem(ent, handId);
+        if (item is null)
+            return null;
+        if (!TryComp<ItemComponent>(item, out var sizeComp))
+            return null;
+        return sizeComp.Size;
+    }
+
+    public int GetHeldItemSizePoints(Entity<HandsComponent?> ent, string handId)
+    {
+        var size = GetHeldItemSize(ent, handId);
+        if (size is null)
+            return 0;
+        var sizeMap = new Dictionary<string, int>
+        {
+            { "Tiny", 1 },
+            { "Small", 2 },
+            { "Normal", 5 },
+            { "Large", 10 },
+            { "Huge", 17 },
+            { "Ginormous", 28 },
+        };
+        if (!sizeMap.ContainsKey(size))
+            return 0;
+        return sizeMap[size];
+    }
+
+    public int GetHeldItemSumSizePoints(Entity<HandsComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
+            return 0;
+
+        var total = 0;
+        foreach (var name in ent.Comp.Hands.Keys)
+        {
+            if (!HandIsEmpty(ent, name))
+                total += GetHeldItemSizePoints(ent, name);
+        }
+
+        return total;
+    }
+    // Reserve edit end: Fix crawling
 
     /// <summary>
     /// Counts the number of hands that are empty or can be emptied by dropping an item.

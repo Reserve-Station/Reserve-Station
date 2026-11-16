@@ -58,7 +58,7 @@
     - FreedomImplanter
     - DeathAcidifierImplanter
   - type: MimePowers
-    preventWriting: true
+    preventWriting: false  # Reserve edit: Mimes can write again
   - type: RandomHumanoidAppearance
     randomizeName: true
   - type: Loadout

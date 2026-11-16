@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._DV.Salvage.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -15,7 +15,7 @@ namespace Content.Shared._DV.Salvage.Systems;
 public sealed class MiningVoucherSystem : EntitySystem
 {
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
+    // [Dependency] private readonly IGameTiming _timing = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;

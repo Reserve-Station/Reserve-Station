@@ -2,6 +2,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Goobstation.Common.Cuffs; // Goob
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Components;
 using Content.Shared.Administration.Logs;
@@ -97,6 +98,7 @@ namespace Content.Shared.Cuffs
             SubscribeLocalEvent<HandcuffComponent, MeleeHitEvent>(OnCuffMeleeHit);
             SubscribeLocalEvent<HandcuffComponent, AddCuffDoAfterEvent>(OnAddCuffDoAfter);
             SubscribeLocalEvent<HandcuffComponent, VirtualItemDeletedEvent>(OnCuffVirtualItemDeleted);
+            SubscribeLocalEvent<HandcuffComponent, UserActivateInWorldEvent>(OnCuffInteract); // Reserve edit
         }
 
         private void CheckInteract(Entity<CuffableComponent> ent, ref InteractionAttemptEvent args)
@@ -340,6 +342,20 @@ namespace Content.Shared.Cuffs
             args.Handled = true;
         }
 
+        // Reserve edit start - restored after upstream merge
+        /// <summary>
+        /// Lets handcuffs cuff someone on their own, when they are the one interacting (animated by a revenant).
+        /// </summary>
+        private void OnCuffInteract(EntityUid uid, HandcuffComponent component, UserActivateInWorldEvent args)
+        {
+            if (args.Handled)
+                return;
+
+            TryCuffing(args.User, args.Target, uid, component);
+            args.Handled = true;
+        }
+        // Reserve edit end
+
         private void OnAddCuffDoAfter(EntityUid uid, HandcuffComponent component, AddCuffDoAfterEvent args)
         {
             var user = args.Args.User;
@@ -499,7 +515,8 @@ namespace Content.Shared.Cuffs
             // Shitmed Change End
 
             // Success!
-            _hands.TryDrop(user, handcuff);
+            if (user != handcuff) // Reserve edit - animated handcuffs have no hands to drop from
+                _hands.TryDrop(user, handcuff);
 
             _container.Insert(handcuff, component.Container);
 
@@ -531,7 +548,7 @@ namespace Content.Shared.Cuffs
                 return true;
             }
 
-            if (!_hands.CanDrop(user, handcuff))
+            if (user != handcuff && !_hands.CanDrop(user, handcuff)) // Reserve edit - animated handcuffs have no hands
             {
                 _popup.PopupClient(Loc.GetString("handcuff-component-cannot-drop-cuffs", ("target", Identity.Name(target, EntityManager, user))), user, user);
                 return false;
@@ -551,6 +568,10 @@ namespace Content.Shared.Cuffs
             if (HasComp<StunnedComponent>(target))
                 cuffTime = MathF.Max(0.1f, cuffTime - handcuffComponent.StunBonus);
 
+            var cuffEv = new ModifyCuffDurationEvent(target, cuffTime); // Goob
+            RaiseLocalEvent(user, ref cuffEv); // Goob
+            cuffTime = cuffEv.Duration; // Goob
+
             if (HasComp<DisarmProneComponent>(target))
                 cuffTime = 0.0f; // cuff them instantly.
 
@@ -559,7 +580,7 @@ namespace Content.Shared.Cuffs
                 BreakOnMove = true,
                 BreakOnWeightlessMove = false,
                 BreakOnDamage = true,
-                NeedHand = true,
+                NeedHand = user != handcuff, // Reserve edit - animated handcuffs have no hands
                 DistanceThreshold = 1f // shorter than default but still feels good
             };
 

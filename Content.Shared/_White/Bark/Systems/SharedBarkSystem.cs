@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Space Station 14 Contributors
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
@@ -50,7 +48,7 @@ public abstract class SharedBarkSystem : EntitySystem
         var list = new List<BarkVoicePrototype>();
         foreach (var (voice, requirements) in listRaw.VoiceList)
         {
-            if(!_prototypeManager.TryIndex(voice, out var prototype))
+            if (!_prototypeManager.TryIndex(voice, out var prototype))
                 continue;
 
             var isValid = true;

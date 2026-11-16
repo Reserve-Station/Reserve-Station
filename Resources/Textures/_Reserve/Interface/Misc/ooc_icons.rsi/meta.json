@@ -1,0 +1,92 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made based on default job icons. Rescaled for the Maecenas System by Ceterai on GitHub.",
+    "size": {
+        "x": 8,
+        "y": 8
+    },
+    "states": [
+        {
+            "name": "Booster"
+        },
+        {
+            "name": "ContentMaker"
+        },
+        {
+            "name": "Developer"
+        },
+        {
+            "name": "DeveloperMaintainer"
+        },
+        {
+            "name": "GMSenior"
+        },
+        {
+            "name": "GM"
+        },
+        {
+            "name": "GMCadet"
+        },
+        {
+            "name": "Host"
+        },
+        {
+            "name": "Leader"
+        },
+        {
+            "name": "Maecenas"
+        },
+        {
+            "name": "MaecenasPrime"
+        },
+        {
+            "name": "MC"
+        },
+        {
+            "name": "Mentor"
+        },
+        {
+            "name": "MindShield"
+        },
+        {
+            "name": "Moderator"
+        },
+        {
+            "name": "Mute"
+        },
+        {
+            "name": "Owner"
+        },
+        {
+            "name": "PartyCard"
+        },
+        {
+            "name": "ReservePride"
+        },
+        {
+            "name": "ReservePride2"
+        },
+        {
+            "name": "ReservePride3"
+        },
+        {
+            "name": "ReservePride4"
+        },
+        {
+            "name": "Sentry"
+        },
+        {
+            "name": "SentryCadet"
+        },
+        {
+            "name": "Swamp"
+        },
+        {
+            "name": "WL"
+        },
+        {
+            "name": "WLModerator"
+        }
+    ]
+}

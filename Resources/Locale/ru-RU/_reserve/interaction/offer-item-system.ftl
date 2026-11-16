@@ -1,0 +1,9 @@
+offer-item-empty-hand = У вас в руке нет ничего, что можно было бы передать!
+offer-item-full-hand = Ваша рука занята
+offer-item-try-give = Вы предлагаете предмет «{ $item }» (кому: { $target })
+offer-item-try-give-target = { $user } предлагает вам предмет «{ $item }»
+offer-item-give = Вы передали предмет «{ $item }» (кому: { $target })
+offer-item-give-other = { $user } передаёт предмет «{ $item }» (кому: { $target })
+offer-item-give-target = { $user } передаёт вам предмет «{ $item }»
+offer-item-no-give = Вы больше не предлагаете предмет «{ $item }» (кому: { $target })
+offer-item-no-give-target = { $user } больше не предлагает вам предмет «{ $item }»

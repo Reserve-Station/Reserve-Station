@@ -1,11 +1,14 @@
-ent-DrinkBasePlastic = { ent-DrinkBase }
-    .desc = { ent-DrinkBase.desc }
-ent-DrinkFitnessShakerBlack = фитнес-шейкер
+ent-DrinkBasePlastic = фитнес-шейкер
     .desc = Достаточно большой, чтобы в нем было достаточно белка для идеальной запеканки. Не обращайте внимания на кусочки.
-ent-DrinkFitnessShakerRed = { ent-DrinkFitnessShakerBlack }
-    .desc = { ent-DrinkFitnessShakerBlack.desc }
-ent-DrinkFitnessShakerBlue = { ent-DrinkFitnessShakerBlack }
-    .desc = { ent-DrinkFitnessShakerBlack.desc }
+    .suffix = Спорт
+ent-DrinkFitnessShakerBlack = { ent-DrinkBasePlastic }
+    .desc = { ent-DrinkBasePlastic.desc }
+    .suffix = { ent-DrinkBasePlastic.suffix }
+ent-DrinkFitnessShakerRed = { ent-DrinkBasePlastic }
+    .desc = { ent-DrinkBasePlastic.desc }
+    .suffix = { ent-DrinkBasePlastic.suffix }
+ent-DrinkFitnessShakerBlue = { ent-DrinkBasePlastic }
+    .desc = { ent-DrinkBasePlastic.desc }
+    .suffix = { ent-DrinkBasePlastic.suffix }
 ent-DrinkMilkBottleFull = бутылка молока
     .desc = Как плазмамены вообще это пьют?
-

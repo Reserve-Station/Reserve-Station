@@ -10,9 +10,9 @@ using Robust.Shared.Console;
 namespace Content.Goobstation.Server.ServerCurrency.Commands
 {
     [AnyCommand]
-    public sealed class CurrencyUiCommand : IConsoleCommand
+    public sealed partial class CurrencyUiCommand : IConsoleCommand
     {
-        [Dependency] private readonly IConfigurationManager _configuration = default!; // Reserve-LenaApi
+        [Dependency] private IConfigurationManager _configuration = default!; // Reserve-LenaApi
 
         public string Command => "balanceui";
         public string Description => "Open the currency UI";

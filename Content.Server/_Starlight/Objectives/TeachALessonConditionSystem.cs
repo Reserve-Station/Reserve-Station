@@ -63,6 +63,10 @@ public sealed class TeachALessonConditionSystem : EntitySystem
             TriggerObjective(component);
         }
 
+        // Reserve edit: the body was deleted (gibbed, bluespace lifeline implant, etc.) without passing through the Dead state
+        if (TerminatingOrDeleted(uid))
+            TriggerObjective(component);
+
         RemCompDeferred<TeachALessonTargetComponent>(uid);
     }
 

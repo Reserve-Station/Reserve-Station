@@ -1,6 +1,6 @@
 # Ghost HUD button
-thunderdome-ghost-button = Thunderdome ({$count})
-thunderdome-ghost-button-default = Thunderdome (0)
+thunderdome-ghost-button = Арена ({$count})
+thunderdome-ghost-button-default = Арена (0)
 
 # Loadout window
 thunderdome-loadout-title = Экипировка арены

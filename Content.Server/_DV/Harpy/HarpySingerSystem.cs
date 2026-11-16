@@ -22,6 +22,7 @@ using Content.Shared._DV.Harpy.Components;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._DV.Harpy
 {
@@ -67,7 +68,7 @@ namespace Content.Server._DV.Harpy
 
         private void OnMobStateChangedEvent(EntityUid uid, InstrumentComponent component, MobStateChangedEvent args)
         {
-            if (args.NewMobState is MobState.Critical or MobState.Dead)
+            if (args.NewMobState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead) // Reserve edit: Soft Crit port
                 CloseMidiUi(args.Target);
         }
 

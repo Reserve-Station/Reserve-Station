@@ -30,6 +30,26 @@ public sealed partial class EggLayerComponent : Component
     [DataField]
     public SoundSpecifier EggLaySound = new SoundPathSpecifier("/Audio/Effects/pop.ogg");
 
+    // Reserve edit start: Mouse multiply popup
+    /// <summary>
+    ///     Popup shown to the layer itself.
+    /// </summary>
+    [DataField]
+    public LocId LayPopupUser = "action-popup-lay-egg-user";
+
+    /// <summary>
+    ///     Popup shown to everyone else around.
+    /// </summary>
+    [DataField]
+    public LocId LayPopupOthers = "action-popup-lay-egg-others";
+
+    /// <summary>
+    ///     Popup shown when the layer is too hungry.
+    /// </summary>
+    [DataField]
+    public LocId TooHungryPopup = "action-popup-lay-egg-too-hungry";
+    // Reserve edit end: Mouse multiply popup
+
     /// <summary>
     ///     Minimum cooldown used for the automatic egg laying.
     /// </summary>

@@ -1,2 +1,2 @@
-ent-BaseShadow = { "" }
-    .desc = { "" }
+ent-BaseShadow = тень
+    .desc = Что-то тут не так.

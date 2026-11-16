@@ -36,4 +36,3 @@ reverse-engineering-examine = [color=yellow]Данный предмет можн
 
 ent-ReverseEngineeringMachine = машина обратной инженерии
     .desc = Деструктивно анализирует образцы технологий в надежде извлечь из них информацию.
-    .suffix = { "" }

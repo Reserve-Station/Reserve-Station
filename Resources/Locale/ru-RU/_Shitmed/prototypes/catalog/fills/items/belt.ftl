@@ -1,3 +1,3 @@
 ent-ClothingAbductorBeltFilled = { ent-ClothingAbductorBelt }
-    .suffix = Заполнен
+    .suffix = Заполненный
     .desc = { ent-ClothingAbductorBelt.desc }

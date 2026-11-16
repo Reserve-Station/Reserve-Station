@@ -1,6 +1,6 @@
-ent-LoneAbductorSpawn = { ent-BaseGameRule }
+ent-LoneAbductorSpawn = Абдуктор-одиночка
     .desc = { ent-BaseGameRule.desc }
-ent-AbductorVictim = { ent-BaseGameRule }
+ent-AbductorVictim = Жертва абдуктора
     .desc = { ent-BaseGameRule.desc }
-ent-DuoAbductorSpawn = { ent-BaseGameRule }
+ent-DuoAbductorSpawn = Абдукторы-дуо
     .desc = { ent-BaseGameRule.desc }

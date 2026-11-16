@@ -37,16 +37,16 @@
       connections:
       - groin
       organs:
-        lungs: OrganAnimalLungs
-        heart: OrganAnimalHeart
+        lungs: OrganAnimalLungsSmall  # Reserve edit: Proper small animal organs
+        heart: OrganAnimalHeartSmall  # Reserve edit: Proper small animal organs
     groin:
       part: GroinAnimal
       connections:
       - legs
       organs:
         stomach: OrganMouseStomach
-        liver: OrganAnimalLiver
-        kidneys: OrganAnimalKidneys
+        liver: OrganAnimalLiverSmall  # Reserve edit: Proper small animal organs
+        kidneys: OrganAnimalKidneysSmall  # Reserve edit: Proper small animal organs
         egg_sack: OrganMouseEggSack # Trauma
     legs:
       part: LegsAnimal

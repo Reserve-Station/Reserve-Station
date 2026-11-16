@@ -1,60 +1,53 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 name: Update Contrib and Patreons in credits
-
+concurrency: commit_action
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 0 * * 0
+  # schedule:
+  #   - cron: 0 0 * * 0
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+env:
+  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+  PR_NUMBER: ${{ github.event.number }}
 
 jobs:
   get_credits:
     runs-on: ubuntu-latest
-    # Hey there fork dev! If you like to include your own contributors in this then you can probably just change this to your own repo
-    # Do this in dump_github_contributors.ps1 too into your own repo
-    if: github.repository == 'Reserve-Station/Reserve-Station/' # Reserve edit
+    if: github.repository == 'Reserve-Station/Reserve-Station'
 
     steps:
-      - uses: actions/checkout@v4.2.2
+      - name: Checkout Master
+        uses: actions/checkout@v3
         with:
-          ref: master
+          token: ${{ secrets.BOT_TOKEN }}
+          ref: "${{ vars.CHANGELOG_BRANCH }}"
 
-      - name: Get this week's Contributors
+      - name: Setup Git
+        run: |
+          git config --global user.name "${{ vars.CHANGELOG_USER }}"
+          git config --global user.email "${{ vars.CHANGELOG_EMAIL }}"
+        shell: bash
+
+      - name: Get contributors
         shell: pwsh
         env:
-          GITHUB_TOKEN: ${{secrets.BOT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
         run: Tools/dump_github_contributors.ps1 > Resources/Credits/GitHub.txt
 
-      # TODO
-      #- name: Get this week's Patreons
-      #  run: Tools/script2dumppatreons > Resources/Credits/Patrons.yml
+      - name: Setup Git
+        run: |
+          git config --global user.name "${{ vars.CHANGELOG_USER }}"
+          git config --global user.email "${{ vars.CHANGELOG_EMAIL }}"
+        shell: bash
 
-      # MAKE SURE YOU ENABLED "Allow GitHub Actions to create and approve pull requests" IN YOUR ACTIONS, OTHERWISE IT WILL MOST LIKELY FAIL
-
-
-      # For this you can use a pat token of an account with direct push access to the repo if you have protected branches.
-      # Uncomment this and comment the other line if you do this.
-      # https://github.com/stefanzweifel/git-auto-commit-action#push-to-protected-branches
-
-      #- name: Commit new credit files
-      #  uses: stefanzweifel/git-auto-commit-action@v4
-      #  with:
-      #    commit_message: Update Credits
-      #    commit_author: PJBot <pieterjan.briers+bot@gmail.com>
-
-      # This will make a PR
       - name: Set current date as env variable
         run: echo "NOW=$(date +'%Y-%m-%dT%H-%M-%S')" >> $GITHUB_ENV
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          commit-message: Update Credits
-          title: Update Credits
-          body: This is an automated Pull Request. This PR updates the github contributors in the credits section.
-          author: GoobBot <uristmchands@proton.me>
-          branch: automated/credits-${{env.NOW}}
+      - name: Commit Changelog
+        run: |
+          git add Resources/Credits/GitHub.txt
+          git commit -m "${{ vars.CREDITS_MESSAGE }} (${{ env.NOW }})"
+          git push
+        shell: bash
+        continue-on-error: true

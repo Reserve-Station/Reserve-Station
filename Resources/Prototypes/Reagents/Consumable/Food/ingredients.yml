@@ -8,6 +8,7 @@
   physicalDesc: reagent-physical-desc-powdery
   flavor: chalky
   color: white
+  puddleSpriteSet: Powder # Goob
   recognizable: true
   metabolisms:
     Food:
@@ -29,6 +30,7 @@
   physicalDesc: reagent-physical-desc-powdery
   flavor: corn #so corn doesnt taste chalky
   color: tan
+  puddleSpriteSet: Powder # Goob
   metabolisms:
     Food:
       effects:
@@ -46,6 +48,7 @@
   physicalDesc: reagent-physical-desc-coarse
   flavor: oats
   color: tan
+  puddleSpriteSet: Powder # Goob
   metabolisms:
     Food:
       effects:
@@ -72,6 +75,7 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleSpriteSet: Splotchy # Goob
 
 - type: reagent
   id: Egg
@@ -81,6 +85,7 @@
   physicalDesc: reagent-physical-desc-mucus-like
   flavor: raw-egg
   color: white
+  puddleSpriteSet: Egg # Goob
   recognizable: true
   # Reserve: Orchid's Barmania - Visual Fixes start
   metamorphicSprite:
@@ -105,6 +110,7 @@
   physicalDesc: reagent-physical-desc-fluffy
   flavor: egg
   color: "#F8F0DA"  # Reserve: Orchid's Barmania - Vendichaos
+  puddleSpriteSet: Egg # Goob
   recognizable: true
   # Reserve: Orchid's Barmania - Visual Fixes start
   metamorphicSprite:
@@ -129,6 +135,7 @@
   physicalDesc: reagent-physical-desc-grainy
   flavor: peppery
   color: black
+  puddleSpriteSet: Powder # Goob
   recognizable: true
   metabolisms:
     Food:
@@ -138,6 +145,8 @@
         showInChat: true
         showInGuidebook: true
         probability: 0.05
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: PepperEffect
   reactiveEffects:
     Acidic:
       methods: [ Touch ]
@@ -158,6 +167,7 @@
   physicalDesc: reagent-physical-desc-sour
   flavor: bitter
   color: tan
+  puddleSpriteSet: Shiny # Goob
   recognizable: true
   # Reserve: Orchid's Barmania - Visual Fixes start
   metamorphicSprite:
@@ -191,6 +201,7 @@
   physicalDesc: reagent-physical-desc-chewy
   flavor: rice
   color: white
+  puddleSpriteSet: Powder # Goob
   recognizable: true
   metabolisms:
     Food:
@@ -211,6 +222,7 @@
   flavor: oily
   flavorMinimum: 0.05
   color: olive
+  puddleSpriteSet: Shiny # Goob
   recognizable: true
   # Reserve: Orchid's Barmania - Visual Fixes start
   metamorphicSprite:
@@ -226,6 +238,8 @@
       - !type:AdjustReagent
         reagent: Nutriment
         amount: 0.75
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: OilyEffect
 
 - type: reagent
   id: Oil
@@ -238,8 +252,16 @@
   recognizable: true
   color: "#b67823"
   flammability: 1 # Funky change
+  puddleSpriteSet: Shiny # Goob
   boilingPoint: 300.0
   meltingPoint: -16.0
+  # Reserve edit start: Mood System port
+  metabolisms:
+    Food:
+      effects:
+      - !type:ChemAddMoodlet
+        moodPrototype: DeepFriedEffect
+  # Reserve edit end: Mood System port
   tileReactions:
   - !type:FlammableTileReaction {}
   # Reserve: Orchid's Barmania - Visual Fixes start
@@ -260,6 +282,7 @@
   flavor: spicy
   flavorMinimum: 0.05
   color: "#FF0000"
+  puddleSpriteSet: Shiny # Goob
   recognizable: true
   meltingPoint: 146
   boilingPoint: 410 # Really high boiling point compared to its melting
@@ -277,6 +300,8 @@
       - !type:AdjustReagent
         reagent: Nutriment #Oils enhance nutrition
         amount: 0.75
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: SpicyEffect
     Poison:
       effects:
         - !type:AdjustTemperature
@@ -302,6 +327,7 @@
   physicalDesc: reagent-physical-desc-powdery
   flavor: chocolate
   color: "#800000"
+  puddleSpriteSet: Powder # Goob
   meltingPoint: 146.0
   metabolisms:
     Food:
@@ -315,6 +341,10 @@
           reagent: Nutriment
           min: 0.1
         factor: 1
+      # Reserve edit start: Mood System port
+      - !type:ChemAddMoodlet
+        moodPrototype: ChocolateEffect
+      # Reserve edit end: Mood System port
   plantMetabolism:
   - !type:PlantAdjustNutrition
     amount: 0.1
@@ -331,6 +361,7 @@
   physicalDesc: reagent-physical-desc-creamy
   flavor: butter
   color: yellow
+  puddleSpriteSet: Splotchy # Goob
   meltingPoint: 32.0
   boilingPoint: 100.0
   recognizable: true
@@ -340,6 +371,8 @@
       - !type:AdjustReagent
         reagent: Nutriment
         amount: 0.75
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: ButterEffect
 
 - type: reagent
   id: TeaPowder
@@ -348,6 +381,7 @@
   physicalDesc: reagent-physical-desc-powdery
   flavor: tea
   color: "#7F8400"
+  puddleSpriteSet: Powder # Goob
   group: Foods
   metabolisms:
     Food:
@@ -374,12 +408,15 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleSpriteSet: Shiny # Goob
   metabolisms:
     Food:
       effects:
       - !type:AdjustReagent
         reagent: Nutriment #Oils enhance nutrition
         amount: 0.75
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: MintyEffect
     Poison:
       effects:
       - !type:AdjustTemperature

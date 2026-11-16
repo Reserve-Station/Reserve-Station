@@ -1,3 +1,3 @@
 ent-WeaponMechDebugMelle = отладочный бам
-    .desc = Надежная штука.
+    .desc = Надёжная штука.
     .suffix = Оружие Меха, DEBUG, Ближний бой

@@ -1,9 +1,12 @@
 ent-MobSkeletonPerson = { ent-BaseMobSkeletonPerson }
     .desc = { ent-BaseMobSkeletonPerson.desc }
-    .suffix = Скелет
+    .suffix = Скелет, Хэллоуин, Костяной карнавал
 ent-MobSkeletonPirate = скелет-пират
     .desc = { ent-MobSkeletonPerson.desc }
+    .suffix = Хэллоуин, Костяной карнавал
 ent-MobSkeletonBiker = скелет-байкер
     .desc = { ent-MobSkeletonPerson.desc }
+    .suffix = Хэллоуин, Костяной карнавал
 ent-MobSkeletonCloset = скелет из шкафа
     .desc = { ent-MobSkeletonPerson.desc }
+    .suffix = Хэллоуин, Костяной карнавал

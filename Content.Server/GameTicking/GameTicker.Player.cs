@@ -12,8 +12,11 @@ using Robust.Server.Player;
 using Robust.Shared.Audio;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
-using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server.Discord;
+using Content.Server.Discord.DiscordLink;  // Reserve edit: Maecenas System
+using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
+using Content.Server.ADT.Administration;
 
 namespace Content.Server.GameTicking
 {
@@ -21,6 +24,8 @@ namespace Content.Server.GameTicking
     public sealed partial class GameTicker
     {
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly DiscordLink _discordLink = default!;  // Reserve edit: Maecenas System
+        [Dependency] private IBanGuardManager _banGuard = default!; // Reserve edit: Reserve Red - BanGuard
 
         private void InitializePlayer()
         {
@@ -58,13 +63,39 @@ namespace Content.Server.GameTicking
 
                     var record = await _db.GetPlayerRecordByUserId(args.Session.UserId);
                     var firstConnection = record != null &&
-                                          Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 1;
+                                          Math.Abs((record.FirstSeenTime - record.LastSeenTime).TotalMinutes) < 120; //Reserve edit - until 2hr played total
 
-                    _chatManager.SendAdminAnnouncement(firstConnection
-                        ? Loc.GetString("player-first-join-message", ("name", args.Session.Name))
+                    var firstSeenTime = record?.FirstSeenTime.ToString("dd.MM.yyyy") ?? "unknown"; // Reserve edit- first connection date
+
+                    //ADT tweak begin
+                    var creationDate = "Не удалось получить дату создания аккаунта";
+                    if (firstConnection) // The date is only used in first-join messages
+                    {
+                        try
+                        {
+                            // Получаем дату создания аккаунта через API визардов
+                            creationDate = await AuthApiHelper.GetCreationDate(args.Session.UserId.ToString());
+                        }
+                        catch (Exception ex)
+                        {
+                            // Warning: this can fail on shutdown (e.g. disposed logger in tests) and must not fail them.
+                            Log.Warning($"Ошибка при получении даты создания аккаунта: {ex.Message}");
+                        }
+                    }
+                    //ADT tweak end
+                        _chatManager.SendAdminAnnouncement(firstConnection
+                        ? Loc.GetString("player-first-join-message", ("name", args.Session.Name)) + " " +
+                          Loc.GetString("player-first-join-date", ("firstSeenTime", firstSeenTime)) + "\n" +//Reserve edit
+                          Loc.GetString("player-first-join-account-date", ("creationDate", creationDate)) //Reserve edit
                         : Loc.GetString("player-join-message", ("name", args.Session.Name)));
 
-                    RaiseNetworkEvent(GetConnectionStatusMsg(), session.Channel);
+                        // Reserve edit start: Reserve Red - BanGuard
+                        if (firstConnection)
+                            _banGuard.PlayerFirstJoined(args.Session.Name, args.Session.UserId, creationDate);
+                        // Reserve edit end: Reserve Red - BanGuard
+                        await _discordLink.AssignPatronTierAsync(args.Session.UserId);  // Reserve edit: Maecenas System
+                    if (session.Channel.IsConnected)  // Reserve edit: Flaky test fixes
+                        RaiseNetworkEvent(GetConnectionStatusMsg(), session.Channel);
 
                     if (firstConnection && _cfg.GetCVar(CCVars.AdminNewPlayerJoinSound))
                         _audio.PlayGlobal(new SoundPathSpecifier("/Audio/Effects/newplayerping.ogg"),
@@ -123,6 +154,11 @@ namespace Content.Server.GameTicking
 
                 case SessionStatus.Disconnected:
                 {
+                    // Moffstation - Start - Ready Manifest
+                    if (_playerGameStatuses.TryGetValue(session.UserId, out var status) &&
+                        status == PlayerGameStatus.ReadyToPlay)
+                        ToggleReady(session, false);
+                    // Moffstation - End
                     _chatManager.SendAdminAnnouncement(Loc.GetString("player-leave-message", ("name", args.Session.Name)));
                     if (mindId != null)
                     {
@@ -201,7 +237,8 @@ namespace Content.Server.GameTicking
                 }
             }
 
-            RaiseNetworkEvent(new TickerJoinGameEvent(), session.Channel);
+            if (session.Channel.IsConnected)  // Reserve edit: Flaky test fixes
+                RaiseNetworkEvent(new TickerJoinGameEvent(), session.Channel);
         }
 
         private void PlayerJoinLobby(ICommonSession session)
@@ -210,9 +247,12 @@ namespace Content.Server.GameTicking
             _db.AddRoundPlayers(RoundId, session.UserId);
 
             var client = session.Channel;
-            RaiseNetworkEvent(new TickerJoinLobbyEvent(), client);
-            RaiseNetworkEvent(GetStatusMsg(session), client);
-            RaiseNetworkEvent(GetInfoMsg(), client);
+            if (client.IsConnected)  // Reserve edit: Flaky test fixes
+            {
+                RaiseNetworkEvent(new TickerJoinLobbyEvent(), client);
+                RaiseNetworkEvent(GetStatusMsg(session), client);
+                RaiseNetworkEvent(GetInfoMsg(), client);
+            }
             RaiseLocalEvent(new PlayerJoinedLobbyEvent(session));
         }
 

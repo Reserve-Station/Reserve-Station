@@ -61,11 +61,15 @@
   id: XenoarchaeologyUnlockingNodes
   name: guide-entry-xenoarchaeologyunlockingnodes
   text: "/ServerInfo/Guidebook/Science/UnlockingNodes.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/UnlockingNodes.xml"
 
 - type: guideEntry
   id: AnalysisConsole
   name: guide-entry-analysisconsole
   text: "/ServerInfo/Guidebook/Science/AnalysisConsole.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Science/AnalysisConsole.xml"
 
 - type: guideEntry
   id: Robotics

@@ -1,12 +1,14 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using System.Numerics;
 using System.Linq;
 using Content.Shared._CorvaxNext.BattleRoyale.DynamicRange;
 using Content.Shared.Salvage;
-using Content.Server.Damage;
 using Content.Server.Audio;
 using Content.Server.Station.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Audio;
+using Content.Shared.Damage.Systems;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Physics.Systems;
@@ -20,17 +22,17 @@ using Robust.Shared.Audio;
 
 namespace Content.Server._CorvaxNext.BattleRoyale.DynamicRange;
 
-public sealed class DynamicRangeSystem : EntitySystem
+public sealed partial class DynamicRangeSystem : EntitySystem
 {
-    [Dependency] private readonly IMapManager _mapManager = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly ServerGlobalSoundSystem _sound = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly StationSystem _stationSystem = default!;
+    [Dependency] private SharedMapSystem _mapManager = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private DamageableSystem _damageableSystem = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private ServerGlobalSoundSystem _sound = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private StationSystem _stationSystem = default!;
 
     private EntityQuery<MapComponent> _mapQuery;
     private EntityQuery<TransformComponent> _xformQuery;
@@ -133,7 +135,7 @@ public sealed class DynamicRangeSystem : EntitySystem
             if (comp.IsShrinking && comp.ShrinkStartTime.HasValue && comp.InitialRange.HasValue)
             {
                 var elapsed = (curTime - comp.ShrinkStartTime.Value).TotalSeconds;
-                var shrinkProgress = (float)Math.Min(elapsed / comp.ShrinkTime, 1.0);
+                var shrinkProgress = (float) Math.Min(elapsed / comp.ShrinkTime, 1.0);
 
                 var targetRange = Math.Max(
                     comp.MinimumRange,
@@ -352,7 +354,7 @@ public sealed class DynamicRangeSystem : EntitySystem
 
         if (_mapManager.MapExists(mapId))
         {
-            var mapUid = _mapManager.GetMapEntityId(mapId);
+            var mapUid = _mapManager.GetMap(mapId);
             mapInitialized = _mapQuery.TryComp(mapUid, out var mapComp) && mapComp.MapInitialized;
         }
 

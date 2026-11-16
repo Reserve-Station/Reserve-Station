@@ -119,6 +119,8 @@
   name: atmos fire suit
   description: An expensive firesuit that protects against even the most deadly of station fires. Designed to protect even if the wearer is set aflame.
   components:
+  - type: Stainable
+    fireScale: 0.1 # Reserve edit: fire-nerf
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/atmos_firesuit.rsi
   - type: Clothing

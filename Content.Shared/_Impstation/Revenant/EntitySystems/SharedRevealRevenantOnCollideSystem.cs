@@ -1,23 +1,22 @@
-using Content.Shared.Revenant.Components;
+﻿using Content.Shared.Revenant.Components;
 using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Robust.Shared.Physics.Events;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 
 namespace Content.Shared.Revenant.EntitySystems;
 
-public abstract class SharedRevealRevenantOnCollideSystem : EntitySystem
+public abstract partial class SharedRevealRevenantOnCollideSystem : EntitySystem
 {
-    [Dependency] private readonly StatusEffectsSystem _status = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private StatusEffectsSystem _status = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
+    // [Dependency] private readonly IGameTiming _gameTiming = default!; // Reserve edit: Fix warnings
 
-    [ValidatePrototypeId<StatusEffectPrototype>]
-    private const string CorporealStatusId = "Corporeal";
-    [ValidatePrototypeId<StatusEffectPrototype>]
-    private const string StunStatusId = "Stun";
+    private readonly ProtoId<StatusEffectPrototype> _corporealStatusId = "Corporeal";
+    private readonly ProtoId<StatusEffectPrototype> _stunStatusId = "Stun";
 
     public override void Initialize()
     {
@@ -31,16 +30,16 @@ public abstract class SharedRevealRevenantOnCollideSystem : EntitySystem
         if (!HasComp<RevenantComponent>(args.OtherEntity))
             return;
 
-        if (!string.IsNullOrEmpty(comp.PopupText) && !_status.HasStatusEffect(args.OtherEntity, CorporealStatusId))
+        if (!string.IsNullOrEmpty(comp.PopupText) && !_status.HasStatusEffect(args.OtherEntity, _corporealStatusId))
             _popup.PopupClient(
                 Loc.GetString(comp.PopupText, ("revealer", uid), ("revenant", args.OtherEntity)),
                 args.OtherEntity,
                 args.OtherEntity
             );
 
-        _status.TryAddStatusEffect<CorporealComponent>(args.OtherEntity, CorporealStatusId, comp.RevealTime, true);
+        _status.TryAddStatusEffect<CorporealComponent>(args.OtherEntity, _corporealStatusId, comp.RevealTime, true);
 
-        if (comp.StunTime != null && !_status.HasStatusEffect(args.OtherEntity, StunStatusId))
+        if (comp.StunTime != null && !_status.HasStatusEffect(args.OtherEntity, _stunStatusId))
             _stun.TryUpdateStunDuration(args.OtherEntity, comp.StunTime.Value);
     }
 }

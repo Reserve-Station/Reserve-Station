@@ -210,6 +210,7 @@ public abstract partial class SharedPuddleSystem : EntitySystem
         if (!Resolve(ent, ref puddle, ref appearance))
             return;
 
+        // var spriteSet = DefaultPuddleSpriteSet; // Goob | reserve - revert puddle visuals (sprite sets unused)
         var volume = FixedPoint2.Zero;
         var color = Color.White;
 
@@ -224,6 +225,7 @@ public abstract partial class SharedPuddleSystem : EntitySystem
             // Kinda EH
             // Could potentially do alpha per-solution but future problem.
 
+            // Reserve start - revert puddle visuals
             color = solution.GetColorWithout(_prototypeManager, _standoutReagents);
             color = color.WithAlpha(0.7f);
 
@@ -238,10 +240,14 @@ public abstract partial class SharedPuddleSystem : EntitySystem
                     _prototypeManager.Index<ReagentPrototype>(standout).SubstanceColor,
                     interpolateValue);
             }
+            // Reserve end
+
+            // spriteSet = GetPuddleSpriteSet(solution); // Goob | reserve - revert puddle visuals (sprite sets unused)
         }
 
         _appearance.SetData(ent, PuddleVisuals.CurrentVolume, volume.Float(), appearance);
         _appearance.SetData(ent, PuddleVisuals.SolutionColor, color, appearance);
+        // _appearance.SetData(ent, PuddleVisuals.SpriteSet, (string) spriteSet, appearance); // Goob | reserve -revert puddle visuals (sprite sets unused)
     }
 
     private void UpdateSlip(Entity<PuddleComponent> entity, Solution solution)

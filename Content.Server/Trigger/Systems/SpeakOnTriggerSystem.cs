@@ -1,10 +1,10 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Chat;
 using Content.Shared.Timing;
 using Content.Server.Chat.Systems;
-using Content.Shared.Chat;
+// using Content.Shared.Chat; // Reserve edit: Fix warnings
 using Content.Shared.Trigger;
 using Content.Shared.Trigger.Components.Effects;
 using Robust.Shared.Prototypes;

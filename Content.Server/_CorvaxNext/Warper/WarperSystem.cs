@@ -12,11 +12,11 @@ using System.Numerics;
 
 namespace Content.Server._CorvaxNext.Warper;
 
-public sealed class WarperSystem : EntitySystem
+public sealed partial class WarperSystem : EntitySystem
 {
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly WarpPointSystem _warpPointSystem = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private SharedPhysicsSystem _physics = default!;
+    [Dependency] private WarpPointSystem _warpPointSystem = default!;
     private ISawmill _sawmill = default!;
 
     public override void Initialize()
@@ -54,9 +54,9 @@ public sealed class WarperSystem : EntitySystem
         }
 
         // Check that the destination map is initialized and return unless in aghost mode.
-        var mapMgr = IoCManager.Resolve<IMapManager>();
+        var mapMgr = IoCManager.Resolve<SharedMapSystem>();
         var destMap = destXform.MapID;
-        if (!mapMgr.IsMapInitialized(destMap) || mapMgr.IsMapPaused(destMap))
+        if (!mapMgr.IsInitialized(destMap) || mapMgr.IsPaused(destMap))
         {
             if (!entMan.HasComponent<GhostComponent>(args.User))
             {

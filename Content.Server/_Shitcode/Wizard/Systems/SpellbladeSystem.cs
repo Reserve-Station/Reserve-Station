@@ -13,6 +13,8 @@ using Content.Shared.Physics;
 using Content.Shared.Timing;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Server.Atmos.Components;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server._Goobstation.Wizard.Systems;
 
@@ -55,7 +57,7 @@ public sealed class SpellbladeSystem : SharedSpellbladeSystem
             temporal.HitsLeft--;
             temporal.Accumulator = 0f;
 
-            _damageable.TryChangeDamage(uid, temporal.Damage, damageable: damageable, targetPart: TargetBodyPart.Chest);
+            _damageable.ChangeDamage((uid, damageable), temporal.Damage, targetPart: TargetBodyPart.Chest);
             Audio.PlayPvs(temporal.HitSound, xform.Coordinates);
             Spawn(temporal.Effect, xform.Coordinates);
 

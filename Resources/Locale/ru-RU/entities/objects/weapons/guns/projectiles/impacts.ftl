@@ -1,8 +1,8 @@
-ent-BulletImpactEffect = { "" }
-    .desc = { "" }
-ent-BulletImpactEffectDisabler = { "" }
-    .desc = { "" }
-ent-BulletImpactEffectOrangeDisabler = { "" }
-    .desc = { "" }
-ent-BulletImpactEffectKinetic = { "" }
-    .desc = { "" }
+ent-BulletImpactEffect = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }
+ent-BulletImpactEffectDisabler = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }
+ent-BulletImpactEffectOrangeDisabler = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }
+ent-BulletImpactEffectKinetic = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }

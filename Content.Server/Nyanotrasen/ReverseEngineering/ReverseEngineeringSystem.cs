@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
+﻿// SPDX-FileCopyrightText: 2026 Space Station 14 Contributors
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -34,7 +34,7 @@ public sealed class ReverseEngineeringSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
-    [Dependency] private readonly MetaDataSystem _meta = default!;
+    // [Dependency] private readonly MetaDataSystem _meta = default!; // Reserve edit: Fix warnings
 
     private readonly ISawmill _sawmill = Logger.GetSawmill("reverseengineering");
 

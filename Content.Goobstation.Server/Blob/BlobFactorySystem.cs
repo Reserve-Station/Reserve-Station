@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
 using Content.Goobstation.Server.Blob.Components;
@@ -17,11 +17,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Goobstation.Server.Blob;
 
-public sealed class BlobFactorySystem : EntitySystem
+public sealed partial class BlobFactorySystem : EntitySystem
 {
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
+    // [Dependency] private PopupSystem _popup = default!; // Reserve edit: Fix warnings
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
 
 
     public override void Initialize()
@@ -94,10 +94,20 @@ public sealed class BlobFactorySystem : EntitySystem
 
     private static readonly ProtoId<ReagentPrototype> Bicaridine = "Bicaridine";
 
+    private static readonly ProtoId<ReagentPrototype> ChloralHydrate = "ChloralHydrate";
+
+    private static readonly ProtoId<ReagentPrototype> Profanol = "Profanol";
+
+    private static readonly ProtoId<ReagentPrototype> PolytrinicAcid = "PolytrinicAcid";
+
+    private static readonly ProtoId<ReagentPrototype> Ipecac = "Ipecac";
+
+    private static readonly ProtoId<ReagentPrototype> Razorium = "Razorium";
+
+    private static readonly ProtoId<ReagentPrototype> Fresium = "Fresium";
+
     private static readonly ProtoId<ReagentPrototype> Aluminium = "Aluminium";
-
     private static readonly ProtoId<ReagentPrototype> Iron = "Iron";
-
     private static readonly ProtoId<ReagentPrototype> Uranium = "Uranium";
 
     private void FillSmokeGas(Entity<BlobPodComponent> ent, BlobChemType currentChem)
@@ -131,6 +141,22 @@ public sealed class BlobFactorySystem : EntitySystem
             default:
                 blobGas.AddSolution(new Solution(TearGas, FixedPoint2.New(30)), _prototypeManager);
                 break;
+            case BlobChemType.ComatoseFiber:
+                blobGas.AddSolution(new Solution(ChloralHydrate, FixedPoint2.New(30)), _prototypeManager);
+                break;
+            case BlobChemType.ChainCoating:
+                blobGas.AddSolution(new Solution(Razorium, FixedPoint2.New(30)), _prototypeManager);
+                break;
+            case BlobChemType.SinewyTendons:
+                blobGas.AddSolution(new Solution(Ipecac, FixedPoint2.New(15)), _prototypeManager);
+                blobGas.AddSolution(new Solution(Profanol, FixedPoint2.New(15)), _prototypeManager);
+                break;
+            case BlobChemType.CorrosiveSlime:
+                blobGas.AddSolution(new Solution(PolytrinicAcid, FixedPoint2.New(30)), _prototypeManager);
+                break;
+            case BlobChemType.CryogenicPoison:
+                blobGas.AddSolution(new Solution(Fresium, FixedPoint2.New(30)), _prototypeManager);
+                break;
         }
     }
 
@@ -144,6 +170,10 @@ public sealed class BlobFactorySystem : EntitySystem
 
         // forget dead pods
         component.BlobPods = component.BlobPods.Where(b => !TerminatingOrDeleted(b) && _mobState.IsAlive(b)).ToList();
+        if (blobCoreComponent.CurrentChem == BlobChemType.SinewyTendons)
+        {
+            component.SpawnLimit = 5;
+        }
 
         if (component.BlobPods.Count >= component.SpawnLimit)
             return;
@@ -165,5 +195,6 @@ public sealed class BlobFactorySystem : EntitySystem
 
         //smokeOnTrigger.SmokeColor = blobCoreComponent.ChemСolors[blobCoreComponent.CurrentChem];
         component.Accumulator = 0;
+        component.SpawnLimit = 3;
     }
 }

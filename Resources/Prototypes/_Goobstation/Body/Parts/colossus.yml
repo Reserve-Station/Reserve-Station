@@ -124,7 +124,7 @@
   - type: BodyPart
     partType: Chest
     # Shitmed Change Start
-    toolName: "a chest"
+    toolName: "surgery-tool-name-chest" # Reserve edit: localization key
     containerName: "chest_slot"
   - type: Woundable
     damageContainer: InorganicMetaphysical

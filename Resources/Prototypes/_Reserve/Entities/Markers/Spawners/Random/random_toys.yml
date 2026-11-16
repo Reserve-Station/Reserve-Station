@@ -1,5 +1,83 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# region Special objects and toys tables for random spawners
+
+- type: entity
+  parent: BaseFlatpack
+  id: TargetDartsFlatpack
+  name: dartboard flatpack
+  description: A flatpack used for constructing a target for playing darts.
+  components:
+  - type: Flatpack
+    entity: TargetDarts
+  - type: Item
+    size: Normal
+
+# endregion Special objects and toys tables for random spawners
+
+# region Tables
+
+- type: entityTable
+  id: AllMusicToysTable
+  table: !type:GroupSelector
+    children:
+    - id: HelicopterInstrument
+    - id: BirdToyInstrument
+
+- type: entityTable
+  id: AllMusicDiscsTable
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: RandomVinylSleeve
+      weight: 2.0
+    - !type:NestedSelector
+      tableId: RandomCDDisk
+      weight: 1.0
+    - id: DiskCaseFilled
+      weight: 1.0
+
+- type: entityTable
+  id: AllSportsToysTable
+  table: !type:GroupSelector
+    children:
+    - !type:AllSelector
+      children:
+      - id: BoxDarts
+      - id: TargetDartsFlatpack
+    - !type:AllSelector  # From ClothingBackpackDuffelTennisGame
+      children:
+      - id: TennisBall
+        amount: 2
+      - id: BaseTennisRacket
+        amount: 2
+      - id: NTTennisRacket
+        amount: 2
+    - !type:GroupSelector
+      rolls: 2
+      children:
+      - id: ClothingHandsGlovesBoxingRed
+      - id: ClothingHandsGlovesBoxingBlue
+      - id: ClothingHandsGlovesBoxingYellow
+      - id: ClothingHandsGlovesBoxingGreen
+
+- type: entityTable
+  id: MoreBoardGamesTable
+  table: !type:GroupSelector
+    children:
+    - id: ChessBoard
+    - id: BackgammonBoard
+    - id: ParchisBoard
+    - id: CheckerBoard
+    - id: BoxPlaysetEvacPod
+      weight: 1.2
+    - id: CardBoxBase
+      weight: 0.7
+    - id: CardBoxBlack
+      weight: 0.7
+    - id: CardBoxNanotrasen
+      weight: 0.7
+
 - type: entity
   id: RandomPersonalAI
   name: random personal AI spawner
@@ -97,6 +175,10 @@
     chance: 0.8
     offset: 0.0
 
+# endregion Tables
+
+# region Objects
+
 - type: entity
   id: RandomTableTopGame
   name: random board game
@@ -125,161 +207,6 @@
     chance: 0.8
     offset: 0.0
 
-# Objects
-
-- type: entityTable
-  id: CrateFunToyBoxFill
-  table: !type:GroupSelector
-    children:
-    - id: SnapPopBox
-      weight: 0.3
-    - id: CrazyGlue
-      amount: 2
-      weight: 0.3
-    - id: PlasticBanana
-      weight: 0.3
-    - id: WhoopieCushion
-      weight: 0.5
-    - id: ToyHammer
-      weight: 0.5
-    - id: MysteryFigureBox
-      weight: 0.7
-    - id: MysteryFigureBox
-      amount: 2
-      weight: 0.2
-    - !type:GroupSelector
-      children:
-      - id: RevolverCapGun
-      - id: DoubleToySword
-      - id: FoamWonderprod
-      - id: FoamCutlass
-      - id: WeaponRifleFoam
-        weight: 0.2
-      weight: 0.8
-    - !type:GroupSelector
-      children:
-      - id: WeaponWaterBlaster
-      - id: WeaponWaterPistol
-      - id: WeaponWaterBlasterSuper
-        weight: 0.2
-      weight: 0.2
-    - !type:GroupSelector
-      children:
-      - !type:AllSelector
-        children:
-        - id: MrChips
-        - id: MrDips
-        - id: LilCal
-        weight: 0.2
-      - !type:NestedSelector
-        tableId: AllPlushiesTable
-        weight: 1.5
-    - !type:GroupSelector
-      children:
-      - !type:NestedSelector
-        tableId: RandomVinylSleeve
-        weight: 2.0
-      - !type:NestedSelector
-        tableId: RandomCDDisk
-        weight: 1.0
-      - id: DiskCaseFilled
-        weight: 1.0
-    - !type:GroupSelector
-      children:
-      - id: BalloonNT
-      - id: BalloonCorgi
-      weight: 0.3
-    - !type:GroupSelector
-      children:
-      - id: Basketball
-      - id: BeachBall
-      - id: Football
-      - id: TennisBall
-        amount: 2
-      - id: DiscoBeachBall
-        weight: 0.2
-      weight: 0.8
-    - id: ClothingShoesSkates
-      weight: 0.3
-    - id: RubberChicken
-      weight: 0.3
-    - !type:GroupSelector
-      children:
-      - id: HelicopterInstrument
-      - id: BirdToyInstrument
-      weight: 0.3
-    - id: DrinkPwrGameCan
-      amount: 2
-      weight: 0.3
-    - id: GrenadeToy
-      amount: 2
-      weight: 0.3
-    - id: GrenadeFoamDart
-      amount: 3
-      weight: 0.2
-    - !type:GroupSelector
-      children:
-      - id: ToyAi
-      - id: ToyMouse
-      weight: 0.3
-    - !type:GroupSelector
-      children:
-      - id: ChessBoard
-      - id: BackgammonBoard
-      - id: ParchisBoard
-      - id: CheckerBoard
-      - id: BoxPlaysetEvacPod
-        weight: 1.2
-      - id: CardBoxBase
-        weight: 0.7
-      - id: CardBoxBlack
-        weight: 0.7
-      - id: CardBoxNanotrasen
-        weight: 0.7
-      - id: DiceBag
-        weight: 0.8
-      - id: MagicDiceBag
-        weight: 0.7
-      - !type:AllSelector
-        children:
-        - id: BoxDarts
-        - id: TargetDarts
-        weight: 1.2
-      - id: CrayonBox
-      - id: ClothingBackpackDuffelTennisGame
-        weight: 1.2
-    - !type:GroupSelector
-      children:
-      - id: ClothingShoesClownLarge
-      - id: ClothingShoeSlippersLizard
-      - id: ClothingShoesFakeJordans
-      weight: 0.3
-    - !type:GroupSelector
-      children:
-      - id: ClothingHandsGlovesBoxingRed
-      - id: ClothingHandsGlovesBoxingBlue
-      - id: ClothingHandsGlovesBoxingYellow
-      - id: ClothingHandsGlovesBoxingGreen
-      weight: 0.6
-      rolls: 2
-    - !type:GroupSelector
-      children:
-      - id: ClothingHeadHatMagician
-      - id: ClothingMaskJoy
-      - id: ClothingEyesHudFriedOnion
-      weight: 0.3
-    - id: SpellCardFun
-      weight: 0.2
-    - !type:AllSelector
-      children:
-      - id: WeaponRifleFoam
-      - id: BoxDonkSoftBox
-      - id: GrenadeFoamDart
-        amount: 2
-      weight: 0.3
-    - id: WaterDropletHat
-      weight: 0.1
-
 - type: entity
   id: CrateFunToyBoxRandom
   parent: CrateToyBox
@@ -288,7 +215,7 @@
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: CrateFunToyBoxFill
+        tableId: AllToysTable
         rolls: !type:RangeNumberSelector
           range: 16, 18
 
@@ -315,3 +242,5 @@
       - SpaceVillainArcadeFilled
       - ClawMachine
     chance: 1
+
+# endregion Objects

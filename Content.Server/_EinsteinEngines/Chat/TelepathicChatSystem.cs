@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -26,9 +26,9 @@ public sealed partial class TelepathicChatSystem : EntitySystem
 {
     [Dependency] private readonly IAdminManager _adminManager = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    // [Dependency] private readonly IRobustRandom _random = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
+    // [Dependency] private readonly ChatSystem _chatSystem = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

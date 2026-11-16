@@ -1,0 +1,2010 @@
+# SPDX-FileCopyrightText: Made by Ceterai on GitHub.
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Title: Halloween on Reserve Station
+
+# A small collection of festive admemes and Halloween-themed objects and items brought by Orchi Dea to Reserve.
+
+
+
+
+
+# region PROTOTYPES
+
+
+
+
+
+# region Bats
+
+- type: entity
+  id: MobBatAngryBase
+  abstract: true
+  components:
+  - type: CombatMode
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: ZombieImmune
+
+- type: entity
+  parent: [MobBatAngryBase, MobBat]
+  id: MobBatAngry
+  components:
+  - type: CombatMode
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: ZombieImmune
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnMobBatAngry
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: ai
+  - type: RandomSpawner
+    prototypes:
+    - MobBatAngry
+
+- type: entity
+  parent: MobBat
+  id: MobBatBlack
+  components:
+  - type: Sprite
+    color: "#668888"
+
+- type: entity
+  parent: SpawnMobBatAngry
+  id: SpawnMobBatBlack
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - MobBatBlack
+
+- type: entity
+  parent: [MobBatAngryBase, MobBatBlack]
+  id: MobBatBlackAngry
+
+- type: entity
+  parent: SpawnMobBatAngry
+  id: SpawnMobBatBlackAngry
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - MobBatBlackAngry
+
+- type: entity
+  parent: MobBat
+  id: MobBatBloodRed
+  components:
+  - type: Sprite
+    color: "#880000"
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 250
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Blood
+          Quantity: 30
+  - type: Butcherable
+    spawned:
+    - id: PuddleBlood
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Critical
+      80: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 120
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+  - type: Item
+
+- type: entity
+  parent: SpawnMobBatAngry
+  id: SpawnMobBatBloodRed
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - MobBatBloodRed
+
+- type: entity
+  parent: [MobBatAngryBase, MobBatBloodRed]
+  id: MobBatBloodRedAngry
+
+- type: entity
+  parent: SpawnMobBatAngry
+  id: SpawnMobBatBloodRedAngry
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - MobBatBloodRedAngry
+
+- type: entity
+  parent: MobBat
+  id: MobBatVampire
+  components:
+  - type: Sprite
+    scale: 1.5, 1.5
+    color: "#668888"
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - VimPilot
+  - type: MindContainer
+  - type: MindExaminable
+  - type: Alerts
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    - TauCetiBasic
+    understands:
+    - Mouse
+    - TauCetiBasic
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Critical
+      120: Dead
+
+- type: entity
+  parent: SpawnMobBatAngry
+  id: SpawnMobBatVampire
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - MobBatVampire
+
+- type: entity
+  parent: [MobBatAngryBase, MobBatVampire]
+  id: MobBatVampireAngry
+
+- type: entity
+  parent: SpawnMobBatAngry
+  id: SpawnMobBatVampireAngry
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - MobBatVampireAngry
+
+# Random spawners
+
+- type: entity
+  parent: SpawnMobBatAngry
+  id: SpawnMobBatAny
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - MobBat
+    - MobBatBlack
+    rarePrototypes:
+    - MobBatBloodRed
+    rareChance: 0.05
+
+- type: entity
+  parent: SpawnMobBatAngry
+  id: SpawnMobBatAnyAngry
+  components:
+  - type: RandomSpawner
+    prototypes:
+    - MobBatAngry
+    - MobBatBlackAngry
+    rarePrototypes:
+    - MobBatBloodRedAngry
+    rareChance: 0.05
+
+# endregion Bats
+
+# region Candy buckets
+
+- type: entityTable
+  id: CandyTable
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      # Random
+      - id: FoodSnackLollypopWrappedMystery
+        weight: 1.5
+      # Orchi Dea
+      - !type:GroupSelector
+        children:
+        - id: FoodSnackOrchito
+        - id: FoodSnackStardustOrchito
+        - id: FoodSnackStardust
+        - id: FoodSnackStardustGoddess
+        weight: 1.5
+      - !type:GroupSelector
+        children:
+        - id: FoodSnackLollypopOrchito
+        - id: FoodSnackLollypopStardustOrchito
+        - id: FoodSnackLollypopStardust
+        - id: FoodSnackLollypopStardustGoddess
+      # Reserve
+      - !type:GroupSelector
+        children:
+        - id: FoodSnackLollypopBrepsi
+        - id: FoodSnackLollypopBacchusBlessing
+        - id: FoodSnackLollypopIce
+        - id: FoodSnackLollypopProtein
+      # Medical
+      - !type:GroupSelector
+        children:
+        - id: FoodSnackLollypopAntihol
+        - id: FoodSnackLollypopDexalinPlus
+        - id: FoodSnackLollypopDylovene
+        weight: 0.5
+      # Regular
+      - id: FoodSnackLollypop
+      - id: FoodSnackLollypopCarp
+      - id: FoodSnackLollypopRainbow
+      - id: FoodSnackLollypopWeh
+      # Bars
+      - !type:GroupSelector
+        children:
+        - id: FoodSnackChocolate
+        - id: FoodSnackChocolateBar
+        - id: FoodSnackEnergy
+        - id: FoodSnackProteinbar
+          weight: 1.5
+      # Other snacks
+      - !type:GroupSelector
+        children:
+        - id: FoodSnackChocobanana
+        - id: FoodSnackCookieFortune
+          weight: 1.5
+        - id: FoodSnackDango
+        - id: FoodSnackLunacakeWrapped
+        - id: FoodSnackMochicakeWrapped
+        - id: FoodSnackMooncakeWrapped
+        - id: FoodSnackPokeysticks
+          weight: 0.5
+      # Command candy, rarely
+      - !type:GroupSelector
+        children:
+        - id: FoodSnackLollypopCentcomm
+        - id: FoodSnackLollypopCaptain
+        - id: FoodSnackLollypopBlueshield
+        weight: 0.2
+      # Crayons, rarely
+      - !type:NestedSelector
+        tableId: AllCrayonsTable
+        weight: 0.2
+
+- type: entity
+  parent: BaseStorageItem  # Not deriving from CandyBucket because of broken ContainerHeld
+  id: CandyBucketFilled
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/candy_bucket.rsi
+    state: full_icon
+  - type: Item
+    heldPrefix: full
+    size: Normal
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,2
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      components:
+        - Pill
+      tags:
+        - FoodSnack
+        - Crayon
+  - type: Dumpable
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: CandyTable
+        rolls: 8, 12
+
+- type: entityTable
+  id: CandyTableMystery
+  table: !type:AllSelector
+    children:
+    - id: FoodSnackLollypopWrappedMysteryNeutral
+
+- type: entity
+  parent: CandyBucketFilled
+  id: CandyBucketFilledMystery
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: CandyTableMystery
+        rolls: 8, 12
+
+- type: entityTable
+  id: CandyTableMysteryEvil
+  table: !type:AllSelector
+    children:
+    - id: FoodSnackLollypopWrappedMysteryEvil
+
+- type: entity
+  parent: CandyBucketFilled
+  id: CandyBucketFilledMysteryEvil
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: CandyTableMysteryEvil
+        rolls: 8, 12
+
+- type: entity
+  parent: CandyBucketFilled
+  id: CandyBucketFilledAny
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:GroupSelector
+        children:
+        - !type:NestedSelector
+          tableId: CandyTable
+          rolls: 8, 12
+        - !type:NestedSelector
+          tableId: CandyTableMystery
+          rolls: 8, 12
+          weight: 0.6
+        - !type:NestedSelector
+          tableId: CandyTableMysteryEvil
+          rolls: 8, 12
+          weight: 0.3
+
+- type: entity
+  parent: CandyBucket
+  id: CandyBucketLarge
+  components:
+  - type: Sprite
+    scale: 1.2, 1.2
+    color: "#ffcccc"
+  - type: Storage
+    grid:
+    - 0,0,6,4
+
+- type: entity
+  parent: CandyBucket
+  id: CandyBucketBluespace
+  components:
+  - type: Sprite
+    scale: 1.3, 1.3
+    color: "#eeff66"
+  - type: Storage
+    grid:
+    - 0,0,8,6
+
+- type: entityTable
+  id: CandyBucketTable
+  table: !type:GroupSelector
+    children:
+    - id: CandyBucket
+      weight: 0.4
+    - id: CandyBucketFilledAny
+    - id: CandyBucketLarge
+      weight: 0.2
+    - id: CandyBucketBluespace
+      weight: 0.075
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnCandyBucket
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Objects/Fun/candy_bucket.rsi
+      state: full_icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: CandyBucketTable
+
+# endregion Candy buckets
+
+# region Food
+
+- type: entity
+  parent: FoodDonutBase
+  id: FoodDonutJellyPumpkin
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - pumpkin
+  - type: Sprite
+    state: jelly-beige
+    color: "#ffcccc"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: PumpkinFlesh
+          Quantity: 1
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 1
+        - ReagentId: Sugar
+          Quantity: 1
+
+# endregion Food
+
+# region Lights
+
+- type: entity
+  parent: LedLightTube
+  id: HalloweenLightTube
+  components:
+  - type: LightBulb
+    color: "#daa77f"
+    lightEnergy: 1.3
+    lightRadius: 7
+    lightSoftness: 0.9
+    BurningTemperature: 350
+    PowerUse: 12
+
+- type: entity
+  parent: PoweredlightLED
+  id: PoweredlightHalloween
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: HalloweenLightTube
+  - type: PointLight
+    radius: 7
+    energy: 1.3
+    softness: 0.9
+    color: "#daa77f"
+
+- type: entity
+  parent: DimLightBulb
+  id: HalloweenLightBulb
+  components:
+  - type: LightBulb
+    bulb: Bulb
+    color: "#daa77f"
+    lightEnergy: 0.8
+    lightRadius: 6
+    lightSoftness: 1.1
+
+- type: entity
+  parent: PoweredDimSmallLight
+  id: PoweredSmallLightHalloween
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: HalloweenLightBulb
+  - type: PointLight
+    enabled: true
+    radius: 6
+    energy: 0.8
+    softness: 1.1
+    color: "#daa77f"
+
+# endregion Lights
+
+# region Pumpkins
+
+- type: entityTable
+  id: RandomCarvedPumpkin
+  table: !type:GroupSelector
+    children:
+    - id: FoodPumpkin
+    - id: CarvedPumpkin
+    - id: PumpkinLantern
+
+- type: entityTable
+  id: RandomCarvedPumpkinSmall
+  table: !type:GroupSelector
+    children:
+    - id: CarvedPumpkinSmall
+    - id: PumpkinLanternSmall
+
+- type: entityTable
+  id: RandomCarvedPumpkinLarge
+  table: !type:GroupSelector
+    children:
+    - id: CarvedPumpkinLarge
+    - id: PumpkinLanternLarge
+
+- type: entityTable
+  id: RandomCarvedPumpkinAnySize
+  table: !type:GroupSelector
+    children:
+    - id: FoodPumpkin
+    - id: CarvedPumpkin
+    - id: CarvedPumpkinSmall
+    - id: CarvedPumpkinLarge
+    - id: PumpkinLantern
+    - id: PumpkinLanternSmall
+    - id: PumpkinLanternLarge
+
+# endregion Pumpkins
+
+# region Candles
+
+- type: entity
+  parent: CandleInfinite
+  id: CandleOrangeInfinite
+  components:
+  - type: Sprite
+    layers:
+      - state: candle-big
+        color: "#da973f"
+      - state: fire-big
+        shader: unshaded
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#da973f"
+      right:
+      - state: inhand-right
+        color: "#da973f"
+
+- type: entity
+  parent: CandleInfinite
+  id: CandleOrangeSmallInfinite
+  components:
+  - type: Sprite
+    layers:
+      - state: candle-small
+        color: "#da973f"
+      - state: fire-small
+        shader: unshaded
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#da973f"
+      right:
+      - state: inhand-right
+        color: "#da973f"
+
+- type: entityTable
+  id: RandomHalloweenCandle
+  table: !type:GroupSelector
+    children:
+    - id: CandleOrangeInfinite
+    - id: CandleOrangeSmallInfinite
+    - id: CandleGreenInfinite
+    - id: CandleGreenSmallInfinite
+    - id: CandlePurpleInfinite
+    - id: CandlePurpleSmallInfinite
+
+- type: entity
+  parent: MarkerBase
+  id: RandomHalloweenCandleBundleSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Specific/Hydroponics/pumpkin.rsi
+      state: lantern
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomHalloweenCandle
+      rolls: 1, 2
+
+- type: entity
+  parent: Candle
+  id: SpiritCandleDecor
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Goobstation/Wraith/Objects/spirit_candle.rsi
+    layers:
+    - state: unmelted-unlit
+    - state: eyes
+      map: [ "enum.SpiritCandleVisuals.Layer" ]
+      visible: true
+
+# endregion Candles
+
+# region Plushies
+
+- type: entity
+  parent: BasePlushie
+  id: PlushiePumpkin
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/pumpkin.rsi
+    state: produce
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Hydroponics/pumpkin.rsi
+    inhandVisuals:
+      left:
+      - state: produce-inhand-left
+      right:
+      - state: produce-inhand-right
+
+- type: entity
+  parent: PlushieGhost
+  id: PlushieGhostBurger
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/burger.rsi
+    state: ghost
+    noRot: true
+    color: "#fff8"
+  - type: Item
+    size: Small
+    sprite: Objects/Consumable/Food/burger.rsi
+    inhandVisuals:
+      left:
+      - state: alpha-bun-inhand-left
+        color: "#cededa"
+      - state: alpha-filling-inhand-left
+        color: "#6a6281"
+      - state: alpha-patty-inhand-left
+        color: "#95a79f"
+      right:
+      - state: alpha-bun-inhand-right
+        color: "#cededa"
+      - state: alpha-filling-inhand-right
+        color: "#6a6281"
+      - state: alpha-patty-inhand-right
+        color: "#95a79f"
+
+# endregion Plushies
+
+# region Decor
+
+- type: entityTable
+  id: RandomHalloweenDecor
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: RandomCarvedPumpkinLarge
+    - !type:NestedSelector
+      tableId: RandomCarvedPumpkin
+    - !type:AllSelector
+      children:
+      - !type:NestedSelector
+        tableId: RandomCarvedPumpkinAnySize
+      - !type:NestedSelector
+        tableId: RandomCarvedPumpkinSmall
+    - !type:AllSelector
+      children:
+      - !type:NestedSelector
+        tableId: RandomCarvedPumpkinAnySize
+      - !type:NestedSelector
+        tableId: RandomHalloweenCandle
+        rolls: 2, 3
+    - id: SpiderWeb
+      weight: 1.5
+
+- type: entity
+  parent: MarkerBase
+  id: RandomHalloweenDecorSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Specific/Hydroponics/pumpkin.rsi
+      state: lantern
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomHalloweenDecor
+
+- type: entityTable
+  id: RandomHalloweenDrink
+  table: !type:GroupSelector
+    children:
+    - id: DrinkAlienBrainHemorrhage
+    - id: DrinkBloodyMaryGlass
+    - id: DrinkBloodGlass
+    - id: DrinkDemonsBlood
+    - id: DrinkVampiroGlass
+    - id: DrinkToxinsSpecialGlass
+    - id: DrinkBloodCan
+    - id: DrinkPumpkinFleshGlass
+    - id: DrinkPumpkinSpiceLatte
+    - id: DrinkPumpkinSoup
+    - id: DrinkPumpkinBoomCan
+
+- type: entityTable
+  id: RandomHalloweenFood
+  table: !type:GroupSelector
+    children:
+    - id: FoodBloodTomatoSlice
+      weight: 0.25
+    - id: FoodCakePumpkinSlice
+    - id: FoodPiePumpkinSlice
+    - id: FoodPumpkinSlice
+      weight: 0.35
+    - id: FoodCakeBrainSlice
+      weight: 0.5
+    - id: FoodDonutJellyPumpkin
+
+- type: entityTable
+  id: RandomHalloweenDrinkLarge
+  table: !type:GroupSelector
+    children:
+    - id: DrinkJuicePumpkinBottleFull
+
+- type: entityTable
+  id: RandomHalloweenFoodLarge
+  table: !type:GroupSelector
+    children:
+    - id: FoodSoupTomatoBlood
+      weight: 0.5
+    - id: FoodSoupEyeball
+    - id: FoodCakeBrain
+      weight: 0.5
+    - id: FoodCakePumpkin
+      weight: 0.5
+    - id: FoodPiePumpkin
+    - id: FoodBurgerGhost
+    - id: FoodBurgerBrain
+      weight: 0.5
+    - id: FoodBurgerSpell
+      weight: 0.1
+
+- type: entityTable
+  id: RandomHalloweenToy
+  table: !type:GroupSelector
+    children:
+    - id: ClothingHeadHatPumpkin
+    - id: ClothingHeadHatWitch
+    - id: ClothingHeadHatWitch1
+    - id: ClothingHeadHatAnimalCatBlack
+    - id: ClothingOuterGhostSheet
+    - id: ToyFigurineSkeleton
+    - id: ToyBladeEldritch
+    - id: PlushiePumpkin
+    - id: PlushieGhostBurger
+    - id: PlushieCosmicCult
+    - id: PlushieLeguia
+    - id: PlushiePasha
+    - id: PlushieDotusaruTaipanSyndicate
+    - id: PlushieGhost
+    - id: PlushieGhostRevenant
+      weight: 0.25
+    - id: PlushieSanabi
+      weight: 0.25
+
+- type: entityTable
+  id: RandomHalloweenVinylSleeve
+  table: !type:GroupSelector
+    children:
+    - id: VinylSleeveEye
+    - id: VinylSleeveDevil
+    - id: VinylSleeveSkull
+    - id: VinylSleeveVampire
+
+- type: entityTable
+  id: RandomHalloweenTableDecor
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 0.4
+      children:
+      - id: FoodPumpkin
+      - id: CarvedPumpkinSmall
+      - id: PumpkinLantern
+      - id: PumpkinLanternSmall
+    - !type:NestedSelector
+      tableId: RandomHalloweenCandle
+      rolls: 2, 3
+    - id: EggSpider
+      weight: 0.2
+      amount: !type:RangeNumberSelector
+        range: 1, 2
+    - id: BoneWeak
+      weight: 0.2
+      amount: !type:RangeNumberSelector
+        range: 1, 2
+    - !type:NestedSelector
+      tableId: CandyBucketTable
+    - !type:NestedSelector
+      tableId: RandomHalloweenDrink
+      rolls: 1, 2
+    - !type:NestedSelector
+      tableId: RandomHalloweenFood
+      rolls: 2, 3
+    - !type:NestedSelector
+      tableId: RandomHalloweenDrinkLarge
+      weight: 0.5
+    - !type:NestedSelector
+      tableId: RandomHalloweenFoodLarge
+      weight: 0.6
+    - !type:NestedSelector
+      tableId: RandomHalloweenToy
+      weight: 0.5
+    - !type:NestedSelector
+      tableId: RandomHalloweenVinylSleeve
+      weight: 0.1
+
+- type: entity
+  parent: MarkerBase
+  id: RandomHalloweenTableDecorSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Objects/Specific/Hydroponics/pumpkin.rsi
+      state: lantern
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomHalloweenTableDecor
+      rolls: 2, 3
+
+# endregion Decor
+
+# region Crates
+
+- type: entityTable
+  id: RandomHalloweenCrate
+  table: !type:GroupSelector
+    children:
+    - id: CrateWeb
+    - id: CrateCoffin
+    - id: CratePirate
+      weight: 0.2
+
+- type: entity
+  parent: MarkerBase
+  id: RandomHalloweenCrateSpawner
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Storage/Crates/coffin.rsi
+      state: base
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomHalloweenCrate
+
+# endregion Crates
+
+# region Posters
+
+- type: entity
+  parent: MarkerBase
+  id: RandomPosterSpooky
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Wallmounts/posters.rsi
+        state: random_legit
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - PosterBroken
+      - PosterLegitGoobWallMeat
+      - PosterContrabandRouny
+      - PosterContrabandKudzu
+      - PosterContrabandRealExomorph
+      - PosterLegitOppenhopper
+      - PosterLegitBotanyFear
+      - PaintingSkeletonCigarette
+    chance: 1
+
+# endregion Posters
+
+# region Water cooler
+
+- type: entity
+  parent: WaterCooler
+  id: BloodCooler
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Blood
+          Quantity: 500
+
+- type: entity
+  parent: BloodCooler
+  id: BloodCoolerFakeCherryJuice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: JuiceCherry
+          Quantity: 500
+
+- type: entity
+  parent: BloodCooler
+  id: BloodCoolerFakeTomatoJuice
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: JuiceTomato
+          Quantity: 500
+
+- type: entityTable
+  id: RandomBloodCooler
+  table: !type:GroupSelector
+    children:
+    - id: BloodCoolerFakeCherryJuice
+    - id: BloodCoolerFakeTomatoJuice
+    - id: BloodCooler
+      weight: 0.1
+
+- type: entity
+  parent: MarkerBase
+  id: RandomBloodCooler
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Storage/tanks.rsi
+        state: watercooler-2
+  - type: RandomSpawner
+    offset: 0
+    rareChance: 0.02
+    prototypes:
+      - BloodCoolerFakeCherryJuice
+      - BloodCoolerFakeTomatoJuice
+    rarePrototypes:
+      - BloodCooler
+    chance: 1
+
+# endregion Water cooler
+
+# region Tomato mutant
+
+- type: entity
+  parent:
+  - BaseSimpleMob
+  - MobDamageable
+  - MobPolymorphable
+  - MobBloodstream
+  - MobFlammable
+  - MobCombat
+  id: MobTomatoKillerMutant
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-tomato-mutant-name
+    description: ghost-role-information-tomato-mutant-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+    reactions:
+    - reagents: [Water]
+      methods: [Touch]
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -0.15
+    - reagents: [Blood]
+      methods: [Touch]
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -0.25
+            Burn: -0.25
+    - reagents: [RobustHarvest]
+      methods: [Touch]
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Brute: -1
+            Burn: -1
+    - reagents: [WeedKiller, PlantBGone]
+      methods: [Touch]
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 1
+  - type: ReplacementAccent
+    accent: tomatoKiller
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: KillerTomatoCompound
+  - type: Sprite
+    sprite: Mobs/Demons/tomatokiller.rsi
+    noRot: true
+    scale: 1.35, 1.35
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: JuiceTomato
+        Quantity: 50
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatTomato
+      amount: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 80
+      behaviors:
+      - !type:GibBehavior
+        recursive: false
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: gib
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      70: Critical
+      100: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.25
+    baseSprintSpeed: 3.25
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        density: 80
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MeleeWeapon
+    hidden: true
+    damage:
+      groups:
+        Brute: 18
+    animation: WeaponArcBite
+  - type: Climbing
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepSlime
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - StunImmune
+    - FootstepSound
+    - Fruit
+  - type: Extractable
+    grindableSolutionName: bloodstream
+  - type: PotencyVisuals
+  - type: Appearance
+  - type: Produce
+    seedId: killerTomato
+
+# endregion Tomato mutant
+
+# region Flying weapons
+
+- type: entity
+  parent:
+  - SimpleSpaceMobBase
+  - FlyingMobBase
+  id: MobFlyingWeaponBase
+  abstract: true
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: GhostTakeoverAvailable
+  - type: DashAction
+    actionProto: ActionDashMoth
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.15
+        density: 10
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+
+- type: entity
+  parent:
+  - MobFlyingWeaponBase
+  - Cutlass
+  id: MobFlyingCutlassBase
+  abstract: true
+  components:
+  - type: MeleeWeapon
+    animation: WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: SpawnOnTrigger
+    proto: Cutlass
+    useMapCoords: true
+  - type: DeleteOnTrigger
+
+- type: entity
+  parent: MobFlyingCutlassBase
+  id: MobFlyingCutlass
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: ghost-role-information-flying-cutlass-name
+    description: ghost-role-information-flying-cutlass-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+
+- type: entity
+  parent: MobFlyingCutlass
+  id: MobFlyingCutlassHostile
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: ghost-role-information-flying-cutlass-hostile-name
+    description: ghost-role-information-flying-cutlass-hostile-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: CombatMode
+
+- type: entity
+  parent:
+  - MobFlyingWeaponBase
+  - Claymore
+  id: MobFlyingClaymoreBase
+  abstract: true
+  components:
+  - type: MeleeWeapon
+    animation: WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: SpawnOnTrigger
+    proto: Claymore
+    useMapCoords: true
+  - type: DeleteOnTrigger
+
+- type: entity
+  parent: MobFlyingClaymoreBase
+  id: MobFlyingClaymore
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: ghost-role-information-flying-claymore-name
+    description: ghost-role-information-flying-claymore-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+
+- type: entity
+  parent: MobFlyingClaymore
+  id: MobFlyingClaymoreHostile
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: ghost-role-information-flying-claymore-hostile-name
+    description: ghost-role-information-flying-claymore-hostile-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: CombatMode
+
+- type: entity
+  id: MobFlyingLaserGunBase
+  abstract: true
+  parent:
+  - MobFlyingWeaponBase
+  - WeaponLaserGun
+  components:
+  - type: Gun
+    fireRate: 1
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: SpawnOnTrigger
+    proto: WeaponLaserGun
+    useMapCoords: true
+  - type: DeleteOnTrigger
+
+- type: entity
+  parent: MobFlyingLaserGunBase
+  id: MobFlyingLaserGun
+  components:
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 0
+    animation: WeaponArcSlash
+  - type: GhostRole
+    allowMovement: true
+    name: ghost-role-information-flying-laser-gun-name
+    description: ghost-role-information-flying-laser-gun-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+
+- type: entity
+  parent: MobFlyingLaserGun
+  id: MobFlyingLaserGunHostile
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: ghost-role-information-flying-laser-gun-hostile-name
+    description: ghost-role-information-flying-laser-gun-hostile-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: CombatMode
+
+# endregion Flying weapons
+
+# region Flying ghost burger
+
+- type: entity
+  id: MobFlyingGhostBurgerBase
+  parent:
+  - SimpleSpaceMobBase
+  - Incorporeal
+  - FoodBurgerGhost
+  abstract: true
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5
+  - type: Fixtures
+    fixtures: {}
+  - type: Tag
+    tags:
+    - StunImmune
+    - Meat
+    - ClothMade
+  - type: Sprite
+    sprite: Objects/Consumable/Food/burger.rsi
+    noRot: true
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: ghost
+      color: "#fff8"
+
+- type: entity
+  parent: MobFlyingGhostBurgerBase
+  id: MobFlyingGhostBurger
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: ghost-role-information-flying-ghost-burger-name
+    description: ghost-role-information-flying-ghost-burger-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+
+- type: entity
+  parent: MobFlyingGhostBurger
+  id: MobFlyingGhostBurgerHostile
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: ghost-role-information-flying-ghost-burger-hostile-name
+    description: ghost-role-information-flying-ghost-burger-hostile-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: CombatMode
+  - type: MeleeWeapon
+    hidden: true
+    damage:
+      groups:
+        Brute: 8
+    animation: WeaponArcBite
+
+# endregion Flying ghost burger
+
+# region Orchi Dea Mime Plushie
+
+- type: entity
+  parent:
+  - PlushieCeteraiOrchiDeaMime
+  - BaseSimpleMob
+  - MobDamageable
+  - MobCombat
+  id: MobPlushieCeteraiOrchiDeaMimeEvil
+  components:
+  - type: Sprite
+    sprite: _Reserve/Objects/Fun/Plushies/orchi_mime.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    sprite: _Reserve/Objects/Fun/Plushies/orchi_mime.rsi
+  - type: GhostRole
+    name: ghost-role-information-orchi-dea-mime-plushie-name
+    description: ghost-role-information-orchi-dea-mime-plushie-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: MeleeWeapon
+    animation: WeaponArcSlash
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    damage:
+      types:
+        Slash: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        density: 10
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: SpawnOnTrigger
+    proto: PlushieCeteraiOrchiDeaMime
+    useMapCoords: true
+  - type: DeleteOnTrigger
+  - type: InputMover
+  - type: MobMover
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+  - type: CombatMode
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - Payload
+    - ClothMade
+
+# endregion Orchi Dea Mime Plushie
+
+# region Bucket
+
+- type: entity
+  parent: Bucket
+  id: PumpkinBucket
+  components:
+  - type: Sprite
+    sprite: &pumpkin_bucket_sprite _Reserve/Mobs/Halloween/pumpkin_bucket.rsi
+  - type: Clothing
+    sprite: *pumpkin_bucket_sprite
+
+- type: entity
+  parent: PumpkinBucket
+  id: PumpkinBucketSurreal
+  components:
+  - type: Sprite
+    sprite: &surreal_pumpkin_bucket_sprite _Reserve/Mobs/Halloween/Surreal/pumpkin_bucket.rsi
+    scale: 0.6, 0.6
+  - type: Clothing
+    sprite: *surreal_pumpkin_bucket_sprite
+
+- type: entity
+  parent: MarkerBase
+  id: RandomPumpkinBucket
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: *pumpkin_bucket_sprite
+        state: icon
+  - type: RandomSpawner
+    offset: 0
+    rareChance: 0.05
+    prototypes:
+      - PumpkinBucket
+    rarePrototypes:
+      - PumpkinBucketSurreal
+    chance: 1
+
+# endregion Bucket
+
+# region Webbed Steel Bench
+
+- type: entity
+  parent: SteelBench
+  id: SteelBenchWebbed
+  components:
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/web_bench.rsi
+    state: web-bench
+
+# endregion Webbed Steel Bench
+
+# region Reaper Statue
+
+- type: entity
+  parent: StatueVenusRed
+  id: StatueReaper
+  components:
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/statue_spooky.rsi
+    layers:
+    - state: reaper
+    - state: reaper-lantern
+      shader: unshaded
+
+- type: entity
+  parent: StatueReaper
+  id: StatueReaperSurreal
+  components:
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/Surreal/statue_spooky.rsi
+
+- type: entity
+  parent: MarkerBase
+  id: RandomStatueReaper
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Reserve/Mobs/Halloween/statue_spooky.rsi
+        state: reaper
+  - type: RandomSpawner
+    offset: 0
+    rareChance: 0.08
+    prototypes:
+      - StatueReaper
+    rarePrototypes:
+      - StatueReaperSurreal
+    chance: 1
+
+# endregion Reaper Statue
+
+# region Killer pumpkin
+
+- type: entity
+  parent: SeedBase
+  id: PumpkinKillerSeeds
+  components:
+  - type: Seed
+    seedId: pumpkinKiller
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/pumpkin_killer.rsi
+    state: seed
+
+- type: seed
+  id: pumpkinKiller
+  name: seeds-pumpkin-killer-name
+  noun: seeds-noun-seeds
+  displayName: seeds-pumpkin-killer-display-name
+  plantRsi: _Reserve/Mobs/Halloween/pumpkin_killer.rsi
+  plantLogImpact: High
+  harvestLogImpact: High
+  packetPrototype: PumpkinKillerSeeds
+  productPrototypes:
+  - MobPumpkinKiller
+  mutationPrototypes:
+    - pumpkinKillerSurreal
+  harvestRepeat: Repeat
+  lifespan: 25
+  maturation: 15
+  production: 6
+  yield: 1
+  potency: 10
+  waterConsumption: 0.60
+  nutrientConsumption: 0.70
+  idealLight: 8
+  idealHeat: 288
+  growthStages: 3
+  splatPrototype: PuddleSplatter
+  chemicals:
+    PumpkinFlesh:
+      Min: 1
+      Max: 20
+      PotencyDivisor: 5
+    Vitamin:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+
+- type: entity
+  parent: MobTomatoKillerMutant
+  id: MobPumpkinKiller
+  components:
+  - type: GhostRole
+    prob: 0.05
+    makeSentient: true
+    allowSpeech: true
+    name: ghost-role-information-pumpkin-killer-name
+    description: ghost-role-information-pumpkin-killer-description
+    rules: ghost-role-information-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFamiliar
+    raffle:
+      settings: short
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/pumpkin_killer.rsi
+    noRot: true
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: mob-alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: mob-alive
+      Dead:
+        Base: mob-dead
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: PumpkinFlesh
+        Quantity: 50
+  - type: Butcherable
+    spawned:
+    - id: FoodPumpkinSlice
+      amount: 10
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 80
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodPumpkinSlice:
+            min: 6
+            max: 8
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: gib
+  - type: Produce
+    seedId: pumpkinKiller
+
+- type: entity
+  parent: MobPumpkinKiller
+  id: MobPumpkinKillerMutant
+  components:
+  - type: GhostRole
+    prob: 1.0
+    raffle:
+      settings: default
+  - type: Sprite
+    scale: 2, 2
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: PumpkinFlesh
+        Quantity: 250
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Critical
+      300: Dead
+  - type: Butcherable
+    spawned:
+    - id: FoodPumpkinSlice
+      amount: 20
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 240
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          FoodPumpkinSlice:
+            min: 16
+            max: 20
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: gib
+  - type: MeleeWeapon
+    hidden: true
+    damage:
+      groups:
+        Brute: 38
+    animation: WeaponArcBite
+
+- type: entity
+  parent: PumpkinKillerSeeds
+  id: PumpkinKillerSeedsSurreal
+  components:
+  - type: Seed
+    seedId: pumpkinKillerSurreal
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/Surreal/pumpkin_killer.rsi
+    state: seed
+
+- type: seed
+  id: pumpkinKillerSurreal
+  name: seeds-pumpkin-killer-name
+  noun: seeds-noun-seeds
+  displayName: seeds-pumpkin-killer-display-name
+  plantRsi: _Reserve/Mobs/Halloween/Surreal/pumpkin_killer.rsi
+  plantLogImpact: High
+  harvestLogImpact: High
+  packetPrototype: PumpkinKillerSeedsSurreal
+  productPrototypes:
+  - MobPumpkinKillerSurreal
+  harvestRepeat: Repeat
+  lifespan: 25
+  maturation: 15
+  production: 6
+  yield: 1
+  potency: 10
+  waterConsumption: 0.60
+  nutrientConsumption: 0.70
+  idealLight: 8
+  idealHeat: 288
+  growthStages: 3
+  splatPrototype: PuddleSplatter
+  chemicals:
+    PumpkinFlesh:
+      Min: 1
+      Max: 20
+      PotencyDivisor: 5
+    Vitamin:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+
+- type: entity
+  parent: MobPumpkinKiller
+  id: MobPumpkinKillerSurreal
+  components:
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/Surreal/pumpkin_killer.rsi
+  - type: Produce
+    seedId: pumpkinKillerSurreal
+
+# endregion Killer pumpkin
+
+# region Eye of Cthulhu
+
+- type: entity
+  parent: MobFlyingWeaponBase
+  id: MobCthulhuEyeSmall
+  components:
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/eye_of_cthulhu_small.rsi
+    noRot: true
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: CombatMode
+  - type: MeleeWeapon
+    hidden: true
+    damage:
+      groups:
+        Brute: 6
+    animation: WeaponArcBite
+
+- type: entity
+  parent: MobFlyingWeaponBase
+  id: MobCthulhuEye
+  components:
+  - type: GhostRole
+    allowMovement: true
+    makeSentient: true
+    name: ghost-role-information-cthulhu-eye-boss-name
+    description: ghost-role-information-cthulhu-eye-boss-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/eye_of_cthulhu.rsi
+    noRot: true
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: BatteryAmmoProvider
+    proto: RedLaser
+    fireCost: 62.5
+  - type: Battery
+    maxCharge: 1000
+    startingCharge: 1000
+  - type: BatterySelfRecharger
+    autoRechargeRate: 40
+  - type: Gun
+    fireRate: 0.75
+    useKey: true
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: CombatMode
+  - type: MeleeWeapon
+    hidden: true
+    damage:
+      groups:
+        Brute: 15
+    animation: WeaponArcBite
+  - type: Input
+    context: "human"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.55
+        density: 100
+        mask:
+        - FlyingMobMask
+        layer:
+        - FlyingMobLayer
+
+- type: entity
+  parent: MobCthulhuEyeSmall
+  id: MobCthulhuEyeSmallSurreal
+  components:
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/Surreal/eye_of_cthulhu_small.rsi
+
+- type: entity
+  parent: MobCthulhuEye
+  id: MobCthulhuEyeSurreal
+  components:
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/Surreal/eye_of_cthulhu.rsi
+    scale: 2, 2
+
+# endregion Eye of Cthulhu
+
+# region Vending Machines
+
+- type: vendingMachineInventory
+  id: HalloweenPumpkinVendingInventory
+  startingInventory:
+    CandyBucketFilledAny: 4
+    FoodCakePumpkinSlice: 3
+    FoodPiePumpkinSlice: 3
+    FoodDonutJellyPumpkin: 3
+    FoodPumpkinSlice: 6
+    DrinkPumpkinSpiceLatte: 4
+    DrinkPumpkinFleshGlass: 4
+    DrinkPumpkinSoup: 4
+    DrinkPumpkinBoomCan: 4
+    DrinkJuicePumpkinBottleFull: 2
+    PlushiePumpkin: 2
+    ClothingHeadHatPumpkin: 2
+    PumpkinBucket: 3
+    PumpkinBucketSurreal: 1
+    PumpkinLanternSmall: 2
+
+- type: vendingMachineInventory
+  id: HalloweenSpookyVendingInventory
+  startingInventory:
+    CandyBucketFilledAny: 4
+    FoodBurgerGhost: 2
+    FoodBurgerBrain: 2
+    FoodBurgerSpell: 2
+    DrinkAlienBrainHemorrhage: 1
+    DrinkBloodyMaryGlass: 4
+    DrinkBloodGlass: 1
+    DrinkDemonsBlood: 1
+    DrinkVampiroGlass: 1
+    DrinkToxinsSpecialGlass: 2
+    DrinkBloodCan: 2
+    VinylSleeveEye: 1
+    VinylSleeveDevil: 1
+    VinylSleeveSkull: 1
+    VinylSleeveVampire: 1
+    FoodCakeBrainSlice: 2
+    PlushieGhostBurger: 2
+    PlushieCosmicCult: 1
+    PlushieLeguia: 1
+    PlushiePasha: 1
+    PlushieDotusaruTaipanSyndicate: 1
+    PlushieGhost: 1
+    PlushieGhostRevenant: 1
+    PlushieSanabi: 1
+    ToyFigurineSkeleton: 1
+    ToyBladeEldritch: 1
+    ClothingHeadHatWitch: 1
+    ClothingHeadHatWitch1: 1
+    ClothingHeadHatAnimalCatBlack: 1
+    ClothingOuterGhostSheet: 1
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineHalloweenPumpkin
+  components:
+  - type: VendingMachine
+    pack: HalloweenPumpkinVendingInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/vending_pumpkin.rsi
+
+- type: entity
+  parent: VendingMachineColaBlack
+  id: VendingMachineHalloweenSpooky
+  components:
+  - type: VendingMachine
+    pack: HalloweenSpookyVendingInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    ejectState: eject-unshaded
+    denyState: deny-unshaded
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/vending_spooky.rsi
+
+- type: entity
+  parent: VendingMachineHalloweenPumpkin
+  id: VendingMachineHalloweenPumpkinSurreal
+  components:
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/Surreal/vending_pumpkin.rsi
+
+- type: entity
+  parent: VendingMachineHalloweenSpooky
+  id: VendingMachineHalloweenSpookySurreal
+  components:
+  - type: Sprite
+    sprite: _Reserve/Mobs/Halloween/Surreal/vending_spooky.rsi
+
+- type: entity
+  parent: MarkerBase
+  id: RandomVendingMachineHalloween
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: _Reserve/Mobs/Halloween/vending_pumpkin.rsi
+        state: normal-unshaded
+  - type: RandomSpawner
+    offset: 0
+    rareChance: 0.05
+    prototypes:
+      - VendingMachineHalloweenPumpkin
+      - VendingMachineHalloweenSpooky
+    rarePrototypes:
+      - VendingMachineHalloweenPumpkinSurreal
+      - VendingMachineHalloweenSpookySurreal
+    chance: 1
+
+# endregion Vending Machines

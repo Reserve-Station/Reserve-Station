@@ -4,6 +4,8 @@
   id: Wizard
   name: guide-entry-wizard
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Wizard.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Wizard.xml"
   children:
   - WizardSpells
 
@@ -11,3 +13,5 @@
   id: WizardSpells
   name: guide-entry-wizard-spells
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/WizardSpells.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/WizardSpells.xml"

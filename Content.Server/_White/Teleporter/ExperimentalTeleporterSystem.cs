@@ -109,7 +109,8 @@ public sealed class ExperimentalTeleporterSystem : EntitySystem
 
         var anchoredEntities = _mapSystem.GetAnchoredEntities(tile.Value.GridUid, mapGridComponent, coords);
 
-        return anchoredEntities.Any(x => _tag.HasTag(x, "Wall"));
+        var wallTag = "Wall";  // Reserve edit: Fix warnings
+        return anchoredEntities.Any(x => _tag.HasTag(x, wallTag));  // Reserve edit: Fix warnings
     }
 
     private Vector2 VectorRandomDirection(ExperimentalTeleporterComponent component, Vector2 offset, int length)

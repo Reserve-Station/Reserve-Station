@@ -30,7 +30,8 @@ public sealed record User
         ReserveCoins = userRead.ReserveCoins;
         CurrentSubTier = userRead.CurrentSubTier;
         CurrentSubTier = userRead.CurrentSubTier;
-        UsernameColor = Color.TryFromHex(userRead.UsernameColor);
+        Color.TryFromHex(userRead.UsernameColor, out var usernameColor);
+        UsernameColor = usernameColor;
     }
 
     public void UpdateFromUserRead(ApiWrapper.UserRead userRead)
@@ -41,7 +42,8 @@ public sealed record User
         ReserveCoins = userRead.ReserveCoins;
         CurrentSubTier = userRead.CurrentSubTier;
         CurrentSubTier = userRead.CurrentSubTier;
-        UsernameColor = Color.TryFromHex(userRead.UsernameColor);
+        Color.TryFromHex(userRead.UsernameColor, out var usernameColor);
+        UsernameColor = usernameColor;
     }
 
     public bool HasActiveSub(out int subLevel)
@@ -59,11 +61,11 @@ public sealed record User
     {
         var response = await wrapper.PostEditBalance(Id,
             new()
-        {
-            ReserveCoins = reserveCoins,
-            DonateCoins = donateCoins,
-            Comment = comment
-        });
+            {
+                ReserveCoins = reserveCoins,
+                DonateCoins = donateCoins,
+                Comment = comment
+            });
 
         if (response.Value != null)
         {

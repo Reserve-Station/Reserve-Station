@@ -1,24 +1,27 @@
-<!--
-SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 Visne <39844191+Visne@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 end <72604018+laok233@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Terraspark4941 <terraspark4941@gmail.com>
-SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 ArtisticRoomba <145879011+ArtisticRoomba@users.noreply.github.com>
-
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <Document>
-# Строительство
+  # Строительство
 
-Нажав [color=#a4885c]G[/color] на клавиатуре, или соответствующую кнопку на экране, вы откроете меню строительства, через которое можно строить различные объекты и создавать предметы.
+  <Box>
+    <GuideEntityEmbed Entity="Bed" Caption=""/>
+    <GuideEntityEmbed Entity="TableReinforced" Caption=""/>
+    <GuideEntityEmbed Entity="WeaponImprovisedPneumaticCannon" Caption=""/>
+    <GuideEntityEmbed Entity="Chair" Caption=""/>
+  </Box>
 
-При размещении призраков объектов, которые «привязываются» к сетке, зажмите [color=#a4885c]Shift[/color] чтобы разместить сразу несколько объектов в линию, или [color=#a4885c]Ctrl[/color] чтобы разместить объекты квадратом.
 
-При создании предметов с большим количеством компонентов помните, что не обязательно держать у себя всё сразу. Вы можете просто положить компоненты на пол или на стол около себя, и они будут использованы автоматически.
+  Через меню строительства в игре строятся объекты и создаются предметы.
+  Чтобы его открыть, нажмите [color=yellow][bold][keybind="OpenCraftingMenu"][/bold][/color].
 
-При размещении "призрака конструкции" где-либо в мире нажмите [color=#a4885c]колёсико мыши[/color], чтобы повернуть призрак по часовой стрелке.
+  При размещении объектов, которые «привязываются» к сетке, зажмите [color=yellow][bold][keybind="EditorLinePlace"][/bold][/color], чтобы разместить сразу целую линию, или [color=yellow][bold][keybind="EditorGridPlace"][/bold][/color], чтобы разместить сразу целую сетку.
+
+  При создании предметов с большим количеством компонентов помните, что держать всё сразу не обязательно: можно просто положить компоненты на пол, в рюкзак или на стол рядом с собой, и они будут использованы при создании как обычно.
+
+  При размещении «призрака конструкции» нажмите [color=yellow][bold][keybind="EditorRotateObject"][/bold][/color], чтобы повернуть призрак по часовой стрелке.
+  Если вы строите зеркально отражаемый компонент (например, газовые смесители или фильтры), нажмите [color=yellow][bold][keybind="EditorFlipObject"][/bold][/color], чтобы отразить призрак.
+
+  Уже построенный объект тоже можно поворачивать по часовой или против часовой стрелки клавишами [color=yellow][bold][keybind="RotateObjectClockwise"][/bold][/color] и [color=yellow][bold][keybind="RotateObjectCounterclockwise"][/bold][/color], если он не закреплён (откручен гаечным ключом).
+
+
+
+
 </Document>

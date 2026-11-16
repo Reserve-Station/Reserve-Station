@@ -8,14 +8,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
               RectClipContent="True">
 
     <Control Name="TitleContent"
-             Margin="5 0 -15 0"
-             MaxWidth="600"
+             Margin="5 0 5 0"
+             MaxWidth="500"
              RectClipContent="True" /> <!-- Reserve edit: New Jobs Style -->
 
     <Control HorizontalExpand="True" />
 
-    <Control SetSize="21 21">
-        <TextureButton Name="Help" StyleClasses="HelpButton"/>
+    <Control SetSize="21 21" Margin="0 0 5 0">
+        <TextureButton Name="Help" StyleClasses="HelpButton"/> <!-- Reserve edit: New Jobs Style -->
     </Control>
 
     <BoxContainer Name="OptionsContainer" />

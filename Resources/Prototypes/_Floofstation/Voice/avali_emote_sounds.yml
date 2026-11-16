@@ -59,8 +59,20 @@
       collection: MaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Belch: # Frontier
-      collection: Belch # Frontier
+    # Belch: # Frontier  # Reserve edit: Disable intentional belching
+    #   collection: Belch # Frontier
+    Scree: # Goob
+      collection: ResomiScrees
+    Call: # Goob
+      collection: ResomiCalls
+    Squawk: # Goob
+      collection: ResomiSquawks
+    Coo: # Goob
+      collection: HarpyCoos
+    Growl: # Goob
+      collection: CatGrowls
+    Hew: # Goob
+      collection: Hew
 
 - type: emoteSounds
   id: FemaleAvaliEmote
@@ -111,5 +123,17 @@
       collection: FemaleDeathGasp
     Gulp: # Goob
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
-    Belch: # Frontier
-      collection: Belch # Frontier
+    # Belch: # Frontier  # Reserve edit: Disable intentional belching
+    #   collection: Belch # Frontier
+    Scree: # Goob
+      collection: ResomiScrees
+    Call: # Goob
+      collection: ResomiCalls
+    Squawk: # Goob
+      collection: ResomiSquawks
+    Coo: # Goob
+      collection: HarpyCoos
+    Growl: # Goob
+      collection: CatGrowls
+    Hew: # Goob
+      collection: Hew

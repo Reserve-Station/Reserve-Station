@@ -47,6 +47,9 @@ ent-AirlockCentralCommand = { ent-AirlockCommand }
     .desc = { ent-AirlockCommand.desc }
 ent-AirlockHatch = герметичный люк
     .desc = { ent-Airlock.desc }
+ent-AirlockXenoborg = { ent-Airlock }
+    .desc = { ent-Airlock.desc }
+    .suffix = Ксеноборг
 ent-AirlockHatchMaintenance = герметичный люк техобслуживания
     .desc = { ent-Airlock.desc }
 ent-AirlockEngineeringGlass = { ent-AirlockGlass }
@@ -100,8 +103,8 @@ ent-AirlockStandardGlass = { ent-AirlockGlass }
 
 ent-AirlockXeno = { ent-Airlock }
     .desc = { ent-Airlock.desc }
-    .suffix = Ксено
+    .suffix = Ксеноморф
 
 ent-AirlockGlassXeno = { ent-AirlockGlass }
     .desc = { ent-AirlockGlass.desc }
-    .suffix = Ксено
+    .suffix = Ксеноморф

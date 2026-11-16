@@ -1,0 +1,189 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Antags
+
+- type: antag
+  id: PirateCaptain
+  name: roles-antag-pirate-captain-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-pirate-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+      time: 30h
+  - !type:SpeciesRequirement
+    inverted: true
+    species:
+    - Plasmaman
+  guides: [ Pirates ]
+  category: Team
+  icon:
+    sprite: Structures/Wallmounts/flags.rsi
+    state: pirate_flag
+
+# endregion Antags
+
+# region Gear
+
+- type: startingGear
+  id: EmptyNudeGear
+  equipment: {}
+
+# endregion Gear
+
+# region Rules
+
+# Roundstart pirates. For midround pirates, see PiratesMidround.
+
+- type: entity
+  parent: BaseGameRule
+  id: Pirates
+  components:
+  - type: ActivePirateRule
+  - type: RuleGrids
+  - type: LoadMapRule
+    mapPath: /Maps/_Reserve/Shuttles/pirates_square.yml
+  - type: AntagLoadProfileRule
+    speciesOverride: Human
+    alwaysUseSpeciesOverride: true
+  - type: GameRule
+    minPlayers: 15
+    chaosScore: 650
+  - type: AntagSelection
+    selectionTime: PrePlayerSpawn
+    agentName: pirates-roundend-name
+    definitions:
+    - prefRoles: [ PirateCaptain ]
+      fallbackRoles: [ Pirate ]
+      spawnerPrototype: GhostRolePirateCaptain
+      min: 1
+      max: 1
+      blacklist:
+        components:
+        - CommandStaff
+        - AntagImmune
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRolePirate
+      startingGear: PirateCaptainGear
+      unequipOldGear: true
+      components:
+      - type: RandomMetadata
+        nameSegments:
+        - NamesDeathCommando
+    - prefRoles: [ Pirate ]
+      fallbackRoles: [ PirateCaptain ]
+      spawnerPrototype: GhostRolePirates
+      min: 2
+      max: 5
+      playerRatio: 7
+      blacklist:
+        components:
+        - CommandStaff
+        - AntagImmune
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRolePirate
+      startingGear: PirateGear
+      unequipOldGear: true
+      components:
+      - type: RandomMetadata
+        nameSegments:
+        - NamesDeathCommando
+  - type: Tag
+    tags:
+      - RoundstartAntag
+
+# A single pirate, no ship - for antag verbs
+
+- type: entity
+  parent: BaseGameRule
+  id: PirateSingleAntagVerb
+  components:
+  - type: ActivePirateRule
+  - type: AntagLoadProfileRule
+    speciesOverride: Human
+    alwaysUseSpeciesOverride: true
+  - type: AntagSelection
+    definitions:
+    - spawnerPrototype: GhostRolePirates
+      pickPlayer: false
+      min: 5
+      max: 5
+      mindRoles:
+      - MindRolePirate
+      startingGear: PirateGear
+      unequipOldGear: true
+      components:
+      - type: RandomMetadata
+        nameSegments:
+        - NamesDeathCommando
+  - type: Tag
+    tags:
+    - MidroundAntag
+
+# endregion Rules
+
+# region Presets
+
+- type: gamePreset
+  id: Pirates
+  alias:
+    - pirate
+    - pirates
+  name: pirates-title
+  description: pirates-description
+  showInVote: true
+  rules:
+  - DummyNonAntagChance
+  - Pirates
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Vampire
+  alias:
+    - vamp
+    - vampyre
+  name: vampire-title
+  description: vampire-description
+  showInVote: true
+  rules:
+  - DummyNonAntagChance
+  - Vampire
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: Thief
+  name: roles-antag-thief-name
+  description: roles-antag-thief-objective
+  showInVote: false
+  rules:
+  - DummyNonAntagChance
+  - Thief
+  #- SubGamemodesRuleNoWizard # Goob
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: CorporateAgent
+  name: roles-antag-corporate-agent-name
+  description: roles-antag-corporate-agent-description
+  showInVote: false
+  rules:
+  - DummyNonAntagChance
+  - CorporateAgent
+  #- SubGamemodesRuleNoWizard # Goob
+  - BasicStationEventScheduler
+  - MeteorSwarmScheduler
+  - SpaceTrafficControlEventScheduler
+  - BasicRoundstartVariation
+
+# endregion Presets

@@ -1,2 +1,2 @@
-ent-ChristmasEventScheduler = { ent-BaseGameRule }
+ent-ChristmasEventScheduler = Рождество
     .desc = { ent-BaseGameRule.desc }

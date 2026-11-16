@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieSanabi
+  name: brigadier general plushie
+  description: It's important to get to the end!
+  components:
+  - type: Sprite
+    sprite: _Reserve/Objects/Fun/Plushies/sanabi.rsi
+    state: sanabi
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: sanabi-inhand-left
+      right:
+      - state: sanabi-inhand-right

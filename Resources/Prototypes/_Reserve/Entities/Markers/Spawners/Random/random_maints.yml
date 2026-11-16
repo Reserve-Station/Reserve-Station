@@ -1,0 +1,627 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# region Closets
+
+- type: entityTable
+  id: RandomMaintenanceEmergencyLockers
+  table: !type:GroupSelector
+    children:
+    - !type:AllSelector
+      weight: 1.2
+      children:
+      - id: ClosetEmergencyFilledRandom
+      - id: ClosetFireFilled
+    - !type:AllSelector
+      children:
+      - id: ClosetEmergencyFilledRandom
+      - id: ClosetEmergencyN2FilledRandom
+    - !type:AllSelector
+      children:
+      - id: ClosetEmergencyN2FilledRandom
+      - id: ClosetFireFilled
+
+- type: entityTable
+  id: RandomMaintenanceLockers
+  table: !type:GroupSelector
+    children:
+    - id: ClosetMaintenanceFilledRandom
+    - id: ClosetMaintenanceFilledRandom
+      amount: 2
+      weight: 0.35
+
+# endregion Closets
+
+# region Canisters
+
+- type: entityTable
+  id: RandomCommonCanisters
+  table: !type:GroupSelector
+    children:
+    - id: AirCanister
+      weight: 1.25
+    - id: CarbonDioxideCanister
+    - id: NitrogenCanister
+      weight: 1.25
+    - id: OxygenCanister
+      weight: 1.5
+    - id: PlasmaCanister
+      weight: 1.25
+    - id: WaterVaporCanister
+    - id: FunnyOxygenCanister
+
+- type: entityTable
+  id: RandomRareCanisters
+  table: !type:GroupSelector
+    children:
+    - id: AmmoniaCanister
+    - id: FrezonCanister
+    - id: NitrousOxideCanister
+    - id: TritiumCanister
+    - id: BZCanister
+    - id: HealiumCanister
+    - id: NitriumCanister
+    - id: PluoxiumCanister
+    - id: RainbowCanister
+      weight: 0.5
+
+# endregion Canisters
+
+# region Crates
+
+- type: entityTable
+  id: RandomRareCrates
+  table: !type:GroupSelector
+    children:
+    - id: CrateFunParty
+    - id: CrateFunDartsSet
+    - id: CrateFoodBarSupply
+    # Perma Escape Crates
+    - id: CrateEngineeringMiniJetpack
+      weight: 0.5
+    - id: CratePermaEscapeBureaucracy
+    - id: CratePermaEscapeComs
+    - id: CratePermaEscapeDigging
+    - id: CratePermaEscapeEVA
+      weight: 0.5
+    - id: CratePermaEscapeGiftsFromSyndicate
+      weight: 0.15
+    - id: CratePermaEscapeGun
+      weight: 0.5
+    - id: CratePermaEscapeLights
+    - id: CratePermaEscapeMats
+    - id: CratePermaEscapeMerc
+      weight: 0.5
+    - id: CratePermaEscapeTowercap
+    - id: CrateServiceCustomSmokable
+    # Rare Crates
+    - id: NTRCratePointDisks
+      weight: 0.15
+    - id: CrateMorgue
+      weight: 0.15
+    - id: CrateFunInstrumentsRandom
+      weight: 0.15
+    - id: CrateCargoGambling
+      weight: 0.10
+    - id: NTRCrateSpesosSmall
+      weight: 0.05
+    - id: CrateSyndicateSurplusBundle
+      weight: 0.05
+
+# endregion Crates
+
+# region Generators
+
+- type: entityTable
+  id: RandomPortableGenerators
+  table: !type:GroupSelector
+    children:
+    - id: PortableGeneratorJrPacman
+      weight: 1.5
+    - id: PortableGeneratorPacman
+    - id: PortableGeneratorSuperPacman
+      weight: 0.5
+    - id: PortableGeneratorSpecialPacman
+      weight: 0.2
+    - id: PortableGeneratorUberPacman
+      weight: 0.05
+    - id: PortableGeneratorBluespacePacman
+      weight: 0.05
+
+# endregion Generators
+
+# region Tanks
+
+- type: entityTable
+  id: RandomCommonTanks
+  table: !type:GroupSelector
+    children:
+    - id: WaterTankFull
+    - id: WeldingFuelTankFull
+    - id: BloodTankFull
+      weight: 0.2
+    - id: THCTankFull
+      weight: 0.1
+    - id: BeerTankFull
+      weight: 0.5
+    - id: WineTankFull
+      weight: 0.5
+    - id: NothingTankFull
+      weight: 0.2
+    - id: EggTankFull
+      weight: 0.2
+    - id: GroundBeeTankFull
+      weight: 0.2
+    - id: SpaceLubeTankFull
+      weight: 0.1
+    - id: OilTankFull
+      weight: 0.5
+    - id: UnstableMutagenTankFull
+      weight: 0.2
+    - id: ClownTankFull
+      weight: 0.2
+    - id: AnimalTankFull
+      weight: 0.1
+
+- type: entityTable
+  id: RandomRareTanks
+  table: !type:GroupSelector
+    children:
+    - id: WaterTankHighCapacity
+    - id: WeldingFuelTankHighCapacity
+    - id: BloodTankHighCapacity
+      weight: 0.2
+    - id: THCTankHighCapacity
+      weight: 0.1
+    - id: BeerTankHighCapacity
+      weight: 0.5
+    - id: WineTankHighCapacity
+      weight: 0.5
+    - id: NothingTankHighCapacity
+      weight: 0.2
+    - id: EggTankHighCapacity
+      weight: 0.2
+    - id: GroundBeeTankHighCapacity
+      weight: 0.2
+    - id: SpaceLubeTankHighCapacity
+      weight: 0.1
+    - id: OilTankHighCapacity
+      weight: 0.5
+    - id: UnstableMutagenTankHighCapacity
+      weight: 0.2
+    - id: ClownTankHighCapacity
+      weight: 0.2
+    - id: AnimalTankHighCapacity
+      weight: 0.1
+
+- type: entityTable
+  id: RandomTanks
+  table: !type:GroupSelector
+    children:
+    - id: GenericTank
+    - !type:NestedSelector
+      tableId: RandomCommonTanks
+      weight: 0.8
+    - !type:NestedSelector
+      tableId: RandomRareTanks
+      weight: 0.05
+
+# endregion Tanks
+
+# region Other
+
+- type: entityTable
+  id: RandomRareMaintObjects
+  table: !type:GroupSelector
+    children:
+    - id: CrateArtifactContainer
+      weight: 0.5
+    - id: CrateFunToyBoxRandom
+    - id: SurveillanceWirelessCameraMovableEntertainment
+    - id: hydroponicsTray
+    - id: PetCarrier
+    - id: FoodCartCold
+    - id: FoodCartHot
+    - id: JanitorialTrolley
+    - id: MailCart
+    - id: MopBucket
+      weight: 0.5
+    - id: MopBucketFull
+      weight: 0.5
+    - id: ConstructionBarricade
+    - id: WaterCooler
+    - id: VendingMachineTankDispenserEVA
+      weight: 0.5
+    - id: VendingMachineTankDispenserEngineering
+      weight: 0.5
+
+- type: entityTable
+  id: RandomRackObjects
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: Rack
+      - id: Table
+        weight: 0.2
+    - !type:NestedSelector
+      tableId: MaintenanceLockerLoot
+      prob: 0.8
+
+- type: entityTable
+  id: RandomAltars
+  table: !type:GroupSelector
+    children:
+    - id: AltarToolbox
+    - id: AltarConvertMaint
+
+- type: entityTable
+  id: RandomMusicObjects
+  table: !type:GroupSelector
+    children:
+    - id: Jukebox
+    - !type:AllSelector
+      children:
+      - id: VinylPlayer
+      - id: Table
+    - id: PianoInstrument
+      weight: 0.5
+    - id: DawInstrument
+      weight: 0.5
+
+- type: entityTable
+  id: RandomChargers
+  table: !type:GroupSelector
+    children:
+    - id: BorgCharger
+      weight: 1.5
+    - id: PowerCageRecharger
+    - !type:AllSelector
+      weight: 0.75
+      children:
+      - id: PowerCellRecharger
+      - id: Table
+    - !type:AllSelector
+      weight: 0.5
+      children:
+      - id: WeaponCapacitorRecharger
+      - id: Table
+    - !type:AllSelector
+      weight: 0.1
+      children:
+      - id: TurboItemRecharger
+      - id: Table
+
+# endregion Other
+
+# region Wallmounts
+
+- type: entityTable
+  id: RandomColoredWardrobeWallmounts
+  table: !type:GroupSelector
+    children:
+    - id: ClosetWallWardrobeGreyFilled
+    - id: ClosetWallWardrobeMixedFilled
+    - id: ClosetWallWardrobeYellowFilled
+    - id: ClosetWallWardrobeWhiteFilled
+    - id: ClosetWallWardrobeBlueFilled
+    - id: ClosetWallWardrobePinkFilled
+    - id: ClosetWallWardrobeBlackFilled
+    - id: ClosetWallWardrobeGreenFilled
+
+- type: entityTable
+  id: RandomFlagWallmounts
+  table: !type:GroupSelector
+    children:
+    - id: BlankFlag
+    - id: NTFlag
+      weight: 1.5
+    - id: LGBTQFlag
+      weight: 0.15
+    - id: SyndieFlag
+      weight: 0.15
+    - id: PirateFlag
+      weight: 0.15
+
+- type: entityTable
+  id: RandomDispenserWallmounts
+  table: !type:GroupSelector
+    children:
+    - id: CleanerDispenser
+    - id: FuelDispenser
+      weight: 0.5
+    - id: CapsaicinDispenser
+      weight: 0.25
+    - id: LaughterDispenser
+      weight: 0.25
+
+- type: entityTable
+  id: RandomWallmounts
+  table: !type:GroupSelector
+    children:
+    - id: ClosetWallMaintenanceFilledRandom
+      weight: 1.5
+    - id: ShelfMetal
+    - id: RandomPosterAny
+    - id: ExtinguisherCabinetFilled
+    - id: ClosetWallEmergencyFilledRandom
+    - id: ClosetWallEmergencyN2FilledRandom
+      weight: 0.75
+    - id: ClosetWallFireFilledRandom
+      weight: 0.75
+    - id: ShelfRMetal
+      weight: 0.5
+    - id: ShelfWallFreezerDark
+      weight: 0.5
+    - id: StationMap
+      weight: 0.15
+    - id: VendingMachineWallMedicalCivilian
+      weight: 0.09
+    - id: VendingMachineWallMedical
+      weight: 0.06
+    - id: GeneratorWallmountBasic
+      weight: 0.1
+    - id: ClosetWallWardrobeAtmosphericsFilled
+      weight: 0.1
+    - id: WallmountTelescreen
+      weight: 0.1
+    - id: DefibrillatorCabinetFilled
+      weight: 0.1
+    - id: FireAxeCabinet
+      weight: 0.1
+    - id: FireAxeCabinetFilled
+      weight: 0.02
+    - id: PaintingBlunt
+      weight: 0.02
+    - !type:NestedSelector
+      tableId: RandomColoredWardrobeWallmounts
+      weight: 0.75
+    - !type:NestedSelector
+      tableId: RandomFlagWallmounts
+      weight: 0.1
+    - !type:NestedSelector
+      tableId: RandomDispenserWallmounts
+      weight: 0.25
+
+# endregion Wallmounts
+
+# region Doors
+
+- type: entityTable
+  id: RandomMaintMiddleDoors
+  table: !type:GroupSelector
+    children:
+    - id: BarricadeBlock
+    - id: AirlockMaint
+      weight: 0.2
+    - id: Barricade
+      weight: 0.1
+    - !type:AllSelector
+      children:
+      - id: AirlockMaint
+      - id: BarricadeBlock
+      weight: 0.1
+    - id: GrilleBroken
+      weight: 0.1
+
+# endregion Doors
+
+# region Spawner
+
+- type: entityTable
+  id: RandomMaintenanceObjects
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: RandomMaintenanceLockers
+      weight: 2.0
+    - !type:NestedSelector
+      tableId: RandomMaintenanceEmergencyLockers
+    - id: CrateTrashCartFilled
+    - !type:NestedSelector
+      tableId: RandomRackObjects
+    - !type:NestedSelector
+      tableId: RandomPortableGenerators
+      weight: 0.35
+    - !type:NestedSelector
+      tableId: RandomCommonCanisters
+      weight: 0.2
+    - !type:NestedSelector
+      tableId: RandomRareCanisters
+      weight: 0.05
+    - !type:NestedSelector
+      tableId: LowValueCrateTable
+      weight: 0.35
+    - !type:NestedSelector
+      tableId: RandomRareCrates
+      weight: 0.15
+    - !type:NestedSelector
+      tableId: RandomVendingTable
+      weight: 0.15
+    - !type:NestedSelector
+      tableId: ClothingVendorTable
+      weight: 0.05
+    - !type:NestedSelector
+      tableId: RandomRareMaintObjects
+      weight: 0.2
+    - id: CdRackFilled
+      weight: 0.08
+    - !type:NestedSelector
+      tableId: RandomAltars
+      weight: 0.06
+    - !type:NestedSelector
+      tableId: RandomMusicObjects
+      weight: 0.06
+    - !type:NestedSelector
+      tableId: RandomTanks
+      weight: 0.35
+    - !type:NestedSelector
+      tableId: RandomChargers
+      weight: 0.1
+
+- type: entity
+  parent: MarkerBase
+  id: RandomMaintenanceObjectSpawner
+  name: random maintenance object spawner
+  description: Spawns a random maints object (locker(s), crate, etc.)
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Storage/closet.rsi
+      state: generic
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomMaintenanceObjects
+
+- type: entity
+  parent: RandomMaintenanceObjectSpawner
+  id: RandomMaintenanceObjectSpawner75
+  suffix: Maintenance Tunnels, 75%
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomMaintenanceObjects
+      prob: 0.75
+
+- type: entity
+  parent: MarkerBase
+  id: RandomMaintenanceWallObjectSpawner
+  name: random maintenance wall object spawner
+  description: Spawns a random maints wall object (shelf, poster, etc.)
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Storage/closet.rsi
+      state: generic
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomWallmounts
+
+- type: entity
+  parent: RandomMaintenanceWallObjectSpawner
+  id: RandomMaintenanceWallObjectSpawner75
+  suffix: Maintenance Tunnels, 75%
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomWallmounts
+      prob: 0.75
+
+- type: entity
+  parent: MarkerBase
+  id: RandomMaintenanceMiddleDoorSpawner
+  name: random maintenance middle door spawner
+  description: Spawns a random maints middle door object (airlock, barricade, etc.)
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Structures/Storage/closet.rsi
+      state: generic
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomMaintMiddleDoors
+
+- type: entity
+  parent: RandomMaintenanceMiddleDoorSpawner
+  id: RandomMaintenanceMiddleDoorSpawner10
+  suffix: Maintenance Tunnels, 10%
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomMaintMiddleDoors
+      prob: 0.1
+
+- type: entity
+  parent: RandomMaintenanceObjectSpawner
+  id: RandomCanisterSpawner
+  name: random canister spawner
+  description: Spawns a random canister with gas.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: RandomCommonCanisters
+        weight: 1
+      - !type:NestedSelector
+        tableId: RandomRareCanisters
+        weight: 0.1
+
+- type: entity
+  parent: RandomMaintenanceObjectSpawner
+  id: RandomPortableGeneratorSpawner
+  name: random portable generator spawner
+  description: Spawns a random portable generator.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomPortableGenerators
+
+- type: entity
+  parent: RandomMaintenanceObjectSpawner
+  id: RandomMaintenanceCrateSpawner
+  name: random maintenance crate spawner
+  description: Spawns a random maintenance crate.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        tableId: LowValueCrateTable
+        weight: 0.35
+      - !type:NestedSelector
+        tableId: RandomRareCrates
+        weight: 0.15
+
+- type: entity
+  parent: RandomMaintenanceObjectSpawner
+  id: RandomTankSpawner
+  name: random tank spawner
+  description: Spawns a random liquid tank.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomTanks
+
+- type: entity
+  parent: RandomMaintenanceWallObjectSpawner
+  id: RandomColoredWardrobeClosetSpawner
+  name: random colored wardrobe wall closet spawner
+  description: Spawns a random colored wardrobe wall closet.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomColoredWardrobeWallmounts
+
+- type: entity
+  parent: RandomMaintenanceWallObjectSpawner
+  id: RandomWallFlagSpawner
+  name: random wall flag spawner
+  description: Spawns a random wall flag.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomFlagWallmounts
+
+- type: entity
+  parent: RandomMaintenanceWallObjectSpawner
+  id: RandomWallDispenserSpawner
+  name: random wall dispenser spawner
+  description: Spawns a random wall liquid dispenser.
+  suffix: Maintenance Tunnels
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomDispenserWallmounts
+# endregion Spawner

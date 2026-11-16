@@ -1,2 +1,2 @@
-ent-EffectStasis = { "" }
-    .desc = { "" }
+ent-EffectStasis = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }

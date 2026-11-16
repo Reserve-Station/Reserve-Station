@@ -3,6 +3,7 @@
   parent: BaseEnchant
   id: EnchantLavaforged
   name: Lavaforged
+  categories: [ HideSpawnMenu ]  # Reserve edit: Clean up spawn menu
   components:
   - type: Enchant
     whitelist:

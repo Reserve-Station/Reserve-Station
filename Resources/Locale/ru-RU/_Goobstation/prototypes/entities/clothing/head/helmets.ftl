@@ -1,8 +1,9 @@
 ent-ClothingHeadHelmetHelldiver = тактический шлем NT-01
     .desc = Эта броня - стандарт выдаваемый элитным утилизаторам NanoTrasen, изготовленную из того же титанового сплава, что и корпус Дюранда.
+    .suffix = Хеллдайвер
 ent-ClothingHeadHelmetHEV = шлем H.E.V
     .desc = Не входит в комплект с ломом, модулем длинного прыжка и устройством манипулирования гравитацией.
-    .suffix = Адмем
+    .suffix = Гордон Фримен, Халф-Лайф, Адмем
 ent-ClothingHeadHelmetBasicAlt = { ent-ClothingHeadHelmetBasic }
     .suffix = Альтернатива
     .desc = { ent-ClothingHeadHelmetBasic.desc }

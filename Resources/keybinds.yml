@@ -52,6 +52,15 @@ binds:
 - function: ResistGrab
   type: State
   key: B
+- function: VoicePushToTalk # Goobstation - Voice chat
+  type: State
+  key: N
+- function: VoicePushToTalkRadio # Goobstation - Voice chat
+  type: State
+  key: M
+- function: NamePeek # Goob
+  type: State
+  key: Alt
 # Shuttle
 - function: ShuttleStrafeUp
   type: State
@@ -280,6 +289,7 @@ binds:
 - function: SmartEquipBack # Goobstation - Smart equip to back
   type: State # Goobstation - Smart equip to back
   key: F # Goobstation - Smart equip to back
+  mod1: Shift # Goobstation - Smart equip to back
 - function: OpenBackpack
   type: State
   key: V
@@ -287,6 +297,9 @@ binds:
   type: State
   key: V
   mod1: Shift
+- function: OfferItem  # Reserve edit: Offer Item system port from WWDP
+  type: State
+  key: F
 - function: ShowDebugConsole
   type: State
   key: Tilde
@@ -316,6 +329,7 @@ binds:
 - function: FlipObject
   type: State
   key: F
+  mod1: Alt
 - function: TextCursorLeft
   type: State
   key: Left
@@ -667,3 +681,27 @@ binds:
   type: State
   key: MouseRight
   canFocus: true
+# Reserve edit start: Posing system port
+- function: TogglePosing
+  type: State
+  key: R
+  mod1: Control
+- function: PosingOffsetLeft
+  type: State
+  key: A
+- function: PosingOffsetRight
+  type: State
+  key: D
+- function: PosingOffsetUp
+  type: State
+  key: W
+- function: PosingOffsetDown
+  type: State
+  key: S
+- function: PosingRotateNegative
+  type: State
+  key: Q
+- function: PosingRotatePositive
+  type: State
+  key: E
+# Reserve edit end: Posing system port

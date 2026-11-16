@@ -1,0 +1,220 @@
+<Document>
+  # Пираты
+
+  <Box>
+    [color=#999999][italic]"Йо-хо-хо, и сундук с долгами!"[/italic][/color]
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="PirateFlag" Caption=""/>
+  </Box>
+
+  Пираты - это независимые антагонисты-коллекторы, спонсируемые станциями, которые они "покрывают".
+  Ваша станция перестала платить им "налоги", вынудив их набежать на станцию и продать с неё самое ценное в поисках наживы.
+
+  ## Цели
+  Вы должны унести со станции как можно больше ценного имущества, и продать его у себя на шхуне.
+
+  Ваша цель — [bold]не уничтожить станцию[/bold], а [italic]ограбить её[/italic], поэтому старайтесь минимизировать ущерб, где это возможно, ведь чем больше разрухи вы нанесёте, тем сложнее будет продать награбленное.
+
+  [bold]Пиратство провалится[/bold], если все [bold][color=#cc8c78]Капитаны пиратов[/color][/bold] погибнут или не смогут набрать достаточное количество [color=green]Кредитов[/color] с награбленного.
+
+  ### Грабёж
+
+  У вас на шхуне имеется статичное устройство сбора налогов - [bold][color=#cc8c78]Сифон прибыли[/color][/bold]. Чтобы достичь своей цели, [color=#cc8c78]вам необходимо заполнить его показатель баланса до максимума[/color].
+
+  Сделать это можно несколькими способами. У сифона есть автоматический сбор кредитов с активов станции, а также встроенный терминал, принимающий кредиты наличными.
+
+  Чтобы активировать сбор кредитов с активов станции, необходимо [color=#cc8c78]пристыковаться к станции[/color] вашей шхуной, и, как только сифон подключится к серверам NanoTrasen, [color=#cc8c78]активировать его[/color].
+
+  <Box>
+    <GuideEntityEmbed Entity="DataSiphon"/>
+  </Box>
+
+  Параллельно, вы можете тащить со станции на шхуну любое ценное имущество, которое сможете найти, и затем продавать, используя [bold][color=#cc8c78]Консоль продажи товаров[/color][/bold] (если она есть у вас на шхуне).
+
+  Полученные с продаж кредиты (а также любые кредиты, найденные на станции) вы можете класть в сифон прибыли, чтобы увеличить его баланс.
+
+  <Box>
+    <GuideEntityEmbed Entity="ComputerPalletConsole"/>
+    <GuideEntityEmbed Entity="CargoPalletSell"/>
+  </Box>
+
+  ## Командный состав
+  [bold][color=#cc8c78]Пиратская шхуна[/color][/bold] и её команда могут появиться в начале или посреди раунда при подходящем игровом режиме.
+  Кроме того, при использовании токена или решении администратора, тот может сделать уже существующего игрока [bold][color=#cc8c78]Капитаном пиратов[/color][/bold], что создаст собственную шхуну где-то в космосе, даст снаряжение и цели капитана пиратов и перенесёт его на эту шхуну. Это [bold]не создаст[/bold] ему команду - её администратор должен будет назначить вручную среди других игроков.
+
+  Пираты чаще всего стостоят из трёх основных ролей: [bold][color=#cc8c78]Капитаны пиратов[/color][/bold], [bold][color=#cc8c78]Пираты[/color][/bold] и [bold][color=#cc8c78]Старпомы[/color][/bold].
+  Кроме того, по воле администратора, могут быть добавлены дополнительные роли, например [bold][color=#cc8c78]Скелет-пират[/color][/bold].
+
+  <Box>
+    <GuideEntityEmbed Entity="MobSpirate" Caption=""/>
+    <GuideEntityEmbed Entity="MobSkeletonPirate" Caption=""/>
+  </Box>
+
+  ### Канал связи
+
+  Пираты чаще всего используют [color=#cc8c78]фрилансерский[/color] канал связи, чтобы координировать свои действия и обмениваться информацией.
+
+  Введите в чате "[color=#f6ce64]:ф[/color]" перед своим сообщением, чтобы сказать его в канал фриланса.
+
+  <Box>
+    <GuideEntityEmbed Entity="ClothingHeadsetFreelance" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadsetAltFreelancer" Caption=""/>
+  </Box>
+
+  ## Вооружение и снаряжение
+
+  Пираты обычно вооружены стандартным пиратским оружием, включая сабли, пистолеты и мушкеты. Они также могут носить с собой метательные бомбочки и даже ручные пушки - а также всё, что им удасться найти на станции.
+
+  <Box>
+  ### Базовое оружие
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="Musket"/>
+    <GuideEntityEmbed Entity="Cutlass"/>
+    <GuideEntityEmbed Entity="WeaponPistolFlintlock"/>
+    <GuideEntityEmbed Entity="WeaponShotgunBlunderbuss"/>
+  </Box>
+
+  <Box>
+  ### Продвинутое оружие
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="WeaponMakeshiftLaser" Caption="лазерный пистоль"/>
+    <GuideEntityEmbed Entity="CaptainSabre"/>
+    <GuideEntityEmbed Entity="PipeBombPirate"/>
+    <GuideEntityEmbed Entity="WeaponRevolverPirate"/>
+  </Box>
+
+  <Box>
+  ### Элитное оружие
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="EnergyCutlass"/>
+    <GuideEntityEmbed Entity="CutlassSabrePirateCaptainJollyRogerAlabaster"/>
+    <GuideEntityEmbed Entity="WeaponShotgunBlunderbussHighCapacity"/>
+    <GuideEntityEmbed Entity="WeaponLauncherPirateCannon"/>
+  </Box>
+
+  <Box>
+  ### Артиллерия
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="ShuttleGunPirateCannon"/>
+  </Box>
+
+  <Box>
+  ### Снаряды для пушек
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="PipeBombPirate" Caption="бомбочка"/>
+    <GuideEntityEmbed Entity="CannonBall"/>
+    <GuideEntityEmbed Entity="CannonBallGlassshot"/>
+    <GuideEntityEmbed Entity="CannonBallGrapeshot"/>
+  </Box>
+
+  <Box>
+  ### Другое
+  </Box>
+
+  <Box>
+    <GuideEntityEmbed Entity="PiratePDA" Caption=""/>
+    <GuideEntityEmbed Entity="AppraisalTool" Caption=""/>
+    <GuideEntityEmbed Entity="Wrench" Caption=""/>
+    <GuideEntityEmbed Entity="HandheldGPSBasic" Caption=""/>
+    <GuideEntityEmbed Entity="WeaponGrapplingGun" Caption=""/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="PirateHandyFlag" Caption=""/>
+    <GuideEntityEmbed Entity="TowelColorPirate" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadHatPirate" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingNeckCloakPirateCap" Caption=""/>
+    <GuideEntityEmbed Entity="ClothingHeadBandSkull" Caption=""/>
+  </Box>
+
+  Другое снаряжение включает в себя инструменты для грабежа и пиратскую атрибутику.
+
+  <Box>
+    <GuideEntityEmbed Entity="WoodenMugRum" Caption="Ром"/>
+    <GuideEntityEmbed Entity="WoodenMugAle" Caption="Эль"/>
+    <GuideEntityEmbed Entity="WoodenMugGrog" Caption="Грог"/>
+    <GuideEntityEmbed Entity="WoodenMugTortuga" Caption="Тортуга"/>
+  </Box>
+
+  Кроме того, опытный пират всегда найдет у себя за пазухой немного пиратской выпивки.
+
+  ## Питомцы
+
+  Часто пираты любят заводить себе питомцев, будь то обезьяны, попугаи или другие экзотические животные, которые сопровождают их в приключениях и помогают в различных делах.
+
+  <Box>
+    <GuideEntityEmbed Entity="MobMonkeyBarbossa"/>
+    <GuideEntityEmbed Entity="MobParrotKesha"/>
+    <GuideEntityEmbed Entity="MobKoboldQwertolomeo"/>
+    <GuideEntityEmbed Entity="MobCrabCoconut"/>
+    <GuideEntityEmbed Entity="MobBandito"/>
+  </Box>
+
+  Среди всех них самый редкий питомец - [bold][color=#cc8c78]Квертоломео[/color][/bold]. Он вооружён до зубов и всегда готов к бою.
+
+  ## Весёлый Роджер
+
+  <Box>
+    <GuideEntityEmbed Entity="HeadSkeletonPirateCaptainJollyRoger" Caption=""/>
+  </Box>
+
+  Всё, что осталось от старого пиратского капитана. Или не всё? Даже после своей условной смерти, он всё ещё продолжает сторожить [bold][color=#cc8c78]Пиратский сундук капитана[/color][/bold].
+
+  ## Чёрная метка
+
+  <Box>
+    <GuideEntityEmbed Entity="BlackMarkOfTaxingPirate" Caption=""/>
+  </Box>
+
+  [bold][color=#cc8c78]Чёрная метка[/color][/bold] является символом того, что станция, не платящая налоги, должна выполнить свои обязательства или столкнётся с последствиями.
+
+  Обычно метка выдаётся пиратов любому из глав станции, чтобы оповестить о своём скором визите. Впрочем, это лишь традиция и [bold]не является обязательным правилом[/bold].
+
+  ## Пиратский кодекс
+
+  <Box>
+    <GuideEntityEmbed Entity="GuidebookPirateCodex" Caption=""/>
+  </Box>
+
+  [bold][color=#cc8c78]Пиратский кодекс[/color][/bold] содержит свод правил и традиций, которым следуют пираты. Он охватывает аспекты пиратской жизни, включая поведение, обязанности и права пиратов, а также кодексы чести и взаимодействие с другими членами пиратского сообщества.
+
+  Выписки из этой книги вы читаете прямо сейчас.
+
+  ## РСПК-1984
+
+  Шаттл распространённого для пиратов типа, модель которого расшифровывается как "[bold][color=#cc8c78]Резерв-станционный Пиратошаттл "Коробка" 1984[/color][/bold]".
+
+  Полную его документацию можно найти на мостике шаттла в [bold][color=#cc8c78]Пиратской папке капитана[/color][/bold], а именно в [bold][color=#cc8c78]Документации РСПК-1984[/color][/bold].
+
+  <Box>
+    <GuideEntityEmbed Entity="BoxFolderBlackThreePapers" Caption=""/>
+  </Box>
+
+  Основные особенности включают в себя:
+
+  - [bold]Рея[/bold] (основной стык) и [bold]Запасные выходы[/bold] слева и справа шаттла;
+  - [bold]Медбей[/bold], [bold]Уборная[/bold] и [bold]Бриг[/bold] при входе в шаттл - бриг хорошо защищён;
+  - [bold]Мостик[/bold] со всем необходимым оборудованием и [bold]Каюта капитана[/bold] с видом на космос и опциональной приватностью;
+  - [bold]Инженерная[/bold] удобно совмещена с [bold]Залом изъятия прибыли[/bold] с сифоном прибыли и консолью продаж;
+  - [bold]Просторная оружейная[/bold], забитая доверху, и [bold]Атмосферный бар[/bold], кишащий выпивкой;
+  - Во всех помещениях присутствуют [bold]выключатели света[/bold] - благодаря ним свет можно выключить [bold]на всем шаттле[/bold].
+
+  ## Тривия
+
+  - [bold][color=#cc8c78]Метательные бомбочки[/color][/bold] можно не только бросать - их можно [color=#cc8c78]зарядить в любую пушку и выстрелить, как ядро[/color]. Правда, сила будет такая же, как и у обычного ядра.
+  - Вам совершенно не обязательно запускать [bold][color=#cc8c78]Сифон прибыли[/color][/bold] - вы можете грабить только физическое имущество станции, [color=#cc8c78]не закрепляя шхуну в одном месте[/color].
+  - [bold][color=#cc8c78]Алебастр[/color][/bold] - это именная сабля пирата по имени [bold][color=#cc8c78]Весёлый Роджер[/color][/bold], павшего от собственного орудия. Победивший его пират продал саблю на [bold][color=#cc8c78]Чёрный рынок[/color][/bold], а [bold][color=#cc8c78]Сундук Роджера[/color][/bold] забрал себе, спрятав в нём его голову. Так и сторожит неупокоенный череп пирата свой сундук до сих пор, изнутри.
+  - [bold][color=#cc8c78]Чёрная метка[/color][/bold], конечно же, в далекие времена имела немного другое значение. Но после смерти пиратства прошло очень много времени, и при появлении [bold][color=#cc8c78]Космических пиратов[/color][/bold] она обрела новое значение.
+  - [bold][color=#cc8c78]Квертоломео[/color][/bold] назван в честь одного из [color=#cc8c78]волонтёров Резерва[/color] и является изменённой версией имени [color=#cc8c78]Бартоломео[/color].
+
+</Document>

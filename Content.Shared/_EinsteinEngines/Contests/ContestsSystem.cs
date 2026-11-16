@@ -230,7 +230,7 @@ namespace Content.Shared._EinsteinEngines.Contests // Goob Edit
             if (!_doContestSystem
                 || !_doHealthContests
                 || !TryComp<DamageableComponent>(performer, out var damage)
-                || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.Critical, out var threshold))
+                || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.SoftCritical, out var threshold)) // Reserve edit: Soft Crit port
                 return 1f;
 
             return _allowClampOverride && bypassClamp
@@ -245,8 +245,8 @@ namespace Content.Shared._EinsteinEngines.Contests // Goob Edit
                 || !_doHealthContests
                 || !TryComp<DamageableComponent>(performer, out var perfDamage)
                 || !TryComp<DamageableComponent>(target, out var targetDamage)
-                || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.Critical, out var perfThreshold)
-                || !_mobThreshold.TryGetThresholdForState(target, Mobs.MobState.Critical, out var targetThreshold))
+                || !_mobThreshold.TryGetThresholdForState(performer, Mobs.MobState.SoftCritical, out var perfThreshold) // Reserve edit: Soft Crit port
+                || !_mobThreshold.TryGetThresholdForState(target, Mobs.MobState.SoftCritical, out var targetThreshold)) // Reserve edit: Soft Crit port
                 return 1f;
 
             return _allowClampOverride && bypassClamp

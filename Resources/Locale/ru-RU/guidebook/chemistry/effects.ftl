@@ -386,8 +386,8 @@ reagent-effect-guidebook-add-to-chemicals =
                 [1] добавить
                *[-1] удалить
             }
-    } { NATURALFIXED($amount, 2) }u of { $reagent } { $deltasign ->
-        [1] to
+    } { NATURALFIXED($amount, 2) }u от { $reagent } { $deltasign ->
+        [1] к
        *[-1] от
     } решение
 
@@ -420,3 +420,39 @@ reagent-effect-guidebook-even-health-change =
                *[both] равномерно изменяют здоровье на
             }
     } { $changes }
+
+entity-effect-guidebook-knockdown =
+    { $type ->
+        [update]{ $chance ->
+                    [1] Вызывает
+                    *[other] вызывают
+                } станкрит на минимум {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                *[other] секунд
+                } без накопления
+        [add]   { $chance ->
+                    [1] Вызывает
+                    *[other] вызывают
+                } станкрит на минимум {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                *[other] секунд
+                } с накоплением
+        *[set]  { $chance ->
+                    [1] Вызывает
+                    *[other] вызывают
+                } станкрит на минимум {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                *[other] секунд
+                } без накопления
+        [remove]{ $chance ->
+                    [1] Убирает
+                    *[other] убирают
+                } {NATURALFIXED($time, 3)} { $time ->
+                    [one] секунду
+                    [few] секунды
+                *[other] секунд
+                } от станкрита
+    }

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Message;
 using Content.Client.Stylesheets;
@@ -29,7 +29,7 @@ public sealed partial class SupermatterConsoleWindow : FancyWindow
     private NetEntity? _trackedEntity;
 
     private SupermatterConsoleEntry[]? _supermatters = null;
-    private IEnumerable<SupermatterConsoleEntry>? _activeAlerts = null;
+    // private IEnumerable<SupermatterConsoleEntry>? _activeAlerts = null; // Reserve edit: Fix warnings
 
     public event Action<NetEntity?>? SendFocusChangeMessageAction;
 

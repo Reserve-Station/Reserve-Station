@@ -114,7 +114,7 @@ public sealed class UplinkPreferenceTests
 
         await SpawnPenInHand();
 
-        await server.WaitPost(() => uplinkSys.TryAddUplink(_player, 20, PenPreference, out _, out _));
+        await server.WaitPost(() => uplinkSys.AddUplink(_player, 20, PenPreference, out _, out _));
         await _pair.RunTicksSync(5);
 
         await server.WaitAssertion(() =>
@@ -166,7 +166,7 @@ public sealed class UplinkPreferenceTests
 
             await server.WaitAssertion(() =>
             {
-                var success = uplinkSys.TryAddUplink(_player, 20, pref.ID, out var uplinkTarget, out var setupEvent);
+                var success = uplinkSys.AddUplink(_player, 20, pref.ID, out var uplinkTarget, out var setupEvent);
                 Assert.That(success, Is.True, $"TryAddUplink failed for preference {pref.ID}");
 
                 if (pref.SearchComponents != null)
@@ -201,7 +201,7 @@ public sealed class UplinkPreferenceTests
 
         await server.WaitAssertion(() =>
         {
-            var success = uplinkSys.TryAddUplink(_player, startingBalance, implantPreference, out var uplinkTarget, out _);
+            var success = uplinkSys.AddUplink(_player, startingBalance, implantPreference, out var uplinkTarget, out _);
             Assert.That(success, Is.True, "Implant uplink should succeed");
             Assert.That(uplinkTarget, Is.Null, "Implant preference should not return an uplink target entity");
 
@@ -223,7 +223,8 @@ public sealed class UplinkPreferenceTests
             var store = entMan.GetComponent<StoreComponent>(implantStore!.Value);
             Assert.That(store.Balance.ContainsKey("Telecrystal"), Is.True);
 
-            var catalog = protoMan.Index<ListingPrototype>("UplinkUplinkImplanter");
+            var protoId = "UplinkUplinkImplanter";  // Reserve edit: Fix warnings
+            var catalog = protoMan.Index<ListingPrototype>(protoId);  // Reserve edit: Fix warnings
             var implantCost = (int) catalog.Cost["Telecrystal"];
             var expectedBalance = startingBalance - implantCost;
             Assert.That((int) store.Balance["Telecrystal"], Is.EqualTo(expectedBalance),
@@ -258,7 +259,7 @@ public sealed class UplinkFallbackTests
             var penTarget = goobUplinkSys.FindUplinkTarget(dummy, new[] { "Pen" });
             Assert.That(penTarget, Is.Null, "Dummy should not have a pen");
 
-            var success = uplinkSys.TryAddUplink(dummy, 20, PenPreference, out _, out _);
+            var success = uplinkSys.AddUplink(dummy, 20, PenPreference, out _, out _);
             Assert.That(success, Is.True, "Should fall back to implant when pen unavailable");
         });
 

@@ -1186,30 +1186,6 @@
 
 - type: entity
   parent: FoodSnackLollypopDylovene
-  id: FoodSnackLollypopOrchito
-  name: orchito lollypop
-  description: An orchito filled lollypop. It's not as refreshing.
-  suffix: Loadout, Trinkets
-  components:
-  - type: Sprite
-    layers:
-    - state: lollypop
-      map: [ "enum.AmmoVisualLayers.Base" ]
-    - state: color
-      map: [ "enum.AmmoVisualLayers.Tip" ]
-      color: "#a0f080"
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Sugar
-          Quantity: 5
-        - ReagentId: Orchito
-          Quantity: 15
-
-- type: entity
-  parent: FoodSnackLollypopDylovene
   id: FoodSnackLollypopBrepsi
   name: brepsi lollypop
   description: An brepsi filled lollypop. It's not as good for cleaning.
@@ -1382,6 +1358,70 @@
     - FoodSnackLollypopAntihol
     - FoodSnackLollypopDexalinPlus
     - FoodSnackLollypopDylovene
+  groupBy: "candy"
+
+- type: loadoutEffectGroup
+  id: OrchiDeaTrinkets
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 15h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBartender
+      time: 15h
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 15h
+
+- type: entity
+  parent: FoodSnackLollypopOrchito
+  id: FoodSnackLollypopOrchiDeaDummy
+  categories: [ HideSpawnMenu ]
+  name: four Orchid lollypops
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+      offset: -0.15, -0.25
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#a0f080"
+      offset: -0.15, -0.25
+    - state: lollypop
+      offset: -0.15, 0.15
+    - state: color
+      color: "#02667f"
+      offset: -0.15, 0.15
+    - state: lollypop
+      offset: 0.25, 0.15
+    - state: color
+      color: "#5000c0"
+      offset: 0.25, 0.15
+    - state: lollypop
+      offset: 0.25, -0.25
+    - state: color
+      color: "#ffa8e8"
+      offset: 0.25, -0.25
+
+- type: loadout
+  id: FoodSnackLollypopOrchiDea
+  dummyEntity: FoodSnackLollypopOrchiDeaDummy
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OrchiDeaTrinkets
+  storage:
+    back:
+    - FoodSnackLollypopOrchito
+    - FoodSnackLollypopStardust
+    - FoodSnackLollypopStardustOrchito
+    - FoodSnackLollypopStardustGoddess
   groupBy: "candy"
 
 - type: entity

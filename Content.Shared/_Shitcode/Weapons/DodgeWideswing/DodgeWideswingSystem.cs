@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
@@ -10,9 +10,9 @@ namespace Content.Shared._Goobstation.Weapons.DodgeWideswing;
 
 public sealed class DodgeWideswingSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
+    // [Dependency] private readonly SharedPopupSystem _popup = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly IRobustRandom _random = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly SharedStaminaSystem _stamina = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

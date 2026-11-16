@@ -58,6 +58,9 @@ global-antagonist-devil-description = Һеҙ әһәмиәтһеҙ.
 global-antagonist-abductor-name = Abductor
 global-antagonist-abductor-description = Zonding in progress.
 
+global-antagonist-vampire-name = Vampire
+global-antagonist-vampire-description = Bloodsucking creature of the night.
+
 global-antagonist-ghost-role-name = Ghost role
 global-antagonist-ghost-role-description = Ghost roles most often have no effect on the station.
 

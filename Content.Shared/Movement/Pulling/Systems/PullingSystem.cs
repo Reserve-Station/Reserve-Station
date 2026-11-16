@@ -2,6 +2,7 @@
 
 using Content.Goobstation.Common.Grab;
 using Content.Shared._Shitcode.Heretic.Components;
+using Content.Shared._ST.Interaction; // Goob
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
@@ -159,7 +160,7 @@ public sealed class PullingSystem : EntitySystem
         if (component.Pulling == null)
             return;
 
-        if (TryComp<PullableComponent>(component.Pulling, out var comp) && (args.NewMobState == MobState.Critical || args.NewMobState == MobState.Dead))
+        if (TryComp<PullableComponent>(component.Pulling, out var comp) && args.NewMobState is MobState.SoftCritical or MobState.HardCritical or MobState.Dead) // Reserve edit: Soft Crit port
         {
             TryStopPull(component.Pulling.Value, comp);
         }
@@ -588,7 +589,7 @@ public sealed class PullingSystem : EntitySystem
 
         // Pulling confirmed
 
-        _interaction.DoContactInteraction(pullableUid, pullerUid);
+        _interaction.DoContactInteraction(pullerUid, pullableUid, null, true, interactionParticleType: StellarInteractionParticleType.Pull); // Goob
 
         // Use net entity so it's consistent across client and server.
         pullableComp.PullJointId = $"pull-joint-{GetNetEntity(pullableUid)}";

@@ -12,7 +12,7 @@
 
   ## Особые способности
 
-  ### Sneak Attack
+  ### Скрытая атака
 
   <Box>
     <GuideEntityEmbed Entity="EnergyKatana" Caption=""/>
@@ -22,7 +22,7 @@
   Как только урон нанесён, [bold]скрытность[/bold] исчезает, отступая в [bold]стремительность[/bold], ожидая следующего шанса подняться.
   Включает [bold]захват ниндзюцу и убийство[/bold], отключает [bold]быстрый удар[/bold].
 
-  ### Loss of Surprise
+  ### Потеря внезапности
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookLossOfSurprise" Caption=""/>
@@ -32,7 +32,7 @@
   [bold]Скорость[/bold] - их оружие, а момент для [bold]удара[/bold] мимолётен, как тень в темноте.
   Длится [bold]5 секунд[/bold]. Отключает [bold]захват ниндзюцу и убийство[/bold], но включает [bold]быстрый удар[/bold].
 
-  ### Escape Plan
+  ### План побега
 
   Ваша [bold]цель погибла[/bold]. Время уйти и планировать следующую [bold]атаку[/bold].
 
@@ -41,43 +41,43 @@
 
   ## Комбо
 
-  ### Assassinate
+  ### Умерщвление
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
   </Box>
 
-  Наносит [bold]массивный урон[/bold] в грудь цели, если активна [bold]Sneak Attack[/bold]. Урон легко блокируется [bold]бронёй[/bold].
-  Работает в [bold]рукопашном бою[/bold] или атаками левой кнопкой мыши оружием [bold]Slash[/bold] типа.
+  Наносит [bold]массивный урон[/bold] в грудь цели, если активна [bold]скрытая атака[/bold]. Урон легко блокируется [bold]бронёй[/bold].
+  Работает в [bold]рукопашном бою[/bold] или атаками левой кнопкой мыши оружием с [bold]режущим[/bold] уроном.
 
-  ### Ninjutsu Takedown
+  ### Захват ниндзюцу
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookHelp" Caption=""/>
   </Box>
 
-  Работает только с активной [bold]Sneak Attack[/bold]. Значительно [bold]замедляет[/bold] противника и [bold]заглушает[/bold] его.
+  Работает только с активной [bold]скрытой атакой[/bold]. Значительно [bold]замедляет[/bold] противника и [bold]заглушает[/bold] его.
   Работает лучше, если выполнено [bold]сзади[/bold].
 
-  ### Swift Strike
+  ### Быстрый удар
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
   </Box>
 
-    Когда враг [bold]сбит с ног[/bold], [bold]оружие ближнего боя[/bold] с [color=Red][bold]Slash[/bold][/color] уроном [color=Green][bold]бьёт быстрее, чем глаз может уследить[/bold][/color].
-    А [bold]безоружным[/bold], каждая [bold]атака[/bold] будет истощать [color=Purple][bold]Stamina[/bold][/color] противника. Работает только с активной [bold]Loss of Surprise[/bold].
+    Когда враг [bold]сбит с ног[/bold], [bold]оружие ближнего боя[/bold] с [color=Red][bold]режущим[/bold][/color] уроном [color=Green][bold]бьёт быстрее, чем глаз может уследить[/bold][/color].
+    А [bold]безоружным[/bold], каждая [bold]атака[/bold] будет истощать [color=Purple][bold]выносливость[/bold][/color] противника. Работает только с активной [bold]потерей внезапности[/bold].
 
-  ### Bite The Dust
+  ### Кануть в пыли
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
     <GuideEntityEmbed Entity="GuidebookGrab" Caption=""/>
   </Box>
 
-  Временно [bold]сбивает противника с ног[/bold]. Также наносит [color=Orange][bold]Blunt[/bold][/color] урон.
+  Временно [bold]сбивает противника с ног[/bold]. Также наносит [color=Orange][bold]тупой[/bold][/color] урон.
 
-  ### Dirty Kill
+  ### Грязное убийство
 
   <Box>
     <GuideEntityEmbed Entity="GuidebookDisarm" Caption=""/>

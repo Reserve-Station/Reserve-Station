@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
 using Content.Server.Actions;
@@ -20,7 +20,7 @@ public sealed class CosmicMonumentSystem : EntitySystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly CosmicCultRuleSystem _cultRule = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly ITileDefinitionManager _tileDef = default!;
+    // [Dependency] private readonly ITileDefinitionManager _tileDef = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly MonumentSystem _monument = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
@@ -71,12 +71,11 @@ public sealed class CosmicMonumentSystem : EntitySystem
 
     private void OnCosmicMoveMonument(Entity<CosmicCultLeadComponent> uid, ref EventCosmicMoveMonument args)
     {
-
-        args.Handled = true;
         if (_cultRule.AssociatedGamerule(uid) is not { } cult
             || !VerifyPlacement(uid, out var pos))
             return;
 
+        args.Handled = true;
         cult.Comp.MonumentMoved = true;
         var leadQuery = EntityQueryEnumerator<CosmicCultLeadComponent>(); // If there are ever multiple leaders for some reason, they all use the action once it's used.
         while (leadQuery.MoveNext(out var lead, out var leadComp))

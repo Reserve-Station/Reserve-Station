@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Enchanting.Components;
 using Content.Shared.Mining.Components;
@@ -9,9 +9,9 @@ namespace Content.Goobstation.Shared.Enchanting.Systems;
 /// <summary>
 /// Handles events for <see cref="FortuneEnchantComponent"/>.
 /// </summary>
-public sealed class FortuneEnchantSystem : EntitySystem
+public sealed partial class FortuneEnchantSystem : EntitySystem
 {
-    [Dependency] private readonly EnchantingSystem _enchanting = default!;
+    // [Dependency] private EnchantingSystem _enchanting = default!; // Reserve edit: Fix warnings
 
     private EntityQuery<OreVeinComponent> _oreQuery;
 

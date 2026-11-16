@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.Notes;
@@ -25,6 +27,7 @@ public sealed class PlayerPanelEui : BaseEui
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly EuiManager _eui = default!;
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     private readonly LocatedPlayerData _targetPlayer;
     private int? _notes;
@@ -103,6 +106,7 @@ public sealed class PlayerPanelEui : BaseEui
                 {
                     _adminLog.Add(LogType.Action,$"{Player:actor} unfroze {_entity.ToPrettyString(session.AttachedEntity):subject}");
                     _entity.RemoveComponent<AdminFrozenComponent>(session.AttachedEntity.Value);
+                    _adminGuard.PlayerFrozen(DiscordLogActor.From(session), AdminFreezeAction.Unfreeze, DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
                     SetPlayerState();
                     return;
                 }
@@ -111,11 +115,13 @@ public sealed class PlayerPanelEui : BaseEui
                 {
                     _adminLog.Add(LogType.Action,$"{Player:actor} froze and muted {_entity.ToPrettyString(session.AttachedEntity):subject}");
                     frozenSystem.FreezeAndMute(session.AttachedEntity.Value);
+                    _adminGuard.PlayerFrozen(DiscordLogActor.From(session), AdminFreezeAction.FreezeAndMute, DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
                 }
                 else
                 {
                     _adminLog.Add(LogType.Action,$"{Player:actor} froze {_entity.ToPrettyString(session.AttachedEntity):subject}");
                     _entity.EnsureComponent<AdminFrozenComponent>(session.AttachedEntity.Value);
+                    _adminGuard.PlayerFrozen(DiscordLogActor.From(session), AdminFreezeAction.Freeze, DiscordLogActor.From(Player)); // Reserve edit: Reserve Red - AdminGuard
                 }
                 SetPlayerState();
                 break;

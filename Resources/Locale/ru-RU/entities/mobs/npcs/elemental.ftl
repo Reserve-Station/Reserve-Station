@@ -1,5 +1,5 @@
-ent-MobElementalBase = { "" }
-    .desc = { "" }
+ent-MobElementalBase = элементаль
+    .desc = Существо, состоящее из чистой стихии.
 ent-MobOreCrab = рудокраб
     .desc = { ent-MobElementalBase.desc }
 ent-MobQuartzCrab = { ent-MobOreCrab }
@@ -10,6 +10,7 @@ ent-MobIronCrab = { ent-MobOreCrab }
     .suffix = Железо
 ent-MobCoalCrab = { ent-MobOreCrab }
     .desc = Рудный краб, состоящий из угля.
+    .suffix = Уголь
 ent-MobUraniumCrab = { ent-MobOreCrab }
     .desc = Рудный краб, состоящий из урана.
     .suffix = Уран
@@ -21,6 +22,11 @@ ent-MobSilverCrab = { ent-MobOreCrab }
     .suffix = Серебро
 ent-MobGoldCrab = { ent-MobOreCrab }
     .desc = Рудный краб, состоящий из золота.
+    .suffix = Золото
+ent-MobSupermatterCrab = { ent-MobOreCrab }
+    .desc = Рудный краб, состоящий из суперматерии.
+    .suffix = Суперматерия
+
 ent-ReagentSlime = химический слайм
     .desc = Состоит из жидкости, и хочет растворить вас в себе.
     .suffix = Вода

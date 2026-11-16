@@ -1,5 +1,3 @@
-// SPDX-FileCopyrightText: 2025 Goob Station Contributors
-//
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Lobby;
@@ -11,13 +9,13 @@ using Robust.Shared.Configuration;
 
 namespace Content.Goobstation.Client.Patron;
 
-public sealed class PatronSupportUIController : UIController, IOnStateEntered<LobbyState>, IOnStateExited<LobbyState>
+public sealed partial class PatronSupportUIController : UIController, IOnStateEntered<LobbyState>, IOnStateExited<LobbyState>
 {
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IUriOpener _uriOpener = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IUriOpener _uriOpener = default!;
 
     private PatronSupportWindow? _supportWindow;
-    private bool _hasShownThisSession;
+    // private bool _hasShownThisSession;  // Reserve edit: Fix warnings
 
     public void OnStateEntered(LobbyState state)
     {

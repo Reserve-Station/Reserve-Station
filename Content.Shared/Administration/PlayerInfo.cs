@@ -22,7 +22,8 @@ public sealed record PlayerInfo(
     bool Connected,
     bool ActiveThisRound,
     bool IsGhost, // Goobstation
-    TimeSpan? OverallPlaytime)
+    TimeSpan? OverallPlaytime,
+    string? AntagNote = null) // Reserve edit: extra antag info for admins, e.g. whose thrall this is
 {
     private string? _playtimeString;
 

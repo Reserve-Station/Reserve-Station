@@ -86,7 +86,7 @@ public partial class SharedMartialArtsSystem
         _stamina.TakeStaminaDamage(target, proto.StaminaDamage);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Weapons/genhit3.ogg"), target);
-        ComboPopup(ent, target, proto.Name);
+        ComboPopup(ent, target, proto.ID); // Reserve edit: localization #359
         ent.Comp.LastAttacks.Clear();
     }
 
@@ -112,7 +112,7 @@ public partial class SharedMartialArtsSystem
         DoDamage(ent, target, proto.DamageType, proto.ExtraDamage, out _);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Weapons/genhit3.ogg"), target);
-        ComboPopup(ent, target, proto.Name);
+        ComboPopup(ent, target, proto.ID); // Reserve edit: localization #359
         ent.Comp.LastAttacks.Clear();
     }
 
@@ -138,7 +138,7 @@ public partial class SharedMartialArtsSystem
         _pulling.TryStopPull(target, pullable, ent, true);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Weapons/genhit3.ogg"), target);
-        ComboPopup(ent, target, proto.Name);
+        ComboPopup(ent, target, proto.ID); // Reserve edit: localization #359
         ent.Comp.LastAttacks.Clear();
     }
 
@@ -174,7 +174,7 @@ public partial class SharedMartialArtsSystem
         _stun.TryKnockdown(target, knockdownTime, true, true, proto.DropItems);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Weapons/genhit3.ogg"), target);
-        ComboPopup(ent, target, proto.Name);
+        ComboPopup(ent, target, proto.ID); // Reserve edit: localization #359
         ent.Comp.LastAttacks.Clear();
     }
 
@@ -201,7 +201,7 @@ public partial class SharedMartialArtsSystem
         _standingState.Stand(ent);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Weapons/genhit3.ogg"), target);
-        ComboPopup(ent, target, proto.Name);
+        ComboPopup(ent, target, proto.ID); // Reserve edit: localization #359
         ent.Comp.LastAttacks.Clear();
     }
 
@@ -219,7 +219,7 @@ public partial class SharedMartialArtsSystem
         _pulling.TryStopPull(target, pullable, ent, true);
 
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Weapons/genhit3.ogg"), target);
-        ComboPopup(ent, target, proto.Name);
+        ComboPopup(ent, target, proto.ID); // Reserve edit: localization #359
         ent.Comp.LastAttacks.Clear();
     }
 

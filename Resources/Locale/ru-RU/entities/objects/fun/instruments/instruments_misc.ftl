@@ -8,6 +8,7 @@ ent-PhoneInstrument = красный телефон
     .desc = Если что-то пойдёт не так...
 ent-PhoneInstrumentSyndicate = кроваво-красный телефон
     .desc = Для злых людей, для связи с друзьями.
+    .suffix = Синдикат
 ent-HelicopterInstrument = игрушечный вертолёт
     .desc = Ч-ка-ч-ка-ч-ка-ч-ка-ч-ка-ч-ка...
 ent-CannedApplauseInstrument = готовые аплодисменты

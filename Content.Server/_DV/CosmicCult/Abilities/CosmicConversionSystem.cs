@@ -1,5 +1,6 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Conversion; // Goob
 using Content.Goobstation.Common.Religion;
 using Content.Server._DV.CosmicCult.Components;
 using Content.Server.Popups;
@@ -15,6 +16,7 @@ using Robust.Shared.Timing;
 using Content.Server.Atmos.Rotting;
 using Content.Server.Administration.Systems;
 using Content.Shared.Administration.Systems;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._DV.CosmicCult.Abilities;
 
@@ -22,9 +24,9 @@ public sealed class CosmicConversionSystem : EntitySystem
 {
     [Dependency] private readonly CosmicCultRuleSystem _cultRule = default!;
     [Dependency] private readonly CosmicGlyphSystem _cosmicGlyph = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
+    // [Dependency] private readonly DamageableSystem _damageable = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly IGameTiming _timing = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly MobStateSystem _mobState = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedCosmicCultSystem _cosmicCult = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
@@ -88,8 +90,16 @@ public sealed class CosmicConversionSystem : EntitySystem
             {
                 _popup.PopupEntity(Loc.GetString("cult-glyph-target-rotting"), uid, args.User);
                 args.Cancel();
+                continue; // Goob
             }
-            if (HasComp<BibleUserComponent>(target))
+            var convEv = new BeforeConversionEvent(target); // Goob
+            RaiseLocalEvent(target, ref convEv, true); // Goob
+            if (convEv.Blocked) // Goob
+            {
+                _popup.PopupEntity(Loc.GetString("cult-glyph-target-immune"), uid, args.User);
+                args.Cancel();
+            }
+            else if (HasComp<BibleUserComponent>(target))
             {
                 _popup.PopupEntity(Loc.GetString("cult-glyph-target-chaplain"), uid, args.User);
                 args.Cancel();

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client._EinsteinEngines.Flight.Components;
 using Robust.Client.GameObjects;
@@ -13,7 +13,7 @@ namespace Content.Client._EinsteinEngines.Flight;
 public sealed class FlyingVisualizerSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly SpriteSystem _spriteSystem = default!;
+    // [Dependency] private readonly SpriteSystem _spriteSystem = default!; // Reserve edit: Fix warnings
     public override void Initialize()
     {
         base.Initialize();
@@ -43,9 +43,6 @@ public sealed class FlyingVisualizerSystem : EntitySystem
 
         if (animateLayer && layer is not null)
             entity.Comp.LayerSetShader(layer.Value, shader);
-
-        //entity.Comp.GetScreenTexture = shader is not null;
-        entity.Comp.RaiseShaderEvent = shader is not null;
     }
 
     /// <summary>

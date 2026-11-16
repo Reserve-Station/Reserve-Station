@@ -314,6 +314,27 @@
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
 
+- type: entity
+  parent: BaseItem
+  id: ToyKnife
+  name: toy knife
+  description: An aqua-colored plastic knife. Nap! Stab! Look!
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Objects/Fun/toy_knife.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 1.5
+    wideAnimationRotation: -125
+    damage:
+      types:
+        Blunt: 0
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    size: Small
+    sprite: _Goobstation/Objects/Fun/toy_knife.rsi
+
 ## Admin plushies go above the rest of the chuds.
 
 - type: entity
@@ -808,7 +829,7 @@
   - type: PointLight
     radius: 8
     energy: 6
-    mask: /Textures/Effects/LightMasks/double_cone.png
+    lightMask: ConeDouble
   - type: RgbLightController
     cycleRate: 0.3
   - type: RotatingLight
@@ -1016,7 +1037,6 @@
     size: Small
     sprite: _Goobstation/Heretic/Blades/eldrich_blade-toy-inhands.rsi
 
-
 - type: entity
   parent: BasePlushie
   id: PlushieTwofish
@@ -1092,7 +1112,7 @@
         Slash: 5
     biteSound:
       collection: VulpkaninSnarls
-      
+
 - type: entity
   parent: BasePlushie
   id: PlushieRouge
@@ -1186,6 +1206,122 @@
     - HEAD
     - NECK
 
+- type: entity
+  parent: BasePlushie
+  id: PlushieDoremyZerg
+  name: Aya plushie
+  description: A shiny toy stained with ink and tea.
+  components:
+    - type: Sprite
+      sprite: _Goobstation/Objects/Fun/toys.rsi
+      state: plushie_aya
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/_Floofstation/Voice/Harpy/harpy_coo1.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_DV/Voice/Harpy/caw1.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/_Floofstation/Voice/Harpy/harpy_coo2.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_Floofstation/Voice/Harpy/harpy_coo3.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/_Floofstation/Voice/Harpy/harpy_coo4.ogg
+    - type: Boomerang
+    - type: Clothing
+      quickEquip: true
+      sprite: _Goobstation/Objects/Fun/toys.rsi
+      equippedPrefix: plushieaya
+      slots:
+      - HEAD
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 0
+      soundHit:
+        path: /Audio/_Goobstation/Voice/Harpy/owl_hoot.ogg
+    - type: Item
+      heldPrefix: plushieaya
+      sprite: _Goobstation/Objects/Fun/toys.rsi
+    # - type: SpeechSynthesis # Commented - Reserve
+    #   voice: Harpy
+
+- type: entity
+  parent: PlushieLizard
+  id: PlushieSanyati
+  name: Nyxoma plushie
+  description: Smells like ag'hsj'saje'sh.
+  components:
+    - type: Sprite
+      sprite: _Goobstation/Objects/Fun/toys.rsi
+      state: plushie_nyxoma
+    - type: EmitSoundOnUse
+      sound:
+        path: /Audio/_Goobstation/Heretic/heartbeat.ogg
+    - type: EmitSoundOnLand
+      sound:
+        path: /Audio/_Goobstation/Heretic/hiss/hiss2.ogg
+    - type: EmitSoundOnActivate
+      sound:
+        path: /Audio/_Goobstation/Heretic/heartbeat.ogg
+    - type: EmitSoundOnTrigger
+      sound:
+        path: /Audio/_Goobstation/Heretic/hiss/hiss2.ogg
+    - type: EmitSoundOnCollide
+      sound:
+        path: /Audio/_Goobstation/Heretic/hiss/hiss2.ogg
+    - type: Clothing
+      quickEquip: true
+      sprite: _Goobstation/Objects/Fun/toys.rsi
+      equippedPrefix: plushienyxoma
+      slots:
+      - HEAD
+    - type: MeleeWeapon
+      damage:
+        types:
+          Blunt: 0
+      soundHit:
+        path: /Audio/_Goobstation/Heretic/repulse.ogg
+    - type: Item
+      heldPrefix: plushienyxoma
+      sprite: _Goobstation/Objects/Fun/toys.rsi
+    # - type: SpeechSynthesis # Commented - Reserve
+    #   voice: Lizard
+
+- type: entity
+  parent: PlushieLizard
+  id: PlushieHarel
+  name: Harel plushie
+  description: Smells like fresh plasma.
+  components:
+    - type: Sprite
+      sprite: _Goobstation/Objects/Fun/toys.rsi
+      state: plushie_harel
+    - type: EmitSoundOnUse
+      sound:
+        collection: ReptilianScreech
+    - type: EmitSoundOnLand
+      sound:
+        collection: ReptilianScreech
+    - type: EmitSoundOnActivate
+      sound:
+        collection: ReptilianScreech
+    - type: EmitSoundOnTrigger
+      sound:
+        collection: ReptilianScreech
+    - type: EmitSoundOnCollide
+      sound:
+        collection: ReptilianScreech
+    - type: Clothing
+      quickEquip: true
+      sprite: _Goobstation/Objects/Fun/toys.rsi
+      equippedPrefix: plushieharel
+      slots:
+      - HEAD
+
 # Plushies, but EVIL!!!
 
 - type: entity
@@ -1277,9 +1413,27 @@
   parent: PlushieRedstonewolf
   id: EvilPlushieRedstonewolf
   suffix: Evil
-  
+
 - type: entity
   name: evil Rouge plush
   parent: PlushieRouge
   id: EvilPlushieRouge
+  suffix: Evil
+
+- type: entity
+  name: evil Aya plush
+  parent: PlushieDoremyZerg
+  id: EvilPlushieDoremyZerg
+  suffix: Evil
+
+- type: entity
+  name: evil Nyxoma plush
+  parent: PlushieSanyati
+  id: EvilPlushieSanyati
+  suffix: Evil
+
+- type: entity
+  name: evil Harel plush
+  parent: PlushieHarel
+  id: EvilPlushieHarel
   suffix: Evil

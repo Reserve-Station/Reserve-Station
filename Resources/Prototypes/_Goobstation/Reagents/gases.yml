@@ -37,7 +37,7 @@
           types:
             Asphyxiation: 10
             Poison: 2.5
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect # Reserve edit: Fix overlay narcotics
         conditions:
         - !type:ReagentCondition
           reagent: BZ
@@ -47,8 +47,7 @@
           - Slime
           - Hydrakin # Go fuck yourself
           inverted: true
-        key: SeeingRainbows
-        component: SeeingRainbows
+        effectProto: StatusEffectSeeingRainbow # Reserve edit: Fix overlay narcotics
         type: Add
         time: 150
       - !type:Emote
@@ -97,7 +96,7 @@
           max: 0.1
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: BZ
@@ -107,8 +106,7 @@
         - !type:BloodReagentThresholdCondition
           reagent: NitrosylPlasmide
           max: 0.1
-        key: ForcedSleep
-        component: ForcedSleeping
+        effectProto: StatusEffectForcedSleeping
         time: 10
         type: Add
       - !type:Oxygenate
@@ -155,7 +153,7 @@
           types:
             Cellular: -0.5
             Poison: -2.0
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect # Reserve edit: Fix overlay narcotics
         conditions:
         - !type:ReagentCondition
           reagent: BZ
@@ -164,8 +162,7 @@
           type:
           - Slime
           - Hydrakin # Go fuck yourself
-        key: SeeingRainbows
-        component: SeeingRainbows
+        effectProto: StatusEffectSeeingRainbow # Reserve edit: Fix overlay narcotics
         type: Add
         time: 150
       - !type:Emote
@@ -214,7 +211,7 @@
           max: 0.1
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: BZ
@@ -224,8 +221,7 @@
         - !type:BloodReagentThresholdCondition
           reagent: NitrosylPlasmide
           max: 0.1
-        key: ForcedSleep
-        component: ForcedSleeping
+        effectProto: StatusEffectForcedSleeping
         time: 10
         type: Add
       - !type:Oxygenate
@@ -277,7 +273,7 @@
         visualType: Medium
         messages: [ "effect-sleepy" ]
         probability: 0.01
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: Healium
@@ -285,8 +281,7 @@
         - !type:BloodReagentThresholdCondition
           reagent: NitrosylPlasmide
           max: 0.01
-        key: ForcedSleep
-        component: ForcedSleeping
+        effectProto: StatusEffectForcedSleeping
         time: 1
         type: Add
       - !type:Drunk
@@ -335,7 +330,7 @@
         visualType: Medium
         messages: [ "effect-sleepy" ]
         probability: 0.01
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: Healium
@@ -343,8 +338,7 @@
         - !type:BloodReagentThresholdCondition
           reagent: NitrosylPlasmide
           max: 0.01
-        key: ForcedSleep
-        component: ForcedSleeping
+        effectProto: StatusEffectForcedSleeping
         time: 1
         type: Add
       - !type:Drunk
@@ -506,6 +500,11 @@
       - !type:Oxygenate
         factor: 8
         conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Feroxi ]
+      - !type:Oxygenate
+        factor: 8
+        conditions:
         - !type:MetabolizerTypeCondition # Goobstation - Cybernetics
           type: [ Cybernetic ]
       # Convert Pluox into CO2.
@@ -563,6 +562,11 @@
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Plant ]
+      - !type:Oxygenate
+        factor: 8
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Feroxi ]
       - !type:Oxygenate
         factor: 8
         conditions:

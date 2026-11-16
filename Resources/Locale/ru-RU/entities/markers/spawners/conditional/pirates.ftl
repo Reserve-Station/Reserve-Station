@@ -1,2 +1,6 @@
-ent-SpawnPointPirates = спавнер пират
-    .desc = { ent-MarkerBase.desc }
+ent-SpawnPointPirates = точка появления роли призрака
+    .desc = Разместите на карте, чтобы тут появлялись новые пираты.
+    .suffix = Пират
+ent-SpawnPointPirateCaptain = точка появления роли призрака
+    .desc = Разместите на карте, чтобы тут появлялся капитан пиратов.
+    .suffix = Пират, Капитан

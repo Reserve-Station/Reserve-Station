@@ -94,6 +94,17 @@ public sealed class GhoulSystem : EntitySystem
 
         SubscribeLocalEvent<HereticMinionComponent, AttackAttemptEvent>(OnTryAttack);
         SubscribeLocalEvent<HereticMinionComponent, TakeGhostRoleEvent>(OnTakeGhostRole);
+        SubscribeLocalEvent<HereticMinionComponent, ComponentShutdown>(OnMinionShutdown);
+    }
+
+    private void OnMinionShutdown(Entity<HereticMinionComponent> ent, ref ComponentShutdown args)
+    {
+        var query = EntityQueryEnumerator<HereticComponent>();
+        while (query.MoveNext(out var mind, out var heretic))
+        {
+            if (heretic.Minions.Remove(ent))
+                Dirty(mind, heretic);
+        }
     }
 
     private void OnGetBriefing(Entity<GhoulRoleComponent> ent, ref GetBriefingEvent args)
@@ -193,7 +204,7 @@ public sealed class GhoulSystem : EntitySystem
         if (TryComp<MobThresholdsComponent>(ent, out var th))
         {
             _threshold.SetMobStateThreshold(ent, ent.Comp.TotalHealth, MobState.Dead, th);
-            _threshold.SetMobStateThreshold(ent, ent.Comp.TotalHealth * 0.99f, MobState.Critical, th);
+            _threshold.SetMobStateThreshold(ent, ent.Comp.TotalHealth * 0.99f, MobState.SoftCritical, th); // Reserve edit: Soft Crit port
         }
 
         _mind.MakeSentient(ent);

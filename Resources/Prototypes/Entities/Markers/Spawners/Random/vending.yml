@@ -1,5 +1,50 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Reserve edit start: Random maints
+- type: entityTable
+  id: RandomVendingTable
+  table: !type:GroupSelector
+    children:
+    - id: VendingMachineChang
+    - id: VendingMachineCigs
+      weight: 2.0
+    - id: VendingMachineCoffee
+    - id: VendingMachineCola #Robust Sofdrinks
+    - id: VendingMachineColaBlack #Robust Sofdrinks [Black]
+    - id: VendingMachineColaRed #Space Cola
+    - id: VendingMachineDiscount
+    - id: VendingMachineDonut
+    - id: VendingMachineDrGibb
+    - id: VendingMachinePwrGame
+    - id: VendingMachineShamblersJuice
+    - id: VendingMachineSmite
+    - id: VendingMachineSnack
+    - id: VendingMachineSnackBlue
+    - id: VendingMachineSnackGreen
+    - id: VendingMachineSnackOrange
+    - id: VendingMachineSnackTeal
+    - id: VendingMachineSoda #Robust Sofdrinks [Soda]
+    - id: VendingMachineSovietSoda #Boda
+    - id: VendingMachineSpaceUp
+    - id: VendingMachineStarkist
+    - id: VendingMachineSweetToof # Goobstation
+    # Reserve: Orchid's Barmania - Vendichaos start
+    - id: VendingMachineFitness
+    - id: VendingMachineHotfood
+    - id: VendingMachineSolsnack
+    - id: VendingMachineWeeb
+    - id: VendingMachineSoups  # Reserve
+    - id: VendingMachineEnergyDrinks  # Reserve
+    - id: VendingMachineBottles  # Reserve
+    - id: VendingMachineIcedDrinks  # Reserve
+    - id: VendingMachineCartons  # Reserve
+    - id: VendingMachineIceCream  # Reserve
+    - id: VendingMachineJellyDonuts  # Reserve
+    # Reserve: Orchid's Barmania - Vendichaos end
+    # - id: RandomVendingMachineHalloween # Reserve edit: Halloween on Reserve  # Uncomment on Halloween
+    #   weight: 6.0
+# Reserve edit end: Random maints
+
 - type: entity
   id: RandomVending
   name: random vending machine spawner
@@ -11,46 +56,9 @@
     - state: red
     - sprite: Structures/Machines/VendingMachines/random.rsi
       state: any
-  - type: RandomSpawner
-    prototypes:
-    - VendingMachineChang
-    - VendingMachineCigs
-    - VendingMachineCoffee
-    - VendingMachineCola #Robust Sofdrinks
-    - VendingMachineColaBlack #Robust Sofdrinks [Black]
-    - VendingMachineColaRed #Space Cola
-    - VendingMachineDiscount
-    - VendingMachineDonut
-    - VendingMachineDrGibb
-    - VendingMachinePwrGame
-    - VendingMachineShamblersJuice
-    - VendingMachineSmite
-    - VendingMachineSnack
-    - VendingMachineSnackBlue
-    - VendingMachineSnackGreen
-    - VendingMachineSnackOrange
-    - VendingMachineSnackTeal
-    - VendingMachineSoda #Robust Sofdrinks [Soda]
-    - VendingMachineSovietSoda #Boda
-    - VendingMachineSpaceUp
-    - VendingMachineStarkist
-    - VendingMachineSweetToof # Goobstation
-    # Reserve: Orchid's Barmania - Vendichaos start
-    - VendingMachineFitness
-    - VendingMachineHotfood
-    - VendingMachineSolsnack
-    - VendingMachineWeeb
-    - VendingMachineCigs  # Twice for bigger chance
-    - VendingMachineSoups  # Reserve
-    - VendingMachineEnergyDrinks  # Reserve
-    - VendingMachineBottles  # Reserve
-    - VendingMachineIcedDrinks  # Reserve
-    - VendingMachineCartons  # Reserve
-    - VendingMachineIceCream  # Reserve
-    - VendingMachineJellyDonuts  # Reserve
-    # Reserve: Orchid's Barmania - Vendichaos end
-    chance: 1
-
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomVendingTable  # Reserve edit: Random maints
 
 - type: entityTable
   id: ClothingVendorTable

@@ -1,6 +1,6 @@
 ent-PartChitinid = часть тела хитинида
     .desc = { ent-PartHuman.desc }
-ent-ChestChitinid = грудь хитинида
+ent-ChestChitinid = грудная клетка хитинида
     .desc = { ent-BaseChest.desc }
 ent-GroinChitinid = пах хитинида
     .desc = { ent-BaseGroin.desc }

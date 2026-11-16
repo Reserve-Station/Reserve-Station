@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._EinsteinEngines.Silicon.Components;
 using Content.Shared.Alert;
@@ -14,7 +14,7 @@ namespace Content.Shared._EinsteinEngines.Silicon.Systems;
 public sealed class SharedSiliconChargeSystem : EntitySystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    // [Dependency] private readonly ItemSlotsSystem _itemSlots = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

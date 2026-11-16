@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseGameRule
+  id: Vampire
+  components:
+  - type: VampireRule
+  - type: GameRule
+    minPlayers: 20
+  - type: AntagSelection
+    selectionTime: IntraPlayerSpawn
+    agentName: vampire-roundend-name
+    definitions:
+    - prefRoles: [ Vampire ]
+      max: 2
+      playerRatio: 20
+      chaosScore: 220
+      jobBlacklist: [ Chaplain ]
+      blacklist:
+        components:
+        - CommandStaff
+        - AntagImmune
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRoleVampire
+  - type: Tag
+    tags:
+      - RoundstartAntag

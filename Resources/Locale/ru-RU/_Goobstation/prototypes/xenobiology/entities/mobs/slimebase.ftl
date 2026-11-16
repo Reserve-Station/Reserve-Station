@@ -7,4 +7,4 @@ ent-MobSlimeXenobioAdult = слайм
     .suffix = Взрослый
     .desc = Это так похоже на желе. Интересно, каково оно на вкус?
 ent-MobSlimeXenobioBabyPending = неопределенный слайм
-    .desc = { "" }
+    .desc = Похоже, ещё не понятно, что это за слайм.

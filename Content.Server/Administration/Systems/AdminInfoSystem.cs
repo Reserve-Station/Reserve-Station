@@ -2,6 +2,7 @@
 
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
 using Content.Shared.Administration.Events;
 using Content.Shared.Database;
 
@@ -12,6 +13,7 @@ public sealed class AdminInfoSystem : EntitySystem
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly IChatManager _chatManager = default!;
     [Dependency] private readonly IPlayerLocator _locator = default!;
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     public override void Initialize()
     {
@@ -33,8 +35,9 @@ public sealed class AdminInfoSystem : EntitySystem
         if (main == null)
             return;
 
-        _adminLog.Add(LogType.AdminMessage, LogImpact.High, $"{name} is attempting to connect with a userid from {main.Username}");
-        _chatManager.SendAdminAlert($"{name} is attempting to connect with a userid from {main.Username}");
 
+        _adminLog.Add(LogType.AdminMessage, LogImpact.High, $"{name} is attempting to connect with a userid from {main.Username}");
+        _chatManager.SendAdminAlert(Loc.GetString("admin-guard-userid-mismatch", ("name", name), ("main", main.Username))); // Reserve edit
+        _adminGuard.UserIdMismatch(name, main.Username); // Reserve edit: Reserve Red - AdminGuard
     }
 }

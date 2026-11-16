@@ -9,4 +9,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<string> AdminChatDiscordChannelId =
         CVarDef.Create("admin.chat_discord_channel_id", string.Empty, CVar.SERVERONLY);
+
+    // Reserve edit start: Reserve Red - BanGuard
+    /// <summary>
+    ///     The discord channel ID to send admin logs to. This requires the Discord Integration to be enabled and configured.
+    /// </summary>
+    public static readonly CVarDef<string> AdminLogsDiscordChannelId =
+        CVarDef.Create("admin.logs_discord_channel_id", string.Empty, CVar.SERVERONLY);
+    // Reserve edit end: Reserve Red - BanGuard
 }

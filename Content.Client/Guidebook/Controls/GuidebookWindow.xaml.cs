@@ -120,6 +120,8 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
     // Reserve edit start: guide-book #320, #323
     public void SaveCurrentPageState()
     {
+        SaveTreeState(); // Reserve edit: guide-book tree state
+
         if (_currentGuideEntry == null)
             return;
 
@@ -166,6 +168,49 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
         _crossReferences.BuildFromPage(EntryContainer);
         ApplyPageState(pageState);
     }
+
+    // Reserve edit start: guide-book tree state
+    private bool IsFullTree => _treeRootEntries == null && _treeForceRoot == null;
+
+    private void SaveTreeState()
+    {
+        if (!IsFullTree || Tree.Items.Count == 0)
+            return;
+
+        var expanded = new HashSet<string>();
+        foreach (var item in Tree.Items)
+        {
+            if (item.Expanded && item.Metadata is GuideEntry entry)
+                expanded.Add(entry.Id);
+        }
+
+        GuidebookPageStateStorage.ExpandedTreeEntries = expanded;
+    }
+
+    public void ApplyTreeState()
+    {
+        if (!IsFullTree)
+        {
+            Tree.SetAllExpanded(false);
+            Tree.SetAllExpanded(true, 1);
+            return;
+        }
+
+        Tree.SetAllExpanded(false);
+
+        if (GuidebookPageStateStorage.ExpandedTreeEntries is { } expanded)
+        {
+            foreach (var item in Tree.Items)
+            {
+                if (item.Metadata is GuideEntry entry && expanded.Contains(entry.Id))
+                    item.SetExpanded(true);
+            }
+        }
+
+        if (Tree.SelectedIndex is { } selected)
+            Tree.ExpandParentEntries(selected);
+    }
+    // Reserve edit end: guide-book tree state
 
     // Reserve edit: guide-book #323
     private void ApplyPageState(GuidebookPageState state)
@@ -493,7 +538,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IG
             AddEntry(entry.Id, parent, addedEntries);
         }
 
-        Tree.SetAllExpanded(true);
+        Tree.SetAllExpanded(false); // Reserve edit: guide-book tree state
     }
 
     private TreeItem? AddEntry(ProtoId<GuideEntryPrototype> id,

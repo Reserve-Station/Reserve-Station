@@ -22,15 +22,15 @@ namespace Content.Goobstation.Client.CustomLawboard;
 public sealed partial class LawboardSiliconLawUi : FancyWindow
 {
 
-    [Dependency] private readonly IFileDialogManager _dialogManager = default!;
-    [Dependency] private readonly ILogManager _logMan = default!;
-    [Dependency] private readonly ISerializationManager _serMan = default!;
+    [Dependency] private IFileDialogManager _dialogManager = default!;
+    [Dependency] private ILogManager _logMan = default!;
+    [Dependency] private ISerializationManager _serMan = default!;
 
     private List<SiliconLaw> _laws = new();
     private ISawmill _sawmill;
 
     public event Action<List<SiliconLaw>, bool>? LawsChangedEvent;
-    public event Action<bool>? LawsSavedEvent;
+    // public event Action<bool>? LawsSavedEvent;  // Reserve edit: Fix warnings
     public EntityUid Entity;
     public CustomLawboardComponent? LawboardComponent;
 

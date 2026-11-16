@@ -25,7 +25,7 @@ namespace Content.Client.Mapping;
 [GenerateTypedNameReferences]
 public sealed partial class MappingScreen : InGameScreen
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     public DecalPlacementSystem DecalSystem = default!;
 
@@ -215,11 +215,10 @@ public sealed partial class MappingScreen : InGameScreen
     // WD EDIT START
     private void OnDecalHexColorInput(LineEdit.LineEditEventArgs args)
     {
-        var color = Color.TryFromHex(args.Text);
-        if (!color.HasValue)
+        if (!Color.TryFromHex(args.Text, out var color))
             return;
 
-        OnDecalColorPicked(color.Value);
+        OnDecalColorPicked(color);
     }
 
     private void UpdateHexColorPreview(Color color)

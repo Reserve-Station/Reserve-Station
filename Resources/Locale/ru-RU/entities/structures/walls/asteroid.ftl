@@ -5,7 +5,7 @@ ent-AsteroidRockCoal = { ent-AsteroidRock }
     .desc = Рудная жила, богатая углём.
     .suffix = Уголь
 ent-AsteroidRockCoalCrab = { ent-AsteroidRock }
-    .desc = { ent-AsteroidRockCoalCrab.desc }
+    .desc = { ent-AsteroidRockCoal.desc }
     .suffix = Уголь, Рудокраб
 ent-AsteroidRockGold = { ent-AsteroidRock }
     .desc = Рудная жила, богатая золотом.
@@ -317,4 +317,7 @@ ent-WallRockAndesiteSalt = { ent-WallRockAndesite }
 
 ent-IronSandstone = железный песчаный камень
     .desc = { ent-AsteroidRock.desc }
-    .suffix = нет руды
+    .suffix = Без руды
+ent-IronSandstoneMining = { ent-IronSandstone }
+    .desc = { ent-IronSandstone.desc }
+    .suffix = Больше руды

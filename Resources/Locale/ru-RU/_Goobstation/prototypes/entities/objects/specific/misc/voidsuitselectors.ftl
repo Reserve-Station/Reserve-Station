@@ -10,3 +10,5 @@ ent-UndeterminedVoidsuitCaptain = селектор скафандра капит
     .desc = { ent-UndeterminedVoidsuitParamedic.desc }
 ent-UndeterminedVoidsuitRD = селектор скафандра научного руководителя
     .desc = { ent-UndeterminedVoidsuitParamedic.desc }
+ent-UndeterminedVoidsuitBrigMed = селектор скафандра бригмедика
+    .desc = { ent-UndeterminedVoidsuitParamedic.desc }

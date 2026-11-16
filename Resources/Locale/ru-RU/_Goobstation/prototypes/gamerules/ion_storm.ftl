@@ -1,4 +1,4 @@
-ent-IonStormScheduler = { ent-BaseGameRule }
+ent-IonStormScheduler = Электромагнитная буря
     .desc = { ent-BaseGameRule.desc }
-ent-RareIonStormScheduler = { ent-BaseGameRule }
+ent-RareIonStormScheduler = Редкая электромагнитная буря
     .desc = { ent-BaseGameRule.desc }

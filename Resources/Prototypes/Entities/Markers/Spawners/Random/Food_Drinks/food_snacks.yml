@@ -43,6 +43,7 @@
     - id: FoodSnackChocolate
     - id: FoodSnackChocolateBar
     - id: FoodSnackChowMein
+    - id: FoodSnackCoalCrunch # Goob - Afterlight synths
     - id: FoodSnackCookieFortune
     - id: FoodSnackDanDanNoodles
     - id: FoodSnackEnergy

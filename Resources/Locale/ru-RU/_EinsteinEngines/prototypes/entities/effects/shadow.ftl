@@ -1,2 +1,2 @@
-ent-EffectFlashShadowkinShadeskip = { "" }
-    .desc = { "" }
+ent-EffectFlashShadowkinShadeskip = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }

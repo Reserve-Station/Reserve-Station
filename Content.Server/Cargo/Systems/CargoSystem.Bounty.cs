@@ -171,6 +171,11 @@ public sealed partial class CargoSystem
 
     private void OnSold(ref EntitySoldEvent args)
     {
+        // Reserve edit start: Pirates Enhanced
+        if (args.Station == null)
+            return;
+        // Reserve edit end: Pirates Enhanced
+
         foreach (var sold in args.Sold)
         {
             if (!TryGetBountyLabel(sold, out _, out var component))

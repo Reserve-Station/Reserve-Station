@@ -138,6 +138,7 @@
     #- Vox
     - Yowie # Goobstation
     - Plasmaman # EE
+    - Synth # Goob
   - type: AntagObjectives # Goobstation
     objectives:
     - NukeopsDetonateObjective
@@ -270,9 +271,9 @@
   components:
   - type: GameRule
     minPlayers: 5
-    delay: # NotGoobstation - I know what you're thinking. I think having 4 minutes of non-chaos is fine?
-      min: 240
-      max: 420
+    # delay: # NotGoobstation - I know what you're thinking. I think having 4 minutes of non-chaos is fine?
+    #   min: 240
+    #   max: 420
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
     definitions:
@@ -285,9 +286,20 @@
         - CommandStaff # Goobstation
         - AntagImmune
         - Changeling # Goobstation
+      roleLoadout:
+      - AntagTraitor
       lateJoinAdditional: true # Goobstation
       mindRoles:
       - MindRoleTraitor
+
+#- type: entity
+#  id: TraitorReinforcement
+#  parent: Traitor
+#  components:
+#  - type: TraitorRule
+#    giveUplink: false
+#    giveCodewords: false # It would actually give them a different set of codewords than the regular traitors, anyway
+#    giveBriefing: false
 
 - type: entity
   id: Revolutionary

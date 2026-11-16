@@ -1,22 +1,32 @@
 ent-ClothingMaskBandanaBase = { ent-ClothingMaskBaseButcherable }
     .desc = { ent-ClothingMaskBaseButcherable.desc }
+
 ent-ClothingMaskBandBlack = чёрная бандана
     .desc = Чёрная бандана, чтобы выглядеть круто.
+    .suffix = Пират, Вор
 ent-ClothingMaskBandBlue = синяя бандана
     .desc = Синяя бандана, чтобы выглядеть круто.
+    .suffix = Ботаник
 ent-ClothingMaskBandBotany = бандана ботаника
     .desc = Ботаническая бандана из натуральных волокон, чтобы выглядеть круто.
 ent-ClothingMaskBandGold = золотая бандана
     .desc = Золотая бандана, чтобы выглядеть круто.
+    .suffix = Жёлтая
 ent-ClothingMaskBandGreen = зелёная бандана
     .desc = Зелёная бандана, чтобы выглядеть круто.
+    .suffix = Ботаник
 ent-ClothingMaskBandGrey = серая бандана
     .desc = Серая бандана, чтобы выглядеть круто.
+    .suffix = Пират
 ent-ClothingMaskBandRed = красная бандана
     .desc = Красная бандана, чтобы выглядеть круто.
-ent-ClothingMaskBandSkull = бандана с черепом
-    .desc = Бандана с черепом, чтобы выглядеть ещё круче.
-ent-ClothingMaskBandMerc = бандана наёмника
-    .desc = Для защиты головы от солнца, насекомых и других угроз сверху.
+    .suffix = Пират
 ent-ClothingMaskBandBrown = коричневая бандана
     .desc = Коричневая бандана, чтобы выглядеть круто.
+    .suffix = Пират
+
+ent-ClothingMaskBandSkull = бандана с черепом
+    .desc = Бандана с черепом, чтобы выглядеть ещё круче.
+    .suffix = Пират
+ent-ClothingMaskBandMerc = бандана наёмника
+    .desc = Для защиты головы от солнца, насекомых и других угроз сверху.

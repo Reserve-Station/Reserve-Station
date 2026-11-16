@@ -1,9 +1,12 @@
 ent-ClothingHeadHatAnimalCat = серая кошко-шапка
     .desc = Милая и пушистая серая кошка вам на голову.
+    .suffix = Хэллоуин, Ведьма
 ent-ClothingHeadHatAnimalCatBrown = коричневая кошко-шапка
     .desc = Милая и пушистая коричневая кошка вам на голову.
+    .suffix = Хэллоуин, Ведьма
 ent-ClothingHeadHatAnimalCatBlack = чёрная кошко-шапка
     .desc = Милая и пушистая чёрная кошка вам на голову.
+    .suffix = Хэллоуин, Ведьма
 ent-ClothingHeadHatAnimalHeadslime = слаймо-шапка
     .desc = Зелёная, липкая слизь, которую надевают на голову.
 ent-ClothingHeadHatAnimalMonkey = обезьянья шапка

@@ -1,4 +1,4 @@
 ent-EffectTeleportation = телепортация
-    .desc = { "" }
+    .desc = { ent-EffectBase.desc }
 ent-EffectTeleportationEntity = телепортация
-    .desc = { "" }
+    .desc = { ent-EffectBase.desc }

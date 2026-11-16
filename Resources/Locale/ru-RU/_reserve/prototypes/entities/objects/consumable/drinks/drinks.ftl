@@ -2,12 +2,6 @@ ent-DrinkBacchusBlessing = { ent-DrinkGlass }
     .desc = Вы не думали, что жидкость может быть настолько отвратительной. Вы уверены в этом?..
     .suffix = Благословение бахуса
 
-# Orchito start
-ent-DrinkOrchitoGlass = { ent-DrinkGlass }
-    .desc = { ent-DrinkGlass.desc }
-    .suffix = Орхито
-# Orchito end
-
 ent-DrinkAppleJuice = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Яблочный сок
@@ -33,6 +27,12 @@ ent-DrinkPotatoJuice = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Картофельный сок
 
+ent-DrinkColaGlass = { ent-DrinkGlass }
+    .desc = { ent-DrinkGlass.desc }
+    .suffix = Космическая кола
+ent-DrinkBrepsiGlass = { ent-DrinkGlass }
+    .desc = { ent-DrinkGlass.desc }
+    .suffix = Брепси
 ent-DrinkChangelingStingGlass = { ent-DrinkGlass }
     .desc = { ent-DrinkGlass.desc }
     .suffix = Жало генокрада

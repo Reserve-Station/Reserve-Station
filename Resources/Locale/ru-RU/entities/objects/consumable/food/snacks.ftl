@@ -49,6 +49,7 @@ ent-FoodSnackMREBrownieOpen = брауни
     .suffix = ИРП
 ent-FoodSnackSwirlLollipop = радужный мега-леденец
     .desc = Вкусный завитой кружок концентрированного сахара. Кто теперь самый большой ребенок на школьной площадке?
+
 ent-FoodPacketTrash = { ent-BaseItem }
     .desc = Это мусор.
 ent-FoodPacketBoritosTrash = пакетик от боритос

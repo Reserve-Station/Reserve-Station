@@ -1,29 +1,42 @@
-ent-EncryptionKeyDS = ключ шифрования отряда смерти
+ent-EncryptionKeyDS = ключ шифрования эскадрона смерти
     .desc = Вам лучше не слышать, о чем говорят на этой частоте...
-ent-ClothingHeadsetDS = накладная гарнитура deathsquad
+ent-ClothingHeadsetDS = накладная гарнитура эскадрона смерти
     .desc = Специальная гарнитура отряда смерти.
-ent-DoorRemoteAllCC = командирский пульт от шлюзов
-    .desc = Дистанционное управление с полным доступом к станции. Имеет доступ ЦК.
-ent-CommunicationsConsolePortative = Портативная коммуникационная консоль ДСО
+
+ent-CommunicationsConsolePortative = портативная консоль связи эскадрона смерти
     .desc = Портативная консоль, используемая для оповещения по всей станции, изменения уровня угрозы, вызова эвакуационного шаттла и наблюдения за экипажем. Имеет прямую связь с офицером специальных операций.
-ent-PinpointerNuclearBomb = устройство для определения местоположения ядерной боеголовки
+ent-DSOComputerComms = консоль связи эскадрона смерти
+    .desc = { ent-CentcommComputerComms.desc }
+
+ent-DoorRemoteAllCC = командирский пульт от шлюзов
+    .desc = Дистанционное управление с полным доступом к станции. Имеет доступ ЦентКом.
+    .suffix = Эскадрон смерти
+ent-PinpointerNuclearBomb = пинпоинтер ядерной боеголовки
     .desc = Портативное устройство слежения. Способное обнаруживать ближайшую ядерную боеголовку.
+    .suffix = Эскадрон смерти
 ent-HyposprayDS = боевой гипоспрей
     .desc = Гипоспрей военного назначения, содержит омнизин и медленно восстанавливает его запасы.
+    .suffix = Эскадрон смерти
 ent-MedkitCombatFilledDS = усовершенствованная боевая аптечка
     .desc = Аптечка первой помощи, оснащенная передовыми лекарствами, которые удобно использовать в бою.
-ent-CrateServiceDSOExp = ящик со взрывчаткой
-    .desc = Содержит запас взрывчатки, способный взорвать целую станцию. Требуется доступ ЦК.
+    .suffix = Эскадрон смерти
+ent-CrateServiceDSOExp = { ent-CrateCommandSecure } со взрывчаткой
+    .desc = Содержит запас взрывчатки, способный взорвать целую станцию. Требуется доступ ЦентКом.
+    .suffix = { ent-CrateCommandSecure.suffix }, Эскадрон смерти
 ent-BoxMREDS = { ent-BoxMRE }
     .desc = Индивидуальные рационы современного дизайна, содержащие полноценный рацион на несколько дней.
+    .suffix = Эскадрон смерти
 ent-PaperDS = протокол миссии
     .desc = Протокол выполнения предстоящего задания. Совершенно секретно.
+    .suffix = Эскадрон смерти
 ent-NukeCodePaperDS = { ent-NukeCodePaperStation }
     .desc = Вот и все.
-ent-DSOComputerComms = Коммуникационная консоль ДСО
-    .desc = { ent-CentcommComputerComms.desc }
+    .suffix = Эскадрон смерти
+
 ent-DoorElectronicsDSO = { ent-DoorElectronics }
     .desc = { ent-DoorElectronics.desc }
+    .suffix = Эскадрон смерти
+
 ent-WallShuttleArm = усиленная стенка шаттла
     .desc = { ent-BaseWall.desc }
 ent-WallShuttleDiagonalArm = { ent-WallShuttleDiagonal }

@@ -9,3 +9,7 @@ ent-MobXenomorphLarva = { ent-BaseMobXenomorphSentinel }
 ent-MobXenomorphLarvaDungeon = { ent-BaseMobXenomorphSentinel }
     .desc = { ent-BaseMobXenomorphSentinel.desc }
     .suffix = { ent-BaseMobXenomorphDungeon.suffix }
+
+ent-RoundStartMobXenomorphLarva = { ent-MobXenomorphLarva }
+    .desc = { ent-MobXenomorphLarva.desc }
+    .suffix = { ent-MobXenomorphLarva.suffix }, Раунд-старт

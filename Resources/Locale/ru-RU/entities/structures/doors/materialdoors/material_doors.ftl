@@ -18,6 +18,7 @@ ent-BananiumDoor = бананиумовая дверь
     .desc = Дверь, куда она ведёт?
 ent-WebDoor = паутинная дверь
     .desc = Дверь, ведущая в земли пауков... или просторную комнату.
+    .suffix = Хэллоуин
 ent-CardDoor = картонная дверь
     .desc = { ent-BaseMaterialDoor.desc }
 

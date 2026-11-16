@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using Content.Server._Reserve.Discord.BanGuard; // Reserve edit: Reserve Red - BanGuard
 using Content.Server.Database;
 using Content.Server.Players.JobWhitelist;
 using Content.Shared.Administration;
@@ -19,6 +20,7 @@ public sealed class JobWhitelistAddCommand : LocalizedCommands
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private IBanGuardManager _banGuard = default!; // Reserve edit: Reserve Red - BanGuard
 
     public override string Command => "jobwhitelistadd";
 
@@ -57,6 +59,7 @@ public sealed class JobWhitelistAddCommand : LocalizedCommands
             }
 
             _jobWhitelist.AddWhitelist(guid, job);
+            _banGuard.JobWhitelistChanged(guid, job, true, shell.Player?.UserId); // Reserve edit: Reserve Red - BanGuard
             shell.WriteLine(Loc.GetString("cmd-jobwhitelistadd-added",
                 ("player", player),
                 ("jobId", job.Id),
@@ -147,6 +150,7 @@ public sealed class RemoveJobWhitelistCommand : LocalizedCommands
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private IBanGuardManager _banGuard = default!; // Reserve edit: Reserve Red - BanGuard
 
     public override string Command => "jobwhitelistremove";
 
@@ -185,6 +189,7 @@ public sealed class RemoveJobWhitelistCommand : LocalizedCommands
             }
 
             _jobWhitelist.RemoveWhitelist(guid, job);
+            _banGuard.JobWhitelistChanged(guid, job, false, shell.Player?.UserId); // Reserve edit: Reserve Red - BanGuard
             shell.WriteLine(Loc.GetString("cmd-jobwhitelistremove-removed",
                 ("player", player),
                 ("jobId", job.Id),

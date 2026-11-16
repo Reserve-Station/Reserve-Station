@@ -1,2 +1,2 @@
-ent-CosmicCult = { ent-BaseGameRule }
+ent-CosmicCult = Космический культ
     .desc = { ent-BaseGameRule.desc }

@@ -4,6 +4,7 @@ using Content.Client._RMC14.LinkAccount;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
+using Content.Client.Chat.UI; // Goob
 using Content.Client.Clickable;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
@@ -69,6 +70,7 @@ namespace Content.Client.IoC
             collection.Register<ClientsidePlaytimeTrackingManager>();
             collection.Register<GuidebookLocalizationManager>(); // Reserve localized guidebook
             collection.Register<IStarlightShaderManager, StarlightShaderManager>(); // Starlight
+            collection.Register<RunechatFontCache>(); // Goob
         }
     }
 }

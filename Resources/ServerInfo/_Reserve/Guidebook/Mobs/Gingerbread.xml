@@ -1,25 +1,23 @@
-<!--
-SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
-SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
-SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
-
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <Document>
-  # Gingerbread (пряник)
+  # Пряник
 
   <Box>
     <GuideEntityEmbed Entity="MobGingerbread" Caption=""/>
   </Box>
 
-  Пряники - это вид разумных кондитерских изделий. У них есть сахар в крови, и их можно разделывать на печенье.
+  Пряники — раса разумных кондитерских изделий. Вместо крови у них сахар, а разделать их можно на печенье.
 
-  ## Статистика урона
+  ## Преимущества
 
-  Пряники получают в 3 раза меньше теплового урона, чем люди, но получают много урона от внешнего воздействия воды.
-  Они получают в 3 раза больше урона от внешнего воздействия воды, чем слаймолюды.
+  - Они сделаны из теста, поэтому весят вдвое меньше рас из плоти.
+  - Пряники получают [color=#1e90ff]в 3 раза меньше урона от огня[/color], чем люди.
+  - Они [color=#1e90ff]не получают урона от удушья[/color] (хотя всё равно дышат и без кислорода им некомфортно).
+  - Они [color=#1e90ff]не получают урона от кровопотери[/color] (хотя, опять же, без сахара им некомфортно).
+  - Они [color=#1e90ff]не получают урона от холода[/color] (хотя холод их замедляет).
+
+  ## Недостатки
+
+  - Они получают [color=#FFA500]в 1,5 раза больше ударного урона.[/color]
+  - Они получают много [color=#FFA500]теплового урона[/color] при внешнем контакте с водой.
 
 </Document>

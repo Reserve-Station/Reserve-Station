@@ -1,4 +1,4 @@
-ent-Heretic = { ent-BaseGameRule }
+ent-Heretic = Еретик
     .desc = { ent-BaseGameRule.desc }
-ent-CalmHeretic = { ent-BaseGameRule }
+ent-CalmHeretic = Спокойный еретик
     .desc = { ent-BaseGameRule.desc }

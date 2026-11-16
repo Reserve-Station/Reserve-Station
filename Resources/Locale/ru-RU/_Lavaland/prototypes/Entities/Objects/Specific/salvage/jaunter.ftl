@@ -1,4 +1,6 @@
-ent-LavalandJaunter = матрос
+ent-LavalandJaunter = спасательный трос
     .desc = Сложное устройство, работающее на технологии блюспейс, способное телепортировать вас из опасных мест. Его необходимо иметь при себе, когда вы находитесь рядом с пропастью.
-ent-LavalandJaunterRecharging = экспериментальная прогулка
+    .suffix = Лаваленд
+ent-LavalandJaunterRecharging = экспериментальный спасательный трос
     .desc = { ent-LavalandJaunter.desc }
+    .suffix = Лаваленд

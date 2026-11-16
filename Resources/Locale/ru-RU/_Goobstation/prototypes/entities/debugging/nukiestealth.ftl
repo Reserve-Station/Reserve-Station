@@ -1,6 +1,6 @@
-ent-ClothingOuterHardsuitSyndieStealthDebug = защитный костюм-невидимка синдиката
+ent-ClothingOuterHardsuitSyndieStealthDebug = защитный костюм-невидимка Синдиката
     .desc = Надеваемый защитный костюм со скрытым покрытием для операций, но защита не работает, когда вы двигаетесь! Для активации маскировочного поля необходим шлем.
     .suffix = DEBUG, НЕ МАППИТЬ, стелс
-ent-ClothingHeadHelmetHardsuitSyndieStealthDebug = защитный шлем-невидимка синдиката
+ent-ClothingHeadHelmetHardsuitSyndieStealthDebug = защитный шлем-невидимка Синдиката
     .desc = Шлем с защитным покрытием для скрытных операций.
     .suffix = DEBUG, НЕ МАППИТЬ, стелс

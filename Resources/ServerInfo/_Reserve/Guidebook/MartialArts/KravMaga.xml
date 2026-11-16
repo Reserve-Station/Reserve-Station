@@ -19,7 +19,7 @@
     <GuideEntityEmbed Entity="GuidebookHarm" Caption=""/>
   </Box>
 
-  ### Leg Sweep
+  ### Подсечка
 
   <Box>
     <GuideEntityEmbed Entity="ActionLegSweep" Caption=""/>
@@ -27,7 +27,7 @@
 
   [bold]Сносит ноги из-под противника[/bold], чтобы [bold]сбить его с ног[/bold].
 
-  ### Neck Chop
+  ### Удар по шее
 
   <Box>
     <GuideEntityEmbed Entity="ActionNeckChop" Caption=""/>
@@ -35,12 +35,12 @@
 
   [bold]Сильный удар ребром ладони[/bold] временно [bold]лишает противника способности говорить[/bold].
 
-  ### Lung Punch
+  ### Удар в лёгкие
 
   <Box>
     <GuideEntityEmbed Entity="ActionLungPunch" Caption=""/>
   </Box>
 
-    Наносит [color=Purple][bold]Stamina[/bold][/color] урон и [color=Yellow][bold]временно лишает[/bold][/color] противника [bold]способности дышать[/bold].
+    Наносит урон [color=Purple][bold]выносливости[/bold][/color] и [color=Yellow][bold]временно лишает[/bold][/color] противника [bold]способности дышать[/bold].
 
 </Document>

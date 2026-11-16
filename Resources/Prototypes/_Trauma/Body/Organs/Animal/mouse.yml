@@ -17,4 +17,9 @@
       hungerUsage: 20
       eggLayAction: MouseMultiply
       hungerRequired: true
+      # Reserve edit start: Mouse multiply popup
+      layPopupUser: mouse-multiply-popup-user
+      layPopupOthers: mouse-multiply-popup-others
+      tooHungryPopup: mouse-multiply-popup-too-hungry
+      # Reserve edit end: Mouse multiply popup
   - type: EggSack # only for surgery whitelist, doesn't do anything

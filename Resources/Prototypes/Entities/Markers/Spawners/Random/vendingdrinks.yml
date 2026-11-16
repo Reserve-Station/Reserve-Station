@@ -32,4 +32,14 @@
       - VendingMachineIcedDrinks  # Reserve
       - VendingMachineCartons  # Reserve
       # Reserve: Orchid's Barmania - Vendichaos end
+      # Reserve edit start: Halloween on Reserve  # Uncomment on Halloween
+      # - RandomVendingMachineHalloween
+      # - RandomVendingMachineHalloween
+      # - RandomVendingMachineHalloween
+      # - RandomVendingMachineHalloween
+      # - RandomVendingMachineHalloween
+      # - RandomVendingMachineHalloween
+      # - RandomVendingMachineHalloween
+      # - RandomVendingMachineHalloween
+      # Reserve edit end: Halloween on Reserve
     chance: 1

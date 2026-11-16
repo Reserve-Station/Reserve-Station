@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleVampire
+  name: Vampire
+  components:
+  - type: MindRole
+    antagPrototype: Vampire
+    exclusiveAntag: true
+    roleType: SoloAntagonist
+    subtype: role-subtype-vampire
+  - type: VampireRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleVampireThrall
+  name: Vampire Thrall
+  components:
+  - type: MindRole
+    antagPrototype: VampireThrall
+    exclusiveAntag: true # Thralls serve only their master, so other antag rules must not pick them
+    roleType: TeamAntagonist
+    subtype: role-subtype-vampire-thrall
+  - type: VampireThrallRole

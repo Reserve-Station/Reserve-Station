@@ -3,6 +3,7 @@ ent-SonicScrewdriver = звуковая отвертка
     .suffix = НЕ МАППИТЬ
 ent-RCDChrono = футуристичный РСУ
     .desc = Инструмент, который может построить станцию с нуля за считанные минуты..
+    .suffix = Хронолегионер
 ent-HandheldFax = ручной факс
     .desc = Инструмент, который может отправить тонну бумаги на факс ЦК.
 ent-HandheldFaxNanorep = { ent-HandheldFax }

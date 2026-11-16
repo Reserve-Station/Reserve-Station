@@ -8,6 +8,8 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: apple
   color: "#FDAD01"
+  puddleSpriteSet: Shiny # Goob
+  puddleColor: "#FDAD0180" # Goob
   recognizable: true
   # Reserve: Orchid's Barmania - Visual Fixes start
   metamorphicSprite:
@@ -34,6 +36,7 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleColor: "#FFE77780" # Goob
 
 - type: reagent
   id: JuiceBerry
@@ -51,6 +54,8 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleSpriteSet: Shiny # Goob
+  puddleColor: "#66009980" # Goob
 
 - type: reagent
   id: JuiceBluePumpkin
@@ -68,6 +73,7 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleColor: "#00BFFF80" # Goob
 
 - type: reagent
   id: JuiceBungo
@@ -94,6 +100,7 @@
   physicalDesc: reagent-physical-desc-crisp
   flavor: carrot
   color: "#FF8820"
+  puddleColor: "#FF882080" # Goob
   metabolisms:
     Drink:
       effects:
@@ -135,6 +142,8 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleSpriteSet: Shiny # Goob
+  puddleColor: "#51228480" # Goob
 
 - type: reagent
   id: JuiceLemon
@@ -144,6 +153,7 @@
   physicalDesc: reagent-physical-desc-citric
   flavor: sour
   color: "#fff690"
+  puddleColor: "#fff69080" # Goob
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/lemonjuiceglass.rsi
     state: icon_empty
@@ -168,6 +178,7 @@
   physicalDesc: reagent-physical-desc-citric
   flavor: sour
   color: "#99bb43"
+  puddleColor: "#99bb4380" # Goob
   metabolisms: #Goobstation start
     Medicine:
       effects:
@@ -195,6 +206,7 @@
   physicalDesc: reagent-physical-desc-citric
   flavor: orange
   color: "#E78108"
+  puddleColor: "#E7810880" # Goob
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/orangejuiceglass.rsi
     state: icon_empty
@@ -219,6 +231,7 @@
   physicalDesc: reagent-physical-desc-tropical
   flavor: pineapple
   color: yellow
+  puddleColor: "#ffff5540" # Goob
   metabolisms: #Goobstation start
     Medicine:
       effects:
@@ -254,6 +267,7 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleColor: "#30200080" # Goob
 
 - type: reagent
   id: JuiceTomato
@@ -271,6 +285,8 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleSpriteSet: Splotchy # Goob
+  puddleColor: "#73100880" # Goob
 
 - type: reagent
   id: JuiceWatermelon
@@ -280,6 +296,7 @@
   physicalDesc: reagent-physical-desc-sweet
   flavor: watermelon
   color: "#EF3520"
+  puddleColor: "#EF352080" # Goob
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/watermelonglass.rsi
     state: icon_empty
@@ -303,3 +320,5 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   # Reserve: Orchid's Barmania - Visual Fixes end
+  puddleSpriteSet: Shiny # Goob
+  puddleColor: "#84031a80" # Goob

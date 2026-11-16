@@ -8,7 +8,7 @@ wraith-absorb-living = Живое сознание, управляющее эт�
 wraith-absorb-too-decomposed = Этот труп уже сгнил.
 wraith-absorb-tainted = Это существо заражено... странным веществом... сейчас оно удалено... Но вы ранены.
 wraith-absorb-rotbonus = Этот труп сгнил и вздулся. Вам это нравится.
-wraith-absorb-smoke1 = С трупа поднимается черный дым! Странно!
+wraith-absorb-smoke1 = С трупа поднимается чёрный дым! Странно!
 wraith-absorb-fresh = Это тело слишком свежее. Его нужно искалечить, прежде чем поглотить.
 wraith-absorb-already = Этот труп уже поглощен!
 

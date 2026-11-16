@@ -35,7 +35,8 @@ public sealed class SignatureSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract)
             return;
 
-        if (args.Using is not {} pen || !_tags.HasTag(pen, "Write"))
+        var writeTag = "Write";  // Reserve edit: Fix warnings
+        if (args.Using is not {} pen || !_tags.HasTag(pen, writeTag))  // Reserve edit: Fix warnings
             return;
 
         var user = args.User;

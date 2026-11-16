@@ -1,8 +1,8 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.Pirates;
 using Content.Goobstation.Shared.Pirates.Roles;
-using Content.Goobstation.Shared.Pirates.Roles;
+// using Content.Goobstation.Shared.Pirates.Roles; // Reserve edit: Fix warnings
 using Content.Server.Antag;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
@@ -17,10 +17,10 @@ namespace Content.Goobstation.Server.Pirates.GameTicking.Rules;
 
 public sealed partial class ActivePirateRuleSystem : GameRuleSystem<ActivePirateRuleComponent>
 {
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly RoleSystem _role = default!;
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
-    [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
+    [Dependency] private MindSystem _mind = default!;
+    [Dependency] private RoleSystem _role = default!;
+    [Dependency] private AntagSelectionSystem _antag = default!;
+    [Dependency] private NpcFactionSystem _npcFaction = default!;
 
     private static readonly SoundSpecifier BriefingSound = new SoundPathSpecifier("/Audio/Ambience/Antag/pirate_start.ogg");
     private static readonly EntProtoId MindRole = "MindRolePirate";
@@ -73,7 +73,8 @@ public sealed partial class ActivePirateRuleSystem : GameRuleSystem<ActivePirate
         var briefing = Loc.GetString("antag-pirate-briefing");
         _antag.SendBriefing(target, briefing, Color.OrangeRed, BriefingSound);
 
-        _npcFaction.AddFaction(target, "PirateFaction"); // yaml fucking sucks!!!
+        var pirateFaction = "PirateFaction";  // Reserve edit: Fix warnings
+        _npcFaction.AddFaction(target, pirateFaction); // yaml fucking sucks!!!  // Reserve edit: Fix warnings
 
         return true;
     }

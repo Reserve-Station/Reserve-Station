@@ -1,4 +1,4 @@
-ent-StraySupplyPod = { ent-BaseGameRule }
+ent-StraySupplyPod = Случайный контейнер с припасами
     .desc = { ent-BaseGameRule.desc }
-ent-StraySupplyPodSyndicate = { ent-BaseGameRule }
+ent-StraySupplyPodSyndicate = Случайный контейнер с припасами Синдиката
     .desc = { ent-BaseGameRule.desc }

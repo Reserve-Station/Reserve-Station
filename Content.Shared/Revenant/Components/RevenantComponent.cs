@@ -8,7 +8,6 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio; // Imp
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Revenant.Components;
 
@@ -24,14 +23,14 @@ public sealed partial class RevenantComponent : Component
     [AutoNetworkedField]
     public FixedPoint2 Essence = 75;
 
-    [DataField("stolenEssenceCurrencyPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<CurrencyPrototype>))]
-    public string StolenEssenceCurrencyPrototype = "StolenEssence";
+    [DataField("stolenEssenceCurrencyPrototype")]
+    public ProtoId<CurrencyPrototype> StolenEssenceCurrencyPrototype = "StolenEssence";
 
     /// <summary>
     /// Prototype to spawn when the entity dies.
     /// </summary>
-    [DataField("spawnOnDeathPrototype", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string SpawnOnDeathPrototype = "Ectoplasm";
+    [DataField("spawnOnDeathPrototype")]
+    public EntProtoId SpawnOnDeathPrototype = "Ectoplasm";
 
     [DataField("stasisTime"), ViewVariables(VVAccess.ReadWrite)] // Begin Imp Changes
     public TimeSpan StasisTime = TimeSpan.FromSeconds(60);
@@ -192,6 +191,12 @@ public sealed partial class RevenantComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("overloadZapRadius")]
     public float OverloadZapRadius = 2f;
+
+    /// <summary>
+    /// Reserve edit - chance for each light in the overload radius to burst. The rest only flicker.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float OverloadBreakChance = 0.25f;
     #endregion
 
     #region Blight Ability
@@ -252,6 +257,56 @@ public sealed partial class RevenantComponent : Component
     #endregion
 
     // Begin Imp Changes
+    // Reserve edit start
+    #region Chill Ability
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public FixedPoint2 ChillCost = 30;
+
+    /// <summary>
+    /// Stun time and corporeal time after using the ability, same as the other abilities.
+    /// </summary>
+    [DataField]
+    public Vector2 ChillDebuffs = new(2, 6);
+
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float ChillRadius = 4f;
+
+    /// <summary>
+    /// How many kelvin the air on each tile loses.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float ChillAirTemperatureDrop = 40f;
+
+    /// <summary>
+    /// The air won't be cooled below this. -30 °C by default.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float ChillAirMinTemperature = 243.15f;
+
+    /// <summary>
+    /// How many kelvin living beings lose.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float ChillBodyTemperatureDrop = 25f;
+
+    /// <summary>
+    /// Bodies won't be cooled below this. Humans slow down below 293 K and take cold damage below 260 K,
+    /// so the default slows them without hurting them.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float ChillBodyMinTemperature = 275f;
+
+    /// <summary>
+    /// Chance for frost to appear on each floor tile in range.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float ChillFrostChance = 0.6f;
+
+    [DataField]
+    public EntProtoId ChillFrostPrototype = "RevenantFrost";
+    #endregion
+    // Reserve edit end
+
     #region Blood Writing
     [ViewVariables(VVAccess.ReadWrite), DataField("bloodWritingCost")]
     public FixedPoint2 BloodWritingCost = 2;
@@ -264,6 +319,20 @@ public sealed partial class RevenantComponent : Component
     #region Animate
     [ViewVariables(VVAccess.ReadWrite), DataField]
     public FixedPoint2 AnimateCost = 50;
+
+    // Reserve edit start
+    /// <summary>
+    /// Items within this many tiles of the revenant get animated.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float AnimateRadius = 3f;
+
+    /// <summary>
+    /// The most items animated at once. The closest ones are picked first.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public int AnimateMaxItems = 6;
+    // Reserve edit end
 
     /// <summary>
     /// How long an item should be animated for

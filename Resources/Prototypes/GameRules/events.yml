@@ -41,7 +41,7 @@
     children:
     - id: ClosetSkeleton
     - id: KingRatMigration
-    # - id: RevenantSpawn # Goob
+    - id: RevenantSpawn # Happy Halloween!
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
 
@@ -54,6 +54,7 @@
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
     #- id: RevenantSpawn  # GoobStation - removed till rework
+    - id: RevenantMidround # Reserve edit: Revenant, replaces the disabled RevenantSpawn
     - id: SleeperAgents
     - id: ZombieOutbreak
     - id: LoneOpsSpawn
@@ -64,7 +65,7 @@
     - id: SlaughterDemonMidround # Goobstation - Slaughter Demon
     - id: XenomorphsInfestation # WD EDIT
     - id: SlasherSpawn # Goobstation - The Slasher
-    - id: SpacePirates # Goobstation - you probably can read whom this rule spawns
+    - id: PiratesMidroundStart # Goobstation - you probably can read whom this rule spawns  # Reserve edit: Pirates Enhanced
     - id: SingulothKnightsMidround # Goobstation - New Midrounds
     #- id: DarkLordMidround # Goobstation - New Midrounds
     - id: MimeAssassinMidround # Goobstation - New Midrounds
@@ -136,7 +137,7 @@
     weight: 8
     duration: 35
     chaos: # Goobstation
-      Anomaly: 100
+      Anomaly: 30
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -159,7 +160,7 @@
     weight: 8
     duration: 35
     chaos: # Goobstation
-      Anomaly: 40
+      Anomaly: 10
     eventType: Chaotic # Goobstation
   - type: BluespaceArtifactRule
 
@@ -173,7 +174,7 @@
     earliestStart: 1
     duration: 1
     chaos: # Goobstation
-      Anomaly: 40
+      Anomaly: 10
     eventType: Neutral # Goobstation
   # Goobstation
   - type: GameRule
@@ -189,7 +190,7 @@
     duration: 1
     minimumPlayers: 15
     chaos: # Goobstation
-      Power: 100
+      Power: 20
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
@@ -237,7 +238,7 @@
   id: ClosetSkeleton
   components:
   - type: StationEvent
-    weight: 5
+    weight: 6 # Goob - Happy Halloween!
     duration: 1
     minimumPlayers: 10
     eventType: Chaotic # Goobstation
@@ -264,6 +265,7 @@
       Combat: 40
       Death: 100
       Medical: 100
+    destruction: 2 # Goobstation
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -321,6 +323,7 @@
     - Abductor
     - Harpy
     - Plasmaman # EE
+    - Synth # Goob
     # Goobstation end
   - type: AntagObjectives
     objectives:
@@ -372,6 +375,8 @@
     earliestStart: 20
     reoccurrenceDelay: 20
     minimumPlayers: 15
+    chaos: # Goobstation
+      Hostile: 20
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -410,27 +415,27 @@
   - type: DynamicRuleCost
     cost: 50
 
-#- type: entity   Goobstaion start - disabled until rework
-#  parent: BaseGameRule
-#  id: RevenantSpawn
-#  components:
-#  - type: StationEvent
-#    weight: 3.5
-#    duration: 1
-#    earliestStart: 30
-#    minimumPlayers: 20
-#    chaos: # Goobstation
-#      Hostile: 20
-#      Friend: 20
-#      Combat: 40
-#      Death: 100
-#      Medical: 100
-#    eventType: HostilesSpawn # Goobstation
-#  # Goobstation
-#  - type: GameRule
-#    chaosScore: 450
-#  - type: RandomSpawnRule
-#    prototype: MobRevenant      goobstation end
+- type: entity
+  parent: BaseGameRule
+  id: RevenantSpawn
+  components:
+  - type: StationEvent
+    weight: 3 # Happy Halloween!
+    duration: 1
+    earliestStart: 30
+    minimumPlayers: 25 # Happy Halloween!
+    chaos: # Goobstation
+      Hostile: 20
+      Friend: 20
+      Combat: 40
+      Death: 100
+      Medical: 100
+    eventType: HostilesSpawn # Goobstation
+  # Goobstation
+  - type: GameRule
+    chaosScore: 450
+  - type: RandomSpawnRule
+    prototype: MobRevenant
 
 #- type: entity
 #  parent: BaseWizardRule
@@ -491,8 +496,8 @@
       path: /Audio/Announcements/attention.ogg
     endAnnouncement: station-event-gas-leak-end-announcement
     weight: 8
-    chaos:
-      Atmos: 100
+    chaos: # Goobstation
+      Atmos: 20
       Medical: 50
     eventType: Maintenance # Goobstation
   # Goobstation
@@ -509,10 +514,10 @@
     minimumPlayers: 15
     weight: 7
     duration: 240
-    chaos:
-      Hostile: 20
-      Friend: 20
-      Medical: 100
+    chaos: # Goobstation
+      Infestation: 60
+      Medical: 30
+    destruction: 1 # Goobstation
     eventType: Maintenance # Goobstation
   # Goobstation
   - type: GameRule
@@ -657,7 +662,7 @@
       path: /Audio/Announcements/aliens.ogg
     earliestStart: 20
     minimumPlayers: 15
-    weight: 7 # Goobstation - was 5
+    weight: 8 # Goobstation - was 5 // Happy Halloween!
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -667,8 +672,15 @@
   - type: GameRule
     chaosScore: 240
   - type: VentCrittersRule
-    table: # DeltaV: EntityTable instead of spawn entries
-      id: MobGiantSpiderAngry
+    table: !type:GroupSelector  # Reserve edit: Arachnageddon
+      children:
+      - id: MobGiantSpiderAngry
+      - id: MobBloodmotherSpiderAngry
+        weight: 0.2
+      - id: MobBrutemotherSpiderAngry
+        weight: 0.2
+      - id: MobXenorantulaSpiderAngry
+        weight: 0.2
 
 - type: entity
   id: SpiderClownSpawn
@@ -708,6 +720,7 @@
       Hostile: 100
       Medical: 200
       Death: 200
+    destruction: 2 # Goobstation
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -752,6 +765,7 @@
       Hostile: 200
       Medical: 200
       Death: 200
+    destruction: 2 # Goobstation
     eventType: HostilesSpawn # Goobstation
   - type: GameRule # Goobstation
     chaosScore: 700
@@ -803,6 +817,8 @@
       path: /Audio/Announcements/intercept.ogg
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
+    chaos: # Goobstation
+      Hostile: 30
     eventType: HostilesSpawn # Goobstation
   # Goobstation
   - type: GameRule
@@ -873,8 +889,6 @@
     weight: 5
     chaos: # Goobstation
       Hostile: 20 # for when they're actually properly hostile
-      Hunger: 10
-      Thirst: 10
     eventType: Neutral # Goobstation
   # Goobstation
   - type: GameRule
@@ -1055,6 +1069,8 @@
     reoccurrenceDelay: 20
     minimumPlayers: 15
     duration: null
+    chaos: # Goobstation
+      Hostile: 25
   - type: SpaceSpawnRule
     spawnDistance: 0
   - type: AntagSpawner

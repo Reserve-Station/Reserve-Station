@@ -124,7 +124,7 @@ public sealed class FollowerSystem : EntitySystem
                 Act = () => StartFollowingEntity(ev.Target, ev.User),
                 Impact = LogImpact.Low,
                 Text = Loc.GetString("verb-follow-me-text"),
-                Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/close.svg.192dpi.png")),
+                Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/close.svg.192dpi.png")),
             };
 
             ev.Verbs.Add(verb);
@@ -144,7 +144,7 @@ public sealed class FollowerSystem : EntitySystem
 
     private void OnGotEquippedHand(EntityUid uid, FollowerComponent component, GotEquippedHandEvent args)
     {
-        StopFollowingEntity(uid, component.Following, deparent:false);
+        StopFollowingEntity(uid, component.Following, deparent: false);
     }
 
     private void OnFollowerTerminating(EntityUid uid, FollowerComponent component, ref EntityTerminatingEvent args)
@@ -161,9 +161,10 @@ public sealed class FollowerSystem : EntitySystem
 
     private void OnFollowedPolymorphed(Entity<FollowedComponent> entity, ref PolymorphedEvent args)
     {
+        var followerStayOnPolymorphTag = "FollowerStayOnPolymorph";  // Reserve edit: Fix warnings
         foreach (var follower in entity.Comp.Following)
         {
-            if (_tagSystem.HasTag(follower, "FollowerStayOnPolymorph"))
+            if (_tagSystem.HasTag(follower, followerStayOnPolymorphTag))  // Reserve edit: Fix warnings
                 continue;
             // Stop following the target's old entity and start following the new one
             StartFollowingEntity(follower, args.NewEntity);
@@ -299,7 +300,7 @@ public sealed class FollowerSystem : EntitySystem
     ///     Forces all of an entity's followers to stop following it.
     /// </summary>
     public void StopAllFollowers(EntityUid uid,
-        FollowedComponent? followed=null)
+        FollowedComponent? followed = null)
     {
         if (!Resolve(uid, ref followed))
             return;

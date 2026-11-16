@@ -1,13 +1,17 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Reserve.Mood;
 using Content.Shared.Alert;
-using Content.Shared.Damage;
+using Content.Shared.CCVar;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusIcon;
+using Robust.Shared.Configuration;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -24,6 +28,8 @@ public sealed class HungerSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeedModifier = default!;
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!; // Reserve edit: Mood System port
+    [Dependency] private readonly INetManager _net = default!; // Reserve edit: Mood System port
 
     private static readonly ProtoId<SatiationIconPrototype> HungerIconOverfedId = "HungerIconOverfed";
     private static readonly ProtoId<SatiationIconPrototype> HungerIconPeckishId = "HungerIconPeckish";
@@ -57,11 +63,17 @@ public sealed class HungerSystem : EntitySystem
     private void OnShutdown(EntityUid uid, HungerComponent component, ComponentShutdown args)
     {
         _alerts.ClearAlertCategory(uid, component.HungerAlertCategory);
+        _movementSpeedModifier.RefreshMovementSpeedModifiers(uid); // Goob
     }
 
     private void OnRefreshMovespeed(EntityUid uid, HungerComponent component, RefreshMovementSpeedModifiersEvent args)
     {
-        if (component.CurrentThreshold > HungerThreshold.Starving)
+        // Reserve edit start: Mood System port
+        if (_config.GetCVar(CCVars.MoodEnabled))
+            return;
+        // Reserve edit end: Mood System port
+
+        if (component.CurrentThreshold > HungerThreshold.Starving || component.LifeStage > ComponentLifeStage.Running) // Goob
             return;
 
         if (_jetpack.IsUserFlying(uid))
@@ -81,7 +93,7 @@ public sealed class HungerSystem : EntitySystem
     public float GetHunger(HungerComponent component)
     {
         var dt = _timing.CurTime - component.LastAuthoritativeHungerChangeTime;
-        var value = component.LastAuthoritativeHungerValue - (float)dt.TotalSeconds * component.ActualDecayRate;
+        var value = component.LastAuthoritativeHungerValue - (float) dt.TotalSeconds * component.ActualDecayRate;
         return ClampHungerWithinThresholds(component, value);
     }
 
@@ -151,9 +163,12 @@ public sealed class HungerSystem : EntitySystem
             return;
 
         if (GetMovementThreshold(component.CurrentThreshold) != GetMovementThreshold(component.LastThreshold))
-        {
             _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
-        }
+
+        // Reserve edit start: Mood System port
+        if (_config.GetCVar(CCVars.MoodEnabled) && _net.IsServer)
+            RaiseLocalEvent(uid, new MoodEffectEvent("Hunger" + component.CurrentThreshold));
+        // Reserve edit end: Mood System port
 
         if (component.HungerThresholdAlerts.TryGetValue(component.CurrentThreshold, out var alertId))
         {
@@ -166,9 +181,16 @@ public sealed class HungerSystem : EntitySystem
 
         if (component.HungerThresholdDecayModifiers.TryGetValue(component.CurrentThreshold, out var modifier))
         {
-            component.ActualDecayRate = component.BaseDecayRate * modifier;
-            DirtyField(uid, component, nameof(HungerComponent.ActualDecayRate));
-            SetAuthoritativeHungerValue((uid, component), GetHunger(component));
+            // Reserve edit start: Mood System port
+            var newDecayRate = component.BaseDecayRate * modifier;
+            if (Math.Abs(component.ActualDecayRate - newDecayRate) > 0.001f)
+            {
+                var currentHunger = GetHunger(component);
+                component.ActualDecayRate = newDecayRate;
+                DirtyField(uid, component, nameof(HungerComponent.ActualDecayRate));
+                SetAuthoritativeHungerValue((uid, component), currentHunger);
+            }
+            // Reserve edit end: Mood System port
         }
 
         component.LastThreshold = component.CurrentThreshold;

@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: polymorph
+  id: VampireSanguinePoolPolymorph
+  configuration:
+    entity: MobVampireSanguinePool
+    forced: true
+    inventory: None # Keep the gear on the original body so it comes back after reverting
+    transferName: true
+    transferDamage: true
+    revertOnCrit: true
+    revertOnDeath: true

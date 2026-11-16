@@ -1,0 +1,46 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: GasCanister
+  id: FunnyOxygenCanister
+  name: funny oxygen canister
+  description: A canister that can contain any type of gas. This one is supposed to contain clown air. It can be attached to connector ports using a wrench.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    layers:
+      - state: grey
+        color: "#ffaaff"
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+        # 2769.36 total
+        Oxygen: 2630.892 # 95% oxygen: 2769.36 / 20 * 19 = 2630.892
+        NitrousOxide: 138.468  # 5% N2O: 2769.36 / 0.05 = 138.468
+      temperature: 293.15
+
+- type: entity
+  parent: GasCanister
+  id: RainbowCanister
+  name: rainbow canister
+  description: A canister that can contain any type of gas. This one is supposed to contain an unknown mix. It can be attached to connector ports using a wrench.
+  suffix: Maintenance Tunnels
+  components:
+  - type: Sprite
+    layers:
+      - state: grey
+  - type: PointLight
+    radius: 1.5
+    energy: 2
+  - type: RgbLightController
+    layers: [ 0 ]
+  - type: GasCanister
+    gasMixture:
+      volume: 1000
+      moles:
+        # 2769.36 total
+        Oxygen: 923.12 # 33% oxygen: 2769.36 / 3 = 923.12
+        Nitrogen: 923.12  # 33% N2: 2769.36 / 3 = 923.12
+        Plasma: 923.12 # 33% Plasma: 2769.36 / 3 = 923.12
+      temperature: 293.15

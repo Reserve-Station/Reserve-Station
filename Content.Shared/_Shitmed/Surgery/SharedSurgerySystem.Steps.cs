@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Goobstation.Common.Surgery;
 using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -91,7 +92,7 @@ public abstract partial class SharedSurgerySystem
     private void OnToolStep(Entity<SurgeryStepComponent> ent, ref SurgeryStepEvent args)
     {
         if (!TryToolAudio(ent, args))
-           return;
+            return;
 
         ApplyComponentChanges(args, ent.Comp);
         HandleOrganModifications(args, ent.Comp);
@@ -158,7 +159,7 @@ public abstract partial class SharedSurgerySystem
 
         foreach (var reg in ent.Comp.Tool.Values)
         {
-            if (GetSurgeryComp(args.Tool, reg.Component) is {} data)
+            if (GetSurgeryComp(args.Tool, reg.Component) is { } data)
             {
                 args.ValidTool = data;
                 return; // multiple required tools isn't supported so just return
@@ -167,7 +168,7 @@ public abstract partial class SharedSurgerySystem
             args.Invalid = StepInvalidReason.MissingTool;
 
             if (reg.Component is ISurgeryToolComponent required)
-                args.Popup = Loc.GetString("surgery-ui-window-steps-error-missing-tool", ("tool", required.ToolName));
+                args.Popup = Loc.GetString("surgery-ui-window-steps-error-missing-tool", ("tool", required.GetLocalizedToolName())); // Reserve edit
             else
                 Log.Error($"Surgery step {ToPrettyString(ent)} wants bad component {reg.Component} which isn't a ISurgeryTool");
 
@@ -263,9 +264,9 @@ public abstract partial class SharedSurgerySystem
         var slotName = removedComp.Symmetry != null
                 ? $"{removedComp.Symmetry?.ToString().ToLower()} {removedComp.Part.ToString().ToLower()}"
                 : removedComp.Part.ToString().ToLower();
-            _body.TryCreatePartSlot(args.Part, slotName, partComp.PartType, partComp.Symmetry, out var _);
-            _body.AttachPart(args.Part, slotName, args.Tool);
-            EnsureComp<BodyPartReattachedComponent>(args.Tool);
+        _body.TryCreatePartSlot(args.Part, slotName, partComp.PartType, partComp.Symmetry, out var _);
+        _body.AttachPart(args.Part, slotName, args.Tool);
+        EnsureComp<BodyPartReattachedComponent>(args.Tool);
     }
 
     private void OnAddOrganSlotStep(Entity<SurgeryAddOrganSlotStepComponent> ent, ref SurgeryStepEvent args)
@@ -294,7 +295,8 @@ public abstract partial class SharedSurgerySystem
         if (targetPart != default)
         {
             // We reward players for properly affixing the parts by healing a little bit of damage, and enabling the part temporarily.
-            _wounds.TryHealWoundsOnWoundable(targetPart.Id, 12f, out _, damageGroup: _prototypes.Index<DamageGroupPrototype>("Brute"));
+            var bruteDamage = "Brute";  // Reserve edit: Fix warnings
+            _wounds.TryHealWoundsOnWoundable(targetPart.Id, 12f, out _, damageGroup: _prototypes.Index<DamageGroupPrototype>(bruteDamage));  // Reserve edit: Fix warnings
             RemComp<BodyPartReattachedComponent>(targetPart.Id);
         }
     }
@@ -346,7 +348,7 @@ public abstract partial class SharedSurgerySystem
 
         // Adding organs is generally done for a single one at a time, so we only need to check for the first.
         var firstOrgan = organComp.Organ.Values.FirstOrDefault();
-        if (firstOrgan == default)
+        if (firstOrgan.Component == null)
             return;
 
         if (!HasComp(args.Tool, firstOrgan.Component.GetType())
@@ -359,9 +361,12 @@ public abstract partial class SharedSurgerySystem
         if (insertedOrgan.OriginalBody == args.Body)
             return;
 
+        var transplantEv = new OrganTransplantedEvent(args.Body, args.Tool);
+        RaiseLocalEvent(args.User, ref transplantEv);
+
         var ev = new SurgeryStepDamageChangeEvent(args.User, args.Body, args.Part, ent);
-            RaiseLocalEvent(ent, ref ev);
-            args.Complete = true;
+        RaiseLocalEvent(ent, ref ev);
+        args.Complete = true;
     }
 
     private void OnAddOrganCheck(Entity<SurgeryAddOrganStepComponent> ent, ref SurgeryStepCompleteCheckEvent args)
@@ -463,7 +468,7 @@ public abstract partial class SharedSurgerySystem
             return;
 
         var organType = ent.Comp.Organ.Values.FirstOrDefault();
-        if (organType == default)
+        if (organType.Component == null)
             return;
 
         var markingCategory = MarkingCategoriesConversion.FromHumanoidVisualLayers(ent.Comp.MarkingCategory);
@@ -662,13 +667,13 @@ public abstract partial class SharedSurgerySystem
                 ent.Comp.PainDuration,
                 ent.Comp.PainType))
         {
-           _pain.TryAddPainModifier(nerveSys.Value.Owner,
-               args.Part,
-               "SurgeryPain",
-               painToInflict,
-               ent.Comp.PainType,
-               nerveSys,
-               ent.Comp.PainDuration);
+            _pain.TryAddPainModifier(nerveSys.Value.Owner,
+                args.Part,
+                "SurgeryPain",
+                painToInflict,
+                ent.Comp.PainType,
+                nerveSys,
+                ent.Comp.PainDuration);
         }
     }
 
@@ -688,8 +693,8 @@ public abstract partial class SharedSurgerySystem
             return;
 
         var user = args.Actor;
-        if (GetEntity(args.Entity) is {} body &&
-            GetEntity(args.Part) is {} targetPart)
+        if (GetEntity(args.Entity) is { } body &&
+            GetEntity(args.Part) is { } targetPart)
         {
             TryDoSurgeryStep(body, targetPart, user, args.Surgery, args.Step);
         }
@@ -712,7 +717,8 @@ public abstract partial class SharedSurgerySystem
             surgeryTargetComponent.SepsisImmune)
             return;
 
-        var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>("Poison"), 5);
+        var protoIdPoison = "Poison";  // Reserve edit: Fix warnings
+        var sepsis = new DamageSpecifier(_prototypes.Index<DamageTypePrototype>(protoIdPoison), 5);  // Reserve edit: Fix warnings
         var ev = new SurgeryStepDamageEvent(args.User, args.Body, args.Part, args.Surgery, sepsis, 0.5f);
         RaiseLocalEvent(args.Body, ref ev);
     }
@@ -880,7 +886,7 @@ public abstract partial class SharedSurgerySystem
             return false;
         }
 
-        if (toolComp?.StartSound is {} sound)
+        if (toolComp?.StartSound is { } sound)
             _audio.PlayPredicted(sound, tool, user);
 
         _rotateToFace.TryFaceCoordinates(user, _transform.GetMapCoordinates(body).Position);
@@ -930,8 +936,8 @@ public abstract partial class SharedSurgerySystem
             return 2f; // Shouldnt really happen but just a failsafe.
 
         var speed = toolSpeed;
-        if(TryComp<BuckleComponent>(target, out var buckleComp)) // Get buckle component from target.
-            if(TryComp<OperatingTableComponent>(buckleComp.BuckledTo, out var operatingTableComponent))  // If they are buckled to entity with operating table component
+        if (TryComp<BuckleComponent>(target, out var buckleComp)) // Get buckle component from target.
+            if (TryComp<OperatingTableComponent>(buckleComp.BuckledTo, out var operatingTableComponent))  // If they are buckled to entity with operating table component
                 speed *= operatingTableComponent.SpeedModifier; // apply surgery speed modifier
         if (TryComp(user, out SurgerySpeedModifierComponent? surgerySpeedMod))
             speed *= surgerySpeedMod.SpeedModifier;

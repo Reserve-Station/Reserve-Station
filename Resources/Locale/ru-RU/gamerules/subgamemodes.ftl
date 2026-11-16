@@ -1,4 +1,4 @@
-ent-Thief = { ent-BaseGameRule }
+ent-Thief = Вор
     .desc = { ent-BaseGameRule.desc }
-ent-SubWizard = { ent-BaseWizardRule }
+ent-SubWizard = Доп. волшебник
     .desc = { ent-BaseWizardRule.desc }

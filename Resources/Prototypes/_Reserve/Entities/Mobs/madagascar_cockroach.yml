@@ -1,4 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Title: Madagascar Cockroach
 
 # region Organs
 
@@ -42,7 +44,7 @@
   - type: Stomach
   - type: Metabolizer
     maxPoisonsProcessable: 6
-    metabolizerTypes: [ Plant ]
+    metabolizerTypes: [ Animal ]
     removeEmpty: true
     groups:
       - id: Food

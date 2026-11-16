@@ -1,27 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# region Cocktails
-
-# Orchito start
-- type: entity
-  parent: DrinkGlass
-  id: DrinkOrchitoGlass
-  suffix: orchito
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Orchito
-          Quantity: 30
-  - type: Icon
-    sprite: _Reserve/Objects/Consumable/Drinks/orchito.rsi
-    state: icon
-# Orchito end
-
-# endregion
-
 # region Juices
 
 - type: entity
@@ -155,6 +133,38 @@
 # endregion
 
 # region Sodas
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkColaGlass
+  suffix: cola
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Cola
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/colaglass.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBrepsiGlass
+  suffix: brepsi
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Brepsi
+          Quantity: 30
+  - type: Icon
+    sprite: Objects/Consumable/Drinks/colaglass.rsi
+    state: icon
 
 - type: entity
   parent: DrinkGlass

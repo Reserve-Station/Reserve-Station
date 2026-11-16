@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Kirill <kirill@example.com>
+﻿// SPDX-FileCopyrightText: 2025 Kirill <kirill@example.com>
 // SPDX-FileCopyrightText: 2025 RedFoxIV <38788538+RedFoxIV@users.noreply.github.com>
 // SPDX-FileCopyrightText: 2025 ReserveBot <211949879+ReserveBot@users.noreply.github.com>
 //
@@ -26,10 +26,10 @@ namespace Content.Server._White.Commands;
 [AnyCommand]
 public sealed class ListCustomGhostsCommand : IConsoleCommand
 {
-    [Dependency] private readonly IServerDbManager _db = default!;
+    // [Dependency] private readonly IServerDbManager _db = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly IServerPreferencesManager _prefMan = default!;
-    [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
+    // [Dependency] private readonly IServerPreferencesManager _prefMan = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!; // Reserve edit: Fix warnings
 
     public string Command => "listcustomghosts";
     public string Description => Loc.GetString("listcustomghosts-command-description");

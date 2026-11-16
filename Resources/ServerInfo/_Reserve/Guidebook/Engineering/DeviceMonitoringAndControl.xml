@@ -30,7 +30,7 @@
     <GuideEntityEmbed Entity="GasPipeSensor" Caption=""/>
   </Box>
   <Box>
-    ## Atmospheric Network Monitor
+    ## Монитор атмосферной сети
   </Box>
   <Box>
     [color=#999999][italic]Мониторинг целых сетей труб[italic][/color]

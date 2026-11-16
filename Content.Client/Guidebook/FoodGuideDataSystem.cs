@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client.Botany.Components;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Construction;
 using Content.Shared.Construction.NodeEntities;
@@ -9,7 +10,6 @@ using Content.Shared.EntityEffects.Effects.EntitySpawning;
 using Content.Shared.Kitchen;
 using Content.Shared.Nutrition.Components;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.Markdown.Value;
 using System.Linq;
 
 namespace Content.Client.Guidebook;
@@ -30,12 +30,12 @@ public readonly record struct FoodEntitySource(
     string Group = "Ingredients"  // Reserve edit: Fix recipe categories
 );
 
-public sealed class FoodGuideDataSystem : EntitySystem
+public sealed partial class FoodGuideDataSystem : EntitySystem
 {
     private const string RollingToolQuality = "Rolling";
 
-    [Dependency] private readonly IPrototypeManager _prototypes = default!;
-    [Dependency] private readonly IComponentFactory _componentFactory = default!;
+    [Dependency] private IPrototypeManager _prototypes = default!;
+    [Dependency] private IComponentFactory _componentFactory = default!;
 
     private readonly Dictionary<EntProtoId, List<FoodEntitySource>> _sources = new();
     private readonly Dictionary<EntProtoId, List<FoodRecipePrototype>> _microwaveByResult = new();
@@ -159,18 +159,18 @@ public sealed class FoodGuideDataSystem : EntitySystem
             if (entity.Abstract)
                 continue;
 
-            if (entity.TryGetComponent<SliceableFoodComponent>(out var sliceable, _componentFactory)
+            if (entity.TryComp<SliceableFoodComponent>(out var sliceable, _componentFactory)
                 && sliceable.Slice is { } sliceId)
             {
                 pendingSlices[sliceId + entity.ID] = (sliceId, entity.ID, sliceable.Group);  // Reserve edit: Fix recipe categories
             }
 
-            if (entity.Components.TryGetValue("Produce", out var produceEntry)
-                && produceEntry.Mapping.TryGet<ValueDataNode>("seedId", out var seedNode)
-                && !string.IsNullOrEmpty(seedNode.Value))
+            // Reserve edit: ComponentRegistryEntry no longer exposes the raw mapping; read the deserialized component instead
+            if (entity.TryComp<ProduceComponent>(out var produce, _componentFactory)
+                && !string.IsNullOrEmpty(produce.SeedId))
             {
                 _plantEntities.Add(entity.ID);
-                AddSource(entity.ID, new FoodEntitySource(FoodEntitySourceKind.Hydroponics, null, null, seedNode.Value));
+                AddSource(entity.ID, new FoodEntitySource(FoodEntitySourceKind.Hydroponics, null, null, produce.SeedId));
             }
         }
 

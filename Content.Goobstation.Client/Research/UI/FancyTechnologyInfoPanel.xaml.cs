@@ -18,8 +18,8 @@ namespace Content.Goobstation.Client.Research.UI;
 [GenerateTypedNameReferences]
 public sealed partial class FancyTechnologyInfoPanel : Control
 {
-    [Dependency] private readonly IEntityManager _ent = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IEntityManager _ent = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public TechnologyPrototype Prototype;
     public Action<TechnologyPrototype>? BuyAction;
@@ -92,7 +92,7 @@ public sealed partial class FancyTechnologyInfoPanel : Control
     {
         base.ExitedTree();
 
-    ResearchButton.OnPressed -= OnResearchPressed; // Reserve edit: rnd-console #344
+        ResearchButton.OnPressed -= OnResearchPressed; // Reserve edit: rnd-console #344
     }
 
     // Reserve edit start: rnd-console #344

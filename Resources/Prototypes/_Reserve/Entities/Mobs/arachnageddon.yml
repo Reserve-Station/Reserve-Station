@@ -1,0 +1,557 @@
+# SPDX-FileCopyrightText: Made by Ceterai on GitHub.
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Title: Arachnageddon
+
+# A collection of terrifying spider creatures brought by Orchi Dea to Reserve.
+
+
+
+
+
+# region PROTOTYPES
+
+
+
+
+
+# region Small spider
+
+- type: entity
+  parent: MobSpiderBase
+  id: MobSmallSpider
+  name: spider
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: tarantula
+      sprite: Mobs/Animals/spider.rsi
+    scale: 0.5, 0.5
+    color: "#cca865"
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: tarantula-moving
+    noMovementLayers:
+      movement:
+        state: tarantula
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: tarantula
+      Critical:
+        Base: tarantula_dead
+      Dead:
+        Base: tarantula_dead
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 2
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSpider
+      amount: 1
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      20: Dead
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 5
+      food:
+        reagents:
+        - ReagentId: CopperBlood
+          Quantity: 5
+  - type: MeleeChemicalInjector
+    transferAmount: 0.25
+    solution: melee
+  - type: Puller
+    needsHands: false
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: CopperBlood
+        Quantity: 50
+  - type: Spider
+    spawnsWebsAsNonPlayer: false
+  - type: Body
+    prototype: Insect
+  - type: Tag
+    tags:
+    - Trash
+    - VimPilot
+  - type: Prying
+    pryPowered: false
+    force: false
+  - type: PassiveDamage
+    damageCap: 19
+    damage:
+      types:
+        Poison: -0.07
+      groups:
+        Brute: -0.07
+        Burn: -0.28
+  - type: Item
+    size: Tiny
+  - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: MouseCompound
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 2
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 5
+  - type: Edible
+  - type: FlavorProfile
+    flavors:
+    - horrible
+    - terrible
+    - chewy
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 10
+      behaviors:
+      - !type:GibBehavior
+        gibContents: Skip
+        recursive: false
+
+- type: entity
+  parent:
+  - MobSpiderAngryBase
+  - MobSmallSpider
+  id: MobSmallSpiderAngry
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+
+# endregion Small spider
+
+# region Bloodmother
+
+- type: entity
+  id: SpiderWebBlood
+  parent: SpiderWeb
+  name: bloody spider web
+  description: A blood-red web that leaves a puddle of blood when destroyed.
+  components:
+  - type: Sprite
+    color: "#a83232dd"
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWebSilk:
+            min: 0
+            max: 1
+          PuddleBloodSmall:
+            min: 1
+            max: 2
+
+- type: entity
+  parent: MobGiantSpider
+  id: MobBloodmotherSpider
+  components:
+  - type: Sprite
+    color: "#a83232"
+    scale: 0.9, 1.1
+  - type: Spider
+    webPrototype: SpiderWebBlood
+
+- type: entity
+  parent:
+  - MobSpiderAngryBase
+  - MobBloodmotherSpider
+  id: MobBloodmotherSpiderAngry
+
+# endregion Bloodmother
+
+# region Brutemother
+
+- type: entity
+  parent: MobGiantSpider
+  id: MobBrutemotherSpider
+  components:
+  - type: Sprite
+    color: "#a2b2f8"
+    scale: 1.2, 1.3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 200
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      115: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 8
+  - type: EatToGrow
+    maxGrowth: 1
+
+- type: entity
+  parent:
+  - MobSpiderAngryBase
+  - MobBrutemotherSpider
+  id: MobBrutemotherSpiderAngry
+
+# endregion Brutemother
+
+# region Xenorantula
+
+- type: entity
+  id: SpiderWebXeno
+  parent: SpiderWeb
+  name: xenoweb
+  description: A xenorantula web that leaves a puddle of acid when destroyed.
+  components:
+  - type: Sprite
+    color: "#125832"
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          XenomorphAcid:
+            min: 1
+            max: 1
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.35
+    sprintSpeedModifier: 0.35
+
+- type: entity
+  parent: MobGiantSpider
+  id: MobXenorantulaSpider
+  components:
+  - type: Sprite
+    color: "#a2f8b2"
+    scale: 1.6, 1.6
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.49
+        density: 300
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      145: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 10
+  - type: EatToGrow
+    maxGrowth: 1
+  - type: HTN
+    rootTask:
+      task: XenoCompound
+    blackboard:
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: Spider
+    webPrototype: SpiderWebXeno
+  - type: Devourer
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidAppearance
+    stomachStorageWhitelist:
+      components:
+      - MobState
+      - Item
+    chemical: Ichor
+    healRate: 7.5
+    whitelist:
+      components:
+      - MobState
+      - Door
+      - Item
+      tags:
+      - Wall
+
+- type: entity
+  parent:
+  - MobSpiderAngryBase
+  - MobXenorantulaSpider
+  id: MobXenorantulaSpiderAngry
+
+# endregion Xenorantula
+
+# region Black Death
+
+- type: entity
+  parent:
+  - MobSpiderAngryBase
+  - MobGiantSpider
+  id: MobBlackDeathSpider
+  components:
+  - type: Sprite
+    scale: 3, 3
+    color: "#888888"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.9
+        density: 800
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1800: Critical
+      2500: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 45
+        Slash: 35
+        Blunt: 10
+  - type: EatToGrow
+    maxGrowth: 1
+  - type: HTN
+    rootTask:
+      task: XenoCompound
+    blackboard:
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: Devourer
+    foodPreferenceWhitelist:
+      components:
+      - HumanoidAppearance
+    stomachStorageWhitelist:
+      components:
+      - MobState
+      - Item
+    chemical: Ichor
+    healRate: 12
+    whitelist:
+      components:
+      - MobState
+      - Door
+      - Item
+      tags:
+      - Wall
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: ghost-role-information-black-death-name
+    description: ghost-role-information-black-death-description
+    rules: ghost-role-information-black-death-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
+    raffle:
+      settings: default
+  - type: ActionGrant
+    actions:
+    - ActionSpawnTinyAngrySpider
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2500
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MobSmallSpiderAngry:
+            min: 6
+            max: 6
+  - type: StaticPrice
+    price: 1000
+
+- type: entity
+  parent: BaseAction
+  id: ActionSpawnTinyAngrySpider
+  components:
+  - type: Action
+    useDelay: 30
+    icon:
+      sprite: Mobs/Animals/spider.rsi
+      state: tarantula
+  - type: InstantAction
+    event: !type:SpawnTileEntityActionEvent
+      entity: MobSmallSpiderAngry
+      blockedCollisionLayer:
+      - Impassable
+      - MidImpassable
+      - LowImpassable
+
+# endregion Arachnageddon
+
+# region Arachnids
+
+- type: startingGear
+  id: ArachnidWebGear
+  equipment:
+    head: ClothingHeadHatHoodWinterWeb
+    jumpsuit: ClothingUniformJumpsuitWeb
+    outerClothing: ClothingOuterWinterWeb
+    shoes: ClothingShoesBootsWinterWeb
+    id: VisitorPDA
+  inhand:
+  - BarberScissors
+  - WebShield
+
+- type: entity
+  parent: MobArachnidRandom
+  id: MobArachnidWeb
+  components:
+  - type: GhostRole
+    makeSentient: true
+    name: ghost-role-information-arachnageddon-arachnid-name
+    description: ghost-role-information-arachnageddon-arachnid-description
+    rules: ghost-role-information-arachnageddon-arachnid-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ArachnidWebGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: MobArachnidWeb
+  id: MobArachnidWebHostile
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+  - type: CombatMode
+
+- type: startingGear
+  id: ArachnidRichGear
+  equipment:
+    neck: ClothingNeckBling
+    outerClothing: ClothingOuterCoatExpensiveOpened
+    id: VisitorPDA
+    pocket1: SpaceCash5000
+    pocket2: SpaceCash5000
+
+- type: entity
+  parent: MobArachnidRandom
+  id: MobArachnidRich
+  components:
+  - type: GhostRole
+    makeSentient: true
+    name: ghost-role-information-arachnageddon-arachnid-rich-name
+    description: ghost-role-information-arachnageddon-arachnid-rich-description
+    rules: ghost-role-information-arachnageddon-arachnid-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ArachnidRichGear]
+  - type: RandomHumanoidAppearance
+
+- type: startingGear
+  id: ArachnidAncientGear
+  equipment:
+    head: LavalandEquipmentAncientArmorHood
+    neck: ClothingNeckCloakHerald
+    jumpsuit: ClothingUniformJumpsuitMilitaryColorMaroon
+    outerClothing: LavalandEquipmentAncientArmor
+    shoes: ClothingShoesWinterCombatBootsFilled
+    id: VisitorPDA
+  inhand:
+  - WeaponCrusherHalberd
+
+- type: entity
+  parent: MobArachnidRandom
+  id: MobArachnidAncient
+  components:
+  - type: GhostRole
+    makeSentient: true
+    name: ghost-role-information-arachnageddon-arachnid-ancient-name
+    description: ghost-role-information-arachnageddon-arachnid-ancient-description
+    rules: ghost-role-information-arachnageddon-arachnid-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ArachnidAncientGear]
+  - type: RandomHumanoidAppearance
+
+- type: entity
+  parent: MobArachnidAncient
+  id: MobArachnidAncientHostile
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+  - type: CombatMode
+
+# endregion Arachnids

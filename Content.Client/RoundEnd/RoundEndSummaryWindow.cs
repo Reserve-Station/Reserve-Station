@@ -228,12 +228,14 @@ namespace Content.Client.RoundEnd
                     var totalDamage = playerInfo.DamagePerGroup.Values.Sum(static v => (decimal) v);
                     var severityAdj = totalDamage switch
                     {
-                        >= 1000 => "catastrophic",
-                        >= 750 => "devastating",
-                        >= 500 => "agonizing",
-                        >= 300 => "painful",
-                        >= 200 => "brutal",
-                        _ => "tragic"
+                        // Reserve edit start: Localization
+                        >= 1000 => Loc.GetString("round-end-summary-window-death-severity-catastrophic"),
+                        >= 750 => Loc.GetString("round-end-summary-window-death-severity-devastating"),
+                        >= 500 => Loc.GetString("round-end-summary-window-death-severity-agonizing"),
+                        >= 300 => Loc.GetString("round-end-summary-window-death-severity-painful"),
+                        >= 200 => Loc.GetString("round-end-summary-window-death-severity-brutal"),
+                        _ => Loc.GetString("round-end-summary-window-death-severity-tragic")
+                        // Reserve edit end: Localization
                     };
 
                     var highestDamage = playerInfo.DamagePerGroup
@@ -241,14 +243,16 @@ namespace Content.Client.RoundEnd
                         .First();
                     var typeAdj = highestDamage.Key switch
                     {
-                        "Burn" => "fiery",
-                        "Brute" => "crushing",
-                        "Toxin" => "poisonous",
-                        "Airloss" => "suffocating",
-                        "Genetic" => "twisted",
-                        "Metaphysical" => "otherworldly",
-                        "Electronic" => "shocking",
-                        _ => "mysterious",
+                        // Reserve edit start: Localization
+                        "Burn" => Loc.GetString("round-end-summary-window-death-type-burn"),
+                        "Brute" => Loc.GetString("round-end-summary-window-death-type-brute"),
+                        "Toxin" => Loc.GetString("round-end-summary-window-death-type-toxin"),
+                        "Airloss" => Loc.GetString("round-end-summary-window-death-type-airloss"),
+                        "Genetic" => Loc.GetString("round-end-summary-window-death-type-genetic"),
+                        "Metaphysical" => Loc.GetString("round-end-summary-window-death-type-metaphysical"),
+                        "Electronic" => Loc.GetString("round-end-summary-window-death-type-electronic"),
+                        _ => Loc.GetString("round-end-summary-window-death-type-unknown"),
+                        // Reserve edit end: Localization
                     };
 
                     deathLabel.SetMarkup(
@@ -346,7 +350,7 @@ namespace Content.Client.RoundEnd
             };
             var StationReportLabel = new RichTextLabel();
             var StationReportmessage = new FormattedMessage();
-            StationReportmessage.AddMarkupOrThrow(stationReportText);
+            StationReportmessage.AddMarkupPermissive(stationReportText);
             StationReportLabel.SetMessage(StationReportmessage);
             StationReportContainer.AddChild(StationReportLabel);
 

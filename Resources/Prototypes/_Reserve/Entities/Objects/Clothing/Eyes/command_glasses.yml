@@ -5,9 +5,9 @@
   description: Glasses that scans the humanoids in view and provides accurate data about their health status. Provides flash protection.
   components:
   - type: Sprite
-    sprite: _Reserve/Entities/Clothing/Eyes/CommandGlasses/CMOglasses.rsi
+    sprite: _Reserve/Clothing/Eyes/CommandGlasses/CMOglasses.rsi
   - type: Clothing
-    sprite: _Reserve/Entities/Clothing/Eyes/CommandGlasses/CMOglasses.rsi
+    sprite: _Reserve/Clothing/Eyes/CommandGlasses/CMOglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
     protectionTime: 5
@@ -19,9 +19,9 @@
   description: Glasses that provides eye protection while welding. Also provides flash protection.
   components:
   - type: Sprite
-    sprite: _Reserve/Entities/Clothing/Eyes/CommandGlasses/CEglasses.rsi
+    sprite: _Reserve/Clothing/Eyes/CommandGlasses/CEglasses.rsi
   - type: Clothing
-    sprite: _Reserve/Entities/Clothing/Eyes/CommandGlasses/CEglasses.rsi
+    sprite: _Reserve/Clothing/Eyes/CommandGlasses/CEglasses.rsi
   - type: EyeProtection
   - type: FlashImmunity
 
@@ -32,9 +32,9 @@
   description: Glasses with ability to appraise objects and verify bounties like regular appraisal tool. Provides flash protection.
   components:
   - type: Sprite
-    sprite: _Reserve/Entities/Clothing/Eyes/CommandGlasses/QMglasses.rsi
+    sprite: _Reserve/Clothing/Eyes/CommandGlasses/QMglasses.rsi
   - type: Clothing
-    sprite: _Reserve/Entities/Clothing/Eyes/CommandGlasses/QMglasses.rsi
+    sprite: _Reserve/Clothing/Eyes/CommandGlasses/QMglasses.rsi
   - type: AppraisalHud
   - type: EyeProtection
   - type: FlashImmunity
@@ -49,9 +49,9 @@
   description: Glasses that capable of analyzing the integrity and status of robotics and exosuits. Provides flash protection.
   components:
   - type: Sprite
-    sprite: _Reserve/Entities/Clothing/Eyes/CommandGlasses/RDglasses.rsi
+    sprite: _Reserve/Clothing/Eyes/CommandGlasses/RDglasses.rsi
   - type: Clothing
-    sprite: _Reserve/Entities/Clothing/Eyes/CommandGlasses/RDglasses.rsi
+    sprite: _Reserve/Clothing/Eyes/CommandGlasses/RDglasses.rsi
   - type: ShowHealthBars
     damageContainers:
     - Inorganic

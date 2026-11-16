@@ -16,6 +16,7 @@ ent-RubberStampWizard = резиновая печать волшебника
     .suffix = НЕ МАППИТЬ
     .desc = { ent-RubberStampCMO.desc }
 ent-EverfullMug = вечно полная кружка
+    .suffix = Волшебник
     .desc = Зачарованная кружка, которая автоматически наполняется омнизином.
 ent-WizardIDCard = ID карта ассистента
     .suffix = Волшебник

@@ -1,16 +1,19 @@
 ent-CarvedPumpkin = вырезанная тыква
     .desc = Традиционное страшное украшение.
-ent-PumpkinLantern = тыквенный фонарик
-    .desc = Вырезанная тыква, излучающая жутковатое свечение.
+    .suffix = Светильник Джека, Хэллоуин
 ent-CarvedPumpkinSmall = { ent-CarvedPumpkin }
-    .suffix = Маленький
     .desc = { ent-CarvedPumpkin.desc }
+    .suffix = Маленький, { ent-CarvedPumpkin.suffix }
 ent-CarvedPumpkinLarge = { ent-CarvedPumpkin }
-    .suffix = Большой
     .desc = { ent-CarvedPumpkin.desc }
+    .suffix = Большой, { ent-CarvedPumpkin.suffix }
+
+ent-PumpkinLantern = тыквенный светильник
+    .desc = Вырезанная тыква, излучающая жутковатое свечение.
+    .suffix = Светильник Джека, Хэллоуин
 ent-PumpkinLanternSmall = { ent-PumpkinLantern }
-    .suffix = Маленький
     .desc = { ent-PumpkinLantern.desc }
+    .suffix = Маленький, { ent-PumpkinLantern.suffix }
 ent-PumpkinLanternLarge = { ent-PumpkinLantern }
-    .suffix = Большой
     .desc = { ent-PumpkinLantern.desc }
+    .suffix = Большой, { ent-PumpkinLantern.suffix }

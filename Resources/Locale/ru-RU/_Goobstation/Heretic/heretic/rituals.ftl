@@ -25,11 +25,11 @@ heretic-ritual-fail-reagentpuddle = Здесь нет { $reagentname }.
 heretic-ritual-fail-temperature-hot = Здесь слишком жарко.
 heretic-ritual-fail-temperature-cold = Здесь недостаточно холодно.
 heretic-ritual-fail-sacrifice-ash = Здесь либо недостаточно мертвых, либо горящих.
-heretic-ritual-fail-sacrifice-blade = У некоторых из них еще есть голова на плечах.
+heretic-ritual-fail-sacrifice-blade = У некоторых из них ещё есть голова на плечах.
 
 ## side quests
 
-heretic-ritual-fail-sacrifice-rust = Недостаточно гниющих или кремниевых трупов.
+heretic-ritual-fail-sacrifice-rust = Недостаточно гниющих или синтетных трупов.
 heretic-ritual-fail-limit = Вы достигли предела количества предметов, которые предоставляет этот ритуал.
 heretic-ritual-fail-no-lost-blades = Потерянные лезвия не могут быть найдены.
 heretic-ritual-fail-already-ascended = Вы уже вознесены.

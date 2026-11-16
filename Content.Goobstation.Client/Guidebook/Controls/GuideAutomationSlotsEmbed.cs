@@ -5,6 +5,7 @@ using Content.Client.Guidebook.Richtext;
 using Content.Goobstation.Shared.Factory;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Prototypes;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Content.Goobstation.Client.Guidebook.Controls;
@@ -14,8 +15,14 @@ namespace Content.Goobstation.Client.Guidebook.Controls;
 /// </summary>
 public sealed partial class GuideAutomationSlotsEmbed : IDocumentTag
 {
-    [Dependency] private readonly IEntityManager _entMan = default!;
+    [Dependency] private IEntityManager _entMan = default!;
+    [Dependency] private IPrototypeManager _proto = default!; // Reserve edit
     private readonly AutomationSystem _automation;
+
+    // Reserve edit start: grid with captions instead of a narrow vertical list
+    private const int Columns = 4;
+    private const float CellWidth = 130f;
+    // Reserve edit end
 
     public GuideAutomationSlotsEmbed()
     {
@@ -26,24 +33,33 @@ public sealed partial class GuideAutomationSlotsEmbed : IDocumentTag
 
     bool IDocumentTag.TryParseTag(Dictionary<string, string> args, [NotNullWhen(true)] out Control? control)
     {
-        var scroll = new ScrollContainer()
+        // Reserve edit start: grid with captions instead of a narrow vertical list
+        var grid = new GridContainer()
         {
-            MinHeight = 200f,
-            MaxHeight = 400f
-        };
-        var box = new BoxContainer()
-        {
-            Orientation = BoxContainer.LayoutOrientation.Vertical,
-            HorizontalExpand = true,
-            VerticalExpand = true
+            Columns = Columns,
+            HorizontalAlignment = Control.HAlignment.Center
         };
         foreach (var id in _automation.Automatable)
         {
-            box.AddChild(new GuideEntityEmbed(id, false, true));
+            var name = _proto.TryIndex(id, out var proto) ? proto.Name : id.Id;
+            var cell = new BoxContainer()
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                SetWidth = CellWidth,
+                ToolTip = name
+            };
+            cell.AddChild(new GuideEntityEmbed(id, false, true) { HorizontalAlignment = Control.HAlignment.Center });
+            cell.AddChild(new Label()
+            {
+                Text = name,
+                ClipText = true,
+                HorizontalAlignment = Control.HAlignment.Center
+            });
+            grid.AddChild(cell);
         }
-        scroll.AddChild(box);
 
-        control = scroll;
+        control = grid;
+        // Reserve edit end
         return true;
     }
 }

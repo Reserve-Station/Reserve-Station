@@ -1,0 +1,6 @@
+- type: guideEntry
+  id: Synth
+  name: species-name-synth
+  text: "/ServerInfo/_Afterlight/Guidebook/Mobs/Synth.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Mobs/Synth.xml"

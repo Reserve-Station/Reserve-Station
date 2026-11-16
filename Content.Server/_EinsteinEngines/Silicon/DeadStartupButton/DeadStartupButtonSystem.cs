@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Chat.Systems;
 using Content.Server.Lightning;
@@ -17,11 +17,12 @@ using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 
- // Goobstation - Revive notification
+// Goobstation - Revive notification
 using Content.Server.EUI;
 using Content.Shared.Mind;
 using Content.Server.Ghost;
 using Robust.Shared.Player;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server._EinsteinEngines.Silicon.DeadStartupButton;
 
@@ -34,11 +35,11 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
     [Dependency] private readonly IRobustRandom _robustRandom = default!;
     [Dependency] private readonly LightningSystem _lightning = default!;
     [Dependency] private readonly SiliconChargeSystem _siliconChargeSystem = default!;
-    [Dependency] private readonly PowerCellSystem _powerCell = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
+    // [Dependency] private readonly PowerCellSystem _powerCell = default!; // Reserve edit: Fix warnings
+    // [Dependency] private readonly ChatSystem _chatSystem = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly BatterySystem _battery = default!; // Goobstation - Energycrit
 
-     // Goobstation - Revive notification
+    // Goobstation - Revive notification
     [Dependency] private readonly EuiManager _euiManager = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
@@ -63,7 +64,7 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
             return;
 
         // Check if entity have critical state
-        if (_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var criticalThreshold, mobThresholdsComponent)
+        if (_mobThreshold.TryGetThresholdForState(uid, MobState.SoftCritical, out var criticalThreshold, mobThresholdsComponent) // Reserve edit: Soft Crit port
             && damageable.TotalDamage < criticalThreshold)
         {
             _mobState.ChangeMobState(uid, MobState.Alive, mobStateComponent);

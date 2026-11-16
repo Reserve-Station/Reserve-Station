@@ -105,7 +105,7 @@ public sealed class AmeControllerSystem : EntitySystem
                 var availableInject = Math.Min(controller.InjectionAmount, fuelContainer.FuelAmount);
                 var powerOutput = group.InjectFuel(availableInject, out var overloading);
                 if (TryComp<PowerSupplierComponent>(uid, out var powerOutlet))
-                    powerOutlet.MaxSupply = powerOutput*1000; // Reserve
+                    powerOutlet.MaxSupply = powerOutput;
                 fuelContainer.FuelAmount -= availableInject;
 
                 // Dirty for the sake of the AME fuel examine not mispredicting
@@ -151,7 +151,7 @@ public sealed class AmeControllerSystem : EntitySystem
         if (TryGetAMENodeGroup(uid, out var group) && group.CoreCount > 0)
         {
             coreCount = group.CoreCount;
-            targetedPowerSupply = group.CalculatePower(controller.InjectionAmount, group.CoreCount);
+            targetedPowerSupply = group.CalculatePower(controller.InjectionAmount, group.CoreCount) / 1000;
         }
 
         // set current power statistics in kW

@@ -17,6 +17,7 @@ public sealed class ButtonSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
         IButtonConfig buttonCfg = sheet;
         IIconConfig iconCfg = sheet;
 
+        var helpTex = sheet.GetTextureOr(iconCfg.HelpIconPath, NanotrasenStylesheet.TextureRoot);  // Reserve edit: New Jobs Style
         var crossTex = sheet.GetTextureOr(iconCfg.CrossIconPath, NanotrasenStylesheet.TextureRoot);
         var refreshTex = sheet.GetTextureOr(iconCfg.RefreshIconPath, NanotrasenStylesheet.TextureRoot);
 
@@ -45,6 +46,13 @@ public sealed class ButtonSheetlet<T> : Sheetlet<T> where T : PalettedStylesheet
                 .ParentOf(E<Label>())
                 .Font(sheet.BaseFont.GetFont(8)),
             CButton().Class(StyleClass.ButtonBig).ParentOf(E<Label>()).Font(sheet.BaseFont.GetFont(16)),
+
+            // Reserve edit start: New Jobs Style
+            // Help Button
+            E<TextureButton>()
+                .Class("HelpButton")
+                .Prop(TextureButton.StylePropertyTexture, helpTex),
+            // Reserve edit end: New Jobs Style
 
             // Cross Button (Red)
             E<TextureButton>()

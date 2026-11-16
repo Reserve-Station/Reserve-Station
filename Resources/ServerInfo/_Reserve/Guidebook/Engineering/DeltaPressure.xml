@@ -1,0 +1,69 @@
+<Document>
+  # Разница давления
+  Разница давления, или ΔP, — это разность давлений между двумя областями.
+  Эта разница может давить на объекты, находящиеся между областями, нанося некоторым из них [bold]урон давлением[/bold].
+
+  Различные стеклянные объекты, такие как окна, стеклянные двери и ставни, могут получать урон давлением, если ΔP между их сторонами достаточно велика.
+  От этого урона объекты могут разбиться, и газ начнёт свободно перетекать между областями.
+
+  У разных объектов разный порог ΔP, который они выдерживают, прежде чем разбиться.
+  Как правило, чем прочнее стекло, тем выше порог. У тонких объектов порог также ниже.
+
+  Стены, шлюзы и пожарные шлюзы не подвержены воздействию ΔP.
+
+  ## Обычное стекло и объекты
+  <Box>
+    <GuideEntityEmbed Entity="Window" Caption=""/>
+    <GuideEntityEmbed Entity="WindowDirectional" Caption=""/>
+    <GuideEntityEmbed Entity="Windoor" Caption=""/>
+    <GuideEntityEmbed Entity="ShuttersWindow" Caption=""/>
+    <GuideEntityEmbed Entity="InflatableWall" Caption=""/>
+  </Box>
+
+  Обычное полноразмерное стекло и другие хрупкие объекты выдерживают ΔP до [color=orange][protodata="Window" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color], после чего начинают трескаться.
+
+  Четвертное стекло, например направленные окна, выдерживает ΔP до [color=orange][protodata="WindowDirectional" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color], после чего начинает трескаться.
+
+  ## Бронированное стекло и объекты
+  <Box>
+    <GuideEntityEmbed Entity="ReinforcedWindow" Caption=""/>
+    <GuideEntityEmbed Entity="WindowReinforcedDirectional" Caption=""/>
+    <GuideEntityEmbed Entity="WindoorSecure" Caption=""/>
+    <GuideEntityEmbed Entity="ShuttleWindow" Caption=""/>
+  </Box>
+
+  Бронированное полноразмерное стекло выдерживает ΔP до [color=orange][protodata="ReinforcedWindow" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color], после чего начинает трескаться.
+
+  Бронированное четвертное стекло выдерживает ΔP до [color=orange][protodata="WindowReinforcedDirectional" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color], после чего начинает трескаться.
+
+  ## Плазменное и урановое стекло
+  <Box>
+    <GuideEntityEmbed Entity="PlasmaWindow" Caption=""/>
+    <GuideEntityEmbed Entity="PlasmaWindowDirectional" Caption=""/>
+    <GuideEntityEmbed Entity="WindoorPlasma" Caption=""/>
+    <GuideEntityEmbed Entity="UraniumWindow" Caption=""/>
+    <GuideEntityEmbed Entity="UraniumWindowDirectional" Caption=""/>
+    <GuideEntityEmbed Entity="WindoorUranium" Caption=""/>
+  </Box>
+
+  Плазменное и урановое стекло выдерживает ΔP до [color=orange][protodata="PlasmaWindow" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color], после чего начинает трескаться.
+
+  Четвертное плазменное и урановое стекло выдерживает ΔP до [color=orange][protodata="PlasmaWindowDirectional" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color], после чего начинает трескаться.
+
+  ## Бронированное плазменное и урановое стекло
+
+  <Box>
+    <GuideEntityEmbed Entity="ReinforcedPlasmaWindow" Caption=""/>
+    <GuideEntityEmbed Entity="PlasmaReinforcedWindowDirectional" Caption=""/>
+    <GuideEntityEmbed Entity="WindoorSecurePlasma" Caption=""/>
+    <GuideEntityEmbed Entity="ReinforcedUraniumWindow" Caption=""/>
+    <GuideEntityEmbed Entity="UraniumReinforcedWindowDirectional" Caption=""/>
+    <GuideEntityEmbed Entity="WindoorSecureUranium" Caption=""/>
+
+  </Box>
+
+  Бронированное плазменное и урановое стекло выдерживает ΔP до [color=orange][protodata="ReinforcedPlasmaWindow" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color], после чего начинает трескаться.
+
+  Бронированное четвертное плазменное и урановое стекло выдерживает ΔP до [color=orange][protodata="PlasmaReinforcedWindowDirectional" comp="DeltaPressure" member="MinPressureDelta"/] кПа[/color], после чего начинает трескаться.
+
+</Document>

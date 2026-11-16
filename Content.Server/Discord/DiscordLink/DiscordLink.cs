@@ -1,10 +1,15 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;  // Reserve edit: Full discord bot integration
 using System.Threading.Tasks;
+using Content.Server._Reserve.Discord;  // Reserve edit: Full discord bot integration
 using Content.Shared.CCVar;
 using NetCord;
 using NetCord.Gateway;
 using NetCord.Rest;
+using DiscordInteraction = NetCord.Interaction;  // Reserve edit: Full discord bot integration
+using Robust.Shared.Asynchronous;  // Reserve edit: Full discord bot integration
 using Robust.Shared.Configuration;
+using Robust.Shared.Network;  // Reserve edit: Maecenas System
 using Robust.Shared.Utility;
 
 namespace Content.Server.Discord.DiscordLink;
@@ -44,6 +49,7 @@ public sealed class DiscordLink : IPostInjectInit
 {
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IConfigurationManager _configuration = default!;
+    [Dependency] private readonly ITaskManager _taskManager = default!;  // Reserve edit: Full discord bot integration
 
     /// <summary>
     ///    The Discord client. This is null if the bot is not connected.
@@ -54,6 +60,8 @@ public sealed class DiscordLink : IPostInjectInit
     private GatewayClient? _client;
     private ISawmill _sawmill = default!;
     private ISawmill _sawmillLog = default!;
+    private DiscordProfileCog? _profileCog;  // Reserve edit: Full discord bot integration
+    private DiscordLinkCog? _linkCog;  // Reserve edit: Discord bot account linking
 
     private ulong _guildId;
     private string _botToken = string.Empty;
@@ -120,13 +128,18 @@ public sealed class DiscordLink : IPostInjectInit
         _client.MessageCreate += OnCommandReceivedInternal;
         _client.MessageCreate += OnMessageReceivedInternal;
 
+        _profileCog = new DiscordProfileCog();  // Reserve edit: Full discord bot integration
+        _linkCog = new DiscordLinkCog();  // Reserve edit: Discord bot account linking
+        _client.InteractionCreate += OnInteractionCreate;  // Reserve edit: Full discord bot integration
+
         _botToken = token;
         // Since you cannot change the token while the server is running / the DiscordLink is initialized,
         // we can just set the token without updating it every time the cvar changes.
 
-        _client.Ready += _ =>
+        _client.Ready += readyArgs =>  // Reserve edit: Full discord bot integration
         {
             _sawmill.Info("Discord client ready.");
+            _ = RegisterApplicationCommandsAsync();  // Reserve edit: Full discord bot integration
             return default;
         };
 
@@ -153,6 +166,7 @@ public sealed class DiscordLink : IPostInjectInit
             // Unsubscribe from the events.
             _client.MessageCreate -= OnCommandReceivedInternal;
             _client.MessageCreate -= OnMessageReceivedInternal;
+            _client.InteractionCreate -= OnInteractionCreate;  // Reserve edit: Full discord bot integration
 
             await _client.CloseAsync();
             _client.Dispose();
@@ -223,6 +237,185 @@ public sealed class DiscordLink : IPostInjectInit
         return ValueTask.CompletedTask;
     }
 
+    // Reserve edit start: Full discord bot integration
+    private async ValueTask OnInteractionCreate(DiscordInteraction interaction)
+    {
+        if (interaction is not SlashCommandInteraction command)
+            return;
+
+        if (command.Data.Name == "link")
+        {
+            await HandleLinkCommand(command);
+            return;
+        }
+        else if (command.Data.Name == "unlink")
+        {
+            await HandleUnlinkCommand(command);
+            return;
+        }
+
+        if (_profileCog == null || command.Data.Name is not ("profile" or "balance" or "characters" or "inventory"))
+            return;
+
+        var player = command.Data.Options.FirstOrDefault(option => option.Name == "player")?.Value;
+        var privately = command.Data.Options.FirstOrDefault(option => option.Name == "privately")?.Value;
+        var ephemeral = privately is not null && bool.TryParse(privately, out var parsedPrivately)
+            ? parsedPrivately
+            : _configuration.GetCVar(CCVars.DiscordProfilePrivatelyDefault);
+
+        var response = await HandleProfileOnMainThread(command.Data.Name, player, command.User.Id, ephemeral);
+        await interaction.SendResponseAsync(response);
+    }
+
+    // Reserve edit start: Discord bot account linking
+    private async Task HandleLinkCommand(SlashCommandInteraction command)
+    {
+        if (_linkCog == null)
+            return;
+
+        var code = command.Data.Options.FirstOrDefault(option => option.Name == "code")?.Value ?? string.Empty;
+        var response = await HandleLinkOnMainThread(code, command.User.Id);
+        await command.SendResponseAsync(response);
+    }
+
+    private async Task HandleUnlinkCommand(SlashCommandInteraction command)
+    {
+        if (_linkCog == null)
+            return;
+
+        var response = await HandleUnlinkOnMainThread(command.User.Id);
+        await command.SendResponseAsync(response);
+    }
+
+    private Task<InteractionCallback> HandleUnlinkOnMainThread(ulong discordUserId)
+    {
+        var completion = new TaskCompletionSource<InteractionCallback>(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        _taskManager.RunOnMainThread(async () =>
+        {
+            try
+            {
+                completion.SetResult(await _linkCog!.HandleUnlinkAsync(discordUserId));
+            }
+            catch (Exception e)
+            {
+                completion.SetException(e);
+            }
+        });
+
+        return completion.Task;
+    }
+
+    private Task<InteractionCallback> HandleLinkOnMainThread(string code, ulong discordUserId)
+    {
+        var completion = new TaskCompletionSource<InteractionCallback>(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        _taskManager.RunOnMainThread(async () =>
+        {
+            try
+            {
+                completion.SetResult(await _linkCog!.HandleLinkAsync(code, discordUserId));
+            }
+            catch (Exception e)
+            {
+                completion.SetException(e);
+            }
+        });
+
+        return completion.Task;
+    }
+    // Reserve edit end: Discord bot account linking
+
+    private Task<InteractionCallback> HandleProfileOnMainThread(string command, string? player, ulong discordUserId, bool ephemeral)
+    {
+        var completion = new TaskCompletionSource<InteractionCallback>(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        _taskManager.RunOnMainThread(async () =>
+        {
+            try
+            {
+                completion.SetResult(await _profileCog!.HandleAsync(command, player, discordUserId, ephemeral, _client!.Rest, _guildId));
+            }
+            catch (Exception e)
+            {
+                completion.SetException(e);
+            }
+        });
+
+        return completion.Task;
+    }
+
+    private async Task RegisterApplicationCommandsAsync()
+    {
+        if (_client == null)
+            return;
+
+        try
+        {
+            var commandDefinitions = new[]
+            {
+                CreateProfileCommand("profile", "Show a player's complete profile."),
+                CreateProfileCommand("balance", "Show a player's coin balance."),
+                CreateProfileCommand("characters", "Show a player's characters."),
+                CreateProfileCommand("inventory", "Show a player's bought tokens."),
+                CreateLinkCommand(),
+                CreateUnlinkCommand(),
+            };
+
+            var registeredCommands = await _client.Rest.GetGuildApplicationCommandsAsync(_client.Id, _guildId);
+            foreach (var command in commandDefinitions)
+            {
+                try
+                {
+                    await _client.Rest.DeleteGuildApplicationCommandAsync(_client.Id, _guildId, registeredCommands.FirstOrDefault(c => c.Name == command.Name)?.Id ?? 0);
+                }
+                catch (Exception e)
+                {
+                    _sawmill.Warning($"Failed to unregister command {command.Name}!", e);
+                }
+                await _client.Rest.CreateGuildApplicationCommandAsync(_client.Id, _guildId, command);
+            }
+
+            _sawmill.Info("Registered Discord application commands.");
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error("Failed to register Discord application commands!", e);
+        }
+    }
+
+    private static SlashCommandProperties CreateProfileCommand(string name, string description)
+    {
+        return new SlashCommandProperties(name, description)
+            .AddOptions(
+                new ApplicationCommandOptionProperties(
+                    ApplicationCommandOptionType.String,
+                    "player",
+                    "Player CKey or UID (defaults to your own linked account)"),
+                new ApplicationCommandOptionProperties(
+                    ApplicationCommandOptionType.Boolean,
+                    "privately",
+                    "Only show the response to you. Always true if you specify a player."));
+    }
+    // Reserve edit end: Full discord bot integration
+
+    // Reserve edit start: Discord bot account linking
+    private static SlashCommandProperties CreateLinkCommand()
+    {
+        return new SlashCommandProperties("link", "Link your Discord account to your in-game account.")
+            .AddOptions(new ApplicationCommandOptionProperties(
+                ApplicationCommandOptionType.String,
+                "code",
+                "The linking code shown in-game")
+                .WithRequired(true));
+    }
+
+    private static SlashCommandProperties CreateUnlinkCommand()
+    {
+        return new SlashCommandProperties("unlink", "Unlink your Discord account from your in-game account.");
+    }
+    // Reserve edit end: Discord bot account linking
+
     #region Proxy methods
 
     /// <summary>
@@ -250,4 +443,42 @@ public sealed class DiscordLink : IPostInjectInit
     }
 
     #endregion
+
+    // Reserve edit start: Reserve Red
+    /// <summary>
+    /// Sends an embed to a Discord channel with the specified ID. Without any mentions.
+    /// </summary>
+    public async Task SendEmbedAsync(ulong channelId, string title, string description, int color, string footer)
+    {
+        if (_client == null)
+            return;
+
+        if (await _client.Rest.GetChannelAsync(channelId) is not TextChannel channel)
+        {
+            _sawmill.Warning("Tried to send an embed to Discord but the channel {Channel} was not found.", channelId);
+            return;
+        }
+
+        await channel.SendMessageAsync(new MessageProperties()
+        {
+            AllowedMentions = AllowedMentionsProperties.None,
+            Embeds =
+            [
+                new EmbedProperties()
+                    .WithTitle(title)
+                    .WithDescription(description)
+                    .WithColor(new NetCord.Color(color))
+                    .WithFooter(new EmbedFooterProperties().WithText(footer)),
+            ],
+        });
+    }
+    // Reserve edit end: Reserve Red
+    // Reserve edit start: Maecenas System
+    public async Task AssignPatronTierAsync(NetUserId playerId)
+    {
+        if (_linkCog == null || _client == null)
+            return;
+        await _linkCog.AssignPatronTierAsync(playerId, _client!.Rest, _guildId);
+    }
+    // Reserve edit end: Maecenas System
 }

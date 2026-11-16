@@ -1,0 +1,21 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- files: ["GloryToReserve.webp"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Made by omitronlarexxx on Discord, converted to webp by Ceterai on GitHub."
+  source: "https://github.com/Reserve-Station/Reserve-Station"
+
+- files: ["OrchidEnteringReserve.webp"]
+  license: "CC-BY-NC-ND-4.0"
+  copyright: "Made by Ceterai on DeviantArt."
+  source: "https://www.deviantart.com/ceterai/art/Orchi-entering-Reserve-%D0%97%D0%B0%D1%85%D0%BE%D0%B4-%D0%BD%D0%B0-%D0%A0%D0%B5%D0%B7%D0%B5%D1%80%D0%B2-1383245887"
+
+- files: ["ReserveBlood.webp"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Made by Ceterai on GitHub."
+  source: "https://github.com/Reserve-Station/Reserve-Station"
+
+- files: ["ReserveLogo.webp"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Made by nodjak on Discord, converted to webp by Ceterai on GitHub."
+  source: "https://github.com/Reserve-Station/Reserve-Station"

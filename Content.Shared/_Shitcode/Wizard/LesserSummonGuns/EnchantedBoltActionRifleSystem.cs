@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._Goobstation.Wizard.FadingTimedDespawn;
 using Content.Shared.Examine;
@@ -26,7 +26,7 @@ public sealed class EnchantedBoltActionRifleSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly SharedWieldableSystem _wieldable = default!;
-    [Dependency] private readonly SharedVirtualItemSystem _virtual = default!;
+    // [Dependency] private readonly SharedVirtualItemSystem _virtual = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {
@@ -76,7 +76,8 @@ public sealed class EnchantedBoltActionRifleSystem : EntitySystem
         var dir = _random.NextAngle().ToVec();
         var speed = _random.NextFloat(comp.ThrowingSpeed.X, comp.ThrowingSpeed.Y);
 
-        _throwingSystem.TryThrow(uid, dir, speed, user, 0, recoil: false);
+        _throwingSystem.TryThrow(uid, dir, speed, user, 0, recoil: false,
+            predicted: false); // Trauma - server only
 
         EnsureComp<FadingTimedDespawnComponent>(uid);
 

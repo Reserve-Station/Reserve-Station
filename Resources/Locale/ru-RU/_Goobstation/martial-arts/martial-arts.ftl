@@ -33,14 +33,65 @@ carp-saying-cowabunga = КОВАБУНГА!
 
 krav-maga-ready = Вы готовы к { $action }
 
-martial-arts-action-sender = Вы ударяете { $name } с помощью { $move }
-martial-arts-action-receiver = {$name} ударяет вас с помощью {$move}
+martial-arts-action-sender =
+    { GENDER($user) ->
+        [male] Вы ударили
+        [female] Вы ударили
+        [epicene] Вы ударили
+       *[neuter] Вы ударили
+    } { $name } { $move }.
+martial-arts-action-receiver =
+    { $name } { GENDER($name) ->
+        [male] ударил
+        [female] ударила
+        [epicene] ударили
+       *[neuter] ударило
+    } тебя { $move }.
 
 martial-arts-fail-prone = Вы не можете использовать этот приём лёжа!
 martial-arts-fail-target-down = Вы не можете использовать этот приём против сбитых целей!
 martial-arts-fail-target-standing = Вы не можете использовать этот приём против стоящих целей!
 capoeira-fail-low-velocity = Вы слишком медлительны, чтобы выполнить этот приём!
 ninjutsu-fail-loss-of-surprise = Ваши намерения известны! Не удаётся выполнить это движение!
+
+# Capoeira
+martial-arts-combo-PushKick = толчковым ударом ногой
+martial-arts-combo-CircleKick = круговым ударом ногой
+martial-arts-combo-SweepKick = ударом-сметанием
+martial-arts-combo-SpinKick = ударом с разворота
+martial-arts-combo-KickUp = ударом с подъёма
+# SleepingCarp
+martial-arts-combo-SleepingCarpGnashingTeeth = скрежетом зубов
+martial-arts-combo-SleepingCarpKneeHaul = киль-холом
+martial-arts-combo-SleepingCarpCrashingWaves = ударом разбивающих волн
+# CQC
+martial-arts-combo-CQCSlam = ударом о землю
+martial-arts-combo-CQCKick = пинком
+martial-arts-combo-CQCRestrain = удержанием
+martial-arts-combo-CQCPressure = давлением
+martial-arts-combo-CQCConsecutive = серией ударов
+martial-arts-combo-NeckSnap = переломом шеи
+martial-arts-combo-LegSweep = подсечкой
+# KungFuDragon
+martial-arts-combo-DragonClaw = когтем дракона
+martial-arts-combo-DragonTail = хвостом дракона
+martial-arts-combo-DragonStrike = ударом дракона
+# HellRip
+martial-arts-combo-DropKick = ударом с разворота
+martial-arts-combo-HeadRip = отвалом бошки
+martial-arts-combo-TearDown = срывом
+martial-arts-combo-Slam = адским ударом
+# CorporateJudo
+martial-arts-combo-JudoDiscombobulate = оглушением
+martial-arts-combo-JudoEyePoke = ударом пальцами в глаза
+martial-arts-combo-JudoThrow = броском дзюдо
+martial-arts-combo-JudoArmbar = захватом руки рычагом
+martial-arts-combo-JudoWheelThrow = колесом
+# Ninjutsu
+martial-arts-combo-BiteTheDust = канув в пыли
+martial-arts-combo-DirtyKill = грязным убийством
+martial-arts-combo-Assassinate = умерщвлением
+martial-arts-combo-Ninjutsu-Takedown = захватом ниндзюцу
 
 alerts-dragon-power-name = Сила дракона
 alerts-dragon-power-desc = Уделите минутку размышлениям о прошлых и грядущих битвах. Это понимание защитит вас от вреда в будущем.

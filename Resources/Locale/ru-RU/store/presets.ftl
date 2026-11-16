@@ -1,4 +1,4 @@
-ent-StorePresetUplink = { "" }
-    .desc = { "" }
-ent-StorePresetSpellbook = { "" }
-    .desc = { "" }
+ent-StorePresetUplink = аплинк
+    .desc = Это не к добру...
+ent-StorePresetSpellbook = книга заклинаний
+    .desc = АЛАКАЗАМ!

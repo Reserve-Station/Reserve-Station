@@ -1,4 +1,4 @@
 ent-SlaughterDemonJauntEffect = прыжок демона резни
-    .desc = { "" }
+    .desc = { ent-EffectBase.desc }
 ent-SlaughterDemonJauntUpEffect = прыжок демона резни вверх
-    .desc = { "" }
+    .desc = { ent-EffectBase.desc }

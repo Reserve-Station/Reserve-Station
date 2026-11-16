@@ -72,7 +72,8 @@ public sealed class DevourSystem : EntitySystem
         {
             switch (targetState.CurrentState)
             {
-                case MobState.Critical:
+                case MobState.SoftCritical: // Reserve edit: Soft Crit port
+                case MobState.HardCritical: // Reserve edit: Soft Crit port
                 case MobState.Dead:
 
                     _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, ent.Owner, ent.Comp.DevourTime, new DevourDoAfterEvent(), ent.Owner, target: target, used: ent.Owner)

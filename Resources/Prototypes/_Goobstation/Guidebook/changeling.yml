@@ -4,6 +4,8 @@
   id: Changelings
   name: guide-entry-changelings # Reserve
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/Changelings.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/Changelings.xml"
   children:
   - ChangelingsAbilities
 
@@ -11,3 +13,5 @@
   id: ChangelingsAbilities
   name: guide-entry-changelings-abilities # Reserve
   text: "/ServerInfo/_Goobstation/Guidebook/Antagonist/ChangelingsAbilities.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Antagonist/ChangelingsAbilities.xml"

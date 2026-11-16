@@ -23,6 +23,11 @@
   - type: StatusEffects
     allowed:
     - Corporeal
+    # Reserve edit - EssenceRegen, Hands, escape hatches, Haunt and the buffs below were restored after the upstream merge
+    - EssenceRegen # Imp
+  - type: Hands # Imp
+    showInHands: false
+    disableExplosionRecursion: true
   - type: Damageable
     damageContainer: ManifestedSpirit
     damageModifierSet: ManifestedSpirit
@@ -47,6 +52,8 @@
       settings: default
   - type: GhostTakeoverAvailable
   - type: Revenant
+    exorcismRequiresBibleUser: true # Imp - Escape hatch, change to false if revenant becomes too OP
+    grindingRequiresSalt: false # Imp - Escape hatch, change to false if revenant becomes too OP
     malfunctionWhitelist:
       components:
       # emag lockers open
@@ -71,6 +78,7 @@
   - type: ActionGrant
     actions:
     - ActionRevenantShop
+    - ActionRevenantHaunt # Imp
   - type: Store
     categories:
     - RevenantAbilities
@@ -93,6 +101,23 @@
   - type: Reactive
     groups:
       Acidic: [Touch]
+  #reserve revenant buff start
+  - type: DamageOnAttacked
+    damage:
+      types:
+        Cold: 10
+    ignoreResistances: true
+  - type: DamageContacts
+    damage:
+      types:
+        Cold: 1.5 #may be painful if spammed, but doesnt ignores protection.
+  - type: Electrified #idk this seems lame but it works fine
+    shockTime: 4 #2 seconds of stun
+    shockDamage: 1
+    requirePower: false
+    ignoreInsulation: true
+    electrocutionChance: 0.25
+    #reserve revenant buff end
   - type: Tag
     tags:
     - SlowImmune

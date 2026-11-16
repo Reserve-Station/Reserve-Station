@@ -178,7 +178,8 @@ public sealed partial class PainSystem : EntitySystem
     {
         switch (args.NewMobState)
         {
-            case MobState.Critical:
+            case MobState.SoftCritical: // Reserve edit: Soft Crit port
+            case MobState.HardCritical: // Reserve edit: Soft Crit port
                 var sex = Sex.Unsexed;
                 if (TryComp<HumanoidAppearanceComponent>(args.Target, out var humanoid))
                     sex = humanoid.Sex;

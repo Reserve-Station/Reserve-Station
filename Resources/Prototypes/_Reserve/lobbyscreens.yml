@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: lobbyBackground
+  id: OrchidEnteringReserve
+  background: /Textures/_Reserve/LobbyScreens/OrchidEnteringReserve.webp
+  name: Заход на Резерв
+  artist: Ceterai
+
+- type: lobbyBackground
+  id: GloryToReserve
+  background: /Textures/_Reserve/LobbyScreens/GloryToReserve.webp
+  name: Слава Резерву!
+  artist: omitronlarexxx
+
+- type: lobbyBackground
+  id: ReserveLogo
+  background: /Textures/_Reserve/LobbyScreens/ReserveLogo.webp
+  name: Логотип Резерва
+  artist: nodjak
+
+- type: lobbyBackground
+  id: ReserveBlood
+  background: /Textures/_Reserve/LobbyScreens/ReserveBlood.webp
+  name: Станция "Резерв"
+  artist: Ceterai

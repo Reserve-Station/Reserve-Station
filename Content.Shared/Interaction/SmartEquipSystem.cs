@@ -157,7 +157,7 @@ public sealed class SmartEquipSystem : EntitySystem
                 case null:
                     var removing = storage.Container.ContainedEntities[^1];
                     _container.RemoveEntity(slotItem, removing);
-                    _hands.TryPickup(uid, removing, handsComp: hands);
+                    _hands.TryPickup(uid, removing, handsComp: hands, fromInventory: true); // Reserve edit
                     return;
             }
 
@@ -239,6 +239,6 @@ public sealed class SmartEquipSystem : EntitySystem
         }
 
         _inventory.TryUnequip(uid, equipmentSlot, inventory: inventory, predicted: true, checkDoafter: true);
-        _hands.TryPickup(uid, slotItem, handsComp: hands);
+        _hands.TryPickup(uid, slotItem, handsComp: hands, fromInventory: true); // Reserve edit
     }
 }

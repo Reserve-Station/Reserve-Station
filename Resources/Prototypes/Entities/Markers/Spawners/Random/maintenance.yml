@@ -95,6 +95,17 @@
       - id: ClothingUniformJumpsuitLoungewear
       - id: ClothingHeadHatCowboyRed
       - id: ClothingShoesSkates #GoobStation
+      # Reserve edit start: Random maints
+      - !type:GroupSelector
+        children:
+        - id: ClothingOuterCoatLabPink
+        - id: ClothingUniformJumpsuitPsychologistPink
+      - !type:GroupSelector
+        children:
+        - id: ClothingOuterCoatLabBlack
+        - id: ClothingUniformJumpsuitPsychologistBlack
+      - id: ClothingUniformJumpskirtDressOpenShoulderBlack
+      # Reserve edit end: Random maints
     # Uncommon Group
     - !type:GroupSelector
       weight: 23
@@ -299,6 +310,71 @@
         children:
         - id: DrinkSpaceGlue
         - id: DrinkSpaceLube
+      # Reserve edit start: Random maints
+      # Plates Group
+      - id: FoodPlateLarge
+        weight: 0.25
+      - id: FoodPlateTiny
+        amount: 4
+        weight: 0.25
+      - id: BoxPlate
+      - id: FoodPlateLargeSturdy
+        weight: 0.25
+      - id: FoodPlateSturdy
+        amount: 2
+        weight: 0.25
+      - id: FoodPlateSmallSturdy
+        amount: 3
+        weight: 0.25
+      - id: FoodPlateTinySturdy
+        amount: 4
+        weight: 0.25
+      - id: BoxPlateSturdy
+      # Glassware Group
+      - id: BoxCupGlass
+      - id: DrinkTeacupEmptySturdy
+        amount: 2
+        weight: 0.25
+      - id: DrinkShotGlassSturdy
+        amount: 2
+        weight: 0.25
+      - id: DrinkGlassCoupeShapedSturdy
+        amount: 2
+        weight: 0.25
+      - id: DrinkGlassSturdy
+        amount: 2
+        weight: 0.25
+      - id: BoxCupGlassSturdy
+      # Beakers & Buckets Group
+      - id: HugeBeaker
+      - id: SmallBeakerMeasuringCup
+        amount: 2
+      - id: LargeBucket
+      - id: SmallBucketToy
+        amount: 2
+      # Food Group
+      - id: FoodBungoPitLarge
+      - id: BoxDrinkCan
+      # Orchi Dea Group
+      - id: BoxDrinkOrchitoCan
+      - id: BoxSurvivalSlotsOrchiDea
+      # Shakers Group
+      - id: DrinkFitnessShakerGold
+        weight: 0.25
+      - id: DrinkFitnessShakerSyndicate
+        weight: 0.25
+      - id: DrinkFitnessShakerPink
+        weight: 0.25
+      - id: DrinkFitnessShakerNT
+        weight: 0.25
+      - id: DrinkFitnessShakerLarge
+        weight: 0.5
+      - id: BoxDrinkFitnessShaker
+      # Toolbox Group
+      - id: ToolboxCake
+        weight: 0.05
+      - id: ToolboxCakeFilled
+      # Reserve edit end: Random maints
       # Rare Group
     - !type:GroupSelector
       weight: 2

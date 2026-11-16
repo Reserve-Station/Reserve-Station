@@ -291,6 +291,14 @@ internal sealed class AdminNameOverlay : Overlay
             args.ScreenHandle.DrawString(_fontBold, screenCoordinates + currentOffset, label, uiScale, color);
             currentOffset += lineoffset;
 
+            // Reserve edit start: extra antag info, e.g. whose thrall this is
+            if (!string.IsNullOrEmpty(playerInfo.AntagNote))
+            {
+                args.ScreenHandle.DrawString(_font, screenCoordinates + currentOffset, playerInfo.AntagNote, uiScale, color);
+                currentOffset += lineoffset;
+            }
+            // Reserve edit end
+
             //Save the coordinates and size of the text block, for stack merge check
             drawnOverlays.Add((screenCoordinatesCenter, currentOffset));
         }

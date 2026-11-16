@@ -90,8 +90,9 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             return;
 
         // Corvax-Next-AiRemoteControl-Start
+        var stationAiTag = "StationAi";  // Reserve edit: Fix warnings
         if (HasComp<AiRemoteControllerComponent>(uid)
-            || _tagSystem.HasTag(uid, "StationAi")) // skip a law's notification for remotable and AI
+            || _tagSystem.HasTag(uid, stationAiTag)) // skip a law's notification for remotable and AI  // Reserve edit: Fix warnings
             return;
         // Corvax-Next-AiRemoteControl-End
 
@@ -181,7 +182,7 @@ public sealed class SiliconLawSystem : SharedSiliconLawSystem
             component.Subverted = true;
 
             // new laws may allow antagonist behaviour so make it clear for admins
-            if(_mind.TryGetMind(uid, out var mindId, out _))
+            if (_mind.TryGetMind(uid, out var mindId, out _))
                 EnsureSubvertedSiliconRole(mindId);
 
         }

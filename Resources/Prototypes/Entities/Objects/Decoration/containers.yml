@@ -19,7 +19,7 @@
       fix1: #Reserve fix
         shape:
           !type:PhysShapeAabb
-          bounds: "-1.5,0,1.5,-1"
+          bounds: "-1.5,-1,1.5,0"
         density: 1000
         layer:
         - WallLayer

@@ -1,0 +1,13 @@
+discord-profile-title = Profile: { $player } ({ $ckey }){ $badges }
+discord-profile-title-not-connected = Profile: { $player } (not connected)
+discord-profile-characters = Characters
+discord-profile-character = - **{ $name }** ({ $gender }, { $species } { $job }, { $age } y.o.)
+discord-profile-no-characters = No characters found.
+discord-profile-no-job = Crew
+discord-profile-balance = Balance
+discord-profile-inventory = Bought tokens
+discord-profile-token = { $token } x{ $count }
+discord-profile-no-tokens = No tokens found.
+discord-profile-no-data = No profile data is available.
+discord-profile-player-not-found = No player found for `{ $player }`.
+discord-profile-player-required = First, link your account with /link.

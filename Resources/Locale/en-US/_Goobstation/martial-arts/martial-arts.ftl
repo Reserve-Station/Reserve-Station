@@ -48,6 +48,45 @@ martial-arts-fail-target-standing = You can't use this combo on standing targets
 capoeira-fail-low-velocity = You are too slow to perform this combo!
 ninjutsu-fail-loss-of-surprise = Your intentions are known! Cannot perform this move!
 
+# Capoeira
+martial-arts-combo-PushKick = Push Kick
+martial-arts-combo-CircleKick = Circle Kick
+martial-arts-combo-SweepKick = Sweep Kick
+martial-arts-combo-SpinKick = Spin Kick
+martial-arts-combo-KickUp = Kick Up
+# SleepingCarp
+martial-arts-combo-SleepingCarpGnashingTeeth = Gnashing Teeth
+martial-arts-combo-SleepingCarpKneeHaul = Knee Haul
+martial-arts-combo-SleepingCarpCrashingWaves = Crashing Waves
+# CQC
+martial-arts-combo-CQCSlam = Slam
+martial-arts-combo-CQCKick = Kick
+martial-arts-combo-CQCRestrain = Restrain
+martial-arts-combo-CQCPressure = Pressure
+martial-arts-combo-CQCConsecutive = Consecutive
+martial-arts-combo-NeckSnap = Neck Snap
+martial-arts-combo-LegSweep = Leg Sweep
+# KungFuDragon
+martial-arts-combo-DragonClaw = Dragon Claw
+martial-arts-combo-DragonTail = Dragon Tail
+martial-arts-combo-DragonStrike = Dragon Strike
+# HellRip
+martial-arts-combo-DropKick = Flying DropKick
+martial-arts-combo-HeadRip = Head Rip
+martial-arts-combo-TearDown = Tear Down
+martial-arts-combo-Slam = Hellish Slam
+# CorporateJudo
+martial-arts-combo-JudoDiscombobulate = Discombobulate
+martial-arts-combo-JudoEyePoke = Eye Poke
+martial-arts-combo-JudoThrow = Judo Throw
+martial-arts-combo-JudoArmbar = Armbar
+martial-arts-combo-JudoWheelThrow = Wheel Throw
+# Ninjutsu
+martial-arts-combo-BiteTheDust = Bite The Dust
+martial-arts-combo-DirtyKill = Dirty Kill
+martial-arts-combo-Assassinate = Assassinate
+martial-arts-combo-Ninjutsu-Takedown = Ninjutsu Takedown
+
 alerts-dragon-power-name = Dragon Power
 alerts-dragon-power-desc = You take a moment to reflect on battles past and to come. This insight will protect you from future harm.
 

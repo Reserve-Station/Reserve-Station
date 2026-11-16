@@ -1,5 +1,6 @@
-ent-SeedBase = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-SeedBase = пакет семян
+    .desc = Набор семян для выращивания растений.
+
 ent-WheatSeeds = пакет семян (пшеница)
     .desc = { ent-SeedBase.desc }
 ent-MeatwheatSeeds = пакет семян (мясница)

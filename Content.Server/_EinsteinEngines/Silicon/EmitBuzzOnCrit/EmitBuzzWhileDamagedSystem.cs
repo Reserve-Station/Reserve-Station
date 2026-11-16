@@ -10,6 +10,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Damage.Components;
 
 namespace Content.Server._EinsteinEngines.Silicon.EmitBuzzOnCrit;
 
@@ -35,7 +36,7 @@ public sealed class EmitBuzzWhileDamagedSystem : EntitySystem
         {
 
             if (_mobState.IsDead(uid, mobStateComponent)
-                || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var threshold, thresholdsComponent)
+                || !_mobThreshold.TryGetThresholdForState(uid, MobState.SoftCritical, out var threshold, thresholdsComponent) // Reserve edit: Soft Crit port
                 || damageableComponent.TotalDamage < threshold / 2)
                 continue;
 

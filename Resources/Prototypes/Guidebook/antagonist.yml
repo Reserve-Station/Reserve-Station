@@ -11,6 +11,7 @@
   - CorporateAgents # Goobstation - Corporate Agents
   - Changelings # Goobstation - changelings
   - Heretics # Goobstation - heretics
+  - Vampire # Reserve edit: Vampires
   - Blob # Goobstation - Blob
   - Wizard # Goobstation - Wizard
   - CosmicCult # DeltaV - Cosmic Cult
@@ -22,6 +23,7 @@
   - BloodBrothers # Harmony
   - Xenoborgs
   - MinorAntagonists
+  - Revenant # Reserve edit: Revenant
   - SpaceNinja
   - Thieves
   - Abductors # Shitmed - Abductors
@@ -32,6 +34,8 @@
   - Xenomorphs # WD - Xenomorphs
   - Wraith
   - Slasher # Goob content
+  - GangWars # Goob content
+  - Pirates  # Reserve edit: Pirates Enhanced
 
 - type: guideEntry
   id: Traitors

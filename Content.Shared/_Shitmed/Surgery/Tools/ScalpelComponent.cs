@@ -7,7 +7,7 @@ namespace Content.Shared._Shitmed.Medical.Surgery.Tools;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class ScalpelComponent : Component, ISurgeryToolComponent
 {
-    public string ToolName => "a scalpel";
+    public string ToolName => "surgery-tool-name-scalpel"; // Reserve edit
     [DataField]
     public bool? Used { get; set; } = null;
     [DataField, AutoNetworkedField]

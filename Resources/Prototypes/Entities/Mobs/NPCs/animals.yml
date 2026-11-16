@@ -93,6 +93,8 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
+  - type: Body  # Reserve edit: Proper small animal organs
+    prototype: Critter
 
 - type: entity
   name: bee
@@ -179,6 +181,8 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: Body  # Reserve edit: Proper small animal organs
+    prototype: Insect
 
 - type: entity
   name: bee
@@ -300,6 +304,8 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: Body  # Reserve edit: Proper small animal organs
+    prototype: Critter
 
 - type: entity
   parent: MobChicken
@@ -356,7 +362,6 @@
   parent: FoodEgg
   suffix: Fertilized, Chicken
   components:
-  - type: Timer
   - type: TimedSpawner
     prototypes:
     - MobChicken
@@ -479,6 +484,8 @@
     damage:
       types:
         Piercing: 0
+  - type: Body  # Reserve edit: Proper small animal organs
+    prototype: Insect
 
 - type: entity
   name: glockroach
@@ -776,6 +783,8 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: Body  # Reserve edit: Proper small animal organs
+    prototype: Critter
 
 - type: entity
   name: white duck #Quack
@@ -820,7 +829,6 @@
   parent: FoodEgg
   suffix: Fertilized, Duck
   components:
-    - type: Timer
     - type: TimedSpawner
       prototypes:
       - MobDuckMallard
@@ -908,6 +916,8 @@
       - !type:GibBehavior
         recursive: false
   - type: ZombieImmune
+  - type: Body  # Reserve edit: Proper small animal organs
+    prototype: Insect
 
 - type: entity
   name: cow
@@ -1558,6 +1568,7 @@
     - VimPilot
     - DoorBumpOpener
     - AnomalyHost
+    - XenobioSlimeFavoriteFood # Goobstation
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -1580,6 +1591,7 @@
   - type: Crawler
   - type: StatusIcon
   - type: DiseaseCarrier # Goobstation
+  - type: XenovacTarget # Goobstation - Xenobio
 
 - type: entity
   name: monkey
@@ -1590,7 +1602,7 @@
   - type: NameIdentifier
     group: Monkey
   - type: Speech
-    speechSounds: Monkey
+    speechSounds: GoobMonkey # GoobStation
     speechVerb: Monkey
   - type: LanguageKnowledge # Einstein Engines - Language
     speaks:
@@ -2111,6 +2123,9 @@
   - type: ActionGrant
     actions:
     - ActionMouseCall
+    - ActionMouseSwarm
+  - type: MouseSwarm
+  - type: LimbGnawer
   - type: MobCallSource
     whitelist:
       tags:
@@ -2132,6 +2147,9 @@
             sprite: _Goobstation/Mobs/Animals/mouse/displacement.rsi
             state: head
   # </Goobstation>
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.025
+    maxGrowth: 1.25
 
 - type: entity
   parent: MobMouse
@@ -2193,6 +2211,8 @@
   - type: Item
     size: Tiny
     heldPrefix: 1
+  - type: MouseSwarm # Goobstation
+    state: mouse-1
 
 - type: entity
   parent: MobMouse
@@ -2222,6 +2242,8 @@
   - type: Item
     size: Tiny
     heldPrefix: 2
+  - type: MouseSwarm # Goobstation
+    state: mouse-2
 
 - type: entity
   name: cancer mouse
@@ -2449,6 +2471,9 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.25
 
 # Would be cool to have some functionality for the parrot to be able to sit on stuff
 - type: entity
@@ -2745,6 +2770,9 @@
     understands:
     - Hissing
     - TauCetiBasic
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.25
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2911,6 +2939,8 @@
     damage:
       types:
         Piercing: 6
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    maxGrowth: 2
 
 - type: entity
   parent:
@@ -2934,6 +2964,14 @@
       spawned:
         - id: MaterialBananium1
           amount: 1
+    # Reserve edit start
+    # - type: SolutionRegeneration
+    #   solution: melee
+    #   generated:
+    #     reagents:
+    #     - ReagentId: CrapoToxin
+    #       Quantity: 1
+    # Reserve edit end
     - type: DamageStateVisuals
       states:
         Alive:
@@ -2979,6 +3017,8 @@
     - Universal # Should allow them to understand everything and speak it too. Might need to change this.
     understands:
     - Universal
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    maxGrowth: 2
 
 - type: entity
   name: possum
@@ -3037,6 +3077,9 @@
     understands:
     - Hissing
     - TauCetiBasic
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.25
 
 - type: entity
   name: possum
@@ -3117,6 +3160,9 @@
     understands:
     - Hissing
     - TauCetiBasic
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.25
 
 - type: entity
   name: fox
@@ -3381,6 +3427,9 @@
   - type: Grammar
     attributes:
       gender: epicene
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.25
 
 - type: entity
   name: cat
@@ -3628,6 +3677,9 @@
     thresholds:
       0: Alive
       25: Dead
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.25
 
 - type: entity
   name: sloth
@@ -3691,6 +3743,9 @@
     understands:
     - Hissing
     - TauCetiBasic
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.25
 
 - type: entity
   name: ferret
@@ -3751,6 +3806,9 @@
     understands:
     - Hissing
     - TauCetiBasic
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.25
 
 - type: entity
   name: hamster
@@ -3914,6 +3972,9 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 1.25
 
 - type: entity
   name: pig
@@ -3989,6 +4050,9 @@
   - type: HTN
     rootTask:
       task: RuminantCompound
+  - type: EatToGrow  # Reserve edit: Chonkers! - Goobstation Eat To Grow System
+    growth: 0.05
+    maxGrowth: 2
 
 - type: entity
   name: diona nymph

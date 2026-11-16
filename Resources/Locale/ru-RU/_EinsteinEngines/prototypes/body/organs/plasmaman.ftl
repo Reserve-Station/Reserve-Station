@@ -1,5 +1,5 @@
-ent-BasePlasmamanOrgan = { "" }
-    .desc = { "" }
+ent-BasePlasmamanOrgan = орган
+    .desc = Орган плазмалюда.
     .suffix = Плазмалюд
 ent-OrganPlasmamanLungs = лёгкие
     .desc = Легкие жаждут плазмы. Только плазменный газ может насытить легкие, а кислород смертельно токсичен.

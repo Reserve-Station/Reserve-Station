@@ -1,5 +1,5 @@
-ent-EffectRCDBase = { "" }
-    .desc = { "" }
+ent-EffectRCDBase = { ent-EffectBase }
+    .desc = { ent-EffectBase.desc }
 ent-EffectRCDDeconstructPreview = { ent-EffectRCDBase }
     .desc = { ent-EffectRCDBase.desc }
 ent-EffectRCDConstruct0 = { ent-EffectRCDBase }

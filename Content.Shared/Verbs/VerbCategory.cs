@@ -49,6 +49,9 @@ namespace Content.Shared.Verbs
         public static readonly VerbCategory Debug =
             new("verb-categories-debug", "/Textures/Interface/VerbIcons/debug.svg.192dpi.png");
 
+        public static readonly VerbCategory PatronActions =  // Reserve edit: Maecenas System
+            new("verb-categories-patron-actions", null);
+
         public static readonly VerbCategory Eject =
             new("verb-categories-eject", "/Textures/Interface/VerbIcons/eject.svg.192dpi.png");
 
@@ -90,14 +93,14 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory Adjust =
             new("verb-categories-adjust", "/Textures/Interface/VerbIcons/screwdriver.png");
-        
+
         // Shitmed - Starlight Abductors
         public static readonly VerbCategory Switch = new("verb-categories-switch", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
 
         public static readonly VerbCategory TurretControlMode = new("verb-categories-turret-control-mode", null); // Corvax-Next-TurretControl
 
         public static readonly VerbCategory PinpointerTarget = new("verb-categories-pinpointer-target", null); // Corvax-Next-VoxRaiders
-        
+
         // Einstein Engines - Interaction Verbs
         public static readonly VerbCategory Interaction = new("verb-categories-interaction", null);
     }

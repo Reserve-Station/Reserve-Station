@@ -3,6 +3,7 @@ spell-fail-not-dead = Цель должна быть мертва.
 spell-fail-target-borg = Невозможно произнести заклинание на боргах.
 spell-fail-target-silicon = Невозможно нанести заклинание на боргов.
 spell-fail-no-held-entity = Любой предмет должен быть у вас в руках, чтобы произнести это заклинание
+spell-fail-no-grid = Это заклинание требует иметь стойкую поверхность под собой.
 spell-fail-no-soul = У вас нет души!
 spell-fail-unremoveable = { CAPITALIZE($item) } прилипает к вашей руке - было бы неразумно вкладывать в него свою душу.
 spell-fail-soul-item-not-suitable = { CAPITALIZE($item) } не подходит для размещения вашей хрупкой души.

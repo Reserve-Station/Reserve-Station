@@ -1,5 +1,5 @@
-ent-CollideFloorTrap = { "" }
-    .desc = { "" }
+ent-CollideFloorTrap = напольная ловушка
+    .desc = Ловушка, расположенная на полу.
 ent-CollideFloorTrapSpawn = спавнер напольная ловушка
     .desc = { ent-CollideFloorTrap.desc }
 ent-FloorTrapExplosion = напольная ловушка взрывная

@@ -1,14 +1,14 @@
-guide-entry-rules-r-reserveemark = Дополнения к правилам
+guide-entry-rules-r-reserve-remark = Дополнения к правилам
 guide-entry-rules-r-reserve1 = 1. Фамильяры должны подчиняться своему хозяину
 guide-entry-rules-r-reserve2 = 2. Отыгрывайте нормальную персону
 guide-entry-rules-r-reserve3 = 3. Не мешайте прибывающим
 guide-entry-rules-r-reserve4 = 4. Не затягивайте раунд
 guide-entry-rules-r-reserve5 = 5. Соблюдайте разумную эскалацию
-guide-entry-rules-r-reserve51 = 5.1 Уровни эскалации
+guide-entry-rules-r-reserve5-1 = 5.1 Уровни эскалации
 guide-entry-rules-r-reserve6 = 6. Командование и Служба Безопасности должны следовать Космическому Закону.
 guide-entry-rules-r-reserve7 = 7. Амнезия после смерти: вы не знаете, кто вас убил.
-guide-entry-rules-s-reserveilicon = Правила Синтетов
-guide-entry-rules-s-reserve1 = 1. Ваши кремниевые законы - это правила игры
+guide-entry-rules-silicon-reserve = Правила Синтетов
+guide-entry-rules-s-reserve1 = 1. Ваши законы - это правила игры
 guide-entry-rules-s-reserve2 = 2. Законы должны быть приоритезированы в порядке очередности
 guide-entry-rules-s-reserve3 = 3. Законы могут переопределять термины, используемые в других законах
 guide-entry-rules-s-reserve4 = 4. Вы не можете требовать или разрешать изменение закона
@@ -22,7 +22,8 @@ guide-entry-rules-space-law-reserve = Космический Закон
 guide-entry-rules-slcrime-list-reserve = Список нарушений
 guide-entry-rules-ban-types-reserve = Типы банов
 guide-entry-rules-ban-durations-reserve = Длительность банов
-guide-entry-grammar = Guide to Grammar
+guide-entry-grammar = Грамматика
+guide-entry-gang-wars = Войны банд
 
 guide-entry-rules-reserve0 = Не будь мудаком!
 guide-entry-rules-reserve1 = Гриф
@@ -53,3 +54,5 @@ guide-entry-centralcommand = ЦентКом
 guide-entry-blueshield = Синий Щит
 guide-entry-syndicate = Синдикат
 guide-entry-tauceti = Тау Кита
+
+guide-entry-reverse-engineering = Обратная инженерия

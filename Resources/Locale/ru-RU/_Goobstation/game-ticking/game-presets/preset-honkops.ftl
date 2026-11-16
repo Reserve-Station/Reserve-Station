@@ -23,8 +23,8 @@ honkops-cond-allnukiesalive = Ни один из хонк-оперативник
 honkops-list-start = Хонк-оперативниками были:
 honkops-list-name = - [color=White]{ $name }[/color]
 honkops-list-name-user = - [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])
-honkops-not-enough-ready-players = Недостаточно игроков готово к игре! Было подготовлено { $readyPlayersCount } игроков из { $minimumPlayers } необходимых. Невозможно начать Honkops.
-honkops-no-one-ready = Нет игроков, готовых к игре! Невозможно начать Хонкопс.
+honkops-not-enough-ready-players = Недостаточно игроков готово к игре! Было подготовлено { $readyPlayersCount } игроков из { $minimumPlayers } необходимых. Невозможно использовать хонк-оперативников.
+honkops-no-one-ready = Нет игроков, готовых к игре! Невозможно использовать хонк-оперативников.
 honkops-role-commander = Командир хонк-оперативников
 honkops-role-agent = Агент хонк-оперативников
 honkops-role-operator = Хонк-оперативник

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.Slippery;
 using Content.Shared.Standing;
@@ -11,10 +11,10 @@ namespace Content.Goobstation.Shared.Slippery;
 /// Slippery and StepTrigger when they're laying down.
 /// </summary>
 
-public sealed class SlipperyOnLayingDownSystem : EntitySystem
+public sealed partial class SlipperyOnLayingDownSystem : EntitySystem
 {
 
-    [Dependency] private readonly StandingStateSystem _standing = default!;
+    // [Dependency] private StandingStateSystem _standing = default!; // Reserve edit: Fix warnings
     public override void Initialize()
     {
         base.Initialize();

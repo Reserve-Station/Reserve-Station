@@ -434,8 +434,10 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
                 var standingEntities = new HashSet<EntityUid>();
                 _lookup.GetLocalEntitiesIntersecting(gridUid.Value, tilePos, standingEntities, 0f);
 
-                var structuralProto = _prototypeManager.Index<DamageTypePrototype>("Structural");
-                var heatProto = _prototypeManager.Index<DamageTypePrototype>("Heat");
+                var protoIdStructural = "Structural";  // Reserve edit: Fix warnings
+                var structuralProto = _prototypeManager.Index<DamageTypePrototype>(protoIdStructural);  // Reserve edit: Fix warnings
+                var protoIdHeat = "Heat";  // Reserve edit: Fix warnings
+                var heatProto = _prototypeManager.Index<DamageTypePrototype>(protoIdHeat);  // Reserve edit: Fix warnings
 
                 var structuralDamage = new DamageSpecifier(structuralProto, 2f * flammability);
                 var heatDamage = new DamageSpecifier(heatProto, 2f * flammability);

@@ -15,6 +15,7 @@ public sealed partial class TriggerSystem
         SubscribeLocalEvent<TriggerOnExaminedComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<TriggerOnActivateComponent, ActivateInWorldEvent>(OnActivate);
         SubscribeLocalEvent<TriggerOnUseComponent, UseInHandEvent>(OnUse);
+        SubscribeLocalEvent<TriggerOnUseComponent, UserActivateInWorldEvent>(OnUseSelf); // Reserve edit
         SubscribeLocalEvent<TriggerOnInteractHandComponent, InteractHandEvent>(OnInteractHand);
         SubscribeLocalEvent<TriggerOnUserInteractHandComponent, UserInteractHandEvent>(OnUserInteractHand);
         SubscribeLocalEvent<TriggerOnInteractUsingComponent, InteractUsingEvent>(OnInteractUsing);
@@ -56,6 +57,20 @@ public sealed partial class TriggerSystem
         Trigger(ent.Owner, args.User, ent.Comp.KeyOut);
         args.Handled = true;
     }
+
+    // Reserve edit start - restored after upstream merge
+    /// <summary>
+    /// Lets grenades arm themselves when they activate themselves (animated by a revenant or controlled by a ghost role).
+    /// </summary>
+    private void OnUseSelf(Entity<TriggerOnUseComponent> ent, ref UserActivateInWorldEvent args)
+    {
+        if (args.Handled || args.Target != ent.Owner)
+            return;
+
+        Trigger(ent.Owner, ent.Owner, ent.Comp.KeyOut);
+        args.Handled = true;
+    }
+    // Reserve edit end
 
     private void OnInteractHand(Entity<TriggerOnInteractHandComponent> ent, ref InteractHandEvent args)
     {

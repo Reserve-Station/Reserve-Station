@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Body.Systems;
 using Content.Shared.Body.Organ;
@@ -13,7 +13,7 @@ namespace Content.Server._Shitmed.Body.Systems
 {
     public sealed class EyesSystem : EntitySystem
     {
-        [Dependency] private readonly IEntityManager _entityManager = default!;
+        // [Dependency] private readonly IEntityManager _entityManager = default!; // Reserve edit: Fix warnings
         [Dependency] private readonly BlindableSystem _blindableSystem = default!;
         [Dependency] private readonly BodySystem _bodySystem = default!;
 
@@ -56,8 +56,12 @@ namespace Content.Server._Shitmed.Body.Systems
                 || organ.IntegrityCap <= 0)
                 return;
 
-            var lost = 1f - (float) (organ.OrganIntegrity / organ.IntegrityCap);
-            _blindableSystem.SetEyeDamage((organ.Body.Value, blindable), (int) (blindable.MaxDamage * lost));
+            
+            // Omu: The expected input is scaled as a number between 12 and 3,
+            // such that "blindness" occurs at 25% eye integrity.
+            
+            var blindnessSeverity = (int) ((organ.IntegrityCap - organ.OrganIntegrity) / (organ.IntegrityCap / 12)); // Omu
+            _blindableSystem.SetEyeDamage((organ.Body.Value, blindable), blindnessSeverity); // Omu
         }
 
         private void OnOrganEnabled(EntityUid uid, EyesComponent component, OrganEnabledEvent args)

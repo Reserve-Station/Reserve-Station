@@ -29,14 +29,20 @@ ent-ChairPilotSeat = кресло пилота
     .desc = Кресло пилота престижного корабля.
 ent-ChairWood = деревянный стул
     .desc = { ent-UnanchoredChairBase.desc }
+
 ent-ChairRitual = ритуальный стул
     .desc = Выглядит неудобно.
+    .suffix = Хэллоуин
 ent-ChairMeat = мясной стул
     .desc = Неприятно потный.
+    .suffix = Хэллоуин
 ent-ChairCursed = проклятый стул
     .desc = Он смотрит в ответ.
+    .suffix = Хэллоуин
 ent-ChairWeb = паутинный стул
     .desc = Для настоящих web-разработчиков.
+    .suffix = Хэллоуин
+
 ent-ChairFolding = раскладной стул
     .desc = Если вы унесёте шесть за раз - вы станете самым крутым парнем в актовом зале.
 ent-ChairFoldingSpawnFolded = { ent-ChairFolding }

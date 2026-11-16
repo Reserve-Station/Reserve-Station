@@ -27,11 +27,15 @@
     maxItemSize: Small
     grid:
     - 0,0,3,2
+    quickInsert: true  # Reserve edit: Halloween on Reserve
+    areaInsert: true  # Reserve edit: Halloween on Reserve
     whitelist:
       components:
         - Pill
       tags:
         - FoodSnack
+        - Crayon  # Reserve edit: Halloween on Reserve
+  - type: Dumpable  # Reserve edit: Halloween on Reserve
   - type: ContainerContainer
     containers:
       storagebase: !type:Container

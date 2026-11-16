@@ -1,27 +1,28 @@
-using System;
 using System.Text.RegularExpressions;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.StationReport;
-using Robust.Shared.GameObjects;
 using Robust.Shared.Configuration;
-using Robust.Shared.IoC;
 
 namespace Content.Goobstation.Server.StationReportDiscordIntergrationSystem;
 
-public sealed class StationReportDiscordIntergrationSystem : EntitySystem
+public sealed partial class StationReportDiscordIntergrationSystem : EntitySystem
 {
     //thank you Timfa for writing this code
-    private static readonly HttpClient client = new();
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    private static readonly HttpClient Client = new();  // Reserve edit: Fix Station Report Discord integration
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private ILogManager _logManager = default!;  // Reserve edit: Fix Station Report Discord integration
+    private ISawmill _sawmill = default!;  // Reserve edit: Fix Station Report Discord integration
 
     private string? _webhookUrl;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        _sawmill = _logManager.GetSawmill("StationReportDiscordIntergrationSystem");  // Reserve edit: Fix Station Report Discord integration
 
         //subscribes to the endroundevent and Stationreportevent
         SubscribeLocalEvent<StationReportEvent>(OnStationReportReceived);
@@ -30,13 +31,13 @@ public sealed class StationReportDiscordIntergrationSystem : EntitySystem
         _cfg.OnValueChanged(GoobCVars.StationReportDiscordWebHook, url => _webhookUrl = url, true);
     }
 
-    public static string? report;
+    private static string? _report;  // Reserve edit: Fix Station Report Discord integration
 
-    private static readonly TagReplacement[] _replacements =
+    private static readonly TagReplacement[] Replacements =  // Reserve edit: Fix Station Report Discord integration
     {
         new(@"\[/?bold\]", @"**"),
         new(@"\[/?italic\]", @"_"),
-        new(@"\[/?mono\]", @"__"),
+        new(@"\[/?mono\]", @"`"),
         new(@">", @""),
         new(@"\[h1\]", @"# "),
         new(@"\[h2\]", @"## "),
@@ -53,16 +54,19 @@ public sealed class StationReportDiscordIntergrationSystem : EntitySystem
 
     private void OnStationReportReceived(StationReportEvent ev)
     {
-        report = ev.StationReportText;
+        _report = ev.StationReportText;  // Reserve edit: Fix Station Report Discord integration
 
-        if (string.IsNullOrWhiteSpace(report))
+        if (string.IsNullOrWhiteSpace(_report))  // Reserve edit: Fix Station Report Discord integration
             return;
 
-        foreach (var replacement in _replacements)
-            report = Regex.Replace(report, replacement.Tag, replacement.Replacement);
+        foreach (var replacement in Replacements)  // Reserve edit: Fix Station Report Discord integration
+        {
+            var regex = new Regex(replacement.Tag);  // Reserve edit: Fix Station Report Discord integration
+            _report = regex.Replace(_report, replacement.Replacement);  // Reserve edit: Fix Station Report Discord integration
+        }
 
         // Run async without blocking
-        _ = SendMessageAsync(report);
+        _ = SendMessageAsync(_report);  // Reserve edit: Fix Station Report Discord integration
     }
 
     private async Task SendMessageAsync(string message)
@@ -76,12 +80,12 @@ public sealed class StationReportDiscordIntergrationSystem : EntitySystem
 
         try
         {
-            var response = await client.PostAsync(_webhookUrl, content);
+            var response = await Client.PostAsync(_webhookUrl, content);  // Reserve edit: Fix Station Report Discord integration
             response.EnsureSuccessStatusCode();
         }
-        catch (Exception)
+        catch (Exception ex)  // Reserve edit: Fix Station Report Discord integration
         {
-
+            _sawmill.Error($"Error sending station report to discord: {ex}");  // Reserve edit: Fix Station Report Discord integration
         }
     }
 

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.GameStates;
 
@@ -27,8 +27,9 @@ namespace Content.Shared.Mobs.Components
         public HashSet<MobState> AllowedStates = new()
             {
                 MobState.Alive,
-                MobState.Critical,
-                MobState.Dead
+                MobState.SoftCritical, // Reserve edit: Soft Crit port
+                MobState.HardCritical, // Reserve edit: Soft Crit port
+                MobState.Dead,
             };
     }
 }

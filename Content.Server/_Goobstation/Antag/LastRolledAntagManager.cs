@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.Database;
 using Robust.Server.Player;
@@ -14,7 +14,7 @@ namespace Content.Server._Goobstation.Antag
     {
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly ITaskManager _task = default!;
-        [Dependency] private readonly IPlayerManager _player = default!;
+        // [Dependency] private readonly IPlayerManager _player = default!; // Reserve edit: Fix warnings
         private readonly List<Task> _pendingSaveTasks = new();
         private ISawmill _sawmill = default!;
 

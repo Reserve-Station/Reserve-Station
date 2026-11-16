@@ -1,10 +1,11 @@
-ent-ShowHealthRelatedIcons = { "" }
-    .desc = { "" }
-ent-ClothingEyesHudChrono = футуристический визор
+ent-ShowHealthRelatedIcons = Показывать индикаторы здоровья
+    .desc = Показывать индикаторы здоровья на визоре.
+ent-ClothingEyesHudChrono = футуристичный визор
     .desc = Визор из будущего, способный отображать практически всё.
+    .suffix = Хронолегионер
 ent-ClothingEyesHudChronoUnremoveable = { ent-ClothingEyesHudChrono }
     .desc = { ent-ClothingEyesHudChrono.desc }
-    .suffix = Неснимаемый
+    .suffix = { ent-ClothingEyesHudChrono.suffix }, Неснимаемый
 ent-ClothingEyesHudDiagnosticMedical = меддиагностический визор
     .desc = Визор, содержащий как медицинскую, так и диагностическую информацию.
 ent-ClothingEyesHudViro = вирусологический визор

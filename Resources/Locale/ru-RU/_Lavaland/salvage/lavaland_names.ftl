@@ -15,7 +15,7 @@ lavaland-ruin-laboratory = Разрушенная лаборатория
 lavaland-ruin-station = Разрушенная исследовательская станция
 lavaland-ruin-big-shuttle = Огромный разрушенный шаттл
 lavaland-ruin-biodome = Биодом
-lavaland-ruin-syndicate = База синдиката
+lavaland-ruin-syndicate = База Синдиката
 lavaland-ruin-hierophant = Межпространственный сигнал
 
 lavaland-ruin-abductor = Инопланетный сигнал

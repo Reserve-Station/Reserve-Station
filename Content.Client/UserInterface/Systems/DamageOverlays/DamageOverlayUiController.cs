@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Damage;
 using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.Damage.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -76,6 +76,7 @@ public sealed class DamageOverlayUiController : UIController
 
     private void ClearOverlay()
     {
+        _overlay.State = MobState.Alive; // Goob - stale crit state darkened the next body
         _overlay.DeadLevel = 0f;
         _overlay.CritLevel = 0f;
         _overlay.PainLevel = 0f;
@@ -135,24 +136,25 @@ public sealed class DamageOverlayUiController : UIController
                         _overlay.CritLevel = 0;
                         _overlay.DeadLevel = 0;
                         break;
-                        }
-                        case MobState.Critical:
-                        {
-                            if (!_mobThresholdSystem.TryGetDeadPercentage(entity,
-                                    FixedPoint2.Max(0.0, _mobThresholdSystem.CheckVitalDamage(entity, damageable)), out var critLevel)) // GoobStation
-                                return;
-                            _overlay.CritLevel = critLevel.Value.Float();
+                    }
+                case MobState.SoftCritical: // Reserve edit: Soft Crit port
+                case MobState.HardCritical: // Reserve edit: Soft Crit port
+                    {
+                        if (!_mobThresholdSystem.TryGetDeadPercentage(entity,
+                                FixedPoint2.Max(0.0, _mobThresholdSystem.CheckVitalDamage(entity, damageable)), out var critLevel)) // GoobStation
+                            return;
+                        _overlay.CritLevel = critLevel.Value.Float();
 
-                            _overlay.PainLevel = 0;
-                            _overlay.DeadLevel = 0;
-                            break;
-                        }
-                        case MobState.Dead:
-                        {
-                            _overlay.PainLevel = 0;
-                            _overlay.CritLevel = 0;
-                            break;
-                        }
+                        _overlay.PainLevel = 0;
+                        _overlay.DeadLevel = 0;
+                        break;
+                    }
+                case MobState.Dead:
+                    {
+                        _overlay.PainLevel = 0;
+                        _overlay.CritLevel = 0;
+                        break;
+                    }
             }
         }
         else if (body != null)
@@ -191,7 +193,8 @@ public sealed class DamageOverlayUiController : UIController
 
                         break;
                     }
-                case MobState.Critical:
+                case MobState.SoftCritical: // Reserve edit: Soft Crit port
+                case MobState.HardCritical: // Reserve edit: Soft Crit port
                     {
                         _overlay.CritLevel = FixedPoint2.Min(1f,
                             (consciousness.Threshold - consciousness.Consciousness) / consciousness.Threshold)

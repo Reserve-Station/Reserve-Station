@@ -1,6 +1,6 @@
-ent-Dynamic = { ent-BaseGameRule }
+ent-Dynamic = Динамика
     .desc = { ent-BaseGameRule.desc }
-ent-DynamicUnforgiving = { ent-Dynamic }
+ent-DynamicUnforgiving = { ent-Dynamic } без пощады
     .desc = { ent-Dynamic.desc }
-ent-DynamicStationEventScheduler = { ent-BaseGameRule }
+ent-DynamicStationEventScheduler = Динамический планировщик событий
     .desc = { ent-BaseGameRule.desc }

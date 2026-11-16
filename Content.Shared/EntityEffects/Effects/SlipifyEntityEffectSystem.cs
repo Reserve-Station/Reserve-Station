@@ -32,7 +32,8 @@ public sealed partial class SlipifyEntityEffectSystem : EntityEffectSystem<Fixtu
 
         // Need to disable collision wake so that mobs can collide with and slip on it
         EnsureComp<CollisionWakeComponent>(entity, out var collisionWake);
-        _collisionWake.SetEnabled(entity, false, collisionWake);
+        if (collisionWake.Enabled)  // Reserve edit: Revenant fix
+            _collisionWake.SetEnabled(entity, false, collisionWake);
     }
 }
 

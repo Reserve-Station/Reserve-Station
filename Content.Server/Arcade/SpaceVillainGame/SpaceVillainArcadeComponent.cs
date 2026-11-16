@@ -3,6 +3,7 @@
 using Content.Shared.Arcade;
 using Content.Shared.Dataset;
 using Robust.Shared.Audio;
+using Robust.Shared.Localization; // Reserve edit: space-vilian-fix
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.Arcade.SpaceVillain;
@@ -62,20 +63,67 @@ public sealed partial class SpaceVillainArcadeComponent : SharedSpaceVillainArca
     /// <summary>
     /// The prefixes that can be used to create the game name.
     /// </summary>
-    [DataField]
-    public ProtoId<LocalizedDatasetPrototype> PossibleFightVerbs = "SpaceVillainVerbsFight";
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("possibleFightVerbs")]
+    // Reserve edit start: space-vilian-fix
+    public List<LocId> PossibleFightVerbs = new()
+    {
+        "space-villain-game-fight-verb-defeat",
+        "space-villain-game-fight-verb-annihilate",
+        "space-villain-game-fight-verb-save",
+        "space-villain-game-fight-verb-strike",
+        "space-villain-game-fight-verb-stop",
+        "space-villain-game-fight-verb-destroy",
+        "space-villain-game-fight-verb-robust",
+        "space-villain-game-fight-verb-romance",
+        "space-villain-game-fight-verb-pwn",
+        "space-villain-game-fight-verb-own",
+    };
 
     /// <summary>
     /// The first names/titles that can be used to construct the name of the villain.
     /// </summary>
-    [DataField]
-    public ProtoId<LocalizedDatasetPrototype> PossibleFirstEnemyNames = "SpaceVillainNamesEnemyFirst";
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("possibleFirstEnemyNames")]
+    public List<LocId> PossibleFirstEnemyNames = new()
+    {
+        "space-villain-game-enemy-first-the-automatic",
+        "space-villain-game-enemy-first-farmer",
+        "space-villain-game-enemy-first-lord",
+        "space-villain-game-enemy-first-professor",
+        "space-villain-game-enemy-first-the-cuban",
+        "space-villain-game-enemy-first-the-evil",
+        "space-villain-game-enemy-first-the-dread-king",
+        "space-villain-game-enemy-first-the-space",
+        "space-villain-game-enemy-first-the-great",
+        "space-villain-game-enemy-first-duke",
+        "space-villain-game-enemy-first-general",
+    };
 
     /// <summary>
     /// The last names that can be used to construct the name of the villain.
     /// </summary>
-    [DataField]
-    public ProtoId<LocalizedDatasetPrototype> PossibleLastEnemyNames = "SpaceVillainNamesEnemyLast";
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("possibleLastEnemyNames")]
+    public List<LocId> PossibleLastEnemyNames = new()
+    {
+        "space-villain-game-enemy-last-melonoid",
+        "space-villain-game-enemy-last-murdertron",
+        "space-villain-game-enemy-last-sorcerer",
+        "space-villain-game-enemy-last-ruin",
+        "space-villain-game-enemy-last-jeff",
+        "space-villain-game-enemy-last-ectoplasm",
+        "space-villain-game-enemy-last-crushulon",
+        "space-villain-game-enemy-last-uhangoid",
+        "space-villain-game-enemy-last-vhakoid",
+        "space-villain-game-enemy-last-peteoid",
+        "space-villain-game-enemy-last-slime",
+        "space-villain-game-enemy-last-griefer",
+        "space-villain-game-enemy-last-erper",
+        "space-villain-game-enemy-last-lizard-man",
+        "space-villain-game-enemy-last-unicorn",
+    };
+    // Reserve edit end: space-vilian-fix
 
     /// <summary>
     /// The prototypes that can be dispensed as a reward for winning the game.

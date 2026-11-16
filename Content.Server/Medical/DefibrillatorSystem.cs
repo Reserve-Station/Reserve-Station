@@ -10,7 +10,8 @@ using Content.Server.Popups;
 using Content.Shared.PowerCell;
 using Content.Shared.Traits.Assorted;
 using Content.Shared.Chat;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Item.ItemToggle;
@@ -242,7 +243,7 @@ public sealed class DefibrillatorSystem : EntitySystem
                 TryComp<DamageableComponent>(target, out var damageableComponent) &&
                 _mobThreshold.CheckVitalDamage(target, damageableComponent) < threshold) // GoobStation
             {
-                _mobState.ChangeMobState(target, MobState.Critical, mob, uid);
+                _mobState.ChangeMobState(target, MobState.SoftCritical, mob, uid); // Reserve edit: Soft Crit port
                 dead = false;
             }
 

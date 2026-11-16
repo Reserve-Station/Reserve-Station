@@ -172,7 +172,11 @@ public sealed class DamageOverlay : Overlay
             _oldPainLevel = PainLevel;
         }
 
-        level = State != MobState.Critical ? _oldOxygenLevel : 1f;
+        // Reserve edit start: Soft Crit port
+        level = State is MobState.SoftCritical or MobState.HardCritical
+            ? 1f
+            : _oldOxygenLevel;
+        // Reserve edit end: Soft Crit port
 
         if (level > 0f)
         {

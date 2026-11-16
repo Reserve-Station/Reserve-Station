@@ -48,23 +48,23 @@ using Vector2 = System.Numerics.Vector2;
 
 namespace Content.Client.Mapping;
 
-public sealed class MappingState : GameplayStateBase
+public sealed partial class MappingState : GameplayStateBase
 {
-    [Dependency] private readonly IClientAdminManager _admin = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
-    [Dependency] private readonly IEntityNetworkManager _entityNetwork = default!;
-    [Dependency] private readonly IInputManager _input = default!;
-    [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
-    [Dependency] private readonly MappingManager _mapping = default!;
-    [Dependency] private readonly IOverlayManager _overlays = default!;
-    [Dependency] private readonly IPlacementManager _placement = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IResourceCache _resources = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
-    [Dependency] private readonly ILocalizationManager _localization = default!;
+    [Dependency] private IClientAdminManager _admin = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IEntitySystemManager _entitySystemManager = default!;
+    [Dependency] private IEntityNetworkManager _entityNetwork = default!;
+    [Dependency] private IInputManager _input = default!;
+    [Dependency] private ILogManager _log = default!;
+    private SharedMapSystem _mapSystem => _entityManager.System<SharedMapSystem>();
+    [Dependency] private MappingManager _mapping = default!;
+    [Dependency] private IOverlayManager _overlays = default!;
+    [Dependency] private IPlacementManager _placement = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IResourceCache _resources = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IClientConsoleHost _consoleHost = default!;
+    [Dependency] private ILocalizationManager _localization = default!;
 
     private EntityMenuUIController _entityMenuController = default!;
 
@@ -1138,26 +1138,23 @@ public sealed class MappingState : GameplayStateBase
 
         if (Screen.Pick.Pressed)
         {
-            if (!uid.IsValid())
+            var mapPos = _transform.ToMapCoordinates(coords);
+
+            if (_mapSystem.TryFindGridAt(mapPos, out var gridUid, out var grid) &&
+                _entityManager.System<SharedMapSystem>().TryGetTileRef(gridUid, grid, coords, out var tileRef) &&
+                _allPrototypesDict.TryGetValue(_entityManager.System<TurfSystem>().GetContentTileDefinition(tileRef), out button))
             {
-                var mapPos = _transform.ToMapCoordinates(coords);
-
-                if (_mapMan.TryFindGridAt(mapPos, out var gridUid, out var grid) &&
-                    _entityManager.System<SharedMapSystem>().TryGetTileRef(gridUid, grid, coords, out var tileRef) &&
-                    _allPrototypesDict.TryGetValue(_entityManager.System<TurfSystem>().GetContentTileDefinition(tileRef), out button))
+                switch (button.Prototype)
                 {
-                    switch (button.Prototype)
-                    {
-                        case EntityPrototype:
-                            OnSelected(Screen.Entities, button);
-                            break;
-                        case ContentTileDefinition:
-                            OnSelected(Screen.Tiles, button);
-                            break;
-                    }
-
-                    return true;
+                    case EntityPrototype:
+                        OnSelected(Screen.Entities, button);
+                        break;
+                    case ContentTileDefinition:
+                        OnSelected(Screen.Tiles, button);
+                        break;
                 }
+
+                return true;
             }
         }
         else if (Screen.PickDecal.Pressed)
@@ -1306,7 +1303,7 @@ public sealed class MappingState : GameplayStateBase
         }
 
         var mapPos = viewport.PixelToMap(position.Position);
-        if (_mapMan.TryFindGridAt(mapPos, out var gridUid, out var grid))
+        if (_mapSystem.TryFindGridAt(mapPos, out var gridUid, out var grid))
         {
             return new Entity<MapGridComponent>(gridUid, grid);
         }

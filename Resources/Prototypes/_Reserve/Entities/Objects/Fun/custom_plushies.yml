@@ -1,0 +1,431 @@
+# SPDX-FileCopyrightText: Made by Ceterai on GitHub.
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Title: Reserve Plushies
+
+# This file contains the definitions for custom crew/player plushies for Reserve Station.
+
+
+
+
+
+# region PROTOTYPES
+
+
+
+
+
+# region Artizzi
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieArtizziKasya
+  components:
+  - type: Sprite
+    sprite: &PlushieArtizziSprite _Reserve/Objects/Fun/Plushies/kasya.rsi
+    state: icon
+  - type: Item
+    sprite: *PlushieArtizziSprite
+  - type: Clothing
+    sprite: *PlushieArtizziSprite
+    slots:
+    - HEAD
+    quickEquip: false
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.04"
+  - type: EmitSoundOnUse
+    sound: &PlushieArtizziSound
+      path: /Audio/_Reserve/Items/Toys/bwaaa.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieArtizziSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieArtizziSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieArtizziSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieArtizziSound
+  - type: Edible
+    useSound: *PlushieArtizziSound
+  - type: MeleeWeapon
+    soundHit: *PlushieArtizziSound
+
+- type: entity
+  parent: PlushieArtizziKasya
+  id: PlushieArtizziKasyaLarge
+  components:
+  - type: Sprite
+    scale: 1.5, 1.5
+  - type: Item
+    size: Normal
+  - type: MultiHandedItem
+
+# endregion Artizzi
+
+# region AwareFoxy
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieAwareFoxy
+  components:
+  - type: Sprite
+    sprite: &PlushieAwareFoxySprite _Reserve/Objects/Fun/Plushies/awarefoxy.rsi
+    state: icon
+  - type: Item
+    sprite: *PlushieAwareFoxySprite
+  - type: Clothing
+    sprite: *PlushieAwareFoxySprite
+    slots:
+    - HEAD
+    quickEquip: false
+  - type: EmitSoundOnUse
+    sound: &PlushieAwareFoxySound
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieAwareFoxySound
+  - type: EmitSoundOnActivate
+    sound: *PlushieAwareFoxySound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieAwareFoxySound
+  - type: EmitSoundOnCollide
+    sound: *PlushieAwareFoxySound
+  - type: Edible
+    useSound: *PlushieAwareFoxySound
+  - type: MeleeWeapon
+    soundHit: *PlushieAwareFoxySound
+
+- type: entity
+  parent: PlushieAwareFoxy
+  id: PlushieAwareFoxyLarge
+  components:
+  - type: Sprite
+    scale: 1.5, 1.5
+  - type: Item
+    size: Normal
+  - type: MultiHandedItem
+
+# endregion AwareFoxy
+
+# region Ceterai
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieCeteraiOrchiDea
+  components:
+  - type: Sprite
+    sprite: &PlushieOrchiDeaSprite _Reserve/Objects/Fun/Plushies/orchi.rsi
+    state: icon
+  - type: Item
+    sprite: *PlushieOrchiDeaSprite
+  - type: Clothing
+    sprite: *PlushieOrchiDeaSprite
+    slots:
+    - HEAD
+    quickEquip: false
+  - type: EmitSoundOnUse
+    sound: &PlushieOrchiDeaSound
+      path: /Audio/_Reserve/Items/Toys/ara.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieOrchiDeaSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieOrchiDeaSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieOrchiDeaSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieOrchiDeaSound
+  - type: Edible
+    useSound: *PlushieOrchiDeaSound
+  - type: MeleeWeapon
+    soundHit: *PlushieOrchiDeaSound
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: Orchito
+          Quantity: 20
+
+- type: entity
+  parent: PlushieCeteraiOrchiDea
+  id: PlushieCeteraiOrchiDeaMime
+  components:
+  - type: Sprite
+    sprite: &PlushieOrchiDeaMimeSprite _Reserve/Objects/Fun/Plushies/orchi_mime.rsi
+  - type: Item
+    sprite: *PlushieOrchiDeaMimeSprite
+  - type: Clothing
+    sprite: *PlushieOrchiDeaMimeSprite
+
+# endregion Ceterai
+
+# region Dotusaru
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieDotusaruTaipan
+  components:
+  - type: Sprite
+    sprite: &PlushieTaipanSprite _Reserve/Objects/Fun/Plushies/taipan.rsi
+    state: icon
+  - type: Item
+    sprite: *PlushieTaipanSprite
+  - type: Clothing
+    sprite: *PlushieTaipanSprite
+    slots:
+    - HEAD
+    quickEquip: false
+  - type: EmitSoundOnUse
+    sound: &PlushieTaipanSound
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieTaipanSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieTaipanSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieTaipanSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieTaipanSound
+  - type: Edible
+    useSound: *PlushieTaipanSound
+  - type: MeleeWeapon
+    soundHit: *PlushieTaipanSound
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+        - ReagentId: ChangelingSting
+          Quantity: 3
+
+- type: entity
+  parent: PlushieDotusaruTaipan
+  id: PlushieDotusaruTaipanRainbow
+  components:
+  - type: PointLight
+    radius: 1.5
+    energy: 2
+  - type: RgbLightController
+    layers: [ 0 ]
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: unshaded
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 100
+      Plasma: 100
+  - type: StaticPrice
+    price: 50
+
+- type: entity
+  parent: PlushieDotusaruTaipan
+  id: PlushieDotusaruTaipanSyndicate
+  components:
+  - type: Sprite
+    color: "#810e0e"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#810e0e"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#810e0e"
+      right:
+      - state: inhand-right
+        color: "#810e0e"
+
+- type: entity
+  parent: PlushieDotusaruTaipan
+  id: PlushieDotusaruTaipanLarge
+  components:
+  - type: Sprite
+    scale: 1.5, 1.5
+  - type: Item
+    size: Normal
+  - type: MultiHandedItem
+
+# endregion Dotusaru
+
+# region Floppa
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieFloppaGeoffroyKrisp
+  components:
+  - type: Sprite
+    sprite: &PlushieGeoffroySprite _Reserve/Objects/Fun/Plushies/geoffroy.rsi
+    state: icon
+  - type: Item
+    sprite: *PlushieGeoffroySprite
+  - type: Clothing
+    sprite: *PlushieGeoffroySprite
+    slots:
+    - HEAD
+    quickEquip: false
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        offset: "0, 0.04"
+  - type: EmitSoundOnUse
+    sound: &PlushieGeoffroySound
+      path: /Audio/_Reserve/Items/Toys/yamol.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieGeoffroySound
+  - type: EmitSoundOnActivate
+    sound: *PlushieGeoffroySound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieGeoffroySound
+  - type: EmitSoundOnCollide
+    sound: *PlushieGeoffroySound
+  - type: Edible
+    useSound: *PlushieGeoffroySound
+  - type: MeleeWeapon
+    soundHit: *PlushieGeoffroySound
+
+# endregion Floppa
+
+# region MrSamuel
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMrSamuelGoose
+  components:
+  - type: Sprite
+    sprite: &PlushieMrSamuelSprite _Reserve/Objects/Fun/Plushies/mr_samuel.rsi
+    state: icon
+  - type: Item
+    sprite: *PlushieMrSamuelSprite
+    size: Normal
+  - type: MultiHandedItem
+  - type: Clothing
+    sprite: *PlushieMrSamuelSprite
+    slots:
+    - Back
+    quickEquip: false
+    clothingVisuals:
+      back:
+      - state: equipped-BACK
+  - type: EmitSoundOnUse
+    sound: &PlushieMrSamuelSound
+      path: /Audio/_Reserve/Items/Toys/honk.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieMrSamuelSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieMrSamuelSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieMrSamuelSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieMrSamuelSound
+  - type: Edible
+    useSound: *PlushieMrSamuelSound
+  - type: MeleeWeapon
+    soundHit: *PlushieMrSamuelSound
+
+# endregion MrSamuel
+
+# region NazrinNya
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieNazrinNya
+  components:
+  - type: Sprite
+    sprite: &PlushieNazrinNyaSprite _Reserve/Objects/Fun/Plushies/nazrinnya.rsi
+    state: icon
+  - type: Item
+    sprite: *PlushieNazrinNyaSprite
+  - type: Clothing
+    sprite: *PlushieNazrinNyaSprite
+    slots:
+    - HEAD
+    quickEquip: false
+  - type: EmitSoundOnUse
+    sound: &PlushieNazrinNyaSound
+      path: /Audio/Items/Toys/rattle.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieNazrinNyaSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieNazrinNyaSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieNazrinNyaSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieNazrinNyaSound
+  - type: Edible
+    useSound: *PlushieNazrinNyaSound
+  - type: MeleeWeapon
+    soundHit: *PlushieNazrinNyaSound
+
+- type: entity
+  parent: PlushieNazrinNya
+  id: PlushieNazrinNyaCap
+  components:
+  - type: Sprite
+    sprite: &PlushieNazrinNyaCapSprite _Reserve/Objects/Fun/Plushies/nazrinnya_cap.rsi
+  - type: Item
+    sprite: *PlushieNazrinNyaCapSprite
+  - type: Clothing
+    sprite: *PlushieNazrinNyaCapSprite
+
+# endregion NazrinNya
+
+# region Svarshik
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieSvarshikEva
+  components:
+  - type: Sprite
+    sprite: &PlushieSvarshikSprite _Reserve/Objects/Fun/Plushies/eva_lindemann.rsi
+    state: icon
+  - type: Item
+    sprite: *PlushieSvarshikSprite
+  - type: Clothing
+    sprite: *PlushieSvarshikSprite
+    slots:
+    - HEAD
+    quickEquip: false
+  - type: EmitSoundOnUse
+    sound: &PlushieSvarshikSound
+      path: /Audio/Items/Toys/arf.ogg
+  - type: EmitSoundOnLand
+    sound: *PlushieSvarshikSound
+  - type: EmitSoundOnActivate
+    sound: *PlushieSvarshikSound
+  - type: EmitSoundOnTrigger
+    sound: *PlushieSvarshikSound
+  - type: EmitSoundOnCollide
+    sound: *PlushieSvarshikSound
+  - type: Edible
+    useSound: *PlushieSvarshikSound
+  - type: MeleeWeapon
+    soundHit: *PlushieSvarshikSound
+
+- type: entity
+  parent: PlushieSvarshikEva
+  id: PlushieSvarshikEvaLarge
+  components:
+  - type: Sprite
+    scale: 1.5, 1.5
+  - type: Item
+    size: Normal
+  - type: MultiHandedItem
+
+# endregion Svarshik

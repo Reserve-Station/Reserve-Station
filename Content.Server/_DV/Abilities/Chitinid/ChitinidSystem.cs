@@ -1,7 +1,9 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared._DV.Abilities;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -11,7 +13,7 @@ namespace Content.Server._DV.Abilities.Chitinid;
 public sealed partial class ChitinidSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    // [Dependency] private readonly IPrototypeManager _proto = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly ItemCougherSystem _cougher = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
@@ -37,8 +39,8 @@ public sealed partial class ChitinidSystem : EntitySystem
                 || _mobState.IsDead(uid))
                 continue;
 
-            if (_damageable.TryChangeDamage(uid, comp.Healing, damageable: damageable) is not {} delta)
-                continue;
+            // goob i changed this a bit but who cares its not like we upstream chitinid
+            var delta = _damageable.ChangeDamage((uid, damageable), comp.Healing);
 
             // damage healed is subtracted, so the delta is negative.
             comp.AmountAbsorbed -= delta.GetTotal();

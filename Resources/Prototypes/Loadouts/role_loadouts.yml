@@ -177,6 +177,7 @@
 
 - type: roleLoadout
   id: JobChaplain
+  canCustomizeName: true
   groups:
   - GroupTankHarness
   - ChaplainHead
@@ -185,7 +186,7 @@
   - ChaplainJumpsuit
   - CommonBackpack
   - ChaplainOuterClothing
-  - ChaplainBible
+  # - ChaplainBible ## Goobstation chaplain gets a bible through ChaplainUndeterminedBible
   - Glasses
   - Survival
   - Trinkets
@@ -442,6 +443,7 @@
   - AtmosphericTechnicianJumpsuit
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianOuterClothing
+  - AtmosphericTechnicianBelt # Goobstation
   - AtmosphericTechnicianShoes
   - SurvivalExtended
   - Trinkets
@@ -529,6 +531,7 @@
   - HeadofSecurityJumpsuit
   - SecurityBackpack
   - SecurityMelee # Goobstation
+  - TrinketsSecurity # Omu Edit
   - SecurityBelt
   - HeadofSecurityOuterClothing
   - HeadofSecurityShoes # Goobstation edit
@@ -552,6 +555,7 @@
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityMelee # Goobstation
+  - TrinketsSecurity # Omu Edit
   - SecurityNeck
   - SecurityBelt
   - WardenOuterClothing
@@ -575,6 +579,7 @@
   - SecurityJumpsuit
   - SecurityBackpack
   - SecurityMelee # Goobstation
+  - TrinketsSecurity # Omu Edit
   - SecurityOuterClothing
   - SecurityShoes
   - SecurityGloves #goob

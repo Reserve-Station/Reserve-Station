@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Administration;
 using Content.Shared.Players.PlayTimeTracking;
@@ -97,6 +99,7 @@ public sealed class PlayTimeAddOverallCommand : IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     public string Command => "playtime_addoverall";
     public string Description => Loc.GetString("cmd-playtime_addoverall-desc");
@@ -119,6 +122,7 @@ public sealed class PlayTimeAddOverallCommand : IConsoleCommand
         }
 
         _playTimeTracking.AddTimeToOverallPlaytime(player, TimeSpan.FromMinutes(minutes));
+        _adminGuard.PlaytimeChanged(player.UserId, [(PlayTimeTrackingShared.TrackerOverall, TimeSpan.FromMinutes(minutes))], false, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
         var overall = _playTimeTracking.GetOverallPlaytime(player);
 
         shell.WriteLine(Loc.GetString(
@@ -145,6 +149,7 @@ public sealed class PlayTimeAddRoleCommand : IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
+    [Dependency] private IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
     public string Command => "playtime_addrole";
     public string Description => Loc.GetString("cmd-playtime_addrole-desc");
@@ -170,6 +175,7 @@ public sealed class PlayTimeAddRoleCommand : IConsoleCommand
         var m = PlayTimeCommandUtilities.CountMinutes(args[2]);
 
         _playTimeTracking.AddTimeToTracker(player, role, TimeSpan.FromMinutes(m));
+        _adminGuard.PlaytimeChanged(player.UserId, [(role, TimeSpan.FromMinutes(m))], false, DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
         var time = _playTimeTracking.GetPlayTimeForTracker(player, role);
         shell.WriteLine(Loc.GetString("cmd-playtime_addrole-succeed",
             ("username", userName),

@@ -1,0 +1,12 @@
+﻿vending-machine-keypad-sold-out = ПРОДАНО
+vending-machine-keypad-clear = X
+vending-machine-keypad-enter = ENT
+vending-machine-keypad-dispense = ВЫДАТЬ
+vending-machine-keypad-target = ВЫБОР
+vending-machine-keypad-row = РЯД
+vending-machine-keypad-col = СТОЛБЕЦ
+vending-machine-keypad-empty = [ ОТКАЗ ]
+vending-machine-keypad-success1 = [ УСПЕХ ]
+vending-machine-keypad-success2 = [ ГОТОВО ]
+vending-machine-keypad-success3 = [ СПАСИБО! ]
+vending-machine-keypad-success4 = [ ВЫДАНО ]

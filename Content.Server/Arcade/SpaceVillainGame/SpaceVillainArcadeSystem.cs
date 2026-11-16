@@ -57,7 +57,7 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
     /// <returns>A fight-verb.</returns>
     public string GenerateFightVerb(SpaceVillainArcadeComponent arcade)
     {
-        return _random.Pick(_prototypeManager.Index(arcade.PossibleFightVerbs));
+        return Loc.GetString(_random.Pick(arcade.PossibleFightVerbs)); // Reserve edit: space-vilian-fix
     }
 
     /// <summary>
@@ -66,10 +66,7 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
     /// <returns>An enemy-name.</returns>
     public string GenerateEnemyName(SpaceVillainArcadeComponent arcade)
     {
-        var possibleFirstEnemyNames = _prototypeManager.Index(arcade.PossibleFirstEnemyNames);
-        var possibleLastEnemyNames = _prototypeManager.Index(arcade.PossibleLastEnemyNames);
-
-        return $"{_random.Pick(possibleFirstEnemyNames)} {_random.Pick(possibleLastEnemyNames)}";
+        return $"{Loc.GetString(_random.Pick(arcade.PossibleFirstEnemyNames))} {Loc.GetString(_random.Pick(arcade.PossibleLastEnemyNames))}"; // Reserve edit: space-vilian-fix
     }
 
     private void OnComponentInit(EntityUid uid, SpaceVillainArcadeComponent component, ComponentInit args)
@@ -109,7 +106,8 @@ public sealed partial class SpaceVillainArcadeSystem : EntitySystem
 
     private void OnAfterUIOpenSV(EntityUid uid, SpaceVillainArcadeComponent component, AfterActivatableUIOpenEvent args)
     {
-        component.Game ??= new(uid, component, this);
+        component.Game ??= new SpaceVillainGame(uid, component, this);
+        _uiSystem.ServerSendUiMessage(uid, SharedSpaceVillainArcadeComponent.SpaceVillainArcadeUiKey.Key, component.Game.GenerateMetaDataMessage()); // Reserve edit: space-vilian-fix
     }
 
     private void OnSVillainPower(EntityUid uid, SpaceVillainArcadeComponent component, ref PowerChangedEvent args)

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server.GameTicking.Rules;
 using Content.Server._Goobstation.Objectives.Components;
@@ -20,9 +20,9 @@ public sealed class KillPersonConditionSystem : EntitySystem
     [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
-    [Dependency] private readonly SharedJobSystem _job = default!;
+    // [Dependency] private readonly SharedJobSystem _job = default!; // Reserve edit: Fix warnings
     [Dependency] private readonly TargetObjectiveSystem _target = default!;
-    [Dependency] private readonly TraitorRuleSystem _traitor = default!;
+    // [Dependency] private readonly TraitorRuleSystem _traitor = default!; // Reserve edit: Fix warnings
 
     public override void Initialize()
     {

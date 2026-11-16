@@ -1,5 +1,5 @@
-ent-WallSpawnAsteroid = { "" }
-    .desc = { "" }
+ent-WallSpawnAsteroid = спавнер астероидной стены
+    .desc = Создаёт каменную стену.
 ent-WallSpawnAsteroidUraniumCrab = { ent-WallSpawnAsteroid }
     .desc = { ent-WallSpawnAsteroid.desc }
 ent-WallSpawnAsteroidUranium = { ent-WallSpawnAsteroid }

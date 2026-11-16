@@ -1,6 +1,7 @@
 ent-BenchBaseMiddle = скамейка
     .desc = Множество посадочных мест, охватывающих один объект. Поистине чудо науки.
     .suffix = Средний
+
 ent-BenchParkMiddle = парковая скамейка
     .desc = { ent-BenchBaseMiddle.desc }
 ent-BenchParkLeft = { ent-BenchParkMiddle }
@@ -9,6 +10,7 @@ ent-BenchParkLeft = { ent-BenchParkMiddle }
 ent-BenchParkRight = { ent-BenchParkMiddle }
     .suffix = Справо
     .desc = { ent-BenchParkMiddle.desc }
+
 ent-BenchParkBambooMiddle = парковая скамейка
     .desc = { ent-BenchBaseMiddle.desc }
 ent-BenchParkBambooLeft = { ent-BenchParkBambooMiddle }
@@ -17,6 +19,7 @@ ent-BenchParkBambooLeft = { ent-BenchParkBambooMiddle }
 ent-BenchParkBambooRight = { ent-BenchParkBambooMiddle }
     .suffix = Справо
     .desc = { ent-BenchParkBambooMiddle.desc }
+
 ent-BenchPewMiddle = скамья
     .desc = { ent-BenchBaseMiddle.desc }
 ent-BenchPewLeft = { ent-BenchPewMiddle }
@@ -25,6 +28,7 @@ ent-BenchPewLeft = { ent-BenchPewMiddle }
 ent-BenchPewRight = { ent-BenchPewMiddle }
     .suffix = Справо
     .desc = { ent-BenchPewMiddle.desc }
+
 ent-BenchSteelMiddle = стальная скамья
     .desc = { ent-BenchBaseMiddle.desc }
 ent-BenchSteelLeft = { ent-BenchSteelMiddle }
@@ -33,6 +37,7 @@ ent-BenchSteelLeft = { ent-BenchSteelMiddle }
 ent-BenchSteelRight = { ent-BenchSteelMiddle }
     .suffix = Справо
     .desc = { ent-BenchSteelMiddle.desc }
+
 ent-BenchSteelWhiteMiddle = скамья из белой стали
     .desc = { ent-BenchBaseMiddle.desc }
 ent-BenchSteelWhiteLeft = { ent-BenchSteelWhiteMiddle }
@@ -41,6 +46,7 @@ ent-BenchSteelWhiteLeft = { ent-BenchSteelWhiteMiddle }
 ent-BenchSteelWhiteRight = { ent-BenchSteelWhiteMiddle }
     .suffix = Справо
     .desc = { ent-BenchSteelWhiteMiddle.desc }
+
 ent-BenchSofaMiddle = диван
     .desc = { ent-BenchBaseMiddle.desc }
 ent-BenchSofaLeft = { ent-BenchSofaMiddle }
@@ -49,9 +55,10 @@ ent-BenchSofaLeft = { ent-BenchSofaMiddle }
 ent-BenchSofaRight = { ent-BenchSofaMiddle }
     .suffix = Справо
     .desc = { ent-BenchSofaMiddle.desc }
-ent-BenchSofaCorner = диван
+ent-BenchSofaCorner = { ent-BenchSofaMiddle }
     .suffix = Угол
-    .desc = { "" }
+    .desc = { ent-BenchSofaMiddle.desc }
+
 ent-BenchSofaCorpMiddle = серый диван
     .desc = { ent-BenchBaseMiddle.desc }
 ent-BenchSofaCorpLeft = { ent-BenchSofaCorpMiddle }
@@ -60,6 +67,6 @@ ent-BenchSofaCorpLeft = { ent-BenchSofaCorpMiddle }
 ent-BenchSofaCorpRight = { ent-BenchSofaCorpMiddle }
     .suffix = Справо
     .desc = { ent-BenchSofaCorpMiddle.desc }
-ent-BenchSofaCorpCorner = серый диван
+ent-BenchSofaCorpCorner = { ent-BenchSofaCorpMiddle }
     .suffix = Угол
-    .desc = { "" }
+    .desc = { ent-BenchSofaCorpMiddle.desc }

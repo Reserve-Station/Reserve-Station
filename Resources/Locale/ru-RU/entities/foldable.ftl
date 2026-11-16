@@ -1,4 +1,4 @@
-ent-BaseFoldable = складной
-    .desc = { "" }
-ent-BaseDeployFoldable = deploy foldable
-    .desc = { ent-BaseFoldable.desc }
+ent-BaseFoldable = складная одежда
+    .desc = Складная одежда, которую можно развернуть.
+ent-BaseDeployFoldable = развернутая складная одежда
+    .desc = Развернутая складная одежда, которую можно сложить обратно.

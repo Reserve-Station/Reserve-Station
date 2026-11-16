@@ -58,5 +58,5 @@ ent-OrganXenomorphPlasmaVesselSmall = маленькое хранилище пл
     .suffix = { roles-antag-xenomorph-name }
 
 ent-OrganXenomorphPlasmaVesselTiny = крошечное хранилище плазмы
-    .desc = { ent-OrganXenomorphPlasmaVesselTiny.desc }
+    .desc = { ent-OrganXenomorphPlasmaVessel.desc }
     .suffix = { roles-antag-xenomorph-name }

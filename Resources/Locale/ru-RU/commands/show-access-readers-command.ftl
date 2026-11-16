@@ -1,7 +1,7 @@
 cmd-showaccessreaders-desc = Переключает отображение прав доступа ридеров на карте
 
 cmd-showaccessreaders-help = Информация о наложении:
-    -Disabled | Ридер доступа отключен
+    -Disabled | Ридер доступа отключён
     +Unrestricted | У ридера доступа нет ограничений
     +Set [Index]: [Tag Name] | Тег в наборе доступа (для доступа требуются все теги из набора)
     +Key [StationUid]: [StationRecordKeyId] | Разрешенный StationRecordKey

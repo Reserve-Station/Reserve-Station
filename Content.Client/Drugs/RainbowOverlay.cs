@@ -29,15 +29,24 @@ public sealed class RainbowOverlay : Overlay
     private readonly ShaderInstance _rainbowShader;
 
     public float Intoxication = 0.0f;
-    public float TimeTicker = 0.0f;
     public float Phase = 0.0f;
 
-    private const float VisualThreshold = 10.0f;
-    private const float PowerDivisor = 250.0f;
+    // Reserve edit start: smooth rainbow intensity
+    /// <summary>
+    ///     Remaining effect duration (in seconds) at which the overlay reaches full strength.
+    /// </summary>
+    private const float PowerDivisor = 120.0f;
+
+    /// <summary>
+    ///     How fast (in seconds) the intensity catches up with the remaining effect duration.
+    /// </summary>
+    private const float RampTime = 4.0f;
+    // Reserve edit end: smooth rainbow intensity
+
     private float _timeScale = 0.0f;
     private float _warpScale = 0.0f;
 
-    private float EffectScale => Math.Clamp((Intoxication - VisualThreshold) / PowerDivisor, 0.0f, 1.0f);
+    private float EffectScale => Math.Clamp(Intoxication / PowerDivisor, 0.0f, 1.0f); // Reserve edit: smooth rainbow intensity
 
     public RainbowOverlay()
     {
@@ -65,18 +74,15 @@ public sealed class RainbowOverlay : Overlay
         if (!_statusEffects.TryGetEffectsEndTimeWithComp<SeeingRainbowsStatusEffectComponent>(playerEntity, out var endTime))
             return;
 
-        endTime ??= TimeSpan.MaxValue;
-        var timeLeft = (float)(endTime - _timing.CurTime).Value.TotalSeconds;
+        // Reserve edit start: smooth rainbow intensity
+        // Intensity smoothly follows the remaining duration: ramps up on start/new doses and fades out at the end.
+        var timeLeft = endTime == null
+            ? PowerDivisor
+            : (float)(endTime.Value - _timing.CurTime).TotalSeconds;
 
-        TimeTicker += args.DeltaSeconds;
-        if (timeLeft - TimeTicker > timeLeft / 16f)
-        {
-            Intoxication += (timeLeft - Intoxication) * args.DeltaSeconds / 16f;
-        }
-        else
-        {
-            Intoxication -= Intoxication / (timeLeft - TimeTicker) * args.DeltaSeconds;
-        }
+        var target = Math.Clamp(timeLeft, 0.0f, PowerDivisor);
+        Intoxication += (target - Intoxication) * Math.Min(1.0f, args.DeltaSeconds / RampTime);
+        // Reserve edit end: smooth rainbow intensity
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

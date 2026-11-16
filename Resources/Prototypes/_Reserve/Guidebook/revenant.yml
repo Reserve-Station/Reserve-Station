@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: guideEntry
+  id: Revenant
+  name: guide-entry-revenant-antag
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/RevenantAntag.xml"

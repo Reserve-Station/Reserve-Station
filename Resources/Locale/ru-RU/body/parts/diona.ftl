@@ -1,9 +1,9 @@
 ent-PartDiona = часть тела дионы
     .desc = { ent-BaseItem.desc }
 ent-ChestDiona = грудная клетка дионы
-    .desc = { ent-PartDionaBase.desc }
+    .desc = { ent-PartDiona.desc }
 ent-GroinDiona = пах пряничного дионы
-    .desc = { ent-PartDionaBase.desc }
+    .desc = { ent-PartDiona.desc }
 ent-HeadDiona = голова дионы
     .desc = { ent-PartDiona.desc }
 ent-LeftArmDiona = левая рука дионы

@@ -25,7 +25,8 @@ public sealed class DeliveryVisualizerSystem : VisualizerSystem<DeliveryComponen
 
         if (!_prototype.TryIndex<JobIconPrototype>(job, out var icon))
         {
-            args.Sprite.LayerSetTexture(DeliveryVisualLayers.JobStamp, _sprite.Frame0(_prototype.Index("JobIconUnknown")));
+            var unknownIcon = "JobIconUnknown";  // Reserve edit: Fix warnings
+            args.Sprite.LayerSetTexture(DeliveryVisualLayers.JobStamp, _sprite.Frame0(_prototype.Index(unknownIcon)));  // Reserve edit: Fix warnings
             return;
         }
 

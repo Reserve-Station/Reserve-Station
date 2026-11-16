@@ -98,6 +98,10 @@ public sealed partial class PlayerTabEntry : PanelContainer
                 break;
         }
 
+        // Reserve edit: extra antag info, e.g. whose thrall this is
+        if (!string.IsNullOrEmpty(player.AntagNote))
+            RoleTypeLabel.Text += $" ({player.AntagNote})";
+
         if (colorRoles)
             RoleTypeLabel.FontColorOverride = rolePrototype?.Color ?? RoleTypePrototype.FallbackColor;
         BackgroundColorPanel.PanelOverride = styleBoxFlat;

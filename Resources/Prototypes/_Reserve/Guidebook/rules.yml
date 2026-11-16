@@ -255,7 +255,7 @@
 #Silicon
 - type: guideEntry
   id: SiliconRulesReserve
-  name: guide-entry-rules-silicon-кeserve
+  name: guide-entry-rules-silicon-reserve
   ruleEntry: true
   priority: 50
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS0.xml"
@@ -273,70 +273,70 @@
 
 - type: guideEntry
   id: RuleSReserve1
-  name: guide-entry-rules-s1
+  name: guide-entry-rules-s-reserve1
   ruleEntry: true
   priority: 1
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS1Laws.xml"
 
 - type: guideEntry
   id: RuleSReserve2
-  name: guide-entry-rules-s2
+  name: guide-entry-rules-s-reserve2
   ruleEntry: true
   priority: 2
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS2LawPriority.xml"
 
 - type: guideEntry
   id: RuleSReserve3
-  name: guide-entry-rules-s3
+  name: guide-entry-rules-s-reserve3
   ruleEntry: true
   priority: 3
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS3LawRedefinition.xml"
 
 - type: guideEntry
   id: RuleSReserve4
-  name: guide-entry-rules-s4
+  name: guide-entry-rules-s-reserve4
   ruleEntry: true
   priority: 4
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS4RequestChanges.xml"
 
 - type: guideEntry
   id: RuleSReserve5
-  name: guide-entry-rules-s5
+  name: guide-entry-rules-s-reserve5
   ruleEntry: true
   priority: 5
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS5FreeSilicon.xml"
 
 - type: guideEntry
   id: RuleSReserve6
-  name: guide-entry-rules-s6
+  name: guide-entry-rules-s-reserve6
   ruleEntry: true
   priority: 6
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS6UnreasonableOrders.xml"
 
 - type: guideEntry
   id: RuleSReserve7
-  name: guide-entry-rules-s7
+  name: guide-entry-rules-s-reserve7
   ruleEntry: true
   priority: 7
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS7Consistency.xml"
 
 - type: guideEntry
   id: RuleSReserve8
-  name: guide-entry-rules-s8
+  name: guide-entry-rules-s-reserve8
   ruleEntry: true
   priority: 8
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS8DefaultCrewDefinition.xml"
 
 - type: guideEntry
   id: RuleSReserve9
-  name: guide-entry-rules-s9
+  name: guide-entry-rules-s-reserve9
   ruleEntry: true
   priority: 9
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS9DefaultHarmDefinition.xml"
 
 - type: guideEntry
   id: RuleSReserve10
-  name: guide-entry-rules-s10
+  name: guide-entry-rules-s-reserve10
   ruleEntry: true
   priority: 10
   text: "/ServerInfo/_Reserve/Guidebook/ServerRules/SiliconRules/RuleS10OrderConflicts.xml"

@@ -33,9 +33,9 @@
       shader: unshaded
     state: base
   - type: PointLight
-    mask: /Textures/Effects/LightMasks/double_cone.png
-    color: "#e2dedb" # Orion-Edit: Changed color
-    energy: 8 # Orion-Edit: 5 > 8
+    lightMask: ConeDouble
+    color: "#e2dedb" # Reserve edit: Update Light: Changed color from "#FFE4CE"
+    energy: 8 # Reserve edit: Update Light: 5 > 8
     radius: 10
     softness: 1
     offset: "0, 0.35"

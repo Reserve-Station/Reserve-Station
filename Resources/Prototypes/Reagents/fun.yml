@@ -36,6 +36,7 @@
   physicalDesc: reagent-physical-desc-fibrous
   flavor: fiber
   color: "#808080"
+  puddleSpriteSet: Powder # Goob
   metabolisms:
     Food:
       effects:
@@ -157,6 +158,8 @@
           inverted: true
           tag: Bee
 # Goobstation yowie changes end
+      - !type:ChemAddMoodlet  # Reserve edit: Mood System port
+        moodPrototype: BuzzochloricBeesEffect
 
 - type: reagent
   id: GroundBee

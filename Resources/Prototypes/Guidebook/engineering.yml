@@ -229,6 +229,8 @@
   id: GasRecycling
   name: guide-entry-gasrecycling
   text: "/ServerInfo/Guidebook/Engineering/GasRecycling.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Engineering/GasRecycling.xml"
 
 - type: guideEntry
   id: Radiators
@@ -331,6 +333,8 @@
   id: DeltaPressure
   name: guide-entry-deltapressure
   text: "/ServerInfo/Guidebook/Engineering/DeltaPressure.xml"
+  localizedText:
+    ru-RU: "/ServerInfo/_Reserve/Guidebook/Engineering/DeltaPressure.xml"
 
 - type: guideEntry
   id: AtmosTools

@@ -161,6 +161,7 @@
   - type: Tag
     tags:
       - Window
+      - DirectionalWindow # Goob
   - type: MeleeSound
     soundGroups:
       Brute:

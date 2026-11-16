@@ -14,15 +14,15 @@ using Robust.Shared.Timing;
 
 namespace Content.Goobstation.Server.Bloodtrak;
 
-public sealed class BloodtrakSystem : SharedBloodtrakSystem
+public sealed partial class BloodtrakSystem : SharedBloodtrakSystem
 {
-    [Dependency] private readonly TagSystem _tag = default!;
-    [Dependency] private readonly ForensicsSystem _forensicsSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly UseDelaySystem _delaySystem = default!;
+    [Dependency] private TagSystem _tag = default!;
+    [Dependency] private ForensicsSystem _forensicsSystem = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private SharedPopupSystem _popupSystem = default!;
+    [Dependency] private UseDelaySystem _delaySystem = default!;
 
     public override void Initialize()
     {
@@ -37,17 +37,18 @@ public sealed class BloodtrakSystem : SharedBloodtrakSystem
     /// </summary>
     private (EntityUid, TimeSpan)? GetPuddleDnaOwner(EntityUid target, BloodtrakComponent component, EntityUid user)
     {
-        if (!_tag.HasTag(target, "DNASolutionScannable") || !HasComp<PuddleComponent>(target))
+        var dNAtag = "DNASolutionScannable";  // Reserve edit: Fix warnings
+        if (!_tag.HasTag(target, dNAtag) || !HasComp<PuddleComponent>(target))  // Reserve edit: Fix warnings
         {
             _popupSystem.PopupEntity(Loc.GetString("bloodtrak-scan-failed"), user, user);
             return null;
         }
 
-        if (component.LastScannedTarget.Equals(target))
+        if (component.LastScannedTarget.Equals(target) && component.ResultList.Count > 0)
         {
             // cycle through DNAs already acquired
             component.ResultListOffset++;
-            if (component.ResultListOffset == component.ResultList.Count)
+            if (component.ResultListOffset >= component.ResultList.Count)
                 component.ResultListOffset = 0;
 
             var (dna, freshnessTimestamp, entityId) = component.ResultList[component.ResultListOffset];

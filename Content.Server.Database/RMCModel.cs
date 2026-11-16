@@ -37,6 +37,7 @@ public sealed class RMCLinkedAccount
 public sealed class RMCPatronTier
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.None)] // Goob - tiers are defined by prototypes
     public int Id { get; set; }
 
     public bool ShowOnCredits { get; set; }
@@ -62,7 +63,22 @@ public sealed class RMCPatronTier
     public int Priority { get; set; }
 
     public List<RMCPatron> Patrons { get; set; } = default!;
+    public List<RMCPatronTierAssignment> Assignments { get; set; } = [];  // Reserve edit: Maecenas System
 }
+
+// Reserve edit start: Maecenas System
+[Table("rmc_patron_tier_assignments")]
+public sealed class RMCPatronTierAssignment
+{
+    public Guid PlayerId { get; set; }
+
+    public RMCPatron Patron { get; set; } = default!;
+
+    public int TierId { get; set; }
+
+    public RMCPatronTier Tier { get; set; } = default!;
+}
+// Reserve edit end: Maecenas System
 
 [Table("rmc_patrons")]
 [Index(nameof(TierId))]
@@ -76,11 +92,13 @@ public sealed class RMCPatron
     public int TierId { get; set; }
 
     public RMCPatronTier Tier { get; set; } = default!;
+    public List<RMCPatronTierAssignment> TierAssignments { get; set; } = [];  // Reserve edit: Maecenas System
     public int? GhostColor { get; set; } = default!;
     // Goob start - ghost cosmetics: selected cosmetic prototype ids
     public string? GhostParticles { get; set; }
     public string? GhostHat { get; set; }
     public string? GhostMask { get; set; }
+    public string? OocIcon { get; set; }
     // Goob end
     public RMCPatronLobbyMessage? LobbyMessage { get; set; } = default!;
     public RMCPatronRoundEndNTShoutout? RoundEndNTShoutout { get; set; } = default!;

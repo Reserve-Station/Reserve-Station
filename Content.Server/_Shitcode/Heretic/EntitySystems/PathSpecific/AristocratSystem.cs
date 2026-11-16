@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Goobstation.Heretic.EntitySystems.PathSpecific;
 using Content.Server.Atmos.EntitySystems;
@@ -27,7 +27,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared._Goobstation.Wizard.Projectiles;
 using Content.Shared._Shitcode.Heretic.Components;
-using Content.Shared.Atmos.Components;
+// using Content.Shared.Atmos.Components; // Reserve edit: Fix warnings
 using Content.Shared.Doors.Components;
 using Content.Shared.Effects;
 using Content.Shared.Heretic;
@@ -42,6 +42,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Content.Server.Atmos.Components;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server.Heretic.EntitySystems.PathSpecific;
 
@@ -51,7 +52,7 @@ public sealed class AristocratSystem : EntitySystem
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly IRobustRandom _rand = default!;
     [Dependency] private readonly IPrototypeManager _prot = default!;
-    [Dependency] private readonly IMapManager _mapMan = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -216,7 +217,8 @@ public sealed class AristocratSystem : EntitySystem
 
         // the fog (snow) is coming
         var xform = Transform(ent);
-        _weather.SetWeather(xform.MapID, _prot.Index<WeatherPrototype>("SnowfallMagic"), null);
+        var snowfallMagic = "SnowfallMagic";  // Reserve edit: Fix warnings
+        _weather.SetWeather(xform.MapID, _prot.Index<WeatherPrototype>(snowfallMagic), null);  // Reserve edit: Fix warnings
     }
 
     private void EndWaltz(Entity<AristocratComponent> ent)
@@ -267,7 +269,7 @@ public sealed class AristocratSystem : EntitySystem
             {
                 var offset = new Vector2(x, y);
 
-                var pos = coords.Offset(offset).SnapToGrid(EntityManager, _mapMan);
+                var pos = coords.Offset(offset).SnapToGrid(EntityManager);
                 tiles.Add(pos);
             }
         }
@@ -351,6 +353,7 @@ public sealed class AristocratSystem : EntitySystem
 
                 var dmg = conduit.StructureDamage;
 
+                var windowTag = "Window";  // Reserve edit: Fix warnings
                 if (airlockQuery.HasComp(ent))
                 {
                     _audio.PlayPvs(conduit.AirlockDamageSound, Transform(ent).Coordinates);
@@ -361,7 +364,7 @@ public sealed class AristocratSystem : EntitySystem
                             conduit.MinMaxAirlockDamageMultiplier.Y),
                         origin: ent);
                 }
-                else if (_tag.HasTag(ent, "Window"))
+                else if (_tag.HasTag(ent, windowTag))  // Reserve edit: Fix warnings
                 {
                     _audio.PlayPvs(conduit.WindowDamageSound, Transform(ent).Coordinates);
                     ignored.Add(ent);
@@ -537,7 +540,8 @@ public sealed class AristocratSystem : EntitySystem
         foreach (var (uid, tag) in tags)
         {
             // walls
-            if (!_tag.HasTag(tag, "Wall") || !_rand.Prob(.45f) ||
+            var wallTag = "Wall";  // Reserve edit: Fix warnings
+            if (!_tag.HasTag(tag, wallTag) || !_rand.Prob(.45f) ||  // Reserve edit: Fix warnings
                 (Prototype(uid)?.ID ?? string.Empty) == IceWallPrototype)
                 continue;
 

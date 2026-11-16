@@ -5,7 +5,7 @@
   table: !type:GroupSelector
     children:
     - !type:GroupSelector # Boring toys (subjective) :o)
-      weight: 0.5 # 1 in 7
+      weight: 0.75 # 1 in 5  # Reserve edit: Random maints
       children:
       - !type:NestedSelector
         tableId: AllPlushiesTable
@@ -68,7 +68,7 @@
       - id: PlushieNar
       - id: PlushieRatvar
     - !type:GroupSelector # Rare plushies
-      weight: 0.1 # 1 in >210
+      weight: 0.2 # 1 in >105  # Reserve edit: Random maints
       children:
       - id: PlushieHuman
       - id: PlushieGhost
@@ -78,6 +78,81 @@
       children:
       - id: PlushieThrongler
       - id: PlushieGhostRevenant # You got the god roll, and failed
+    # Reserve edit start: Random maints
+    - !type:GroupSelector
+      children:
+      - id: PlushieLizardLarge
+      - id: PlushieLizardJobMimeLarge
+      - id: PlushieSlimeLarge
+      - id: PlushieSharkBlueLarge
+    - !type:GroupSelector  # Very rare Reserve loadout-only trinket plushies
+      weight: 0.1 # 1 in >210
+      children:
+      - id: PlushieBread
+      - id: PlushiePiano
+      - id: PlushieBehonkerEye
+      - id: PlushieChest
+      - id: PlushieSharkRainbow
+      - id: PlushieGhostRainbow
+    - !type:GroupSelector # Goobstation plushies  # Reserve edit: Random maints - moved from figurines
+      weight: 0.4 # 1 in >52.5  # Reserve edit: Random maints
+      children:
+      - id: PlushieBingle # Goobstation
+      - id: PlushieSamantha # Goobstation
+      - id: PlushieJvne # Goobstation
+      - id: PlushieFern # Goobstation
+      - id: PlushieAbductor # Goobstation
+      - id: PlushieBongle
+      - id: PlushieBinglePony
+      - id: PlushieAbductor
+      - id: PlushieNigel
+      - id: PlushieBrizby
+      - id: PlushieBoggle
+      - id: PlushieLehmin
+      - id: PlushieWachtel
+      - id: PlushieLeguia
+      - id: PlushiePasha
+      - id: PlushieLeoMalone
+      - id: PlushieRouge
+      - id: PlushieRedstonewolf
+      - id: PlushieDoremyZerg
+      - id: PlushieSanyati
+      - id: PlushieHarel
+    # Reserve edit end: Random maints
+    # Reserve edit start: Reserve Plushies
+    - !type:GroupSelector
+      children:
+      - id: PlushieArtizziKasya
+      - id: PlushieArtizziKasyaLarge
+      - id: PlushieAwareFoxy
+      - id: PlushieAwareFoxyLarge
+      - id: PlushieCeteraiOrchiDea
+      - id: PlushieCeteraiOrchiDeaMime
+      - id: PlushieDotusaruTaipan
+        weight: 0.5
+      - id: PlushieDotusaruTaipanRainbow
+        weight: 0.5
+      - id: PlushieDotusaruTaipanSyndicate
+        weight: 0.5
+      - id: PlushieDotusaruTaipanLarge
+        weight: 0.5
+      - id: PlushieFloppaGeoffroyKrisp
+        weight: 2.0
+      - id: PlushieMrSamuelGoose
+        weight: 2.0
+      - id: PlushieNazrinNya
+      - id: PlushieNazrinNyaCap
+      - id: PlushieSvarshikEva
+      - id: PlushieSvarshikEvaLarge
+    # Reserve edit end: Reserve Plushies
+    - id: PlushieSanabi  # Reserve edit: Reserve Plushies
+    - id: PlushieSynth  # Reserve edit: Upstream 20261020
+    # Reserve edit start: Halloween on Reserve
+    - !type:GroupSelector
+      children:
+      - id: PlushiePumpkin
+      - id: PlushieGhostBurger
+    # Reserve edit end: Halloween on Reserve
 
 # Weh!
 - type: entityTable
@@ -210,12 +285,12 @@
     - id: ToyFigurineSkeleton
     - id: ToyNuke
     - id: ToyFigurineOwlman
-    - id: PlushieBingle # Goobstation
-    - id: PlushieSamantha # Goobstation
-    - id: PlushieJvne # Goobstation
-    - id: PlushieFern # Goobstation
-    - id: PlushieAbductor # Goobstation
-    - id: ToyFigurineCosmicCultist # DeltaV
+    # - id: PlushieBingle # Goobstation  # Reserve edit: Random maints - moved into plushies
+    # - id: PlushieSamantha # Goobstation
+    # - id: PlushieJvne # Goobstation
+    # - id: PlushieFern # Goobstation
+    # - id: PlushieAbductor # Goobstation
+    # - id: ToyFigurineCosmicCultist # DeltaV
     # WD EDIT START
     - id: FaceHuggerToys
     # WD EDIT END
@@ -251,12 +326,15 @@
       - id: FoamBlade
       - id: FoamCutlass
       - id: CardSword
+      - id: DoubleToySword  # Reserve edit: Random maints
+      - id: FoamWonderprod  # Reserve edit: Random maints
     - !type:GroupSelector # Throwing type group
       rolls: 2 # Expendables need restocks
       children:
       - id: SnapPopBox
       - id: BoxDarts
       - id: GrenadeFoamDart
+      - id: GrenadeToy  # Reserve edit: Random maints
       - !type:GroupSelector # REAL fake grenades
         weight: 0.05 # 2 in 186. Rare in order to not spoil the surprise
         children:
@@ -269,6 +347,8 @@
         children:
         - id: WeaponWaterBlaster
         - id: WeaponWaterPistol
+        - id: WeaponWaterBlasterSuper  # Reserve edit: Random maints
+          weight: 0.2
       - !type:NestedSelector
         tableId: RandomFoamGunTable
       - !type:NestedSelector
@@ -309,19 +389,26 @@
     - id: CrayonBox
     - id: PlasticBanana
     - id: NukeDiskFake
-    - id: DiceBag
+    - !type:GroupSelector  # Reserve edit: Random maints
+      children:
+      - id: DiceBag
+      - id: MagicDiceBag
+        weight: 0.5
     - id: SpectralLocator
     - id: BarberScissors
     - id: SprayFlowerPin
     - id: ClothingShoesSkates
-    - id: CrazyGlue
-    - id: CrazyLube
+    - !type:GroupSelector  # Reserve edit: Random maints
+      children:
+      - id: CrazyGlue
+      - id: CrazyLube
     - !type:NestedSelector
-      tableId: AllBoardGamesTable
-    - !type:GroupSelector # Where there's Chips there's Dips
+      tableId: MoreBoardGamesTable  # Reserve edit: Random maints
+    - !type:AllSelector # Where there's Chips there's Dips  # Reserve edit: Random maints
       children:
       - id: MrChips
       - id: MrDips
+      - id: LilCal  # Reserve edit: Random maints
     - !type:GroupSelector # Ballons
       children:
       - id: BalloonNT
@@ -335,6 +422,8 @@
       - id: BeachBall
       - id: TennisBall
         amount: 2
+      - id: DiscoBeachBall  # Reserve edit: Random maints
+        weight: 0.2
     - !type:GroupSelector # PAIs are basically toys
       children:
       - id: PersonalAI
@@ -348,6 +437,47 @@
       - id: SingularityToy
       - id: TeslaToy
       - id: PonderingOrb
+    # Reserve edit start: Random maints
+    - id: DrinkPwrGameCan
+      amount: 2
+    - id: ToyCow
+    - id: ToyXenomorph
+    - id: SmallBucketToy
+    - id: SpellCardFun
+      weight: 0.5
+    - id: WaterDropletHat
+      weight: 0.5
+    - id: MysteryFigureBox
+      amount: 2
+    - !type:GroupSelector  # Toy cars
+      weight: 1.5
+      children:
+      - id: ToyCarMonoSupron
+        weight: 0.25
+      - id: ToyCarMonoSupronPolice
+        weight: 0.25
+      - id: ToyCarMonoSupronNT
+        weight: 0.25
+      - id: ToyCarMonoSupronSyndicate
+        weight: 0.25
+      - id: BoxToyCarMonoSupron
+    - !type:GroupSelector  # Clothing toys
+      weight: 1.5
+      children:
+      - !type:GroupSelector
+        children:
+        - id: ClothingShoesClownLarge
+        - id: ClothingShoeSlippersLizard
+        - id: ClothingShoesFakeJordans
+      - !type:GroupSelector
+        children:
+        - id: ClothingHeadHatMagician
+        - id: ClothingMaskJoy
+        - id: ClothingEyesHudFriedOnion
+    - !type:NestedSelector  # Sports toys
+      weight: 1.5
+      tableId: AllSportsToysTable
+    # Reserve edit end: Random maints
 
 # Entities that don't do much more than make a unique sound. Plushies excluded.
 - type: entityTable # size 1x2  # price 100
@@ -372,6 +502,11 @@
         weight: 0.5 # 1 in 143
     - !type:NestedSelector # The original
       tableId: RandomBikeHornTable
+    - !type:NestedSelector
+      tableId: AllMusicToysTable
+    - !type:NestedSelector
+      tableId: AllMusicDiscsTable
+      weight: 1.5
 
 - type: entityTable # size 1x2  # price 100
   id: RandomBikeHornTable

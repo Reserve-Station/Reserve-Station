@@ -1,6 +1,6 @@
 ent-MedkitCombatStasiziumFilled = футуристичная аптечка
     .desc = Аптечка с медициной будущего.
-    .suffix = Стазизиум
+    .suffix = Хронолегионер, Стазизиум
 ent-MedkitBSOFilled = { ent-MedkitBSO }
     .suffix = Заполненный
     .desc = { ent-MedkitBSO.desc }

@@ -17,7 +17,7 @@ construction-graph-tag-mime-meal = обед хэппи хонк в стиле м
 construction-graph-tag-purple-crayon = фиолетовый мелок
 construction-graph-tag-red-crayon = красный мелок
 construction-graph-tag-yellow-crayon = жёлтый мелок
-construction-graph-tag-black-crayon = черный мелок
+construction-graph-tag-black-crayon = чёрный мелок
 
 # eva
 construction-graph-tag-eva-suit = скафандр EVA
@@ -77,15 +77,15 @@ construction-graph-tag-ectoplasm = эктоплазма
 construction-graph-tag-lizard-plushie = плюшевый унатх
 
 # carpet
-construction-graph-tag-black-carpet = черный ковер
-construction-graph-tag-blue-carpet = синий ковер
-construction-graph-tag-cyan-carpet = бирюзовый ковер
-construction-graph-tag-green-carpet = зелёный ковер
-construction-graph-tag-orange-carpet = оранжевый ковер
-construction-graph-tag-pink-carpet = розовый ковер
-construction-graph-tag-purple-carpet = фиолетовый ковер
-construction-graph-tag-red-carpet = красный ковер
-construction-graph-tag-white-carpet = белый ковер
+construction-graph-tag-black-carpet = чёрный ковёр
+construction-graph-tag-blue-carpet = синий ковёр
+construction-graph-tag-cyan-carpet = бирюзовый ковёр
+construction-graph-tag-green-carpet = зелёный ковёр
+construction-graph-tag-orange-carpet = оранжевый ковёр
+construction-graph-tag-pink-carpet = розовый ковёр
+construction-graph-tag-purple-carpet = фиолетовый ковёр
+construction-graph-tag-red-carpet = красный ковёр
+construction-graph-tag-white-carpet = белый ковёр
 
 # mechs
 construction-graph-tag-hamtr-central-control-module = центральный модуль управления ХАМЯК
@@ -131,7 +131,7 @@ construction-graph-tag-orange-crystal-shard = оранжевый осколок 
 construction-graph-tag-red-crystal-shard = красный осколок кристалла
 construction-graph-tag-green-crystal-shard = зелёный осколок кристалла
 construction-graph-tag-yellow-crystal-shard = жёлтый осколок кристалла
-construction-graph-tag-black-crystal-shard = черный осколок кристалла
+construction-graph-tag-black-crystal-shard = чёрный осколок кристалла
 
 # unknown
 construction-graph-tag-weapon-pistol-chimp-upgrade-kit = набор для улучшения пистолета МАРТЫХ

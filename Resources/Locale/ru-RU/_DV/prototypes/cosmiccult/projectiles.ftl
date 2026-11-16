@@ -1,8 +1,12 @@
-ent-ProjectileCosmicNova = астральная новая
+ent-ProjectileCosmicNova = астральная нова
     .desc = О-о-о...
-ent-ProjectileRogueCosmicNova = узурпированная астральная новая
+    .suffix = Космический культ
+ent-ProjectileRogueCosmicNova = узурпированная астральная нова
     .desc = { ent-ProjectileCosmicNova.desc }
+    .suffix = Космический культ
 ent-ProjectileCosmicRazor = астральный разряд
     .desc = Помечает цель, на которую наносится дополнительный урон.
-ent-BulletImpactEffectCosmic = { "" }
-    .desc = { "" }
+    .suffix = Космический культ
+ent-BulletImpactEffectCosmic = эффект попадания астрального снаряда
+    .desc = Больно, наверное.
+    .suffix = Космический культ

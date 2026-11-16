@@ -70,6 +70,7 @@
     tags:
       - WhitelistChameleon
   - type: Stainable # Reserve
+    fireScale: 0.35 # Reserve edit: fire-nerf
     clothingVisuals:
       outerClothing:
       - sprite: _Gabystation/Effects/blood.rsi
@@ -186,6 +187,8 @@
 # SlotBlocker blocked until UI change
 #  - type: SlotBlock
 #    slots: [innerclothing, feet]
+  - type: Stainable
+    fireScale: 0.15 # Reserve edit: fire-nerf
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
@@ -242,6 +245,8 @@
       enum.ToggleClothingUiKey.Key:
         type: ToggleableClothingBoundUserInterface
   - type: GroupExamine
+  - type: GlowShielding # Goobstation - hardsuit strongly dims the plasmaman body glow
+    reduction: 0.7
   - type: Tag
     tags:
     - Hardsuit
@@ -323,6 +328,7 @@
     - jumpsuit
   - type: Tag
     tags:
+    - ScurretWearable  # Reserve edit: Super Scurret - let scurrets wear other EVAs too
     - PlasmamanSafe # EE Plasmeme Change
   - type: StainBlocker # Reserve
     slots: [INNERCLOTHING, FEET, GLOVES]

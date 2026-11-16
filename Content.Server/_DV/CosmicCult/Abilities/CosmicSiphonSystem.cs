@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Religion;
 using Content.Server.Database;
@@ -13,7 +13,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Light.Components;
-using Content.Shared.Mind;
+// using Content.Shared.Mind; // Reserve edit: Fix warnings
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -22,6 +22,7 @@ using Content.Shared.Popups;
 using Content.Shared.StatusEffect;
 using Robust.Server.Player;
 using Robust.Shared.Random;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._DV.CosmicCult.Abilities;
 

@@ -1,0 +1,871 @@
+# SPDX-FileCopyrightText: Made by Ceterai on GitHub.
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+#
+# Title: Stardust
+
+# A special treat grown and used by Orchi Dea - pure stardust gathered from alien flowers -
+# stardust orchids, created by and named after a fallen little star.
+#
+# Includes:
+#
+# - Seeds (can be planted, multiharvest of petals, 1 item at a time)
+# - Petals (can be grinded into dust or turned into seeds, can be worn on head, hands, ears, eyes and neck, can be used to craft a pile)
+# - Dust (can be drunk or microwaved into pills, or into candies with sugar)
+# - Piles (can be stacked up to 20u. Can be rolled into a joint. Can be put into a container via grinding it at a reagent grinder)
+# - Pills (can be swallowed, grinded back into dust or turned into seeds, is considered a minor contraband)
+# - Candy (can be eaten or grinded back into dust and sugar)
+# - Cocktail (can be drunk or microwaved into cocktail candies)
+# - Cocktail candy (can be eaten or grinded back into cocktail)
+# - Joints (can be crafted from a pile, is considered a minor contraband)
+# - Jugs (for both dust and cocktail)
+# - Bottles (for both dust and cocktail)
+#
+# Tips:
+#
+# - Instead of simply turning petals into seeds, grind them and make pills first:
+#   one petal (20-24u) will give you 2 pills (10u), then each can be turned into seeds, giving you twice as much.
+# - While you can't turn stardust candies into seeds themselves, you can:
+#   grind 3 of them into 12u of stardust and 3u of sugar, get rid of sugar, then turn the rest into a pill.
+# - The Goddess Cocktail has all the benefits of milk, nutrition-fueled sugar and stardust while it lasts!
+#   It also digests slower due to turning into milk, meaning the milk benefits will stay much longer than usual.
+#   Drinking 10u of it quickly will give you roughly 5u of stardust. Don't overdrink!
+# - Petals can be worn in 5 different slots: as a wreath on your head, as a necklace, as lenses, as ear clips and as a bracelet!
+#
+# Disclaimer:
+#
+# - Stardust is not a drug and isn't addictive.
+# - Drugs and drug-taking activities are very bad for you and others around you, including drinking alcohol and smoking.
+# - This is a personal item, so all dependent prototypes are not meant to be mapped (with exceptions).
+
+
+
+
+
+# region PROTOTYPES
+
+
+
+
+
+# region Reagent
+
+- type: flavor
+  id: stardust
+  flavorType: Complex
+  description: flavor-complex-stardust
+
+- type: moodEffect
+  id: stardust
+  moodChange: 8
+  timeout: 1800  # 30 minutes
+
+- type: reagent
+  id: Stardust
+  name: reagent-name-stardust
+  desc: reagent-desc-stardust
+  physicalDesc: reagent-physical-desc-powdery
+  flavor: stardust
+  color: &stardust-color "#5000c0"
+  recognizable: true
+  slipData:
+    requiredSlipSpeed: 8.0  # It's not as slippery as water
+  group: Narcotics
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: -0.2  # It's dust, so will only make you thirstier.
+    Narcotic:
+      effects:
+
+      # Weak effects - if taken less than one portion (10u) - like a candy.
+      - !type:ChemAddMoodlet
+        moodPrototype: stardust  # Makes you slightly happier.
+      # Antibloodloss
+      - !type:ModifyBleed
+        amount: -1
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stardust
+          max: 11
+      - !type:ModifyBloodLevel
+        amount: 4
+      - !type:HealthChange
+        damage:
+          types:
+            Bloodloss: -5
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stardust
+          max: 11
+
+      # Mild effects - if taken one portion - like a pill.
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectSeeingRainbow
+        type: Add
+        time: 4
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stardust
+          min: 6
+      # Antifatique
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 2
+        type: Remove
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stardust
+          min: 9
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 2
+        type: Remove
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stardust
+          min: 9
+      - !type:GenericStatusEffect
+        key: StaminaModifier
+        component: StaminaModifier
+        time: 5
+        type: Add
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stardust
+          min: 9
+
+      # Strong effects - if taken more than one portion at a time.
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 1.15
+        sprintSpeedModifier: 1.15
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stardust
+          min: 16
+      - !type:Emote
+        emote: Laugh
+        showInChat: true
+        probability: 0.1
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stardust
+          min: 16
+          max: 30
+
+      # Overdose - if taken at extremely high rates.
+      - !type:Emote
+        emote: Crying
+        showInChat: true
+        probability: 0.1
+        conditions:
+        - !type:ReagentCondition
+          reagent: Stardust
+          min: 31
+  metamorphicChangeColor: false
+  metamorphicFillBaseName: glass_dust_fill-
+  metamorphicMaxFillLevels: 4
+  metamorphicSprite:
+    sprite: &stardust-rsi _Reserve/Objects/Misc/stardust.rsi
+    state: glass_dust_empty
+
+# endregion Reagent
+
+# region Seed
+
+- type: seed
+  id: stardust
+  name: seeds-stardust-name
+  noun: seeds-noun-seeds
+  displayName: seeds-stardust-display-name
+  plantRsi: *stardust-rsi
+  plantIconState: item_produce
+  packetPrototype: StardustSeeds
+  productPrototypes:
+    - LeavesStardust
+  harvestRepeat: Repeat
+  lifespan: 64
+  maturation: 16
+  production: 12
+  yield: 1
+  potency: 8
+  growthStages: 6
+  waterConsumption: 0.30
+  chemicals:
+    Stardust:
+      Min: 16
+      Max: 20
+      PotencyDivisor: 2
+
+- type: entity
+  parent: SeedBase
+  id: StardustSeeds
+  components:
+    - type: Seed
+      seedId: stardust
+    - type: Sprite
+      sprite: *stardust-rsi
+      state: seed
+
+# endregion Seed
+
+# region Produce
+
+- type: Tag
+  id: Stardust
+
+- type: entity
+  parent: ProduceBase
+  id: LeavesStardust
+  components:
+  - type: Sprite
+    sprite: *stardust-rsi
+    state: item_produce
+  - type: Produce
+    seedId: stardust
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 20
+  - type: Clothing
+    sprite: *stardust-rsi
+    quickEquip: true
+    slots:
+    - ears  # Clips
+    - eyes  # Lenses
+    - gloves  # Bracelet
+    - head  # Wreath
+    - neck  # Necklace
+    clothingVisuals:
+      ears:
+      - state: item_produce_equipped-ears
+      eyes:
+      - state: item_produce_equipped-eyes
+      gloves:
+      - state: item_produce_equipped-hand
+      head:
+      - state: item_produce_equipped-head
+      neck:
+      - state: item_produce_equipped-neck
+  - type: PointLight
+    radius: 1.5
+    energy: 1
+    softness: 1
+    color: *stardust-color
+  - type: Tag
+    tags:
+      - Stardust
+
+# endregion Produce
+
+# region Pill
+
+- type: microwaveMealRecipe
+  id: RecipePillStardust
+  result: PillStardust
+  time: 10
+  group: Dessert
+  reagents:
+    Stardust: 10
+
+- type: entity
+  parent: [Pill, BaseMinorContraband]
+  id: PillStardust
+  components:
+  - type: Sprite
+    sprite: *stardust-rsi
+    state: pill1
+  - type: Label
+    currentLabel: reagent-name-stardust-pill
+  - type: Produce
+    seedId: stardust
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 10
+
+# endregion Pill
+
+# region Candy
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSnackStardust
+  result: FoodSnackStardust
+  time: 5
+  group: Dessert
+  reagents:
+    Stardust: 4
+    Sugar: 1
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackStardust
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - stardust
+  - type: Sprite
+    sprite: *stardust-rsi
+    state: item_candy
+  - type: Item
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 4
+        - ReagentId: Sugar
+          Quantity: 1
+  - type: Tag
+    tags:
+    - FoodSnack
+    - Pill
+
+- type: entity
+  parent: FoodSnackLollypopDylovene
+  id: FoodSnackLollypopStardust
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: *stardust-color
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: Stardust
+          Quantity: 15
+
+# endregion Candy
+
+# region Containers
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkStardustGlass
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 30
+  - type: Icon
+    sprite: *stardust-rsi
+    state: glass_dust
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkStardustJug
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 300
+  - type: Label
+    currentLabel: reagent-name-stardust
+
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: ChemistryBottleStardust
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 30
+  - type: Label
+    currentLabel: reagent-name-stardust
+
+- type: entity
+  parent: PrefilledSyringe
+  id: SyringeStardust
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 15
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 15
+  - type: Label
+    currentLabel: reagent-name-stardust
+
+- type: entity
+  parent: Jug
+  id: JugStardust
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 200
+  - type: Label
+    currentLabel: reagent-name-stardust
+
+- type: entity
+  parent: Bucket
+  id: BucketStardust
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 250
+  - type: Label
+    currentLabel: reagent-name-stardust
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkStardustBottleFull
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 100
+  - type: Label
+    currentLabel: reagent-name-stardust
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkStardustCarton
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 50
+  - type: Label
+    currentLabel: reagent-name-stardust
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleStardust
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 30
+  - type: Label
+    currentLabel: reagent-name-stardust
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkStardustCup
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 20
+
+# endregion Containers
+
+# region Pile
+
+- type: stack
+  id: StackStardust
+  name: reagent-name-stardust
+  icon: { sprite: *stardust-rsi, state: item_powder }
+  spawn: MaterialStardust
+  maxCount: 20
+
+- type: construction
+  id: MaterialStardust
+  graph: RecipeStardust
+  startNode: start
+  targetNode: ground
+  category: construction-category-misc
+  objectType: Item
+
+- type: constructionGraph
+  id: RecipeStardust
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: ground
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialStardust
+              amount: 3  # You will always get way less stardust as opposed to grinding.
+          steps:
+          - tag: Stardust
+            icon:
+              sprite: *stardust-rsi
+              state: item_produce
+            name: seeds-stardust-name
+            doAfter: 2
+    - node: ground
+      entity: MaterialStardust
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialStardust
+  components:
+  - type: Stack
+    stackType: StackStardust
+    count: 1
+  - type: Sprite
+    sprite: *stardust-rsi
+    state: item_powder
+  - type: Item
+    size: Tiny
+  - type: Material
+  - type: Produce  # So we can put it in a plant bag
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 1  # So that 1 unit of pile contains exactly 1 unit of reagent
+  - type: PointLight
+    radius: 1.5
+    energy: 1
+    softness: 1
+    color: *stardust-color
+  - type: Construction
+    graph: RecipeStardust
+    node: ground
+  - type: Tag
+    tags:
+      - RawMaterial
+      - Smokable
+
+# endregion Pile
+
+# region Joint
+
+- type: construction
+  id: JointStardust
+  graph: RecipeJointStardust
+  startNode: start
+  targetNode: end
+  category: construction-category-misc
+  objectType: Item
+
+- type: constructionGraph
+  id: RecipeJointStardust
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: end
+          steps:
+            - material: PaperRolling
+            - material: CigaretteFilter
+            - material: StackStardust
+              amount: 10
+              doAfter: 2
+    - node: end
+      entity: JointStardust
+
+- type: entity
+  parent: [JointRainbow, BaseMinorContraband]
+  id: JointStardust
+  components:
+  - type: Construction
+    graph: RecipeJointStardust
+    node: end
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 20
+        reagents:
+        - ReagentId: Stardust
+          Quantity: 12
+
+# endregion Joint
+
+# region Cocktail
+
+- type: reaction
+  id: StardustGoddess
+  reactants:
+    Milk:
+      amount: 1
+    Sugar:
+      amount: 1
+    Stardust:
+      amount: 2
+  products:
+    StardustGoddess: 4
+
+- type: reagent
+  parent: [Milk, BaseDrink]  # Milk overrides BaseDrink
+  id: StardustGoddess
+  name: reagent-name-stardust-goddess
+  desc: reagent-desc-stardust-goddess
+  physicalDesc: reagent-physical-desc-holy
+  flavor: holy
+  color: &stardust-goddess-color "#ffa8e8"
+  recognizable: true
+  metamorphicChangeColor: false
+  metamorphicFillBaseName: glass_cocktail_fill-
+  metamorphicMaxFillLevels: 4
+  metamorphicSprite:
+    sprite: *stardust-rsi
+    state: glass_cocktail_empty
+  metabolisms:
+    Drink:
+      effects:
+      - !type:AdjustReagent
+        reagent: Stardust
+        amount: 1.25
+      - !type:AdjustReagent
+        reagent: Milk
+        amount: 0.75
+      - !type:SatiateHunger
+        factor: 1
+      - !type:ChemAddMoodlet
+        moodPrototype: SweetenerEffect
+
+# endregion Cocktail
+
+# region Cocktail Candy
+
+- type: microwaveMealRecipe
+  id: RecipeFoodSnackStardustGoddess
+  result: FoodSnackStardustGoddess
+  time: 5
+  group: Dessert
+  reagents:
+    StardustGoddess: 5
+
+- type: entity
+  parent: FoodSnackStardust
+  id: FoodSnackStardustGoddess
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - holy
+    - stardust
+  - type: Sprite
+    sprite: *stardust-rsi
+    state: item_candy_cocktail
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 5
+
+- type: entity
+  parent: FoodSnackLollypopStardust
+  id: FoodSnackLollypopStardustGoddess
+  components:
+  - type: Sprite
+    layers:
+    - state: lollypop
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: color
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: *stardust-goddess-color
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 5
+        - ReagentId: StardustGoddess
+          Quantity: 15
+
+# endregion Cocktail Candy
+
+# region Cocktail Containers
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkStardustGoddessGlass
+  components:
+  - type: Icon
+    sprite: *stardust-rsi
+    state: glass_cocktail
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 30
+
+- type: entity
+  parent: DrinkBottlePlasticBaseFull
+  id: DrinkStardustGoddessJug
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 300
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 300
+  - type: Label
+    currentLabel: reagent-name-stardust-goddess
+
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: ChemistryBottleStardustGoddess
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 30
+  - type: Label
+    currentLabel: reagent-name-stardust-goddess
+
+- type: entity
+  parent: PrefilledSyringe
+  id: SyringeStardustGoddess
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 15
+  - type: Label
+    currentLabel: reagent-name-stardust-goddess
+
+- type: entity
+  parent: Jug
+  id: JugStardustGoddess
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 200
+  - type: Label
+    currentLabel: reagent-name-stardust-goddess
+
+- type: entity
+  parent: Bucket
+  id: BucketStardustGoddess
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 250
+  - type: Label
+    currentLabel: reagent-name-stardust-goddess
+
+- type: entity
+  parent: DrinkBottle
+  id: DrinkStardustGoddessBottleFull
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 100
+  - type: Label
+    currentLabel: reagent-name-stardust-goddess
+
+- type: entity
+  parent: DrinkCarton
+  id: DrinkStardustGoddessCarton
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 50
+  - type: Label
+    currentLabel: reagent-name-stardust-goddess
+
+- type: entity
+  parent: DrinkBottleTall
+  id: FoodCondimentBottleStardustGoddess
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 30
+  - type: Label
+    currentLabel: reagent-name-stardust-goddess
+
+- type: entity
+  parent: DrinkCup
+  id: DrinkStardustGoddessCup
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: StardustGoddess
+          Quantity: 20
+
+# endregion Cocktail Containers
+
+# region Pill Bottle
+
+- type: entity
+  parent: PillCanister
+  id: PillCanisterStardust
+  components:
+  - type: Label
+    currentLabel: reagent-name-stardust-label
+  - type: StorageFill
+    contents:
+    - id: PillStardust
+      amount: 5
+    - id: FoodSnackStardust
+      amount: 3
+    - id: FoodSnackStardustGoddess
+      amount: 2
+    - id: FoodSnackOrchito
+      amount: 3
+    - id: FoodSnackStardustOrchito
+      amount: 2
+
+# endregion Pill Bottle

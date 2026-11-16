@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: guideEntry
+  id: Vampire
+  name: guide-entry-vampire
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/Vampire.xml"
+  children:
+  - VampireProgression
+  - VampireClasses
+  - VampireCounterplay
+
+- type: guideEntry
+  id: VampireProgression
+  name: guide-entry-vampire-progression
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/VampireProgression.xml"
+
+- type: guideEntry
+  id: VampireClasses
+  name: guide-entry-vampire-classes
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/VampireClasses.xml"
+
+- type: guideEntry
+  id: VampireCounterplay
+  name: guide-entry-vampire-counterplay
+  text: "/ServerInfo/_Reserve/Guidebook/Antagonist/VampireCounterplay.xml"

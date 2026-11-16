@@ -23,7 +23,8 @@ public sealed partial class DogVisionOverlay : Overlay
     public DogVisionOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _dogVisionShader = _prototypeManager.Index<ShaderPrototype>("DogVision").Instance().Duplicate();
+        var protoId = "DogVision";  // Reserve edit: Fix warnings
+        _dogVisionShader = _prototypeManager.Index<ShaderPrototype>(protoId).Instance().Duplicate();  // Reserve edit: Fix warnings
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
