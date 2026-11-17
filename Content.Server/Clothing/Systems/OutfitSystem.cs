@@ -66,7 +66,7 @@ public sealed class OutfitSystem : EntitySystem
 
                 var equipmentEntity = EntityManager.SpawnEntity(gearStr, EntityManager.GetComponent<TransformComponent>(target).Coordinates);
                 // Reserve edit start: Proper ID name after "Set Outfit" admin verb
-                // - Make sure card gets renamed (evein inside of a PDA)
+                // - Make sure card gets renamed (even inside of a PDA)
                 // - Set the PDA owner
                 if (slot.Name == "id")
                 {
