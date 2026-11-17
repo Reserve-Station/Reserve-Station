@@ -1104,6 +1104,9 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem // Goob - p
         RaiseLocalEvent(user, comboEv);
         // Goobstation end
 
+        if (IsShoveBlocked(target, user)) // Goob
+            return true;
+
         PhysicalShove(user, target);
         Interaction.DoContactInteraction(user, target, null, true); // Goob
 

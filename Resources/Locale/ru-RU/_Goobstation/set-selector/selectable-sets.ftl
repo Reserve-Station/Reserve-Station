@@ -137,13 +137,6 @@ selectable-set-blueshield-syringe-description =
     Идеально для лечения союзников или отравления врагов.
     Включает: боевой шприц и несколько флаконов с лекарствами.
 
-# Синий щит скафандры
-
-selectable-set-blueshield-hardsuit-light-name = бронированный боевой костюм
-selectable-set-blueshield-hardsuit-light-description = Бронированный боевой костюм, дающий больше скорости за счет меньшей защиты.
-selectable-set-blueshield-modsuit-name = MOD Синего Щита
-selectable-set-blueshield-modsuit-description = MOD требующий питания.
-
 # ERT
 
 selectable-set-ert-ballistic-name = баллистический набор

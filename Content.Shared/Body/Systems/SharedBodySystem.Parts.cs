@@ -1108,12 +1108,19 @@ public partial class SharedBodySystem
             || Standing.IsDown(target))
             return attackerComp.Target;
 
-        var totalWeight = targetComp.TargetOdds[attackerComp.Target].Values.Sum();
+        // Reserve start: validate target odds
+        if (!targetComp.TargetOdds.TryGetValue(attackerComp.Target, out var odds))
+            return GetRandomBodyPart(target);
+
+        var totalWeight = odds.Values.Sum();
+        // Reserve end
+
         // i think this is the way to do predicted random
         var random = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(target));
         var randomValue = random.NextFloat() * totalWeight;
 
-        foreach (var (part, weight) in targetComp.TargetOdds[attackerComp.Target])
+        // Reserve: targetComp.TargetOdds[attackerComp.Target] -> odds
+        foreach (var (part, weight) in odds)
         {
             if (randomValue <= weight)
                 return part;
@@ -1134,13 +1141,19 @@ public partial class SharedBodySystem
             || Standing.IsDown(target))
             return targetPart;
 
-        var totalWeight = targetComp.TargetOdds[targetPart].Values.Sum();
+        // Reserve start: validate target odds
+        if (!targetComp.TargetOdds.TryGetValue(targetPart, out var odds))
+            return GetRandomBodyPart(target);
+
+        var totalWeight = odds.Values.Sum();
+        // Reserve end
 
         // i think this is the way to do predicted random
         var random = SharedRandomExtensions.PredictedRandom(_timing, GetNetEntity(target));
         var randomValue = random.NextFloat() * totalWeight;
 
-        foreach (var (part, weight) in targetComp.TargetOdds[targetPart])
+        // Reserve: targetComp.TargetOdds[targetPart] -> odds
+        foreach (var (part, weight) in odds)
         {
             if (randomValue <= weight)
                 return part;

@@ -271,15 +271,23 @@ public abstract class SharedIdCardSystem : EntitySystem
         if (!Resolve(uid, ref id))
             return;
 
-        var jobSuffix = string.IsNullOrWhiteSpace(id.LocalizedJobTitle) ? string.Empty : $" ({id.LocalizedJobTitle})";
+        var jobTitle = id.LocalizedJobTitle; // Reserve edit: ID Card name format
+        var hasJob = !string.IsNullOrWhiteSpace(jobTitle); // Reserve edit: ID Card name format
+        var jobSuffix = hasJob ? $" ({jobTitle})" : string.Empty; // Reserve edit: ID Card name format
 
+        // Reserve edit start: ID Card name format
         var val = string.IsNullOrWhiteSpace(id.FullName)
             ? Loc.GetString(id.NameLocId,
-                ("jobSuffix", jobSuffix))
+                ("jobSuffix", jobSuffix),
+                ("jobTitle", jobTitle ?? string.Empty),
+                ("hasJob", hasJob))
             : Loc.GetString(id.FullNameLocId,
                 ("fullName", id.FullName),
-                ("jobSuffix", jobSuffix));
+                ("jobSuffix", jobSuffix),
+                ("jobTitle", jobTitle ?? string.Empty),
+                ("hasJob", hasJob));
         _metaSystem.SetEntityName(uid, val);
+        // Reserve edit end: ID Card name format
     }
 
     private static string ExtractFullTitle(IdCardComponent idCardComponent)

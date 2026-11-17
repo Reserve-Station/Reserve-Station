@@ -27,6 +27,23 @@ public abstract class SharedTargetingSystem : EntitySystem
         return parts;
     }
 
+    // Reserve start: validate target part
+    public static bool IsValidTargetPart(TargetBodyPart part)
+    {
+        return part is TargetBodyPart.Head
+            or TargetBodyPart.Chest
+            or TargetBodyPart.Groin
+            or TargetBodyPart.LeftArm
+            or TargetBodyPart.LeftHand
+            or TargetBodyPart.LeftLeg
+            or TargetBodyPart.LeftFoot
+            or TargetBodyPart.RightArm
+            or TargetBodyPart.RightHand
+            or TargetBodyPart.RightLeg
+            or TargetBodyPart.RightFoot;
+    }
+    // Reserve end
+
     public static HumanoidVisualLayers ToVisualLayers(TargetBodyPart targetBodyPart)
     {
         switch (targetBodyPart)
