@@ -58,6 +58,16 @@ public sealed partial class ObjectiveComponent : Component
     public bool ServerCurrencyRewardPartial;
 
     //Goobstation - end
+
+    //Reserve edit start: syndicate-objectives #468
+
+    /// <summary>
+    /// Should the objective be optional?
+    /// </summary>
+    [DataField]
+    public bool Optional = false;
+
+    //Reserve edit end: syndicate-objectives #468
 }
 
 /// <summary>

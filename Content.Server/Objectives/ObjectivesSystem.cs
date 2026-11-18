@@ -214,6 +214,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                     var progress = info.Value.Progress;
                     var reward = info.Value.ServerCurrency;
                     var rewardPartial = info.Value.PartialCurrency;
+                    var optional = info.Value.Optional; // Reserve edit: syndicate-objectives #468
                     totalObjectives++;
 
                     // Goob (even tho the entire file got massacred by John already)
@@ -229,7 +230,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
                                     $"{username:subject} achieved {progress}% of objective {objectiveTitle}");
 
                     agentSummary.Append("- ");
-                    if (!_showGreentext)
+                    if (optional || !_showGreentext) // Reserve edit: syndicate-objectives #468
                     {
                         agentSummary.AppendLine(objectiveTitle);
                     }

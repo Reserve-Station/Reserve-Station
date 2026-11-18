@@ -28,6 +28,8 @@ traitor-round-end-agent-name = a traitor
 objective-issuer-syndicate = [color=crimson]The Syndicate[/color]
 objective-issuer-unknown = Unknown
 
+objective-issuer-syndicate-fluff = [color=crimson]Non-mandatory objectives[/color]
+
 # Shown at the end of a round of Traitor
 
 traitor-title = Traitor
