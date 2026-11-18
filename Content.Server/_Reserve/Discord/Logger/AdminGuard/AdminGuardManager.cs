@@ -23,9 +23,11 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
     private const int ColorPerms = 0x9b59b6;
     private const int ColorDiscord = 0x1abc9c;
     private const int ColorCurrency = 0xf1c40f;
+    private const int ColorAlert = 0xe74c3c;
 
     private const DiscordLogChannel LogChannel = DiscordLogChannel.AdminLogs;
     private const DiscordLogChannel ChatChannel = DiscordLogChannel.AdminChat;
+    private const DiscordLogChannel SecurityChannel = DiscordLogChannel.AdminSecurity;
 
     public void Initialize()
     {
@@ -149,6 +151,79 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
 
             await _logger.Send(msg, LogChannel);
         });
+    }
+
+    public void PermissionsViolation(DiscordLogActor actor, string reasonLocId, NetUserId? target = null)
+    {
+        _ = _logger.Guarded(async () =>
+        {
+            var actorLabel = await _logger.ActorLabel(actor);
+            var reason = Loc.GetString(reasonLocId);
+
+            var msg = _logger.NewMessage("admin-guard-title-perms-violation", ColorAlert);
+            msg.Add("admin-guard-actor", ("actor", actorLabel));
+            if (target is { } t)
+                msg.Add("admin-guard-target", ("target", await _logger.PlayerLabel(t)));
+            AddField(msg, "admin-guard-field-reason", reason);
+
+            await _logger.Send(msg, SecurityChannel);
+            await _logger.SendText(Loc.GetString("admin-guard-perms-violation-alert", ("actor", actorLabel), ("reason", reason)), ChatChannel);
+        });
+    }
+
+    public void AdminSessionLoaded(DiscordLogActor admin, AdminFlags? oldFlags, AdminFlags flags, string? title, AdminLoginSource source, string? address, bool active, bool stealth)
+    {
+        _ = _logger.Guarded(async () =>
+        {
+            var label = await _logger.ActorLabel(admin);
+            var host = source != AdminLoginSource.Database;
+            var sourceText = Loc.GetString(SourceLocId(source));
+
+            var msg = _logger.NewMessage(oldFlags == null ? "admin-guard-title-session-login" : "admin-guard-title-session-reload",
+                host ? ColorAlert : ColorPerms);
+            msg.Add("admin-guard-target", ("target", label));
+            AddField(msg, "admin-guard-field-title", TextOrNone(title));
+
+            if (oldFlags is { } old)
+                AddChange(msg, "admin-guard-field-flags", FlagsText(old, AdminFlags.None), FlagsText(flags, AdminFlags.None));
+            else
+                AddField(msg, "admin-guard-field-flags", FlagsText(flags, AdminFlags.None));
+
+            AddField(msg, "admin-guard-field-source", sourceText);
+            if (host && address != null)
+                AddField(msg, "admin-guard-field-address", $"`{address}`");
+            AddField(msg, "admin-guard-field-active", BoolText(active));
+            AddField(msg, "admin-guard-field-stealth", BoolText(stealth));
+
+            // Contains IPs and stealth state - security channel only
+            await _logger.Send(msg, SecurityChannel);
+
+            if (host)
+                await _logger.SendText(Loc.GetString("admin-guard-host-login-alert", ("name", label), ("source", sourceText)), ChatChannel);
+        });
+    }
+
+    public void HostPromoted(DiscordLogActor target, DiscordLogActor by)
+    {
+        _ = _logger.Guarded(async () =>
+        {
+            var msg = _logger.NewMessage("admin-guard-title-host-promoted", ColorAlert);
+            msg.Add("admin-guard-target", ("target", await _logger.ActorLabel(target)));
+            msg.Add("admin-guard-actor", ("actor", await _logger.ActorLabel(by)));
+
+            await _logger.Send(msg, SecurityChannel);
+        });
+    }
+
+    private static string SourceLocId(AdminLoginSource source)
+    {
+        return source switch
+        {
+            AdminLoginSource.LocalHost => "admin-guard-source-localhost",
+            AdminLoginSource.HostUser => "admin-guard-source-hostuser",
+            AdminLoginSource.PromoteHost => "admin-guard-source-promotehost",
+            _ => "admin-guard-source-db",
+        };
     }
 
     public void DiscordAccountLinked(NetUserId player, ulong discordId)

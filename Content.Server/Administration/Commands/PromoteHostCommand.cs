@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 using Content.Server.Administration.Managers;
 using JetBrains.Annotations;
 using Robust.Server.Player;
@@ -12,6 +14,7 @@ namespace Content.Server.Administration.Commands
     {
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
+        [Dependency] private readonly IAdminGuardManager _adminGuard = default!; // Reserve edit: Reserve Red - AdminGuard
 
         public override string Command => "promotehost";
 
@@ -29,6 +32,7 @@ namespace Content.Server.Administration.Commands
                 return;
             }
 
+            _adminGuard.HostPromoted(DiscordLogActor.From(targetPlayer), DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
             _adminManager.PromoteHost(targetPlayer);
         }
     }

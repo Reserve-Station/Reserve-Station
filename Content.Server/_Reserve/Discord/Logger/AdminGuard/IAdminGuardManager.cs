@@ -30,6 +30,17 @@ public enum AdminStatusChange
 }
 
 /// <summary>
+///     Where a session's admin perms came from. Anything but <see cref="Database"/> is full host access.
+/// </summary>
+public enum AdminLoginSource
+{
+    Database,
+    LocalHost,
+    HostUser,
+    PromoteHost,
+}
+
+/// <summary>
 ///     Название и флаги группы прав.
 /// </summary>
 public readonly record struct AdminRankData(string Name, AdminFlags Flags);
@@ -67,6 +78,22 @@ public interface IAdminGuardManager
     void AdminPermsUpdated(NetUserId user, AdminPermsData oldPerms, AdminPermsData newPerms, DiscordLogActor admin);
 
     void AdminPermsRemoved(NetUserId user, DiscordLogActor admin);
+
+    /// <summary>
+    ///     Alert: a rejected permissions panel request.
+    /// </summary>
+    void PermissionsViolation(DiscordLogActor actor, string reasonLocId, NetUserId? target = null);
+
+    /// <summary>
+    ///     Admin perms applied to a session: login (<paramref name="oldFlags"/> = null) or reload.
+    ///     Always sent, including stealth admins, so perms granted outside the panel are still visible.
+    /// </summary>
+    void AdminSessionLoaded(DiscordLogActor admin, AdminFlags? oldFlags, AdminFlags flags, string? title, AdminLoginSource source, string? address, bool active, bool stealth);
+
+    /// <summary>
+    ///     The promotehost command was run.
+    /// </summary>
+    void HostPromoted(DiscordLogActor target, DiscordLogActor by);
 
     void DiscordAccountLinked(NetUserId player, ulong discordId);
 
