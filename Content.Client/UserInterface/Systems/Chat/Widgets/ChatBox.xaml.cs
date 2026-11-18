@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client._Reserve.UserInterface.RichText; // Reserve edit: cmdlink protection
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Goobstation.Common.CCVar; // Goobstation Change
 using Content.Shared.Chat;
@@ -99,14 +100,14 @@ public partial class ChatBox : UIWidget
                 return;
 
             _lastLineRepeatCount++;
-            AddLine(msg.WrappedMessage, color, _lastLineRepeatCount);
+            AddLine(msg.WrappedMessage, color, _lastLineRepeatCount, AllowsCommandLinks(msg.Channel)); // Reserve edit: cmdlink protection
             Contents.RemoveEntry(^2);
         }
         else
         {
             _lastLineRepeatCount = 0;
             _lastLine = (msg.WrappedMessage, color);
-            AddLine(msg.WrappedMessage, color, _lastLineRepeatCount);
+            AddLine(msg.WrappedMessage, color, _lastLineRepeatCount, AllowsCommandLinks(msg.Channel)); // Reserve edit: cmdlink protection
         } // WD EDIT END
     }
 
@@ -158,7 +159,19 @@ public partial class ChatBox : UIWidget
         _controller.UpdateHighlights(highlighs);
     }
 
-    public void AddLine(string message, Color color, int repeat = 0)
+    // Reserve edit start: cmdlink protection
+    /// <summary>
+    /// [cmdlink] runs a console command as whoever clicks it. Only admin alerts may contain them:
+    /// that channel only carries server-built teleport links and escaped log text (see AdminLogManager).
+    /// Everywhere else, player text that slips through server-side escaping must not become a clickable command.
+    /// </summary>
+    private static bool AllowsCommandLinks(ChatChannel channel)
+    {
+        return channel == ChatChannel.AdminAlert;
+    }
+    // Reserve edit end
+
+    public void AddLine(string message, Color color, int repeat = 0, bool allowCommandLinks = false) // Reserve edit: cmdlink protection
     {
         var formatted = new FormattedMessage(4); // WD EDIT // specifying size beforehand smells like a useless microoptimisation, but i'll give them the benefit of doubt
         formatted.PushColor(color);
@@ -173,7 +186,7 @@ public partial class ChatBox : UIWidget
                                 ("size", 8 + sizeIncrease)
                                 ));
         } // WD EDIT END
-        Contents.AddMessage(formatted, tagsAllowed: null);
+        Contents.AddMessage(formatted, tagsAllowed: allowCommandLinks ? null : SafeMarkupTags.WithoutCommandLinks); // Reserve edit: cmdlink protection
     }
 
     public void Focus(ChatSelectChannel? channel = null)
