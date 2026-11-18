@@ -100,7 +100,7 @@ public sealed partial class RoundIntroSystem : EntitySystem
         else
         {
             if (ev.Job is { } jobId && _proto.TryIndex(jobId, out var jobProto))
-                job = Loc.GetString("round-intro-job", ("job", jobProto.LocalizedName));
+                job = Loc.GetString("round-intro-job", ("job", ev.JobTitle ?? jobProto.LocalizedName)); // Reserve: Alternate Job Titles
 
             if (antagName != null)
                 antagLine = Loc.GetString("round-intro-antag-hidden", ("antag", antagName));
@@ -128,7 +128,7 @@ public sealed partial class RoundIntroSystem : EntitySystem
         {
             string? job = null;
             if (coworker.Job is { } jobId && _proto.TryIndex(jobId, out var jobProto))
-                job = jobProto.LocalizedName;
+                job = coworker.JobTitle ?? jobProto.LocalizedName; // Reserve: Alternate Job Titles
             else if (coworker.Antag is { } antagId && _proto.TryIndex(antagId, out var antagProto))
                 job = Loc.GetString(antagProto.Name);
 
