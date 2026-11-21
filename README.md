@@ -74,7 +74,7 @@
 
 ## Администрация
 
-- <img src="https://github.com/echotry-ss14.png" width="16" height="16" alt="echotry" style="border-radius:50%;" loading="lazy"/> [**echotry**](https://github.com/echotry-ss14) - создатель проекта и его владелец, а также контент-мейкер.
+- <img src="https://github.com/echonyte.png" width="16" height="16" alt="echotry" style="border-radius:50%;" loading="lazy"/> [**echotry**](https://github.com/echonyte) - создатель проекта и его владелец, а также контент-мейкер.
 - <img src="https://github.com/Ceterai.png" width="16" height="16" alt="Ceterai" style="border-radius:50%;" loading="lazy"/> [**Орхидея**](https://github.com/Ceterai) - лидер проекта, хост инфраструктуры, администратор медиаресурсов и главная разработчица.
 
 Связываться по любым вопросам лучше всего через Дискорд, по вопросам подписки или поддержки также можно через Бусти.
