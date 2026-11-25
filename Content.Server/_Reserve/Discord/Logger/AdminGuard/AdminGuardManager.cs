@@ -9,6 +9,7 @@ using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Network;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Reserve.Discord.AdminGuard;
 
@@ -18,6 +19,7 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
     [Dependency] private IConsoleHost _console = default!;
     [Dependency] private IPlayerManager _players = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private const int ColorPlaytime = 0x3498db;
     private const int ColorPerms = 0x9b59b6;
@@ -28,6 +30,11 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
     private const DiscordLogChannel LogChannel = DiscordLogChannel.AdminLogs;
     private const DiscordLogChannel ChatChannel = DiscordLogChannel.AdminChat;
     private const DiscordLogChannel SecurityChannel = DiscordLogChannel.AdminSecurity;
+
+    private static readonly TimeSpan ViolationWindow = TimeSpan.FromSeconds(30);
+    private const int ViolationPruneThreshold = 64;
+
+    private readonly Dictionary<(NetUserId? Actor, string Reason), (TimeSpan Last, int Suppressed)> _violations = new();
 
     public void Initialize()
     {
@@ -155,6 +162,9 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
 
     public void PermissionsViolation(DiscordLogActor actor, string reasonLocId, NetUserId? target = null)
     {
+        if (!TryReportViolation(actor.UserId, reasonLocId, out var suppressed))
+            return;
+
         _ = _logger.Guarded(async () =>
         {
             var actorLabel = await _logger.ActorLabel(actor);
@@ -166,9 +176,50 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
                 msg.Add("admin-guard-target", ("target", await _logger.PlayerLabel(t)));
             AddField(msg, "admin-guard-field-reason", reason);
 
+            var alert = Loc.GetString("admin-guard-perms-violation-alert", ("actor", actorLabel), ("reason", reason));
+            if (suppressed > 0)
+            {
+                var repeats = Loc.GetString("admin-guard-perms-violation-suppressed",
+                    ("count", suppressed),
+                    ("seconds", (int) ViolationWindow.TotalSeconds));
+                AddField(msg, "admin-guard-field-suppressed", repeats);
+                alert += $" ({repeats})";
+            }
+
             await _logger.Send(msg, SecurityChannel);
-            await _logger.SendText(Loc.GetString("admin-guard-perms-violation-alert", ("actor", actorLabel), ("reason", reason)), ChatChannel);
+            await _logger.SendText(alert, ChatChannel);
         });
+    }
+
+    /// <summary>
+    ///     Один отчёт на (игрок, причина) за <see cref="ViolationWindow"/>; повторы внутри окна только считаются
+    ///     и попадают в следующий отчёт.
+    /// </summary>
+    private bool TryReportViolation(NetUserId? actor, string reasonLocId, out int suppressed)
+    {
+        var now = _timing.RealTime;
+        var key = (actor, reasonLocId);
+
+        if (_violations.TryGetValue(key, out var entry) && now - entry.Last < ViolationWindow)
+        {
+            _violations[key] = entry with { Suppressed = entry.Suppressed + 1 };
+            suppressed = 0;
+            return false;
+        }
+
+        suppressed = entry.Suppressed;
+
+        if (_violations.Count >= ViolationPruneThreshold)
+        {
+            foreach (var (k, v) in _violations.ToArray())
+            {
+                if (now - v.Last >= ViolationWindow && v.Suppressed == 0)
+                    _violations.Remove(k);
+            }
+        }
+
+        _violations[key] = (now, 0);
+        return true;
     }
 
     public void AdminSessionLoaded(DiscordLogActor admin, AdminFlags? oldFlags, AdminFlags flags, string? title, AdminLoginSource source, string? address, bool active, bool stealth)

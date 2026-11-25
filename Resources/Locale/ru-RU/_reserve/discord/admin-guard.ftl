@@ -33,6 +33,7 @@ admin-guard-field-balance = Баланс
 admin-guard-field-from = Отправитель
 admin-guard-field-to = Получатель
 admin-guard-field-reason = Причина
+admin-guard-field-suppressed = Повторы
 admin-guard-field-source = Источник
 admin-guard-field-active = Активны
 admin-guard-field-stealth = Стелс
@@ -42,13 +43,17 @@ admin-guard-source-db = база данных
 admin-guard-source-localhost = :warning: хост - подключение с localhost (console.loginlocal)
 admin-guard-source-hostuser = :warning: хост - ник совпадает с console.login_host_user
 admin-guard-source-promotehost = :warning: хост - команда promotehost
-admin-guard-violation-no-permissions = отправил запрос панели прав без +PERMISSIONS
 admin-guard-violation-higher-rank = пытался изменить группу прав выше своих полномочий
 admin-guard-violation-higher-admin = пытался изменить админа выше своих полномочий
 admin-guard-violation-flags-above = пытался выдать флаги, которых у него нет
 admin-guard-violation-rank-above = пытался назначить группу прав выше своих полномочий
 admin-guard-violation-overlap = отправил одни и те же флаги как выданные и снятые (модифицированный клиент)
 admin-guard-perms-violation-alert = :rotating_light: { $actor } **заблокирован** при изменении админских прав: { $reason }
+admin-guard-perms-violation-suppressed = ещё { $count } { $count ->
+    [one] раз
+    [few] раза
+   *[other] раз
+} за предыдущие { $seconds } с
 admin-guard-host-login-alert = :warning: { $name } получил **хост**-права (все флаги, в обход базы данных). Источник: { $source }
 admin-guard-playtime-added = - { $tracker }: **{ $minutes }** мин.
 admin-guard-playtime-set = - { $tracker }: установлено **{ $minutes }** мин.

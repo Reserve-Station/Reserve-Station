@@ -33,6 +33,7 @@ admin-guard-field-balance = Balance
 admin-guard-field-from = Sender
 admin-guard-field-to = Recipient
 admin-guard-field-reason = Reason
+admin-guard-field-suppressed = Repeats
 admin-guard-field-source = Source
 admin-guard-field-active = Active
 admin-guard-field-stealth = Stealth
@@ -42,13 +43,16 @@ admin-guard-source-db = database
 admin-guard-source-localhost = :warning: host - localhost connection (console.loginlocal)
 admin-guard-source-hostuser = :warning: host - username matches console.login_host_user
 admin-guard-source-promotehost = :warning: host - promotehost command
-admin-guard-violation-no-permissions = sent a permissions panel request without +PERMISSIONS
 admin-guard-violation-higher-rank = tried to modify a permission group above their own permissions
 admin-guard-violation-higher-admin = tried to modify an admin above their own permissions
 admin-guard-violation-flags-above = tried to grant flags they do not have themselves
 admin-guard-violation-rank-above = tried to assign a permission group above their own permissions
 admin-guard-violation-overlap = sent the same flags as both granted and revoked (modified client)
 admin-guard-perms-violation-alert = :rotating_light: { $actor } **was blocked** while changing admin permissions: { $reason }
+admin-guard-perms-violation-suppressed = { $count } more { $count ->
+    [one] time
+   *[other] times
+} in the previous { $seconds } s
 admin-guard-host-login-alert = :warning: { $name } received **host** permissions (all flags, bypassing the database). Source: { $source }
 admin-guard-playtime-added = - { $tracker }: **{ $minutes }** min.
 admin-guard-playtime-set = - { $tracker }: set to **{ $minutes }** min.

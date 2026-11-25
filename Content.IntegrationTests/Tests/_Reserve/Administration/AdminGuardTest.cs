@@ -90,7 +90,8 @@ public sealed class AdminGuardTest
             guard.AdminPermsRemoved(player.UserId, actor);
 
             guard.PermissionsViolation(actor, "admin-guard-violation-rank-above", player.UserId);
-            guard.PermissionsViolation(actor, "admin-guard-violation-no-permissions");
+            guard.PermissionsViolation(actor, "admin-guard-violation-overlap");
+            guard.PermissionsViolation(actor, "admin-guard-violation-overlap");
             guard.AdminSessionLoaded(actor, null, AdminFlags.Ban, "Title", AdminLoginSource.Database, null, true, false);
             guard.AdminSessionLoaded(actor, AdminFlags.Ban, AdminFlagsHelper.Everything, null, AdminLoginSource.LocalHost, "127.0.0.1:1212", true, true);
             guard.AdminSessionLoaded(actor, null, AdminFlagsHelper.Everything, null, AdminLoginSource.HostUser, "1.2.3.4:1212", true, false);
