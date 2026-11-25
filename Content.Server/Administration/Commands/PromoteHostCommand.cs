@@ -32,8 +32,8 @@ namespace Content.Server.Administration.Commands
                 return;
             }
 
-            _adminGuard.HostPromoted(DiscordLogActor.From(targetPlayer), DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
             _adminManager.PromoteHost(targetPlayer);
+            _adminGuard.HostPromoted(DiscordLogActor.From(targetPlayer), DiscordLogActor.From(shell.Player)); // Reserve edit: Reserve Red - AdminGuard
         }
     }
 }

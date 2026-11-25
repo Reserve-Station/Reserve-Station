@@ -452,9 +452,7 @@ namespace Content.Server.Administration.Managers
 
         private async Task<(AdminData dat, int? rankId, bool specialLogin)?> LoadAdminDataCore(ICommonSession session)
         {
-            var promoteHost = IsLocal(session) && _cfg.GetCVar(CCVars.ConsoleLoginLocal)
-                              || _promotedPlayers.Contains(session.UserId)
-                              || session.Name == _cfg.GetCVar(CCVars.ConsoleLoginHostUser);
+            var promoteHost = GetHostLoginSource(session) != null; // Reserve edit: Reserve Red - AdminGuard
 
             if (promoteHost)
             {
@@ -522,19 +520,31 @@ namespace Content.Server.Administration.Managers
             }
         }
 
-        // Reserve edit start: Reserve Red - AdminGuard - mirrors the promoteHost checks in LoadAdminDataCore
-        private AdminLoginSource GuardLoginSource(ICommonSession session, bool specialLogin)
+        // Reserve edit start: Reserve Red - AdminGuard
+        /// <summary>
+        ///     Why this session gets host perms, or null if it doesn't. Single source of truth for the promoteHost check in LoadAdminDataCore.
+        /// </summary>
+        private AdminLoginSource? GetHostLoginSource(ICommonSession session)
         {
-            if (!specialLogin)
-                return AdminLoginSource.Database;
-
             if (IsLocal(session) && _cfg.GetCVar(CCVars.ConsoleLoginLocal))
                 return AdminLoginSource.LocalHost;
 
             if (_promotedPlayers.Contains(session.UserId))
                 return AdminLoginSource.PromoteHost;
 
-            return AdminLoginSource.HostUser;
+            if (session.Name == _cfg.GetCVar(CCVars.ConsoleLoginHostUser))
+                return AdminLoginSource.HostUser;
+
+            return null;
+        }
+
+        private AdminLoginSource GuardLoginSource(ICommonSession session, bool specialLogin)
+        {
+            if (!specialLogin)
+                return AdminLoginSource.Database;
+
+            // Host data was already granted; null only if the cvars changed since it was loaded
+            return GetHostLoginSource(session) ?? AdminLoginSource.HostUser;
         }
 
         private static string? GuardAddress(ICommonSession session)

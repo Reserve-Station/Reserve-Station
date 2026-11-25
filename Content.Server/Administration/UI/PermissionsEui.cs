@@ -97,16 +97,6 @@ namespace Content.Server.Administration.UI
         {
             base.HandleMessage(msg);
 
-            // Reserve edit start: Reserve Red - AdminGuard - re-check +PERMISSIONS on every message
-            if (!UserAdminFlagCheck(AdminFlags.Permissions))
-            {
-                _sawmill.Warning($"{Player} sent {msg.GetType().Name} without +PERMISSIONS");
-                _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-no-permissions");
-                Close();
-                return;
-            }
-            // Reserve edit end: Reserve Red - AdminGuard
-
             switch (msg)
             {
                 case AddAdmin ca:
