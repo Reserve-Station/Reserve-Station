@@ -19,10 +19,7 @@
       factions:
       - NanoTrasen
       - Assistant
-  - !type:PlaytimeDegrade # MisandryBox - tider main syndrome
-    since: 600
-    until: 24600
-    disarmMalus: true
+  # Reserve edit: Remove assistant playtime degradation
   alternateTitles: # Reserve - alternate titles
   - AssistantPassenger
   - AssistantVisitor
