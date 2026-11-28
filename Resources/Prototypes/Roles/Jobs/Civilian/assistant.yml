@@ -20,6 +20,10 @@
       - NanoTrasen
       - Assistant
   # Reserve edit: Remove assistant playtime degradation
+  # - !type:PlaytimeDegrade # MisandryBox - tider main syndrome
+  #   since: 600
+  #   until: 24600
+  #   disarmMalus: true
   alternateTitles: # Reserve - alternate titles
   - AssistantPassenger
   - AssistantVisitor
