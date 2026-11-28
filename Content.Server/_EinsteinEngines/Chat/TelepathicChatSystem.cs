@@ -67,11 +67,13 @@ public sealed partial class TelepathicChatSystem : EntitySystem
         string messageWrap;
         string adminMessageWrap;
 
+        message = Robust.Shared.Utility.FormattedMessage.EscapeText(message); // Reserve edit: cmdlink protection
+
         messageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message",
             ("telepathicChannelName", Loc.GetString("chat-manager-telepathic-channel-name")), ("message", message));
 
         adminMessageWrap = Loc.GetString("chat-manager-send-telepathic-chat-wrap-message-admin",
-            ("source", source), ("message", message));
+            ("source", Robust.Shared.Utility.FormattedMessage.EscapeText(Name(source))), ("message", message)); // Reserve edit: cmdlink protection
 
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Telepathic chat from {ToPrettyString(source):Player}: {message}");
 

@@ -471,6 +471,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (_mobStateSystem.IsDead(source) || collectiveMind == null || message == "" || !TryComp<CollectiveMindComponent>(source, out var sourseCollectiveMindComp) || !sourseCollectiveMindComp.Minds.ContainsKey(collectiveMind.ID))
             return;
 
+        // Reserve edit start: cmdlink protection
+        message = FormattedMessage.EscapeText(message);
+        var sourceName = FormattedMessage.EscapeText(Name(source));
+        // Reserve edit end
+
         var clients = Filter.Empty();
         var clientsSeeNames = Filter.Empty();
         var mindQuery = EntityQueryEnumerator<CollectiveMindComponent, ActorComponent>();
@@ -498,11 +503,11 @@ public sealed partial class ChatSystem : SharedChatSystem
             ("channel", collectiveMind.LocalizedName),
             ("number", number));
         string namedMessageWrap = Loc.GetString("collective-mind-chat-wrap-message-named",
-            ("source", source),
+            ("source", sourceName), // Reserve edit: cmdlink protection
             ("message", message),
             ("channel", collectiveMind.LocalizedName));
         string adminMessageWrap = Loc.GetString("collective-mind-chat-wrap-message-admin",
-            ("source", source),
+            ("source", sourceName), // Reserve edit: cmdlink protection
             ("message", message),
             ("channel", collectiveMind.LocalizedName),
             ("number", number));
@@ -818,7 +823,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         var wrappedMessage = Loc.GetString("chat-manager-entity-me-wrap-message",
             ("entityName", name),
             ("entity", ent),
-            ("message", FormattedMessage.RemoveMarkupPermissive(action))); // Goob - Fix (malformed markup throws)
+            ("message", FormattedMessage.EscapeText(FormattedMessage.RemoveMarkupPermissive(action)))); // Goob - Fix (malformed markup throws) // Reserve edit: cmdlink protection - RemoveMarkupPermissive turns "\[" back into "["
 
         if (checkEmote && !TryEmoteChatInput(source, action))
             return;
