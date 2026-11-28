@@ -9,6 +9,7 @@ using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Network;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Reserve.Discord.AdminGuard;
 
@@ -18,14 +19,22 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
     [Dependency] private IConsoleHost _console = default!;
     [Dependency] private IPlayerManager _players = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private const int ColorPlaytime = 0x3498db;
     private const int ColorPerms = 0x9b59b6;
     private const int ColorDiscord = 0x1abc9c;
     private const int ColorCurrency = 0xf1c40f;
+    private const int ColorAlert = 0xe74c3c;
 
     private const DiscordLogChannel LogChannel = DiscordLogChannel.AdminLogs;
     private const DiscordLogChannel ChatChannel = DiscordLogChannel.AdminChat;
+    private const DiscordLogChannel SecurityChannel = DiscordLogChannel.AdminSecurity;
+
+    private static readonly TimeSpan ViolationWindow = TimeSpan.FromSeconds(30);
+    private const int ViolationPruneThreshold = 64;
+
+    private readonly Dictionary<(NetUserId? Actor, string Reason), (TimeSpan Last, int Suppressed)> _violations = new();
 
     public void Initialize()
     {
@@ -149,6 +158,123 @@ public sealed partial class AdminGuardManager : IAdminGuardManager
 
             await _logger.Send(msg, LogChannel);
         });
+    }
+
+    public void PermissionsViolation(DiscordLogActor actor, string reasonLocId, NetUserId? target = null)
+    {
+        if (!TryReportViolation(actor.UserId, reasonLocId, out var suppressed))
+            return;
+
+        _ = _logger.Guarded(async () =>
+        {
+            var actorLabel = await _logger.ActorLabel(actor);
+            var reason = Loc.GetString(reasonLocId);
+
+            var msg = _logger.NewMessage("admin-guard-title-perms-violation", ColorAlert);
+            msg.Add("admin-guard-actor", ("actor", actorLabel));
+            if (target is { } t)
+                msg.Add("admin-guard-target", ("target", await _logger.PlayerLabel(t)));
+            AddField(msg, "admin-guard-field-reason", reason);
+
+            var alert = Loc.GetString("admin-guard-perms-violation-alert", ("actor", actorLabel), ("reason", reason));
+            if (suppressed > 0)
+            {
+                var repeats = Loc.GetString("admin-guard-perms-violation-suppressed",
+                    ("count", suppressed),
+                    ("seconds", (int) ViolationWindow.TotalSeconds));
+                AddField(msg, "admin-guard-field-suppressed", repeats);
+                alert += $" ({repeats})";
+            }
+
+            await _logger.Send(msg, SecurityChannel);
+            await _logger.SendText(alert, ChatChannel);
+        });
+    }
+
+    /// <summary>
+    ///     Один отчёт на (игрок, причина) за <see cref="ViolationWindow"/>; повторы внутри окна только считаются
+    ///     и попадают в следующий отчёт.
+    /// </summary>
+    private bool TryReportViolation(NetUserId? actor, string reasonLocId, out int suppressed)
+    {
+        var now = _timing.RealTime;
+        var key = (actor, reasonLocId);
+
+        if (_violations.TryGetValue(key, out var entry) && now - entry.Last < ViolationWindow)
+        {
+            _violations[key] = entry with { Suppressed = entry.Suppressed + 1 };
+            suppressed = 0;
+            return false;
+        }
+
+        suppressed = entry.Suppressed;
+
+        if (_violations.Count >= ViolationPruneThreshold)
+        {
+            foreach (var (k, v) in _violations.ToArray())
+            {
+                if (now - v.Last >= ViolationWindow && v.Suppressed == 0)
+                    _violations.Remove(k);
+            }
+        }
+
+        _violations[key] = (now, 0);
+        return true;
+    }
+
+    public void AdminSessionLoaded(DiscordLogActor admin, AdminFlags? oldFlags, AdminFlags flags, string? title, AdminLoginSource source, string? address, bool active, bool stealth)
+    {
+        _ = _logger.Guarded(async () =>
+        {
+            var label = await _logger.ActorLabel(admin);
+            var host = source != AdminLoginSource.Database;
+            var sourceText = Loc.GetString(SourceLocId(source));
+
+            var msg = _logger.NewMessage(oldFlags == null ? "admin-guard-title-session-login" : "admin-guard-title-session-reload",
+                host ? ColorAlert : ColorPerms);
+            msg.Add("admin-guard-target", ("target", label));
+            AddField(msg, "admin-guard-field-title", TextOrNone(title));
+
+            if (oldFlags is { } old)
+                AddChange(msg, "admin-guard-field-flags", FlagsText(old, AdminFlags.None), FlagsText(flags, AdminFlags.None));
+            else
+                AddField(msg, "admin-guard-field-flags", FlagsText(flags, AdminFlags.None));
+
+            AddField(msg, "admin-guard-field-source", sourceText);
+            if (host && address != null)
+                AddField(msg, "admin-guard-field-address", $"`{address}`");
+            AddField(msg, "admin-guard-field-active", BoolText(active));
+            AddField(msg, "admin-guard-field-stealth", BoolText(stealth));
+
+            // Contains IPs and stealth state - security channel only
+            await _logger.Send(msg, SecurityChannel);
+
+            if (host)
+                await _logger.SendText(Loc.GetString("admin-guard-host-login-alert", ("name", label), ("source", sourceText)), ChatChannel);
+        });
+    }
+
+    public void HostPromoted(DiscordLogActor target, DiscordLogActor by)
+    {
+        _ = _logger.Guarded(async () =>
+        {
+            var msg = _logger.NewMessage("admin-guard-title-host-promoted", ColorAlert);
+            msg.Add("admin-guard-target", ("target", await _logger.ActorLabel(target)));
+            msg.Add("admin-guard-actor", ("actor", await _logger.ActorLabel(by)));
+
+            await _logger.Send(msg, SecurityChannel);
+        });
+    }
+
+    private static string SourceLocId(AdminLoginSource source)
+    {
+        return source switch
+        {
+            AdminLoginSource.LocalHost => "admin-guard-source-localhost",
+            AdminLoginSource.HostUser => "admin-guard-source-hostuser",
+            AdminLoginSource.PromoteHost => "admin-guard-source-promotehost",
+            _ => "admin-guard-source-db",
+        };
     }
 
     public void DiscordAccountLinked(NetUserId player, ulong discordId)

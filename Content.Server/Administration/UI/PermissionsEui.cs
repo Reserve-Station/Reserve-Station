@@ -153,6 +153,7 @@ namespace Content.Server.Administration.UI
             if (!CanTouchRank(rank))
             {
                 _sawmill.Warning($"{Player} tried to remove higher-ranked admin rank {rank.Name}");
+                _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-higher-rank"); // Reserve edit: Reserve Red - AdminGuard
                 return;
             }
 
@@ -173,12 +174,14 @@ namespace Content.Server.Administration.UI
             if (!CanTouchRank(rank))
             {
                 _sawmill.Warning($"{Player} tried to update higher-ranked admin rank {rank.Name}");
+                _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-higher-rank"); // Reserve edit: Reserve Red - AdminGuard
                 return;
             }
 
             if (!UserAdminFlagCheck(ur.Flags))
             {
                 _sawmill.Warning($"{Player} tried to give a rank permissions above their authorization.");
+                _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-flags-above"); // Reserve edit: Reserve Red - AdminGuard
                 return;
             }
 
@@ -200,6 +203,7 @@ namespace Content.Server.Administration.UI
             if (!UserAdminFlagCheck(ar.Flags))
             {
                 _sawmill.Warning($"{Player} tried to give a rank permissions above their authorization.");
+                _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-flags-above"); // Reserve edit: Reserve Red - AdminGuard
                 return;
             }
 
@@ -228,6 +232,7 @@ namespace Content.Server.Administration.UI
             if (!CanTouchAdmin(admin))
             {
                 _sawmill.Warning($"{Player} tried to remove higher-ranked admin {ra.UserId.ToString()}");
+                _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-higher-admin", ra.UserId); // Reserve edit: Reserve Red - AdminGuard
                 return;
             }
 
@@ -266,6 +271,7 @@ namespace Content.Server.Administration.UI
             if (!CanTouchAdmin(admin))
             {
                 _sawmill.Warning($"{Player} tried to modify higher-ranked admin {ua.UserId.ToString()}");
+                _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-higher-admin", ua.UserId); // Reserve edit: Reserve Red - AdminGuard
                 return;
             }
 
@@ -375,6 +381,7 @@ namespace Content.Server.Administration.UI
             {
                 // Can't have overlapping pos and neg flags.
                 // Just deny the entire message.
+                _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-overlap"); // Reserve edit: Reserve Red - AdminGuard
                 return false;
             }
 
@@ -382,6 +389,7 @@ namespace Content.Server.Administration.UI
             {
                 // Can't create an admin with higher perms than yourself, obviously.
                 _sawmill.Warning($"{Player} tried to grant admin powers above their authorization.");
+                _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-flags-above"); // Reserve edit: Reserve Red - AdminGuard
                 return false;
             }
 
@@ -408,6 +416,7 @@ namespace Content.Server.Administration.UI
                 {
                     // Can't assign a rank with flags you don't have yourself.
                     _sawmill.Warning($"{Player} tried to assign admin rank above their authorization.");
+                    _adminGuard.PermissionsViolation(DiscordLogActor.From(Player), "admin-guard-violation-rank-above"); // Reserve edit: Reserve Red - AdminGuard
                     return (true, null);
                 }
             }

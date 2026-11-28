@@ -21,6 +21,7 @@ using Robust.Shared.Toolshed;
 using Robust.Shared.Toolshed.Errors;
 using Robust.Shared.Utility;
 using Content.Server._Reserve.Discord.AdminGuard; // Reserve edit: Reserve Red - AdminGuard
+using Content.Server._Reserve.Discord.Logger; // Reserve edit: Reserve Red - AdminGuard
 
 
 namespace Content.Server.Administration.Managers
@@ -208,6 +209,10 @@ namespace Content.Server.Administration.Managers
             else
             {
                 var (aData, rankId, special) = data.Value;
+                // Reserve edit start: Reserve Red - AdminGuard
+                var guardOldFlags = curAdmin?.Data.Flags ?? AdminFlags.None;
+                var guardOldSpecial = curAdmin?.IsSpecialLogin ?? false;
+                // Reserve edit end: Reserve Red - AdminGuard
 
                 if (curAdmin == null)
                 {
@@ -239,6 +244,11 @@ namespace Content.Server.Administration.Managers
                 {
                     aData.Stealth = true;
                 }
+
+                // Reserve edit start: Reserve Red - AdminGuard
+                if (curAdmin == null || guardOldFlags != aData.Flags || guardOldSpecial != special)
+                    _adminGuard.AdminSessionLoaded(DiscordLogActor.From(player), guardOldFlags, aData.Flags, aData.Title, GuardLoginSource(player, special), GuardAddress(player), aData.Active, aData.Stealth);
+                // Reserve edit end: Reserve Red - AdminGuard
             }
 
             SendPermsChangedEvent(player);
@@ -401,6 +411,9 @@ namespace Content.Server.Administration.Managers
             if (contentData != null && contentData.Stealthed)
                 reg.Data.Stealth = true;
 
+            // Reserve edit: Reserve Red - AdminGuard - always, regardless of stealth or admin.announce_login
+            _adminGuard.AdminSessionLoaded(DiscordLogActor.From(session), null, reg.Data.Flags, reg.Data.Title, GuardLoginSource(session, specialLogin), GuardAddress(session), reg.Data.Active, reg.Data.Stealth);
+
             if (reg.Data.Active)
             {
                 if (_cfg.GetCVar(CCVars.AdminAnnounceLogin))
@@ -439,9 +452,7 @@ namespace Content.Server.Administration.Managers
 
         private async Task<(AdminData dat, int? rankId, bool specialLogin)?> LoadAdminDataCore(ICommonSession session)
         {
-            var promoteHost = IsLocal(session) && _cfg.GetCVar(CCVars.ConsoleLoginLocal)
-                              || _promotedPlayers.Contains(session.UserId)
-                              || session.Name == _cfg.GetCVar(CCVars.ConsoleLoginHostUser);
+            var promoteHost = GetHostLoginSource(session) != null; // Reserve edit: Reserve Red - AdminGuard
 
             if (promoteHost)
             {
@@ -508,6 +519,39 @@ namespace Content.Server.Administration.Managers
                 return (data, dbData.AdminRankId, false);
             }
         }
+
+        // Reserve edit start: Reserve Red - AdminGuard
+        /// <summary>
+        ///     Why this session gets host perms, or null if it doesn't. Single source of truth for the promoteHost check in LoadAdminDataCore.
+        /// </summary>
+        private AdminLoginSource? GetHostLoginSource(ICommonSession session)
+        {
+            if (IsLocal(session) && _cfg.GetCVar(CCVars.ConsoleLoginLocal))
+                return AdminLoginSource.LocalHost;
+
+            if (_promotedPlayers.Contains(session.UserId))
+                return AdminLoginSource.PromoteHost;
+
+            if (session.Name == _cfg.GetCVar(CCVars.ConsoleLoginHostUser))
+                return AdminLoginSource.HostUser;
+
+            return null;
+        }
+
+        private AdminLoginSource GuardLoginSource(ICommonSession session, bool specialLogin)
+        {
+            if (!specialLogin)
+                return AdminLoginSource.Database;
+
+            // Host data was already granted; null only if the cvars changed since it was loaded
+            return GetHostLoginSource(session) ?? AdminLoginSource.HostUser;
+        }
+
+        private static string? GuardAddress(ICommonSession session)
+        {
+            return session.Channel.RemoteEndPoint.ToString();
+        }
+        // Reserve edit end: Reserve Red - AdminGuard
 
         private static bool IsLocal(ICommonSession player)
         {

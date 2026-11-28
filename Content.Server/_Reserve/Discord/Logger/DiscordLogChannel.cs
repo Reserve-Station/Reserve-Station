@@ -34,4 +34,9 @@ public enum DiscordLogChannel
     ///     добавление и удаление триггеров
     /// </summary>
     Brainrot = 1 << 4,
+
+    /// <summary>
+    ///     Admin security: bot (security channel), otherwise the security webhook. No fallback, since it may contain IPs.
+    /// </summary>
+    AdminSecurity = 1 << 5,
 }
