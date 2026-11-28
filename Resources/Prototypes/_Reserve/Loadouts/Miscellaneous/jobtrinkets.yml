@@ -1,0 +1,543 @@
+# region Captain
+
+- type: entity
+  parent: BoxFolderBlue
+  id: BoxFolderBlueCaptainsThoughts
+  name: captain's journal
+  suffix: Loadout, Job Trinkets, Captain, Blue, Filled
+  components:
+  - type: Sprite
+    layers:
+    - state: folder-colormap
+      color: "#3d4379"
+    - state: folder-base
+      color: "#e6e6fa"
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PaperCaptainsThoughts
+        - id: PaperCaptainsThoughts
+        - id: PaperCaptainsThoughts
+        - id: PaperCaptainsThoughts
+        - id: PaperCaptainsThoughts
+        - id: PaperCaptainsThoughts
+
+- type: loadout
+  id: BoxFolderBlueCaptainsThoughts
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 10h
+  storage:
+    back:
+    - BoxFolderBlueCaptainsThoughts
+
+# endregion Captain
+
+# region Head of Personnel
+
+- type: entity
+  parent: BoxFolderBlue
+  id: BoxFolderBlueHoP
+  name: head of personnel's folder
+  description: This folder seems much wider than usual.
+  suffix: Loadout, Job Trinkets, Head of Personnel, Blue, Filled
+  components:
+  - type: Storage
+    grid:
+    - 0,0,4,5
+  - type: Sprite
+    layers:
+    - state: folder-colormap
+      color: "#004787"
+    - state: folder-base
+      color: "#cc2323"
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PaperCargoInvoice
+        - id: PaperCargoInvoice
+        - id: PaperCargoInvoice
+        - id: PaperCargoInvoice
+
+- type: loadout
+  id: BoxFolderBlueHoP
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 10h
+  storage:
+    back:
+    - BoxFolderBlueHoP
+
+# endregion Head of Personnel
+
+# region Bartender
+
+- type: entity
+  parent: DrinkBeerBottleFull
+  id: DrinkBeerBottleFullOfHolding
+  name: beer bottle of drinking
+  description: This bottomless beer bottle can turn one person into an alcoholic, so better to share it with friends.
+  suffix: Loadout, Job Trinkets, Bartender
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 200
+        reagents:
+        - ReagentId: Beer
+          Quantity: 200
+  - type: Sprite
+    scale: 1.3, 1.3
+
+- type: loadout
+  id: DrinkBeerBottleFullOfHolding
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBartender
+      time: 50h
+  storage:
+    back:
+    - DrinkBeerBottleFullOfHolding
+
+# endregion Bartender
+
+# region Chef
+
+- type: entity
+  parent: BaseItem
+  id: FoodCheeseSliceOld
+  name: ancient cheese slice
+  description: A slice of cheese that has been here as far as history goes. It's anomalously hard.
+  suffix: Loadout, Job Trinkets, Chef, Throwing weapon
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/ingredients.rsi
+    state: cheesewedge
+  - type: Item
+    size: Tiny
+    storedOffset: 0,-3
+    inhandVisuals:
+      left:
+      - state: cheesewedge-inhand-left
+      right:
+      - state: cheesewedge-inhand-right
+  - type: DamageOtherOnHit
+    ignoreResistances: true
+    damage:
+      types:
+        Blunt: 20
+
+- type: loadout
+  id: FoodCheeseSliceOld
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChef
+      time: 10h
+  storage:
+    back:
+    - FoodCheeseSliceOld
+
+# endregion Chef
+
+# region Librarian
+
+- type: loadout
+  id: PlushieLamp
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLibrarian
+      time: 10h
+  storage:
+    back:
+    - PlushieLamp
+
+# endregion Librarian
+
+# region Clown
+
+- type: loadout
+  id: DrinkEggCanClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 10h
+  storage:
+    back:
+    - DrinkEggCan
+
+- type: loadout
+  id: TrashBananaPeelClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 15h
+  storage:
+    back:
+    - TrashBananaPeel
+
+- type: loadout
+  id: WhoopieCushionClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 20h
+  storage:
+    back:
+    - WhoopieCushion
+
+- type: loadout
+  id: PlasticBananaClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 25h
+  storage:
+    back:
+    - PlasticBanana
+
+- type: loadout
+  id: CrazyGlueClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 30h
+  storage:
+    back:
+    - CrazyGlue
+
+- type: loadout
+  id: RubberChickenClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 35h
+  storage:
+    back:
+    - RubberChicken
+
+- type: loadout
+  id: FoodBurgerClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 40h
+  storage:
+    back:
+    - FoodBurgerClown
+
+- type: loadout
+  id: FoodFrozenSnowconeClown
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 45h
+  storage:
+    back:
+    - FoodFrozenSnowconeClown
+
+# endregion Clown
+
+# region Mime
+
+- type: loadout
+  id: DrinkNothingCanMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 10h
+  storage:
+    back:
+    - DrinkNothingCan
+
+- type: loadout
+  id: TrashMimanaPeelMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 15h
+  storage:
+    back:
+    - TrashMimanaPeel
+
+- type: loadout
+  id: CrayonMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 20h
+  storage:
+    back:
+    - CrayonMime
+
+- type: loadout
+  id: MimeRingMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 25h
+  storage:
+    back:
+    - MimeRing
+
+- type: entity
+  parent: RedTabletopPiece
+  id: ButtonRedBig
+  name: big red button
+  description: What could it possibly do?..
+  suffix: Loadout, Job Trinkets, Mime
+  components:
+  - type: Sprite
+    scale: 0.5, 0.5
+
+- type: loadout
+  id: ButtonRedBigMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 30h
+  storage:
+    back:
+    - ButtonRedBig
+
+- type: entity
+  parent: CrayonMime
+  id: CrayonMimeBig
+  name: big mime crayon
+  suffix: Loadout, Job Trinkets, Mime
+  components:
+  - type: Sprite
+    scale: 1.3, 1.3
+  - type: LimitedCharges
+    maxCharges: 50
+
+- type: loadout
+  id: CrayonMimeBig
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 35h
+  storage:
+    back:
+    - CrayonMimeBig
+
+- type: loadout
+  id: FoodBurgerMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 40h
+  storage:
+    back:
+    - FoodBurgerMime
+
+- type: loadout
+  id: FoodFrozenSnowconeMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 45h
+  storage:
+    back:
+    - FoodFrozenSnowconeMime
+
+- type: loadout
+  id: FoodTartMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 50h
+  storage:
+    back:
+    - FoodTartMime
+
+- type: loadout
+  id: BoxAdvMimeryMime
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMime
+      time: 55h
+  storage:
+    back:
+    - BoxAdvMimery
+
+# endregion Mime
+
+# region Musician
+
+- type: entity
+  parent: BoxFolderBlack
+  id: BoxFolderBlackMusicNotebook
+  name: music notebook
+  suffix: Loadout, Job Trinkets, Musician, Black, Filled
+  components:
+  - type: Sprite
+    layers:
+    - state: folder-colormap
+      color: "#3f3f74"
+    - state: folder-base
+      color: "#d2ecde"
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: VinylDiskBlue
+        - id: VinylDiskBlue
+        - id: Paper
+        - id: Paper
+        - id: Paper
+        - id: Paper
+        - id: Paper
+        - id: Paper
+  - type: Storage
+    whitelist:
+      tags:
+      - Document
+      - Card
+      - CD
+      - VinylSleeveFit
+
+- type: loadout
+  id: BoxFolderBlackMusicNotebook
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMusician
+      time: 55h
+  storage:
+    back:
+    - BoxFolderBlackMusicNotebook
+
+# endregion Musician
+
+# region CargoTechnician
+
+- type: loadout
+  id: BoxEnvelope
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobCargoTechnician
+      time: 20h
+  storage:
+    back:
+    - BoxEnvelope
+
+# endregion CargoTechnician
+
+# region Atmospheric Technician
+
+- type: loadout
+  id: PlushieAtmosian
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 40h
+  storage:
+    back:
+    - PlushieAtmosian
+
+# endregion Atmospheric Technician
+
+# region Psychologist
+
+- type: entity
+  parent: BaseItem
+  id: OrganHumanBrainPlastic
+  name: brain
+  description: A plastic brain used for psychological experiments. It's surprisingly resilient.
+  suffix: Loadout, Job Trinkets, Psychologist, Plastic, Throwing weapon
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+    state: brain
+  - type: GhostRole
+    prob: 1
+    name: ent-OrganHumanBrainPlastic
+    allowMovement: true
+    description: ent-OrganHumanBrainPlastic.desc
+    rules: ghost-role-information-familiar-rules
+    raffle:
+      settings: short
+  - type: GhostTakeoverAvailable
+  - type: Examiner
+  - type: DamageOtherOnHit
+    ignoreResistances: true
+    damage:
+      types:
+        Blunt: 10
+  - type: Tag
+    tags:
+    - VimPilot
+    - DoorBumpOpener
+  - type: Input
+    context: "human"
+  - type: InputMover
+  - type: BlockMovement
+
+- type: loadout
+  id: OrganHumanBrainPlastic
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobPsychologist
+      time: 10h
+  storage:
+    back:
+    - OrganHumanBrainPlastic
+
+# endregion Psychologist
