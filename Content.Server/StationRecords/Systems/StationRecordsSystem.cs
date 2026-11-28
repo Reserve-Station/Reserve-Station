@@ -10,6 +10,7 @@ using Content.Shared.PDA;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.StationRecords;
+using Robust.Shared.Configuration; // Reserve: Alternate Job Titles
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -42,6 +43,7 @@ public sealed partial class StationRecordsSystem : SharedStationRecordsSystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IdCardSystem _idCard = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!; // Reserve: Alternate Job Titles
 
     public override void Initialize()
     {
@@ -156,7 +158,7 @@ public sealed partial class StationRecordsSystem : SharedStationRecordsSystem
         {
             Name = name,
             Age = age,
-            JobTitle = jobPrototype.LocalizedName,
+            JobTitle = profile.GetLocalizedAlternateTitle(jobId, _prototypeManager, _cfg) ?? jobPrototype.LocalizedName, // Reserve: Alternate Job Titles
             JobIcon = jobPrototype.Icon,
             JobPrototype = jobId,
             Species = species,

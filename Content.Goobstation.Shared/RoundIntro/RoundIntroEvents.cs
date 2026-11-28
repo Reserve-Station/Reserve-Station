@@ -12,7 +12,8 @@ public sealed class RoundIntroEvent(
     ProtoId<AntagPrototype>? antag,
     bool antagBody,
     string? location,
-    bool lateJoin) : EntityEventArgs
+    bool lateJoin,
+    string? jobTitle = null) : EntityEventArgs // Reserve: Alternate Job Titles
 {
     public NetEntity Entity = entity;
     public string Name = name;
@@ -21,6 +22,7 @@ public sealed class RoundIntroEvent(
     public bool AntagBody = antagBody;
     public string? Location = location;
     public bool LateJoin = lateJoin;
+    public string? JobTitle = jobTitle; // Reserve: Alternate Job Titles - overrides the job prototype's name
 }
 
 [Serializable, NetSerializable]
@@ -35,7 +37,8 @@ public readonly record struct RoundIntroCoworker(
     NetEntity Entity,
     string Name,
     ProtoId<JobPrototype>? Job,
-    ProtoId<AntagPrototype>? Antag);
+    ProtoId<AntagPrototype>? Antag,
+    string? JobTitle = null); // Reserve: Alternate Job Titles - overrides the job prototype's name
 
 [ByRefEvent]
 public record struct ClientJoinGameAttemptEvent(bool Handled = false);
