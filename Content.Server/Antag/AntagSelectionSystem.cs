@@ -29,7 +29,10 @@ using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
 using Content.Shared.Mind;
 using Content.Shared.Players;
+using Content.Shared.Preferences;  // Reserve edit: Antag loadouts
+using Content.Shared.Preferences.Loadouts;  // Reserve edit: Antag loadouts
 using Content.Shared.Roles;
+using Content.Shared.Station;  // Reserve edit: Antag loadouts
 using Content.Shared.Whitelist;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
@@ -63,6 +66,9 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
     [Dependency] private readonly PlayTimeTrackingManager _playTimeManager = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly ArrivalsSystem _arrivals = default!;
+    [Dependency] private readonly SharedStationSpawningSystem _spawningSystem = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     // arbitrary random number to give late joining some mild interest.
     public const float LateJoinRandomChance = 0.5f;
@@ -522,7 +528,51 @@ public sealed partial class AntagSelectionSystem : GameRuleSystem<AntagSelection
         if (def.StartingGear is not null)
             gear.Add(def.StartingGear.Value);
 
-        _loadout.Equip(player, gear, def.RoleLoadout);
+        _loadout.Equip(player, gear, null);  // Reserve edit: Antag loadouts
+
+        // Reserve edit start: Antag loadouts - actually respect antag loadouts
+        if (def.RoleLoadout != null)
+        {
+            var jobProtoId = _random.Pick(def.RoleLoadout);
+            HumanoidCharacterProfile? profile = null;
+            // Check if we are setting the outfit of a player to respect the preferences
+            if (EntityManager.TryGetComponent(player, out ActorComponent? actorComponent))
+            {
+                session = actorComponent.PlayerSession;
+                var userId = actorComponent.PlayerSession.UserId;
+                var prefs = _pref.GetPreferences(userId);
+                profile = prefs.SelectedCharacter as HumanoidCharacterProfile;
+            }
+            // Don't require a player, so this works on Urists
+            profile ??= EntityManager.TryGetComponent<HumanoidAppearanceComponent>(player, out var comp)
+                ? HumanoidCharacterProfile.DefaultWithSpecies(comp.Species)
+                : new HumanoidCharacterProfile();
+            // Try to get the user's existing loadout for the role
+            profile.Loadouts.TryGetValue(jobProtoId, out var roleLoadout);
+
+            if (roleLoadout == null)
+            {
+                // If they don't have a loadout for the role, make a default one
+                roleLoadout = new RoleLoadout(jobProtoId);
+                roleLoadout.SetDefault(profile, session, _prototypeManager);
+            }
+
+            // Order loadout selections by the order they appear on the prototype.
+            foreach (var group in roleLoadout.SelectedLoadouts)
+            {
+                foreach (var items in group.Value)
+                {
+                    if (!_prototypeManager.TryIndex(items.Prototype, out var loadoutProto))
+                    {
+                        Log.Error($"Unable to find loadout prototype for {items.Prototype}");
+                        continue;
+                    }
+
+                    _spawningSystem.EquipStartingGear(player, loadoutProto, raiseEvent: false);
+                }
+            }
+        }
+        // Reserve edit end: Antag loadouts
 
         if (session != null)
         {
